@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMatchesFilter;
+
+message filterRequest
+{
+bytes inputMatches = 1;
+bytes keyPoints_1 = 2;
+bytes keyPoints_2 = 3;
+bytes outputMatches = 4;
+}
+
+message filterResponse
+{
+bytes outputMatches = 1;
+}
+
+service grpcIMatchesFilterService {
+rpc filter(filterRequest) returns(filterResponse) {}
+}
+

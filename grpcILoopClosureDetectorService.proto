@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcILoopClosureDetector;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distortionParams = 2;
+}
+
+message detectRequest
+{
+bytes queryKeyframe = 1;
+bytes detectedLoopKeyframe = 2;
+bytes sim3Transform = 3;
+bytes duplicatedPointsIndices = 4;
+}
+
+message detectResponse
+{
+bytes detectedLoopKeyframe = 1;
+bytes sim3Transform = 2;
+bytes duplicatedPointsIndices = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+service grpcILoopClosureDetectorService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc detect(detectRequest) returns(detectResponse) {}
+}
+

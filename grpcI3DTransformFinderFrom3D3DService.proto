@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI3DTransformFinderFrom3D3D;
+
+message estimateRequest
+{
+bytes sourcePointCloud = 1;
+bytes targetPointCloud = 2;
+bytes initialPose = 3;
+bytes pose = 4;
+}
+
+message estimateResponse
+{
+bytes pose = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcI3DTransformFinderFrom3D3DService {
+rpc estimate(estimateRequest) returns(estimateResponse) {}
+}
+

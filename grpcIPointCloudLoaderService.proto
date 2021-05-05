@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIPointCloudLoader;
+
+message loadRequest
+{
+string filepath = 1;
+bytes pointCloud = 2;
+}
+
+message loadResponse
+{
+bytes pointCloud = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIPointCloudLoaderService {
+rpc load(loadRequest) returns(loadResponse) {}
+}
+

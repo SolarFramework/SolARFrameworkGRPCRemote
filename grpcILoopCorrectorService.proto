@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcILoopCorrector;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distortionParams = 2;
+}
+
+message correctRequest
+{
+bytes queryKeyframe = 1;
+bytes detectedLoopKeyframe = 2;
+bytes S_wl_wc = 3;
+bytes duplicatedPointsIndices = 4;
+}
+
+message correctResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcILoopCorrectorService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc correct(correctRequest) returns(correctResponse) {}
+}
+

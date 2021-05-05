@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI3DTransform;
+
+message transformRequest
+{
+bytes inputPoints = 1;
+bytes transformation = 2;
+bytes outputPoints = 3;
+}
+
+message transformResponse
+{
+bytes outputPoints = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message transformInPlace_grpc0Request
+{
+bytes transformation = 1;
+bytes pointCloud = 2;
+}
+
+message transformInPlace_grpc0Response
+{
+bytes pointCloud = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message transformInPlace_grpc1Request
+{
+bytes transformation = 1;
+bytes keyframes = 2;
+}
+
+message transformInPlace_grpc1Response
+{
+bytes keyframes = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcI3DTransformService {
+rpc transform(transformRequest) returns(transformResponse) {}
+rpc transformInPlace_grpc0(transformInPlace_grpc0Request) returns(transformInPlace_grpc0Response) {}
+rpc transformInPlace_grpc1(transformInPlace_grpc1Request) returns(transformInPlace_grpc1Response) {}
+}
+

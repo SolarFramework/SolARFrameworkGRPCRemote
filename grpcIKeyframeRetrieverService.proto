@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIKeyframeRetriever;
+
+message addKeyframeRequest
+{
+bytes keyframe = 1;
+}
+
+message addKeyframeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message suppressKeyframeRequest
+{
+uint32 keyframe_id = 1;
+}
+
+message suppressKeyframeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message retrieve_grpc0Request
+{
+bytes frame = 1;
+bytes retKeyframes_id = 2;
+}
+
+message retrieve_grpc0Response
+{
+bytes retKeyframes_id = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message retrieve_grpc1Request
+{
+bytes frame = 1;
+bytes canKeyframes_id = 2;
+bytes retKeyframes_id = 3;
+}
+
+message retrieve_grpc1Response
+{
+bytes retKeyframes_id = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message saveToFileRequest
+{
+string file = 1;
+}
+
+message saveToFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message loadFromFileRequest
+{
+string file = 1;
+}
+
+message loadFromFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message match_grpc0Request
+{
+bytes frame = 1;
+bytes keyframe = 2;
+bytes matches = 3;
+}
+
+message match_grpc0Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message match_grpc1Request
+{
+bytes indexDescriptors = 1;
+bytes descriptors = 2;
+bytes keyframe = 3;
+bytes matches = 4;
+}
+
+message match_grpc1Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIKeyframeRetrieverService {
+rpc addKeyframe(addKeyframeRequest) returns(addKeyframeResponse) {}
+rpc suppressKeyframe(suppressKeyframeRequest) returns(suppressKeyframeResponse) {}
+rpc retrieve_grpc0(retrieve_grpc0Request) returns(retrieve_grpc0Response) {}
+rpc retrieve_grpc1(retrieve_grpc1Request) returns(retrieve_grpc1Response) {}
+rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
+rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
+rpc match_grpc0(match_grpc0Request) returns(match_grpc0Response) {}
+rpc match_grpc1(match_grpc1Request) returns(match_grpc1Response) {}
+}
+

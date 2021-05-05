@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIContoursExtractor;
+
+message extractRequest
+{
+bytes inputImg = 1;
+bytes contours = 2;
+}
+
+message extractResponse
+{
+bytes contours = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIContoursExtractorService {
+rpc extract(extractRequest) returns(extractResponse) {}
+}
+

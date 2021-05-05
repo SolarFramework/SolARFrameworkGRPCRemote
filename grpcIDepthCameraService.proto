@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIDepthCamera;
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getNextDepthFrameRequest
+{
+bytes img = 1;
+}
+
+message getNextDepthFrameResponse
+{
+bytes img = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getPointCloudRequest
+{
+bytes pc = 1;
+}
+
+message getPointCloudResponse
+{
+bytes pc = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message setDepthResolutionRequest
+{
+bytes resolution = 1;
+}
+
+message setDepthResolutionResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setIntrinsicDepthParametersRequest
+{
+bytes intrinsic_parameters = 1;
+}
+
+message setIntrinsicDepthParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setDistortionDepthParametersRequest
+{
+bytes distortion_parameters = 1;
+}
+
+message setDistortionDepthParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getDepthResolutionResponse
+{
+bytes xpcfGrpcReturnValue = 1;
+}
+
+message getDepthMinDistanceResponse
+{
+float xpcfGrpcReturnValue = 1;
+}
+
+message getIntrinsicsDepthParametersResponse
+{
+bytes xpcfGrpcReturnValue = 1;
+}
+
+message getDistortionDepthParametersResponse
+{
+bytes xpcfGrpcReturnValue = 1;
+}
+
+service grpcIDepthCameraService {
+rpc start(google.protobuf.Empty) returns(startResponse) {}
+rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc getNextDepthFrame(getNextDepthFrameRequest) returns(getNextDepthFrameResponse) {}
+rpc getPointCloud(getPointCloudRequest) returns(getPointCloudResponse) {}
+rpc setDepthResolution(setDepthResolutionRequest) returns(setDepthResolutionResponse) {}
+rpc setIntrinsicDepthParameters(setIntrinsicDepthParametersRequest) returns(setIntrinsicDepthParametersResponse) {}
+rpc setDistortionDepthParameters(setDistortionDepthParametersRequest) returns(setDistortionDepthParametersResponse) {}
+rpc getDepthResolution(google.protobuf.Empty) returns(getDepthResolutionResponse) {}
+rpc getDepthMinDistance(google.protobuf.Empty) returns(getDepthMinDistanceResponse) {}
+rpc getIntrinsicsDepthParameters(google.protobuf.Empty) returns(getIntrinsicsDepthParametersResponse) {}
+rpc getDistortionDepthParameters(google.protobuf.Empty) returns(getDistortionDepthParametersResponse) {}
+}
+

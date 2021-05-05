@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI2DTransform;
+
+message transformRequest
+{
+bytes inputPoints = 1;
+bytes transformation = 2;
+bytes outputPoints = 3;
+}
+
+message transformResponse
+{
+bytes outputPoints = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcI2DTransformService {
+rpc transform(transformRequest) returns(transformResponse) {}
+}
+

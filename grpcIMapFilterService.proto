@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMapFilter;
+
+message filter_grpc0Request
+{
+bytes pose1 = 1;
+bytes pose2 = 2;
+bytes input = 3;
+bytes output = 4;
+}
+
+message filter_grpc0Response
+{
+bytes output = 1;
+}
+
+message filter_grpc1Request
+{
+bytes pose1 = 1;
+bytes pose2 = 2;
+bytes input = 3;
+bytes output = 4;
+bytes index = 5;
+}
+
+message filter_grpc1Response
+{
+bytes output = 1;
+bytes index = 2;
+}
+
+service grpcIMapFilterService {
+rpc filter_grpc0(filter_grpc0Request) returns(filter_grpc0Response) {}
+rpc filter_grpc1(filter_grpc1Request) returns(filter_grpc1Response) {}
+}
+

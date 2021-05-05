@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIImageFilter;
+
+message filterRequest
+{
+bytes input = 1;
+bytes output = 2;
+}
+
+message filterResponse
+{
+bytes output = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIImageFilterService {
+rpc filter(filterRequest) returns(filterResponse) {}
+}
+

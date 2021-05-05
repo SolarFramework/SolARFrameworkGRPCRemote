@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIBundler;
+
+message setMapperRequest
+{
+bytes map = 1;
+}
+
+message setMapperResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message bundleAdjustmentRequest
+{
+bytes selectKeyframes = 1;
+bytes K = 2;
+bytes D = 3;
+}
+
+message bundleAdjustmentResponse
+{
+bytes K = 1;
+bytes D = 2;
+double xpcfGrpcReturnValue = 3;
+}
+
+service grpcIBundlerService {
+rpc setMapper(setMapperRequest) returns(setMapperResponse) {}
+rpc bundleAdjustment(bundleAdjustmentRequest) returns(bundleAdjustmentResponse) {}
+}
+

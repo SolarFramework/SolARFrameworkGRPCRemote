@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI2D3DCorrespondencesFinder;
+
+message findRequest
+{
+bytes lastFrame = 1;
+bytes currentFrame = 2;
+bytes current_matches = 3;
+bytes shared_3dpoint = 4;
+bytes shared_2dpoint = 5;
+bytes corres2D3D = 6;
+bytes found_matches = 7;
+bytes remaining_matches = 8;
+}
+
+message findResponse
+{
+bytes shared_3dpoint = 1;
+bytes shared_2dpoint = 2;
+bytes corres2D3D = 3;
+bytes found_matches = 4;
+bytes remaining_matches = 5;
+sint32 xpcfGrpcReturnValue = 6;
+}
+
+service grpcI2D3DCorrespondencesFinderService {
+rpc find(findRequest) returns(findResponse) {}
+}
+

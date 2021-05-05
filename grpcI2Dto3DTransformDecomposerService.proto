@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI2Dto3DTransformDecomposer;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distorsionParams = 2;
+}
+
+message decomposeRequest
+{
+bytes F = 1;
+bytes decomposedPoses = 2;
+}
+
+message decomposeResponse
+{
+bytes decomposedPoses = 1;
+bool xpcfGrpcReturnValue = 2;
+}
+
+service grpcI2Dto3DTransformDecomposerService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc decompose(decomposeRequest) returns(decomposeResponse) {}
+}
+

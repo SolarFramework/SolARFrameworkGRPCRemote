@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI3DPointsViewer;
+
+message display_grpc0Request
+{
+bytes points = 1;
+bytes pose = 2;
+bytes keyframePoses = 3;
+bytes framePoses = 4;
+bytes points2 = 5;
+bytes keyframePoses2 = 6;
+}
+
+message display_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message display_grpc1Request
+{
+bytes points = 1;
+bytes pose = 2;
+bytes keyframePoses = 3;
+bytes framePoses = 4;
+bytes points2 = 5;
+bytes keyframePoses2 = 6;
+}
+
+message display_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcI3DPointsViewerService {
+rpc display_grpc0(display_grpc0Request) returns(display_grpc0Response) {}
+rpc display_grpc1(display_grpc1Request) returns(display_grpc1Response) {}
+}
+

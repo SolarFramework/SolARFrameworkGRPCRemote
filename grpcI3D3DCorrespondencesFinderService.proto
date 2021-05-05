@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI3D3DCorrespondencesFinder;
+
+message find_grpc0Request
+{
+bytes firstKeyframe = 1;
+bytes secondKeyframe = 2;
+bytes current_matches = 3;
+bytes firstCloudPoints = 4;
+bytes secondCloudPoints = 5;
+bytes found_matches = 6;
+bytes remaining_matches = 7;
+}
+
+message find_grpc0Response
+{
+bytes firstCloudPoints = 1;
+bytes secondCloudPoints = 2;
+bytes found_matches = 3;
+bytes remaining_matches = 4;
+sint32 xpcfGrpcReturnValue = 5;
+}
+
+message find_grpc1Request
+{
+bytes firstKeyframe = 1;
+bytes secondKeyframe = 2;
+bytes current_matches = 3;
+bytes firstCloudPointsIndices = 4;
+bytes secondCloudPointsIndices = 5;
+bytes found_matches = 6;
+}
+
+message find_grpc1Response
+{
+bytes firstCloudPointsIndices = 1;
+bytes secondCloudPointsIndices = 2;
+bytes found_matches = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+service grpcI3D3DCorrespondencesFinderService {
+rpc find_grpc0(find_grpc0Request) returns(find_grpc0Response) {}
+rpc find_grpc1(find_grpc1Request) returns(find_grpc1Response) {}
+}
+

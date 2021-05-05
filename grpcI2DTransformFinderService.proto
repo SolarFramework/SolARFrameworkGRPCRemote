@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI2DTransformFinder;
+
+message findTransform2DRequest
+{
+bytes srcPoints = 1;
+bytes dstPoints = 2;
+bytes fundamental = 3;
+}
+
+message findTransform2DResponse
+{
+bytes fundamental = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcI2DTransformFinderService {
+rpc find(findTransform2DRequest) returns(findTransform2DResponse) {}
+}
+

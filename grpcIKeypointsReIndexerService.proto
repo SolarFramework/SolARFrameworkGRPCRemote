@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIKeypointsReIndexer;
+
+message reindexRequest
+{
+bytes keypoints1 = 1;
+bytes keypoints2 = 2;
+bytes matches = 3;
+bytes matchedKeypoints1 = 4;
+bytes matchedKeypoints2 = 5;
+}
+
+message reindexResponse
+{
+bytes matchedKeypoints1 = 1;
+bytes matchedKeypoints2 = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+service grpcIKeypointsReIndexerService {
+rpc reindex(reindexRequest) returns(reindexResponse) {}
+}
+

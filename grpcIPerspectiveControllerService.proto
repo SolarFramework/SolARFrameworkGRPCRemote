@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIPerspectiveController;
+
+message correct_grpc0Request
+{
+bytes inputImg = 1;
+bytes contours = 2;
+bytes patches = 3;
+}
+
+message correct_grpc0Response
+{
+bytes patches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message correct_grpc1Request
+{
+bytes inputImg = 1;
+bytes contour = 2;
+bytes patch = 3;
+}
+
+message correct_grpc1Response
+{
+bytes patch = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIPerspectiveControllerService {
+rpc correct_grpc0(correct_grpc0Request) returns(correct_grpc0Response) {}
+rpc correct_grpc1(correct_grpc1Request) returns(correct_grpc1Response) {}
+}
+

@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIDescriptorMatcher;
+
+message match_grpc0Request
+{
+bytes descriptors1 = 1;
+bytes descriptors2 = 2;
+bytes matches = 3;
+}
+
+message match_grpc0Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message match_grpc1Request
+{
+bytes descriptors1 = 1;
+bytes descriptors2 = 2;
+bytes matches = 3;
+}
+
+message match_grpc1Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIDescriptorMatcherService {
+rpc match_grpc0(match_grpc0Request) returns(match_grpc0Response) {}
+rpc match_grpc1(match_grpc1Request) returns(match_grpc1Response) {}
+}
+

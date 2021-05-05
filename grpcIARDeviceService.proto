@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIARDevice;
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getNbCamerasResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getDataRequest
+{
+bytes images = 1;
+bytes poses = 2;
+bytes timestamp = 3;
+}
+
+message getDataResponse
+{
+bytes images = 1;
+bytes poses = 2;
+bytes timestamp = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+message getParametersRequest
+{
+sint32 camera_id = 1;
+}
+
+message getParametersResponse
+{
+bytes xpcfGrpcReturnValue = 1;
+}
+
+message setParametersRequest
+{
+sint32 camera_id = 1;
+bytes parameters = 2;
+}
+
+service grpcIARDeviceService {
+rpc start(google.protobuf.Empty) returns(startResponse) {}
+rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc getNbCameras(google.protobuf.Empty) returns(getNbCamerasResponse) {}
+rpc getData(getDataRequest) returns(getDataResponse) {}
+rpc getParameters(getParametersRequest) returns(getParametersResponse) {}
+rpc setParameters(setParametersRequest) returns(google.protobuf.Empty) {}
+}
+

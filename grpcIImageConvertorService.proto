@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIImageConvertor;
+
+message convert_grpc0Request
+{
+bytes imgSrc = 1;
+bytes imgDst = 2;
+}
+
+message convert_grpc0Response
+{
+bytes imgDst = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message convert_grpc1Request
+{
+bytes imgSrc = 1;
+sint32 destLayout = 2;
+bytes imgDst = 3;
+}
+
+message convert_grpc1Response
+{
+bytes imgDst = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message convertLookUpTableRequest
+{
+bytes imgSrc = 1;
+bytes imgDst = 2;
+}
+
+message convertLookUpTableResponse
+{
+bytes imgDst = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIImageConvertorService {
+rpc convert_grpc0(convert_grpc0Request) returns(convert_grpc0Response) {}
+rpc convert_grpc1(convert_grpc1Request) returns(convert_grpc1Response) {}
+rpc convertLookUpTable(convertLookUpTableRequest) returns(convertLookUpTableResponse) {}
+}
+

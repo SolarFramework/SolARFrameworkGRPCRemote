@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIDescriptorsExtractorSBPattern;
+
+message extract_grpc0Request
+{
+bytes images = 1;
+bytes inContours = 2;
+bytes descriptors = 3;
+bytes outContours = 4;
+}
+
+message extract_grpc0Response
+{
+bytes descriptors = 1;
+bytes outContours = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message extract_grpc1Request
+{
+bytes pattern = 1;
+bytes descriptorParam = 2;
+}
+
+message extract_grpc1Response
+{
+bytes descriptorParam = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIDescriptorsExtractorSBPatternService {
+rpc extract_grpc0(extract_grpc0Request) returns(extract_grpc0Response) {}
+rpc extract_grpc1(extract_grpc1Request) returns(extract_grpc1Response) {}
+}
+

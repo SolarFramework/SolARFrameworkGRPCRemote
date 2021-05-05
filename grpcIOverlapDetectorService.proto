@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIOverlapDetector;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distortionParams = 2;
+}
+
+message detect_grpc0Request
+{
+bytes globalMap = 1;
+bytes floatingMap = 2;
+bytes sim3Transform = 3;
+bytes cpOverlapIndices = 4;
+}
+
+message detect_grpc0Response
+{
+bytes sim3Transform = 1;
+bytes cpOverlapIndices = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message detect_grpc1Request
+{
+bytes globalMap = 1;
+bytes floatingMap = 2;
+bytes sim3Transform = 3;
+bytes overlapIndices = 4;
+bytes scores = 5;
+}
+
+message detect_grpc1Response
+{
+bytes sim3Transform = 1;
+bytes overlapIndices = 2;
+bytes scores = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+service grpcIOverlapDetectorService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc detect_grpc0(detect_grpc0Request) returns(detect_grpc0Response) {}
+rpc detect_grpc1(detect_grpc1Request) returns(detect_grpc1Response) {}
+}
+

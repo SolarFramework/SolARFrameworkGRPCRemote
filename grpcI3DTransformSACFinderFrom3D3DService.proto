@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI3DTransformSACFinderFrom3D3D;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distortionParams = 2;
+}
+
+message estimate_grpc0Request
+{
+bytes firstPoints3D = 1;
+bytes secondPoints3D = 2;
+bytes pose = 3;
+bytes inliers = 4;
+}
+
+message estimate_grpc0Response
+{
+bytes pose = 1;
+bytes inliers = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message estimate_grpc1Request
+{
+bytes firstKeyframe = 1;
+bytes secondKeyframe = 2;
+bytes matches = 3;
+bytes firstPoints3D = 4;
+bytes secondPoints3D = 5;
+bytes pose = 6;
+bytes inliers = 7;
+}
+
+message estimate_grpc1Response
+{
+bytes pose = 1;
+bytes inliers = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+service grpcI3DTransformSACFinderFrom3D3DService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc estimate_grpc0(estimate_grpc0Request) returns(estimate_grpc0Response) {}
+rpc estimate_grpc1(estimate_grpc1Request) returns(estimate_grpc1Response) {}
+}
+

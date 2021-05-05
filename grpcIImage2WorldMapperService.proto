@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIImage2WorldMapper;
+
+message mapRequest
+{
+bytes digitalPoints = 1;
+bytes worldPoints = 2;
+}
+
+message mapResponse
+{
+bytes worldPoints = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIImage2WorldMapperService {
+rpc map(mapRequest) returns(mapResponse) {}
+}
+

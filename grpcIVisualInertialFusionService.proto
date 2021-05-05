@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIVisualInertialFusion;
+
+message initRequest
+{
+bytes initialVisionData = 1;
+}
+
+message addInertialDataRequest
+{
+bytes inertialData = 1;
+}
+
+message addVisionDataRequest
+{
+bytes visionData = 1;
+}
+
+message processRequest
+{
+bytes outputData = 1;
+}
+
+message processResponse
+{
+bytes outputData = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIVisualInertialFusionService {
+rpc init(initRequest) returns(google.protobuf.Empty) {}
+rpc addInertialData(addInertialDataRequest) returns(google.protobuf.Empty) {}
+rpc addVisionData(addVisionDataRequest) returns(google.protobuf.Empty) {}
+rpc process(processRequest) returns(processResponse) {}
+}
+

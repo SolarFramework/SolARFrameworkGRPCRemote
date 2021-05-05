@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcITrackablePose;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distorsionParams = 2;
+}
+
+message setTrackableRequest
+{
+bytes trackable = 1;
+}
+
+message setTrackableResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message estimateRequest
+{
+bytes image = 1;
+bytes pose = 2;
+}
+
+message estimateResponse
+{
+bytes pose = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcITrackablePoseService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc setTrackable(setTrackableRequest) returns(setTrackableResponse) {}
+rpc estimate(estimateRequest) returns(estimateResponse) {}
+}
+

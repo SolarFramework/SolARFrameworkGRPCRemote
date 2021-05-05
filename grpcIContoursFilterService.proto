@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIContoursFilter;
+
+message filterRequest
+{
+bytes inContours = 1;
+bytes outContours = 2;
+}
+
+message filterResponse
+{
+bytes outContours = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIContoursFilterService {
+rpc filter(filterRequest) returns(filterResponse) {}
+}
+

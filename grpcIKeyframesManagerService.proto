@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIKeyframesManager;
+
+message addKeyframe_grpc0Request
+{
+bytes keyframe = 1;
+}
+
+message addKeyframe_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message addKeyframe_grpc1Request
+{
+bytes keyframe = 1;
+}
+
+message addKeyframe_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getKeyframeRequest
+{
+uint32 id = 1;
+bytes keyframe = 2;
+}
+
+message getKeyframeResponse
+{
+bytes keyframe = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getKeyframesRequest
+{
+bytes ids = 1;
+bytes keyframes = 2;
+}
+
+message getKeyframesResponse
+{
+bytes keyframes = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getAllKeyframesRequest
+{
+bytes keyframes = 1;
+}
+
+message getAllKeyframesResponse
+{
+bytes keyframes = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message suppressKeyframeRequest
+{
+uint32 id = 1;
+}
+
+message suppressKeyframeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getDescriptorTypeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setDescriptorTypeRequest
+{
+sint32 type = 1;
+}
+
+message setDescriptorTypeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message isExistKeyframeRequest
+{
+uint32 id = 1;
+}
+
+message isExistKeyframeResponse
+{
+bool xpcfGrpcReturnValue = 1;
+}
+
+message getNbKeyframesResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message saveToFileRequest
+{
+string file = 1;
+}
+
+message saveToFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message loadFromFileRequest
+{
+string file = 1;
+}
+
+message loadFromFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIKeyframesManagerService {
+rpc addKeyframe_grpc0(addKeyframe_grpc0Request) returns(addKeyframe_grpc0Response) {}
+rpc addKeyframe_grpc1(addKeyframe_grpc1Request) returns(addKeyframe_grpc1Response) {}
+rpc getKeyframe(getKeyframeRequest) returns(getKeyframeResponse) {}
+rpc getKeyframes(getKeyframesRequest) returns(getKeyframesResponse) {}
+rpc getAllKeyframes(getAllKeyframesRequest) returns(getAllKeyframesResponse) {}
+rpc suppressKeyframe(suppressKeyframeRequest) returns(suppressKeyframeResponse) {}
+rpc getDescriptorType(google.protobuf.Empty) returns(getDescriptorTypeResponse) {}
+rpc setDescriptorType(setDescriptorTypeRequest) returns(setDescriptorTypeResponse) {}
+rpc isExistKeyframe(isExistKeyframeRequest) returns(isExistKeyframeResponse) {}
+rpc getNbKeyframes(google.protobuf.Empty) returns(getNbKeyframesResponse) {}
+rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
+rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
+}
+

@@ -1,0 +1,169 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIPointCloudManager;
+
+message addPoint_grpc0Request
+{
+bytes point = 1;
+}
+
+message addPoint_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message addPoints_grpc0Request
+{
+bytes points = 1;
+}
+
+message addPoints_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message addPoint_grpc1Request
+{
+bytes point = 1;
+}
+
+message addPoint_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message addPoints_grpc1Request
+{
+bytes points = 1;
+}
+
+message addPoints_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getPointRequest
+{
+uint32 id = 1;
+bytes point = 2;
+}
+
+message getPointResponse
+{
+bytes point = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getPointsRequest
+{
+bytes ids = 1;
+bytes points = 2;
+}
+
+message getPointsResponse
+{
+bytes points = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getAllPointsRequest
+{
+bytes points = 1;
+}
+
+message getAllPointsResponse
+{
+bytes points = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message suppressPointRequest
+{
+uint32 id = 1;
+}
+
+message suppressPointResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message suppressPointsRequest
+{
+bytes ids = 1;
+}
+
+message suppressPointsResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getDescriptorTypeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setDescriptorTypeRequest
+{
+sint32 type = 1;
+}
+
+message setDescriptorTypeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message isExistPointRequest
+{
+uint32 id = 1;
+}
+
+message isExistPointResponse
+{
+bool xpcfGrpcReturnValue = 1;
+}
+
+message getNbPointsResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message saveToFileRequest
+{
+string file = 1;
+}
+
+message saveToFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message loadFromFileRequest
+{
+string file = 1;
+}
+
+message loadFromFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIPointCloudManagerService {
+rpc addPoint_grpc0(addPoint_grpc0Request) returns(addPoint_grpc0Response) {}
+rpc addPoints_grpc0(addPoints_grpc0Request) returns(addPoints_grpc0Response) {}
+rpc addPoint_grpc1(addPoint_grpc1Request) returns(addPoint_grpc1Response) {}
+rpc addPoints_grpc1(addPoints_grpc1Request) returns(addPoints_grpc1Response) {}
+rpc getPoint(getPointRequest) returns(getPointResponse) {}
+rpc getPoints(getPointsRequest) returns(getPointsResponse) {}
+rpc getAllPoints(getAllPointsRequest) returns(getAllPointsResponse) {}
+rpc suppressPoint(suppressPointRequest) returns(suppressPointResponse) {}
+rpc suppressPoints(suppressPointsRequest) returns(suppressPointsResponse) {}
+rpc getDescriptorType(google.protobuf.Empty) returns(getDescriptorTypeResponse) {}
+rpc setDescriptorType(setDescriptorTypeRequest) returns(setDescriptorTypeResponse) {}
+rpc isExistPoint(isExistPointRequest) returns(isExistPointResponse) {}
+rpc getNbPoints(google.protobuf.Empty) returns(getNbPointsResponse) {}
+rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
+rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
+}
+

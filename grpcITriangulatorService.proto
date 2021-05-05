@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcITriangulator;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distorsionParams = 2;
+}
+
+message triangulate_grpc0Request
+{
+bytes pointsView1 = 1;
+bytes pointView2 = 2;
+bytes matches = 3;
+bytes working_views = 4;
+bytes poseView1 = 5;
+bytes poseView2 = 6;
+bytes pcloud = 7;
+}
+
+message triangulate_grpc0Response
+{
+bytes pcloud = 1;
+double xpcfGrpcReturnValue = 2;
+}
+
+message triangulate_grpc1Request
+{
+bytes keypointsView1 = 1;
+bytes keypointsView2 = 2;
+bytes matches = 3;
+bytes working_views = 4;
+bytes poseView1 = 5;
+bytes poseView2 = 6;
+bytes pcloud = 7;
+}
+
+message triangulate_grpc1Response
+{
+bytes pcloud = 1;
+double xpcfGrpcReturnValue = 2;
+}
+
+message triangulate_grpc2Request
+{
+bytes keypointsView1 = 1;
+bytes keypointsView2 = 2;
+bytes descriptor1 = 3;
+bytes descriptor2 = 4;
+bytes matches = 5;
+bytes working_views = 6;
+bytes poseView1 = 7;
+bytes poseView2 = 8;
+bytes pcloud = 9;
+}
+
+message triangulate_grpc2Response
+{
+bytes pcloud = 1;
+double xpcfGrpcReturnValue = 2;
+}
+
+message triangulate_grpc3Request
+{
+bytes curKeyframe = 1;
+bytes matches = 2;
+bytes pcloud = 3;
+}
+
+message triangulate_grpc3Response
+{
+bytes pcloud = 1;
+double xpcfGrpcReturnValue = 2;
+}
+
+service grpcITriangulatorService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc triangulate_grpc0(triangulate_grpc0Request) returns(triangulate_grpc0Response) {}
+rpc triangulate_grpc1(triangulate_grpc1Request) returns(triangulate_grpc1Response) {}
+rpc triangulate_grpc2(triangulate_grpc2Request) returns(triangulate_grpc2Response) {}
+rpc triangulate_grpc3(triangulate_grpc3Request) returns(triangulate_grpc3Response) {}
+}
+

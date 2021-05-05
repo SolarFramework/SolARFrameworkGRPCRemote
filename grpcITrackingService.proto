@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcITracking;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distorsionParams = 2;
+}
+
+message updateReferenceKeyframeRequest
+{
+bytes refKeyframe = 1;
+}
+
+message processRequest
+{
+bytes frame = 1;
+bytes displayImage = 2;
+}
+
+message processResponse
+{
+bytes displayImage = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcITrackingService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc updateReferenceKeyframe(updateReferenceKeyframeRequest) returns(google.protobuf.Empty) {}
+rpc process(processRequest) returns(processResponse) {}
+}
+

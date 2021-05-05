@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIHomographyValidation;
+
+message isValidRequest
+{
+bytes ref2DSquaredMarkerCorners = 1;
+bytes projected2DSquaredMarkerCorners = 2;
+}
+
+message isValidResponse
+{
+bool xpcfGrpcReturnValue = 1;
+}
+
+service grpcIHomographyValidationService {
+rpc isValid(isValidRequest) returns(isValidResponse) {}
+}
+

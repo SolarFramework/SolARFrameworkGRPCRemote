@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIRelocalizer;
+
+message addKeyframeRequest
+{
+bytes keyframe = 1;
+}
+
+message addKeyframeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message relocalizeRequest
+{
+bytes frame = 1;
+bytes pose = 2;
+}
+
+message relocalizeResponse
+{
+bytes pose = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIRelocalizerService {
+rpc addKeyframe(addKeyframeRequest) returns(addKeyframeResponse) {}
+rpc relocalize(relocalizeRequest) returns(relocalizeResponse) {}
+}
+

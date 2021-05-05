@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIDescriptorsExtractor;
+
+message getTypeStringResponse
+{
+string xpcfGrpcReturnValue = 1;
+}
+
+message extractRequest
+{
+bytes image = 1;
+bytes keypoints = 2;
+bytes descriptors = 3;
+}
+
+message extractResponse
+{
+bytes descriptors = 1;
+}
+
+service grpcIDescriptorsExtractorService {
+rpc getTypeString(google.protobuf.Empty) returns(getTypeStringResponse) {}
+rpc extract(extractRequest) returns(extractResponse) {}
+}
+

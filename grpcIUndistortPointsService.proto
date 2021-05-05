@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIUndistortPoints;
+
+message undistort_grpc0Request
+{
+bytes inputPoints = 1;
+bytes outputPoints = 2;
+}
+
+message undistort_grpc0Response
+{
+bytes outputPoints = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message undistort_grpc1Request
+{
+bytes inputKeypoints = 1;
+bytes outputKeypoints = 2;
+}
+
+message undistort_grpc1Response
+{
+bytes outputKeypoints = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distorsionParams = 2;
+}
+
+service grpcIUndistortPointsService {
+rpc undistort_grpc0(undistort_grpc0Request) returns(undistort_grpc0Response) {}
+rpc undistort_grpc1(undistort_grpc1Request) returns(undistort_grpc1Response) {}
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+}
+

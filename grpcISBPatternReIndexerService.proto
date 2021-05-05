@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcISBPatternReIndexer;
+
+message reindexRequest
+{
+bytes candidateContours = 1;
+bytes matches = 2;
+bytes patternPoints = 3;
+bytes imagePoints = 4;
+}
+
+message reindexResponse
+{
+bytes patternPoints = 1;
+bytes imagePoints = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+service grpcISBPatternReIndexerService {
+rpc reindex(reindexRequest) returns(reindexResponse) {}
+}
+

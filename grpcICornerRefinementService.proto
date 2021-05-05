@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcICornerRefinement;
+
+message refineRequest
+{
+bytes image = 1;
+bytes corners = 2;
+}
+
+message refineResponse
+{
+bytes corners = 1;
+}
+
+service grpcICornerRefinementService {
+rpc refine(refineRequest) returns(refineResponse) {}
+}
+

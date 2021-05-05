@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIImageLoader;
+
+message getImageRequest
+{
+bytes img = 1;
+}
+
+message getImageResponse
+{
+bytes img = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message reloadImageResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIImageLoaderService {
+rpc getImage(getImageRequest) returns(getImageResponse) {}
+rpc reloadImage(google.protobuf.Empty) returns(reloadImageResponse) {}
+}
+

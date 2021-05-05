@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIImageViewer;
+
+message displayRequest
+{
+bytes img = 1;
+}
+
+message displayResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message displayKeyRequest
+{
+bytes img = 1;
+sint32 key = 2;
+}
+
+message displayKeyResponse
+{
+sint32 key = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIImageViewerService {
+rpc display(displayRequest) returns(displayResponse) {}
+rpc displayKey(displayKeyRequest) returns(displayKeyResponse) {}
+}
+

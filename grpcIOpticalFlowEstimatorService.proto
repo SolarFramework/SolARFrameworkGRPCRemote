@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIOpticalFlowEstimator;
+
+message estimate_grpc0Request
+{
+bytes previousImage = 1;
+bytes currentImage = 2;
+bytes pointsToTrack = 3;
+bytes trackedPoints = 4;
+bytes status = 5;
+bytes error = 6;
+}
+
+message estimate_grpc0Response
+{
+bytes trackedPoints = 1;
+bytes status = 2;
+bytes error = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+message estimate_grpc1Request
+{
+bytes previousImage = 1;
+bytes currentImage = 2;
+bytes pointsToTrack = 3;
+bytes trackedPoints = 4;
+bytes status = 5;
+bytes error = 6;
+}
+
+message estimate_grpc1Response
+{
+bytes trackedPoints = 1;
+bytes status = 2;
+bytes error = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+service grpcIOpticalFlowEstimatorService {
+rpc estimate_grpc0(estimate_grpc0Request) returns(estimate_grpc0Response) {}
+rpc estimate_grpc1(estimate_grpc1Request) returns(estimate_grpc1Response) {}
+}
+

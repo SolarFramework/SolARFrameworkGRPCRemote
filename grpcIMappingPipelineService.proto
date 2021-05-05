@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMappingPipeline;
+
+message initResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setCameraParametersRequest
+{
+bytes cameraParams = 1;
+}
+
+message setCameraParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setObjectToTrackRequest
+{
+bytes trackableObject = 1;
+}
+
+message setObjectToTrackResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message mappingProcessRequestRequest
+{
+bytes image = 1;
+bytes pose = 2;
+}
+
+message mappingProcessRequestResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getDataForVisualizationRequest
+{
+bytes outputPointClouds = 1;
+bytes keyframePoses = 2;
+}
+
+message getDataForVisualizationResponse
+{
+bytes outputPointClouds = 1;
+bytes keyframePoses = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+service grpcIMappingPipelineService {
+rpc init(google.protobuf.Empty) returns(initResponse) {}
+rpc start(google.protobuf.Empty) returns(startResponse) {}
+rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
+rpc setObjectToTrack(setObjectToTrackRequest) returns(setObjectToTrackResponse) {}
+rpc mappingProcessRequest(mappingProcessRequestRequest) returns(mappingProcessRequestResponse) {}
+rpc getDataForVisualization(getDataForVisualizationRequest) returns(getDataForVisualizationResponse) {}
+}
+
