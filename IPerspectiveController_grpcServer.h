@@ -42,7 +42,7 @@ class IPerspectiveController_grpcServer:  public org::bcom::xpcf::ConfigurableBa
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPerspectiveController::IPerspectiveController_grpcServer>
 {
-  static constexpr const char * UUID = "5d402ab5-c503-475b-995b-7807dac21fc0";
+  static constexpr const char * UUID = "e37503d1-9bdf-4626-816f-4a9578e945ec";
   static constexpr const char * NAME = "IPerspectiveController_grpcServer";
   static constexpr const char * DESCRIPTION = "IPerspectiveController_grpcServer grpc server component";
 };

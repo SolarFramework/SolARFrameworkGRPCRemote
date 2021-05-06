@@ -41,7 +41,7 @@ class I2DTransform_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI2DTransform::I2DTransform_grpcServer>
 {
-  static constexpr const char * UUID = "2c3e8aa7-e796-4df7-ad81-e62fe5b499b9";
+  static constexpr const char * UUID = "8081a951-d45a-4bbe-9ec6-d133aaa09b2f";
   static constexpr const char * NAME = "I2DTransform_grpcServer";
   static constexpr const char * DESCRIPTION = "I2DTransform_grpcServer grpc server component";
 };

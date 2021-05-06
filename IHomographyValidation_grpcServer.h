@@ -41,7 +41,7 @@ class IHomographyValidation_grpcServer:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIHomographyValidation::IHomographyValidation_grpcServer>
 {
-  static constexpr const char * UUID = "1456e9f5-5915-4f38-af5a-88f523cf2560";
+  static constexpr const char * UUID = "bfde7684-1161-4221-8f1f-e0b10312b491";
   static constexpr const char * NAME = "IHomographyValidation_grpcServer";
   static constexpr const char * DESCRIPTION = "IHomographyValidation_grpcServer grpc server component";
 };

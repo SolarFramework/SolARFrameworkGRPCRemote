@@ -42,7 +42,7 @@ class IDescriptorsExtractorSBPattern_grpcServer:  public org::bcom::xpcf::Config
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIDescriptorsExtractorSBPattern::IDescriptorsExtractorSBPattern_grpcServer>
 {
-  static constexpr const char * UUID = "6807c16d-7f91-4474-bac1-111b877e4004";
+  static constexpr const char * UUID = "0a3c779d-b733-46cc-ac45-9686127e12e9";
   static constexpr const char * NAME = "IDescriptorsExtractorSBPattern_grpcServer";
   static constexpr const char * DESCRIPTION = "IDescriptorsExtractorSBPattern_grpcServer grpc server component";
 };

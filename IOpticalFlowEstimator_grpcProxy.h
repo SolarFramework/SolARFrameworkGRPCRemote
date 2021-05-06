@@ -37,7 +37,7 @@ class IOpticalFlowEstimator_grpcProxy:  public org::bcom::xpcf::ConfigurableBase
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIOpticalFlowEstimator::IOpticalFlowEstimator_grpcProxy>
 {
-  static constexpr const char * UUID = "18f0c0d0-1a67-48b9-8073-f5a9bbcc5d94";
+  static constexpr const char * UUID = "90ced359-84d4-4a00-bf5f-c30c834fabfd";
   static constexpr const char * NAME = "IOpticalFlowEstimator_grpcProxy";
   static constexpr const char * DESCRIPTION = "IOpticalFlowEstimator_grpcProxy grpc client proxy component";
 };

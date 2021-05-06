@@ -41,7 +41,7 @@ class IPCFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPCFilter::IPCFilter_grpcServer>
 {
-  static constexpr const char * UUID = "f7225095-fd3e-4789-9d3f-1f448fe94efb";
+  static constexpr const char * UUID = "d59bd067-faa5-4e9e-a95a-f5a7cc786af3";
   static constexpr const char * NAME = "IPCFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IPCFilter_grpcServer grpc server component";
 };

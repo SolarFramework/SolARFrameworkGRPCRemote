@@ -43,7 +43,7 @@ class IKeypointDetectorRegion_grpcServer:  public org::bcom::xpcf::ConfigurableB
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeypointDetectorRegion::IKeypointDetectorRegion_grpcServer>
 {
-  static constexpr const char * UUID = "33990d4a-c1e1-499b-ab48-ffdb9247fe1c";
+  static constexpr const char * UUID = "115ed8c0-840e-41e1-9e28-009998450374";
   static constexpr const char * NAME = "IKeypointDetectorRegion_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeypointDetectorRegion_grpcServer grpc server component";
 };

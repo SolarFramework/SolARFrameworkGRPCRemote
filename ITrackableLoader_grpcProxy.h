@@ -36,7 +36,7 @@ class ITrackableLoader_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyITrackableLoader::ITrackableLoader_grpcProxy>
 {
-  static constexpr const char * UUID = "20e55b46-c8d2-4378-ba62-a4d57d7e920f";
+  static constexpr const char * UUID = "8ecf2a9a-0f4e-40e6-b73b-f7e6ea4e9ef7";
   static constexpr const char * NAME = "ITrackableLoader_grpcProxy";
   static constexpr const char * DESCRIPTION = "ITrackableLoader_grpcProxy grpc client proxy component";
 };

@@ -37,7 +37,7 @@ class IPerspectiveController_grpcProxy:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIPerspectiveController::IPerspectiveController_grpcProxy>
 {
-  static constexpr const char * UUID = "2af03022-7749-4b5f-8d56-17d4dc9c27cb";
+  static constexpr const char * UUID = "6acf8f5e-8eb9-4549-82d0-a92dc7ffb3e8";
   static constexpr const char * NAME = "IPerspectiveController_grpcProxy";
   static constexpr const char * DESCRIPTION = "IPerspectiveController_grpcProxy grpc client proxy component";
 };

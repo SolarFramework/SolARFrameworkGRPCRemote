@@ -41,7 +41,7 @@ class IPointCloudLoader_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPointCloudLoader::IPointCloudLoader_grpcServer>
 {
-  static constexpr const char * UUID = "588b13f8-42a8-46d7-851c-23115a6d1572";
+  static constexpr const char * UUID = "120d7c2a-9df2-40f7-a2cc-bc5b11c1c999";
   static constexpr const char * NAME = "IPointCloudLoader_grpcServer";
   static constexpr const char * DESCRIPTION = "IPointCloudLoader_grpcServer grpc server component";
 };

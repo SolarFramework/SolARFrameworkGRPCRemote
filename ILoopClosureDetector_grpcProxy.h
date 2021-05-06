@@ -37,7 +37,7 @@ class ILoopClosureDetector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase,
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyILoopClosureDetector::ILoopClosureDetector_grpcProxy>
 {
-  static constexpr const char * UUID = "1b9ef968-4e99-41c7-bbb2-b6fcddcea94a";
+  static constexpr const char * UUID = "742fa97f-1a4c-40e6-b487-da25e60e8f82";
   static constexpr const char * NAME = "ILoopClosureDetector_grpcProxy";
   static constexpr const char * DESCRIPTION = "ILoopClosureDetector_grpcProxy grpc client proxy component";
 };

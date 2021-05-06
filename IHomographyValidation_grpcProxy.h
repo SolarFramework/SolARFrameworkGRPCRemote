@@ -36,7 +36,7 @@ class IHomographyValidation_grpcProxy:  public org::bcom::xpcf::ConfigurableBase
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIHomographyValidation::IHomographyValidation_grpcProxy>
 {
-  static constexpr const char * UUID = "2dfc96d3-2259-48c7-a877-d3787de539b1";
+  static constexpr const char * UUID = "c3624b1a-13f8-4ef8-ae8b-7891a95d5008";
   static constexpr const char * NAME = "IHomographyValidation_grpcProxy";
   static constexpr const char * DESCRIPTION = "IHomographyValidation_grpcProxy grpc client proxy component";
 };

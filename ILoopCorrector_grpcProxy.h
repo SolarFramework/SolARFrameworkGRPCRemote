@@ -37,7 +37,7 @@ class ILoopCorrector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyILoopCorrector::ILoopCorrector_grpcProxy>
 {
-  static constexpr const char * UUID = "9a8514af-b8d5-46e5-9098-6357e286e313";
+  static constexpr const char * UUID = "4da59c8e-d935-4573-b9c5-ffc1d6bd62b7";
   static constexpr const char * NAME = "ILoopCorrector_grpcProxy";
   static constexpr const char * DESCRIPTION = "ILoopCorrector_grpcProxy grpc client proxy component";
 };

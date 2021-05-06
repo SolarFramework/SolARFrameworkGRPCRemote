@@ -52,7 +52,7 @@ class IKeyframesManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeyframesManager::IKeyframesManager_grpcServer>
 {
-  static constexpr const char * UUID = "b854f26a-a80b-43f0-add2-62ba328d48b6";
+  static constexpr const char * UUID = "23d4874f-a3be-4fe5-9a06-51ef00de21bd";
   static constexpr const char * NAME = "IKeyframesManager_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeyframesManager_grpcServer grpc server component";
 };

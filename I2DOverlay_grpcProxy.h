@@ -41,7 +41,7 @@ class I2DOverlay_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2DOverlay::I2DOverlay_grpcProxy>
 {
-  static constexpr const char * UUID = "02c2276f-3f81-4e56-81b3-a5d0039c6605";
+  static constexpr const char * UUID = "24725ed3-41a7-4824-b8ac-02070af48787";
   static constexpr const char * NAME = "I2DOverlay_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2DOverlay_grpcProxy grpc client proxy component";
 };

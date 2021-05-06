@@ -39,7 +39,7 @@ class IVisualInertialFusion_grpcProxy:  public org::bcom::xpcf::ConfigurableBase
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIVisualInertialFusion::IVisualInertialFusion_grpcProxy>
 {
-  static constexpr const char * UUID = "683051a6-ee53-4a6d-a2ee-c253cc071fe2";
+  static constexpr const char * UUID = "d8983686-c0cd-44ef-8a72-8b1dda918e62";
   static constexpr const char * NAME = "IVisualInertialFusion_grpcProxy";
   static constexpr const char * DESCRIPTION = "IVisualInertialFusion_grpcProxy grpc client proxy component";
 };

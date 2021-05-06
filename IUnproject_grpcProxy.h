@@ -38,7 +38,7 @@ class IUnproject_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIUnproject::IUnproject_grpcProxy>
 {
-  static constexpr const char * UUID = "5e302e03-3359-475c-b8c1-6c6c57cb1754";
+  static constexpr const char * UUID = "5058bc67-31c1-4341-a7ae-19d7786e2840";
   static constexpr const char * NAME = "IUnproject_grpcProxy";
   static constexpr const char * DESCRIPTION = "IUnproject_grpcProxy grpc client proxy component";
 };

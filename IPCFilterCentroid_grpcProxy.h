@@ -36,7 +36,7 @@ class IPCFilterCentroid_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIPCFilterCentroid::IPCFilterCentroid_grpcProxy>
 {
-  static constexpr const char * UUID = "c9c14d45-524c-4b9e-8b68-f9ed206d3dfc";
+  static constexpr const char * UUID = "f368702e-ec9c-4de8-8b3e-8687a8c0ad45";
   static constexpr const char * NAME = "IPCFilterCentroid_grpcProxy";
   static constexpr const char * DESCRIPTION = "IPCFilterCentroid_grpcProxy grpc client proxy component";
 };

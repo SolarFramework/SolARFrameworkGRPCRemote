@@ -49,7 +49,7 @@ class IIMU_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual public
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIIMU::IIMU_grpcServer>
 {
-  static constexpr const char * UUID = "9434d4bd-48e3-4599-9d8b-326aab99cc3f";
+  static constexpr const char * UUID = "69d1d6dc-8a7b-4fc2-a251-780c67a97663";
   static constexpr const char * NAME = "IIMU_grpcServer";
   static constexpr const char * DESCRIPTION = "IIMU_grpcServer grpc server component";
 };

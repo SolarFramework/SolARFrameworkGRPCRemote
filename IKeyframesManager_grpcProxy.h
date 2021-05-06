@@ -47,7 +47,7 @@ class IKeyframesManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIKeyframesManager::IKeyframesManager_grpcProxy>
 {
-  static constexpr const char * UUID = "8d79d530-963b-4c20-ac68-df477edb00e0";
+  static constexpr const char * UUID = "4c863cfe-1eb1-4ddf-beea-8767bf5237a3";
   static constexpr const char * NAME = "IKeyframesManager_grpcProxy";
   static constexpr const char * DESCRIPTION = "IKeyframesManager_grpcProxy grpc client proxy component";
 };

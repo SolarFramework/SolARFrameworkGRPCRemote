@@ -1,5 +1,9 @@
 
 HEADERS += \
+    $$PWD/IRelocalizationPipeline_grpcProxy.h \
+    $$PWD/IRelocalizationPipeline_grpcServer.h \
+    $$PWD/grpcIRelocalizationPipelineService.grpc.pb.h \
+    $$PWD/grpcIRelocalizationPipelineService.pb.h \
 I2D3DCorrespondencesFinder_grpcProxy.h \
 I2D3DCorrespondencesFinder_grpcServer.h \
 grpcI2D3DCorrespondencesFinderService.pb.h \
@@ -267,6 +271,10 @@ grpcIVisualInertialFusionService.grpc.pb.h \
 SolARFrameworkGRPCRemoteMain.h
 
 SOURCES += \
+    $$PWD/IRelocalizationPipeline_grpcProxy.cpp \
+    $$PWD/IRelocalizationPipeline_grpcServer.cpp \
+    $$PWD/grpcIRelocalizationPipelineService.grpc.pb.cc \
+    $$PWD/grpcIRelocalizationPipelineService.pb.cc \
 I2D3DCorrespondencesFinder_grpcProxy.cpp \
 I2D3DCorrespondencesFinder_grpcServer.cpp \
 grpcI2D3DCorrespondencesFinderService.pb.cc \
@@ -532,3 +540,6 @@ IVisualInertialFusion_grpcServer.cpp \
 grpcIVisualInertialFusionService.pb.cc \
 grpcIVisualInertialFusionService.grpc.pb.cc \
 SolARFrameworkGRPCRemoteMain.cpp
+
+DISTFILES += \
+    $$PWD/grpcIRelocalizationPipelineService.proto

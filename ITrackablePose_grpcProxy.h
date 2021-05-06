@@ -38,7 +38,7 @@ class ITrackablePose_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyITrackablePose::ITrackablePose_grpcProxy>
 {
-  static constexpr const char * UUID = "0ad0649a-e911-4b69-a01e-08d03685bf52";
+  static constexpr const char * UUID = "ce566aa4-9fee-4436-8b82-45edd7a58325";
   static constexpr const char * NAME = "ITrackablePose_grpcProxy";
   static constexpr const char * DESCRIPTION = "ITrackablePose_grpcProxy grpc client proxy component";
 };

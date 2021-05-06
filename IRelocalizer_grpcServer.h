@@ -42,7 +42,7 @@ class IRelocalizer_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIRelocalizer::IRelocalizer_grpcServer>
 {
-  static constexpr const char * UUID = "5bd6d516-8097-448d-aa82-de8658ee390f";
+  static constexpr const char * UUID = "884d5995-4ebb-4355-b49d-5e99708f0114";
   static constexpr const char * NAME = "IRelocalizer_grpcServer";
   static constexpr const char * DESCRIPTION = "IRelocalizer_grpcServer grpc server component";
 };

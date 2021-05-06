@@ -37,7 +37,7 @@ class IBootstrapper_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIBootstrapper::IBootstrapper_grpcProxy>
 {
-  static constexpr const char * UUID = "7c7d0656-0552-4e67-891d-2428a77fd55d";
+  static constexpr const char * UUID = "540dbc60-6b01-4586-ad81-bd375ef24692";
   static constexpr const char * NAME = "IBootstrapper_grpcProxy";
   static constexpr const char * DESCRIPTION = "IBootstrapper_grpcProxy grpc client proxy component";
 };

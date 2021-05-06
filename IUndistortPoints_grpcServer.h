@@ -43,7 +43,7 @@ class IUndistortPoints_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIUndistortPoints::IUndistortPoints_grpcServer>
 {
-  static constexpr const char * UUID = "b0820f5a-e7a1-4258-9278-df08dc3c2cdf";
+  static constexpr const char * UUID = "c57207dd-1e28-4237-957c-ab9c117ef7af";
   static constexpr const char * NAME = "IUndistortPoints_grpcServer";
   static constexpr const char * DESCRIPTION = "IUndistortPoints_grpcServer grpc server component";
 };

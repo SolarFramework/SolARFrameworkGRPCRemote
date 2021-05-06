@@ -42,7 +42,7 @@ class I2Dto3DTransformDecomposer_grpcServer:  public org::bcom::xpcf::Configurab
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI2Dto3DTransformDecomposer::I2Dto3DTransformDecomposer_grpcServer>
 {
-  static constexpr const char * UUID = "056151fb-7928-4035-a5a0-2fb4ce3e3b4d";
+  static constexpr const char * UUID = "1185c43c-1324-49fe-b320-4e020d63c6e7";
   static constexpr const char * NAME = "I2Dto3DTransformDecomposer_grpcServer";
   static constexpr const char * DESCRIPTION = "I2Dto3DTransformDecomposer_grpcServer grpc server component";
 };

@@ -37,7 +37,7 @@ class IDevice_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual publ
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDevice::IDevice_grpcProxy>
 {
-  static constexpr const char * UUID = "5af1526d-67c1-4cc4-9404-01204d5b89a1";
+  static constexpr const char * UUID = "c5a42f74-5919-49bb-ad62-752912f18637";
   static constexpr const char * NAME = "IDevice_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDevice_grpcProxy grpc client proxy component";
 };
