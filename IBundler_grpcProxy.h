@@ -37,7 +37,7 @@ class IBundler_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pub
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIBundler::IBundler_grpcProxy>
 {
-  static constexpr const char * UUID = "120b26c6-38d9-4122-bbc3-bdb126cbd4c7";
+  static constexpr const char * UUID = "9a8d1201-1f8d-4177-929b-6a40334de779";
   static constexpr const char * NAME = "IBundler_grpcProxy";
   static constexpr const char * DESCRIPTION = "IBundler_grpcProxy grpc client proxy component";
 };

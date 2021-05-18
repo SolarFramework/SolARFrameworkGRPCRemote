@@ -66,7 +66,7 @@ class IRGBDCamera_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIRGBDCamera::IRGBDCamera_grpcProxy>
 {
-  static constexpr const char * UUID = "e2e194f9-4197-49ce-a82b-3fa045a5a9e1";
+  static constexpr const char * UUID = "27c68c39-cb1d-43a1-9ddf-7516727a4f23";
   static constexpr const char * NAME = "IRGBDCamera_grpcProxy";
   static constexpr const char * DESCRIPTION = "IRGBDCamera_grpcProxy grpc client proxy component";
 };

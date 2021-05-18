@@ -42,7 +42,7 @@ class IMapFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMapFilter::IMapFilter_grpcServer>
 {
-  static constexpr const char * UUID = "21270484-83f4-48e3-a80f-612b98ebc93e";
+  static constexpr const char * UUID = "e3ac3877-67ca-4071-8c86-163514dfd395";
   static constexpr const char * NAME = "IMapFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IMapFilter_grpcServer grpc server component";
 };

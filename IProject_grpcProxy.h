@@ -38,7 +38,7 @@ class IProject_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pub
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIProject::IProject_grpcProxy>
 {
-  static constexpr const char * UUID = "40761c2d-676c-41bc-ad3f-8dd0d94b50b2";
+  static constexpr const char * UUID = "05d8e31d-90a0-47b7-a49c-927e848cf535";
   static constexpr const char * NAME = "IProject_grpcProxy";
   static constexpr const char * DESCRIPTION = "IProject_grpcProxy grpc client proxy component";
 };

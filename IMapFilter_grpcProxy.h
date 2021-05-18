@@ -37,7 +37,7 @@ class IMapFilter_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapFilter::IMapFilter_grpcProxy>
 {
-  static constexpr const char * UUID = "2c87ce83-a681-4b35-8bb6-f4a1ddcd5869";
+  static constexpr const char * UUID = "5560983a-180f-402c-8648-4dc9d8f32b1e";
   static constexpr const char * NAME = "IMapFilter_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMapFilter_grpcProxy grpc client proxy component";
 };

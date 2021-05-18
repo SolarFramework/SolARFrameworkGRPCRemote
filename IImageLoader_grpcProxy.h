@@ -37,7 +37,7 @@ class IImageLoader_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIImageLoader::IImageLoader_grpcProxy>
 {
-  static constexpr const char * UUID = "f4c1af2e-141d-45c0-a910-3e811cf5fd30";
+  static constexpr const char * UUID = "d92a78fc-cf06-4ed4-8ac3-a4c0a37f51ed";
   static constexpr const char * NAME = "IImageLoader_grpcProxy";
   static constexpr const char * DESCRIPTION = "IImageLoader_grpcProxy grpc client proxy component";
 };

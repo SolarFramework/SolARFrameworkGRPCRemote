@@ -55,7 +55,7 @@ class IPointCloudManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPointCloudManager::IPointCloudManager_grpcServer>
 {
-  static constexpr const char * UUID = "55bfc3d9-abc6-499b-a609-a1a765401f0c";
+  static constexpr const char * UUID = "47a35d8a-bd56-4d6b-ba26-ed06cf197873";
   static constexpr const char * NAME = "IPointCloudManager_grpcServer";
   static constexpr const char * DESCRIPTION = "IPointCloudManager_grpcServer grpc server component";
 };

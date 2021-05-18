@@ -41,7 +41,7 @@ class I2D3DCorrespondencesFinder_grpcServer:  public org::bcom::xpcf::Configurab
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI2D3DCorrespondencesFinder::I2D3DCorrespondencesFinder_grpcServer>
 {
-  static constexpr const char * UUID = "1afbb3d8-fabc-4abf-9f02-1c1218472552";
+  static constexpr const char * UUID = "d0516327-683c-4eb8-9898-34d2069f186f";
   static constexpr const char * NAME = "I2D3DCorrespondencesFinder_grpcServer";
   static constexpr const char * DESCRIPTION = "I2D3DCorrespondencesFinder_grpcServer grpc server component";
 };

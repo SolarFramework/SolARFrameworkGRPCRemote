@@ -36,7 +36,7 @@ class IKeypointsReIndexer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIKeypointsReIndexer::IKeypointsReIndexer_grpcProxy>
 {
-  static constexpr const char * UUID = "1d5070df-0b05-415f-b099-55f7dc5c7c8c";
+  static constexpr const char * UUID = "b413a8c0-4d39-47a6-bb66-b916bfc7d8c7";
   static constexpr const char * NAME = "IKeypointsReIndexer_grpcProxy";
   static constexpr const char * DESCRIPTION = "IKeypointsReIndexer_grpcProxy grpc client proxy component";
 };

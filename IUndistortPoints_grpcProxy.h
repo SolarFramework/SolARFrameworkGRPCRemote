@@ -38,7 +38,7 @@ class IUndistortPoints_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIUndistortPoints::IUndistortPoints_grpcProxy>
 {
-  static constexpr const char * UUID = "e135fd4b-4c71-4295-8c9c-6b1da425c262";
+  static constexpr const char * UUID = "2fd8ff5c-569b-4a90-a75c-c3eee8adbfd8";
   static constexpr const char * NAME = "IUndistortPoints_grpcProxy";
   static constexpr const char * DESCRIPTION = "IUndistortPoints_grpcProxy grpc client proxy component";
 };

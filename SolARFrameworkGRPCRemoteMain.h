@@ -117,6 +117,8 @@
 #include "IProject_grpcServer.h"
 #include "IRGBDCamera_grpcProxy.h"
 #include "IRGBDCamera_grpcServer.h"
+#include "IRelocalizationPipeline_grpcProxy.h"
+#include "IRelocalizationPipeline_grpcServer.h"
 #include "IRelocalizer_grpcProxy.h"
 #include "IRelocalizer_grpcServer.h"
 #include "ISBPatternReIndexer_grpcProxy.h"

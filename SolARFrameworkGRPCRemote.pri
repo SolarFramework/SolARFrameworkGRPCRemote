@@ -1,9 +1,5 @@
 
 HEADERS += \
-    $$PWD/IRelocalizationPipeline_grpcProxy.h \
-    $$PWD/IRelocalizationPipeline_grpcServer.h \
-    $$PWD/grpcIRelocalizationPipelineService.grpc.pb.h \
-    $$PWD/grpcIRelocalizationPipelineService.pb.h \
 I2D3DCorrespondencesFinder_grpcProxy.h \
 I2D3DCorrespondencesFinder_grpcServer.h \
 grpcI2D3DCorrespondencesFinderService.pb.h \
@@ -232,6 +228,10 @@ IRGBDCamera_grpcProxy.h \
 IRGBDCamera_grpcServer.h \
 grpcIRGBDCameraService.pb.h \
 grpcIRGBDCameraService.grpc.pb.h \
+IRelocalizationPipeline_grpcProxy.h \
+IRelocalizationPipeline_grpcServer.h \
+grpcIRelocalizationPipelineService.pb.h \
+grpcIRelocalizationPipelineService.grpc.pb.h \
 IRelocalizer_grpcProxy.h \
 IRelocalizer_grpcServer.h \
 grpcIRelocalizerService.pb.h \
@@ -271,10 +271,6 @@ grpcIVisualInertialFusionService.grpc.pb.h \
 SolARFrameworkGRPCRemoteMain.h
 
 SOURCES += \
-    $$PWD/IRelocalizationPipeline_grpcProxy.cpp \
-    $$PWD/IRelocalizationPipeline_grpcServer.cpp \
-    $$PWD/grpcIRelocalizationPipelineService.grpc.pb.cc \
-    $$PWD/grpcIRelocalizationPipelineService.pb.cc \
 I2D3DCorrespondencesFinder_grpcProxy.cpp \
 I2D3DCorrespondencesFinder_grpcServer.cpp \
 grpcI2D3DCorrespondencesFinderService.pb.cc \
@@ -503,6 +499,10 @@ IRGBDCamera_grpcProxy.cpp \
 IRGBDCamera_grpcServer.cpp \
 grpcIRGBDCameraService.pb.cc \
 grpcIRGBDCameraService.grpc.pb.cc \
+IRelocalizationPipeline_grpcProxy.cpp \
+IRelocalizationPipeline_grpcServer.cpp \
+grpcIRelocalizationPipelineService.pb.cc \
+grpcIRelocalizationPipelineService.grpc.pb.cc \
 IRelocalizer_grpcProxy.cpp \
 IRelocalizer_grpcServer.cpp \
 grpcIRelocalizerService.pb.cc \
@@ -540,6 +540,3 @@ IVisualInertialFusion_grpcServer.cpp \
 grpcIVisualInertialFusionService.pb.cc \
 grpcIVisualInertialFusionService.grpc.pb.cc \
 SolARFrameworkGRPCRemoteMain.cpp
-
-DISTFILES += \
-    $$PWD/grpcIRelocalizationPipelineService.proto

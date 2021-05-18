@@ -41,7 +41,7 @@ class I2DTransformFinder_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI2DTransformFinder::I2DTransformFinder_grpcServer>
 {
-  static constexpr const char * UUID = "6a77fe03-af27-49e2-9397-dc8cfa62c343";
+  static constexpr const char * UUID = "985c8882-e56c-402e-8fb2-edf66ed89f57";
   static constexpr const char * NAME = "I2DTransformFinder_grpcServer";
   static constexpr const char * DESCRIPTION = "I2DTransformFinder_grpcServer grpc server component";
 };

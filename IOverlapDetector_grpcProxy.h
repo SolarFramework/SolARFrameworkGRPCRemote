@@ -38,7 +38,7 @@ class IOverlapDetector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIOverlapDetector::IOverlapDetector_grpcProxy>
 {
-  static constexpr const char * UUID = "6a21545a-93c8-4025-8119-82a07efee091";
+  static constexpr const char * UUID = "829689c8-1eb6-44b9-808d-5cd4ea0be7f0";
   static constexpr const char * NAME = "IOverlapDetector_grpcProxy";
   static constexpr const char * DESCRIPTION = "IOverlapDetector_grpcProxy grpc client proxy component";
 };

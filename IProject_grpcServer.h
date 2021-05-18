@@ -43,7 +43,7 @@ class IProject_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIProject::IProject_grpcServer>
 {
-  static constexpr const char * UUID = "99b99faa-6a7c-43de-a4ba-df3f681f785e";
+  static constexpr const char * UUID = "abbe5396-e224-41c4-9f12-0ab295456065";
   static constexpr const char * NAME = "IProject_grpcServer";
   static constexpr const char * DESCRIPTION = "IProject_grpcServer grpc server component";
 };

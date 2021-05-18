@@ -42,7 +42,7 @@ class IImageViewer_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImageViewer::IImageViewer_grpcServer>
 {
-  static constexpr const char * UUID = "7af29664-7702-4a2e-947a-63660ebfde56";
+  static constexpr const char * UUID = "42e792b7-eec5-491f-91cc-5b4ef3635efd";
   static constexpr const char * NAME = "IImageViewer_grpcServer";
   static constexpr const char * DESCRIPTION = "IImageViewer_grpcServer grpc server component";
 };

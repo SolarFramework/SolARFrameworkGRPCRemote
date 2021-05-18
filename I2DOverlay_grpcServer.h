@@ -46,7 +46,7 @@ class I2DOverlay_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI2DOverlay::I2DOverlay_grpcServer>
 {
-  static constexpr const char * UUID = "85e4f6fd-df46-43f7-a1a6-f4b9f6224080";
+  static constexpr const char * UUID = "1d27bc1d-e165-4388-b2d1-90b0903a7d84";
   static constexpr const char * NAME = "I2DOverlay_grpcServer";
   static constexpr const char * DESCRIPTION = "I2DOverlay_grpcServer grpc server component";
 };

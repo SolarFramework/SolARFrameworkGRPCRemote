@@ -45,7 +45,7 @@ class ITriangulator_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverITriangulator::ITriangulator_grpcServer>
 {
-  static constexpr const char * UUID = "129daa04-046e-4422-88bd-84bcff5c9ab3";
+  static constexpr const char * UUID = "57e08dec-0e48-425e-8880-c59a7f47e083";
   static constexpr const char * NAME = "ITriangulator_grpcServer";
   static constexpr const char * DESCRIPTION = "ITriangulator_grpcServer grpc server component";
 };

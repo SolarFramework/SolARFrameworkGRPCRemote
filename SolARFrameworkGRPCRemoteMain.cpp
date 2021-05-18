@@ -1,7 +1,7 @@
 #include "SolARFrameworkGRPCRemoteMain.h"
 #include <xpcf/module/ModuleFactory.h>
 namespace xpcf=org::bcom::xpcf;
-XPCF_DECLARE_MODULE("fbfdbd05-d642-4aab-8c49-4f4776aa427b", "SolARFrameworkGRPCRemote","xpcf remoting module for project SolARFramework");
+XPCF_DECLARE_MODULE("ef97ff20-3dee-4f36-9c2a-d8a2454029a9", "SolARFrameworkGRPCRemote","xpcf remoting module for project SolARFramework");
 
 extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boost::uuids::uuid& componentUUID,SRef<xpcf::IComponentIntrospect>& interfaceRef)
 {
@@ -578,6 +578,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIRelocalizationPipeline::IRelocalizationPipeline_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIRelocalizationPipeline::IRelocalizationPipeline_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIRelocalizer::IRelocalizer_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -785,6 +795,8 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIProject::IProject_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIProject::IProject_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRGBDCamera::IRGBDCamera_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRGBDCamera::IRGBDCamera_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizationPipeline::IRelocalizationPipeline_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRelocalizationPipeline::IRelocalizationPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizer::IRelocalizer_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRelocalizer::IRelocalizer_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyISBPatternReIndexer::ISBPatternReIndexer_grpcProxy)

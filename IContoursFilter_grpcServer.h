@@ -41,7 +41,7 @@ class IContoursFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIContoursFilter::IContoursFilter_grpcServer>
 {
-  static constexpr const char * UUID = "d5e135ff-dce1-40fe-b2b0-539d35217d16";
+  static constexpr const char * UUID = "b9b01ca0-d5b1-433e-88c6-05acd9d0994b";
   static constexpr const char * NAME = "IContoursFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IContoursFilter_grpcServer grpc server component";
 };
