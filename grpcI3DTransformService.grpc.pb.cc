@@ -25,6 +25,9 @@ static const char* grpcI3DTransformService_method_names[] = {
   "/grpcI3DTransform.grpcI3DTransformService/transform",
   "/grpcI3DTransform.grpcI3DTransformService/transformInPlace_grpc0",
   "/grpcI3DTransform.grpcI3DTransformService/transformInPlace_grpc1",
+  "/grpcI3DTransform.grpcI3DTransformService/transformInPlace_grpc2",
+  "/grpcI3DTransform.grpcI3DTransformService/transformInPlace_grpc3",
+  "/grpcI3DTransform.grpcI3DTransformService/transformInPlace_grpc4",
 };
 
 std::unique_ptr< grpcI3DTransformService::Stub> grpcI3DTransformService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -37,6 +40,9 @@ grpcI3DTransformService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterf
   : channel_(channel), rpcmethod_transform_(grpcI3DTransformService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_transformInPlace_grpc0_(grpcI3DTransformService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_transformInPlace_grpc1_(grpcI3DTransformService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_transformInPlace_grpc2_(grpcI3DTransformService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_transformInPlace_grpc3_(grpcI3DTransformService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_transformInPlace_grpc4_(grpcI3DTransformService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcI3DTransformService::Stub::transform(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest& request, ::grpcI3DTransform::transformResponse* response) {
@@ -108,6 +114,75 @@ void grpcI3DTransformService::Stub::experimental_async::transformInPlace_grpc1(:
   return result;
 }
 
+::grpc::Status grpcI3DTransformService::Stub::transformInPlace_grpc2(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request& request, ::grpcI3DTransform::transformInPlace_grpc2Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransform::transformInPlace_grpc2Request, ::grpcI3DTransform::transformInPlace_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_transformInPlace_grpc2_, context, request, response);
+}
+
+void grpcI3DTransformService::Stub::experimental_async::transformInPlace_grpc2(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcI3DTransform::transformInPlace_grpc2Request, ::grpcI3DTransform::transformInPlace_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_transformInPlace_grpc2_, context, request, response, std::move(f));
+}
+
+void grpcI3DTransformService::Stub::experimental_async::transformInPlace_grpc2(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_transformInPlace_grpc2_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformInPlace_grpc2Response>* grpcI3DTransformService::Stub::PrepareAsynctransformInPlace_grpc2Raw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcI3DTransform::transformInPlace_grpc2Response, ::grpcI3DTransform::transformInPlace_grpc2Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_transformInPlace_grpc2_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformInPlace_grpc2Response>* grpcI3DTransformService::Stub::AsynctransformInPlace_grpc2Raw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsynctransformInPlace_grpc2Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcI3DTransformService::Stub::transformInPlace_grpc3(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request& request, ::grpcI3DTransform::transformInPlace_grpc3Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransform::transformInPlace_grpc3Request, ::grpcI3DTransform::transformInPlace_grpc3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_transformInPlace_grpc3_, context, request, response);
+}
+
+void grpcI3DTransformService::Stub::experimental_async::transformInPlace_grpc3(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcI3DTransform::transformInPlace_grpc3Request, ::grpcI3DTransform::transformInPlace_grpc3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_transformInPlace_grpc3_, context, request, response, std::move(f));
+}
+
+void grpcI3DTransformService::Stub::experimental_async::transformInPlace_grpc3(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_transformInPlace_grpc3_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformInPlace_grpc3Response>* grpcI3DTransformService::Stub::PrepareAsynctransformInPlace_grpc3Raw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcI3DTransform::transformInPlace_grpc3Response, ::grpcI3DTransform::transformInPlace_grpc3Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_transformInPlace_grpc3_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformInPlace_grpc3Response>* grpcI3DTransformService::Stub::AsynctransformInPlace_grpc3Raw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsynctransformInPlace_grpc3Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcI3DTransformService::Stub::transformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request& request, ::grpcI3DTransform::transformInPlace_grpc4Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransform::transformInPlace_grpc4Request, ::grpcI3DTransform::transformInPlace_grpc4Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_transformInPlace_grpc4_, context, request, response);
+}
+
+void grpcI3DTransformService::Stub::experimental_async::transformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcI3DTransform::transformInPlace_grpc4Request, ::grpcI3DTransform::transformInPlace_grpc4Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_transformInPlace_grpc4_, context, request, response, std::move(f));
+}
+
+void grpcI3DTransformService::Stub::experimental_async::transformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_transformInPlace_grpc4_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformInPlace_grpc4Response>* grpcI3DTransformService::Stub::PrepareAsynctransformInPlace_grpc4Raw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcI3DTransform::transformInPlace_grpc4Response, ::grpcI3DTransform::transformInPlace_grpc4Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_transformInPlace_grpc4_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformInPlace_grpc4Response>* grpcI3DTransformService::Stub::AsynctransformInPlace_grpc4Raw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsynctransformInPlace_grpc4Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 grpcI3DTransformService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcI3DTransformService_method_names[0],
@@ -139,6 +214,36 @@ grpcI3DTransformService::Service::Service() {
              ::grpcI3DTransform::transformInPlace_grpc1Response* resp) {
                return service->transformInPlace_grpc1(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcI3DTransformService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcI3DTransformService::Service, ::grpcI3DTransform::transformInPlace_grpc2Request, ::grpcI3DTransform::transformInPlace_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcI3DTransformService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcI3DTransform::transformInPlace_grpc2Request* req,
+             ::grpcI3DTransform::transformInPlace_grpc2Response* resp) {
+               return service->transformInPlace_grpc2(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcI3DTransformService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcI3DTransformService::Service, ::grpcI3DTransform::transformInPlace_grpc3Request, ::grpcI3DTransform::transformInPlace_grpc3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcI3DTransformService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcI3DTransform::transformInPlace_grpc3Request* req,
+             ::grpcI3DTransform::transformInPlace_grpc3Response* resp) {
+               return service->transformInPlace_grpc3(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcI3DTransformService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcI3DTransformService::Service, ::grpcI3DTransform::transformInPlace_grpc4Request, ::grpcI3DTransform::transformInPlace_grpc4Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcI3DTransformService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcI3DTransform::transformInPlace_grpc4Request* req,
+             ::grpcI3DTransform::transformInPlace_grpc4Response* resp) {
+               return service->transformInPlace_grpc4(ctx, req, resp);
+             }, this)));
 }
 
 grpcI3DTransformService::Service::~Service() {
@@ -159,6 +264,27 @@ grpcI3DTransformService::Service::~Service() {
 }
 
 ::grpc::Status grpcI3DTransformService::Service::transformInPlace_grpc1(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcI3DTransformService::Service::transformInPlace_grpc2(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcI3DTransformService::Service::transformInPlace_grpc3(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcI3DTransformService::Service::transformInPlace_grpc4(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response) {
   (void) context;
   (void) request;
   (void) response;

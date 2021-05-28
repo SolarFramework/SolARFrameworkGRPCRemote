@@ -117,5 +117,29 @@ XPCFErrorCode IKeyframeRetriever_grpcServer::onConfigured()
 }
 
 
+::grpc::Status IKeyframeRetriever_grpcServer::grpcIKeyframeRetrieverServiceImpl::getConstKeyframeRetrieval(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response)
+{
+  SRef<SolAR::datastructure::KeyframeRetrieval> returnValue = m_xpcfComponent->getConstKeyframeRetrieval();
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IKeyframeRetriever_grpcServer::grpcIKeyframeRetrieverServiceImpl::getKeyframeRetrieval(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response)
+{
+  SRef<SolAR::datastructure::KeyframeRetrieval> keyframeRetrieval = xpcf::deserialize<SRef<SolAR::datastructure::KeyframeRetrieval>>(request->keyframeretrieval());
+  std::unique_lock<std::mutex> returnValue = m_xpcfComponent->getKeyframeRetrieval(keyframeRetrieval);
+  response->set_keyframeretrieval(xpcf::serialize<SRef<SolAR::datastructure::KeyframeRetrieval>>(keyframeRetrieval));
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IKeyframeRetriever_grpcServer::grpcIKeyframeRetrieverServiceImpl::setKeyframeRetrieval(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response)
+{
+  SRef<SolAR::datastructure::KeyframeRetrieval> keyframeRetrieval = xpcf::deserialize<SRef<SolAR::datastructure::KeyframeRetrieval>>(request->keyframeretrieval());
+  m_xpcfComponent->setKeyframeRetrieval(keyframeRetrieval);
+  return ::grpc::Status::OK;
+}
+
+
 }
 

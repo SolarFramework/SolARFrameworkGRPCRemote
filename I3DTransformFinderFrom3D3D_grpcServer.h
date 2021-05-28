@@ -41,7 +41,7 @@ class I3DTransformFinderFrom3D3D_grpcServer:  public org::bcom::xpcf::Configurab
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DTransformFinderFrom3D3D::I3DTransformFinderFrom3D3D_grpcServer>
 {
-  static constexpr const char * UUID = "3914215a-47b6-4e8d-a2b9-6fa934912a78";
+  static constexpr const char * UUID = "9db3d43a-72f6-46d1-b19b-51eb5294cf84";
   static constexpr const char * NAME = "I3DTransformFinderFrom3D3D_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DTransformFinderFrom3D3D_grpcServer grpc server component";
 };

@@ -41,7 +41,7 @@ class IImageFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImageFilter::IImageFilter_grpcServer>
 {
-  static constexpr const char * UUID = "bc34d371-017f-4091-aaf9-94315e165139";
+  static constexpr const char * UUID = "74a0912f-bc18-4772-84ec-b0ee3f962a53";
   static constexpr const char * NAME = "IImageFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IImageFilter_grpcServer grpc server component";
 };

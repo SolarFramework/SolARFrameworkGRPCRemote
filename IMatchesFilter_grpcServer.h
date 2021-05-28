@@ -41,7 +41,7 @@ class IMatchesFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMatchesFilter::IMatchesFilter_grpcServer>
 {
-  static constexpr const char * UUID = "7258d01d-7653-4ecb-8a74-d75c8752c611";
+  static constexpr const char * UUID = "467ecbc8-aa9c-4732-98f0-c5e6ed6e398a";
   static constexpr const char * NAME = "IMatchesFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IMatchesFilter_grpcServer grpc server component";
 };

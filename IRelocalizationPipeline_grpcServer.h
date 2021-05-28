@@ -46,7 +46,7 @@ class IRelocalizationPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableB
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIRelocalizationPipeline::IRelocalizationPipeline_grpcServer>
 {
-  static constexpr const char * UUID = "234bb765-ac3b-4755-8825-5cd92145b7a8";
+  static constexpr const char * UUID = "aced265d-832c-44e3-9356-dab531fa153a";
   static constexpr const char * NAME = "IRelocalizationPipeline_grpcServer";
   static constexpr const char * DESCRIPTION = "IRelocalizationPipeline_grpcServer grpc server component";
 };

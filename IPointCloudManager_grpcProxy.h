@@ -35,6 +35,9 @@ class IPointCloudManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
     int getNbPoints()     const     override;
     SolAR::FrameworkReturnCode saveToFile(std::string const& file)     const     override;
     SolAR::FrameworkReturnCode loadFromFile(std::string const& file)     override;
+    SRef<SolAR::datastructure::PointCloud> const& getConstPointCloud()     const     override;
+    std::unique_lock<std::mutex> getPointCloud(SRef<SolAR::datastructure::PointCloud>& pointCloud)     override;
+    void setPointCloud(SRef<SolAR::datastructure::PointCloud> const pointCloud)     override;
 
 
   private:
@@ -42,6 +45,7 @@ class IPointCloudManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
     std::unique_ptr<::grpcIPointCloudManager::grpcIPointCloudManagerService::Stub> m_grpcStub;
+    mutable     SRef<SolAR::datastructure::PointCloud> m_getConstPointCloud;
 
 };
 
@@ -50,7 +54,7 @@ class IPointCloudManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIPointCloudManager::IPointCloudManager_grpcProxy>
 {
-  static constexpr const char * UUID = "72deed17-06ef-4f93-89d7-44914a7a664a";
+  static constexpr const char * UUID = "4c4d919c-8f4d-4c84-9bdf-7e8bf2b5407d";
   static constexpr const char * NAME = "IPointCloudManager_grpcProxy";
   static constexpr const char * DESCRIPTION = "IPointCloudManager_grpcProxy grpc client proxy component";
 };

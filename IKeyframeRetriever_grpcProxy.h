@@ -28,6 +28,9 @@ class IKeyframeRetriever_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
     SolAR::FrameworkReturnCode loadFromFile(std::string const& file)     override;
     SolAR::FrameworkReturnCode match(SRef<SolAR::datastructure::Frame> const frame, SRef<SolAR::datastructure::Keyframe> const keyframe, std::vector<SolAR::datastructure::DescriptorMatch>& matches)     override;
     SolAR::FrameworkReturnCode match(std::vector<int> const& indexDescriptors, SRef<SolAR::datastructure::DescriptorBuffer> const descriptors, SRef<SolAR::datastructure::Keyframe> const keyframe, std::vector<SolAR::datastructure::DescriptorMatch>& matches)     override;
+    SRef<SolAR::datastructure::KeyframeRetrieval> const& getConstKeyframeRetrieval()     const     override;
+    std::unique_lock<std::mutex> getKeyframeRetrieval(SRef<SolAR::datastructure::KeyframeRetrieval>& keyframeRetrieval)     override;
+    void setKeyframeRetrieval(SRef<SolAR::datastructure::KeyframeRetrieval> const keyframeRetrieval)     override;
 
 
   private:
@@ -35,6 +38,7 @@ class IKeyframeRetriever_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
     std::unique_ptr<::grpcIKeyframeRetriever::grpcIKeyframeRetrieverService::Stub> m_grpcStub;
+    mutable     SRef<SolAR::datastructure::KeyframeRetrieval> m_getConstKeyframeRetrieval;
 
 };
 
@@ -43,7 +47,7 @@ class IKeyframeRetriever_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIKeyframeRetriever::IKeyframeRetriever_grpcProxy>
 {
-  static constexpr const char * UUID = "0d440c8d-4e2c-48a4-a665-4d98f8253d35";
+  static constexpr const char * UUID = "79d69472-0de2-45a5-9230-fe2fd31b7ce7";
   static constexpr const char * NAME = "IKeyframeRetriever_grpcProxy";
   static constexpr const char * DESCRIPTION = "IKeyframeRetriever_grpcProxy grpc client proxy component";
 };

@@ -42,7 +42,7 @@ class ILoopClosureDetector_grpcServer:  public org::bcom::xpcf::ConfigurableBase
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverILoopClosureDetector::ILoopClosureDetector_grpcServer>
 {
-  static constexpr const char * UUID = "84876b24-f36d-4537-a9c5-02cb1d4ecb0d";
+  static constexpr const char * UUID = "aa8c49f5-24ff-4329-8ebb-f7d7f9eee369";
   static constexpr const char * NAME = "ILoopClosureDetector_grpcServer";
   static constexpr const char * DESCRIPTION = "ILoopClosureDetector_grpcServer grpc server component";
 };

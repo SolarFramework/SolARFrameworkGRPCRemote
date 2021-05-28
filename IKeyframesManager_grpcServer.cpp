@@ -144,5 +144,29 @@ XPCFErrorCode IKeyframesManager_grpcServer::onConfigured()
 }
 
 
+::grpc::Status IKeyframesManager_grpcServer::grpcIKeyframesManagerServiceImpl::getConstKeyframeCollection(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* response)
+{
+  SRef<SolAR::datastructure::KeyframeCollection> returnValue = m_xpcfComponent->getConstKeyframeCollection();
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IKeyframesManager_grpcServer::grpcIKeyframesManagerServiceImpl::getKeyframeCollection(::grpc::ServerContext* context, const ::grpcIKeyframesManager::getKeyframeCollectionRequest* request, ::grpcIKeyframesManager::getKeyframeCollectionResponse* response)
+{
+  SRef<SolAR::datastructure::KeyframeCollection> keyframeCollection = xpcf::deserialize<SRef<SolAR::datastructure::KeyframeCollection>>(request->keyframecollection());
+  std::unique_lock<std::mutex> returnValue = m_xpcfComponent->getKeyframeCollection(keyframeCollection);
+  response->set_keyframecollection(xpcf::serialize<SRef<SolAR::datastructure::KeyframeCollection>>(keyframeCollection));
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IKeyframesManager_grpcServer::grpcIKeyframesManagerServiceImpl::setKeyframeCollection(::grpc::ServerContext* context, const ::grpcIKeyframesManager::setKeyframeCollectionRequest* request, ::google::protobuf::Empty* response)
+{
+  SRef<SolAR::datastructure::KeyframeCollection> keyframeCollection = xpcf::deserialize<SRef<SolAR::datastructure::KeyframeCollection>>(request->keyframecollection());
+  m_xpcfComponent->setKeyframeCollection(keyframeCollection);
+  return ::grpc::Status::OK;
+}
+
+
 }
 

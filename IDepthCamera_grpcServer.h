@@ -51,7 +51,7 @@ class IDepthCamera_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIDepthCamera::IDepthCamera_grpcServer>
 {
-  static constexpr const char * UUID = "b65c0c4c-5674-4e1b-9b1f-8e306902ec1b";
+  static constexpr const char * UUID = "780e2510-5455-4d1f-95f4-1ead5d4ac233";
   static constexpr const char * NAME = "IDepthCamera_grpcServer";
   static constexpr const char * DESCRIPTION = "IDepthCamera_grpcServer grpc server component";
 };

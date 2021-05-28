@@ -36,12 +36,12 @@ class grpcIBundlerService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpcIBundler::setMapperResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapperResponse>> AsyncsetMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapperResponse>>(AsyncsetMapperRaw(context, request, cq));
+    virtual ::grpc::Status setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpcIBundler::setMapResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapResponse>> AsyncsetMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapResponse>>(AsyncsetMapRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapperResponse>> PrepareAsyncsetMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapperResponse>>(PrepareAsyncsetMapperRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapResponse>> PrepareAsyncsetMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapResponse>>(PrepareAsyncsetMapRaw(context, request, cq));
     }
     virtual ::grpc::Status bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpcIBundler::bundleAdjustmentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::bundleAdjustmentResponse>> AsyncbundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpc::CompletionQueue* cq) {
@@ -50,20 +50,33 @@ class grpcIBundlerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::bundleAdjustmentResponse>> PrepareAsyncbundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::bundleAdjustmentResponse>>(PrepareAsyncbundleAdjustmentRaw(context, request, cq));
     }
+    virtual ::grpc::Status optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpcIBundler::optimizeSim3Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::optimizeSim3Response>> AsyncoptimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::optimizeSim3Response>>(AsyncoptimizeSim3Raw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::optimizeSim3Response>> PrepareAsyncoptimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::optimizeSim3Response>>(PrepareAsyncoptimizeSim3Raw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -74,20 +87,22 @@ class grpcIBundlerService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapperResponse>* AsyncsetMapperRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapperResponse>* PrepareAsyncsetMapperRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapResponse>* AsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapResponse>* PrepareAsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::bundleAdjustmentResponse>* AsyncbundleAdjustmentRaw(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::bundleAdjustmentResponse>* PrepareAsyncbundleAdjustmentRaw(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::optimizeSim3Response>* AsyncoptimizeSim3Raw(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::optimizeSim3Response>* PrepareAsyncoptimizeSim3Raw(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpcIBundler::setMapperResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapperResponse>> AsyncsetMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapperResponse>>(AsyncsetMapperRaw(context, request, cq));
+    ::grpc::Status setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpcIBundler::setMapResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>> AsyncsetMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>>(AsyncsetMapRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapperResponse>> PrepareAsyncsetMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapperResponse>>(PrepareAsyncsetMapperRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>> PrepareAsyncsetMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>>(PrepareAsyncsetMapRaw(context, request, cq));
     }
     ::grpc::Status bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpcIBundler::bundleAdjustmentResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::bundleAdjustmentResponse>> AsyncbundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpc::CompletionQueue* cq) {
@@ -96,20 +111,33 @@ class grpcIBundlerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::bundleAdjustmentResponse>> PrepareAsyncbundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::bundleAdjustmentResponse>>(PrepareAsyncbundleAdjustmentRaw(context, request, cq));
     }
+    ::grpc::Status optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpcIBundler::optimizeSim3Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>> AsyncoptimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>>(AsyncoptimizeSim3Raw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>> PrepareAsyncoptimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>>(PrepareAsyncoptimizeSim3Raw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response, std::function<void(::grpc::Status)>) override;
+      void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -122,12 +150,15 @@ class grpcIBundlerService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapperResponse>* AsyncsetMapperRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapperResponse>* PrepareAsyncsetMapperRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>* AsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>* PrepareAsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIBundler::bundleAdjustmentResponse>* AsyncbundleAdjustmentRaw(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIBundler::bundleAdjustmentResponse>* PrepareAsyncbundleAdjustmentRaw(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_setMapper_;
+    ::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>* AsyncoptimizeSim3Raw(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>* PrepareAsyncoptimizeSim3Raw(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_setMap_;
     const ::grpc::internal::RpcMethod rpcmethod_bundleAdjustment_;
+    const ::grpc::internal::RpcMethod rpcmethod_optimizeSim3_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -135,26 +166,27 @@ class grpcIBundlerService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status setMapper(::grpc::ServerContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response);
+    virtual ::grpc::Status setMap(::grpc::ServerContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response);
     virtual ::grpc::Status bundleAdjustment(::grpc::ServerContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response);
+    virtual ::grpc::Status optimizeSim3(::grpc::ServerContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response);
   };
   template <class BaseClass>
-  class WithAsyncMethod_setMapper : public BaseClass {
+  class WithAsyncMethod_setMap : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_setMapper() {
+    WithAsyncMethod_setMap() {
       ::grpc::Service::MarkMethodAsync(0);
     }
-    ~WithAsyncMethod_setMapper() override {
+    ~WithAsyncMethod_setMap() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status setMapper(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapperRequest* /*request*/, ::grpcIBundler::setMapperResponse* /*response*/) override {
+    ::grpc::Status setMap(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestsetMapper(::grpc::ServerContext* context, ::grpcIBundler::setMapperRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIBundler::setMapperResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestsetMap(::grpc::ServerContext* context, ::grpcIBundler::setMapRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIBundler::setMapResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -178,51 +210,71 @@ class grpcIBundlerService final {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_setMapper<WithAsyncMethod_bundleAdjustment<Service > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_setMapper : public BaseClass {
+  class WithAsyncMethod_optimizeSim3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_setMapper() {
+    WithAsyncMethod_optimizeSim3() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_optimizeSim3() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status optimizeSim3(::grpc::ServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestoptimizeSim3(::grpc::ServerContext* context, ::grpcIBundler::optimizeSim3Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIBundler::optimizeSim3Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_setMap<WithAsyncMethod_bundleAdjustment<WithAsyncMethod_optimizeSim3<Service > > > AsyncService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_setMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_setMap() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::setMapperRequest, ::grpcIBundler::setMapperResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response) { return this->setMapper(context, request, response); }));}
-    void SetMessageAllocatorFor_setMapper(
-        ::grpc::experimental::MessageAllocator< ::grpcIBundler::setMapperRequest, ::grpcIBundler::setMapperResponse>* allocator) {
+                     context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response) { return this->setMap(context, request, response); }));}
+    void SetMessageAllocatorFor_setMap(
+        ::grpc::experimental::MessageAllocator< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::setMapperRequest, ::grpcIBundler::setMapperResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_setMapper() override {
+    ~ExperimentalWithCallbackMethod_setMap() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status setMapper(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapperRequest* /*request*/, ::grpcIBundler::setMapperResponse* /*response*/) override {
+    ::grpc::Status setMap(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* setMapper(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBundler::setMapperRequest* /*request*/, ::grpcIBundler::setMapperResponse* /*response*/)
+    virtual ::grpc::ServerUnaryReactor* setMap(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setMapper(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIBundler::setMapperRequest* /*request*/, ::grpcIBundler::setMapperResponse* /*response*/)
+    virtual ::grpc::experimental::ServerUnaryReactor* setMap(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -273,24 +325,71 @@ class grpcIBundlerService final {
     #endif
       { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_setMapper<ExperimentalWithCallbackMethod_bundleAdjustment<Service > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_setMapper<ExperimentalWithCallbackMethod_bundleAdjustment<Service > > ExperimentalCallbackService;
   template <class BaseClass>
-  class WithGenericMethod_setMapper : public BaseClass {
+  class ExperimentalWithCallbackMethod_optimizeSim3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_setMapper() {
-      ::grpc::Service::MarkMethodGeneric(0);
+    ExperimentalWithCallbackMethod_optimizeSim3() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response) { return this->optimizeSim3(context, request, response); }));}
+    void SetMessageAllocatorFor_optimizeSim3(
+        ::grpc::experimental::MessageAllocator< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response>*>(handler)
+              ->SetMessageAllocator(allocator);
     }
-    ~WithGenericMethod_setMapper() override {
+    ~ExperimentalWithCallbackMethod_optimizeSim3() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status setMapper(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapperRequest* /*request*/, ::grpcIBundler::setMapperResponse* /*response*/) override {
+    ::grpc::Status optimizeSim3(::grpc::ServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* optimizeSim3(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* optimizeSim3(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_bundleAdjustment<ExperimentalWithCallbackMethod_optimizeSim3<Service > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_bundleAdjustment<ExperimentalWithCallbackMethod_optimizeSim3<Service > > > ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_setMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_setMap() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_setMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status setMap(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -313,22 +412,39 @@ class grpcIBundlerService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_setMapper : public BaseClass {
+  class WithGenericMethod_optimizeSim3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_setMapper() {
-      ::grpc::Service::MarkMethodRaw(0);
+    WithGenericMethod_optimizeSim3() {
+      ::grpc::Service::MarkMethodGeneric(2);
     }
-    ~WithRawMethod_setMapper() override {
+    ~WithGenericMethod_optimizeSim3() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status setMapper(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapperRequest* /*request*/, ::grpcIBundler::setMapperResponse* /*response*/) override {
+    ::grpc::Status optimizeSim3(::grpc::ServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestsetMapper(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+  };
+  template <class BaseClass>
+  class WithRawMethod_setMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_setMap() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_setMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status setMap(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestsetMap(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -353,11 +469,31 @@ class grpcIBundlerService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_setMapper : public BaseClass {
+  class WithRawMethod_optimizeSim3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_setMapper() {
+    WithRawMethod_optimizeSim3() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_optimizeSim3() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status optimizeSim3(::grpc::ServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestoptimizeSim3(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_setMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_setMap() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -371,21 +507,21 @@ class grpcIBundlerService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setMapper(context, request, response); }));
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setMap(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_setMapper() override {
+    ~ExperimentalWithRawCallbackMethod_setMap() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status setMapper(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapperRequest* /*request*/, ::grpcIBundler::setMapperResponse* /*response*/) override {
+    ::grpc::Status setMap(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* setMapper(
+    virtual ::grpc::ServerUnaryReactor* setMap(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setMapper(
+    virtual ::grpc::experimental::ServerUnaryReactor* setMap(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #endif
       { return nullptr; }
@@ -429,31 +565,69 @@ class grpcIBundlerService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_setMapper : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_optimizeSim3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_setMapper() {
+    ExperimentalWithRawCallbackMethod_optimizeSim3() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->optimizeSim3(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_optimizeSim3() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status optimizeSim3(::grpc::ServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* optimizeSim3(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* optimizeSim3(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_setMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_setMap() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIBundler::setMapperRequest, ::grpcIBundler::setMapperResponse>(
+          ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::grpcIBundler::setMapperRequest, ::grpcIBundler::setMapperResponse>* streamer) {
-                       return this->StreamedsetMapper(context,
+                     ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse>* streamer) {
+                       return this->StreamedsetMap(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_setMapper() override {
+    ~WithStreamedUnaryMethod_setMap() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status setMapper(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapperRequest* /*request*/, ::grpcIBundler::setMapperResponse* /*response*/) override {
+    ::grpc::Status setMap(::grpc::ServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedsetMapper(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIBundler::setMapperRequest,::grpcIBundler::setMapperResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedsetMap(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIBundler::setMapRequest,::grpcIBundler::setMapResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_bundleAdjustment : public BaseClass {
@@ -482,9 +656,36 @@ class grpcIBundlerService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedbundleAdjustment(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIBundler::bundleAdjustmentRequest,::grpcIBundler::bundleAdjustmentResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_setMapper<WithStreamedUnaryMethod_bundleAdjustment<Service > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_optimizeSim3 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_optimizeSim3() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response>* streamer) {
+                       return this->StreamedoptimizeSim3(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_optimizeSim3() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status optimizeSim3(::grpc::ServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedoptimizeSim3(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIBundler::optimizeSim3Request,::grpcIBundler::optimizeSim3Response>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_bundleAdjustment<WithStreamedUnaryMethod_optimizeSim3<Service > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_setMapper<WithStreamedUnaryMethod_bundleAdjustment<Service > > StreamedService;
+  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_bundleAdjustment<WithStreamedUnaryMethod_optimizeSim3<Service > > > StreamedService;
 };
 
 }  // namespace grpcIBundler

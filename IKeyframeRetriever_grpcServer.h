@@ -32,6 +32,9 @@ class IKeyframeRetriever_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
         ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::loadFromFileRequest* request, ::grpcIKeyframeRetriever::loadFromFileResponse* response) override;
         ::grpc::Status match_grpc0(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::match_grpc0Request* request, ::grpcIKeyframeRetriever::match_grpc0Response* response) override;
         ::grpc::Status match_grpc1(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request* request, ::grpcIKeyframeRetriever::match_grpc1Response* response) override;
+        ::grpc::Status getConstKeyframeRetrieval(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response) override;
+        ::grpc::Status getKeyframeRetrieval(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response) override;
+        ::grpc::Status setKeyframeRetrieval(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response) override;
 
         SRef<SolAR::api::reloc::IKeyframeRetriever> m_xpcfComponent;
 
@@ -48,7 +51,7 @@ class IKeyframeRetriever_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeyframeRetriever::IKeyframeRetriever_grpcServer>
 {
-  static constexpr const char * UUID = "b976bb10-42fc-4bed-840c-6b8209b9890a";
+  static constexpr const char * UUID = "8d4f4713-50bc-41e2-a3fd-fa77e58ea395";
   static constexpr const char * NAME = "IKeyframeRetriever_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeyframeRetriever_grpcServer grpc server component";
 };

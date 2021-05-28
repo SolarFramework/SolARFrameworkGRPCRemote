@@ -221,8 +221,57 @@ struct match_grpc1ResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT match_grpc1ResponseDefaultTypeInternal _match_grpc1Response_default_instance_;
+constexpr getConstKeyframeRetrievalResponse::getConstKeyframeRetrievalResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : xpcfgrpcreturnvalue_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct getConstKeyframeRetrievalResponseDefaultTypeInternal {
+  constexpr getConstKeyframeRetrievalResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getConstKeyframeRetrievalResponseDefaultTypeInternal() {}
+  union {
+    getConstKeyframeRetrievalResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getConstKeyframeRetrievalResponseDefaultTypeInternal _getConstKeyframeRetrievalResponse_default_instance_;
+constexpr getKeyframeRetrievalRequest::getKeyframeRetrievalRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : keyframeretrieval_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct getKeyframeRetrievalRequestDefaultTypeInternal {
+  constexpr getKeyframeRetrievalRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getKeyframeRetrievalRequestDefaultTypeInternal() {}
+  union {
+    getKeyframeRetrievalRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getKeyframeRetrievalRequestDefaultTypeInternal _getKeyframeRetrievalRequest_default_instance_;
+constexpr getKeyframeRetrievalResponse::getKeyframeRetrievalResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : keyframeretrieval_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , xpcfgrpcreturnvalue_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct getKeyframeRetrievalResponseDefaultTypeInternal {
+  constexpr getKeyframeRetrievalResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getKeyframeRetrievalResponseDefaultTypeInternal() {}
+  union {
+    getKeyframeRetrievalResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getKeyframeRetrievalResponseDefaultTypeInternal _getKeyframeRetrievalResponse_default_instance_;
+constexpr setKeyframeRetrievalRequest::setKeyframeRetrievalRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : keyframeretrieval_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct setKeyframeRetrievalRequestDefaultTypeInternal {
+  constexpr setKeyframeRetrievalRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~setKeyframeRetrievalRequestDefaultTypeInternal() {}
+  union {
+    setKeyframeRetrievalRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setKeyframeRetrievalRequestDefaultTypeInternal _setKeyframeRetrievalRequest_default_instance_;
 }  // namespace grpcIKeyframeRetriever
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIKeyframeRetrieverService_2eproto[16];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIKeyframeRetrieverService_2eproto[20];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIKeyframeRetrieverService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIKeyframeRetrieverService_2eproto = nullptr;
 
@@ -335,6 +384,31 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframeRetrieverService_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::match_grpc1Response, matches_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::match_grpc1Response, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, keyframeretrieval_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::getKeyframeRetrievalResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::getKeyframeRetrievalResponse, keyframeretrieval_),
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::getKeyframeRetrievalResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, keyframeretrieval_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIKeyframeRetriever::addKeyframeRequest)},
@@ -353,6 +427,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 85, -1, sizeof(::grpcIKeyframeRetriever::match_grpc0Response)},
   { 92, -1, sizeof(::grpcIKeyframeRetriever::match_grpc1Request)},
   { 101, -1, sizeof(::grpcIKeyframeRetriever::match_grpc1Response)},
+  { 108, -1, sizeof(::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse)},
+  { 114, -1, sizeof(::grpcIKeyframeRetriever::getKeyframeRetrievalRequest)},
+  { 120, -1, sizeof(::grpcIKeyframeRetriever::getKeyframeRetrievalResponse)},
+  { 127, -1, sizeof(::grpcIKeyframeRetriever::setKeyframeRetrievalRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -372,6 +450,10 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframeRetriever::_match_grpc0Response_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframeRetriever::_match_grpc1Request_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframeRetriever::_match_grpc1Response_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframeRetriever::_getConstKeyframeRetrievalResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframeRetriever::_getKeyframeRetrievalRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframeRetriever::_getKeyframeRetrievalResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframeRetriever::_setKeyframeRetrievalRequest_default_instance_),
 };
 
 const char descriptor_table_protodef_grpcIKeyframeRetrieverService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -402,38 +484,53 @@ const char descriptor_table_protodef_grpcIKeyframeRetrieverService_2eproto[] PRO
   "s\030\001 \001(\014\022\023\n\013descriptors\030\002 \001(\014\022\020\n\010keyframe"
   "\030\003 \001(\014\022\017\n\007matches\030\004 \001(\014\"C\n\023match_grpc1Re"
   "sponse\022\017\n\007matches\030\001 \001(\014\022\033\n\023xpcfGrpcRetur"
-  "nValue\030\002 \001(\0212\220\007\n\035grpcIKeyframeRetrieverS"
-  "ervice\022h\n\013addKeyframe\022*.grpcIKeyframeRet"
-  "riever.addKeyframeRequest\032+.grpcIKeyfram"
-  "eRetriever.addKeyframeResponse\"\000\022w\n\020supp"
-  "ressKeyframe\022/.grpcIKeyframeRetriever.su"
-  "ppressKeyframeRequest\0320.grpcIKeyframeRet"
-  "riever.suppressKeyframeResponse\"\000\022q\n\016ret"
-  "rieve_grpc0\022-.grpcIKeyframeRetriever.ret"
-  "rieve_grpc0Request\032..grpcIKeyframeRetrie"
-  "ver.retrieve_grpc0Response\"\000\022q\n\016retrieve"
-  "_grpc1\022-.grpcIKeyframeRetriever.retrieve"
-  "_grpc1Request\032..grpcIKeyframeRetriever.r"
-  "etrieve_grpc1Response\"\000\022e\n\nsaveToFile\022)."
-  "grpcIKeyframeRetriever.saveToFileRequest"
-  "\032*.grpcIKeyframeRetriever.saveToFileResp"
-  "onse\"\000\022k\n\014loadFromFile\022+.grpcIKeyframeRe"
-  "triever.loadFromFileRequest\032,.grpcIKeyfr"
-  "ameRetriever.loadFromFileResponse\"\000\022h\n\013m"
-  "atch_grpc0\022*.grpcIKeyframeRetriever.matc"
-  "h_grpc0Request\032+.grpcIKeyframeRetriever."
-  "match_grpc0Response\"\000\022h\n\013match_grpc1\022*.g"
-  "rpcIKeyframeRetriever.match_grpc1Request"
-  "\032+.grpcIKeyframeRetriever.match_grpc1Res"
-  "ponse\"\000b\006proto3"
+  "nValue\030\002 \001(\021\"@\n!getConstKeyframeRetrieva"
+  "lResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\014\"8"
+  "\n\033getKeyframeRetrievalRequest\022\031\n\021keyfram"
+  "eRetrieval\030\001 \001(\014\"V\n\034getKeyframeRetrieval"
+  "Response\022\031\n\021keyframeRetrieval\030\001 \001(\014\022\033\n\023x"
+  "pcfGrpcReturnValue\030\002 \001(\014\"8\n\033setKeyframeR"
+  "etrievalRequest\022\031\n\021keyframeRetrieval\030\001 \001"
+  "(\0142\357\t\n\035grpcIKeyframeRetrieverService\022h\n\013"
+  "addKeyframe\022*.grpcIKeyframeRetriever.add"
+  "KeyframeRequest\032+.grpcIKeyframeRetriever"
+  ".addKeyframeResponse\"\000\022w\n\020suppressKeyfra"
+  "me\022/.grpcIKeyframeRetriever.suppressKeyf"
+  "rameRequest\0320.grpcIKeyframeRetriever.sup"
+  "pressKeyframeResponse\"\000\022q\n\016retrieve_grpc"
+  "0\022-.grpcIKeyframeRetriever.retrieve_grpc"
+  "0Request\032..grpcIKeyframeRetriever.retrie"
+  "ve_grpc0Response\"\000\022q\n\016retrieve_grpc1\022-.g"
+  "rpcIKeyframeRetriever.retrieve_grpc1Requ"
+  "est\032..grpcIKeyframeRetriever.retrieve_gr"
+  "pc1Response\"\000\022e\n\nsaveToFile\022).grpcIKeyfr"
+  "ameRetriever.saveToFileRequest\032*.grpcIKe"
+  "yframeRetriever.saveToFileResponse\"\000\022k\n\014"
+  "loadFromFile\022+.grpcIKeyframeRetriever.lo"
+  "adFromFileRequest\032,.grpcIKeyframeRetriev"
+  "er.loadFromFileResponse\"\000\022h\n\013match_grpc0"
+  "\022*.grpcIKeyframeRetriever.match_grpc0Req"
+  "uest\032+.grpcIKeyframeRetriever.match_grpc"
+  "0Response\"\000\022h\n\013match_grpc1\022*.grpcIKeyfra"
+  "meRetriever.match_grpc1Request\032+.grpcIKe"
+  "yframeRetriever.match_grpc1Response\"\000\022p\n"
+  "\031getConstKeyframeRetrieval\022\026.google.prot"
+  "obuf.Empty\0329.grpcIKeyframeRetriever.getC"
+  "onstKeyframeRetrievalResponse\"\000\022\203\001\n\024getK"
+  "eyframeRetrieval\0223.grpcIKeyframeRetrieve"
+  "r.getKeyframeRetrievalRequest\0324.grpcIKey"
+  "frameRetriever.getKeyframeRetrievalRespo"
+  "nse\"\000\022e\n\024setKeyframeRetrieval\0223.grpcIKey"
+  "frameRetriever.setKeyframeRetrievalReque"
+  "st\032\026.google.protobuf.Empty\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIKeyframeRetrieverService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIKeyframeRetrieverService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIKeyframeRetrieverService_2eproto = {
-  false, false, 2015, descriptor_table_protodef_grpcIKeyframeRetrieverService_2eproto, "grpcIKeyframeRetrieverService.proto", 
-  &descriptor_table_grpcIKeyframeRetrieverService_2eproto_once, descriptor_table_grpcIKeyframeRetrieverService_2eproto_deps, 1, 16,
+  false, false, 2636, descriptor_table_protodef_grpcIKeyframeRetrieverService_2eproto, "grpcIKeyframeRetrieverService.proto", 
+  &descriptor_table_grpcIKeyframeRetrieverService_2eproto_once, descriptor_table_grpcIKeyframeRetrieverService_2eproto_deps, 1, 20,
   schemas, file_default_instances, TableStruct_grpcIKeyframeRetrieverService_2eproto::offsets,
   file_level_metadata_grpcIKeyframeRetrieverService_2eproto, file_level_enum_descriptors_grpcIKeyframeRetrieverService_2eproto, file_level_service_descriptors_grpcIKeyframeRetrieverService_2eproto,
 };
@@ -3919,6 +4016,819 @@ void match_grpc1Response::InternalSwap(match_grpc1Response* other) {
 }
 
 
+// ===================================================================
+
+class getConstKeyframeRetrievalResponse::_Internal {
+ public:
+};
+
+getConstKeyframeRetrievalResponse::getConstKeyframeRetrievalResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+}
+getConstKeyframeRetrievalResponse::getConstKeyframeRetrievalResponse(const getConstKeyframeRetrievalResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_xpcfgrpcreturnvalue().empty()) {
+    xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_xpcfgrpcreturnvalue(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+}
+
+void getConstKeyframeRetrievalResponse::SharedCtor() {
+xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+getConstKeyframeRetrievalResponse::~getConstKeyframeRetrievalResponse() {
+  // @@protoc_insertion_point(destructor:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getConstKeyframeRetrievalResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  xpcfgrpcreturnvalue_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void getConstKeyframeRetrievalResponse::ArenaDtor(void* object) {
+  getConstKeyframeRetrievalResponse* _this = reinterpret_cast< getConstKeyframeRetrievalResponse* >(object);
+  (void)_this;
+}
+void getConstKeyframeRetrievalResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getConstKeyframeRetrievalResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getConstKeyframeRetrievalResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  xpcfgrpcreturnvalue_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getConstKeyframeRetrievalResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bytes xpcfGrpcReturnValue = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_xpcfgrpcreturnvalue();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getConstKeyframeRetrievalResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes xpcfGrpcReturnValue = 1;
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+  return target;
+}
+
+size_t getConstKeyframeRetrievalResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes xpcfGrpcReturnValue = 1;
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getConstKeyframeRetrievalResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getConstKeyframeRetrievalResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getConstKeyframeRetrievalResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+    MergeFrom(*source);
+  }
+}
+
+void getConstKeyframeRetrievalResponse::MergeFrom(const getConstKeyframeRetrievalResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.xpcfgrpcreturnvalue().size() > 0) {
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  }
+}
+
+void getConstKeyframeRetrievalResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getConstKeyframeRetrievalResponse::CopyFrom(const getConstKeyframeRetrievalResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIKeyframeRetriever.getConstKeyframeRetrievalResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getConstKeyframeRetrievalResponse::IsInitialized() const {
+  return true;
+}
+
+void getConstKeyframeRetrievalResponse::InternalSwap(getConstKeyframeRetrievalResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  xpcfgrpcreturnvalue_.Swap(&other->xpcfgrpcreturnvalue_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getConstKeyframeRetrievalResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getKeyframeRetrievalRequest::_Internal {
+ public:
+};
+
+getKeyframeRetrievalRequest::getKeyframeRetrievalRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+}
+getKeyframeRetrievalRequest::getKeyframeRetrievalRequest(const getKeyframeRetrievalRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  keyframeretrieval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_keyframeretrieval().empty()) {
+    keyframeretrieval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframeretrieval(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+}
+
+void getKeyframeRetrievalRequest::SharedCtor() {
+keyframeretrieval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+getKeyframeRetrievalRequest::~getKeyframeRetrievalRequest() {
+  // @@protoc_insertion_point(destructor:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getKeyframeRetrievalRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  keyframeretrieval_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void getKeyframeRetrievalRequest::ArenaDtor(void* object) {
+  getKeyframeRetrievalRequest* _this = reinterpret_cast< getKeyframeRetrievalRequest* >(object);
+  (void)_this;
+}
+void getKeyframeRetrievalRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getKeyframeRetrievalRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getKeyframeRetrievalRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  keyframeretrieval_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getKeyframeRetrievalRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bytes keyframeRetrieval = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_keyframeretrieval();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getKeyframeRetrievalRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes keyframeRetrieval = 1;
+  if (this->keyframeretrieval().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_keyframeretrieval(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+  return target;
+}
+
+size_t getKeyframeRetrievalRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes keyframeRetrieval = 1;
+  if (this->keyframeretrieval().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_keyframeretrieval());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getKeyframeRetrievalRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getKeyframeRetrievalRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getKeyframeRetrievalRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+    MergeFrom(*source);
+  }
+}
+
+void getKeyframeRetrievalRequest::MergeFrom(const getKeyframeRetrievalRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.keyframeretrieval().size() > 0) {
+    _internal_set_keyframeretrieval(from._internal_keyframeretrieval());
+  }
+}
+
+void getKeyframeRetrievalRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getKeyframeRetrievalRequest::CopyFrom(const getKeyframeRetrievalRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIKeyframeRetriever.getKeyframeRetrievalRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getKeyframeRetrievalRequest::IsInitialized() const {
+  return true;
+}
+
+void getKeyframeRetrievalRequest::InternalSwap(getKeyframeRetrievalRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  keyframeretrieval_.Swap(&other->keyframeretrieval_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getKeyframeRetrievalRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getKeyframeRetrievalResponse::_Internal {
+ public:
+};
+
+getKeyframeRetrievalResponse::getKeyframeRetrievalResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+}
+getKeyframeRetrievalResponse::getKeyframeRetrievalResponse(const getKeyframeRetrievalResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  keyframeretrieval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_keyframeretrieval().empty()) {
+    keyframeretrieval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframeretrieval(), 
+      GetArena());
+  }
+  xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_xpcfgrpcreturnvalue().empty()) {
+    xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_xpcfgrpcreturnvalue(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+}
+
+void getKeyframeRetrievalResponse::SharedCtor() {
+keyframeretrieval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+getKeyframeRetrievalResponse::~getKeyframeRetrievalResponse() {
+  // @@protoc_insertion_point(destructor:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getKeyframeRetrievalResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  keyframeretrieval_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  xpcfgrpcreturnvalue_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void getKeyframeRetrievalResponse::ArenaDtor(void* object) {
+  getKeyframeRetrievalResponse* _this = reinterpret_cast< getKeyframeRetrievalResponse* >(object);
+  (void)_this;
+}
+void getKeyframeRetrievalResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getKeyframeRetrievalResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getKeyframeRetrievalResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  keyframeretrieval_.ClearToEmpty();
+  xpcfgrpcreturnvalue_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getKeyframeRetrievalResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bytes keyframeRetrieval = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_keyframeretrieval();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes xpcfGrpcReturnValue = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_xpcfgrpcreturnvalue();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getKeyframeRetrievalResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes keyframeRetrieval = 1;
+  if (this->keyframeretrieval().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_keyframeretrieval(), target);
+  }
+
+  // bytes xpcfGrpcReturnValue = 2;
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+  return target;
+}
+
+size_t getKeyframeRetrievalResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes keyframeRetrieval = 1;
+  if (this->keyframeretrieval().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_keyframeretrieval());
+  }
+
+  // bytes xpcfGrpcReturnValue = 2;
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getKeyframeRetrievalResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getKeyframeRetrievalResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getKeyframeRetrievalResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+    MergeFrom(*source);
+  }
+}
+
+void getKeyframeRetrievalResponse::MergeFrom(const getKeyframeRetrievalResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.keyframeretrieval().size() > 0) {
+    _internal_set_keyframeretrieval(from._internal_keyframeretrieval());
+  }
+  if (from.xpcfgrpcreturnvalue().size() > 0) {
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  }
+}
+
+void getKeyframeRetrievalResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getKeyframeRetrievalResponse::CopyFrom(const getKeyframeRetrievalResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIKeyframeRetriever.getKeyframeRetrievalResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getKeyframeRetrievalResponse::IsInitialized() const {
+  return true;
+}
+
+void getKeyframeRetrievalResponse::InternalSwap(getKeyframeRetrievalResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  keyframeretrieval_.Swap(&other->keyframeretrieval_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  xpcfgrpcreturnvalue_.Swap(&other->xpcfgrpcreturnvalue_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getKeyframeRetrievalResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class setKeyframeRetrievalRequest::_Internal {
+ public:
+};
+
+setKeyframeRetrievalRequest::setKeyframeRetrievalRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+}
+setKeyframeRetrievalRequest::setKeyframeRetrievalRequest(const setKeyframeRetrievalRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  keyframeretrieval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_keyframeretrieval().empty()) {
+    keyframeretrieval_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframeretrieval(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+}
+
+void setKeyframeRetrievalRequest::SharedCtor() {
+keyframeretrieval_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+setKeyframeRetrievalRequest::~setKeyframeRetrievalRequest() {
+  // @@protoc_insertion_point(destructor:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void setKeyframeRetrievalRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  keyframeretrieval_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void setKeyframeRetrievalRequest::ArenaDtor(void* object) {
+  setKeyframeRetrievalRequest* _this = reinterpret_cast< setKeyframeRetrievalRequest* >(object);
+  (void)_this;
+}
+void setKeyframeRetrievalRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void setKeyframeRetrievalRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void setKeyframeRetrievalRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  keyframeretrieval_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* setKeyframeRetrievalRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bytes keyframeRetrieval = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_keyframeretrieval();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* setKeyframeRetrievalRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes keyframeRetrieval = 1;
+  if (this->keyframeretrieval().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_keyframeretrieval(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+  return target;
+}
+
+size_t setKeyframeRetrievalRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes keyframeRetrieval = 1;
+  if (this->keyframeretrieval().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_keyframeretrieval());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void setKeyframeRetrievalRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const setKeyframeRetrievalRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setKeyframeRetrievalRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+    MergeFrom(*source);
+  }
+}
+
+void setKeyframeRetrievalRequest::MergeFrom(const setKeyframeRetrievalRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.keyframeretrieval().size() > 0) {
+    _internal_set_keyframeretrieval(from._internal_keyframeretrieval());
+  }
+}
+
+void setKeyframeRetrievalRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void setKeyframeRetrievalRequest::CopyFrom(const setKeyframeRetrievalRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIKeyframeRetriever.setKeyframeRetrievalRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool setKeyframeRetrievalRequest::IsInitialized() const {
+  return true;
+}
+
+void setKeyframeRetrievalRequest::InternalSwap(setKeyframeRetrievalRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  keyframeretrieval_.Swap(&other->keyframeretrieval_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata setKeyframeRetrievalRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIKeyframeRetriever
 PROTOBUF_NAMESPACE_OPEN
@@ -3969,6 +4879,18 @@ template<> PROTOBUF_NOINLINE ::grpcIKeyframeRetriever::match_grpc1Request* Arena
 }
 template<> PROTOBUF_NOINLINE ::grpcIKeyframeRetriever::match_grpc1Response* Arena::CreateMaybeMessage< ::grpcIKeyframeRetriever::match_grpc1Response >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIKeyframeRetriever::match_grpc1Response >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* Arena::CreateMaybeMessage< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* Arena::CreateMaybeMessage< ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* Arena::CreateMaybeMessage< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* Arena::CreateMaybeMessage< ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

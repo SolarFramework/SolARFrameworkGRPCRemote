@@ -1,0 +1,124 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMapManager;
+
+message setMapRequest
+{
+bytes map = 1;
+}
+
+message setMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getMapRequest
+{
+bytes map = 1;
+}
+
+message getMapResponse
+{
+bytes map = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getLocalPointCloudRequest
+{
+bytes keyframe = 1;
+float minWeightNeighbor = 2;
+bytes localPointCloud = 3;
+}
+
+message getLocalPointCloudResponse
+{
+bytes localPointCloud = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message addCloudPointRequest
+{
+bytes cloudPoint = 1;
+}
+
+message addCloudPointResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message removeCloudPointRequest
+{
+bytes cloudPoint = 1;
+}
+
+message removeCloudPointResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message addKeyframeRequest
+{
+bytes keyframe = 1;
+}
+
+message addKeyframeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message removeKeyframeRequest
+{
+bytes keyframe = 1;
+}
+
+message removeKeyframeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message pointCloudPruningRequest
+{
+bytes cloudPoints = 1;
+}
+
+message pointCloudPruningResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message keyframePruningRequest
+{
+bytes keyframes = 1;
+}
+
+message keyframePruningResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message saveToFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message loadFromFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIMapManagerService {
+rpc setMap(setMapRequest) returns(setMapResponse) {}
+rpc getMap(getMapRequest) returns(getMapResponse) {}
+rpc getLocalPointCloud(getLocalPointCloudRequest) returns(getLocalPointCloudResponse) {}
+rpc addCloudPoint(addCloudPointRequest) returns(addCloudPointResponse) {}
+rpc removeCloudPoint(removeCloudPointRequest) returns(removeCloudPointResponse) {}
+rpc addKeyframe(addKeyframeRequest) returns(addKeyframeResponse) {}
+rpc removeKeyframe(removeKeyframeRequest) returns(removeKeyframeResponse) {}
+rpc pointCloudPruning(pointCloudPruningRequest) returns(pointCloudPruningResponse) {}
+rpc keyframePruning(keyframePruningRequest) returns(keyframePruningResponse) {}
+rpc saveToFile(google.protobuf.Empty) returns(saveToFileResponse) {}
+rpc loadFromFile(google.protobuf.Empty) returns(loadFromFileResponse) {}
+}
+

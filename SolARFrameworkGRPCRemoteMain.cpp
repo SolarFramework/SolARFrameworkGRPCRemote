@@ -1,7 +1,7 @@
 #include "SolARFrameworkGRPCRemoteMain.h"
 #include <xpcf/module/ModuleFactory.h>
 namespace xpcf=org::bcom::xpcf;
-XPCF_DECLARE_MODULE("ef97ff20-3dee-4f36-9c2a-d8a2454029a9", "SolARFrameworkGRPCRemote","xpcf remoting module for project SolARFramework");
+XPCF_DECLARE_MODULE("2220ba3c-9b0d-4363-8d24-7714397cee15", "xpcfGrpcRemotingSolARFramework","xpcf remoting module for project SolARFramework");
 
 extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boost::uuids::uuid& componentUUID,SRef<xpcf::IComponentIntrospect>& interfaceRef)
 {
@@ -238,12 +238,12 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyICovisibilityGraph::ICovisibilityGraph_grpcProxy>(componentUUID,interfaceRef);
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyICovisibilityGraphManager::ICovisibilityGraphManager_grpcProxy>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverICovisibilityGraph::ICovisibilityGraph_grpcServer>(componentUUID,interfaceRef);
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverICovisibilityGraphManager::ICovisibilityGraphManager_grpcServer>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
@@ -444,6 +444,36 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIMapFilter::IMapFilter_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIMapManager::IMapManager_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIMapManager::IMapManager_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIMapUpdate::IMapUpdate_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIMapUpdate::IMapUpdate_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIMapUpdatePipeline::IMapUpdatePipeline_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIMapUpdatePipeline::IMapUpdatePipeline_grpcServer>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
@@ -727,8 +757,8 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIContoursFilter::IContoursFilter_
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIContoursFilter::IContoursFilter_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyICornerRefinement::ICornerRefinement_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverICornerRefinement::ICornerRefinement_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyICovisibilityGraph::ICovisibilityGraph_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverICovisibilityGraph::ICovisibilityGraph_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyICovisibilityGraphManager::ICovisibilityGraphManager_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverICovisibilityGraphManager::ICovisibilityGraphManager_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIDepthCamera::IDepthCamera_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIDepthCamera::IDepthCamera_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIDescriptorMatcher::IDescriptorMatcher_grpcProxy)
@@ -769,6 +799,12 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyILoopCorrector::ILoopCorrector_gr
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverILoopCorrector::ILoopCorrector_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapFilter::IMapFilter_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapFilter::IMapFilter_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapManager::IMapManager_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapManager::IMapManager_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapUpdate::IMapUpdate_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapUpdate::IMapUpdate_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapUpdatePipeline::IMapUpdatePipeline_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapUpdatePipeline::IMapUpdatePipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapping::IMapping_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapping::IMapping_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMappingPipeline::IMappingPipeline_grpcProxy)

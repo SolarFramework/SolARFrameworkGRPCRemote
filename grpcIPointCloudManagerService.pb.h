@@ -47,7 +47,7 @@ struct TableStruct_grpcIPointCloudManagerService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[28]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[32]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -86,12 +86,21 @@ extern getAllPointsRequestDefaultTypeInternal _getAllPointsRequest_default_insta
 class getAllPointsResponse;
 struct getAllPointsResponseDefaultTypeInternal;
 extern getAllPointsResponseDefaultTypeInternal _getAllPointsResponse_default_instance_;
+class getConstPointCloudResponse;
+struct getConstPointCloudResponseDefaultTypeInternal;
+extern getConstPointCloudResponseDefaultTypeInternal _getConstPointCloudResponse_default_instance_;
 class getDescriptorTypeResponse;
 struct getDescriptorTypeResponseDefaultTypeInternal;
 extern getDescriptorTypeResponseDefaultTypeInternal _getDescriptorTypeResponse_default_instance_;
 class getNbPointsResponse;
 struct getNbPointsResponseDefaultTypeInternal;
 extern getNbPointsResponseDefaultTypeInternal _getNbPointsResponse_default_instance_;
+class getPointCloudRequest;
+struct getPointCloudRequestDefaultTypeInternal;
+extern getPointCloudRequestDefaultTypeInternal _getPointCloudRequest_default_instance_;
+class getPointCloudResponse;
+struct getPointCloudResponseDefaultTypeInternal;
+extern getPointCloudResponseDefaultTypeInternal _getPointCloudResponse_default_instance_;
 class getPointRequest;
 struct getPointRequestDefaultTypeInternal;
 extern getPointRequestDefaultTypeInternal _getPointRequest_default_instance_;
@@ -128,6 +137,9 @@ extern setDescriptorTypeRequestDefaultTypeInternal _setDescriptorTypeRequest_def
 class setDescriptorTypeResponse;
 struct setDescriptorTypeResponseDefaultTypeInternal;
 extern setDescriptorTypeResponseDefaultTypeInternal _setDescriptorTypeResponse_default_instance_;
+class setPointCloudRequest;
+struct setPointCloudRequestDefaultTypeInternal;
+extern setPointCloudRequestDefaultTypeInternal _setPointCloudRequest_default_instance_;
 class suppressPointRequest;
 struct suppressPointRequestDefaultTypeInternal;
 extern suppressPointRequestDefaultTypeInternal _suppressPointRequest_default_instance_;
@@ -152,8 +164,11 @@ template<> ::grpcIPointCloudManager::addPoints_grpc1Request* Arena::CreateMaybeM
 template<> ::grpcIPointCloudManager::addPoints_grpc1Response* Arena::CreateMaybeMessage<::grpcIPointCloudManager::addPoints_grpc1Response>(Arena*);
 template<> ::grpcIPointCloudManager::getAllPointsRequest* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getAllPointsRequest>(Arena*);
 template<> ::grpcIPointCloudManager::getAllPointsResponse* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getAllPointsResponse>(Arena*);
+template<> ::grpcIPointCloudManager::getConstPointCloudResponse* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getConstPointCloudResponse>(Arena*);
 template<> ::grpcIPointCloudManager::getDescriptorTypeResponse* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getDescriptorTypeResponse>(Arena*);
 template<> ::grpcIPointCloudManager::getNbPointsResponse* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getNbPointsResponse>(Arena*);
+template<> ::grpcIPointCloudManager::getPointCloudRequest* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getPointCloudRequest>(Arena*);
+template<> ::grpcIPointCloudManager::getPointCloudResponse* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getPointCloudResponse>(Arena*);
 template<> ::grpcIPointCloudManager::getPointRequest* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getPointRequest>(Arena*);
 template<> ::grpcIPointCloudManager::getPointResponse* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getPointResponse>(Arena*);
 template<> ::grpcIPointCloudManager::getPointsRequest* Arena::CreateMaybeMessage<::grpcIPointCloudManager::getPointsRequest>(Arena*);
@@ -166,6 +181,7 @@ template<> ::grpcIPointCloudManager::saveToFileRequest* Arena::CreateMaybeMessag
 template<> ::grpcIPointCloudManager::saveToFileResponse* Arena::CreateMaybeMessage<::grpcIPointCloudManager::saveToFileResponse>(Arena*);
 template<> ::grpcIPointCloudManager::setDescriptorTypeRequest* Arena::CreateMaybeMessage<::grpcIPointCloudManager::setDescriptorTypeRequest>(Arena*);
 template<> ::grpcIPointCloudManager::setDescriptorTypeResponse* Arena::CreateMaybeMessage<::grpcIPointCloudManager::setDescriptorTypeResponse>(Arena*);
+template<> ::grpcIPointCloudManager::setPointCloudRequest* Arena::CreateMaybeMessage<::grpcIPointCloudManager::setPointCloudRequest>(Arena*);
 template<> ::grpcIPointCloudManager::suppressPointRequest* Arena::CreateMaybeMessage<::grpcIPointCloudManager::suppressPointRequest>(Arena*);
 template<> ::grpcIPointCloudManager::suppressPointResponse* Arena::CreateMaybeMessage<::grpcIPointCloudManager::suppressPointResponse>(Arena*);
 template<> ::grpcIPointCloudManager::suppressPointsRequest* Arena::CreateMaybeMessage<::grpcIPointCloudManager::suppressPointsRequest>(Arena*);
@@ -4162,6 +4178,600 @@ class loadFromFileResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIPointCloudManagerService_2eproto;
 };
+// -------------------------------------------------------------------
+
+class getConstPointCloudResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIPointCloudManager.getConstPointCloudResponse) */ {
+ public:
+  inline getConstPointCloudResponse() : getConstPointCloudResponse(nullptr) {}
+  virtual ~getConstPointCloudResponse();
+  explicit constexpr getConstPointCloudResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getConstPointCloudResponse(const getConstPointCloudResponse& from);
+  getConstPointCloudResponse(getConstPointCloudResponse&& from) noexcept
+    : getConstPointCloudResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline getConstPointCloudResponse& operator=(const getConstPointCloudResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getConstPointCloudResponse& operator=(getConstPointCloudResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getConstPointCloudResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getConstPointCloudResponse* internal_default_instance() {
+    return reinterpret_cast<const getConstPointCloudResponse*>(
+               &_getConstPointCloudResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  friend void swap(getConstPointCloudResponse& a, getConstPointCloudResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getConstPointCloudResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getConstPointCloudResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getConstPointCloudResponse* New() const final {
+    return CreateMaybeMessage<getConstPointCloudResponse>(nullptr);
+  }
+
+  getConstPointCloudResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getConstPointCloudResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getConstPointCloudResponse& from);
+  void MergeFrom(const getConstPointCloudResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getConstPointCloudResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIPointCloudManager.getConstPointCloudResponse";
+  }
+  protected:
+  explicit getConstPointCloudResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIPointCloudManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // bytes xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  const std::string& xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(const std::string& value);
+  void set_xpcfgrpcreturnvalue(std::string&& value);
+  void set_xpcfgrpcreturnvalue(const char* value);
+  void set_xpcfgrpcreturnvalue(const void* value, size_t size);
+  std::string* mutable_xpcfgrpcreturnvalue();
+  std::string* release_xpcfgrpcreturnvalue();
+  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  private:
+  const std::string& _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
+  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIPointCloudManager.getConstPointCloudResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIPointCloudManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getPointCloudRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIPointCloudManager.getPointCloudRequest) */ {
+ public:
+  inline getPointCloudRequest() : getPointCloudRequest(nullptr) {}
+  virtual ~getPointCloudRequest();
+  explicit constexpr getPointCloudRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getPointCloudRequest(const getPointCloudRequest& from);
+  getPointCloudRequest(getPointCloudRequest&& from) noexcept
+    : getPointCloudRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getPointCloudRequest& operator=(const getPointCloudRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getPointCloudRequest& operator=(getPointCloudRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getPointCloudRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getPointCloudRequest* internal_default_instance() {
+    return reinterpret_cast<const getPointCloudRequest*>(
+               &_getPointCloudRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    29;
+
+  friend void swap(getPointCloudRequest& a, getPointCloudRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getPointCloudRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getPointCloudRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getPointCloudRequest* New() const final {
+    return CreateMaybeMessage<getPointCloudRequest>(nullptr);
+  }
+
+  getPointCloudRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getPointCloudRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getPointCloudRequest& from);
+  void MergeFrom(const getPointCloudRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getPointCloudRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIPointCloudManager.getPointCloudRequest";
+  }
+  protected:
+  explicit getPointCloudRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIPointCloudManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPointCloudFieldNumber = 1,
+  };
+  // bytes pointCloud = 1;
+  void clear_pointcloud();
+  const std::string& pointcloud() const;
+  void set_pointcloud(const std::string& value);
+  void set_pointcloud(std::string&& value);
+  void set_pointcloud(const char* value);
+  void set_pointcloud(const void* value, size_t size);
+  std::string* mutable_pointcloud();
+  std::string* release_pointcloud();
+  void set_allocated_pointcloud(std::string* pointcloud);
+  private:
+  const std::string& _internal_pointcloud() const;
+  void _internal_set_pointcloud(const std::string& value);
+  std::string* _internal_mutable_pointcloud();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIPointCloudManager.getPointCloudRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIPointCloudManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getPointCloudResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIPointCloudManager.getPointCloudResponse) */ {
+ public:
+  inline getPointCloudResponse() : getPointCloudResponse(nullptr) {}
+  virtual ~getPointCloudResponse();
+  explicit constexpr getPointCloudResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getPointCloudResponse(const getPointCloudResponse& from);
+  getPointCloudResponse(getPointCloudResponse&& from) noexcept
+    : getPointCloudResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline getPointCloudResponse& operator=(const getPointCloudResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getPointCloudResponse& operator=(getPointCloudResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getPointCloudResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getPointCloudResponse* internal_default_instance() {
+    return reinterpret_cast<const getPointCloudResponse*>(
+               &_getPointCloudResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  friend void swap(getPointCloudResponse& a, getPointCloudResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getPointCloudResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getPointCloudResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getPointCloudResponse* New() const final {
+    return CreateMaybeMessage<getPointCloudResponse>(nullptr);
+  }
+
+  getPointCloudResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getPointCloudResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getPointCloudResponse& from);
+  void MergeFrom(const getPointCloudResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getPointCloudResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIPointCloudManager.getPointCloudResponse";
+  }
+  protected:
+  explicit getPointCloudResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIPointCloudManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPointCloudFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes pointCloud = 1;
+  void clear_pointcloud();
+  const std::string& pointcloud() const;
+  void set_pointcloud(const std::string& value);
+  void set_pointcloud(std::string&& value);
+  void set_pointcloud(const char* value);
+  void set_pointcloud(const void* value, size_t size);
+  std::string* mutable_pointcloud();
+  std::string* release_pointcloud();
+  void set_allocated_pointcloud(std::string* pointcloud);
+  private:
+  const std::string& _internal_pointcloud() const;
+  void _internal_set_pointcloud(const std::string& value);
+  std::string* _internal_mutable_pointcloud();
+  public:
+
+  // bytes xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue();
+  const std::string& xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(const std::string& value);
+  void set_xpcfgrpcreturnvalue(std::string&& value);
+  void set_xpcfgrpcreturnvalue(const char* value);
+  void set_xpcfgrpcreturnvalue(const void* value, size_t size);
+  std::string* mutable_xpcfgrpcreturnvalue();
+  std::string* release_xpcfgrpcreturnvalue();
+  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  private:
+  const std::string& _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
+  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIPointCloudManager.getPointCloudResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIPointCloudManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class setPointCloudRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIPointCloudManager.setPointCloudRequest) */ {
+ public:
+  inline setPointCloudRequest() : setPointCloudRequest(nullptr) {}
+  virtual ~setPointCloudRequest();
+  explicit constexpr setPointCloudRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  setPointCloudRequest(const setPointCloudRequest& from);
+  setPointCloudRequest(setPointCloudRequest&& from) noexcept
+    : setPointCloudRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline setPointCloudRequest& operator=(const setPointCloudRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline setPointCloudRequest& operator=(setPointCloudRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const setPointCloudRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const setPointCloudRequest* internal_default_instance() {
+    return reinterpret_cast<const setPointCloudRequest*>(
+               &_setPointCloudRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    31;
+
+  friend void swap(setPointCloudRequest& a, setPointCloudRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(setPointCloudRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(setPointCloudRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline setPointCloudRequest* New() const final {
+    return CreateMaybeMessage<setPointCloudRequest>(nullptr);
+  }
+
+  setPointCloudRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<setPointCloudRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const setPointCloudRequest& from);
+  void MergeFrom(const setPointCloudRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(setPointCloudRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIPointCloudManager.setPointCloudRequest";
+  }
+  protected:
+  explicit setPointCloudRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIPointCloudManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPointCloudFieldNumber = 1,
+  };
+  // bytes pointCloud = 1;
+  void clear_pointcloud();
+  const std::string& pointcloud() const;
+  void set_pointcloud(const std::string& value);
+  void set_pointcloud(std::string&& value);
+  void set_pointcloud(const char* value);
+  void set_pointcloud(const void* value, size_t size);
+  std::string* mutable_pointcloud();
+  std::string* release_pointcloud();
+  void set_allocated_pointcloud(std::string* pointcloud);
+  private:
+  const std::string& _internal_pointcloud() const;
+  void _internal_set_pointcloud(const std::string& value);
+  std::string* _internal_mutable_pointcloud();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIPointCloudManager.setPointCloudRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIPointCloudManagerService_2eproto;
+};
 // ===================================================================
 
 
@@ -5515,9 +6125,338 @@ inline void loadFromFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
   // @@protoc_insertion_point(field_set:grpcIPointCloudManager.loadFromFileResponse.xpcfGrpcReturnValue)
 }
 
+// -------------------------------------------------------------------
+
+// getConstPointCloudResponse
+
+// bytes xpcfGrpcReturnValue = 1;
+inline void getConstPointCloudResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_.ClearToEmpty();
+}
+inline const std::string& getConstPointCloudResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIPointCloudManager.getConstPointCloudResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getConstPointCloudResponse::set_xpcfgrpcreturnvalue(const std::string& value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIPointCloudManager.getConstPointCloudResponse.xpcfGrpcReturnValue)
+}
+inline std::string* getConstPointCloudResponse::mutable_xpcfgrpcreturnvalue() {
+  // @@protoc_insertion_point(field_mutable:grpcIPointCloudManager.getConstPointCloudResponse.xpcfGrpcReturnValue)
+  return _internal_mutable_xpcfgrpcreturnvalue();
+}
+inline const std::string& getConstPointCloudResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_.Get();
+}
+inline void getConstPointCloudResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getConstPointCloudResponse::set_xpcfgrpcreturnvalue(std::string&& value) {
+  
+  xpcfgrpcreturnvalue_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIPointCloudManager.getConstPointCloudResponse.xpcfGrpcReturnValue)
+}
+inline void getConstPointCloudResponse::set_xpcfgrpcreturnvalue(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIPointCloudManager.getConstPointCloudResponse.xpcfGrpcReturnValue)
+}
+inline void getConstPointCloudResponse::set_xpcfgrpcreturnvalue(const void* value,
+    size_t size) {
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIPointCloudManager.getConstPointCloudResponse.xpcfGrpcReturnValue)
+}
+inline std::string* getConstPointCloudResponse::_internal_mutable_xpcfgrpcreturnvalue() {
+  
+  return xpcfgrpcreturnvalue_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getConstPointCloudResponse::release_xpcfgrpcreturnvalue() {
+  // @@protoc_insertion_point(field_release:grpcIPointCloudManager.getConstPointCloudResponse.xpcfGrpcReturnValue)
+  return xpcfgrpcreturnvalue_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getConstPointCloudResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
+  if (xpcfgrpcreturnvalue != nullptr) {
+    
+  } else {
+    
+  }
+  xpcfgrpcreturnvalue_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), xpcfgrpcreturnvalue,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIPointCloudManager.getConstPointCloudResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getPointCloudRequest
+
+// bytes pointCloud = 1;
+inline void getPointCloudRequest::clear_pointcloud() {
+  pointcloud_.ClearToEmpty();
+}
+inline const std::string& getPointCloudRequest::pointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIPointCloudManager.getPointCloudRequest.pointCloud)
+  return _internal_pointcloud();
+}
+inline void getPointCloudRequest::set_pointcloud(const std::string& value) {
+  _internal_set_pointcloud(value);
+  // @@protoc_insertion_point(field_set:grpcIPointCloudManager.getPointCloudRequest.pointCloud)
+}
+inline std::string* getPointCloudRequest::mutable_pointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcIPointCloudManager.getPointCloudRequest.pointCloud)
+  return _internal_mutable_pointcloud();
+}
+inline const std::string& getPointCloudRequest::_internal_pointcloud() const {
+  return pointcloud_.Get();
+}
+inline void getPointCloudRequest::_internal_set_pointcloud(const std::string& value) {
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getPointCloudRequest::set_pointcloud(std::string&& value) {
+  
+  pointcloud_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIPointCloudManager.getPointCloudRequest.pointCloud)
+}
+inline void getPointCloudRequest::set_pointcloud(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIPointCloudManager.getPointCloudRequest.pointCloud)
+}
+inline void getPointCloudRequest::set_pointcloud(const void* value,
+    size_t size) {
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIPointCloudManager.getPointCloudRequest.pointCloud)
+}
+inline std::string* getPointCloudRequest::_internal_mutable_pointcloud() {
+  
+  return pointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getPointCloudRequest::release_pointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIPointCloudManager.getPointCloudRequest.pointCloud)
+  return pointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getPointCloudRequest::set_allocated_pointcloud(std::string* pointcloud) {
+  if (pointcloud != nullptr) {
+    
+  } else {
+    
+  }
+  pointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pointcloud,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIPointCloudManager.getPointCloudRequest.pointCloud)
+}
+
+// -------------------------------------------------------------------
+
+// getPointCloudResponse
+
+// bytes pointCloud = 1;
+inline void getPointCloudResponse::clear_pointcloud() {
+  pointcloud_.ClearToEmpty();
+}
+inline const std::string& getPointCloudResponse::pointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIPointCloudManager.getPointCloudResponse.pointCloud)
+  return _internal_pointcloud();
+}
+inline void getPointCloudResponse::set_pointcloud(const std::string& value) {
+  _internal_set_pointcloud(value);
+  // @@protoc_insertion_point(field_set:grpcIPointCloudManager.getPointCloudResponse.pointCloud)
+}
+inline std::string* getPointCloudResponse::mutable_pointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcIPointCloudManager.getPointCloudResponse.pointCloud)
+  return _internal_mutable_pointcloud();
+}
+inline const std::string& getPointCloudResponse::_internal_pointcloud() const {
+  return pointcloud_.Get();
+}
+inline void getPointCloudResponse::_internal_set_pointcloud(const std::string& value) {
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getPointCloudResponse::set_pointcloud(std::string&& value) {
+  
+  pointcloud_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIPointCloudManager.getPointCloudResponse.pointCloud)
+}
+inline void getPointCloudResponse::set_pointcloud(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIPointCloudManager.getPointCloudResponse.pointCloud)
+}
+inline void getPointCloudResponse::set_pointcloud(const void* value,
+    size_t size) {
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIPointCloudManager.getPointCloudResponse.pointCloud)
+}
+inline std::string* getPointCloudResponse::_internal_mutable_pointcloud() {
+  
+  return pointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getPointCloudResponse::release_pointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIPointCloudManager.getPointCloudResponse.pointCloud)
+  return pointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getPointCloudResponse::set_allocated_pointcloud(std::string* pointcloud) {
+  if (pointcloud != nullptr) {
+    
+  } else {
+    
+  }
+  pointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pointcloud,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIPointCloudManager.getPointCloudResponse.pointCloud)
+}
+
+// bytes xpcfGrpcReturnValue = 2;
+inline void getPointCloudResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_.ClearToEmpty();
+}
+inline const std::string& getPointCloudResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIPointCloudManager.getPointCloudResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getPointCloudResponse::set_xpcfgrpcreturnvalue(const std::string& value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIPointCloudManager.getPointCloudResponse.xpcfGrpcReturnValue)
+}
+inline std::string* getPointCloudResponse::mutable_xpcfgrpcreturnvalue() {
+  // @@protoc_insertion_point(field_mutable:grpcIPointCloudManager.getPointCloudResponse.xpcfGrpcReturnValue)
+  return _internal_mutable_xpcfgrpcreturnvalue();
+}
+inline const std::string& getPointCloudResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_.Get();
+}
+inline void getPointCloudResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getPointCloudResponse::set_xpcfgrpcreturnvalue(std::string&& value) {
+  
+  xpcfgrpcreturnvalue_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIPointCloudManager.getPointCloudResponse.xpcfGrpcReturnValue)
+}
+inline void getPointCloudResponse::set_xpcfgrpcreturnvalue(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIPointCloudManager.getPointCloudResponse.xpcfGrpcReturnValue)
+}
+inline void getPointCloudResponse::set_xpcfgrpcreturnvalue(const void* value,
+    size_t size) {
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIPointCloudManager.getPointCloudResponse.xpcfGrpcReturnValue)
+}
+inline std::string* getPointCloudResponse::_internal_mutable_xpcfgrpcreturnvalue() {
+  
+  return xpcfgrpcreturnvalue_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getPointCloudResponse::release_xpcfgrpcreturnvalue() {
+  // @@protoc_insertion_point(field_release:grpcIPointCloudManager.getPointCloudResponse.xpcfGrpcReturnValue)
+  return xpcfgrpcreturnvalue_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getPointCloudResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
+  if (xpcfgrpcreturnvalue != nullptr) {
+    
+  } else {
+    
+  }
+  xpcfgrpcreturnvalue_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), xpcfgrpcreturnvalue,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIPointCloudManager.getPointCloudResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// setPointCloudRequest
+
+// bytes pointCloud = 1;
+inline void setPointCloudRequest::clear_pointcloud() {
+  pointcloud_.ClearToEmpty();
+}
+inline const std::string& setPointCloudRequest::pointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIPointCloudManager.setPointCloudRequest.pointCloud)
+  return _internal_pointcloud();
+}
+inline void setPointCloudRequest::set_pointcloud(const std::string& value) {
+  _internal_set_pointcloud(value);
+  // @@protoc_insertion_point(field_set:grpcIPointCloudManager.setPointCloudRequest.pointCloud)
+}
+inline std::string* setPointCloudRequest::mutable_pointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcIPointCloudManager.setPointCloudRequest.pointCloud)
+  return _internal_mutable_pointcloud();
+}
+inline const std::string& setPointCloudRequest::_internal_pointcloud() const {
+  return pointcloud_.Get();
+}
+inline void setPointCloudRequest::_internal_set_pointcloud(const std::string& value) {
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void setPointCloudRequest::set_pointcloud(std::string&& value) {
+  
+  pointcloud_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIPointCloudManager.setPointCloudRequest.pointCloud)
+}
+inline void setPointCloudRequest::set_pointcloud(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIPointCloudManager.setPointCloudRequest.pointCloud)
+}
+inline void setPointCloudRequest::set_pointcloud(const void* value,
+    size_t size) {
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIPointCloudManager.setPointCloudRequest.pointCloud)
+}
+inline std::string* setPointCloudRequest::_internal_mutable_pointcloud() {
+  
+  return pointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* setPointCloudRequest::release_pointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIPointCloudManager.setPointCloudRequest.pointCloud)
+  return pointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void setPointCloudRequest::set_allocated_pointcloud(std::string* pointcloud) {
+  if (pointcloud != nullptr) {
+    
+  } else {
+    
+  }
+  pointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pointcloud,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIPointCloudManager.setPointCloudRequest.pointCloud)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

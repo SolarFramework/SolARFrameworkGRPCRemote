@@ -149,6 +149,27 @@ message loadFromFileResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message getConstPointCloudResponse
+{
+bytes xpcfGrpcReturnValue = 1;
+}
+
+message getPointCloudRequest
+{
+bytes pointCloud = 1;
+}
+
+message getPointCloudResponse
+{
+bytes pointCloud = 1;
+bytes xpcfGrpcReturnValue = 2;
+}
+
+message setPointCloudRequest
+{
+bytes pointCloud = 1;
+}
+
 service grpcIPointCloudManagerService {
 rpc addPoint_grpc0(addPoint_grpc0Request) returns(addPoint_grpc0Response) {}
 rpc addPoints_grpc0(addPoints_grpc0Request) returns(addPoints_grpc0Response) {}
@@ -165,5 +186,8 @@ rpc isExistPoint(isExistPointRequest) returns(isExistPointResponse) {}
 rpc getNbPoints(google.protobuf.Empty) returns(getNbPointsResponse) {}
 rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
+rpc getConstPointCloud(google.protobuf.Empty) returns(getConstPointCloudResponse) {}
+rpc getPointCloud(getPointCloudRequest) returns(getPointCloudResponse) {}
+rpc setPointCloud(setPointCloudRequest) returns(google.protobuf.Empty) {}
 }
 

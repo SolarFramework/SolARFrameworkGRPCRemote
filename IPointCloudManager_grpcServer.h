@@ -39,6 +39,9 @@ class IPointCloudManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
         ::grpc::Status getNbPoints(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response) override;
         ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response) override;
         ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response) override;
+        ::grpc::Status getConstPointCloud(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) override;
+        ::grpc::Status getPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response) override;
+        ::grpc::Status setPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response) override;
 
         SRef<SolAR::api::storage::IPointCloudManager> m_xpcfComponent;
 
@@ -55,7 +58,7 @@ class IPointCloudManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPointCloudManager::IPointCloudManager_grpcServer>
 {
-  static constexpr const char * UUID = "47a35d8a-bd56-4d6b-ba26-ed06cf197873";
+  static constexpr const char * UUID = "48b64703-362d-422e-9d60-a6cf74ad0751";
   static constexpr const char * NAME = "IPointCloudManager_grpcServer";
   static constexpr const char * DESCRIPTION = "IPointCloudManager_grpcServer grpc server component";
 };

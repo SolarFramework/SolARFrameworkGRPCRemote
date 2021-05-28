@@ -37,7 +37,7 @@ class IDescriptorMatcher_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDescriptorMatcher::IDescriptorMatcher_grpcProxy>
 {
-  static constexpr const char * UUID = "8b5ad239-dcfa-4ab2-9263-9e36daf6dfbe";
+  static constexpr const char * UUID = "45bd05f3-9200-4c1b-96f7-afd0ae3b73f5";
   static constexpr const char * NAME = "IDescriptorMatcher_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDescriptorMatcher_grpcProxy grpc client proxy component";
 };

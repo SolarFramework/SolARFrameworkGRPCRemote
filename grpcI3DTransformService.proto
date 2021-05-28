@@ -20,30 +20,66 @@ sint32 xpcfGrpcReturnValue = 2;
 message transformInPlace_grpc0Request
 {
 bytes transformation = 1;
-bytes pointCloud = 2;
+bytes map = 2;
 }
 
 message transformInPlace_grpc0Response
 {
-bytes pointCloud = 1;
-sint32 xpcfGrpcReturnValue = 2;
+sint32 xpcfGrpcReturnValue = 1;
 }
 
 message transformInPlace_grpc1Request
 {
 bytes transformation = 1;
-bytes keyframes = 2;
+bytes pointCloud = 2;
 }
 
 message transformInPlace_grpc1Response
 {
+bytes pointCloud = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message transformInPlace_grpc2Request
+{
+bytes transformation = 1;
+bytes keyframes = 2;
+}
+
+message transformInPlace_grpc2Response
+{
 bytes keyframes = 1;
 sint32 xpcfGrpcReturnValue = 2;
+}
+
+message transformInPlace_grpc3Request
+{
+bytes transformation = 1;
+bytes pointCloud = 2;
+}
+
+message transformInPlace_grpc3Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message transformInPlace_grpc4Request
+{
+bytes transformation = 1;
+bytes keyframeCollection = 2;
+}
+
+message transformInPlace_grpc4Response
+{
+sint32 xpcfGrpcReturnValue = 1;
 }
 
 service grpcI3DTransformService {
 rpc transform(transformRequest) returns(transformResponse) {}
 rpc transformInPlace_grpc0(transformInPlace_grpc0Request) returns(transformInPlace_grpc0Response) {}
 rpc transformInPlace_grpc1(transformInPlace_grpc1Request) returns(transformInPlace_grpc1Response) {}
+rpc transformInPlace_grpc2(transformInPlace_grpc2Request) returns(transformInPlace_grpc2Response) {}
+rpc transformInPlace_grpc3(transformInPlace_grpc3Request) returns(transformInPlace_grpc3Response) {}
+rpc transformInPlace_grpc4(transformInPlace_grpc4Request) returns(transformInPlace_grpc4Response) {}
 }
 

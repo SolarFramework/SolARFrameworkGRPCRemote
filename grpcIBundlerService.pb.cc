@@ -17,30 +17,30 @@
 
 PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcIBundler {
-constexpr setMapperRequest::setMapperRequest(
+constexpr setMapRequest::setMapRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : map_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct setMapperRequestDefaultTypeInternal {
-  constexpr setMapperRequestDefaultTypeInternal()
+struct setMapRequestDefaultTypeInternal {
+  constexpr setMapRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~setMapperRequestDefaultTypeInternal() {}
+  ~setMapRequestDefaultTypeInternal() {}
   union {
-    setMapperRequest _instance;
+    setMapRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setMapperRequestDefaultTypeInternal _setMapperRequest_default_instance_;
-constexpr setMapperResponse::setMapperResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setMapRequestDefaultTypeInternal _setMapRequest_default_instance_;
+constexpr setMapResponse::setMapResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(0){}
-struct setMapperResponseDefaultTypeInternal {
-  constexpr setMapperResponseDefaultTypeInternal()
+struct setMapResponseDefaultTypeInternal {
+  constexpr setMapResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~setMapperResponseDefaultTypeInternal() {}
+  ~setMapResponseDefaultTypeInternal() {}
   union {
-    setMapperResponse _instance;
+    setMapResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setMapperResponseDefaultTypeInternal _setMapperResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setMapResponseDefaultTypeInternal _setMapResponse_default_instance_;
 constexpr bundleAdjustmentRequest::bundleAdjustmentRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : selectkeyframes_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -69,24 +69,58 @@ struct bundleAdjustmentResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT bundleAdjustmentResponseDefaultTypeInternal _bundleAdjustmentResponse_default_instance_;
+constexpr optimizeSim3Request::optimizeSim3Request(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : keyframe1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , keyframe2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , pts3d1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , pts3d2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , k1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , k2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct optimizeSim3RequestDefaultTypeInternal {
+  constexpr optimizeSim3RequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~optimizeSim3RequestDefaultTypeInternal() {}
+  union {
+    optimizeSim3Request _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT optimizeSim3RequestDefaultTypeInternal _optimizeSim3Request_default_instance_;
+constexpr optimizeSim3Response::optimizeSim3Response(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : k1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , k2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , xpcfgrpcreturnvalue_(0){}
+struct optimizeSim3ResponseDefaultTypeInternal {
+  constexpr optimizeSim3ResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~optimizeSim3ResponseDefaultTypeInternal() {}
+  union {
+    optimizeSim3Response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT optimizeSim3ResponseDefaultTypeInternal _optimizeSim3Response_default_instance_;
 }  // namespace grpcIBundler
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIBundlerService_2eproto[4];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIBundlerService_2eproto[6];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIBundlerService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIBundlerService_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIBundlerService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIBundler::setMapperRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::setMapRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIBundler::setMapperRequest, map_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::setMapRequest, map_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIBundler::setMapperResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::setMapResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIBundler::setMapperResponse, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::setMapResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIBundler::bundleAdjustmentRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -103,43 +137,77 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIBundlerService_2eproto::o
   PROTOBUF_FIELD_OFFSET(::grpcIBundler::bundleAdjustmentResponse, k_),
   PROTOBUF_FIELD_OFFSET(::grpcIBundler::bundleAdjustmentResponse, d_),
   PROTOBUF_FIELD_OFFSET(::grpcIBundler::bundleAdjustmentResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Request, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Request, keyframe1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Request, keyframe2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Request, matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Request, pts3d1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Request, pts3d2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Request, k1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Request, k2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Request, pose_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Response, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Response, k1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Response, k2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Response, pose_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBundler::optimizeSim3Response, xpcfgrpcreturnvalue_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::grpcIBundler::setMapperRequest)},
-  { 6, -1, sizeof(::grpcIBundler::setMapperResponse)},
+  { 0, -1, sizeof(::grpcIBundler::setMapRequest)},
+  { 6, -1, sizeof(::grpcIBundler::setMapResponse)},
   { 12, -1, sizeof(::grpcIBundler::bundleAdjustmentRequest)},
   { 20, -1, sizeof(::grpcIBundler::bundleAdjustmentResponse)},
+  { 28, -1, sizeof(::grpcIBundler::optimizeSim3Request)},
+  { 41, -1, sizeof(::grpcIBundler::optimizeSim3Response)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIBundler::_setMapperRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIBundler::_setMapperResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIBundler::_setMapRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIBundler::_setMapResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIBundler::_bundleAdjustmentRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIBundler::_bundleAdjustmentResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIBundler::_optimizeSim3Request_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIBundler::_optimizeSim3Response_default_instance_),
 };
 
 const char descriptor_table_protodef_grpcIBundlerService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\031grpcIBundlerService.proto\022\014grpcIBundle"
-  "r\032\033google/protobuf/empty.proto\"\037\n\020setMap"
-  "perRequest\022\013\n\003map\030\001 \001(\014\"0\n\021setMapperResp"
-  "onse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"H\n\027bun"
-  "dleAdjustmentRequest\022\027\n\017selectKeyframes\030"
-  "\001 \001(\014\022\t\n\001K\030\002 \001(\014\022\t\n\001D\030\003 \001(\014\"M\n\030bundleAdj"
-  "ustmentResponse\022\t\n\001K\030\001 \001(\014\022\t\n\001D\030\002 \001(\014\022\033\n"
-  "\023xpcfGrpcReturnValue\030\003 \001(\0012\312\001\n\023grpcIBund"
-  "lerService\022N\n\tsetMapper\022\036.grpcIBundler.s"
-  "etMapperRequest\032\037.grpcIBundler.setMapper"
-  "Response\"\000\022c\n\020bundleAdjustment\022%.grpcIBu"
-  "ndler.bundleAdjustmentRequest\032&.grpcIBun"
-  "dler.bundleAdjustmentResponse\"\000b\006proto3"
+  "r\032\033google/protobuf/empty.proto\"\034\n\rsetMap"
+  "Request\022\013\n\003map\030\001 \001(\014\"-\n\016setMapResponse\022\033"
+  "\n\023xpcfGrpcReturnValue\030\001 \001(\021\"H\n\027bundleAdj"
+  "ustmentRequest\022\027\n\017selectKeyframes\030\001 \001(\014\022"
+  "\t\n\001K\030\002 \001(\014\022\t\n\001D\030\003 \001(\014\"M\n\030bundleAdjustmen"
+  "tResponse\022\t\n\001K\030\001 \001(\014\022\t\n\001D\030\002 \001(\014\022\033\n\023xpcfG"
+  "rpcReturnValue\030\003 \001(\001\"\222\001\n\023optimizeSim3Req"
+  "uest\022\021\n\tkeyframe1\030\001 \001(\014\022\021\n\tkeyframe2\030\002 \001"
+  "(\014\022\017\n\007matches\030\003 \001(\014\022\016\n\006pts3D1\030\004 \001(\014\022\016\n\006p"
+  "ts3D2\030\005 \001(\014\022\n\n\002K1\030\006 \001(\014\022\n\n\002K2\030\007 \001(\014\022\014\n\004p"
+  "ose\030\010 \001(\014\"Y\n\024optimizeSim3Response\022\n\n\002K1\030"
+  "\001 \001(\014\022\n\n\002K2\030\002 \001(\014\022\014\n\004pose\030\003 \001(\014\022\033\n\023xpcfG"
+  "rpcReturnValue\030\004 \001(\0012\232\002\n\023grpcIBundlerSer"
+  "vice\022E\n\006setMap\022\033.grpcIBundler.setMapRequ"
+  "est\032\034.grpcIBundler.setMapResponse\"\000\022c\n\020b"
+  "undleAdjustment\022%.grpcIBundler.bundleAdj"
+  "ustmentRequest\032&.grpcIBundler.bundleAdju"
+  "stmentResponse\"\000\022W\n\014optimizeSim3\022!.grpcI"
+  "Bundler.optimizeSim3Request\032\".grpcIBundl"
+  "er.optimizeSim3Response\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIBundlerService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIBundlerService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIBundlerService_2eproto = {
-  false, false, 519, descriptor_table_protodef_grpcIBundlerService_2eproto, "grpcIBundlerService.proto", 
-  &descriptor_table_grpcIBundlerService_2eproto_once, descriptor_table_grpcIBundlerService_2eproto_deps, 1, 4,
+  false, false, 833, descriptor_table_protodef_grpcIBundlerService_2eproto, "grpcIBundlerService.proto", 
+  &descriptor_table_grpcIBundlerService_2eproto_once, descriptor_table_grpcIBundlerService_2eproto_deps, 1, 6,
   schemas, file_default_instances, TableStruct_grpcIBundlerService_2eproto::offsets,
   file_level_metadata_grpcIBundlerService_2eproto, file_level_enum_descriptors_grpcIBundlerService_2eproto, file_level_service_descriptors_grpcIBundlerService_2eproto,
 };
@@ -155,17 +223,17 @@ namespace grpcIBundler {
 
 // ===================================================================
 
-class setMapperRequest::_Internal {
+class setMapRequest::_Internal {
  public:
 };
 
-setMapperRequest::setMapperRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+setMapRequest::setMapRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcIBundler.setMapperRequest)
+  // @@protoc_insertion_point(arena_constructor:grpcIBundler.setMapRequest)
 }
-setMapperRequest::setMapperRequest(const setMapperRequest& from)
+setMapRequest::setMapRequest(const setMapRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   map_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -173,36 +241,36 @@ setMapperRequest::setMapperRequest(const setMapperRequest& from)
     map_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_map(), 
       GetArena());
   }
-  // @@protoc_insertion_point(copy_constructor:grpcIBundler.setMapperRequest)
+  // @@protoc_insertion_point(copy_constructor:grpcIBundler.setMapRequest)
 }
 
-void setMapperRequest::SharedCtor() {
+void setMapRequest::SharedCtor() {
 map_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-setMapperRequest::~setMapperRequest() {
-  // @@protoc_insertion_point(destructor:grpcIBundler.setMapperRequest)
+setMapRequest::~setMapRequest() {
+  // @@protoc_insertion_point(destructor:grpcIBundler.setMapRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void setMapperRequest::SharedDtor() {
+void setMapRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   map_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void setMapperRequest::ArenaDtor(void* object) {
-  setMapperRequest* _this = reinterpret_cast< setMapperRequest* >(object);
+void setMapRequest::ArenaDtor(void* object) {
+  setMapRequest* _this = reinterpret_cast< setMapRequest* >(object);
   (void)_this;
 }
-void setMapperRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void setMapRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void setMapperRequest::SetCachedSize(int size) const {
+void setMapRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void setMapperRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIBundler.setMapperRequest)
+void setMapRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIBundler.setMapRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -211,7 +279,7 @@ void setMapperRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* setMapperRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* setMapRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -248,9 +316,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* setMapperRequest::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* setMapRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIBundler.setMapperRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIBundler.setMapRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -264,12 +332,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIBundler.setMapperRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIBundler.setMapRequest)
   return target;
 }
 
-size_t setMapperRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIBundler.setMapperRequest)
+size_t setMapRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIBundler.setMapRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -292,23 +360,23 @@ size_t setMapperRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void setMapperRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIBundler.setMapperRequest)
+void setMapRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIBundler.setMapRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const setMapperRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setMapperRequest>(
+  const setMapRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setMapRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIBundler.setMapperRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIBundler.setMapRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIBundler.setMapperRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIBundler.setMapRequest)
     MergeFrom(*source);
   }
 }
 
-void setMapperRequest::MergeFrom(const setMapperRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIBundler.setMapperRequest)
+void setMapRequest::MergeFrom(const setMapRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIBundler.setMapRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -319,80 +387,80 @@ void setMapperRequest::MergeFrom(const setMapperRequest& from) {
   }
 }
 
-void setMapperRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIBundler.setMapperRequest)
+void setMapRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIBundler.setMapRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void setMapperRequest::CopyFrom(const setMapperRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIBundler.setMapperRequest)
+void setMapRequest::CopyFrom(const setMapRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIBundler.setMapRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool setMapperRequest::IsInitialized() const {
+bool setMapRequest::IsInitialized() const {
   return true;
 }
 
-void setMapperRequest::InternalSwap(setMapperRequest* other) {
+void setMapRequest::InternalSwap(setMapRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   map_.Swap(&other->map_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata setMapperRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata setMapRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-class setMapperResponse::_Internal {
+class setMapResponse::_Internal {
  public:
 };
 
-setMapperResponse::setMapperResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+setMapResponse::setMapResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcIBundler.setMapperResponse)
+  // @@protoc_insertion_point(arena_constructor:grpcIBundler.setMapResponse)
 }
-setMapperResponse::setMapperResponse(const setMapperResponse& from)
+setMapResponse::setMapResponse(const setMapResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
-  // @@protoc_insertion_point(copy_constructor:grpcIBundler.setMapperResponse)
+  // @@protoc_insertion_point(copy_constructor:grpcIBundler.setMapResponse)
 }
 
-void setMapperResponse::SharedCtor() {
+void setMapResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
-setMapperResponse::~setMapperResponse() {
-  // @@protoc_insertion_point(destructor:grpcIBundler.setMapperResponse)
+setMapResponse::~setMapResponse() {
+  // @@protoc_insertion_point(destructor:grpcIBundler.setMapResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void setMapperResponse::SharedDtor() {
+void setMapResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void setMapperResponse::ArenaDtor(void* object) {
-  setMapperResponse* _this = reinterpret_cast< setMapperResponse* >(object);
+void setMapResponse::ArenaDtor(void* object) {
+  setMapResponse* _this = reinterpret_cast< setMapResponse* >(object);
   (void)_this;
 }
-void setMapperResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void setMapResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void setMapperResponse::SetCachedSize(int size) const {
+void setMapResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void setMapperResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIBundler.setMapperResponse)
+void setMapResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIBundler.setMapResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -401,7 +469,7 @@ void setMapperResponse::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* setMapperResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* setMapResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -437,9 +505,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* setMapperResponse::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* setMapResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIBundler.setMapperResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIBundler.setMapResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -453,12 +521,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIBundler.setMapperResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIBundler.setMapResponse)
   return target;
 }
 
-size_t setMapperResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIBundler.setMapperResponse)
+size_t setMapResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIBundler.setMapResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -481,23 +549,23 @@ size_t setMapperResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void setMapperResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIBundler.setMapperResponse)
+void setMapResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIBundler.setMapResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const setMapperResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setMapperResponse>(
+  const setMapResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setMapResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIBundler.setMapperResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIBundler.setMapResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIBundler.setMapperResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIBundler.setMapResponse)
     MergeFrom(*source);
   }
 }
 
-void setMapperResponse::MergeFrom(const setMapperResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIBundler.setMapperResponse)
+void setMapResponse::MergeFrom(const setMapResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIBundler.setMapResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -508,31 +576,31 @@ void setMapperResponse::MergeFrom(const setMapperResponse& from) {
   }
 }
 
-void setMapperResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIBundler.setMapperResponse)
+void setMapResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIBundler.setMapResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void setMapperResponse::CopyFrom(const setMapperResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIBundler.setMapperResponse)
+void setMapResponse::CopyFrom(const setMapResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIBundler.setMapResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool setMapperResponse::IsInitialized() const {
+bool setMapResponse::IsInitialized() const {
   return true;
 }
 
-void setMapperResponse::InternalSwap(setMapperResponse* other) {
+void setMapResponse::InternalSwap(setMapResponse* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata setMapperResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata setMapResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -1051,20 +1119,738 @@ void bundleAdjustmentResponse::InternalSwap(bundleAdjustmentResponse* other) {
 }
 
 
+// ===================================================================
+
+class optimizeSim3Request::_Internal {
+ public:
+};
+
+optimizeSim3Request::optimizeSim3Request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIBundler.optimizeSim3Request)
+}
+optimizeSim3Request::optimizeSim3Request(const optimizeSim3Request& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  keyframe1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_keyframe1().empty()) {
+    keyframe1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframe1(), 
+      GetArena());
+  }
+  keyframe2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_keyframe2().empty()) {
+    keyframe2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframe2(), 
+      GetArena());
+  }
+  matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_matches().empty()) {
+    matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matches(), 
+      GetArena());
+  }
+  pts3d1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_pts3d1().empty()) {
+    pts3d1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pts3d1(), 
+      GetArena());
+  }
+  pts3d2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_pts3d2().empty()) {
+    pts3d2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pts3d2(), 
+      GetArena());
+  }
+  k1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_k1().empty()) {
+    k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_k1(), 
+      GetArena());
+  }
+  k2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_k2().empty()) {
+    k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_k2(), 
+      GetArena());
+  }
+  pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_pose().empty()) {
+    pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pose(), 
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:grpcIBundler.optimizeSim3Request)
+}
+
+void optimizeSim3Request::SharedCtor() {
+keyframe1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+keyframe2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+pts3d1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+pts3d2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+k1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+k2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+optimizeSim3Request::~optimizeSim3Request() {
+  // @@protoc_insertion_point(destructor:grpcIBundler.optimizeSim3Request)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void optimizeSim3Request::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  keyframe1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  keyframe2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  matches_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  pts3d1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  pts3d2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  k1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  k2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  pose_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void optimizeSim3Request::ArenaDtor(void* object) {
+  optimizeSim3Request* _this = reinterpret_cast< optimizeSim3Request* >(object);
+  (void)_this;
+}
+void optimizeSim3Request::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void optimizeSim3Request::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void optimizeSim3Request::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIBundler.optimizeSim3Request)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  keyframe1_.ClearToEmpty();
+  keyframe2_.ClearToEmpty();
+  matches_.ClearToEmpty();
+  pts3d1_.ClearToEmpty();
+  pts3d2_.ClearToEmpty();
+  k1_.ClearToEmpty();
+  k2_.ClearToEmpty();
+  pose_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* optimizeSim3Request::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bytes keyframe1 = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_keyframe1();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes keyframe2 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_keyframe2();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes matches = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_matches();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes pts3D1 = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_pts3d1();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes pts3D2 = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_pts3d2();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes K1 = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_k1();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes K2 = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_k2();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes pose = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_pose();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* optimizeSim3Request::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIBundler.optimizeSim3Request)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes keyframe1 = 1;
+  if (this->keyframe1().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_keyframe1(), target);
+  }
+
+  // bytes keyframe2 = 2;
+  if (this->keyframe2().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_keyframe2(), target);
+  }
+
+  // bytes matches = 3;
+  if (this->matches().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_matches(), target);
+  }
+
+  // bytes pts3D1 = 4;
+  if (this->pts3d1().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        4, this->_internal_pts3d1(), target);
+  }
+
+  // bytes pts3D2 = 5;
+  if (this->pts3d2().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        5, this->_internal_pts3d2(), target);
+  }
+
+  // bytes K1 = 6;
+  if (this->k1().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        6, this->_internal_k1(), target);
+  }
+
+  // bytes K2 = 7;
+  if (this->k2().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        7, this->_internal_k2(), target);
+  }
+
+  // bytes pose = 8;
+  if (this->pose().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        8, this->_internal_pose(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIBundler.optimizeSim3Request)
+  return target;
+}
+
+size_t optimizeSim3Request::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIBundler.optimizeSim3Request)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes keyframe1 = 1;
+  if (this->keyframe1().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_keyframe1());
+  }
+
+  // bytes keyframe2 = 2;
+  if (this->keyframe2().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_keyframe2());
+  }
+
+  // bytes matches = 3;
+  if (this->matches().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_matches());
+  }
+
+  // bytes pts3D1 = 4;
+  if (this->pts3d1().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_pts3d1());
+  }
+
+  // bytes pts3D2 = 5;
+  if (this->pts3d2().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_pts3d2());
+  }
+
+  // bytes K1 = 6;
+  if (this->k1().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_k1());
+  }
+
+  // bytes K2 = 7;
+  if (this->k2().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_k2());
+  }
+
+  // bytes pose = 8;
+  if (this->pose().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_pose());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void optimizeSim3Request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIBundler.optimizeSim3Request)
+  GOOGLE_DCHECK_NE(&from, this);
+  const optimizeSim3Request* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<optimizeSim3Request>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIBundler.optimizeSim3Request)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIBundler.optimizeSim3Request)
+    MergeFrom(*source);
+  }
+}
+
+void optimizeSim3Request::MergeFrom(const optimizeSim3Request& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIBundler.optimizeSim3Request)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.keyframe1().size() > 0) {
+    _internal_set_keyframe1(from._internal_keyframe1());
+  }
+  if (from.keyframe2().size() > 0) {
+    _internal_set_keyframe2(from._internal_keyframe2());
+  }
+  if (from.matches().size() > 0) {
+    _internal_set_matches(from._internal_matches());
+  }
+  if (from.pts3d1().size() > 0) {
+    _internal_set_pts3d1(from._internal_pts3d1());
+  }
+  if (from.pts3d2().size() > 0) {
+    _internal_set_pts3d2(from._internal_pts3d2());
+  }
+  if (from.k1().size() > 0) {
+    _internal_set_k1(from._internal_k1());
+  }
+  if (from.k2().size() > 0) {
+    _internal_set_k2(from._internal_k2());
+  }
+  if (from.pose().size() > 0) {
+    _internal_set_pose(from._internal_pose());
+  }
+}
+
+void optimizeSim3Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIBundler.optimizeSim3Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void optimizeSim3Request::CopyFrom(const optimizeSim3Request& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIBundler.optimizeSim3Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool optimizeSim3Request::IsInitialized() const {
+  return true;
+}
+
+void optimizeSim3Request::InternalSwap(optimizeSim3Request* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  keyframe1_.Swap(&other->keyframe1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  keyframe2_.Swap(&other->keyframe2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  matches_.Swap(&other->matches_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  pts3d1_.Swap(&other->pts3d1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  pts3d2_.Swap(&other->pts3d2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  k1_.Swap(&other->k1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  k2_.Swap(&other->k2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  pose_.Swap(&other->pose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata optimizeSim3Request::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class optimizeSim3Response::_Internal {
+ public:
+};
+
+optimizeSim3Response::optimizeSim3Response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIBundler.optimizeSim3Response)
+}
+optimizeSim3Response::optimizeSim3Response(const optimizeSim3Response& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  k1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_k1().empty()) {
+    k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_k1(), 
+      GetArena());
+  }
+  k2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_k2().empty()) {
+    k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_k2(), 
+      GetArena());
+  }
+  pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_pose().empty()) {
+    pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pose(), 
+      GetArena());
+  }
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  // @@protoc_insertion_point(copy_constructor:grpcIBundler.optimizeSim3Response)
+}
+
+void optimizeSim3Response::SharedCtor() {
+k1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+k2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+xpcfgrpcreturnvalue_ = 0;
+}
+
+optimizeSim3Response::~optimizeSim3Response() {
+  // @@protoc_insertion_point(destructor:grpcIBundler.optimizeSim3Response)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void optimizeSim3Response::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  k1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  k2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  pose_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void optimizeSim3Response::ArenaDtor(void* object) {
+  optimizeSim3Response* _this = reinterpret_cast< optimizeSim3Response* >(object);
+  (void)_this;
+}
+void optimizeSim3Response::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void optimizeSim3Response::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void optimizeSim3Response::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIBundler.optimizeSim3Response)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  k1_.ClearToEmpty();
+  k2_.ClearToEmpty();
+  pose_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* optimizeSim3Response::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bytes K1 = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_k1();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes K2 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_k2();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes pose = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_pose();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // double xpcfGrpcReturnValue = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* optimizeSim3Response::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIBundler.optimizeSim3Response)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes K1 = 1;
+  if (this->k1().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_k1(), target);
+  }
+
+  // bytes K2 = 2;
+  if (this->k2().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_k2(), target);
+  }
+
+  // bytes pose = 3;
+  if (this->pose().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_pose(), target);
+  }
+
+  // double xpcfGrpcReturnValue = 4;
+  if (!(this->xpcfgrpcreturnvalue() <= 0 && this->xpcfgrpcreturnvalue() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIBundler.optimizeSim3Response)
+  return target;
+}
+
+size_t optimizeSim3Response::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIBundler.optimizeSim3Response)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes K1 = 1;
+  if (this->k1().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_k1());
+  }
+
+  // bytes K2 = 2;
+  if (this->k2().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_k2());
+  }
+
+  // bytes pose = 3;
+  if (this->pose().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_pose());
+  }
+
+  // double xpcfGrpcReturnValue = 4;
+  if (!(this->xpcfgrpcreturnvalue() <= 0 && this->xpcfgrpcreturnvalue() >= 0)) {
+    total_size += 1 + 8;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void optimizeSim3Response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIBundler.optimizeSim3Response)
+  GOOGLE_DCHECK_NE(&from, this);
+  const optimizeSim3Response* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<optimizeSim3Response>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIBundler.optimizeSim3Response)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIBundler.optimizeSim3Response)
+    MergeFrom(*source);
+  }
+}
+
+void optimizeSim3Response::MergeFrom(const optimizeSim3Response& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIBundler.optimizeSim3Response)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.k1().size() > 0) {
+    _internal_set_k1(from._internal_k1());
+  }
+  if (from.k2().size() > 0) {
+    _internal_set_k2(from._internal_k2());
+  }
+  if (from.pose().size() > 0) {
+    _internal_set_pose(from._internal_pose());
+  }
+  if (!(from.xpcfgrpcreturnvalue() <= 0 && from.xpcfgrpcreturnvalue() >= 0)) {
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  }
+}
+
+void optimizeSim3Response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIBundler.optimizeSim3Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void optimizeSim3Response::CopyFrom(const optimizeSim3Response& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIBundler.optimizeSim3Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool optimizeSim3Response::IsInitialized() const {
+  return true;
+}
+
+void optimizeSim3Response::InternalSwap(optimizeSim3Response* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  k1_.Swap(&other->k1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  k2_.Swap(&other->k2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  pose_.Swap(&other->pose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata optimizeSim3Response::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIBundler
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::grpcIBundler::setMapperRequest* Arena::CreateMaybeMessage< ::grpcIBundler::setMapperRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIBundler::setMapperRequest >(arena);
+template<> PROTOBUF_NOINLINE ::grpcIBundler::setMapRequest* Arena::CreateMaybeMessage< ::grpcIBundler::setMapRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIBundler::setMapRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIBundler::setMapperResponse* Arena::CreateMaybeMessage< ::grpcIBundler::setMapperResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIBundler::setMapperResponse >(arena);
+template<> PROTOBUF_NOINLINE ::grpcIBundler::setMapResponse* Arena::CreateMaybeMessage< ::grpcIBundler::setMapResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIBundler::setMapResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIBundler::bundleAdjustmentRequest* Arena::CreateMaybeMessage< ::grpcIBundler::bundleAdjustmentRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIBundler::bundleAdjustmentRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIBundler::bundleAdjustmentResponse* Arena::CreateMaybeMessage< ::grpcIBundler::bundleAdjustmentResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIBundler::bundleAdjustmentResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIBundler::optimizeSim3Request* Arena::CreateMaybeMessage< ::grpcIBundler::optimizeSim3Request >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIBundler::optimizeSim3Request >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIBundler::optimizeSim3Response* Arena::CreateMaybeMessage< ::grpcIBundler::optimizeSim3Response >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIBundler::optimizeSim3Response >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -41,7 +41,7 @@ class ITrackableLoader_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverITrackableLoader::ITrackableLoader_grpcServer>
 {
-  static constexpr const char * UUID = "897d57d9-2a11-4e1c-90e1-5323860689d0";
+  static constexpr const char * UUID = "30c266b8-c8aa-4efe-993b-daa4c098e6a2";
   static constexpr const char * NAME = "ITrackableLoader_grpcServer";
   static constexpr const char * DESCRIPTION = "ITrackableLoader_grpcServer grpc server component";
 };

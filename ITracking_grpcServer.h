@@ -43,7 +43,7 @@ class ITracking_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverITracking::ITracking_grpcServer>
 {
-  static constexpr const char * UUID = "0103c32f-9b3f-4419-ba66-da90b28c0483";
+  static constexpr const char * UUID = "775b416b-118b-4eed-b04d-30e6d19f594e";
   static constexpr const char * NAME = "ITracking_grpcServer";
   static constexpr const char * DESCRIPTION = "ITracking_grpcServer grpc server component";
 };

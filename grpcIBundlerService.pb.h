@@ -47,7 +47,7 @@ struct TableStruct_grpcIBundlerService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,41 +62,49 @@ extern bundleAdjustmentRequestDefaultTypeInternal _bundleAdjustmentRequest_defau
 class bundleAdjustmentResponse;
 struct bundleAdjustmentResponseDefaultTypeInternal;
 extern bundleAdjustmentResponseDefaultTypeInternal _bundleAdjustmentResponse_default_instance_;
-class setMapperRequest;
-struct setMapperRequestDefaultTypeInternal;
-extern setMapperRequestDefaultTypeInternal _setMapperRequest_default_instance_;
-class setMapperResponse;
-struct setMapperResponseDefaultTypeInternal;
-extern setMapperResponseDefaultTypeInternal _setMapperResponse_default_instance_;
+class optimizeSim3Request;
+struct optimizeSim3RequestDefaultTypeInternal;
+extern optimizeSim3RequestDefaultTypeInternal _optimizeSim3Request_default_instance_;
+class optimizeSim3Response;
+struct optimizeSim3ResponseDefaultTypeInternal;
+extern optimizeSim3ResponseDefaultTypeInternal _optimizeSim3Response_default_instance_;
+class setMapRequest;
+struct setMapRequestDefaultTypeInternal;
+extern setMapRequestDefaultTypeInternal _setMapRequest_default_instance_;
+class setMapResponse;
+struct setMapResponseDefaultTypeInternal;
+extern setMapResponseDefaultTypeInternal _setMapResponse_default_instance_;
 }  // namespace grpcIBundler
 PROTOBUF_NAMESPACE_OPEN
 template<> ::grpcIBundler::bundleAdjustmentRequest* Arena::CreateMaybeMessage<::grpcIBundler::bundleAdjustmentRequest>(Arena*);
 template<> ::grpcIBundler::bundleAdjustmentResponse* Arena::CreateMaybeMessage<::grpcIBundler::bundleAdjustmentResponse>(Arena*);
-template<> ::grpcIBundler::setMapperRequest* Arena::CreateMaybeMessage<::grpcIBundler::setMapperRequest>(Arena*);
-template<> ::grpcIBundler::setMapperResponse* Arena::CreateMaybeMessage<::grpcIBundler::setMapperResponse>(Arena*);
+template<> ::grpcIBundler::optimizeSim3Request* Arena::CreateMaybeMessage<::grpcIBundler::optimizeSim3Request>(Arena*);
+template<> ::grpcIBundler::optimizeSim3Response* Arena::CreateMaybeMessage<::grpcIBundler::optimizeSim3Response>(Arena*);
+template<> ::grpcIBundler::setMapRequest* Arena::CreateMaybeMessage<::grpcIBundler::setMapRequest>(Arena*);
+template<> ::grpcIBundler::setMapResponse* Arena::CreateMaybeMessage<::grpcIBundler::setMapResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIBundler {
 
 // ===================================================================
 
-class setMapperRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIBundler.setMapperRequest) */ {
+class setMapRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIBundler.setMapRequest) */ {
  public:
-  inline setMapperRequest() : setMapperRequest(nullptr) {}
-  virtual ~setMapperRequest();
-  explicit constexpr setMapperRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline setMapRequest() : setMapRequest(nullptr) {}
+  virtual ~setMapRequest();
+  explicit constexpr setMapRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  setMapperRequest(const setMapperRequest& from);
-  setMapperRequest(setMapperRequest&& from) noexcept
-    : setMapperRequest() {
+  setMapRequest(const setMapRequest& from);
+  setMapRequest(setMapRequest&& from) noexcept
+    : setMapRequest() {
     *this = ::std::move(from);
   }
 
-  inline setMapperRequest& operator=(const setMapperRequest& from) {
+  inline setMapRequest& operator=(const setMapRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline setMapperRequest& operator=(setMapperRequest&& from) noexcept {
+  inline setMapRequest& operator=(setMapRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -114,20 +122,20 @@ class setMapperRequest PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const setMapperRequest& default_instance() {
+  static const setMapRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const setMapperRequest* internal_default_instance() {
-    return reinterpret_cast<const setMapperRequest*>(
-               &_setMapperRequest_default_instance_);
+  static inline const setMapRequest* internal_default_instance() {
+    return reinterpret_cast<const setMapRequest*>(
+               &_setMapRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(setMapperRequest& a, setMapperRequest& b) {
+  friend void swap(setMapRequest& a, setMapRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(setMapperRequest* other) {
+  inline void Swap(setMapRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -135,7 +143,7 @@ class setMapperRequest PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(setMapperRequest* other) {
+  void UnsafeArenaSwap(setMapRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -143,17 +151,17 @@ class setMapperRequest PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline setMapperRequest* New() const final {
-    return CreateMaybeMessage<setMapperRequest>(nullptr);
+  inline setMapRequest* New() const final {
+    return CreateMaybeMessage<setMapRequest>(nullptr);
   }
 
-  setMapperRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<setMapperRequest>(arena);
+  setMapRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<setMapRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const setMapperRequest& from);
-  void MergeFrom(const setMapperRequest& from);
+  void CopyFrom(const setMapRequest& from);
+  void MergeFrom(const setMapRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -167,13 +175,13 @@ class setMapperRequest PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(setMapperRequest* other);
+  void InternalSwap(setMapRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIBundler.setMapperRequest";
+    return "grpcIBundler.setMapRequest";
   }
   protected:
-  explicit setMapperRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit setMapRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -210,7 +218,7 @@ class setMapperRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_map();
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIBundler.setMapperRequest)
+  // @@protoc_insertion_point(class_scope:grpcIBundler.setMapRequest)
  private:
   class _Internal;
 
@@ -223,24 +231,24 @@ class setMapperRequest PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class setMapperResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIBundler.setMapperResponse) */ {
+class setMapResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIBundler.setMapResponse) */ {
  public:
-  inline setMapperResponse() : setMapperResponse(nullptr) {}
-  virtual ~setMapperResponse();
-  explicit constexpr setMapperResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline setMapResponse() : setMapResponse(nullptr) {}
+  virtual ~setMapResponse();
+  explicit constexpr setMapResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  setMapperResponse(const setMapperResponse& from);
-  setMapperResponse(setMapperResponse&& from) noexcept
-    : setMapperResponse() {
+  setMapResponse(const setMapResponse& from);
+  setMapResponse(setMapResponse&& from) noexcept
+    : setMapResponse() {
     *this = ::std::move(from);
   }
 
-  inline setMapperResponse& operator=(const setMapperResponse& from) {
+  inline setMapResponse& operator=(const setMapResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline setMapperResponse& operator=(setMapperResponse&& from) noexcept {
+  inline setMapResponse& operator=(setMapResponse&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -258,20 +266,20 @@ class setMapperResponse PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const setMapperResponse& default_instance() {
+  static const setMapResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const setMapperResponse* internal_default_instance() {
-    return reinterpret_cast<const setMapperResponse*>(
-               &_setMapperResponse_default_instance_);
+  static inline const setMapResponse* internal_default_instance() {
+    return reinterpret_cast<const setMapResponse*>(
+               &_setMapResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(setMapperResponse& a, setMapperResponse& b) {
+  friend void swap(setMapResponse& a, setMapResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(setMapperResponse* other) {
+  inline void Swap(setMapResponse* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -279,7 +287,7 @@ class setMapperResponse PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(setMapperResponse* other) {
+  void UnsafeArenaSwap(setMapResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -287,17 +295,17 @@ class setMapperResponse PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline setMapperResponse* New() const final {
-    return CreateMaybeMessage<setMapperResponse>(nullptr);
+  inline setMapResponse* New() const final {
+    return CreateMaybeMessage<setMapResponse>(nullptr);
   }
 
-  setMapperResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<setMapperResponse>(arena);
+  setMapResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<setMapResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const setMapperResponse& from);
-  void MergeFrom(const setMapperResponse& from);
+  void CopyFrom(const setMapResponse& from);
+  void MergeFrom(const setMapResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -311,13 +319,13 @@ class setMapperResponse PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(setMapperResponse* other);
+  void InternalSwap(setMapResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIBundler.setMapperResponse";
+    return "grpcIBundler.setMapResponse";
   }
   protected:
-  explicit setMapperResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit setMapResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -347,7 +355,7 @@ class setMapperResponse PROTOBUF_FINAL :
   void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIBundler.setMapperResponse)
+  // @@protoc_insertion_point(class_scope:grpcIBundler.setMapResponse)
  private:
   class _Internal;
 
@@ -711,6 +719,467 @@ class bundleAdjustmentResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIBundlerService_2eproto;
 };
+// -------------------------------------------------------------------
+
+class optimizeSim3Request PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIBundler.optimizeSim3Request) */ {
+ public:
+  inline optimizeSim3Request() : optimizeSim3Request(nullptr) {}
+  virtual ~optimizeSim3Request();
+  explicit constexpr optimizeSim3Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  optimizeSim3Request(const optimizeSim3Request& from);
+  optimizeSim3Request(optimizeSim3Request&& from) noexcept
+    : optimizeSim3Request() {
+    *this = ::std::move(from);
+  }
+
+  inline optimizeSim3Request& operator=(const optimizeSim3Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline optimizeSim3Request& operator=(optimizeSim3Request&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const optimizeSim3Request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const optimizeSim3Request* internal_default_instance() {
+    return reinterpret_cast<const optimizeSim3Request*>(
+               &_optimizeSim3Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(optimizeSim3Request& a, optimizeSim3Request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(optimizeSim3Request* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(optimizeSim3Request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline optimizeSim3Request* New() const final {
+    return CreateMaybeMessage<optimizeSim3Request>(nullptr);
+  }
+
+  optimizeSim3Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<optimizeSim3Request>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const optimizeSim3Request& from);
+  void MergeFrom(const optimizeSim3Request& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(optimizeSim3Request* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIBundler.optimizeSim3Request";
+  }
+  protected:
+  explicit optimizeSim3Request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIBundlerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKeyframe1FieldNumber = 1,
+    kKeyframe2FieldNumber = 2,
+    kMatchesFieldNumber = 3,
+    kPts3D1FieldNumber = 4,
+    kPts3D2FieldNumber = 5,
+    kK1FieldNumber = 6,
+    kK2FieldNumber = 7,
+    kPoseFieldNumber = 8,
+  };
+  // bytes keyframe1 = 1;
+  void clear_keyframe1();
+  const std::string& keyframe1() const;
+  void set_keyframe1(const std::string& value);
+  void set_keyframe1(std::string&& value);
+  void set_keyframe1(const char* value);
+  void set_keyframe1(const void* value, size_t size);
+  std::string* mutable_keyframe1();
+  std::string* release_keyframe1();
+  void set_allocated_keyframe1(std::string* keyframe1);
+  private:
+  const std::string& _internal_keyframe1() const;
+  void _internal_set_keyframe1(const std::string& value);
+  std::string* _internal_mutable_keyframe1();
+  public:
+
+  // bytes keyframe2 = 2;
+  void clear_keyframe2();
+  const std::string& keyframe2() const;
+  void set_keyframe2(const std::string& value);
+  void set_keyframe2(std::string&& value);
+  void set_keyframe2(const char* value);
+  void set_keyframe2(const void* value, size_t size);
+  std::string* mutable_keyframe2();
+  std::string* release_keyframe2();
+  void set_allocated_keyframe2(std::string* keyframe2);
+  private:
+  const std::string& _internal_keyframe2() const;
+  void _internal_set_keyframe2(const std::string& value);
+  std::string* _internal_mutable_keyframe2();
+  public:
+
+  // bytes matches = 3;
+  void clear_matches();
+  const std::string& matches() const;
+  void set_matches(const std::string& value);
+  void set_matches(std::string&& value);
+  void set_matches(const char* value);
+  void set_matches(const void* value, size_t size);
+  std::string* mutable_matches();
+  std::string* release_matches();
+  void set_allocated_matches(std::string* matches);
+  private:
+  const std::string& _internal_matches() const;
+  void _internal_set_matches(const std::string& value);
+  std::string* _internal_mutable_matches();
+  public:
+
+  // bytes pts3D1 = 4;
+  void clear_pts3d1();
+  const std::string& pts3d1() const;
+  void set_pts3d1(const std::string& value);
+  void set_pts3d1(std::string&& value);
+  void set_pts3d1(const char* value);
+  void set_pts3d1(const void* value, size_t size);
+  std::string* mutable_pts3d1();
+  std::string* release_pts3d1();
+  void set_allocated_pts3d1(std::string* pts3d1);
+  private:
+  const std::string& _internal_pts3d1() const;
+  void _internal_set_pts3d1(const std::string& value);
+  std::string* _internal_mutable_pts3d1();
+  public:
+
+  // bytes pts3D2 = 5;
+  void clear_pts3d2();
+  const std::string& pts3d2() const;
+  void set_pts3d2(const std::string& value);
+  void set_pts3d2(std::string&& value);
+  void set_pts3d2(const char* value);
+  void set_pts3d2(const void* value, size_t size);
+  std::string* mutable_pts3d2();
+  std::string* release_pts3d2();
+  void set_allocated_pts3d2(std::string* pts3d2);
+  private:
+  const std::string& _internal_pts3d2() const;
+  void _internal_set_pts3d2(const std::string& value);
+  std::string* _internal_mutable_pts3d2();
+  public:
+
+  // bytes K1 = 6;
+  void clear_k1();
+  const std::string& k1() const;
+  void set_k1(const std::string& value);
+  void set_k1(std::string&& value);
+  void set_k1(const char* value);
+  void set_k1(const void* value, size_t size);
+  std::string* mutable_k1();
+  std::string* release_k1();
+  void set_allocated_k1(std::string* k1);
+  private:
+  const std::string& _internal_k1() const;
+  void _internal_set_k1(const std::string& value);
+  std::string* _internal_mutable_k1();
+  public:
+
+  // bytes K2 = 7;
+  void clear_k2();
+  const std::string& k2() const;
+  void set_k2(const std::string& value);
+  void set_k2(std::string&& value);
+  void set_k2(const char* value);
+  void set_k2(const void* value, size_t size);
+  std::string* mutable_k2();
+  std::string* release_k2();
+  void set_allocated_k2(std::string* k2);
+  private:
+  const std::string& _internal_k2() const;
+  void _internal_set_k2(const std::string& value);
+  std::string* _internal_mutable_k2();
+  public:
+
+  // bytes pose = 8;
+  void clear_pose();
+  const std::string& pose() const;
+  void set_pose(const std::string& value);
+  void set_pose(std::string&& value);
+  void set_pose(const char* value);
+  void set_pose(const void* value, size_t size);
+  std::string* mutable_pose();
+  std::string* release_pose();
+  void set_allocated_pose(std::string* pose);
+  private:
+  const std::string& _internal_pose() const;
+  void _internal_set_pose(const std::string& value);
+  std::string* _internal_mutable_pose();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIBundler.optimizeSim3Request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframe1_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframe2_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pts3d1_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pts3d2_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k1_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k2_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIBundlerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class optimizeSim3Response PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIBundler.optimizeSim3Response) */ {
+ public:
+  inline optimizeSim3Response() : optimizeSim3Response(nullptr) {}
+  virtual ~optimizeSim3Response();
+  explicit constexpr optimizeSim3Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  optimizeSim3Response(const optimizeSim3Response& from);
+  optimizeSim3Response(optimizeSim3Response&& from) noexcept
+    : optimizeSim3Response() {
+    *this = ::std::move(from);
+  }
+
+  inline optimizeSim3Response& operator=(const optimizeSim3Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline optimizeSim3Response& operator=(optimizeSim3Response&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const optimizeSim3Response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const optimizeSim3Response* internal_default_instance() {
+    return reinterpret_cast<const optimizeSim3Response*>(
+               &_optimizeSim3Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(optimizeSim3Response& a, optimizeSim3Response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(optimizeSim3Response* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(optimizeSim3Response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline optimizeSim3Response* New() const final {
+    return CreateMaybeMessage<optimizeSim3Response>(nullptr);
+  }
+
+  optimizeSim3Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<optimizeSim3Response>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const optimizeSim3Response& from);
+  void MergeFrom(const optimizeSim3Response& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(optimizeSim3Response* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIBundler.optimizeSim3Response";
+  }
+  protected:
+  explicit optimizeSim3Response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIBundlerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kK1FieldNumber = 1,
+    kK2FieldNumber = 2,
+    kPoseFieldNumber = 3,
+    kXpcfGrpcReturnValueFieldNumber = 4,
+  };
+  // bytes K1 = 1;
+  void clear_k1();
+  const std::string& k1() const;
+  void set_k1(const std::string& value);
+  void set_k1(std::string&& value);
+  void set_k1(const char* value);
+  void set_k1(const void* value, size_t size);
+  std::string* mutable_k1();
+  std::string* release_k1();
+  void set_allocated_k1(std::string* k1);
+  private:
+  const std::string& _internal_k1() const;
+  void _internal_set_k1(const std::string& value);
+  std::string* _internal_mutable_k1();
+  public:
+
+  // bytes K2 = 2;
+  void clear_k2();
+  const std::string& k2() const;
+  void set_k2(const std::string& value);
+  void set_k2(std::string&& value);
+  void set_k2(const char* value);
+  void set_k2(const void* value, size_t size);
+  std::string* mutable_k2();
+  std::string* release_k2();
+  void set_allocated_k2(std::string* k2);
+  private:
+  const std::string& _internal_k2() const;
+  void _internal_set_k2(const std::string& value);
+  std::string* _internal_mutable_k2();
+  public:
+
+  // bytes pose = 3;
+  void clear_pose();
+  const std::string& pose() const;
+  void set_pose(const std::string& value);
+  void set_pose(std::string&& value);
+  void set_pose(const char* value);
+  void set_pose(const void* value, size_t size);
+  std::string* mutable_pose();
+  std::string* release_pose();
+  void set_allocated_pose(std::string* pose);
+  private:
+  const std::string& _internal_pose() const;
+  void _internal_set_pose(const std::string& value);
+  std::string* _internal_mutable_pose();
+  public:
+
+  // double xpcfGrpcReturnValue = 4;
+  void clear_xpcfgrpcreturnvalue();
+  double xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(double value);
+  private:
+  double _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(double value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIBundler.optimizeSim3Response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k1_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k2_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
+  double xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIBundlerService_2eproto;
+};
 // ===================================================================
 
 
@@ -720,59 +1189,59 @@ class bundleAdjustmentResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// setMapperRequest
+// setMapRequest
 
 // bytes map = 1;
-inline void setMapperRequest::clear_map() {
+inline void setMapRequest::clear_map() {
   map_.ClearToEmpty();
 }
-inline const std::string& setMapperRequest::map() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.setMapperRequest.map)
+inline const std::string& setMapRequest::map() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.setMapRequest.map)
   return _internal_map();
 }
-inline void setMapperRequest::set_map(const std::string& value) {
+inline void setMapRequest::set_map(const std::string& value) {
   _internal_set_map(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.setMapperRequest.map)
+  // @@protoc_insertion_point(field_set:grpcIBundler.setMapRequest.map)
 }
-inline std::string* setMapperRequest::mutable_map() {
-  // @@protoc_insertion_point(field_mutable:grpcIBundler.setMapperRequest.map)
+inline std::string* setMapRequest::mutable_map() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.setMapRequest.map)
   return _internal_mutable_map();
 }
-inline const std::string& setMapperRequest::_internal_map() const {
+inline const std::string& setMapRequest::_internal_map() const {
   return map_.Get();
 }
-inline void setMapperRequest::_internal_set_map(const std::string& value) {
+inline void setMapRequest::_internal_set_map(const std::string& value) {
   
   map_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void setMapperRequest::set_map(std::string&& value) {
+inline void setMapRequest::set_map(std::string&& value) {
   
   map_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.setMapperRequest.map)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.setMapRequest.map)
 }
-inline void setMapperRequest::set_map(const char* value) {
+inline void setMapRequest::set_map(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   map_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBundler.setMapperRequest.map)
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.setMapRequest.map)
 }
-inline void setMapperRequest::set_map(const void* value,
+inline void setMapRequest::set_map(const void* value,
     size_t size) {
   
   map_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.setMapperRequest.map)
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.setMapRequest.map)
 }
-inline std::string* setMapperRequest::_internal_mutable_map() {
+inline std::string* setMapRequest::_internal_mutable_map() {
   
   return map_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* setMapperRequest::release_map() {
-  // @@protoc_insertion_point(field_release:grpcIBundler.setMapperRequest.map)
+inline std::string* setMapRequest::release_map() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.setMapRequest.map)
   return map_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void setMapperRequest::set_allocated_map(std::string* map) {
+inline void setMapRequest::set_allocated_map(std::string* map) {
   if (map != nullptr) {
     
   } else {
@@ -780,31 +1249,31 @@ inline void setMapperRequest::set_allocated_map(std::string* map) {
   }
   map_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), map,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.setMapperRequest.map)
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.setMapRequest.map)
 }
 
 // -------------------------------------------------------------------
 
-// setMapperResponse
+// setMapResponse
 
 // sint32 xpcfGrpcReturnValue = 1;
-inline void setMapperResponse::clear_xpcfgrpcreturnvalue() {
+inline void setMapResponse::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 setMapperResponse::_internal_xpcfgrpcreturnvalue() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 setMapResponse::_internal_xpcfgrpcreturnvalue() const {
   return xpcfgrpcreturnvalue_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 setMapperResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.setMapperResponse.xpcfGrpcReturnValue)
+inline ::PROTOBUF_NAMESPACE_ID::int32 setMapResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.setMapResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-inline void setMapperResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void setMapResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   xpcfgrpcreturnvalue_ = value;
 }
-inline void setMapperResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void setMapResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.setMapperResponse.xpcfGrpcReturnValue)
+  // @@protoc_insertion_point(field_set:grpcIBundler.setMapResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -1140,9 +1609,712 @@ inline void bundleAdjustmentResponse::set_xpcfgrpcreturnvalue(double value) {
   // @@protoc_insertion_point(field_set:grpcIBundler.bundleAdjustmentResponse.xpcfGrpcReturnValue)
 }
 
+// -------------------------------------------------------------------
+
+// optimizeSim3Request
+
+// bytes keyframe1 = 1;
+inline void optimizeSim3Request::clear_keyframe1() {
+  keyframe1_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Request::keyframe1() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.keyframe1)
+  return _internal_keyframe1();
+}
+inline void optimizeSim3Request::set_keyframe1(const std::string& value) {
+  _internal_set_keyframe1(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.keyframe1)
+}
+inline std::string* optimizeSim3Request::mutable_keyframe1() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.keyframe1)
+  return _internal_mutable_keyframe1();
+}
+inline const std::string& optimizeSim3Request::_internal_keyframe1() const {
+  return keyframe1_.Get();
+}
+inline void optimizeSim3Request::_internal_set_keyframe1(const std::string& value) {
+  
+  keyframe1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Request::set_keyframe1(std::string&& value) {
+  
+  keyframe1_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.keyframe1)
+}
+inline void optimizeSim3Request::set_keyframe1(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  keyframe1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.keyframe1)
+}
+inline void optimizeSim3Request::set_keyframe1(const void* value,
+    size_t size) {
+  
+  keyframe1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.keyframe1)
+}
+inline std::string* optimizeSim3Request::_internal_mutable_keyframe1() {
+  
+  return keyframe1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Request::release_keyframe1() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.keyframe1)
+  return keyframe1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Request::set_allocated_keyframe1(std::string* keyframe1) {
+  if (keyframe1 != nullptr) {
+    
+  } else {
+    
+  }
+  keyframe1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframe1,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.keyframe1)
+}
+
+// bytes keyframe2 = 2;
+inline void optimizeSim3Request::clear_keyframe2() {
+  keyframe2_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Request::keyframe2() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.keyframe2)
+  return _internal_keyframe2();
+}
+inline void optimizeSim3Request::set_keyframe2(const std::string& value) {
+  _internal_set_keyframe2(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.keyframe2)
+}
+inline std::string* optimizeSim3Request::mutable_keyframe2() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.keyframe2)
+  return _internal_mutable_keyframe2();
+}
+inline const std::string& optimizeSim3Request::_internal_keyframe2() const {
+  return keyframe2_.Get();
+}
+inline void optimizeSim3Request::_internal_set_keyframe2(const std::string& value) {
+  
+  keyframe2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Request::set_keyframe2(std::string&& value) {
+  
+  keyframe2_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.keyframe2)
+}
+inline void optimizeSim3Request::set_keyframe2(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  keyframe2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.keyframe2)
+}
+inline void optimizeSim3Request::set_keyframe2(const void* value,
+    size_t size) {
+  
+  keyframe2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.keyframe2)
+}
+inline std::string* optimizeSim3Request::_internal_mutable_keyframe2() {
+  
+  return keyframe2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Request::release_keyframe2() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.keyframe2)
+  return keyframe2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Request::set_allocated_keyframe2(std::string* keyframe2) {
+  if (keyframe2 != nullptr) {
+    
+  } else {
+    
+  }
+  keyframe2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframe2,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.keyframe2)
+}
+
+// bytes matches = 3;
+inline void optimizeSim3Request::clear_matches() {
+  matches_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Request::matches() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.matches)
+  return _internal_matches();
+}
+inline void optimizeSim3Request::set_matches(const std::string& value) {
+  _internal_set_matches(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.matches)
+}
+inline std::string* optimizeSim3Request::mutable_matches() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.matches)
+  return _internal_mutable_matches();
+}
+inline const std::string& optimizeSim3Request::_internal_matches() const {
+  return matches_.Get();
+}
+inline void optimizeSim3Request::_internal_set_matches(const std::string& value) {
+  
+  matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Request::set_matches(std::string&& value) {
+  
+  matches_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.matches)
+}
+inline void optimizeSim3Request::set_matches(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.matches)
+}
+inline void optimizeSim3Request::set_matches(const void* value,
+    size_t size) {
+  
+  matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.matches)
+}
+inline std::string* optimizeSim3Request::_internal_mutable_matches() {
+  
+  return matches_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Request::release_matches() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.matches)
+  return matches_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Request::set_allocated_matches(std::string* matches) {
+  if (matches != nullptr) {
+    
+  } else {
+    
+  }
+  matches_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), matches,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.matches)
+}
+
+// bytes pts3D1 = 4;
+inline void optimizeSim3Request::clear_pts3d1() {
+  pts3d1_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Request::pts3d1() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.pts3D1)
+  return _internal_pts3d1();
+}
+inline void optimizeSim3Request::set_pts3d1(const std::string& value) {
+  _internal_set_pts3d1(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.pts3D1)
+}
+inline std::string* optimizeSim3Request::mutable_pts3d1() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.pts3D1)
+  return _internal_mutable_pts3d1();
+}
+inline const std::string& optimizeSim3Request::_internal_pts3d1() const {
+  return pts3d1_.Get();
+}
+inline void optimizeSim3Request::_internal_set_pts3d1(const std::string& value) {
+  
+  pts3d1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Request::set_pts3d1(std::string&& value) {
+  
+  pts3d1_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.pts3D1)
+}
+inline void optimizeSim3Request::set_pts3d1(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pts3d1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.pts3D1)
+}
+inline void optimizeSim3Request::set_pts3d1(const void* value,
+    size_t size) {
+  
+  pts3d1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.pts3D1)
+}
+inline std::string* optimizeSim3Request::_internal_mutable_pts3d1() {
+  
+  return pts3d1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Request::release_pts3d1() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.pts3D1)
+  return pts3d1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Request::set_allocated_pts3d1(std::string* pts3d1) {
+  if (pts3d1 != nullptr) {
+    
+  } else {
+    
+  }
+  pts3d1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pts3d1,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.pts3D1)
+}
+
+// bytes pts3D2 = 5;
+inline void optimizeSim3Request::clear_pts3d2() {
+  pts3d2_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Request::pts3d2() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.pts3D2)
+  return _internal_pts3d2();
+}
+inline void optimizeSim3Request::set_pts3d2(const std::string& value) {
+  _internal_set_pts3d2(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.pts3D2)
+}
+inline std::string* optimizeSim3Request::mutable_pts3d2() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.pts3D2)
+  return _internal_mutable_pts3d2();
+}
+inline const std::string& optimizeSim3Request::_internal_pts3d2() const {
+  return pts3d2_.Get();
+}
+inline void optimizeSim3Request::_internal_set_pts3d2(const std::string& value) {
+  
+  pts3d2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Request::set_pts3d2(std::string&& value) {
+  
+  pts3d2_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.pts3D2)
+}
+inline void optimizeSim3Request::set_pts3d2(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pts3d2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.pts3D2)
+}
+inline void optimizeSim3Request::set_pts3d2(const void* value,
+    size_t size) {
+  
+  pts3d2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.pts3D2)
+}
+inline std::string* optimizeSim3Request::_internal_mutable_pts3d2() {
+  
+  return pts3d2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Request::release_pts3d2() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.pts3D2)
+  return pts3d2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Request::set_allocated_pts3d2(std::string* pts3d2) {
+  if (pts3d2 != nullptr) {
+    
+  } else {
+    
+  }
+  pts3d2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pts3d2,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.pts3D2)
+}
+
+// bytes K1 = 6;
+inline void optimizeSim3Request::clear_k1() {
+  k1_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Request::k1() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.K1)
+  return _internal_k1();
+}
+inline void optimizeSim3Request::set_k1(const std::string& value) {
+  _internal_set_k1(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.K1)
+}
+inline std::string* optimizeSim3Request::mutable_k1() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.K1)
+  return _internal_mutable_k1();
+}
+inline const std::string& optimizeSim3Request::_internal_k1() const {
+  return k1_.Get();
+}
+inline void optimizeSim3Request::_internal_set_k1(const std::string& value) {
+  
+  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Request::set_k1(std::string&& value) {
+  
+  k1_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.K1)
+}
+inline void optimizeSim3Request::set_k1(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.K1)
+}
+inline void optimizeSim3Request::set_k1(const void* value,
+    size_t size) {
+  
+  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.K1)
+}
+inline std::string* optimizeSim3Request::_internal_mutable_k1() {
+  
+  return k1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Request::release_k1() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.K1)
+  return k1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Request::set_allocated_k1(std::string* k1) {
+  if (k1 != nullptr) {
+    
+  } else {
+    
+  }
+  k1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k1,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.K1)
+}
+
+// bytes K2 = 7;
+inline void optimizeSim3Request::clear_k2() {
+  k2_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Request::k2() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.K2)
+  return _internal_k2();
+}
+inline void optimizeSim3Request::set_k2(const std::string& value) {
+  _internal_set_k2(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.K2)
+}
+inline std::string* optimizeSim3Request::mutable_k2() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.K2)
+  return _internal_mutable_k2();
+}
+inline const std::string& optimizeSim3Request::_internal_k2() const {
+  return k2_.Get();
+}
+inline void optimizeSim3Request::_internal_set_k2(const std::string& value) {
+  
+  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Request::set_k2(std::string&& value) {
+  
+  k2_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.K2)
+}
+inline void optimizeSim3Request::set_k2(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.K2)
+}
+inline void optimizeSim3Request::set_k2(const void* value,
+    size_t size) {
+  
+  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.K2)
+}
+inline std::string* optimizeSim3Request::_internal_mutable_k2() {
+  
+  return k2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Request::release_k2() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.K2)
+  return k2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Request::set_allocated_k2(std::string* k2) {
+  if (k2 != nullptr) {
+    
+  } else {
+    
+  }
+  k2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k2,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.K2)
+}
+
+// bytes pose = 8;
+inline void optimizeSim3Request::clear_pose() {
+  pose_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Request::pose() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.pose)
+  return _internal_pose();
+}
+inline void optimizeSim3Request::set_pose(const std::string& value) {
+  _internal_set_pose(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.pose)
+}
+inline std::string* optimizeSim3Request::mutable_pose() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.pose)
+  return _internal_mutable_pose();
+}
+inline const std::string& optimizeSim3Request::_internal_pose() const {
+  return pose_.Get();
+}
+inline void optimizeSim3Request::_internal_set_pose(const std::string& value) {
+  
+  pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Request::set_pose(std::string&& value) {
+  
+  pose_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.pose)
+}
+inline void optimizeSim3Request::set_pose(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.pose)
+}
+inline void optimizeSim3Request::set_pose(const void* value,
+    size_t size) {
+  
+  pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.pose)
+}
+inline std::string* optimizeSim3Request::_internal_mutable_pose() {
+  
+  return pose_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Request::release_pose() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.pose)
+  return pose_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Request::set_allocated_pose(std::string* pose) {
+  if (pose != nullptr) {
+    
+  } else {
+    
+  }
+  pose_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pose,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.pose)
+}
+
+// -------------------------------------------------------------------
+
+// optimizeSim3Response
+
+// bytes K1 = 1;
+inline void optimizeSim3Response::clear_k1() {
+  k1_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Response::k1() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Response.K1)
+  return _internal_k1();
+}
+inline void optimizeSim3Response::set_k1(const std::string& value) {
+  _internal_set_k1(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Response.K1)
+}
+inline std::string* optimizeSim3Response::mutable_k1() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Response.K1)
+  return _internal_mutable_k1();
+}
+inline const std::string& optimizeSim3Response::_internal_k1() const {
+  return k1_.Get();
+}
+inline void optimizeSim3Response::_internal_set_k1(const std::string& value) {
+  
+  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Response::set_k1(std::string&& value) {
+  
+  k1_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Response.K1)
+}
+inline void optimizeSim3Response::set_k1(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Response.K1)
+}
+inline void optimizeSim3Response::set_k1(const void* value,
+    size_t size) {
+  
+  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Response.K1)
+}
+inline std::string* optimizeSim3Response::_internal_mutable_k1() {
+  
+  return k1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Response::release_k1() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Response.K1)
+  return k1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Response::set_allocated_k1(std::string* k1) {
+  if (k1 != nullptr) {
+    
+  } else {
+    
+  }
+  k1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k1,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Response.K1)
+}
+
+// bytes K2 = 2;
+inline void optimizeSim3Response::clear_k2() {
+  k2_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Response::k2() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Response.K2)
+  return _internal_k2();
+}
+inline void optimizeSim3Response::set_k2(const std::string& value) {
+  _internal_set_k2(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Response.K2)
+}
+inline std::string* optimizeSim3Response::mutable_k2() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Response.K2)
+  return _internal_mutable_k2();
+}
+inline const std::string& optimizeSim3Response::_internal_k2() const {
+  return k2_.Get();
+}
+inline void optimizeSim3Response::_internal_set_k2(const std::string& value) {
+  
+  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Response::set_k2(std::string&& value) {
+  
+  k2_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Response.K2)
+}
+inline void optimizeSim3Response::set_k2(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Response.K2)
+}
+inline void optimizeSim3Response::set_k2(const void* value,
+    size_t size) {
+  
+  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Response.K2)
+}
+inline std::string* optimizeSim3Response::_internal_mutable_k2() {
+  
+  return k2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Response::release_k2() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Response.K2)
+  return k2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Response::set_allocated_k2(std::string* k2) {
+  if (k2 != nullptr) {
+    
+  } else {
+    
+  }
+  k2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k2,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Response.K2)
+}
+
+// bytes pose = 3;
+inline void optimizeSim3Response::clear_pose() {
+  pose_.ClearToEmpty();
+}
+inline const std::string& optimizeSim3Response::pose() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Response.pose)
+  return _internal_pose();
+}
+inline void optimizeSim3Response::set_pose(const std::string& value) {
+  _internal_set_pose(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Response.pose)
+}
+inline std::string* optimizeSim3Response::mutable_pose() {
+  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Response.pose)
+  return _internal_mutable_pose();
+}
+inline const std::string& optimizeSim3Response::_internal_pose() const {
+  return pose_.Get();
+}
+inline void optimizeSim3Response::_internal_set_pose(const std::string& value) {
+  
+  pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void optimizeSim3Response::set_pose(std::string&& value) {
+  
+  pose_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Response.pose)
+}
+inline void optimizeSim3Response::set_pose(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Response.pose)
+}
+inline void optimizeSim3Response::set_pose(const void* value,
+    size_t size) {
+  
+  pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Response.pose)
+}
+inline std::string* optimizeSim3Response::_internal_mutable_pose() {
+  
+  return pose_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* optimizeSim3Response::release_pose() {
+  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Response.pose)
+  return pose_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void optimizeSim3Response::set_allocated_pose(std::string* pose) {
+  if (pose != nullptr) {
+    
+  } else {
+    
+  }
+  pose_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pose,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Response.pose)
+}
+
+// double xpcfGrpcReturnValue = 4;
+inline void optimizeSim3Response::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline double optimizeSim3Response::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline double optimizeSim3Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Response.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void optimizeSim3Response::_internal_set_xpcfgrpcreturnvalue(double value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void optimizeSim3Response::set_xpcfgrpcreturnvalue(double value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Response.xpcfGrpcReturnValue)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

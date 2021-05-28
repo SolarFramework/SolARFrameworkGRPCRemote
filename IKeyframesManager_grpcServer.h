@@ -36,6 +36,9 @@ class IKeyframesManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
         ::grpc::Status getNbKeyframes(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getNbKeyframesResponse* response) override;
         ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcIKeyframesManager::saveToFileRequest* request, ::grpcIKeyframesManager::saveToFileResponse* response) override;
         ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIKeyframesManager::loadFromFileRequest* request, ::grpcIKeyframesManager::loadFromFileResponse* response) override;
+        ::grpc::Status getConstKeyframeCollection(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* response) override;
+        ::grpc::Status getKeyframeCollection(::grpc::ServerContext* context, const ::grpcIKeyframesManager::getKeyframeCollectionRequest* request, ::grpcIKeyframesManager::getKeyframeCollectionResponse* response) override;
+        ::grpc::Status setKeyframeCollection(::grpc::ServerContext* context, const ::grpcIKeyframesManager::setKeyframeCollectionRequest* request, ::google::protobuf::Empty* response) override;
 
         SRef<SolAR::api::storage::IKeyframesManager> m_xpcfComponent;
 
@@ -52,7 +55,7 @@ class IKeyframesManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeyframesManager::IKeyframesManager_grpcServer>
 {
-  static constexpr const char * UUID = "5a910f63-32fe-467f-8b4f-a7842aacdd12";
+  static constexpr const char * UUID = "b1ca9e38-7ba0-457a-871b-b0893b68a601";
   static constexpr const char * NAME = "IKeyframesManager_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeyframesManager_grpcServer grpc server component";
 };

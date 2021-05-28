@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMapUpdate;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distortionParams = 2;
+}
+
+message updateRequest
+{
+bytes globalMap = 1;
+bytes newKeyframeIds = 2;
+}
+
+message updateResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIMapUpdateService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc update(updateRequest) returns(updateResponse) {}
+}
+

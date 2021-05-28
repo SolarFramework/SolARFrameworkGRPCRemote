@@ -37,7 +37,7 @@ class I3DOverlay_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DOverlay::I3DOverlay_grpcProxy>
 {
-  static constexpr const char * UUID = "4fe3c255-1a88-4055-bc0b-c52ed5991450";
+  static constexpr const char * UUID = "6a5ec4f6-2261-4793-a3d7-2ea5fb423491";
   static constexpr const char * NAME = "I3DOverlay_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DOverlay_grpcProxy grpc client proxy component";
 };

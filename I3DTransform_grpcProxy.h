@@ -21,8 +21,11 @@ class I3DTransform_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
     SolAR::FrameworkReturnCode transform(std::vector<SolAR::datastructure::Point3Df> const& inputPoints, SolAR::datastructure::Transform3Df const& transformation, std::vector<SolAR::datastructure::Point3Df>& outputPoints)     override;
+    SolAR::FrameworkReturnCode transformInPlace(SolAR::datastructure::Transform3Df const& transformation, SRef<SolAR::datastructure::Map> map)     override;
     SolAR::FrameworkReturnCode transformInPlace(SolAR::datastructure::Transform3Df const& transformation, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud)     override;
     SolAR::FrameworkReturnCode transformInPlace(SolAR::datastructure::Transform3Df const& transformation, std::vector<SRef<SolAR::datastructure::Keyframe>>& keyframes)     override;
+    SolAR::FrameworkReturnCode transformInPlace(SolAR::datastructure::Transform3Df const& transformation, SRef<SolAR::datastructure::PointCloud> pointCloud)     override;
+    SolAR::FrameworkReturnCode transformInPlace(SolAR::datastructure::Transform3Df const& transformation, SRef<SolAR::datastructure::KeyframeCollection> keyframeCollection)     override;
 
 
   private:
@@ -38,7 +41,7 @@ class I3DTransform_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DTransform::I3DTransform_grpcProxy>
 {
-  static constexpr const char * UUID = "5ee7e29c-ee24-4405-ba68-433cc25397ad";
+  static constexpr const char * UUID = "44c2e10f-fbef-4cf2-8162-34c424450952";
   static constexpr const char * NAME = "I3DTransform_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DTransform_grpcProxy grpc client proxy component";
 };

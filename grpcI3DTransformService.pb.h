@@ -47,7 +47,7 @@ struct TableStruct_grpcI3DTransformService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -68,6 +68,24 @@ extern transformInPlace_grpc1RequestDefaultTypeInternal _transformInPlace_grpc1R
 class transformInPlace_grpc1Response;
 struct transformInPlace_grpc1ResponseDefaultTypeInternal;
 extern transformInPlace_grpc1ResponseDefaultTypeInternal _transformInPlace_grpc1Response_default_instance_;
+class transformInPlace_grpc2Request;
+struct transformInPlace_grpc2RequestDefaultTypeInternal;
+extern transformInPlace_grpc2RequestDefaultTypeInternal _transformInPlace_grpc2Request_default_instance_;
+class transformInPlace_grpc2Response;
+struct transformInPlace_grpc2ResponseDefaultTypeInternal;
+extern transformInPlace_grpc2ResponseDefaultTypeInternal _transformInPlace_grpc2Response_default_instance_;
+class transformInPlace_grpc3Request;
+struct transformInPlace_grpc3RequestDefaultTypeInternal;
+extern transformInPlace_grpc3RequestDefaultTypeInternal _transformInPlace_grpc3Request_default_instance_;
+class transformInPlace_grpc3Response;
+struct transformInPlace_grpc3ResponseDefaultTypeInternal;
+extern transformInPlace_grpc3ResponseDefaultTypeInternal _transformInPlace_grpc3Response_default_instance_;
+class transformInPlace_grpc4Request;
+struct transformInPlace_grpc4RequestDefaultTypeInternal;
+extern transformInPlace_grpc4RequestDefaultTypeInternal _transformInPlace_grpc4Request_default_instance_;
+class transformInPlace_grpc4Response;
+struct transformInPlace_grpc4ResponseDefaultTypeInternal;
+extern transformInPlace_grpc4ResponseDefaultTypeInternal _transformInPlace_grpc4Response_default_instance_;
 class transformRequest;
 struct transformRequestDefaultTypeInternal;
 extern transformRequestDefaultTypeInternal _transformRequest_default_instance_;
@@ -80,6 +98,12 @@ template<> ::grpcI3DTransform::transformInPlace_grpc0Request* Arena::CreateMaybe
 template<> ::grpcI3DTransform::transformInPlace_grpc0Response* Arena::CreateMaybeMessage<::grpcI3DTransform::transformInPlace_grpc0Response>(Arena*);
 template<> ::grpcI3DTransform::transformInPlace_grpc1Request* Arena::CreateMaybeMessage<::grpcI3DTransform::transformInPlace_grpc1Request>(Arena*);
 template<> ::grpcI3DTransform::transformInPlace_grpc1Response* Arena::CreateMaybeMessage<::grpcI3DTransform::transformInPlace_grpc1Response>(Arena*);
+template<> ::grpcI3DTransform::transformInPlace_grpc2Request* Arena::CreateMaybeMessage<::grpcI3DTransform::transformInPlace_grpc2Request>(Arena*);
+template<> ::grpcI3DTransform::transformInPlace_grpc2Response* Arena::CreateMaybeMessage<::grpcI3DTransform::transformInPlace_grpc2Response>(Arena*);
+template<> ::grpcI3DTransform::transformInPlace_grpc3Request* Arena::CreateMaybeMessage<::grpcI3DTransform::transformInPlace_grpc3Request>(Arena*);
+template<> ::grpcI3DTransform::transformInPlace_grpc3Response* Arena::CreateMaybeMessage<::grpcI3DTransform::transformInPlace_grpc3Response>(Arena*);
+template<> ::grpcI3DTransform::transformInPlace_grpc4Request* Arena::CreateMaybeMessage<::grpcI3DTransform::transformInPlace_grpc4Request>(Arena*);
+template<> ::grpcI3DTransform::transformInPlace_grpc4Response* Arena::CreateMaybeMessage<::grpcI3DTransform::transformInPlace_grpc4Response>(Arena*);
 template<> ::grpcI3DTransform::transformRequest* Arena::CreateMaybeMessage<::grpcI3DTransform::transformRequest>(Arena*);
 template<> ::grpcI3DTransform::transformResponse* Arena::CreateMaybeMessage<::grpcI3DTransform::transformResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -536,7 +560,7 @@ class transformInPlace_grpc0Request PROTOBUF_FINAL :
 
   enum : int {
     kTransformationFieldNumber = 1,
-    kPointCloudFieldNumber = 2,
+    kMapFieldNumber = 2,
   };
   // bytes transformation = 1;
   void clear_transformation();
@@ -554,20 +578,20 @@ class transformInPlace_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes pointCloud = 2;
-  void clear_pointcloud();
-  const std::string& pointcloud() const;
-  void set_pointcloud(const std::string& value);
-  void set_pointcloud(std::string&& value);
-  void set_pointcloud(const char* value);
-  void set_pointcloud(const void* value, size_t size);
-  std::string* mutable_pointcloud();
-  std::string* release_pointcloud();
-  void set_allocated_pointcloud(std::string* pointcloud);
+  // bytes map = 2;
+  void clear_map();
+  const std::string& map() const;
+  void set_map(const std::string& value);
+  void set_map(std::string&& value);
+  void set_map(const char* value);
+  void set_map(const void* value, size_t size);
+  std::string* mutable_map();
+  std::string* release_map();
+  void set_allocated_map(std::string* map);
   private:
-  const std::string& _internal_pointcloud() const;
-  void _internal_set_pointcloud(const std::string& value);
-  std::string* _internal_mutable_pointcloud();
+  const std::string& _internal_map() const;
+  void _internal_set_map(const std::string& value);
+  std::string* _internal_mutable_map();
   public:
 
   // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc0Request)
@@ -578,7 +602,7 @@ class transformInPlace_grpc0Request PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr map_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
 };
@@ -697,26 +721,9 @@ class transformInPlace_grpc0Response PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPointCloudFieldNumber = 1,
-    kXpcfGrpcReturnValueFieldNumber = 2,
+    kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes pointCloud = 1;
-  void clear_pointcloud();
-  const std::string& pointcloud() const;
-  void set_pointcloud(const std::string& value);
-  void set_pointcloud(std::string&& value);
-  void set_pointcloud(const char* value);
-  void set_pointcloud(const void* value, size_t size);
-  std::string* mutable_pointcloud();
-  std::string* release_pointcloud();
-  void set_allocated_pointcloud(std::string* pointcloud);
-  private:
-  const std::string& _internal_pointcloud() const;
-  void _internal_set_pointcloud(const std::string& value);
-  std::string* _internal_mutable_pointcloud();
-  public:
-
-  // sint32 xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -732,7 +739,6 @@ class transformInPlace_grpc0Response PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
@@ -853,7 +859,7 @@ class transformInPlace_grpc1Request PROTOBUF_FINAL :
 
   enum : int {
     kTransformationFieldNumber = 1,
-    kKeyframesFieldNumber = 2,
+    kPointCloudFieldNumber = 2,
   };
   // bytes transformation = 1;
   void clear_transformation();
@@ -871,20 +877,20 @@ class transformInPlace_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes keyframes = 2;
-  void clear_keyframes();
-  const std::string& keyframes() const;
-  void set_keyframes(const std::string& value);
-  void set_keyframes(std::string&& value);
-  void set_keyframes(const char* value);
-  void set_keyframes(const void* value, size_t size);
-  std::string* mutable_keyframes();
-  std::string* release_keyframes();
-  void set_allocated_keyframes(std::string* keyframes);
+  // bytes pointCloud = 2;
+  void clear_pointcloud();
+  const std::string& pointcloud() const;
+  void set_pointcloud(const std::string& value);
+  void set_pointcloud(std::string&& value);
+  void set_pointcloud(const char* value);
+  void set_pointcloud(const void* value, size_t size);
+  std::string* mutable_pointcloud();
+  std::string* release_pointcloud();
+  void set_allocated_pointcloud(std::string* pointcloud);
   private:
-  const std::string& _internal_keyframes() const;
-  void _internal_set_keyframes(const std::string& value);
-  std::string* _internal_mutable_keyframes();
+  const std::string& _internal_pointcloud() const;
+  void _internal_set_pointcloud(const std::string& value);
+  std::string* _internal_mutable_pointcloud();
   public:
 
   // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc1Request)
@@ -895,7 +901,7 @@ class transformInPlace_grpc1Request PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframes_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
 };
@@ -1014,6 +1020,323 @@ class transformInPlace_grpc1Response PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kPointCloudFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes pointCloud = 1;
+  void clear_pointcloud();
+  const std::string& pointcloud() const;
+  void set_pointcloud(const std::string& value);
+  void set_pointcloud(std::string&& value);
+  void set_pointcloud(const char* value);
+  void set_pointcloud(const void* value, size_t size);
+  std::string* mutable_pointcloud();
+  std::string* release_pointcloud();
+  void set_allocated_pointcloud(std::string* pointcloud);
+  private:
+  const std::string& _internal_pointcloud() const;
+  void _internal_set_pointcloud(const std::string& value);
+  std::string* _internal_mutable_pointcloud();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc1Response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcI3DTransformService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class transformInPlace_grpc2Request PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcI3DTransform.transformInPlace_grpc2Request) */ {
+ public:
+  inline transformInPlace_grpc2Request() : transformInPlace_grpc2Request(nullptr) {}
+  virtual ~transformInPlace_grpc2Request();
+  explicit constexpr transformInPlace_grpc2Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  transformInPlace_grpc2Request(const transformInPlace_grpc2Request& from);
+  transformInPlace_grpc2Request(transformInPlace_grpc2Request&& from) noexcept
+    : transformInPlace_grpc2Request() {
+    *this = ::std::move(from);
+  }
+
+  inline transformInPlace_grpc2Request& operator=(const transformInPlace_grpc2Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline transformInPlace_grpc2Request& operator=(transformInPlace_grpc2Request&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const transformInPlace_grpc2Request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const transformInPlace_grpc2Request* internal_default_instance() {
+    return reinterpret_cast<const transformInPlace_grpc2Request*>(
+               &_transformInPlace_grpc2Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(transformInPlace_grpc2Request& a, transformInPlace_grpc2Request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(transformInPlace_grpc2Request* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(transformInPlace_grpc2Request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline transformInPlace_grpc2Request* New() const final {
+    return CreateMaybeMessage<transformInPlace_grpc2Request>(nullptr);
+  }
+
+  transformInPlace_grpc2Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<transformInPlace_grpc2Request>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const transformInPlace_grpc2Request& from);
+  void MergeFrom(const transformInPlace_grpc2Request& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(transformInPlace_grpc2Request* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcI3DTransform.transformInPlace_grpc2Request";
+  }
+  protected:
+  explicit transformInPlace_grpc2Request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcI3DTransformService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTransformationFieldNumber = 1,
+    kKeyframesFieldNumber = 2,
+  };
+  // bytes transformation = 1;
+  void clear_transformation();
+  const std::string& transformation() const;
+  void set_transformation(const std::string& value);
+  void set_transformation(std::string&& value);
+  void set_transformation(const char* value);
+  void set_transformation(const void* value, size_t size);
+  std::string* mutable_transformation();
+  std::string* release_transformation();
+  void set_allocated_transformation(std::string* transformation);
+  private:
+  const std::string& _internal_transformation() const;
+  void _internal_set_transformation(const std::string& value);
+  std::string* _internal_mutable_transformation();
+  public:
+
+  // bytes keyframes = 2;
+  void clear_keyframes();
+  const std::string& keyframes() const;
+  void set_keyframes(const std::string& value);
+  void set_keyframes(std::string&& value);
+  void set_keyframes(const char* value);
+  void set_keyframes(const void* value, size_t size);
+  std::string* mutable_keyframes();
+  std::string* release_keyframes();
+  void set_allocated_keyframes(std::string* keyframes);
+  private:
+  const std::string& _internal_keyframes() const;
+  void _internal_set_keyframes(const std::string& value);
+  std::string* _internal_mutable_keyframes();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc2Request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframes_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcI3DTransformService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class transformInPlace_grpc2Response PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcI3DTransform.transformInPlace_grpc2Response) */ {
+ public:
+  inline transformInPlace_grpc2Response() : transformInPlace_grpc2Response(nullptr) {}
+  virtual ~transformInPlace_grpc2Response();
+  explicit constexpr transformInPlace_grpc2Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  transformInPlace_grpc2Response(const transformInPlace_grpc2Response& from);
+  transformInPlace_grpc2Response(transformInPlace_grpc2Response&& from) noexcept
+    : transformInPlace_grpc2Response() {
+    *this = ::std::move(from);
+  }
+
+  inline transformInPlace_grpc2Response& operator=(const transformInPlace_grpc2Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline transformInPlace_grpc2Response& operator=(transformInPlace_grpc2Response&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const transformInPlace_grpc2Response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const transformInPlace_grpc2Response* internal_default_instance() {
+    return reinterpret_cast<const transformInPlace_grpc2Response*>(
+               &_transformInPlace_grpc2Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(transformInPlace_grpc2Response& a, transformInPlace_grpc2Response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(transformInPlace_grpc2Response* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(transformInPlace_grpc2Response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline transformInPlace_grpc2Response* New() const final {
+    return CreateMaybeMessage<transformInPlace_grpc2Response>(nullptr);
+  }
+
+  transformInPlace_grpc2Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<transformInPlace_grpc2Response>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const transformInPlace_grpc2Response& from);
+  void MergeFrom(const transformInPlace_grpc2Response& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(transformInPlace_grpc2Response* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcI3DTransform.transformInPlace_grpc2Response";
+  }
+  protected:
+  explicit transformInPlace_grpc2Response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcI3DTransformService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
     kKeyframesFieldNumber = 1,
     kXpcfGrpcReturnValueFieldNumber = 2,
   };
@@ -1042,7 +1365,7 @@ class transformInPlace_grpc1Response PROTOBUF_FINAL :
   void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc1Response)
+  // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc2Response)
  private:
   class _Internal;
 
@@ -1050,6 +1373,604 @@ class transformInPlace_grpc1Response PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframes_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcI3DTransformService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class transformInPlace_grpc3Request PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcI3DTransform.transformInPlace_grpc3Request) */ {
+ public:
+  inline transformInPlace_grpc3Request() : transformInPlace_grpc3Request(nullptr) {}
+  virtual ~transformInPlace_grpc3Request();
+  explicit constexpr transformInPlace_grpc3Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  transformInPlace_grpc3Request(const transformInPlace_grpc3Request& from);
+  transformInPlace_grpc3Request(transformInPlace_grpc3Request&& from) noexcept
+    : transformInPlace_grpc3Request() {
+    *this = ::std::move(from);
+  }
+
+  inline transformInPlace_grpc3Request& operator=(const transformInPlace_grpc3Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline transformInPlace_grpc3Request& operator=(transformInPlace_grpc3Request&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const transformInPlace_grpc3Request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const transformInPlace_grpc3Request* internal_default_instance() {
+    return reinterpret_cast<const transformInPlace_grpc3Request*>(
+               &_transformInPlace_grpc3Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(transformInPlace_grpc3Request& a, transformInPlace_grpc3Request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(transformInPlace_grpc3Request* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(transformInPlace_grpc3Request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline transformInPlace_grpc3Request* New() const final {
+    return CreateMaybeMessage<transformInPlace_grpc3Request>(nullptr);
+  }
+
+  transformInPlace_grpc3Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<transformInPlace_grpc3Request>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const transformInPlace_grpc3Request& from);
+  void MergeFrom(const transformInPlace_grpc3Request& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(transformInPlace_grpc3Request* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcI3DTransform.transformInPlace_grpc3Request";
+  }
+  protected:
+  explicit transformInPlace_grpc3Request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcI3DTransformService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTransformationFieldNumber = 1,
+    kPointCloudFieldNumber = 2,
+  };
+  // bytes transformation = 1;
+  void clear_transformation();
+  const std::string& transformation() const;
+  void set_transformation(const std::string& value);
+  void set_transformation(std::string&& value);
+  void set_transformation(const char* value);
+  void set_transformation(const void* value, size_t size);
+  std::string* mutable_transformation();
+  std::string* release_transformation();
+  void set_allocated_transformation(std::string* transformation);
+  private:
+  const std::string& _internal_transformation() const;
+  void _internal_set_transformation(const std::string& value);
+  std::string* _internal_mutable_transformation();
+  public:
+
+  // bytes pointCloud = 2;
+  void clear_pointcloud();
+  const std::string& pointcloud() const;
+  void set_pointcloud(const std::string& value);
+  void set_pointcloud(std::string&& value);
+  void set_pointcloud(const char* value);
+  void set_pointcloud(const void* value, size_t size);
+  std::string* mutable_pointcloud();
+  std::string* release_pointcloud();
+  void set_allocated_pointcloud(std::string* pointcloud);
+  private:
+  const std::string& _internal_pointcloud() const;
+  void _internal_set_pointcloud(const std::string& value);
+  std::string* _internal_mutable_pointcloud();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc3Request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcI3DTransformService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class transformInPlace_grpc3Response PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcI3DTransform.transformInPlace_grpc3Response) */ {
+ public:
+  inline transformInPlace_grpc3Response() : transformInPlace_grpc3Response(nullptr) {}
+  virtual ~transformInPlace_grpc3Response();
+  explicit constexpr transformInPlace_grpc3Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  transformInPlace_grpc3Response(const transformInPlace_grpc3Response& from);
+  transformInPlace_grpc3Response(transformInPlace_grpc3Response&& from) noexcept
+    : transformInPlace_grpc3Response() {
+    *this = ::std::move(from);
+  }
+
+  inline transformInPlace_grpc3Response& operator=(const transformInPlace_grpc3Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline transformInPlace_grpc3Response& operator=(transformInPlace_grpc3Response&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const transformInPlace_grpc3Response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const transformInPlace_grpc3Response* internal_default_instance() {
+    return reinterpret_cast<const transformInPlace_grpc3Response*>(
+               &_transformInPlace_grpc3Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(transformInPlace_grpc3Response& a, transformInPlace_grpc3Response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(transformInPlace_grpc3Response* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(transformInPlace_grpc3Response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline transformInPlace_grpc3Response* New() const final {
+    return CreateMaybeMessage<transformInPlace_grpc3Response>(nullptr);
+  }
+
+  transformInPlace_grpc3Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<transformInPlace_grpc3Response>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const transformInPlace_grpc3Response& from);
+  void MergeFrom(const transformInPlace_grpc3Response& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(transformInPlace_grpc3Response* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcI3DTransform.transformInPlace_grpc3Response";
+  }
+  protected:
+  explicit transformInPlace_grpc3Response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcI3DTransformService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc3Response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcI3DTransformService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class transformInPlace_grpc4Request PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcI3DTransform.transformInPlace_grpc4Request) */ {
+ public:
+  inline transformInPlace_grpc4Request() : transformInPlace_grpc4Request(nullptr) {}
+  virtual ~transformInPlace_grpc4Request();
+  explicit constexpr transformInPlace_grpc4Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  transformInPlace_grpc4Request(const transformInPlace_grpc4Request& from);
+  transformInPlace_grpc4Request(transformInPlace_grpc4Request&& from) noexcept
+    : transformInPlace_grpc4Request() {
+    *this = ::std::move(from);
+  }
+
+  inline transformInPlace_grpc4Request& operator=(const transformInPlace_grpc4Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline transformInPlace_grpc4Request& operator=(transformInPlace_grpc4Request&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const transformInPlace_grpc4Request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const transformInPlace_grpc4Request* internal_default_instance() {
+    return reinterpret_cast<const transformInPlace_grpc4Request*>(
+               &_transformInPlace_grpc4Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(transformInPlace_grpc4Request& a, transformInPlace_grpc4Request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(transformInPlace_grpc4Request* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(transformInPlace_grpc4Request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline transformInPlace_grpc4Request* New() const final {
+    return CreateMaybeMessage<transformInPlace_grpc4Request>(nullptr);
+  }
+
+  transformInPlace_grpc4Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<transformInPlace_grpc4Request>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const transformInPlace_grpc4Request& from);
+  void MergeFrom(const transformInPlace_grpc4Request& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(transformInPlace_grpc4Request* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcI3DTransform.transformInPlace_grpc4Request";
+  }
+  protected:
+  explicit transformInPlace_grpc4Request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcI3DTransformService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTransformationFieldNumber = 1,
+    kKeyframeCollectionFieldNumber = 2,
+  };
+  // bytes transformation = 1;
+  void clear_transformation();
+  const std::string& transformation() const;
+  void set_transformation(const std::string& value);
+  void set_transformation(std::string&& value);
+  void set_transformation(const char* value);
+  void set_transformation(const void* value, size_t size);
+  std::string* mutable_transformation();
+  std::string* release_transformation();
+  void set_allocated_transformation(std::string* transformation);
+  private:
+  const std::string& _internal_transformation() const;
+  void _internal_set_transformation(const std::string& value);
+  std::string* _internal_mutable_transformation();
+  public:
+
+  // bytes keyframeCollection = 2;
+  void clear_keyframecollection();
+  const std::string& keyframecollection() const;
+  void set_keyframecollection(const std::string& value);
+  void set_keyframecollection(std::string&& value);
+  void set_keyframecollection(const char* value);
+  void set_keyframecollection(const void* value, size_t size);
+  std::string* mutable_keyframecollection();
+  std::string* release_keyframecollection();
+  void set_allocated_keyframecollection(std::string* keyframecollection);
+  private:
+  const std::string& _internal_keyframecollection() const;
+  void _internal_set_keyframecollection(const std::string& value);
+  std::string* _internal_mutable_keyframecollection();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc4Request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframecollection_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcI3DTransformService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class transformInPlace_grpc4Response PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcI3DTransform.transformInPlace_grpc4Response) */ {
+ public:
+  inline transformInPlace_grpc4Response() : transformInPlace_grpc4Response(nullptr) {}
+  virtual ~transformInPlace_grpc4Response();
+  explicit constexpr transformInPlace_grpc4Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  transformInPlace_grpc4Response(const transformInPlace_grpc4Response& from);
+  transformInPlace_grpc4Response(transformInPlace_grpc4Response&& from) noexcept
+    : transformInPlace_grpc4Response() {
+    *this = ::std::move(from);
+  }
+
+  inline transformInPlace_grpc4Response& operator=(const transformInPlace_grpc4Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline transformInPlace_grpc4Response& operator=(transformInPlace_grpc4Response&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const transformInPlace_grpc4Response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const transformInPlace_grpc4Response* internal_default_instance() {
+    return reinterpret_cast<const transformInPlace_grpc4Response*>(
+               &_transformInPlace_grpc4Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(transformInPlace_grpc4Response& a, transformInPlace_grpc4Response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(transformInPlace_grpc4Response* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(transformInPlace_grpc4Response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline transformInPlace_grpc4Response* New() const final {
+    return CreateMaybeMessage<transformInPlace_grpc4Response>(nullptr);
+  }
+
+  transformInPlace_grpc4Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<transformInPlace_grpc4Response>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const transformInPlace_grpc4Response& from);
+  void MergeFrom(const transformInPlace_grpc4Response& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(transformInPlace_grpc4Response* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcI3DTransform.transformInPlace_grpc4Response";
+  }
+  protected:
+  explicit transformInPlace_grpc4Response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcI3DTransformService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc4Response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
@@ -1398,133 +2319,72 @@ inline void transformInPlace_grpc0Request::set_allocated_transformation(std::str
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc0Request.transformation)
 }
 
-// bytes pointCloud = 2;
-inline void transformInPlace_grpc0Request::clear_pointcloud() {
-  pointcloud_.ClearToEmpty();
+// bytes map = 2;
+inline void transformInPlace_grpc0Request::clear_map() {
+  map_.ClearToEmpty();
 }
-inline const std::string& transformInPlace_grpc0Request::pointcloud() const {
-  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc0Request.pointCloud)
-  return _internal_pointcloud();
+inline const std::string& transformInPlace_grpc0Request::map() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc0Request.map)
+  return _internal_map();
 }
-inline void transformInPlace_grpc0Request::set_pointcloud(const std::string& value) {
-  _internal_set_pointcloud(value);
-  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc0Request.pointCloud)
+inline void transformInPlace_grpc0Request::set_map(const std::string& value) {
+  _internal_set_map(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc0Request.map)
 }
-inline std::string* transformInPlace_grpc0Request::mutable_pointcloud() {
-  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc0Request.pointCloud)
-  return _internal_mutable_pointcloud();
+inline std::string* transformInPlace_grpc0Request::mutable_map() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc0Request.map)
+  return _internal_mutable_map();
 }
-inline const std::string& transformInPlace_grpc0Request::_internal_pointcloud() const {
-  return pointcloud_.Get();
+inline const std::string& transformInPlace_grpc0Request::_internal_map() const {
+  return map_.Get();
 }
-inline void transformInPlace_grpc0Request::_internal_set_pointcloud(const std::string& value) {
+inline void transformInPlace_grpc0Request::_internal_set_map(const std::string& value) {
   
-  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  map_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void transformInPlace_grpc0Request::set_pointcloud(std::string&& value) {
+inline void transformInPlace_grpc0Request::set_map(std::string&& value) {
   
-  pointcloud_.Set(
+  map_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc0Request.pointCloud)
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc0Request.map)
 }
-inline void transformInPlace_grpc0Request::set_pointcloud(const char* value) {
+inline void transformInPlace_grpc0Request::set_map(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc0Request.pointCloud)
+  map_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc0Request.map)
 }
-inline void transformInPlace_grpc0Request::set_pointcloud(const void* value,
+inline void transformInPlace_grpc0Request::set_map(const void* value,
     size_t size) {
   
-  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  map_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc0Request.pointCloud)
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc0Request.map)
 }
-inline std::string* transformInPlace_grpc0Request::_internal_mutable_pointcloud() {
+inline std::string* transformInPlace_grpc0Request::_internal_mutable_map() {
   
-  return pointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return map_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* transformInPlace_grpc0Request::release_pointcloud() {
-  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc0Request.pointCloud)
-  return pointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* transformInPlace_grpc0Request::release_map() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc0Request.map)
+  return map_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void transformInPlace_grpc0Request::set_allocated_pointcloud(std::string* pointcloud) {
-  if (pointcloud != nullptr) {
+inline void transformInPlace_grpc0Request::set_allocated_map(std::string* map) {
+  if (map != nullptr) {
     
   } else {
     
   }
-  pointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pointcloud,
+  map_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), map,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc0Request.pointCloud)
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc0Request.map)
 }
 
 // -------------------------------------------------------------------
 
 // transformInPlace_grpc0Response
 
-// bytes pointCloud = 1;
-inline void transformInPlace_grpc0Response::clear_pointcloud() {
-  pointcloud_.ClearToEmpty();
-}
-inline const std::string& transformInPlace_grpc0Response::pointcloud() const {
-  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc0Response.pointCloud)
-  return _internal_pointcloud();
-}
-inline void transformInPlace_grpc0Response::set_pointcloud(const std::string& value) {
-  _internal_set_pointcloud(value);
-  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc0Response.pointCloud)
-}
-inline std::string* transformInPlace_grpc0Response::mutable_pointcloud() {
-  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc0Response.pointCloud)
-  return _internal_mutable_pointcloud();
-}
-inline const std::string& transformInPlace_grpc0Response::_internal_pointcloud() const {
-  return pointcloud_.Get();
-}
-inline void transformInPlace_grpc0Response::_internal_set_pointcloud(const std::string& value) {
-  
-  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void transformInPlace_grpc0Response::set_pointcloud(std::string&& value) {
-  
-  pointcloud_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc0Response.pointCloud)
-}
-inline void transformInPlace_grpc0Response::set_pointcloud(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc0Response.pointCloud)
-}
-inline void transformInPlace_grpc0Response::set_pointcloud(const void* value,
-    size_t size) {
-  
-  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc0Response.pointCloud)
-}
-inline std::string* transformInPlace_grpc0Response::_internal_mutable_pointcloud() {
-  
-  return pointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* transformInPlace_grpc0Response::release_pointcloud() {
-  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc0Response.pointCloud)
-  return pointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void transformInPlace_grpc0Response::set_allocated_pointcloud(std::string* pointcloud) {
-  if (pointcloud != nullptr) {
-    
-  } else {
-    
-  }
-  pointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pointcloud,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc0Response.pointCloud)
-}
-
-// sint32 xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void transformInPlace_grpc0Response::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }
@@ -1609,130 +2469,130 @@ inline void transformInPlace_grpc1Request::set_allocated_transformation(std::str
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc1Request.transformation)
 }
 
-// bytes keyframes = 2;
-inline void transformInPlace_grpc1Request::clear_keyframes() {
-  keyframes_.ClearToEmpty();
+// bytes pointCloud = 2;
+inline void transformInPlace_grpc1Request::clear_pointcloud() {
+  pointcloud_.ClearToEmpty();
 }
-inline const std::string& transformInPlace_grpc1Request::keyframes() const {
-  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc1Request.keyframes)
-  return _internal_keyframes();
+inline const std::string& transformInPlace_grpc1Request::pointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc1Request.pointCloud)
+  return _internal_pointcloud();
 }
-inline void transformInPlace_grpc1Request::set_keyframes(const std::string& value) {
-  _internal_set_keyframes(value);
-  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc1Request.keyframes)
+inline void transformInPlace_grpc1Request::set_pointcloud(const std::string& value) {
+  _internal_set_pointcloud(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc1Request.pointCloud)
 }
-inline std::string* transformInPlace_grpc1Request::mutable_keyframes() {
-  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc1Request.keyframes)
-  return _internal_mutable_keyframes();
+inline std::string* transformInPlace_grpc1Request::mutable_pointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc1Request.pointCloud)
+  return _internal_mutable_pointcloud();
 }
-inline const std::string& transformInPlace_grpc1Request::_internal_keyframes() const {
-  return keyframes_.Get();
+inline const std::string& transformInPlace_grpc1Request::_internal_pointcloud() const {
+  return pointcloud_.Get();
 }
-inline void transformInPlace_grpc1Request::_internal_set_keyframes(const std::string& value) {
+inline void transformInPlace_grpc1Request::_internal_set_pointcloud(const std::string& value) {
   
-  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void transformInPlace_grpc1Request::set_keyframes(std::string&& value) {
+inline void transformInPlace_grpc1Request::set_pointcloud(std::string&& value) {
   
-  keyframes_.Set(
+  pointcloud_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc1Request.keyframes)
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc1Request.pointCloud)
 }
-inline void transformInPlace_grpc1Request::set_keyframes(const char* value) {
+inline void transformInPlace_grpc1Request::set_pointcloud(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc1Request.keyframes)
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc1Request.pointCloud)
 }
-inline void transformInPlace_grpc1Request::set_keyframes(const void* value,
+inline void transformInPlace_grpc1Request::set_pointcloud(const void* value,
     size_t size) {
   
-  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc1Request.keyframes)
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc1Request.pointCloud)
 }
-inline std::string* transformInPlace_grpc1Request::_internal_mutable_keyframes() {
+inline std::string* transformInPlace_grpc1Request::_internal_mutable_pointcloud() {
   
-  return keyframes_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return pointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* transformInPlace_grpc1Request::release_keyframes() {
-  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc1Request.keyframes)
-  return keyframes_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* transformInPlace_grpc1Request::release_pointcloud() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc1Request.pointCloud)
+  return pointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void transformInPlace_grpc1Request::set_allocated_keyframes(std::string* keyframes) {
-  if (keyframes != nullptr) {
+inline void transformInPlace_grpc1Request::set_allocated_pointcloud(std::string* pointcloud) {
+  if (pointcloud != nullptr) {
     
   } else {
     
   }
-  keyframes_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframes,
+  pointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pointcloud,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc1Request.keyframes)
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc1Request.pointCloud)
 }
 
 // -------------------------------------------------------------------
 
 // transformInPlace_grpc1Response
 
-// bytes keyframes = 1;
-inline void transformInPlace_grpc1Response::clear_keyframes() {
-  keyframes_.ClearToEmpty();
+// bytes pointCloud = 1;
+inline void transformInPlace_grpc1Response::clear_pointcloud() {
+  pointcloud_.ClearToEmpty();
 }
-inline const std::string& transformInPlace_grpc1Response::keyframes() const {
-  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc1Response.keyframes)
-  return _internal_keyframes();
+inline const std::string& transformInPlace_grpc1Response::pointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc1Response.pointCloud)
+  return _internal_pointcloud();
 }
-inline void transformInPlace_grpc1Response::set_keyframes(const std::string& value) {
-  _internal_set_keyframes(value);
-  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc1Response.keyframes)
+inline void transformInPlace_grpc1Response::set_pointcloud(const std::string& value) {
+  _internal_set_pointcloud(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc1Response.pointCloud)
 }
-inline std::string* transformInPlace_grpc1Response::mutable_keyframes() {
-  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc1Response.keyframes)
-  return _internal_mutable_keyframes();
+inline std::string* transformInPlace_grpc1Response::mutable_pointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc1Response.pointCloud)
+  return _internal_mutable_pointcloud();
 }
-inline const std::string& transformInPlace_grpc1Response::_internal_keyframes() const {
-  return keyframes_.Get();
+inline const std::string& transformInPlace_grpc1Response::_internal_pointcloud() const {
+  return pointcloud_.Get();
 }
-inline void transformInPlace_grpc1Response::_internal_set_keyframes(const std::string& value) {
+inline void transformInPlace_grpc1Response::_internal_set_pointcloud(const std::string& value) {
   
-  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void transformInPlace_grpc1Response::set_keyframes(std::string&& value) {
+inline void transformInPlace_grpc1Response::set_pointcloud(std::string&& value) {
   
-  keyframes_.Set(
+  pointcloud_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc1Response.keyframes)
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc1Response.pointCloud)
 }
-inline void transformInPlace_grpc1Response::set_keyframes(const char* value) {
+inline void transformInPlace_grpc1Response::set_pointcloud(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc1Response.keyframes)
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc1Response.pointCloud)
 }
-inline void transformInPlace_grpc1Response::set_keyframes(const void* value,
+inline void transformInPlace_grpc1Response::set_pointcloud(const void* value,
     size_t size) {
   
-  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc1Response.keyframes)
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc1Response.pointCloud)
 }
-inline std::string* transformInPlace_grpc1Response::_internal_mutable_keyframes() {
+inline std::string* transformInPlace_grpc1Response::_internal_mutable_pointcloud() {
   
-  return keyframes_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return pointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* transformInPlace_grpc1Response::release_keyframes() {
-  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc1Response.keyframes)
-  return keyframes_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* transformInPlace_grpc1Response::release_pointcloud() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc1Response.pointCloud)
+  return pointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void transformInPlace_grpc1Response::set_allocated_keyframes(std::string* keyframes) {
-  if (keyframes != nullptr) {
+inline void transformInPlace_grpc1Response::set_allocated_pointcloud(std::string* pointcloud) {
+  if (pointcloud != nullptr) {
     
   } else {
     
   }
-  keyframes_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframes,
+  pointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pointcloud,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc1Response.keyframes)
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc1Response.pointCloud)
 }
 
 // sint32 xpcfGrpcReturnValue = 2;
@@ -1755,9 +2615,532 @@ inline void transformInPlace_grpc1Response::set_xpcfgrpcreturnvalue(::PROTOBUF_N
   // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc1Response.xpcfGrpcReturnValue)
 }
 
+// -------------------------------------------------------------------
+
+// transformInPlace_grpc2Request
+
+// bytes transformation = 1;
+inline void transformInPlace_grpc2Request::clear_transformation() {
+  transformation_.ClearToEmpty();
+}
+inline const std::string& transformInPlace_grpc2Request::transformation() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc2Request.transformation)
+  return _internal_transformation();
+}
+inline void transformInPlace_grpc2Request::set_transformation(const std::string& value) {
+  _internal_set_transformation(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc2Request.transformation)
+}
+inline std::string* transformInPlace_grpc2Request::mutable_transformation() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc2Request.transformation)
+  return _internal_mutable_transformation();
+}
+inline const std::string& transformInPlace_grpc2Request::_internal_transformation() const {
+  return transformation_.Get();
+}
+inline void transformInPlace_grpc2Request::_internal_set_transformation(const std::string& value) {
+  
+  transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void transformInPlace_grpc2Request::set_transformation(std::string&& value) {
+  
+  transformation_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc2Request.transformation)
+}
+inline void transformInPlace_grpc2Request::set_transformation(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc2Request.transformation)
+}
+inline void transformInPlace_grpc2Request::set_transformation(const void* value,
+    size_t size) {
+  
+  transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc2Request.transformation)
+}
+inline std::string* transformInPlace_grpc2Request::_internal_mutable_transformation() {
+  
+  return transformation_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* transformInPlace_grpc2Request::release_transformation() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc2Request.transformation)
+  return transformation_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void transformInPlace_grpc2Request::set_allocated_transformation(std::string* transformation) {
+  if (transformation != nullptr) {
+    
+  } else {
+    
+  }
+  transformation_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transformation,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc2Request.transformation)
+}
+
+// bytes keyframes = 2;
+inline void transformInPlace_grpc2Request::clear_keyframes() {
+  keyframes_.ClearToEmpty();
+}
+inline const std::string& transformInPlace_grpc2Request::keyframes() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc2Request.keyframes)
+  return _internal_keyframes();
+}
+inline void transformInPlace_grpc2Request::set_keyframes(const std::string& value) {
+  _internal_set_keyframes(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc2Request.keyframes)
+}
+inline std::string* transformInPlace_grpc2Request::mutable_keyframes() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc2Request.keyframes)
+  return _internal_mutable_keyframes();
+}
+inline const std::string& transformInPlace_grpc2Request::_internal_keyframes() const {
+  return keyframes_.Get();
+}
+inline void transformInPlace_grpc2Request::_internal_set_keyframes(const std::string& value) {
+  
+  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void transformInPlace_grpc2Request::set_keyframes(std::string&& value) {
+  
+  keyframes_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc2Request.keyframes)
+}
+inline void transformInPlace_grpc2Request::set_keyframes(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc2Request.keyframes)
+}
+inline void transformInPlace_grpc2Request::set_keyframes(const void* value,
+    size_t size) {
+  
+  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc2Request.keyframes)
+}
+inline std::string* transformInPlace_grpc2Request::_internal_mutable_keyframes() {
+  
+  return keyframes_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* transformInPlace_grpc2Request::release_keyframes() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc2Request.keyframes)
+  return keyframes_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void transformInPlace_grpc2Request::set_allocated_keyframes(std::string* keyframes) {
+  if (keyframes != nullptr) {
+    
+  } else {
+    
+  }
+  keyframes_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframes,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc2Request.keyframes)
+}
+
+// -------------------------------------------------------------------
+
+// transformInPlace_grpc2Response
+
+// bytes keyframes = 1;
+inline void transformInPlace_grpc2Response::clear_keyframes() {
+  keyframes_.ClearToEmpty();
+}
+inline const std::string& transformInPlace_grpc2Response::keyframes() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc2Response.keyframes)
+  return _internal_keyframes();
+}
+inline void transformInPlace_grpc2Response::set_keyframes(const std::string& value) {
+  _internal_set_keyframes(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc2Response.keyframes)
+}
+inline std::string* transformInPlace_grpc2Response::mutable_keyframes() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc2Response.keyframes)
+  return _internal_mutable_keyframes();
+}
+inline const std::string& transformInPlace_grpc2Response::_internal_keyframes() const {
+  return keyframes_.Get();
+}
+inline void transformInPlace_grpc2Response::_internal_set_keyframes(const std::string& value) {
+  
+  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void transformInPlace_grpc2Response::set_keyframes(std::string&& value) {
+  
+  keyframes_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc2Response.keyframes)
+}
+inline void transformInPlace_grpc2Response::set_keyframes(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc2Response.keyframes)
+}
+inline void transformInPlace_grpc2Response::set_keyframes(const void* value,
+    size_t size) {
+  
+  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc2Response.keyframes)
+}
+inline std::string* transformInPlace_grpc2Response::_internal_mutable_keyframes() {
+  
+  return keyframes_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* transformInPlace_grpc2Response::release_keyframes() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc2Response.keyframes)
+  return keyframes_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void transformInPlace_grpc2Response::set_allocated_keyframes(std::string* keyframes) {
+  if (keyframes != nullptr) {
+    
+  } else {
+    
+  }
+  keyframes_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframes,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc2Response.keyframes)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void transformInPlace_grpc2Response::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc2Response::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc2Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc2Response.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void transformInPlace_grpc2Response::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void transformInPlace_grpc2Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc2Response.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// transformInPlace_grpc3Request
+
+// bytes transformation = 1;
+inline void transformInPlace_grpc3Request::clear_transformation() {
+  transformation_.ClearToEmpty();
+}
+inline const std::string& transformInPlace_grpc3Request::transformation() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc3Request.transformation)
+  return _internal_transformation();
+}
+inline void transformInPlace_grpc3Request::set_transformation(const std::string& value) {
+  _internal_set_transformation(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc3Request.transformation)
+}
+inline std::string* transformInPlace_grpc3Request::mutable_transformation() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc3Request.transformation)
+  return _internal_mutable_transformation();
+}
+inline const std::string& transformInPlace_grpc3Request::_internal_transformation() const {
+  return transformation_.Get();
+}
+inline void transformInPlace_grpc3Request::_internal_set_transformation(const std::string& value) {
+  
+  transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void transformInPlace_grpc3Request::set_transformation(std::string&& value) {
+  
+  transformation_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc3Request.transformation)
+}
+inline void transformInPlace_grpc3Request::set_transformation(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc3Request.transformation)
+}
+inline void transformInPlace_grpc3Request::set_transformation(const void* value,
+    size_t size) {
+  
+  transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc3Request.transformation)
+}
+inline std::string* transformInPlace_grpc3Request::_internal_mutable_transformation() {
+  
+  return transformation_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* transformInPlace_grpc3Request::release_transformation() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc3Request.transformation)
+  return transformation_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void transformInPlace_grpc3Request::set_allocated_transformation(std::string* transformation) {
+  if (transformation != nullptr) {
+    
+  } else {
+    
+  }
+  transformation_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transformation,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc3Request.transformation)
+}
+
+// bytes pointCloud = 2;
+inline void transformInPlace_grpc3Request::clear_pointcloud() {
+  pointcloud_.ClearToEmpty();
+}
+inline const std::string& transformInPlace_grpc3Request::pointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc3Request.pointCloud)
+  return _internal_pointcloud();
+}
+inline void transformInPlace_grpc3Request::set_pointcloud(const std::string& value) {
+  _internal_set_pointcloud(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc3Request.pointCloud)
+}
+inline std::string* transformInPlace_grpc3Request::mutable_pointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc3Request.pointCloud)
+  return _internal_mutable_pointcloud();
+}
+inline const std::string& transformInPlace_grpc3Request::_internal_pointcloud() const {
+  return pointcloud_.Get();
+}
+inline void transformInPlace_grpc3Request::_internal_set_pointcloud(const std::string& value) {
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void transformInPlace_grpc3Request::set_pointcloud(std::string&& value) {
+  
+  pointcloud_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc3Request.pointCloud)
+}
+inline void transformInPlace_grpc3Request::set_pointcloud(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc3Request.pointCloud)
+}
+inline void transformInPlace_grpc3Request::set_pointcloud(const void* value,
+    size_t size) {
+  
+  pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc3Request.pointCloud)
+}
+inline std::string* transformInPlace_grpc3Request::_internal_mutable_pointcloud() {
+  
+  return pointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* transformInPlace_grpc3Request::release_pointcloud() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc3Request.pointCloud)
+  return pointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void transformInPlace_grpc3Request::set_allocated_pointcloud(std::string* pointcloud) {
+  if (pointcloud != nullptr) {
+    
+  } else {
+    
+  }
+  pointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pointcloud,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc3Request.pointCloud)
+}
+
+// -------------------------------------------------------------------
+
+// transformInPlace_grpc3Response
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void transformInPlace_grpc3Response::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc3Response::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc3Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc3Response.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void transformInPlace_grpc3Response::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void transformInPlace_grpc3Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc3Response.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// transformInPlace_grpc4Request
+
+// bytes transformation = 1;
+inline void transformInPlace_grpc4Request::clear_transformation() {
+  transformation_.ClearToEmpty();
+}
+inline const std::string& transformInPlace_grpc4Request::transformation() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc4Request.transformation)
+  return _internal_transformation();
+}
+inline void transformInPlace_grpc4Request::set_transformation(const std::string& value) {
+  _internal_set_transformation(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc4Request.transformation)
+}
+inline std::string* transformInPlace_grpc4Request::mutable_transformation() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc4Request.transformation)
+  return _internal_mutable_transformation();
+}
+inline const std::string& transformInPlace_grpc4Request::_internal_transformation() const {
+  return transformation_.Get();
+}
+inline void transformInPlace_grpc4Request::_internal_set_transformation(const std::string& value) {
+  
+  transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void transformInPlace_grpc4Request::set_transformation(std::string&& value) {
+  
+  transformation_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc4Request.transformation)
+}
+inline void transformInPlace_grpc4Request::set_transformation(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc4Request.transformation)
+}
+inline void transformInPlace_grpc4Request::set_transformation(const void* value,
+    size_t size) {
+  
+  transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc4Request.transformation)
+}
+inline std::string* transformInPlace_grpc4Request::_internal_mutable_transformation() {
+  
+  return transformation_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* transformInPlace_grpc4Request::release_transformation() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc4Request.transformation)
+  return transformation_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void transformInPlace_grpc4Request::set_allocated_transformation(std::string* transformation) {
+  if (transformation != nullptr) {
+    
+  } else {
+    
+  }
+  transformation_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transformation,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc4Request.transformation)
+}
+
+// bytes keyframeCollection = 2;
+inline void transformInPlace_grpc4Request::clear_keyframecollection() {
+  keyframecollection_.ClearToEmpty();
+}
+inline const std::string& transformInPlace_grpc4Request::keyframecollection() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc4Request.keyframeCollection)
+  return _internal_keyframecollection();
+}
+inline void transformInPlace_grpc4Request::set_keyframecollection(const std::string& value) {
+  _internal_set_keyframecollection(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc4Request.keyframeCollection)
+}
+inline std::string* transformInPlace_grpc4Request::mutable_keyframecollection() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DTransform.transformInPlace_grpc4Request.keyframeCollection)
+  return _internal_mutable_keyframecollection();
+}
+inline const std::string& transformInPlace_grpc4Request::_internal_keyframecollection() const {
+  return keyframecollection_.Get();
+}
+inline void transformInPlace_grpc4Request::_internal_set_keyframecollection(const std::string& value) {
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void transformInPlace_grpc4Request::set_keyframecollection(std::string&& value) {
+  
+  keyframecollection_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DTransform.transformInPlace_grpc4Request.keyframeCollection)
+}
+inline void transformInPlace_grpc4Request::set_keyframecollection(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DTransform.transformInPlace_grpc4Request.keyframeCollection)
+}
+inline void transformInPlace_grpc4Request::set_keyframecollection(const void* value,
+    size_t size) {
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DTransform.transformInPlace_grpc4Request.keyframeCollection)
+}
+inline std::string* transformInPlace_grpc4Request::_internal_mutable_keyframecollection() {
+  
+  return keyframecollection_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* transformInPlace_grpc4Request::release_keyframecollection() {
+  // @@protoc_insertion_point(field_release:grpcI3DTransform.transformInPlace_grpc4Request.keyframeCollection)
+  return keyframecollection_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void transformInPlace_grpc4Request::set_allocated_keyframecollection(std::string* keyframecollection) {
+  if (keyframecollection != nullptr) {
+    
+  } else {
+    
+  }
+  keyframecollection_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframecollection,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc4Request.keyframeCollection)
+}
+
+// -------------------------------------------------------------------
+
+// transformInPlace_grpc4Response
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void transformInPlace_grpc4Response::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc4Response::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc4Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc4Response.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void transformInPlace_grpc4Response::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void transformInPlace_grpc4Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc4Response.xpcfGrpcReturnValue)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

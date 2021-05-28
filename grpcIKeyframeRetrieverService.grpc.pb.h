@@ -92,6 +92,27 @@ class grpcIKeyframeRetrieverService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::match_grpc1Response>> PrepareAsyncmatch_grpc1(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::match_grpc1Response>>(PrepareAsyncmatch_grpc1Raw(context, request, cq));
     }
+    virtual ::grpc::Status getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>> AsyncgetConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>>(AsyncgetConstKeyframeRetrievalRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>> PrepareAsyncgetConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>>(PrepareAsyncgetConstKeyframeRetrievalRaw(context, request, cq));
+    }
+    virtual ::grpc::Status getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>> AsyncgetKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>>(AsyncgetKeyframeRetrievalRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>> PrepareAsyncgetKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>>(PrepareAsyncgetKeyframeRetrievalRaw(context, request, cq));
+    }
+    virtual ::grpc::Status setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::google::protobuf::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncsetKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncsetKeyframeRetrievalRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncsetKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncsetKeyframeRetrievalRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -143,6 +164,24 @@ class grpcIKeyframeRetrieverService final {
       #else
       virtual void match_grpc1(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request* request, ::grpcIKeyframeRetriever::match_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -168,6 +207,12 @@ class grpcIKeyframeRetrieverService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::match_grpc0Response>* PrepareAsyncmatch_grpc0Raw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::match_grpc1Response>* Asyncmatch_grpc1Raw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::match_grpc1Response>* PrepareAsyncmatch_grpc1Raw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* AsyncgetConstKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* PrepareAsyncgetConstKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* AsyncgetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* PrepareAsyncgetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncsetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncsetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -228,6 +273,27 @@ class grpcIKeyframeRetrieverService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::match_grpc1Response>> PrepareAsyncmatch_grpc1(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::match_grpc1Response>>(PrepareAsyncmatch_grpc1Raw(context, request, cq));
     }
+    ::grpc::Status getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>> AsyncgetConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>>(AsyncgetConstKeyframeRetrievalRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>> PrepareAsyncgetConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>>(PrepareAsyncgetConstKeyframeRetrievalRaw(context, request, cq));
+    }
+    ::grpc::Status getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>> AsyncgetKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>>(AsyncgetKeyframeRetrievalRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>> PrepareAsyncgetKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>>(PrepareAsyncgetKeyframeRetrievalRaw(context, request, cq));
+    }
+    ::grpc::Status setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::google::protobuf::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncsetKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncsetKeyframeRetrievalRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncsetKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncsetKeyframeRetrievalRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -279,6 +345,24 @@ class grpcIKeyframeRetrieverService final {
       #else
       void match_grpc1(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request* request, ::grpcIKeyframeRetriever::match_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -306,6 +390,12 @@ class grpcIKeyframeRetrieverService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::match_grpc0Response>* PrepareAsyncmatch_grpc0Raw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::match_grpc1Response>* Asyncmatch_grpc1Raw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::match_grpc1Response>* PrepareAsyncmatch_grpc1Raw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* AsyncgetConstKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* PrepareAsyncgetConstKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* AsyncgetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* PrepareAsyncgetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncsetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncsetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_addKeyframe_;
     const ::grpc::internal::RpcMethod rpcmethod_suppressKeyframe_;
     const ::grpc::internal::RpcMethod rpcmethod_retrieve_grpc0_;
@@ -314,6 +404,9 @@ class grpcIKeyframeRetrieverService final {
     const ::grpc::internal::RpcMethod rpcmethod_loadFromFile_;
     const ::grpc::internal::RpcMethod rpcmethod_match_grpc0_;
     const ::grpc::internal::RpcMethod rpcmethod_match_grpc1_;
+    const ::grpc::internal::RpcMethod rpcmethod_getConstKeyframeRetrieval_;
+    const ::grpc::internal::RpcMethod rpcmethod_getKeyframeRetrieval_;
+    const ::grpc::internal::RpcMethod rpcmethod_setKeyframeRetrieval_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -329,6 +422,9 @@ class grpcIKeyframeRetrieverService final {
     virtual ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::loadFromFileRequest* request, ::grpcIKeyframeRetriever::loadFromFileResponse* response);
     virtual ::grpc::Status match_grpc0(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::match_grpc0Request* request, ::grpcIKeyframeRetriever::match_grpc0Response* response);
     virtual ::grpc::Status match_grpc1(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request* request, ::grpcIKeyframeRetriever::match_grpc1Response* response);
+    virtual ::grpc::Status getConstKeyframeRetrieval(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response);
+    virtual ::grpc::Status getKeyframeRetrieval(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response);
+    virtual ::grpc::Status setKeyframeRetrieval(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_addKeyframe : public BaseClass {
@@ -490,7 +586,67 @@ class grpcIKeyframeRetrieverService final {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_addKeyframe<WithAsyncMethod_suppressKeyframe<WithAsyncMethod_retrieve_grpc0<WithAsyncMethod_retrieve_grpc1<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<WithAsyncMethod_match_grpc0<WithAsyncMethod_match_grpc1<Service > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_getConstKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_getConstKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_getConstKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getConstKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetConstKeyframeRetrieval(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_getKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_getKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodAsync(9);
+    }
+    ~WithAsyncMethod_getKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* /*request*/, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetKeyframeRetrieval(::grpc::ServerContext* context, ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_setKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_setKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodAsync(10);
+    }
+    ~WithAsyncMethod_setKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status setKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestsetKeyframeRetrieval(::grpc::ServerContext* context, ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_addKeyframe<WithAsyncMethod_suppressKeyframe<WithAsyncMethod_retrieve_grpc0<WithAsyncMethod_retrieve_grpc1<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<WithAsyncMethod_match_grpc0<WithAsyncMethod_match_grpc1<WithAsyncMethod_getConstKeyframeRetrieval<WithAsyncMethod_getKeyframeRetrieval<WithAsyncMethod_setKeyframeRetrieval<Service > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_addKeyframe : public BaseClass {
    private:
@@ -867,11 +1023,152 @@ class grpcIKeyframeRetrieverService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_getConstKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_getConstKeyframeRetrieval() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response) { return this->getConstKeyframeRetrieval(context, request, response); }));}
+    void SetMessageAllocatorFor_getConstKeyframeRetrieval(
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_getConstKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getConstKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getConstKeyframeRetrieval(
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getConstKeyframeRetrieval(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_getKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_getKeyframeRetrieval() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response) { return this->getKeyframeRetrieval(context, request, response); }));}
+    void SetMessageAllocatorFor_getKeyframeRetrieval(
+        ::grpc::experimental::MessageAllocator< ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_getKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* /*request*/, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getKeyframeRetrieval(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* /*request*/, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getKeyframeRetrieval(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* /*request*/, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_setKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_setKeyframeRetrieval() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, ::google::protobuf::Empty>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response) { return this->setKeyframeRetrieval(context, request, response); }));}
+    void SetMessageAllocatorFor_setKeyframeRetrieval(
+        ::grpc::experimental::MessageAllocator< ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, ::google::protobuf::Empty>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, ::google::protobuf::Empty>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_setKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status setKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* setKeyframeRetrieval(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setKeyframeRetrieval(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_suppressKeyframe<ExperimentalWithCallbackMethod_retrieve_grpc0<ExperimentalWithCallbackMethod_retrieve_grpc1<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_match_grpc0<ExperimentalWithCallbackMethod_match_grpc1<Service > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_suppressKeyframe<ExperimentalWithCallbackMethod_retrieve_grpc0<ExperimentalWithCallbackMethod_retrieve_grpc1<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_match_grpc0<ExperimentalWithCallbackMethod_match_grpc1<ExperimentalWithCallbackMethod_getConstKeyframeRetrieval<ExperimentalWithCallbackMethod_getKeyframeRetrieval<ExperimentalWithCallbackMethod_setKeyframeRetrieval<Service > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_suppressKeyframe<ExperimentalWithCallbackMethod_retrieve_grpc0<ExperimentalWithCallbackMethod_retrieve_grpc1<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_match_grpc0<ExperimentalWithCallbackMethod_match_grpc1<Service > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_suppressKeyframe<ExperimentalWithCallbackMethod_retrieve_grpc0<ExperimentalWithCallbackMethod_retrieve_grpc1<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_match_grpc0<ExperimentalWithCallbackMethod_match_grpc1<ExperimentalWithCallbackMethod_getConstKeyframeRetrieval<ExperimentalWithCallbackMethod_getKeyframeRetrieval<ExperimentalWithCallbackMethod_setKeyframeRetrieval<Service > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_addKeyframe : public BaseClass {
    private:
@@ -1004,6 +1301,57 @@ class grpcIKeyframeRetrieverService final {
     }
     // disable synchronous version of this method
     ::grpc::Status match_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::match_grpc1Request* /*request*/, ::grpcIKeyframeRetriever::match_grpc1Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_getConstKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_getConstKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_getConstKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getConstKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_getKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_getKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodGeneric(9);
+    }
+    ~WithGenericMethod_getKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* /*request*/, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_setKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_setKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodGeneric(10);
+    }
+    ~WithGenericMethod_setKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status setKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1166,6 +1514,66 @@ class grpcIKeyframeRetrieverService final {
     }
     void Requestmatch_grpc1(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_getConstKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_getConstKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_getConstKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getConstKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetConstKeyframeRetrieval(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_getKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_getKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodRaw(9);
+    }
+    ~WithRawMethod_getKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* /*request*/, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetKeyframeRetrieval(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_setKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_setKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodRaw(10);
+    }
+    ~WithRawMethod_setKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status setKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestsetKeyframeRetrieval(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1473,6 +1881,120 @@ class grpcIKeyframeRetrieverService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_getConstKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_getConstKeyframeRetrieval() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(8,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getConstKeyframeRetrieval(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_getConstKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getConstKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getConstKeyframeRetrieval(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getConstKeyframeRetrieval(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_getKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_getKeyframeRetrieval() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(9,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getKeyframeRetrieval(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_getKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* /*request*/, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getKeyframeRetrieval(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getKeyframeRetrieval(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_setKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_setKeyframeRetrieval() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setKeyframeRetrieval(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_setKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status setKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* setKeyframeRetrieval(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setKeyframeRetrieval(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_addKeyframe : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1688,9 +2210,90 @@ class grpcIKeyframeRetrieverService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status Streamedmatch_grpc1(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIKeyframeRetriever::match_grpc1Request,::grpcIKeyframeRetriever::match_grpc1Response>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_suppressKeyframe<WithStreamedUnaryMethod_retrieve_grpc0<WithStreamedUnaryMethod_retrieve_grpc1<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_match_grpc0<WithStreamedUnaryMethod_match_grpc1<Service > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_getConstKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_getConstKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodStreamed(8,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::google::protobuf::Empty, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::google::protobuf::Empty, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* streamer) {
+                       return this->StreamedgetConstKeyframeRetrieval(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_getConstKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status getConstKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedgetConstKeyframeRetrieval(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_getKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_getKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodStreamed(9,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* streamer) {
+                       return this->StreamedgetKeyframeRetrieval(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_getKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status getKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* /*request*/, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedgetKeyframeRetrieval(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest,::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_setKeyframeRetrieval : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_setKeyframeRetrieval() {
+      ::grpc::Service::MarkMethodStreamed(10,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, ::google::protobuf::Empty>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, ::google::protobuf::Empty>* streamer) {
+                       return this->StreamedsetKeyframeRetrieval(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_setKeyframeRetrieval() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status setKeyframeRetrieval(::grpc::ServerContext* /*context*/, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedsetKeyframeRetrieval(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_suppressKeyframe<WithStreamedUnaryMethod_retrieve_grpc0<WithStreamedUnaryMethod_retrieve_grpc1<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_match_grpc0<WithStreamedUnaryMethod_match_grpc1<WithStreamedUnaryMethod_getConstKeyframeRetrieval<WithStreamedUnaryMethod_getKeyframeRetrieval<WithStreamedUnaryMethod_setKeyframeRetrieval<Service > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_suppressKeyframe<WithStreamedUnaryMethod_retrieve_grpc0<WithStreamedUnaryMethod_retrieve_grpc1<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_match_grpc0<WithStreamedUnaryMethod_match_grpc1<Service > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_suppressKeyframe<WithStreamedUnaryMethod_retrieve_grpc0<WithStreamedUnaryMethod_retrieve_grpc1<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_match_grpc0<WithStreamedUnaryMethod_match_grpc1<WithStreamedUnaryMethod_getConstKeyframeRetrieval<WithStreamedUnaryMethod_getKeyframeRetrieval<WithStreamedUnaryMethod_setKeyframeRetrieval<Service > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIKeyframeRetriever

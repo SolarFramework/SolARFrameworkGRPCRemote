@@ -42,7 +42,7 @@ class I3DOverlay_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DOverlay::I3DOverlay_grpcServer>
 {
-  static constexpr const char * UUID = "d88cc682-bd53-4936-9175-12605f9cb814";
+  static constexpr const char * UUID = "e44254a9-7da3-454c-97cb-40696e0a55b4";
   static constexpr const char * NAME = "I3DOverlay_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DOverlay_grpcServer grpc server component";
 };

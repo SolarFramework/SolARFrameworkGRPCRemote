@@ -21,8 +21,8 @@ class IOverlapDetector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
     void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distortionParams)     override;
-    SolAR::FrameworkReturnCode detect(SRef<SolAR::api::solver::map::IMapper> const globalMap, SRef<SolAR::api::solver::map::IMapper> const floatingMap, SolAR::datastructure::Transform3Df& sim3Transform, std::vector<std::pair<uint32_t,uint32_t>>& cpOverlapIndices)     const     override;
-    SolAR::FrameworkReturnCode detect(SRef<SolAR::api::solver::map::IMapper> const globalMap, SRef<SolAR::api::solver::map::IMapper> const floatingMap, std::vector<SolAR::datastructure::Transform3Df>& sim3Transform, std::vector<std::pair<uint32_t,uint32_t>>& overlapIndices, std::vector<double>& scores)     const     override;
+    SolAR::FrameworkReturnCode detect(SRef<SolAR::datastructure::Map> const globalMap, SRef<SolAR::datastructure::Map> const floatingMap, SolAR::datastructure::Transform3Df& sim3Transform, std::vector<std::pair<uint32_t,uint32_t>>& cpOverlapIndices)     const     override;
+    SolAR::FrameworkReturnCode detect(SRef<SolAR::datastructure::Map> const globalMap, SRef<SolAR::datastructure::Map> const floatingMap, std::vector<SolAR::datastructure::Transform3Df>& sim3Transform, std::vector<std::pair<uint32_t,uint32_t>>& overlapIndices, std::vector<double>& scores)     const     override;
 
 
   private:
@@ -38,7 +38,7 @@ class IOverlapDetector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIOverlapDetector::IOverlapDetector_grpcProxy>
 {
-  static constexpr const char * UUID = "829689c8-1eb6-44b9-808d-5cd4ea0be7f0";
+  static constexpr const char * UUID = "26545184-c07e-4665-97a2-8f7bf19a860d";
   static constexpr const char * NAME = "IOverlapDetector_grpcProxy";
   static constexpr const char * DESCRIPTION = "IOverlapDetector_grpcProxy grpc client proxy component";
 };

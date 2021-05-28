@@ -37,7 +37,7 @@ class I3DPointsViewer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DPointsViewer::I3DPointsViewer_grpcProxy>
 {
-  static constexpr const char * UUID = "e51412d0-84e1-4559-8669-3a10ee6d9220";
+  static constexpr const char * UUID = "41d943de-6e99-4796-9a74-b3c5db807aad";
   static constexpr const char * NAME = "I3DPointsViewer_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DPointsViewer_grpcProxy grpc client proxy component";
 };

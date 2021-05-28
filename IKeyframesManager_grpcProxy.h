@@ -32,6 +32,9 @@ class IKeyframesManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
     int getNbKeyframes()     const     override;
     SolAR::FrameworkReturnCode saveToFile(std::string const& file)     const     override;
     SolAR::FrameworkReturnCode loadFromFile(std::string const& file)     override;
+    SRef<SolAR::datastructure::KeyframeCollection> const& getConstKeyframeCollection()     const     override;
+    std::unique_lock<std::mutex> getKeyframeCollection(SRef<SolAR::datastructure::KeyframeCollection>& keyframeCollection)     override;
+    void setKeyframeCollection(SRef<SolAR::datastructure::KeyframeCollection> const keyframeCollection)     override;
 
 
   private:
@@ -39,6 +42,7 @@ class IKeyframesManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
     std::unique_ptr<::grpcIKeyframesManager::grpcIKeyframesManagerService::Stub> m_grpcStub;
+    mutable     SRef<SolAR::datastructure::KeyframeCollection> m_getConstKeyframeCollection;
 
 };
 
@@ -47,7 +51,7 @@ class IKeyframesManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIKeyframesManager::IKeyframesManager_grpcProxy>
 {
-  static constexpr const char * UUID = "ac377563-f992-46b0-b9b9-0eab89a0c477";
+  static constexpr const char * UUID = "c8a8ed95-4b3d-4bab-b9e0-49f8ed0d168d";
   static constexpr const char * NAME = "IKeyframesManager_grpcProxy";
   static constexpr const char * DESCRIPTION = "IKeyframesManager_grpcProxy grpc client proxy component";
 };

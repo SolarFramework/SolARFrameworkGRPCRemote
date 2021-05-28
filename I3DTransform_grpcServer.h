@@ -27,6 +27,9 @@ class I3DTransform_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
         ::grpc::Status transform(::grpc::ServerContext* context, const ::grpcI3DTransform::transformRequest* request, ::grpcI3DTransform::transformResponse* response) override;
         ::grpc::Status transformInPlace_grpc0(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc0Request* request, ::grpcI3DTransform::transformInPlace_grpc0Response* response) override;
         ::grpc::Status transformInPlace_grpc1(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response) override;
+        ::grpc::Status transformInPlace_grpc2(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response) override;
+        ::grpc::Status transformInPlace_grpc3(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response) override;
+        ::grpc::Status transformInPlace_grpc4(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response) override;
 
         SRef<SolAR::api::geom::I3DTransform> m_xpcfComponent;
 
@@ -43,7 +46,7 @@ class I3DTransform_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DTransform::I3DTransform_grpcServer>
 {
-  static constexpr const char * UUID = "fa927ed9-8572-4e4f-86ad-d46ec10e7800";
+  static constexpr const char * UUID = "0d7d3179-02d8-485c-a187-7a8f152a9a38";
   static constexpr const char * NAME = "I3DTransform_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DTransform_grpcServer grpc server component";
 };

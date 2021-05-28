@@ -30,6 +30,9 @@ static const char* grpcIKeyframeRetrieverService_method_names[] = {
   "/grpcIKeyframeRetriever.grpcIKeyframeRetrieverService/loadFromFile",
   "/grpcIKeyframeRetriever.grpcIKeyframeRetrieverService/match_grpc0",
   "/grpcIKeyframeRetriever.grpcIKeyframeRetrieverService/match_grpc1",
+  "/grpcIKeyframeRetriever.grpcIKeyframeRetrieverService/getConstKeyframeRetrieval",
+  "/grpcIKeyframeRetriever.grpcIKeyframeRetrieverService/getKeyframeRetrieval",
+  "/grpcIKeyframeRetriever.grpcIKeyframeRetrieverService/setKeyframeRetrieval",
 };
 
 std::unique_ptr< grpcIKeyframeRetrieverService::Stub> grpcIKeyframeRetrieverService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -47,6 +50,9 @@ grpcIKeyframeRetrieverService::Stub::Stub(const std::shared_ptr< ::grpc::Channel
   , rpcmethod_loadFromFile_(grpcIKeyframeRetrieverService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_match_grpc0_(grpcIKeyframeRetrieverService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_match_grpc1_(grpcIKeyframeRetrieverService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getConstKeyframeRetrieval_(grpcIKeyframeRetrieverService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getKeyframeRetrieval_(grpcIKeyframeRetrieverService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setKeyframeRetrieval_(grpcIKeyframeRetrieverService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIKeyframeRetrieverService::Stub::addKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::addKeyframeRequest& request, ::grpcIKeyframeRetriever::addKeyframeResponse* response) {
@@ -233,6 +239,75 @@ void grpcIKeyframeRetrieverService::Stub::experimental_async::match_grpc1(::grpc
   return result;
 }
 
+::grpc::Status grpcIKeyframeRetrieverService::Stub::getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getConstKeyframeRetrieval_, context, request, response);
+}
+
+void grpcIKeyframeRetrieverService::Stub::experimental_async::getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getConstKeyframeRetrieval_, context, request, response, std::move(f));
+}
+
+void grpcIKeyframeRetrieverService::Stub::experimental_async::getConstKeyframeRetrieval(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getConstKeyframeRetrieval_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* grpcIKeyframeRetrieverService::Stub::PrepareAsyncgetConstKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getConstKeyframeRetrieval_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse>* grpcIKeyframeRetrieverService::Stub::AsyncgetConstKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetConstKeyframeRetrievalRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIKeyframeRetrieverService::Stub::getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getKeyframeRetrieval_, context, request, response);
+}
+
+void grpcIKeyframeRetrieverService::Stub::experimental_async::getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getKeyframeRetrieval_, context, request, response, std::move(f));
+}
+
+void grpcIKeyframeRetrieverService::Stub::experimental_async::getKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getKeyframeRetrieval_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* grpcIKeyframeRetrieverService::Stub::PrepareAsyncgetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse, ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getKeyframeRetrieval_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse>* grpcIKeyframeRetrieverService::Stub::AsyncgetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetKeyframeRetrievalRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIKeyframeRetrieverService::Stub::setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::google::protobuf::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setKeyframeRetrieval_, context, request, response);
+}
+
+void grpcIKeyframeRetrieverService::Stub::experimental_async::setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setKeyframeRetrieval_, context, request, response, std::move(f));
+}
+
+void grpcIKeyframeRetrieverService::Stub::experimental_async::setKeyframeRetrieval(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setKeyframeRetrieval_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIKeyframeRetrieverService::Stub::PrepareAsyncsetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setKeyframeRetrieval_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIKeyframeRetrieverService::Stub::AsyncsetKeyframeRetrievalRaw(::grpc::ClientContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncsetKeyframeRetrievalRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 grpcIKeyframeRetrieverService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIKeyframeRetrieverService_method_names[0],
@@ -314,6 +389,36 @@ grpcIKeyframeRetrieverService::Service::Service() {
              ::grpcIKeyframeRetriever::match_grpc1Response* resp) {
                return service->match_grpc1(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIKeyframeRetrieverService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIKeyframeRetrieverService::Service, ::google::protobuf::Empty, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIKeyframeRetrieverService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::google::protobuf::Empty* req,
+             ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* resp) {
+               return service->getConstKeyframeRetrieval(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIKeyframeRetrieverService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIKeyframeRetrieverService::Service, ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIKeyframeRetrieverService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* req,
+             ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* resp) {
+               return service->getKeyframeRetrieval(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIKeyframeRetrieverService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIKeyframeRetrieverService::Service, ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIKeyframeRetrieverService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* req,
+             ::google::protobuf::Empty* resp) {
+               return service->setKeyframeRetrieval(ctx, req, resp);
+             }, this)));
 }
 
 grpcIKeyframeRetrieverService::Service::~Service() {
@@ -369,6 +474,27 @@ grpcIKeyframeRetrieverService::Service::~Service() {
 }
 
 ::grpc::Status grpcIKeyframeRetrieverService::Service::match_grpc1(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::match_grpc1Request* request, ::grpcIKeyframeRetriever::match_grpc1Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIKeyframeRetrieverService::Service::getConstKeyframeRetrieval(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIKeyframeRetrieverService::Service::getKeyframeRetrieval(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::getKeyframeRetrievalRequest* request, ::grpcIKeyframeRetriever::getKeyframeRetrievalResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIKeyframeRetrieverService::Service::setKeyframeRetrieval(::grpc::ServerContext* context, const ::grpcIKeyframeRetriever::setKeyframeRetrievalRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;

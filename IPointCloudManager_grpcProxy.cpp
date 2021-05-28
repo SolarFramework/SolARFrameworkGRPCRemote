@@ -279,5 +279,50 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::loadFromFile(std::stri
 }
 
 
+SRef<SolAR::datastructure::PointCloud> const&  IPointCloudManager_grpcProxy::getConstPointCloud() const
+{
+  ::grpc::ClientContext context;
+  ::google::protobuf::Empty reqIn;
+  ::grpcIPointCloudManager::getConstPointCloudResponse respOut;
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getConstPointCloud(&context, reqIn, &respOut);
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getConstPointCloudrpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIPointCloudManagerService","getConstPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+}
+
+
+std::unique_lock<std::mutex>  IPointCloudManager_grpcProxy::getPointCloud(SRef<SolAR::datastructure::PointCloud>& pointCloud)
+{
+  ::grpc::ClientContext context;
+  ::grpcIPointCloudManager::getPointCloudRequest reqIn;
+  ::grpcIPointCloudManager::getPointCloudResponse respOut;
+  reqIn.set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getPointCloud(&context, reqIn, &respOut);
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getPointCloudrpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIPointCloudManagerService","getPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(respOut.pointcloud());
+}
+
+
+void  IPointCloudManager_grpcProxy::setPointCloud(SRef<SolAR::datastructure::PointCloud> const pointCloud)
+{
+  ::grpc::ClientContext context;
+  ::grpcIPointCloudManager::setPointCloudRequest reqIn;
+  ::google::protobuf::Empty respOut;
+  reqIn.set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->setPointCloud(&context, reqIn, &respOut);
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "setPointCloudrpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIPointCloudManagerService","setPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+}
+
+
 }
 

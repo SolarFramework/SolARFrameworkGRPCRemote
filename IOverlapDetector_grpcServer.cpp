@@ -44,8 +44,8 @@ XPCFErrorCode IOverlapDetector_grpcServer::onConfigured()
 
 ::grpc::Status IOverlapDetector_grpcServer::grpcIOverlapDetectorServiceImpl::detect_grpc0(::grpc::ServerContext* context, const ::grpcIOverlapDetector::detect_grpc0Request* request, ::grpcIOverlapDetector::detect_grpc0Response* response)
 {
-  SRef<SolAR::api::solver::map::IMapper> globalMap = xpcf::deserialize<SRef<SolAR::api::solver::map::IMapper>>(request->globalmap());
-  SRef<SolAR::api::solver::map::IMapper> floatingMap = xpcf::deserialize<SRef<SolAR::api::solver::map::IMapper>>(request->floatingmap());
+  SRef<SolAR::datastructure::Map> globalMap = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->globalmap());
+  SRef<SolAR::datastructure::Map> floatingMap = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->floatingmap());
   SolAR::datastructure::Transform3Df sim3Transform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->sim3transform());
   std::vector<std::pair<uint32_t,uint32_t>> cpOverlapIndices = xpcf::deserialize<std::vector<std::pair<uint32_t,uint32_t>>>(request->cpoverlapindices());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->detect(globalMap, floatingMap, sim3Transform, cpOverlapIndices);
@@ -58,8 +58,8 @@ XPCFErrorCode IOverlapDetector_grpcServer::onConfigured()
 
 ::grpc::Status IOverlapDetector_grpcServer::grpcIOverlapDetectorServiceImpl::detect_grpc1(::grpc::ServerContext* context, const ::grpcIOverlapDetector::detect_grpc1Request* request, ::grpcIOverlapDetector::detect_grpc1Response* response)
 {
-  SRef<SolAR::api::solver::map::IMapper> globalMap = xpcf::deserialize<SRef<SolAR::api::solver::map::IMapper>>(request->globalmap());
-  SRef<SolAR::api::solver::map::IMapper> floatingMap = xpcf::deserialize<SRef<SolAR::api::solver::map::IMapper>>(request->floatingmap());
+  SRef<SolAR::datastructure::Map> globalMap = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->globalmap());
+  SRef<SolAR::datastructure::Map> floatingMap = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->floatingmap());
   std::vector<SolAR::datastructure::Transform3Df> sim3Transform = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->sim3transform());
   std::vector<std::pair<uint32_t,uint32_t>> overlapIndices = xpcf::deserialize<std::vector<std::pair<uint32_t,uint32_t>>>(request->overlapindices());
   std::vector<double> scores = xpcf::deserialize<std::vector<double>>(request->scores());

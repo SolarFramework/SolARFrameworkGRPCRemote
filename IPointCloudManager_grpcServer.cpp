@@ -171,5 +171,29 @@ XPCFErrorCode IPointCloudManager_grpcServer::onConfigured()
 }
 
 
+::grpc::Status IPointCloudManager_grpcServer::grpcIPointCloudManagerServiceImpl::getConstPointCloud(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response)
+{
+  SRef<SolAR::datastructure::PointCloud> returnValue = m_xpcfComponent->getConstPointCloud();
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IPointCloudManager_grpcServer::grpcIPointCloudManagerServiceImpl::getPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response)
+{
+  SRef<SolAR::datastructure::PointCloud> pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(request->pointcloud());
+  std::unique_lock<std::mutex> returnValue = m_xpcfComponent->getPointCloud(pointCloud);
+  response->set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IPointCloudManager_grpcServer::grpcIPointCloudManagerServiceImpl::setPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response)
+{
+  SRef<SolAR::datastructure::PointCloud> pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(request->pointcloud());
+  m_xpcfComponent->setPointCloud(pointCloud);
+  return ::grpc::Status::OK;
+}
+
+
 }
 

@@ -22,8 +22,9 @@
 namespace grpcIBundler {
 
 static const char* grpcIBundlerService_method_names[] = {
-  "/grpcIBundler.grpcIBundlerService/setMapper",
+  "/grpcIBundler.grpcIBundlerService/setMap",
   "/grpcIBundler.grpcIBundlerService/bundleAdjustment",
+  "/grpcIBundler.grpcIBundlerService/optimizeSim3",
 };
 
 std::unique_ptr< grpcIBundlerService::Stub> grpcIBundlerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -33,29 +34,30 @@ std::unique_ptr< grpcIBundlerService::Stub> grpcIBundlerService::NewStub(const s
 }
 
 grpcIBundlerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setMapper_(grpcIBundlerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_setMap_(grpcIBundlerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_bundleAdjustment_(grpcIBundlerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_optimizeSim3_(grpcIBundlerService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status grpcIBundlerService::Stub::setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpcIBundler::setMapperResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIBundler::setMapperRequest, ::grpcIBundler::setMapperResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setMapper_, context, request, response);
+::grpc::Status grpcIBundlerService::Stub::setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpcIBundler::setMapResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setMap_, context, request, response);
 }
 
-void grpcIBundlerService::Stub::experimental_async::setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIBundler::setMapperRequest, ::grpcIBundler::setMapperResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapper_, context, request, response, std::move(f));
+void grpcIBundlerService::Stub::experimental_async::setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMap_, context, request, response, std::move(f));
 }
 
-void grpcIBundlerService::Stub::experimental_async::setMapper(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapper_, context, request, response, reactor);
+void grpcIBundlerService::Stub::experimental_async::setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMap_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapperResponse>* grpcIBundlerService::Stub::PrepareAsyncsetMapperRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIBundler::setMapperResponse, ::grpcIBundler::setMapperRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setMapper_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>* grpcIBundlerService::Stub::PrepareAsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIBundler::setMapResponse, ::grpcIBundler::setMapRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setMap_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapperResponse>* grpcIBundlerService::Stub::AsyncsetMapperRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapperRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>* grpcIBundlerService::Stub::AsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncsetMapperRaw(context, request, cq);
+    this->PrepareAsyncsetMapRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -83,16 +85,39 @@ void grpcIBundlerService::Stub::experimental_async::bundleAdjustment(::grpc::Cli
   return result;
 }
 
+::grpc::Status grpcIBundlerService::Stub::optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpcIBundler::optimizeSim3Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_optimizeSim3_, context, request, response);
+}
+
+void grpcIBundlerService::Stub::experimental_async::optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_optimizeSim3_, context, request, response, std::move(f));
+}
+
+void grpcIBundlerService::Stub::experimental_async::optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_optimizeSim3_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>* grpcIBundlerService::Stub::PrepareAsyncoptimizeSim3Raw(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIBundler::optimizeSim3Response, ::grpcIBundler::optimizeSim3Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_optimizeSim3_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>* grpcIBundlerService::Stub::AsyncoptimizeSim3Raw(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncoptimizeSim3Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 grpcIBundlerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIBundlerService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIBundlerService::Service, ::grpcIBundler::setMapperRequest, ::grpcIBundler::setMapperResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIBundlerService::Service, ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIBundlerService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIBundler::setMapperRequest* req,
-             ::grpcIBundler::setMapperResponse* resp) {
-               return service->setMapper(ctx, req, resp);
+             const ::grpcIBundler::setMapRequest* req,
+             ::grpcIBundler::setMapResponse* resp) {
+               return service->setMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIBundlerService_method_names[1],
@@ -104,12 +129,22 @@ grpcIBundlerService::Service::Service() {
              ::grpcIBundler::bundleAdjustmentResponse* resp) {
                return service->bundleAdjustment(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIBundlerService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIBundlerService::Service, ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIBundlerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIBundler::optimizeSim3Request* req,
+             ::grpcIBundler::optimizeSim3Response* resp) {
+               return service->optimizeSim3(ctx, req, resp);
+             }, this)));
 }
 
 grpcIBundlerService::Service::~Service() {
 }
 
-::grpc::Status grpcIBundlerService::Service::setMapper(::grpc::ServerContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response) {
+::grpc::Status grpcIBundlerService::Service::setMap(::grpc::ServerContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -117,6 +152,13 @@ grpcIBundlerService::Service::~Service() {
 }
 
 ::grpc::Status grpcIBundlerService::Service::bundleAdjustment(::grpc::ServerContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIBundlerService::Service::optimizeSim3(::grpc::ServerContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -119,6 +119,27 @@ message loadFromFileResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message getConstKeyframeCollectionResponse
+{
+bytes xpcfGrpcReturnValue = 1;
+}
+
+message getKeyframeCollectionRequest
+{
+bytes keyframeCollection = 1;
+}
+
+message getKeyframeCollectionResponse
+{
+bytes keyframeCollection = 1;
+bytes xpcfGrpcReturnValue = 2;
+}
+
+message setKeyframeCollectionRequest
+{
+bytes keyframeCollection = 1;
+}
+
 service grpcIKeyframesManagerService {
 rpc addKeyframe_grpc0(addKeyframe_grpc0Request) returns(addKeyframe_grpc0Response) {}
 rpc addKeyframe_grpc1(addKeyframe_grpc1Request) returns(addKeyframe_grpc1Response) {}
@@ -132,5 +153,8 @@ rpc isExistKeyframe(isExistKeyframeRequest) returns(isExistKeyframeResponse) {}
 rpc getNbKeyframes(google.protobuf.Empty) returns(getNbKeyframesResponse) {}
 rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
+rpc getConstKeyframeCollection(google.protobuf.Empty) returns(getConstKeyframeCollectionResponse) {}
+rpc getKeyframeCollection(getKeyframeCollectionRequest) returns(getKeyframeCollectionResponse) {}
+rpc setKeyframeCollection(setKeyframeCollectionRequest) returns(google.protobuf.Empty) {}
 }
 

@@ -47,7 +47,7 @@ struct TableStruct_grpcIKeyframesManagerService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[26]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -74,9 +74,18 @@ extern getAllKeyframesRequestDefaultTypeInternal _getAllKeyframesRequest_default
 class getAllKeyframesResponse;
 struct getAllKeyframesResponseDefaultTypeInternal;
 extern getAllKeyframesResponseDefaultTypeInternal _getAllKeyframesResponse_default_instance_;
+class getConstKeyframeCollectionResponse;
+struct getConstKeyframeCollectionResponseDefaultTypeInternal;
+extern getConstKeyframeCollectionResponseDefaultTypeInternal _getConstKeyframeCollectionResponse_default_instance_;
 class getDescriptorTypeResponse;
 struct getDescriptorTypeResponseDefaultTypeInternal;
 extern getDescriptorTypeResponseDefaultTypeInternal _getDescriptorTypeResponse_default_instance_;
+class getKeyframeCollectionRequest;
+struct getKeyframeCollectionRequestDefaultTypeInternal;
+extern getKeyframeCollectionRequestDefaultTypeInternal _getKeyframeCollectionRequest_default_instance_;
+class getKeyframeCollectionResponse;
+struct getKeyframeCollectionResponseDefaultTypeInternal;
+extern getKeyframeCollectionResponseDefaultTypeInternal _getKeyframeCollectionResponse_default_instance_;
 class getKeyframeRequest;
 struct getKeyframeRequestDefaultTypeInternal;
 extern getKeyframeRequestDefaultTypeInternal _getKeyframeRequest_default_instance_;
@@ -116,6 +125,9 @@ extern setDescriptorTypeRequestDefaultTypeInternal _setDescriptorTypeRequest_def
 class setDescriptorTypeResponse;
 struct setDescriptorTypeResponseDefaultTypeInternal;
 extern setDescriptorTypeResponseDefaultTypeInternal _setDescriptorTypeResponse_default_instance_;
+class setKeyframeCollectionRequest;
+struct setKeyframeCollectionRequestDefaultTypeInternal;
+extern setKeyframeCollectionRequestDefaultTypeInternal _setKeyframeCollectionRequest_default_instance_;
 class suppressKeyframeRequest;
 struct suppressKeyframeRequestDefaultTypeInternal;
 extern suppressKeyframeRequestDefaultTypeInternal _suppressKeyframeRequest_default_instance_;
@@ -130,7 +142,10 @@ template<> ::grpcIKeyframesManager::addKeyframe_grpc1Request* Arena::CreateMaybe
 template<> ::grpcIKeyframesManager::addKeyframe_grpc1Response* Arena::CreateMaybeMessage<::grpcIKeyframesManager::addKeyframe_grpc1Response>(Arena*);
 template<> ::grpcIKeyframesManager::getAllKeyframesRequest* Arena::CreateMaybeMessage<::grpcIKeyframesManager::getAllKeyframesRequest>(Arena*);
 template<> ::grpcIKeyframesManager::getAllKeyframesResponse* Arena::CreateMaybeMessage<::grpcIKeyframesManager::getAllKeyframesResponse>(Arena*);
+template<> ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* Arena::CreateMaybeMessage<::grpcIKeyframesManager::getConstKeyframeCollectionResponse>(Arena*);
 template<> ::grpcIKeyframesManager::getDescriptorTypeResponse* Arena::CreateMaybeMessage<::grpcIKeyframesManager::getDescriptorTypeResponse>(Arena*);
+template<> ::grpcIKeyframesManager::getKeyframeCollectionRequest* Arena::CreateMaybeMessage<::grpcIKeyframesManager::getKeyframeCollectionRequest>(Arena*);
+template<> ::grpcIKeyframesManager::getKeyframeCollectionResponse* Arena::CreateMaybeMessage<::grpcIKeyframesManager::getKeyframeCollectionResponse>(Arena*);
 template<> ::grpcIKeyframesManager::getKeyframeRequest* Arena::CreateMaybeMessage<::grpcIKeyframesManager::getKeyframeRequest>(Arena*);
 template<> ::grpcIKeyframesManager::getKeyframeResponse* Arena::CreateMaybeMessage<::grpcIKeyframesManager::getKeyframeResponse>(Arena*);
 template<> ::grpcIKeyframesManager::getKeyframesRequest* Arena::CreateMaybeMessage<::grpcIKeyframesManager::getKeyframesRequest>(Arena*);
@@ -144,6 +159,7 @@ template<> ::grpcIKeyframesManager::saveToFileRequest* Arena::CreateMaybeMessage
 template<> ::grpcIKeyframesManager::saveToFileResponse* Arena::CreateMaybeMessage<::grpcIKeyframesManager::saveToFileResponse>(Arena*);
 template<> ::grpcIKeyframesManager::setDescriptorTypeRequest* Arena::CreateMaybeMessage<::grpcIKeyframesManager::setDescriptorTypeRequest>(Arena*);
 template<> ::grpcIKeyframesManager::setDescriptorTypeResponse* Arena::CreateMaybeMessage<::grpcIKeyframesManager::setDescriptorTypeResponse>(Arena*);
+template<> ::grpcIKeyframesManager::setKeyframeCollectionRequest* Arena::CreateMaybeMessage<::grpcIKeyframesManager::setKeyframeCollectionRequest>(Arena*);
 template<> ::grpcIKeyframesManager::suppressKeyframeRequest* Arena::CreateMaybeMessage<::grpcIKeyframesManager::suppressKeyframeRequest>(Arena*);
 template<> ::grpcIKeyframesManager::suppressKeyframeResponse* Arena::CreateMaybeMessage<::grpcIKeyframesManager::suppressKeyframeResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -3295,6 +3311,600 @@ class loadFromFileResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIKeyframesManagerService_2eproto;
 };
+// -------------------------------------------------------------------
+
+class getConstKeyframeCollectionResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIKeyframesManager.getConstKeyframeCollectionResponse) */ {
+ public:
+  inline getConstKeyframeCollectionResponse() : getConstKeyframeCollectionResponse(nullptr) {}
+  virtual ~getConstKeyframeCollectionResponse();
+  explicit constexpr getConstKeyframeCollectionResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getConstKeyframeCollectionResponse(const getConstKeyframeCollectionResponse& from);
+  getConstKeyframeCollectionResponse(getConstKeyframeCollectionResponse&& from) noexcept
+    : getConstKeyframeCollectionResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline getConstKeyframeCollectionResponse& operator=(const getConstKeyframeCollectionResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getConstKeyframeCollectionResponse& operator=(getConstKeyframeCollectionResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getConstKeyframeCollectionResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getConstKeyframeCollectionResponse* internal_default_instance() {
+    return reinterpret_cast<const getConstKeyframeCollectionResponse*>(
+               &_getConstKeyframeCollectionResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(getConstKeyframeCollectionResponse& a, getConstKeyframeCollectionResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getConstKeyframeCollectionResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getConstKeyframeCollectionResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getConstKeyframeCollectionResponse* New() const final {
+    return CreateMaybeMessage<getConstKeyframeCollectionResponse>(nullptr);
+  }
+
+  getConstKeyframeCollectionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getConstKeyframeCollectionResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getConstKeyframeCollectionResponse& from);
+  void MergeFrom(const getConstKeyframeCollectionResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getConstKeyframeCollectionResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIKeyframesManager.getConstKeyframeCollectionResponse";
+  }
+  protected:
+  explicit getConstKeyframeCollectionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIKeyframesManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // bytes xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  const std::string& xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(const std::string& value);
+  void set_xpcfgrpcreturnvalue(std::string&& value);
+  void set_xpcfgrpcreturnvalue(const char* value);
+  void set_xpcfgrpcreturnvalue(const void* value, size_t size);
+  std::string* mutable_xpcfgrpcreturnvalue();
+  std::string* release_xpcfgrpcreturnvalue();
+  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  private:
+  const std::string& _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
+  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIKeyframesManager.getConstKeyframeCollectionResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIKeyframesManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getKeyframeCollectionRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIKeyframesManager.getKeyframeCollectionRequest) */ {
+ public:
+  inline getKeyframeCollectionRequest() : getKeyframeCollectionRequest(nullptr) {}
+  virtual ~getKeyframeCollectionRequest();
+  explicit constexpr getKeyframeCollectionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getKeyframeCollectionRequest(const getKeyframeCollectionRequest& from);
+  getKeyframeCollectionRequest(getKeyframeCollectionRequest&& from) noexcept
+    : getKeyframeCollectionRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getKeyframeCollectionRequest& operator=(const getKeyframeCollectionRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getKeyframeCollectionRequest& operator=(getKeyframeCollectionRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getKeyframeCollectionRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getKeyframeCollectionRequest* internal_default_instance() {
+    return reinterpret_cast<const getKeyframeCollectionRequest*>(
+               &_getKeyframeCollectionRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(getKeyframeCollectionRequest& a, getKeyframeCollectionRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getKeyframeCollectionRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getKeyframeCollectionRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getKeyframeCollectionRequest* New() const final {
+    return CreateMaybeMessage<getKeyframeCollectionRequest>(nullptr);
+  }
+
+  getKeyframeCollectionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getKeyframeCollectionRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getKeyframeCollectionRequest& from);
+  void MergeFrom(const getKeyframeCollectionRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getKeyframeCollectionRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIKeyframesManager.getKeyframeCollectionRequest";
+  }
+  protected:
+  explicit getKeyframeCollectionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIKeyframesManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKeyframeCollectionFieldNumber = 1,
+  };
+  // bytes keyframeCollection = 1;
+  void clear_keyframecollection();
+  const std::string& keyframecollection() const;
+  void set_keyframecollection(const std::string& value);
+  void set_keyframecollection(std::string&& value);
+  void set_keyframecollection(const char* value);
+  void set_keyframecollection(const void* value, size_t size);
+  std::string* mutable_keyframecollection();
+  std::string* release_keyframecollection();
+  void set_allocated_keyframecollection(std::string* keyframecollection);
+  private:
+  const std::string& _internal_keyframecollection() const;
+  void _internal_set_keyframecollection(const std::string& value);
+  std::string* _internal_mutable_keyframecollection();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIKeyframesManager.getKeyframeCollectionRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframecollection_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIKeyframesManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getKeyframeCollectionResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIKeyframesManager.getKeyframeCollectionResponse) */ {
+ public:
+  inline getKeyframeCollectionResponse() : getKeyframeCollectionResponse(nullptr) {}
+  virtual ~getKeyframeCollectionResponse();
+  explicit constexpr getKeyframeCollectionResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getKeyframeCollectionResponse(const getKeyframeCollectionResponse& from);
+  getKeyframeCollectionResponse(getKeyframeCollectionResponse&& from) noexcept
+    : getKeyframeCollectionResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline getKeyframeCollectionResponse& operator=(const getKeyframeCollectionResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getKeyframeCollectionResponse& operator=(getKeyframeCollectionResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getKeyframeCollectionResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getKeyframeCollectionResponse* internal_default_instance() {
+    return reinterpret_cast<const getKeyframeCollectionResponse*>(
+               &_getKeyframeCollectionResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(getKeyframeCollectionResponse& a, getKeyframeCollectionResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getKeyframeCollectionResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getKeyframeCollectionResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getKeyframeCollectionResponse* New() const final {
+    return CreateMaybeMessage<getKeyframeCollectionResponse>(nullptr);
+  }
+
+  getKeyframeCollectionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getKeyframeCollectionResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getKeyframeCollectionResponse& from);
+  void MergeFrom(const getKeyframeCollectionResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getKeyframeCollectionResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIKeyframesManager.getKeyframeCollectionResponse";
+  }
+  protected:
+  explicit getKeyframeCollectionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIKeyframesManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKeyframeCollectionFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes keyframeCollection = 1;
+  void clear_keyframecollection();
+  const std::string& keyframecollection() const;
+  void set_keyframecollection(const std::string& value);
+  void set_keyframecollection(std::string&& value);
+  void set_keyframecollection(const char* value);
+  void set_keyframecollection(const void* value, size_t size);
+  std::string* mutable_keyframecollection();
+  std::string* release_keyframecollection();
+  void set_allocated_keyframecollection(std::string* keyframecollection);
+  private:
+  const std::string& _internal_keyframecollection() const;
+  void _internal_set_keyframecollection(const std::string& value);
+  std::string* _internal_mutable_keyframecollection();
+  public:
+
+  // bytes xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue();
+  const std::string& xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(const std::string& value);
+  void set_xpcfgrpcreturnvalue(std::string&& value);
+  void set_xpcfgrpcreturnvalue(const char* value);
+  void set_xpcfgrpcreturnvalue(const void* value, size_t size);
+  std::string* mutable_xpcfgrpcreturnvalue();
+  std::string* release_xpcfgrpcreturnvalue();
+  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  private:
+  const std::string& _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
+  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIKeyframesManager.getKeyframeCollectionResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframecollection_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIKeyframesManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class setKeyframeCollectionRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIKeyframesManager.setKeyframeCollectionRequest) */ {
+ public:
+  inline setKeyframeCollectionRequest() : setKeyframeCollectionRequest(nullptr) {}
+  virtual ~setKeyframeCollectionRequest();
+  explicit constexpr setKeyframeCollectionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  setKeyframeCollectionRequest(const setKeyframeCollectionRequest& from);
+  setKeyframeCollectionRequest(setKeyframeCollectionRequest&& from) noexcept
+    : setKeyframeCollectionRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline setKeyframeCollectionRequest& operator=(const setKeyframeCollectionRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline setKeyframeCollectionRequest& operator=(setKeyframeCollectionRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const setKeyframeCollectionRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const setKeyframeCollectionRequest* internal_default_instance() {
+    return reinterpret_cast<const setKeyframeCollectionRequest*>(
+               &_setKeyframeCollectionRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(setKeyframeCollectionRequest& a, setKeyframeCollectionRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(setKeyframeCollectionRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(setKeyframeCollectionRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline setKeyframeCollectionRequest* New() const final {
+    return CreateMaybeMessage<setKeyframeCollectionRequest>(nullptr);
+  }
+
+  setKeyframeCollectionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<setKeyframeCollectionRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const setKeyframeCollectionRequest& from);
+  void MergeFrom(const setKeyframeCollectionRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(setKeyframeCollectionRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIKeyframesManager.setKeyframeCollectionRequest";
+  }
+  protected:
+  explicit setKeyframeCollectionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIKeyframesManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKeyframeCollectionFieldNumber = 1,
+  };
+  // bytes keyframeCollection = 1;
+  void clear_keyframecollection();
+  const std::string& keyframecollection() const;
+  void set_keyframecollection(const std::string& value);
+  void set_keyframecollection(std::string&& value);
+  void set_keyframecollection(const char* value);
+  void set_keyframecollection(const void* value, size_t size);
+  std::string* mutable_keyframecollection();
+  std::string* release_keyframecollection();
+  void set_allocated_keyframecollection(std::string* keyframecollection);
+  private:
+  const std::string& _internal_keyframecollection() const;
+  void _internal_set_keyframecollection(const std::string& value);
+  std::string* _internal_mutable_keyframecollection();
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIKeyframesManager.setKeyframeCollectionRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframecollection_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIKeyframesManagerService_2eproto;
+};
 // ===================================================================
 
 
@@ -4381,9 +4991,338 @@ inline void loadFromFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
   // @@protoc_insertion_point(field_set:grpcIKeyframesManager.loadFromFileResponse.xpcfGrpcReturnValue)
 }
 
+// -------------------------------------------------------------------
+
+// getConstKeyframeCollectionResponse
+
+// bytes xpcfGrpcReturnValue = 1;
+inline void getConstKeyframeCollectionResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_.ClearToEmpty();
+}
+inline const std::string& getConstKeyframeCollectionResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIKeyframesManager.getConstKeyframeCollectionResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getConstKeyframeCollectionResponse::set_xpcfgrpcreturnvalue(const std::string& value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIKeyframesManager.getConstKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+inline std::string* getConstKeyframeCollectionResponse::mutable_xpcfgrpcreturnvalue() {
+  // @@protoc_insertion_point(field_mutable:grpcIKeyframesManager.getConstKeyframeCollectionResponse.xpcfGrpcReturnValue)
+  return _internal_mutable_xpcfgrpcreturnvalue();
+}
+inline const std::string& getConstKeyframeCollectionResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_.Get();
+}
+inline void getConstKeyframeCollectionResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getConstKeyframeCollectionResponse::set_xpcfgrpcreturnvalue(std::string&& value) {
+  
+  xpcfgrpcreturnvalue_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIKeyframesManager.getConstKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+inline void getConstKeyframeCollectionResponse::set_xpcfgrpcreturnvalue(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIKeyframesManager.getConstKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+inline void getConstKeyframeCollectionResponse::set_xpcfgrpcreturnvalue(const void* value,
+    size_t size) {
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIKeyframesManager.getConstKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+inline std::string* getConstKeyframeCollectionResponse::_internal_mutable_xpcfgrpcreturnvalue() {
+  
+  return xpcfgrpcreturnvalue_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getConstKeyframeCollectionResponse::release_xpcfgrpcreturnvalue() {
+  // @@protoc_insertion_point(field_release:grpcIKeyframesManager.getConstKeyframeCollectionResponse.xpcfGrpcReturnValue)
+  return xpcfgrpcreturnvalue_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getConstKeyframeCollectionResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
+  if (xpcfgrpcreturnvalue != nullptr) {
+    
+  } else {
+    
+  }
+  xpcfgrpcreturnvalue_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), xpcfgrpcreturnvalue,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIKeyframesManager.getConstKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getKeyframeCollectionRequest
+
+// bytes keyframeCollection = 1;
+inline void getKeyframeCollectionRequest::clear_keyframecollection() {
+  keyframecollection_.ClearToEmpty();
+}
+inline const std::string& getKeyframeCollectionRequest::keyframecollection() const {
+  // @@protoc_insertion_point(field_get:grpcIKeyframesManager.getKeyframeCollectionRequest.keyframeCollection)
+  return _internal_keyframecollection();
+}
+inline void getKeyframeCollectionRequest::set_keyframecollection(const std::string& value) {
+  _internal_set_keyframecollection(value);
+  // @@protoc_insertion_point(field_set:grpcIKeyframesManager.getKeyframeCollectionRequest.keyframeCollection)
+}
+inline std::string* getKeyframeCollectionRequest::mutable_keyframecollection() {
+  // @@protoc_insertion_point(field_mutable:grpcIKeyframesManager.getKeyframeCollectionRequest.keyframeCollection)
+  return _internal_mutable_keyframecollection();
+}
+inline const std::string& getKeyframeCollectionRequest::_internal_keyframecollection() const {
+  return keyframecollection_.Get();
+}
+inline void getKeyframeCollectionRequest::_internal_set_keyframecollection(const std::string& value) {
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getKeyframeCollectionRequest::set_keyframecollection(std::string&& value) {
+  
+  keyframecollection_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIKeyframesManager.getKeyframeCollectionRequest.keyframeCollection)
+}
+inline void getKeyframeCollectionRequest::set_keyframecollection(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIKeyframesManager.getKeyframeCollectionRequest.keyframeCollection)
+}
+inline void getKeyframeCollectionRequest::set_keyframecollection(const void* value,
+    size_t size) {
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIKeyframesManager.getKeyframeCollectionRequest.keyframeCollection)
+}
+inline std::string* getKeyframeCollectionRequest::_internal_mutable_keyframecollection() {
+  
+  return keyframecollection_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getKeyframeCollectionRequest::release_keyframecollection() {
+  // @@protoc_insertion_point(field_release:grpcIKeyframesManager.getKeyframeCollectionRequest.keyframeCollection)
+  return keyframecollection_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getKeyframeCollectionRequest::set_allocated_keyframecollection(std::string* keyframecollection) {
+  if (keyframecollection != nullptr) {
+    
+  } else {
+    
+  }
+  keyframecollection_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframecollection,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIKeyframesManager.getKeyframeCollectionRequest.keyframeCollection)
+}
+
+// -------------------------------------------------------------------
+
+// getKeyframeCollectionResponse
+
+// bytes keyframeCollection = 1;
+inline void getKeyframeCollectionResponse::clear_keyframecollection() {
+  keyframecollection_.ClearToEmpty();
+}
+inline const std::string& getKeyframeCollectionResponse::keyframecollection() const {
+  // @@protoc_insertion_point(field_get:grpcIKeyframesManager.getKeyframeCollectionResponse.keyframeCollection)
+  return _internal_keyframecollection();
+}
+inline void getKeyframeCollectionResponse::set_keyframecollection(const std::string& value) {
+  _internal_set_keyframecollection(value);
+  // @@protoc_insertion_point(field_set:grpcIKeyframesManager.getKeyframeCollectionResponse.keyframeCollection)
+}
+inline std::string* getKeyframeCollectionResponse::mutable_keyframecollection() {
+  // @@protoc_insertion_point(field_mutable:grpcIKeyframesManager.getKeyframeCollectionResponse.keyframeCollection)
+  return _internal_mutable_keyframecollection();
+}
+inline const std::string& getKeyframeCollectionResponse::_internal_keyframecollection() const {
+  return keyframecollection_.Get();
+}
+inline void getKeyframeCollectionResponse::_internal_set_keyframecollection(const std::string& value) {
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getKeyframeCollectionResponse::set_keyframecollection(std::string&& value) {
+  
+  keyframecollection_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIKeyframesManager.getKeyframeCollectionResponse.keyframeCollection)
+}
+inline void getKeyframeCollectionResponse::set_keyframecollection(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIKeyframesManager.getKeyframeCollectionResponse.keyframeCollection)
+}
+inline void getKeyframeCollectionResponse::set_keyframecollection(const void* value,
+    size_t size) {
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIKeyframesManager.getKeyframeCollectionResponse.keyframeCollection)
+}
+inline std::string* getKeyframeCollectionResponse::_internal_mutable_keyframecollection() {
+  
+  return keyframecollection_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getKeyframeCollectionResponse::release_keyframecollection() {
+  // @@protoc_insertion_point(field_release:grpcIKeyframesManager.getKeyframeCollectionResponse.keyframeCollection)
+  return keyframecollection_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getKeyframeCollectionResponse::set_allocated_keyframecollection(std::string* keyframecollection) {
+  if (keyframecollection != nullptr) {
+    
+  } else {
+    
+  }
+  keyframecollection_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframecollection,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIKeyframesManager.getKeyframeCollectionResponse.keyframeCollection)
+}
+
+// bytes xpcfGrpcReturnValue = 2;
+inline void getKeyframeCollectionResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_.ClearToEmpty();
+}
+inline const std::string& getKeyframeCollectionResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIKeyframesManager.getKeyframeCollectionResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getKeyframeCollectionResponse::set_xpcfgrpcreturnvalue(const std::string& value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIKeyframesManager.getKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+inline std::string* getKeyframeCollectionResponse::mutable_xpcfgrpcreturnvalue() {
+  // @@protoc_insertion_point(field_mutable:grpcIKeyframesManager.getKeyframeCollectionResponse.xpcfGrpcReturnValue)
+  return _internal_mutable_xpcfgrpcreturnvalue();
+}
+inline const std::string& getKeyframeCollectionResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_.Get();
+}
+inline void getKeyframeCollectionResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getKeyframeCollectionResponse::set_xpcfgrpcreturnvalue(std::string&& value) {
+  
+  xpcfgrpcreturnvalue_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIKeyframesManager.getKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+inline void getKeyframeCollectionResponse::set_xpcfgrpcreturnvalue(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIKeyframesManager.getKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+inline void getKeyframeCollectionResponse::set_xpcfgrpcreturnvalue(const void* value,
+    size_t size) {
+  
+  xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIKeyframesManager.getKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+inline std::string* getKeyframeCollectionResponse::_internal_mutable_xpcfgrpcreturnvalue() {
+  
+  return xpcfgrpcreturnvalue_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getKeyframeCollectionResponse::release_xpcfgrpcreturnvalue() {
+  // @@protoc_insertion_point(field_release:grpcIKeyframesManager.getKeyframeCollectionResponse.xpcfGrpcReturnValue)
+  return xpcfgrpcreturnvalue_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getKeyframeCollectionResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
+  if (xpcfgrpcreturnvalue != nullptr) {
+    
+  } else {
+    
+  }
+  xpcfgrpcreturnvalue_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), xpcfgrpcreturnvalue,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIKeyframesManager.getKeyframeCollectionResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// setKeyframeCollectionRequest
+
+// bytes keyframeCollection = 1;
+inline void setKeyframeCollectionRequest::clear_keyframecollection() {
+  keyframecollection_.ClearToEmpty();
+}
+inline const std::string& setKeyframeCollectionRequest::keyframecollection() const {
+  // @@protoc_insertion_point(field_get:grpcIKeyframesManager.setKeyframeCollectionRequest.keyframeCollection)
+  return _internal_keyframecollection();
+}
+inline void setKeyframeCollectionRequest::set_keyframecollection(const std::string& value) {
+  _internal_set_keyframecollection(value);
+  // @@protoc_insertion_point(field_set:grpcIKeyframesManager.setKeyframeCollectionRequest.keyframeCollection)
+}
+inline std::string* setKeyframeCollectionRequest::mutable_keyframecollection() {
+  // @@protoc_insertion_point(field_mutable:grpcIKeyframesManager.setKeyframeCollectionRequest.keyframeCollection)
+  return _internal_mutable_keyframecollection();
+}
+inline const std::string& setKeyframeCollectionRequest::_internal_keyframecollection() const {
+  return keyframecollection_.Get();
+}
+inline void setKeyframeCollectionRequest::_internal_set_keyframecollection(const std::string& value) {
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void setKeyframeCollectionRequest::set_keyframecollection(std::string&& value) {
+  
+  keyframecollection_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIKeyframesManager.setKeyframeCollectionRequest.keyframeCollection)
+}
+inline void setKeyframeCollectionRequest::set_keyframecollection(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIKeyframesManager.setKeyframeCollectionRequest.keyframeCollection)
+}
+inline void setKeyframeCollectionRequest::set_keyframecollection(const void* value,
+    size_t size) {
+  
+  keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIKeyframesManager.setKeyframeCollectionRequest.keyframeCollection)
+}
+inline std::string* setKeyframeCollectionRequest::_internal_mutable_keyframecollection() {
+  
+  return keyframecollection_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* setKeyframeCollectionRequest::release_keyframecollection() {
+  // @@protoc_insertion_point(field_release:grpcIKeyframesManager.setKeyframeCollectionRequest.keyframeCollection)
+  return keyframecollection_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void setKeyframeCollectionRequest::set_allocated_keyframecollection(std::string* keyframecollection) {
+  if (keyframecollection != nullptr) {
+    
+  } else {
+    
+  }
+  keyframecollection_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframecollection,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIKeyframesManager.setKeyframeCollectionRequest.keyframeCollection)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

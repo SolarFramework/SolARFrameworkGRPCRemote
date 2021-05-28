@@ -24,8 +24,9 @@ class IBundler_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     {
       public:
         grpcIBundlerServiceImpl() = default;
-        ::grpc::Status setMapper(::grpc::ServerContext* context, const ::grpcIBundler::setMapperRequest* request, ::grpcIBundler::setMapperResponse* response) override;
+        ::grpc::Status setMap(::grpc::ServerContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response) override;
         ::grpc::Status bundleAdjustment(::grpc::ServerContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response) override;
+        ::grpc::Status optimizeSim3(::grpc::ServerContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response) override;
 
         SRef<SolAR::api::solver::map::IBundler> m_xpcfComponent;
 
@@ -42,7 +43,7 @@ class IBundler_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIBundler::IBundler_grpcServer>
 {
-  static constexpr const char * UUID = "4e2067a4-7416-4e53-bc02-900d0634a700";
+  static constexpr const char * UUID = "52329c74-eec7-49cd-9da5-7b660f830eb5";
   static constexpr const char * NAME = "IBundler_grpcServer";
   static constexpr const char * DESCRIPTION = "IBundler_grpcServer grpc server component";
 };

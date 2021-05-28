@@ -52,13 +52,13 @@ void  IOverlapDetector_grpcProxy::setCameraParameters(SolAR::datastructure::CamC
 }
 
 
-SolAR::FrameworkReturnCode  IOverlapDetector_grpcProxy::detect(SRef<SolAR::api::solver::map::IMapper> const globalMap, SRef<SolAR::api::solver::map::IMapper> const floatingMap, SolAR::datastructure::Transform3Df& sim3Transform, std::vector<std::pair<uint32_t,uint32_t>>& cpOverlapIndices) const
+SolAR::FrameworkReturnCode  IOverlapDetector_grpcProxy::detect(SRef<SolAR::datastructure::Map> const globalMap, SRef<SolAR::datastructure::Map> const floatingMap, SolAR::datastructure::Transform3Df& sim3Transform, std::vector<std::pair<uint32_t,uint32_t>>& cpOverlapIndices) const
 {
   ::grpc::ClientContext context;
   ::grpcIOverlapDetector::detect_grpc0Request reqIn;
   ::grpcIOverlapDetector::detect_grpc0Response respOut;
-  reqIn.set_globalmap(xpcf::serialize<SRef<SolAR::api::solver::map::IMapper>>(globalMap));
-  reqIn.set_floatingmap(xpcf::serialize<SRef<SolAR::api::solver::map::IMapper>>(floatingMap));
+  reqIn.set_globalmap(xpcf::serialize<SRef<SolAR::datastructure::Map>>(globalMap));
+  reqIn.set_floatingmap(xpcf::serialize<SRef<SolAR::datastructure::Map>>(floatingMap));
   reqIn.set_sim3transform(xpcf::serialize<SolAR::datastructure::Transform3Df>(sim3Transform));
   reqIn.set_cpoverlapindices(xpcf::serialize<std::vector<std::pair<uint32_t,uint32_t>>>(cpOverlapIndices));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->detect_grpc0(&context, reqIn, &respOut);
@@ -73,13 +73,13 @@ SolAR::FrameworkReturnCode  IOverlapDetector_grpcProxy::detect(SRef<SolAR::api::
 }
 
 
-SolAR::FrameworkReturnCode  IOverlapDetector_grpcProxy::detect(SRef<SolAR::api::solver::map::IMapper> const globalMap, SRef<SolAR::api::solver::map::IMapper> const floatingMap, std::vector<SolAR::datastructure::Transform3Df>& sim3Transform, std::vector<std::pair<uint32_t,uint32_t>>& overlapIndices, std::vector<double>& scores) const
+SolAR::FrameworkReturnCode  IOverlapDetector_grpcProxy::detect(SRef<SolAR::datastructure::Map> const globalMap, SRef<SolAR::datastructure::Map> const floatingMap, std::vector<SolAR::datastructure::Transform3Df>& sim3Transform, std::vector<std::pair<uint32_t,uint32_t>>& overlapIndices, std::vector<double>& scores) const
 {
   ::grpc::ClientContext context;
   ::grpcIOverlapDetector::detect_grpc1Request reqIn;
   ::grpcIOverlapDetector::detect_grpc1Response respOut;
-  reqIn.set_globalmap(xpcf::serialize<SRef<SolAR::api::solver::map::IMapper>>(globalMap));
-  reqIn.set_floatingmap(xpcf::serialize<SRef<SolAR::api::solver::map::IMapper>>(floatingMap));
+  reqIn.set_globalmap(xpcf::serialize<SRef<SolAR::datastructure::Map>>(globalMap));
+  reqIn.set_floatingmap(xpcf::serialize<SRef<SolAR::datastructure::Map>>(floatingMap));
   reqIn.set_sim3transform(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(sim3Transform));
   reqIn.set_overlapindices(xpcf::serialize<std::vector<std::pair<uint32_t,uint32_t>>>(overlapIndices));
   reqIn.set_scores(xpcf::serialize<std::vector<double>>(scores));

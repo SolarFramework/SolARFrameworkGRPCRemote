@@ -36,7 +36,7 @@ class IPointCloudLoader_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIPointCloudLoader::IPointCloudLoader_grpcProxy>
 {
-  static constexpr const char * UUID = "8e0422db-2de8-4ab0-b1c6-7b450093374f";
+  static constexpr const char * UUID = "037261eb-e181-491f-b341-4c7384d17498";
   static constexpr const char * NAME = "IPointCloudLoader_grpcProxy";
   static constexpr const char * DESCRIPTION = "IPointCloudLoader_grpcProxy grpc client proxy component";
 };

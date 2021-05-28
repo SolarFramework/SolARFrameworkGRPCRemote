@@ -96,6 +96,27 @@ bytes matches = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message getConstKeyframeRetrievalResponse
+{
+bytes xpcfGrpcReturnValue = 1;
+}
+
+message getKeyframeRetrievalRequest
+{
+bytes keyframeRetrieval = 1;
+}
+
+message getKeyframeRetrievalResponse
+{
+bytes keyframeRetrieval = 1;
+bytes xpcfGrpcReturnValue = 2;
+}
+
+message setKeyframeRetrievalRequest
+{
+bytes keyframeRetrieval = 1;
+}
+
 service grpcIKeyframeRetrieverService {
 rpc addKeyframe(addKeyframeRequest) returns(addKeyframeResponse) {}
 rpc suppressKeyframe(suppressKeyframeRequest) returns(suppressKeyframeResponse) {}
@@ -105,5 +126,8 @@ rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
 rpc match_grpc0(match_grpc0Request) returns(match_grpc0Response) {}
 rpc match_grpc1(match_grpc1Request) returns(match_grpc1Response) {}
+rpc getConstKeyframeRetrieval(google.protobuf.Empty) returns(getConstKeyframeRetrievalResponse) {}
+rpc getKeyframeRetrieval(getKeyframeRetrievalRequest) returns(getKeyframeRetrievalResponse) {}
+rpc setKeyframeRetrieval(setKeyframeRetrievalRequest) returns(google.protobuf.Empty) {}
 }
 

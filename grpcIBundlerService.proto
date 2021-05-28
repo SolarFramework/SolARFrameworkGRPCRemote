@@ -4,12 +4,12 @@ import "google/protobuf/empty.proto";
 
 package grpcIBundler;
 
-message setMapperRequest
+message setMapRequest
 {
 bytes map = 1;
 }
 
-message setMapperResponse
+message setMapResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -28,8 +28,29 @@ bytes D = 2;
 double xpcfGrpcReturnValue = 3;
 }
 
+message optimizeSim3Request
+{
+bytes keyframe1 = 1;
+bytes keyframe2 = 2;
+bytes matches = 3;
+bytes pts3D1 = 4;
+bytes pts3D2 = 5;
+bytes K1 = 6;
+bytes K2 = 7;
+bytes pose = 8;
+}
+
+message optimizeSim3Response
+{
+bytes K1 = 1;
+bytes K2 = 2;
+bytes pose = 3;
+double xpcfGrpcReturnValue = 4;
+}
+
 service grpcIBundlerService {
-rpc setMapper(setMapperRequest) returns(setMapperResponse) {}
+rpc setMap(setMapRequest) returns(setMapResponse) {}
 rpc bundleAdjustment(bundleAdjustmentRequest) returns(bundleAdjustmentResponse) {}
+rpc optimizeSim3(optimizeSim3Request) returns(optimizeSim3Response) {}
 }
 

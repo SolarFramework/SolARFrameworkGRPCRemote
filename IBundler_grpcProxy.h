@@ -20,8 +20,9 @@ class IBundler_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pub
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode setMapper(SRef<SolAR::api::solver::map::IMapper> const map)     override;
+    SolAR::FrameworkReturnCode setMap(SRef<SolAR::datastructure::Map> const map)     override;
     double bundleAdjustment(SolAR::datastructure::CamCalibration& K, SolAR::datastructure::CamDistortion& D, std::vector<uint32_t> const& selectKeyframes)     override;
+    double optimizeSim3(SolAR::datastructure::CamCalibration& K1, SolAR::datastructure::CamCalibration& K2, SRef<SolAR::datastructure::Keyframe> const& keyframe1, SRef<SolAR::datastructure::Keyframe> const& keyframe2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::vector<SolAR::datastructure::Point3Df> const& pts3D1, std::vector<SolAR::datastructure::Point3Df> const& pts3D2, SolAR::datastructure::Transform3Df& pose)     override;
 
 
   private:
@@ -37,7 +38,7 @@ class IBundler_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pub
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIBundler::IBundler_grpcProxy>
 {
-  static constexpr const char * UUID = "9a8d1201-1f8d-4177-929b-6a40334de779";
+  static constexpr const char * UUID = "c055a972-9f1d-4b66-82fb-4d1fde74b9cb";
   static constexpr const char * NAME = "IBundler_grpcProxy";
   static constexpr const char * DESCRIPTION = "IBundler_grpcProxy grpc client proxy component";
 };
