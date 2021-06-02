@@ -44,7 +44,7 @@ class IVisualInertialFusion_grpcServer:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIVisualInertialFusion::IVisualInertialFusion_grpcServer>
 {
-  static constexpr const char * UUID = "4132c1be-584b-47b9-b4a9-0aa4776c6594";
+  static constexpr const char * UUID = "670a59a5-e8a7-4d4e-b6c9-174e03e738fd";
   static constexpr const char * NAME = "IVisualInertialFusion_grpcServer";
   static constexpr const char * DESCRIPTION = "IVisualInertialFusion_grpcServer grpc server component";
 };

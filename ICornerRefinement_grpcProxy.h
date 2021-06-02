@@ -36,7 +36,7 @@ class ICornerRefinement_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyICornerRefinement::ICornerRefinement_grpcProxy>
 {
-  static constexpr const char * UUID = "1bc30aaa-de79-48d4-b2c2-e3ca1dcdd50b";
+  static constexpr const char * UUID = "4505834b-bdec-4483-a90d-c11ec6f0d4fd";
   static constexpr const char * NAME = "ICornerRefinement_grpcProxy";
   static constexpr const char * DESCRIPTION = "ICornerRefinement_grpcProxy grpc client proxy component";
 };

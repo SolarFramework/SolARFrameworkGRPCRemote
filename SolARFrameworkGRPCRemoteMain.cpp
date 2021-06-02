@@ -1,7 +1,7 @@
 #include "SolARFrameworkGRPCRemoteMain.h"
 #include <xpcf/module/ModuleFactory.h>
 namespace xpcf=org::bcom::xpcf;
-XPCF_DECLARE_MODULE("2220ba3c-9b0d-4363-8d24-7714397cee15", "xpcfGrpcRemotingSolARFramework","xpcf remoting module for project SolARFramework");
+XPCF_DECLARE_MODULE("8b340456-e9fe-43d8-8d77-8c3998854aa6", "SolARFrameworkGRPCRemote","xpcf remoting module for project SolARFramework");
 
 extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boost::uuids::uuid& componentUUID,SRef<xpcf::IComponentIntrospect>& interfaceRef)
 {

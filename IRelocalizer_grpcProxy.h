@@ -37,7 +37,7 @@ class IRelocalizer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIRelocalizer::IRelocalizer_grpcProxy>
 {
-  static constexpr const char * UUID = "cec3c0b4-c640-4ea6-bc87-37619d3a4199";
+  static constexpr const char * UUID = "fc28906e-2eb8-407c-ba27-8e277cc029cc";
   static constexpr const char * NAME = "IRelocalizer_grpcProxy";
   static constexpr const char * DESCRIPTION = "IRelocalizer_grpcProxy grpc client proxy component";
 };

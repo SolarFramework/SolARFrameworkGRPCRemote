@@ -36,7 +36,7 @@ class ISBPatternReIndexer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyISBPatternReIndexer::ISBPatternReIndexer_grpcProxy>
 {
-  static constexpr const char * UUID = "211fa52e-adfd-4c37-8cff-dd3ca61240a6";
+  static constexpr const char * UUID = "9ed2c484-4b6f-4a15-87db-47f9ac2c3e9a";
   static constexpr const char * NAME = "ISBPatternReIndexer_grpcProxy";
   static constexpr const char * DESCRIPTION = "ISBPatternReIndexer_grpcProxy grpc client proxy component";
 };

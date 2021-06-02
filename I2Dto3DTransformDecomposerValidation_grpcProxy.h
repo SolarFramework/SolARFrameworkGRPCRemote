@@ -36,7 +36,7 @@ class I2Dto3DTransformDecomposerValidation_grpcProxy:  public org::bcom::xpcf::C
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2Dto3DTransformDecomposerValidation::I2Dto3DTransformDecomposerValidation_grpcProxy>
 {
-  static constexpr const char * UUID = "bed46a8d-d9e5-4ec5-9142-bc37b181e4c6";
+  static constexpr const char * UUID = "0ccb2b0a-0642-44ee-a84a-4546336cd823";
   static constexpr const char * NAME = "I2Dto3DTransformDecomposerValidation_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2Dto3DTransformDecomposerValidation_grpcProxy grpc client proxy component";
 };

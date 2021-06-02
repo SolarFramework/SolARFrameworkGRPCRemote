@@ -1,5 +1,6 @@
 
 HEADERS += \
+    $$PWD/SolARFrameworkGRPCRemoteMain.h \
 I2D3DCorrespondencesFinder_grpcProxy.h \
 I2D3DCorrespondencesFinder_grpcServer.h \
 grpcI2D3DCorrespondencesFinderService.pb.h \
@@ -279,10 +280,10 @@ grpcIUnprojectService.grpc.pb.h \
 IVisualInertialFusion_grpcProxy.h \
 IVisualInertialFusion_grpcServer.h \
 grpcIVisualInertialFusionService.pb.h \
-grpcIVisualInertialFusionService.grpc.pb.h \
-SolARFrameworkGRPCRemoteMain.h
+grpcIVisualInertialFusionService.grpc.pb.h
 
 SOURCES += \
+    $$PWD/SolARFrameworkGRPCRemoteMain.cpp \
 I2D3DCorrespondencesFinder_grpcProxy.cpp \
 I2D3DCorrespondencesFinder_grpcServer.cpp \
 grpcI2D3DCorrespondencesFinderService.pb.cc \
@@ -562,5 +563,4 @@ grpcIUnprojectService.grpc.pb.cc \
 IVisualInertialFusion_grpcProxy.cpp \
 IVisualInertialFusion_grpcServer.cpp \
 grpcIVisualInertialFusionService.pb.cc \
-grpcIVisualInertialFusionService.grpc.pb.cc \
-SolARFrameworkGRPCRemoteMain.cpp
+grpcIVisualInertialFusionService.grpc.pb.cc

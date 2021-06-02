@@ -38,7 +38,7 @@ class ITracking_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyITracking::ITracking_grpcProxy>
 {
-  static constexpr const char * UUID = "cc60748e-e902-4ffc-8635-fcc5872abbe7";
+  static constexpr const char * UUID = "badf1747-fc7f-4422-b46f-7e1844e1ed0a";
   static constexpr const char * NAME = "ITracking_grpcProxy";
   static constexpr const char * DESCRIPTION = "ITracking_grpcProxy grpc client proxy component";
 };

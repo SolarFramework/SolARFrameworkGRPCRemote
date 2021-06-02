@@ -46,7 +46,7 @@ class I3DTransform_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DTransform::I3DTransform_grpcServer>
 {
-  static constexpr const char * UUID = "0d7d3179-02d8-485c-a187-7a8f152a9a38";
+  static constexpr const char * UUID = "74a8a24b-74b0-446f-af75-ee046d8637b2";
   static constexpr const char * NAME = "I3DTransform_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DTransform_grpcServer grpc server component";
 };

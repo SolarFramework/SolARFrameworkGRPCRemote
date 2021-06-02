@@ -41,7 +41,7 @@ class I3DTransform_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DTransform::I3DTransform_grpcProxy>
 {
-  static constexpr const char * UUID = "44c2e10f-fbef-4cf2-8162-34c424450952";
+  static constexpr const char * UUID = "e115aece-9f08-4833-b899-56d677678f26";
   static constexpr const char * NAME = "I3DTransform_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DTransform_grpcProxy grpc client proxy component";
 };

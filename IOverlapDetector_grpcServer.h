@@ -43,7 +43,7 @@ class IOverlapDetector_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIOverlapDetector::IOverlapDetector_grpcServer>
 {
-  static constexpr const char * UUID = "64ee5a2f-d8da-493c-8cf7-2febb2f45e66";
+  static constexpr const char * UUID = "65d1dfc7-6871-4ea7-a8e5-4d1fb8c32023";
   static constexpr const char * NAME = "IOverlapDetector_grpcServer";
   static constexpr const char * DESCRIPTION = "IOverlapDetector_grpcServer grpc server component";
 };

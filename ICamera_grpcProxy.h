@@ -49,7 +49,7 @@ class ICamera_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual publ
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyICamera::ICamera_grpcProxy>
 {
-  static constexpr const char * UUID = "494daf20-747f-409e-b401-19e11e142cb8";
+  static constexpr const char * UUID = "bc0ad84c-65f7-4b5d-9ff3-6036814058f4";
   static constexpr const char * NAME = "ICamera_grpcProxy";
   static constexpr const char * DESCRIPTION = "ICamera_grpcProxy grpc client proxy component";
 };

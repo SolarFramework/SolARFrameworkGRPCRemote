@@ -41,7 +41,7 @@ class ISBPatternReIndexer_grpcServer:  public org::bcom::xpcf::ConfigurableBase,
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverISBPatternReIndexer::ISBPatternReIndexer_grpcServer>
 {
-  static constexpr const char * UUID = "f5d4c478-1171-43ba-9fc2-18f67c3f2589";
+  static constexpr const char * UUID = "6acb8d56-c10b-4cb1-ad07-03cef8d9a8ad";
   static constexpr const char * NAME = "ISBPatternReIndexer_grpcServer";
   static constexpr const char * DESCRIPTION = "ISBPatternReIndexer_grpcServer grpc server component";
 };

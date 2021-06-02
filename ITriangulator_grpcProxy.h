@@ -40,7 +40,7 @@ class ITriangulator_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyITriangulator::ITriangulator_grpcProxy>
 {
-  static constexpr const char * UUID = "dd307362-5dec-4d0e-990c-884fc6e596ef";
+  static constexpr const char * UUID = "a2ae8f02-2bda-45b6-8bbc-a8a6bae64a31";
   static constexpr const char * NAME = "ITriangulator_grpcProxy";
   static constexpr const char * DESCRIPTION = "ITriangulator_grpcProxy grpc client proxy component";
 };

@@ -44,7 +44,7 @@ class IIMU_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIIMU::IIMU_grpcProxy>
 {
-  static constexpr const char * UUID = "79a3fa5b-4c63-4142-a849-54e3be27c446";
+  static constexpr const char * UUID = "58ea2290-11f9-45f0-8bfb-cd1a1fa05349";
   static constexpr const char * NAME = "IIMU_grpcProxy";
   static constexpr const char * DESCRIPTION = "IIMU_grpcProxy grpc client proxy component";
 };

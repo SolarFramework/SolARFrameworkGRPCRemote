@@ -36,7 +36,7 @@ class IImage2WorldMapper_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIImage2WorldMapper::IImage2WorldMapper_grpcProxy>
 {
-  static constexpr const char * UUID = "29a89f2e-93e7-4b9f-bbe9-fb2b382b2b2b";
+  static constexpr const char * UUID = "ee271e06-f9df-41f2-8a66-42efc0fb729e";
   static constexpr const char * NAME = "IImage2WorldMapper_grpcProxy";
   static constexpr const char * DESCRIPTION = "IImage2WorldMapper_grpcProxy grpc client proxy component";
 };
