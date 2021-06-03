@@ -36,7 +36,7 @@ class I2D3DCorrespondencesFinder_grpcProxy:  public org::bcom::xpcf::Configurabl
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2D3DCorrespondencesFinder::I2D3DCorrespondencesFinder_grpcProxy>
 {
-  static constexpr const char * UUID = "97fc46b3-9775-4869-aad6-2777421c9486";
+  static constexpr const char * UUID = "9840f407-3762-485f-bff4-e26fbad7e7a2";
   static constexpr const char * NAME = "I2D3DCorrespondencesFinder_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2D3DCorrespondencesFinder_grpcProxy grpc client proxy component";
 };

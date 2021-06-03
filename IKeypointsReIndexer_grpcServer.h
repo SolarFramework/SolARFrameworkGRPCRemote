@@ -41,7 +41,7 @@ class IKeypointsReIndexer_grpcServer:  public org::bcom::xpcf::ConfigurableBase,
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeypointsReIndexer::IKeypointsReIndexer_grpcServer>
 {
-  static constexpr const char * UUID = "0adb5ff8-3e7f-4d0e-9845-aecc23e9fea7";
+  static constexpr const char * UUID = "490c2e6a-8a91-4cd5-81fd-07893ef06691";
   static constexpr const char * NAME = "IKeypointsReIndexer_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeypointsReIndexer_grpcServer grpc server component";
 };

@@ -42,7 +42,7 @@ class IMapping_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMapping::IMapping_grpcServer>
 {
-  static constexpr const char * UUID = "595ae088-8146-45b3-8816-5903af77e85f";
+  static constexpr const char * UUID = "5aeef1a6-64dd-413f-9cba-7cd4a71cb1f8";
   static constexpr const char * NAME = "IMapping_grpcServer";
   static constexpr const char * DESCRIPTION = "IMapping_grpcServer grpc server component";
 };

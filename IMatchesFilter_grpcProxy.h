@@ -36,7 +36,7 @@ class IMatchesFilter_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMatchesFilter::IMatchesFilter_grpcProxy>
 {
-  static constexpr const char * UUID = "436e501d-0792-4e01-a7d3-ba8b8412cc9c";
+  static constexpr const char * UUID = "4435dcf2-a93f-4106-9f4d-fbeb831862ef";
   static constexpr const char * NAME = "IMatchesFilter_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMatchesFilter_grpcProxy grpc client proxy component";
 };

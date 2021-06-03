@@ -41,7 +41,7 @@ class ICornerRefinement_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverICornerRefinement::ICornerRefinement_grpcServer>
 {
-  static constexpr const char * UUID = "8cf405fe-10b3-4c03-bbd7-5944b2aeb288";
+  static constexpr const char * UUID = "680c7b3c-f6e5-413f-9a06-43a3039192b4";
   static constexpr const char * NAME = "ICornerRefinement_grpcServer";
   static constexpr const char * DESCRIPTION = "ICornerRefinement_grpcServer grpc server component";
 };

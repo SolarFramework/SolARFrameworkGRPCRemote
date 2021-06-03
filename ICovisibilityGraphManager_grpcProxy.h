@@ -53,7 +53,7 @@ class ICovisibilityGraphManager_grpcProxy:  public org::bcom::xpcf::Configurable
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyICovisibilityGraphManager::ICovisibilityGraphManager_grpcProxy>
 {
-  static constexpr const char * UUID = "bed425e9-ac66-4d5a-88a5-d889afca2843";
+  static constexpr const char * UUID = "510e0dcf-089e-4bdd-8ea2-3f4aa08c7235";
   static constexpr const char * NAME = "ICovisibilityGraphManager_grpcProxy";
   static constexpr const char * DESCRIPTION = "ICovisibilityGraphManager_grpcProxy grpc client proxy component";
 };

@@ -51,7 +51,7 @@ class IMapManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMapManager::IMapManager_grpcServer>
 {
-  static constexpr const char * UUID = "7c4ffd7c-7114-45c8-9f42-cf6a5fddd9cb";
+  static constexpr const char * UUID = "38dbecc0-ff5a-4446-b818-5ad4747921fb";
   static constexpr const char * NAME = "IMapManager_grpcServer";
   static constexpr const char * DESCRIPTION = "IMapManager_grpcServer grpc server component";
 };

@@ -41,7 +41,7 @@ class IContoursExtractor_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIContoursExtractor::IContoursExtractor_grpcServer>
 {
-  static constexpr const char * UUID = "eca1f8fd-2f8c-4b4c-befb-45d81eade7fc";
+  static constexpr const char * UUID = "24b9af96-68ac-4213-b8f5-230268c490f1";
   static constexpr const char * NAME = "IContoursExtractor_grpcServer";
   static constexpr const char * DESCRIPTION = "IContoursExtractor_grpcServer grpc server component";
 };

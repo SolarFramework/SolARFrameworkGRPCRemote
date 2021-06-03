@@ -42,7 +42,7 @@ class IDevice_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pub
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIDevice::IDevice_grpcServer>
 {
-  static constexpr const char * UUID = "d4c0d706-b137-4677-b7ed-24577fb65142";
+  static constexpr const char * UUID = "5e432b50-87ac-4f21-a2c2-1407c53b60c3";
   static constexpr const char * NAME = "IDevice_grpcServer";
   static constexpr const char * DESCRIPTION = "IDevice_grpcServer grpc server component";
 };

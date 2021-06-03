@@ -42,7 +42,7 @@ class IBootstrapper_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIBootstrapper::IBootstrapper_grpcServer>
 {
-  static constexpr const char * UUID = "d1449d79-7281-46f7-8cac-73dda31ed30e";
+  static constexpr const char * UUID = "87ead526-d8c0-4a19-afbe-cc19e874c104";
   static constexpr const char * NAME = "IBootstrapper_grpcServer";
   static constexpr const char * DESCRIPTION = "IBootstrapper_grpcServer grpc server component";
 };

@@ -48,7 +48,7 @@ class IDepthCamera_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDepthCamera::IDepthCamera_grpcProxy>
 {
-  static constexpr const char * UUID = "ec801ecd-7404-4607-ba37-f8ac415a83ca";
+  static constexpr const char * UUID = "53d43e77-30e7-4799-ad94-c435bbc30281";
   static constexpr const char * NAME = "IDepthCamera_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDepthCamera_grpcProxy grpc client proxy component";
 };
