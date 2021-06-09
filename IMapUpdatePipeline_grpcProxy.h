@@ -25,6 +25,7 @@ class IMapUpdatePipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
     SolAR::FrameworkReturnCode stop()     override;
     SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)     override;
     SolAR::FrameworkReturnCode mapUpdateRequest(SRef<SolAR::datastructure::Map> const map)     override;
+    SolAR::FrameworkReturnCode getMapRequest(SRef<SolAR::datastructure::Map>& map)     const     override;
 
 
   private:

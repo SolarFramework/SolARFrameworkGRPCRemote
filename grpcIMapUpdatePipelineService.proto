@@ -39,11 +39,23 @@ message mapUpdateRequestResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message getMapRequestRequest
+{
+bytes map = 1;
+}
+
+message getMapRequestResponse
+{
+bytes map = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 service grpcIMapUpdatePipelineService {
 rpc init(google.protobuf.Empty) returns(initResponse) {}
 rpc start(google.protobuf.Empty) returns(startResponse) {}
 rpc stop(google.protobuf.Empty) returns(stopResponse) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
 rpc mapUpdateRequest(mapUpdateRequestRequest) returns(mapUpdateRequestResponse) {}
+rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 }
 

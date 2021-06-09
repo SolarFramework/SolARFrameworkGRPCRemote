@@ -113,5 +113,22 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::mapUpdateRequest(SRef<
 }
 
 
+SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::getMapRequest(SRef<SolAR::datastructure::Map>& map) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapUpdatePipeline::getMapRequestRequest reqIn;
+  ::grpcIMapUpdatePipeline::getMapRequestResponse respOut;
+  reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getMapRequest(&context, reqIn, &respOut);
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getMapRequestrpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapUpdatePipelineService","getMapRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(respOut.map());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
 }
 

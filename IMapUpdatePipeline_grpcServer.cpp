@@ -75,5 +75,15 @@ XPCFErrorCode IMapUpdatePipeline_grpcServer::onConfigured()
 }
 
 
+::grpc::Status IMapUpdatePipeline_grpcServer::grpcIMapUpdatePipelineServiceImpl::getMapRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response)
+{
+  SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(map);
+  response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  return ::grpc::Status::OK;
+}
+
+
 }
 
