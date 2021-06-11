@@ -77,30 +77,6 @@ struct setCameraParametersResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParametersResponseDefaultTypeInternal _setCameraParametersResponse_default_instance_;
-constexpr setObjectToTrackRequest::setObjectToTrackRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : trackableobject_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct setObjectToTrackRequestDefaultTypeInternal {
-  constexpr setObjectToTrackRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~setObjectToTrackRequestDefaultTypeInternal() {}
-  union {
-    setObjectToTrackRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setObjectToTrackRequestDefaultTypeInternal _setObjectToTrackRequest_default_instance_;
-constexpr setObjectToTrackResponse::setObjectToTrackResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : xpcfgrpcreturnvalue_(0){}
-struct setObjectToTrackResponseDefaultTypeInternal {
-  constexpr setObjectToTrackResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~setObjectToTrackResponseDefaultTypeInternal() {}
-  union {
-    setObjectToTrackResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setObjectToTrackResponseDefaultTypeInternal _setObjectToTrackResponse_default_instance_;
 constexpr mappingProcessRequestRequest::mappingProcessRequestRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -154,7 +130,7 @@ struct getDataForVisualizationResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getDataForVisualizationResponseDefaultTypeInternal _getDataForVisualizationResponse_default_instance_;
 }  // namespace grpcIMappingPipeline
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIMappingPipelineService_2eproto[11];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIMappingPipelineService_2eproto[9];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIMappingPipelineService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIMappingPipelineService_2eproto = nullptr;
 
@@ -190,18 +166,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIMappingPipelineService_2e
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::setCameraParametersResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::setObjectToTrackRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::setObjectToTrackRequest, trackableobject_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::setObjectToTrackResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::setObjectToTrackResponse, xpcfgrpcreturnvalue_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequestRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -236,12 +200,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 12, -1, sizeof(::grpcIMappingPipeline::stopResponse)},
   { 18, -1, sizeof(::grpcIMappingPipeline::setCameraParametersRequest)},
   { 24, -1, sizeof(::grpcIMappingPipeline::setCameraParametersResponse)},
-  { 30, -1, sizeof(::grpcIMappingPipeline::setObjectToTrackRequest)},
-  { 36, -1, sizeof(::grpcIMappingPipeline::setObjectToTrackResponse)},
-  { 42, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequestRequest)},
-  { 49, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequestResponse)},
-  { 55, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationRequest)},
-  { 62, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationResponse)},
+  { 30, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequestRequest)},
+  { 37, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequestResponse)},
+  { 43, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationRequest)},
+  { 50, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -250,8 +212,6 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMappingPipeline::_stopResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMappingPipeline::_setCameraParametersRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMappingPipeline::_setCameraParametersResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMappingPipeline::_setObjectToTrackRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMappingPipeline::_setObjectToTrackResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMappingPipeline::_mappingProcessRequestRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMappingPipeline::_mappingProcessRequestResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMappingPipeline::_getDataForVisualizationRequest_default_instance_),
@@ -267,45 +227,39 @@ const char descriptor_table_protodef_grpcIMappingPipelineService_2eproto[] PROTO
   "fGrpcReturnValue\030\001 \001(\021\"2\n\032setCameraParam"
   "etersRequest\022\024\n\014cameraParams\030\001 \001(\014\":\n\033se"
   "tCameraParametersResponse\022\033\n\023xpcfGrpcRet"
-  "urnValue\030\001 \001(\021\"2\n\027setObjectToTrackReques"
-  "t\022\027\n\017trackableObject\030\001 \001(\014\"7\n\030setObjectT"
-  "oTrackResponse\022\033\n\023xpcfGrpcReturnValue\030\001 "
-  "\001(\021\";\n\034mappingProcessRequestRequest\022\r\n\005i"
-  "mage\030\001 \001(\014\022\014\n\004pose\030\002 \001(\014\"<\n\035mappingProce"
-  "ssRequestResponse\022\033\n\023xpcfGrpcReturnValue"
-  "\030\001 \001(\021\"R\n\036getDataForVisualizationRequest"
-  "\022\031\n\021outputPointClouds\030\001 \001(\014\022\025\n\rkeyframeP"
-  "oses\030\002 \001(\014\"p\n\037getDataForVisualizationRes"
-  "ponse\022\031\n\021outputPointClouds\030\001 \001(\014\022\025\n\rkeyf"
-  "ramePoses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003"
-  " \001(\0212\364\005\n\033grpcIMappingPipelineService\022D\n\004"
-  "init\022\026.google.protobuf.Empty\032\".grpcIMapp"
-  "ingPipeline.initResponse\"\000\022F\n\005start\022\026.go"
-  "ogle.protobuf.Empty\032#.grpcIMappingPipeli"
-  "ne.startResponse\"\000\022D\n\004stop\022\026.google.prot"
-  "obuf.Empty\032\".grpcIMappingPipeline.stopRe"
-  "sponse\"\000\022|\n\023setCameraParameters\0220.grpcIM"
-  "appingPipeline.setCameraParametersReques"
-  "t\0321.grpcIMappingPipeline.setCameraParame"
-  "tersResponse\"\000\022s\n\020setObjectToTrack\022-.grp"
-  "cIMappingPipeline.setObjectToTrackReques"
-  "t\032..grpcIMappingPipeline.setObjectToTrac"
-  "kResponse\"\000\022\202\001\n\025mappingProcessRequest\0222."
-  "grpcIMappingPipeline.mappingProcessReque"
-  "stRequest\0323.grpcIMappingPipeline.mapping"
-  "ProcessRequestResponse\"\000\022\210\001\n\027getDataForV"
-  "isualization\0224.grpcIMappingPipeline.getD"
-  "ataForVisualizationRequest\0325.grpcIMappin"
-  "gPipeline.getDataForVisualizationRespons"
-  "e\"\000b\006proto3"
+  "urnValue\030\001 \001(\021\";\n\034mappingProcessRequestR"
+  "equest\022\r\n\005image\030\001 \001(\014\022\014\n\004pose\030\002 \001(\014\"<\n\035m"
+  "appingProcessRequestResponse\022\033\n\023xpcfGrpc"
+  "ReturnValue\030\001 \001(\021\"R\n\036getDataForVisualiza"
+  "tionRequest\022\031\n\021outputPointClouds\030\001 \001(\014\022\025"
+  "\n\rkeyframePoses\030\002 \001(\014\"p\n\037getDataForVisua"
+  "lizationResponse\022\031\n\021outputPointClouds\030\001 "
+  "\001(\014\022\025\n\rkeyframePoses\030\002 \001(\014\022\033\n\023xpcfGrpcRe"
+  "turnValue\030\003 \001(\0212\377\004\n\033grpcIMappingPipeline"
+  "Service\022D\n\004init\022\026.google.protobuf.Empty\032"
+  "\".grpcIMappingPipeline.initResponse\"\000\022F\n"
+  "\005start\022\026.google.protobuf.Empty\032#.grpcIMa"
+  "ppingPipeline.startResponse\"\000\022D\n\004stop\022\026."
+  "google.protobuf.Empty\032\".grpcIMappingPipe"
+  "line.stopResponse\"\000\022|\n\023setCameraParamete"
+  "rs\0220.grpcIMappingPipeline.setCameraParam"
+  "etersRequest\0321.grpcIMappingPipeline.setC"
+  "ameraParametersResponse\"\000\022\202\001\n\025mappingPro"
+  "cessRequest\0222.grpcIMappingPipeline.mappi"
+  "ngProcessRequestRequest\0323.grpcIMappingPi"
+  "peline.mappingProcessRequestResponse\"\000\022\210"
+  "\001\n\027getDataForVisualization\0224.grpcIMappin"
+  "gPipeline.getDataForVisualizationRequest"
+  "\0325.grpcIMappingPipeline.getDataForVisual"
+  "izationResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIMappingPipelineService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIMappingPipelineService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIMappingPipelineService_2eproto = {
-  false, false, 1531, descriptor_table_protodef_grpcIMappingPipelineService_2eproto, "grpcIMappingPipelineService.proto", 
-  &descriptor_table_grpcIMappingPipelineService_2eproto_once, descriptor_table_grpcIMappingPipelineService_2eproto_deps, 1, 11,
+  false, false, 1305, descriptor_table_protodef_grpcIMappingPipelineService_2eproto, "grpcIMappingPipelineService.proto", 
+  &descriptor_table_grpcIMappingPipelineService_2eproto_once, descriptor_table_grpcIMappingPipelineService_2eproto_deps, 1, 9,
   schemas, file_default_instances, TableStruct_grpcIMappingPipelineService_2eproto::offsets,
   file_level_metadata_grpcIMappingPipelineService_2eproto, file_level_enum_descriptors_grpcIMappingPipelineService_2eproto, file_level_service_descriptors_grpcIMappingPipelineService_2eproto,
 };
@@ -1272,390 +1226,6 @@ void setCameraParametersResponse::InternalSwap(setCameraParametersResponse* othe
 
 // ===================================================================
 
-class setObjectToTrackRequest::_Internal {
- public:
-};
-
-setObjectToTrackRequest::setObjectToTrackRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcIMappingPipeline.setObjectToTrackRequest)
-}
-setObjectToTrackRequest::setObjectToTrackRequest(const setObjectToTrackRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  trackableobject_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_trackableobject().empty()) {
-    trackableobject_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_trackableobject(), 
-      GetArena());
-  }
-  // @@protoc_insertion_point(copy_constructor:grpcIMappingPipeline.setObjectToTrackRequest)
-}
-
-void setObjectToTrackRequest::SharedCtor() {
-trackableobject_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-setObjectToTrackRequest::~setObjectToTrackRequest() {
-  // @@protoc_insertion_point(destructor:grpcIMappingPipeline.setObjectToTrackRequest)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void setObjectToTrackRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  trackableobject_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void setObjectToTrackRequest::ArenaDtor(void* object) {
-  setObjectToTrackRequest* _this = reinterpret_cast< setObjectToTrackRequest* >(object);
-  (void)_this;
-}
-void setObjectToTrackRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void setObjectToTrackRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void setObjectToTrackRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIMappingPipeline.setObjectToTrackRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  trackableobject_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* setObjectToTrackRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // bytes trackableObject = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_trackableobject();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* setObjectToTrackRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIMappingPipeline.setObjectToTrackRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // bytes trackableObject = 1;
-  if (this->trackableobject().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_trackableobject(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIMappingPipeline.setObjectToTrackRequest)
-  return target;
-}
-
-size_t setObjectToTrackRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIMappingPipeline.setObjectToTrackRequest)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // bytes trackableObject = 1;
-  if (this->trackableobject().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_trackableobject());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void setObjectToTrackRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIMappingPipeline.setObjectToTrackRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const setObjectToTrackRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setObjectToTrackRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMappingPipeline.setObjectToTrackRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMappingPipeline.setObjectToTrackRequest)
-    MergeFrom(*source);
-  }
-}
-
-void setObjectToTrackRequest::MergeFrom(const setObjectToTrackRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMappingPipeline.setObjectToTrackRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.trackableobject().size() > 0) {
-    _internal_set_trackableobject(from._internal_trackableobject());
-  }
-}
-
-void setObjectToTrackRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIMappingPipeline.setObjectToTrackRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void setObjectToTrackRequest::CopyFrom(const setObjectToTrackRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMappingPipeline.setObjectToTrackRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool setObjectToTrackRequest::IsInitialized() const {
-  return true;
-}
-
-void setObjectToTrackRequest::InternalSwap(setObjectToTrackRequest* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  trackableobject_.Swap(&other->trackableobject_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata setObjectToTrackRequest::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-class setObjectToTrackResponse::_Internal {
- public:
-};
-
-setObjectToTrackResponse::setObjectToTrackResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcIMappingPipeline.setObjectToTrackResponse)
-}
-setObjectToTrackResponse::setObjectToTrackResponse(const setObjectToTrackResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
-  // @@protoc_insertion_point(copy_constructor:grpcIMappingPipeline.setObjectToTrackResponse)
-}
-
-void setObjectToTrackResponse::SharedCtor() {
-xpcfgrpcreturnvalue_ = 0;
-}
-
-setObjectToTrackResponse::~setObjectToTrackResponse() {
-  // @@protoc_insertion_point(destructor:grpcIMappingPipeline.setObjectToTrackResponse)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void setObjectToTrackResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void setObjectToTrackResponse::ArenaDtor(void* object) {
-  setObjectToTrackResponse* _this = reinterpret_cast< setObjectToTrackResponse* >(object);
-  (void)_this;
-}
-void setObjectToTrackResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void setObjectToTrackResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void setObjectToTrackResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIMappingPipeline.setObjectToTrackResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  xpcfgrpcreturnvalue_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* setObjectToTrackResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // sint32 xpcfGrpcReturnValue = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* setObjectToTrackResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIMappingPipeline.setObjectToTrackResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // sint32 xpcfGrpcReturnValue = 1;
-  if (this->xpcfgrpcreturnvalue() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIMappingPipeline.setObjectToTrackResponse)
-  return target;
-}
-
-size_t setObjectToTrackResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIMappingPipeline.setObjectToTrackResponse)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // sint32 xpcfGrpcReturnValue = 1;
-  if (this->xpcfgrpcreturnvalue() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
-        this->_internal_xpcfgrpcreturnvalue());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void setObjectToTrackResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIMappingPipeline.setObjectToTrackResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const setObjectToTrackResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setObjectToTrackResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMappingPipeline.setObjectToTrackResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMappingPipeline.setObjectToTrackResponse)
-    MergeFrom(*source);
-  }
-}
-
-void setObjectToTrackResponse::MergeFrom(const setObjectToTrackResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMappingPipeline.setObjectToTrackResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
-  }
-}
-
-void setObjectToTrackResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIMappingPipeline.setObjectToTrackResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void setObjectToTrackResponse::CopyFrom(const setObjectToTrackResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMappingPipeline.setObjectToTrackResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool setObjectToTrackResponse::IsInitialized() const {
-  return true;
-}
-
-void setObjectToTrackResponse::InternalSwap(setObjectToTrackResponse* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata setObjectToTrackResponse::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
 class mappingProcessRequestRequest::_Internal {
  public:
 };
@@ -2571,12 +2141,6 @@ template<> PROTOBUF_NOINLINE ::grpcIMappingPipeline::setCameraParametersRequest*
 }
 template<> PROTOBUF_NOINLINE ::grpcIMappingPipeline::setCameraParametersResponse* Arena::CreateMaybeMessage< ::grpcIMappingPipeline::setCameraParametersResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMappingPipeline::setCameraParametersResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::grpcIMappingPipeline::setObjectToTrackRequest* Arena::CreateMaybeMessage< ::grpcIMappingPipeline::setObjectToTrackRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIMappingPipeline::setObjectToTrackRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::grpcIMappingPipeline::setObjectToTrackResponse* Arena::CreateMaybeMessage< ::grpcIMappingPipeline::setObjectToTrackResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIMappingPipeline::setObjectToTrackResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIMappingPipeline::mappingProcessRequestRequest* Arena::CreateMaybeMessage< ::grpcIMappingPipeline::mappingProcessRequestRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMappingPipeline::mappingProcessRequestRequest >(arena);

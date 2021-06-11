@@ -97,22 +97,6 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setCameraParameters(SolA
 }
 
 
-SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setObjectToTrack(SRef<SolAR::datastructure::Trackable> const trackableObject)
-{
-  ::grpc::ClientContext context;
-  ::grpcIMappingPipeline::setObjectToTrackRequest reqIn;
-  ::grpcIMappingPipeline::setObjectToTrackResponse respOut;
-  reqIn.set_trackableobject(xpcf::serialize<SRef<SolAR::datastructure::Trackable>>(trackableObject));
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->setObjectToTrack(&context, reqIn, &respOut);
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "setObjectToTrackrpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMappingPipelineService","setObjectToTrack",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
-}
-
-
 SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df const& pose)
 {
   ::grpc::ClientContext context;

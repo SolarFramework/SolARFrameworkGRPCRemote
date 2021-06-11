@@ -29,16 +29,6 @@ message setCameraParametersResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message setObjectToTrackRequest
-{
-bytes trackableObject = 1;
-}
-
-message setObjectToTrackResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 message mappingProcessRequestRequest
 {
 bytes image = 1;
@@ -68,7 +58,6 @@ rpc init(google.protobuf.Empty) returns(initResponse) {}
 rpc start(google.protobuf.Empty) returns(startResponse) {}
 rpc stop(google.protobuf.Empty) returns(stopResponse) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
-rpc setObjectToTrack(setObjectToTrackRequest) returns(setObjectToTrackResponse) {}
 rpc mappingProcessRequest(mappingProcessRequestRequest) returns(mappingProcessRequestResponse) {}
 rpc getDataForVisualization(getDataForVisualizationRequest) returns(getDataForVisualizationResponse) {}
 }

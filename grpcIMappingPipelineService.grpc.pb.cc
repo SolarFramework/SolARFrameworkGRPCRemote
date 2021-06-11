@@ -26,7 +26,6 @@ static const char* grpcIMappingPipelineService_method_names[] = {
   "/grpcIMappingPipeline.grpcIMappingPipelineService/start",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/stop",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/setCameraParameters",
-  "/grpcIMappingPipeline.grpcIMappingPipelineService/setObjectToTrack",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/mappingProcessRequest",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/getDataForVisualization",
 };
@@ -42,9 +41,8 @@ grpcIMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelIn
   , rpcmethod_start_(grpcIMappingPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_stop_(grpcIMappingPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_setCameraParameters_(grpcIMappingPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setObjectToTrack_(grpcIMappingPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_(grpcIMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_(grpcIMappingPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMappingPipelineService::Stub::init(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMappingPipeline::initResponse* response) {
@@ -139,29 +137,6 @@ void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters(
   return result;
 }
 
-::grpc::Status grpcIMappingPipelineService::Stub::setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpcIMappingPipeline::setObjectToTrackResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::setObjectToTrackRequest, ::grpcIMappingPipeline::setObjectToTrackResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setObjectToTrack_, context, request, response);
-}
-
-void grpcIMappingPipelineService::Stub::experimental_async::setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::setObjectToTrackRequest, ::grpcIMappingPipeline::setObjectToTrackResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setObjectToTrack_, context, request, response, std::move(f));
-}
-
-void grpcIMappingPipelineService::Stub::experimental_async::setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setObjectToTrack_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setObjectToTrackResponse>* grpcIMappingPipelineService::Stub::PrepareAsyncsetObjectToTrackRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::setObjectToTrackResponse, ::grpcIMappingPipeline::setObjectToTrackRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setObjectToTrack_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setObjectToTrackResponse>* grpcIMappingPipelineService::Stub::AsyncsetObjectToTrackRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetObjectToTrackRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
 ::grpc::Status grpcIMappingPipelineService::Stub::mappingProcessRequest(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest& request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::mappingProcessRequestRequest, ::grpcIMappingPipeline::mappingProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_mappingProcessRequest_, context, request, response);
 }
@@ -252,16 +227,6 @@ grpcIMappingPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMappingPipelineService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::setObjectToTrackRequest, ::grpcIMappingPipeline::setObjectToTrackResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIMappingPipelineService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIMappingPipeline::setObjectToTrackRequest* req,
-             ::grpcIMappingPipeline::setObjectToTrackResponse* resp) {
-               return service->setObjectToTrack(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[5],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequestRequest, ::grpcIMappingPipeline::mappingProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -270,7 +235,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[6],
+      grpcIMappingPipelineService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -306,13 +271,6 @@ grpcIMappingPipelineService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMappingPipelineService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest* request, ::grpcIMappingPipeline::setCameraParametersResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status grpcIMappingPipelineService::Service::setObjectToTrack(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -66,15 +66,6 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IMappingPipeline_grpcServer::grpcIMappingPipelineServiceImpl::setObjectToTrack(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response)
-{
-  SRef<SolAR::datastructure::Trackable> trackableObject = xpcf::deserialize<SRef<SolAR::datastructure::Trackable>>(request->trackableobject());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setObjectToTrack(trackableObject);
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  return ::grpc::Status::OK;
-}
-
-
 ::grpc::Status IMappingPipeline_grpcServer::grpcIMappingPipelineServiceImpl::mappingProcessRequest(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest* request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response)
 {
   SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());

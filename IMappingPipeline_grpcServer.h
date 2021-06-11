@@ -28,7 +28,6 @@ class IMappingPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
         ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::stopResponse* response) override;
         ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest* request, ::grpcIMappingPipeline::setCameraParametersResponse* response) override;
-        ::grpc::Status setObjectToTrack(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response) override;
         ::grpc::Status mappingProcessRequest(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest* request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response) override;
         ::grpc::Status getDataForVisualization(::grpc::ServerContext* context, const ::grpcIMappingPipeline::getDataForVisualizationRequest* request, ::grpcIMappingPipeline::getDataForVisualizationResponse* response) override;
 

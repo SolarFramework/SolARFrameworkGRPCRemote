@@ -64,13 +64,6 @@ class grpcIMappingPipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setCameraParametersResponse>> PrepareAsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setCameraParametersResponse>>(PrepareAsyncsetCameraParametersRaw(context, request, cq));
     }
-    virtual ::grpc::Status setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpcIMappingPipeline::setObjectToTrackResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setObjectToTrackResponse>> AsyncsetObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setObjectToTrackResponse>>(AsyncsetObjectToTrackRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setObjectToTrackResponse>> PrepareAsyncsetObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setObjectToTrackResponse>>(PrepareAsyncsetObjectToTrackRaw(context, request, cq));
-    }
     virtual ::grpc::Status mappingProcessRequest(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest& request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::mappingProcessRequestResponse>> AsyncmappingProcessRequest(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::mappingProcessRequestResponse>>(AsyncmappingProcessRequestRaw(context, request, cq));
@@ -112,12 +105,6 @@ class grpcIMappingPipelineService final {
       #else
       virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest* request, ::grpcIMappingPipeline::setCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void mappingProcessRequest(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest* request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void mappingProcessRequest(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest* request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -147,8 +134,6 @@ class grpcIMappingPipelineService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setCameraParametersResponse>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setCameraParametersResponse>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setObjectToTrackResponse>* AsyncsetObjectToTrackRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setObjectToTrackResponse>* PrepareAsyncsetObjectToTrackRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::mappingProcessRequestResponse>* AsyncmappingProcessRequestRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::mappingProcessRequestResponse>* PrepareAsyncmappingProcessRequestRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::getDataForVisualizationResponse>* AsyncgetDataForVisualizationRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -184,13 +169,6 @@ class grpcIMappingPipelineService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParametersResponse>> PrepareAsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParametersResponse>>(PrepareAsyncsetCameraParametersRaw(context, request, cq));
-    }
-    ::grpc::Status setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpcIMappingPipeline::setObjectToTrackResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setObjectToTrackResponse>> AsyncsetObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setObjectToTrackResponse>>(AsyncsetObjectToTrackRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setObjectToTrackResponse>> PrepareAsyncsetObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setObjectToTrackResponse>>(PrepareAsyncsetObjectToTrackRaw(context, request, cq));
     }
     ::grpc::Status mappingProcessRequest(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest& request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::mappingProcessRequestResponse>> AsyncmappingProcessRequest(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest& request, ::grpc::CompletionQueue* cq) {
@@ -233,12 +211,6 @@ class grpcIMappingPipelineService final {
       #else
       void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest* request, ::grpcIMappingPipeline::setCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void setObjectToTrack(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void mappingProcessRequest(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest* request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void mappingProcessRequest(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest* request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
@@ -270,8 +242,6 @@ class grpcIMappingPipelineService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParametersResponse>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParametersResponse>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setObjectToTrackResponse>* AsyncsetObjectToTrackRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setObjectToTrackResponse>* PrepareAsyncsetObjectToTrackRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::mappingProcessRequestResponse>* AsyncmappingProcessRequestRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::mappingProcessRequestResponse>* PrepareAsyncmappingProcessRequestRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::getDataForVisualizationResponse>* AsyncgetDataForVisualizationRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -280,7 +250,6 @@ class grpcIMappingPipelineService final {
     const ::grpc::internal::RpcMethod rpcmethod_start_;
     const ::grpc::internal::RpcMethod rpcmethod_stop_;
     const ::grpc::internal::RpcMethod rpcmethod_setCameraParameters_;
-    const ::grpc::internal::RpcMethod rpcmethod_setObjectToTrack_;
     const ::grpc::internal::RpcMethod rpcmethod_mappingProcessRequest_;
     const ::grpc::internal::RpcMethod rpcmethod_getDataForVisualization_;
   };
@@ -294,7 +263,6 @@ class grpcIMappingPipelineService final {
     virtual ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::startResponse* response);
     virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::stopResponse* response);
     virtual ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest* request, ::grpcIMappingPipeline::setCameraParametersResponse* response);
-    virtual ::grpc::Status setObjectToTrack(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response);
     virtual ::grpc::Status mappingProcessRequest(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest* request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response);
     virtual ::grpc::Status getDataForVisualization(::grpc::ServerContext* context, const ::grpcIMappingPipeline::getDataForVisualizationRequest* request, ::grpcIMappingPipeline::getDataForVisualizationResponse* response);
   };
@@ -379,32 +347,12 @@ class grpcIMappingPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_setObjectToTrack : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_setObjectToTrack() {
-      ::grpc::Service::MarkMethodAsync(4);
-    }
-    ~WithAsyncMethod_setObjectToTrack() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setObjectToTrack(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::setObjectToTrackRequest* /*request*/, ::grpcIMappingPipeline::setObjectToTrackResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestsetObjectToTrack(::grpc::ServerContext* context, ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMappingPipeline::setObjectToTrackResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_mappingProcessRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_mappingProcessRequest() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_mappingProcessRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -415,7 +363,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestmappingProcessRequest(::grpc::ServerContext* context, ::grpcIMappingPipeline::mappingProcessRequestRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMappingPipeline::mappingProcessRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -424,7 +372,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getDataForVisualization() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_getDataForVisualization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -435,10 +383,10 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetDataForVisualization(::grpc::ServerContext* context, ::grpcIMappingPipeline::getDataForVisualizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMappingPipeline::getDataForVisualizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_setCameraParameters<WithAsyncMethod_setObjectToTrack<WithAsyncMethod_mappingProcessRequest<WithAsyncMethod_getDataForVisualization<Service > > > > > > > AsyncService;
+  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_setCameraParameters<WithAsyncMethod_mappingProcessRequest<WithAsyncMethod_getDataForVisualization<Service > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_init : public BaseClass {
    private:
@@ -628,53 +576,6 @@ class grpcIMappingPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_setObjectToTrack : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_setObjectToTrack() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::setObjectToTrackRequest, ::grpcIMappingPipeline::setObjectToTrackResponse>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMappingPipeline::setObjectToTrackRequest* request, ::grpcIMappingPipeline::setObjectToTrackResponse* response) { return this->setObjectToTrack(context, request, response); }));}
-    void SetMessageAllocatorFor_setObjectToTrack(
-        ::grpc::experimental::MessageAllocator< ::grpcIMappingPipeline::setObjectToTrackRequest, ::grpcIMappingPipeline::setObjectToTrackResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
-    #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::setObjectToTrackRequest, ::grpcIMappingPipeline::setObjectToTrackResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_setObjectToTrack() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setObjectToTrack(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::setObjectToTrackRequest* /*request*/, ::grpcIMappingPipeline::setObjectToTrackResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* setObjectToTrack(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMappingPipeline::setObjectToTrackRequest* /*request*/, ::grpcIMappingPipeline::setObjectToTrackResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setObjectToTrack(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMappingPipeline::setObjectToTrackRequest* /*request*/, ::grpcIMappingPipeline::setObjectToTrackResponse* /*response*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
   class ExperimentalWithCallbackMethod_mappingProcessRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -685,7 +586,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(5,
+        MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::mappingProcessRequestRequest, ::grpcIMappingPipeline::mappingProcessRequestResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -697,9 +598,9 @@ class grpcIMappingPipelineService final {
     void SetMessageAllocatorFor_mappingProcessRequest(
         ::grpc::experimental::MessageAllocator< ::grpcIMappingPipeline::mappingProcessRequestRequest, ::grpcIMappingPipeline::mappingProcessRequestResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::mappingProcessRequestRequest, ::grpcIMappingPipeline::mappingProcessRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -732,7 +633,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(6,
+        MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -744,9 +645,9 @@ class grpcIMappingPipelineService final {
     void SetMessageAllocatorFor_getDataForVisualization(
         ::grpc::experimental::MessageAllocator< ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -769,10 +670,10 @@ class grpcIMappingPipelineService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_setObjectToTrack<ExperimentalWithCallbackMethod_mappingProcessRequest<ExperimentalWithCallbackMethod_getDataForVisualization<Service > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_mappingProcessRequest<ExperimentalWithCallbackMethod_getDataForVisualization<Service > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_setObjectToTrack<ExperimentalWithCallbackMethod_mappingProcessRequest<ExperimentalWithCallbackMethod_getDataForVisualization<Service > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_mappingProcessRequest<ExperimentalWithCallbackMethod_getDataForVisualization<Service > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_init : public BaseClass {
    private:
@@ -842,29 +743,12 @@ class grpcIMappingPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_setObjectToTrack : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_setObjectToTrack() {
-      ::grpc::Service::MarkMethodGeneric(4);
-    }
-    ~WithGenericMethod_setObjectToTrack() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setObjectToTrack(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::setObjectToTrackRequest* /*request*/, ::grpcIMappingPipeline::setObjectToTrackResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_mappingProcessRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_mappingProcessRequest() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_mappingProcessRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -881,7 +765,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getDataForVisualization() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_getDataForVisualization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -973,32 +857,12 @@ class grpcIMappingPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_setObjectToTrack : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_setObjectToTrack() {
-      ::grpc::Service::MarkMethodRaw(4);
-    }
-    ~WithRawMethod_setObjectToTrack() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setObjectToTrack(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::setObjectToTrackRequest* /*request*/, ::grpcIMappingPipeline::setObjectToTrackResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestsetObjectToTrack(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_mappingProcessRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_mappingProcessRequest() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_mappingProcessRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1009,7 +873,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestmappingProcessRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1018,7 +882,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getDataForVisualization() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_getDataForVisualization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1029,7 +893,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetDataForVisualization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1185,44 +1049,6 @@ class grpcIMappingPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_setObjectToTrack : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_setObjectToTrack() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setObjectToTrack(context, request, response); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_setObjectToTrack() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setObjectToTrack(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::setObjectToTrackRequest* /*request*/, ::grpcIMappingPipeline::setObjectToTrackResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* setObjectToTrack(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setObjectToTrack(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_mappingProcessRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1233,7 +1059,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(5,
+        MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1271,7 +1097,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(6,
+        MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1407,39 +1233,12 @@ class grpcIMappingPipelineService final {
     virtual ::grpc::Status StreamedsetCameraParameters(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMappingPipeline::setCameraParametersRequest,::grpcIMappingPipeline::setCameraParametersResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_setObjectToTrack : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_setObjectToTrack() {
-      ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIMappingPipeline::setObjectToTrackRequest, ::grpcIMappingPipeline::setObjectToTrackResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::grpcIMappingPipeline::setObjectToTrackRequest, ::grpcIMappingPipeline::setObjectToTrackResponse>* streamer) {
-                       return this->StreamedsetObjectToTrack(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_setObjectToTrack() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status setObjectToTrack(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::setObjectToTrackRequest* /*request*/, ::grpcIMappingPipeline::setObjectToTrackResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedsetObjectToTrack(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMappingPipeline::setObjectToTrackRequest,::grpcIMappingPipeline::setObjectToTrackResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_mappingProcessRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_mappingProcessRequest() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMappingPipeline::mappingProcessRequestRequest, ::grpcIMappingPipeline::mappingProcessRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -1466,7 +1265,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getDataForVisualization() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse>(
             [this](::grpc::ServerContext* context,
@@ -1487,9 +1286,9 @@ class grpcIMappingPipelineService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedgetDataForVisualization(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMappingPipeline::getDataForVisualizationRequest,::grpcIMappingPipeline::getDataForVisualizationResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_setObjectToTrack<WithStreamedUnaryMethod_mappingProcessRequest<WithStreamedUnaryMethod_getDataForVisualization<Service > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_mappingProcessRequest<WithStreamedUnaryMethod_getDataForVisualization<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_setObjectToTrack<WithStreamedUnaryMethod_mappingProcessRequest<WithStreamedUnaryMethod_getDataForVisualization<Service > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_mappingProcessRequest<WithStreamedUnaryMethod_getDataForVisualization<Service > > > > > > StreamedService;
 };
 
 }  // namespace grpcIMappingPipeline

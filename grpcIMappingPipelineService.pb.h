@@ -47,7 +47,7 @@ struct TableStruct_grpcIMappingPipelineService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[11]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -77,12 +77,6 @@ extern setCameraParametersRequestDefaultTypeInternal _setCameraParametersRequest
 class setCameraParametersResponse;
 struct setCameraParametersResponseDefaultTypeInternal;
 extern setCameraParametersResponseDefaultTypeInternal _setCameraParametersResponse_default_instance_;
-class setObjectToTrackRequest;
-struct setObjectToTrackRequestDefaultTypeInternal;
-extern setObjectToTrackRequestDefaultTypeInternal _setObjectToTrackRequest_default_instance_;
-class setObjectToTrackResponse;
-struct setObjectToTrackResponseDefaultTypeInternal;
-extern setObjectToTrackResponseDefaultTypeInternal _setObjectToTrackResponse_default_instance_;
 class startResponse;
 struct startResponseDefaultTypeInternal;
 extern startResponseDefaultTypeInternal _startResponse_default_instance_;
@@ -98,8 +92,6 @@ template<> ::grpcIMappingPipeline::mappingProcessRequestRequest* Arena::CreateMa
 template<> ::grpcIMappingPipeline::mappingProcessRequestResponse* Arena::CreateMaybeMessage<::grpcIMappingPipeline::mappingProcessRequestResponse>(Arena*);
 template<> ::grpcIMappingPipeline::setCameraParametersRequest* Arena::CreateMaybeMessage<::grpcIMappingPipeline::setCameraParametersRequest>(Arena*);
 template<> ::grpcIMappingPipeline::setCameraParametersResponse* Arena::CreateMaybeMessage<::grpcIMappingPipeline::setCameraParametersResponse>(Arena*);
-template<> ::grpcIMappingPipeline::setObjectToTrackRequest* Arena::CreateMaybeMessage<::grpcIMappingPipeline::setObjectToTrackRequest>(Arena*);
-template<> ::grpcIMappingPipeline::setObjectToTrackResponse* Arena::CreateMaybeMessage<::grpcIMappingPipeline::setObjectToTrackResponse>(Arena*);
 template<> ::grpcIMappingPipeline::startResponse* Arena::CreateMaybeMessage<::grpcIMappingPipeline::startResponse>(Arena*);
 template<> ::grpcIMappingPipeline::stopResponse* Arena::CreateMaybeMessage<::grpcIMappingPipeline::stopResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -799,287 +791,6 @@ class setCameraParametersResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class setObjectToTrackRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMappingPipeline.setObjectToTrackRequest) */ {
- public:
-  inline setObjectToTrackRequest() : setObjectToTrackRequest(nullptr) {}
-  virtual ~setObjectToTrackRequest();
-  explicit constexpr setObjectToTrackRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  setObjectToTrackRequest(const setObjectToTrackRequest& from);
-  setObjectToTrackRequest(setObjectToTrackRequest&& from) noexcept
-    : setObjectToTrackRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline setObjectToTrackRequest& operator=(const setObjectToTrackRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline setObjectToTrackRequest& operator=(setObjectToTrackRequest&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const setObjectToTrackRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const setObjectToTrackRequest* internal_default_instance() {
-    return reinterpret_cast<const setObjectToTrackRequest*>(
-               &_setObjectToTrackRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  friend void swap(setObjectToTrackRequest& a, setObjectToTrackRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(setObjectToTrackRequest* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(setObjectToTrackRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline setObjectToTrackRequest* New() const final {
-    return CreateMaybeMessage<setObjectToTrackRequest>(nullptr);
-  }
-
-  setObjectToTrackRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<setObjectToTrackRequest>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const setObjectToTrackRequest& from);
-  void MergeFrom(const setObjectToTrackRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(setObjectToTrackRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIMappingPipeline.setObjectToTrackRequest";
-  }
-  protected:
-  explicit setObjectToTrackRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    return ::descriptor_table_grpcIMappingPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kTrackableObjectFieldNumber = 1,
-  };
-  // bytes trackableObject = 1;
-  void clear_trackableobject();
-  const std::string& trackableobject() const;
-  void set_trackableobject(const std::string& value);
-  void set_trackableobject(std::string&& value);
-  void set_trackableobject(const char* value);
-  void set_trackableobject(const void* value, size_t size);
-  std::string* mutable_trackableobject();
-  std::string* release_trackableobject();
-  void set_allocated_trackableobject(std::string* trackableobject);
-  private:
-  const std::string& _internal_trackableobject() const;
-  void _internal_set_trackableobject(const std::string& value);
-  std::string* _internal_mutable_trackableobject();
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.setObjectToTrackRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trackableobject_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class setObjectToTrackResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMappingPipeline.setObjectToTrackResponse) */ {
- public:
-  inline setObjectToTrackResponse() : setObjectToTrackResponse(nullptr) {}
-  virtual ~setObjectToTrackResponse();
-  explicit constexpr setObjectToTrackResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  setObjectToTrackResponse(const setObjectToTrackResponse& from);
-  setObjectToTrackResponse(setObjectToTrackResponse&& from) noexcept
-    : setObjectToTrackResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline setObjectToTrackResponse& operator=(const setObjectToTrackResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline setObjectToTrackResponse& operator=(setObjectToTrackResponse&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const setObjectToTrackResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const setObjectToTrackResponse* internal_default_instance() {
-    return reinterpret_cast<const setObjectToTrackResponse*>(
-               &_setObjectToTrackResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  friend void swap(setObjectToTrackResponse& a, setObjectToTrackResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(setObjectToTrackResponse* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(setObjectToTrackResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline setObjectToTrackResponse* New() const final {
-    return CreateMaybeMessage<setObjectToTrackResponse>(nullptr);
-  }
-
-  setObjectToTrackResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<setObjectToTrackResponse>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const setObjectToTrackResponse& from);
-  void MergeFrom(const setObjectToTrackResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(setObjectToTrackResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIMappingPipeline.setObjectToTrackResponse";
-  }
-  protected:
-  explicit setObjectToTrackResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    return ::descriptor_table_grpcIMappingPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kXpcfGrpcReturnValueFieldNumber = 1,
-  };
-  // sint32 xpcfGrpcReturnValue = 1;
-  void clear_xpcfgrpcreturnvalue();
-  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
-  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
-  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.setObjectToTrackResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
-};
-// -------------------------------------------------------------------
-
 class mappingProcessRequestRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMappingPipeline.mappingProcessRequestRequest) */ {
  public:
@@ -1123,7 +834,7 @@ class mappingProcessRequestRequest PROTOBUF_FINAL :
                &_mappingProcessRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    5;
 
   friend void swap(mappingProcessRequestRequest& a, mappingProcessRequestRequest& b) {
     a.Swap(&b);
@@ -1285,7 +996,7 @@ class mappingProcessRequestResponse PROTOBUF_FINAL :
                &_mappingProcessRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    6;
 
   friend void swap(mappingProcessRequestResponse& a, mappingProcessRequestResponse& b) {
     a.Swap(&b);
@@ -1422,7 +1133,7 @@ class getDataForVisualizationRequest PROTOBUF_FINAL :
                &_getDataForVisualizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    7;
 
   friend void swap(getDataForVisualizationRequest& a, getDataForVisualizationRequest& b) {
     a.Swap(&b);
@@ -1584,7 +1295,7 @@ class getDataForVisualizationResponse PROTOBUF_FINAL :
                &_getDataForVisualizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    8;
 
   friend void swap(getDataForVisualizationResponse& a, getDataForVisualizationResponse& b) {
     a.Swap(&b);
@@ -1878,95 +1589,6 @@ inline void setCameraParametersResponse::_internal_set_xpcfgrpcreturnvalue(::PRO
 inline void setCameraParametersResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIMappingPipeline.setCameraParametersResponse.xpcfGrpcReturnValue)
-}
-
-// -------------------------------------------------------------------
-
-// setObjectToTrackRequest
-
-// bytes trackableObject = 1;
-inline void setObjectToTrackRequest::clear_trackableobject() {
-  trackableobject_.ClearToEmpty();
-}
-inline const std::string& setObjectToTrackRequest::trackableobject() const {
-  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.setObjectToTrackRequest.trackableObject)
-  return _internal_trackableobject();
-}
-inline void setObjectToTrackRequest::set_trackableobject(const std::string& value) {
-  _internal_set_trackableobject(value);
-  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.setObjectToTrackRequest.trackableObject)
-}
-inline std::string* setObjectToTrackRequest::mutable_trackableobject() {
-  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.setObjectToTrackRequest.trackableObject)
-  return _internal_mutable_trackableobject();
-}
-inline const std::string& setObjectToTrackRequest::_internal_trackableobject() const {
-  return trackableobject_.Get();
-}
-inline void setObjectToTrackRequest::_internal_set_trackableobject(const std::string& value) {
-  
-  trackableobject_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void setObjectToTrackRequest::set_trackableobject(std::string&& value) {
-  
-  trackableobject_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIMappingPipeline.setObjectToTrackRequest.trackableObject)
-}
-inline void setObjectToTrackRequest::set_trackableobject(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  trackableobject_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIMappingPipeline.setObjectToTrackRequest.trackableObject)
-}
-inline void setObjectToTrackRequest::set_trackableobject(const void* value,
-    size_t size) {
-  
-  trackableobject_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIMappingPipeline.setObjectToTrackRequest.trackableObject)
-}
-inline std::string* setObjectToTrackRequest::_internal_mutable_trackableobject() {
-  
-  return trackableobject_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* setObjectToTrackRequest::release_trackableobject() {
-  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.setObjectToTrackRequest.trackableObject)
-  return trackableobject_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void setObjectToTrackRequest::set_allocated_trackableobject(std::string* trackableobject) {
-  if (trackableobject != nullptr) {
-    
-  } else {
-    
-  }
-  trackableobject_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), trackableobject,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.setObjectToTrackRequest.trackableObject)
-}
-
-// -------------------------------------------------------------------
-
-// setObjectToTrackResponse
-
-// sint32 xpcfGrpcReturnValue = 1;
-inline void setObjectToTrackResponse::clear_xpcfgrpcreturnvalue() {
-  xpcfgrpcreturnvalue_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 setObjectToTrackResponse::_internal_xpcfgrpcreturnvalue() const {
-  return xpcfgrpcreturnvalue_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 setObjectToTrackResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.setObjectToTrackResponse.xpcfGrpcReturnValue)
-  return _internal_xpcfgrpcreturnvalue();
-}
-inline void setObjectToTrackResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  xpcfgrpcreturnvalue_ = value;
-}
-inline void setObjectToTrackResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.setObjectToTrackResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -2394,10 +2016,6 @@ inline void getDataForVisualizationResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
