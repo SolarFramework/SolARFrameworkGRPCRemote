@@ -30,6 +30,15 @@ void IMapUpdatePipeline_grpcProxy::unloadComponent ()
 
 XPCFErrorCode IMapUpdatePipeline_grpcProxy::onConfigured()
 {
+    std::cout << "[IMapUpdatePipeline_grpcProxy::onConfigured()]Check if remote map update pipeline URL is defined in XPCF_GRPC_MAP_UPDATE_URL" << std::endl;
+
+    char * envValue = getenv("XPCF_GRPC_MAP_UPDATE_URL");
+
+    if (envValue != nullptr) {
+        std::cout << "[IMapUpdatePipeline_grpcProxy::onConfigured()]XPCF_GRPC_MAP_UPDATE_URL environment variable found: " << envValue  << std::endl;
+        m_channelUrl = envValue;
+    }
+
 //  m_channel = ::grpc::CreateChannel(m_channelUrl, xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)));
     ::grpc::ChannelArguments ch_args;
     ch_args.SetMaxReceiveMessageSize(-1);
