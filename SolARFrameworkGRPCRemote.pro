@@ -74,3 +74,6 @@ OTHER_FILES += \n    SolARFrameworkGRPCRemote.xml
 
 #NOTE : Must be placed at the end of the .pro
 include ($${QMAKE_REMAKEN_RULES_ROOT}/remaken_install_target.pri)
+
+DISTFILES += \
+    README.md

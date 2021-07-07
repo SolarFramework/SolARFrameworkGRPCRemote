@@ -11,3 +11,25 @@ For more informations see :
 *   Roadmap https://solarframework.github.io/discover/when/
 *   Contact framework.solar@b-com.com
 *   Getting started https://solarframework.github.io/contribute/getting_started_linux/
+
+**Process to generate the gRPC module**
+
+Generate the compilation database from the SolAR project (for example, using *Qt Creator*: "Build->Generate Compilation Database").
+
+From this compilation database, generate the remoting code for the SolAR Framework interfaces, using the *xpcf_grpc_gen* tool.
+This tools is included in the *XPCF remoting framework* as a dedicated project, and must be built before use.
+
+XPCF remoting project sources: https://github.com/b-com-software-basis/xpcf/tree/feature/remoting
+
+*xpcf_grpc_gen* parses all the SolAR interfaces and creates a **Qt Creator** development project to compile all the generated code in a XPCF module.
+It also creates a client and a server XPCF configuration file.
+
+Then, you can build the generated XPCF remoting modules, using your IDE.
+
+**xpcf_grpc_gen syntax**
+
+xpcf_grpc_gen -n <project name> -v <project version> -r <repository type> -u <host repository url> --std <C++ standard> --database_dir <compilation database path> --remove_comments_in_macro -o <destination folder> -g <message format>
+
+Example:
+
+xpcf_grpc_gen -n SolARFramework -v 0.10.0 -r build@github -u https://github.com/SolarFramework/SolARFramework --database_dir /home/user/Dev/SolAR/core/build-SolARFramework-Desktop_Qt_5_15_2_GCC_64bit-Release/ --std c++1z --remove_comments_in_macro -g protobuf -o ~/grpcGenSolar
