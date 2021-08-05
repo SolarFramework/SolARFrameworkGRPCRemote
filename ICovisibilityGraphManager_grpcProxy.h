@@ -3,7 +3,7 @@
 
 #ifndef ICOVISIBILITYGRAPHMANAGER_GRPCPROXY_H
 #define ICOVISIBILITYGRAPHMANAGER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/storage/ICovisibilityGraphManager.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/storage/ICovisibilityGraphManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -53,7 +53,7 @@ class ICovisibilityGraphManager_grpcProxy:  public org::bcom::xpcf::Configurable
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyICovisibilityGraphManager::ICovisibilityGraphManager_grpcProxy>
 {
-  static constexpr const char * UUID = "510e0dcf-089e-4bdd-8ea2-3f4aa08c7235";
+  static constexpr const char * UUID = "76ebcd38-916a-4cfd-a1ba-7a14fb62766b";
   static constexpr const char * NAME = "ICovisibilityGraphManager_grpcProxy";
   static constexpr const char * DESCRIPTION = "ICovisibilityGraphManager_grpcProxy grpc client proxy component";
 };

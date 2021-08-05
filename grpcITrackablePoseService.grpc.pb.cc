@@ -29,25 +29,25 @@ static const char* grpcITrackablePoseService_method_names[] = {
 
 std::unique_ptr< grpcITrackablePoseService::Stub> grpcITrackablePoseService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcITrackablePoseService::Stub> stub(new grpcITrackablePoseService::Stub(channel));
+  std::unique_ptr< grpcITrackablePoseService::Stub> stub(new grpcITrackablePoseService::Stub(channel, options));
   return stub;
 }
 
-grpcITrackablePoseService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcITrackablePoseService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setTrackable_(grpcITrackablePoseService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_estimate_(grpcITrackablePoseService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcITrackablePoseService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_setCameraParameters_(grpcITrackablePoseService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setTrackable_(grpcITrackablePoseService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_estimate_(grpcITrackablePoseService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcITrackablePoseService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcITrackablePose::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcITrackablePose::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcITrackablePoseService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITrackablePose::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcITrackablePoseService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITrackablePose::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITrackablePose::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcITrackablePoseService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITrackablePose::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcITrackablePoseService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITrackablePose::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcITrackablePoseService::Stub::experimental_async::setCameraParameters(::
   return ::grpc::internal::BlockingUnaryCall< ::grpcITrackablePose::setTrackableRequest, ::grpcITrackablePose::setTrackableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setTrackable_, context, request, response);
 }
 
-void grpcITrackablePoseService::Stub::experimental_async::setTrackable(::grpc::ClientContext* context, const ::grpcITrackablePose::setTrackableRequest* request, ::grpcITrackablePose::setTrackableResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcITrackablePoseService::Stub::async::setTrackable(::grpc::ClientContext* context, const ::grpcITrackablePose::setTrackableRequest* request, ::grpcITrackablePose::setTrackableResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITrackablePose::setTrackableRequest, ::grpcITrackablePose::setTrackableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setTrackable_, context, request, response, std::move(f));
 }
 
-void grpcITrackablePoseService::Stub::experimental_async::setTrackable(::grpc::ClientContext* context, const ::grpcITrackablePose::setTrackableRequest* request, ::grpcITrackablePose::setTrackableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcITrackablePoseService::Stub::async::setTrackable(::grpc::ClientContext* context, const ::grpcITrackablePose::setTrackableRequest* request, ::grpcITrackablePose::setTrackableResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setTrackable_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcITrackablePoseService::Stub::experimental_async::setTrackable(::grpc::C
   return ::grpc::internal::BlockingUnaryCall< ::grpcITrackablePose::estimateRequest, ::grpcITrackablePose::estimateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_estimate_, context, request, response);
 }
 
-void grpcITrackablePoseService::Stub::experimental_async::estimate(::grpc::ClientContext* context, const ::grpcITrackablePose::estimateRequest* request, ::grpcITrackablePose::estimateResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcITrackablePoseService::Stub::async::estimate(::grpc::ClientContext* context, const ::grpcITrackablePose::estimateRequest* request, ::grpcITrackablePose::estimateResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITrackablePose::estimateRequest, ::grpcITrackablePose::estimateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_, context, request, response, std::move(f));
 }
 
-void grpcITrackablePoseService::Stub::experimental_async::estimate(::grpc::ClientContext* context, const ::grpcITrackablePose::estimateRequest* request, ::grpcITrackablePose::estimateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcITrackablePoseService::Stub::async::estimate(::grpc::ClientContext* context, const ::grpcITrackablePose::estimateRequest* request, ::grpcITrackablePose::estimateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_, context, request, response, reactor);
 }
 

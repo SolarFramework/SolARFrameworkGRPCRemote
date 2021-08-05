@@ -2,7 +2,7 @@
 
 #ifndef ILOOPCLOSUREDETECTOR_GRPCSERVER_H
 #define ILOOPCLOSUREDETECTOR_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopClosureDetector.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopClosureDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcILoopClosureDetectorService.grpc.pb.h"
@@ -42,7 +42,7 @@ class ILoopClosureDetector_grpcServer:  public org::bcom::xpcf::ConfigurableBase
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverILoopClosureDetector::ILoopClosureDetector_grpcServer>
 {
-  static constexpr const char * UUID = "c1da83ed-dfce-43c1-8f84-bad710237811";
+  static constexpr const char * UUID = "ab6941d7-4838-48e9-a540-14cfaa021df3";
   static constexpr const char * NAME = "ILoopClosureDetector_grpcServer";
   static constexpr const char * DESCRIPTION = "ILoopClosureDetector_grpcServer grpc server component";
 };

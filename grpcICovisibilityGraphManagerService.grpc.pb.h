@@ -7,7 +7,6 @@
 #include "grpcICovisibilityGraphManagerService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -155,119 +154,47 @@ class grpcICovisibilityGraphManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncsetCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncsetCovisibilityGraphRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::increaseEdgeResponse>* AsyncincreaseEdgeRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::increaseEdgeResponse>* PrepareAsyncincreaseEdgeRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -306,7 +233,7 @@ class grpcICovisibilityGraphManagerService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest& request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::increaseEdgeResponse>> AsyncincreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::increaseEdgeResponse>>(AsyncincreaseEdgeRaw(context, request, cq));
@@ -426,122 +353,54 @@ class grpcICovisibilityGraphManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncsetCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncsetCovisibilityGraphRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::increaseEdgeResponse>* AsyncincreaseEdgeRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::increaseEdgeResponse>* PrepareAsyncincreaseEdgeRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::decreaseEdgeResponse>* AsyncdecreaseEdgeRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -960,36 +819,22 @@ class grpcICovisibilityGraphManagerService final {
   };
   typedef WithAsyncMethod_increaseEdge<WithAsyncMethod_decreaseEdge<WithAsyncMethod_removeEdge<WithAsyncMethod_getEdge<WithAsyncMethod_isEdge<WithAsyncMethod_getAllNodes<WithAsyncMethod_suppressNode<WithAsyncMethod_getNeighbors<WithAsyncMethod_minimalSpanningTree<WithAsyncMethod_maximalSpanningTree<WithAsyncMethod_getShortestPath<WithAsyncMethod_display<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<WithAsyncMethod_getConstCovisibilityGraph<WithAsyncMethod_getCovisibilityGraph<WithAsyncMethod_setCovisibilityGraph<Service > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_increaseEdge : public BaseClass {
+  class WithCallbackMethod_increaseEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_increaseEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_increaseEdge() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::increaseEdgeRequest, ::grpcICovisibilityGraphManager::increaseEdgeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response) { return this->increaseEdge(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response) { return this->increaseEdge(context, request, response); }));}
     void SetMessageAllocatorFor_increaseEdge(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::increaseEdgeRequest, ::grpcICovisibilityGraphManager::increaseEdgeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::increaseEdgeRequest, ::grpcICovisibilityGraphManager::increaseEdgeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::increaseEdgeRequest, ::grpcICovisibilityGraphManager::increaseEdgeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_increaseEdge() override {
+    ~WithCallbackMethod_increaseEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -997,46 +842,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* increaseEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::increaseEdgeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* increaseEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::increaseEdgeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::increaseEdgeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_decreaseEdge : public BaseClass {
+  class WithCallbackMethod_decreaseEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_decreaseEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_decreaseEdge() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::decreaseEdgeRequest, ::grpcICovisibilityGraphManager::decreaseEdgeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response) { return this->decreaseEdge(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response) { return this->decreaseEdge(context, request, response); }));}
     void SetMessageAllocatorFor_decreaseEdge(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::decreaseEdgeRequest, ::grpcICovisibilityGraphManager::decreaseEdgeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::decreaseEdgeRequest, ::grpcICovisibilityGraphManager::decreaseEdgeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::decreaseEdgeRequest, ::grpcICovisibilityGraphManager::decreaseEdgeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_decreaseEdge() override {
+    ~WithCallbackMethod_decreaseEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1044,46 +869,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* decreaseEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* decreaseEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_removeEdge : public BaseClass {
+  class WithCallbackMethod_removeEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_removeEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
+    WithCallbackMethod_removeEdge() {
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::removeEdgeRequest, ::grpcICovisibilityGraphManager::removeEdgeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response) { return this->removeEdge(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response) { return this->removeEdge(context, request, response); }));}
     void SetMessageAllocatorFor_removeEdge(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::removeEdgeRequest, ::grpcICovisibilityGraphManager::removeEdgeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::removeEdgeRequest, ::grpcICovisibilityGraphManager::removeEdgeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::removeEdgeRequest, ::grpcICovisibilityGraphManager::removeEdgeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_removeEdge() override {
+    ~WithCallbackMethod_removeEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1091,46 +896,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* removeEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::removeEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::removeEdgeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* removeEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::removeEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::removeEdgeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::removeEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::removeEdgeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getEdge : public BaseClass {
+  class WithCallbackMethod_getEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(3,
+    WithCallbackMethod_getEdge() {
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getEdgeRequest, ::grpcICovisibilityGraphManager::getEdgeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response) { return this->getEdge(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response) { return this->getEdge(context, request, response); }));}
     void SetMessageAllocatorFor_getEdge(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::getEdgeRequest, ::grpcICovisibilityGraphManager::getEdgeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::getEdgeRequest, ::grpcICovisibilityGraphManager::getEdgeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getEdgeRequest, ::grpcICovisibilityGraphManager::getEdgeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getEdge() override {
+    ~WithCallbackMethod_getEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1138,46 +923,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::getEdgeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::getEdgeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::getEdgeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_isEdge : public BaseClass {
+  class WithCallbackMethod_isEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_isEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(4,
+    WithCallbackMethod_isEdge() {
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::isEdgeRequest, ::grpcICovisibilityGraphManager::isEdgeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response) { return this->isEdge(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response) { return this->isEdge(context, request, response); }));}
     void SetMessageAllocatorFor_isEdge(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::isEdgeRequest, ::grpcICovisibilityGraphManager::isEdgeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::isEdgeRequest, ::grpcICovisibilityGraphManager::isEdgeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::isEdgeRequest, ::grpcICovisibilityGraphManager::isEdgeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_isEdge() override {
+    ~WithCallbackMethod_isEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1185,46 +950,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::isEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::isEdgeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* isEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::isEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::isEdgeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::isEdgeRequest* /*request*/, ::grpcICovisibilityGraphManager::isEdgeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getAllNodes : public BaseClass {
+  class WithCallbackMethod_getAllNodes : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getAllNodes() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(5,
+    WithCallbackMethod_getAllNodes() {
+      ::grpc::Service::MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getAllNodesRequest, ::grpcICovisibilityGraphManager::getAllNodesResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response) { return this->getAllNodes(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response) { return this->getAllNodes(context, request, response); }));}
     void SetMessageAllocatorFor_getAllNodes(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::getAllNodesRequest, ::grpcICovisibilityGraphManager::getAllNodesResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::getAllNodesRequest, ::grpcICovisibilityGraphManager::getAllNodesResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getAllNodesRequest, ::grpcICovisibilityGraphManager::getAllNodesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getAllNodes() override {
+    ~WithCallbackMethod_getAllNodes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1232,46 +977,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getAllNodes(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getAllNodesRequest* /*request*/, ::grpcICovisibilityGraphManager::getAllNodesResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getAllNodes(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getAllNodesRequest* /*request*/, ::grpcICovisibilityGraphManager::getAllNodesResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getAllNodesRequest* /*request*/, ::grpcICovisibilityGraphManager::getAllNodesResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_suppressNode : public BaseClass {
+  class WithCallbackMethod_suppressNode : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_suppressNode() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(6,
+    WithCallbackMethod_suppressNode() {
+      ::grpc::Service::MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::suppressNodeRequest, ::grpcICovisibilityGraphManager::suppressNodeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response) { return this->suppressNode(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response) { return this->suppressNode(context, request, response); }));}
     void SetMessageAllocatorFor_suppressNode(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::suppressNodeRequest, ::grpcICovisibilityGraphManager::suppressNodeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::suppressNodeRequest, ::grpcICovisibilityGraphManager::suppressNodeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::suppressNodeRequest, ::grpcICovisibilityGraphManager::suppressNodeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_suppressNode() override {
+    ~WithCallbackMethod_suppressNode() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1279,46 +1004,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* suppressNode(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::suppressNodeRequest* /*request*/, ::grpcICovisibilityGraphManager::suppressNodeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* suppressNode(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::suppressNodeRequest* /*request*/, ::grpcICovisibilityGraphManager::suppressNodeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::suppressNodeRequest* /*request*/, ::grpcICovisibilityGraphManager::suppressNodeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getNeighbors : public BaseClass {
+  class WithCallbackMethod_getNeighbors : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getNeighbors() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(7,
+    WithCallbackMethod_getNeighbors() {
+      ::grpc::Service::MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getNeighborsRequest, ::grpcICovisibilityGraphManager::getNeighborsResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response) { return this->getNeighbors(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response) { return this->getNeighbors(context, request, response); }));}
     void SetMessageAllocatorFor_getNeighbors(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::getNeighborsRequest, ::grpcICovisibilityGraphManager::getNeighborsResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::getNeighborsRequest, ::grpcICovisibilityGraphManager::getNeighborsResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getNeighborsRequest, ::grpcICovisibilityGraphManager::getNeighborsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getNeighbors() override {
+    ~WithCallbackMethod_getNeighbors() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1326,46 +1031,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNeighbors(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getNeighborsRequest* /*request*/, ::grpcICovisibilityGraphManager::getNeighborsResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getNeighbors(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getNeighborsRequest* /*request*/, ::grpcICovisibilityGraphManager::getNeighborsResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getNeighborsRequest* /*request*/, ::grpcICovisibilityGraphManager::getNeighborsResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_minimalSpanningTree : public BaseClass {
+  class WithCallbackMethod_minimalSpanningTree : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_minimalSpanningTree() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(8,
+    WithCallbackMethod_minimalSpanningTree() {
+      ::grpc::Service::MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response) { return this->minimalSpanningTree(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response) { return this->minimalSpanningTree(context, request, response); }));}
     void SetMessageAllocatorFor_minimalSpanningTree(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_minimalSpanningTree() override {
+    ~WithCallbackMethod_minimalSpanningTree() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1373,46 +1058,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* minimalSpanningTree(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* /*request*/, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* minimalSpanningTree(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* /*request*/, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* /*request*/, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_maximalSpanningTree : public BaseClass {
+  class WithCallbackMethod_maximalSpanningTree : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_maximalSpanningTree() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(9,
+    WithCallbackMethod_maximalSpanningTree() {
+      ::grpc::Service::MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response) { return this->maximalSpanningTree(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response) { return this->maximalSpanningTree(context, request, response); }));}
     void SetMessageAllocatorFor_maximalSpanningTree(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_maximalSpanningTree() override {
+    ~WithCallbackMethod_maximalSpanningTree() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1420,46 +1085,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* maximalSpanningTree(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* /*request*/, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* maximalSpanningTree(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* /*request*/, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* /*request*/, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getShortestPath : public BaseClass {
+  class WithCallbackMethod_getShortestPath : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getShortestPath() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(10,
+    WithCallbackMethod_getShortestPath() {
+      ::grpc::Service::MarkMethodCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getShortestPathRequest, ::grpcICovisibilityGraphManager::getShortestPathResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response) { return this->getShortestPath(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response) { return this->getShortestPath(context, request, response); }));}
     void SetMessageAllocatorFor_getShortestPath(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::getShortestPathRequest, ::grpcICovisibilityGraphManager::getShortestPathResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::getShortestPathRequest, ::grpcICovisibilityGraphManager::getShortestPathResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getShortestPathRequest, ::grpcICovisibilityGraphManager::getShortestPathResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getShortestPath() override {
+    ~WithCallbackMethod_getShortestPath() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1467,46 +1112,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getShortestPath(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getShortestPathRequest* /*request*/, ::grpcICovisibilityGraphManager::getShortestPathResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getShortestPath(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getShortestPathRequest* /*request*/, ::grpcICovisibilityGraphManager::getShortestPathResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getShortestPathRequest* /*request*/, ::grpcICovisibilityGraphManager::getShortestPathResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_display : public BaseClass {
+  class WithCallbackMethod_display : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_display() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(11,
+    WithCallbackMethod_display() {
+      ::grpc::Service::MarkMethodCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response) { return this->display(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response) { return this->display(context, request, response); }));}
     void SetMessageAllocatorFor_display(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_display() override {
+    ~WithCallbackMethod_display() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1514,46 +1139,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* display(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* display(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_saveToFile : public BaseClass {
+  class WithCallbackMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_saveToFile() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(12,
+    WithCallbackMethod_saveToFile() {
+      ::grpc::Service::MarkMethodCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::saveToFileRequest, ::grpcICovisibilityGraphManager::saveToFileResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response) { return this->saveToFile(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response) { return this->saveToFile(context, request, response); }));}
     void SetMessageAllocatorFor_saveToFile(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::saveToFileRequest, ::grpcICovisibilityGraphManager::saveToFileResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::saveToFileRequest, ::grpcICovisibilityGraphManager::saveToFileResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::saveToFileRequest, ::grpcICovisibilityGraphManager::saveToFileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_saveToFile() override {
+    ~WithCallbackMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1561,46 +1166,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* saveToFile(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::saveToFileRequest* /*request*/, ::grpcICovisibilityGraphManager::saveToFileResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* saveToFile(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::saveToFileRequest* /*request*/, ::grpcICovisibilityGraphManager::saveToFileResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::saveToFileRequest* /*request*/, ::grpcICovisibilityGraphManager::saveToFileResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_loadFromFile : public BaseClass {
+  class WithCallbackMethod_loadFromFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_loadFromFile() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(13,
+    WithCallbackMethod_loadFromFile() {
+      ::grpc::Service::MarkMethodCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::loadFromFileRequest, ::grpcICovisibilityGraphManager::loadFromFileResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response) { return this->loadFromFile(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response) { return this->loadFromFile(context, request, response); }));}
     void SetMessageAllocatorFor_loadFromFile(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::loadFromFileRequest, ::grpcICovisibilityGraphManager::loadFromFileResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::loadFromFileRequest, ::grpcICovisibilityGraphManager::loadFromFileResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::loadFromFileRequest, ::grpcICovisibilityGraphManager::loadFromFileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_loadFromFile() override {
+    ~WithCallbackMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1608,46 +1193,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* loadFromFile(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::loadFromFileRequest* /*request*/, ::grpcICovisibilityGraphManager::loadFromFileResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* loadFromFile(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::loadFromFileRequest* /*request*/, ::grpcICovisibilityGraphManager::loadFromFileResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::loadFromFileRequest* /*request*/, ::grpcICovisibilityGraphManager::loadFromFileResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getConstCovisibilityGraph : public BaseClass {
+  class WithCallbackMethod_getConstCovisibilityGraph : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getConstCovisibilityGraph() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(14,
+    WithCallbackMethod_getConstCovisibilityGraph() {
+      ::grpc::Service::MarkMethodCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) { return this->getConstCovisibilityGraph(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) { return this->getConstCovisibilityGraph(context, request, response); }));}
     void SetMessageAllocatorFor_getConstCovisibilityGraph(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getConstCovisibilityGraph() override {
+    ~WithCallbackMethod_getConstCovisibilityGraph() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1655,46 +1220,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getConstCovisibilityGraph(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getConstCovisibilityGraph(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getCovisibilityGraph : public BaseClass {
+  class WithCallbackMethod_getCovisibilityGraph : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getCovisibilityGraph() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(15,
+    WithCallbackMethod_getCovisibilityGraph() {
+      ::grpc::Service::MarkMethodCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response) { return this->getCovisibilityGraph(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response) { return this->getCovisibilityGraph(context, request, response); }));}
     void SetMessageAllocatorFor_getCovisibilityGraph(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getCovisibilityGraph() override {
+    ~WithCallbackMethod_getCovisibilityGraph() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1702,46 +1247,26 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getCovisibilityGraph(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getCovisibilityGraph(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_setCovisibilityGraph : public BaseClass {
+  class WithCallbackMethod_setCovisibilityGraph : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_setCovisibilityGraph() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(16,
+    WithCallbackMethod_setCovisibilityGraph() {
+      ::grpc::Service::MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest, ::google::protobuf::Empty>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response) { return this->setCovisibilityGraph(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response) { return this->setCovisibilityGraph(context, request, response); }));}
     void SetMessageAllocatorFor_setCovisibilityGraph(
-        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_setCovisibilityGraph() override {
+    ~WithCallbackMethod_setCovisibilityGraph() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1749,20 +1274,11 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setCovisibilityGraph(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setCovisibilityGraph(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_increaseEdge<ExperimentalWithCallbackMethod_decreaseEdge<ExperimentalWithCallbackMethod_removeEdge<ExperimentalWithCallbackMethod_getEdge<ExperimentalWithCallbackMethod_isEdge<ExperimentalWithCallbackMethod_getAllNodes<ExperimentalWithCallbackMethod_suppressNode<ExperimentalWithCallbackMethod_getNeighbors<ExperimentalWithCallbackMethod_minimalSpanningTree<ExperimentalWithCallbackMethod_maximalSpanningTree<ExperimentalWithCallbackMethod_getShortestPath<ExperimentalWithCallbackMethod_display<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_getConstCovisibilityGraph<ExperimentalWithCallbackMethod_getCovisibilityGraph<ExperimentalWithCallbackMethod_setCovisibilityGraph<Service > > > > > > > > > > > > > > > > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_increaseEdge<ExperimentalWithCallbackMethod_decreaseEdge<ExperimentalWithCallbackMethod_removeEdge<ExperimentalWithCallbackMethod_getEdge<ExperimentalWithCallbackMethod_isEdge<ExperimentalWithCallbackMethod_getAllNodes<ExperimentalWithCallbackMethod_suppressNode<ExperimentalWithCallbackMethod_getNeighbors<ExperimentalWithCallbackMethod_minimalSpanningTree<ExperimentalWithCallbackMethod_maximalSpanningTree<ExperimentalWithCallbackMethod_getShortestPath<ExperimentalWithCallbackMethod_display<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_getConstCovisibilityGraph<ExperimentalWithCallbackMethod_getCovisibilityGraph<ExperimentalWithCallbackMethod_setCovisibilityGraph<Service > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_increaseEdge<WithCallbackMethod_decreaseEdge<WithCallbackMethod_removeEdge<WithCallbackMethod_getEdge<WithCallbackMethod_isEdge<WithCallbackMethod_getAllNodes<WithCallbackMethod_suppressNode<WithCallbackMethod_getNeighbors<WithCallbackMethod_minimalSpanningTree<WithCallbackMethod_maximalSpanningTree<WithCallbackMethod_getShortestPath<WithCallbackMethod_display<WithCallbackMethod_saveToFile<WithCallbackMethod_loadFromFile<WithCallbackMethod_getConstCovisibilityGraph<WithCallbackMethod_getCovisibilityGraph<WithCallbackMethod_setCovisibilityGraph<Service > > > > > > > > > > > > > > > > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_increaseEdge : public BaseClass {
    private:
@@ -2393,27 +1909,17 @@ class grpcICovisibilityGraphManagerService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_increaseEdge : public BaseClass {
+  class WithRawCallbackMethod_increaseEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_increaseEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_increaseEdge() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->increaseEdge(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->increaseEdge(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_increaseEdge() override {
+    ~WithRawCallbackMethod_increaseEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2421,37 +1927,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* increaseEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* increaseEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_decreaseEdge : public BaseClass {
+  class WithRawCallbackMethod_decreaseEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_decreaseEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_decreaseEdge() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->decreaseEdge(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->decreaseEdge(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_decreaseEdge() override {
+    ~WithRawCallbackMethod_decreaseEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2459,37 +1949,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* decreaseEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* decreaseEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_removeEdge : public BaseClass {
+  class WithRawCallbackMethod_removeEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_removeEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
+    WithRawCallbackMethod_removeEdge() {
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->removeEdge(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->removeEdge(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_removeEdge() override {
+    ~WithRawCallbackMethod_removeEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2497,37 +1971,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* removeEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* removeEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getEdge : public BaseClass {
+  class WithRawCallbackMethod_getEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(3,
+    WithRawCallbackMethod_getEdge() {
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getEdge(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getEdge(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getEdge() override {
+    ~WithRawCallbackMethod_getEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2535,37 +1993,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_isEdge : public BaseClass {
+  class WithRawCallbackMethod_isEdge : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_isEdge() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(4,
+    WithRawCallbackMethod_isEdge() {
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isEdge(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isEdge(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_isEdge() override {
+    ~WithRawCallbackMethod_isEdge() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2573,37 +2015,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isEdge(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* isEdge(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getAllNodes : public BaseClass {
+  class WithRawCallbackMethod_getAllNodes : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getAllNodes() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(5,
+    WithRawCallbackMethod_getAllNodes() {
+      ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAllNodes(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAllNodes(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getAllNodes() override {
+    ~WithRawCallbackMethod_getAllNodes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2611,37 +2037,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getAllNodes(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getAllNodes(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_suppressNode : public BaseClass {
+  class WithRawCallbackMethod_suppressNode : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_suppressNode() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(6,
+    WithRawCallbackMethod_suppressNode() {
+      ::grpc::Service::MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->suppressNode(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->suppressNode(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_suppressNode() override {
+    ~WithRawCallbackMethod_suppressNode() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2649,37 +2059,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* suppressNode(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* suppressNode(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getNeighbors : public BaseClass {
+  class WithRawCallbackMethod_getNeighbors : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getNeighbors() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(7,
+    WithRawCallbackMethod_getNeighbors() {
+      ::grpc::Service::MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNeighbors(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNeighbors(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getNeighbors() override {
+    ~WithRawCallbackMethod_getNeighbors() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2687,37 +2081,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNeighbors(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getNeighbors(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_minimalSpanningTree : public BaseClass {
+  class WithRawCallbackMethod_minimalSpanningTree : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_minimalSpanningTree() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(8,
+    WithRawCallbackMethod_minimalSpanningTree() {
+      ::grpc::Service::MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->minimalSpanningTree(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->minimalSpanningTree(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_minimalSpanningTree() override {
+    ~WithRawCallbackMethod_minimalSpanningTree() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2725,37 +2103,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* minimalSpanningTree(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* minimalSpanningTree(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_maximalSpanningTree : public BaseClass {
+  class WithRawCallbackMethod_maximalSpanningTree : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_maximalSpanningTree() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(9,
+    WithRawCallbackMethod_maximalSpanningTree() {
+      ::grpc::Service::MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->maximalSpanningTree(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->maximalSpanningTree(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_maximalSpanningTree() override {
+    ~WithRawCallbackMethod_maximalSpanningTree() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2763,37 +2125,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* maximalSpanningTree(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* maximalSpanningTree(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getShortestPath : public BaseClass {
+  class WithRawCallbackMethod_getShortestPath : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getShortestPath() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(10,
+    WithRawCallbackMethod_getShortestPath() {
+      ::grpc::Service::MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getShortestPath(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getShortestPath(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getShortestPath() override {
+    ~WithRawCallbackMethod_getShortestPath() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2801,37 +2147,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getShortestPath(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getShortestPath(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_display : public BaseClass {
+  class WithRawCallbackMethod_display : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_display() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(11,
+    WithRawCallbackMethod_display() {
+      ::grpc::Service::MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->display(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->display(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_display() override {
+    ~WithRawCallbackMethod_display() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2839,37 +2169,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* display(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* display(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_saveToFile : public BaseClass {
+  class WithRawCallbackMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_saveToFile() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(12,
+    WithRawCallbackMethod_saveToFile() {
+      ::grpc::Service::MarkMethodRawCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->saveToFile(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->saveToFile(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_saveToFile() override {
+    ~WithRawCallbackMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2877,37 +2191,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* saveToFile(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* saveToFile(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_loadFromFile : public BaseClass {
+  class WithRawCallbackMethod_loadFromFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_loadFromFile() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(13,
+    WithRawCallbackMethod_loadFromFile() {
+      ::grpc::Service::MarkMethodRawCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->loadFromFile(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->loadFromFile(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_loadFromFile() override {
+    ~WithRawCallbackMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2915,37 +2213,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* loadFromFile(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* loadFromFile(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getConstCovisibilityGraph : public BaseClass {
+  class WithRawCallbackMethod_getConstCovisibilityGraph : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getConstCovisibilityGraph() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(14,
+    WithRawCallbackMethod_getConstCovisibilityGraph() {
+      ::grpc::Service::MarkMethodRawCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getConstCovisibilityGraph(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getConstCovisibilityGraph(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getConstCovisibilityGraph() override {
+    ~WithRawCallbackMethod_getConstCovisibilityGraph() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2953,37 +2235,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getConstCovisibilityGraph(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getConstCovisibilityGraph(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getCovisibilityGraph : public BaseClass {
+  class WithRawCallbackMethod_getCovisibilityGraph : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getCovisibilityGraph() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(15,
+    WithRawCallbackMethod_getCovisibilityGraph() {
+      ::grpc::Service::MarkMethodRawCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getCovisibilityGraph(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getCovisibilityGraph(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getCovisibilityGraph() override {
+    ~WithRawCallbackMethod_getCovisibilityGraph() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2991,37 +2257,21 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getCovisibilityGraph(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getCovisibilityGraph(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_setCovisibilityGraph : public BaseClass {
+  class WithRawCallbackMethod_setCovisibilityGraph : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_setCovisibilityGraph() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(16,
+    WithRawCallbackMethod_setCovisibilityGraph() {
+      ::grpc::Service::MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCovisibilityGraph(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCovisibilityGraph(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_setCovisibilityGraph() override {
+    ~WithRawCallbackMethod_setCovisibilityGraph() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3029,14 +2279,8 @@ class grpcICovisibilityGraphManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setCovisibilityGraph(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setCovisibilityGraph(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_increaseEdge : public BaseClass {

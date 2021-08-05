@@ -3,7 +3,7 @@
 
 #ifndef IDESCRIPTORSEXTRACTORSBPATTERN_GRPCPROXY_H
 #define IDESCRIPTORSEXTRACTORSBPATTERN_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorsExtractorSBPattern.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorsExtractorSBPattern.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IDescriptorsExtractorSBPattern_grpcProxy:  public org::bcom::xpcf::Configu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDescriptorsExtractorSBPattern::IDescriptorsExtractorSBPattern_grpcProxy>
 {
-  static constexpr const char * UUID = "a586aa80-f9dc-49b5-9429-c9fcd5b6194b";
+  static constexpr const char * UUID = "093d5cb8-881a-48e9-adf5-eec03e08a48f";
   static constexpr const char * NAME = "IDescriptorsExtractorSBPattern_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDescriptorsExtractorSBPattern_grpcProxy grpc client proxy component";
 };

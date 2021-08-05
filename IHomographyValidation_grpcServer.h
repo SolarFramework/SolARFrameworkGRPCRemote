@@ -2,7 +2,7 @@
 
 #ifndef IHOMOGRAPHYVALIDATION_GRPCSERVER_H
 #define IHOMOGRAPHYVALIDATION_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/IHomographyValidation.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/IHomographyValidation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIHomographyValidationService.grpc.pb.h"
@@ -41,7 +41,7 @@ class IHomographyValidation_grpcServer:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIHomographyValidation::IHomographyValidation_grpcServer>
 {
-  static constexpr const char * UUID = "1fba7576-d6ff-4a6b-b28b-c21bddba1bf4";
+  static constexpr const char * UUID = "33070863-c703-4db2-a549-fdd349924b8d";
   static constexpr const char * NAME = "IHomographyValidation_grpcServer";
   static constexpr const char * DESCRIPTION = "IHomographyValidation_grpcServer grpc server component";
 };

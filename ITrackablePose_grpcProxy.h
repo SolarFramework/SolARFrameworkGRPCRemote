@@ -3,7 +3,7 @@
 
 #ifndef ITRACKABLEPOSE_GRPCPROXY_H
 #define ITRACKABLEPOSE_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/ITrackablePose.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/ITrackablePose.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -38,7 +38,7 @@ class ITrackablePose_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyITrackablePose::ITrackablePose_grpcProxy>
 {
-  static constexpr const char * UUID = "6f40122b-1502-4d4d-870c-eb75b793dc2b";
+  static constexpr const char * UUID = "b7469d74-780b-445a-9859-200272ef8526";
   static constexpr const char * NAME = "ITrackablePose_grpcProxy";
   static constexpr const char * DESCRIPTION = "ITrackablePose_grpcProxy grpc client proxy component";
 };

@@ -3,7 +3,7 @@
 
 #ifndef I3DOVERLAY_GRPCPROXY_H
 #define I3DOVERLAY_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DOverlay.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class I3DOverlay_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DOverlay::I3DOverlay_grpcProxy>
 {
-  static constexpr const char * UUID = "15240d6d-27df-4312-9718-8e2c22d4684d";
+  static constexpr const char * UUID = "9e3c3784-6f1f-4ee1-9430-4ee6eddc9818";
   static constexpr const char * NAME = "I3DOverlay_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DOverlay_grpcProxy grpc client proxy component";
 };

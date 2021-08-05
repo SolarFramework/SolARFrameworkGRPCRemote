@@ -3,7 +3,7 @@
 
 #ifndef IMATCHESFILTER_GRPCPROXY_H
 #define IMATCHESFILTER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/features/IMatchesFilter.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IMatchesFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IMatchesFilter_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMatchesFilter::IMatchesFilter_grpcProxy>
 {
-  static constexpr const char * UUID = "4435dcf2-a93f-4106-9f4d-fbeb831862ef";
+  static constexpr const char * UUID = "86a2ad6c-9f66-44f0-a08f-22a6e0ee1d67";
   static constexpr const char * NAME = "IMatchesFilter_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMatchesFilter_grpcProxy grpc client proxy component";
 };

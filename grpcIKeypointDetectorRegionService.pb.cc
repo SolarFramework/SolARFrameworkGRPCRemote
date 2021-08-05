@@ -141,10 +141,8 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIK
   schemas, file_default_instances, TableStruct_grpcIKeypointDetectorRegionService_2eproto::offsets,
   file_level_metadata_grpcIKeypointDetectorRegionService_2eproto, file_level_enum_descriptors_grpcIKeypointDetectorRegionService_2eproto, file_level_service_descriptors_grpcIKeypointDetectorRegionService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
-descriptor_table_grpcIKeypointDetectorRegionService_2eproto_metadata_getter(int index) {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcIKeypointDetectorRegionService_2eproto);
-  return descriptor_table_grpcIKeypointDetectorRegionService_2eproto.file_level_metadata[index];
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcIKeypointDetectorRegionService_2eproto_getter() {
+  return &descriptor_table_grpcIKeypointDetectorRegionService_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -157,10 +155,13 @@ class setTypeRequest::_Internal {
  public:
 };
 
-setTypeRequest::setTypeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+setTypeRequest::setTypeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcIKeypointDetectorRegion.setTypeRequest)
 }
 setTypeRequest::setTypeRequest(const setTypeRequest& from)
@@ -170,18 +171,19 @@ setTypeRequest::setTypeRequest(const setTypeRequest& from)
   // @@protoc_insertion_point(copy_constructor:grpcIKeypointDetectorRegion.setTypeRequest)
 }
 
-void setTypeRequest::SharedCtor() {
+inline void setTypeRequest::SharedCtor() {
 type_ = 0;
 }
 
 setTypeRequest::~setTypeRequest() {
   // @@protoc_insertion_point(destructor:grpcIKeypointDetectorRegion.setTypeRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void setTypeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void setTypeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void setTypeRequest::ArenaDtor(void* object) {
@@ -209,7 +211,6 @@ const char* setTypeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 type = 1;
       case 1:
@@ -220,7 +221,8 @@ const char* setTypeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -247,7 +249,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 type = 1;
-  if (this->type() != 0) {
+  if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_type(), target);
   }
@@ -269,7 +271,7 @@ size_t setTypeRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 type = 1;
-  if (this->type() != 0) {
+  if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_type());
@@ -284,38 +286,29 @@ size_t setTypeRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void setTypeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeypointDetectorRegion.setTypeRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const setTypeRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setTypeRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeypointDetectorRegion.setTypeRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeypointDetectorRegion.setTypeRequest)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData setTypeRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    setTypeRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*setTypeRequest::GetClassData() const { return &_class_data_; }
+
+void setTypeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<setTypeRequest *>(to)->MergeFrom(
+      static_cast<const setTypeRequest &>(from));
 }
+
 
 void setTypeRequest::MergeFrom(const setTypeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeypointDetectorRegion.setTypeRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.type() != 0) {
+  if (from._internal_type() != 0) {
     _internal_set_type(from._internal_type());
   }
-}
-
-void setTypeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeypointDetectorRegion.setTypeRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void setTypeRequest::CopyFrom(const setTypeRequest& from) {
@@ -331,14 +324,15 @@ bool setTypeRequest::IsInitialized() const {
 
 void setTypeRequest::InternalSwap(setTypeRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(type_, other->type_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata setTypeRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcIKeypointDetectorRegionService_2eproto_getter, &descriptor_table_grpcIKeypointDetectorRegionService_2eproto_once,
+      file_level_metadata_grpcIKeypointDetectorRegionService_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -346,10 +340,13 @@ class getTypeResponse::_Internal {
  public:
 };
 
-getTypeResponse::getTypeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+getTypeResponse::getTypeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcIKeypointDetectorRegion.getTypeResponse)
 }
 getTypeResponse::getTypeResponse(const getTypeResponse& from)
@@ -359,18 +356,19 @@ getTypeResponse::getTypeResponse(const getTypeResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcIKeypointDetectorRegion.getTypeResponse)
 }
 
-void getTypeResponse::SharedCtor() {
+inline void getTypeResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 getTypeResponse::~getTypeResponse() {
   // @@protoc_insertion_point(destructor:grpcIKeypointDetectorRegion.getTypeResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void getTypeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void getTypeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void getTypeResponse::ArenaDtor(void* object) {
@@ -398,7 +396,6 @@ const char* getTypeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -409,7 +406,8 @@ const char* getTypeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -436,7 +434,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -458,7 +456,7 @@ size_t getTypeResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -473,38 +471,29 @@ size_t getTypeResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void getTypeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeypointDetectorRegion.getTypeResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const getTypeResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getTypeResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeypointDetectorRegion.getTypeResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeypointDetectorRegion.getTypeResponse)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getTypeResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    getTypeResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getTypeResponse::GetClassData() const { return &_class_data_; }
+
+void getTypeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<getTypeResponse *>(to)->MergeFrom(
+      static_cast<const getTypeResponse &>(from));
 }
+
 
 void getTypeResponse::MergeFrom(const getTypeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeypointDetectorRegion.getTypeResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.xpcfgrpcreturnvalue() != 0) {
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-}
-
-void getTypeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeypointDetectorRegion.getTypeResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void getTypeResponse::CopyFrom(const getTypeResponse& from) {
@@ -520,14 +509,15 @@ bool getTypeResponse::IsInitialized() const {
 
 void getTypeResponse::InternalSwap(getTypeResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getTypeResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcIKeypointDetectorRegionService_2eproto_getter, &descriptor_table_grpcIKeypointDetectorRegionService_2eproto_once,
+      file_level_metadata_grpcIKeypointDetectorRegionService_2eproto[1]);
 }
-
 
 // ===================================================================
 
@@ -535,10 +525,13 @@ class detectRequest::_Internal {
  public:
 };
 
-detectRequest::detectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+detectRequest::detectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcIKeypointDetectorRegion.detectRequest)
 }
 detectRequest::detectRequest(const detectRequest& from)
@@ -547,22 +540,22 @@ detectRequest::detectRequest(const detectRequest& from)
   image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_image().empty()) {
     image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_image(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   contours_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_contours().empty()) {
     contours_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_contours(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   keypoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_keypoints().empty()) {
     keypoints_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keypoints(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIKeypointDetectorRegion.detectRequest)
 }
 
-void detectRequest::SharedCtor() {
+inline void detectRequest::SharedCtor() {
 image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 contours_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 keypoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -570,12 +563,13 @@ keypoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAl
 
 detectRequest::~detectRequest() {
   // @@protoc_insertion_point(destructor:grpcIKeypointDetectorRegion.detectRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void detectRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void detectRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   contours_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   keypoints_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -608,7 +602,6 @@ const char* detectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes image = 1;
       case 1:
@@ -636,7 +629,8 @@ const char* detectRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -663,19 +657,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes image = 1;
-  if (this->image().size() > 0) {
+  if (!this->_internal_image().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_image(), target);
   }
 
   // bytes contours = 2;
-  if (this->contours().size() > 0) {
+  if (!this->_internal_contours().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_contours(), target);
   }
 
   // bytes keypoints = 3;
-  if (this->keypoints().size() > 0) {
+  if (!this->_internal_keypoints().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_keypoints(), target);
   }
@@ -697,21 +691,21 @@ size_t detectRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes image = 1;
-  if (this->image().size() > 0) {
+  if (!this->_internal_image().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_image());
   }
 
   // bytes contours = 2;
-  if (this->contours().size() > 0) {
+  if (!this->_internal_contours().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_contours());
   }
 
   // bytes keypoints = 3;
-  if (this->keypoints().size() > 0) {
+  if (!this->_internal_keypoints().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keypoints());
@@ -726,44 +720,35 @@ size_t detectRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void detectRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeypointDetectorRegion.detectRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const detectRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<detectRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeypointDetectorRegion.detectRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeypointDetectorRegion.detectRequest)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData detectRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    detectRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*detectRequest::GetClassData() const { return &_class_data_; }
+
+void detectRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<detectRequest *>(to)->MergeFrom(
+      static_cast<const detectRequest &>(from));
 }
+
 
 void detectRequest::MergeFrom(const detectRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeypointDetectorRegion.detectRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.image().size() > 0) {
+  if (!from._internal_image().empty()) {
     _internal_set_image(from._internal_image());
   }
-  if (from.contours().size() > 0) {
+  if (!from._internal_contours().empty()) {
     _internal_set_contours(from._internal_contours());
   }
-  if (from.keypoints().size() > 0) {
+  if (!from._internal_keypoints().empty()) {
     _internal_set_keypoints(from._internal_keypoints());
   }
-}
-
-void detectRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeypointDetectorRegion.detectRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void detectRequest::CopyFrom(const detectRequest& from) {
@@ -779,16 +764,29 @@ bool detectRequest::IsInitialized() const {
 
 void detectRequest::InternalSwap(detectRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  image_.Swap(&other->image_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  contours_.Swap(&other->contours_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  keypoints_.Swap(&other->keypoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &image_, GetArenaForAllocation(),
+      &other->image_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &contours_, GetArenaForAllocation(),
+      &other->contours_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &keypoints_, GetArenaForAllocation(),
+      &other->keypoints_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detectRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcIKeypointDetectorRegionService_2eproto_getter, &descriptor_table_grpcIKeypointDetectorRegionService_2eproto_once,
+      file_level_metadata_grpcIKeypointDetectorRegionService_2eproto[2]);
 }
-
 
 // ===================================================================
 
@@ -796,10 +794,13 @@ class detectResponse::_Internal {
  public:
 };
 
-detectResponse::detectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+detectResponse::detectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcIKeypointDetectorRegion.detectResponse)
 }
 detectResponse::detectResponse(const detectResponse& from)
@@ -808,23 +809,24 @@ detectResponse::detectResponse(const detectResponse& from)
   keypoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_keypoints().empty()) {
     keypoints_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keypoints(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIKeypointDetectorRegion.detectResponse)
 }
 
-void detectResponse::SharedCtor() {
+inline void detectResponse::SharedCtor() {
 keypoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 detectResponse::~detectResponse() {
   // @@protoc_insertion_point(destructor:grpcIKeypointDetectorRegion.detectResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void detectResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void detectResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   keypoints_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -853,7 +855,6 @@ const char* detectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes keypoints = 1;
       case 1:
@@ -865,7 +866,8 @@ const char* detectResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -892,7 +894,7 @@ failure:
   (void) cached_has_bits;
 
   // bytes keypoints = 1;
-  if (this->keypoints().size() > 0) {
+  if (!this->_internal_keypoints().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_keypoints(), target);
   }
@@ -914,7 +916,7 @@ size_t detectResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes keypoints = 1;
-  if (this->keypoints().size() > 0) {
+  if (!this->_internal_keypoints().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keypoints());
@@ -929,38 +931,29 @@ size_t detectResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void detectResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeypointDetectorRegion.detectResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const detectResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<detectResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeypointDetectorRegion.detectResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeypointDetectorRegion.detectResponse)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData detectResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    detectResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*detectResponse::GetClassData() const { return &_class_data_; }
+
+void detectResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<detectResponse *>(to)->MergeFrom(
+      static_cast<const detectResponse &>(from));
 }
+
 
 void detectResponse::MergeFrom(const detectResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeypointDetectorRegion.detectResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.keypoints().size() > 0) {
+  if (!from._internal_keypoints().empty()) {
     _internal_set_keypoints(from._internal_keypoints());
   }
-}
-
-void detectResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeypointDetectorRegion.detectResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void detectResponse::CopyFrom(const detectResponse& from) {
@@ -976,14 +969,19 @@ bool detectResponse::IsInitialized() const {
 
 void detectResponse::InternalSwap(detectResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  keypoints_.Swap(&other->keypoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &keypoints_, GetArenaForAllocation(),
+      &other->keypoints_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detectResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcIKeypointDetectorRegionService_2eproto_getter, &descriptor_table_grpcIKeypointDetectorRegionService_2eproto_once,
+      file_level_metadata_grpcIKeypointDetectorRegionService_2eproto[3]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIKeypointDetectorRegion

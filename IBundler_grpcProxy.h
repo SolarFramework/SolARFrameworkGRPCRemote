@@ -3,7 +3,7 @@
 
 #ifndef IBUNDLER_GRPCPROXY_H
 #define IBUNDLER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IBundler.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IBundler.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -38,7 +38,7 @@ class IBundler_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pub
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIBundler::IBundler_grpcProxy>
 {
-  static constexpr const char * UUID = "a9177cef-91ee-4a41-9fb2-8dd706dbc214";
+  static constexpr const char * UUID = "fff916b8-95a7-4875-885f-9b6cfa358897";
   static constexpr const char * NAME = "IBundler_grpcProxy";
   static constexpr const char * DESCRIPTION = "IBundler_grpcProxy grpc client proxy component";
 };

@@ -44,40 +44,40 @@ static const char* grpcIPointCloudManagerService_method_names[] = {
 
 std::unique_ptr< grpcIPointCloudManagerService::Stub> grpcIPointCloudManagerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIPointCloudManagerService::Stub> stub(new grpcIPointCloudManagerService::Stub(channel));
+  std::unique_ptr< grpcIPointCloudManagerService::Stub> stub(new grpcIPointCloudManagerService::Stub(channel, options));
   return stub;
 }
 
-grpcIPointCloudManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_addPoint_grpc0_(grpcIPointCloudManagerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_addPoints_grpc0_(grpcIPointCloudManagerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_addPoint_grpc1_(grpcIPointCloudManagerService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_addPoints_grpc1_(grpcIPointCloudManagerService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPoint_(grpcIPointCloudManagerService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPoints_(grpcIPointCloudManagerService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAllPoints_(grpcIPointCloudManagerService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_suppressPoint_(grpcIPointCloudManagerService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_suppressPoints_(grpcIPointCloudManagerService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getDescriptorType_(grpcIPointCloudManagerService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setDescriptorType_(grpcIPointCloudManagerService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_isExistPoint_(grpcIPointCloudManagerService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getNbPoints_(grpcIPointCloudManagerService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_saveToFile_(grpcIPointCloudManagerService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_loadFromFile_(grpcIPointCloudManagerService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getConstPointCloud_(grpcIPointCloudManagerService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPointCloud_(grpcIPointCloudManagerService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setPointCloud_(grpcIPointCloudManagerService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIPointCloudManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_addPoint_grpc0_(grpcIPointCloudManagerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_addPoints_grpc0_(grpcIPointCloudManagerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_addPoint_grpc1_(grpcIPointCloudManagerService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_addPoints_grpc1_(grpcIPointCloudManagerService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPoint_(grpcIPointCloudManagerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPoints_(grpcIPointCloudManagerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAllPoints_(grpcIPointCloudManagerService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_suppressPoint_(grpcIPointCloudManagerService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_suppressPoints_(grpcIPointCloudManagerService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getDescriptorType_(grpcIPointCloudManagerService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setDescriptorType_(grpcIPointCloudManagerService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_isExistPoint_(grpcIPointCloudManagerService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getNbPoints_(grpcIPointCloudManagerService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_saveToFile_(grpcIPointCloudManagerService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_loadFromFile_(grpcIPointCloudManagerService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getConstPointCloud_(grpcIPointCloudManagerService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloud_(grpcIPointCloudManagerService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setPointCloud_(grpcIPointCloudManagerService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIPointCloudManagerService::Stub::addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request& request, ::grpcIPointCloudManager::addPoint_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::addPoint_grpc0Request, ::grpcIPointCloudManager::addPoint_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addPoint_grpc0_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::addPoint_grpc0Request, ::grpcIPointCloudManager::addPoint_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addPoint_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addPoint_grpc0_, context, request, response, reactor);
 }
 
@@ -96,11 +96,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::addPoint_grpc0(::g
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::addPoints_grpc0Request, ::grpcIPointCloudManager::addPoints_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addPoints_grpc0_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::addPoints_grpc0Request, ::grpcIPointCloudManager::addPoints_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addPoints_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addPoints_grpc0_, context, request, response, reactor);
 }
 
@@ -119,11 +119,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::addPoints_grpc0(::
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::addPoint_grpc1Request, ::grpcIPointCloudManager::addPoint_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addPoint_grpc1_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::addPoint_grpc1Request, ::grpcIPointCloudManager::addPoint_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addPoint_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addPoint_grpc1_, context, request, response, reactor);
 }
 
@@ -142,11 +142,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::addPoint_grpc1(::g
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::addPoints_grpc1Request, ::grpcIPointCloudManager::addPoints_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addPoints_grpc1_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::addPoints_grpc1Request, ::grpcIPointCloudManager::addPoints_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addPoints_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addPoints_grpc1_, context, request, response, reactor);
 }
 
@@ -165,11 +165,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::addPoints_grpc1(::
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::getPointRequest, ::grpcIPointCloudManager::getPointResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getPoint_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::getPointRequest, ::grpcIPointCloudManager::getPointResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPoint_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPoint_, context, request, response, reactor);
 }
 
@@ -188,11 +188,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::getPoint(::grpc::C
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::getPointsRequest, ::grpcIPointCloudManager::getPointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getPoints_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::getPointsRequest, ::grpcIPointCloudManager::getPointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPoints_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPoints_, context, request, response, reactor);
 }
 
@@ -211,11 +211,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::getPoints(::grpc::
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::getAllPointsRequest, ::grpcIPointCloudManager::getAllPointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getAllPoints_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::getAllPointsRequest, ::grpcIPointCloudManager::getAllPointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAllPoints_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAllPoints_, context, request, response, reactor);
 }
 
@@ -234,11 +234,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::getAllPoints(::grp
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::suppressPointRequest, ::grpcIPointCloudManager::suppressPointResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_suppressPoint_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::suppressPointRequest, ::grpcIPointCloudManager::suppressPointResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_suppressPoint_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_suppressPoint_, context, request, response, reactor);
 }
 
@@ -257,11 +257,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::suppressPoint(::gr
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::suppressPointsRequest, ::grpcIPointCloudManager::suppressPointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_suppressPoints_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::suppressPointsRequest, ::grpcIPointCloudManager::suppressPointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_suppressPoints_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_suppressPoints_, context, request, response, reactor);
 }
 
@@ -280,11 +280,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::suppressPoints(::g
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDescriptorType_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDescriptorType_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDescriptorType_, context, request, response, reactor);
 }
 
@@ -303,11 +303,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::getDescriptorType(
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::setDescriptorTypeRequest, ::grpcIPointCloudManager::setDescriptorTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setDescriptorType_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::setDescriptorTypeRequest, ::grpcIPointCloudManager::setDescriptorTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setDescriptorType_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setDescriptorType_, context, request, response, reactor);
 }
 
@@ -326,11 +326,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::setDescriptorType(
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::isExistPointRequest, ::grpcIPointCloudManager::isExistPointResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isExistPoint_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::isExistPointRequest, ::grpcIPointCloudManager::isExistPointResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isExistPoint_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isExistPoint_, context, request, response, reactor);
 }
 
@@ -349,11 +349,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::isExistPoint(::grp
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getNbPoints_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNbPoints_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNbPoints_, context, request, response, reactor);
 }
 
@@ -372,11 +372,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::getNbPoints(::grpc
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::saveToFileRequest, ::grpcIPointCloudManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_saveToFile_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::saveToFileRequest, ::grpcIPointCloudManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_saveToFile_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_saveToFile_, context, request, response, reactor);
 }
 
@@ -395,11 +395,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::saveToFile(::grpc:
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::loadFromFileRequest, ::grpcIPointCloudManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_loadFromFile_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::loadFromFileRequest, ::grpcIPointCloudManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadFromFile_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadFromFile_, context, request, response, reactor);
 }
 
@@ -418,11 +418,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::loadFromFile(::grp
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getConstPointCloud_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getConstPointCloud_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getConstPointCloud_, context, request, response, reactor);
 }
 
@@ -441,11 +441,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::getConstPointCloud
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::getPointCloudRequest, ::grpcIPointCloudManager::getPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getPointCloud_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::getPointCloudRequest, ::grpcIPointCloudManager::getPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPointCloud_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPointCloud_, context, request, response, reactor);
 }
 
@@ -464,11 +464,11 @@ void grpcIPointCloudManagerService::Stub::experimental_async::getPointCloud(::gr
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudManager::setPointCloudRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setPointCloud_, context, request, response);
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudManagerService::Stub::async::setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudManager::setPointCloudRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setPointCloud_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudManagerService::Stub::experimental_async::setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudManagerService::Stub::async::setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setPointCloud_, context, request, response, reactor);
 }
 

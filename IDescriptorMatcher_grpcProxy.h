@@ -3,7 +3,7 @@
 
 #ifndef IDESCRIPTORMATCHER_GRPCPROXY_H
 #define IDESCRIPTORMATCHER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcher.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcher.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IDescriptorMatcher_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDescriptorMatcher::IDescriptorMatcher_grpcProxy>
 {
-  static constexpr const char * UUID = "3456a250-43a7-4fc2-b447-7ac6ba73d4a4";
+  static constexpr const char * UUID = "e395a0ed-ba6e-4810-8804-92c60cf9e092";
   static constexpr const char * NAME = "IDescriptorMatcher_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDescriptorMatcher_grpcProxy grpc client proxy component";
 };

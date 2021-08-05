@@ -2,7 +2,7 @@
 
 #ifndef IIMU_GRPCSERVER_H
 #define IIMU_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IIMU.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IIMU.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIIMUService.grpc.pb.h"
@@ -49,7 +49,7 @@ class IIMU_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual public
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIIMU::IIMU_grpcServer>
 {
-  static constexpr const char * UUID = "4426c7ee-367a-4992-8f75-a3e4f3d6de9b";
+  static constexpr const char * UUID = "cc6a4bb5-6e4a-4b00-a5de-3ed8ac989f9d";
   static constexpr const char * NAME = "IIMU_grpcServer";
   static constexpr const char * DESCRIPTION = "IIMU_grpcServer grpc server component";
 };

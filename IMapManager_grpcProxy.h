@@ -3,7 +3,7 @@
 
 #ifndef IMAPMANAGER_GRPCPROXY_H
 #define IMAPMANAGER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -46,7 +46,7 @@ class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapManager::IMapManager_grpcProxy>
 {
-  static constexpr const char * UUID = "6c20cf82-1d86-4dea-ae16-e8f2d345cec2";
+  static constexpr const char * UUID = "5d8340b0-28ed-40f7-8709-bfb02ceaa0ee";
   static constexpr const char * NAME = "IMapManager_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMapManager_grpcProxy grpc client proxy component";
 };

@@ -29,25 +29,25 @@ static const char* grpcICameraCalibrationService_method_names[] = {
 
 std::unique_ptr< grpcICameraCalibrationService::Stub> grpcICameraCalibrationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcICameraCalibrationService::Stub> stub(new grpcICameraCalibrationService::Stub(channel));
+  std::unique_ptr< grpcICameraCalibrationService::Stub> stub(new grpcICameraCalibrationService::Stub(channel, options));
   return stub;
 }
 
-grpcICameraCalibrationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_calibrate_grpc0_(grpcICameraCalibrationService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_calibrate_grpc1_(grpcICameraCalibrationService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setParameters_(grpcICameraCalibrationService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcICameraCalibrationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_calibrate_grpc0_(grpcICameraCalibrationService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_calibrate_grpc1_(grpcICameraCalibrationService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setParameters_(grpcICameraCalibrationService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcICameraCalibrationService::Stub::calibrate_grpc0(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrate_grpc0Request& request, ::grpcICameraCalibration::calibrate_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcICameraCalibration::calibrate_grpc0Request, ::grpcICameraCalibration::calibrate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_calibrate_grpc0_, context, request, response);
 }
 
-void grpcICameraCalibrationService::Stub::experimental_async::calibrate_grpc0(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrate_grpc0Request* request, ::grpcICameraCalibration::calibrate_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraCalibrationService::Stub::async::calibrate_grpc0(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrate_grpc0Request* request, ::grpcICameraCalibration::calibrate_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICameraCalibration::calibrate_grpc0Request, ::grpcICameraCalibration::calibrate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_calibrate_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcICameraCalibrationService::Stub::experimental_async::calibrate_grpc0(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrate_grpc0Request* request, ::grpcICameraCalibration::calibrate_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcICameraCalibrationService::Stub::async::calibrate_grpc0(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrate_grpc0Request* request, ::grpcICameraCalibration::calibrate_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_calibrate_grpc0_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcICameraCalibrationService::Stub::experimental_async::calibrate_grpc0(::
   return ::grpc::internal::BlockingUnaryCall< ::grpcICameraCalibration::calibrate_grpc1Request, ::grpcICameraCalibration::calibrate_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_calibrate_grpc1_, context, request, response);
 }
 
-void grpcICameraCalibrationService::Stub::experimental_async::calibrate_grpc1(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrate_grpc1Request* request, ::grpcICameraCalibration::calibrate_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraCalibrationService::Stub::async::calibrate_grpc1(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrate_grpc1Request* request, ::grpcICameraCalibration::calibrate_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICameraCalibration::calibrate_grpc1Request, ::grpcICameraCalibration::calibrate_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_calibrate_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcICameraCalibrationService::Stub::experimental_async::calibrate_grpc1(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrate_grpc1Request* request, ::grpcICameraCalibration::calibrate_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcICameraCalibrationService::Stub::async::calibrate_grpc1(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrate_grpc1Request* request, ::grpcICameraCalibration::calibrate_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_calibrate_grpc1_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcICameraCalibrationService::Stub::experimental_async::calibrate_grpc1(::
   return ::grpc::internal::BlockingUnaryCall< ::grpcICameraCalibration::setParametersRequest, ::grpcICameraCalibration::setParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setParameters_, context, request, response);
 }
 
-void grpcICameraCalibrationService::Stub::experimental_async::setParameters(::grpc::ClientContext* context, const ::grpcICameraCalibration::setParametersRequest* request, ::grpcICameraCalibration::setParametersResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraCalibrationService::Stub::async::setParameters(::grpc::ClientContext* context, const ::grpcICameraCalibration::setParametersRequest* request, ::grpcICameraCalibration::setParametersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICameraCalibration::setParametersRequest, ::grpcICameraCalibration::setParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setParameters_, context, request, response, std::move(f));
 }
 
-void grpcICameraCalibrationService::Stub::experimental_async::setParameters(::grpc::ClientContext* context, const ::grpcICameraCalibration::setParametersRequest* request, ::grpcICameraCalibration::setParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcICameraCalibrationService::Stub::async::setParameters(::grpc::ClientContext* context, const ::grpcICameraCalibration::setParametersRequest* request, ::grpcICameraCalibration::setParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setParameters_, context, request, response, reactor);
 }
 

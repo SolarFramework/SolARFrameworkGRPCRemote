@@ -3,7 +3,7 @@
 
 #ifndef IOPTICALFLOWESTIMATOR_GRPCPROXY_H
 #define IOPTICALFLOWESTIMATOR_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/tracking/IOpticalFlowEstimator.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/tracking/IOpticalFlowEstimator.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IOpticalFlowEstimator_grpcProxy:  public org::bcom::xpcf::ConfigurableBase
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIOpticalFlowEstimator::IOpticalFlowEstimator_grpcProxy>
 {
-  static constexpr const char * UUID = "b483786a-0141-45b9-89d3-6d9f5cd63e20";
+  static constexpr const char * UUID = "b26ed1e6-7472-427a-8389-25fd129a43a4";
   static constexpr const char * NAME = "IOpticalFlowEstimator_grpcProxy";
   static constexpr const char * DESCRIPTION = "IOpticalFlowEstimator_grpcProxy grpc client proxy component";
 };

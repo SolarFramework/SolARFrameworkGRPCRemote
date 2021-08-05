@@ -3,7 +3,7 @@
 
 #ifndef IIMAGELOADER_GRPCPROXY_H
 #define IIMAGELOADER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageLoader.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IImageLoader_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIImageLoader::IImageLoader_grpcProxy>
 {
-  static constexpr const char * UUID = "35d8b457-e0c3-417d-b5d7-8e1413dfa1b5";
+  static constexpr const char * UUID = "aa8328ac-8d39-492a-a3e4-55e24500b643";
   static constexpr const char * NAME = "IImageLoader_grpcProxy";
   static constexpr const char * DESCRIPTION = "IImageLoader_grpcProxy grpc client proxy component";
 };

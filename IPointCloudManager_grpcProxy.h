@@ -3,7 +3,7 @@
 
 #ifndef IPOINTCLOUDMANAGER_GRPCPROXY_H
 #define IPOINTCLOUDMANAGER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IPointCloudManager.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IPointCloudManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -54,7 +54,7 @@ class IPointCloudManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIPointCloudManager::IPointCloudManager_grpcProxy>
 {
-  static constexpr const char * UUID = "19a73ded-532d-4cf4-9635-f64146389d4d";
+  static constexpr const char * UUID = "6aa574b9-da3a-4ecc-908b-13bf11f7db62";
   static constexpr const char * NAME = "IPointCloudManager_grpcProxy";
   static constexpr const char * DESCRIPTION = "IPointCloudManager_grpcProxy grpc client proxy component";
 };

@@ -3,7 +3,7 @@
 
 #ifndef ILOOPCLOSUREDETECTOR_GRPCPROXY_H
 #define ILOOPCLOSUREDETECTOR_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopClosureDetector.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopClosureDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class ILoopClosureDetector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase,
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyILoopClosureDetector::ILoopClosureDetector_grpcProxy>
 {
-  static constexpr const char * UUID = "06e31803-73c5-4854-b229-e6162017e751";
+  static constexpr const char * UUID = "45c9efb4-64bf-4e08-8898-e27069e4761c";
   static constexpr const char * NAME = "ILoopClosureDetector_grpcProxy";
   static constexpr const char * DESCRIPTION = "ILoopClosureDetector_grpcProxy grpc client proxy component";
 };

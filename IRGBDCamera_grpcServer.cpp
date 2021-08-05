@@ -254,7 +254,7 @@ XPCFErrorCode IRGBDCamera_grpcServer::onConfigured()
 
 ::grpc::Status IRGBDCamera_grpcServer::grpcIRGBDCameraServiceImpl::getWorldToPixels(::grpc::ServerContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest* request, ::grpcIRGBDCamera::getWorldToPixelsResponse* response)
 {
-  std::vector<SolAR::datastructure::CloudPoint> in3DPoints = xpcf::deserialize<std::vector<SolAR::datastructure::CloudPoint>>(request->in3dpoints());
+  std::vector<SRef<SolAR::datastructure::CloudPoint>> in3DPoints = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->in3dpoints());
   std::vector<SolAR::datastructure::Point2Df> returnValue = m_xpcfComponent->getWorldToPixels(in3DPoints);
   return ::grpc::Status::OK;
 }

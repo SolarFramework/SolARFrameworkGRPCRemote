@@ -2,7 +2,7 @@
 
 #ifndef IKEYPOINTSREINDEXER_GRPCSERVER_H
 #define IKEYPOINTSREINDEXER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointsReIndexer.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointsReIndexer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIKeypointsReIndexerService.grpc.pb.h"
@@ -41,7 +41,7 @@ class IKeypointsReIndexer_grpcServer:  public org::bcom::xpcf::ConfigurableBase,
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeypointsReIndexer::IKeypointsReIndexer_grpcServer>
 {
-  static constexpr const char * UUID = "490c2e6a-8a91-4cd5-81fd-07893ef06691";
+  static constexpr const char * UUID = "948d6a78-70aa-454f-83e8-07a90f50d0ac";
   static constexpr const char * NAME = "IKeypointsReIndexer_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeypointsReIndexer_grpcServer grpc server component";
 };

@@ -29,25 +29,25 @@ static const char* grpcIBundlerService_method_names[] = {
 
 std::unique_ptr< grpcIBundlerService::Stub> grpcIBundlerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIBundlerService::Stub> stub(new grpcIBundlerService::Stub(channel));
+  std::unique_ptr< grpcIBundlerService::Stub> stub(new grpcIBundlerService::Stub(channel, options));
   return stub;
 }
 
-grpcIBundlerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setMap_(grpcIBundlerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_bundleAdjustment_(grpcIBundlerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_optimizeSim3_(grpcIBundlerService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIBundlerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_setMap_(grpcIBundlerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_bundleAdjustment_(grpcIBundlerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_optimizeSim3_(grpcIBundlerService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIBundlerService::Stub::setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpcIBundler::setMapResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setMap_, context, request, response);
 }
 
-void grpcIBundlerService::Stub::experimental_async::setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIBundlerService::Stub::async::setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMap_, context, request, response, std::move(f));
 }
 
-void grpcIBundlerService::Stub::experimental_async::setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIBundlerService::Stub::async::setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMap_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcIBundlerService::Stub::experimental_async::setMap(::grpc::ClientContext
   return ::grpc::internal::BlockingUnaryCall< ::grpcIBundler::bundleAdjustmentRequest, ::grpcIBundler::bundleAdjustmentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_bundleAdjustment_, context, request, response);
 }
 
-void grpcIBundlerService::Stub::experimental_async::bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIBundlerService::Stub::async::bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIBundler::bundleAdjustmentRequest, ::grpcIBundler::bundleAdjustmentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_bundleAdjustment_, context, request, response, std::move(f));
 }
 
-void grpcIBundlerService::Stub::experimental_async::bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIBundlerService::Stub::async::bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_bundleAdjustment_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcIBundlerService::Stub::experimental_async::bundleAdjustment(::grpc::Cli
   return ::grpc::internal::BlockingUnaryCall< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_optimizeSim3_, context, request, response);
 }
 
-void grpcIBundlerService::Stub::experimental_async::optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIBundlerService::Stub::async::optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_optimizeSim3_, context, request, response, std::move(f));
 }
 
-void grpcIBundlerService::Stub::experimental_async::optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIBundlerService::Stub::async::optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_optimizeSim3_, context, request, response, reactor);
 }
 

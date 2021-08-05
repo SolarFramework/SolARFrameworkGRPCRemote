@@ -2,7 +2,7 @@
 
 #ifndef IUNDISTORTPOINTS_GRPCSERVER_H
 #define IUNDISTORTPOINTS_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IUndistortPoints.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IUndistortPoints.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIUndistortPointsService.grpc.pb.h"
@@ -43,7 +43,7 @@ class IUndistortPoints_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIUndistortPoints::IUndistortPoints_grpcServer>
 {
-  static constexpr const char * UUID = "a8dd83e7-e88d-49cf-b587-57e40ac7d87d";
+  static constexpr const char * UUID = "37ec0b2a-c3c8-4eff-a4dc-630396cd5866";
   static constexpr const char * NAME = "IUndistortPoints_grpcServer";
   static constexpr const char * DESCRIPTION = "IUndistortPoints_grpcServer grpc server component";
 };

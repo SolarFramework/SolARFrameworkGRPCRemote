@@ -41,37 +41,37 @@ static const char* grpcIKeyframesManagerService_method_names[] = {
 
 std::unique_ptr< grpcIKeyframesManagerService::Stub> grpcIKeyframesManagerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIKeyframesManagerService::Stub> stub(new grpcIKeyframesManagerService::Stub(channel));
+  std::unique_ptr< grpcIKeyframesManagerService::Stub> stub(new grpcIKeyframesManagerService::Stub(channel, options));
   return stub;
 }
 
-grpcIKeyframesManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_addKeyframe_grpc0_(grpcIKeyframesManagerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_addKeyframe_grpc1_(grpcIKeyframesManagerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getKeyframe_(grpcIKeyframesManagerService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getKeyframes_(grpcIKeyframesManagerService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAllKeyframes_(grpcIKeyframesManagerService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_suppressKeyframe_(grpcIKeyframesManagerService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getDescriptorType_(grpcIKeyframesManagerService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setDescriptorType_(grpcIKeyframesManagerService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_isExistKeyframe_(grpcIKeyframesManagerService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getNbKeyframes_(grpcIKeyframesManagerService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_saveToFile_(grpcIKeyframesManagerService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_loadFromFile_(grpcIKeyframesManagerService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getConstKeyframeCollection_(grpcIKeyframesManagerService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getKeyframeCollection_(grpcIKeyframesManagerService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setKeyframeCollection_(grpcIKeyframesManagerService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIKeyframesManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_addKeyframe_grpc0_(grpcIKeyframesManagerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_addKeyframe_grpc1_(grpcIKeyframesManagerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getKeyframe_(grpcIKeyframesManagerService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getKeyframes_(grpcIKeyframesManagerService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAllKeyframes_(grpcIKeyframesManagerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_suppressKeyframe_(grpcIKeyframesManagerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getDescriptorType_(grpcIKeyframesManagerService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setDescriptorType_(grpcIKeyframesManagerService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_isExistKeyframe_(grpcIKeyframesManagerService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getNbKeyframes_(grpcIKeyframesManagerService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_saveToFile_(grpcIKeyframesManagerService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_loadFromFile_(grpcIKeyframesManagerService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getConstKeyframeCollection_(grpcIKeyframesManagerService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getKeyframeCollection_(grpcIKeyframesManagerService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setKeyframeCollection_(grpcIKeyframesManagerService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIKeyframesManagerService::Stub::addKeyframe_grpc0(::grpc::ClientContext* context, const ::grpcIKeyframesManager::addKeyframe_grpc0Request& request, ::grpcIKeyframesManager::addKeyframe_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::addKeyframe_grpc0Request, ::grpcIKeyframesManager::addKeyframe_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addKeyframe_grpc0_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::addKeyframe_grpc0(::grpc::ClientContext* context, const ::grpcIKeyframesManager::addKeyframe_grpc0Request* request, ::grpcIKeyframesManager::addKeyframe_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::addKeyframe_grpc0(::grpc::ClientContext* context, const ::grpcIKeyframesManager::addKeyframe_grpc0Request* request, ::grpcIKeyframesManager::addKeyframe_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::addKeyframe_grpc0Request, ::grpcIKeyframesManager::addKeyframe_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addKeyframe_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::addKeyframe_grpc0(::grpc::ClientContext* context, const ::grpcIKeyframesManager::addKeyframe_grpc0Request* request, ::grpcIKeyframesManager::addKeyframe_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::addKeyframe_grpc0(::grpc::ClientContext* context, const ::grpcIKeyframesManager::addKeyframe_grpc0Request* request, ::grpcIKeyframesManager::addKeyframe_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addKeyframe_grpc0_, context, request, response, reactor);
 }
 
@@ -90,11 +90,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::addKeyframe_grpc0(:
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::addKeyframe_grpc1Request, ::grpcIKeyframesManager::addKeyframe_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addKeyframe_grpc1_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::addKeyframe_grpc1(::grpc::ClientContext* context, const ::grpcIKeyframesManager::addKeyframe_grpc1Request* request, ::grpcIKeyframesManager::addKeyframe_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::addKeyframe_grpc1(::grpc::ClientContext* context, const ::grpcIKeyframesManager::addKeyframe_grpc1Request* request, ::grpcIKeyframesManager::addKeyframe_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::addKeyframe_grpc1Request, ::grpcIKeyframesManager::addKeyframe_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addKeyframe_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::addKeyframe_grpc1(::grpc::ClientContext* context, const ::grpcIKeyframesManager::addKeyframe_grpc1Request* request, ::grpcIKeyframesManager::addKeyframe_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::addKeyframe_grpc1(::grpc::ClientContext* context, const ::grpcIKeyframesManager::addKeyframe_grpc1Request* request, ::grpcIKeyframesManager::addKeyframe_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addKeyframe_grpc1_, context, request, response, reactor);
 }
 
@@ -113,11 +113,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::addKeyframe_grpc1(:
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::getKeyframeRequest, ::grpcIKeyframesManager::getKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getKeyframe_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframeRequest* request, ::grpcIKeyframesManager::getKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::getKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframeRequest* request, ::grpcIKeyframesManager::getKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::getKeyframeRequest, ::grpcIKeyframesManager::getKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getKeyframe_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframeRequest* request, ::grpcIKeyframesManager::getKeyframeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::getKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframeRequest* request, ::grpcIKeyframesManager::getKeyframeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getKeyframe_, context, request, response, reactor);
 }
 
@@ -136,11 +136,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::getKeyframe(::grpc:
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::getKeyframesRequest, ::grpcIKeyframesManager::getKeyframesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getKeyframes_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getKeyframes(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframesRequest* request, ::grpcIKeyframesManager::getKeyframesResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::getKeyframes(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframesRequest* request, ::grpcIKeyframesManager::getKeyframesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::getKeyframesRequest, ::grpcIKeyframesManager::getKeyframesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getKeyframes_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getKeyframes(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframesRequest* request, ::grpcIKeyframesManager::getKeyframesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::getKeyframes(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframesRequest* request, ::grpcIKeyframesManager::getKeyframesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getKeyframes_, context, request, response, reactor);
 }
 
@@ -159,11 +159,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::getKeyframes(::grpc
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::getAllKeyframesRequest, ::grpcIKeyframesManager::getAllKeyframesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getAllKeyframes_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getAllKeyframes(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getAllKeyframesRequest* request, ::grpcIKeyframesManager::getAllKeyframesResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::getAllKeyframes(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getAllKeyframesRequest* request, ::grpcIKeyframesManager::getAllKeyframesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::getAllKeyframesRequest, ::grpcIKeyframesManager::getAllKeyframesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAllKeyframes_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getAllKeyframes(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getAllKeyframesRequest* request, ::grpcIKeyframesManager::getAllKeyframesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::getAllKeyframes(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getAllKeyframesRequest* request, ::grpcIKeyframesManager::getAllKeyframesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAllKeyframes_, context, request, response, reactor);
 }
 
@@ -182,11 +182,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::getAllKeyframes(::g
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::suppressKeyframeRequest, ::grpcIKeyframesManager::suppressKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_suppressKeyframe_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::suppressKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::suppressKeyframeRequest* request, ::grpcIKeyframesManager::suppressKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::suppressKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::suppressKeyframeRequest* request, ::grpcIKeyframesManager::suppressKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::suppressKeyframeRequest, ::grpcIKeyframesManager::suppressKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_suppressKeyframe_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::suppressKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::suppressKeyframeRequest* request, ::grpcIKeyframesManager::suppressKeyframeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::suppressKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::suppressKeyframeRequest* request, ::grpcIKeyframesManager::suppressKeyframeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_suppressKeyframe_, context, request, response, reactor);
 }
 
@@ -205,11 +205,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::suppressKeyframe(::
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIKeyframesManager::getDescriptorTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDescriptorType_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIKeyframesManager::getDescriptorTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDescriptorType_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDescriptorType_, context, request, response, reactor);
 }
 
@@ -228,11 +228,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::getDescriptorType(:
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::setDescriptorTypeRequest, ::grpcIKeyframesManager::setDescriptorTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setDescriptorType_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::setDescriptorType(::grpc::ClientContext* context, const ::grpcIKeyframesManager::setDescriptorTypeRequest* request, ::grpcIKeyframesManager::setDescriptorTypeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::setDescriptorType(::grpc::ClientContext* context, const ::grpcIKeyframesManager::setDescriptorTypeRequest* request, ::grpcIKeyframesManager::setDescriptorTypeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::setDescriptorTypeRequest, ::grpcIKeyframesManager::setDescriptorTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setDescriptorType_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::setDescriptorType(::grpc::ClientContext* context, const ::grpcIKeyframesManager::setDescriptorTypeRequest* request, ::grpcIKeyframesManager::setDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::setDescriptorType(::grpc::ClientContext* context, const ::grpcIKeyframesManager::setDescriptorTypeRequest* request, ::grpcIKeyframesManager::setDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setDescriptorType_, context, request, response, reactor);
 }
 
@@ -251,11 +251,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::setDescriptorType(:
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::isExistKeyframeRequest, ::grpcIKeyframesManager::isExistKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isExistKeyframe_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::isExistKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::isExistKeyframeRequest* request, ::grpcIKeyframesManager::isExistKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::isExistKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::isExistKeyframeRequest* request, ::grpcIKeyframesManager::isExistKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::isExistKeyframeRequest, ::grpcIKeyframesManager::isExistKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isExistKeyframe_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::isExistKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::isExistKeyframeRequest* request, ::grpcIKeyframesManager::isExistKeyframeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::isExistKeyframe(::grpc::ClientContext* context, const ::grpcIKeyframesManager::isExistKeyframeRequest* request, ::grpcIKeyframesManager::isExistKeyframeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isExistKeyframe_, context, request, response, reactor);
 }
 
@@ -274,11 +274,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::isExistKeyframe(::g
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIKeyframesManager::getNbKeyframesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getNbKeyframes_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getNbKeyframes(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getNbKeyframesResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::getNbKeyframes(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getNbKeyframesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIKeyframesManager::getNbKeyframesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNbKeyframes_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getNbKeyframes(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getNbKeyframesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::getNbKeyframes(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getNbKeyframesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNbKeyframes_, context, request, response, reactor);
 }
 
@@ -297,11 +297,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::getNbKeyframes(::gr
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::saveToFileRequest, ::grpcIKeyframesManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_saveToFile_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::grpcIKeyframesManager::saveToFileRequest* request, ::grpcIKeyframesManager::saveToFileResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::saveToFile(::grpc::ClientContext* context, const ::grpcIKeyframesManager::saveToFileRequest* request, ::grpcIKeyframesManager::saveToFileResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::saveToFileRequest, ::grpcIKeyframesManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_saveToFile_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::grpcIKeyframesManager::saveToFileRequest* request, ::grpcIKeyframesManager::saveToFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::saveToFile(::grpc::ClientContext* context, const ::grpcIKeyframesManager::saveToFileRequest* request, ::grpcIKeyframesManager::saveToFileResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_saveToFile_, context, request, response, reactor);
 }
 
@@ -320,11 +320,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::saveToFile(::grpc::
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::loadFromFileRequest, ::grpcIKeyframesManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_loadFromFile_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::grpcIKeyframesManager::loadFromFileRequest* request, ::grpcIKeyframesManager::loadFromFileResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::loadFromFile(::grpc::ClientContext* context, const ::grpcIKeyframesManager::loadFromFileRequest* request, ::grpcIKeyframesManager::loadFromFileResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::loadFromFileRequest, ::grpcIKeyframesManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadFromFile_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::grpcIKeyframesManager::loadFromFileRequest* request, ::grpcIKeyframesManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::loadFromFile(::grpc::ClientContext* context, const ::grpcIKeyframesManager::loadFromFileRequest* request, ::grpcIKeyframesManager::loadFromFileResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadFromFile_, context, request, response, reactor);
 }
 
@@ -343,11 +343,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::loadFromFile(::grpc
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getConstKeyframeCollection_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getConstKeyframeCollection(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::getConstKeyframeCollection(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getConstKeyframeCollection_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getConstKeyframeCollection(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::getConstKeyframeCollection(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getConstKeyframeCollection_, context, request, response, reactor);
 }
 
@@ -366,11 +366,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::getConstKeyframeCol
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::getKeyframeCollectionRequest, ::grpcIKeyframesManager::getKeyframeCollectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getKeyframeCollection_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getKeyframeCollection(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframeCollectionRequest* request, ::grpcIKeyframesManager::getKeyframeCollectionResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::getKeyframeCollection(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframeCollectionRequest* request, ::grpcIKeyframesManager::getKeyframeCollectionResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::getKeyframeCollectionRequest, ::grpcIKeyframesManager::getKeyframeCollectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getKeyframeCollection_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::getKeyframeCollection(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframeCollectionRequest* request, ::grpcIKeyframesManager::getKeyframeCollectionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::getKeyframeCollection(::grpc::ClientContext* context, const ::grpcIKeyframesManager::getKeyframeCollectionRequest* request, ::grpcIKeyframesManager::getKeyframeCollectionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getKeyframeCollection_, context, request, response, reactor);
 }
 
@@ -389,11 +389,11 @@ void grpcIKeyframesManagerService::Stub::experimental_async::getKeyframeCollecti
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeyframesManager::setKeyframeCollectionRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setKeyframeCollection_, context, request, response);
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::setKeyframeCollection(::grpc::ClientContext* context, const ::grpcIKeyframesManager::setKeyframeCollectionRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeyframesManagerService::Stub::async::setKeyframeCollection(::grpc::ClientContext* context, const ::grpcIKeyframesManager::setKeyframeCollectionRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeyframesManager::setKeyframeCollectionRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setKeyframeCollection_, context, request, response, std::move(f));
 }
 
-void grpcIKeyframesManagerService::Stub::experimental_async::setKeyframeCollection(::grpc::ClientContext* context, const ::grpcIKeyframesManager::setKeyframeCollectionRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeyframesManagerService::Stub::async::setKeyframeCollection(::grpc::ClientContext* context, const ::grpcIKeyframesManager::setKeyframeCollectionRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setKeyframeCollection_, context, request, response, reactor);
 }
 

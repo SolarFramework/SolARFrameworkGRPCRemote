@@ -2,7 +2,7 @@
 
 #ifndef IKEYFRAMESMANAGER_GRPCSERVER_H
 #define IKEYFRAMESMANAGER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IKeyframesManager.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IKeyframesManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIKeyframesManagerService.grpc.pb.h"
@@ -55,7 +55,7 @@ class IKeyframesManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeyframesManager::IKeyframesManager_grpcServer>
 {
-  static constexpr const char * UUID = "09217bad-16ce-46cb-8629-a6b18641cbe6";
+  static constexpr const char * UUID = "02e787cb-f0a0-4952-886f-87f290afc980";
   static constexpr const char * NAME = "IKeyframesManager_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeyframesManager_grpcServer grpc server component";
 };

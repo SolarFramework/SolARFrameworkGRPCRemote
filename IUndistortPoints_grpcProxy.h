@@ -3,7 +3,7 @@
 
 #ifndef IUNDISTORTPOINTS_GRPCPROXY_H
 #define IUNDISTORTPOINTS_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IUndistortPoints.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IUndistortPoints.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -38,7 +38,7 @@ class IUndistortPoints_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIUndistortPoints::IUndistortPoints_grpcProxy>
 {
-  static constexpr const char * UUID = "5532d8bf-2601-44e7-acd1-5474c328593c";
+  static constexpr const char * UUID = "31bcafdc-4161-4cf4-8c2c-d62a89c0afd5";
   static constexpr const char * NAME = "IUndistortPoints_grpcProxy";
   static constexpr const char * DESCRIPTION = "IUndistortPoints_grpcProxy grpc client proxy component";
 };

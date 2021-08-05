@@ -3,7 +3,7 @@
 
 #ifndef IPERSPECTIVECONTROLLER_GRPCPROXY_H
 #define IPERSPECTIVECONTROLLER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/image/IPerspectiveController.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/image/IPerspectiveController.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IPerspectiveController_grpcProxy:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIPerspectiveController::IPerspectiveController_grpcProxy>
 {
-  static constexpr const char * UUID = "4c9bdf44-35cd-4ad4-a0f8-47b1fa75b2af";
+  static constexpr const char * UUID = "68fe73ef-2822-4827-a903-e8d7fed7f022";
   static constexpr const char * NAME = "IPerspectiveController_grpcProxy";
   static constexpr const char * DESCRIPTION = "IPerspectiveController_grpcProxy grpc client proxy component";
 };

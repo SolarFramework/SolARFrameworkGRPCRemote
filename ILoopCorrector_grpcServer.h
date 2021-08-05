@@ -2,7 +2,7 @@
 
 #ifndef ILOOPCORRECTOR_GRPCSERVER_H
 #define ILOOPCORRECTOR_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopCorrector.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopCorrector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcILoopCorrectorService.grpc.pb.h"
@@ -42,7 +42,7 @@ class ILoopCorrector_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverILoopCorrector::ILoopCorrector_grpcServer>
 {
-  static constexpr const char * UUID = "fab87fa8-f6a1-41f1-b620-8e74e1ae474a";
+  static constexpr const char * UUID = "0ac886a6-047f-410a-96aa-7cee8ee430f3";
   static constexpr const char * NAME = "ILoopCorrector_grpcServer";
   static constexpr const char * DESCRIPTION = "ILoopCorrector_grpcServer grpc server component";
 };

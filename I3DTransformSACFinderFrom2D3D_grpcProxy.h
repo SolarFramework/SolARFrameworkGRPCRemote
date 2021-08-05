@@ -3,7 +3,7 @@
 
 #ifndef I3DTRANSFORMSACFINDERFROM2D3D_GRPCPROXY_H
 #define I3DTRANSFORMSACFINDERFROM2D3D_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformSACFinderFrom2D3D.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformSACFinderFrom2D3D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class I3DTransformSACFinderFrom2D3D_grpcProxy:  public org::bcom::xpcf::Configur
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DTransformSACFinderFrom2D3D::I3DTransformSACFinderFrom2D3D_grpcProxy>
 {
-  static constexpr const char * UUID = "7a313aa7-d9e1-4973-85ed-aa055400c338";
+  static constexpr const char * UUID = "932eb089-66bc-4294-8c4d-0d9e80280ed5";
   static constexpr const char * NAME = "I3DTransformSACFinderFrom2D3D_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DTransformSACFinderFrom2D3D_grpcProxy grpc client proxy component";
 };

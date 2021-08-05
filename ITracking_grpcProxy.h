@@ -3,7 +3,7 @@
 
 #ifndef ITRACKING_GRPCPROXY_H
 #define ITRACKING_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/slam/ITracking.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/slam/ITracking.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -38,7 +38,7 @@ class ITracking_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyITracking::ITracking_grpcProxy>
 {
-  static constexpr const char * UUID = "6d26be79-9f48-42e9-a0d8-442203e8ea17";
+  static constexpr const char * UUID = "a97548f2-22dd-4104-929f-0372300f8628";
   static constexpr const char * NAME = "ITracking_grpcProxy";
   static constexpr const char * DESCRIPTION = "ITracking_grpcProxy grpc client proxy component";
 };

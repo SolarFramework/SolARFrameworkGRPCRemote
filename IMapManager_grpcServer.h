@@ -2,7 +2,7 @@
 
 #ifndef IMAPMANAGER_GRPCSERVER_H
 #define IMAPMANAGER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMapManagerService.grpc.pb.h"
@@ -51,7 +51,7 @@ class IMapManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMapManager::IMapManager_grpcServer>
 {
-  static constexpr const char * UUID = "38dbecc0-ff5a-4446-b818-5ad4747921fb";
+  static constexpr const char * UUID = "9a28745c-4a24-466c-836a-2dedcd130f62";
   static constexpr const char * NAME = "IMapManager_grpcServer";
   static constexpr const char * DESCRIPTION = "IMapManager_grpcServer grpc server component";
 };

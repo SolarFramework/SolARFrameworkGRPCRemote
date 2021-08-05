@@ -2,7 +2,7 @@
 
 #ifndef IPERSPECTIVECONTROLLER_GRPCSERVER_H
 #define IPERSPECTIVECONTROLLER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/image/IPerspectiveController.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/image/IPerspectiveController.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIPerspectiveControllerService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IPerspectiveController_grpcServer:  public org::bcom::xpcf::ConfigurableBa
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPerspectiveController::IPerspectiveController_grpcServer>
 {
-  static constexpr const char * UUID = "1b62047c-63e7-49e8-9f33-fd598ce37f81";
+  static constexpr const char * UUID = "a4dd2eeb-f0e7-429b-af29-4dedd14852bd";
   static constexpr const char * NAME = "IPerspectiveController_grpcServer";
   static constexpr const char * DESCRIPTION = "IPerspectiveController_grpcServer grpc server component";
 };

@@ -3,7 +3,7 @@
 
 #ifndef IHOMOGRAPHYVALIDATION_GRPCPROXY_H
 #define IHOMOGRAPHYVALIDATION_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/IHomographyValidation.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/IHomographyValidation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IHomographyValidation_grpcProxy:  public org::bcom::xpcf::ConfigurableBase
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIHomographyValidation::IHomographyValidation_grpcProxy>
 {
-  static constexpr const char * UUID = "3e5b407b-4133-4414-a091-d5942fae9198";
+  static constexpr const char * UUID = "96cb05c3-9c2f-43dd-b46e-7a6ca3716b22";
   static constexpr const char * NAME = "IHomographyValidation_grpcProxy";
   static constexpr const char * DESCRIPTION = "IHomographyValidation_grpcProxy grpc client proxy component";
 };

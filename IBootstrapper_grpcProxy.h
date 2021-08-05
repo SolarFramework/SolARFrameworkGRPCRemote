@@ -3,7 +3,7 @@
 
 #ifndef IBOOTSTRAPPER_GRPCPROXY_H
 #define IBOOTSTRAPPER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IBootstrapper.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IBootstrapper.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IBootstrapper_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIBootstrapper::IBootstrapper_grpcProxy>
 {
-  static constexpr const char * UUID = "83ee7bcd-5703-4c5a-8fc3-382ded9890eb";
+  static constexpr const char * UUID = "8b7a555b-e91c-49c7-8b3f-4e0ae71fb53a";
   static constexpr const char * NAME = "IBootstrapper_grpcProxy";
   static constexpr const char * DESCRIPTION = "IBootstrapper_grpcProxy grpc client proxy component";
 };

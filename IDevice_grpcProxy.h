@@ -3,7 +3,7 @@
 
 #ifndef IDEVICE_GRPCPROXY_H
 #define IDEVICE_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IDevice.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IDevice.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IDevice_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual publ
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDevice::IDevice_grpcProxy>
 {
-  static constexpr const char * UUID = "c979e235-eb6a-4456-a91f-93b9b1d40dd6";
+  static constexpr const char * UUID = "c48e7eb6-62f6-4623-b023-f367085800c5";
   static constexpr const char * NAME = "IDevice_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDevice_grpcProxy grpc client proxy component";
 };

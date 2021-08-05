@@ -2,7 +2,7 @@
 
 #ifndef IMATCHESOVERLAY_GRPCSERVER_H
 #define IMATCHESOVERLAY_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/display/IMatchesOverlay.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/IMatchesOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMatchesOverlayService.grpc.pb.h"
@@ -44,7 +44,7 @@ class IMatchesOverlay_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMatchesOverlay::IMatchesOverlay_grpcServer>
 {
-  static constexpr const char * UUID = "e2a1b505-d217-4a35-91fa-7269b0b7e761";
+  static constexpr const char * UUID = "c6efeffa-d3cd-40d0-9ace-e6d156de5adf";
   static constexpr const char * NAME = "IMatchesOverlay_grpcServer";
   static constexpr const char * DESCRIPTION = "IMatchesOverlay_grpcServer grpc server component";
 };

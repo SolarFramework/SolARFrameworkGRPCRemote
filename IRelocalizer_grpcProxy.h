@@ -3,7 +3,7 @@
 
 #ifndef IRELOCALIZER_GRPCPROXY_H
 #define IRELOCALIZER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRelocalizer.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRelocalizer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IRelocalizer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIRelocalizer::IRelocalizer_grpcProxy>
 {
-  static constexpr const char * UUID = "614d0807-c0ee-4a27-81dc-0d10ba18d321";
+  static constexpr const char * UUID = "63311c8a-820b-4bc6-baac-28bf865f0b32";
   static constexpr const char * NAME = "IRelocalizer_grpcProxy";
   static constexpr const char * DESCRIPTION = "IRelocalizer_grpcProxy grpc client proxy component";
 };

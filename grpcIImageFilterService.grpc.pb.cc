@@ -27,23 +27,23 @@ static const char* grpcIImageFilterService_method_names[] = {
 
 std::unique_ptr< grpcIImageFilterService::Stub> grpcIImageFilterService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIImageFilterService::Stub> stub(new grpcIImageFilterService::Stub(channel));
+  std::unique_ptr< grpcIImageFilterService::Stub> stub(new grpcIImageFilterService::Stub(channel, options));
   return stub;
 }
 
-grpcIImageFilterService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_filter_(grpcIImageFilterService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIImageFilterService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_filter_(grpcIImageFilterService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIImageFilterService::Stub::filter(::grpc::ClientContext* context, const ::grpcIImageFilter::filterRequest& request, ::grpcIImageFilter::filterResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIImageFilter::filterRequest, ::grpcIImageFilter::filterResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_filter_, context, request, response);
 }
 
-void grpcIImageFilterService::Stub::experimental_async::filter(::grpc::ClientContext* context, const ::grpcIImageFilter::filterRequest* request, ::grpcIImageFilter::filterResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIImageFilterService::Stub::async::filter(::grpc::ClientContext* context, const ::grpcIImageFilter::filterRequest* request, ::grpcIImageFilter::filterResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIImageFilter::filterRequest, ::grpcIImageFilter::filterResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_filter_, context, request, response, std::move(f));
 }
 
-void grpcIImageFilterService::Stub::experimental_async::filter(::grpc::ClientContext* context, const ::grpcIImageFilter::filterRequest* request, ::grpcIImageFilter::filterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIImageFilterService::Stub::async::filter(::grpc::ClientContext* context, const ::grpcIImageFilter::filterRequest* request, ::grpcIImageFilter::filterResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_filter_, context, request, response, reactor);
 }
 

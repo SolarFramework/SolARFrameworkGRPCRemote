@@ -3,7 +3,7 @@
 
 #ifndef ITRIANGULATOR_GRPCPROXY_H
 #define ITRIANGULATOR_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/ITriangulator.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/ITriangulator.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -40,7 +40,7 @@ class ITriangulator_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyITriangulator::ITriangulator_grpcProxy>
 {
-  static constexpr const char * UUID = "d007b32b-2b35-4d77-8a66-e9a21cb1d319";
+  static constexpr const char * UUID = "27385119-6762-4c36-9dfa-86bdc2e2627e";
   static constexpr const char * NAME = "ITriangulator_grpcProxy";
   static constexpr const char * DESCRIPTION = "ITriangulator_grpcProxy grpc client proxy component";
 };

@@ -3,7 +3,7 @@
 
 #ifndef IMATCHESOVERLAY_GRPCPROXY_H
 #define IMATCHESOVERLAY_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/display/IMatchesOverlay.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/IMatchesOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -39,7 +39,7 @@ class IMatchesOverlay_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMatchesOverlay::IMatchesOverlay_grpcProxy>
 {
-  static constexpr const char * UUID = "91fa989e-a228-45ee-9573-b4050ad36604";
+  static constexpr const char * UUID = "d70c6103-98ce-4784-9258-5bdcb5697d67";
   static constexpr const char * NAME = "IMatchesOverlay_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMatchesOverlay_grpcProxy grpc client proxy component";
 };

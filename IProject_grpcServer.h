@@ -2,7 +2,7 @@
 
 #ifndef IPROJECT_GRPCSERVER_H
 #define IPROJECT_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IProject.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IProject.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIProjectService.grpc.pb.h"
@@ -43,7 +43,7 @@ class IProject_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIProject::IProject_grpcServer>
 {
-  static constexpr const char * UUID = "26220e9b-25c0-493c-bf5f-3d7b8d6f0dca";
+  static constexpr const char * UUID = "75a080af-26e3-4ee1-ad13-00f52fcd61c2";
   static constexpr const char * NAME = "IProject_grpcServer";
   static constexpr const char * DESCRIPTION = "IProject_grpcServer grpc server component";
 };

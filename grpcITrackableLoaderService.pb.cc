@@ -93,10 +93,8 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIT
   schemas, file_default_instances, TableStruct_grpcITrackableLoaderService_2eproto::offsets,
   file_level_metadata_grpcITrackableLoaderService_2eproto, file_level_enum_descriptors_grpcITrackableLoaderService_2eproto, file_level_service_descriptors_grpcITrackableLoaderService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
-descriptor_table_grpcITrackableLoaderService_2eproto_metadata_getter(int index) {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcITrackableLoaderService_2eproto);
-  return descriptor_table_grpcITrackableLoaderService_2eproto.file_level_metadata[index];
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcITrackableLoaderService_2eproto_getter() {
+  return &descriptor_table_grpcITrackableLoaderService_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -109,10 +107,13 @@ class loadTrackableRequest::_Internal {
  public:
 };
 
-loadTrackableRequest::loadTrackableRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+loadTrackableRequest::loadTrackableRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcITrackableLoader.loadTrackableRequest)
 }
 loadTrackableRequest::loadTrackableRequest(const loadTrackableRequest& from)
@@ -121,23 +122,24 @@ loadTrackableRequest::loadTrackableRequest(const loadTrackableRequest& from)
   trackable_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_trackable().empty()) {
     trackable_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_trackable(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:grpcITrackableLoader.loadTrackableRequest)
 }
 
-void loadTrackableRequest::SharedCtor() {
+inline void loadTrackableRequest::SharedCtor() {
 trackable_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 loadTrackableRequest::~loadTrackableRequest() {
   // @@protoc_insertion_point(destructor:grpcITrackableLoader.loadTrackableRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void loadTrackableRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void loadTrackableRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   trackable_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -166,7 +168,6 @@ const char* loadTrackableRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes trackable = 1;
       case 1:
@@ -178,7 +179,8 @@ const char* loadTrackableRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -205,7 +207,7 @@ failure:
   (void) cached_has_bits;
 
   // bytes trackable = 1;
-  if (this->trackable().size() > 0) {
+  if (!this->_internal_trackable().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_trackable(), target);
   }
@@ -227,7 +229,7 @@ size_t loadTrackableRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes trackable = 1;
-  if (this->trackable().size() > 0) {
+  if (!this->_internal_trackable().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_trackable());
@@ -242,38 +244,29 @@ size_t loadTrackableRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void loadTrackableRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcITrackableLoader.loadTrackableRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const loadTrackableRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<loadTrackableRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcITrackableLoader.loadTrackableRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcITrackableLoader.loadTrackableRequest)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData loadTrackableRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    loadTrackableRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*loadTrackableRequest::GetClassData() const { return &_class_data_; }
+
+void loadTrackableRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<loadTrackableRequest *>(to)->MergeFrom(
+      static_cast<const loadTrackableRequest &>(from));
 }
+
 
 void loadTrackableRequest::MergeFrom(const loadTrackableRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcITrackableLoader.loadTrackableRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.trackable().size() > 0) {
+  if (!from._internal_trackable().empty()) {
     _internal_set_trackable(from._internal_trackable());
   }
-}
-
-void loadTrackableRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcITrackableLoader.loadTrackableRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void loadTrackableRequest::CopyFrom(const loadTrackableRequest& from) {
@@ -289,14 +282,19 @@ bool loadTrackableRequest::IsInitialized() const {
 
 void loadTrackableRequest::InternalSwap(loadTrackableRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  trackable_.Swap(&other->trackable_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &trackable_, GetArenaForAllocation(),
+      &other->trackable_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadTrackableRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcITrackableLoaderService_2eproto_getter, &descriptor_table_grpcITrackableLoaderService_2eproto_once,
+      file_level_metadata_grpcITrackableLoaderService_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -304,10 +302,13 @@ class loadTrackableResponse::_Internal {
  public:
 };
 
-loadTrackableResponse::loadTrackableResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+loadTrackableResponse::loadTrackableResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcITrackableLoader.loadTrackableResponse)
 }
 loadTrackableResponse::loadTrackableResponse(const loadTrackableResponse& from)
@@ -316,25 +317,26 @@ loadTrackableResponse::loadTrackableResponse(const loadTrackableResponse& from)
   trackable_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_trackable().empty()) {
     trackable_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_trackable(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcITrackableLoader.loadTrackableResponse)
 }
 
-void loadTrackableResponse::SharedCtor() {
+inline void loadTrackableResponse::SharedCtor() {
 trackable_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
 }
 
 loadTrackableResponse::~loadTrackableResponse() {
   // @@protoc_insertion_point(destructor:grpcITrackableLoader.loadTrackableResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void loadTrackableResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void loadTrackableResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   trackable_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -364,7 +366,6 @@ const char* loadTrackableResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes trackable = 1;
       case 1:
@@ -383,7 +384,8 @@ const char* loadTrackableResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -410,13 +412,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes trackable = 1;
-  if (this->trackable().size() > 0) {
+  if (!this->_internal_trackable().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_trackable(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -438,14 +440,14 @@ size_t loadTrackableResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes trackable = 1;
-  if (this->trackable().size() > 0) {
+  if (!this->_internal_trackable().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_trackable());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -460,41 +462,32 @@ size_t loadTrackableResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void loadTrackableResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcITrackableLoader.loadTrackableResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const loadTrackableResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<loadTrackableResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcITrackableLoader.loadTrackableResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcITrackableLoader.loadTrackableResponse)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData loadTrackableResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    loadTrackableResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*loadTrackableResponse::GetClassData() const { return &_class_data_; }
+
+void loadTrackableResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<loadTrackableResponse *>(to)->MergeFrom(
+      static_cast<const loadTrackableResponse &>(from));
 }
+
 
 void loadTrackableResponse::MergeFrom(const loadTrackableResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcITrackableLoader.loadTrackableResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.trackable().size() > 0) {
+  if (!from._internal_trackable().empty()) {
     _internal_set_trackable(from._internal_trackable());
   }
-  if (from.xpcfgrpcreturnvalue() != 0) {
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-}
-
-void loadTrackableResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcITrackableLoader.loadTrackableResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void loadTrackableResponse::CopyFrom(const loadTrackableResponse& from) {
@@ -510,15 +503,20 @@ bool loadTrackableResponse::IsInitialized() const {
 
 void loadTrackableResponse::InternalSwap(loadTrackableResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  trackable_.Swap(&other->trackable_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &trackable_, GetArenaForAllocation(),
+      &other->trackable_, other->GetArenaForAllocation()
+  );
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadTrackableResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcITrackableLoaderService_2eproto_getter, &descriptor_table_grpcITrackableLoaderService_2eproto_once,
+      file_level_metadata_grpcITrackableLoaderService_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcITrackableLoader

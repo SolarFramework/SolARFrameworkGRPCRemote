@@ -2,7 +2,7 @@
 
 #ifndef IARDEVICE_GRPCSERVER_H
 #define IARDEVICE_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IARDevice.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IARDevice.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIARDeviceService.grpc.pb.h"
@@ -46,7 +46,7 @@ class IARDevice_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIARDevice::IARDevice_grpcServer>
 {
-  static constexpr const char * UUID = "ddfe84c3-22dc-479f-8677-54e7664cfcf1";
+  static constexpr const char * UUID = "1d7b62ff-b4f9-4b1e-a381-f6b759aa7e2f";
   static constexpr const char * NAME = "IARDevice_grpcServer";
   static constexpr const char * DESCRIPTION = "IARDevice_grpcServer grpc server component";
 };

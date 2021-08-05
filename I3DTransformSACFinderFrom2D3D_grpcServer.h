@@ -2,7 +2,7 @@
 
 #ifndef I3DTRANSFORMSACFINDERFROM2D3D_GRPCSERVER_H
 #define I3DTRANSFORMSACFINDERFROM2D3D_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformSACFinderFrom2D3D.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformSACFinderFrom2D3D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI3DTransformSACFinderFrom2D3DService.grpc.pb.h"
@@ -42,7 +42,7 @@ class I3DTransformSACFinderFrom2D3D_grpcServer:  public org::bcom::xpcf::Configu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DTransformSACFinderFrom2D3D::I3DTransformSACFinderFrom2D3D_grpcServer>
 {
-  static constexpr const char * UUID = "67eb49ce-fdfc-4a0e-b52a-e6e2b1b412f3";
+  static constexpr const char * UUID = "b0f04822-a9cf-4448-854a-d010ab201243";
   static constexpr const char * NAME = "I3DTransformSACFinderFrom2D3D_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DTransformSACFinderFrom2D3D_grpcServer grpc server component";
 };

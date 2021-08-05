@@ -2,7 +2,7 @@
 
 #ifndef ICOVISIBILITYGRAPHMANAGER_GRPCSERVER_H
 #define ICOVISIBILITYGRAPHMANAGER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/storage/ICovisibilityGraphManager.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/storage/ICovisibilityGraphManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcICovisibilityGraphManagerService.grpc.pb.h"
@@ -57,7 +57,7 @@ class ICovisibilityGraphManager_grpcServer:  public org::bcom::xpcf::Configurabl
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverICovisibilityGraphManager::ICovisibilityGraphManager_grpcServer>
 {
-  static constexpr const char * UUID = "5a8a79b2-d969-4a93-a45f-243cd2c408d5";
+  static constexpr const char * UUID = "b213896f-098c-494d-a799-095a3bdb577a";
   static constexpr const char * NAME = "ICovisibilityGraphManager_grpcServer";
   static constexpr const char * DESCRIPTION = "ICovisibilityGraphManager_grpcServer grpc server component";
 };

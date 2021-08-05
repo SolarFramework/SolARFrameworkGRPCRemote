@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIRegression;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+bytes distorsionParams = 2;
+}
+
+message addRequest
+{
+bytes descriptors = 1;
+bytes points3D = 2;
+}
+
+message addResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message regressRequest
+{
+bytes frame = 1;
+bytes points2D = 2;
+bytes points3D = 3;
+}
+
+message regressResponse
+{
+bytes points2D = 1;
+bytes points3D = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message updateRequest
+{
+bytes inliers = 1;
+bytes cameraPose = 2;
+}
+
+message updateResponse
+{
+bytes inliers = 1;
+bytes cameraPose = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message loadModelResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getTrainingStatusResponse
+{
+bytes xpcfGrpcReturnValue = 1;
+}
+
+message getNumActiveLeavesResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getNumPassiveLeavesResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIRegressionService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc add(addRequest) returns(addResponse) {}
+rpc regress(regressRequest) returns(regressResponse) {}
+rpc update(updateRequest) returns(updateResponse) {}
+rpc loadModel(google.protobuf.Empty) returns(loadModelResponse) {}
+rpc getTrainingStatus(google.protobuf.Empty) returns(getTrainingStatusResponse) {}
+rpc getNumActiveLeaves(google.protobuf.Empty) returns(getNumActiveLeavesResponse) {}
+rpc getNumPassiveLeaves(google.protobuf.Empty) returns(getNumPassiveLeavesResponse) {}
+}
+

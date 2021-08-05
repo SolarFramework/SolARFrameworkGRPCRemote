@@ -3,7 +3,7 @@
 
 #ifndef ICAMERACALIBRATION_GRPCPROXY_H
 #define ICAMERACALIBRATION_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICameraCalibration.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICameraCalibration.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -38,7 +38,7 @@ class ICameraCalibration_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyICameraCalibration::ICameraCalibration_grpcProxy>
 {
-  static constexpr const char * UUID = "f1f697a8-1666-42d3-91d1-81672022ecf0";
+  static constexpr const char * UUID = "953e4f0b-9e31-4178-9a0b-95db93cede2e";
   static constexpr const char * NAME = "ICameraCalibration_grpcProxy";
   static constexpr const char * DESCRIPTION = "ICameraCalibration_grpcProxy grpc client proxy component";
 };

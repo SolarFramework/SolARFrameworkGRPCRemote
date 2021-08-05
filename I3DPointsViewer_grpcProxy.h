@@ -3,7 +3,7 @@
 
 #ifndef I3DPOINTSVIEWER_GRPCPROXY_H
 #define I3DPOINTSVIEWER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DPointsViewer.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DPointsViewer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class I3DPointsViewer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DPointsViewer::I3DPointsViewer_grpcProxy>
 {
-  static constexpr const char * UUID = "9a06be0e-1d4e-412e-8ba5-79ad9a8494b9";
+  static constexpr const char * UUID = "d0fcefb9-3939-409d-8b64-e0b1e45aabbc";
   static constexpr const char * NAME = "I3DPointsViewer_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DPointsViewer_grpcProxy grpc client proxy component";
 };

@@ -2,7 +2,7 @@
 
 #ifndef ICONTOURSFILTER_GRPCSERVER_H
 #define ICONTOURSFILTER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/features/IContoursFilter.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IContoursFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIContoursFilterService.grpc.pb.h"
@@ -41,7 +41,7 @@ class IContoursFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIContoursFilter::IContoursFilter_grpcServer>
 {
-  static constexpr const char * UUID = "5a9da64c-87ec-4ff1-9acc-928673b092ee";
+  static constexpr const char * UUID = "d5ed56cd-c349-4a91-a4d5-d20d925a4093";
   static constexpr const char * NAME = "IContoursFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IContoursFilter_grpcServer grpc server component";
 };

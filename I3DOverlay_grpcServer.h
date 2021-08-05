@@ -2,7 +2,7 @@
 
 #ifndef I3DOVERLAY_GRPCSERVER_H
 #define I3DOVERLAY_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DOverlay.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI3DOverlayService.grpc.pb.h"
@@ -42,7 +42,7 @@ class I3DOverlay_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DOverlay::I3DOverlay_grpcServer>
 {
-  static constexpr const char * UUID = "ad659363-7a99-4236-970c-8fa4f1643444";
+  static constexpr const char * UUID = "b165c051-ad8a-4c65-af25-31df792bbefe";
   static constexpr const char * NAME = "I3DOverlay_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DOverlay_grpcServer grpc server component";
 };

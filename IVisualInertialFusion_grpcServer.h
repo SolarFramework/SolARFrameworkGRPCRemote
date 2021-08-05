@@ -2,7 +2,7 @@
 
 #ifndef IVISUALINERTIALFUSION_GRPCSERVER_H
 #define IVISUALINERTIALFUSION_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/fusion/IVisualInertialFusion.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/fusion/IVisualInertialFusion.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIVisualInertialFusionService.grpc.pb.h"
@@ -44,7 +44,7 @@ class IVisualInertialFusion_grpcServer:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIVisualInertialFusion::IVisualInertialFusion_grpcServer>
 {
-  static constexpr const char * UUID = "818bc58c-c40f-4590-bc0e-86dd1fe781f7";
+  static constexpr const char * UUID = "cbb65608-b139-40b4-b102-ba450113742d";
   static constexpr const char * NAME = "IVisualInertialFusion_grpcServer";
   static constexpr const char * DESCRIPTION = "IVisualInertialFusion_grpcServer grpc server component";
 };

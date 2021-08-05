@@ -2,7 +2,7 @@
 
 #ifndef IKEYPOINTDETECTORREGION_GRPCSERVER_H
 #define IKEYPOINTDETECTORREGION_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointDetectorRegion.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointDetectorRegion.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIKeypointDetectorRegionService.grpc.pb.h"
@@ -43,7 +43,7 @@ class IKeypointDetectorRegion_grpcServer:  public org::bcom::xpcf::ConfigurableB
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeypointDetectorRegion::IKeypointDetectorRegion_grpcServer>
 {
-  static constexpr const char * UUID = "d6670177-4b72-4f20-a943-28a2aa422908";
+  static constexpr const char * UUID = "921afbd1-c6f7-48fa-8d6b-e506a2c6e236";
   static constexpr const char * NAME = "IKeypointDetectorRegion_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeypointDetectorRegion_grpcServer grpc server component";
 };

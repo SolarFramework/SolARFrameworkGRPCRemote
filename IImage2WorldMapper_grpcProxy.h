@@ -3,7 +3,7 @@
 
 #ifndef IIMAGE2WORLDMAPPER_GRPCPROXY_H
 #define IIMAGE2WORLDMAPPER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IImage2WorldMapper.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IImage2WorldMapper.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IImage2WorldMapper_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIImage2WorldMapper::IImage2WorldMapper_grpcProxy>
 {
-  static constexpr const char * UUID = "0359b32c-7350-40e4-b37b-ace194087e79";
+  static constexpr const char * UUID = "adce484e-4e9a-4277-a95e-6e54460ad898";
   static constexpr const char * NAME = "IImage2WorldMapper_grpcProxy";
   static constexpr const char * DESCRIPTION = "IImage2WorldMapper_grpcProxy grpc client proxy component";
 };

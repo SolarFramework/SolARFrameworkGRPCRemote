@@ -2,7 +2,7 @@
 
 #ifndef IMATCHESFILTER_GRPCSERVER_H
 #define IMATCHESFILTER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/features/IMatchesFilter.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IMatchesFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMatchesFilterService.grpc.pb.h"
@@ -41,7 +41,7 @@ class IMatchesFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMatchesFilter::IMatchesFilter_grpcServer>
 {
-  static constexpr const char * UUID = "3cd29125-2103-48ec-8d90-526149635ea0";
+  static constexpr const char * UUID = "748b844a-ceaa-4e5f-9e15-c429bb0b9078";
   static constexpr const char * NAME = "IMatchesFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IMatchesFilter_grpcServer grpc server component";
 };

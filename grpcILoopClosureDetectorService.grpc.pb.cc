@@ -28,24 +28,24 @@ static const char* grpcILoopClosureDetectorService_method_names[] = {
 
 std::unique_ptr< grpcILoopClosureDetectorService::Stub> grpcILoopClosureDetectorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcILoopClosureDetectorService::Stub> stub(new grpcILoopClosureDetectorService::Stub(channel));
+  std::unique_ptr< grpcILoopClosureDetectorService::Stub> stub(new grpcILoopClosureDetectorService::Stub(channel, options));
   return stub;
 }
 
-grpcILoopClosureDetectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcILoopClosureDetectorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_detect_(grpcILoopClosureDetectorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcILoopClosureDetectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_setCameraParameters_(grpcILoopClosureDetectorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_detect_(grpcILoopClosureDetectorService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcILoopClosureDetectorService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcILoopClosureDetector::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcILoopClosureDetectorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcILoopClosureDetectorService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcILoopClosureDetector::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcILoopClosureDetectorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcILoopClosureDetectorService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcILoopClosureDetectorService::Stub::experimental_async::setCameraParamet
   return ::grpc::internal::BlockingUnaryCall< ::grpcILoopClosureDetector::detectRequest, ::grpcILoopClosureDetector::detectResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_detect_, context, request, response);
 }
 
-void grpcILoopClosureDetectorService::Stub::experimental_async::detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcILoopClosureDetectorService::Stub::async::detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcILoopClosureDetector::detectRequest, ::grpcILoopClosureDetector::detectResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_, context, request, response, std::move(f));
 }
 
-void grpcILoopClosureDetectorService::Stub::experimental_async::detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcILoopClosureDetectorService::Stub::async::detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_, context, request, response, reactor);
 }
 

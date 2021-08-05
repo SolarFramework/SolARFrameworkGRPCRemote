@@ -3,7 +3,7 @@
 
 #ifndef IPOINTCLOUDLOADER_GRPCPROXY_H
 #define IPOINTCLOUDLOADER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/input/files/IPointCloudLoader.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/files/IPointCloudLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IPointCloudLoader_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIPointCloudLoader::IPointCloudLoader_grpcProxy>
 {
-  static constexpr const char * UUID = "0ac77825-be67-4d7f-b815-124ca2cc861c";
+  static constexpr const char * UUID = "ba3a2f54-0f0f-41f0-baeb-4a0ce5082d8e";
   static constexpr const char * NAME = "IPointCloudLoader_grpcProxy";
   static constexpr const char * DESCRIPTION = "IPointCloudLoader_grpcProxy grpc client proxy component";
 };

@@ -2,7 +2,7 @@
 
 #ifndef IRELOCALIZER_GRPCSERVER_H
 #define IRELOCALIZER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRelocalizer.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRelocalizer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIRelocalizerService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IRelocalizer_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIRelocalizer::IRelocalizer_grpcServer>
 {
-  static constexpr const char * UUID = "ce1b6af9-1c4f-4e4e-91b6-f8292e33a6db";
+  static constexpr const char * UUID = "df79f40d-86b9-4aaf-a890-812a03e1b6c4";
   static constexpr const char * NAME = "IRelocalizer_grpcServer";
   static constexpr const char * DESCRIPTION = "IRelocalizer_grpcServer grpc server component";
 };

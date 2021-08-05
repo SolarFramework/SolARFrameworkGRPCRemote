@@ -29,25 +29,25 @@ static const char* grpcIProjectService_method_names[] = {
 
 std::unique_ptr< grpcIProjectService::Stub> grpcIProjectService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIProjectService::Stub> stub(new grpcIProjectService::Stub(channel));
+  std::unique_ptr< grpcIProjectService::Stub> stub(new grpcIProjectService::Stub(channel, options));
   return stub;
 }
 
-grpcIProjectService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcIProjectService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_project_grpc0_(grpcIProjectService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_project_grpc1_(grpcIProjectService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIProjectService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_setCameraParameters_(grpcIProjectService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_project_grpc0_(grpcIProjectService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_project_grpc1_(grpcIProjectService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIProjectService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIProject::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcIProjectService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIProjectService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIProject::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcIProjectService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIProjectService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcIProjectService::Stub::experimental_async::setCameraParameters(::grpc::
   return ::grpc::internal::BlockingUnaryCall< ::grpcIProject::project_grpc0Request, ::grpcIProject::project_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_project_grpc0_, context, request, response);
 }
 
-void grpcIProjectService::Stub::experimental_async::project_grpc0(::grpc::ClientContext* context, const ::grpcIProject::project_grpc0Request* request, ::grpcIProject::project_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIProjectService::Stub::async::project_grpc0(::grpc::ClientContext* context, const ::grpcIProject::project_grpc0Request* request, ::grpcIProject::project_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIProject::project_grpc0Request, ::grpcIProject::project_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_project_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIProjectService::Stub::experimental_async::project_grpc0(::grpc::ClientContext* context, const ::grpcIProject::project_grpc0Request* request, ::grpcIProject::project_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIProjectService::Stub::async::project_grpc0(::grpc::ClientContext* context, const ::grpcIProject::project_grpc0Request* request, ::grpcIProject::project_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_project_grpc0_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcIProjectService::Stub::experimental_async::project_grpc0(::grpc::Client
   return ::grpc::internal::BlockingUnaryCall< ::grpcIProject::project_grpc1Request, ::grpcIProject::project_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_project_grpc1_, context, request, response);
 }
 
-void grpcIProjectService::Stub::experimental_async::project_grpc1(::grpc::ClientContext* context, const ::grpcIProject::project_grpc1Request* request, ::grpcIProject::project_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIProjectService::Stub::async::project_grpc1(::grpc::ClientContext* context, const ::grpcIProject::project_grpc1Request* request, ::grpcIProject::project_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIProject::project_grpc1Request, ::grpcIProject::project_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_project_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIProjectService::Stub::experimental_async::project_grpc1(::grpc::ClientContext* context, const ::grpcIProject::project_grpc1Request* request, ::grpcIProject::project_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIProjectService::Stub::async::project_grpc1(::grpc::ClientContext* context, const ::grpcIProject::project_grpc1Request* request, ::grpcIProject::project_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_project_grpc1_, context, request, response, reactor);
 }
 

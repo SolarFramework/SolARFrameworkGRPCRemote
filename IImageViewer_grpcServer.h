@@ -2,7 +2,7 @@
 
 #ifndef IIMAGEVIEWER_GRPCSERVER_H
 #define IIMAGEVIEWER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/display/IImageViewer.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/IImageViewer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIImageViewerService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IImageViewer_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImageViewer::IImageViewer_grpcServer>
 {
-  static constexpr const char * UUID = "ba0272f1-2035-4d88-8fd2-409ad69a457d";
+  static constexpr const char * UUID = "99d2fe83-269b-4a3b-b27b-f7d84b7ef262";
   static constexpr const char * NAME = "IImageViewer_grpcServer";
   static constexpr const char * DESCRIPTION = "IImageViewer_grpcServer grpc server component";
 };

@@ -40,13 +40,14 @@ XPCFErrorCode IMapUpdatePipeline_grpcProxy::onConfigured()
     }
 
 //  m_channel = ::grpc::CreateChannel(m_channelUrl, xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)));
-    ::grpc::ChannelArguments ch_args;
-    ch_args.SetMaxReceiveMessageSize(-1);
-    m_channel = ::grpc::CreateCustomChannel(m_channelUrl,
-                                            xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)),
-                                            ch_args);
-    m_grpcStub = ::grpcIMapUpdatePipeline::grpcIMapUpdatePipelineService::NewStub(m_channel);
-    return xpcf::XPCFErrorCode::_SUCCESS;
+  ::grpc::ChannelArguments ch_args;
+  ch_args.SetMaxReceiveMessageSize(-1);
+  m_channel = ::grpc::CreateCustomChannel(m_channelUrl,
+                                          xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)),
+                                          ch_args);
+
+  m_grpcStub = ::grpcIMapUpdatePipeline::grpcIMapUpdatePipelineService::NewStub(m_channel);
+  return xpcf::XPCFErrorCode::_SUCCESS;
 }
 
 

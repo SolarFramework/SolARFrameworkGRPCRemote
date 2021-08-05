@@ -2,7 +2,7 @@
 
 #ifndef IMAPUPDATE_GRPCSERVER_H
 #define IMAPUPDATE_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapUpdate.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapUpdate.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMapUpdateService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IMapUpdate_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMapUpdate::IMapUpdate_grpcServer>
 {
-  static constexpr const char * UUID = "16c1f5ad-451e-4943-8f26-2b676f6b349e";
+  static constexpr const char * UUID = "cf213827-2494-413a-9927-019142e18c47";
   static constexpr const char * NAME = "IMapUpdate_grpcServer";
   static constexpr const char * DESCRIPTION = "IMapUpdate_grpcServer grpc server component";
 };

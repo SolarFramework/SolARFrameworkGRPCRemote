@@ -3,7 +3,7 @@
 
 #ifndef IMAPPING_GRPCPROXY_H
 #define IMAPPING_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IMapping.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IMapping.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IMapping_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pub
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapping::IMapping_grpcProxy>
 {
-  static constexpr const char * UUID = "e802d243-87e8-4c58-941a-4573ccf0489d";
+  static constexpr const char * UUID = "5e847f05-017b-47ea-acf0-0366f8a5a958";
   static constexpr const char * NAME = "IMapping_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMapping_grpcProxy grpc client proxy component";
 };

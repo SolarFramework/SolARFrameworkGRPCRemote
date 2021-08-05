@@ -106,10 +106,8 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIK
   schemas, file_default_instances, TableStruct_grpcIKeypointsReIndexerService_2eproto::offsets,
   file_level_metadata_grpcIKeypointsReIndexerService_2eproto, file_level_enum_descriptors_grpcIKeypointsReIndexerService_2eproto, file_level_service_descriptors_grpcIKeypointsReIndexerService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
-descriptor_table_grpcIKeypointsReIndexerService_2eproto_metadata_getter(int index) {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcIKeypointsReIndexerService_2eproto);
-  return descriptor_table_grpcIKeypointsReIndexerService_2eproto.file_level_metadata[index];
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcIKeypointsReIndexerService_2eproto_getter() {
+  return &descriptor_table_grpcIKeypointsReIndexerService_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -122,10 +120,13 @@ class reindexRequest::_Internal {
  public:
 };
 
-reindexRequest::reindexRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+reindexRequest::reindexRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcIKeypointsReIndexer.reindexRequest)
 }
 reindexRequest::reindexRequest(const reindexRequest& from)
@@ -134,32 +135,32 @@ reindexRequest::reindexRequest(const reindexRequest& from)
   keypoints1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_keypoints1().empty()) {
     keypoints1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keypoints1(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   keypoints2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_keypoints2().empty()) {
     keypoints2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keypoints2(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_matches().empty()) {
     matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matches(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   matchedkeypoints1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_matchedkeypoints1().empty()) {
     matchedkeypoints1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matchedkeypoints1(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   matchedkeypoints2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_matchedkeypoints2().empty()) {
     matchedkeypoints2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matchedkeypoints2(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIKeypointsReIndexer.reindexRequest)
 }
 
-void reindexRequest::SharedCtor() {
+inline void reindexRequest::SharedCtor() {
 keypoints1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 keypoints2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -169,12 +170,13 @@ matchedkeypoints2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmpty
 
 reindexRequest::~reindexRequest() {
   // @@protoc_insertion_point(destructor:grpcIKeypointsReIndexer.reindexRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void reindexRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void reindexRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   keypoints1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   keypoints2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   matches_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -211,7 +213,6 @@ const char* reindexRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes keypoints1 = 1;
       case 1:
@@ -255,7 +256,8 @@ const char* reindexRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -282,31 +284,31 @@ failure:
   (void) cached_has_bits;
 
   // bytes keypoints1 = 1;
-  if (this->keypoints1().size() > 0) {
+  if (!this->_internal_keypoints1().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_keypoints1(), target);
   }
 
   // bytes keypoints2 = 2;
-  if (this->keypoints2().size() > 0) {
+  if (!this->_internal_keypoints2().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_keypoints2(), target);
   }
 
   // bytes matches = 3;
-  if (this->matches().size() > 0) {
+  if (!this->_internal_matches().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_matches(), target);
   }
 
   // bytes matchedKeypoints1 = 4;
-  if (this->matchedkeypoints1().size() > 0) {
+  if (!this->_internal_matchedkeypoints1().empty()) {
     target = stream->WriteBytesMaybeAliased(
         4, this->_internal_matchedkeypoints1(), target);
   }
 
   // bytes matchedKeypoints2 = 5;
-  if (this->matchedkeypoints2().size() > 0) {
+  if (!this->_internal_matchedkeypoints2().empty()) {
     target = stream->WriteBytesMaybeAliased(
         5, this->_internal_matchedkeypoints2(), target);
   }
@@ -328,35 +330,35 @@ size_t reindexRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes keypoints1 = 1;
-  if (this->keypoints1().size() > 0) {
+  if (!this->_internal_keypoints1().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keypoints1());
   }
 
   // bytes keypoints2 = 2;
-  if (this->keypoints2().size() > 0) {
+  if (!this->_internal_keypoints2().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keypoints2());
   }
 
   // bytes matches = 3;
-  if (this->matches().size() > 0) {
+  if (!this->_internal_matches().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matches());
   }
 
   // bytes matchedKeypoints1 = 4;
-  if (this->matchedkeypoints1().size() > 0) {
+  if (!this->_internal_matchedkeypoints1().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matchedkeypoints1());
   }
 
   // bytes matchedKeypoints2 = 5;
-  if (this->matchedkeypoints2().size() > 0) {
+  if (!this->_internal_matchedkeypoints2().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matchedkeypoints2());
@@ -371,50 +373,41 @@ size_t reindexRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void reindexRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeypointsReIndexer.reindexRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const reindexRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<reindexRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeypointsReIndexer.reindexRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeypointsReIndexer.reindexRequest)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData reindexRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    reindexRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*reindexRequest::GetClassData() const { return &_class_data_; }
+
+void reindexRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<reindexRequest *>(to)->MergeFrom(
+      static_cast<const reindexRequest &>(from));
 }
+
 
 void reindexRequest::MergeFrom(const reindexRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeypointsReIndexer.reindexRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.keypoints1().size() > 0) {
+  if (!from._internal_keypoints1().empty()) {
     _internal_set_keypoints1(from._internal_keypoints1());
   }
-  if (from.keypoints2().size() > 0) {
+  if (!from._internal_keypoints2().empty()) {
     _internal_set_keypoints2(from._internal_keypoints2());
   }
-  if (from.matches().size() > 0) {
+  if (!from._internal_matches().empty()) {
     _internal_set_matches(from._internal_matches());
   }
-  if (from.matchedkeypoints1().size() > 0) {
+  if (!from._internal_matchedkeypoints1().empty()) {
     _internal_set_matchedkeypoints1(from._internal_matchedkeypoints1());
   }
-  if (from.matchedkeypoints2().size() > 0) {
+  if (!from._internal_matchedkeypoints2().empty()) {
     _internal_set_matchedkeypoints2(from._internal_matchedkeypoints2());
   }
-}
-
-void reindexRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeypointsReIndexer.reindexRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void reindexRequest::CopyFrom(const reindexRequest& from) {
@@ -430,18 +423,39 @@ bool reindexRequest::IsInitialized() const {
 
 void reindexRequest::InternalSwap(reindexRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  keypoints1_.Swap(&other->keypoints1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  keypoints2_.Swap(&other->keypoints2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  matches_.Swap(&other->matches_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  matchedkeypoints1_.Swap(&other->matchedkeypoints1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  matchedkeypoints2_.Swap(&other->matchedkeypoints2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &keypoints1_, GetArenaForAllocation(),
+      &other->keypoints1_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &keypoints2_, GetArenaForAllocation(),
+      &other->keypoints2_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &matches_, GetArenaForAllocation(),
+      &other->matches_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &matchedkeypoints1_, GetArenaForAllocation(),
+      &other->matchedkeypoints1_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &matchedkeypoints2_, GetArenaForAllocation(),
+      &other->matchedkeypoints2_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata reindexRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcIKeypointsReIndexerService_2eproto_getter, &descriptor_table_grpcIKeypointsReIndexerService_2eproto_once,
+      file_level_metadata_grpcIKeypointsReIndexerService_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -449,10 +463,13 @@ class reindexResponse::_Internal {
  public:
 };
 
-reindexResponse::reindexResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+reindexResponse::reindexResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcIKeypointsReIndexer.reindexResponse)
 }
 reindexResponse::reindexResponse(const reindexResponse& from)
@@ -461,18 +478,18 @@ reindexResponse::reindexResponse(const reindexResponse& from)
   matchedkeypoints1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_matchedkeypoints1().empty()) {
     matchedkeypoints1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matchedkeypoints1(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   matchedkeypoints2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_matchedkeypoints2().empty()) {
     matchedkeypoints2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matchedkeypoints2(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIKeypointsReIndexer.reindexResponse)
 }
 
-void reindexResponse::SharedCtor() {
+inline void reindexResponse::SharedCtor() {
 matchedkeypoints1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 matchedkeypoints2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
@@ -480,12 +497,13 @@ xpcfgrpcreturnvalue_ = 0;
 
 reindexResponse::~reindexResponse() {
   // @@protoc_insertion_point(destructor:grpcIKeypointsReIndexer.reindexResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void reindexResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void reindexResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   matchedkeypoints1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   matchedkeypoints2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -517,7 +535,6 @@ const char* reindexResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes matchedKeypoints1 = 1;
       case 1:
@@ -544,7 +561,8 @@ const char* reindexResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -571,19 +589,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes matchedKeypoints1 = 1;
-  if (this->matchedkeypoints1().size() > 0) {
+  if (!this->_internal_matchedkeypoints1().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_matchedkeypoints1(), target);
   }
 
   // bytes matchedKeypoints2 = 2;
-  if (this->matchedkeypoints2().size() > 0) {
+  if (!this->_internal_matchedkeypoints2().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_matchedkeypoints2(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(3, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -605,21 +623,21 @@ size_t reindexResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes matchedKeypoints1 = 1;
-  if (this->matchedkeypoints1().size() > 0) {
+  if (!this->_internal_matchedkeypoints1().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matchedkeypoints1());
   }
 
   // bytes matchedKeypoints2 = 2;
-  if (this->matchedkeypoints2().size() > 0) {
+  if (!this->_internal_matchedkeypoints2().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matchedkeypoints2());
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -634,44 +652,35 @@ size_t reindexResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void reindexResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeypointsReIndexer.reindexResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const reindexResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<reindexResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeypointsReIndexer.reindexResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeypointsReIndexer.reindexResponse)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData reindexResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    reindexResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*reindexResponse::GetClassData() const { return &_class_data_; }
+
+void reindexResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<reindexResponse *>(to)->MergeFrom(
+      static_cast<const reindexResponse &>(from));
 }
+
 
 void reindexResponse::MergeFrom(const reindexResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeypointsReIndexer.reindexResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.matchedkeypoints1().size() > 0) {
+  if (!from._internal_matchedkeypoints1().empty()) {
     _internal_set_matchedkeypoints1(from._internal_matchedkeypoints1());
   }
-  if (from.matchedkeypoints2().size() > 0) {
+  if (!from._internal_matchedkeypoints2().empty()) {
     _internal_set_matchedkeypoints2(from._internal_matchedkeypoints2());
   }
-  if (from.xpcfgrpcreturnvalue() != 0) {
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-}
-
-void reindexResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeypointsReIndexer.reindexResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void reindexResponse::CopyFrom(const reindexResponse& from) {
@@ -687,16 +696,25 @@ bool reindexResponse::IsInitialized() const {
 
 void reindexResponse::InternalSwap(reindexResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  matchedkeypoints1_.Swap(&other->matchedkeypoints1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  matchedkeypoints2_.Swap(&other->matchedkeypoints2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &matchedkeypoints1_, GetArenaForAllocation(),
+      &other->matchedkeypoints1_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &matchedkeypoints2_, GetArenaForAllocation(),
+      &other->matchedkeypoints2_, other->GetArenaForAllocation()
+  );
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata reindexResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcIKeypointsReIndexerService_2eproto_getter, &descriptor_table_grpcIKeypointsReIndexerService_2eproto_once,
+      file_level_metadata_grpcIKeypointsReIndexerService_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIKeypointsReIndexer

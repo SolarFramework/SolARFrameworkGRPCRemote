@@ -2,7 +2,7 @@
 
 #ifndef IOVERLAPDETECTOR_GRPCSERVER_H
 #define IOVERLAPDETECTOR_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/loop/IOverlapDetector.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/loop/IOverlapDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIOverlapDetectorService.grpc.pb.h"
@@ -43,7 +43,7 @@ class IOverlapDetector_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIOverlapDetector::IOverlapDetector_grpcServer>
 {
-  static constexpr const char * UUID = "ffb73eb3-e1e3-420f-8645-98e78060788a";
+  static constexpr const char * UUID = "b0bd415d-ebad-440c-947c-1ad37d27ffad";
   static constexpr const char * NAME = "IOverlapDetector_grpcServer";
   static constexpr const char * DESCRIPTION = "IOverlapDetector_grpcServer grpc server component";
 };

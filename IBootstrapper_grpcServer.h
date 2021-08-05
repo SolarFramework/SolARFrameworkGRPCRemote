@@ -2,7 +2,7 @@
 
 #ifndef IBOOTSTRAPPER_GRPCSERVER_H
 #define IBOOTSTRAPPER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IBootstrapper.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IBootstrapper.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIBootstrapperService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IBootstrapper_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIBootstrapper::IBootstrapper_grpcServer>
 {
-  static constexpr const char * UUID = "87ead526-d8c0-4a19-afbe-cc19e874c104";
+  static constexpr const char * UUID = "7f4c70a7-7b07-4248-a9f6-1f73eb532b0f";
   static constexpr const char * NAME = "IBootstrapper_grpcServer";
   static constexpr const char * DESCRIPTION = "IBootstrapper_grpcServer grpc server component";
 };

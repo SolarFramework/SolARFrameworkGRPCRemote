@@ -29,25 +29,25 @@ static const char* grpcIUndistortPointsService_method_names[] = {
 
 std::unique_ptr< grpcIUndistortPointsService::Stub> grpcIUndistortPointsService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIUndistortPointsService::Stub> stub(new grpcIUndistortPointsService::Stub(channel));
+  std::unique_ptr< grpcIUndistortPointsService::Stub> stub(new grpcIUndistortPointsService::Stub(channel, options));
   return stub;
 }
 
-grpcIUndistortPointsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_undistort_grpc0_(grpcIUndistortPointsService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_undistort_grpc1_(grpcIUndistortPointsService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_(grpcIUndistortPointsService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIUndistortPointsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_undistort_grpc0_(grpcIUndistortPointsService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_undistort_grpc1_(grpcIUndistortPointsService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_(grpcIUndistortPointsService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIUndistortPointsService::Stub::undistort_grpc0(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request& request, ::grpcIUndistortPoints::undistort_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIUndistortPoints::undistort_grpc0Request, ::grpcIUndistortPoints::undistort_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_undistort_grpc0_, context, request, response);
 }
 
-void grpcIUndistortPointsService::Stub::experimental_async::undistort_grpc0(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request* request, ::grpcIUndistortPoints::undistort_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIUndistortPointsService::Stub::async::undistort_grpc0(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request* request, ::grpcIUndistortPoints::undistort_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIUndistortPoints::undistort_grpc0Request, ::grpcIUndistortPoints::undistort_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_undistort_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIUndistortPointsService::Stub::experimental_async::undistort_grpc0(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request* request, ::grpcIUndistortPoints::undistort_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIUndistortPointsService::Stub::async::undistort_grpc0(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request* request, ::grpcIUndistortPoints::undistort_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_undistort_grpc0_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcIUndistortPointsService::Stub::experimental_async::undistort_grpc0(::gr
   return ::grpc::internal::BlockingUnaryCall< ::grpcIUndistortPoints::undistort_grpc1Request, ::grpcIUndistortPoints::undistort_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_undistort_grpc1_, context, request, response);
 }
 
-void grpcIUndistortPointsService::Stub::experimental_async::undistort_grpc1(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIUndistortPointsService::Stub::async::undistort_grpc1(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIUndistortPoints::undistort_grpc1Request, ::grpcIUndistortPoints::undistort_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_undistort_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIUndistortPointsService::Stub::experimental_async::undistort_grpc1(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIUndistortPointsService::Stub::async::undistort_grpc1(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_undistort_grpc1_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcIUndistortPointsService::Stub::experimental_async::undistort_grpc1(::gr
   return ::grpc::internal::BlockingUnaryCall< ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcIUndistortPointsService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIUndistortPointsService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcIUndistortPointsService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIUndistortPointsService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 

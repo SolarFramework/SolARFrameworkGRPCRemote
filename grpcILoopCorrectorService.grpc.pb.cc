@@ -28,24 +28,24 @@ static const char* grpcILoopCorrectorService_method_names[] = {
 
 std::unique_ptr< grpcILoopCorrectorService::Stub> grpcILoopCorrectorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcILoopCorrectorService::Stub> stub(new grpcILoopCorrectorService::Stub(channel));
+  std::unique_ptr< grpcILoopCorrectorService::Stub> stub(new grpcILoopCorrectorService::Stub(channel, options));
   return stub;
 }
 
-grpcILoopCorrectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcILoopCorrectorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_correct_(grpcILoopCorrectorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcILoopCorrectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_setCameraParameters_(grpcILoopCorrectorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_correct_(grpcILoopCorrectorService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcILoopCorrectorService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcILoopCorrector::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcILoopCorrectorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcILoopCorrectorService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcILoopCorrector::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcILoopCorrectorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcILoopCorrectorService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcILoopCorrectorService::Stub::experimental_async::setCameraParameters(::
   return ::grpc::internal::BlockingUnaryCall< ::grpcILoopCorrector::correctRequest, ::grpcILoopCorrector::correctResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_correct_, context, request, response);
 }
 
-void grpcILoopCorrectorService::Stub::experimental_async::correct(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcILoopCorrectorService::Stub::async::correct(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcILoopCorrector::correctRequest, ::grpcILoopCorrector::correctResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_, context, request, response, std::move(f));
 }
 
-void grpcILoopCorrectorService::Stub::experimental_async::correct(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcILoopCorrectorService::Stub::async::correct(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_, context, request, response, reactor);
 }
 

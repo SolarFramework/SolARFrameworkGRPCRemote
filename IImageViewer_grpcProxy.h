@@ -3,7 +3,7 @@
 
 #ifndef IIMAGEVIEWER_GRPCPROXY_H
 #define IIMAGEVIEWER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/display/IImageViewer.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/IImageViewer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IImageViewer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIImageViewer::IImageViewer_grpcProxy>
 {
-  static constexpr const char * UUID = "b65721a5-1542-426f-9939-3cd9dd13364b";
+  static constexpr const char * UUID = "f13644be-febf-4e56-ac4a-100d28bef47b";
   static constexpr const char * NAME = "IImageViewer_grpcProxy";
   static constexpr const char * DESCRIPTION = "IImageViewer_grpcProxy grpc client proxy component";
 };

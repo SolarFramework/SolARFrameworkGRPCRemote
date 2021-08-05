@@ -94,10 +94,8 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIH
   schemas, file_default_instances, TableStruct_grpcIHomographyValidationService_2eproto::offsets,
   file_level_metadata_grpcIHomographyValidationService_2eproto, file_level_enum_descriptors_grpcIHomographyValidationService_2eproto, file_level_service_descriptors_grpcIHomographyValidationService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
-descriptor_table_grpcIHomographyValidationService_2eproto_metadata_getter(int index) {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcIHomographyValidationService_2eproto);
-  return descriptor_table_grpcIHomographyValidationService_2eproto.file_level_metadata[index];
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcIHomographyValidationService_2eproto_getter() {
+  return &descriptor_table_grpcIHomographyValidationService_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -110,10 +108,13 @@ class isValidRequest::_Internal {
  public:
 };
 
-isValidRequest::isValidRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+isValidRequest::isValidRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcIHomographyValidation.isValidRequest)
 }
 isValidRequest::isValidRequest(const isValidRequest& from)
@@ -122,29 +123,30 @@ isValidRequest::isValidRequest(const isValidRequest& from)
   ref2dsquaredmarkercorners_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ref2dsquaredmarkercorners().empty()) {
     ref2dsquaredmarkercorners_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ref2dsquaredmarkercorners(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   projected2dsquaredmarkercorners_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_projected2dsquaredmarkercorners().empty()) {
     projected2dsquaredmarkercorners_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_projected2dsquaredmarkercorners(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIHomographyValidation.isValidRequest)
 }
 
-void isValidRequest::SharedCtor() {
+inline void isValidRequest::SharedCtor() {
 ref2dsquaredmarkercorners_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 projected2dsquaredmarkercorners_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 isValidRequest::~isValidRequest() {
   // @@protoc_insertion_point(destructor:grpcIHomographyValidation.isValidRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void isValidRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void isValidRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   ref2dsquaredmarkercorners_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   projected2dsquaredmarkercorners_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -175,7 +177,6 @@ const char* isValidRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes ref2DSquaredMarkerCorners = 1;
       case 1:
@@ -195,7 +196,8 @@ const char* isValidRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -222,13 +224,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes ref2DSquaredMarkerCorners = 1;
-  if (this->ref2dsquaredmarkercorners().size() > 0) {
+  if (!this->_internal_ref2dsquaredmarkercorners().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_ref2dsquaredmarkercorners(), target);
   }
 
   // bytes projected2DSquaredMarkerCorners = 2;
-  if (this->projected2dsquaredmarkercorners().size() > 0) {
+  if (!this->_internal_projected2dsquaredmarkercorners().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_projected2dsquaredmarkercorners(), target);
   }
@@ -250,14 +252,14 @@ size_t isValidRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes ref2DSquaredMarkerCorners = 1;
-  if (this->ref2dsquaredmarkercorners().size() > 0) {
+  if (!this->_internal_ref2dsquaredmarkercorners().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_ref2dsquaredmarkercorners());
   }
 
   // bytes projected2DSquaredMarkerCorners = 2;
-  if (this->projected2dsquaredmarkercorners().size() > 0) {
+  if (!this->_internal_projected2dsquaredmarkercorners().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_projected2dsquaredmarkercorners());
@@ -272,41 +274,32 @@ size_t isValidRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void isValidRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIHomographyValidation.isValidRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const isValidRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<isValidRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIHomographyValidation.isValidRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIHomographyValidation.isValidRequest)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData isValidRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    isValidRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*isValidRequest::GetClassData() const { return &_class_data_; }
+
+void isValidRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<isValidRequest *>(to)->MergeFrom(
+      static_cast<const isValidRequest &>(from));
 }
+
 
 void isValidRequest::MergeFrom(const isValidRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIHomographyValidation.isValidRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.ref2dsquaredmarkercorners().size() > 0) {
+  if (!from._internal_ref2dsquaredmarkercorners().empty()) {
     _internal_set_ref2dsquaredmarkercorners(from._internal_ref2dsquaredmarkercorners());
   }
-  if (from.projected2dsquaredmarkercorners().size() > 0) {
+  if (!from._internal_projected2dsquaredmarkercorners().empty()) {
     _internal_set_projected2dsquaredmarkercorners(from._internal_projected2dsquaredmarkercorners());
   }
-}
-
-void isValidRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIHomographyValidation.isValidRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void isValidRequest::CopyFrom(const isValidRequest& from) {
@@ -322,15 +315,24 @@ bool isValidRequest::IsInitialized() const {
 
 void isValidRequest::InternalSwap(isValidRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ref2dsquaredmarkercorners_.Swap(&other->ref2dsquaredmarkercorners_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  projected2dsquaredmarkercorners_.Swap(&other->projected2dsquaredmarkercorners_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ref2dsquaredmarkercorners_, GetArenaForAllocation(),
+      &other->ref2dsquaredmarkercorners_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &projected2dsquaredmarkercorners_, GetArenaForAllocation(),
+      &other->projected2dsquaredmarkercorners_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isValidRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcIHomographyValidationService_2eproto_getter, &descriptor_table_grpcIHomographyValidationService_2eproto_once,
+      file_level_metadata_grpcIHomographyValidationService_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -338,10 +340,13 @@ class isValidResponse::_Internal {
  public:
 };
 
-isValidResponse::isValidResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+isValidResponse::isValidResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:grpcIHomographyValidation.isValidResponse)
 }
 isValidResponse::isValidResponse(const isValidResponse& from)
@@ -351,18 +356,19 @@ isValidResponse::isValidResponse(const isValidResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcIHomographyValidation.isValidResponse)
 }
 
-void isValidResponse::SharedCtor() {
+inline void isValidResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = false;
 }
 
 isValidResponse::~isValidResponse() {
   // @@protoc_insertion_point(destructor:grpcIHomographyValidation.isValidResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void isValidResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void isValidResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void isValidResponse::ArenaDtor(void* object) {
@@ -390,7 +396,6 @@ const char* isValidResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bool xpcfGrpcReturnValue = 1;
       case 1:
@@ -401,7 +406,8 @@ const char* isValidResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -428,7 +434,7 @@ failure:
   (void) cached_has_bits;
 
   // bool xpcfGrpcReturnValue = 1;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -450,7 +456,7 @@ size_t isValidResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bool xpcfGrpcReturnValue = 1;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     total_size += 1 + 1;
   }
 
@@ -463,38 +469,29 @@ size_t isValidResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void isValidResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIHomographyValidation.isValidResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const isValidResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<isValidResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIHomographyValidation.isValidResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIHomographyValidation.isValidResponse)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData isValidResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    isValidResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*isValidResponse::GetClassData() const { return &_class_data_; }
+
+void isValidResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<isValidResponse *>(to)->MergeFrom(
+      static_cast<const isValidResponse &>(from));
 }
+
 
 void isValidResponse::MergeFrom(const isValidResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIHomographyValidation.isValidResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.xpcfgrpcreturnvalue() != 0) {
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-}
-
-void isValidResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIHomographyValidation.isValidResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void isValidResponse::CopyFrom(const isValidResponse& from) {
@@ -510,14 +507,15 @@ bool isValidResponse::IsInitialized() const {
 
 void isValidResponse::InternalSwap(isValidResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isValidResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grpcIHomographyValidationService_2eproto_getter, &descriptor_table_grpcIHomographyValidationService_2eproto_once,
+      file_level_metadata_grpcIHomographyValidationService_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIHomographyValidation

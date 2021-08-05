@@ -29,25 +29,25 @@ static const char* grpcI3DTransformSACFinderFrom3D3DService_method_names[] = {
 
 std::unique_ptr< grpcI3DTransformSACFinderFrom3D3DService::Stub> grpcI3DTransformSACFinderFrom3D3DService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcI3DTransformSACFinderFrom3D3DService::Stub> stub(new grpcI3DTransformSACFinderFrom3D3DService::Stub(channel));
+  std::unique_ptr< grpcI3DTransformSACFinderFrom3D3DService::Stub> stub(new grpcI3DTransformSACFinderFrom3D3DService::Stub(channel, options));
   return stub;
 }
 
-grpcI3DTransformSACFinderFrom3D3DService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcI3DTransformSACFinderFrom3D3DService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_estimate_grpc0_(grpcI3DTransformSACFinderFrom3D3DService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_estimate_grpc1_(grpcI3DTransformSACFinderFrom3D3DService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcI3DTransformSACFinderFrom3D3DService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_setCameraParameters_(grpcI3DTransformSACFinderFrom3D3DService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_estimate_grpc0_(grpcI3DTransformSACFinderFrom3D3DService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_estimate_grpc1_(grpcI3DTransformSACFinderFrom3D3DService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcI3DTransformSACFinderFrom3D3DService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI3DTransformSACFinderFrom3D3DService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcI3DTransformSACFinderFrom3D3DService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::setCame
   return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_estimate_grpc0_, context, request, response);
 }
 
-void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::estimate_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcI3DTransformSACFinderFrom3D3DService::Stub::async::estimate_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::estimate_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcI3DTransformSACFinderFrom3D3DService::Stub::async::estimate_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_grpc0_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::estimat
   return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_estimate_grpc1_, context, request, response);
 }
 
-void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::estimate_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcI3DTransformSACFinderFrom3D3DService::Stub::async::estimate_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::estimate_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcI3DTransformSACFinderFrom3D3DService::Stub::async::estimate_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_grpc1_, context, request, response, reactor);
 }
 

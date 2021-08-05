@@ -1,360 +1,365 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<xpcf-registry autoAlias="true">
-<module uuid="{adfe6b14-2c1e-4720-9ff5-6df8d23a5d4b}" name="SolARFrameworkGRPCRemote" description="xpcf remoting module for project SolARFramework" path="$REMAKENROOT/modules">
-<component uuid="e1e8c8d1-c276-4d3b-b4f2-af38d92b73ea" name="I2D3DCorrespondencesFinder_grpcServer" description="I2D3DCorrespondencesFinder_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="ecf5d0e3-47cc-41ce-8310-48566df4d3ed" name="I2DOverlay_grpcServer" description="I2DOverlay_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="7bbdb492-586b-457e-8bab-5cb250d50cef" name="I2DTransform_grpcServer" description="I2DTransform_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="4b8f79c9-09f9-433a-9e74-09547b9bcf16" name="I2DTransformFinder_grpcServer" description="I2DTransformFinder_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="1dec2405-fb90-4c53-814f-aea416f27232" name="I2Dto3DTransformDecomposer_grpcServer" description="I2Dto3DTransformDecomposer_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="2f19483d-5179-4cc5-8ae1-86cbdd9d1494" name="I2Dto3DTransformDecomposerValidation_grpcServer" description="I2Dto3DTransformDecomposerValidation_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="d1400403-f2c2-4a05-b3d2-c83143e9b411" name="I3D3DCorrespondencesFinder_grpcServer" description="I3D3DCorrespondencesFinder_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="ad659363-7a99-4236-970c-8fa4f1643444" name="I3DOverlay_grpcServer" description="I3DOverlay_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="d0e9e905-07da-4796-9d55-eba2cbe59321" name="I3DPointsViewer_grpcServer" description="I3DPointsViewer_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="97cf3ad0-d1ee-4e1b-baed-c220aa2bf0a5" name="I3DTransform_grpcServer" description="I3DTransform_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="17782015-6236-43fe-8f92-abbe210b2ee4" name="I3DTransformFinderFrom2D2D_grpcServer" description="I3DTransformFinderFrom2D2D_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="460b1561-7e99-4d79-bb3c-cc7b8eec6c4e" name="I3DTransformFinderFrom2D3D_grpcServer" description="I3DTransformFinderFrom2D3D_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="64959289-38b7-430e-b192-78e7f7d0ed73" name="I3DTransformFinderFrom3D3D_grpcServer" description="I3DTransformFinderFrom3D3D_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="67eb49ce-fdfc-4a0e-b52a-e6e2b1b412f3" name="I3DTransformSACFinderFrom2D3D_grpcServer" description="I3DTransformSACFinderFrom2D3D_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="68bee9ed-a7de-4f5f-a4c1-ea9d0ee297c9" name="I3DTransformSACFinderFrom3D3D_grpcServer" description="I3DTransformSACFinderFrom3D3D_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="ddfe84c3-22dc-479f-8677-54e7664cfcf1" name="IARDevice_grpcServer" description="IARDevice_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="87ead526-d8c0-4a19-afbe-cc19e874c104" name="IBootstrapper_grpcServer" description="IBootstrapper_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="792bc5e6-c23b-44c6-9042-6dae7aead63f" name="IBundler_grpcServer" description="IBundler_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="bca81095-857e-484f-941f-807991c39a68" name="ICamera_grpcServer" description="ICamera_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="ec7d7a78-613a-458f-b7e0-d4841bbd4a35" name="ICameraCalibration_grpcServer" description="ICameraCalibration_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="24b9af96-68ac-4213-b8f5-230268c490f1" name="IContoursExtractor_grpcServer" description="IContoursExtractor_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="5a9da64c-87ec-4ff1-9acc-928673b092ee" name="IContoursFilter_grpcServer" description="IContoursFilter_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="680c7b3c-f6e5-413f-9a06-43a3039192b4" name="ICornerRefinement_grpcServer" description="ICornerRefinement_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="5a8a79b2-d969-4a93-a45f-243cd2c408d5" name="ICovisibilityGraphManager_grpcServer" description="ICovisibilityGraphManager_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="591667b1-e08e-4b1c-8317-ec173da4c36a" name="IDepthCamera_grpcServer" description="IDepthCamera_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="1b963e6d-78b4-4079-a5bc-9c5f63b72d24" name="IDescriptorMatcher_grpcServer" description="IDescriptorMatcher_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="70c161bf-e75c-4042-811b-947a99f3bd6f" name="IDescriptorsExtractor_grpcServer" description="IDescriptorsExtractor_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="f495d389-c56d-41c3-92d5-db09af388d82" name="IDescriptorsExtractorSBPattern_grpcServer" description="IDescriptorsExtractorSBPattern_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="5e432b50-87ac-4f21-a2c2-1407c53b60c3" name="IDevice_grpcServer" description="IDevice_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="1fba7576-d6ff-4a6b-b28b-c21bddba1bf4" name="IHomographyValidation_grpcServer" description="IHomographyValidation_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="4426c7ee-367a-4992-8f75-a3e4f3d6de9b" name="IIMU_grpcServer" description="IIMU_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="4422bf93-6d3c-4f38-8cc4-b34fe08d2804" name="IImage2WorldMapper_grpcServer" description="IImage2WorldMapper_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="7aecaf84-a352-44f9-a3d6-46dc92f61f4f" name="IImageConvertor_grpcServer" description="IImageConvertor_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="bc57769e-64d7-4d4c-8a45-901f1bc35397" name="IImageFilter_grpcServer" description="IImageFilter_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="6725c28e-a98b-4fc5-be4a-09c198ec9636" name="IImageLoader_grpcServer" description="IImageLoader_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="ba0272f1-2035-4d88-8fd2-409ad69a457d" name="IImageViewer_grpcServer" description="IImageViewer_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="4e2512f6-c33e-4160-a2e8-6072225c394d" name="IKeyframeRetriever_grpcServer" description="IKeyframeRetriever_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="09217bad-16ce-46cb-8629-a6b18641cbe6" name="IKeyframesManager_grpcServer" description="IKeyframesManager_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="81369312-13ce-4f2c-ad1f-c8ee0028f0f7" name="IKeypointDetector_grpcServer" description="IKeypointDetector_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="d6670177-4b72-4f20-a943-28a2aa422908" name="IKeypointDetectorRegion_grpcServer" description="IKeypointDetectorRegion_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="490c2e6a-8a91-4cd5-81fd-07893ef06691" name="IKeypointsReIndexer_grpcServer" description="IKeypointsReIndexer_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="c1da83ed-dfce-43c1-8f84-bad710237811" name="ILoopClosureDetector_grpcServer" description="ILoopClosureDetector_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="fab87fa8-f6a1-41f1-b620-8e74e1ae474a" name="ILoopCorrector_grpcServer" description="ILoopCorrector_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="c8932a27-450b-4895-aef9-32bea68da8e0" name="IMapFilter_grpcServer" description="IMapFilter_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="38dbecc0-ff5a-4446-b818-5ad4747921fb" name="IMapManager_grpcServer" description="IMapManager_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="16c1f5ad-451e-4943-8f26-2b676f6b349e" name="IMapUpdate_grpcServer" description="IMapUpdate_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="82f9fdff-06ee-471f-a260-b7f4ac414627" name="IMapUpdatePipeline_grpcServer" description="IMapUpdatePipeline_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="5aeef1a6-64dd-413f-9cba-7cd4a71cb1f8" name="IMapping_grpcServer" description="IMapping_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="aced265d-832c-44e3-9356-dab531fa153a" name="IMappingPipeline_grpcServer" description="IMappingPipeline_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="3cd29125-2103-48ec-8d90-526149635ea0" name="IMatchesFilter_grpcServer" description="IMatchesFilter_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="e2a1b505-d217-4a35-91fa-7269b0b7e761" name="IMatchesOverlay_grpcServer" description="IMatchesOverlay_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="f33cd501-599a-49e4-93ed-d57697d2d6e7" name="IOpticalFlowEstimator_grpcServer" description="IOpticalFlowEstimator_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="ffb73eb3-e1e3-420f-8645-98e78060788a" name="IOverlapDetector_grpcServer" description="IOverlapDetector_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="47cfdb22-ec94-4941-a024-72f0ba5fb7ff" name="IPCFilter_grpcServer" description="IPCFilter_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="846ef711-08cf-4b28-8dca-d035574a0dfc" name="IPCFilterCentroid_grpcServer" description="IPCFilterCentroid_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="1b62047c-63e7-49e8-9f33-fd598ce37f81" name="IPerspectiveController_grpcServer" description="IPerspectiveController_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="1780a850-b49c-4106-8c95-6d67d8ef1cab" name="IPointCloudLoader_grpcServer" description="IPointCloudLoader_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="2bb8e45c-03eb-43ac-ba5e-52bdff4ba4a7" name="IPointCloudManager_grpcServer" description="IPointCloudManager_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="26220e9b-25c0-493c-bf5f-3d7b8d6f0dca" name="IProject_grpcServer" description="IProject_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="b08b8fdb-af30-4a2d-94ae-50636a977af1" name="IRGBDCamera_grpcServer" description="IRGBDCamera_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="234bb765-ac3b-4755-8825-5cd92145b7a8" name="IRelocalizationPipeline_grpcServer" description="IRelocalizationPipeline_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="ce1b6af9-1c4f-4e4e-91b6-f8292e33a6db" name="IRelocalizer_grpcServer" description="IRelocalizer_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="da1ff765-c37c-45c8-ba40-ed63728dc1fc" name="ISBPatternReIndexer_grpcServer" description="ISBPatternReIndexer_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="8fa3fa49-4005-400e-80fa-a13b7c23b79d" name="ITrackableLoader_grpcServer" description="ITrackableLoader_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="20a1dbe6-754f-4013-a835-62f237bcba3a" name="ITrackablePose_grpcServer" description="ITrackablePose_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="d2e5691c-8693-4d7f-a3ea-6034c3fb98a5" name="ITracking_grpcServer" description="ITracking_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="4bacb524-3a6f-43fe-9ca9-7e375d297300" name="ITriangulator_grpcServer" description="ITriangulator_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="a8dd83e7-e88d-49cf-b587-57e40ac7d87d" name="IUndistortPoints_grpcServer" description="IUndistortPoints_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="0ccfe31e-0609-40ad-96ff-2d400611933a" name="IUnproject_grpcServer" description="IUnproject_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
-<component uuid="818bc58c-c40f-4590-bc0e-86dd1fe781f7" name="IVisualInertialFusion_grpcServer" description="IVisualInertialFusion_grpcServer grpc server component">
-  <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface."/>
-  <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
-</component>
+<xpcf-registry>
+  <module uuid="adfe6b14-2c1e-4720-9ff5-6df8d23a5d4b" name="SolARFrameworkGRPCRemote" description="xpcf remoting module for project SolARFramework" path="$REMAKENROOT/modules">
+  <component uuid="991b9212-c607-4856-93cc-9742d9e93a42" name="I2DOverlay_grpcServer" description="I2DOverlay_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="cd8853f0-384f-4859-9ec9-52d977c41a43" name="I3DOverlay_grpcServer" description="I3DOverlay_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="67152a74-aef0-4428-8b9e-597d35fc3efb" name="I3DPointsViewer_grpcServer" description="I3DPointsViewer_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="cae7bb92-9a1c-43d4-88ee-ae81ed2c5246" name="IImageViewer_grpcServer" description="IImageViewer_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="cfa7b379-9071-4cb4-a9fa-acc1491c9cbc" name="IMatchesOverlay_grpcServer" description="IMatchesOverlay_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="e1749ff2-58c3-482b-a9cf-c616c946d1eb" name="IContoursExtractor_grpcServer" description="IContoursExtractor_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="0bf6c03a-d1a0-40dc-a935-61c90d196605" name="IContoursFilter_grpcServer" description="IContoursFilter_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="25295847-b2ca-4b58-9384-bce3a0389e69" name="ICornerRefinement_grpcServer" description="ICornerRefinement_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="304e299d-fe82-42bd-a234-5fe0cf87705b" name="IDescriptorMatcher_grpcServer" description="IDescriptorMatcher_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="7a4d11f0-bfae-420f-849e-4388757a4319" name="IDescriptorsExtractor_grpcServer" description="IDescriptorsExtractor_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="db46467e-85fa-4d10-8a3d-25d3eb1f6eaf" name="IDescriptorsExtractorSBPattern_grpcServer" description="IDescriptorsExtractorSBPattern_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="c0974831-884f-43c2-9cf7-f2cb39198970" name="IKeypointDetector_grpcServer" description="IKeypointDetector_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="3bf95336-f541-4296-9aff-6714e9fb6f06" name="IKeypointDetectorRegion_grpcServer" description="IKeypointDetectorRegion_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="c5be6bae-b44b-4ceb-beeb-8b9ecf544a22" name="IKeypointsReIndexer_grpcServer" description="IKeypointsReIndexer_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="527ac7de-d9e3-4e24-b219-f7ae3ab39763" name="IMatchesFilter_grpcServer" description="IMatchesFilter_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="dd9aa4d0-ba6f-4448-bb7f-41e6b781ed1e" name="ISBPatternReIndexer_grpcServer" description="ISBPatternReIndexer_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="d645c4f3-1ae2-4923-9535-636b8132cf73" name="IVisualInertialFusion_grpcServer" description="IVisualInertialFusion_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="bad0ae7e-0345-43d8-af86-f16fd5ec190f" name="I2DTransform_grpcServer" description="I2DTransform_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="07840792-489f-488d-8a42-3c433f067073" name="I3DTransform_grpcServer" description="I3DTransform_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="32b44447-ba05-4b02-b15f-070d7f6b809e" name="IImage2WorldMapper_grpcServer" description="IImage2WorldMapper_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="9996bacb-a0b3-445e-9b45-0528729904d0" name="IProject_grpcServer" description="IProject_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="f97a2f79-baaa-4471-a1c5-3ea27c46cc40" name="IUndistortPoints_grpcServer" description="IUndistortPoints_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="98230773-4619-4fdc-84c5-4a8acbb061f4" name="IUnproject_grpcServer" description="IUnproject_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="c10959d6-4382-4b64-97b7-97a86b69d53b" name="IImageConvertor_grpcServer" description="IImageConvertor_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="b3f9601c-65d7-455b-bf52-25bdaebb4bd6" name="IImageFilter_grpcServer" description="IImageFilter_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="ba01f01c-a928-420d-b937-6d48c061f5f4" name="IImageLoader_grpcServer" description="IImageLoader_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="806f80c8-e475-4adf-9b9f-131745978475" name="IPerspectiveController_grpcServer" description="IPerspectiveController_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="1cd2027a-f275-4728-8e7b-9ed3d4b11dff" name="IARDevice_grpcServer" description="IARDevice_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="04762a9b-39c6-41ae-97de-31ee9186f48c" name="ICamera_grpcServer" description="ICamera_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="abe35179-2efd-42ec-91af-eb24d4d36b48" name="ICameraCalibration_grpcServer" description="ICameraCalibration_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="2a00a188-27a4-407f-a49b-10325cf0af8f" name="IDepthCamera_grpcServer" description="IDepthCamera_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="b34cd590-3069-414d-9a01-bdbed529b837" name="IDevice_grpcServer" description="IDevice_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="85239db2-ebca-4353-8677-b5e3ef166c01" name="IIMU_grpcServer" description="IIMU_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="3f8b4a21-ff16-4a3e-aa8d-fecceaecf65a" name="IRGBDCamera_grpcServer" description="IRGBDCamera_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="b9765a3d-e1b3-445a-a72e-73dbb908d8ae" name="IPointCloudLoader_grpcServer" description="IPointCloudLoader_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="01330a08-d4ac-40d6-8c7a-898c1b810559" name="ITrackableLoader_grpcServer" description="ITrackableLoader_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="0cfdac3f-cb0c-4462-83c5-508184bfe78f" name="ILoopClosureDetector_grpcServer" description="ILoopClosureDetector_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="8727cdbc-e059-472e-9925-e9ae5e96456f" name="ILoopCorrector_grpcServer" description="ILoopCorrector_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="d53006ca-5793-4406-82da-1dfdb891a806" name="IOverlapDetector_grpcServer" description="IOverlapDetector_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="82f9fdff-06ee-471f-a260-b7f4ac414627" name="IMapUpdatePipeline_grpcServer" description="IMapUpdatePipeline_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="aced265d-832c-44e3-9356-dab531fa153a" name="IMappingPipeline_grpcServer" description="IMappingPipeline_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="234bb765-ac3b-4755-8825-5cd92145b7a8" name="IRelocalizationPipeline_grpcServer" description="IRelocalizationPipeline_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="23300993-75f6-4bce-9e3b-cebe9d6ff0f7" name="IPCFilter_grpcServer" description="IPCFilter_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="ca1f686f-dc57-405f-adcf-6dd675d89a90" name="IPCFilterCentroid_grpcServer" description="IPCFilterCentroid_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="5e7948e2-72a7-461f-b03c-672b3aae0e27" name="IKeyframeRetriever_grpcServer" description="IKeyframeRetriever_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="29552f34-684f-49aa-af27-082262c7eaf7" name="IRegression_grpcServer" description="IRegression_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="3e412ed2-cb67-49cc-9646-1d29797633ce" name="IRelocalizer_grpcServer" description="IRelocalizer_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="f9492cc2-e0ff-4916-8500-164548afa1a9" name="IBootstrapper_grpcServer" description="IBootstrapper_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="8bb57a44-5903-4ef6-8ede-134fc0c4a0d5" name="IMapping_grpcServer" description="IMapping_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="411c6378-687c-4833-8959-4b49b82c1cde" name="ITracking_grpcServer" description="ITracking_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="eb26cc80-80ac-4861-94ee-8b74e701a729" name="IBundler_grpcServer" description="IBundler_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="90b54c14-3926-48c2-a681-28b69e4a03b7" name="IMapFilter_grpcServer" description="IMapFilter_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="012b744c-498b-4324-b64f-a43b5465faf3" name="IMapUpdate_grpcServer" description="IMapUpdate_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="84f07063-c864-4332-99e7-1007026cd10e" name="ITriangulator_grpcServer" description="ITriangulator_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="8a1d3a22-243d-4747-94c6-968b163b4718" name="I2D3DCorrespondencesFinder_grpcServer" description="I2D3DCorrespondencesFinder_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="d9f7d773-6879-46e6-8d85-cd74e0746a7e" name="I2DTransformFinder_grpcServer" description="I2DTransformFinder_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="55b131a6-53e2-4289-bbe7-7b51a51b7b25" name="I2Dto3DTransformDecomposer_grpcServer" description="I2Dto3DTransformDecomposer_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="732110d4-976a-4d6f-a41c-971516fc60d7" name="I2Dto3DTransformDecomposerValidation_grpcServer" description="I2Dto3DTransformDecomposerValidation_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="a1083a59-1d65-466c-9b9a-8727770645af" name="I3D3DCorrespondencesFinder_grpcServer" description="I3D3DCorrespondencesFinder_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="67e44bb5-eb02-4cf7-adf1-abcdcf5d39eb" name="I3DTransformFinderFrom2D2D_grpcServer" description="I3DTransformFinderFrom2D2D_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="4b95c878-5f47-4d96-adbb-7af48348aca8" name="I3DTransformFinderFrom2D3D_grpcServer" description="I3DTransformFinderFrom2D3D_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="e24d6983-a3d7-4b55-91a6-b44830ae7f4e" name="I3DTransformFinderFrom3D3D_grpcServer" description="I3DTransformFinderFrom3D3D_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="9d040101-d104-41c7-964b-1601ef399b07" name="I3DTransformSACFinderFrom2D3D_grpcServer" description="I3DTransformSACFinderFrom2D3D_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="40c06e1b-14b1-4a4f-9c14-64d49b0b36f0" name="I3DTransformSACFinderFrom3D3D_grpcServer" description="I3DTransformSACFinderFrom3D3D_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="5d107a06-6803-4051-9797-72e9df5509d4" name="IHomographyValidation_grpcServer" description="IHomographyValidation_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="4cc8f84e-09b6-4a53-90b6-224c3472633b" name="ITrackablePose_grpcServer" description="ITrackablePose_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="732f661f-d15f-44f1-8524-b823d8fd4452" name="ICovisibilityGraphManager_grpcServer" description="ICovisibilityGraphManager_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="cd6df9d6-71e9-4d9d-a566-3724200c97df" name="IKeyframesManager_grpcServer" description="IKeyframesManager_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="1ee70ca1-da76-4fc3-8cd6-b27e91f82975" name="IMapManager_grpcServer" description="IMapManager_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="e79ff670-205a-48ae-8344-a05cc6359ded" name="IPointCloudManager_grpcServer" description="IPointCloudManager_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
+  <component uuid="48d4f369-8a76-46cb-9855-92d51a0766c8" name="IOpticalFlowEstimator_grpcServer" description="IOpticalFlowEstimator_grpcServer">
+    <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+    <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+  </component>
 </module>
 <factory>
   <bindings>
     <bind interface="org::bcom::xpcf::IGrpcService">
-      <component to="I2D3DCorrespondencesFinder_grpcServer"/>
       <component to="I2DOverlay_grpcServer"/>
+      <component to="I3DOverlay_grpcServer"/>
+      <component to="I3DPointsViewer_grpcServer"/>
+      <component to="IImageViewer_grpcServer"/>
+      <component to="IMatchesOverlay_grpcServer"/>
+      <component to="IContoursExtractor_grpcServer"/>
+      <component to="IContoursFilter_grpcServer"/>
+      <component to="ICornerRefinement_grpcServer"/>
+      <component to="IDescriptorMatcher_grpcServer"/>
+      <component to="IDescriptorsExtractor_grpcServer"/>
+      <component to="IDescriptorsExtractorSBPattern_grpcServer"/>
+      <component to="IKeypointDetector_grpcServer"/>
+      <component to="IKeypointDetectorRegion_grpcServer"/>
+      <component to="IKeypointsReIndexer_grpcServer"/>
+      <component to="IMatchesFilter_grpcServer"/>
+      <component to="ISBPatternReIndexer_grpcServer"/>
+      <component to="IVisualInertialFusion_grpcServer"/>
       <component to="I2DTransform_grpcServer"/>
+      <component to="I3DTransform_grpcServer"/>
+      <component to="IImage2WorldMapper_grpcServer"/>
+      <component to="IProject_grpcServer"/>
+      <component to="IUndistortPoints_grpcServer"/>
+      <component to="IUnproject_grpcServer"/>
+      <component to="IImageConvertor_grpcServer"/>
+      <component to="IImageFilter_grpcServer"/>
+      <component to="IImageLoader_grpcServer"/>
+      <component to="IPerspectiveController_grpcServer"/>
+      <component to="IARDevice_grpcServer"/>
+      <component to="ICamera_grpcServer"/>
+      <component to="ICameraCalibration_grpcServer"/>
+      <component to="IDepthCamera_grpcServer"/>
+      <component to="IDevice_grpcServer"/>
+      <component to="IIMU_grpcServer"/>
+      <component to="IRGBDCamera_grpcServer"/>
+      <component to="IPointCloudLoader_grpcServer"/>
+      <component to="ITrackableLoader_grpcServer"/>
+      <component to="ILoopClosureDetector_grpcServer"/>
+      <component to="ILoopCorrector_grpcServer"/>
+      <component to="IOverlapDetector_grpcServer"/>
+      <component to="IMapUpdatePipeline_grpcServer"/>
+      <component to="IMappingPipeline_grpcServer"/>
+      <component to="IRelocalizationPipeline_grpcServer"/>
+      <component to="IPCFilter_grpcServer"/>
+      <component to="IPCFilterCentroid_grpcServer"/>
+      <component to="IKeyframeRetriever_grpcServer"/>
+      <component to="IRegression_grpcServer"/>
+      <component to="IRelocalizer_grpcServer"/>
+      <component to="IBootstrapper_grpcServer"/>
+      <component to="IMapping_grpcServer"/>
+      <component to="ITracking_grpcServer"/>
+      <component to="IBundler_grpcServer"/>
+      <component to="IMapFilter_grpcServer"/>
+      <component to="IMapUpdate_grpcServer"/>
+      <component to="ITriangulator_grpcServer"/>
+      <component to="I2D3DCorrespondencesFinder_grpcServer"/>
       <component to="I2DTransformFinder_grpcServer"/>
       <component to="I2Dto3DTransformDecomposer_grpcServer"/>
       <component to="I2Dto3DTransformDecomposerValidation_grpcServer"/>
       <component to="I3D3DCorrespondencesFinder_grpcServer"/>
-      <component to="I3DOverlay_grpcServer"/>
-      <component to="I3DPointsViewer_grpcServer"/>
-      <component to="I3DTransform_grpcServer"/>
       <component to="I3DTransformFinderFrom2D2D_grpcServer"/>
       <component to="I3DTransformFinderFrom2D3D_grpcServer"/>
       <component to="I3DTransformFinderFrom3D3D_grpcServer"/>
       <component to="I3DTransformSACFinderFrom2D3D_grpcServer"/>
       <component to="I3DTransformSACFinderFrom3D3D_grpcServer"/>
-      <component to="IARDevice_grpcServer"/>
-      <component to="IBootstrapper_grpcServer"/>
-      <component to="IBundler_grpcServer"/>
-      <component to="ICamera_grpcServer"/>
-      <component to="ICameraCalibration_grpcServer"/>
-      <component to="IContoursExtractor_grpcServer"/>
-      <component to="IContoursFilter_grpcServer"/>
-      <component to="ICornerRefinement_grpcServer"/>
-      <component to="ICovisibilityGraphManager_grpcServer"/>
-      <component to="IDepthCamera_grpcServer"/>
-      <component to="IDescriptorMatcher_grpcServer"/>
-      <component to="IDescriptorsExtractor_grpcServer"/>
-      <component to="IDescriptorsExtractorSBPattern_grpcServer"/>
-      <component to="IDevice_grpcServer"/>
       <component to="IHomographyValidation_grpcServer"/>
-      <component to="IIMU_grpcServer"/>
-      <component to="IImage2WorldMapper_grpcServer"/>
-      <component to="IImageConvertor_grpcServer"/>
-      <component to="IImageFilter_grpcServer"/>
-      <component to="IImageLoader_grpcServer"/>
-      <component to="IImageViewer_grpcServer"/>
-      <component to="IKeyframeRetriever_grpcServer"/>
-      <component to="IKeyframesManager_grpcServer"/>
-      <component to="IKeypointDetector_grpcServer"/>
-      <component to="IKeypointDetectorRegion_grpcServer"/>
-      <component to="IKeypointsReIndexer_grpcServer"/>
-      <component to="ILoopClosureDetector_grpcServer"/>
-      <component to="ILoopCorrector_grpcServer"/>
-      <component to="IMapFilter_grpcServer"/>
-      <component to="IMapManager_grpcServer"/>
-      <component to="IMapUpdate_grpcServer"/>
-      <component to="IMapUpdatePipeline_grpcServer"/>
-      <component to="IMapping_grpcServer"/>
-      <component to="IMappingPipeline_grpcServer"/>
-      <component to="IMatchesFilter_grpcServer"/>
-      <component to="IMatchesOverlay_grpcServer"/>
-      <component to="IOpticalFlowEstimator_grpcServer"/>
-      <component to="IOverlapDetector_grpcServer"/>
-      <component to="IPCFilter_grpcServer"/>
-      <component to="IPCFilterCentroid_grpcServer"/>
-      <component to="IPerspectiveController_grpcServer"/>
-      <component to="IPointCloudLoader_grpcServer"/>
-      <component to="IPointCloudManager_grpcServer"/>
-      <component to="IProject_grpcServer"/>
-      <component to="IRGBDCamera_grpcServer"/>
-      <component to="IRelocalizationPipeline_grpcServer"/>
-      <component to="IRelocalizer_grpcServer"/>
-      <component to="ISBPatternReIndexer_grpcServer"/>
-      <component to="ITrackableLoader_grpcServer"/>
       <component to="ITrackablePose_grpcServer"/>
-      <component to="ITracking_grpcServer"/>
-      <component to="ITriangulator_grpcServer"/>
-      <component to="IUndistortPoints_grpcServer"/>
-      <component to="IUnproject_grpcServer"/>
-      <component to="IVisualInertialFusion_grpcServer"/>
+      <component to="ICovisibilityGraphManager_grpcServer"/>
+      <component to="IKeyframesManager_grpcServer"/>
+      <component to="IMapManager_grpcServer"/>
+      <component to="IPointCloudManager_grpcServer"/>
+      <component to="IOpticalFlowEstimator_grpcServer"/>
     </bind>
   </bindings>
 </factory>

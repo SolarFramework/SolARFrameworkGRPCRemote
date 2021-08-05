@@ -2,7 +2,7 @@
 
 #ifndef ITRACKABLEPOSE_GRPCSERVER_H
 #define ITRACKABLEPOSE_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/ITrackablePose.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/ITrackablePose.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcITrackablePoseService.grpc.pb.h"
@@ -43,7 +43,7 @@ class ITrackablePose_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverITrackablePose::ITrackablePose_grpcServer>
 {
-  static constexpr const char * UUID = "20a1dbe6-754f-4013-a835-62f237bcba3a";
+  static constexpr const char * UUID = "09cde52a-6764-4a36-a1c1-b62ac8dae666";
   static constexpr const char * NAME = "ITrackablePose_grpcServer";
   static constexpr const char * DESCRIPTION = "ITrackablePose_grpcServer grpc server component";
 };

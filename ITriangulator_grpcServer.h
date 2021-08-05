@@ -2,7 +2,7 @@
 
 #ifndef ITRIANGULATOR_GRPCSERVER_H
 #define ITRIANGULATOR_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/ITriangulator.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/ITriangulator.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcITriangulatorService.grpc.pb.h"
@@ -45,7 +45,7 @@ class ITriangulator_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverITriangulator::ITriangulator_grpcServer>
 {
-  static constexpr const char * UUID = "4bacb524-3a6f-43fe-9ca9-7e375d297300";
+  static constexpr const char * UUID = "59131181-c74c-47e9-8aba-7910a924a0e7";
   static constexpr const char * NAME = "ITriangulator_grpcServer";
   static constexpr const char * DESCRIPTION = "ITriangulator_grpcServer grpc server component";
 };

@@ -3,7 +3,7 @@
 
 #ifndef IOVERLAPDETECTOR_GRPCPROXY_H
 #define IOVERLAPDETECTOR_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/loop/IOverlapDetector.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/loop/IOverlapDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -38,7 +38,7 @@ class IOverlapDetector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIOverlapDetector::IOverlapDetector_grpcProxy>
 {
-  static constexpr const char * UUID = "46556b9a-5148-4a7c-a3f9-cd5bb2414a90";
+  static constexpr const char * UUID = "3339d00d-6236-4fee-a883-9ff33c54f078";
   static constexpr const char * NAME = "IOverlapDetector_grpcProxy";
   static constexpr const char * DESCRIPTION = "IOverlapDetector_grpcProxy grpc client proxy component";
 };

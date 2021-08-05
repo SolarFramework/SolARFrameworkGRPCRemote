@@ -27,23 +27,23 @@ static const char* grpcI2D3DCorrespondencesFinderService_method_names[] = {
 
 std::unique_ptr< grpcI2D3DCorrespondencesFinderService::Stub> grpcI2D3DCorrespondencesFinderService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcI2D3DCorrespondencesFinderService::Stub> stub(new grpcI2D3DCorrespondencesFinderService::Stub(channel));
+  std::unique_ptr< grpcI2D3DCorrespondencesFinderService::Stub> stub(new grpcI2D3DCorrespondencesFinderService::Stub(channel, options));
   return stub;
 }
 
-grpcI2D3DCorrespondencesFinderService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_find_(grpcI2D3DCorrespondencesFinderService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcI2D3DCorrespondencesFinderService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_find_(grpcI2D3DCorrespondencesFinderService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcI2D3DCorrespondencesFinderService::Stub::find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest& request, ::grpcI2D3DCorrespondencesFinder::findResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2D3DCorrespondencesFinder::findRequest, ::grpcI2D3DCorrespondencesFinder::findResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_find_, context, request, response);
 }
 
-void grpcI2D3DCorrespondencesFinderService::Stub::experimental_async::find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcI2D3DCorrespondencesFinderService::Stub::async::find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2D3DCorrespondencesFinder::findRequest, ::grpcI2D3DCorrespondencesFinder::findResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_find_, context, request, response, std::move(f));
 }
 
-void grpcI2D3DCorrespondencesFinderService::Stub::experimental_async::find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcI2D3DCorrespondencesFinderService::Stub::async::find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_find_, context, request, response, reactor);
 }
 

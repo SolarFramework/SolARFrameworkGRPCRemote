@@ -2,7 +2,7 @@
 
 #ifndef IMAPPING_GRPCSERVER_H
 #define IMAPPING_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IMapping.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IMapping.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMappingService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IMapping_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMapping::IMapping_grpcServer>
 {
-  static constexpr const char * UUID = "5aeef1a6-64dd-413f-9cba-7cd4a71cb1f8";
+  static constexpr const char * UUID = "51a93596-de0d-49ab-b7f2-a1588dddf13c";
   static constexpr const char * NAME = "IMapping_grpcServer";
   static constexpr const char * DESCRIPTION = "IMapping_grpcServer grpc server component";
 };

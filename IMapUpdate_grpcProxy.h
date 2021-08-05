@@ -3,7 +3,7 @@
 
 #ifndef IMAPUPDATE_GRPCPROXY_H
 #define IMAPUPDATE_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapUpdate.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapUpdate.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IMapUpdate_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapUpdate::IMapUpdate_grpcProxy>
 {
-  static constexpr const char * UUID = "7d3416a9-268d-420d-8e3c-abc4b07e63dd";
+  static constexpr const char * UUID = "1d25d0c6-6a83-4b9a-bade-84fb60f7145c";
   static constexpr const char * NAME = "IMapUpdate_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMapUpdate_grpcProxy grpc client proxy component";
 };

@@ -3,7 +3,7 @@
 
 #ifndef IKEYPOINTDETECTOR_GRPCPROXY_H
 #define IKEYPOINTDETECTOR_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointDetector.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -38,7 +38,7 @@ class IKeypointDetector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIKeypointDetector::IKeypointDetector_grpcProxy>
 {
-  static constexpr const char * UUID = "c5df6566-3764-4a2e-b3b2-162373386d70";
+  static constexpr const char * UUID = "25098a22-91d4-41be-961d-b6afe2a96f75";
   static constexpr const char * NAME = "IKeypointDetector_grpcProxy";
   static constexpr const char * DESCRIPTION = "IKeypointDetector_grpcProxy grpc client proxy component";
 };

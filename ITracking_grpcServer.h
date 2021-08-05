@@ -2,7 +2,7 @@
 
 #ifndef ITRACKING_GRPCSERVER_H
 #define ITRACKING_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/slam/ITracking.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/slam/ITracking.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcITrackingService.grpc.pb.h"
@@ -43,7 +43,7 @@ class ITracking_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverITracking::ITracking_grpcServer>
 {
-  static constexpr const char * UUID = "d2e5691c-8693-4d7f-a3ea-6034c3fb98a5";
+  static constexpr const char * UUID = "048eab6d-7649-494a-b7ef-ceeed765d904";
   static constexpr const char * NAME = "ITracking_grpcServer";
   static constexpr const char * DESCRIPTION = "ITracking_grpcServer grpc server component";
 };

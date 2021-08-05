@@ -2,7 +2,7 @@
 
 #ifndef IIMAGECONVERTOR_GRPCSERVER_H
 #define IIMAGECONVERTOR_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageConvertor.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageConvertor.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIImageConvertorService.grpc.pb.h"
@@ -43,7 +43,7 @@ class IImageConvertor_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImageConvertor::IImageConvertor_grpcServer>
 {
-  static constexpr const char * UUID = "7aecaf84-a352-44f9-a3d6-46dc92f61f4f";
+  static constexpr const char * UUID = "94095dca-1081-42f9-9258-89631cb35cbd";
   static constexpr const char * NAME = "IImageConvertor_grpcServer";
   static constexpr const char * DESCRIPTION = "IImageConvertor_grpcServer grpc server component";
 };

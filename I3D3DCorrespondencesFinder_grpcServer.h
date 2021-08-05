@@ -2,7 +2,7 @@
 
 #ifndef I3D3DCORRESPONDENCESFINDER_GRPCSERVER_H
 #define I3D3DCORRESPONDENCESFINDER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3D3DCorrespondencesFinder.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3D3DCorrespondencesFinder.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI3D3DCorrespondencesFinderService.grpc.pb.h"
@@ -42,7 +42,7 @@ class I3D3DCorrespondencesFinder_grpcServer:  public org::bcom::xpcf::Configurab
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3D3DCorrespondencesFinder::I3D3DCorrespondencesFinder_grpcServer>
 {
-  static constexpr const char * UUID = "d1400403-f2c2-4a05-b3d2-c83143e9b411";
+  static constexpr const char * UUID = "253905c3-b1ff-42b3-8d26-9bf58a249a85";
   static constexpr const char * NAME = "I3D3DCorrespondencesFinder_grpcServer";
   static constexpr const char * DESCRIPTION = "I3D3DCorrespondencesFinder_grpcServer grpc server component";
 };

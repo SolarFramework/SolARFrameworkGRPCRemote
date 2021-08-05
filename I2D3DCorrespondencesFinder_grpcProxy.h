@@ -3,7 +3,7 @@
 
 #ifndef I2D3DCORRESPONDENCESFINDER_GRPCPROXY_H
 #define I2D3DCORRESPONDENCESFINDER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2D3DCorrespondencesFinder.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2D3DCorrespondencesFinder.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class I2D3DCorrespondencesFinder_grpcProxy:  public org::bcom::xpcf::Configurabl
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2D3DCorrespondencesFinder::I2D3DCorrespondencesFinder_grpcProxy>
 {
-  static constexpr const char * UUID = "9840f407-3762-485f-bff4-e26fbad7e7a2";
+  static constexpr const char * UUID = "082a06de-2d31-44b0-a51b-c2ff90373385";
   static constexpr const char * NAME = "I2D3DCorrespondencesFinder_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2D3DCorrespondencesFinder_grpcProxy grpc client proxy component";
 };

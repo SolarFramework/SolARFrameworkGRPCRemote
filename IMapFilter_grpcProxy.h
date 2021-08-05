@@ -3,7 +3,7 @@
 
 #ifndef IMAPFILTER_GRPCPROXY_H
 #define IMAPFILTER_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapFilter.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class IMapFilter_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapFilter::IMapFilter_grpcProxy>
 {
-  static constexpr const char * UUID = "3379ade8-c0a5-40b2-ab80-0847b8ce069e";
+  static constexpr const char * UUID = "6aecd3fa-a840-41fa-b11a-ba5334975642";
   static constexpr const char * NAME = "IMapFilter_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMapFilter_grpcProxy grpc client proxy component";
 };

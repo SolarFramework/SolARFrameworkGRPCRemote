@@ -3,7 +3,7 @@
 
 #ifndef IPCFILTERCENTROID_GRPCPROXY_H
 #define IPCFILTERCENTROID_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilterCentroid.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilterCentroid.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IPCFilterCentroid_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIPCFilterCentroid::IPCFilterCentroid_grpcProxy>
 {
-  static constexpr const char * UUID = "b3549575-4262-4772-b8ec-76d29043529b";
+  static constexpr const char * UUID = "ec6b374b-e1fc-4aff-8e54-c950738cfde2";
   static constexpr const char * NAME = "IPCFilterCentroid_grpcProxy";
   static constexpr const char * DESCRIPTION = "IPCFilterCentroid_grpcProxy grpc client proxy component";
 };

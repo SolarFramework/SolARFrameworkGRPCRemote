@@ -2,7 +2,7 @@
 
 #ifndef ICAMERACALIBRATION_GRPCSERVER_H
 #define ICAMERACALIBRATION_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICameraCalibration.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICameraCalibration.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcICameraCalibrationService.grpc.pb.h"
@@ -43,7 +43,7 @@ class ICameraCalibration_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverICameraCalibration::ICameraCalibration_grpcServer>
 {
-  static constexpr const char * UUID = "ec7d7a78-613a-458f-b7e0-d4841bbd4a35";
+  static constexpr const char * UUID = "3ff20b60-cc8e-43aa-b1c1-cad6f2aa7227";
   static constexpr const char * NAME = "ICameraCalibration_grpcServer";
   static constexpr const char * DESCRIPTION = "ICameraCalibration_grpcServer grpc server component";
 };

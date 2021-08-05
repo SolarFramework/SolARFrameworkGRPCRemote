@@ -435,12 +435,12 @@ SolAR::datastructure::Point2Di  IRGBDCamera_grpcProxy::getWorldToPixel(SolAR::da
 }
 
 
-std::vector<SolAR::datastructure::Point2Df>  IRGBDCamera_grpcProxy::getWorldToPixels(std::vector<SolAR::datastructure::CloudPoint> const& in3DPoints) const
+std::vector<SolAR::datastructure::Point2Df>  IRGBDCamera_grpcProxy::getWorldToPixels(std::vector<SRef<SolAR::datastructure::CloudPoint>> const& in3DPoints) const
 {
   ::grpc::ClientContext context;
   ::grpcIRGBDCamera::getWorldToPixelsRequest reqIn;
   ::grpcIRGBDCamera::getWorldToPixelsResponse respOut;
-  reqIn.set_in3dpoints(xpcf::serialize<std::vector<SolAR::datastructure::CloudPoint>>(in3DPoints));
+  reqIn.set_in3dpoints(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(in3DPoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getWorldToPixels(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
     std::cout << "getWorldToPixelsrpc failed." << std::endl;

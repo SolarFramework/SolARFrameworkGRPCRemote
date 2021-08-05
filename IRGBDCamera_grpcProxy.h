@@ -3,7 +3,7 @@
 
 #ifndef IRGBDCAMERA_GRPCPROXY_H
 #define IRGBDCAMERA_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IRGBDCamera.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IRGBDCamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -45,7 +45,7 @@ class IRGBDCamera_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
     SolAR::FrameworkReturnCode alignColorToDepth(SRef<SolAR::datastructure::Image>& alignedColorImg)     const     override;
     SolAR::datastructure::Point3Df getPixelToWorld(SolAR::datastructure::Point2Di const& inPixel)     const     override;
     SolAR::datastructure::Point2Di getWorldToPixel(SolAR::datastructure::CloudPoint const& in3DPoint)     const     override;
-    std::vector<SolAR::datastructure::Point2Df> getWorldToPixels(std::vector<SolAR::datastructure::CloudPoint> const& in3DPoints)     const     override;
+    std::vector<SolAR::datastructure::Point2Df> getWorldToPixels(std::vector<SRef<SolAR::datastructure::CloudPoint>> const& in3DPoints)     const     override;
 
 
   private:
@@ -66,7 +66,7 @@ class IRGBDCamera_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIRGBDCamera::IRGBDCamera_grpcProxy>
 {
-  static constexpr const char * UUID = "ea6c0b46-d428-4fe0-94fc-8ade17decc57";
+  static constexpr const char * UUID = "b856975a-89ac-44ab-8bb8-cdd932faa02a";
   static constexpr const char * NAME = "IRGBDCamera_grpcProxy";
   static constexpr const char * DESCRIPTION = "IRGBDCamera_grpcProxy grpc client proxy component";
 };

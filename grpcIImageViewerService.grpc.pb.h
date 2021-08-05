@@ -7,7 +7,6 @@
 #include "grpcIImageViewerService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -50,29 +49,17 @@ class grpcIImageViewerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageViewer::displayKeyResponse>> PrepareAsyncdisplayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageViewer::displayKeyResponse>>(PrepareAsyncdisplayKeyRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageViewer::displayResponse>* AsyncdisplayRaw(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageViewer::displayResponse>* PrepareAsyncdisplayRaw(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -81,7 +68,7 @@ class grpcIImageViewerService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest& request, ::grpcIImageViewer::displayResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageViewer::displayResponse>> Asyncdisplay(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageViewer::displayResponse>>(AsyncdisplayRaw(context, request, cq));
@@ -96,32 +83,24 @@ class grpcIImageViewerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageViewer::displayKeyResponse>> PrepareAsyncdisplayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageViewer::displayKeyResponse>>(PrepareAsyncdisplayKeyRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIImageViewer::displayResponse>* AsyncdisplayRaw(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIImageViewer::displayResponse>* PrepareAsyncdisplayRaw(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIImageViewer::displayKeyResponse>* AsyncdisplayKeyRaw(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -180,36 +159,22 @@ class grpcIImageViewerService final {
   };
   typedef WithAsyncMethod_display<WithAsyncMethod_displayKey<Service > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_display : public BaseClass {
+  class WithCallbackMethod_display : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_display() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_display() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIImageViewer::displayRequest, ::grpcIImageViewer::displayResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response) { return this->display(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response) { return this->display(context, request, response); }));}
     void SetMessageAllocatorFor_display(
-        ::grpc::experimental::MessageAllocator< ::grpcIImageViewer::displayRequest, ::grpcIImageViewer::displayResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIImageViewer::displayRequest, ::grpcIImageViewer::displayResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIImageViewer::displayRequest, ::grpcIImageViewer::displayResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_display() override {
+    ~WithCallbackMethod_display() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -217,46 +182,26 @@ class grpcIImageViewerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* display(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageViewer::displayRequest* /*request*/, ::grpcIImageViewer::displayResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* display(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIImageViewer::displayRequest* /*request*/, ::grpcIImageViewer::displayResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageViewer::displayRequest* /*request*/, ::grpcIImageViewer::displayResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_displayKey : public BaseClass {
+  class WithCallbackMethod_displayKey : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_displayKey() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_displayKey() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIImageViewer::displayKeyRequest, ::grpcIImageViewer::displayKeyResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response) { return this->displayKey(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response) { return this->displayKey(context, request, response); }));}
     void SetMessageAllocatorFor_displayKey(
-        ::grpc::experimental::MessageAllocator< ::grpcIImageViewer::displayKeyRequest, ::grpcIImageViewer::displayKeyResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIImageViewer::displayKeyRequest, ::grpcIImageViewer::displayKeyResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIImageViewer::displayKeyRequest, ::grpcIImageViewer::displayKeyResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_displayKey() override {
+    ~WithCallbackMethod_displayKey() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -264,20 +209,11 @@ class grpcIImageViewerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* displayKey(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageViewer::displayKeyRequest* /*request*/, ::grpcIImageViewer::displayKeyResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* displayKey(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIImageViewer::displayKeyRequest* /*request*/, ::grpcIImageViewer::displayKeyResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageViewer::displayKeyRequest* /*request*/, ::grpcIImageViewer::displayKeyResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_display<ExperimentalWithCallbackMethod_displayKey<Service > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_display<ExperimentalWithCallbackMethod_displayKey<Service > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_display<WithCallbackMethod_displayKey<Service > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_display : public BaseClass {
    private:
@@ -353,27 +289,17 @@ class grpcIImageViewerService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_display : public BaseClass {
+  class WithRawCallbackMethod_display : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_display() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_display() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->display(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->display(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_display() override {
+    ~WithRawCallbackMethod_display() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -381,37 +307,21 @@ class grpcIImageViewerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* display(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* display(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_displayKey : public BaseClass {
+  class WithRawCallbackMethod_displayKey : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_displayKey() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_displayKey() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->displayKey(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->displayKey(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_displayKey() override {
+    ~WithRawCallbackMethod_displayKey() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -419,14 +329,8 @@ class grpcIImageViewerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* displayKey(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* displayKey(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_display : public BaseClass {

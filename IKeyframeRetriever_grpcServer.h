@@ -2,7 +2,7 @@
 
 #ifndef IKEYFRAMERETRIEVER_GRPCSERVER_H
 #define IKEYFRAMERETRIEVER_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IKeyframeRetriever.h"
+#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IKeyframeRetriever.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIKeyframeRetrieverService.grpc.pb.h"
@@ -51,7 +51,7 @@ class IKeyframeRetriever_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeyframeRetriever::IKeyframeRetriever_grpcServer>
 {
-  static constexpr const char * UUID = "4e2512f6-c33e-4160-a2e8-6072225c394d";
+  static constexpr const char * UUID = "05fc9c9a-9748-4c50-94be-91e172906063";
   static constexpr const char * NAME = "IKeyframeRetriever_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeyframeRetriever_grpcServer grpc server component";
 };
