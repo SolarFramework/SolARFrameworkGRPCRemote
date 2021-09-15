@@ -4,3 +4,8 @@ build/debug/
 build/release/
 
 SolARFrameworkGRPCRemote.pro.user
+
+xpcfGrpcRemotingSolARFramework*.xml
+xpcfGrpcRemotingSolARFramework.pro
+
+build/*

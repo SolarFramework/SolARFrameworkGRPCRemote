@@ -31,7 +31,7 @@ PROJECTCONFIG = QTVS
 #NOTE : CONFIG as staticlib or sharedlib, DEPENDENCIESCONFIG as staticlib or sharedlib, QMAKE_TARGET.arch and PROJECTDEPLOYDIR MUST BE DEFINED BEFORE templatelibconfig.pri inclusion
 include ($${QMAKE_REMAKEN_RULES_ROOT}/templatelibconfig.pri)
 
-include (SolARFrameworkGRPCRemote.pri)
+include (xpcfGrpcRemotingSolARFramework.pri)
 
 
 unix:!android {
