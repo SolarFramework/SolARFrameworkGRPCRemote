@@ -2,7 +2,7 @@
 
 #ifndef IBUNDLER_GRPCSERVER_H
 #define IBUNDLER_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IBundler.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IBundler.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIBundlerService.grpc.pb.h"
@@ -43,7 +43,7 @@ class IBundler_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIBundler::IBundler_grpcServer>
 {
-  static constexpr const char * UUID = "69493b06-289a-46d7-8ddc-e7d1930be3ca";
+  static constexpr const char * UUID = "a0f22aba-eec1-4e58-8744-d2477d19666c";
   static constexpr const char * NAME = "IBundler_grpcServer";
   static constexpr const char * DESCRIPTION = "IBundler_grpcServer grpc server component";
 };

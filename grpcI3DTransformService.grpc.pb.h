@@ -7,6 +7,7 @@
 #include "grpcI3DTransformService.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -77,25 +78,53 @@ class grpcI3DTransformService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI3DTransform::transformInPlace_grpc4Response>> PrepareAsynctransformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI3DTransform::transformInPlace_grpc4Response>>(PrepareAsynctransformInPlace_grpc4Raw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void transform(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest* request, ::grpcI3DTransform::transformResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void transform(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest* request, ::grpcI3DTransform::transformResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void transform(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest* request, ::grpcI3DTransform::transformResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void transformInPlace_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc0Request* request, ::grpcI3DTransform::transformInPlace_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void transformInPlace_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc0Request* request, ::grpcI3DTransform::transformInPlace_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void transformInPlace_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc0Request* request, ::grpcI3DTransform::transformInPlace_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void transformInPlace_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void transformInPlace_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void transformInPlace_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void transformInPlace_grpc2(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void transformInPlace_grpc2(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void transformInPlace_grpc2(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void transformInPlace_grpc3(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void transformInPlace_grpc3(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void transformInPlace_grpc3(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void transformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void transformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void transformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI3DTransform::transformResponse>* AsynctransformRaw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI3DTransform::transformResponse>* PrepareAsynctransformRaw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -112,7 +141,7 @@ class grpcI3DTransformService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status transform(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest& request, ::grpcI3DTransform::transformResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformResponse>> Asynctransform(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformResponse>>(AsynctransformRaw(context, request, cq));
@@ -155,32 +184,56 @@ class grpcI3DTransformService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformInPlace_grpc4Response>> PrepareAsynctransformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformInPlace_grpc4Response>>(PrepareAsynctransformInPlace_grpc4Raw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void transform(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest* request, ::grpcI3DTransform::transformResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void transform(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest* request, ::grpcI3DTransform::transformResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void transform(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest* request, ::grpcI3DTransform::transformResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void transformInPlace_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc0Request* request, ::grpcI3DTransform::transformInPlace_grpc0Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void transformInPlace_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc0Request* request, ::grpcI3DTransform::transformInPlace_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void transformInPlace_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc0Request* request, ::grpcI3DTransform::transformInPlace_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void transformInPlace_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void transformInPlace_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void transformInPlace_grpc1(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void transformInPlace_grpc2(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void transformInPlace_grpc2(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void transformInPlace_grpc2(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void transformInPlace_grpc3(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void transformInPlace_grpc3(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void transformInPlace_grpc3(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void transformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void transformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void transformInPlace_grpc4(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformResponse>* AsynctransformRaw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformResponse>* PrepareAsynctransformRaw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcI3DTransform::transformInPlace_grpc0Response>* AsynctransformInPlace_grpc0Raw(::grpc::ClientContext* context, const ::grpcI3DTransform::transformInPlace_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
@@ -335,22 +388,36 @@ class grpcI3DTransformService final {
   };
   typedef WithAsyncMethod_transform<WithAsyncMethod_transformInPlace_grpc0<WithAsyncMethod_transformInPlace_grpc1<WithAsyncMethod_transformInPlace_grpc2<WithAsyncMethod_transformInPlace_grpc3<WithAsyncMethod_transformInPlace_grpc4<Service > > > > > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_transform : public BaseClass {
+  class ExperimentalWithCallbackMethod_transform : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_transform() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_transform() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformRequest, ::grpcI3DTransform::transformResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcI3DTransform::transformRequest* request, ::grpcI3DTransform::transformResponse* response) { return this->transform(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcI3DTransform::transformRequest* request, ::grpcI3DTransform::transformResponse* response) { return this->transform(context, request, response); }));}
     void SetMessageAllocatorFor_transform(
-        ::grpc::MessageAllocator< ::grpcI3DTransform::transformRequest, ::grpcI3DTransform::transformResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcI3DTransform::transformRequest, ::grpcI3DTransform::transformResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformRequest, ::grpcI3DTransform::transformResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_transform() override {
+    ~ExperimentalWithCallbackMethod_transform() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -358,26 +425,46 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transform(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformRequest* /*request*/, ::grpcI3DTransform::transformResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformRequest* /*request*/, ::grpcI3DTransform::transformResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transform(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformRequest* /*request*/, ::grpcI3DTransform::transformResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_transformInPlace_grpc0 : public BaseClass {
+  class ExperimentalWithCallbackMethod_transformInPlace_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_transformInPlace_grpc0() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_transformInPlace_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc0Request, ::grpcI3DTransform::transformInPlace_grpc0Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc0Request* request, ::grpcI3DTransform::transformInPlace_grpc0Response* response) { return this->transformInPlace_grpc0(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcI3DTransform::transformInPlace_grpc0Request* request, ::grpcI3DTransform::transformInPlace_grpc0Response* response) { return this->transformInPlace_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_transformInPlace_grpc0(
-        ::grpc::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc0Request, ::grpcI3DTransform::transformInPlace_grpc0Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc0Request, ::grpcI3DTransform::transformInPlace_grpc0Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc0Request, ::grpcI3DTransform::transformInPlace_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_transformInPlace_grpc0() override {
+    ~ExperimentalWithCallbackMethod_transformInPlace_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -385,26 +472,46 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc0Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc0Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc0Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc0Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc0Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc0Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_transformInPlace_grpc1 : public BaseClass {
+  class ExperimentalWithCallbackMethod_transformInPlace_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_transformInPlace_grpc1() {
-      ::grpc::Service::MarkMethodCallback(2,
+    ExperimentalWithCallbackMethod_transformInPlace_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc1Request, ::grpcI3DTransform::transformInPlace_grpc1Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response) { return this->transformInPlace_grpc1(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcI3DTransform::transformInPlace_grpc1Request* request, ::grpcI3DTransform::transformInPlace_grpc1Response* response) { return this->transformInPlace_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_transformInPlace_grpc1(
-        ::grpc::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc1Request, ::grpcI3DTransform::transformInPlace_grpc1Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc1Request, ::grpcI3DTransform::transformInPlace_grpc1Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc1Request, ::grpcI3DTransform::transformInPlace_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_transformInPlace_grpc1() override {
+    ~ExperimentalWithCallbackMethod_transformInPlace_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -412,26 +519,46 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc1Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc1Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc1Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc1Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc1Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc1Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_transformInPlace_grpc2 : public BaseClass {
+  class ExperimentalWithCallbackMethod_transformInPlace_grpc2 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_transformInPlace_grpc2() {
-      ::grpc::Service::MarkMethodCallback(3,
+    ExperimentalWithCallbackMethod_transformInPlace_grpc2() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc2Request, ::grpcI3DTransform::transformInPlace_grpc2Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response) { return this->transformInPlace_grpc2(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcI3DTransform::transformInPlace_grpc2Request* request, ::grpcI3DTransform::transformInPlace_grpc2Response* response) { return this->transformInPlace_grpc2(context, request, response); }));}
     void SetMessageAllocatorFor_transformInPlace_grpc2(
-        ::grpc::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc2Request, ::grpcI3DTransform::transformInPlace_grpc2Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc2Request, ::grpcI3DTransform::transformInPlace_grpc2Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc2Request, ::grpcI3DTransform::transformInPlace_grpc2Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_transformInPlace_grpc2() override {
+    ~ExperimentalWithCallbackMethod_transformInPlace_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -439,26 +566,46 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc2(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc2Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc2Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc2Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc2Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc2(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc2Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc2Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_transformInPlace_grpc3 : public BaseClass {
+  class ExperimentalWithCallbackMethod_transformInPlace_grpc3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_transformInPlace_grpc3() {
-      ::grpc::Service::MarkMethodCallback(4,
+    ExperimentalWithCallbackMethod_transformInPlace_grpc3() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc3Request, ::grpcI3DTransform::transformInPlace_grpc3Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response) { return this->transformInPlace_grpc3(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcI3DTransform::transformInPlace_grpc3Request* request, ::grpcI3DTransform::transformInPlace_grpc3Response* response) { return this->transformInPlace_grpc3(context, request, response); }));}
     void SetMessageAllocatorFor_transformInPlace_grpc3(
-        ::grpc::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc3Request, ::grpcI3DTransform::transformInPlace_grpc3Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc3Request, ::grpcI3DTransform::transformInPlace_grpc3Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc3Request, ::grpcI3DTransform::transformInPlace_grpc3Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_transformInPlace_grpc3() override {
+    ~ExperimentalWithCallbackMethod_transformInPlace_grpc3() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -466,26 +613,46 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc3(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc3Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc3Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc3Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc3Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc3(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc3Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc3Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_transformInPlace_grpc4 : public BaseClass {
+  class ExperimentalWithCallbackMethod_transformInPlace_grpc4 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_transformInPlace_grpc4() {
-      ::grpc::Service::MarkMethodCallback(5,
+    ExperimentalWithCallbackMethod_transformInPlace_grpc4() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc4Request, ::grpcI3DTransform::transformInPlace_grpc4Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response) { return this->transformInPlace_grpc4(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response) { return this->transformInPlace_grpc4(context, request, response); }));}
     void SetMessageAllocatorFor_transformInPlace_grpc4(
-        ::grpc::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc4Request, ::grpcI3DTransform::transformInPlace_grpc4Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcI3DTransform::transformInPlace_grpc4Request, ::grpcI3DTransform::transformInPlace_grpc4Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI3DTransform::transformInPlace_grpc4Request, ::grpcI3DTransform::transformInPlace_grpc4Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_transformInPlace_grpc4() override {
+    ~ExperimentalWithCallbackMethod_transformInPlace_grpc4() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -493,11 +660,20 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc4(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc4Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc4Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc4Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc4Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc4(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI3DTransform::transformInPlace_grpc4Request* /*request*/, ::grpcI3DTransform::transformInPlace_grpc4Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_transform<WithCallbackMethod_transformInPlace_grpc0<WithCallbackMethod_transformInPlace_grpc1<WithCallbackMethod_transformInPlace_grpc2<WithCallbackMethod_transformInPlace_grpc3<WithCallbackMethod_transformInPlace_grpc4<Service > > > > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_transform<ExperimentalWithCallbackMethod_transformInPlace_grpc0<ExperimentalWithCallbackMethod_transformInPlace_grpc1<ExperimentalWithCallbackMethod_transformInPlace_grpc2<ExperimentalWithCallbackMethod_transformInPlace_grpc3<ExperimentalWithCallbackMethod_transformInPlace_grpc4<Service > > > > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_transform<ExperimentalWithCallbackMethod_transformInPlace_grpc0<ExperimentalWithCallbackMethod_transformInPlace_grpc1<ExperimentalWithCallbackMethod_transformInPlace_grpc2<ExperimentalWithCallbackMethod_transformInPlace_grpc3<ExperimentalWithCallbackMethod_transformInPlace_grpc4<Service > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_transform : public BaseClass {
    private:
@@ -721,17 +897,27 @@ class grpcI3DTransformService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_transform : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_transform : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_transform() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_transform() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transform(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transform(context, request, response); }));
     }
-    ~WithRawCallbackMethod_transform() override {
+    ~ExperimentalWithRawCallbackMethod_transform() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -739,21 +925,37 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transform(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transform(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_transformInPlace_grpc0 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_transformInPlace_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_transformInPlace_grpc0() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_transformInPlace_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc0(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc0(context, request, response); }));
     }
-    ~WithRawCallbackMethod_transformInPlace_grpc0() override {
+    ~ExperimentalWithRawCallbackMethod_transformInPlace_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -761,21 +963,37 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_transformInPlace_grpc1 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_transformInPlace_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_transformInPlace_grpc1() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+    ExperimentalWithRawCallbackMethod_transformInPlace_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc1(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc1(context, request, response); }));
     }
-    ~WithRawCallbackMethod_transformInPlace_grpc1() override {
+    ~ExperimentalWithRawCallbackMethod_transformInPlace_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -783,21 +1001,37 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_transformInPlace_grpc2 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_transformInPlace_grpc2 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_transformInPlace_grpc2() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+    ExperimentalWithRawCallbackMethod_transformInPlace_grpc2() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc2(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc2(context, request, response); }));
     }
-    ~WithRawCallbackMethod_transformInPlace_grpc2() override {
+    ~ExperimentalWithRawCallbackMethod_transformInPlace_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -805,21 +1039,37 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc2(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc2(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_transformInPlace_grpc3 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_transformInPlace_grpc3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_transformInPlace_grpc3() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+    ExperimentalWithRawCallbackMethod_transformInPlace_grpc3() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc3(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc3(context, request, response); }));
     }
-    ~WithRawCallbackMethod_transformInPlace_grpc3() override {
+    ~ExperimentalWithRawCallbackMethod_transformInPlace_grpc3() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -827,21 +1077,37 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc3(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc3(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_transformInPlace_grpc4 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_transformInPlace_grpc4 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_transformInPlace_grpc4() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+    ExperimentalWithRawCallbackMethod_transformInPlace_grpc4() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc4(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->transformInPlace_grpc4(context, request, response); }));
     }
-    ~WithRawCallbackMethod_transformInPlace_grpc4() override {
+    ~ExperimentalWithRawCallbackMethod_transformInPlace_grpc4() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -849,8 +1115,14 @@ class grpcI3DTransformService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* transformInPlace_grpc4(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* transformInPlace_grpc4(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_transform : public BaseClass {

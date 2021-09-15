@@ -49,7 +49,7 @@ SolAR::FrameworkReturnCode  I3DPointsViewer_grpcProxy::display(std::vector<SRef<
   reqIn.set_keyframeposes2(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(keyframePoses2));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->display_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "display_grpc0rpc failed." << std::endl;
+    std::cout << "display_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DPointsViewerService","display_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -70,7 +70,7 @@ SolAR::FrameworkReturnCode  I3DPointsViewer_grpcProxy::display(SRef<SolAR::datas
   reqIn.set_keyframeposes2(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(keyframePoses2));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->display_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "display_grpc1rpc failed." << std::endl;
+    std::cout << "display_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DPointsViewerService","display_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

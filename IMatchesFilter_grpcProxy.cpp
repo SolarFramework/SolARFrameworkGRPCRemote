@@ -47,7 +47,7 @@ void  IMatchesFilter_grpcProxy::filter(std::vector<SolAR::datastructure::Descrip
   reqIn.set_outputmatches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(outputMatches));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->filter(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "filterrpc failed." << std::endl;
+    std::cout << "filter rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMatchesFilterService","filter",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

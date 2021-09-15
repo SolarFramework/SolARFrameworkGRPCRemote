@@ -45,7 +45,7 @@ SolAR::FrameworkReturnCode  IContoursExtractor_grpcProxy::extract(SRef<SolAR::da
   reqIn.set_contours(xpcf::serialize<std::vector<SolAR::datastructure::Contour2Df>>(contours));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->extract(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "extractrpc failed." << std::endl;
+    std::cout << "extract rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIContoursExtractorService","extract",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

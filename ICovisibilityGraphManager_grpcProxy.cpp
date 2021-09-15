@@ -46,7 +46,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::increaseEdge(ui
   reqIn.set_weight(weight);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->increaseEdge(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "increaseEdgerpc failed." << std::endl;
+    std::cout << "increaseEdge rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","increaseEdge",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -64,7 +64,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::decreaseEdge(ui
   reqIn.set_weight(weight);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->decreaseEdge(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "decreaseEdgerpc failed." << std::endl;
+    std::cout << "decreaseEdge rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","decreaseEdge",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -81,7 +81,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::removeEdge(uint
   reqIn.set_node2_id(node2_id);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->removeEdge(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "removeEdgerpc failed." << std::endl;
+    std::cout << "removeEdge rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","removeEdge",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -99,7 +99,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::getEdge(uint32_
   reqIn.set_weight(weight);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getEdge(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getEdgerpc failed." << std::endl;
+    std::cout << "getEdge rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","getEdge",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -117,7 +117,7 @@ bool  ICovisibilityGraphManager_grpcProxy::isEdge(uint32_t const node1_id, uint3
   reqIn.set_node2_id(node2_id);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->isEdge(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "isEdgerpc failed." << std::endl;
+    std::cout << "isEdge rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","isEdge",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -133,7 +133,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::getAllNodes(std
   reqIn.set_nodes_id(xpcf::serialize<std::set<uint32_t>>(nodes_id));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getAllNodes(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getAllNodesrpc failed." << std::endl;
+    std::cout << "getAllNodes rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","getAllNodes",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -150,7 +150,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::suppressNode(ui
   reqIn.set_node_id(node_id);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->suppressNode(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "suppressNoderpc failed." << std::endl;
+    std::cout << "suppressNode rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","suppressNode",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -168,7 +168,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::getNeighbors(ui
   reqIn.set_neighbors(xpcf::serialize<std::vector<uint32_t>>(neighbors));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getNeighbors(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getNeighborsrpc failed." << std::endl;
+    std::cout << "getNeighbors rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","getNeighbors",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -186,7 +186,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::minimalSpanning
   reqIn.set_mintotalweights(minTotalWeights);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->minimalSpanningTree(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "minimalSpanningTreerpc failed." << std::endl;
+    std::cout << "minimalSpanningTree rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","minimalSpanningTree",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -205,7 +205,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::maximalSpanning
   reqIn.set_maxtotalweights(maxTotalWeights);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->maximalSpanningTree(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "maximalSpanningTreerpc failed." << std::endl;
+    std::cout << "maximalSpanningTree rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","maximalSpanningTree",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -225,7 +225,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::getShortestPath
   reqIn.set_path(xpcf::serialize<std::vector<uint32_t>>(path));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getShortestPath(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getShortestPathrpc failed." << std::endl;
+    std::cout << "getShortestPath rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","getShortestPath",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -241,7 +241,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::display() const
   ::grpcICovisibilityGraphManager::displayResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->display(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "displayrpc failed." << std::endl;
+    std::cout << "display rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","display",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -257,7 +257,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::saveToFile(std:
   reqIn.set_file(file);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->saveToFile(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "saveToFilerpc failed." << std::endl;
+    std::cout << "saveToFile rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","saveToFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -273,7 +273,7 @@ SolAR::FrameworkReturnCode  ICovisibilityGraphManager_grpcProxy::loadFromFile(st
   reqIn.set_file(file);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->loadFromFile(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "loadFromFilerpc failed." << std::endl;
+    std::cout << "loadFromFile rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","loadFromFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -288,7 +288,7 @@ SRef<SolAR::datastructure::CovisibilityGraph> const&  ICovisibilityGraphManager_
   ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getConstCovisibilityGraph(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getConstCovisibilityGraphrpc failed." << std::endl;
+    std::cout << "getConstCovisibilityGraph rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","getConstCovisibilityGraph",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -303,7 +303,7 @@ std::unique_lock<std::mutex>  ICovisibilityGraphManager_grpcProxy::getCovisibili
   reqIn.set_covisibilitygraph(xpcf::serialize<SRef<SolAR::datastructure::CovisibilityGraph>>(covisibilityGraph));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getCovisibilityGraph(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getCovisibilityGraphrpc failed." << std::endl;
+    std::cout << "getCovisibilityGraph rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","getCovisibilityGraph",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -319,7 +319,7 @@ void  ICovisibilityGraphManager_grpcProxy::setCovisibilityGraph(SRef<SolAR::data
   reqIn.set_covisibilitygraph(xpcf::serialize<SRef<SolAR::datastructure::CovisibilityGraph>>(covisibilityGraph));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCovisibilityGraph(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCovisibilityGraphrpc failed." << std::endl;
+    std::cout << "setCovisibilityGraph rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICovisibilityGraphManagerService","setCovisibilityGraph",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

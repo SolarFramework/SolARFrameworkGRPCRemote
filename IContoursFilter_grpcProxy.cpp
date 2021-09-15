@@ -45,7 +45,7 @@ SolAR::FrameworkReturnCode  IContoursFilter_grpcProxy::filter(std::vector<SolAR:
   reqIn.set_outcontours(xpcf::serialize<std::vector<SolAR::datastructure::Contour2Df>>(outContours));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->filter(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "filterrpc failed." << std::endl;
+    std::cout << "filter rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIContoursFilterService","filter",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

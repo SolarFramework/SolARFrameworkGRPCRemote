@@ -2,7 +2,7 @@
 
 #ifndef I2DTO3DTRANSFORMDECOMPOSERVALIDATION_GRPCSERVER_H
 #define I2DTO3DTRANSFORMDECOMPOSERVALIDATION_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2Dto3DTransformDecomposerValidation.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2Dto3DTransformDecomposerValidation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI2Dto3DTransformDecomposerValidationService.grpc.pb.h"
@@ -41,7 +41,7 @@ class I2Dto3DTransformDecomposerValidation_grpcServer:  public org::bcom::xpcf::
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI2Dto3DTransformDecomposerValidation::I2Dto3DTransformDecomposerValidation_grpcServer>
 {
-  static constexpr const char * UUID = "f8802341-b660-4643-8de3-500895d48154";
+  static constexpr const char * UUID = "3ac56881-8719-49bf-9b02-4406264b26d3";
   static constexpr const char * NAME = "I2Dto3DTransformDecomposerValidation_grpcServer";
   static constexpr const char * DESCRIPTION = "I2Dto3DTransformDecomposerValidation_grpcServer grpc server component";
 };

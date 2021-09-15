@@ -3,7 +3,7 @@
 
 #ifndef IIMAGEFILTER_GRPCPROXY_H
 #define IIMAGEFILTER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageFilter.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IImageFilter_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIImageFilter::IImageFilter_grpcProxy>
 {
-  static constexpr const char * UUID = "ac24da57-8111-46b6-a7db-7f81080a9105";
+  static constexpr const char * UUID = "77943853-dc6d-404d-a4bb-f000ce15b910";
   static constexpr const char * NAME = "IImageFilter_grpcProxy";
   static constexpr const char * DESCRIPTION = "IImageFilter_grpcProxy grpc client proxy component";
 };

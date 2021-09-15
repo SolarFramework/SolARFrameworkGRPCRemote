@@ -49,14 +49,6 @@ XPCFErrorCode IARDevice_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IARDevice_grpcServer::grpcIARDeviceServiceImpl::getNbCameras(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response)
-{
-  int returnValue = m_xpcfComponent->getNbCameras();
-  response->set_xpcfgrpcreturnvalue(returnValue);
-  return ::grpc::Status::OK;
-}
-
-
 ::grpc::Status IARDevice_grpcServer::grpcIARDeviceServiceImpl::getData(::grpc::ServerContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response)
 {
   std::vector<SRef<SolAR::datastructure::Image>> images = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Image>>>(request->images());
@@ -71,20 +63,10 @@ XPCFErrorCode IARDevice_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IARDevice_grpcServer::grpcIARDeviceServiceImpl::getParameters(::grpc::ServerContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response)
+::grpc::Status IARDevice_grpcServer::grpcIARDeviceServiceImpl::getCameraParameters(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response)
 {
-  int camera_id = request->camera_id();
-  SolAR::datastructure::CameraParameters returnValue = m_xpcfComponent->getParameters(camera_id);
-  response->set_xpcfgrpcreturnvalue(xpcf::serialize<SolAR::datastructure::CameraParameters>(returnValue));
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IARDevice_grpcServer::grpcIARDeviceServiceImpl::setParameters(::grpc::ServerContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  int camera_id = request->camera_id();
-  SolAR::datastructure::CameraParameters parameters = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->parameters());
-  m_xpcfComponent->setParameters(camera_id, parameters);
+  SolAR::datastructure::CameraRigParameters returnValue = m_xpcfComponent->getCameraParameters();
+  response->set_xpcfgrpcreturnvalue(xpcf::serialize<SolAR::datastructure::CameraRigParameters>(returnValue));
   return ::grpc::Status::OK;
 }
 

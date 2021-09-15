@@ -34,30 +34,30 @@ static const char* grpcIRegressionService_method_names[] = {
 
 std::unique_ptr< grpcIRegressionService::Stub> grpcIRegressionService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIRegressionService::Stub> stub(new grpcIRegressionService::Stub(channel, options));
+  std::unique_ptr< grpcIRegressionService::Stub> stub(new grpcIRegressionService::Stub(channel));
   return stub;
 }
 
-grpcIRegressionService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcIRegressionService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_add_(grpcIRegressionService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_regress_(grpcIRegressionService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_update_(grpcIRegressionService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_loadModel_(grpcIRegressionService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getTrainingStatus_(grpcIRegressionService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getNumActiveLeaves_(grpcIRegressionService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getNumPassiveLeaves_(grpcIRegressionService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIRegressionService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_setCameraParameters_(grpcIRegressionService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_add_(grpcIRegressionService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_regress_(grpcIRegressionService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_update_(grpcIRegressionService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_loadModel_(grpcIRegressionService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getTrainingStatus_(grpcIRegressionService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getNumActiveLeaves_(grpcIRegressionService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getNumPassiveLeaves_(grpcIRegressionService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIRegressionService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRegression::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcIRegressionService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIRegressionService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRegression::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcIRegressionService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRegressionService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -76,11 +76,11 @@ void grpcIRegressionService::Stub::async::setCameraParameters(::grpc::ClientCont
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRegression::addRequest, ::grpcIRegression::addResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_add_, context, request, response);
 }
 
-void grpcIRegressionService::Stub::async::add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRegressionService::Stub::experimental_async::add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRegression::addRequest, ::grpcIRegression::addResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_add_, context, request, response, std::move(f));
 }
 
-void grpcIRegressionService::Stub::async::add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRegressionService::Stub::experimental_async::add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_add_, context, request, response, reactor);
 }
 
@@ -99,11 +99,11 @@ void grpcIRegressionService::Stub::async::add(::grpc::ClientContext* context, co
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRegression::regressRequest, ::grpcIRegression::regressResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_regress_, context, request, response);
 }
 
-void grpcIRegressionService::Stub::async::regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRegressionService::Stub::experimental_async::regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRegression::regressRequest, ::grpcIRegression::regressResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_regress_, context, request, response, std::move(f));
 }
 
-void grpcIRegressionService::Stub::async::regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRegressionService::Stub::experimental_async::regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_regress_, context, request, response, reactor);
 }
 
@@ -122,11 +122,11 @@ void grpcIRegressionService::Stub::async::regress(::grpc::ClientContext* context
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRegression::updateRequest, ::grpcIRegression::updateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_update_, context, request, response);
 }
 
-void grpcIRegressionService::Stub::async::update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRegressionService::Stub::experimental_async::update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRegression::updateRequest, ::grpcIRegression::updateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_update_, context, request, response, std::move(f));
 }
 
-void grpcIRegressionService::Stub::async::update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRegressionService::Stub::experimental_async::update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_update_, context, request, response, reactor);
 }
 
@@ -145,11 +145,11 @@ void grpcIRegressionService::Stub::async::update(::grpc::ClientContext* context,
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_loadModel_, context, request, response);
 }
 
-void grpcIRegressionService::Stub::async::loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRegressionService::Stub::experimental_async::loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadModel_, context, request, response, std::move(f));
 }
 
-void grpcIRegressionService::Stub::async::loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRegressionService::Stub::experimental_async::loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadModel_, context, request, response, reactor);
 }
 
@@ -168,11 +168,11 @@ void grpcIRegressionService::Stub::async::loadModel(::grpc::ClientContext* conte
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getTrainingStatus_, context, request, response);
 }
 
-void grpcIRegressionService::Stub::async::getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRegressionService::Stub::experimental_async::getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getTrainingStatus_, context, request, response, std::move(f));
 }
 
-void grpcIRegressionService::Stub::async::getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRegressionService::Stub::experimental_async::getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getTrainingStatus_, context, request, response, reactor);
 }
 
@@ -191,11 +191,11 @@ void grpcIRegressionService::Stub::async::getTrainingStatus(::grpc::ClientContex
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getNumActiveLeaves_, context, request, response);
 }
 
-void grpcIRegressionService::Stub::async::getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRegressionService::Stub::experimental_async::getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNumActiveLeaves_, context, request, response, std::move(f));
 }
 
-void grpcIRegressionService::Stub::async::getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRegressionService::Stub::experimental_async::getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNumActiveLeaves_, context, request, response, reactor);
 }
 
@@ -214,11 +214,11 @@ void grpcIRegressionService::Stub::async::getNumActiveLeaves(::grpc::ClientConte
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getNumPassiveLeaves_, context, request, response);
 }
 
-void grpcIRegressionService::Stub::async::getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRegressionService::Stub::experimental_async::getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNumPassiveLeaves_, context, request, response, std::move(f));
 }
 
-void grpcIRegressionService::Stub::async::getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRegressionService::Stub::experimental_async::getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNumPassiveLeaves_, context, request, response, reactor);
 }
 

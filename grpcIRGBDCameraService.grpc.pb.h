@@ -7,6 +7,7 @@
 #include "grpcIRGBDCameraService.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -217,65 +218,173 @@ class grpcIRGBDCameraService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRGBDCamera::getWorldToPixelsResponse>> PrepareAsyncgetWorldToPixels(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRGBDCamera::getWorldToPixelsResponse>>(PrepareAsyncgetWorldToPixelsRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::startResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getNextImage(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextImageRequest* request, ::grpcIRGBDCamera::getNextImageResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getNextImage(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextImageRequest* request, ::grpcIRGBDCamera::getNextImageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getNextImage(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextImageRequest* request, ::grpcIRGBDCamera::getNextImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void setResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setResolutionRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setResolutionRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setResolutionRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void setDistortionParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setDistortionParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setDistortionParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void setParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getResolutionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getResolutionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getResolutionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getNextDepthFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextDepthFrameRequest* request, ::grpcIRGBDCamera::getNextDepthFrameResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getNextDepthFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextDepthFrameRequest* request, ::grpcIRGBDCamera::getNextDepthFrameResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getNextDepthFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextDepthFrameRequest* request, ::grpcIRGBDCamera::getNextDepthFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getPointCloud(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPointCloudRequest* request, ::grpcIRGBDCamera::getPointCloudResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getPointCloud(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPointCloudRequest* request, ::grpcIRGBDCamera::getPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getPointCloud(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPointCloudRequest* request, ::grpcIRGBDCamera::getPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void setDepthResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDepthResolutionRequest* request, ::grpcIRGBDCamera::setDepthResolutionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setDepthResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDepthResolutionRequest* request, ::grpcIRGBDCamera::setDepthResolutionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setDepthResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDepthResolutionRequest* request, ::grpcIRGBDCamera::setDepthResolutionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void setIntrinsicDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* request, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setIntrinsicDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* request, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setIntrinsicDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* request, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void setDistortionDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* request, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setDistortionDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* request, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setDistortionDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* request, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getDepthResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthResolutionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getDepthResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthResolutionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getDepthResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthResolutionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getDepthMinDistance(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthMinDistanceResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getDepthMinDistance(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthMinDistanceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getDepthMinDistance(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthMinDistanceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getDistortionDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getDistortionDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getDistortionDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getNextRGBDFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* request, ::grpcIRGBDCamera::getNextRGBDFrameResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getNextRGBDFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* request, ::grpcIRGBDCamera::getNextRGBDFrameResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getNextRGBDFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* request, ::grpcIRGBDCamera::getNextRGBDFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void alignDepthToColor(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignDepthToColorRequest* request, ::grpcIRGBDCamera::alignDepthToColorResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void alignDepthToColor(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignDepthToColorRequest* request, ::grpcIRGBDCamera::alignDepthToColorResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void alignDepthToColor(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignDepthToColorRequest* request, ::grpcIRGBDCamera::alignDepthToColorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void alignColorToDepth(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignColorToDepthRequest* request, ::grpcIRGBDCamera::alignColorToDepthResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void alignColorToDepth(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignColorToDepthRequest* request, ::grpcIRGBDCamera::alignColorToDepthResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void alignColorToDepth(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignColorToDepthRequest* request, ::grpcIRGBDCamera::alignColorToDepthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getPixelToWorld(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPixelToWorldRequest* request, ::grpcIRGBDCamera::getPixelToWorldResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getPixelToWorld(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPixelToWorldRequest* request, ::grpcIRGBDCamera::getPixelToWorldResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getPixelToWorld(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPixelToWorldRequest* request, ::grpcIRGBDCamera::getPixelToWorldResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getWorldToPixel(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelRequest* request, ::grpcIRGBDCamera::getWorldToPixelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getWorldToPixel(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelRequest* request, ::grpcIRGBDCamera::getWorldToPixelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getWorldToPixel(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelRequest* request, ::grpcIRGBDCamera::getWorldToPixelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getWorldToPixels(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest* request, ::grpcIRGBDCamera::getWorldToPixelsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getWorldToPixels(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest* request, ::grpcIRGBDCamera::getWorldToPixelsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getWorldToPixels(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest* request, ::grpcIRGBDCamera::getWorldToPixelsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRGBDCamera::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRGBDCamera::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
@@ -332,7 +441,7 @@ class grpcIRGBDCameraService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRGBDCamera::startResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRGBDCamera::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRGBDCamera::startResponse>>(AsyncstartRaw(context, request, cq));
@@ -515,72 +624,176 @@ class grpcIRGBDCameraService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRGBDCamera::getWorldToPixelsResponse>> PrepareAsyncgetWorldToPixels(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRGBDCamera::getWorldToPixelsResponse>>(PrepareAsyncgetWorldToPixelsRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::startResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::stopResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getNextImage(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextImageRequest* request, ::grpcIRGBDCamera::getNextImageResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getNextImage(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextImageRequest* request, ::grpcIRGBDCamera::getNextImageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getNextImage(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextImageRequest* request, ::grpcIRGBDCamera::getNextImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void setResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setResolutionRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setResolutionRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setResolutionRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void setDistortionParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setDistortionParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setDistortionParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void setParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getResolutionResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getResolutionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getResolutionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getParametersResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionParametersResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getNextDepthFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextDepthFrameRequest* request, ::grpcIRGBDCamera::getNextDepthFrameResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getNextDepthFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextDepthFrameRequest* request, ::grpcIRGBDCamera::getNextDepthFrameResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getNextDepthFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextDepthFrameRequest* request, ::grpcIRGBDCamera::getNextDepthFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getPointCloud(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPointCloudRequest* request, ::grpcIRGBDCamera::getPointCloudResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getPointCloud(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPointCloudRequest* request, ::grpcIRGBDCamera::getPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getPointCloud(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPointCloudRequest* request, ::grpcIRGBDCamera::getPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void setDepthResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDepthResolutionRequest* request, ::grpcIRGBDCamera::setDepthResolutionResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setDepthResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDepthResolutionRequest* request, ::grpcIRGBDCamera::setDepthResolutionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setDepthResolution(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDepthResolutionRequest* request, ::grpcIRGBDCamera::setDepthResolutionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void setIntrinsicDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* request, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setIntrinsicDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* request, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setIntrinsicDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* request, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void setDistortionDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* request, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setDistortionDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* request, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setDistortionDepthParameters(::grpc::ClientContext* context, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* request, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getDepthResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthResolutionResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getDepthResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthResolutionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getDepthResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthResolutionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getDepthMinDistance(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthMinDistanceResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getDepthMinDistance(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthMinDistanceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getDepthMinDistance(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthMinDistanceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getDistortionDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getDistortionDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getDistortionDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getNextRGBDFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* request, ::grpcIRGBDCamera::getNextRGBDFrameResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getNextRGBDFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* request, ::grpcIRGBDCamera::getNextRGBDFrameResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getNextRGBDFrame(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* request, ::grpcIRGBDCamera::getNextRGBDFrameResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void alignDepthToColor(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignDepthToColorRequest* request, ::grpcIRGBDCamera::alignDepthToColorResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void alignDepthToColor(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignDepthToColorRequest* request, ::grpcIRGBDCamera::alignDepthToColorResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void alignDepthToColor(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignDepthToColorRequest* request, ::grpcIRGBDCamera::alignDepthToColorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void alignColorToDepth(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignColorToDepthRequest* request, ::grpcIRGBDCamera::alignColorToDepthResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void alignColorToDepth(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignColorToDepthRequest* request, ::grpcIRGBDCamera::alignColorToDepthResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void alignColorToDepth(::grpc::ClientContext* context, const ::grpcIRGBDCamera::alignColorToDepthRequest* request, ::grpcIRGBDCamera::alignColorToDepthResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getPixelToWorld(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPixelToWorldRequest* request, ::grpcIRGBDCamera::getPixelToWorldResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getPixelToWorld(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPixelToWorldRequest* request, ::grpcIRGBDCamera::getPixelToWorldResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getPixelToWorld(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getPixelToWorldRequest* request, ::grpcIRGBDCamera::getPixelToWorldResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getWorldToPixel(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelRequest* request, ::grpcIRGBDCamera::getWorldToPixelResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getWorldToPixel(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelRequest* request, ::grpcIRGBDCamera::getWorldToPixelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getWorldToPixel(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelRequest* request, ::grpcIRGBDCamera::getWorldToPixelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getWorldToPixels(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest* request, ::grpcIRGBDCamera::getWorldToPixelsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getWorldToPixels(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest* request, ::grpcIRGBDCamera::getWorldToPixelsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getWorldToPixels(::grpc::ClientContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest* request, ::grpcIRGBDCamera::getWorldToPixelsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIRGBDCamera::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIRGBDCamera::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIRGBDCamera::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
@@ -1215,22 +1428,36 @@ class grpcIRGBDCameraService final {
   };
   typedef WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_getNextImage<WithAsyncMethod_setResolution<WithAsyncMethod_setIntrinsicParameters<WithAsyncMethod_setDistortionParameters<WithAsyncMethod_setParameters<WithAsyncMethod_getResolution<WithAsyncMethod_getIntrinsicsParameters<WithAsyncMethod_getParameters<WithAsyncMethod_getDistortionParameters<WithAsyncMethod_getNextDepthFrame<WithAsyncMethod_getPointCloud<WithAsyncMethod_setDepthResolution<WithAsyncMethod_setIntrinsicDepthParameters<WithAsyncMethod_setDistortionDepthParameters<WithAsyncMethod_getDepthResolution<WithAsyncMethod_getDepthMinDistance<WithAsyncMethod_getIntrinsicsDepthParameters<WithAsyncMethod_getDistortionDepthParameters<WithAsyncMethod_getNextRGBDFrame<WithAsyncMethod_alignDepthToColor<WithAsyncMethod_alignColorToDepth<WithAsyncMethod_getPixelToWorld<WithAsyncMethod_getWorldToPixel<WithAsyncMethod_getWorldToPixels<Service > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_start : public BaseClass {
+  class ExperimentalWithCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_start() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_start() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::startResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::startResponse* response) { return this->start(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::startResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::startResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_start() override {
+    ~ExperimentalWithCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1238,26 +1465,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::startResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::startResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* start(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::startResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_stop : public BaseClass {
+  class ExperimentalWithCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_stop() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_stop() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::stopResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::stopResponse* response) { return this->stop(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::stopResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::stopResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_stop() override {
+    ~ExperimentalWithCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1265,26 +1512,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::stopResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::stopResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* stop(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::stopResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getNextImage : public BaseClass {
+  class ExperimentalWithCallbackMethod_getNextImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getNextImage() {
-      ::grpc::Service::MarkMethodCallback(2,
+    ExperimentalWithCallbackMethod_getNextImage() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getNextImageRequest, ::grpcIRGBDCamera::getNextImageResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::getNextImageRequest* request, ::grpcIRGBDCamera::getNextImageResponse* response) { return this->getNextImage(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::getNextImageRequest* request, ::grpcIRGBDCamera::getNextImageResponse* response) { return this->getNextImage(context, request, response); }));}
     void SetMessageAllocatorFor_getNextImage(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::getNextImageRequest, ::grpcIRGBDCamera::getNextImageResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::getNextImageRequest, ::grpcIRGBDCamera::getNextImageResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getNextImageRequest, ::grpcIRGBDCamera::getNextImageResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getNextImage() override {
+    ~ExperimentalWithCallbackMethod_getNextImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1292,26 +1559,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNextImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getNextImageRequest* /*request*/, ::grpcIRGBDCamera::getNextImageResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getNextImageRequest* /*request*/, ::grpcIRGBDCamera::getNextImageResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNextImage(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getNextImageRequest* /*request*/, ::grpcIRGBDCamera::getNextImageResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_setResolution : public BaseClass {
+  class ExperimentalWithCallbackMethod_setResolution : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setResolution() {
-      ::grpc::Service::MarkMethodCallback(3,
+    ExperimentalWithCallbackMethod_setResolution() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setResolutionRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::setResolutionRequest* request, ::google::protobuf::Empty* response) { return this->setResolution(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::setResolutionRequest* request, ::google::protobuf::Empty* response) { return this->setResolution(context, request, response); }));}
     void SetMessageAllocatorFor_setResolution(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::setResolutionRequest, ::google::protobuf::Empty>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::setResolutionRequest, ::google::protobuf::Empty>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setResolutionRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setResolution() override {
+    ~ExperimentalWithCallbackMethod_setResolution() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1319,26 +1606,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setResolution(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setResolutionRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setResolutionRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setResolution(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setResolutionRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_setIntrinsicParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_setIntrinsicParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setIntrinsicParameters() {
-      ::grpc::Service::MarkMethodCallback(4,
+    ExperimentalWithCallbackMethod_setIntrinsicParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setIntrinsicParametersRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response) { return this->setIntrinsicParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response) { return this->setIntrinsicParameters(context, request, response); }));}
     void SetMessageAllocatorFor_setIntrinsicParameters(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::setIntrinsicParametersRequest, ::google::protobuf::Empty>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::setIntrinsicParametersRequest, ::google::protobuf::Empty>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setIntrinsicParametersRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setIntrinsicParameters() override {
+    ~ExperimentalWithCallbackMethod_setIntrinsicParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1346,26 +1653,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setIntrinsicParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setIntrinsicParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setIntrinsicParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_setDistortionParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_setDistortionParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setDistortionParameters() {
-      ::grpc::Service::MarkMethodCallback(5,
+    ExperimentalWithCallbackMethod_setDistortionParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setDistortionParametersRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response) { return this->setDistortionParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response) { return this->setDistortionParameters(context, request, response); }));}
     void SetMessageAllocatorFor_setDistortionParameters(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::setDistortionParametersRequest, ::google::protobuf::Empty>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::setDistortionParametersRequest, ::google::protobuf::Empty>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setDistortionParametersRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setDistortionParameters() override {
+    ~ExperimentalWithCallbackMethod_setDistortionParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1373,26 +1700,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setDistortionParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setDistortionParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setDistortionParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setDistortionParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setDistortionParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_setParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_setParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setParameters() {
-      ::grpc::Service::MarkMethodCallback(6,
+    ExperimentalWithCallbackMethod_setParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setParametersRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::setParametersRequest* request, ::google::protobuf::Empty* response) { return this->setParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::setParametersRequest* request, ::google::protobuf::Empty* response) { return this->setParameters(context, request, response); }));}
     void SetMessageAllocatorFor_setParameters(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::setParametersRequest, ::google::protobuf::Empty>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::setParametersRequest, ::google::protobuf::Empty>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setParametersRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setParameters() override {
+    ~ExperimentalWithCallbackMethod_setParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1400,26 +1747,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getResolution : public BaseClass {
+  class ExperimentalWithCallbackMethod_getResolution : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getResolution() {
-      ::grpc::Service::MarkMethodCallback(7,
+    ExperimentalWithCallbackMethod_getResolution() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getResolutionResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getResolutionResponse* response) { return this->getResolution(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getResolutionResponse* response) { return this->getResolution(context, request, response); }));}
     void SetMessageAllocatorFor_getResolution(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getResolutionResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getResolutionResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getResolutionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getResolution() override {
+    ~ExperimentalWithCallbackMethod_getResolution() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1427,26 +1794,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getResolution(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getResolutionResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getResolutionResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getResolution(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getResolutionResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getIntrinsicsParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_getIntrinsicsParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getIntrinsicsParameters() {
-      ::grpc::Service::MarkMethodCallback(8,
+    ExperimentalWithCallbackMethod_getIntrinsicsParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getIntrinsicsParametersResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* response) { return this->getIntrinsicsParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* response) { return this->getIntrinsicsParameters(context, request, response); }));}
     void SetMessageAllocatorFor_getIntrinsicsParameters(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getIntrinsicsParametersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getIntrinsicsParametersResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getIntrinsicsParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getIntrinsicsParameters() override {
+    ~ExperimentalWithCallbackMethod_getIntrinsicsParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1454,26 +1841,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getIntrinsicsParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getIntrinsicsParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getIntrinsicsParametersResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_getParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getParameters() {
-      ::grpc::Service::MarkMethodCallback(9,
+    ExperimentalWithCallbackMethod_getParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getParametersResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getParametersResponse* response) { return this->getParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getParametersResponse* response) { return this->getParameters(context, request, response); }));}
     void SetMessageAllocatorFor_getParameters(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getParametersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getParametersResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getParameters() override {
+    ~ExperimentalWithCallbackMethod_getParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1481,26 +1888,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getParametersResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getParametersResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getParametersResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getDistortionParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_getDistortionParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getDistortionParameters() {
-      ::grpc::Service::MarkMethodCallback(10,
+    ExperimentalWithCallbackMethod_getDistortionParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDistortionParametersResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionParametersResponse* response) { return this->getDistortionParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionParametersResponse* response) { return this->getDistortionParameters(context, request, response); }));}
     void SetMessageAllocatorFor_getDistortionParameters(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDistortionParametersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDistortionParametersResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDistortionParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getDistortionParameters() override {
+    ~ExperimentalWithCallbackMethod_getDistortionParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1508,26 +1935,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDistortionParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDistortionParametersResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDistortionParametersResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDistortionParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDistortionParametersResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getNextDepthFrame : public BaseClass {
+  class ExperimentalWithCallbackMethod_getNextDepthFrame : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getNextDepthFrame() {
-      ::grpc::Service::MarkMethodCallback(11,
+    ExperimentalWithCallbackMethod_getNextDepthFrame() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getNextDepthFrameRequest, ::grpcIRGBDCamera::getNextDepthFrameResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::getNextDepthFrameRequest* request, ::grpcIRGBDCamera::getNextDepthFrameResponse* response) { return this->getNextDepthFrame(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::getNextDepthFrameRequest* request, ::grpcIRGBDCamera::getNextDepthFrameResponse* response) { return this->getNextDepthFrame(context, request, response); }));}
     void SetMessageAllocatorFor_getNextDepthFrame(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::getNextDepthFrameRequest, ::grpcIRGBDCamera::getNextDepthFrameResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::getNextDepthFrameRequest, ::grpcIRGBDCamera::getNextDepthFrameResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getNextDepthFrameRequest, ::grpcIRGBDCamera::getNextDepthFrameResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getNextDepthFrame() override {
+    ~ExperimentalWithCallbackMethod_getNextDepthFrame() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1535,26 +1982,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNextDepthFrame(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getNextDepthFrameRequest* /*request*/, ::grpcIRGBDCamera::getNextDepthFrameResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getNextDepthFrameRequest* /*request*/, ::grpcIRGBDCamera::getNextDepthFrameResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNextDepthFrame(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getNextDepthFrameRequest* /*request*/, ::grpcIRGBDCamera::getNextDepthFrameResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getPointCloud : public BaseClass {
+  class ExperimentalWithCallbackMethod_getPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getPointCloud() {
-      ::grpc::Service::MarkMethodCallback(12,
+    ExperimentalWithCallbackMethod_getPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getPointCloudRequest, ::grpcIRGBDCamera::getPointCloudResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::getPointCloudRequest* request, ::grpcIRGBDCamera::getPointCloudResponse* response) { return this->getPointCloud(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::getPointCloudRequest* request, ::grpcIRGBDCamera::getPointCloudResponse* response) { return this->getPointCloud(context, request, response); }));}
     void SetMessageAllocatorFor_getPointCloud(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::getPointCloudRequest, ::grpcIRGBDCamera::getPointCloudResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::getPointCloudRequest, ::grpcIRGBDCamera::getPointCloudResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getPointCloudRequest, ::grpcIRGBDCamera::getPointCloudResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getPointCloud() override {
+    ~ExperimentalWithCallbackMethod_getPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1562,26 +2029,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getPointCloudRequest* /*request*/, ::grpcIRGBDCamera::getPointCloudResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getPointCloudRequest* /*request*/, ::grpcIRGBDCamera::getPointCloudResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getPointCloudRequest* /*request*/, ::grpcIRGBDCamera::getPointCloudResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_setDepthResolution : public BaseClass {
+  class ExperimentalWithCallbackMethod_setDepthResolution : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setDepthResolution() {
-      ::grpc::Service::MarkMethodCallback(13,
+    ExperimentalWithCallbackMethod_setDepthResolution() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setDepthResolutionRequest, ::grpcIRGBDCamera::setDepthResolutionResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::setDepthResolutionRequest* request, ::grpcIRGBDCamera::setDepthResolutionResponse* response) { return this->setDepthResolution(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::setDepthResolutionRequest* request, ::grpcIRGBDCamera::setDepthResolutionResponse* response) { return this->setDepthResolution(context, request, response); }));}
     void SetMessageAllocatorFor_setDepthResolution(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::setDepthResolutionRequest, ::grpcIRGBDCamera::setDepthResolutionResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::setDepthResolutionRequest, ::grpcIRGBDCamera::setDepthResolutionResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setDepthResolutionRequest, ::grpcIRGBDCamera::setDepthResolutionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setDepthResolution() override {
+    ~ExperimentalWithCallbackMethod_setDepthResolution() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1589,26 +2076,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setDepthResolution(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setDepthResolutionRequest* /*request*/, ::grpcIRGBDCamera::setDepthResolutionResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setDepthResolutionRequest* /*request*/, ::grpcIRGBDCamera::setDepthResolutionResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setDepthResolution(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setDepthResolutionRequest* /*request*/, ::grpcIRGBDCamera::setDepthResolutionResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_setIntrinsicDepthParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_setIntrinsicDepthParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setIntrinsicDepthParameters() {
-      ::grpc::Service::MarkMethodCallback(14,
+    ExperimentalWithCallbackMethod_setIntrinsicDepthParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* request, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* response) { return this->setIntrinsicDepthParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* request, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* response) { return this->setIntrinsicDepthParameters(context, request, response); }));}
     void SetMessageAllocatorFor_setIntrinsicDepthParameters(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setIntrinsicDepthParameters() override {
+    ~ExperimentalWithCallbackMethod_setIntrinsicDepthParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1616,26 +2123,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setIntrinsicDepthParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* /*request*/, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* /*request*/, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setIntrinsicDepthParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setIntrinsicDepthParametersRequest* /*request*/, ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_setDistortionDepthParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_setDistortionDepthParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setDistortionDepthParameters() {
-      ::grpc::Service::MarkMethodCallback(15,
+    ExperimentalWithCallbackMethod_setDistortionDepthParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setDistortionDepthParametersRequest, ::grpcIRGBDCamera::setDistortionDepthParametersResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* request, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* response) { return this->setDistortionDepthParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* request, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* response) { return this->setDistortionDepthParameters(context, request, response); }));}
     void SetMessageAllocatorFor_setDistortionDepthParameters(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::setDistortionDepthParametersRequest, ::grpcIRGBDCamera::setDistortionDepthParametersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::setDistortionDepthParametersRequest, ::grpcIRGBDCamera::setDistortionDepthParametersResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::setDistortionDepthParametersRequest, ::grpcIRGBDCamera::setDistortionDepthParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setDistortionDepthParameters() override {
+    ~ExperimentalWithCallbackMethod_setDistortionDepthParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1643,26 +2170,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setDistortionDepthParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* /*request*/, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* /*request*/, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setDistortionDepthParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::setDistortionDepthParametersRequest* /*request*/, ::grpcIRGBDCamera::setDistortionDepthParametersResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getDepthResolution : public BaseClass {
+  class ExperimentalWithCallbackMethod_getDepthResolution : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getDepthResolution() {
-      ::grpc::Service::MarkMethodCallback(16,
+    ExperimentalWithCallbackMethod_getDepthResolution() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDepthResolutionResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthResolutionResponse* response) { return this->getDepthResolution(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthResolutionResponse* response) { return this->getDepthResolution(context, request, response); }));}
     void SetMessageAllocatorFor_getDepthResolution(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDepthResolutionResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDepthResolutionResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDepthResolutionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getDepthResolution() override {
+    ~ExperimentalWithCallbackMethod_getDepthResolution() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1670,26 +2217,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDepthResolution(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDepthResolutionResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDepthResolutionResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDepthResolution(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDepthResolutionResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getDepthMinDistance : public BaseClass {
+  class ExperimentalWithCallbackMethod_getDepthMinDistance : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getDepthMinDistance() {
-      ::grpc::Service::MarkMethodCallback(17,
+    ExperimentalWithCallbackMethod_getDepthMinDistance() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDepthMinDistanceResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthMinDistanceResponse* response) { return this->getDepthMinDistance(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDepthMinDistanceResponse* response) { return this->getDepthMinDistance(context, request, response); }));}
     void SetMessageAllocatorFor_getDepthMinDistance(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDepthMinDistanceResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDepthMinDistanceResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDepthMinDistanceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getDepthMinDistance() override {
+    ~ExperimentalWithCallbackMethod_getDepthMinDistance() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1697,26 +2264,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDepthMinDistance(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDepthMinDistanceResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDepthMinDistanceResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDepthMinDistance(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDepthMinDistanceResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getIntrinsicsDepthParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_getIntrinsicsDepthParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getIntrinsicsDepthParameters() {
-      ::grpc::Service::MarkMethodCallback(18,
+    ExperimentalWithCallbackMethod_getIntrinsicsDepthParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* response) { return this->getIntrinsicsDepthParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* response) { return this->getIntrinsicsDepthParameters(context, request, response); }));}
     void SetMessageAllocatorFor_getIntrinsicsDepthParameters(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getIntrinsicsDepthParameters() override {
+    ~ExperimentalWithCallbackMethod_getIntrinsicsDepthParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1724,26 +2311,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getIntrinsicsDepthParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getIntrinsicsDepthParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getDistortionDepthParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_getDistortionDepthParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getDistortionDepthParameters() {
-      ::grpc::Service::MarkMethodCallback(19,
+    ExperimentalWithCallbackMethod_getDistortionDepthParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDistortionDepthParametersResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* response) { return this->getDistortionDepthParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* response) { return this->getDistortionDepthParameters(context, request, response); }));}
     void SetMessageAllocatorFor_getDistortionDepthParameters(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDistortionDepthParametersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDistortionDepthParametersResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(19);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRGBDCamera::getDistortionDepthParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getDistortionDepthParameters() override {
+    ~ExperimentalWithCallbackMethod_getDistortionDepthParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1751,26 +2358,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDistortionDepthParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDistortionDepthParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRGBDCamera::getDistortionDepthParametersResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getNextRGBDFrame : public BaseClass {
+  class ExperimentalWithCallbackMethod_getNextRGBDFrame : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getNextRGBDFrame() {
-      ::grpc::Service::MarkMethodCallback(20,
+    ExperimentalWithCallbackMethod_getNextRGBDFrame() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getNextRGBDFrameRequest, ::grpcIRGBDCamera::getNextRGBDFrameResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* request, ::grpcIRGBDCamera::getNextRGBDFrameResponse* response) { return this->getNextRGBDFrame(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* request, ::grpcIRGBDCamera::getNextRGBDFrameResponse* response) { return this->getNextRGBDFrame(context, request, response); }));}
     void SetMessageAllocatorFor_getNextRGBDFrame(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::getNextRGBDFrameRequest, ::grpcIRGBDCamera::getNextRGBDFrameResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::getNextRGBDFrameRequest, ::grpcIRGBDCamera::getNextRGBDFrameResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(20);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getNextRGBDFrameRequest, ::grpcIRGBDCamera::getNextRGBDFrameResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getNextRGBDFrame() override {
+    ~ExperimentalWithCallbackMethod_getNextRGBDFrame() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1778,26 +2405,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNextRGBDFrame(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* /*request*/, ::grpcIRGBDCamera::getNextRGBDFrameResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* /*request*/, ::grpcIRGBDCamera::getNextRGBDFrameResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNextRGBDFrame(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getNextRGBDFrameRequest* /*request*/, ::grpcIRGBDCamera::getNextRGBDFrameResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_alignDepthToColor : public BaseClass {
+  class ExperimentalWithCallbackMethod_alignDepthToColor : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_alignDepthToColor() {
-      ::grpc::Service::MarkMethodCallback(21,
+    ExperimentalWithCallbackMethod_alignDepthToColor() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::alignDepthToColorRequest, ::grpcIRGBDCamera::alignDepthToColorResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::alignDepthToColorRequest* request, ::grpcIRGBDCamera::alignDepthToColorResponse* response) { return this->alignDepthToColor(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::alignDepthToColorRequest* request, ::grpcIRGBDCamera::alignDepthToColorResponse* response) { return this->alignDepthToColor(context, request, response); }));}
     void SetMessageAllocatorFor_alignDepthToColor(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::alignDepthToColorRequest, ::grpcIRGBDCamera::alignDepthToColorResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::alignDepthToColorRequest, ::grpcIRGBDCamera::alignDepthToColorResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(21);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::alignDepthToColorRequest, ::grpcIRGBDCamera::alignDepthToColorResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_alignDepthToColor() override {
+    ~ExperimentalWithCallbackMethod_alignDepthToColor() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1805,26 +2452,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* alignDepthToColor(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::alignDepthToColorRequest* /*request*/, ::grpcIRGBDCamera::alignDepthToColorResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::alignDepthToColorRequest* /*request*/, ::grpcIRGBDCamera::alignDepthToColorResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* alignDepthToColor(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::alignDepthToColorRequest* /*request*/, ::grpcIRGBDCamera::alignDepthToColorResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_alignColorToDepth : public BaseClass {
+  class ExperimentalWithCallbackMethod_alignColorToDepth : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_alignColorToDepth() {
-      ::grpc::Service::MarkMethodCallback(22,
+    ExperimentalWithCallbackMethod_alignColorToDepth() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::alignColorToDepthRequest, ::grpcIRGBDCamera::alignColorToDepthResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::alignColorToDepthRequest* request, ::grpcIRGBDCamera::alignColorToDepthResponse* response) { return this->alignColorToDepth(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::alignColorToDepthRequest* request, ::grpcIRGBDCamera::alignColorToDepthResponse* response) { return this->alignColorToDepth(context, request, response); }));}
     void SetMessageAllocatorFor_alignColorToDepth(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::alignColorToDepthRequest, ::grpcIRGBDCamera::alignColorToDepthResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::alignColorToDepthRequest, ::grpcIRGBDCamera::alignColorToDepthResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(22);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::alignColorToDepthRequest, ::grpcIRGBDCamera::alignColorToDepthResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_alignColorToDepth() override {
+    ~ExperimentalWithCallbackMethod_alignColorToDepth() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1832,26 +2499,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* alignColorToDepth(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::alignColorToDepthRequest* /*request*/, ::grpcIRGBDCamera::alignColorToDepthResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::alignColorToDepthRequest* /*request*/, ::grpcIRGBDCamera::alignColorToDepthResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* alignColorToDepth(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::alignColorToDepthRequest* /*request*/, ::grpcIRGBDCamera::alignColorToDepthResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getPixelToWorld : public BaseClass {
+  class ExperimentalWithCallbackMethod_getPixelToWorld : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getPixelToWorld() {
-      ::grpc::Service::MarkMethodCallback(23,
+    ExperimentalWithCallbackMethod_getPixelToWorld() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getPixelToWorldRequest, ::grpcIRGBDCamera::getPixelToWorldResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::getPixelToWorldRequest* request, ::grpcIRGBDCamera::getPixelToWorldResponse* response) { return this->getPixelToWorld(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::getPixelToWorldRequest* request, ::grpcIRGBDCamera::getPixelToWorldResponse* response) { return this->getPixelToWorld(context, request, response); }));}
     void SetMessageAllocatorFor_getPixelToWorld(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::getPixelToWorldRequest, ::grpcIRGBDCamera::getPixelToWorldResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::getPixelToWorldRequest, ::grpcIRGBDCamera::getPixelToWorldResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(23);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getPixelToWorldRequest, ::grpcIRGBDCamera::getPixelToWorldResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getPixelToWorld() override {
+    ~ExperimentalWithCallbackMethod_getPixelToWorld() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1859,26 +2546,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPixelToWorld(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getPixelToWorldRequest* /*request*/, ::grpcIRGBDCamera::getPixelToWorldResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getPixelToWorldRequest* /*request*/, ::grpcIRGBDCamera::getPixelToWorldResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPixelToWorld(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getPixelToWorldRequest* /*request*/, ::grpcIRGBDCamera::getPixelToWorldResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getWorldToPixel : public BaseClass {
+  class ExperimentalWithCallbackMethod_getWorldToPixel : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getWorldToPixel() {
-      ::grpc::Service::MarkMethodCallback(24,
+    ExperimentalWithCallbackMethod_getWorldToPixel() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getWorldToPixelRequest, ::grpcIRGBDCamera::getWorldToPixelResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::getWorldToPixelRequest* request, ::grpcIRGBDCamera::getWorldToPixelResponse* response) { return this->getWorldToPixel(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::getWorldToPixelRequest* request, ::grpcIRGBDCamera::getWorldToPixelResponse* response) { return this->getWorldToPixel(context, request, response); }));}
     void SetMessageAllocatorFor_getWorldToPixel(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::getWorldToPixelRequest, ::grpcIRGBDCamera::getWorldToPixelResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::getWorldToPixelRequest, ::grpcIRGBDCamera::getWorldToPixelResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(24);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getWorldToPixelRequest, ::grpcIRGBDCamera::getWorldToPixelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getWorldToPixel() override {
+    ~ExperimentalWithCallbackMethod_getWorldToPixel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1886,26 +2593,46 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getWorldToPixel(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getWorldToPixelRequest* /*request*/, ::grpcIRGBDCamera::getWorldToPixelResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getWorldToPixelRequest* /*request*/, ::grpcIRGBDCamera::getWorldToPixelResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getWorldToPixel(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getWorldToPixelRequest* /*request*/, ::grpcIRGBDCamera::getWorldToPixelResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getWorldToPixels : public BaseClass {
+  class ExperimentalWithCallbackMethod_getWorldToPixels : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getWorldToPixels() {
-      ::grpc::Service::MarkMethodCallback(25,
+    ExperimentalWithCallbackMethod_getWorldToPixels() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getWorldToPixelsRequest, ::grpcIRGBDCamera::getWorldToPixelsResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRGBDCamera::getWorldToPixelsRequest* request, ::grpcIRGBDCamera::getWorldToPixelsResponse* response) { return this->getWorldToPixels(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRGBDCamera::getWorldToPixelsRequest* request, ::grpcIRGBDCamera::getWorldToPixelsResponse* response) { return this->getWorldToPixels(context, request, response); }));}
     void SetMessageAllocatorFor_getWorldToPixels(
-        ::grpc::MessageAllocator< ::grpcIRGBDCamera::getWorldToPixelsRequest, ::grpcIRGBDCamera::getWorldToPixelsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRGBDCamera::getWorldToPixelsRequest, ::grpcIRGBDCamera::getWorldToPixelsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(25);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRGBDCamera::getWorldToPixelsRequest, ::grpcIRGBDCamera::getWorldToPixelsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getWorldToPixels() override {
+    ~ExperimentalWithCallbackMethod_getWorldToPixels() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1913,11 +2640,20 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getWorldToPixels(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getWorldToPixelsRequest* /*request*/, ::grpcIRGBDCamera::getWorldToPixelsResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getWorldToPixelsRequest* /*request*/, ::grpcIRGBDCamera::getWorldToPixelsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getWorldToPixels(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRGBDCamera::getWorldToPixelsRequest* /*request*/, ::grpcIRGBDCamera::getWorldToPixelsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_getNextImage<WithCallbackMethod_setResolution<WithCallbackMethod_setIntrinsicParameters<WithCallbackMethod_setDistortionParameters<WithCallbackMethod_setParameters<WithCallbackMethod_getResolution<WithCallbackMethod_getIntrinsicsParameters<WithCallbackMethod_getParameters<WithCallbackMethod_getDistortionParameters<WithCallbackMethod_getNextDepthFrame<WithCallbackMethod_getPointCloud<WithCallbackMethod_setDepthResolution<WithCallbackMethod_setIntrinsicDepthParameters<WithCallbackMethod_setDistortionDepthParameters<WithCallbackMethod_getDepthResolution<WithCallbackMethod_getDepthMinDistance<WithCallbackMethod_getIntrinsicsDepthParameters<WithCallbackMethod_getDistortionDepthParameters<WithCallbackMethod_getNextRGBDFrame<WithCallbackMethod_alignDepthToColor<WithCallbackMethod_alignColorToDepth<WithCallbackMethod_getPixelToWorld<WithCallbackMethod_getWorldToPixel<WithCallbackMethod_getWorldToPixels<Service > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_getNextImage<ExperimentalWithCallbackMethod_setResolution<ExperimentalWithCallbackMethod_setIntrinsicParameters<ExperimentalWithCallbackMethod_setDistortionParameters<ExperimentalWithCallbackMethod_setParameters<ExperimentalWithCallbackMethod_getResolution<ExperimentalWithCallbackMethod_getIntrinsicsParameters<ExperimentalWithCallbackMethod_getParameters<ExperimentalWithCallbackMethod_getDistortionParameters<ExperimentalWithCallbackMethod_getNextDepthFrame<ExperimentalWithCallbackMethod_getPointCloud<ExperimentalWithCallbackMethod_setDepthResolution<ExperimentalWithCallbackMethod_setIntrinsicDepthParameters<ExperimentalWithCallbackMethod_setDistortionDepthParameters<ExperimentalWithCallbackMethod_getDepthResolution<ExperimentalWithCallbackMethod_getDepthMinDistance<ExperimentalWithCallbackMethod_getIntrinsicsDepthParameters<ExperimentalWithCallbackMethod_getDistortionDepthParameters<ExperimentalWithCallbackMethod_getNextRGBDFrame<ExperimentalWithCallbackMethod_alignDepthToColor<ExperimentalWithCallbackMethod_alignColorToDepth<ExperimentalWithCallbackMethod_getPixelToWorld<ExperimentalWithCallbackMethod_getWorldToPixel<ExperimentalWithCallbackMethod_getWorldToPixels<Service > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_getNextImage<ExperimentalWithCallbackMethod_setResolution<ExperimentalWithCallbackMethod_setIntrinsicParameters<ExperimentalWithCallbackMethod_setDistortionParameters<ExperimentalWithCallbackMethod_setParameters<ExperimentalWithCallbackMethod_getResolution<ExperimentalWithCallbackMethod_getIntrinsicsParameters<ExperimentalWithCallbackMethod_getParameters<ExperimentalWithCallbackMethod_getDistortionParameters<ExperimentalWithCallbackMethod_getNextDepthFrame<ExperimentalWithCallbackMethod_getPointCloud<ExperimentalWithCallbackMethod_setDepthResolution<ExperimentalWithCallbackMethod_setIntrinsicDepthParameters<ExperimentalWithCallbackMethod_setDistortionDepthParameters<ExperimentalWithCallbackMethod_getDepthResolution<ExperimentalWithCallbackMethod_getDepthMinDistance<ExperimentalWithCallbackMethod_getIntrinsicsDepthParameters<ExperimentalWithCallbackMethod_getDistortionDepthParameters<ExperimentalWithCallbackMethod_getNextRGBDFrame<ExperimentalWithCallbackMethod_alignDepthToColor<ExperimentalWithCallbackMethod_alignColorToDepth<ExperimentalWithCallbackMethod_getPixelToWorld<ExperimentalWithCallbackMethod_getWorldToPixel<ExperimentalWithCallbackMethod_getWorldToPixels<Service > > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_start : public BaseClass {
    private:
@@ -2881,17 +3617,27 @@ class grpcIRGBDCameraService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_start : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_start() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_start() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
     }
-    ~WithRawCallbackMethod_start() override {
+    ~ExperimentalWithRawCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2899,21 +3645,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* start(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_stop : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_stop() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_stop() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
     }
-    ~WithRawCallbackMethod_stop() override {
+    ~ExperimentalWithRawCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2921,21 +3683,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* stop(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getNextImage : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getNextImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getNextImage() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+    ExperimentalWithRawCallbackMethod_getNextImage() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNextImage(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNextImage(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getNextImage() override {
+    ~ExperimentalWithRawCallbackMethod_getNextImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2943,21 +3721,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNextImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNextImage(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setResolution : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setResolution : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setResolution() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+    ExperimentalWithRawCallbackMethod_setResolution() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setResolution(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setResolution(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setResolution() override {
+    ~ExperimentalWithRawCallbackMethod_setResolution() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2965,21 +3759,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setResolution(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setResolution(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setIntrinsicParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setIntrinsicParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setIntrinsicParameters() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+    ExperimentalWithRawCallbackMethod_setIntrinsicParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setIntrinsicParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setIntrinsicParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setIntrinsicParameters() override {
+    ~ExperimentalWithRawCallbackMethod_setIntrinsicParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2987,21 +3797,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setIntrinsicParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setIntrinsicParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setDistortionParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setDistortionParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setDistortionParameters() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+    ExperimentalWithRawCallbackMethod_setDistortionParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setDistortionParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setDistortionParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setDistortionParameters() override {
+    ~ExperimentalWithRawCallbackMethod_setDistortionParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3009,21 +3835,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setDistortionParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setDistortionParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setParameters() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+    ExperimentalWithRawCallbackMethod_setParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setParameters() override {
+    ~ExperimentalWithRawCallbackMethod_setParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3031,21 +3873,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getResolution : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getResolution : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getResolution() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+    ExperimentalWithRawCallbackMethod_getResolution() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getResolution(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getResolution(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getResolution() override {
+    ~ExperimentalWithRawCallbackMethod_getResolution() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3053,21 +3911,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getResolution(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getResolution(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getIntrinsicsParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getIntrinsicsParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getIntrinsicsParameters() {
-      ::grpc::Service::MarkMethodRawCallback(8,
+    ExperimentalWithRawCallbackMethod_getIntrinsicsParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getIntrinsicsParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getIntrinsicsParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getIntrinsicsParameters() override {
+    ~ExperimentalWithRawCallbackMethod_getIntrinsicsParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3075,21 +3949,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getIntrinsicsParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getIntrinsicsParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getParameters() {
-      ::grpc::Service::MarkMethodRawCallback(9,
+    ExperimentalWithRawCallbackMethod_getParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getParameters() override {
+    ~ExperimentalWithRawCallbackMethod_getParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3097,21 +3987,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getDistortionParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getDistortionParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getDistortionParameters() {
-      ::grpc::Service::MarkMethodRawCallback(10,
+    ExperimentalWithRawCallbackMethod_getDistortionParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDistortionParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDistortionParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getDistortionParameters() override {
+    ~ExperimentalWithRawCallbackMethod_getDistortionParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3119,21 +4025,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDistortionParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDistortionParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getNextDepthFrame : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getNextDepthFrame : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getNextDepthFrame() {
-      ::grpc::Service::MarkMethodRawCallback(11,
+    ExperimentalWithRawCallbackMethod_getNextDepthFrame() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNextDepthFrame(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNextDepthFrame(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getNextDepthFrame() override {
+    ~ExperimentalWithRawCallbackMethod_getNextDepthFrame() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3141,21 +4063,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNextDepthFrame(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNextDepthFrame(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getPointCloud : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getPointCloud() {
-      ::grpc::Service::MarkMethodRawCallback(12,
+    ExperimentalWithRawCallbackMethod_getPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPointCloud(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPointCloud(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getPointCloud() override {
+    ~ExperimentalWithRawCallbackMethod_getPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3163,21 +4101,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setDepthResolution : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setDepthResolution : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setDepthResolution() {
-      ::grpc::Service::MarkMethodRawCallback(13,
+    ExperimentalWithRawCallbackMethod_setDepthResolution() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setDepthResolution(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setDepthResolution(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setDepthResolution() override {
+    ~ExperimentalWithRawCallbackMethod_setDepthResolution() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3185,21 +4139,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setDepthResolution(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setDepthResolution(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setIntrinsicDepthParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setIntrinsicDepthParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setIntrinsicDepthParameters() {
-      ::grpc::Service::MarkMethodRawCallback(14,
+    ExperimentalWithRawCallbackMethod_setIntrinsicDepthParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setIntrinsicDepthParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setIntrinsicDepthParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setIntrinsicDepthParameters() override {
+    ~ExperimentalWithRawCallbackMethod_setIntrinsicDepthParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3207,21 +4177,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setIntrinsicDepthParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setIntrinsicDepthParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setDistortionDepthParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setDistortionDepthParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setDistortionDepthParameters() {
-      ::grpc::Service::MarkMethodRawCallback(15,
+    ExperimentalWithRawCallbackMethod_setDistortionDepthParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setDistortionDepthParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setDistortionDepthParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setDistortionDepthParameters() override {
+    ~ExperimentalWithRawCallbackMethod_setDistortionDepthParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3229,21 +4215,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setDistortionDepthParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setDistortionDepthParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getDepthResolution : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getDepthResolution : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getDepthResolution() {
-      ::grpc::Service::MarkMethodRawCallback(16,
+    ExperimentalWithRawCallbackMethod_getDepthResolution() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDepthResolution(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDepthResolution(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getDepthResolution() override {
+    ~ExperimentalWithRawCallbackMethod_getDepthResolution() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3251,21 +4253,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDepthResolution(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDepthResolution(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getDepthMinDistance : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getDepthMinDistance : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getDepthMinDistance() {
-      ::grpc::Service::MarkMethodRawCallback(17,
+    ExperimentalWithRawCallbackMethod_getDepthMinDistance() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDepthMinDistance(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDepthMinDistance(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getDepthMinDistance() override {
+    ~ExperimentalWithRawCallbackMethod_getDepthMinDistance() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3273,21 +4291,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDepthMinDistance(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDepthMinDistance(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getIntrinsicsDepthParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getIntrinsicsDepthParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getIntrinsicsDepthParameters() {
-      ::grpc::Service::MarkMethodRawCallback(18,
+    ExperimentalWithRawCallbackMethod_getIntrinsicsDepthParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getIntrinsicsDepthParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getIntrinsicsDepthParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getIntrinsicsDepthParameters() override {
+    ~ExperimentalWithRawCallbackMethod_getIntrinsicsDepthParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3295,21 +4329,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getIntrinsicsDepthParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getIntrinsicsDepthParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getDistortionDepthParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getDistortionDepthParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getDistortionDepthParameters() {
-      ::grpc::Service::MarkMethodRawCallback(19,
+    ExperimentalWithRawCallbackMethod_getDistortionDepthParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDistortionDepthParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDistortionDepthParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getDistortionDepthParameters() override {
+    ~ExperimentalWithRawCallbackMethod_getDistortionDepthParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3317,21 +4367,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDistortionDepthParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDistortionDepthParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getNextRGBDFrame : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getNextRGBDFrame : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getNextRGBDFrame() {
-      ::grpc::Service::MarkMethodRawCallback(20,
+    ExperimentalWithRawCallbackMethod_getNextRGBDFrame() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNextRGBDFrame(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNextRGBDFrame(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getNextRGBDFrame() override {
+    ~ExperimentalWithRawCallbackMethod_getNextRGBDFrame() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3339,21 +4405,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNextRGBDFrame(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNextRGBDFrame(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_alignDepthToColor : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_alignDepthToColor : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_alignDepthToColor() {
-      ::grpc::Service::MarkMethodRawCallback(21,
+    ExperimentalWithRawCallbackMethod_alignDepthToColor() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->alignDepthToColor(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->alignDepthToColor(context, request, response); }));
     }
-    ~WithRawCallbackMethod_alignDepthToColor() override {
+    ~ExperimentalWithRawCallbackMethod_alignDepthToColor() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3361,21 +4443,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* alignDepthToColor(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* alignDepthToColor(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_alignColorToDepth : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_alignColorToDepth : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_alignColorToDepth() {
-      ::grpc::Service::MarkMethodRawCallback(22,
+    ExperimentalWithRawCallbackMethod_alignColorToDepth() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->alignColorToDepth(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->alignColorToDepth(context, request, response); }));
     }
-    ~WithRawCallbackMethod_alignColorToDepth() override {
+    ~ExperimentalWithRawCallbackMethod_alignColorToDepth() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3383,21 +4481,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* alignColorToDepth(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* alignColorToDepth(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getPixelToWorld : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getPixelToWorld : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getPixelToWorld() {
-      ::grpc::Service::MarkMethodRawCallback(23,
+    ExperimentalWithRawCallbackMethod_getPixelToWorld() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPixelToWorld(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPixelToWorld(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getPixelToWorld() override {
+    ~ExperimentalWithRawCallbackMethod_getPixelToWorld() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3405,21 +4519,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPixelToWorld(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPixelToWorld(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getWorldToPixel : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getWorldToPixel : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getWorldToPixel() {
-      ::grpc::Service::MarkMethodRawCallback(24,
+    ExperimentalWithRawCallbackMethod_getWorldToPixel() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getWorldToPixel(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getWorldToPixel(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getWorldToPixel() override {
+    ~ExperimentalWithRawCallbackMethod_getWorldToPixel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3427,21 +4557,37 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getWorldToPixel(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getWorldToPixel(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getWorldToPixels : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getWorldToPixels : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getWorldToPixels() {
-      ::grpc::Service::MarkMethodRawCallback(25,
+    ExperimentalWithRawCallbackMethod_getWorldToPixels() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getWorldToPixels(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getWorldToPixels(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getWorldToPixels() override {
+    ~ExperimentalWithRawCallbackMethod_getWorldToPixels() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -3449,8 +4595,14 @@ class grpcIRGBDCameraService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getWorldToPixels(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getWorldToPixels(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_start : public BaseClass {

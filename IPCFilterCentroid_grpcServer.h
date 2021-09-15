@@ -2,7 +2,7 @@
 
 #ifndef IPCFILTERCENTROID_GRPCSERVER_H
 #define IPCFILTERCENTROID_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilterCentroid.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilterCentroid.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIPCFilterCentroidService.grpc.pb.h"
@@ -41,7 +41,7 @@ class IPCFilterCentroid_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPCFilterCentroid::IPCFilterCentroid_grpcServer>
 {
-  static constexpr const char * UUID = "1f767da3-2e84-4dc0-ad98-28d810265a82";
+  static constexpr const char * UUID = "bd9ff486-d41c-43c3-ab28-795142291ca3";
   static constexpr const char * NAME = "IPCFilterCentroid_grpcServer";
   static constexpr const char * DESCRIPTION = "IPCFilterCentroid_grpcServer grpc server component";
 };

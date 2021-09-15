@@ -49,7 +49,7 @@ SolAR::FrameworkReturnCode  IOpticalFlowEstimator_grpcProxy::estimate(SRef<SolAR
   reqIn.set_error(xpcf::serialize<std::vector<float>>(error));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->estimate_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "estimate_grpc0rpc failed." << std::endl;
+    std::cout << "estimate_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIOpticalFlowEstimatorService","estimate_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -73,7 +73,7 @@ SolAR::FrameworkReturnCode  IOpticalFlowEstimator_grpcProxy::estimate(SRef<SolAR
   reqIn.set_error(xpcf::serialize<std::vector<float>>(error));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->estimate_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "estimate_grpc1rpc failed." << std::endl;
+    std::cout << "estimate_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIOpticalFlowEstimatorService","estimate_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

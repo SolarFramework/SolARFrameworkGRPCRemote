@@ -33,31 +33,13 @@ XPCFErrorCode ICameraCalibration_grpcServer::onConfigured()
   return &m_grpcService;
 }
 
-::grpc::Status ICameraCalibration_grpcServer::grpcICameraCalibrationServiceImpl::calibrate_grpc0(::grpc::ServerContext* context, const ::grpcICameraCalibration::calibrate_grpc0Request* request, ::grpcICameraCalibration::calibrate_grpc0Response* response)
+::grpc::Status ICameraCalibration_grpcServer::grpcICameraCalibrationServiceImpl::calibrate(::grpc::ServerContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response)
 {
-  std::string inputVideo = request->inputvideo();
-  std::string cailbrationFilePath = request->cailbrationfilepath();
-  bool returnValue = m_xpcfComponent->calibrate(inputVideo, cailbrationFilePath);
-  response->set_xpcfgrpcreturnvalue(returnValue);
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status ICameraCalibration_grpcServer::grpcICameraCalibrationServiceImpl::calibrate_grpc1(::grpc::ServerContext* context, const ::grpcICameraCalibration::calibrate_grpc1Request* request, ::grpcICameraCalibration::calibrate_grpc1Response* response)
-{
-  int camera_id = request->camera_id();
-  std::string cailbrationFilePath = request->cailbrationfilepath();
-  bool returnValue = m_xpcfComponent->calibrate(camera_id, cailbrationFilePath);
-  response->set_xpcfgrpcreturnvalue(returnValue);
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status ICameraCalibration_grpcServer::grpcICameraCalibrationServiceImpl::setParameters(::grpc::ServerContext* context, const ::grpcICameraCalibration::setParametersRequest* request, ::grpcICameraCalibration::setParametersResponse* response)
-{
-  std::string config_file = request->config_file();
-  bool returnValue = m_xpcfComponent->setParameters(config_file);
-  response->set_xpcfgrpcreturnvalue(returnValue);
+  std::vector<SRef<SolAR::datastructure::Image>> images = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Image>>>(request->images());
+  SolAR::datastructure::CameraParameters camParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->calibrate(images, camParams);
+  response->set_camparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   return ::grpc::Status::OK;
 }
 

@@ -28,24 +28,24 @@ static const char* grpcI3DTransformFinderFrom2D3DService_method_names[] = {
 
 std::unique_ptr< grpcI3DTransformFinderFrom2D3DService::Stub> grpcI3DTransformFinderFrom2D3DService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcI3DTransformFinderFrom2D3DService::Stub> stub(new grpcI3DTransformFinderFrom2D3DService::Stub(channel, options));
+  std::unique_ptr< grpcI3DTransformFinderFrom2D3DService::Stub> stub(new grpcI3DTransformFinderFrom2D3DService::Stub(channel));
   return stub;
 }
 
-grpcI3DTransformFinderFrom2D3DService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcI3DTransformFinderFrom2D3DService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_estimate_(grpcI3DTransformFinderFrom2D3DService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcI3DTransformFinderFrom2D3DService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_setCameraParameters_(grpcI3DTransformFinderFrom2D3DService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_estimate_(grpcI3DTransformFinderFrom2D3DService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcI3DTransformFinderFrom2D3DService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcI3DTransformFinderFrom2D3DService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI3DTransformFinderFrom2D3DService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcI3DTransformFinderFrom2D3DService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI3DTransformFinderFrom2D3DService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcI3DTransformFinderFrom2D3DService::Stub::async::setCameraParameters(::g
   return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransformFinderFrom2D3D::estimateRequest, ::grpcI3DTransformFinderFrom2D3D::estimateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_estimate_, context, request, response);
 }
 
-void grpcI3DTransformFinderFrom2D3DService::Stub::async::estimate(::grpc::ClientContext* context, const ::grpcI3DTransformFinderFrom2D3D::estimateRequest* request, ::grpcI3DTransformFinderFrom2D3D::estimateResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcI3DTransformFinderFrom2D3DService::Stub::experimental_async::estimate(::grpc::ClientContext* context, const ::grpcI3DTransformFinderFrom2D3D::estimateRequest* request, ::grpcI3DTransformFinderFrom2D3D::estimateResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI3DTransformFinderFrom2D3D::estimateRequest, ::grpcI3DTransformFinderFrom2D3D::estimateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_, context, request, response, std::move(f));
 }
 
-void grpcI3DTransformFinderFrom2D3DService::Stub::async::estimate(::grpc::ClientContext* context, const ::grpcI3DTransformFinderFrom2D3D::estimateRequest* request, ::grpcI3DTransformFinderFrom2D3D::estimateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI3DTransformFinderFrom2D3DService::Stub::experimental_async::estimate(::grpc::ClientContext* context, const ::grpcI3DTransformFinderFrom2D3D::estimateRequest* request, ::grpcI3DTransformFinderFrom2D3D::estimateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_, context, request, response, reactor);
 }
 

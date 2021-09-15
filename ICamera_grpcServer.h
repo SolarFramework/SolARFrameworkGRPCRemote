@@ -2,7 +2,7 @@
 
 #ifndef ICAMERA_GRPCSERVER_H
 #define ICAMERA_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICamera.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcICameraService.grpc.pb.h"
@@ -51,7 +51,7 @@ class ICamera_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pub
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverICamera::ICamera_grpcServer>
 {
-  static constexpr const char * UUID = "18f75fc4-5750-4e19-9246-e6aeb26af4ce";
+  static constexpr const char * UUID = "40ac045c-b371-442e-9557-67d2f30220b4";
   static constexpr const char * NAME = "ICamera_grpcServer";
   static constexpr const char * DESCRIPTION = "ICamera_grpcServer grpc server component";
 };

@@ -44,7 +44,7 @@ SolAR::FrameworkReturnCode  IImageViewer_grpcProxy::display(SRef<SolAR::datastru
   reqIn.set_img(xpcf::serialize<SRef<SolAR::datastructure::Image>>(img));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->display(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "displayrpc failed." << std::endl;
+    std::cout << "display rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIImageViewerService","display",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -61,7 +61,7 @@ SolAR::FrameworkReturnCode  IImageViewer_grpcProxy::displayKey(SRef<SolAR::datas
   reqIn.set_key(static_cast<int32_t>(key));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->displayKey(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "displayKeyrpc failed." << std::endl;
+    std::cout << "displayKey rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIImageViewerService","displayKey",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

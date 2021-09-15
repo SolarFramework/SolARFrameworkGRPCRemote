@@ -3,7 +3,7 @@
 
 #ifndef IDESCRIPTORMATCHER_GRPCPROXY_H
 #define IDESCRIPTORMATCHER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcher.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcher.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -20,8 +20,8 @@ class IDescriptorMatcher_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::api::features::IDescriptorMatcher::RetCode match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, SRef<SolAR::datastructure::DescriptorBuffer> const descriptors2, std::vector<SolAR::datastructure::DescriptorMatch>& matches)     override;
-    SolAR::api::features::IDescriptorMatcher::RetCode match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, std::vector<SRef<SolAR::datastructure::DescriptorBuffer>> const& descriptors2, std::vector<SolAR::datastructure::DescriptorMatch>& matches)     override;
+    SolAR::FrameworkReturnCode match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, SRef<SolAR::datastructure::DescriptorBuffer> const descriptors2, std::vector<SolAR::datastructure::DescriptorMatch>& matches)     override;
+    SolAR::FrameworkReturnCode match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, std::vector<SRef<SolAR::datastructure::DescriptorBuffer>> const& descriptors2, std::vector<SolAR::datastructure::DescriptorMatch>& matches)     override;
 
 
   private:
@@ -37,7 +37,7 @@ class IDescriptorMatcher_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDescriptorMatcher::IDescriptorMatcher_grpcProxy>
 {
-  static constexpr const char * UUID = "e395a0ed-ba6e-4810-8804-92c60cf9e092";
+  static constexpr const char * UUID = "ed165360-7bcd-4b02-9eaf-75182dad8a92";
   static constexpr const char * NAME = "IDescriptorMatcher_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDescriptorMatcher_grpcProxy grpc client proxy component";
 };

@@ -36,8 +36,8 @@ XPCFErrorCode IBootstrapper_grpcServer::onConfigured()
 ::grpc::Status IBootstrapper_grpcServer::grpcIBootstrapperServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcIBootstrapper::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
 {
   SolAR::datastructure::CamCalibration intrinsicParams = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsicparams());
-  SolAR::datastructure::CamDistortion distorsionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distorsionparams());
-  m_xpcfComponent->setCameraParameters(intrinsicParams, distorsionParams);
+  SolAR::datastructure::CamDistortion distortionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distortionparams());
+  m_xpcfComponent->setCameraParameters(intrinsicParams, distortionParams);
   return ::grpc::Status::OK;
 }
 

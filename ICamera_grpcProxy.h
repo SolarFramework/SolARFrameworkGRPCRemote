@@ -3,7 +3,7 @@
 
 #ifndef ICAMERA_GRPCPROXY_H
 #define ICAMERA_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICamera.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -49,7 +49,7 @@ class ICamera_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual publ
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyICamera::ICamera_grpcProxy>
 {
-  static constexpr const char * UUID = "c8030d1e-23bf-4731-bc8a-f4b5361ca75c";
+  static constexpr const char * UUID = "da9184b9-f093-490a-87e8-132c36f1a3d2";
   static constexpr const char * NAME = "ICamera_grpcProxy";
   static constexpr const char * DESCRIPTION = "ICamera_grpcProxy grpc client proxy component";
 };

@@ -45,7 +45,7 @@ void  I3DOverlay_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibra
   reqIn.set_distorsion_parameters(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsion_parameters));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DOverlayService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -61,7 +61,7 @@ void  I3DOverlay_grpcProxy::draw(SolAR::datastructure::Transform3Df const& pose,
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->draw(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "drawrpc failed." << std::endl;
+    std::cout << "draw rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DOverlayService","draw",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

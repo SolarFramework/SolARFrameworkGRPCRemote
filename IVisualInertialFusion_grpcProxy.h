@@ -3,7 +3,7 @@
 
 #ifndef IVISUALINERTIALFUSION_GRPCPROXY_H
 #define IVISUALINERTIALFUSION_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/fusion/IVisualInertialFusion.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/fusion/IVisualInertialFusion.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -39,7 +39,7 @@ class IVisualInertialFusion_grpcProxy:  public org::bcom::xpcf::ConfigurableBase
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIVisualInertialFusion::IVisualInertialFusion_grpcProxy>
 {
-  static constexpr const char * UUID = "f58180b9-b3a4-42b8-ae7d-9830da9f2f09";
+  static constexpr const char * UUID = "67465314-246d-429b-bffb-a0eedaafb22f";
   static constexpr const char * NAME = "IVisualInertialFusion_grpcProxy";
   static constexpr const char * DESCRIPTION = "IVisualInertialFusion_grpcProxy grpc client proxy component";
 };

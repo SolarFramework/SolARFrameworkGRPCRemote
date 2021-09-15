@@ -47,7 +47,7 @@ void  IMapFilter_grpcProxy::filter(SolAR::datastructure::Transform3Df const& pos
   reqIn.set_output(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(output));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->filter_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "filter_grpc0rpc failed." << std::endl;
+    std::cout << "filter_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapFilterService","filter_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -67,7 +67,7 @@ void  IMapFilter_grpcProxy::filter(SolAR::datastructure::Transform3Df const& pos
   reqIn.set_index(xpcf::serialize<std::vector<int>>(index));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->filter_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "filter_grpc1rpc failed." << std::endl;
+    std::cout << "filter_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapFilterService","filter_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

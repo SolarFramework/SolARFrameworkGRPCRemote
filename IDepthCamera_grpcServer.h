@@ -2,7 +2,7 @@
 
 #ifndef IDEPTHCAMERA_GRPCSERVER_H
 #define IDEPTHCAMERA_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IDepthCamera.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IDepthCamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIDepthCameraService.grpc.pb.h"
@@ -51,7 +51,7 @@ class IDepthCamera_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIDepthCamera::IDepthCamera_grpcServer>
 {
-  static constexpr const char * UUID = "ddce681d-8181-4061-9857-bd38921c9cd8";
+  static constexpr const char * UUID = "db26f627-57f8-485d-8643-62cdfd1d3cb4";
   static constexpr const char * NAME = "IDepthCamera_grpcServer";
   static constexpr const char * DESCRIPTION = "IDepthCamera_grpcServer grpc server component";
 };

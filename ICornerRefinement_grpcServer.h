@@ -2,7 +2,7 @@
 
 #ifndef ICORNERREFINEMENT_GRPCSERVER_H
 #define ICORNERREFINEMENT_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/ICornerRefinement.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/ICornerRefinement.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcICornerRefinementService.grpc.pb.h"
@@ -41,7 +41,7 @@ class ICornerRefinement_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverICornerRefinement::ICornerRefinement_grpcServer>
 {
-  static constexpr const char * UUID = "da7833a7-01b3-4ef0-8ce9-6aec885a29e3";
+  static constexpr const char * UUID = "5f55d39d-830e-496e-b7ec-83262a1abe41";
   static constexpr const char * NAME = "ICornerRefinement_grpcServer";
   static constexpr const char * DESCRIPTION = "ICornerRefinement_grpcServer grpc server component";
 };

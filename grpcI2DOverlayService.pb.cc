@@ -199,8 +199,10 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcI2
   schemas, file_default_instances, TableStruct_grpcI2DOverlayService_2eproto::offsets,
   file_level_metadata_grpcI2DOverlayService_2eproto, file_level_enum_descriptors_grpcI2DOverlayService_2eproto, file_level_service_descriptors_grpcI2DOverlayService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcI2DOverlayService_2eproto_getter() {
-  return &descriptor_table_grpcI2DOverlayService_2eproto;
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_grpcI2DOverlayService_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcI2DOverlayService_2eproto);
+  return descriptor_table_grpcI2DOverlayService_2eproto.file_level_metadata[index];
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -213,13 +215,10 @@ class drawCircleRequest::_Internal {
  public:
 };
 
-drawCircleRequest::drawCircleRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+drawCircleRequest::drawCircleRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcI2DOverlay.drawCircleRequest)
 }
 drawCircleRequest::drawCircleRequest(const drawCircleRequest& from)
@@ -228,30 +227,29 @@ drawCircleRequest::drawCircleRequest(const drawCircleRequest& from)
   point_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_point().empty()) {
     point_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_point(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_displayimage().empty()) {
     displayimage_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_displayimage(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcI2DOverlay.drawCircleRequest)
 }
 
-inline void drawCircleRequest::SharedCtor() {
+void drawCircleRequest::SharedCtor() {
 point_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 drawCircleRequest::~drawCircleRequest() {
   // @@protoc_insertion_point(destructor:grpcI2DOverlay.drawCircleRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void drawCircleRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void drawCircleRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   point_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   displayimage_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -282,6 +280,7 @@ const char* drawCircleRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes point = 1;
       case 1:
@@ -301,8 +300,7 @@ const char* drawCircleRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -329,13 +327,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes point = 1;
-  if (!this->_internal_point().empty()) {
+  if (this->point().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_point(), target);
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_displayimage(), target);
   }
@@ -357,14 +355,14 @@ size_t drawCircleRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes point = 1;
-  if (!this->_internal_point().empty()) {
+  if (this->point().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_point());
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_displayimage());
@@ -379,32 +377,41 @@ size_t drawCircleRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData drawCircleRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    drawCircleRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*drawCircleRequest::GetClassData() const { return &_class_data_; }
-
-void drawCircleRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<drawCircleRequest *>(to)->MergeFrom(
-      static_cast<const drawCircleRequest &>(from));
+void drawCircleRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcI2DOverlay.drawCircleRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const drawCircleRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<drawCircleRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2DOverlay.drawCircleRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2DOverlay.drawCircleRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void drawCircleRequest::MergeFrom(const drawCircleRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DOverlay.drawCircleRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_point().empty()) {
+  if (from.point().size() > 0) {
     _internal_set_point(from._internal_point());
   }
-  if (!from._internal_displayimage().empty()) {
+  if (from.displayimage().size() > 0) {
     _internal_set_displayimage(from._internal_displayimage());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void drawCircleRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcI2DOverlay.drawCircleRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void drawCircleRequest::CopyFrom(const drawCircleRequest& from) {
@@ -420,24 +427,15 @@ bool drawCircleRequest::IsInitialized() const {
 
 void drawCircleRequest::InternalSwap(drawCircleRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &point_, GetArenaForAllocation(),
-      &other->point_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &displayimage_, GetArenaForAllocation(),
-      &other->displayimage_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  point_.Swap(&other->point_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  displayimage_.Swap(&other->displayimage_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata drawCircleRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcI2DOverlayService_2eproto_getter, &descriptor_table_grpcI2DOverlayService_2eproto_once,
-      file_level_metadata_grpcI2DOverlayService_2eproto[0]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -445,13 +443,10 @@ class drawCircles_grpc0Request::_Internal {
  public:
 };
 
-drawCircles_grpc0Request::drawCircles_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+drawCircles_grpc0Request::drawCircles_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcI2DOverlay.drawCircles_grpc0Request)
 }
 drawCircles_grpc0Request::drawCircles_grpc0Request(const drawCircles_grpc0Request& from)
@@ -460,30 +455,29 @@ drawCircles_grpc0Request::drawCircles_grpc0Request(const drawCircles_grpc0Reques
   points_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_points().empty()) {
     points_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_points(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_displayimage().empty()) {
     displayimage_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_displayimage(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcI2DOverlay.drawCircles_grpc0Request)
 }
 
-inline void drawCircles_grpc0Request::SharedCtor() {
+void drawCircles_grpc0Request::SharedCtor() {
 points_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 drawCircles_grpc0Request::~drawCircles_grpc0Request() {
   // @@protoc_insertion_point(destructor:grpcI2DOverlay.drawCircles_grpc0Request)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void drawCircles_grpc0Request::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void drawCircles_grpc0Request::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   points_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   displayimage_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -514,6 +508,7 @@ const char* drawCircles_grpc0Request::_InternalParse(const char* ptr, ::PROTOBUF
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes points = 1;
       case 1:
@@ -533,8 +528,7 @@ const char* drawCircles_grpc0Request::_InternalParse(const char* ptr, ::PROTOBUF
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -561,13 +555,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes points = 1;
-  if (!this->_internal_points().empty()) {
+  if (this->points().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_points(), target);
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_displayimage(), target);
   }
@@ -589,14 +583,14 @@ size_t drawCircles_grpc0Request::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes points = 1;
-  if (!this->_internal_points().empty()) {
+  if (this->points().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points());
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_displayimage());
@@ -611,32 +605,41 @@ size_t drawCircles_grpc0Request::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData drawCircles_grpc0Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    drawCircles_grpc0Request::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*drawCircles_grpc0Request::GetClassData() const { return &_class_data_; }
-
-void drawCircles_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<drawCircles_grpc0Request *>(to)->MergeFrom(
-      static_cast<const drawCircles_grpc0Request &>(from));
+void drawCircles_grpc0Request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcI2DOverlay.drawCircles_grpc0Request)
+  GOOGLE_DCHECK_NE(&from, this);
+  const drawCircles_grpc0Request* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<drawCircles_grpc0Request>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2DOverlay.drawCircles_grpc0Request)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2DOverlay.drawCircles_grpc0Request)
+    MergeFrom(*source);
+  }
 }
-
 
 void drawCircles_grpc0Request::MergeFrom(const drawCircles_grpc0Request& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DOverlay.drawCircles_grpc0Request)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_points().empty()) {
+  if (from.points().size() > 0) {
     _internal_set_points(from._internal_points());
   }
-  if (!from._internal_displayimage().empty()) {
+  if (from.displayimage().size() > 0) {
     _internal_set_displayimage(from._internal_displayimage());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void drawCircles_grpc0Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcI2DOverlay.drawCircles_grpc0Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void drawCircles_grpc0Request::CopyFrom(const drawCircles_grpc0Request& from) {
@@ -652,24 +655,15 @@ bool drawCircles_grpc0Request::IsInitialized() const {
 
 void drawCircles_grpc0Request::InternalSwap(drawCircles_grpc0Request* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &points_, GetArenaForAllocation(),
-      &other->points_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &displayimage_, GetArenaForAllocation(),
-      &other->displayimage_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  points_.Swap(&other->points_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  displayimage_.Swap(&other->displayimage_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata drawCircles_grpc0Request::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcI2DOverlayService_2eproto_getter, &descriptor_table_grpcI2DOverlayService_2eproto_once,
-      file_level_metadata_grpcI2DOverlayService_2eproto[1]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -677,13 +671,10 @@ class drawCircles_grpc1Request::_Internal {
  public:
 };
 
-drawCircles_grpc1Request::drawCircles_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+drawCircles_grpc1Request::drawCircles_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcI2DOverlay.drawCircles_grpc1Request)
 }
 drawCircles_grpc1Request::drawCircles_grpc1Request(const drawCircles_grpc1Request& from)
@@ -692,30 +683,29 @@ drawCircles_grpc1Request::drawCircles_grpc1Request(const drawCircles_grpc1Reques
   keypoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_keypoints().empty()) {
     keypoints_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keypoints(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_displayimage().empty()) {
     displayimage_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_displayimage(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcI2DOverlay.drawCircles_grpc1Request)
 }
 
-inline void drawCircles_grpc1Request::SharedCtor() {
+void drawCircles_grpc1Request::SharedCtor() {
 keypoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 drawCircles_grpc1Request::~drawCircles_grpc1Request() {
   // @@protoc_insertion_point(destructor:grpcI2DOverlay.drawCircles_grpc1Request)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void drawCircles_grpc1Request::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void drawCircles_grpc1Request::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   keypoints_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   displayimage_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -746,6 +736,7 @@ const char* drawCircles_grpc1Request::_InternalParse(const char* ptr, ::PROTOBUF
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes keypoints = 1;
       case 1:
@@ -765,8 +756,7 @@ const char* drawCircles_grpc1Request::_InternalParse(const char* ptr, ::PROTOBUF
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -793,13 +783,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes keypoints = 1;
-  if (!this->_internal_keypoints().empty()) {
+  if (this->keypoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_keypoints(), target);
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_displayimage(), target);
   }
@@ -821,14 +811,14 @@ size_t drawCircles_grpc1Request::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes keypoints = 1;
-  if (!this->_internal_keypoints().empty()) {
+  if (this->keypoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keypoints());
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_displayimage());
@@ -843,32 +833,41 @@ size_t drawCircles_grpc1Request::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData drawCircles_grpc1Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    drawCircles_grpc1Request::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*drawCircles_grpc1Request::GetClassData() const { return &_class_data_; }
-
-void drawCircles_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<drawCircles_grpc1Request *>(to)->MergeFrom(
-      static_cast<const drawCircles_grpc1Request &>(from));
+void drawCircles_grpc1Request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcI2DOverlay.drawCircles_grpc1Request)
+  GOOGLE_DCHECK_NE(&from, this);
+  const drawCircles_grpc1Request* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<drawCircles_grpc1Request>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2DOverlay.drawCircles_grpc1Request)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2DOverlay.drawCircles_grpc1Request)
+    MergeFrom(*source);
+  }
 }
-
 
 void drawCircles_grpc1Request::MergeFrom(const drawCircles_grpc1Request& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DOverlay.drawCircles_grpc1Request)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_keypoints().empty()) {
+  if (from.keypoints().size() > 0) {
     _internal_set_keypoints(from._internal_keypoints());
   }
-  if (!from._internal_displayimage().empty()) {
+  if (from.displayimage().size() > 0) {
     _internal_set_displayimage(from._internal_displayimage());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void drawCircles_grpc1Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcI2DOverlay.drawCircles_grpc1Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void drawCircles_grpc1Request::CopyFrom(const drawCircles_grpc1Request& from) {
@@ -884,24 +883,15 @@ bool drawCircles_grpc1Request::IsInitialized() const {
 
 void drawCircles_grpc1Request::InternalSwap(drawCircles_grpc1Request* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &keypoints_, GetArenaForAllocation(),
-      &other->keypoints_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &displayimage_, GetArenaForAllocation(),
-      &other->displayimage_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  keypoints_.Swap(&other->keypoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  displayimage_.Swap(&other->displayimage_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata drawCircles_grpc1Request::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcI2DOverlayService_2eproto_getter, &descriptor_table_grpcI2DOverlayService_2eproto_once,
-      file_level_metadata_grpcI2DOverlayService_2eproto[2]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -909,13 +899,10 @@ class drawContourRequest::_Internal {
  public:
 };
 
-drawContourRequest::drawContourRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+drawContourRequest::drawContourRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcI2DOverlay.drawContourRequest)
 }
 drawContourRequest::drawContourRequest(const drawContourRequest& from)
@@ -924,30 +911,29 @@ drawContourRequest::drawContourRequest(const drawContourRequest& from)
   contours_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_contours().empty()) {
     contours_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_contours(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_displayimage().empty()) {
     displayimage_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_displayimage(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcI2DOverlay.drawContourRequest)
 }
 
-inline void drawContourRequest::SharedCtor() {
+void drawContourRequest::SharedCtor() {
 contours_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 drawContourRequest::~drawContourRequest() {
   // @@protoc_insertion_point(destructor:grpcI2DOverlay.drawContourRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void drawContourRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void drawContourRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   contours_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   displayimage_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -978,6 +964,7 @@ const char* drawContourRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes contours = 1;
       case 1:
@@ -997,8 +984,7 @@ const char* drawContourRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1025,13 +1011,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes contours = 1;
-  if (!this->_internal_contours().empty()) {
+  if (this->contours().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_contours(), target);
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_displayimage(), target);
   }
@@ -1053,14 +1039,14 @@ size_t drawContourRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes contours = 1;
-  if (!this->_internal_contours().empty()) {
+  if (this->contours().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_contours());
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_displayimage());
@@ -1075,32 +1061,41 @@ size_t drawContourRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData drawContourRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    drawContourRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*drawContourRequest::GetClassData() const { return &_class_data_; }
-
-void drawContourRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<drawContourRequest *>(to)->MergeFrom(
-      static_cast<const drawContourRequest &>(from));
+void drawContourRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcI2DOverlay.drawContourRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const drawContourRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<drawContourRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2DOverlay.drawContourRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2DOverlay.drawContourRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void drawContourRequest::MergeFrom(const drawContourRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DOverlay.drawContourRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_contours().empty()) {
+  if (from.contours().size() > 0) {
     _internal_set_contours(from._internal_contours());
   }
-  if (!from._internal_displayimage().empty()) {
+  if (from.displayimage().size() > 0) {
     _internal_set_displayimage(from._internal_displayimage());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void drawContourRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcI2DOverlay.drawContourRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void drawContourRequest::CopyFrom(const drawContourRequest& from) {
@@ -1116,24 +1111,15 @@ bool drawContourRequest::IsInitialized() const {
 
 void drawContourRequest::InternalSwap(drawContourRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &contours_, GetArenaForAllocation(),
-      &other->contours_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &displayimage_, GetArenaForAllocation(),
-      &other->displayimage_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  contours_.Swap(&other->contours_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  displayimage_.Swap(&other->displayimage_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata drawContourRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcI2DOverlayService_2eproto_getter, &descriptor_table_grpcI2DOverlayService_2eproto_once,
-      file_level_metadata_grpcI2DOverlayService_2eproto[3]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1141,13 +1127,10 @@ class drawContoursRequest::_Internal {
  public:
 };
 
-drawContoursRequest::drawContoursRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+drawContoursRequest::drawContoursRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcI2DOverlay.drawContoursRequest)
 }
 drawContoursRequest::drawContoursRequest(const drawContoursRequest& from)
@@ -1156,30 +1139,29 @@ drawContoursRequest::drawContoursRequest(const drawContoursRequest& from)
   contours_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_contours().empty()) {
     contours_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_contours(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_displayimage().empty()) {
     displayimage_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_displayimage(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcI2DOverlay.drawContoursRequest)
 }
 
-inline void drawContoursRequest::SharedCtor() {
+void drawContoursRequest::SharedCtor() {
 contours_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 drawContoursRequest::~drawContoursRequest() {
   // @@protoc_insertion_point(destructor:grpcI2DOverlay.drawContoursRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void drawContoursRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void drawContoursRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   contours_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   displayimage_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1210,6 +1192,7 @@ const char* drawContoursRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes contours = 1;
       case 1:
@@ -1229,8 +1212,7 @@ const char* drawContoursRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1257,13 +1239,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes contours = 1;
-  if (!this->_internal_contours().empty()) {
+  if (this->contours().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_contours(), target);
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_displayimage(), target);
   }
@@ -1285,14 +1267,14 @@ size_t drawContoursRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes contours = 1;
-  if (!this->_internal_contours().empty()) {
+  if (this->contours().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_contours());
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_displayimage());
@@ -1307,32 +1289,41 @@ size_t drawContoursRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData drawContoursRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    drawContoursRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*drawContoursRequest::GetClassData() const { return &_class_data_; }
-
-void drawContoursRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<drawContoursRequest *>(to)->MergeFrom(
-      static_cast<const drawContoursRequest &>(from));
+void drawContoursRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcI2DOverlay.drawContoursRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const drawContoursRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<drawContoursRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2DOverlay.drawContoursRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2DOverlay.drawContoursRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void drawContoursRequest::MergeFrom(const drawContoursRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DOverlay.drawContoursRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_contours().empty()) {
+  if (from.contours().size() > 0) {
     _internal_set_contours(from._internal_contours());
   }
-  if (!from._internal_displayimage().empty()) {
+  if (from.displayimage().size() > 0) {
     _internal_set_displayimage(from._internal_displayimage());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void drawContoursRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcI2DOverlay.drawContoursRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void drawContoursRequest::CopyFrom(const drawContoursRequest& from) {
@@ -1348,24 +1339,15 @@ bool drawContoursRequest::IsInitialized() const {
 
 void drawContoursRequest::InternalSwap(drawContoursRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &contours_, GetArenaForAllocation(),
-      &other->contours_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &displayimage_, GetArenaForAllocation(),
-      &other->displayimage_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  contours_.Swap(&other->contours_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  displayimage_.Swap(&other->displayimage_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata drawContoursRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcI2DOverlayService_2eproto_getter, &descriptor_table_grpcI2DOverlayService_2eproto_once,
-      file_level_metadata_grpcI2DOverlayService_2eproto[4]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1373,13 +1355,10 @@ class drawSBPatternRequest::_Internal {
  public:
 };
 
-drawSBPatternRequest::drawSBPatternRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+drawSBPatternRequest::drawSBPatternRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcI2DOverlay.drawSBPatternRequest)
 }
 drawSBPatternRequest::drawSBPatternRequest(const drawSBPatternRequest& from)
@@ -1388,30 +1367,29 @@ drawSBPatternRequest::drawSBPatternRequest(const drawSBPatternRequest& from)
   pattern_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_pattern().empty()) {
     pattern_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pattern(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_displayimage().empty()) {
     displayimage_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_displayimage(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcI2DOverlay.drawSBPatternRequest)
 }
 
-inline void drawSBPatternRequest::SharedCtor() {
+void drawSBPatternRequest::SharedCtor() {
 pattern_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 displayimage_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 drawSBPatternRequest::~drawSBPatternRequest() {
   // @@protoc_insertion_point(destructor:grpcI2DOverlay.drawSBPatternRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void drawSBPatternRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void drawSBPatternRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   pattern_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   displayimage_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1442,6 +1420,7 @@ const char* drawSBPatternRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes pattern = 1;
       case 1:
@@ -1461,8 +1440,7 @@ const char* drawSBPatternRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1489,13 +1467,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes pattern = 1;
-  if (!this->_internal_pattern().empty()) {
+  if (this->pattern().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_pattern(), target);
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_displayimage(), target);
   }
@@ -1517,14 +1495,14 @@ size_t drawSBPatternRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes pattern = 1;
-  if (!this->_internal_pattern().empty()) {
+  if (this->pattern().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_pattern());
   }
 
   // bytes displayImage = 2;
-  if (!this->_internal_displayimage().empty()) {
+  if (this->displayimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_displayimage());
@@ -1539,32 +1517,41 @@ size_t drawSBPatternRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData drawSBPatternRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    drawSBPatternRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*drawSBPatternRequest::GetClassData() const { return &_class_data_; }
-
-void drawSBPatternRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<drawSBPatternRequest *>(to)->MergeFrom(
-      static_cast<const drawSBPatternRequest &>(from));
+void drawSBPatternRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcI2DOverlay.drawSBPatternRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const drawSBPatternRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<drawSBPatternRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2DOverlay.drawSBPatternRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2DOverlay.drawSBPatternRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void drawSBPatternRequest::MergeFrom(const drawSBPatternRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DOverlay.drawSBPatternRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_pattern().empty()) {
+  if (from.pattern().size() > 0) {
     _internal_set_pattern(from._internal_pattern());
   }
-  if (!from._internal_displayimage().empty()) {
+  if (from.displayimage().size() > 0) {
     _internal_set_displayimage(from._internal_displayimage());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void drawSBPatternRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcI2DOverlay.drawSBPatternRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void drawSBPatternRequest::CopyFrom(const drawSBPatternRequest& from) {
@@ -1580,24 +1567,15 @@ bool drawSBPatternRequest::IsInitialized() const {
 
 void drawSBPatternRequest::InternalSwap(drawSBPatternRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &pattern_, GetArenaForAllocation(),
-      &other->pattern_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &displayimage_, GetArenaForAllocation(),
-      &other->displayimage_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  pattern_.Swap(&other->pattern_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  displayimage_.Swap(&other->displayimage_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata drawSBPatternRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcI2DOverlayService_2eproto_getter, &descriptor_table_grpcI2DOverlayService_2eproto_once,
-      file_level_metadata_grpcI2DOverlayService_2eproto[5]);
+  return GetMetadataStatic();
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcI2DOverlay

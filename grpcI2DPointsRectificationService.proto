@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI2DPointsRectification;
+
+message rectify_grpc0Request
+{
+bytes points2D = 1;
+bytes camParams = 2;
+bytes rectParams = 3;
+bytes rectifiedPoints2D = 4;
+}
+
+message rectify_grpc0Response
+{
+bytes rectifiedPoints2D = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message rectify_grpc1Request
+{
+bytes keypoints = 1;
+bytes camParams = 2;
+bytes rectParams = 3;
+bytes rectifiedKeypoints = 4;
+}
+
+message rectify_grpc1Response
+{
+bytes rectifiedKeypoints = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcI2DPointsRectificationService {
+rpc rectify_grpc0(rectify_grpc0Request) returns(rectify_grpc0Response) {}
+rpc rectify_grpc1(rectify_grpc1Request) returns(rectify_grpc1Response) {}
+}
+

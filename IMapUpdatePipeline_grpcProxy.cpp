@@ -30,22 +30,12 @@ void IMapUpdatePipeline_grpcProxy::unloadComponent ()
 
 XPCFErrorCode IMapUpdatePipeline_grpcProxy::onConfigured()
 {
-    std::cout << "[IMapUpdatePipeline_grpcProxy::onConfigured()]Check if remote map update pipeline URL is defined in XPCF_GRPC_MAP_UPDATE_URL" << std::endl;
-
-    char * envValue = getenv("XPCF_GRPC_MAP_UPDATE_URL");
-
-    if (envValue != nullptr) {
-        std::cout << "[IMapUpdatePipeline_grpcProxy::onConfigured()]XPCF_GRPC_MAP_UPDATE_URL environment variable found: " << envValue  << std::endl;
-        m_channelUrl = envValue;
-    }
-
-//  m_channel = ::grpc::CreateChannel(m_channelUrl, xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)));
   ::grpc::ChannelArguments ch_args;
   ch_args.SetMaxReceiveMessageSize(-1);
+  ch_args.SetMaxSendMessageSize(-1);
   m_channel = ::grpc::CreateCustomChannel(m_channelUrl,
-                                          xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)),
-                                          ch_args);
-
+  xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)),
+  ch_args);
   m_grpcStub = ::grpcIMapUpdatePipeline::grpcIMapUpdatePipelineService::NewStub(m_channel);
   return xpcf::XPCFErrorCode::_SUCCESS;
 }
@@ -58,7 +48,7 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::init()
   ::grpcIMapUpdatePipeline::initResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "initrpc failed." << std::endl;
+    std::cout << "init rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapUpdatePipelineService","init",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -73,7 +63,7 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::start()
   ::grpcIMapUpdatePipeline::startResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "startrpc failed." << std::endl;
+    std::cout << "start rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapUpdatePipelineService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -88,7 +78,7 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::stop()
   ::grpcIMapUpdatePipeline::stopResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "stoprpc failed." << std::endl;
+    std::cout << "stop rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapUpdatePipelineService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -104,7 +94,7 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::setCameraParameters(So
   reqIn.set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapUpdatePipelineService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -120,7 +110,7 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::mapUpdateRequest(SRef<
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->mapUpdateRequest(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "mapUpdateRequestrpc failed." << std::endl;
+    std::cout << "mapUpdateRequest rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapUpdatePipelineService","mapUpdateRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -136,7 +126,7 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::getMapRequest(SRef<Sol
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getMapRequest(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getMapRequestrpc failed." << std::endl;
+    std::cout << "getMapRequest rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapUpdatePipelineService","getMapRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

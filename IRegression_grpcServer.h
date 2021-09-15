@@ -2,7 +2,7 @@
 
 #ifndef IREGRESSION_GRPCSERVER_H
 #define IREGRESSION_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRegression.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRegression.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIRegressionService.grpc.pb.h"
@@ -48,7 +48,7 @@ class IRegression_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIRegression::IRegression_grpcServer>
 {
-  static constexpr const char * UUID = "8da4d311-6117-417f-8301-196b97dc7421";
+  static constexpr const char * UUID = "bb953ee8-f209-4c7b-8537-5731be42904b";
   static constexpr const char * NAME = "IRegression_grpcServer";
   static constexpr const char * DESCRIPTION = "IRegression_grpcServer grpc server component";
 };

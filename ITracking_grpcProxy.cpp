@@ -45,7 +45,7 @@ void  ITracking_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibrat
   reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcITrackingService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -60,7 +60,7 @@ void  ITracking_grpcProxy::updateReferenceKeyframe(SRef<SolAR::datastructure::Ke
   reqIn.set_refkeyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(refKeyframe));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->updateReferenceKeyframe(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "updateReferenceKeyframerpc failed." << std::endl;
+    std::cout << "updateReferenceKeyframe rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcITrackingService","updateReferenceKeyframe",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -76,7 +76,7 @@ SolAR::FrameworkReturnCode  ITracking_grpcProxy::process(SRef<SolAR::datastructu
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->process(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "processrpc failed." << std::endl;
+    std::cout << "process rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcITrackingService","process",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

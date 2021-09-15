@@ -2,7 +2,7 @@
 
 #ifndef IIMAGEFILTER_GRPCSERVER_H
 #define IIMAGEFILTER_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageFilter.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIImageFilterService.grpc.pb.h"
@@ -41,7 +41,7 @@ class IImageFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImageFilter::IImageFilter_grpcServer>
 {
-  static constexpr const char * UUID = "85567c6e-8419-4fcf-af46-baf6009c5a36";
+  static constexpr const char * UUID = "5f06b69a-77ba-4ccf-ae0a-310164c9cd1b";
   static constexpr const char * NAME = "IImageFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IImageFilter_grpcServer grpc server component";
 };

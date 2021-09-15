@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIDescriptorMatcherRegion;
+
+message match_grpc0Request
+{
+bytes descriptors1 = 1;
+bytes descriptors2 = 2;
+bytes points2D1 = 3;
+bytes points2D2 = 4;
+float radius = 5;
+float matchingDistanceMax = 6;
+bytes matches = 7;
+}
+
+message match_grpc0Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message match_grpc1Request
+{
+bytes points2D = 1;
+bytes descriptors = 2;
+bytes frame = 3;
+float radius = 4;
+float matchingDistanceMax = 5;
+bytes matches = 6;
+}
+
+message match_grpc1Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message match_grpc2Request
+{
+bytes currentFrame = 1;
+bytes lastFrame = 2;
+float radius = 3;
+float matchingDistanceMax = 4;
+bytes matches = 5;
+}
+
+message match_grpc2Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIDescriptorMatcherRegionService {
+rpc match_grpc0(match_grpc0Request) returns(match_grpc0Response) {}
+rpc match_grpc1(match_grpc1Request) returns(match_grpc1Response) {}
+rpc match_grpc2(match_grpc2Request) returns(match_grpc2Response) {}
+}
+

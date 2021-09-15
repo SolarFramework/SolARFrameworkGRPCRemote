@@ -38,7 +38,7 @@ XPCFErrorCode IDescriptorMatcher_grpcServer::onConfigured()
   SRef<SolAR::datastructure::DescriptorBuffer> descriptors1 = xpcf::deserialize<SRef<SolAR::datastructure::DescriptorBuffer>>(request->descriptors1());
   SRef<SolAR::datastructure::DescriptorBuffer> descriptors2 = xpcf::deserialize<SRef<SolAR::datastructure::DescriptorBuffer>>(request->descriptors2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
-  SolAR::api::features::IDescriptorMatcher::RetCode returnValue = m_xpcfComponent->match(descriptors1, descriptors2, matches);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->match(descriptors1, descriptors2, matches);
   response->set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   return ::grpc::Status::OK;
@@ -50,7 +50,7 @@ XPCFErrorCode IDescriptorMatcher_grpcServer::onConfigured()
   SRef<SolAR::datastructure::DescriptorBuffer> descriptors1 = xpcf::deserialize<SRef<SolAR::datastructure::DescriptorBuffer>>(request->descriptors1());
   std::vector<SRef<SolAR::datastructure::DescriptorBuffer>> descriptors2 = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::DescriptorBuffer>>>(request->descriptors2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
-  SolAR::api::features::IDescriptorMatcher::RetCode returnValue = m_xpcfComponent->match(descriptors1, descriptors2, matches);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->match(descriptors1, descriptors2, matches);
   response->set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   return ::grpc::Status::OK;

@@ -2,7 +2,7 @@
 
 #ifndef I3DTRANSFORM_GRPCSERVER_H
 #define I3DTRANSFORM_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/geom/I3DTransform.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/I3DTransform.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI3DTransformService.grpc.pb.h"
@@ -46,7 +46,7 @@ class I3DTransform_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DTransform::I3DTransform_grpcServer>
 {
-  static constexpr const char * UUID = "e95fc5fc-1369-4016-8237-e4a4fcf7e1be";
+  static constexpr const char * UUID = "e7ed295d-71c5-4153-a816-58ed6c67be83";
   static constexpr const char * NAME = "I3DTransform_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DTransform_grpcServer grpc server component";
 };

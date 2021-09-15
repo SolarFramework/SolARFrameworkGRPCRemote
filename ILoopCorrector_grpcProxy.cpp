@@ -45,7 +45,7 @@ void  ILoopCorrector_grpcProxy::setCameraParameters(SolAR::datastructure::CamCal
   reqIn.set_distortionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcILoopCorrectorService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -63,7 +63,7 @@ SolAR::FrameworkReturnCode  ILoopCorrector_grpcProxy::correct(SRef<SolAR::datast
   reqIn.set_duplicatedpointsindices(xpcf::serialize<std::vector<std::pair<uint32_t,uint32_t>>>(duplicatedPointsIndices));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->correct(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "correctrpc failed." << std::endl;
+    std::cout << "correct rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcILoopCorrectorService","correct",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

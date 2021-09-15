@@ -3,7 +3,7 @@
 
 #ifndef ILOOPCORRECTOR_GRPCPROXY_H
 #define ILOOPCORRECTOR_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopCorrector.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopCorrector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class ILoopCorrector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyILoopCorrector::ILoopCorrector_grpcProxy>
 {
-  static constexpr const char * UUID = "513e3940-1504-4d47-adfa-99944b875cb2";
+  static constexpr const char * UUID = "3d3c3db3-3471-4862-ae36-fdaf7dad1b02";
   static constexpr const char * NAME = "ILoopCorrector_grpcProxy";
   static constexpr const char * DESCRIPTION = "ILoopCorrector_grpcProxy grpc client proxy component";
 };

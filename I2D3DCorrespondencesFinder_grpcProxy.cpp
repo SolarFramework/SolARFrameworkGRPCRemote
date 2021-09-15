@@ -51,7 +51,7 @@ SolAR::FrameworkReturnCode  I2D3DCorrespondencesFinder_grpcProxy::find(SRef<SolA
   reqIn.set_remaining_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(remaining_matches));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->find(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "findrpc failed." << std::endl;
+    std::cout << "find rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2D3DCorrespondencesFinderService","find",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

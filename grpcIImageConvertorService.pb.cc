@@ -198,8 +198,10 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcII
   schemas, file_default_instances, TableStruct_grpcIImageConvertorService_2eproto::offsets,
   file_level_metadata_grpcIImageConvertorService_2eproto, file_level_enum_descriptors_grpcIImageConvertorService_2eproto, file_level_service_descriptors_grpcIImageConvertorService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcIImageConvertorService_2eproto_getter() {
-  return &descriptor_table_grpcIImageConvertorService_2eproto;
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_grpcIImageConvertorService_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcIImageConvertorService_2eproto);
+  return descriptor_table_grpcIImageConvertorService_2eproto.file_level_metadata[index];
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -212,13 +214,10 @@ class convert_grpc0Request::_Internal {
  public:
 };
 
-convert_grpc0Request::convert_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+convert_grpc0Request::convert_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIImageConvertor.convert_grpc0Request)
 }
 convert_grpc0Request::convert_grpc0Request(const convert_grpc0Request& from)
@@ -227,30 +226,29 @@ convert_grpc0Request::convert_grpc0Request(const convert_grpc0Request& from)
   imgsrc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_imgsrc().empty()) {
     imgsrc_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_imgsrc(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_imgdst().empty()) {
     imgdst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_imgdst(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIImageConvertor.convert_grpc0Request)
 }
 
-inline void convert_grpc0Request::SharedCtor() {
+void convert_grpc0Request::SharedCtor() {
 imgsrc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 convert_grpc0Request::~convert_grpc0Request() {
   // @@protoc_insertion_point(destructor:grpcIImageConvertor.convert_grpc0Request)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void convert_grpc0Request::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void convert_grpc0Request::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   imgsrc_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   imgdst_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -281,6 +279,7 @@ const char* convert_grpc0Request::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes imgSrc = 1;
       case 1:
@@ -300,8 +299,7 @@ const char* convert_grpc0Request::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -328,13 +326,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes imgSrc = 1;
-  if (!this->_internal_imgsrc().empty()) {
+  if (this->imgsrc().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_imgsrc(), target);
   }
 
   // bytes imgDst = 2;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_imgdst(), target);
   }
@@ -356,14 +354,14 @@ size_t convert_grpc0Request::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes imgSrc = 1;
-  if (!this->_internal_imgsrc().empty()) {
+  if (this->imgsrc().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imgsrc());
   }
 
   // bytes imgDst = 2;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imgdst());
@@ -378,32 +376,41 @@ size_t convert_grpc0Request::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData convert_grpc0Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    convert_grpc0Request::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*convert_grpc0Request::GetClassData() const { return &_class_data_; }
-
-void convert_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<convert_grpc0Request *>(to)->MergeFrom(
-      static_cast<const convert_grpc0Request &>(from));
+void convert_grpc0Request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageConvertor.convert_grpc0Request)
+  GOOGLE_DCHECK_NE(&from, this);
+  const convert_grpc0Request* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<convert_grpc0Request>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageConvertor.convert_grpc0Request)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageConvertor.convert_grpc0Request)
+    MergeFrom(*source);
+  }
 }
-
 
 void convert_grpc0Request::MergeFrom(const convert_grpc0Request& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageConvertor.convert_grpc0Request)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_imgsrc().empty()) {
+  if (from.imgsrc().size() > 0) {
     _internal_set_imgsrc(from._internal_imgsrc());
   }
-  if (!from._internal_imgdst().empty()) {
+  if (from.imgdst().size() > 0) {
     _internal_set_imgdst(from._internal_imgdst());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void convert_grpc0Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageConvertor.convert_grpc0Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void convert_grpc0Request::CopyFrom(const convert_grpc0Request& from) {
@@ -419,24 +426,15 @@ bool convert_grpc0Request::IsInitialized() const {
 
 void convert_grpc0Request::InternalSwap(convert_grpc0Request* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &imgsrc_, GetArenaForAllocation(),
-      &other->imgsrc_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &imgdst_, GetArenaForAllocation(),
-      &other->imgdst_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  imgsrc_.Swap(&other->imgsrc_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  imgdst_.Swap(&other->imgdst_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata convert_grpc0Request::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIImageConvertorService_2eproto_getter, &descriptor_table_grpcIImageConvertorService_2eproto_once,
-      file_level_metadata_grpcIImageConvertorService_2eproto[0]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -444,13 +442,10 @@ class convert_grpc0Response::_Internal {
  public:
 };
 
-convert_grpc0Response::convert_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+convert_grpc0Response::convert_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIImageConvertor.convert_grpc0Response)
 }
 convert_grpc0Response::convert_grpc0Response(const convert_grpc0Response& from)
@@ -459,26 +454,25 @@ convert_grpc0Response::convert_grpc0Response(const convert_grpc0Response& from)
   imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_imgdst().empty()) {
     imgdst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_imgdst(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageConvertor.convert_grpc0Response)
 }
 
-inline void convert_grpc0Response::SharedCtor() {
+void convert_grpc0Response::SharedCtor() {
 imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
 }
 
 convert_grpc0Response::~convert_grpc0Response() {
   // @@protoc_insertion_point(destructor:grpcIImageConvertor.convert_grpc0Response)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void convert_grpc0Response::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void convert_grpc0Response::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   imgdst_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -508,6 +502,7 @@ const char* convert_grpc0Response::_InternalParse(const char* ptr, ::PROTOBUF_NA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes imgDst = 1;
       case 1:
@@ -526,8 +521,7 @@ const char* convert_grpc0Response::_InternalParse(const char* ptr, ::PROTOBUF_NA
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -554,13 +548,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes imgDst = 1;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_imgdst(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -582,14 +576,14 @@ size_t convert_grpc0Response::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes imgDst = 1;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imgdst());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -604,32 +598,41 @@ size_t convert_grpc0Response::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData convert_grpc0Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    convert_grpc0Response::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*convert_grpc0Response::GetClassData() const { return &_class_data_; }
-
-void convert_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<convert_grpc0Response *>(to)->MergeFrom(
-      static_cast<const convert_grpc0Response &>(from));
+void convert_grpc0Response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageConvertor.convert_grpc0Response)
+  GOOGLE_DCHECK_NE(&from, this);
+  const convert_grpc0Response* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<convert_grpc0Response>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageConvertor.convert_grpc0Response)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageConvertor.convert_grpc0Response)
+    MergeFrom(*source);
+  }
 }
-
 
 void convert_grpc0Response::MergeFrom(const convert_grpc0Response& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageConvertor.convert_grpc0Response)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_imgdst().empty()) {
+  if (from.imgdst().size() > 0) {
     _internal_set_imgdst(from._internal_imgdst());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void convert_grpc0Response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageConvertor.convert_grpc0Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void convert_grpc0Response::CopyFrom(const convert_grpc0Response& from) {
@@ -645,20 +648,15 @@ bool convert_grpc0Response::IsInitialized() const {
 
 void convert_grpc0Response::InternalSwap(convert_grpc0Response* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &imgdst_, GetArenaForAllocation(),
-      &other->imgdst_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  imgdst_.Swap(&other->imgdst_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata convert_grpc0Response::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIImageConvertorService_2eproto_getter, &descriptor_table_grpcIImageConvertorService_2eproto_once,
-      file_level_metadata_grpcIImageConvertorService_2eproto[1]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -666,13 +664,10 @@ class convert_grpc1Request::_Internal {
  public:
 };
 
-convert_grpc1Request::convert_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+convert_grpc1Request::convert_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIImageConvertor.convert_grpc1Request)
 }
 convert_grpc1Request::convert_grpc1Request(const convert_grpc1Request& from)
@@ -681,18 +676,18 @@ convert_grpc1Request::convert_grpc1Request(const convert_grpc1Request& from)
   imgsrc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_imgsrc().empty()) {
     imgsrc_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_imgsrc(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_imgdst().empty()) {
     imgdst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_imgdst(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   destlayout_ = from.destlayout_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageConvertor.convert_grpc1Request)
 }
 
-inline void convert_grpc1Request::SharedCtor() {
+void convert_grpc1Request::SharedCtor() {
 imgsrc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 destlayout_ = 0;
@@ -700,13 +695,12 @@ destlayout_ = 0;
 
 convert_grpc1Request::~convert_grpc1Request() {
   // @@protoc_insertion_point(destructor:grpcIImageConvertor.convert_grpc1Request)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void convert_grpc1Request::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void convert_grpc1Request::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   imgsrc_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   imgdst_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -738,6 +732,7 @@ const char* convert_grpc1Request::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes imgSrc = 1;
       case 1:
@@ -764,8 +759,7 @@ const char* convert_grpc1Request::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -792,19 +786,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes imgSrc = 1;
-  if (!this->_internal_imgsrc().empty()) {
+  if (this->imgsrc().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_imgsrc(), target);
   }
 
   // sint32 destLayout = 2;
-  if (this->_internal_destlayout() != 0) {
+  if (this->destlayout() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_destlayout(), target);
   }
 
   // bytes imgDst = 3;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_imgdst(), target);
   }
@@ -826,21 +820,21 @@ size_t convert_grpc1Request::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes imgSrc = 1;
-  if (!this->_internal_imgsrc().empty()) {
+  if (this->imgsrc().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imgsrc());
   }
 
   // bytes imgDst = 3;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imgdst());
   }
 
   // sint32 destLayout = 2;
-  if (this->_internal_destlayout() != 0) {
+  if (this->destlayout() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_destlayout());
@@ -855,35 +849,44 @@ size_t convert_grpc1Request::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData convert_grpc1Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    convert_grpc1Request::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*convert_grpc1Request::GetClassData() const { return &_class_data_; }
-
-void convert_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<convert_grpc1Request *>(to)->MergeFrom(
-      static_cast<const convert_grpc1Request &>(from));
+void convert_grpc1Request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageConvertor.convert_grpc1Request)
+  GOOGLE_DCHECK_NE(&from, this);
+  const convert_grpc1Request* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<convert_grpc1Request>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageConvertor.convert_grpc1Request)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageConvertor.convert_grpc1Request)
+    MergeFrom(*source);
+  }
 }
-
 
 void convert_grpc1Request::MergeFrom(const convert_grpc1Request& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageConvertor.convert_grpc1Request)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_imgsrc().empty()) {
+  if (from.imgsrc().size() > 0) {
     _internal_set_imgsrc(from._internal_imgsrc());
   }
-  if (!from._internal_imgdst().empty()) {
+  if (from.imgdst().size() > 0) {
     _internal_set_imgdst(from._internal_imgdst());
   }
-  if (from._internal_destlayout() != 0) {
+  if (from.destlayout() != 0) {
     _internal_set_destlayout(from._internal_destlayout());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void convert_grpc1Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageConvertor.convert_grpc1Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void convert_grpc1Request::CopyFrom(const convert_grpc1Request& from) {
@@ -899,25 +902,16 @@ bool convert_grpc1Request::IsInitialized() const {
 
 void convert_grpc1Request::InternalSwap(convert_grpc1Request* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &imgsrc_, GetArenaForAllocation(),
-      &other->imgsrc_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &imgdst_, GetArenaForAllocation(),
-      &other->imgdst_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  imgsrc_.Swap(&other->imgsrc_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  imgdst_.Swap(&other->imgdst_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(destlayout_, other->destlayout_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata convert_grpc1Request::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIImageConvertorService_2eproto_getter, &descriptor_table_grpcIImageConvertorService_2eproto_once,
-      file_level_metadata_grpcIImageConvertorService_2eproto[2]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -925,13 +919,10 @@ class convert_grpc1Response::_Internal {
  public:
 };
 
-convert_grpc1Response::convert_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+convert_grpc1Response::convert_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIImageConvertor.convert_grpc1Response)
 }
 convert_grpc1Response::convert_grpc1Response(const convert_grpc1Response& from)
@@ -940,26 +931,25 @@ convert_grpc1Response::convert_grpc1Response(const convert_grpc1Response& from)
   imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_imgdst().empty()) {
     imgdst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_imgdst(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageConvertor.convert_grpc1Response)
 }
 
-inline void convert_grpc1Response::SharedCtor() {
+void convert_grpc1Response::SharedCtor() {
 imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
 }
 
 convert_grpc1Response::~convert_grpc1Response() {
   // @@protoc_insertion_point(destructor:grpcIImageConvertor.convert_grpc1Response)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void convert_grpc1Response::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void convert_grpc1Response::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   imgdst_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -989,6 +979,7 @@ const char* convert_grpc1Response::_InternalParse(const char* ptr, ::PROTOBUF_NA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes imgDst = 1;
       case 1:
@@ -1007,8 +998,7 @@ const char* convert_grpc1Response::_InternalParse(const char* ptr, ::PROTOBUF_NA
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1035,13 +1025,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes imgDst = 1;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_imgdst(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -1063,14 +1053,14 @@ size_t convert_grpc1Response::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes imgDst = 1;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imgdst());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -1085,32 +1075,41 @@ size_t convert_grpc1Response::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData convert_grpc1Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    convert_grpc1Response::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*convert_grpc1Response::GetClassData() const { return &_class_data_; }
-
-void convert_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<convert_grpc1Response *>(to)->MergeFrom(
-      static_cast<const convert_grpc1Response &>(from));
+void convert_grpc1Response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageConvertor.convert_grpc1Response)
+  GOOGLE_DCHECK_NE(&from, this);
+  const convert_grpc1Response* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<convert_grpc1Response>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageConvertor.convert_grpc1Response)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageConvertor.convert_grpc1Response)
+    MergeFrom(*source);
+  }
 }
-
 
 void convert_grpc1Response::MergeFrom(const convert_grpc1Response& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageConvertor.convert_grpc1Response)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_imgdst().empty()) {
+  if (from.imgdst().size() > 0) {
     _internal_set_imgdst(from._internal_imgdst());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void convert_grpc1Response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageConvertor.convert_grpc1Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void convert_grpc1Response::CopyFrom(const convert_grpc1Response& from) {
@@ -1126,20 +1125,15 @@ bool convert_grpc1Response::IsInitialized() const {
 
 void convert_grpc1Response::InternalSwap(convert_grpc1Response* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &imgdst_, GetArenaForAllocation(),
-      &other->imgdst_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  imgdst_.Swap(&other->imgdst_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata convert_grpc1Response::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIImageConvertorService_2eproto_getter, &descriptor_table_grpcIImageConvertorService_2eproto_once,
-      file_level_metadata_grpcIImageConvertorService_2eproto[3]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1147,13 +1141,10 @@ class convertLookUpTableRequest::_Internal {
  public:
 };
 
-convertLookUpTableRequest::convertLookUpTableRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+convertLookUpTableRequest::convertLookUpTableRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIImageConvertor.convertLookUpTableRequest)
 }
 convertLookUpTableRequest::convertLookUpTableRequest(const convertLookUpTableRequest& from)
@@ -1162,30 +1153,29 @@ convertLookUpTableRequest::convertLookUpTableRequest(const convertLookUpTableReq
   imgsrc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_imgsrc().empty()) {
     imgsrc_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_imgsrc(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_imgdst().empty()) {
     imgdst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_imgdst(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIImageConvertor.convertLookUpTableRequest)
 }
 
-inline void convertLookUpTableRequest::SharedCtor() {
+void convertLookUpTableRequest::SharedCtor() {
 imgsrc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 convertLookUpTableRequest::~convertLookUpTableRequest() {
   // @@protoc_insertion_point(destructor:grpcIImageConvertor.convertLookUpTableRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void convertLookUpTableRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void convertLookUpTableRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   imgsrc_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   imgdst_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1216,6 +1206,7 @@ const char* convertLookUpTableRequest::_InternalParse(const char* ptr, ::PROTOBU
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes imgSrc = 1;
       case 1:
@@ -1235,8 +1226,7 @@ const char* convertLookUpTableRequest::_InternalParse(const char* ptr, ::PROTOBU
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1263,13 +1253,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes imgSrc = 1;
-  if (!this->_internal_imgsrc().empty()) {
+  if (this->imgsrc().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_imgsrc(), target);
   }
 
   // bytes imgDst = 2;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_imgdst(), target);
   }
@@ -1291,14 +1281,14 @@ size_t convertLookUpTableRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes imgSrc = 1;
-  if (!this->_internal_imgsrc().empty()) {
+  if (this->imgsrc().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imgsrc());
   }
 
   // bytes imgDst = 2;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imgdst());
@@ -1313,32 +1303,41 @@ size_t convertLookUpTableRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData convertLookUpTableRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    convertLookUpTableRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*convertLookUpTableRequest::GetClassData() const { return &_class_data_; }
-
-void convertLookUpTableRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<convertLookUpTableRequest *>(to)->MergeFrom(
-      static_cast<const convertLookUpTableRequest &>(from));
+void convertLookUpTableRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageConvertor.convertLookUpTableRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const convertLookUpTableRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<convertLookUpTableRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageConvertor.convertLookUpTableRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageConvertor.convertLookUpTableRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void convertLookUpTableRequest::MergeFrom(const convertLookUpTableRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageConvertor.convertLookUpTableRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_imgsrc().empty()) {
+  if (from.imgsrc().size() > 0) {
     _internal_set_imgsrc(from._internal_imgsrc());
   }
-  if (!from._internal_imgdst().empty()) {
+  if (from.imgdst().size() > 0) {
     _internal_set_imgdst(from._internal_imgdst());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void convertLookUpTableRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageConvertor.convertLookUpTableRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void convertLookUpTableRequest::CopyFrom(const convertLookUpTableRequest& from) {
@@ -1354,24 +1353,15 @@ bool convertLookUpTableRequest::IsInitialized() const {
 
 void convertLookUpTableRequest::InternalSwap(convertLookUpTableRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &imgsrc_, GetArenaForAllocation(),
-      &other->imgsrc_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &imgdst_, GetArenaForAllocation(),
-      &other->imgdst_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  imgsrc_.Swap(&other->imgsrc_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  imgdst_.Swap(&other->imgdst_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata convertLookUpTableRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIImageConvertorService_2eproto_getter, &descriptor_table_grpcIImageConvertorService_2eproto_once,
-      file_level_metadata_grpcIImageConvertorService_2eproto[4]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1379,13 +1369,10 @@ class convertLookUpTableResponse::_Internal {
  public:
 };
 
-convertLookUpTableResponse::convertLookUpTableResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+convertLookUpTableResponse::convertLookUpTableResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIImageConvertor.convertLookUpTableResponse)
 }
 convertLookUpTableResponse::convertLookUpTableResponse(const convertLookUpTableResponse& from)
@@ -1394,26 +1381,25 @@ convertLookUpTableResponse::convertLookUpTableResponse(const convertLookUpTableR
   imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_imgdst().empty()) {
     imgdst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_imgdst(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageConvertor.convertLookUpTableResponse)
 }
 
-inline void convertLookUpTableResponse::SharedCtor() {
+void convertLookUpTableResponse::SharedCtor() {
 imgdst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
 }
 
 convertLookUpTableResponse::~convertLookUpTableResponse() {
   // @@protoc_insertion_point(destructor:grpcIImageConvertor.convertLookUpTableResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void convertLookUpTableResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void convertLookUpTableResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   imgdst_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1443,6 +1429,7 @@ const char* convertLookUpTableResponse::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes imgDst = 1;
       case 1:
@@ -1461,8 +1448,7 @@ const char* convertLookUpTableResponse::_InternalParse(const char* ptr, ::PROTOB
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1489,13 +1475,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes imgDst = 1;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_imgdst(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -1517,14 +1503,14 @@ size_t convertLookUpTableResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes imgDst = 1;
-  if (!this->_internal_imgdst().empty()) {
+  if (this->imgdst().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imgdst());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -1539,32 +1525,41 @@ size_t convertLookUpTableResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData convertLookUpTableResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    convertLookUpTableResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*convertLookUpTableResponse::GetClassData() const { return &_class_data_; }
-
-void convertLookUpTableResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<convertLookUpTableResponse *>(to)->MergeFrom(
-      static_cast<const convertLookUpTableResponse &>(from));
+void convertLookUpTableResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageConvertor.convertLookUpTableResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const convertLookUpTableResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<convertLookUpTableResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageConvertor.convertLookUpTableResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageConvertor.convertLookUpTableResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void convertLookUpTableResponse::MergeFrom(const convertLookUpTableResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageConvertor.convertLookUpTableResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_imgdst().empty()) {
+  if (from.imgdst().size() > 0) {
     _internal_set_imgdst(from._internal_imgdst());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void convertLookUpTableResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageConvertor.convertLookUpTableResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void convertLookUpTableResponse::CopyFrom(const convertLookUpTableResponse& from) {
@@ -1580,20 +1575,15 @@ bool convertLookUpTableResponse::IsInitialized() const {
 
 void convertLookUpTableResponse::InternalSwap(convertLookUpTableResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &imgdst_, GetArenaForAllocation(),
-      &other->imgdst_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  imgdst_.Swap(&other->imgdst_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata convertLookUpTableResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIImageConvertorService_2eproto_getter, &descriptor_table_grpcIImageConvertorService_2eproto_once,
-      file_level_metadata_grpcIImageConvertorService_2eproto[5]);
+  return GetMetadataStatic();
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIImageConvertor

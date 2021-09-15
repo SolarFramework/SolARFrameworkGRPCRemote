@@ -3,7 +3,7 @@
 
 #ifndef ICONTOURSFILTER_GRPCPROXY_H
 #define ICONTOURSFILTER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IContoursFilter.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IContoursFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IContoursFilter_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIContoursFilter::IContoursFilter_grpcProxy>
 {
-  static constexpr const char * UUID = "c9514201-6c41-4e0b-bdf0-80641f1414f1";
+  static constexpr const char * UUID = "a832c562-0f1d-457e-9494-a24325761f4f";
   static constexpr const char * NAME = "IContoursFilter_grpcProxy";
   static constexpr const char * DESCRIPTION = "IContoursFilter_grpcProxy grpc client proxy component";
 };

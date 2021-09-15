@@ -46,7 +46,7 @@ SolAR::FrameworkReturnCode  I2DTransform_grpcProxy::transform(std::vector<SolAR:
   reqIn.set_outputpoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(outputPoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->transform(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "transformrpc failed." << std::endl;
+    std::cout << "transform rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DTransformService","transform",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

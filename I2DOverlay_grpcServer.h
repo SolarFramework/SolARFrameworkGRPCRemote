@@ -2,7 +2,7 @@
 
 #ifndef I2DOVERLAY_GRPCSERVER_H
 #define I2DOVERLAY_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/I2DOverlay.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/display/I2DOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI2DOverlayService.grpc.pb.h"
@@ -46,7 +46,7 @@ class I2DOverlay_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI2DOverlay::I2DOverlay_grpcServer>
 {
-  static constexpr const char * UUID = "7335fdb0-dcbe-474e-83a4-2cb4412e9ac4";
+  static constexpr const char * UUID = "9383ce9b-750b-4d24-b478-a2eab3263b00";
   static constexpr const char * NAME = "I2DOverlay_grpcServer";
   static constexpr const char * DESCRIPTION = "I2DOverlay_grpcServer grpc server component";
 };

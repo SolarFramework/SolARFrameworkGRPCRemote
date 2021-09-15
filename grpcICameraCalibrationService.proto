@@ -4,41 +4,19 @@ import "google/protobuf/empty.proto";
 
 package grpcICameraCalibration;
 
-message calibrate_grpc0Request
+message calibrateRequest
 {
-string inputVideo = 1;
-string cailbrationFilePath = 2;
+bytes images = 1;
+bytes camParams = 2;
 }
 
-message calibrate_grpc0Response
+message calibrateResponse
 {
-bool xpcfGrpcReturnValue = 1;
-}
-
-message calibrate_grpc1Request
-{
-sint32 camera_id = 1;
-string cailbrationFilePath = 2;
-}
-
-message calibrate_grpc1Response
-{
-bool xpcfGrpcReturnValue = 1;
-}
-
-message setParametersRequest
-{
-string config_file = 1;
-}
-
-message setParametersResponse
-{
-bool xpcfGrpcReturnValue = 1;
+bytes camParams = 1;
+sint32 xpcfGrpcReturnValue = 2;
 }
 
 service grpcICameraCalibrationService {
-rpc calibrate_grpc0(calibrate_grpc0Request) returns(calibrate_grpc0Response) {}
-rpc calibrate_grpc1(calibrate_grpc1Request) returns(calibrate_grpc1Response) {}
-rpc setParameters(setParametersRequest) returns(setParametersResponse) {}
+rpc calibrate(calibrateRequest) returns(calibrateResponse) {}
 }
 

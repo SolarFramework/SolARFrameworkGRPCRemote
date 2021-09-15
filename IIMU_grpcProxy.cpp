@@ -43,7 +43,7 @@ SolAR::FrameworkReturnCode  IIMU_grpcProxy::start()
   ::grpcIIMU::startResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "startrpc failed." << std::endl;
+    std::cout << "start rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIIMUService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -58,7 +58,7 @@ SolAR::FrameworkReturnCode  IIMU_grpcProxy::stop()
   ::grpcIIMU::stopResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "stoprpc failed." << std::endl;
+    std::cout << "stop rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIIMUService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -74,7 +74,7 @@ SolAR::FrameworkReturnCode  IIMU_grpcProxy::getGyroscopeData(SolAR::datastructur
   reqIn.set_gyrodata(xpcf::serialize<SolAR::datastructure::Vector3f>(gyroData));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getGyroscopeData(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getGyroscopeDatarpc failed." << std::endl;
+    std::cout << "getGyroscopeData rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIIMUService","getGyroscopeData",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -91,7 +91,7 @@ SolAR::FrameworkReturnCode  IIMU_grpcProxy::getAccelerometerData(SolAR::datastru
   reqIn.set_acceldata(xpcf::serialize<SolAR::datastructure::Vector3f>(accelData));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getAccelerometerData(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getAccelerometerDatarpc failed." << std::endl;
+    std::cout << "getAccelerometerData rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIIMUService","getAccelerometerData",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -108,7 +108,7 @@ SolAR::FrameworkReturnCode  IIMU_grpcProxy::getMagnetometerData(SolAR::datastruc
   reqIn.set_magdata(xpcf::serialize<SolAR::datastructure::Vector3f>(magData));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getMagnetometerData(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getMagnetometerDatarpc failed." << std::endl;
+    std::cout << "getMagnetometerData rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIIMUService","getMagnetometerData",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -127,7 +127,7 @@ SolAR::FrameworkReturnCode  IIMU_grpcProxy::getAllSensorsData(SolAR::datastructu
   reqIn.set_magdata(xpcf::serialize<SolAR::datastructure::Vector3f>(magData));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getAllSensorsData(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getAllSensorsDatarpc failed." << std::endl;
+    std::cout << "getAllSensorsData rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIIMUService","getAllSensorsData",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -145,7 +145,7 @@ bool  IIMU_grpcProxy::isGyroscopeAvailable()
   ::grpcIIMU::isGyroscopeAvailableResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->isGyroscopeAvailable(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "isGyroscopeAvailablerpc failed." << std::endl;
+    std::cout << "isGyroscopeAvailable rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIIMUService","isGyroscopeAvailable",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -160,7 +160,7 @@ bool  IIMU_grpcProxy::isAccelerometerAvailable()
   ::grpcIIMU::isAccelerometerAvailableResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->isAccelerometerAvailable(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "isAccelerometerAvailablerpc failed." << std::endl;
+    std::cout << "isAccelerometerAvailable rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIIMUService","isAccelerometerAvailable",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -175,7 +175,7 @@ bool  IIMU_grpcProxy::isMagnetometerAvailable()
   ::grpcIIMU::isMagnetometerAvailableResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->isMagnetometerAvailable(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "isMagnetometerAvailablerpc failed." << std::endl;
+    std::cout << "isMagnetometerAvailable rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIIMUService","isMagnetometerAvailable",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

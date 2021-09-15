@@ -28,24 +28,24 @@ static const char* grpcI2Dto3DTransformDecomposerService_method_names[] = {
 
 std::unique_ptr< grpcI2Dto3DTransformDecomposerService::Stub> grpcI2Dto3DTransformDecomposerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcI2Dto3DTransformDecomposerService::Stub> stub(new grpcI2Dto3DTransformDecomposerService::Stub(channel, options));
+  std::unique_ptr< grpcI2Dto3DTransformDecomposerService::Stub> stub(new grpcI2Dto3DTransformDecomposerService::Stub(channel));
   return stub;
 }
 
-grpcI2Dto3DTransformDecomposerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcI2Dto3DTransformDecomposerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_decompose_(grpcI2Dto3DTransformDecomposerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcI2Dto3DTransformDecomposerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_setCameraParameters_(grpcI2Dto3DTransformDecomposerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_decompose_(grpcI2Dto3DTransformDecomposerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcI2Dto3DTransformDecomposerService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2Dto3DTransformDecomposer::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcI2Dto3DTransformDecomposerService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI2Dto3DTransformDecomposerService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2Dto3DTransformDecomposer::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcI2Dto3DTransformDecomposerService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI2Dto3DTransformDecomposerService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcI2Dto3DTransformDecomposerService::Stub::async::setCameraParameters(::g
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2Dto3DTransformDecomposer::decomposeRequest, ::grpcI2Dto3DTransformDecomposer::decomposeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_decompose_, context, request, response);
 }
 
-void grpcI2Dto3DTransformDecomposerService::Stub::async::decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcI2Dto3DTransformDecomposerService::Stub::experimental_async::decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2Dto3DTransformDecomposer::decomposeRequest, ::grpcI2Dto3DTransformDecomposer::decomposeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_decompose_, context, request, response, std::move(f));
 }
 
-void grpcI2Dto3DTransformDecomposerService::Stub::async::decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI2Dto3DTransformDecomposerService::Stub::experimental_async::decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_decompose_, context, request, response, reactor);
 }
 

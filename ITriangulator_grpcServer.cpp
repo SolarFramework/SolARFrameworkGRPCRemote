@@ -47,7 +47,7 @@ XPCFErrorCode ITriangulator_grpcServer::onConfigured()
   std::vector<SolAR::datastructure::Point2Df> pointsView1 = xpcf::deserialize<std::vector<SolAR::datastructure::Point2Df>>(request->pointsview1());
   std::vector<SolAR::datastructure::Point2Df> pointView2 = xpcf::deserialize<std::vector<SolAR::datastructure::Point2Df>>(request->pointview2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
-  std::pair<unsigned int,unsigned int> working_views = xpcf::deserialize<std::pair<unsigned int,unsigned int>>(request->working_views());
+  std::pair<uint32_t,uint32_t> working_views = xpcf::deserialize<std::pair<uint32_t,uint32_t>>(request->working_views());
   SolAR::datastructure::Transform3Df poseView1 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview1());
   SolAR::datastructure::Transform3Df poseView2 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview2());
   std::vector<SRef<SolAR::datastructure::CloudPoint>> pcloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->pcloud());
@@ -63,7 +63,7 @@ XPCFErrorCode ITriangulator_grpcServer::onConfigured()
   std::vector<SolAR::datastructure::Keypoint> keypointsView1 = xpcf::deserialize<std::vector<SolAR::datastructure::Keypoint>>(request->keypointsview1());
   std::vector<SolAR::datastructure::Keypoint> keypointsView2 = xpcf::deserialize<std::vector<SolAR::datastructure::Keypoint>>(request->keypointsview2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
-  std::pair<unsigned int,unsigned int> working_views = xpcf::deserialize<std::pair<unsigned int,unsigned int>>(request->working_views());
+  std::pair<uint32_t,uint32_t> working_views = xpcf::deserialize<std::pair<uint32_t,uint32_t>>(request->working_views());
   SolAR::datastructure::Transform3Df poseView1 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview1());
   SolAR::datastructure::Transform3Df poseView2 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview2());
   std::vector<SRef<SolAR::datastructure::CloudPoint>> pcloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->pcloud());
@@ -81,7 +81,7 @@ XPCFErrorCode ITriangulator_grpcServer::onConfigured()
   SRef<SolAR::datastructure::DescriptorBuffer> descriptor1 = xpcf::deserialize<SRef<SolAR::datastructure::DescriptorBuffer>>(request->descriptor1());
   SRef<SolAR::datastructure::DescriptorBuffer> descriptor2 = xpcf::deserialize<SRef<SolAR::datastructure::DescriptorBuffer>>(request->descriptor2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
-  std::pair<unsigned int,unsigned int> working_views = xpcf::deserialize<std::pair<unsigned int,unsigned int>>(request->working_views());
+  std::pair<uint32_t,uint32_t> working_views = xpcf::deserialize<std::pair<uint32_t,uint32_t>>(request->working_views());
   SolAR::datastructure::Transform3Df poseView1 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview1());
   SolAR::datastructure::Transform3Df poseView2 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview2());
   std::vector<SRef<SolAR::datastructure::CloudPoint>> pcloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->pcloud());
@@ -94,10 +94,13 @@ XPCFErrorCode ITriangulator_grpcServer::onConfigured()
 
 ::grpc::Status ITriangulator_grpcServer::grpcITriangulatorServiceImpl::triangulate_grpc3(::grpc::ServerContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response)
 {
-  SRef<SolAR::datastructure::Keyframe> curKeyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->curkeyframe());
+  SRef<SolAR::datastructure::Frame> frame1 = xpcf::deserialize<SRef<SolAR::datastructure::Frame>>(request->frame1());
+  SRef<SolAR::datastructure::Frame> frame2 = xpcf::deserialize<SRef<SolAR::datastructure::Frame>>(request->frame2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
+  std::pair<uint32_t,uint32_t> working_views = xpcf::deserialize<std::pair<uint32_t,uint32_t>>(request->working_views());
   std::vector<SRef<SolAR::datastructure::CloudPoint>> pcloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->pcloud());
-  double returnValue = m_xpcfComponent->triangulate(curKeyframe, matches, pcloud);
+  bool onlyDepth = request->onlydepth();
+  double returnValue = m_xpcfComponent->triangulate(frame1, frame2, matches, working_views, pcloud, onlyDepth);
   response->set_pcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pcloud));
   response->set_xpcfgrpcreturnvalue(returnValue);
   return ::grpc::Status::OK;

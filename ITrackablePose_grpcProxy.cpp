@@ -45,7 +45,7 @@ void  ITrackablePose_grpcProxy::setCameraParameters(SolAR::datastructure::CamCal
   reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcITrackablePoseService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -60,7 +60,7 @@ SolAR::FrameworkReturnCode  ITrackablePose_grpcProxy::setTrackable(SRef<SolAR::d
   reqIn.set_trackable(xpcf::serialize<SRef<SolAR::datastructure::Trackable>>(trackable));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setTrackable(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setTrackablerpc failed." << std::endl;
+    std::cout << "setTrackable rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcITrackablePoseService","setTrackable",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -77,7 +77,7 @@ SolAR::FrameworkReturnCode  ITrackablePose_grpcProxy::estimate(SRef<SolAR::datas
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->estimate(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "estimaterpc failed." << std::endl;
+    std::cout << "estimate rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcITrackablePoseService","estimate",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

@@ -3,7 +3,7 @@
 
 #ifndef I2DTO3DTRANSFORMDECOMPOSER_GRPCPROXY_H
 #define I2DTO3DTRANSFORMDECOMPOSER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2Dto3DTransformDecomposer.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2Dto3DTransformDecomposer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -37,7 +37,7 @@ class I2Dto3DTransformDecomposer_grpcProxy:  public org::bcom::xpcf::Configurabl
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2Dto3DTransformDecomposer::I2Dto3DTransformDecomposer_grpcProxy>
 {
-  static constexpr const char * UUID = "71919c06-8f2d-4582-b5a6-04bfe2bdbd8c";
+  static constexpr const char * UUID = "e868b8d1-9dfa-4982-ba9d-1c79e8344e04";
   static constexpr const char * NAME = "I2Dto3DTransformDecomposer_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2Dto3DTransformDecomposer_grpcProxy grpc client proxy component";
 };

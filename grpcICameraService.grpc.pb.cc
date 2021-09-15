@@ -37,33 +37,33 @@ static const char* grpcICameraService_method_names[] = {
 
 std::unique_ptr< grpcICameraService::Stub> grpcICameraService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcICameraService::Stub> stub(new grpcICameraService::Stub(channel, options));
+  std::unique_ptr< grpcICameraService::Stub> stub(new grpcICameraService::Stub(channel));
   return stub;
 }
 
-grpcICameraService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_start_(grpcICameraService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcICameraService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getNextImage_(grpcICameraService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setResolution_(grpcICameraService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setIntrinsicParameters_(grpcICameraService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setDistortionParameters_(grpcICameraService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setParameters_(grpcICameraService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getResolution_(grpcICameraService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getIntrinsicsParameters_(grpcICameraService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getParameters_(grpcICameraService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getDistortionParameters_(grpcICameraService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcICameraService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_start_(grpcICameraService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcICameraService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getNextImage_(grpcICameraService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setResolution_(grpcICameraService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setIntrinsicParameters_(grpcICameraService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setDistortionParameters_(grpcICameraService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setParameters_(grpcICameraService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getResolution_(grpcICameraService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getIntrinsicsParameters_(grpcICameraService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getParameters_(grpcICameraService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getDistortionParameters_(grpcICameraService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcICameraService::Stub::start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcICamera::startResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcICamera::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::startResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::startResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcICamera::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::startResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
@@ -82,11 +82,11 @@ void grpcICameraService::Stub::async::start(::grpc::ClientContext* context, cons
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcICamera::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::stopResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::stopResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcICamera::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 
@@ -105,11 +105,11 @@ void grpcICameraService::Stub::async::stop(::grpc::ClientContext* context, const
   return ::grpc::internal::BlockingUnaryCall< ::grpcICamera::getNextImageRequest, ::grpcICamera::getNextImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getNextImage_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::getNextImage(::grpc::ClientContext* context, const ::grpcICamera::getNextImageRequest* request, ::grpcICamera::getNextImageResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::getNextImage(::grpc::ClientContext* context, const ::grpcICamera::getNextImageRequest* request, ::grpcICamera::getNextImageResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICamera::getNextImageRequest, ::grpcICamera::getNextImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNextImage_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::getNextImage(::grpc::ClientContext* context, const ::grpcICamera::getNextImageRequest* request, ::grpcICamera::getNextImageResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::getNextImage(::grpc::ClientContext* context, const ::grpcICamera::getNextImageRequest* request, ::grpcICamera::getNextImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNextImage_, context, request, response, reactor);
 }
 
@@ -128,11 +128,11 @@ void grpcICameraService::Stub::async::getNextImage(::grpc::ClientContext* contex
   return ::grpc::internal::BlockingUnaryCall< ::grpcICamera::setResolutionRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setResolution_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::setResolution(::grpc::ClientContext* context, const ::grpcICamera::setResolutionRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::setResolution(::grpc::ClientContext* context, const ::grpcICamera::setResolutionRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICamera::setResolutionRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setResolution_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::setResolution(::grpc::ClientContext* context, const ::grpcICamera::setResolutionRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::setResolution(::grpc::ClientContext* context, const ::grpcICamera::setResolutionRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setResolution_, context, request, response, reactor);
 }
 
@@ -151,11 +151,11 @@ void grpcICameraService::Stub::async::setResolution(::grpc::ClientContext* conte
   return ::grpc::internal::BlockingUnaryCall< ::grpcICamera::setIntrinsicParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setIntrinsicParameters_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcICamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcICamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICamera::setIntrinsicParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setIntrinsicParameters_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcICamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::setIntrinsicParameters(::grpc::ClientContext* context, const ::grpcICamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setIntrinsicParameters_, context, request, response, reactor);
 }
 
@@ -174,11 +174,11 @@ void grpcICameraService::Stub::async::setIntrinsicParameters(::grpc::ClientConte
   return ::grpc::internal::BlockingUnaryCall< ::grpcICamera::setDistortionParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setDistortionParameters_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::setDistortionParameters(::grpc::ClientContext* context, const ::grpcICamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::setDistortionParameters(::grpc::ClientContext* context, const ::grpcICamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICamera::setDistortionParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setDistortionParameters_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::setDistortionParameters(::grpc::ClientContext* context, const ::grpcICamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::setDistortionParameters(::grpc::ClientContext* context, const ::grpcICamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setDistortionParameters_, context, request, response, reactor);
 }
 
@@ -197,11 +197,11 @@ void grpcICameraService::Stub::async::setDistortionParameters(::grpc::ClientCont
   return ::grpc::internal::BlockingUnaryCall< ::grpcICamera::setParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setParameters_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::setParameters(::grpc::ClientContext* context, const ::grpcICamera::setParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::setParameters(::grpc::ClientContext* context, const ::grpcICamera::setParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICamera::setParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setParameters_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::setParameters(::grpc::ClientContext* context, const ::grpcICamera::setParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::setParameters(::grpc::ClientContext* context, const ::grpcICamera::setParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setParameters_, context, request, response, reactor);
 }
 
@@ -220,11 +220,11 @@ void grpcICameraService::Stub::async::setParameters(::grpc::ClientContext* conte
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcICamera::getResolutionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getResolution_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getResolutionResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getResolutionResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcICamera::getResolutionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getResolution_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getResolutionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::getResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getResolutionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getResolution_, context, request, response, reactor);
 }
 
@@ -243,11 +243,11 @@ void grpcICameraService::Stub::async::getResolution(::grpc::ClientContext* conte
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcICamera::getIntrinsicsParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getIntrinsicsParameters_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getIntrinsicsParametersResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getIntrinsicsParametersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcICamera::getIntrinsicsParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getIntrinsicsParameters_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getIntrinsicsParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::getIntrinsicsParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getIntrinsicsParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getIntrinsicsParameters_, context, request, response, reactor);
 }
 
@@ -266,11 +266,11 @@ void grpcICameraService::Stub::async::getIntrinsicsParameters(::grpc::ClientCont
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcICamera::getParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getParameters_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getParametersResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getParametersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcICamera::getParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getParameters_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::getParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getParameters_, context, request, response, reactor);
 }
 
@@ -289,11 +289,11 @@ void grpcICameraService::Stub::async::getParameters(::grpc::ClientContext* conte
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcICamera::getDistortionParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDistortionParameters_, context, request, response);
 }
 
-void grpcICameraService::Stub::async::getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getDistortionParametersResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICameraService::Stub::experimental_async::getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getDistortionParametersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcICamera::getDistortionParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDistortionParameters_, context, request, response, std::move(f));
 }
 
-void grpcICameraService::Stub::async::getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getDistortionParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICameraService::Stub::experimental_async::getDistortionParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getDistortionParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDistortionParameters_, context, request, response, reactor);
 }
 

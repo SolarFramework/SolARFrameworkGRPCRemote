@@ -44,7 +44,7 @@ SolAR::FrameworkReturnCode  IRelocalizer_grpcProxy::addKeyframe(SRef<SolAR::data
   reqIn.set_keyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(keyframe));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addKeyframe(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addKeyframerpc failed." << std::endl;
+    std::cout << "addKeyframe rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRelocalizerService","addKeyframe",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -61,7 +61,7 @@ SolAR::FrameworkReturnCode  IRelocalizer_grpcProxy::relocalize(SRef<SolAR::datas
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->relocalize(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "relocalizerpc failed." << std::endl;
+    std::cout << "relocalize rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRelocalizerService","relocalize",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

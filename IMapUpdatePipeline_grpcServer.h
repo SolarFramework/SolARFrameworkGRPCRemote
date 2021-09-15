@@ -2,7 +2,7 @@
 
 #ifndef IMAPUPDATEPIPELINE_GRPCSERVER_H
 #define IMAPUPDATEPIPELINE_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IMapUpdatePipeline.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IMapUpdatePipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMapUpdatePipelineService.grpc.pb.h"

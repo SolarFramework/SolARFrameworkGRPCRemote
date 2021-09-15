@@ -45,7 +45,7 @@ void  ILoopClosureDetector_grpcProxy::setCameraParameters(SolAR::datastructure::
   reqIn.set_distortionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcILoopClosureDetectorService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -63,7 +63,7 @@ SolAR::FrameworkReturnCode  ILoopClosureDetector_grpcProxy::detect(SRef<SolAR::d
   reqIn.set_duplicatedpointsindices(xpcf::serialize<std::vector<std::pair<uint32_t,uint32_t>>>(duplicatedPointsIndices));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->detect(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "detectrpc failed." << std::endl;
+    std::cout << "detect rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcILoopClosureDetectorService","detect",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

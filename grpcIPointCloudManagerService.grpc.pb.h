@@ -7,6 +7,7 @@
 #include "grpcIPointCloudManagerService.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -161,49 +162,125 @@ class grpcIPointCloudManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncsetPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncsetPointCloudRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::addPoint_grpc0Response>* AsyncaddPoint_grpc0Raw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::addPoint_grpc0Response>* PrepareAsyncaddPoint_grpc0Raw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -244,7 +321,7 @@ class grpcIPointCloudManagerService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request& request, ::grpcIPointCloudManager::addPoint_grpc0Response* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::addPoint_grpc0Response>> AsyncaddPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::addPoint_grpc0Response>>(AsyncaddPoint_grpc0Raw(context, request, cq));
@@ -371,56 +448,128 @@ class grpcIPointCloudManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncsetPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncsetPointCloudRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void addPoint_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void addPoints_grpc0(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void addPoint_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void addPoints_grpc1(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getAllPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void suppressPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::addPoint_grpc0Response>* AsyncaddPoint_grpc0Raw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::addPoint_grpc0Response>* PrepareAsyncaddPoint_grpc0Raw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::addPoints_grpc0Response>* AsyncaddPoints_grpc0Raw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
@@ -863,22 +1012,36 @@ class grpcIPointCloudManagerService final {
   };
   typedef WithAsyncMethod_addPoint_grpc0<WithAsyncMethod_addPoints_grpc0<WithAsyncMethod_addPoint_grpc1<WithAsyncMethod_addPoints_grpc1<WithAsyncMethod_getPoint<WithAsyncMethod_getPoints<WithAsyncMethod_getAllPoints<WithAsyncMethod_suppressPoint<WithAsyncMethod_suppressPoints<WithAsyncMethod_getDescriptorType<WithAsyncMethod_setDescriptorType<WithAsyncMethod_isExistPoint<WithAsyncMethod_getNbPoints<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<WithAsyncMethod_getConstPointCloud<WithAsyncMethod_getPointCloud<WithAsyncMethod_setPointCloud<Service > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_addPoint_grpc0 : public BaseClass {
+  class ExperimentalWithCallbackMethod_addPoint_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_addPoint_grpc0() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_addPoint_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::addPoint_grpc0Request, ::grpcIPointCloudManager::addPoint_grpc0Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response) { return this->addPoint_grpc0(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::addPoint_grpc0Request* request, ::grpcIPointCloudManager::addPoint_grpc0Response* response) { return this->addPoint_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_addPoint_grpc0(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::addPoint_grpc0Request, ::grpcIPointCloudManager::addPoint_grpc0Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::addPoint_grpc0Request, ::grpcIPointCloudManager::addPoint_grpc0Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::addPoint_grpc0Request, ::grpcIPointCloudManager::addPoint_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_addPoint_grpc0() override {
+    ~ExperimentalWithCallbackMethod_addPoint_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -886,26 +1049,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* addPoint_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoint_grpc0Request* /*request*/, ::grpcIPointCloudManager::addPoint_grpc0Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoint_grpc0Request* /*request*/, ::grpcIPointCloudManager::addPoint_grpc0Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* addPoint_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoint_grpc0Request* /*request*/, ::grpcIPointCloudManager::addPoint_grpc0Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_addPoints_grpc0 : public BaseClass {
+  class ExperimentalWithCallbackMethod_addPoints_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_addPoints_grpc0() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_addPoints_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::addPoints_grpc0Request, ::grpcIPointCloudManager::addPoints_grpc0Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response) { return this->addPoints_grpc0(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::addPoints_grpc0Request* request, ::grpcIPointCloudManager::addPoints_grpc0Response* response) { return this->addPoints_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_addPoints_grpc0(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::addPoints_grpc0Request, ::grpcIPointCloudManager::addPoints_grpc0Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::addPoints_grpc0Request, ::grpcIPointCloudManager::addPoints_grpc0Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::addPoints_grpc0Request, ::grpcIPointCloudManager::addPoints_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_addPoints_grpc0() override {
+    ~ExperimentalWithCallbackMethod_addPoints_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -913,26 +1096,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* addPoints_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoints_grpc0Request* /*request*/, ::grpcIPointCloudManager::addPoints_grpc0Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoints_grpc0Request* /*request*/, ::grpcIPointCloudManager::addPoints_grpc0Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* addPoints_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoints_grpc0Request* /*request*/, ::grpcIPointCloudManager::addPoints_grpc0Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_addPoint_grpc1 : public BaseClass {
+  class ExperimentalWithCallbackMethod_addPoint_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_addPoint_grpc1() {
-      ::grpc::Service::MarkMethodCallback(2,
+    ExperimentalWithCallbackMethod_addPoint_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::addPoint_grpc1Request, ::grpcIPointCloudManager::addPoint_grpc1Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response) { return this->addPoint_grpc1(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::addPoint_grpc1Request* request, ::grpcIPointCloudManager::addPoint_grpc1Response* response) { return this->addPoint_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_addPoint_grpc1(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::addPoint_grpc1Request, ::grpcIPointCloudManager::addPoint_grpc1Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::addPoint_grpc1Request, ::grpcIPointCloudManager::addPoint_grpc1Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::addPoint_grpc1Request, ::grpcIPointCloudManager::addPoint_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_addPoint_grpc1() override {
+    ~ExperimentalWithCallbackMethod_addPoint_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -940,26 +1143,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* addPoint_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoint_grpc1Request* /*request*/, ::grpcIPointCloudManager::addPoint_grpc1Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoint_grpc1Request* /*request*/, ::grpcIPointCloudManager::addPoint_grpc1Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* addPoint_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoint_grpc1Request* /*request*/, ::grpcIPointCloudManager::addPoint_grpc1Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_addPoints_grpc1 : public BaseClass {
+  class ExperimentalWithCallbackMethod_addPoints_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_addPoints_grpc1() {
-      ::grpc::Service::MarkMethodCallback(3,
+    ExperimentalWithCallbackMethod_addPoints_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::addPoints_grpc1Request, ::grpcIPointCloudManager::addPoints_grpc1Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response) { return this->addPoints_grpc1(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::addPoints_grpc1Request* request, ::grpcIPointCloudManager::addPoints_grpc1Response* response) { return this->addPoints_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_addPoints_grpc1(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::addPoints_grpc1Request, ::grpcIPointCloudManager::addPoints_grpc1Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::addPoints_grpc1Request, ::grpcIPointCloudManager::addPoints_grpc1Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::addPoints_grpc1Request, ::grpcIPointCloudManager::addPoints_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_addPoints_grpc1() override {
+    ~ExperimentalWithCallbackMethod_addPoints_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -967,26 +1190,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* addPoints_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoints_grpc1Request* /*request*/, ::grpcIPointCloudManager::addPoints_grpc1Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoints_grpc1Request* /*request*/, ::grpcIPointCloudManager::addPoints_grpc1Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* addPoints_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::addPoints_grpc1Request* /*request*/, ::grpcIPointCloudManager::addPoints_grpc1Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getPoint : public BaseClass {
+  class ExperimentalWithCallbackMethod_getPoint : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getPoint() {
-      ::grpc::Service::MarkMethodCallback(4,
+    ExperimentalWithCallbackMethod_getPoint() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getPointRequest, ::grpcIPointCloudManager::getPointResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response) { return this->getPoint(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::getPointRequest* request, ::grpcIPointCloudManager::getPointResponse* response) { return this->getPoint(context, request, response); }));}
     void SetMessageAllocatorFor_getPoint(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::getPointRequest, ::grpcIPointCloudManager::getPointResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::getPointRequest, ::grpcIPointCloudManager::getPointResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getPointRequest, ::grpcIPointCloudManager::getPointResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getPoint() override {
+    ~ExperimentalWithCallbackMethod_getPoint() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -994,26 +1237,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPoint(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getPointRequest* /*request*/, ::grpcIPointCloudManager::getPointResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getPointRequest* /*request*/, ::grpcIPointCloudManager::getPointResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPoint(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getPointRequest* /*request*/, ::grpcIPointCloudManager::getPointResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getPoints : public BaseClass {
+  class ExperimentalWithCallbackMethod_getPoints : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getPoints() {
-      ::grpc::Service::MarkMethodCallback(5,
+    ExperimentalWithCallbackMethod_getPoints() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getPointsRequest, ::grpcIPointCloudManager::getPointsResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response) { return this->getPoints(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::getPointsRequest* request, ::grpcIPointCloudManager::getPointsResponse* response) { return this->getPoints(context, request, response); }));}
     void SetMessageAllocatorFor_getPoints(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::getPointsRequest, ::grpcIPointCloudManager::getPointsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::getPointsRequest, ::grpcIPointCloudManager::getPointsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getPointsRequest, ::grpcIPointCloudManager::getPointsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getPoints() override {
+    ~ExperimentalWithCallbackMethod_getPoints() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1021,26 +1284,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPoints(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getPointsRequest* /*request*/, ::grpcIPointCloudManager::getPointsResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getPointsRequest* /*request*/, ::grpcIPointCloudManager::getPointsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPoints(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getPointsRequest* /*request*/, ::grpcIPointCloudManager::getPointsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getAllPoints : public BaseClass {
+  class ExperimentalWithCallbackMethod_getAllPoints : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getAllPoints() {
-      ::grpc::Service::MarkMethodCallback(6,
+    ExperimentalWithCallbackMethod_getAllPoints() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getAllPointsRequest, ::grpcIPointCloudManager::getAllPointsResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response) { return this->getAllPoints(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response) { return this->getAllPoints(context, request, response); }));}
     void SetMessageAllocatorFor_getAllPoints(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::getAllPointsRequest, ::grpcIPointCloudManager::getAllPointsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::getAllPointsRequest, ::grpcIPointCloudManager::getAllPointsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getAllPointsRequest, ::grpcIPointCloudManager::getAllPointsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getAllPoints() override {
+    ~ExperimentalWithCallbackMethod_getAllPoints() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1048,26 +1331,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getAllPoints(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getAllPointsRequest* /*request*/, ::grpcIPointCloudManager::getAllPointsResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getAllPointsRequest* /*request*/, ::grpcIPointCloudManager::getAllPointsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getAllPoints(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getAllPointsRequest* /*request*/, ::grpcIPointCloudManager::getAllPointsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_suppressPoint : public BaseClass {
+  class ExperimentalWithCallbackMethod_suppressPoint : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_suppressPoint() {
-      ::grpc::Service::MarkMethodCallback(7,
+    ExperimentalWithCallbackMethod_suppressPoint() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::suppressPointRequest, ::grpcIPointCloudManager::suppressPointResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response) { return this->suppressPoint(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response) { return this->suppressPoint(context, request, response); }));}
     void SetMessageAllocatorFor_suppressPoint(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::suppressPointRequest, ::grpcIPointCloudManager::suppressPointResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::suppressPointRequest, ::grpcIPointCloudManager::suppressPointResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::suppressPointRequest, ::grpcIPointCloudManager::suppressPointResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_suppressPoint() override {
+    ~ExperimentalWithCallbackMethod_suppressPoint() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1075,26 +1378,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* suppressPoint(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::suppressPointRequest* /*request*/, ::grpcIPointCloudManager::suppressPointResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::suppressPointRequest* /*request*/, ::grpcIPointCloudManager::suppressPointResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* suppressPoint(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::suppressPointRequest* /*request*/, ::grpcIPointCloudManager::suppressPointResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_suppressPoints : public BaseClass {
+  class ExperimentalWithCallbackMethod_suppressPoints : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_suppressPoints() {
-      ::grpc::Service::MarkMethodCallback(8,
+    ExperimentalWithCallbackMethod_suppressPoints() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::suppressPointsRequest, ::grpcIPointCloudManager::suppressPointsResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response) { return this->suppressPoints(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response) { return this->suppressPoints(context, request, response); }));}
     void SetMessageAllocatorFor_suppressPoints(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::suppressPointsRequest, ::grpcIPointCloudManager::suppressPointsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::suppressPointsRequest, ::grpcIPointCloudManager::suppressPointsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::suppressPointsRequest, ::grpcIPointCloudManager::suppressPointsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_suppressPoints() override {
+    ~ExperimentalWithCallbackMethod_suppressPoints() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1102,26 +1425,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* suppressPoints(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::suppressPointsRequest* /*request*/, ::grpcIPointCloudManager::suppressPointsResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::suppressPointsRequest* /*request*/, ::grpcIPointCloudManager::suppressPointsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* suppressPoints(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::suppressPointsRequest* /*request*/, ::grpcIPointCloudManager::suppressPointsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getDescriptorType : public BaseClass {
+  class ExperimentalWithCallbackMethod_getDescriptorType : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getDescriptorType() {
-      ::grpc::Service::MarkMethodCallback(9,
+    ExperimentalWithCallbackMethod_getDescriptorType() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) { return this->getDescriptorType(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) { return this->getDescriptorType(context, request, response); }));}
     void SetMessageAllocatorFor_getDescriptorType(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getDescriptorType() override {
+    ~ExperimentalWithCallbackMethod_getDescriptorType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1129,26 +1472,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDescriptorType(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDescriptorType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_setDescriptorType : public BaseClass {
+  class ExperimentalWithCallbackMethod_setDescriptorType : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setDescriptorType() {
-      ::grpc::Service::MarkMethodCallback(10,
+    ExperimentalWithCallbackMethod_setDescriptorType() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::setDescriptorTypeRequest, ::grpcIPointCloudManager::setDescriptorTypeResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response) { return this->setDescriptorType(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response) { return this->setDescriptorType(context, request, response); }));}
     void SetMessageAllocatorFor_setDescriptorType(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::setDescriptorTypeRequest, ::grpcIPointCloudManager::setDescriptorTypeResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::setDescriptorTypeRequest, ::grpcIPointCloudManager::setDescriptorTypeResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::setDescriptorTypeRequest, ::grpcIPointCloudManager::setDescriptorTypeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setDescriptorType() override {
+    ~ExperimentalWithCallbackMethod_setDescriptorType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1156,26 +1519,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setDescriptorType(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::setDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::setDescriptorTypeResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::setDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::setDescriptorTypeResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setDescriptorType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::setDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::setDescriptorTypeResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_isExistPoint : public BaseClass {
+  class ExperimentalWithCallbackMethod_isExistPoint : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_isExistPoint() {
-      ::grpc::Service::MarkMethodCallback(11,
+    ExperimentalWithCallbackMethod_isExistPoint() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::isExistPointRequest, ::grpcIPointCloudManager::isExistPointResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response) { return this->isExistPoint(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response) { return this->isExistPoint(context, request, response); }));}
     void SetMessageAllocatorFor_isExistPoint(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::isExistPointRequest, ::grpcIPointCloudManager::isExistPointResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::isExistPointRequest, ::grpcIPointCloudManager::isExistPointResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::isExistPointRequest, ::grpcIPointCloudManager::isExistPointResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_isExistPoint() override {
+    ~ExperimentalWithCallbackMethod_isExistPoint() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1183,26 +1566,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isExistPoint(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::isExistPointRequest* /*request*/, ::grpcIPointCloudManager::isExistPointResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::isExistPointRequest* /*request*/, ::grpcIPointCloudManager::isExistPointResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* isExistPoint(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::isExistPointRequest* /*request*/, ::grpcIPointCloudManager::isExistPointResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getNbPoints : public BaseClass {
+  class ExperimentalWithCallbackMethod_getNbPoints : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getNbPoints() {
-      ::grpc::Service::MarkMethodCallback(12,
+    ExperimentalWithCallbackMethod_getNbPoints() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response) { return this->getNbPoints(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response) { return this->getNbPoints(context, request, response); }));}
     void SetMessageAllocatorFor_getNbPoints(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getNbPoints() override {
+    ~ExperimentalWithCallbackMethod_getNbPoints() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1210,26 +1613,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNbPoints(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNbPoints(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_saveToFile : public BaseClass {
+  class ExperimentalWithCallbackMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_saveToFile() {
-      ::grpc::Service::MarkMethodCallback(13,
+    ExperimentalWithCallbackMethod_saveToFile() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::saveToFileRequest, ::grpcIPointCloudManager::saveToFileResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response) { return this->saveToFile(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response) { return this->saveToFile(context, request, response); }));}
     void SetMessageAllocatorFor_saveToFile(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::saveToFileRequest, ::grpcIPointCloudManager::saveToFileResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::saveToFileRequest, ::grpcIPointCloudManager::saveToFileResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::saveToFileRequest, ::grpcIPointCloudManager::saveToFileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_saveToFile() override {
+    ~ExperimentalWithCallbackMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1237,26 +1660,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* saveToFile(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::saveToFileRequest* /*request*/, ::grpcIPointCloudManager::saveToFileResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::saveToFileRequest* /*request*/, ::grpcIPointCloudManager::saveToFileResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* saveToFile(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::saveToFileRequest* /*request*/, ::grpcIPointCloudManager::saveToFileResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_loadFromFile : public BaseClass {
+  class ExperimentalWithCallbackMethod_loadFromFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodCallback(14,
+    ExperimentalWithCallbackMethod_loadFromFile() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::loadFromFileRequest, ::grpcIPointCloudManager::loadFromFileResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response) { return this->loadFromFile(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response) { return this->loadFromFile(context, request, response); }));}
     void SetMessageAllocatorFor_loadFromFile(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::loadFromFileRequest, ::grpcIPointCloudManager::loadFromFileResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::loadFromFileRequest, ::grpcIPointCloudManager::loadFromFileResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::loadFromFileRequest, ::grpcIPointCloudManager::loadFromFileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_loadFromFile() override {
+    ~ExperimentalWithCallbackMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1264,26 +1707,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* loadFromFile(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::loadFromFileRequest* /*request*/, ::grpcIPointCloudManager::loadFromFileResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::loadFromFileRequest* /*request*/, ::grpcIPointCloudManager::loadFromFileResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* loadFromFile(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::loadFromFileRequest* /*request*/, ::grpcIPointCloudManager::loadFromFileResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getConstPointCloud : public BaseClass {
+  class ExperimentalWithCallbackMethod_getConstPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getConstPointCloud() {
-      ::grpc::Service::MarkMethodCallback(15,
+    ExperimentalWithCallbackMethod_getConstPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) { return this->getConstPointCloud(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) { return this->getConstPointCloud(context, request, response); }));}
     void SetMessageAllocatorFor_getConstPointCloud(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getConstPointCloud() override {
+    ~ExperimentalWithCallbackMethod_getConstPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1291,26 +1754,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getConstPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getConstPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getPointCloud : public BaseClass {
+  class ExperimentalWithCallbackMethod_getPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getPointCloud() {
-      ::grpc::Service::MarkMethodCallback(16,
+    ExperimentalWithCallbackMethod_getPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getPointCloudRequest, ::grpcIPointCloudManager::getPointCloudResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response) { return this->getPointCloud(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response) { return this->getPointCloud(context, request, response); }));}
     void SetMessageAllocatorFor_getPointCloud(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::getPointCloudRequest, ::grpcIPointCloudManager::getPointCloudResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::getPointCloudRequest, ::grpcIPointCloudManager::getPointCloudResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getPointCloudRequest, ::grpcIPointCloudManager::getPointCloudResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getPointCloud() override {
+    ~ExperimentalWithCallbackMethod_getPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1318,26 +1801,46 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getPointCloudResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getPointCloudResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getPointCloudResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_setPointCloud : public BaseClass {
+  class ExperimentalWithCallbackMethod_setPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setPointCloud() {
-      ::grpc::Service::MarkMethodCallback(17,
+    ExperimentalWithCallbackMethod_setPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::setPointCloudRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response) { return this->setPointCloud(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response) { return this->setPointCloud(context, request, response); }));}
     void SetMessageAllocatorFor_setPointCloud(
-        ::grpc::MessageAllocator< ::grpcIPointCloudManager::setPointCloudRequest, ::google::protobuf::Empty>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::setPointCloudRequest, ::google::protobuf::Empty>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::setPointCloudRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setPointCloud() override {
+    ~ExperimentalWithCallbackMethod_setPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1345,11 +1848,20 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::setPointCloudRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::setPointCloudRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::setPointCloudRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_addPoint_grpc0<WithCallbackMethod_addPoints_grpc0<WithCallbackMethod_addPoint_grpc1<WithCallbackMethod_addPoints_grpc1<WithCallbackMethod_getPoint<WithCallbackMethod_getPoints<WithCallbackMethod_getAllPoints<WithCallbackMethod_suppressPoint<WithCallbackMethod_suppressPoints<WithCallbackMethod_getDescriptorType<WithCallbackMethod_setDescriptorType<WithCallbackMethod_isExistPoint<WithCallbackMethod_getNbPoints<WithCallbackMethod_saveToFile<WithCallbackMethod_loadFromFile<WithCallbackMethod_getConstPointCloud<WithCallbackMethod_getPointCloud<WithCallbackMethod_setPointCloud<Service > > > > > > > > > > > > > > > > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_addPoint_grpc0<ExperimentalWithCallbackMethod_addPoints_grpc0<ExperimentalWithCallbackMethod_addPoint_grpc1<ExperimentalWithCallbackMethod_addPoints_grpc1<ExperimentalWithCallbackMethod_getPoint<ExperimentalWithCallbackMethod_getPoints<ExperimentalWithCallbackMethod_getAllPoints<ExperimentalWithCallbackMethod_suppressPoint<ExperimentalWithCallbackMethod_suppressPoints<ExperimentalWithCallbackMethod_getDescriptorType<ExperimentalWithCallbackMethod_setDescriptorType<ExperimentalWithCallbackMethod_isExistPoint<ExperimentalWithCallbackMethod_getNbPoints<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_getConstPointCloud<ExperimentalWithCallbackMethod_getPointCloud<ExperimentalWithCallbackMethod_setPointCloud<Service > > > > > > > > > > > > > > > > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_addPoint_grpc0<ExperimentalWithCallbackMethod_addPoints_grpc0<ExperimentalWithCallbackMethod_addPoint_grpc1<ExperimentalWithCallbackMethod_addPoints_grpc1<ExperimentalWithCallbackMethod_getPoint<ExperimentalWithCallbackMethod_getPoints<ExperimentalWithCallbackMethod_getAllPoints<ExperimentalWithCallbackMethod_suppressPoint<ExperimentalWithCallbackMethod_suppressPoints<ExperimentalWithCallbackMethod_getDescriptorType<ExperimentalWithCallbackMethod_setDescriptorType<ExperimentalWithCallbackMethod_isExistPoint<ExperimentalWithCallbackMethod_getNbPoints<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_getConstPointCloud<ExperimentalWithCallbackMethod_getPointCloud<ExperimentalWithCallbackMethod_setPointCloud<Service > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_addPoint_grpc0 : public BaseClass {
    private:
@@ -2017,17 +2529,27 @@ class grpcIPointCloudManagerService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_addPoint_grpc0 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_addPoint_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_addPoint_grpc0() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_addPoint_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->addPoint_grpc0(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->addPoint_grpc0(context, request, response); }));
     }
-    ~WithRawCallbackMethod_addPoint_grpc0() override {
+    ~ExperimentalWithRawCallbackMethod_addPoint_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2035,21 +2557,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* addPoint_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* addPoint_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_addPoints_grpc0 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_addPoints_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_addPoints_grpc0() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_addPoints_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->addPoints_grpc0(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->addPoints_grpc0(context, request, response); }));
     }
-    ~WithRawCallbackMethod_addPoints_grpc0() override {
+    ~ExperimentalWithRawCallbackMethod_addPoints_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2057,21 +2595,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* addPoints_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* addPoints_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_addPoint_grpc1 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_addPoint_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_addPoint_grpc1() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+    ExperimentalWithRawCallbackMethod_addPoint_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->addPoint_grpc1(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->addPoint_grpc1(context, request, response); }));
     }
-    ~WithRawCallbackMethod_addPoint_grpc1() override {
+    ~ExperimentalWithRawCallbackMethod_addPoint_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2079,21 +2633,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* addPoint_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* addPoint_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_addPoints_grpc1 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_addPoints_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_addPoints_grpc1() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+    ExperimentalWithRawCallbackMethod_addPoints_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->addPoints_grpc1(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->addPoints_grpc1(context, request, response); }));
     }
-    ~WithRawCallbackMethod_addPoints_grpc1() override {
+    ~ExperimentalWithRawCallbackMethod_addPoints_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2101,21 +2671,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* addPoints_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* addPoints_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getPoint : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getPoint : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getPoint() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+    ExperimentalWithRawCallbackMethod_getPoint() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPoint(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPoint(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getPoint() override {
+    ~ExperimentalWithRawCallbackMethod_getPoint() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2123,21 +2709,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPoint(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPoint(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getPoints : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getPoints : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getPoints() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+    ExperimentalWithRawCallbackMethod_getPoints() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPoints(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPoints(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getPoints() override {
+    ~ExperimentalWithRawCallbackMethod_getPoints() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2145,21 +2747,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPoints(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPoints(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getAllPoints : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getAllPoints : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getAllPoints() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+    ExperimentalWithRawCallbackMethod_getAllPoints() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAllPoints(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAllPoints(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getAllPoints() override {
+    ~ExperimentalWithRawCallbackMethod_getAllPoints() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2167,21 +2785,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getAllPoints(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getAllPoints(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_suppressPoint : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_suppressPoint : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_suppressPoint() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+    ExperimentalWithRawCallbackMethod_suppressPoint() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->suppressPoint(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->suppressPoint(context, request, response); }));
     }
-    ~WithRawCallbackMethod_suppressPoint() override {
+    ~ExperimentalWithRawCallbackMethod_suppressPoint() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2189,21 +2823,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* suppressPoint(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* suppressPoint(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_suppressPoints : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_suppressPoints : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_suppressPoints() {
-      ::grpc::Service::MarkMethodRawCallback(8,
+    ExperimentalWithRawCallbackMethod_suppressPoints() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->suppressPoints(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->suppressPoints(context, request, response); }));
     }
-    ~WithRawCallbackMethod_suppressPoints() override {
+    ~ExperimentalWithRawCallbackMethod_suppressPoints() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2211,21 +2861,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* suppressPoints(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* suppressPoints(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getDescriptorType : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getDescriptorType : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getDescriptorType() {
-      ::grpc::Service::MarkMethodRawCallback(9,
+    ExperimentalWithRawCallbackMethod_getDescriptorType() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDescriptorType(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDescriptorType(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getDescriptorType() override {
+    ~ExperimentalWithRawCallbackMethod_getDescriptorType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2233,21 +2899,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDescriptorType(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getDescriptorType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setDescriptorType : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setDescriptorType : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setDescriptorType() {
-      ::grpc::Service::MarkMethodRawCallback(10,
+    ExperimentalWithRawCallbackMethod_setDescriptorType() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setDescriptorType(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setDescriptorType(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setDescriptorType() override {
+    ~ExperimentalWithRawCallbackMethod_setDescriptorType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2255,21 +2937,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setDescriptorType(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setDescriptorType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_isExistPoint : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_isExistPoint : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_isExistPoint() {
-      ::grpc::Service::MarkMethodRawCallback(11,
+    ExperimentalWithRawCallbackMethod_isExistPoint() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isExistPoint(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isExistPoint(context, request, response); }));
     }
-    ~WithRawCallbackMethod_isExistPoint() override {
+    ~ExperimentalWithRawCallbackMethod_isExistPoint() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2277,21 +2975,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isExistPoint(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* isExistPoint(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getNbPoints : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getNbPoints : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getNbPoints() {
-      ::grpc::Service::MarkMethodRawCallback(12,
+    ExperimentalWithRawCallbackMethod_getNbPoints() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNbPoints(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNbPoints(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getNbPoints() override {
+    ~ExperimentalWithRawCallbackMethod_getNbPoints() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2299,21 +3013,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNbPoints(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNbPoints(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_saveToFile : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_saveToFile() {
-      ::grpc::Service::MarkMethodRawCallback(13,
+    ExperimentalWithRawCallbackMethod_saveToFile() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->saveToFile(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->saveToFile(context, request, response); }));
     }
-    ~WithRawCallbackMethod_saveToFile() override {
+    ~ExperimentalWithRawCallbackMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2321,21 +3051,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* saveToFile(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* saveToFile(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_loadFromFile : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_loadFromFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodRawCallback(14,
+    ExperimentalWithRawCallbackMethod_loadFromFile() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->loadFromFile(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->loadFromFile(context, request, response); }));
     }
-    ~WithRawCallbackMethod_loadFromFile() override {
+    ~ExperimentalWithRawCallbackMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2343,21 +3089,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* loadFromFile(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* loadFromFile(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getConstPointCloud : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getConstPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getConstPointCloud() {
-      ::grpc::Service::MarkMethodRawCallback(15,
+    ExperimentalWithRawCallbackMethod_getConstPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getConstPointCloud(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getConstPointCloud(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getConstPointCloud() override {
+    ~ExperimentalWithRawCallbackMethod_getConstPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2365,21 +3127,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getConstPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getConstPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getPointCloud : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getPointCloud() {
-      ::grpc::Service::MarkMethodRawCallback(16,
+    ExperimentalWithRawCallbackMethod_getPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPointCloud(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPointCloud(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getPointCloud() override {
+    ~ExperimentalWithRawCallbackMethod_getPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2387,21 +3165,37 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setPointCloud : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setPointCloud() {
-      ::grpc::Service::MarkMethodRawCallback(17,
+    ExperimentalWithRawCallbackMethod_setPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setPointCloud(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setPointCloud(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setPointCloud() override {
+    ~ExperimentalWithRawCallbackMethod_setPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -2409,8 +3203,14 @@ class grpcIPointCloudManagerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_addPoint_grpc0 : public BaseClass {

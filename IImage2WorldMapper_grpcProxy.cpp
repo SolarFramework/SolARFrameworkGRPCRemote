@@ -45,7 +45,7 @@ SolAR::FrameworkReturnCode  IImage2WorldMapper_grpcProxy::map(std::vector<SolAR:
   reqIn.set_worldpoints(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(worldPoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->map(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "maprpc failed." << std::endl;
+    std::cout << "map rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIImage2WorldMapperService","map",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

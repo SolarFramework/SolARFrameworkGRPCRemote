@@ -27,23 +27,23 @@ static const char* grpcIImage2WorldMapperService_method_names[] = {
 
 std::unique_ptr< grpcIImage2WorldMapperService::Stub> grpcIImage2WorldMapperService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIImage2WorldMapperService::Stub> stub(new grpcIImage2WorldMapperService::Stub(channel, options));
+  std::unique_ptr< grpcIImage2WorldMapperService::Stub> stub(new grpcIImage2WorldMapperService::Stub(channel));
   return stub;
 }
 
-grpcIImage2WorldMapperService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_map_(grpcIImage2WorldMapperService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIImage2WorldMapperService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_map_(grpcIImage2WorldMapperService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIImage2WorldMapperService::Stub::map(::grpc::ClientContext* context, const ::grpcIImage2WorldMapper::mapRequest& request, ::grpcIImage2WorldMapper::mapResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIImage2WorldMapper::mapRequest, ::grpcIImage2WorldMapper::mapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_map_, context, request, response);
 }
 
-void grpcIImage2WorldMapperService::Stub::async::map(::grpc::ClientContext* context, const ::grpcIImage2WorldMapper::mapRequest* request, ::grpcIImage2WorldMapper::mapResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIImage2WorldMapperService::Stub::experimental_async::map(::grpc::ClientContext* context, const ::grpcIImage2WorldMapper::mapRequest* request, ::grpcIImage2WorldMapper::mapResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIImage2WorldMapper::mapRequest, ::grpcIImage2WorldMapper::mapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_map_, context, request, response, std::move(f));
 }
 
-void grpcIImage2WorldMapperService::Stub::async::map(::grpc::ClientContext* context, const ::grpcIImage2WorldMapper::mapRequest* request, ::grpcIImage2WorldMapper::mapResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIImage2WorldMapperService::Stub::experimental_async::map(::grpc::ClientContext* context, const ::grpcIImage2WorldMapper::mapRequest* request, ::grpcIImage2WorldMapper::mapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_map_, context, request, response, reactor);
 }
 

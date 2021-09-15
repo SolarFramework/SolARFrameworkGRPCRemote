@@ -2,7 +2,7 @@
 
 #ifndef IIMAGELOADER_GRPCSERVER_H
 #define IIMAGELOADER_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageLoader.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIImageLoaderService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IImageLoader_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImageLoader::IImageLoader_grpcServer>
 {
-  static constexpr const char * UUID = "edbcd12d-d5ae-4cf8-aa6c-66f68efcbda0";
+  static constexpr const char * UUID = "3eb8cbad-310a-4fac-9abd-fe6ef0bc6d49";
   static constexpr const char * NAME = "IImageLoader_grpcServer";
   static constexpr const char * DESCRIPTION = "IImageLoader_grpcServer grpc server component";
 };

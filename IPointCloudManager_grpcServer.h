@@ -2,7 +2,7 @@
 
 #ifndef IPOINTCLOUDMANAGER_GRPCSERVER_H
 #define IPOINTCLOUDMANAGER_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IPointCloudManager.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IPointCloudManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIPointCloudManagerService.grpc.pb.h"
@@ -58,7 +58,7 @@ class IPointCloudManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPointCloudManager::IPointCloudManager_grpcServer>
 {
-  static constexpr const char * UUID = "9d5a4d88-2797-4499-a5df-67506e8c1cbe";
+  static constexpr const char * UUID = "3262f93a-3bc4-497f-b2df-9e070aef35f7";
   static constexpr const char * NAME = "IPointCloudManager_grpcServer";
   static constexpr const char * DESCRIPTION = "IPointCloudManager_grpcServer grpc server component";
 };

@@ -2,7 +2,7 @@
 
 #ifndef I2DTRANSFORM_GRPCSERVER_H
 #define I2DTRANSFORM_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/geom/I2DTransform.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/I2DTransform.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI2DTransformService.grpc.pb.h"
@@ -41,7 +41,7 @@ class I2DTransform_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI2DTransform::I2DTransform_grpcServer>
 {
-  static constexpr const char * UUID = "10725eb9-2cef-4539-af10-8af323d58e81";
+  static constexpr const char * UUID = "e0d3b970-001f-4d5c-89b9-1dd1969cb152";
   static constexpr const char * NAME = "I2DTransform_grpcServer";
   static constexpr const char * DESCRIPTION = "I2DTransform_grpcServer grpc server component";
 };

@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIReprojectionStereo;
+
+message reprojectToUnrectificationRequest
+{
+bytes rectifiedKeypoints = 1;
+bytes rectParams = 2;
+bytes unrectifiedKeypoints = 3;
+}
+
+message reprojectToUnrectificationResponse
+{
+bytes unrectifiedKeypoints = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message reprojectToCloudPoints_grpc0Request
+{
+bytes undistortedKeypoints = 1;
+bytes descriptors = 2;
+bytes pose = 3;
+bytes intrinsicParams = 4;
+bytes cloudPoints = 5;
+}
+
+message reprojectToCloudPoints_grpc0Response
+{
+bytes cloudPoints = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message reprojectToCloudPoints_grpc1Request
+{
+bytes frame = 1;
+bytes intrinsicParams = 2;
+bytes cloudPoints = 3;
+}
+
+message reprojectToCloudPoints_grpc1Response
+{
+bytes cloudPoints = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIReprojectionStereoService {
+rpc reprojectToUnrectification(reprojectToUnrectificationRequest) returns(reprojectToUnrectificationResponse) {}
+rpc reprojectToCloudPoints_grpc0(reprojectToCloudPoints_grpc0Request) returns(reprojectToCloudPoints_grpc0Response) {}
+rpc reprojectToCloudPoints_grpc1(reprojectToCloudPoints_grpc1Request) returns(reprojectToCloudPoints_grpc1Response) {}
+}
+

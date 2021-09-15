@@ -2,7 +2,7 @@
 
 #ifndef IRGBDCAMERA_GRPCSERVER_H
 #define IRGBDCAMERA_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IRGBDCamera.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IRGBDCamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIRGBDCameraService.grpc.pb.h"
@@ -66,7 +66,7 @@ class IRGBDCamera_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIRGBDCamera::IRGBDCamera_grpcServer>
 {
-  static constexpr const char * UUID = "7e0d41e3-7b2a-4993-8456-ed97a53c005b";
+  static constexpr const char * UUID = "8a0cc5ed-7fb3-4881-86ba-0c4451dd74d8";
   static constexpr const char * NAME = "IRGBDCamera_grpcServer";
   static constexpr const char * DESCRIPTION = "IRGBDCamera_grpcServer grpc server component";
 };

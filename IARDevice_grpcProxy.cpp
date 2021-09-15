@@ -43,7 +43,7 @@ SolAR::FrameworkReturnCode  IARDevice_grpcProxy::start()
   ::grpcIARDevice::startResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "startrpc failed." << std::endl;
+    std::cout << "start rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIARDeviceService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -58,26 +58,11 @@ SolAR::FrameworkReturnCode  IARDevice_grpcProxy::stop()
   ::grpcIARDevice::stopResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "stoprpc failed." << std::endl;
+    std::cout << "stop rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIARDeviceService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
-}
-
-
-int  IARDevice_grpcProxy::getNbCameras()
-{
-  ::grpc::ClientContext context;
-  ::google::protobuf::Empty reqIn;
-  ::grpcIARDevice::getNbCamerasResponse respOut;
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->getNbCameras(&context, reqIn, &respOut);
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "getNbCamerasrpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIARDeviceService","getNbCameras",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-  return respOut.xpcfgrpcreturnvalue();
 }
 
 
@@ -91,7 +76,7 @@ SolAR::FrameworkReturnCode  IARDevice_grpcProxy::getData(std::vector<SRef<SolAR:
   reqIn.set_timestamp(xpcf::serialize<std::chrono::system_clock::time_point>(timestamp));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getData(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDatarpc failed." << std::endl;
+    std::cout << "getData rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIARDeviceService","getData",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -102,36 +87,19 @@ SolAR::FrameworkReturnCode  IARDevice_grpcProxy::getData(std::vector<SRef<SolAR:
 }
 
 
-SolAR::datastructure::CameraParameters const&  IARDevice_grpcProxy::getParameters(int const& camera_id) const
+SolAR::datastructure::CameraRigParameters const&  IARDevice_grpcProxy::getCameraParameters() const
 {
   ::grpc::ClientContext context;
-  ::grpcIARDevice::getParametersRequest reqIn;
-  ::grpcIARDevice::getParametersResponse respOut;
-  reqIn.set_camera_id(camera_id);
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->getParameters(&context, reqIn, &respOut);
+  ::google::protobuf::Empty reqIn;
+  ::grpcIARDevice::getCameraParametersResponse respOut;
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getParametersrpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIARDeviceService","getParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "getCameraParameters rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIARDeviceService","getCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  m_getParameters = xpcf::deserialize<SolAR::datastructure::CameraParameters>(respOut.xpcfgrpcreturnvalue());
-  return m_getParameters;
-}
-
-
-void  IARDevice_grpcProxy::setParameters(int const& camera_id, SolAR::datastructure::CameraParameters const& parameters)
-{
-  ::grpc::ClientContext context;
-  ::grpcIARDevice::setParametersRequest reqIn;
-  ::google::protobuf::Empty respOut;
-  reqIn.set_camera_id(camera_id);
-  reqIn.set_parameters(xpcf::serialize<SolAR::datastructure::CameraParameters>(parameters));
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->setParameters(&context, reqIn, &respOut);
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "setParametersrpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIARDeviceService","setParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
+  m_getCameraParameters = xpcf::deserialize<SolAR::datastructure::CameraRigParameters>(respOut.xpcfgrpcreturnvalue());
+  return m_getCameraParameters;
 }
 
 

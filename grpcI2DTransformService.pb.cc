@@ -97,8 +97,10 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcI2
   schemas, file_default_instances, TableStruct_grpcI2DTransformService_2eproto::offsets,
   file_level_metadata_grpcI2DTransformService_2eproto, file_level_enum_descriptors_grpcI2DTransformService_2eproto, file_level_service_descriptors_grpcI2DTransformService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcI2DTransformService_2eproto_getter() {
-  return &descriptor_table_grpcI2DTransformService_2eproto;
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_grpcI2DTransformService_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcI2DTransformService_2eproto);
+  return descriptor_table_grpcI2DTransformService_2eproto.file_level_metadata[index];
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -111,13 +113,10 @@ class transformRequest::_Internal {
  public:
 };
 
-transformRequest::transformRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+transformRequest::transformRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcI2DTransform.transformRequest)
 }
 transformRequest::transformRequest(const transformRequest& from)
@@ -126,22 +125,22 @@ transformRequest::transformRequest(const transformRequest& from)
   inputpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_inputpoints().empty()) {
     inputpoints_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_inputpoints(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   transformation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_transformation().empty()) {
     transformation_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_transformation(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   outputpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_outputpoints().empty()) {
     outputpoints_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_outputpoints(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcI2DTransform.transformRequest)
 }
 
-inline void transformRequest::SharedCtor() {
+void transformRequest::SharedCtor() {
 inputpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 transformation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 outputpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -149,13 +148,12 @@ outputpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStrin
 
 transformRequest::~transformRequest() {
   // @@protoc_insertion_point(destructor:grpcI2DTransform.transformRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void transformRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void transformRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   inputpoints_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   transformation_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   outputpoints_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -188,6 +186,7 @@ const char* transformRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes inputPoints = 1;
       case 1:
@@ -215,8 +214,7 @@ const char* transformRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -243,19 +241,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes inputPoints = 1;
-  if (!this->_internal_inputpoints().empty()) {
+  if (this->inputpoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_inputpoints(), target);
   }
 
   // bytes transformation = 2;
-  if (!this->_internal_transformation().empty()) {
+  if (this->transformation().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_transformation(), target);
   }
 
   // bytes outputPoints = 3;
-  if (!this->_internal_outputpoints().empty()) {
+  if (this->outputpoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_outputpoints(), target);
   }
@@ -277,21 +275,21 @@ size_t transformRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes inputPoints = 1;
-  if (!this->_internal_inputpoints().empty()) {
+  if (this->inputpoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_inputpoints());
   }
 
   // bytes transformation = 2;
-  if (!this->_internal_transformation().empty()) {
+  if (this->transformation().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_transformation());
   }
 
   // bytes outputPoints = 3;
-  if (!this->_internal_outputpoints().empty()) {
+  if (this->outputpoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_outputpoints());
@@ -306,35 +304,44 @@ size_t transformRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData transformRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    transformRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*transformRequest::GetClassData() const { return &_class_data_; }
-
-void transformRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<transformRequest *>(to)->MergeFrom(
-      static_cast<const transformRequest &>(from));
+void transformRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcI2DTransform.transformRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const transformRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<transformRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2DTransform.transformRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2DTransform.transformRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void transformRequest::MergeFrom(const transformRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransform.transformRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_inputpoints().empty()) {
+  if (from.inputpoints().size() > 0) {
     _internal_set_inputpoints(from._internal_inputpoints());
   }
-  if (!from._internal_transformation().empty()) {
+  if (from.transformation().size() > 0) {
     _internal_set_transformation(from._internal_transformation());
   }
-  if (!from._internal_outputpoints().empty()) {
+  if (from.outputpoints().size() > 0) {
     _internal_set_outputpoints(from._internal_outputpoints());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void transformRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcI2DTransform.transformRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void transformRequest::CopyFrom(const transformRequest& from) {
@@ -350,29 +357,16 @@ bool transformRequest::IsInitialized() const {
 
 void transformRequest::InternalSwap(transformRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &inputpoints_, GetArenaForAllocation(),
-      &other->inputpoints_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &transformation_, GetArenaForAllocation(),
-      &other->transformation_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &outputpoints_, GetArenaForAllocation(),
-      &other->outputpoints_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  inputpoints_.Swap(&other->inputpoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  transformation_.Swap(&other->transformation_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  outputpoints_.Swap(&other->outputpoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata transformRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcI2DTransformService_2eproto_getter, &descriptor_table_grpcI2DTransformService_2eproto_once,
-      file_level_metadata_grpcI2DTransformService_2eproto[0]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -380,13 +374,10 @@ class transformResponse::_Internal {
  public:
 };
 
-transformResponse::transformResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+transformResponse::transformResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcI2DTransform.transformResponse)
 }
 transformResponse::transformResponse(const transformResponse& from)
@@ -395,26 +386,25 @@ transformResponse::transformResponse(const transformResponse& from)
   outputpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_outputpoints().empty()) {
     outputpoints_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_outputpoints(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcI2DTransform.transformResponse)
 }
 
-inline void transformResponse::SharedCtor() {
+void transformResponse::SharedCtor() {
 outputpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
 }
 
 transformResponse::~transformResponse() {
   // @@protoc_insertion_point(destructor:grpcI2DTransform.transformResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void transformResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void transformResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   outputpoints_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -444,6 +434,7 @@ const char* transformResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes outputPoints = 1;
       case 1:
@@ -462,8 +453,7 @@ const char* transformResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -490,13 +480,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes outputPoints = 1;
-  if (!this->_internal_outputpoints().empty()) {
+  if (this->outputpoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_outputpoints(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -518,14 +508,14 @@ size_t transformResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes outputPoints = 1;
-  if (!this->_internal_outputpoints().empty()) {
+  if (this->outputpoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_outputpoints());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -540,32 +530,41 @@ size_t transformResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData transformResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    transformResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*transformResponse::GetClassData() const { return &_class_data_; }
-
-void transformResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<transformResponse *>(to)->MergeFrom(
-      static_cast<const transformResponse &>(from));
+void transformResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcI2DTransform.transformResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const transformResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<transformResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2DTransform.transformResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2DTransform.transformResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void transformResponse::MergeFrom(const transformResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransform.transformResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_outputpoints().empty()) {
+  if (from.outputpoints().size() > 0) {
     _internal_set_outputpoints(from._internal_outputpoints());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void transformResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcI2DTransform.transformResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void transformResponse::CopyFrom(const transformResponse& from) {
@@ -581,20 +580,15 @@ bool transformResponse::IsInitialized() const {
 
 void transformResponse::InternalSwap(transformResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &outputpoints_, GetArenaForAllocation(),
-      &other->outputpoints_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  outputpoints_.Swap(&other->outputpoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata transformResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcI2DTransformService_2eproto_getter, &descriptor_table_grpcI2DTransformService_2eproto_once,
-      file_level_metadata_grpcI2DTransformService_2eproto[1]);
+  return GetMetadataStatic();
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcI2DTransform

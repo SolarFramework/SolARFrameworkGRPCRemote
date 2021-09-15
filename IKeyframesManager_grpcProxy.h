@@ -3,7 +3,7 @@
 
 #ifndef IKEYFRAMESMANAGER_GRPCPROXY_H
 #define IKEYFRAMESMANAGER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IKeyframesManager.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IKeyframesManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -51,7 +51,7 @@ class IKeyframesManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIKeyframesManager::IKeyframesManager_grpcProxy>
 {
-  static constexpr const char * UUID = "749d310f-bcfd-474a-b60d-8dfcbcf24b72";
+  static constexpr const char * UUID = "4497e76b-7e89-4a69-86ac-df7c1a617cbe";
   static constexpr const char * NAME = "IKeyframesManager_grpcProxy";
   static constexpr const char * DESCRIPTION = "IKeyframesManager_grpcProxy grpc client proxy component";
 };

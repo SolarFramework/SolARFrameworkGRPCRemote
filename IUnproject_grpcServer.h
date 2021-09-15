@@ -2,7 +2,7 @@
 
 #ifndef IUNPROJECT_GRPCSERVER_H
 #define IUNPROJECT_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IUnproject.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IUnproject.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIUnprojectService.grpc.pb.h"
@@ -43,7 +43,7 @@ class IUnproject_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIUnproject::IUnproject_grpcServer>
 {
-  static constexpr const char * UUID = "1a3da266-9a11-42d9-bd84-59f6141cc501";
+  static constexpr const char * UUID = "4455863a-3cc3-480c-862d-6326f641c33f";
   static constexpr const char * NAME = "IUnproject_grpcServer";
   static constexpr const char * DESCRIPTION = "IUnproject_grpcServer grpc server component";
 };

@@ -3,7 +3,7 @@
 
 #ifndef IPROJECT_GRPCPROXY_H
 #define IPROJECT_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IProject.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IProject.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -38,7 +38,7 @@ class IProject_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pub
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIProject::IProject_grpcProxy>
 {
-  static constexpr const char * UUID = "07238afd-8bde-4918-ba5a-07cabf7c4ae2";
+  static constexpr const char * UUID = "6fe5ce50-77a0-44ec-80d6-6d0294ac404c";
   static constexpr const char * NAME = "IProject_grpcProxy";
   static constexpr const char * DESCRIPTION = "IProject_grpcProxy grpc client proxy component";
 };

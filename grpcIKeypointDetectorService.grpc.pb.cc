@@ -29,25 +29,25 @@ static const char* grpcIKeypointDetectorService_method_names[] = {
 
 std::unique_ptr< grpcIKeypointDetectorService::Stub> grpcIKeypointDetectorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIKeypointDetectorService::Stub> stub(new grpcIKeypointDetectorService::Stub(channel, options));
+  std::unique_ptr< grpcIKeypointDetectorService::Stub> stub(new grpcIKeypointDetectorService::Stub(channel));
   return stub;
 }
 
-grpcIKeypointDetectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_setType_(grpcIKeypointDetectorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getType_(grpcIKeypointDetectorService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_detect_(grpcIKeypointDetectorService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIKeypointDetectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_setType_(grpcIKeypointDetectorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getType_(grpcIKeypointDetectorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_detect_(grpcIKeypointDetectorService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIKeypointDetectorService::Stub::setType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeypointDetector::setTypeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setType_, context, request, response);
 }
 
-void grpcIKeypointDetectorService::Stub::async::setType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeypointDetectorService::Stub::experimental_async::setType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeypointDetector::setTypeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setType_, context, request, response, std::move(f));
 }
 
-void grpcIKeypointDetectorService::Stub::async::setType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIKeypointDetectorService::Stub::experimental_async::setType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setType_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcIKeypointDetectorService::Stub::async::setType(::grpc::ClientContext* c
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIKeypointDetector::getTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getType_, context, request, response);
 }
 
-void grpcIKeypointDetectorService::Stub::async::getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeypointDetectorService::Stub::experimental_async::getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIKeypointDetector::getTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getType_, context, request, response, std::move(f));
 }
 
-void grpcIKeypointDetectorService::Stub::async::getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIKeypointDetectorService::Stub::experimental_async::getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getType_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcIKeypointDetectorService::Stub::async::getType(::grpc::ClientContext* c
   return ::grpc::internal::BlockingUnaryCall< ::grpcIKeypointDetector::detectRequest, ::grpcIKeypointDetector::detectResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_detect_, context, request, response);
 }
 
-void grpcIKeypointDetectorService::Stub::async::detect(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest* request, ::grpcIKeypointDetector::detectResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIKeypointDetectorService::Stub::experimental_async::detect(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest* request, ::grpcIKeypointDetector::detectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIKeypointDetector::detectRequest, ::grpcIKeypointDetector::detectResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_, context, request, response, std::move(f));
 }
 
-void grpcIKeypointDetectorService::Stub::async::detect(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest* request, ::grpcIKeypointDetector::detectResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIKeypointDetectorService::Stub::experimental_async::detect(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest* request, ::grpcIKeypointDetector::detectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_, context, request, response, reactor);
 }
 

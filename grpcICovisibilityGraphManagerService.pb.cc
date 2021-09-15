@@ -813,8 +813,10 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIC
   schemas, file_default_instances, TableStruct_grpcICovisibilityGraphManagerService_2eproto::offsets,
   file_level_metadata_grpcICovisibilityGraphManagerService_2eproto, file_level_enum_descriptors_grpcICovisibilityGraphManagerService_2eproto, file_level_service_descriptors_grpcICovisibilityGraphManagerService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter() {
-  return &descriptor_table_grpcICovisibilityGraphManagerService_2eproto;
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_grpcICovisibilityGraphManagerService_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcICovisibilityGraphManagerService_2eproto);
+  return descriptor_table_grpcICovisibilityGraphManagerService_2eproto.file_level_metadata[index];
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -827,13 +829,10 @@ class increaseEdgeRequest::_Internal {
  public:
 };
 
-increaseEdgeRequest::increaseEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+increaseEdgeRequest::increaseEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.increaseEdgeRequest)
 }
 increaseEdgeRequest::increaseEdgeRequest(const increaseEdgeRequest& from)
@@ -845,7 +844,7 @@ increaseEdgeRequest::increaseEdgeRequest(const increaseEdgeRequest& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.increaseEdgeRequest)
 }
 
-inline void increaseEdgeRequest::SharedCtor() {
+void increaseEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&weight_) -
@@ -854,13 +853,12 @@ inline void increaseEdgeRequest::SharedCtor() {
 
 increaseEdgeRequest::~increaseEdgeRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.increaseEdgeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void increaseEdgeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void increaseEdgeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void increaseEdgeRequest::ArenaDtor(void* object) {
@@ -890,6 +888,7 @@ const char* increaseEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 node1_id = 1;
       case 1:
@@ -914,8 +913,7 @@ const char* increaseEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -942,19 +940,19 @@ failure:
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
   }
 
   // float weight = 3;
-  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
+  if (!(this->weight() <= 0 && this->weight() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_weight(), target);
   }
@@ -976,21 +974,21 @@ size_t increaseEdgeRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node2_id());
   }
 
   // float weight = 3;
-  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
+  if (!(this->weight() <= 0 && this->weight() >= 0)) {
     total_size += 1 + 4;
   }
 
@@ -1003,35 +1001,44 @@ size_t increaseEdgeRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData increaseEdgeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    increaseEdgeRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*increaseEdgeRequest::GetClassData() const { return &_class_data_; }
-
-void increaseEdgeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<increaseEdgeRequest *>(to)->MergeFrom(
-      static_cast<const increaseEdgeRequest &>(from));
+void increaseEdgeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.increaseEdgeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const increaseEdgeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<increaseEdgeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.increaseEdgeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.increaseEdgeRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void increaseEdgeRequest::MergeFrom(const increaseEdgeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.increaseEdgeRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_node1_id() != 0) {
+  if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
-  if (from._internal_node2_id() != 0) {
+  if (from.node2_id() != 0) {
     _internal_set_node2_id(from._internal_node2_id());
   }
-  if (!(from._internal_weight() <= 0 && from._internal_weight() >= 0)) {
+  if (!(from.weight() <= 0 && from.weight() >= 0)) {
     _internal_set_weight(from._internal_weight());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void increaseEdgeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.increaseEdgeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void increaseEdgeRequest::CopyFrom(const increaseEdgeRequest& from) {
@@ -1047,7 +1054,7 @@ bool increaseEdgeRequest::IsInitialized() const {
 
 void increaseEdgeRequest::InternalSwap(increaseEdgeRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(increaseEdgeRequest, weight_)
       + sizeof(increaseEdgeRequest::weight_)
@@ -1057,10 +1064,9 @@ void increaseEdgeRequest::InternalSwap(increaseEdgeRequest* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata increaseEdgeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[0]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1068,13 +1074,10 @@ class increaseEdgeResponse::_Internal {
  public:
 };
 
-increaseEdgeResponse::increaseEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+increaseEdgeResponse::increaseEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.increaseEdgeResponse)
 }
 increaseEdgeResponse::increaseEdgeResponse(const increaseEdgeResponse& from)
@@ -1084,19 +1087,18 @@ increaseEdgeResponse::increaseEdgeResponse(const increaseEdgeResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.increaseEdgeResponse)
 }
 
-inline void increaseEdgeResponse::SharedCtor() {
+void increaseEdgeResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 increaseEdgeResponse::~increaseEdgeResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.increaseEdgeResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void increaseEdgeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void increaseEdgeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void increaseEdgeResponse::ArenaDtor(void* object) {
@@ -1124,6 +1126,7 @@ const char* increaseEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -1134,8 +1137,7 @@ const char* increaseEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1162,7 +1164,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -1184,7 +1186,7 @@ size_t increaseEdgeResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -1199,29 +1201,38 @@ size_t increaseEdgeResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData increaseEdgeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    increaseEdgeResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*increaseEdgeResponse::GetClassData() const { return &_class_data_; }
-
-void increaseEdgeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<increaseEdgeResponse *>(to)->MergeFrom(
-      static_cast<const increaseEdgeResponse &>(from));
+void increaseEdgeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.increaseEdgeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const increaseEdgeResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<increaseEdgeResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.increaseEdgeResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.increaseEdgeResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void increaseEdgeResponse::MergeFrom(const increaseEdgeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.increaseEdgeResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void increaseEdgeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.increaseEdgeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void increaseEdgeResponse::CopyFrom(const increaseEdgeResponse& from) {
@@ -1237,15 +1248,14 @@ bool increaseEdgeResponse::IsInitialized() const {
 
 void increaseEdgeResponse::InternalSwap(increaseEdgeResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata increaseEdgeResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[1]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1253,13 +1263,10 @@ class decreaseEdgeRequest::_Internal {
  public:
 };
 
-decreaseEdgeRequest::decreaseEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+decreaseEdgeRequest::decreaseEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.decreaseEdgeRequest)
 }
 decreaseEdgeRequest::decreaseEdgeRequest(const decreaseEdgeRequest& from)
@@ -1271,7 +1278,7 @@ decreaseEdgeRequest::decreaseEdgeRequest(const decreaseEdgeRequest& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.decreaseEdgeRequest)
 }
 
-inline void decreaseEdgeRequest::SharedCtor() {
+void decreaseEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&weight_) -
@@ -1280,13 +1287,12 @@ inline void decreaseEdgeRequest::SharedCtor() {
 
 decreaseEdgeRequest::~decreaseEdgeRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.decreaseEdgeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void decreaseEdgeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void decreaseEdgeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void decreaseEdgeRequest::ArenaDtor(void* object) {
@@ -1316,6 +1322,7 @@ const char* decreaseEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 node1_id = 1;
       case 1:
@@ -1340,8 +1347,7 @@ const char* decreaseEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1368,19 +1374,19 @@ failure:
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
   }
 
   // float weight = 3;
-  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
+  if (!(this->weight() <= 0 && this->weight() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_weight(), target);
   }
@@ -1402,21 +1408,21 @@ size_t decreaseEdgeRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node2_id());
   }
 
   // float weight = 3;
-  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
+  if (!(this->weight() <= 0 && this->weight() >= 0)) {
     total_size += 1 + 4;
   }
 
@@ -1429,35 +1435,44 @@ size_t decreaseEdgeRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData decreaseEdgeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    decreaseEdgeRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*decreaseEdgeRequest::GetClassData() const { return &_class_data_; }
-
-void decreaseEdgeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<decreaseEdgeRequest *>(to)->MergeFrom(
-      static_cast<const decreaseEdgeRequest &>(from));
+void decreaseEdgeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.decreaseEdgeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const decreaseEdgeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<decreaseEdgeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.decreaseEdgeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.decreaseEdgeRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void decreaseEdgeRequest::MergeFrom(const decreaseEdgeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.decreaseEdgeRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_node1_id() != 0) {
+  if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
-  if (from._internal_node2_id() != 0) {
+  if (from.node2_id() != 0) {
     _internal_set_node2_id(from._internal_node2_id());
   }
-  if (!(from._internal_weight() <= 0 && from._internal_weight() >= 0)) {
+  if (!(from.weight() <= 0 && from.weight() >= 0)) {
     _internal_set_weight(from._internal_weight());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void decreaseEdgeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.decreaseEdgeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void decreaseEdgeRequest::CopyFrom(const decreaseEdgeRequest& from) {
@@ -1473,7 +1488,7 @@ bool decreaseEdgeRequest::IsInitialized() const {
 
 void decreaseEdgeRequest::InternalSwap(decreaseEdgeRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(decreaseEdgeRequest, weight_)
       + sizeof(decreaseEdgeRequest::weight_)
@@ -1483,10 +1498,9 @@ void decreaseEdgeRequest::InternalSwap(decreaseEdgeRequest* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata decreaseEdgeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[2]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1494,13 +1508,10 @@ class decreaseEdgeResponse::_Internal {
  public:
 };
 
-decreaseEdgeResponse::decreaseEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+decreaseEdgeResponse::decreaseEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.decreaseEdgeResponse)
 }
 decreaseEdgeResponse::decreaseEdgeResponse(const decreaseEdgeResponse& from)
@@ -1510,19 +1521,18 @@ decreaseEdgeResponse::decreaseEdgeResponse(const decreaseEdgeResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.decreaseEdgeResponse)
 }
 
-inline void decreaseEdgeResponse::SharedCtor() {
+void decreaseEdgeResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 decreaseEdgeResponse::~decreaseEdgeResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.decreaseEdgeResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void decreaseEdgeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void decreaseEdgeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void decreaseEdgeResponse::ArenaDtor(void* object) {
@@ -1550,6 +1560,7 @@ const char* decreaseEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -1560,8 +1571,7 @@ const char* decreaseEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1588,7 +1598,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -1610,7 +1620,7 @@ size_t decreaseEdgeResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -1625,29 +1635,38 @@ size_t decreaseEdgeResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData decreaseEdgeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    decreaseEdgeResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*decreaseEdgeResponse::GetClassData() const { return &_class_data_; }
-
-void decreaseEdgeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<decreaseEdgeResponse *>(to)->MergeFrom(
-      static_cast<const decreaseEdgeResponse &>(from));
+void decreaseEdgeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.decreaseEdgeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const decreaseEdgeResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<decreaseEdgeResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.decreaseEdgeResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.decreaseEdgeResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void decreaseEdgeResponse::MergeFrom(const decreaseEdgeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.decreaseEdgeResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void decreaseEdgeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.decreaseEdgeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void decreaseEdgeResponse::CopyFrom(const decreaseEdgeResponse& from) {
@@ -1663,15 +1682,14 @@ bool decreaseEdgeResponse::IsInitialized() const {
 
 void decreaseEdgeResponse::InternalSwap(decreaseEdgeResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata decreaseEdgeResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[3]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1679,13 +1697,10 @@ class removeEdgeRequest::_Internal {
  public:
 };
 
-removeEdgeRequest::removeEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+removeEdgeRequest::removeEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.removeEdgeRequest)
 }
 removeEdgeRequest::removeEdgeRequest(const removeEdgeRequest& from)
@@ -1697,7 +1712,7 @@ removeEdgeRequest::removeEdgeRequest(const removeEdgeRequest& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.removeEdgeRequest)
 }
 
-inline void removeEdgeRequest::SharedCtor() {
+void removeEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&node2_id_) -
@@ -1706,13 +1721,12 @@ inline void removeEdgeRequest::SharedCtor() {
 
 removeEdgeRequest::~removeEdgeRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.removeEdgeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void removeEdgeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void removeEdgeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void removeEdgeRequest::ArenaDtor(void* object) {
@@ -1742,6 +1756,7 @@ const char* removeEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 node1_id = 1;
       case 1:
@@ -1759,8 +1774,7 @@ const char* removeEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1787,13 +1801,13 @@ failure:
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
   }
@@ -1815,14 +1829,14 @@ size_t removeEdgeRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node2_id());
@@ -1837,32 +1851,41 @@ size_t removeEdgeRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData removeEdgeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    removeEdgeRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*removeEdgeRequest::GetClassData() const { return &_class_data_; }
-
-void removeEdgeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<removeEdgeRequest *>(to)->MergeFrom(
-      static_cast<const removeEdgeRequest &>(from));
+void removeEdgeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.removeEdgeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const removeEdgeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<removeEdgeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.removeEdgeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.removeEdgeRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void removeEdgeRequest::MergeFrom(const removeEdgeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.removeEdgeRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_node1_id() != 0) {
+  if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
-  if (from._internal_node2_id() != 0) {
+  if (from.node2_id() != 0) {
     _internal_set_node2_id(from._internal_node2_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void removeEdgeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.removeEdgeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void removeEdgeRequest::CopyFrom(const removeEdgeRequest& from) {
@@ -1878,7 +1901,7 @@ bool removeEdgeRequest::IsInitialized() const {
 
 void removeEdgeRequest::InternalSwap(removeEdgeRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(removeEdgeRequest, node2_id_)
       + sizeof(removeEdgeRequest::node2_id_)
@@ -1888,10 +1911,9 @@ void removeEdgeRequest::InternalSwap(removeEdgeRequest* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata removeEdgeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[4]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1899,13 +1921,10 @@ class removeEdgeResponse::_Internal {
  public:
 };
 
-removeEdgeResponse::removeEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+removeEdgeResponse::removeEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.removeEdgeResponse)
 }
 removeEdgeResponse::removeEdgeResponse(const removeEdgeResponse& from)
@@ -1915,19 +1934,18 @@ removeEdgeResponse::removeEdgeResponse(const removeEdgeResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.removeEdgeResponse)
 }
 
-inline void removeEdgeResponse::SharedCtor() {
+void removeEdgeResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 removeEdgeResponse::~removeEdgeResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.removeEdgeResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void removeEdgeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void removeEdgeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void removeEdgeResponse::ArenaDtor(void* object) {
@@ -1955,6 +1973,7 @@ const char* removeEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -1965,8 +1984,7 @@ const char* removeEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1993,7 +2011,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -2015,7 +2033,7 @@ size_t removeEdgeResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -2030,29 +2048,38 @@ size_t removeEdgeResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData removeEdgeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    removeEdgeResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*removeEdgeResponse::GetClassData() const { return &_class_data_; }
-
-void removeEdgeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<removeEdgeResponse *>(to)->MergeFrom(
-      static_cast<const removeEdgeResponse &>(from));
+void removeEdgeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.removeEdgeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const removeEdgeResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<removeEdgeResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.removeEdgeResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.removeEdgeResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void removeEdgeResponse::MergeFrom(const removeEdgeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.removeEdgeResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void removeEdgeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.removeEdgeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void removeEdgeResponse::CopyFrom(const removeEdgeResponse& from) {
@@ -2068,15 +2095,14 @@ bool removeEdgeResponse::IsInitialized() const {
 
 void removeEdgeResponse::InternalSwap(removeEdgeResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata removeEdgeResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[5]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -2084,13 +2110,10 @@ class getEdgeRequest::_Internal {
  public:
 };
 
-getEdgeRequest::getEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getEdgeRequest::getEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getEdgeRequest)
 }
 getEdgeRequest::getEdgeRequest(const getEdgeRequest& from)
@@ -2102,7 +2125,7 @@ getEdgeRequest::getEdgeRequest(const getEdgeRequest& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getEdgeRequest)
 }
 
-inline void getEdgeRequest::SharedCtor() {
+void getEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&weight_) -
@@ -2111,13 +2134,12 @@ inline void getEdgeRequest::SharedCtor() {
 
 getEdgeRequest::~getEdgeRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getEdgeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getEdgeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getEdgeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void getEdgeRequest::ArenaDtor(void* object) {
@@ -2147,6 +2169,7 @@ const char* getEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 node1_id = 1;
       case 1:
@@ -2171,8 +2194,7 @@ const char* getEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2199,19 +2221,19 @@ failure:
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
   }
 
   // float weight = 3;
-  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
+  if (!(this->weight() <= 0 && this->weight() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_weight(), target);
   }
@@ -2233,21 +2255,21 @@ size_t getEdgeRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node2_id());
   }
 
   // float weight = 3;
-  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
+  if (!(this->weight() <= 0 && this->weight() >= 0)) {
     total_size += 1 + 4;
   }
 
@@ -2260,35 +2282,44 @@ size_t getEdgeRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getEdgeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getEdgeRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getEdgeRequest::GetClassData() const { return &_class_data_; }
-
-void getEdgeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getEdgeRequest *>(to)->MergeFrom(
-      static_cast<const getEdgeRequest &>(from));
+void getEdgeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getEdgeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getEdgeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getEdgeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getEdgeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getEdgeRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void getEdgeRequest::MergeFrom(const getEdgeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getEdgeRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_node1_id() != 0) {
+  if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
-  if (from._internal_node2_id() != 0) {
+  if (from.node2_id() != 0) {
     _internal_set_node2_id(from._internal_node2_id());
   }
-  if (!(from._internal_weight() <= 0 && from._internal_weight() >= 0)) {
+  if (!(from.weight() <= 0 && from.weight() >= 0)) {
     _internal_set_weight(from._internal_weight());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getEdgeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getEdgeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getEdgeRequest::CopyFrom(const getEdgeRequest& from) {
@@ -2304,7 +2335,7 @@ bool getEdgeRequest::IsInitialized() const {
 
 void getEdgeRequest::InternalSwap(getEdgeRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getEdgeRequest, weight_)
       + sizeof(getEdgeRequest::weight_)
@@ -2314,10 +2345,9 @@ void getEdgeRequest::InternalSwap(getEdgeRequest* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getEdgeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[6]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -2325,13 +2355,10 @@ class getEdgeResponse::_Internal {
  public:
 };
 
-getEdgeResponse::getEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getEdgeResponse::getEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getEdgeResponse)
 }
 getEdgeResponse::getEdgeResponse(const getEdgeResponse& from)
@@ -2343,7 +2370,7 @@ getEdgeResponse::getEdgeResponse(const getEdgeResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getEdgeResponse)
 }
 
-inline void getEdgeResponse::SharedCtor() {
+void getEdgeResponse::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&weight_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&xpcfgrpcreturnvalue_) -
@@ -2352,13 +2379,12 @@ inline void getEdgeResponse::SharedCtor() {
 
 getEdgeResponse::~getEdgeResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getEdgeResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getEdgeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getEdgeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void getEdgeResponse::ArenaDtor(void* object) {
@@ -2388,6 +2414,7 @@ const char* getEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // float weight = 1;
       case 1:
@@ -2405,8 +2432,7 @@ const char* getEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2433,13 +2459,13 @@ failure:
   (void) cached_has_bits;
 
   // float weight = 1;
-  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
+  if (!(this->weight() <= 0 && this->weight() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_weight(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -2461,12 +2487,12 @@ size_t getEdgeResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // float weight = 1;
-  if (!(this->_internal_weight() <= 0 && this->_internal_weight() >= 0)) {
+  if (!(this->weight() <= 0 && this->weight() >= 0)) {
     total_size += 1 + 4;
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -2481,32 +2507,41 @@ size_t getEdgeResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getEdgeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getEdgeResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getEdgeResponse::GetClassData() const { return &_class_data_; }
-
-void getEdgeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getEdgeResponse *>(to)->MergeFrom(
-      static_cast<const getEdgeResponse &>(from));
+void getEdgeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getEdgeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getEdgeResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getEdgeResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getEdgeResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getEdgeResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getEdgeResponse::MergeFrom(const getEdgeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getEdgeResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!(from._internal_weight() <= 0 && from._internal_weight() >= 0)) {
+  if (!(from.weight() <= 0 && from.weight() >= 0)) {
     _internal_set_weight(from._internal_weight());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getEdgeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getEdgeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getEdgeResponse::CopyFrom(const getEdgeResponse& from) {
@@ -2522,7 +2557,7 @@ bool getEdgeResponse::IsInitialized() const {
 
 void getEdgeResponse::InternalSwap(getEdgeResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getEdgeResponse, xpcfgrpcreturnvalue_)
       + sizeof(getEdgeResponse::xpcfgrpcreturnvalue_)
@@ -2532,10 +2567,9 @@ void getEdgeResponse::InternalSwap(getEdgeResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getEdgeResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[7]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -2543,13 +2577,10 @@ class isEdgeRequest::_Internal {
  public:
 };
 
-isEdgeRequest::isEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+isEdgeRequest::isEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.isEdgeRequest)
 }
 isEdgeRequest::isEdgeRequest(const isEdgeRequest& from)
@@ -2561,7 +2592,7 @@ isEdgeRequest::isEdgeRequest(const isEdgeRequest& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.isEdgeRequest)
 }
 
-inline void isEdgeRequest::SharedCtor() {
+void isEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&node2_id_) -
@@ -2570,13 +2601,12 @@ inline void isEdgeRequest::SharedCtor() {
 
 isEdgeRequest::~isEdgeRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.isEdgeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void isEdgeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void isEdgeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void isEdgeRequest::ArenaDtor(void* object) {
@@ -2606,6 +2636,7 @@ const char* isEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 node1_id = 1;
       case 1:
@@ -2623,8 +2654,7 @@ const char* isEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2651,13 +2681,13 @@ failure:
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
   }
@@ -2679,14 +2709,14 @@ size_t isEdgeRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node2_id());
@@ -2701,32 +2731,41 @@ size_t isEdgeRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData isEdgeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    isEdgeRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*isEdgeRequest::GetClassData() const { return &_class_data_; }
-
-void isEdgeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<isEdgeRequest *>(to)->MergeFrom(
-      static_cast<const isEdgeRequest &>(from));
+void isEdgeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.isEdgeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const isEdgeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<isEdgeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.isEdgeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.isEdgeRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void isEdgeRequest::MergeFrom(const isEdgeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.isEdgeRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_node1_id() != 0) {
+  if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
-  if (from._internal_node2_id() != 0) {
+  if (from.node2_id() != 0) {
     _internal_set_node2_id(from._internal_node2_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void isEdgeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.isEdgeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void isEdgeRequest::CopyFrom(const isEdgeRequest& from) {
@@ -2742,7 +2781,7 @@ bool isEdgeRequest::IsInitialized() const {
 
 void isEdgeRequest::InternalSwap(isEdgeRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(isEdgeRequest, node2_id_)
       + sizeof(isEdgeRequest::node2_id_)
@@ -2752,10 +2791,9 @@ void isEdgeRequest::InternalSwap(isEdgeRequest* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isEdgeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[8]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -2763,13 +2801,10 @@ class isEdgeResponse::_Internal {
  public:
 };
 
-isEdgeResponse::isEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+isEdgeResponse::isEdgeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.isEdgeResponse)
 }
 isEdgeResponse::isEdgeResponse(const isEdgeResponse& from)
@@ -2779,19 +2814,18 @@ isEdgeResponse::isEdgeResponse(const isEdgeResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.isEdgeResponse)
 }
 
-inline void isEdgeResponse::SharedCtor() {
+void isEdgeResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = false;
 }
 
 isEdgeResponse::~isEdgeResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.isEdgeResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void isEdgeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void isEdgeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void isEdgeResponse::ArenaDtor(void* object) {
@@ -2819,6 +2853,7 @@ const char* isEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bool xpcfGrpcReturnValue = 1;
       case 1:
@@ -2829,8 +2864,7 @@ const char* isEdgeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2857,7 +2891,7 @@ failure:
   (void) cached_has_bits;
 
   // bool xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -2879,7 +2913,7 @@ size_t isEdgeResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bool xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 + 1;
   }
 
@@ -2892,29 +2926,38 @@ size_t isEdgeResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData isEdgeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    isEdgeResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*isEdgeResponse::GetClassData() const { return &_class_data_; }
-
-void isEdgeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<isEdgeResponse *>(to)->MergeFrom(
-      static_cast<const isEdgeResponse &>(from));
+void isEdgeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.isEdgeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const isEdgeResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<isEdgeResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.isEdgeResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.isEdgeResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void isEdgeResponse::MergeFrom(const isEdgeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.isEdgeResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void isEdgeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.isEdgeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void isEdgeResponse::CopyFrom(const isEdgeResponse& from) {
@@ -2930,15 +2973,14 @@ bool isEdgeResponse::IsInitialized() const {
 
 void isEdgeResponse::InternalSwap(isEdgeResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isEdgeResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[9]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -2946,13 +2988,10 @@ class getAllNodesRequest::_Internal {
  public:
 };
 
-getAllNodesRequest::getAllNodesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getAllNodesRequest::getAllNodesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getAllNodesRequest)
 }
 getAllNodesRequest::getAllNodesRequest(const getAllNodesRequest& from)
@@ -2961,24 +3000,23 @@ getAllNodesRequest::getAllNodesRequest(const getAllNodesRequest& from)
   nodes_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_nodes_id().empty()) {
     nodes_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nodes_id(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getAllNodesRequest)
 }
 
-inline void getAllNodesRequest::SharedCtor() {
+void getAllNodesRequest::SharedCtor() {
 nodes_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 getAllNodesRequest::~getAllNodesRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getAllNodesRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getAllNodesRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getAllNodesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   nodes_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -3007,6 +3045,7 @@ const char* getAllNodesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes nodes_id = 1;
       case 1:
@@ -3018,8 +3057,7 @@ const char* getAllNodesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -3046,7 +3084,7 @@ failure:
   (void) cached_has_bits;
 
   // bytes nodes_id = 1;
-  if (!this->_internal_nodes_id().empty()) {
+  if (this->nodes_id().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_nodes_id(), target);
   }
@@ -3068,7 +3106,7 @@ size_t getAllNodesRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes nodes_id = 1;
-  if (!this->_internal_nodes_id().empty()) {
+  if (this->nodes_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_nodes_id());
@@ -3083,29 +3121,38 @@ size_t getAllNodesRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getAllNodesRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getAllNodesRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getAllNodesRequest::GetClassData() const { return &_class_data_; }
-
-void getAllNodesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getAllNodesRequest *>(to)->MergeFrom(
-      static_cast<const getAllNodesRequest &>(from));
+void getAllNodesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getAllNodesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getAllNodesRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getAllNodesRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getAllNodesRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getAllNodesRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void getAllNodesRequest::MergeFrom(const getAllNodesRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getAllNodesRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_nodes_id().empty()) {
+  if (from.nodes_id().size() > 0) {
     _internal_set_nodes_id(from._internal_nodes_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getAllNodesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getAllNodesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getAllNodesRequest::CopyFrom(const getAllNodesRequest& from) {
@@ -3121,19 +3168,14 @@ bool getAllNodesRequest::IsInitialized() const {
 
 void getAllNodesRequest::InternalSwap(getAllNodesRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &nodes_id_, GetArenaForAllocation(),
-      &other->nodes_id_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  nodes_id_.Swap(&other->nodes_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getAllNodesRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[10]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -3141,13 +3183,10 @@ class getAllNodesResponse::_Internal {
  public:
 };
 
-getAllNodesResponse::getAllNodesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getAllNodesResponse::getAllNodesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getAllNodesResponse)
 }
 getAllNodesResponse::getAllNodesResponse(const getAllNodesResponse& from)
@@ -3156,26 +3195,25 @@ getAllNodesResponse::getAllNodesResponse(const getAllNodesResponse& from)
   nodes_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_nodes_id().empty()) {
     nodes_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nodes_id(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getAllNodesResponse)
 }
 
-inline void getAllNodesResponse::SharedCtor() {
+void getAllNodesResponse::SharedCtor() {
 nodes_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
 }
 
 getAllNodesResponse::~getAllNodesResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getAllNodesResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getAllNodesResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getAllNodesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   nodes_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -3205,6 +3243,7 @@ const char* getAllNodesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes nodes_id = 1;
       case 1:
@@ -3223,8 +3262,7 @@ const char* getAllNodesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -3251,13 +3289,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes nodes_id = 1;
-  if (!this->_internal_nodes_id().empty()) {
+  if (this->nodes_id().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_nodes_id(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -3279,14 +3317,14 @@ size_t getAllNodesResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes nodes_id = 1;
-  if (!this->_internal_nodes_id().empty()) {
+  if (this->nodes_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_nodes_id());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -3301,32 +3339,41 @@ size_t getAllNodesResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getAllNodesResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getAllNodesResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getAllNodesResponse::GetClassData() const { return &_class_data_; }
-
-void getAllNodesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getAllNodesResponse *>(to)->MergeFrom(
-      static_cast<const getAllNodesResponse &>(from));
+void getAllNodesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getAllNodesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getAllNodesResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getAllNodesResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getAllNodesResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getAllNodesResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getAllNodesResponse::MergeFrom(const getAllNodesResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getAllNodesResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_nodes_id().empty()) {
+  if (from.nodes_id().size() > 0) {
     _internal_set_nodes_id(from._internal_nodes_id());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getAllNodesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getAllNodesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getAllNodesResponse::CopyFrom(const getAllNodesResponse& from) {
@@ -3342,20 +3389,15 @@ bool getAllNodesResponse::IsInitialized() const {
 
 void getAllNodesResponse::InternalSwap(getAllNodesResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &nodes_id_, GetArenaForAllocation(),
-      &other->nodes_id_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  nodes_id_.Swap(&other->nodes_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getAllNodesResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[11]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -3363,13 +3405,10 @@ class suppressNodeRequest::_Internal {
  public:
 };
 
-suppressNodeRequest::suppressNodeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+suppressNodeRequest::suppressNodeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.suppressNodeRequest)
 }
 suppressNodeRequest::suppressNodeRequest(const suppressNodeRequest& from)
@@ -3379,19 +3418,18 @@ suppressNodeRequest::suppressNodeRequest(const suppressNodeRequest& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.suppressNodeRequest)
 }
 
-inline void suppressNodeRequest::SharedCtor() {
+void suppressNodeRequest::SharedCtor() {
 node_id_ = 0u;
 }
 
 suppressNodeRequest::~suppressNodeRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.suppressNodeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void suppressNodeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void suppressNodeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void suppressNodeRequest::ArenaDtor(void* object) {
@@ -3419,6 +3457,7 @@ const char* suppressNodeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 node_id = 1;
       case 1:
@@ -3429,8 +3468,7 @@ const char* suppressNodeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -3457,7 +3495,7 @@ failure:
   (void) cached_has_bits;
 
   // uint32 node_id = 1;
-  if (this->_internal_node_id() != 0) {
+  if (this->node_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node_id(), target);
   }
@@ -3479,7 +3517,7 @@ size_t suppressNodeRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // uint32 node_id = 1;
-  if (this->_internal_node_id() != 0) {
+  if (this->node_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node_id());
@@ -3494,29 +3532,38 @@ size_t suppressNodeRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData suppressNodeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    suppressNodeRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*suppressNodeRequest::GetClassData() const { return &_class_data_; }
-
-void suppressNodeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<suppressNodeRequest *>(to)->MergeFrom(
-      static_cast<const suppressNodeRequest &>(from));
+void suppressNodeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.suppressNodeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const suppressNodeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<suppressNodeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.suppressNodeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.suppressNodeRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void suppressNodeRequest::MergeFrom(const suppressNodeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.suppressNodeRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_node_id() != 0) {
+  if (from.node_id() != 0) {
     _internal_set_node_id(from._internal_node_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void suppressNodeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.suppressNodeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void suppressNodeRequest::CopyFrom(const suppressNodeRequest& from) {
@@ -3532,15 +3579,14 @@ bool suppressNodeRequest::IsInitialized() const {
 
 void suppressNodeRequest::InternalSwap(suppressNodeRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(node_id_, other->node_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata suppressNodeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[12]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -3548,13 +3594,10 @@ class suppressNodeResponse::_Internal {
  public:
 };
 
-suppressNodeResponse::suppressNodeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+suppressNodeResponse::suppressNodeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.suppressNodeResponse)
 }
 suppressNodeResponse::suppressNodeResponse(const suppressNodeResponse& from)
@@ -3564,19 +3607,18 @@ suppressNodeResponse::suppressNodeResponse(const suppressNodeResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.suppressNodeResponse)
 }
 
-inline void suppressNodeResponse::SharedCtor() {
+void suppressNodeResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 suppressNodeResponse::~suppressNodeResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.suppressNodeResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void suppressNodeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void suppressNodeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void suppressNodeResponse::ArenaDtor(void* object) {
@@ -3604,6 +3646,7 @@ const char* suppressNodeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -3614,8 +3657,7 @@ const char* suppressNodeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -3642,7 +3684,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -3664,7 +3706,7 @@ size_t suppressNodeResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -3679,29 +3721,38 @@ size_t suppressNodeResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData suppressNodeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    suppressNodeResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*suppressNodeResponse::GetClassData() const { return &_class_data_; }
-
-void suppressNodeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<suppressNodeResponse *>(to)->MergeFrom(
-      static_cast<const suppressNodeResponse &>(from));
+void suppressNodeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.suppressNodeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const suppressNodeResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<suppressNodeResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.suppressNodeResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.suppressNodeResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void suppressNodeResponse::MergeFrom(const suppressNodeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.suppressNodeResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void suppressNodeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.suppressNodeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void suppressNodeResponse::CopyFrom(const suppressNodeResponse& from) {
@@ -3717,15 +3768,14 @@ bool suppressNodeResponse::IsInitialized() const {
 
 void suppressNodeResponse::InternalSwap(suppressNodeResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata suppressNodeResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[13]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -3733,13 +3783,10 @@ class getNeighborsRequest::_Internal {
  public:
 };
 
-getNeighborsRequest::getNeighborsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getNeighborsRequest::getNeighborsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getNeighborsRequest)
 }
 getNeighborsRequest::getNeighborsRequest(const getNeighborsRequest& from)
@@ -3748,7 +3795,7 @@ getNeighborsRequest::getNeighborsRequest(const getNeighborsRequest& from)
   neighbors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_neighbors().empty()) {
     neighbors_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_neighbors(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   ::memcpy(&node_id_, &from.node_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&minweight_) -
@@ -3756,7 +3803,7 @@ getNeighborsRequest::getNeighborsRequest(const getNeighborsRequest& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getNeighborsRequest)
 }
 
-inline void getNeighborsRequest::SharedCtor() {
+void getNeighborsRequest::SharedCtor() {
 neighbors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&node_id_) - reinterpret_cast<char*>(this)),
@@ -3766,13 +3813,12 @@ neighbors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAl
 
 getNeighborsRequest::~getNeighborsRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getNeighborsRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getNeighborsRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getNeighborsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   neighbors_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -3804,6 +3850,7 @@ const char* getNeighborsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 node_id = 1;
       case 1:
@@ -3829,8 +3876,7 @@ const char* getNeighborsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -3857,19 +3903,19 @@ failure:
   (void) cached_has_bits;
 
   // uint32 node_id = 1;
-  if (this->_internal_node_id() != 0) {
+  if (this->node_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node_id(), target);
   }
 
   // float minWeight = 2;
-  if (!(this->_internal_minweight() <= 0 && this->_internal_minweight() >= 0)) {
+  if (!(this->minweight() <= 0 && this->minweight() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_minweight(), target);
   }
 
   // bytes neighbors = 3;
-  if (!this->_internal_neighbors().empty()) {
+  if (this->neighbors().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_neighbors(), target);
   }
@@ -3891,21 +3937,21 @@ size_t getNeighborsRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes neighbors = 3;
-  if (!this->_internal_neighbors().empty()) {
+  if (this->neighbors().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_neighbors());
   }
 
   // uint32 node_id = 1;
-  if (this->_internal_node_id() != 0) {
+  if (this->node_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node_id());
   }
 
   // float minWeight = 2;
-  if (!(this->_internal_minweight() <= 0 && this->_internal_minweight() >= 0)) {
+  if (!(this->minweight() <= 0 && this->minweight() >= 0)) {
     total_size += 1 + 4;
   }
 
@@ -3918,35 +3964,44 @@ size_t getNeighborsRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getNeighborsRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getNeighborsRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getNeighborsRequest::GetClassData() const { return &_class_data_; }
-
-void getNeighborsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getNeighborsRequest *>(to)->MergeFrom(
-      static_cast<const getNeighborsRequest &>(from));
+void getNeighborsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getNeighborsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getNeighborsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getNeighborsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getNeighborsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getNeighborsRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void getNeighborsRequest::MergeFrom(const getNeighborsRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getNeighborsRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_neighbors().empty()) {
+  if (from.neighbors().size() > 0) {
     _internal_set_neighbors(from._internal_neighbors());
   }
-  if (from._internal_node_id() != 0) {
+  if (from.node_id() != 0) {
     _internal_set_node_id(from._internal_node_id());
   }
-  if (!(from._internal_minweight() <= 0 && from._internal_minweight() >= 0)) {
+  if (!(from.minweight() <= 0 && from.minweight() >= 0)) {
     _internal_set_minweight(from._internal_minweight());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getNeighborsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getNeighborsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getNeighborsRequest::CopyFrom(const getNeighborsRequest& from) {
@@ -3962,12 +4017,8 @@ bool getNeighborsRequest::IsInitialized() const {
 
 void getNeighborsRequest::InternalSwap(getNeighborsRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &neighbors_, GetArenaForAllocation(),
-      &other->neighbors_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  neighbors_.Swap(&other->neighbors_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getNeighborsRequest, minweight_)
       + sizeof(getNeighborsRequest::minweight_)
@@ -3977,10 +4028,9 @@ void getNeighborsRequest::InternalSwap(getNeighborsRequest* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getNeighborsRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[14]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -3988,13 +4038,10 @@ class getNeighborsResponse::_Internal {
  public:
 };
 
-getNeighborsResponse::getNeighborsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getNeighborsResponse::getNeighborsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getNeighborsResponse)
 }
 getNeighborsResponse::getNeighborsResponse(const getNeighborsResponse& from)
@@ -4003,26 +4050,25 @@ getNeighborsResponse::getNeighborsResponse(const getNeighborsResponse& from)
   neighbors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_neighbors().empty()) {
     neighbors_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_neighbors(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getNeighborsResponse)
 }
 
-inline void getNeighborsResponse::SharedCtor() {
+void getNeighborsResponse::SharedCtor() {
 neighbors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
 }
 
 getNeighborsResponse::~getNeighborsResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getNeighborsResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getNeighborsResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getNeighborsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   neighbors_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -4052,6 +4098,7 @@ const char* getNeighborsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes neighbors = 1;
       case 1:
@@ -4070,8 +4117,7 @@ const char* getNeighborsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -4098,13 +4144,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes neighbors = 1;
-  if (!this->_internal_neighbors().empty()) {
+  if (this->neighbors().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_neighbors(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -4126,14 +4172,14 @@ size_t getNeighborsResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes neighbors = 1;
-  if (!this->_internal_neighbors().empty()) {
+  if (this->neighbors().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_neighbors());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -4148,32 +4194,41 @@ size_t getNeighborsResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getNeighborsResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getNeighborsResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getNeighborsResponse::GetClassData() const { return &_class_data_; }
-
-void getNeighborsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getNeighborsResponse *>(to)->MergeFrom(
-      static_cast<const getNeighborsResponse &>(from));
+void getNeighborsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getNeighborsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getNeighborsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getNeighborsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getNeighborsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getNeighborsResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getNeighborsResponse::MergeFrom(const getNeighborsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getNeighborsResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_neighbors().empty()) {
+  if (from.neighbors().size() > 0) {
     _internal_set_neighbors(from._internal_neighbors());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getNeighborsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getNeighborsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getNeighborsResponse::CopyFrom(const getNeighborsResponse& from) {
@@ -4189,20 +4244,15 @@ bool getNeighborsResponse::IsInitialized() const {
 
 void getNeighborsResponse::InternalSwap(getNeighborsResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &neighbors_, GetArenaForAllocation(),
-      &other->neighbors_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  neighbors_.Swap(&other->neighbors_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getNeighborsResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[15]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -4210,13 +4260,10 @@ class minimalSpanningTreeRequest::_Internal {
  public:
 };
 
-minimalSpanningTreeRequest::minimalSpanningTreeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+minimalSpanningTreeRequest::minimalSpanningTreeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.minimalSpanningTreeRequest)
 }
 minimalSpanningTreeRequest::minimalSpanningTreeRequest(const minimalSpanningTreeRequest& from)
@@ -4225,26 +4272,25 @@ minimalSpanningTreeRequest::minimalSpanningTreeRequest(const minimalSpanningTree
   edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_edges_weights().empty()) {
     edges_weights_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_edges_weights(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   mintotalweights_ = from.mintotalweights_;
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.minimalSpanningTreeRequest)
 }
 
-inline void minimalSpanningTreeRequest::SharedCtor() {
+void minimalSpanningTreeRequest::SharedCtor() {
 edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 mintotalweights_ = 0;
 }
 
 minimalSpanningTreeRequest::~minimalSpanningTreeRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.minimalSpanningTreeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void minimalSpanningTreeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void minimalSpanningTreeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   edges_weights_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -4274,6 +4320,7 @@ const char* minimalSpanningTreeRequest::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes edges_weights = 1;
       case 1:
@@ -4292,8 +4339,7 @@ const char* minimalSpanningTreeRequest::_InternalParse(const char* ptr, ::PROTOB
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -4320,13 +4366,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes edges_weights = 1;
-  if (!this->_internal_edges_weights().empty()) {
+  if (this->edges_weights().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_edges_weights(), target);
   }
 
   // float minTotalWeights = 2;
-  if (!(this->_internal_mintotalweights() <= 0 && this->_internal_mintotalweights() >= 0)) {
+  if (!(this->mintotalweights() <= 0 && this->mintotalweights() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_mintotalweights(), target);
   }
@@ -4348,14 +4394,14 @@ size_t minimalSpanningTreeRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes edges_weights = 1;
-  if (!this->_internal_edges_weights().empty()) {
+  if (this->edges_weights().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_edges_weights());
   }
 
   // float minTotalWeights = 2;
-  if (!(this->_internal_mintotalweights() <= 0 && this->_internal_mintotalweights() >= 0)) {
+  if (!(this->mintotalweights() <= 0 && this->mintotalweights() >= 0)) {
     total_size += 1 + 4;
   }
 
@@ -4368,32 +4414,41 @@ size_t minimalSpanningTreeRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData minimalSpanningTreeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    minimalSpanningTreeRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*minimalSpanningTreeRequest::GetClassData() const { return &_class_data_; }
-
-void minimalSpanningTreeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<minimalSpanningTreeRequest *>(to)->MergeFrom(
-      static_cast<const minimalSpanningTreeRequest &>(from));
+void minimalSpanningTreeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.minimalSpanningTreeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const minimalSpanningTreeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<minimalSpanningTreeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.minimalSpanningTreeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.minimalSpanningTreeRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void minimalSpanningTreeRequest::MergeFrom(const minimalSpanningTreeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.minimalSpanningTreeRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_edges_weights().empty()) {
+  if (from.edges_weights().size() > 0) {
     _internal_set_edges_weights(from._internal_edges_weights());
   }
-  if (!(from._internal_mintotalweights() <= 0 && from._internal_mintotalweights() >= 0)) {
+  if (!(from.mintotalweights() <= 0 && from.mintotalweights() >= 0)) {
     _internal_set_mintotalweights(from._internal_mintotalweights());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void minimalSpanningTreeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.minimalSpanningTreeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void minimalSpanningTreeRequest::CopyFrom(const minimalSpanningTreeRequest& from) {
@@ -4409,20 +4464,15 @@ bool minimalSpanningTreeRequest::IsInitialized() const {
 
 void minimalSpanningTreeRequest::InternalSwap(minimalSpanningTreeRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &edges_weights_, GetArenaForAllocation(),
-      &other->edges_weights_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  edges_weights_.Swap(&other->edges_weights_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(mintotalweights_, other->mintotalweights_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata minimalSpanningTreeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[16]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -4430,13 +4480,10 @@ class minimalSpanningTreeResponse::_Internal {
  public:
 };
 
-minimalSpanningTreeResponse::minimalSpanningTreeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+minimalSpanningTreeResponse::minimalSpanningTreeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.minimalSpanningTreeResponse)
 }
 minimalSpanningTreeResponse::minimalSpanningTreeResponse(const minimalSpanningTreeResponse& from)
@@ -4445,7 +4492,7 @@ minimalSpanningTreeResponse::minimalSpanningTreeResponse(const minimalSpanningTr
   edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_edges_weights().empty()) {
     edges_weights_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_edges_weights(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   ::memcpy(&mintotalweights_, &from.mintotalweights_,
     static_cast<size_t>(reinterpret_cast<char*>(&xpcfgrpcreturnvalue_) -
@@ -4453,7 +4500,7 @@ minimalSpanningTreeResponse::minimalSpanningTreeResponse(const minimalSpanningTr
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.minimalSpanningTreeResponse)
 }
 
-inline void minimalSpanningTreeResponse::SharedCtor() {
+void minimalSpanningTreeResponse::SharedCtor() {
 edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&mintotalweights_) - reinterpret_cast<char*>(this)),
@@ -4463,13 +4510,12 @@ edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStri
 
 minimalSpanningTreeResponse::~minimalSpanningTreeResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.minimalSpanningTreeResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void minimalSpanningTreeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void minimalSpanningTreeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   edges_weights_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -4501,6 +4547,7 @@ const char* minimalSpanningTreeResponse::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes edges_weights = 1;
       case 1:
@@ -4526,8 +4573,7 @@ const char* minimalSpanningTreeResponse::_InternalParse(const char* ptr, ::PROTO
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -4554,19 +4600,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes edges_weights = 1;
-  if (!this->_internal_edges_weights().empty()) {
+  if (this->edges_weights().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_edges_weights(), target);
   }
 
   // float minTotalWeights = 2;
-  if (!(this->_internal_mintotalweights() <= 0 && this->_internal_mintotalweights() >= 0)) {
+  if (!(this->mintotalweights() <= 0 && this->mintotalweights() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_mintotalweights(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(3, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -4588,19 +4634,19 @@ size_t minimalSpanningTreeResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes edges_weights = 1;
-  if (!this->_internal_edges_weights().empty()) {
+  if (this->edges_weights().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_edges_weights());
   }
 
   // float minTotalWeights = 2;
-  if (!(this->_internal_mintotalweights() <= 0 && this->_internal_mintotalweights() >= 0)) {
+  if (!(this->mintotalweights() <= 0 && this->mintotalweights() >= 0)) {
     total_size += 1 + 4;
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -4615,35 +4661,44 @@ size_t minimalSpanningTreeResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData minimalSpanningTreeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    minimalSpanningTreeResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*minimalSpanningTreeResponse::GetClassData() const { return &_class_data_; }
-
-void minimalSpanningTreeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<minimalSpanningTreeResponse *>(to)->MergeFrom(
-      static_cast<const minimalSpanningTreeResponse &>(from));
+void minimalSpanningTreeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.minimalSpanningTreeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const minimalSpanningTreeResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<minimalSpanningTreeResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.minimalSpanningTreeResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.minimalSpanningTreeResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void minimalSpanningTreeResponse::MergeFrom(const minimalSpanningTreeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.minimalSpanningTreeResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_edges_weights().empty()) {
+  if (from.edges_weights().size() > 0) {
     _internal_set_edges_weights(from._internal_edges_weights());
   }
-  if (!(from._internal_mintotalweights() <= 0 && from._internal_mintotalweights() >= 0)) {
+  if (!(from.mintotalweights() <= 0 && from.mintotalweights() >= 0)) {
     _internal_set_mintotalweights(from._internal_mintotalweights());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void minimalSpanningTreeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.minimalSpanningTreeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void minimalSpanningTreeResponse::CopyFrom(const minimalSpanningTreeResponse& from) {
@@ -4659,12 +4714,8 @@ bool minimalSpanningTreeResponse::IsInitialized() const {
 
 void minimalSpanningTreeResponse::InternalSwap(minimalSpanningTreeResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &edges_weights_, GetArenaForAllocation(),
-      &other->edges_weights_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  edges_weights_.Swap(&other->edges_weights_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(minimalSpanningTreeResponse, xpcfgrpcreturnvalue_)
       + sizeof(minimalSpanningTreeResponse::xpcfgrpcreturnvalue_)
@@ -4674,10 +4725,9 @@ void minimalSpanningTreeResponse::InternalSwap(minimalSpanningTreeResponse* othe
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata minimalSpanningTreeResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[17]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -4685,13 +4735,10 @@ class maximalSpanningTreeRequest::_Internal {
  public:
 };
 
-maximalSpanningTreeRequest::maximalSpanningTreeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+maximalSpanningTreeRequest::maximalSpanningTreeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.maximalSpanningTreeRequest)
 }
 maximalSpanningTreeRequest::maximalSpanningTreeRequest(const maximalSpanningTreeRequest& from)
@@ -4700,26 +4747,25 @@ maximalSpanningTreeRequest::maximalSpanningTreeRequest(const maximalSpanningTree
   edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_edges_weights().empty()) {
     edges_weights_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_edges_weights(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   maxtotalweights_ = from.maxtotalweights_;
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.maximalSpanningTreeRequest)
 }
 
-inline void maximalSpanningTreeRequest::SharedCtor() {
+void maximalSpanningTreeRequest::SharedCtor() {
 edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 maxtotalweights_ = 0;
 }
 
 maximalSpanningTreeRequest::~maximalSpanningTreeRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.maximalSpanningTreeRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void maximalSpanningTreeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void maximalSpanningTreeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   edges_weights_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -4749,6 +4795,7 @@ const char* maximalSpanningTreeRequest::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes edges_weights = 1;
       case 1:
@@ -4767,8 +4814,7 @@ const char* maximalSpanningTreeRequest::_InternalParse(const char* ptr, ::PROTOB
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -4795,13 +4841,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes edges_weights = 1;
-  if (!this->_internal_edges_weights().empty()) {
+  if (this->edges_weights().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_edges_weights(), target);
   }
 
   // float maxTotalWeights = 2;
-  if (!(this->_internal_maxtotalweights() <= 0 && this->_internal_maxtotalweights() >= 0)) {
+  if (!(this->maxtotalweights() <= 0 && this->maxtotalweights() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_maxtotalweights(), target);
   }
@@ -4823,14 +4869,14 @@ size_t maximalSpanningTreeRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes edges_weights = 1;
-  if (!this->_internal_edges_weights().empty()) {
+  if (this->edges_weights().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_edges_weights());
   }
 
   // float maxTotalWeights = 2;
-  if (!(this->_internal_maxtotalweights() <= 0 && this->_internal_maxtotalweights() >= 0)) {
+  if (!(this->maxtotalweights() <= 0 && this->maxtotalweights() >= 0)) {
     total_size += 1 + 4;
   }
 
@@ -4843,32 +4889,41 @@ size_t maximalSpanningTreeRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData maximalSpanningTreeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    maximalSpanningTreeRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*maximalSpanningTreeRequest::GetClassData() const { return &_class_data_; }
-
-void maximalSpanningTreeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<maximalSpanningTreeRequest *>(to)->MergeFrom(
-      static_cast<const maximalSpanningTreeRequest &>(from));
+void maximalSpanningTreeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.maximalSpanningTreeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const maximalSpanningTreeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<maximalSpanningTreeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.maximalSpanningTreeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.maximalSpanningTreeRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void maximalSpanningTreeRequest::MergeFrom(const maximalSpanningTreeRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.maximalSpanningTreeRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_edges_weights().empty()) {
+  if (from.edges_weights().size() > 0) {
     _internal_set_edges_weights(from._internal_edges_weights());
   }
-  if (!(from._internal_maxtotalweights() <= 0 && from._internal_maxtotalweights() >= 0)) {
+  if (!(from.maxtotalweights() <= 0 && from.maxtotalweights() >= 0)) {
     _internal_set_maxtotalweights(from._internal_maxtotalweights());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void maximalSpanningTreeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.maximalSpanningTreeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void maximalSpanningTreeRequest::CopyFrom(const maximalSpanningTreeRequest& from) {
@@ -4884,20 +4939,15 @@ bool maximalSpanningTreeRequest::IsInitialized() const {
 
 void maximalSpanningTreeRequest::InternalSwap(maximalSpanningTreeRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &edges_weights_, GetArenaForAllocation(),
-      &other->edges_weights_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  edges_weights_.Swap(&other->edges_weights_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(maxtotalweights_, other->maxtotalweights_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata maximalSpanningTreeRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[18]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -4905,13 +4955,10 @@ class maximalSpanningTreeResponse::_Internal {
  public:
 };
 
-maximalSpanningTreeResponse::maximalSpanningTreeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+maximalSpanningTreeResponse::maximalSpanningTreeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.maximalSpanningTreeResponse)
 }
 maximalSpanningTreeResponse::maximalSpanningTreeResponse(const maximalSpanningTreeResponse& from)
@@ -4920,7 +4967,7 @@ maximalSpanningTreeResponse::maximalSpanningTreeResponse(const maximalSpanningTr
   edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_edges_weights().empty()) {
     edges_weights_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_edges_weights(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   ::memcpy(&maxtotalweights_, &from.maxtotalweights_,
     static_cast<size_t>(reinterpret_cast<char*>(&xpcfgrpcreturnvalue_) -
@@ -4928,7 +4975,7 @@ maximalSpanningTreeResponse::maximalSpanningTreeResponse(const maximalSpanningTr
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.maximalSpanningTreeResponse)
 }
 
-inline void maximalSpanningTreeResponse::SharedCtor() {
+void maximalSpanningTreeResponse::SharedCtor() {
 edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&maxtotalweights_) - reinterpret_cast<char*>(this)),
@@ -4938,13 +4985,12 @@ edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStri
 
 maximalSpanningTreeResponse::~maximalSpanningTreeResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.maximalSpanningTreeResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void maximalSpanningTreeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void maximalSpanningTreeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   edges_weights_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -4976,6 +5022,7 @@ const char* maximalSpanningTreeResponse::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes edges_weights = 1;
       case 1:
@@ -5001,8 +5048,7 @@ const char* maximalSpanningTreeResponse::_InternalParse(const char* ptr, ::PROTO
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -5029,19 +5075,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes edges_weights = 1;
-  if (!this->_internal_edges_weights().empty()) {
+  if (this->edges_weights().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_edges_weights(), target);
   }
 
   // float maxTotalWeights = 2;
-  if (!(this->_internal_maxtotalweights() <= 0 && this->_internal_maxtotalweights() >= 0)) {
+  if (!(this->maxtotalweights() <= 0 && this->maxtotalweights() >= 0)) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_maxtotalweights(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(3, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -5063,19 +5109,19 @@ size_t maximalSpanningTreeResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes edges_weights = 1;
-  if (!this->_internal_edges_weights().empty()) {
+  if (this->edges_weights().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_edges_weights());
   }
 
   // float maxTotalWeights = 2;
-  if (!(this->_internal_maxtotalweights() <= 0 && this->_internal_maxtotalweights() >= 0)) {
+  if (!(this->maxtotalweights() <= 0 && this->maxtotalweights() >= 0)) {
     total_size += 1 + 4;
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -5090,35 +5136,44 @@ size_t maximalSpanningTreeResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData maximalSpanningTreeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    maximalSpanningTreeResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*maximalSpanningTreeResponse::GetClassData() const { return &_class_data_; }
-
-void maximalSpanningTreeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<maximalSpanningTreeResponse *>(to)->MergeFrom(
-      static_cast<const maximalSpanningTreeResponse &>(from));
+void maximalSpanningTreeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.maximalSpanningTreeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const maximalSpanningTreeResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<maximalSpanningTreeResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.maximalSpanningTreeResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.maximalSpanningTreeResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void maximalSpanningTreeResponse::MergeFrom(const maximalSpanningTreeResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.maximalSpanningTreeResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_edges_weights().empty()) {
+  if (from.edges_weights().size() > 0) {
     _internal_set_edges_weights(from._internal_edges_weights());
   }
-  if (!(from._internal_maxtotalweights() <= 0 && from._internal_maxtotalweights() >= 0)) {
+  if (!(from.maxtotalweights() <= 0 && from.maxtotalweights() >= 0)) {
     _internal_set_maxtotalweights(from._internal_maxtotalweights());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void maximalSpanningTreeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.maximalSpanningTreeResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void maximalSpanningTreeResponse::CopyFrom(const maximalSpanningTreeResponse& from) {
@@ -5134,12 +5189,8 @@ bool maximalSpanningTreeResponse::IsInitialized() const {
 
 void maximalSpanningTreeResponse::InternalSwap(maximalSpanningTreeResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &edges_weights_, GetArenaForAllocation(),
-      &other->edges_weights_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  edges_weights_.Swap(&other->edges_weights_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(maximalSpanningTreeResponse, xpcfgrpcreturnvalue_)
       + sizeof(maximalSpanningTreeResponse::xpcfgrpcreturnvalue_)
@@ -5149,10 +5200,9 @@ void maximalSpanningTreeResponse::InternalSwap(maximalSpanningTreeResponse* othe
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata maximalSpanningTreeResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[19]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -5160,13 +5210,10 @@ class getShortestPathRequest::_Internal {
  public:
 };
 
-getShortestPathRequest::getShortestPathRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getShortestPathRequest::getShortestPathRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getShortestPathRequest)
 }
 getShortestPathRequest::getShortestPathRequest(const getShortestPathRequest& from)
@@ -5175,7 +5222,7 @@ getShortestPathRequest::getShortestPathRequest(const getShortestPathRequest& fro
   path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_path().empty()) {
     path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_path(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   ::memcpy(&node1_id_, &from.node1_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&node2_id_) -
@@ -5183,7 +5230,7 @@ getShortestPathRequest::getShortestPathRequest(const getShortestPathRequest& fro
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getShortestPathRequest)
 }
 
-inline void getShortestPathRequest::SharedCtor() {
+void getShortestPathRequest::SharedCtor() {
 path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
@@ -5193,13 +5240,12 @@ path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 
 getShortestPathRequest::~getShortestPathRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getShortestPathRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getShortestPathRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getShortestPathRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -5231,6 +5277,7 @@ const char* getShortestPathRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 node1_id = 1;
       case 1:
@@ -5256,8 +5303,7 @@ const char* getShortestPathRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -5284,19 +5330,19 @@ failure:
   (void) cached_has_bits;
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
   }
 
   // bytes path = 3;
-  if (!this->_internal_path().empty()) {
+  if (this->path().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_path(), target);
   }
@@ -5318,21 +5364,21 @@ size_t getShortestPathRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes path = 3;
-  if (!this->_internal_path().empty()) {
+  if (this->path().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_path());
   }
 
   // uint32 node1_id = 1;
-  if (this->_internal_node1_id() != 0) {
+  if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
   // uint32 node2_id = 2;
-  if (this->_internal_node2_id() != 0) {
+  if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node2_id());
@@ -5347,35 +5393,44 @@ size_t getShortestPathRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getShortestPathRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getShortestPathRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getShortestPathRequest::GetClassData() const { return &_class_data_; }
-
-void getShortestPathRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getShortestPathRequest *>(to)->MergeFrom(
-      static_cast<const getShortestPathRequest &>(from));
+void getShortestPathRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getShortestPathRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getShortestPathRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getShortestPathRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getShortestPathRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getShortestPathRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void getShortestPathRequest::MergeFrom(const getShortestPathRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getShortestPathRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_path().empty()) {
+  if (from.path().size() > 0) {
     _internal_set_path(from._internal_path());
   }
-  if (from._internal_node1_id() != 0) {
+  if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
-  if (from._internal_node2_id() != 0) {
+  if (from.node2_id() != 0) {
     _internal_set_node2_id(from._internal_node2_id());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getShortestPathRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getShortestPathRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getShortestPathRequest::CopyFrom(const getShortestPathRequest& from) {
@@ -5391,12 +5446,8 @@ bool getShortestPathRequest::IsInitialized() const {
 
 void getShortestPathRequest::InternalSwap(getShortestPathRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &path_, GetArenaForAllocation(),
-      &other->path_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  path_.Swap(&other->path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getShortestPathRequest, node2_id_)
       + sizeof(getShortestPathRequest::node2_id_)
@@ -5406,10 +5457,9 @@ void getShortestPathRequest::InternalSwap(getShortestPathRequest* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getShortestPathRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[20]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -5417,13 +5467,10 @@ class getShortestPathResponse::_Internal {
  public:
 };
 
-getShortestPathResponse::getShortestPathResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getShortestPathResponse::getShortestPathResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getShortestPathResponse)
 }
 getShortestPathResponse::getShortestPathResponse(const getShortestPathResponse& from)
@@ -5432,26 +5479,25 @@ getShortestPathResponse::getShortestPathResponse(const getShortestPathResponse& 
   path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_path().empty()) {
     path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_path(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getShortestPathResponse)
 }
 
-inline void getShortestPathResponse::SharedCtor() {
+void getShortestPathResponse::SharedCtor() {
 path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
 }
 
 getShortestPathResponse::~getShortestPathResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getShortestPathResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getShortestPathResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getShortestPathResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -5481,6 +5527,7 @@ const char* getShortestPathResponse::_InternalParse(const char* ptr, ::PROTOBUF_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes path = 1;
       case 1:
@@ -5499,8 +5546,7 @@ const char* getShortestPathResponse::_InternalParse(const char* ptr, ::PROTOBUF_
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -5527,13 +5573,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes path = 1;
-  if (!this->_internal_path().empty()) {
+  if (this->path().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_path(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -5555,14 +5601,14 @@ size_t getShortestPathResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes path = 1;
-  if (!this->_internal_path().empty()) {
+  if (this->path().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_path());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -5577,32 +5623,41 @@ size_t getShortestPathResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getShortestPathResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getShortestPathResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getShortestPathResponse::GetClassData() const { return &_class_data_; }
-
-void getShortestPathResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getShortestPathResponse *>(to)->MergeFrom(
-      static_cast<const getShortestPathResponse &>(from));
+void getShortestPathResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getShortestPathResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getShortestPathResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getShortestPathResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getShortestPathResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getShortestPathResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getShortestPathResponse::MergeFrom(const getShortestPathResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getShortestPathResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_path().empty()) {
+  if (from.path().size() > 0) {
     _internal_set_path(from._internal_path());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getShortestPathResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getShortestPathResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getShortestPathResponse::CopyFrom(const getShortestPathResponse& from) {
@@ -5618,20 +5673,15 @@ bool getShortestPathResponse::IsInitialized() const {
 
 void getShortestPathResponse::InternalSwap(getShortestPathResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &path_, GetArenaForAllocation(),
-      &other->path_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  path_.Swap(&other->path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getShortestPathResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[21]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -5639,13 +5689,10 @@ class displayResponse::_Internal {
  public:
 };
 
-displayResponse::displayResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+displayResponse::displayResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.displayResponse)
 }
 displayResponse::displayResponse(const displayResponse& from)
@@ -5655,19 +5702,18 @@ displayResponse::displayResponse(const displayResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.displayResponse)
 }
 
-inline void displayResponse::SharedCtor() {
+void displayResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 displayResponse::~displayResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.displayResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void displayResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void displayResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void displayResponse::ArenaDtor(void* object) {
@@ -5695,6 +5741,7 @@ const char* displayResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -5705,8 +5752,7 @@ const char* displayResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -5733,7 +5779,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -5755,7 +5801,7 @@ size_t displayResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -5770,29 +5816,38 @@ size_t displayResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData displayResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    displayResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*displayResponse::GetClassData() const { return &_class_data_; }
-
-void displayResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<displayResponse *>(to)->MergeFrom(
-      static_cast<const displayResponse &>(from));
+void displayResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.displayResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const displayResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<displayResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.displayResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.displayResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void displayResponse::MergeFrom(const displayResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.displayResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void displayResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.displayResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void displayResponse::CopyFrom(const displayResponse& from) {
@@ -5808,15 +5863,14 @@ bool displayResponse::IsInitialized() const {
 
 void displayResponse::InternalSwap(displayResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata displayResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[22]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -5824,13 +5878,10 @@ class saveToFileRequest::_Internal {
  public:
 };
 
-saveToFileRequest::saveToFileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+saveToFileRequest::saveToFileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.saveToFileRequest)
 }
 saveToFileRequest::saveToFileRequest(const saveToFileRequest& from)
@@ -5839,24 +5890,23 @@ saveToFileRequest::saveToFileRequest(const saveToFileRequest& from)
   file_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_file().empty()) {
     file_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_file(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.saveToFileRequest)
 }
 
-inline void saveToFileRequest::SharedCtor() {
+void saveToFileRequest::SharedCtor() {
 file_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 saveToFileRequest::~saveToFileRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.saveToFileRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void saveToFileRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void saveToFileRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   file_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -5885,6 +5935,7 @@ const char* saveToFileRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string file = 1;
       case 1:
@@ -5897,8 +5948,7 @@ const char* saveToFileRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -5925,7 +5975,7 @@ failure:
   (void) cached_has_bits;
 
   // string file = 1;
-  if (!this->_internal_file().empty()) {
+  if (this->file().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_file().data(), static_cast<int>(this->_internal_file().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -5951,7 +6001,7 @@ size_t saveToFileRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string file = 1;
-  if (!this->_internal_file().empty()) {
+  if (this->file().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_file());
@@ -5966,29 +6016,38 @@ size_t saveToFileRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData saveToFileRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    saveToFileRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*saveToFileRequest::GetClassData() const { return &_class_data_; }
-
-void saveToFileRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<saveToFileRequest *>(to)->MergeFrom(
-      static_cast<const saveToFileRequest &>(from));
+void saveToFileRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.saveToFileRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const saveToFileRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<saveToFileRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.saveToFileRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.saveToFileRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void saveToFileRequest::MergeFrom(const saveToFileRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.saveToFileRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_file().empty()) {
+  if (from.file().size() > 0) {
     _internal_set_file(from._internal_file());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void saveToFileRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.saveToFileRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void saveToFileRequest::CopyFrom(const saveToFileRequest& from) {
@@ -6004,19 +6063,14 @@ bool saveToFileRequest::IsInitialized() const {
 
 void saveToFileRequest::InternalSwap(saveToFileRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &file_, GetArenaForAllocation(),
-      &other->file_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  file_.Swap(&other->file_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata saveToFileRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[23]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -6024,13 +6078,10 @@ class saveToFileResponse::_Internal {
  public:
 };
 
-saveToFileResponse::saveToFileResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+saveToFileResponse::saveToFileResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.saveToFileResponse)
 }
 saveToFileResponse::saveToFileResponse(const saveToFileResponse& from)
@@ -6040,19 +6091,18 @@ saveToFileResponse::saveToFileResponse(const saveToFileResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.saveToFileResponse)
 }
 
-inline void saveToFileResponse::SharedCtor() {
+void saveToFileResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 saveToFileResponse::~saveToFileResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.saveToFileResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void saveToFileResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void saveToFileResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void saveToFileResponse::ArenaDtor(void* object) {
@@ -6080,6 +6130,7 @@ const char* saveToFileResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -6090,8 +6141,7 @@ const char* saveToFileResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -6118,7 +6168,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -6140,7 +6190,7 @@ size_t saveToFileResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -6155,29 +6205,38 @@ size_t saveToFileResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData saveToFileResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    saveToFileResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*saveToFileResponse::GetClassData() const { return &_class_data_; }
-
-void saveToFileResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<saveToFileResponse *>(to)->MergeFrom(
-      static_cast<const saveToFileResponse &>(from));
+void saveToFileResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.saveToFileResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const saveToFileResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<saveToFileResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.saveToFileResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.saveToFileResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void saveToFileResponse::MergeFrom(const saveToFileResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.saveToFileResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void saveToFileResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.saveToFileResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void saveToFileResponse::CopyFrom(const saveToFileResponse& from) {
@@ -6193,15 +6252,14 @@ bool saveToFileResponse::IsInitialized() const {
 
 void saveToFileResponse::InternalSwap(saveToFileResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata saveToFileResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[24]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -6209,13 +6267,10 @@ class loadFromFileRequest::_Internal {
  public:
 };
 
-loadFromFileRequest::loadFromFileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+loadFromFileRequest::loadFromFileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.loadFromFileRequest)
 }
 loadFromFileRequest::loadFromFileRequest(const loadFromFileRequest& from)
@@ -6224,24 +6279,23 @@ loadFromFileRequest::loadFromFileRequest(const loadFromFileRequest& from)
   file_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_file().empty()) {
     file_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_file(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.loadFromFileRequest)
 }
 
-inline void loadFromFileRequest::SharedCtor() {
+void loadFromFileRequest::SharedCtor() {
 file_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 loadFromFileRequest::~loadFromFileRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.loadFromFileRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void loadFromFileRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void loadFromFileRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   file_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -6270,6 +6324,7 @@ const char* loadFromFileRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // string file = 1;
       case 1:
@@ -6282,8 +6337,7 @@ const char* loadFromFileRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -6310,7 +6364,7 @@ failure:
   (void) cached_has_bits;
 
   // string file = 1;
-  if (!this->_internal_file().empty()) {
+  if (this->file().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_file().data(), static_cast<int>(this->_internal_file().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -6336,7 +6390,7 @@ size_t loadFromFileRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // string file = 1;
-  if (!this->_internal_file().empty()) {
+  if (this->file().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_file());
@@ -6351,29 +6405,38 @@ size_t loadFromFileRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData loadFromFileRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    loadFromFileRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*loadFromFileRequest::GetClassData() const { return &_class_data_; }
-
-void loadFromFileRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<loadFromFileRequest *>(to)->MergeFrom(
-      static_cast<const loadFromFileRequest &>(from));
+void loadFromFileRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.loadFromFileRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const loadFromFileRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<loadFromFileRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.loadFromFileRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.loadFromFileRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void loadFromFileRequest::MergeFrom(const loadFromFileRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.loadFromFileRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_file().empty()) {
+  if (from.file().size() > 0) {
     _internal_set_file(from._internal_file());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void loadFromFileRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.loadFromFileRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void loadFromFileRequest::CopyFrom(const loadFromFileRequest& from) {
@@ -6389,19 +6452,14 @@ bool loadFromFileRequest::IsInitialized() const {
 
 void loadFromFileRequest::InternalSwap(loadFromFileRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &file_, GetArenaForAllocation(),
-      &other->file_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  file_.Swap(&other->file_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadFromFileRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[25]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -6409,13 +6467,10 @@ class loadFromFileResponse::_Internal {
  public:
 };
 
-loadFromFileResponse::loadFromFileResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+loadFromFileResponse::loadFromFileResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.loadFromFileResponse)
 }
 loadFromFileResponse::loadFromFileResponse(const loadFromFileResponse& from)
@@ -6425,19 +6480,18 @@ loadFromFileResponse::loadFromFileResponse(const loadFromFileResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.loadFromFileResponse)
 }
 
-inline void loadFromFileResponse::SharedCtor() {
+void loadFromFileResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 loadFromFileResponse::~loadFromFileResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.loadFromFileResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void loadFromFileResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void loadFromFileResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void loadFromFileResponse::ArenaDtor(void* object) {
@@ -6465,6 +6519,7 @@ const char* loadFromFileResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -6475,8 +6530,7 @@ const char* loadFromFileResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -6503,7 +6557,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -6525,7 +6579,7 @@ size_t loadFromFileResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -6540,29 +6594,38 @@ size_t loadFromFileResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData loadFromFileResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    loadFromFileResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*loadFromFileResponse::GetClassData() const { return &_class_data_; }
-
-void loadFromFileResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<loadFromFileResponse *>(to)->MergeFrom(
-      static_cast<const loadFromFileResponse &>(from));
+void loadFromFileResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.loadFromFileResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const loadFromFileResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<loadFromFileResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.loadFromFileResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.loadFromFileResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void loadFromFileResponse::MergeFrom(const loadFromFileResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.loadFromFileResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void loadFromFileResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.loadFromFileResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void loadFromFileResponse::CopyFrom(const loadFromFileResponse& from) {
@@ -6578,15 +6641,14 @@ bool loadFromFileResponse::IsInitialized() const {
 
 void loadFromFileResponse::InternalSwap(loadFromFileResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadFromFileResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[26]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -6594,13 +6656,10 @@ class getConstCovisibilityGraphResponse::_Internal {
  public:
 };
 
-getConstCovisibilityGraphResponse::getConstCovisibilityGraphResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getConstCovisibilityGraphResponse::getConstCovisibilityGraphResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getConstCovisibilityGraphResponse)
 }
 getConstCovisibilityGraphResponse::getConstCovisibilityGraphResponse(const getConstCovisibilityGraphResponse& from)
@@ -6609,24 +6668,23 @@ getConstCovisibilityGraphResponse::getConstCovisibilityGraphResponse(const getCo
   xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_xpcfgrpcreturnvalue().empty()) {
     xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_xpcfgrpcreturnvalue(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getConstCovisibilityGraphResponse)
 }
 
-inline void getConstCovisibilityGraphResponse::SharedCtor() {
+void getConstCovisibilityGraphResponse::SharedCtor() {
 xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 getConstCovisibilityGraphResponse::~getConstCovisibilityGraphResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getConstCovisibilityGraphResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getConstCovisibilityGraphResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getConstCovisibilityGraphResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   xpcfgrpcreturnvalue_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -6655,6 +6713,7 @@ const char* getConstCovisibilityGraphResponse::_InternalParse(const char* ptr, :
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes xpcfGrpcReturnValue = 1;
       case 1:
@@ -6666,8 +6725,7 @@ const char* getConstCovisibilityGraphResponse::_InternalParse(const char* ptr, :
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -6694,7 +6752,7 @@ failure:
   (void) cached_has_bits;
 
   // bytes xpcfGrpcReturnValue = 1;
-  if (!this->_internal_xpcfgrpcreturnvalue().empty()) {
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -6716,7 +6774,7 @@ size_t getConstCovisibilityGraphResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes xpcfGrpcReturnValue = 1;
-  if (!this->_internal_xpcfgrpcreturnvalue().empty()) {
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_xpcfgrpcreturnvalue());
@@ -6731,29 +6789,38 @@ size_t getConstCovisibilityGraphResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getConstCovisibilityGraphResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getConstCovisibilityGraphResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getConstCovisibilityGraphResponse::GetClassData() const { return &_class_data_; }
-
-void getConstCovisibilityGraphResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getConstCovisibilityGraphResponse *>(to)->MergeFrom(
-      static_cast<const getConstCovisibilityGraphResponse &>(from));
+void getConstCovisibilityGraphResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getConstCovisibilityGraphResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getConstCovisibilityGraphResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getConstCovisibilityGraphResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getConstCovisibilityGraphResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getConstCovisibilityGraphResponse::MergeFrom(const getConstCovisibilityGraphResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_xpcfgrpcreturnvalue().empty()) {
+  if (from.xpcfgrpcreturnvalue().size() > 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getConstCovisibilityGraphResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getConstCovisibilityGraphResponse::CopyFrom(const getConstCovisibilityGraphResponse& from) {
@@ -6769,19 +6836,14 @@ bool getConstCovisibilityGraphResponse::IsInitialized() const {
 
 void getConstCovisibilityGraphResponse::InternalSwap(getConstCovisibilityGraphResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &xpcfgrpcreturnvalue_, GetArenaForAllocation(),
-      &other->xpcfgrpcreturnvalue_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  xpcfgrpcreturnvalue_.Swap(&other->xpcfgrpcreturnvalue_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getConstCovisibilityGraphResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[27]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -6789,13 +6851,10 @@ class getCovisibilityGraphRequest::_Internal {
  public:
 };
 
-getCovisibilityGraphRequest::getCovisibilityGraphRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getCovisibilityGraphRequest::getCovisibilityGraphRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
 }
 getCovisibilityGraphRequest::getCovisibilityGraphRequest(const getCovisibilityGraphRequest& from)
@@ -6804,24 +6863,23 @@ getCovisibilityGraphRequest::getCovisibilityGraphRequest(const getCovisibilityGr
   covisibilitygraph_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_covisibilitygraph().empty()) {
     covisibilitygraph_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_covisibilitygraph(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
 }
 
-inline void getCovisibilityGraphRequest::SharedCtor() {
+void getCovisibilityGraphRequest::SharedCtor() {
 covisibilitygraph_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 getCovisibilityGraphRequest::~getCovisibilityGraphRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getCovisibilityGraphRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getCovisibilityGraphRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   covisibilitygraph_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -6850,6 +6908,7 @@ const char* getCovisibilityGraphRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes covisibilityGraph = 1;
       case 1:
@@ -6861,8 +6920,7 @@ const char* getCovisibilityGraphRequest::_InternalParse(const char* ptr, ::PROTO
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -6889,7 +6947,7 @@ failure:
   (void) cached_has_bits;
 
   // bytes covisibilityGraph = 1;
-  if (!this->_internal_covisibilitygraph().empty()) {
+  if (this->covisibilitygraph().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_covisibilitygraph(), target);
   }
@@ -6911,7 +6969,7 @@ size_t getCovisibilityGraphRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes covisibilityGraph = 1;
-  if (!this->_internal_covisibilitygraph().empty()) {
+  if (this->covisibilitygraph().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_covisibilitygraph());
@@ -6926,29 +6984,38 @@ size_t getCovisibilityGraphRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getCovisibilityGraphRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getCovisibilityGraphRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getCovisibilityGraphRequest::GetClassData() const { return &_class_data_; }
-
-void getCovisibilityGraphRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getCovisibilityGraphRequest *>(to)->MergeFrom(
-      static_cast<const getCovisibilityGraphRequest &>(from));
+void getCovisibilityGraphRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getCovisibilityGraphRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getCovisibilityGraphRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void getCovisibilityGraphRequest::MergeFrom(const getCovisibilityGraphRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_covisibilitygraph().empty()) {
+  if (from.covisibilitygraph().size() > 0) {
     _internal_set_covisibilitygraph(from._internal_covisibilitygraph());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getCovisibilityGraphRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getCovisibilityGraphRequest::CopyFrom(const getCovisibilityGraphRequest& from) {
@@ -6964,19 +7031,14 @@ bool getCovisibilityGraphRequest::IsInitialized() const {
 
 void getCovisibilityGraphRequest::InternalSwap(getCovisibilityGraphRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &covisibilitygraph_, GetArenaForAllocation(),
-      &other->covisibilitygraph_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  covisibilitygraph_.Swap(&other->covisibilitygraph_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getCovisibilityGraphRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[28]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -6984,13 +7046,10 @@ class getCovisibilityGraphResponse::_Internal {
  public:
 };
 
-getCovisibilityGraphResponse::getCovisibilityGraphResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getCovisibilityGraphResponse::getCovisibilityGraphResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getCovisibilityGraphResponse)
 }
 getCovisibilityGraphResponse::getCovisibilityGraphResponse(const getCovisibilityGraphResponse& from)
@@ -6999,30 +7058,29 @@ getCovisibilityGraphResponse::getCovisibilityGraphResponse(const getCovisibility
   covisibilitygraph_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_covisibilitygraph().empty()) {
     covisibilitygraph_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_covisibilitygraph(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_xpcfgrpcreturnvalue().empty()) {
     xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_xpcfgrpcreturnvalue(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getCovisibilityGraphResponse)
 }
 
-inline void getCovisibilityGraphResponse::SharedCtor() {
+void getCovisibilityGraphResponse::SharedCtor() {
 covisibilitygraph_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 getCovisibilityGraphResponse::~getCovisibilityGraphResponse() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getCovisibilityGraphResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getCovisibilityGraphResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getCovisibilityGraphResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   covisibilitygraph_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   xpcfgrpcreturnvalue_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -7053,6 +7111,7 @@ const char* getCovisibilityGraphResponse::_InternalParse(const char* ptr, ::PROT
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes covisibilityGraph = 1;
       case 1:
@@ -7072,8 +7131,7 @@ const char* getCovisibilityGraphResponse::_InternalParse(const char* ptr, ::PROT
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -7100,13 +7158,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes covisibilityGraph = 1;
-  if (!this->_internal_covisibilitygraph().empty()) {
+  if (this->covisibilitygraph().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_covisibilitygraph(), target);
   }
 
   // bytes xpcfGrpcReturnValue = 2;
-  if (!this->_internal_xpcfgrpcreturnvalue().empty()) {
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -7128,14 +7186,14 @@ size_t getCovisibilityGraphResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes covisibilityGraph = 1;
-  if (!this->_internal_covisibilitygraph().empty()) {
+  if (this->covisibilitygraph().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_covisibilitygraph());
   }
 
   // bytes xpcfGrpcReturnValue = 2;
-  if (!this->_internal_xpcfgrpcreturnvalue().empty()) {
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_xpcfgrpcreturnvalue());
@@ -7150,32 +7208,41 @@ size_t getCovisibilityGraphResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getCovisibilityGraphResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getCovisibilityGraphResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getCovisibilityGraphResponse::GetClassData() const { return &_class_data_; }
-
-void getCovisibilityGraphResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getCovisibilityGraphResponse *>(to)->MergeFrom(
-      static_cast<const getCovisibilityGraphResponse &>(from));
+void getCovisibilityGraphResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getCovisibilityGraphResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getCovisibilityGraphResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getCovisibilityGraphResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getCovisibilityGraphResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getCovisibilityGraphResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getCovisibilityGraphResponse::MergeFrom(const getCovisibilityGraphResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getCovisibilityGraphResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_covisibilitygraph().empty()) {
+  if (from.covisibilitygraph().size() > 0) {
     _internal_set_covisibilitygraph(from._internal_covisibilitygraph());
   }
-  if (!from._internal_xpcfgrpcreturnvalue().empty()) {
+  if (from.xpcfgrpcreturnvalue().size() > 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getCovisibilityGraphResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getCovisibilityGraphResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getCovisibilityGraphResponse::CopyFrom(const getCovisibilityGraphResponse& from) {
@@ -7191,24 +7258,15 @@ bool getCovisibilityGraphResponse::IsInitialized() const {
 
 void getCovisibilityGraphResponse::InternalSwap(getCovisibilityGraphResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &covisibilitygraph_, GetArenaForAllocation(),
-      &other->covisibilitygraph_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &xpcfgrpcreturnvalue_, GetArenaForAllocation(),
-      &other->xpcfgrpcreturnvalue_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  covisibilitygraph_.Swap(&other->covisibilitygraph_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  xpcfgrpcreturnvalue_.Swap(&other->xpcfgrpcreturnvalue_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getCovisibilityGraphResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[29]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -7216,13 +7274,10 @@ class setCovisibilityGraphRequest::_Internal {
  public:
 };
 
-setCovisibilityGraphRequest::setCovisibilityGraphRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+setCovisibilityGraphRequest::setCovisibilityGraphRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.setCovisibilityGraphRequest)
 }
 setCovisibilityGraphRequest::setCovisibilityGraphRequest(const setCovisibilityGraphRequest& from)
@@ -7231,24 +7286,23 @@ setCovisibilityGraphRequest::setCovisibilityGraphRequest(const setCovisibilityGr
   covisibilitygraph_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_covisibilitygraph().empty()) {
     covisibilitygraph_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_covisibilitygraph(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.setCovisibilityGraphRequest)
 }
 
-inline void setCovisibilityGraphRequest::SharedCtor() {
+void setCovisibilityGraphRequest::SharedCtor() {
 covisibilitygraph_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 setCovisibilityGraphRequest::~setCovisibilityGraphRequest() {
   // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.setCovisibilityGraphRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void setCovisibilityGraphRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void setCovisibilityGraphRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   covisibilitygraph_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -7277,6 +7331,7 @@ const char* setCovisibilityGraphRequest::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes covisibilityGraph = 1;
       case 1:
@@ -7288,8 +7343,7 @@ const char* setCovisibilityGraphRequest::_InternalParse(const char* ptr, ::PROTO
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -7316,7 +7370,7 @@ failure:
   (void) cached_has_bits;
 
   // bytes covisibilityGraph = 1;
-  if (!this->_internal_covisibilitygraph().empty()) {
+  if (this->covisibilitygraph().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_covisibilitygraph(), target);
   }
@@ -7338,7 +7392,7 @@ size_t setCovisibilityGraphRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes covisibilityGraph = 1;
-  if (!this->_internal_covisibilitygraph().empty()) {
+  if (this->covisibilitygraph().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_covisibilitygraph());
@@ -7353,29 +7407,38 @@ size_t setCovisibilityGraphRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData setCovisibilityGraphRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    setCovisibilityGraphRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*setCovisibilityGraphRequest::GetClassData() const { return &_class_data_; }
-
-void setCovisibilityGraphRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<setCovisibilityGraphRequest *>(to)->MergeFrom(
-      static_cast<const setCovisibilityGraphRequest &>(from));
+void setCovisibilityGraphRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.setCovisibilityGraphRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const setCovisibilityGraphRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCovisibilityGraphRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.setCovisibilityGraphRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.setCovisibilityGraphRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void setCovisibilityGraphRequest::MergeFrom(const setCovisibilityGraphRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.setCovisibilityGraphRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_covisibilitygraph().empty()) {
+  if (from.covisibilitygraph().size() > 0) {
     _internal_set_covisibilitygraph(from._internal_covisibilitygraph());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void setCovisibilityGraphRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.setCovisibilityGraphRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void setCovisibilityGraphRequest::CopyFrom(const setCovisibilityGraphRequest& from) {
@@ -7391,19 +7454,14 @@ bool setCovisibilityGraphRequest::IsInitialized() const {
 
 void setCovisibilityGraphRequest::InternalSwap(setCovisibilityGraphRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &covisibilitygraph_, GetArenaForAllocation(),
-      &other->covisibilitygraph_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  covisibilitygraph_.Swap(&other->covisibilitygraph_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata setCovisibilityGraphRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_getter, &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once,
-      file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[30]);
+  return GetMetadataStatic();
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcICovisibilityGraphManager

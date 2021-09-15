@@ -1,6 +1,5 @@
 
 HEADERS += \
-SolARFrameworkGRPCRemoteMain.h \
 I2DOverlay_grpcProxy.h \
 I2DOverlay_grpcServer.h \
 grpcI2DOverlayService.pb.h \
@@ -37,14 +36,38 @@ IDescriptorMatcher_grpcProxy.h \
 IDescriptorMatcher_grpcServer.h \
 grpcIDescriptorMatcherService.pb.h \
 grpcIDescriptorMatcherService.grpc.pb.h \
+IDescriptorMatcherGeometric_grpcProxy.h \
+IDescriptorMatcherGeometric_grpcServer.h \
+grpcIDescriptorMatcherGeometricService.pb.h \
+grpcIDescriptorMatcherGeometricService.grpc.pb.h \
+IDescriptorMatcherRegion_grpcProxy.h \
+IDescriptorMatcherRegion_grpcServer.h \
+grpcIDescriptorMatcherRegionService.pb.h \
+grpcIDescriptorMatcherRegionService.grpc.pb.h \
+IDescriptorMatcherStereo_grpcProxy.h \
+IDescriptorMatcherStereo_grpcServer.h \
+grpcIDescriptorMatcherStereoService.pb.h \
+grpcIDescriptorMatcherStereoService.grpc.pb.h \
 IDescriptorsExtractor_grpcProxy.h \
 IDescriptorsExtractor_grpcServer.h \
 grpcIDescriptorsExtractorService.pb.h \
 grpcIDescriptorsExtractorService.grpc.pb.h \
+IDescriptorsExtractorFromImage_grpcProxy.h \
+IDescriptorsExtractorFromImage_grpcServer.h \
+grpcIDescriptorsExtractorFromImageService.pb.h \
+grpcIDescriptorsExtractorFromImageService.grpc.pb.h \
 IDescriptorsExtractorSBPattern_grpcProxy.h \
 IDescriptorsExtractorSBPattern_grpcServer.h \
 grpcIDescriptorsExtractorSBPatternService.pb.h \
 grpcIDescriptorsExtractorSBPatternService.grpc.pb.h \
+IFeatureWithDepthFromStereo_grpcProxy.h \
+IFeatureWithDepthFromStereo_grpcServer.h \
+grpcIFeatureWithDepthFromStereoService.pb.h \
+grpcIFeatureWithDepthFromStereoService.grpc.pb.h \
+IImageMatcher_grpcProxy.h \
+IImageMatcher_grpcServer.h \
+grpcIImageMatcherService.pb.h \
+grpcIImageMatcherService.grpc.pb.h \
 IKeypointDetector_grpcProxy.h \
 IKeypointDetector_grpcServer.h \
 grpcIKeypointDetectorService.pb.h \
@@ -69,6 +92,10 @@ IVisualInertialFusion_grpcProxy.h \
 IVisualInertialFusion_grpcServer.h \
 grpcIVisualInertialFusionService.pb.h \
 grpcIVisualInertialFusionService.grpc.pb.h \
+I2DPointsRectification_grpcProxy.h \
+I2DPointsRectification_grpcServer.h \
+grpcI2DPointsRectificationService.pb.h \
+grpcI2DPointsRectificationService.grpc.pb.h \
 I2DTransform_grpcProxy.h \
 I2DTransform_grpcServer.h \
 grpcI2DTransformService.pb.h \
@@ -77,6 +104,10 @@ I3DTransform_grpcProxy.h \
 I3DTransform_grpcServer.h \
 grpcI3DTransformService.pb.h \
 grpcI3DTransformService.grpc.pb.h \
+IDepthEstimation_grpcProxy.h \
+IDepthEstimation_grpcServer.h \
+grpcIDepthEstimationService.pb.h \
+grpcIDepthEstimationService.grpc.pb.h \
 IImage2WorldMapper_grpcProxy.h \
 IImage2WorldMapper_grpcServer.h \
 grpcIImage2WorldMapperService.pb.h \
@@ -85,6 +116,10 @@ IProject_grpcProxy.h \
 IProject_grpcServer.h \
 grpcIProjectService.pb.h \
 grpcIProjectService.grpc.pb.h \
+IReprojectionStereo_grpcProxy.h \
+IReprojectionStereo_grpcServer.h \
+grpcIReprojectionStereoService.pb.h \
+grpcIReprojectionStereoService.grpc.pb.h \
 IUndistortPoints_grpcProxy.h \
 IUndistortPoints_grpcServer.h \
 grpcIUndistortPointsService.pb.h \
@@ -105,6 +140,10 @@ IImageLoader_grpcProxy.h \
 IImageLoader_grpcServer.h \
 grpcIImageLoaderService.pb.h \
 grpcIImageLoaderService.grpc.pb.h \
+IImageRectification_grpcProxy.h \
+IImageRectification_grpcServer.h \
+grpcIImageRectificationService.pb.h \
+grpcIImageRectificationService.grpc.pb.h \
 IPerspectiveController_grpcProxy.h \
 IPerspectiveController_grpcServer.h \
 grpcIPerspectiveControllerService.pb.h \
@@ -137,6 +176,10 @@ IRGBDCamera_grpcProxy.h \
 IRGBDCamera_grpcServer.h \
 grpcIRGBDCameraService.pb.h \
 grpcIRGBDCameraService.grpc.pb.h \
+IStereoCameraCalibration_grpcProxy.h \
+IStereoCameraCalibration_grpcServer.h \
+grpcIStereoCameraCalibrationService.pb.h \
+grpcIStereoCameraCalibrationService.grpc.pb.h \
 IPointCloudLoader_grpcProxy.h \
 IPointCloudLoader_grpcServer.h \
 grpcIPointCloudLoaderService.pb.h \
@@ -193,6 +236,10 @@ IBootstrapper_grpcProxy.h \
 IBootstrapper_grpcServer.h \
 grpcIBootstrapperService.pb.h \
 grpcIBootstrapperService.grpc.pb.h \
+IBootstrapperStereo_grpcProxy.h \
+IBootstrapperStereo_grpcServer.h \
+grpcIBootstrapperStereoService.pb.h \
+grpcIBootstrapperStereoService.grpc.pb.h \
 IMapping_grpcProxy.h \
 IMapping_grpcServer.h \
 grpcIMappingService.pb.h \
@@ -284,10 +331,10 @@ grpcIPointCloudManagerService.grpc.pb.h \
 IOpticalFlowEstimator_grpcProxy.h \
 IOpticalFlowEstimator_grpcServer.h \
 grpcIOpticalFlowEstimatorService.pb.h \
-grpcIOpticalFlowEstimatorService.grpc.pb.h
+grpcIOpticalFlowEstimatorService.grpc.pb.h \
+xpcfGrpcModuleMain.h
 
 SOURCES += \
-SolARFrameworkGRPCRemoteMain.cpp \
 I2DOverlay_grpcProxy.cpp \
 I2DOverlay_grpcServer.cpp \
 grpcI2DOverlayService.pb.cc \
@@ -324,14 +371,38 @@ IDescriptorMatcher_grpcProxy.cpp \
 IDescriptorMatcher_grpcServer.cpp \
 grpcIDescriptorMatcherService.pb.cc \
 grpcIDescriptorMatcherService.grpc.pb.cc \
+IDescriptorMatcherGeometric_grpcProxy.cpp \
+IDescriptorMatcherGeometric_grpcServer.cpp \
+grpcIDescriptorMatcherGeometricService.pb.cc \
+grpcIDescriptorMatcherGeometricService.grpc.pb.cc \
+IDescriptorMatcherRegion_grpcProxy.cpp \
+IDescriptorMatcherRegion_grpcServer.cpp \
+grpcIDescriptorMatcherRegionService.pb.cc \
+grpcIDescriptorMatcherRegionService.grpc.pb.cc \
+IDescriptorMatcherStereo_grpcProxy.cpp \
+IDescriptorMatcherStereo_grpcServer.cpp \
+grpcIDescriptorMatcherStereoService.pb.cc \
+grpcIDescriptorMatcherStereoService.grpc.pb.cc \
 IDescriptorsExtractor_grpcProxy.cpp \
 IDescriptorsExtractor_grpcServer.cpp \
 grpcIDescriptorsExtractorService.pb.cc \
 grpcIDescriptorsExtractorService.grpc.pb.cc \
+IDescriptorsExtractorFromImage_grpcProxy.cpp \
+IDescriptorsExtractorFromImage_grpcServer.cpp \
+grpcIDescriptorsExtractorFromImageService.pb.cc \
+grpcIDescriptorsExtractorFromImageService.grpc.pb.cc \
 IDescriptorsExtractorSBPattern_grpcProxy.cpp \
 IDescriptorsExtractorSBPattern_grpcServer.cpp \
 grpcIDescriptorsExtractorSBPatternService.pb.cc \
 grpcIDescriptorsExtractorSBPatternService.grpc.pb.cc \
+IFeatureWithDepthFromStereo_grpcProxy.cpp \
+IFeatureWithDepthFromStereo_grpcServer.cpp \
+grpcIFeatureWithDepthFromStereoService.pb.cc \
+grpcIFeatureWithDepthFromStereoService.grpc.pb.cc \
+IImageMatcher_grpcProxy.cpp \
+IImageMatcher_grpcServer.cpp \
+grpcIImageMatcherService.pb.cc \
+grpcIImageMatcherService.grpc.pb.cc \
 IKeypointDetector_grpcProxy.cpp \
 IKeypointDetector_grpcServer.cpp \
 grpcIKeypointDetectorService.pb.cc \
@@ -356,6 +427,10 @@ IVisualInertialFusion_grpcProxy.cpp \
 IVisualInertialFusion_grpcServer.cpp \
 grpcIVisualInertialFusionService.pb.cc \
 grpcIVisualInertialFusionService.grpc.pb.cc \
+I2DPointsRectification_grpcProxy.cpp \
+I2DPointsRectification_grpcServer.cpp \
+grpcI2DPointsRectificationService.pb.cc \
+grpcI2DPointsRectificationService.grpc.pb.cc \
 I2DTransform_grpcProxy.cpp \
 I2DTransform_grpcServer.cpp \
 grpcI2DTransformService.pb.cc \
@@ -364,6 +439,10 @@ I3DTransform_grpcProxy.cpp \
 I3DTransform_grpcServer.cpp \
 grpcI3DTransformService.pb.cc \
 grpcI3DTransformService.grpc.pb.cc \
+IDepthEstimation_grpcProxy.cpp \
+IDepthEstimation_grpcServer.cpp \
+grpcIDepthEstimationService.pb.cc \
+grpcIDepthEstimationService.grpc.pb.cc \
 IImage2WorldMapper_grpcProxy.cpp \
 IImage2WorldMapper_grpcServer.cpp \
 grpcIImage2WorldMapperService.pb.cc \
@@ -372,6 +451,10 @@ IProject_grpcProxy.cpp \
 IProject_grpcServer.cpp \
 grpcIProjectService.pb.cc \
 grpcIProjectService.grpc.pb.cc \
+IReprojectionStereo_grpcProxy.cpp \
+IReprojectionStereo_grpcServer.cpp \
+grpcIReprojectionStereoService.pb.cc \
+grpcIReprojectionStereoService.grpc.pb.cc \
 IUndistortPoints_grpcProxy.cpp \
 IUndistortPoints_grpcServer.cpp \
 grpcIUndistortPointsService.pb.cc \
@@ -392,6 +475,10 @@ IImageLoader_grpcProxy.cpp \
 IImageLoader_grpcServer.cpp \
 grpcIImageLoaderService.pb.cc \
 grpcIImageLoaderService.grpc.pb.cc \
+IImageRectification_grpcProxy.cpp \
+IImageRectification_grpcServer.cpp \
+grpcIImageRectificationService.pb.cc \
+grpcIImageRectificationService.grpc.pb.cc \
 IPerspectiveController_grpcProxy.cpp \
 IPerspectiveController_grpcServer.cpp \
 grpcIPerspectiveControllerService.pb.cc \
@@ -424,6 +511,10 @@ IRGBDCamera_grpcProxy.cpp \
 IRGBDCamera_grpcServer.cpp \
 grpcIRGBDCameraService.pb.cc \
 grpcIRGBDCameraService.grpc.pb.cc \
+IStereoCameraCalibration_grpcProxy.cpp \
+IStereoCameraCalibration_grpcServer.cpp \
+grpcIStereoCameraCalibrationService.pb.cc \
+grpcIStereoCameraCalibrationService.grpc.pb.cc \
 IPointCloudLoader_grpcProxy.cpp \
 IPointCloudLoader_grpcServer.cpp \
 grpcIPointCloudLoaderService.pb.cc \
@@ -480,6 +571,10 @@ IBootstrapper_grpcProxy.cpp \
 IBootstrapper_grpcServer.cpp \
 grpcIBootstrapperService.pb.cc \
 grpcIBootstrapperService.grpc.pb.cc \
+IBootstrapperStereo_grpcProxy.cpp \
+IBootstrapperStereo_grpcServer.cpp \
+grpcIBootstrapperStereoService.pb.cc \
+grpcIBootstrapperStereoService.grpc.pb.cc \
 IMapping_grpcProxy.cpp \
 IMapping_grpcServer.cpp \
 grpcIMappingService.pb.cc \
@@ -571,4 +666,5 @@ grpcIPointCloudManagerService.grpc.pb.cc \
 IOpticalFlowEstimator_grpcProxy.cpp \
 IOpticalFlowEstimator_grpcServer.cpp \
 grpcIOpticalFlowEstimatorService.pb.cc \
-grpcIOpticalFlowEstimatorService.grpc.pb.cc
+grpcIOpticalFlowEstimatorService.grpc.pb.cc \
+xpcfGrpcModuleMain.cpp

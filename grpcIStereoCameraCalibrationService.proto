@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIStereoCameraCalibration;
+
+message calibrateRequest
+{
+bytes images1 = 1;
+bytes images2 = 2;
+bytes camParams1 = 3;
+bytes camParams2 = 4;
+bytes transformation = 5;
+bytes rectParams1 = 6;
+bytes rectParams2 = 7;
+}
+
+message calibrateResponse
+{
+bytes transformation = 1;
+bytes rectParams1 = 2;
+bytes rectParams2 = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+service grpcIStereoCameraCalibrationService {
+rpc calibrate(calibrateRequest) returns(calibrateResponse) {}
+}
+

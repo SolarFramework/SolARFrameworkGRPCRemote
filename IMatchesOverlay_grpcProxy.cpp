@@ -49,7 +49,7 @@ void  IMatchesOverlay_grpcProxy::draw(SRef<SolAR::datastructure::Image> const im
   reqIn.set_outimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(outImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->draw_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "draw_grpc0rpc failed." << std::endl;
+    std::cout << "draw_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMatchesOverlayService","draw_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -70,7 +70,7 @@ void  IMatchesOverlay_grpcProxy::draw(SRef<SolAR::datastructure::Image> const im
   reqIn.set_outimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(outImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->draw_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "draw_grpc1rpc failed." << std::endl;
+    std::cout << "draw_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMatchesOverlayService","draw_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -90,7 +90,7 @@ void  IMatchesOverlay_grpcProxy::draw(SRef<SolAR::datastructure::Image> const im
   reqIn.set_outimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(outImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->draw_grpc2(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "draw_grpc2rpc failed." << std::endl;
+    std::cout << "draw_grpc2 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMatchesOverlayService","draw_grpc2",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -110,7 +110,7 @@ void  IMatchesOverlay_grpcProxy::draw(SRef<SolAR::datastructure::Image> const im
   reqIn.set_outimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(outImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->draw_grpc3(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "draw_grpc3rpc failed." << std::endl;
+    std::cout << "draw_grpc3 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMatchesOverlayService","draw_grpc3",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

@@ -36,7 +36,7 @@ XPCFErrorCode IDescriptorMatcher_grpcProxy::onConfigured()
 }
 
 
-SolAR::api::features::IDescriptorMatcher::RetCode  IDescriptorMatcher_grpcProxy::match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, SRef<SolAR::datastructure::DescriptorBuffer> const descriptors2, std::vector<SolAR::datastructure::DescriptorMatch>& matches)
+SolAR::FrameworkReturnCode  IDescriptorMatcher_grpcProxy::match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, SRef<SolAR::datastructure::DescriptorBuffer> const descriptors2, std::vector<SolAR::datastructure::DescriptorMatch>& matches)
 {
   ::grpc::ClientContext context;
   ::grpcIDescriptorMatcher::match_grpc0Request reqIn;
@@ -46,16 +46,16 @@ SolAR::api::features::IDescriptorMatcher::RetCode  IDescriptorMatcher_grpcProxy:
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->match_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "match_grpc0rpc failed." << std::endl;
+    std::cout << "match_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDescriptorMatcherService","match_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(respOut.matches());
-  return static_cast<SolAR::api::features::IDescriptorMatcher::RetCode>(respOut.xpcfgrpcreturnvalue());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
-SolAR::api::features::IDescriptorMatcher::RetCode  IDescriptorMatcher_grpcProxy::match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, std::vector<SRef<SolAR::datastructure::DescriptorBuffer>> const& descriptors2, std::vector<SolAR::datastructure::DescriptorMatch>& matches)
+SolAR::FrameworkReturnCode  IDescriptorMatcher_grpcProxy::match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, std::vector<SRef<SolAR::datastructure::DescriptorBuffer>> const& descriptors2, std::vector<SolAR::datastructure::DescriptorMatch>& matches)
 {
   ::grpc::ClientContext context;
   ::grpcIDescriptorMatcher::match_grpc1Request reqIn;
@@ -65,12 +65,12 @@ SolAR::api::features::IDescriptorMatcher::RetCode  IDescriptorMatcher_grpcProxy:
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->match_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "match_grpc1rpc failed." << std::endl;
+    std::cout << "match_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDescriptorMatcherService","match_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(respOut.matches());
-  return static_cast<SolAR::api::features::IDescriptorMatcher::RetCode>(respOut.xpcfgrpcreturnvalue());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 

@@ -3,7 +3,7 @@
 
 #ifndef IPCFILTER_GRPCPROXY_H
 #define IPCFILTER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilter.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IPCFilter_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIPCFilter::IPCFilter_grpcProxy>
 {
-  static constexpr const char * UUID = "48c36c7b-ef72-4860-aad5-274fe452edcd";
+  static constexpr const char * UUID = "cf24abfe-755e-4c1e-917b-5cd8f492816c";
   static constexpr const char * NAME = "IPCFilter_grpcProxy";
   static constexpr const char * DESCRIPTION = "IPCFilter_grpcProxy grpc client proxy component";
 };

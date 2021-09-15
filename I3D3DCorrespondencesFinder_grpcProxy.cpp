@@ -50,7 +50,7 @@ SolAR::FrameworkReturnCode  I3D3DCorrespondencesFinder_grpcProxy::find(SRef<SolA
   reqIn.set_remaining_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(remaining_matches));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->find_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "find_grpc0rpc failed." << std::endl;
+    std::cout << "find_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3D3DCorrespondencesFinderService","find_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -75,7 +75,7 @@ SolAR::FrameworkReturnCode  I3D3DCorrespondencesFinder_grpcProxy::find(SRef<SolA
   reqIn.set_found_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(found_matches));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->find_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "find_grpc1rpc failed." << std::endl;
+    std::cout << "find_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3D3DCorrespondencesFinderService","find_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

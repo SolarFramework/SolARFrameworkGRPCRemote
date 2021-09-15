@@ -3,7 +3,7 @@
 
 #ifndef IKEYFRAMERETRIEVER_GRPCPROXY_H
 #define IKEYFRAMERETRIEVER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IKeyframeRetriever.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IKeyframeRetriever.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -47,7 +47,7 @@ class IKeyframeRetriever_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIKeyframeRetriever::IKeyframeRetriever_grpcProxy>
 {
-  static constexpr const char * UUID = "d2e80a19-06e9-4feb-9839-3be18150a157";
+  static constexpr const char * UUID = "89dbfe6f-f7c7-4d4b-a07a-f742d1522157";
   static constexpr const char * NAME = "IKeyframeRetriever_grpcProxy";
   static constexpr const char * DESCRIPTION = "IKeyframeRetriever_grpcProxy grpc client proxy component";
 };

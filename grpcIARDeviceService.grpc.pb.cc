@@ -24,36 +24,32 @@ namespace grpcIARDevice {
 static const char* grpcIARDeviceService_method_names[] = {
   "/grpcIARDevice.grpcIARDeviceService/start",
   "/grpcIARDevice.grpcIARDeviceService/stop",
-  "/grpcIARDevice.grpcIARDeviceService/getNbCameras",
   "/grpcIARDevice.grpcIARDeviceService/getData",
-  "/grpcIARDevice.grpcIARDeviceService/getParameters",
-  "/grpcIARDevice.grpcIARDeviceService/setParameters",
+  "/grpcIARDevice.grpcIARDeviceService/getCameraParameters",
 };
 
 std::unique_ptr< grpcIARDeviceService::Stub> grpcIARDeviceService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIARDeviceService::Stub> stub(new grpcIARDeviceService::Stub(channel, options));
+  std::unique_ptr< grpcIARDeviceService::Stub> stub(new grpcIARDeviceService::Stub(channel));
   return stub;
 }
 
-grpcIARDeviceService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_start_(grpcIARDeviceService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIARDeviceService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getNbCameras_(grpcIARDeviceService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getData_(grpcIARDeviceService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getParameters_(grpcIARDeviceService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setParameters_(grpcIARDeviceService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIARDeviceService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_start_(grpcIARDeviceService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcIARDeviceService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getData_(grpcIARDeviceService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getCameraParameters_(grpcIARDeviceService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIARDeviceService::Stub::start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIARDevice::startResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIARDevice::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcIARDeviceService::Stub::async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIARDeviceService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIARDevice::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcIARDeviceService::Stub::async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIARDeviceService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
@@ -72,11 +68,11 @@ void grpcIARDeviceService::Stub::async::start(::grpc::ClientContext* context, co
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIARDevice::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcIARDeviceService::Stub::async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIARDeviceService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIARDevice::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcIARDeviceService::Stub::async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIARDeviceService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 
@@ -91,38 +87,15 @@ void grpcIARDeviceService::Stub::async::stop(::grpc::ClientContext* context, con
   return result;
 }
 
-::grpc::Status grpcIARDeviceService::Stub::getNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIARDevice::getNbCamerasResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIARDevice::getNbCamerasResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getNbCameras_, context, request, response);
-}
-
-void grpcIARDeviceService::Stub::async::getNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIARDevice::getNbCamerasResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNbCameras_, context, request, response, std::move(f));
-}
-
-void grpcIARDeviceService::Stub::async::getNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNbCameras_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getNbCamerasResponse>* grpcIARDeviceService::Stub::PrepareAsyncgetNbCamerasRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIARDevice::getNbCamerasResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getNbCameras_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getNbCamerasResponse>* grpcIARDeviceService::Stub::AsyncgetNbCamerasRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncgetNbCamerasRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
 ::grpc::Status grpcIARDeviceService::Stub::getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpcIARDevice::getDataResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getData_, context, request, response);
 }
 
-void grpcIARDeviceService::Stub::async::getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIARDeviceService::Stub::experimental_async::getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getData_, context, request, response, std::move(f));
 }
 
-void grpcIARDeviceService::Stub::async::getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIARDeviceService::Stub::experimental_async::getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getData_, context, request, response, reactor);
 }
 
@@ -137,48 +110,25 @@ void grpcIARDeviceService::Stub::async::getData(::grpc::ClientContext* context, 
   return result;
 }
 
-::grpc::Status grpcIARDeviceService::Stub::getParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpcIARDevice::getParametersResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIARDevice::getParametersRequest, ::grpcIARDevice::getParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getParameters_, context, request, response);
+::grpc::Status grpcIARDeviceService::Stub::getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIARDevice::getCameraParametersResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIARDevice::getCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getCameraParameters_, context, request, response);
 }
 
-void grpcIARDeviceService::Stub::async::getParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIARDevice::getParametersRequest, ::grpcIARDevice::getParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getParameters_, context, request, response, std::move(f));
+void grpcIARDeviceService::Stub::experimental_async::getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIARDevice::getCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcIARDeviceService::Stub::async::getParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getParameters_, context, request, response, reactor);
+void grpcIARDeviceService::Stub::experimental_async::getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCameraParameters_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getParametersResponse>* grpcIARDeviceService::Stub::PrepareAsyncgetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIARDevice::getParametersResponse, ::grpcIARDevice::getParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getParameters_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>* grpcIARDeviceService::Stub::PrepareAsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIARDevice::getCameraParametersResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getCameraParameters_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getParametersResponse>* grpcIARDeviceService::Stub::AsyncgetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>* grpcIARDeviceService::Stub::AsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncgetParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status grpcIARDeviceService::Stub::setParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIARDevice::setParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setParameters_, context, request, response);
-}
-
-void grpcIARDeviceService::Stub::async::setParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIARDevice::setParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setParameters_, context, request, response, std::move(f));
-}
-
-void grpcIARDeviceService::Stub::async::setParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIARDeviceService::Stub::PrepareAsyncsetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcIARDevice::setParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIARDeviceService::Stub::AsyncsetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetParametersRaw(context, request, cq);
+    this->PrepareAsyncgetCameraParametersRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -207,16 +157,6 @@ grpcIARDeviceService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIARDeviceService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIARDeviceService::Service, ::google::protobuf::Empty, ::grpcIARDevice::getNbCamerasResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIARDeviceService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
-             ::grpcIARDevice::getNbCamerasResponse* resp) {
-               return service->getNbCameras(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIARDeviceService_method_names[3],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIARDeviceService::Service, ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIARDeviceService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -225,24 +165,14 @@ grpcIARDeviceService::Service::Service() {
                return service->getData(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIARDeviceService_method_names[4],
+      grpcIARDeviceService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIARDeviceService::Service, ::grpcIARDevice::getParametersRequest, ::grpcIARDevice::getParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIARDeviceService::Service, ::google::protobuf::Empty, ::grpcIARDevice::getCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIARDeviceService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIARDevice::getParametersRequest* req,
-             ::grpcIARDevice::getParametersResponse* resp) {
-               return service->getParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIARDeviceService_method_names[5],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIARDeviceService::Service, ::grpcIARDevice::setParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIARDeviceService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIARDevice::setParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setParameters(ctx, req, resp);
+             const ::google::protobuf::Empty* req,
+             ::grpcIARDevice::getCameraParametersResponse* resp) {
+               return service->getCameraParameters(ctx, req, resp);
              }, this)));
 }
 
@@ -263,13 +193,6 @@ grpcIARDeviceService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIARDeviceService::Service::getNbCameras(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
 ::grpc::Status grpcIARDeviceService::Service::getData(::grpc::ServerContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response) {
   (void) context;
   (void) request;
@@ -277,14 +200,7 @@ grpcIARDeviceService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIARDeviceService::Service::getParameters(::grpc::ServerContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status grpcIARDeviceService::Service::setParameters(::grpc::ServerContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response) {
+::grpc::Status grpcIARDeviceService::Service::getCameraParameters(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -3,7 +3,7 @@
 
 #ifndef IDEPTHCAMERA_GRPCPROXY_H
 #define IDEPTHCAMERA_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IDepthCamera.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IDepthCamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -48,7 +48,7 @@ class IDepthCamera_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDepthCamera::IDepthCamera_grpcProxy>
 {
-  static constexpr const char * UUID = "b6839674-c11c-4c71-8950-996a5fe60251";
+  static constexpr const char * UUID = "e85eb22d-99e8-4f08-a492-8018bb44e0f0";
   static constexpr const char * NAME = "IDepthCamera_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDepthCamera_grpcProxy grpc client proxy component";
 };

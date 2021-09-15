@@ -45,7 +45,7 @@ bool  IHomographyValidation_grpcProxy::isValid(std::vector<SolAR::datastructure:
   reqIn.set_projected2dsquaredmarkercorners(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(projected2DSquaredMarkerCorners));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->isValid(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "isValidrpc failed." << std::endl;
+    std::cout << "isValid rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIHomographyValidationService","isValid",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

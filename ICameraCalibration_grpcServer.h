@@ -2,7 +2,7 @@
 
 #ifndef ICAMERACALIBRATION_GRPCSERVER_H
 #define ICAMERACALIBRATION_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICameraCalibration.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICameraCalibration.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcICameraCalibrationService.grpc.pb.h"
@@ -24,9 +24,7 @@ class ICameraCalibration_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
     {
       public:
         grpcICameraCalibrationServiceImpl() = default;
-        ::grpc::Status calibrate_grpc0(::grpc::ServerContext* context, const ::grpcICameraCalibration::calibrate_grpc0Request* request, ::grpcICameraCalibration::calibrate_grpc0Response* response) override;
-        ::grpc::Status calibrate_grpc1(::grpc::ServerContext* context, const ::grpcICameraCalibration::calibrate_grpc1Request* request, ::grpcICameraCalibration::calibrate_grpc1Response* response) override;
-        ::grpc::Status setParameters(::grpc::ServerContext* context, const ::grpcICameraCalibration::setParametersRequest* request, ::grpcICameraCalibration::setParametersResponse* response) override;
+        ::grpc::Status calibrate(::grpc::ServerContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response) override;
 
         SRef<SolAR::api::input::devices::ICameraCalibration> m_xpcfComponent;
 
@@ -43,7 +41,7 @@ class ICameraCalibration_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverICameraCalibration::ICameraCalibration_grpcServer>
 {
-  static constexpr const char * UUID = "3ff20b60-cc8e-43aa-b1c1-cad6f2aa7227";
+  static constexpr const char * UUID = "c6130c06-5a33-48f5-928e-680af61b251a";
   static constexpr const char * NAME = "ICameraCalibration_grpcServer";
   static constexpr const char * DESCRIPTION = "ICameraCalibration_grpcServer grpc server component";
 };

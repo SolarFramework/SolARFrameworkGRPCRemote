@@ -7,6 +7,7 @@
 #include "grpcIBundlerService.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -56,19 +57,35 @@ class grpcIBundlerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::optimizeSim3Response>> PrepareAsyncoptimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::optimizeSim3Response>>(PrepareAsyncoptimizeSim3Raw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapResponse>* AsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBundler::setMapResponse>* PrepareAsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -79,7 +96,7 @@ class grpcIBundlerService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpcIBundler::setMapResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>> AsyncsetMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>>(AsyncsetMapRaw(context, request, cq));
@@ -101,26 +118,38 @@ class grpcIBundlerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>> PrepareAsyncoptimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBundler::optimizeSim3Response>>(PrepareAsyncoptimizeSim3Raw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setMap(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void bundleAdjustment(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void optimizeSim3(::grpc::ClientContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>* AsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIBundler::setMapResponse>* PrepareAsyncsetMapRaw(::grpc::ClientContext* context, const ::grpcIBundler::setMapRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIBundler::bundleAdjustmentResponse>* AsyncbundleAdjustmentRaw(::grpc::ClientContext* context, const ::grpcIBundler::bundleAdjustmentRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -203,22 +232,36 @@ class grpcIBundlerService final {
   };
   typedef WithAsyncMethod_setMap<WithAsyncMethod_bundleAdjustment<WithAsyncMethod_optimizeSim3<Service > > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_setMap : public BaseClass {
+  class ExperimentalWithCallbackMethod_setMap : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setMap() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_setMap() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response) { return this->setMap(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIBundler::setMapRequest* request, ::grpcIBundler::setMapResponse* response) { return this->setMap(context, request, response); }));}
     void SetMessageAllocatorFor_setMap(
-        ::grpc::MessageAllocator< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::setMapRequest, ::grpcIBundler::setMapResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setMap() override {
+    ~ExperimentalWithCallbackMethod_setMap() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -226,26 +269,46 @@ class grpcIBundlerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setMap(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setMap(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIBundler::setMapRequest* /*request*/, ::grpcIBundler::setMapResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_bundleAdjustment : public BaseClass {
+  class ExperimentalWithCallbackMethod_bundleAdjustment : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_bundleAdjustment() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_bundleAdjustment() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::bundleAdjustmentRequest, ::grpcIBundler::bundleAdjustmentResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response) { return this->bundleAdjustment(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIBundler::bundleAdjustmentRequest* request, ::grpcIBundler::bundleAdjustmentResponse* response) { return this->bundleAdjustment(context, request, response); }));}
     void SetMessageAllocatorFor_bundleAdjustment(
-        ::grpc::MessageAllocator< ::grpcIBundler::bundleAdjustmentRequest, ::grpcIBundler::bundleAdjustmentResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIBundler::bundleAdjustmentRequest, ::grpcIBundler::bundleAdjustmentResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::bundleAdjustmentRequest, ::grpcIBundler::bundleAdjustmentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_bundleAdjustment() override {
+    ~ExperimentalWithCallbackMethod_bundleAdjustment() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -253,26 +316,46 @@ class grpcIBundlerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* bundleAdjustment(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBundler::bundleAdjustmentRequest* /*request*/, ::grpcIBundler::bundleAdjustmentResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBundler::bundleAdjustmentRequest* /*request*/, ::grpcIBundler::bundleAdjustmentResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* bundleAdjustment(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIBundler::bundleAdjustmentRequest* /*request*/, ::grpcIBundler::bundleAdjustmentResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_optimizeSim3 : public BaseClass {
+  class ExperimentalWithCallbackMethod_optimizeSim3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_optimizeSim3() {
-      ::grpc::Service::MarkMethodCallback(2,
+    ExperimentalWithCallbackMethod_optimizeSim3() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response) { return this->optimizeSim3(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response) { return this->optimizeSim3(context, request, response); }));}
     void SetMessageAllocatorFor_optimizeSim3(
-        ::grpc::MessageAllocator< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIBundler::optimizeSim3Request, ::grpcIBundler::optimizeSim3Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_optimizeSim3() override {
+    ~ExperimentalWithCallbackMethod_optimizeSim3() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -280,11 +363,20 @@ class grpcIBundlerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* optimizeSim3(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* optimizeSim3(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIBundler::optimizeSim3Request* /*request*/, ::grpcIBundler::optimizeSim3Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_setMap<WithCallbackMethod_bundleAdjustment<WithCallbackMethod_optimizeSim3<Service > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_bundleAdjustment<ExperimentalWithCallbackMethod_optimizeSim3<Service > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_bundleAdjustment<ExperimentalWithCallbackMethod_optimizeSim3<Service > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_setMap : public BaseClass {
    private:
@@ -397,17 +489,27 @@ class grpcIBundlerService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setMap : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setMap : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setMap() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_setMap() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setMap(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setMap(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setMap() override {
+    ~ExperimentalWithRawCallbackMethod_setMap() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -415,21 +517,37 @@ class grpcIBundlerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setMap(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setMap(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_bundleAdjustment : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_bundleAdjustment : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_bundleAdjustment() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_bundleAdjustment() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->bundleAdjustment(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->bundleAdjustment(context, request, response); }));
     }
-    ~WithRawCallbackMethod_bundleAdjustment() override {
+    ~ExperimentalWithRawCallbackMethod_bundleAdjustment() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -437,21 +555,37 @@ class grpcIBundlerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* bundleAdjustment(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* bundleAdjustment(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_optimizeSim3 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_optimizeSim3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_optimizeSim3() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+    ExperimentalWithRawCallbackMethod_optimizeSim3() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->optimizeSim3(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->optimizeSim3(context, request, response); }));
     }
-    ~WithRawCallbackMethod_optimizeSim3() override {
+    ~ExperimentalWithRawCallbackMethod_optimizeSim3() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -459,8 +593,14 @@ class grpcIBundlerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* optimizeSim3(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* optimizeSim3(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_setMap : public BaseClass {

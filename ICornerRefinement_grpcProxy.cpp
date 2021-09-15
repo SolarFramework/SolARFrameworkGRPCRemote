@@ -45,7 +45,7 @@ void  ICornerRefinement_grpcProxy::refine(SRef<SolAR::datastructure::Image> cons
   reqIn.set_corners(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(corners));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->refine(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "refinerpc failed." << std::endl;
+    std::cout << "refine rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcICornerRefinementService","refine",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

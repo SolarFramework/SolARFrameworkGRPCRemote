@@ -36,16 +36,16 @@ XPCFErrorCode IBootstrapper_grpcProxy::onConfigured()
 }
 
 
-void  IBootstrapper_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)
+void  IBootstrapper_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distortionParams)
 {
   ::grpc::ClientContext context;
   ::grpcIBootstrapper::setCameraParametersRequest reqIn;
   ::google::protobuf::Empty respOut;
   reqIn.set_intrinsicparams(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsicParams));
-  reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
+  reqIn.set_distortionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIBootstrapperService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -62,7 +62,7 @@ SolAR::FrameworkReturnCode  IBootstrapper_grpcProxy::process(SRef<SolAR::datastr
   reqIn.set_view(xpcf::serialize<SRef<SolAR::datastructure::Image>>(view));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->process(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "processrpc failed." << std::endl;
+    std::cout << "process rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIBootstrapperService","process",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

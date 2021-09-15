@@ -2,7 +2,7 @@
 
 #ifndef I3DPOINTSVIEWER_GRPCSERVER_H
 #define I3DPOINTSVIEWER_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DPointsViewer.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DPointsViewer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI3DPointsViewerService.grpc.pb.h"
@@ -42,7 +42,7 @@ class I3DPointsViewer_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DPointsViewer::I3DPointsViewer_grpcServer>
 {
-  static constexpr const char * UUID = "1df3a005-f6c0-4e91-8a07-4fe69ad07e06";
+  static constexpr const char * UUID = "95262dab-fe4e-4014-9ad9-c7b4abe7da7d";
   static constexpr const char * NAME = "I3DPointsViewer_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DPointsViewer_grpcServer grpc server component";
 };

@@ -36,16 +36,15 @@ XPCFErrorCode IMapping_grpcProxy::onConfigured()
 }
 
 
-void  IMapping_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)
+void  IMapping_grpcProxy::setCameraParameters(SolAR::datastructure::CameraParameters const& camParams)
 {
   ::grpc::ClientContext context;
   ::grpcIMapping::setCameraParametersRequest reqIn;
   ::google::protobuf::Empty respOut;
-  reqIn.set_intrinsicparams(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsicParams));
-  reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
+  reqIn.set_camparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -61,7 +60,7 @@ SolAR::FrameworkReturnCode  IMapping_grpcProxy::process(SRef<SolAR::datastructur
   reqIn.set_keyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(keyframe));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->process(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "processrpc failed." << std::endl;
+    std::cout << "process rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingService","process",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

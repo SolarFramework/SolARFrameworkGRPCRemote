@@ -45,7 +45,7 @@ void  I3DTransformSACFinderFrom2D3D_grpcProxy::setCameraParameters(SolAR::datast
   reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformSACFinderFrom2D3DService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -64,7 +64,7 @@ SolAR::FrameworkReturnCode  I3DTransformSACFinderFrom2D3D_grpcProxy::estimate(st
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->estimate(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "estimaterpc failed." << std::endl;
+    std::cout << "estimate rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformSACFinderFrom2D3DService","estimate",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

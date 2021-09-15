@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIDepthEstimation;
+
+message estimateRequest
+{
+bytes matches = 1;
+float focal = 2;
+float baseline = 3;
+bytes type = 4;
+bytes rectKeypoints1 = 5;
+bytes rectKeypoints2 = 6;
+}
+
+message estimateResponse
+{
+bytes rectKeypoints1 = 1;
+bytes rectKeypoints2 = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+service grpcIDepthEstimationService {
+rpc estimate(estimateRequest) returns(estimateResponse) {}
+}
+

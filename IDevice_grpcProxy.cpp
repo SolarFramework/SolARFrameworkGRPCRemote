@@ -43,7 +43,7 @@ SolAR::FrameworkReturnCode  IDevice_grpcProxy::start()
   ::grpcIDevice::startResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "startrpc failed." << std::endl;
+    std::cout << "start rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDeviceService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -58,7 +58,7 @@ SolAR::FrameworkReturnCode  IDevice_grpcProxy::stop()
   ::grpcIDevice::stopResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "stoprpc failed." << std::endl;
+    std::cout << "stop rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDeviceService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

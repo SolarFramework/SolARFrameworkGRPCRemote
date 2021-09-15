@@ -3,7 +3,7 @@
 
 #ifndef ICONTOURSEXTRACTOR_GRPCPROXY_H
 #define ICONTOURSEXTRACTOR_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IContoursExtractor.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IContoursExtractor.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IContoursExtractor_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIContoursExtractor::IContoursExtractor_grpcProxy>
 {
-  static constexpr const char * UUID = "fed2fe20-21f3-42ec-a75a-0c816fcc01d7";
+  static constexpr const char * UUID = "6686948e-7303-482e-bd30-19dfe3c9c5f7";
   static constexpr const char * NAME = "IContoursExtractor_grpcProxy";
   static constexpr const char * DESCRIPTION = "IContoursExtractor_grpcProxy grpc client proxy component";
 };

@@ -3,7 +3,7 @@
 
 #ifndef I2DTRANSFORM_GRPCPROXY_H
 #define I2DTRANSFORM_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/geom/I2DTransform.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/I2DTransform.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class I2DTransform_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2DTransform::I2DTransform_grpcProxy>
 {
-  static constexpr const char * UUID = "2e9a7449-af74-48b0-a85a-f76c5491dd72";
+  static constexpr const char * UUID = "cc7ef7b0-4f4c-443b-9016-4ab077ff201e";
   static constexpr const char * NAME = "I2DTransform_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2DTransform_grpcProxy grpc client proxy component";
 };

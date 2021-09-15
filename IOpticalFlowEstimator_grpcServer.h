@@ -2,7 +2,7 @@
 
 #ifndef IOPTICALFLOWESTIMATOR_GRPCSERVER_H
 #define IOPTICALFLOWESTIMATOR_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/tracking/IOpticalFlowEstimator.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/tracking/IOpticalFlowEstimator.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIOpticalFlowEstimatorService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IOpticalFlowEstimator_grpcServer:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIOpticalFlowEstimator::IOpticalFlowEstimator_grpcServer>
 {
-  static constexpr const char * UUID = "6127b49b-89b6-4f30-a5a1-d4452e272e9f";
+  static constexpr const char * UUID = "798a9f01-8d4e-43de-85c6-e0907626cc1c";
   static constexpr const char * NAME = "IOpticalFlowEstimator_grpcServer";
   static constexpr const char * DESCRIPTION = "IOpticalFlowEstimator_grpcServer grpc server component";
 };

@@ -2,7 +2,7 @@
 
 #ifndef IPCFILTER_GRPCSERVER_H
 #define IPCFILTER_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilter.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIPCFilterService.grpc.pb.h"
@@ -41,7 +41,7 @@ class IPCFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPCFilter::IPCFilter_grpcServer>
 {
-  static constexpr const char * UUID = "0c2d15d1-a0f5-41f5-9c43-29ea2e453ccd";
+  static constexpr const char * UUID = "7da52a9f-a091-4807-b3e7-6c9da4d1b69e";
   static constexpr const char * NAME = "IPCFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IPCFilter_grpcServer grpc server component";
 };

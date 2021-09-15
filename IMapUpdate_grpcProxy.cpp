@@ -45,7 +45,7 @@ void  IMapUpdate_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibra
   reqIn.set_distortionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapUpdateService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -61,7 +61,7 @@ SolAR::FrameworkReturnCode  IMapUpdate_grpcProxy::update(SRef<SolAR::datastructu
   reqIn.set_newkeyframeids(xpcf::serialize<std::vector<uint32_t>>(newKeyframeIds));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->update(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "updaterpc failed." << std::endl;
+    std::cout << "update rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapUpdateService","update",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

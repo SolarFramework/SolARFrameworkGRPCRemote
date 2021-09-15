@@ -3,7 +3,7 @@
 
 #ifndef IIMAGECONVERTOR_GRPCPROXY_H
 #define IIMAGECONVERTOR_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageConvertor.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageConvertor.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -38,7 +38,7 @@ class IImageConvertor_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIImageConvertor::IImageConvertor_grpcProxy>
 {
-  static constexpr const char * UUID = "5482b0b3-e2f4-4145-bb77-a9e6efd97783";
+  static constexpr const char * UUID = "0cdd8f29-b28e-4d2a-8ecc-7a6c99b26aa5";
   static constexpr const char * NAME = "IImageConvertor_grpcProxy";
   static constexpr const char * DESCRIPTION = "IImageConvertor_grpcProxy grpc client proxy component";
 };

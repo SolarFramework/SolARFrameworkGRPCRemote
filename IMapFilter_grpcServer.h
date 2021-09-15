@@ -2,7 +2,7 @@
 
 #ifndef IMAPFILTER_GRPCSERVER_H
 #define IMAPFILTER_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapFilter.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMapFilterService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IMapFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMapFilter::IMapFilter_grpcServer>
 {
-  static constexpr const char * UUID = "e1df5fb7-5bf3-46da-8b5c-d5cfa6de59e9";
+  static constexpr const char * UUID = "b0d5e263-2c85-4003-bb29-e292c4f98de4";
   static constexpr const char * NAME = "IMapFilter_grpcServer";
   static constexpr const char * DESCRIPTION = "IMapFilter_grpcServer grpc server component";
 };

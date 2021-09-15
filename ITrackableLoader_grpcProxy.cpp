@@ -44,7 +44,7 @@ SolAR::FrameworkReturnCode  ITrackableLoader_grpcProxy::loadTrackable(SRef<SolAR
   reqIn.set_trackable(xpcf::serialize<SRef<SolAR::datastructure::Trackable>>(trackable));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->loadTrackable(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "loadTrackablerpc failed." << std::endl;
+    std::cout << "loadTrackable rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcITrackableLoaderService","loadTrackable",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

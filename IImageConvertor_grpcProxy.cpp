@@ -45,7 +45,7 @@ SolAR::FrameworkReturnCode  IImageConvertor_grpcProxy::convert(SRef<SolAR::datas
   reqIn.set_imgdst(xpcf::serialize<SRef<SolAR::datastructure::Image>>(imgDst));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->convert_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "convert_grpc0rpc failed." << std::endl;
+    std::cout << "convert_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIImageConvertorService","convert_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -64,7 +64,7 @@ SolAR::FrameworkReturnCode  IImageConvertor_grpcProxy::convert(SRef<SolAR::datas
   reqIn.set_imgdst(xpcf::serialize<SRef<SolAR::datastructure::Image>>(imgDst));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->convert_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "convert_grpc1rpc failed." << std::endl;
+    std::cout << "convert_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIImageConvertorService","convert_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -82,7 +82,7 @@ SolAR::FrameworkReturnCode  IImageConvertor_grpcProxy::convertLookUpTable(SRef<S
   reqIn.set_imgdst(xpcf::serialize<SRef<SolAR::datastructure::Image>>(imgDst));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->convertLookUpTable(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "convertLookUpTablerpc failed." << std::endl;
+    std::cout << "convertLookUpTable rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIImageConvertorService","convertLookUpTable",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

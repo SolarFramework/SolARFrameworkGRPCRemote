@@ -2,7 +2,7 @@
 
 #ifndef ISBPATTERNREINDEXER_GRPCSERVER_H
 #define ISBPATTERNREINDEXER_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/ISBPatternReIndexer.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/ISBPatternReIndexer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcISBPatternReIndexerService.grpc.pb.h"
@@ -41,7 +41,7 @@ class ISBPatternReIndexer_grpcServer:  public org::bcom::xpcf::ConfigurableBase,
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverISBPatternReIndexer::ISBPatternReIndexer_grpcServer>
 {
-  static constexpr const char * UUID = "dcf95c1a-b2e2-4efc-8ab1-f83caf244831";
+  static constexpr const char * UUID = "661fd94e-2871-4f35-b64e-c1234bc6221a";
   static constexpr const char * NAME = "ISBPatternReIndexer_grpcServer";
   static constexpr const char * DESCRIPTION = "ISBPatternReIndexer_grpcServer grpc server component";
 };

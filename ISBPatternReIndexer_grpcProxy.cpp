@@ -47,7 +47,7 @@ SolAR::FrameworkReturnCode  ISBPatternReIndexer_grpcProxy::reindex(std::vector<S
   reqIn.set_imagepoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(imagePoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->reindex(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "reindexrpc failed." << std::endl;
+    std::cout << "reindex rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcISBPatternReIndexerService","reindex",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

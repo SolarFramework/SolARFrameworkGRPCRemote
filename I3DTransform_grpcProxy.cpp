@@ -46,7 +46,7 @@ SolAR::FrameworkReturnCode  I3DTransform_grpcProxy::transform(std::vector<SolAR:
   reqIn.set_outputpoints(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(outputPoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->transform(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "transformrpc failed." << std::endl;
+    std::cout << "transform rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformService","transform",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -64,7 +64,7 @@ SolAR::FrameworkReturnCode  I3DTransform_grpcProxy::transformInPlace(SolAR::data
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->transformInPlace_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "transformInPlace_grpc0rpc failed." << std::endl;
+    std::cout << "transformInPlace_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformService","transformInPlace_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -81,7 +81,7 @@ SolAR::FrameworkReturnCode  I3DTransform_grpcProxy::transformInPlace(SolAR::data
   reqIn.set_pointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pointCloud));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->transformInPlace_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "transformInPlace_grpc1rpc failed." << std::endl;
+    std::cout << "transformInPlace_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformService","transformInPlace_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -99,7 +99,7 @@ SolAR::FrameworkReturnCode  I3DTransform_grpcProxy::transformInPlace(SolAR::data
   reqIn.set_keyframes(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Keyframe>>>(keyframes));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->transformInPlace_grpc2(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "transformInPlace_grpc2rpc failed." << std::endl;
+    std::cout << "transformInPlace_grpc2 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformService","transformInPlace_grpc2",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -117,7 +117,7 @@ SolAR::FrameworkReturnCode  I3DTransform_grpcProxy::transformInPlace(SolAR::data
   reqIn.set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->transformInPlace_grpc3(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "transformInPlace_grpc3rpc failed." << std::endl;
+    std::cout << "transformInPlace_grpc3 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformService","transformInPlace_grpc3",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -134,7 +134,7 @@ SolAR::FrameworkReturnCode  I3DTransform_grpcProxy::transformInPlace(SolAR::data
   reqIn.set_keyframecollection(xpcf::serialize<SRef<SolAR::datastructure::KeyframeCollection>>(keyframeCollection));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->transformInPlace_grpc4(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "transformInPlace_grpc4rpc failed." << std::endl;
+    std::cout << "transformInPlace_grpc4 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformService","transformInPlace_grpc4",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

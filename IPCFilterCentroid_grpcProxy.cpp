@@ -46,7 +46,7 @@ SolAR::FrameworkReturnCode  IPCFilterCentroid_grpcProxy::filter(SRef<SolAR::data
   reqIn.set_outpointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(outPointCloud));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->filter(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "filterrpc failed." << std::endl;
+    std::cout << "filter rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPCFilterCentroidService","filter",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

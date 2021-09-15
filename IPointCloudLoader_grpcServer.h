@@ -2,7 +2,7 @@
 
 #ifndef IPOINTCLOUDLOADER_GRPCSERVER_H
 #define IPOINTCLOUDLOADER_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/files/IPointCloudLoader.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/files/IPointCloudLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIPointCloudLoaderService.grpc.pb.h"
@@ -41,7 +41,7 @@ class IPointCloudLoader_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIPointCloudLoader::IPointCloudLoader_grpcServer>
 {
-  static constexpr const char * UUID = "cf667adb-8ca3-4f4c-9dbe-0e4d7431e0c6";
+  static constexpr const char * UUID = "335e38eb-8070-4dc5-a249-47fad0c53b16";
   static constexpr const char * NAME = "IPointCloudLoader_grpcServer";
   static constexpr const char * DESCRIPTION = "IPointCloudLoader_grpcServer grpc server component";
 };

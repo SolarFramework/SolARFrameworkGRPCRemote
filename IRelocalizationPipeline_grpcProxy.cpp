@@ -43,7 +43,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::init()
   ::grpcIRelocalizationPipeline::initResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "initrpc failed." << std::endl;
+    std::cout << "init rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRelocalizationPipelineService","init",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -58,7 +58,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::start()
   ::grpcIRelocalizationPipeline::startResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "startrpc failed." << std::endl;
+    std::cout << "start rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRelocalizationPipelineService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -73,7 +73,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::stop()
   ::grpcIRelocalizationPipeline::stopResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "stoprpc failed." << std::endl;
+    std::cout << "stop rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRelocalizationPipelineService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -89,7 +89,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::setCameraParamete
   reqIn.set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRelocalizationPipelineService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -105,7 +105,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::getCameraParamete
   reqIn.set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getCameraParametersrpc failed." << std::endl;
+    std::cout << "getCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRelocalizationPipelineService","getCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -124,7 +124,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcess
   reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->relocalizeProcessRequest(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "relocalizeProcessRequestrpc failed." << std::endl;
+    std::cout << "relocalizeProcessRequest rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRelocalizationPipelineService","relocalizeProcessRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

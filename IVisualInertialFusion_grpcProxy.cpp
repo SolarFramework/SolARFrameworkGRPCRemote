@@ -44,7 +44,7 @@ void  IVisualInertialFusion_grpcProxy::init(SolAR::api::fusion::VisionData const
   reqIn.set_initialvisiondata(xpcf::serialize<SolAR::api::fusion::VisionData>(initialVisionData));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "initrpc failed." << std::endl;
+    std::cout << "init rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIVisualInertialFusionService","init",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -59,7 +59,7 @@ void  IVisualInertialFusion_grpcProxy::addInertialData(SolAR::api::fusion::Inert
   reqIn.set_inertialdata(xpcf::serialize<SolAR::api::fusion::InertialData>(inertialData));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addInertialData(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addInertialDatarpc failed." << std::endl;
+    std::cout << "addInertialData rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIVisualInertialFusionService","addInertialData",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -74,7 +74,7 @@ void  IVisualInertialFusion_grpcProxy::addVisionData(SolAR::api::fusion::VisionD
   reqIn.set_visiondata(xpcf::serialize<SolAR::api::fusion::VisionData>(visionData));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addVisionData(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addVisionDatarpc failed." << std::endl;
+    std::cout << "addVisionData rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIVisualInertialFusionService","addVisionData",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -89,7 +89,7 @@ SolAR::FrameworkReturnCode  IVisualInertialFusion_grpcProxy::process(SolAR::data
   reqIn.set_outputdata(xpcf::serialize<SolAR::datastructure::Transform3Df>(outputData));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->process(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "processrpc failed." << std::endl;
+    std::cout << "process rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIVisualInertialFusionService","process",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

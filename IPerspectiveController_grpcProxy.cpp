@@ -46,7 +46,7 @@ SolAR::FrameworkReturnCode  IPerspectiveController_grpcProxy::correct(SRef<SolAR
   reqIn.set_patches(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Image>>>(patches));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->correct_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "correct_grpc0rpc failed." << std::endl;
+    std::cout << "correct_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPerspectiveControllerService","correct_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -65,7 +65,7 @@ SolAR::FrameworkReturnCode  IPerspectiveController_grpcProxy::correct(SRef<SolAR
   reqIn.set_patch(xpcf::serialize<SRef<SolAR::datastructure::Image>>(patch));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->correct_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "correct_grpc1rpc failed." << std::endl;
+    std::cout << "correct_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPerspectiveControllerService","correct_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

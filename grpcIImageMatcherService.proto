@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIImageMatcher;
+
+message matchRequest
+{
+bytes image1 = 1;
+bytes image2 = 2;
+bytes descriptors1 = 3;
+bytes descriptors2 = 4;
+bytes keypoints1 = 5;
+bytes keypoints2 = 6;
+bytes matches = 7;
+}
+
+message matchResponse
+{
+bytes keypoints1 = 1;
+bytes keypoints2 = 2;
+bytes matches = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+service grpcIImageMatcherService {
+rpc match(matchRequest) returns(matchResponse) {}
+}
+

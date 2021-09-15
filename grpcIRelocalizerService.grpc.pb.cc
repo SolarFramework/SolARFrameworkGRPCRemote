@@ -28,24 +28,24 @@ static const char* grpcIRelocalizerService_method_names[] = {
 
 std::unique_ptr< grpcIRelocalizerService::Stub> grpcIRelocalizerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIRelocalizerService::Stub> stub(new grpcIRelocalizerService::Stub(channel, options));
+  std::unique_ptr< grpcIRelocalizerService::Stub> stub(new grpcIRelocalizerService::Stub(channel));
   return stub;
 }
 
-grpcIRelocalizerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_addKeyframe_(grpcIRelocalizerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalize_(grpcIRelocalizerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIRelocalizerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_addKeyframe_(grpcIRelocalizerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_relocalize_(grpcIRelocalizerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIRelocalizerService::Stub::addKeyframe(::grpc::ClientContext* context, const ::grpcIRelocalizer::addKeyframeRequest& request, ::grpcIRelocalizer::addKeyframeResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizer::addKeyframeRequest, ::grpcIRelocalizer::addKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addKeyframe_, context, request, response);
 }
 
-void grpcIRelocalizerService::Stub::async::addKeyframe(::grpc::ClientContext* context, const ::grpcIRelocalizer::addKeyframeRequest* request, ::grpcIRelocalizer::addKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRelocalizerService::Stub::experimental_async::addKeyframe(::grpc::ClientContext* context, const ::grpcIRelocalizer::addKeyframeRequest* request, ::grpcIRelocalizer::addKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizer::addKeyframeRequest, ::grpcIRelocalizer::addKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addKeyframe_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizerService::Stub::async::addKeyframe(::grpc::ClientContext* context, const ::grpcIRelocalizer::addKeyframeRequest* request, ::grpcIRelocalizer::addKeyframeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRelocalizerService::Stub::experimental_async::addKeyframe(::grpc::ClientContext* context, const ::grpcIRelocalizer::addKeyframeRequest* request, ::grpcIRelocalizer::addKeyframeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addKeyframe_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIRelocalizerService::Stub::async::addKeyframe(::grpc::ClientContext* co
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizer::relocalizeRequest, ::grpcIRelocalizer::relocalizeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_relocalize_, context, request, response);
 }
 
-void grpcIRelocalizerService::Stub::async::relocalize(::grpc::ClientContext* context, const ::grpcIRelocalizer::relocalizeRequest* request, ::grpcIRelocalizer::relocalizeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRelocalizerService::Stub::experimental_async::relocalize(::grpc::ClientContext* context, const ::grpcIRelocalizer::relocalizeRequest* request, ::grpcIRelocalizer::relocalizeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizer::relocalizeRequest, ::grpcIRelocalizer::relocalizeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_relocalize_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizerService::Stub::async::relocalize(::grpc::ClientContext* context, const ::grpcIRelocalizer::relocalizeRequest* request, ::grpcIRelocalizer::relocalizeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRelocalizerService::Stub::experimental_async::relocalize(::grpc::ClientContext* context, const ::grpcIRelocalizer::relocalizeRequest* request, ::grpcIRelocalizer::relocalizeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_relocalize_, context, request, response, reactor);
 }
 

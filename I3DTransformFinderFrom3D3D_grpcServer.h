@@ -2,7 +2,7 @@
 
 #ifndef I3DTRANSFORMFINDERFROM3D3D_GRPCSERVER_H
 #define I3DTRANSFORMFINDERFROM3D3D_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformFinderFrom3D3D.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformFinderFrom3D3D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI3DTransformFinderFrom3D3DService.grpc.pb.h"
@@ -41,7 +41,7 @@ class I3DTransformFinderFrom3D3D_grpcServer:  public org::bcom::xpcf::Configurab
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DTransformFinderFrom3D3D::I3DTransformFinderFrom3D3D_grpcServer>
 {
-  static constexpr const char * UUID = "f606987c-3563-4a95-8411-4b265e883ed2";
+  static constexpr const char * UUID = "b8efb660-41a2-4446-a334-7c97408b4389";
   static constexpr const char * NAME = "I3DTransformFinderFrom3D3D_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DTransformFinderFrom3D3D_grpcServer grpc server component";
 };

@@ -45,7 +45,7 @@ void  IRegression_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibr
   reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRegressionService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -61,7 +61,7 @@ SolAR::FrameworkReturnCode  IRegression_grpcProxy::add(std::vector<SRef<SolAR::d
   reqIn.set_points3d(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(points3D));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->add(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addrpc failed." << std::endl;
+    std::cout << "add rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRegressionService","add",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -79,7 +79,7 @@ SolAR::FrameworkReturnCode  IRegression_grpcProxy::regress(SRef<SolAR::datastruc
   reqIn.set_points3d(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(points3D));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->regress(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "regressrpc failed." << std::endl;
+    std::cout << "regress rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRegressionService","regress",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -98,7 +98,7 @@ SolAR::FrameworkReturnCode  IRegression_grpcProxy::update(std::vector<bool>& inl
   reqIn.set_camerapose(xpcf::serialize<SolAR::datastructure::Transform3Df>(cameraPose));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->update(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "updaterpc failed." << std::endl;
+    std::cout << "update rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRegressionService","update",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -115,7 +115,7 @@ SolAR::FrameworkReturnCode  IRegression_grpcProxy::loadModel()
   ::grpcIRegression::loadModelResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->loadModel(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "loadModelrpc failed." << std::endl;
+    std::cout << "loadModel rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRegressionService","loadModel",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -130,7 +130,7 @@ std::vector<int>  IRegression_grpcProxy::getTrainingStatus()
   ::grpcIRegression::getTrainingStatusResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getTrainingStatus(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getTrainingStatusrpc failed." << std::endl;
+    std::cout << "getTrainingStatus rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRegressionService","getTrainingStatus",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -144,7 +144,7 @@ int  IRegression_grpcProxy::getNumActiveLeaves()
   ::grpcIRegression::getNumActiveLeavesResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getNumActiveLeaves(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getNumActiveLeavesrpc failed." << std::endl;
+    std::cout << "getNumActiveLeaves rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRegressionService","getNumActiveLeaves",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -159,7 +159,7 @@ int  IRegression_grpcProxy::getNumPassiveLeaves()
   ::grpcIRegression::getNumPassiveLeavesResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getNumPassiveLeaves(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getNumPassiveLeavesrpc failed." << std::endl;
+    std::cout << "getNumPassiveLeaves rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRegressionService","getNumPassiveLeaves",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

@@ -3,7 +3,7 @@
 
 #ifndef IARDEVICE_GRPCPROXY_H
 #define IARDEVICE_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IARDevice.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IARDevice.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,10 +22,8 @@ class IARDevice_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
-    int getNbCameras()     override;
     SolAR::FrameworkReturnCode getData(std::vector<SRef<SolAR::datastructure::Image>>& images, std::vector<SolAR::datastructure::Transform3Df>& poses, std::chrono::system_clock::time_point& timestamp)     override;
-    SolAR::datastructure::CameraParameters const& getParameters(int const& camera_id)     const     override;
-    void setParameters(int const& camera_id, SolAR::datastructure::CameraParameters const& parameters)     override;
+    SolAR::datastructure::CameraRigParameters const& getCameraParameters()     const     override;
 
 
   private:
@@ -33,7 +31,7 @@ class IARDevice_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
     std::unique_ptr<::grpcIARDevice::grpcIARDeviceService::Stub> m_grpcStub;
-    mutable     SolAR::datastructure::CameraParameters m_getParameters;
+    mutable     SolAR::datastructure::CameraRigParameters m_getCameraParameters;
 
 };
 
@@ -42,7 +40,7 @@ class IARDevice_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIARDevice::IARDevice_grpcProxy>
 {
-  static constexpr const char * UUID = "7b51ebd0-2647-44b6-bd66-49fb0cb7aa37";
+  static constexpr const char * UUID = "77c01b0e-0ba6-4d00-85d6-e95bc09f6436";
   static constexpr const char * NAME = "IARDevice_grpcProxy";
   static constexpr const char * DESCRIPTION = "IARDevice_grpcProxy grpc client proxy component";
 };

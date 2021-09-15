@@ -48,7 +48,7 @@ SolAR::FrameworkReturnCode  IKeypointsReIndexer_grpcProxy::reindex(std::vector<S
   reqIn.set_matchedkeypoints2(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(matchedKeypoints2));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->reindex(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "reindexrpc failed." << std::endl;
+    std::cout << "reindex rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeypointsReIndexerService","reindex",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

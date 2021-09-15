@@ -65,9 +65,12 @@ double xpcfGrpcReturnValue = 2;
 
 message triangulate_grpc3Request
 {
-bytes curKeyframe = 1;
-bytes matches = 2;
-bytes pcloud = 3;
+bytes frame1 = 1;
+bytes frame2 = 2;
+bytes matches = 3;
+bytes working_views = 4;
+bool onlyDepth = 5;
+bytes pcloud = 6;
 }
 
 message triangulate_grpc3Response

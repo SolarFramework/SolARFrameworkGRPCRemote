@@ -43,7 +43,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init()
   ::grpcIMappingPipeline::initResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "initrpc failed." << std::endl;
+    std::cout << "init rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","init",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -58,7 +58,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::start()
   ::grpcIMappingPipeline::startResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "startrpc failed." << std::endl;
+    std::cout << "start rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -73,7 +73,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::stop()
   ::grpcIMappingPipeline::stopResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "stoprpc failed." << std::endl;
+    std::cout << "stop rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -89,7 +89,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setCameraParameters(SolA
   reqIn.set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -106,7 +106,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(SR
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->mappingProcessRequest(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "mappingProcessRequestrpc failed." << std::endl;
+    std::cout << "mappingProcessRequest rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","mappingProcessRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -123,7 +123,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::getDataForVisualization(
   reqIn.set_keyframeposes(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(keyframePoses));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDataForVisualization(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDataForVisualizationrpc failed." << std::endl;
+    std::cout << "getDataForVisualization rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","getDataForVisualization",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

@@ -46,7 +46,7 @@ SolAR::api::solver::pose::Transform2DFinder::RetCode  I2DTransformFinder_grpcPro
   reqIn.set_fundamental(xpcf::serialize<SolAR::datastructure::Transform2Df>(fundamental));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->find(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "findrpc failed." << std::endl;
+    std::cout << "find rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DTransformFinderService","find",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

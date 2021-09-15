@@ -7,6 +7,7 @@
 #include "grpcIRegressionService.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -91,29 +92,65 @@ class grpcIRegressionService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>> PrepareAsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>>(PrepareAsyncgetNumPassiveLeavesRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -134,7 +171,7 @@ class grpcIRegressionService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest& request, ::google::protobuf::Empty* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncsetCameraParametersRaw(context, request, cq));
@@ -191,36 +228,68 @@ class grpcIRegressionService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>> PrepareAsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>>(PrepareAsyncgetNumPassiveLeavesRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void setCameraParameters(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void add(::grpc::ClientContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void regress(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRegression::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIRegression::addResponse>* AsyncaddRaw(::grpc::ClientContext* context, const ::grpcIRegression::addRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -423,22 +492,36 @@ class grpcIRegressionService final {
   };
   typedef WithAsyncMethod_setCameraParameters<WithAsyncMethod_add<WithAsyncMethod_regress<WithAsyncMethod_update<WithAsyncMethod_loadModel<WithAsyncMethod_getTrainingStatus<WithAsyncMethod_getNumActiveLeaves<WithAsyncMethod_getNumPassiveLeaves<Service > > > > > > > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_setCameraParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_setCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_setCameraParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::setCameraParametersRequest, ::google::protobuf::Empty>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response) { return this->setCameraParameters(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRegression::setCameraParametersRequest* request, ::google::protobuf::Empty* response) { return this->setCameraParameters(context, request, response); }));}
     void SetMessageAllocatorFor_setCameraParameters(
-        ::grpc::MessageAllocator< ::grpcIRegression::setCameraParametersRequest, ::google::protobuf::Empty>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRegression::setCameraParametersRequest, ::google::protobuf::Empty>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::setCameraParametersRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_setCameraParameters() override {
+    ~ExperimentalWithCallbackMethod_setCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -446,26 +529,46 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setCameraParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRegression::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_add : public BaseClass {
+  class ExperimentalWithCallbackMethod_add : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_add() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_add() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::addRequest, ::grpcIRegression::addResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response) { return this->add(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response) { return this->add(context, request, response); }));}
     void SetMessageAllocatorFor_add(
-        ::grpc::MessageAllocator< ::grpcIRegression::addRequest, ::grpcIRegression::addResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRegression::addRequest, ::grpcIRegression::addResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::addRequest, ::grpcIRegression::addResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_add() override {
+    ~ExperimentalWithCallbackMethod_add() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -473,26 +576,46 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* add(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::addRequest* /*request*/, ::grpcIRegression::addResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::addRequest* /*request*/, ::grpcIRegression::addResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* add(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRegression::addRequest* /*request*/, ::grpcIRegression::addResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_regress : public BaseClass {
+  class ExperimentalWithCallbackMethod_regress : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_regress() {
-      ::grpc::Service::MarkMethodCallback(2,
+    ExperimentalWithCallbackMethod_regress() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::regressRequest, ::grpcIRegression::regressResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response) { return this->regress(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response) { return this->regress(context, request, response); }));}
     void SetMessageAllocatorFor_regress(
-        ::grpc::MessageAllocator< ::grpcIRegression::regressRequest, ::grpcIRegression::regressResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRegression::regressRequest, ::grpcIRegression::regressResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::regressRequest, ::grpcIRegression::regressResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_regress() override {
+    ~ExperimentalWithCallbackMethod_regress() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -500,26 +623,46 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* regress(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::regressRequest* /*request*/, ::grpcIRegression::regressResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::regressRequest* /*request*/, ::grpcIRegression::regressResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* regress(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRegression::regressRequest* /*request*/, ::grpcIRegression::regressResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_update : public BaseClass {
+  class ExperimentalWithCallbackMethod_update : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_update() {
-      ::grpc::Service::MarkMethodCallback(3,
+    ExperimentalWithCallbackMethod_update() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::updateRequest, ::grpcIRegression::updateResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response) { return this->update(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response) { return this->update(context, request, response); }));}
     void SetMessageAllocatorFor_update(
-        ::grpc::MessageAllocator< ::grpcIRegression::updateRequest, ::grpcIRegression::updateResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRegression::updateRequest, ::grpcIRegression::updateResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::updateRequest, ::grpcIRegression::updateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_update() override {
+    ~ExperimentalWithCallbackMethod_update() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -527,26 +670,46 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* update(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::updateRequest* /*request*/, ::grpcIRegression::updateResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::updateRequest* /*request*/, ::grpcIRegression::updateResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* update(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRegression::updateRequest* /*request*/, ::grpcIRegression::updateResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_loadModel : public BaseClass {
+  class ExperimentalWithCallbackMethod_loadModel : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_loadModel() {
-      ::grpc::Service::MarkMethodCallback(4,
+    ExperimentalWithCallbackMethod_loadModel() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response) { return this->loadModel(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response) { return this->loadModel(context, request, response); }));}
     void SetMessageAllocatorFor_loadModel(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_loadModel() override {
+    ~ExperimentalWithCallbackMethod_loadModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -554,26 +717,46 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* loadModel(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* loadModel(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getTrainingStatus : public BaseClass {
+  class ExperimentalWithCallbackMethod_getTrainingStatus : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getTrainingStatus() {
-      ::grpc::Service::MarkMethodCallback(5,
+    ExperimentalWithCallbackMethod_getTrainingStatus() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response) { return this->getTrainingStatus(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response) { return this->getTrainingStatus(context, request, response); }));}
     void SetMessageAllocatorFor_getTrainingStatus(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getTrainingStatus() override {
+    ~ExperimentalWithCallbackMethod_getTrainingStatus() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -581,26 +764,46 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getTrainingStatus(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getTrainingStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getNumActiveLeaves : public BaseClass {
+  class ExperimentalWithCallbackMethod_getNumActiveLeaves : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getNumActiveLeaves() {
-      ::grpc::Service::MarkMethodCallback(6,
+    ExperimentalWithCallbackMethod_getNumActiveLeaves() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response) { return this->getNumActiveLeaves(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response) { return this->getNumActiveLeaves(context, request, response); }));}
     void SetMessageAllocatorFor_getNumActiveLeaves(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getNumActiveLeaves() override {
+    ~ExperimentalWithCallbackMethod_getNumActiveLeaves() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -608,26 +811,46 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNumActiveLeaves(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNumActiveLeaves(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getNumPassiveLeaves : public BaseClass {
+  class ExperimentalWithCallbackMethod_getNumPassiveLeaves : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getNumPassiveLeaves() {
-      ::grpc::Service::MarkMethodCallback(7,
+    ExperimentalWithCallbackMethod_getNumPassiveLeaves() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response) { return this->getNumPassiveLeaves(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response) { return this->getNumPassiveLeaves(context, request, response); }));}
     void SetMessageAllocatorFor_getNumPassiveLeaves(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getNumPassiveLeaves() override {
+    ~ExperimentalWithCallbackMethod_getNumPassiveLeaves() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -635,11 +858,20 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNumPassiveLeaves(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNumPassiveLeaves(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_setCameraParameters<WithCallbackMethod_add<WithCallbackMethod_regress<WithCallbackMethod_update<WithCallbackMethod_loadModel<WithCallbackMethod_getTrainingStatus<WithCallbackMethod_getNumActiveLeaves<WithCallbackMethod_getNumPassiveLeaves<Service > > > > > > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_add<ExperimentalWithCallbackMethod_regress<ExperimentalWithCallbackMethod_update<ExperimentalWithCallbackMethod_loadModel<ExperimentalWithCallbackMethod_getTrainingStatus<ExperimentalWithCallbackMethod_getNumActiveLeaves<ExperimentalWithCallbackMethod_getNumPassiveLeaves<Service > > > > > > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_add<ExperimentalWithCallbackMethod_regress<ExperimentalWithCallbackMethod_update<ExperimentalWithCallbackMethod_loadModel<ExperimentalWithCallbackMethod_getTrainingStatus<ExperimentalWithCallbackMethod_getNumActiveLeaves<ExperimentalWithCallbackMethod_getNumPassiveLeaves<Service > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_setCameraParameters : public BaseClass {
    private:
@@ -937,17 +1169,27 @@ class grpcIRegressionService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_setCameraParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_setCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_setCameraParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCameraParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCameraParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_setCameraParameters() override {
+    ~ExperimentalWithRawCallbackMethod_setCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -955,21 +1197,37 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* setCameraParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_add : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_add : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_add() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_add() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->add(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->add(context, request, response); }));
     }
-    ~WithRawCallbackMethod_add() override {
+    ~ExperimentalWithRawCallbackMethod_add() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -977,21 +1235,37 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* add(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* add(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_regress : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_regress : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_regress() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+    ExperimentalWithRawCallbackMethod_regress() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->regress(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->regress(context, request, response); }));
     }
-    ~WithRawCallbackMethod_regress() override {
+    ~ExperimentalWithRawCallbackMethod_regress() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -999,21 +1273,37 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* regress(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* regress(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_update : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_update : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_update() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+    ExperimentalWithRawCallbackMethod_update() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->update(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->update(context, request, response); }));
     }
-    ~WithRawCallbackMethod_update() override {
+    ~ExperimentalWithRawCallbackMethod_update() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1021,21 +1311,37 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* update(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* update(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_loadModel : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_loadModel : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_loadModel() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+    ExperimentalWithRawCallbackMethod_loadModel() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->loadModel(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->loadModel(context, request, response); }));
     }
-    ~WithRawCallbackMethod_loadModel() override {
+    ~ExperimentalWithRawCallbackMethod_loadModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1043,21 +1349,37 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* loadModel(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* loadModel(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getTrainingStatus : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getTrainingStatus : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getTrainingStatus() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+    ExperimentalWithRawCallbackMethod_getTrainingStatus() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getTrainingStatus(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getTrainingStatus(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getTrainingStatus() override {
+    ~ExperimentalWithRawCallbackMethod_getTrainingStatus() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1065,21 +1387,37 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getTrainingStatus(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getTrainingStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getNumActiveLeaves : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getNumActiveLeaves : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getNumActiveLeaves() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+    ExperimentalWithRawCallbackMethod_getNumActiveLeaves() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNumActiveLeaves(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNumActiveLeaves(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getNumActiveLeaves() override {
+    ~ExperimentalWithRawCallbackMethod_getNumActiveLeaves() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1087,21 +1425,37 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNumActiveLeaves(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNumActiveLeaves(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getNumPassiveLeaves : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getNumPassiveLeaves : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getNumPassiveLeaves() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+    ExperimentalWithRawCallbackMethod_getNumPassiveLeaves() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNumPassiveLeaves(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNumPassiveLeaves(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getNumPassiveLeaves() override {
+    ~ExperimentalWithRawCallbackMethod_getNumPassiveLeaves() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1109,8 +1463,14 @@ class grpcIRegressionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNumPassiveLeaves(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getNumPassiveLeaves(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_setCameraParameters : public BaseClass {

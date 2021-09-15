@@ -2,7 +2,7 @@
 
 #ifndef IDESCRIPTORSEXTRACTOR_GRPCSERVER_H
 #define IDESCRIPTORSEXTRACTOR_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorsExtractor.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorsExtractor.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIDescriptorsExtractorService.grpc.pb.h"
@@ -42,7 +42,7 @@ class IDescriptorsExtractor_grpcServer:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIDescriptorsExtractor::IDescriptorsExtractor_grpcServer>
 {
-  static constexpr const char * UUID = "d8c44008-dfdd-4b46-bedd-7b79951b9ce9";
+  static constexpr const char * UUID = "ec92cc26-05c2-4263-88e8-273efcf465aa";
   static constexpr const char * NAME = "IDescriptorsExtractor_grpcServer";
   static constexpr const char * DESCRIPTION = "IDescriptorsExtractor_grpcServer grpc server component";
 };

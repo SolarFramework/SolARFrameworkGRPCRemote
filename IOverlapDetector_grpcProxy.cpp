@@ -45,7 +45,7 @@ void  IOverlapDetector_grpcProxy::setCameraParameters(SolAR::datastructure::CamC
   reqIn.set_distortionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIOverlapDetectorService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -63,7 +63,7 @@ SolAR::FrameworkReturnCode  IOverlapDetector_grpcProxy::detect(SRef<SolAR::datas
   reqIn.set_cpoverlapindices(xpcf::serialize<std::vector<std::pair<uint32_t,uint32_t>>>(cpOverlapIndices));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->detect_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "detect_grpc0rpc failed." << std::endl;
+    std::cout << "detect_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIOverlapDetectorService","detect_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -85,7 +85,7 @@ SolAR::FrameworkReturnCode  IOverlapDetector_grpcProxy::detect(SRef<SolAR::datas
   reqIn.set_scores(xpcf::serialize<std::vector<double>>(scores));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->detect_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "detect_grpc1rpc failed." << std::endl;
+    std::cout << "detect_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIOverlapDetectorService","detect_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

@@ -317,8 +317,10 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIR
   schemas, file_default_instances, TableStruct_grpcIRegressionService_2eproto::offsets,
   file_level_metadata_grpcIRegressionService_2eproto, file_level_enum_descriptors_grpcIRegressionService_2eproto, file_level_service_descriptors_grpcIRegressionService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcIRegressionService_2eproto_getter() {
-  return &descriptor_table_grpcIRegressionService_2eproto;
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_grpcIRegressionService_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcIRegressionService_2eproto);
+  return descriptor_table_grpcIRegressionService_2eproto.file_level_metadata[index];
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -331,13 +333,10 @@ class setCameraParametersRequest::_Internal {
  public:
 };
 
-setCameraParametersRequest::setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+setCameraParametersRequest::setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.setCameraParametersRequest)
 }
 setCameraParametersRequest::setCameraParametersRequest(const setCameraParametersRequest& from)
@@ -346,30 +345,29 @@ setCameraParametersRequest::setCameraParametersRequest(const setCameraParameters
   intrinsicparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_intrinsicparams().empty()) {
     intrinsicparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_intrinsicparams(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   distorsionparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_distorsionparams().empty()) {
     distorsionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_distorsionparams(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.setCameraParametersRequest)
 }
 
-inline void setCameraParametersRequest::SharedCtor() {
+void setCameraParametersRequest::SharedCtor() {
 intrinsicparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 distorsionparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 setCameraParametersRequest::~setCameraParametersRequest() {
   // @@protoc_insertion_point(destructor:grpcIRegression.setCameraParametersRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void setCameraParametersRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void setCameraParametersRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   intrinsicparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   distorsionparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -400,6 +398,7 @@ const char* setCameraParametersRequest::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes intrinsicParams = 1;
       case 1:
@@ -419,8 +418,7 @@ const char* setCameraParametersRequest::_InternalParse(const char* ptr, ::PROTOB
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -447,13 +445,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes intrinsicParams = 1;
-  if (!this->_internal_intrinsicparams().empty()) {
+  if (this->intrinsicparams().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_intrinsicparams(), target);
   }
 
   // bytes distorsionParams = 2;
-  if (!this->_internal_distorsionparams().empty()) {
+  if (this->distorsionparams().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_distorsionparams(), target);
   }
@@ -475,14 +473,14 @@ size_t setCameraParametersRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes intrinsicParams = 1;
-  if (!this->_internal_intrinsicparams().empty()) {
+  if (this->intrinsicparams().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_intrinsicparams());
   }
 
   // bytes distorsionParams = 2;
-  if (!this->_internal_distorsionparams().empty()) {
+  if (this->distorsionparams().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_distorsionparams());
@@ -497,32 +495,41 @@ size_t setCameraParametersRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData setCameraParametersRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    setCameraParametersRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*setCameraParametersRequest::GetClassData() const { return &_class_data_; }
-
-void setCameraParametersRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<setCameraParametersRequest *>(to)->MergeFrom(
-      static_cast<const setCameraParametersRequest &>(from));
+void setCameraParametersRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.setCameraParametersRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const setCameraParametersRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCameraParametersRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.setCameraParametersRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.setCameraParametersRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void setCameraParametersRequest::MergeFrom(const setCameraParametersRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.setCameraParametersRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_intrinsicparams().empty()) {
+  if (from.intrinsicparams().size() > 0) {
     _internal_set_intrinsicparams(from._internal_intrinsicparams());
   }
-  if (!from._internal_distorsionparams().empty()) {
+  if (from.distorsionparams().size() > 0) {
     _internal_set_distorsionparams(from._internal_distorsionparams());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void setCameraParametersRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.setCameraParametersRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void setCameraParametersRequest::CopyFrom(const setCameraParametersRequest& from) {
@@ -538,24 +545,15 @@ bool setCameraParametersRequest::IsInitialized() const {
 
 void setCameraParametersRequest::InternalSwap(setCameraParametersRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &intrinsicparams_, GetArenaForAllocation(),
-      &other->intrinsicparams_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &distorsionparams_, GetArenaForAllocation(),
-      &other->distorsionparams_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  intrinsicparams_.Swap(&other->intrinsicparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  distorsionparams_.Swap(&other->distorsionparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata setCameraParametersRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[0]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -563,13 +561,10 @@ class addRequest::_Internal {
  public:
 };
 
-addRequest::addRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+addRequest::addRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.addRequest)
 }
 addRequest::addRequest(const addRequest& from)
@@ -578,30 +573,29 @@ addRequest::addRequest(const addRequest& from)
   descriptors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_descriptors().empty()) {
     descriptors_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_descriptors(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   points3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_points3d().empty()) {
     points3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_points3d(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.addRequest)
 }
 
-inline void addRequest::SharedCtor() {
+void addRequest::SharedCtor() {
 descriptors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 points3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 addRequest::~addRequest() {
   // @@protoc_insertion_point(destructor:grpcIRegression.addRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void addRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void addRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   descriptors_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   points3d_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -632,6 +626,7 @@ const char* addRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes descriptors = 1;
       case 1:
@@ -651,8 +646,7 @@ const char* addRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -679,13 +673,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes descriptors = 1;
-  if (!this->_internal_descriptors().empty()) {
+  if (this->descriptors().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_descriptors(), target);
   }
 
   // bytes points3D = 2;
-  if (!this->_internal_points3d().empty()) {
+  if (this->points3d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_points3d(), target);
   }
@@ -707,14 +701,14 @@ size_t addRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes descriptors = 1;
-  if (!this->_internal_descriptors().empty()) {
+  if (this->descriptors().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_descriptors());
   }
 
   // bytes points3D = 2;
-  if (!this->_internal_points3d().empty()) {
+  if (this->points3d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points3d());
@@ -729,32 +723,41 @@ size_t addRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData addRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    addRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*addRequest::GetClassData() const { return &_class_data_; }
-
-void addRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<addRequest *>(to)->MergeFrom(
-      static_cast<const addRequest &>(from));
+void addRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.addRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const addRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<addRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.addRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.addRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void addRequest::MergeFrom(const addRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.addRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_descriptors().empty()) {
+  if (from.descriptors().size() > 0) {
     _internal_set_descriptors(from._internal_descriptors());
   }
-  if (!from._internal_points3d().empty()) {
+  if (from.points3d().size() > 0) {
     _internal_set_points3d(from._internal_points3d());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void addRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.addRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void addRequest::CopyFrom(const addRequest& from) {
@@ -770,24 +773,15 @@ bool addRequest::IsInitialized() const {
 
 void addRequest::InternalSwap(addRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &descriptors_, GetArenaForAllocation(),
-      &other->descriptors_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &points3d_, GetArenaForAllocation(),
-      &other->points3d_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  descriptors_.Swap(&other->descriptors_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  points3d_.Swap(&other->points3d_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata addRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[1]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -795,13 +789,10 @@ class addResponse::_Internal {
  public:
 };
 
-addResponse::addResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+addResponse::addResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.addResponse)
 }
 addResponse::addResponse(const addResponse& from)
@@ -811,19 +802,18 @@ addResponse::addResponse(const addResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.addResponse)
 }
 
-inline void addResponse::SharedCtor() {
+void addResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 addResponse::~addResponse() {
   // @@protoc_insertion_point(destructor:grpcIRegression.addResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void addResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void addResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void addResponse::ArenaDtor(void* object) {
@@ -851,6 +841,7 @@ const char* addResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -861,8 +852,7 @@ const char* addResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -889,7 +879,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -911,7 +901,7 @@ size_t addResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -926,29 +916,38 @@ size_t addResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData addResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    addResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*addResponse::GetClassData() const { return &_class_data_; }
-
-void addResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<addResponse *>(to)->MergeFrom(
-      static_cast<const addResponse &>(from));
+void addResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.addResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const addResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<addResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.addResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.addResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void addResponse::MergeFrom(const addResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.addResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void addResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.addResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void addResponse::CopyFrom(const addResponse& from) {
@@ -964,15 +963,14 @@ bool addResponse::IsInitialized() const {
 
 void addResponse::InternalSwap(addResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata addResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[2]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -980,13 +978,10 @@ class regressRequest::_Internal {
  public:
 };
 
-regressRequest::regressRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+regressRequest::regressRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.regressRequest)
 }
 regressRequest::regressRequest(const regressRequest& from)
@@ -995,22 +990,22 @@ regressRequest::regressRequest(const regressRequest& from)
   frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_frame().empty()) {
     frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_frame(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   points2d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_points2d().empty()) {
     points2d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_points2d(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   points3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_points3d().empty()) {
     points3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_points3d(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.regressRequest)
 }
 
-inline void regressRequest::SharedCtor() {
+void regressRequest::SharedCtor() {
 frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 points2d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 points3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1018,13 +1013,12 @@ points3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlr
 
 regressRequest::~regressRequest() {
   // @@protoc_insertion_point(destructor:grpcIRegression.regressRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void regressRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void regressRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   frame_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   points2d_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   points3d_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1057,6 +1051,7 @@ const char* regressRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes frame = 1;
       case 1:
@@ -1084,8 +1079,7 @@ const char* regressRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1112,19 +1106,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes frame = 1;
-  if (!this->_internal_frame().empty()) {
+  if (this->frame().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_frame(), target);
   }
 
   // bytes points2D = 2;
-  if (!this->_internal_points2d().empty()) {
+  if (this->points2d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_points2d(), target);
   }
 
   // bytes points3D = 3;
-  if (!this->_internal_points3d().empty()) {
+  if (this->points3d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_points3d(), target);
   }
@@ -1146,21 +1140,21 @@ size_t regressRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes frame = 1;
-  if (!this->_internal_frame().empty()) {
+  if (this->frame().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_frame());
   }
 
   // bytes points2D = 2;
-  if (!this->_internal_points2d().empty()) {
+  if (this->points2d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points2d());
   }
 
   // bytes points3D = 3;
-  if (!this->_internal_points3d().empty()) {
+  if (this->points3d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points3d());
@@ -1175,35 +1169,44 @@ size_t regressRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData regressRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    regressRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*regressRequest::GetClassData() const { return &_class_data_; }
-
-void regressRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<regressRequest *>(to)->MergeFrom(
-      static_cast<const regressRequest &>(from));
+void regressRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.regressRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const regressRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<regressRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.regressRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.regressRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void regressRequest::MergeFrom(const regressRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.regressRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_frame().empty()) {
+  if (from.frame().size() > 0) {
     _internal_set_frame(from._internal_frame());
   }
-  if (!from._internal_points2d().empty()) {
+  if (from.points2d().size() > 0) {
     _internal_set_points2d(from._internal_points2d());
   }
-  if (!from._internal_points3d().empty()) {
+  if (from.points3d().size() > 0) {
     _internal_set_points3d(from._internal_points3d());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void regressRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.regressRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void regressRequest::CopyFrom(const regressRequest& from) {
@@ -1219,29 +1222,16 @@ bool regressRequest::IsInitialized() const {
 
 void regressRequest::InternalSwap(regressRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &frame_, GetArenaForAllocation(),
-      &other->frame_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &points2d_, GetArenaForAllocation(),
-      &other->points2d_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &points3d_, GetArenaForAllocation(),
-      &other->points3d_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  frame_.Swap(&other->frame_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  points2d_.Swap(&other->points2d_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  points3d_.Swap(&other->points3d_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata regressRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[3]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1249,13 +1239,10 @@ class regressResponse::_Internal {
  public:
 };
 
-regressResponse::regressResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+regressResponse::regressResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.regressResponse)
 }
 regressResponse::regressResponse(const regressResponse& from)
@@ -1264,18 +1251,18 @@ regressResponse::regressResponse(const regressResponse& from)
   points2d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_points2d().empty()) {
     points2d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_points2d(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   points3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_points3d().empty()) {
     points3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_points3d(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.regressResponse)
 }
 
-inline void regressResponse::SharedCtor() {
+void regressResponse::SharedCtor() {
 points2d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 points3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
@@ -1283,13 +1270,12 @@ xpcfgrpcreturnvalue_ = 0;
 
 regressResponse::~regressResponse() {
   // @@protoc_insertion_point(destructor:grpcIRegression.regressResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void regressResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void regressResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   points2d_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   points3d_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1321,6 +1307,7 @@ const char* regressResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes points2D = 1;
       case 1:
@@ -1347,8 +1334,7 @@ const char* regressResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1375,19 +1361,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes points2D = 1;
-  if (!this->_internal_points2d().empty()) {
+  if (this->points2d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_points2d(), target);
   }
 
   // bytes points3D = 2;
-  if (!this->_internal_points3d().empty()) {
+  if (this->points3d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_points3d(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(3, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -1409,21 +1395,21 @@ size_t regressResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes points2D = 1;
-  if (!this->_internal_points2d().empty()) {
+  if (this->points2d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points2d());
   }
 
   // bytes points3D = 2;
-  if (!this->_internal_points3d().empty()) {
+  if (this->points3d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points3d());
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -1438,35 +1424,44 @@ size_t regressResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData regressResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    regressResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*regressResponse::GetClassData() const { return &_class_data_; }
-
-void regressResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<regressResponse *>(to)->MergeFrom(
-      static_cast<const regressResponse &>(from));
+void regressResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.regressResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const regressResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<regressResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.regressResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.regressResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void regressResponse::MergeFrom(const regressResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.regressResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_points2d().empty()) {
+  if (from.points2d().size() > 0) {
     _internal_set_points2d(from._internal_points2d());
   }
-  if (!from._internal_points3d().empty()) {
+  if (from.points3d().size() > 0) {
     _internal_set_points3d(from._internal_points3d());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void regressResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.regressResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void regressResponse::CopyFrom(const regressResponse& from) {
@@ -1482,25 +1477,16 @@ bool regressResponse::IsInitialized() const {
 
 void regressResponse::InternalSwap(regressResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &points2d_, GetArenaForAllocation(),
-      &other->points2d_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &points3d_, GetArenaForAllocation(),
-      &other->points3d_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  points2d_.Swap(&other->points2d_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  points3d_.Swap(&other->points3d_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata regressResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[4]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1508,13 +1494,10 @@ class updateRequest::_Internal {
  public:
 };
 
-updateRequest::updateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+updateRequest::updateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.updateRequest)
 }
 updateRequest::updateRequest(const updateRequest& from)
@@ -1523,30 +1506,29 @@ updateRequest::updateRequest(const updateRequest& from)
   inliers_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_inliers().empty()) {
     inliers_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_inliers(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   camerapose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_camerapose().empty()) {
     camerapose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_camerapose(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.updateRequest)
 }
 
-inline void updateRequest::SharedCtor() {
+void updateRequest::SharedCtor() {
 inliers_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 camerapose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 updateRequest::~updateRequest() {
   // @@protoc_insertion_point(destructor:grpcIRegression.updateRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void updateRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void updateRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   inliers_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   camerapose_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1577,6 +1559,7 @@ const char* updateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes inliers = 1;
       case 1:
@@ -1596,8 +1579,7 @@ const char* updateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1624,13 +1606,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes inliers = 1;
-  if (!this->_internal_inliers().empty()) {
+  if (this->inliers().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_inliers(), target);
   }
 
   // bytes cameraPose = 2;
-  if (!this->_internal_camerapose().empty()) {
+  if (this->camerapose().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_camerapose(), target);
   }
@@ -1652,14 +1634,14 @@ size_t updateRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes inliers = 1;
-  if (!this->_internal_inliers().empty()) {
+  if (this->inliers().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_inliers());
   }
 
   // bytes cameraPose = 2;
-  if (!this->_internal_camerapose().empty()) {
+  if (this->camerapose().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_camerapose());
@@ -1674,32 +1656,41 @@ size_t updateRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData updateRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    updateRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*updateRequest::GetClassData() const { return &_class_data_; }
-
-void updateRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<updateRequest *>(to)->MergeFrom(
-      static_cast<const updateRequest &>(from));
+void updateRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.updateRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const updateRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<updateRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.updateRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.updateRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void updateRequest::MergeFrom(const updateRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.updateRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_inliers().empty()) {
+  if (from.inliers().size() > 0) {
     _internal_set_inliers(from._internal_inliers());
   }
-  if (!from._internal_camerapose().empty()) {
+  if (from.camerapose().size() > 0) {
     _internal_set_camerapose(from._internal_camerapose());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void updateRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.updateRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void updateRequest::CopyFrom(const updateRequest& from) {
@@ -1715,24 +1706,15 @@ bool updateRequest::IsInitialized() const {
 
 void updateRequest::InternalSwap(updateRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &inliers_, GetArenaForAllocation(),
-      &other->inliers_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &camerapose_, GetArenaForAllocation(),
-      &other->camerapose_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  inliers_.Swap(&other->inliers_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  camerapose_.Swap(&other->camerapose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata updateRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[5]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1740,13 +1722,10 @@ class updateResponse::_Internal {
  public:
 };
 
-updateResponse::updateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+updateResponse::updateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.updateResponse)
 }
 updateResponse::updateResponse(const updateResponse& from)
@@ -1755,18 +1734,18 @@ updateResponse::updateResponse(const updateResponse& from)
   inliers_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_inliers().empty()) {
     inliers_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_inliers(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   camerapose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_camerapose().empty()) {
     camerapose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_camerapose(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.updateResponse)
 }
 
-inline void updateResponse::SharedCtor() {
+void updateResponse::SharedCtor() {
 inliers_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 camerapose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
@@ -1774,13 +1753,12 @@ xpcfgrpcreturnvalue_ = 0;
 
 updateResponse::~updateResponse() {
   // @@protoc_insertion_point(destructor:grpcIRegression.updateResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void updateResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void updateResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   inliers_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   camerapose_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -1812,6 +1790,7 @@ const char* updateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes inliers = 1;
       case 1:
@@ -1838,8 +1817,7 @@ const char* updateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1866,19 +1844,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes inliers = 1;
-  if (!this->_internal_inliers().empty()) {
+  if (this->inliers().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_inliers(), target);
   }
 
   // bytes cameraPose = 2;
-  if (!this->_internal_camerapose().empty()) {
+  if (this->camerapose().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_camerapose(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(3, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -1900,21 +1878,21 @@ size_t updateResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes inliers = 1;
-  if (!this->_internal_inliers().empty()) {
+  if (this->inliers().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_inliers());
   }
 
   // bytes cameraPose = 2;
-  if (!this->_internal_camerapose().empty()) {
+  if (this->camerapose().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_camerapose());
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -1929,35 +1907,44 @@ size_t updateResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData updateResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    updateResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*updateResponse::GetClassData() const { return &_class_data_; }
-
-void updateResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<updateResponse *>(to)->MergeFrom(
-      static_cast<const updateResponse &>(from));
+void updateResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.updateResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const updateResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<updateResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.updateResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.updateResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void updateResponse::MergeFrom(const updateResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.updateResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_inliers().empty()) {
+  if (from.inliers().size() > 0) {
     _internal_set_inliers(from._internal_inliers());
   }
-  if (!from._internal_camerapose().empty()) {
+  if (from.camerapose().size() > 0) {
     _internal_set_camerapose(from._internal_camerapose());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void updateResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.updateResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void updateResponse::CopyFrom(const updateResponse& from) {
@@ -1973,25 +1960,16 @@ bool updateResponse::IsInitialized() const {
 
 void updateResponse::InternalSwap(updateResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &inliers_, GetArenaForAllocation(),
-      &other->inliers_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &camerapose_, GetArenaForAllocation(),
-      &other->camerapose_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  inliers_.Swap(&other->inliers_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  camerapose_.Swap(&other->camerapose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata updateResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[6]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1999,13 +1977,10 @@ class loadModelResponse::_Internal {
  public:
 };
 
-loadModelResponse::loadModelResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+loadModelResponse::loadModelResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.loadModelResponse)
 }
 loadModelResponse::loadModelResponse(const loadModelResponse& from)
@@ -2015,19 +1990,18 @@ loadModelResponse::loadModelResponse(const loadModelResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.loadModelResponse)
 }
 
-inline void loadModelResponse::SharedCtor() {
+void loadModelResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 loadModelResponse::~loadModelResponse() {
   // @@protoc_insertion_point(destructor:grpcIRegression.loadModelResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void loadModelResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void loadModelResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void loadModelResponse::ArenaDtor(void* object) {
@@ -2055,6 +2029,7 @@ const char* loadModelResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -2065,8 +2040,7 @@ const char* loadModelResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2093,7 +2067,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -2115,7 +2089,7 @@ size_t loadModelResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -2130,29 +2104,38 @@ size_t loadModelResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData loadModelResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    loadModelResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*loadModelResponse::GetClassData() const { return &_class_data_; }
-
-void loadModelResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<loadModelResponse *>(to)->MergeFrom(
-      static_cast<const loadModelResponse &>(from));
+void loadModelResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.loadModelResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const loadModelResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<loadModelResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.loadModelResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.loadModelResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void loadModelResponse::MergeFrom(const loadModelResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.loadModelResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void loadModelResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.loadModelResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void loadModelResponse::CopyFrom(const loadModelResponse& from) {
@@ -2168,15 +2151,14 @@ bool loadModelResponse::IsInitialized() const {
 
 void loadModelResponse::InternalSwap(loadModelResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadModelResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[7]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -2184,13 +2166,10 @@ class getTrainingStatusResponse::_Internal {
  public:
 };
 
-getTrainingStatusResponse::getTrainingStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getTrainingStatusResponse::getTrainingStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.getTrainingStatusResponse)
 }
 getTrainingStatusResponse::getTrainingStatusResponse(const getTrainingStatusResponse& from)
@@ -2199,24 +2178,23 @@ getTrainingStatusResponse::getTrainingStatusResponse(const getTrainingStatusResp
   xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_xpcfgrpcreturnvalue().empty()) {
     xpcfgrpcreturnvalue_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_xpcfgrpcreturnvalue(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.getTrainingStatusResponse)
 }
 
-inline void getTrainingStatusResponse::SharedCtor() {
+void getTrainingStatusResponse::SharedCtor() {
 xpcfgrpcreturnvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 getTrainingStatusResponse::~getTrainingStatusResponse() {
   // @@protoc_insertion_point(destructor:grpcIRegression.getTrainingStatusResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getTrainingStatusResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getTrainingStatusResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   xpcfgrpcreturnvalue_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -2245,6 +2223,7 @@ const char* getTrainingStatusResponse::_InternalParse(const char* ptr, ::PROTOBU
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes xpcfGrpcReturnValue = 1;
       case 1:
@@ -2256,8 +2235,7 @@ const char* getTrainingStatusResponse::_InternalParse(const char* ptr, ::PROTOBU
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2284,7 +2262,7 @@ failure:
   (void) cached_has_bits;
 
   // bytes xpcfGrpcReturnValue = 1;
-  if (!this->_internal_xpcfgrpcreturnvalue().empty()) {
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -2306,7 +2284,7 @@ size_t getTrainingStatusResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes xpcfGrpcReturnValue = 1;
-  if (!this->_internal_xpcfgrpcreturnvalue().empty()) {
+  if (this->xpcfgrpcreturnvalue().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_xpcfgrpcreturnvalue());
@@ -2321,29 +2299,38 @@ size_t getTrainingStatusResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getTrainingStatusResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getTrainingStatusResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getTrainingStatusResponse::GetClassData() const { return &_class_data_; }
-
-void getTrainingStatusResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getTrainingStatusResponse *>(to)->MergeFrom(
-      static_cast<const getTrainingStatusResponse &>(from));
+void getTrainingStatusResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.getTrainingStatusResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getTrainingStatusResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getTrainingStatusResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.getTrainingStatusResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.getTrainingStatusResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getTrainingStatusResponse::MergeFrom(const getTrainingStatusResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.getTrainingStatusResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_xpcfgrpcreturnvalue().empty()) {
+  if (from.xpcfgrpcreturnvalue().size() > 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getTrainingStatusResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.getTrainingStatusResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getTrainingStatusResponse::CopyFrom(const getTrainingStatusResponse& from) {
@@ -2359,19 +2346,14 @@ bool getTrainingStatusResponse::IsInitialized() const {
 
 void getTrainingStatusResponse::InternalSwap(getTrainingStatusResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &xpcfgrpcreturnvalue_, GetArenaForAllocation(),
-      &other->xpcfgrpcreturnvalue_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  xpcfgrpcreturnvalue_.Swap(&other->xpcfgrpcreturnvalue_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getTrainingStatusResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[8]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -2379,13 +2361,10 @@ class getNumActiveLeavesResponse::_Internal {
  public:
 };
 
-getNumActiveLeavesResponse::getNumActiveLeavesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getNumActiveLeavesResponse::getNumActiveLeavesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.getNumActiveLeavesResponse)
 }
 getNumActiveLeavesResponse::getNumActiveLeavesResponse(const getNumActiveLeavesResponse& from)
@@ -2395,19 +2374,18 @@ getNumActiveLeavesResponse::getNumActiveLeavesResponse(const getNumActiveLeavesR
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.getNumActiveLeavesResponse)
 }
 
-inline void getNumActiveLeavesResponse::SharedCtor() {
+void getNumActiveLeavesResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 getNumActiveLeavesResponse::~getNumActiveLeavesResponse() {
   // @@protoc_insertion_point(destructor:grpcIRegression.getNumActiveLeavesResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getNumActiveLeavesResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getNumActiveLeavesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void getNumActiveLeavesResponse::ArenaDtor(void* object) {
@@ -2435,6 +2413,7 @@ const char* getNumActiveLeavesResponse::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -2445,8 +2424,7 @@ const char* getNumActiveLeavesResponse::_InternalParse(const char* ptr, ::PROTOB
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2473,7 +2451,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -2495,7 +2473,7 @@ size_t getNumActiveLeavesResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -2510,29 +2488,38 @@ size_t getNumActiveLeavesResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getNumActiveLeavesResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getNumActiveLeavesResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getNumActiveLeavesResponse::GetClassData() const { return &_class_data_; }
-
-void getNumActiveLeavesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getNumActiveLeavesResponse *>(to)->MergeFrom(
-      static_cast<const getNumActiveLeavesResponse &>(from));
+void getNumActiveLeavesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.getNumActiveLeavesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getNumActiveLeavesResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getNumActiveLeavesResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.getNumActiveLeavesResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.getNumActiveLeavesResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getNumActiveLeavesResponse::MergeFrom(const getNumActiveLeavesResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.getNumActiveLeavesResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getNumActiveLeavesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.getNumActiveLeavesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getNumActiveLeavesResponse::CopyFrom(const getNumActiveLeavesResponse& from) {
@@ -2548,15 +2535,14 @@ bool getNumActiveLeavesResponse::IsInitialized() const {
 
 void getNumActiveLeavesResponse::InternalSwap(getNumActiveLeavesResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getNumActiveLeavesResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[9]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -2564,13 +2550,10 @@ class getNumPassiveLeavesResponse::_Internal {
  public:
 };
 
-getNumPassiveLeavesResponse::getNumPassiveLeavesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getNumPassiveLeavesResponse::getNumPassiveLeavesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIRegression.getNumPassiveLeavesResponse)
 }
 getNumPassiveLeavesResponse::getNumPassiveLeavesResponse(const getNumPassiveLeavesResponse& from)
@@ -2580,19 +2563,18 @@ getNumPassiveLeavesResponse::getNumPassiveLeavesResponse(const getNumPassiveLeav
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.getNumPassiveLeavesResponse)
 }
 
-inline void getNumPassiveLeavesResponse::SharedCtor() {
+void getNumPassiveLeavesResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 getNumPassiveLeavesResponse::~getNumPassiveLeavesResponse() {
   // @@protoc_insertion_point(destructor:grpcIRegression.getNumPassiveLeavesResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getNumPassiveLeavesResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getNumPassiveLeavesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void getNumPassiveLeavesResponse::ArenaDtor(void* object) {
@@ -2620,6 +2602,7 @@ const char* getNumPassiveLeavesResponse::_InternalParse(const char* ptr, ::PROTO
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -2630,8 +2613,7 @@ const char* getNumPassiveLeavesResponse::_InternalParse(const char* ptr, ::PROTO
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -2658,7 +2640,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -2680,7 +2662,7 @@ size_t getNumPassiveLeavesResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -2695,29 +2677,38 @@ size_t getNumPassiveLeavesResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getNumPassiveLeavesResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getNumPassiveLeavesResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getNumPassiveLeavesResponse::GetClassData() const { return &_class_data_; }
-
-void getNumPassiveLeavesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getNumPassiveLeavesResponse *>(to)->MergeFrom(
-      static_cast<const getNumPassiveLeavesResponse &>(from));
+void getNumPassiveLeavesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.getNumPassiveLeavesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getNumPassiveLeavesResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getNumPassiveLeavesResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.getNumPassiveLeavesResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.getNumPassiveLeavesResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getNumPassiveLeavesResponse::MergeFrom(const getNumPassiveLeavesResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.getNumPassiveLeavesResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getNumPassiveLeavesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.getNumPassiveLeavesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getNumPassiveLeavesResponse::CopyFrom(const getNumPassiveLeavesResponse& from) {
@@ -2733,15 +2724,14 @@ bool getNumPassiveLeavesResponse::IsInitialized() const {
 
 void getNumPassiveLeavesResponse::InternalSwap(getNumPassiveLeavesResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getNumPassiveLeavesResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIRegressionService_2eproto_getter, &descriptor_table_grpcIRegressionService_2eproto_once,
-      file_level_metadata_grpcIRegressionService_2eproto[10]);
+  return GetMetadataStatic();
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIRegression

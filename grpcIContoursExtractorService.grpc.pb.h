@@ -7,6 +7,7 @@
 #include "grpcIContoursExtractorService.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -42,22 +43,30 @@ class grpcIContoursExtractorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIContoursExtractor::extractResponse>> PrepareAsyncextract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIContoursExtractor::extractResponse>>(PrepareAsyncextractRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIContoursExtractor::extractResponse>* AsyncextractRaw(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIContoursExtractor::extractResponse>* PrepareAsyncextractRaw(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest& request, ::grpcIContoursExtractor::extractResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIContoursExtractor::extractResponse>> Asyncextract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIContoursExtractor::extractResponse>>(AsyncextractRaw(context, request, cq));
@@ -65,22 +74,26 @@ class grpcIContoursExtractorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIContoursExtractor::extractResponse>> PrepareAsyncextract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIContoursExtractor::extractResponse>>(PrepareAsyncextractRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIContoursExtractor::extractResponse>* AsyncextractRaw(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIContoursExtractor::extractResponse>* PrepareAsyncextractRaw(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_extract_;
@@ -115,22 +128,36 @@ class grpcIContoursExtractorService final {
   };
   typedef WithAsyncMethod_extract<Service > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_extract : public BaseClass {
+  class ExperimentalWithCallbackMethod_extract : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_extract() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_extract() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIContoursExtractor::extractRequest, ::grpcIContoursExtractor::extractResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response) { return this->extract(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response) { return this->extract(context, request, response); }));}
     void SetMessageAllocatorFor_extract(
-        ::grpc::MessageAllocator< ::grpcIContoursExtractor::extractRequest, ::grpcIContoursExtractor::extractResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIContoursExtractor::extractRequest, ::grpcIContoursExtractor::extractResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIContoursExtractor::extractRequest, ::grpcIContoursExtractor::extractResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_extract() override {
+    ~ExperimentalWithCallbackMethod_extract() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -138,11 +165,20 @@ class grpcIContoursExtractorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* extract(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIContoursExtractor::extractRequest* /*request*/, ::grpcIContoursExtractor::extractResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIContoursExtractor::extractRequest* /*request*/, ::grpcIContoursExtractor::extractResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* extract(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIContoursExtractor::extractRequest* /*request*/, ::grpcIContoursExtractor::extractResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_extract<Service > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_extract<Service > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_extract<Service > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_extract : public BaseClass {
    private:
@@ -181,17 +217,27 @@ class grpcIContoursExtractorService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_extract : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_extract : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_extract() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_extract() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->extract(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->extract(context, request, response); }));
     }
-    ~WithRawCallbackMethod_extract() override {
+    ~ExperimentalWithRawCallbackMethod_extract() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -199,8 +245,14 @@ class grpcIContoursExtractorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* extract(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* extract(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_extract : public BaseClass {

@@ -43,7 +43,7 @@ SolAR::FrameworkReturnCode  IDepthCamera_grpcProxy::start()
   ::grpcIDepthCamera::startResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "startrpc failed." << std::endl;
+    std::cout << "start rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -58,7 +58,7 @@ SolAR::FrameworkReturnCode  IDepthCamera_grpcProxy::stop()
   ::grpcIDepthCamera::stopResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "stoprpc failed." << std::endl;
+    std::cout << "stop rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -74,7 +74,7 @@ SolAR::FrameworkReturnCode  IDepthCamera_grpcProxy::getNextDepthFrame(SRef<SolAR
   reqIn.set_img(xpcf::serialize<SRef<SolAR::datastructure::Image>>(img));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getNextDepthFrame(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getNextDepthFramerpc failed." << std::endl;
+    std::cout << "getNextDepthFrame rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","getNextDepthFrame",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -91,7 +91,7 @@ SolAR::FrameworkReturnCode  IDepthCamera_grpcProxy::getPointCloud(SRef<SolAR::da
   reqIn.set_pc(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pc));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getPointCloud(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getPointCloudrpc failed." << std::endl;
+    std::cout << "getPointCloud rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","getPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -108,7 +108,7 @@ SolAR::FrameworkReturnCode  IDepthCamera_grpcProxy::setDepthResolution(SolAR::da
   reqIn.set_resolution(xpcf::serialize<SolAR::datastructure::Sizei>(resolution));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setDepthResolution(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setDepthResolutionrpc failed." << std::endl;
+    std::cout << "setDepthResolution rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","setDepthResolution",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -124,7 +124,7 @@ SolAR::FrameworkReturnCode  IDepthCamera_grpcProxy::setIntrinsicDepthParameters(
   reqIn.set_intrinsic_parameters(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsic_parameters));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setIntrinsicDepthParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setIntrinsicDepthParametersrpc failed." << std::endl;
+    std::cout << "setIntrinsicDepthParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","setIntrinsicDepthParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -140,7 +140,7 @@ SolAR::FrameworkReturnCode  IDepthCamera_grpcProxy::setDistortionDepthParameters
   reqIn.set_distortion_parameters(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortion_parameters));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setDistortionDepthParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setDistortionDepthParametersrpc failed." << std::endl;
+    std::cout << "setDistortionDepthParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","setDistortionDepthParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -155,7 +155,7 @@ SolAR::datastructure::Sizei  IDepthCamera_grpcProxy::getDepthResolution() const
   ::grpcIDepthCamera::getDepthResolutionResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDepthResolution(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDepthResolutionrpc failed." << std::endl;
+    std::cout << "getDepthResolution rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","getDepthResolution",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -170,7 +170,7 @@ float  IDepthCamera_grpcProxy::getDepthMinDistance() const
   ::grpcIDepthCamera::getDepthMinDistanceResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDepthMinDistance(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDepthMinDistancerpc failed." << std::endl;
+    std::cout << "getDepthMinDistance rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","getDepthMinDistance",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -185,7 +185,7 @@ SolAR::datastructure::CamCalibration const&  IDepthCamera_grpcProxy::getIntrinsi
   ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getIntrinsicsDepthParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getIntrinsicsDepthParametersrpc failed." << std::endl;
+    std::cout << "getIntrinsicsDepthParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","getIntrinsicsDepthParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -201,7 +201,7 @@ SolAR::datastructure::CamDistortion const&  IDepthCamera_grpcProxy::getDistortio
   ::grpcIDepthCamera::getDistortionDepthParametersResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDistortionDepthParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDistortionDepthParametersrpc failed." << std::endl;
+    std::cout << "getDistortionDepthParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDepthCameraService","getDistortionDepthParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

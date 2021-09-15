@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIDescriptorMatcherGeometric;
+
+message match_grpc0Request
+{
+bytes descriptors1 = 1;
+bytes descriptors2 = 2;
+bytes undistortedKeypoints1 = 3;
+bytes undistortedKeypoints2 = 4;
+bytes pose1 = 5;
+bytes pose2 = 6;
+bytes camParams = 7;
+bytes mask = 8;
+bytes matches = 9;
+}
+
+message match_grpc0Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message match_grpc1Request
+{
+bytes frame1 = 1;
+bytes frame2 = 2;
+bytes camParams = 3;
+bytes mask = 4;
+bytes matches = 5;
+}
+
+message match_grpc1Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIDescriptorMatcherGeometricService {
+rpc match_grpc0(match_grpc0Request) returns(match_grpc0Response) {}
+rpc match_grpc1(match_grpc1Request) returns(match_grpc1Response) {}
+}
+

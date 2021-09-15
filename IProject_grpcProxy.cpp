@@ -45,7 +45,7 @@ void  IProject_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibrati
   reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIProjectService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -62,7 +62,7 @@ SolAR::FrameworkReturnCode  IProject_grpcProxy::project(std::vector<SolAR::datas
   reqIn.set_imagepoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(imagePoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->project_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "project_grpc0rpc failed." << std::endl;
+    std::cout << "project_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIProjectService","project_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -81,7 +81,7 @@ SolAR::FrameworkReturnCode  IProject_grpcProxy::project(std::vector<SRef<SolAR::
   reqIn.set_imagepoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(imagePoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->project_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "project_grpc1rpc failed." << std::endl;
+    std::cout << "project_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIProjectService","project_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

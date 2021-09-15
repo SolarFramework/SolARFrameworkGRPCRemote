@@ -44,7 +44,7 @@ SolAR::FrameworkReturnCode  IKeyframeRetriever_grpcProxy::addKeyframe(SRef<SolAR
   reqIn.set_keyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(keyframe));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addKeyframe(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addKeyframerpc failed." << std::endl;
+    std::cout << "addKeyframe rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","addKeyframe",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -60,7 +60,7 @@ SolAR::FrameworkReturnCode  IKeyframeRetriever_grpcProxy::suppressKeyframe(uint3
   reqIn.set_keyframe_id(keyframe_id);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->suppressKeyframe(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "suppressKeyframerpc failed." << std::endl;
+    std::cout << "suppressKeyframe rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","suppressKeyframe",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -77,7 +77,7 @@ SolAR::FrameworkReturnCode  IKeyframeRetriever_grpcProxy::retrieve(SRef<SolAR::d
   reqIn.set_retkeyframes_id(xpcf::serialize<std::vector<uint32_t>>(retKeyframes_id));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->retrieve_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "retrieve_grpc0rpc failed." << std::endl;
+    std::cout << "retrieve_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","retrieve_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -96,7 +96,7 @@ SolAR::FrameworkReturnCode  IKeyframeRetriever_grpcProxy::retrieve(SRef<SolAR::d
   reqIn.set_retkeyframes_id(xpcf::serialize<std::vector<uint32_t>>(retKeyframes_id));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->retrieve_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "retrieve_grpc1rpc failed." << std::endl;
+    std::cout << "retrieve_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","retrieve_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -113,7 +113,7 @@ SolAR::FrameworkReturnCode  IKeyframeRetriever_grpcProxy::saveToFile(std::string
   reqIn.set_file(file);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->saveToFile(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "saveToFilerpc failed." << std::endl;
+    std::cout << "saveToFile rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","saveToFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -129,7 +129,7 @@ SolAR::FrameworkReturnCode  IKeyframeRetriever_grpcProxy::loadFromFile(std::stri
   reqIn.set_file(file);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->loadFromFile(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "loadFromFilerpc failed." << std::endl;
+    std::cout << "loadFromFile rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","loadFromFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -147,7 +147,7 @@ SolAR::FrameworkReturnCode  IKeyframeRetriever_grpcProxy::match(SRef<SolAR::data
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->match_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "match_grpc0rpc failed." << std::endl;
+    std::cout << "match_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","match_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -167,7 +167,7 @@ SolAR::FrameworkReturnCode  IKeyframeRetriever_grpcProxy::match(std::vector<int>
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->match_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "match_grpc1rpc failed." << std::endl;
+    std::cout << "match_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","match_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -183,7 +183,7 @@ SRef<SolAR::datastructure::KeyframeRetrieval> const&  IKeyframeRetriever_grpcPro
   ::grpcIKeyframeRetriever::getConstKeyframeRetrievalResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getConstKeyframeRetrieval(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getConstKeyframeRetrievalrpc failed." << std::endl;
+    std::cout << "getConstKeyframeRetrieval rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","getConstKeyframeRetrieval",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -198,7 +198,7 @@ std::unique_lock<std::mutex>  IKeyframeRetriever_grpcProxy::getKeyframeRetrieval
   reqIn.set_keyframeretrieval(xpcf::serialize<SRef<SolAR::datastructure::KeyframeRetrieval>>(keyframeRetrieval));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getKeyframeRetrieval(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getKeyframeRetrievalrpc failed." << std::endl;
+    std::cout << "getKeyframeRetrieval rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","getKeyframeRetrieval",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -214,7 +214,7 @@ void  IKeyframeRetriever_grpcProxy::setKeyframeRetrieval(SRef<SolAR::datastructu
   reqIn.set_keyframeretrieval(xpcf::serialize<SRef<SolAR::datastructure::KeyframeRetrieval>>(keyframeRetrieval));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setKeyframeRetrieval(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setKeyframeRetrievalrpc failed." << std::endl;
+    std::cout << "setKeyframeRetrieval rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeyframeRetrieverService","setKeyframeRetrieval",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

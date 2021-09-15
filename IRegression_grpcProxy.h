@@ -3,7 +3,7 @@
 
 #ifndef IREGRESSION_GRPCPROXY_H
 #define IREGRESSION_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRegression.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRegression.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -43,7 +43,7 @@ class IRegression_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIRegression::IRegression_grpcProxy>
 {
-  static constexpr const char * UUID = "0751c10f-2758-43f7-9f46-52ab0d2bdecd";
+  static constexpr const char * UUID = "eac2dbd5-87b3-460c-aa15-0a45d6b6f308";
   static constexpr const char * NAME = "IRegression_grpcProxy";
   static constexpr const char * DESCRIPTION = "IRegression_grpcProxy grpc client proxy component";
 };

@@ -3,7 +3,7 @@
 
 #ifndef I2DOVERLAY_GRPCPROXY_H
 #define I2DOVERLAY_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/display/I2DOverlay.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/display/I2DOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -41,7 +41,7 @@ class I2DOverlay_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2DOverlay::I2DOverlay_grpcProxy>
 {
-  static constexpr const char * UUID = "1e4f982e-e5ca-4d1b-a9aa-7ad51e031d73";
+  static constexpr const char * UUID = "7858813f-fe76-47fb-81b2-91668a967e37";
   static constexpr const char * NAME = "I2DOverlay_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2DOverlay_grpcProxy grpc client proxy component";
 };

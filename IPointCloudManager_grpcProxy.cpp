@@ -44,7 +44,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::addPoint(SRef<SolAR::d
   reqIn.set_point(xpcf::serialize<SRef<SolAR::datastructure::CloudPoint>>(point));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addPoint_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addPoint_grpc0rpc failed." << std::endl;
+    std::cout << "addPoint_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","addPoint_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -60,7 +60,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::addPoints(std::vector<
   reqIn.set_points(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(points));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addPoints_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addPoints_grpc0rpc failed." << std::endl;
+    std::cout << "addPoints_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","addPoints_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -76,7 +76,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::addPoint(SolAR::datast
   reqIn.set_point(xpcf::serialize<SolAR::datastructure::CloudPoint>(point));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addPoint_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addPoint_grpc1rpc failed." << std::endl;
+    std::cout << "addPoint_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","addPoint_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -92,7 +92,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::addPoints(std::vector<
   reqIn.set_points(xpcf::serialize<std::vector<SolAR::datastructure::CloudPoint>>(points));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addPoints_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addPoints_grpc1rpc failed." << std::endl;
+    std::cout << "addPoints_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","addPoints_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -109,7 +109,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::getPoint(uint32_t cons
   reqIn.set_point(xpcf::serialize<SRef<SolAR::datastructure::CloudPoint>>(point));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getPoint(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getPointrpc failed." << std::endl;
+    std::cout << "getPoint rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","getPoint",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -127,7 +127,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::getPoints(std::vector<
   reqIn.set_points(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(points));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getPoints(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getPointsrpc failed." << std::endl;
+    std::cout << "getPoints rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","getPoints",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -144,7 +144,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::getAllPoints(std::vect
   reqIn.set_points(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(points));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getAllPoints(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getAllPointsrpc failed." << std::endl;
+    std::cout << "getAllPoints rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","getAllPoints",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -161,7 +161,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::suppressPoint(uint32_t
   reqIn.set_id(id);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->suppressPoint(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "suppressPointrpc failed." << std::endl;
+    std::cout << "suppressPoint rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","suppressPoint",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -177,7 +177,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::suppressPoints(std::ve
   reqIn.set_ids(xpcf::serialize<std::vector<uint32_t>>(ids));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->suppressPoints(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "suppressPointsrpc failed." << std::endl;
+    std::cout << "suppressPoints rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","suppressPoints",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -192,7 +192,7 @@ SolAR::datastructure::DescriptorType  IPointCloudManager_grpcProxy::getDescripto
   ::grpcIPointCloudManager::getDescriptorTypeResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDescriptorType(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDescriptorTyperpc failed." << std::endl;
+    std::cout << "getDescriptorType rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","getDescriptorType",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -208,7 +208,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::setDescriptorType(SolA
   reqIn.set_type(static_cast<int32_t>(type));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setDescriptorType(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setDescriptorTyperpc failed." << std::endl;
+    std::cout << "setDescriptorType rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","setDescriptorType",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -224,7 +224,7 @@ bool  IPointCloudManager_grpcProxy::isExistPoint(uint32_t const id) const
   reqIn.set_id(id);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->isExistPoint(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "isExistPointrpc failed." << std::endl;
+    std::cout << "isExistPoint rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","isExistPoint",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -239,7 +239,7 @@ int  IPointCloudManager_grpcProxy::getNbPoints() const
   ::grpcIPointCloudManager::getNbPointsResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getNbPoints(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getNbPointsrpc failed." << std::endl;
+    std::cout << "getNbPoints rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","getNbPoints",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -255,7 +255,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::saveToFile(std::string
   reqIn.set_file(file);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->saveToFile(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "saveToFilerpc failed." << std::endl;
+    std::cout << "saveToFile rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","saveToFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -271,7 +271,7 @@ SolAR::FrameworkReturnCode  IPointCloudManager_grpcProxy::loadFromFile(std::stri
   reqIn.set_file(file);
   ::grpc::Status grpcRemoteStatus = m_grpcStub->loadFromFile(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "loadFromFilerpc failed." << std::endl;
+    std::cout << "loadFromFile rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","loadFromFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -286,7 +286,7 @@ SRef<SolAR::datastructure::PointCloud> const&  IPointCloudManager_grpcProxy::get
   ::grpcIPointCloudManager::getConstPointCloudResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getConstPointCloud(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getConstPointCloudrpc failed." << std::endl;
+    std::cout << "getConstPointCloud rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","getConstPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -301,7 +301,7 @@ std::unique_lock<std::mutex>  IPointCloudManager_grpcProxy::getPointCloud(SRef<S
   reqIn.set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getPointCloud(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getPointCloudrpc failed." << std::endl;
+    std::cout << "getPointCloud rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","getPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -317,7 +317,7 @@ void  IPointCloudManager_grpcProxy::setPointCloud(SRef<SolAR::datastructure::Poi
   reqIn.set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setPointCloud(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setPointCloudrpc failed." << std::endl;
+    std::cout << "setPointCloud rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudManagerService","setPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

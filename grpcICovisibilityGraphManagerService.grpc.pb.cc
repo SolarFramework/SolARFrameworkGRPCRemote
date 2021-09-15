@@ -43,39 +43,39 @@ static const char* grpcICovisibilityGraphManagerService_method_names[] = {
 
 std::unique_ptr< grpcICovisibilityGraphManagerService::Stub> grpcICovisibilityGraphManagerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcICovisibilityGraphManagerService::Stub> stub(new grpcICovisibilityGraphManagerService::Stub(channel, options));
+  std::unique_ptr< grpcICovisibilityGraphManagerService::Stub> stub(new grpcICovisibilityGraphManagerService::Stub(channel));
   return stub;
 }
 
-grpcICovisibilityGraphManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_increaseEdge_(grpcICovisibilityGraphManagerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_decreaseEdge_(grpcICovisibilityGraphManagerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_removeEdge_(grpcICovisibilityGraphManagerService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getEdge_(grpcICovisibilityGraphManagerService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_isEdge_(grpcICovisibilityGraphManagerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAllNodes_(grpcICovisibilityGraphManagerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_suppressNode_(grpcICovisibilityGraphManagerService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getNeighbors_(grpcICovisibilityGraphManagerService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_minimalSpanningTree_(grpcICovisibilityGraphManagerService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_maximalSpanningTree_(grpcICovisibilityGraphManagerService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getShortestPath_(grpcICovisibilityGraphManagerService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_display_(grpcICovisibilityGraphManagerService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_saveToFile_(grpcICovisibilityGraphManagerService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_loadFromFile_(grpcICovisibilityGraphManagerService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getConstCovisibilityGraph_(grpcICovisibilityGraphManagerService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getCovisibilityGraph_(grpcICovisibilityGraphManagerService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCovisibilityGraph_(grpcICovisibilityGraphManagerService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcICovisibilityGraphManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_increaseEdge_(grpcICovisibilityGraphManagerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_decreaseEdge_(grpcICovisibilityGraphManagerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_removeEdge_(grpcICovisibilityGraphManagerService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getEdge_(grpcICovisibilityGraphManagerService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_isEdge_(grpcICovisibilityGraphManagerService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAllNodes_(grpcICovisibilityGraphManagerService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_suppressNode_(grpcICovisibilityGraphManagerService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getNeighbors_(grpcICovisibilityGraphManagerService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_minimalSpanningTree_(grpcICovisibilityGraphManagerService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_maximalSpanningTree_(grpcICovisibilityGraphManagerService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getShortestPath_(grpcICovisibilityGraphManagerService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_display_(grpcICovisibilityGraphManagerService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_saveToFile_(grpcICovisibilityGraphManagerService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_loadFromFile_(grpcICovisibilityGraphManagerService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getConstCovisibilityGraph_(grpcICovisibilityGraphManagerService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getCovisibilityGraph_(grpcICovisibilityGraphManagerService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCovisibilityGraph_(grpcICovisibilityGraphManagerService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcICovisibilityGraphManagerService::Stub::increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest& request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::increaseEdgeRequest, ::grpcICovisibilityGraphManager::increaseEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_increaseEdge_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::increaseEdgeRequest, ::grpcICovisibilityGraphManager::increaseEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_increaseEdge_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::increaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::increaseEdgeRequest* request, ::grpcICovisibilityGraphManager::increaseEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_increaseEdge_, context, request, response, reactor);
 }
 
@@ -94,11 +94,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::increaseEdge(::grpc::Cli
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::decreaseEdgeRequest, ::grpcICovisibilityGraphManager::decreaseEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_decreaseEdge_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::decreaseEdgeRequest, ::grpcICovisibilityGraphManager::decreaseEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_decreaseEdge_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::decreaseEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::decreaseEdgeRequest* request, ::grpcICovisibilityGraphManager::decreaseEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_decreaseEdge_, context, request, response, reactor);
 }
 
@@ -117,11 +117,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::decreaseEdge(::grpc::Cli
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::removeEdgeRequest, ::grpcICovisibilityGraphManager::removeEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_removeEdge_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::removeEdgeRequest, ::grpcICovisibilityGraphManager::removeEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_removeEdge_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::removeEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::removeEdgeRequest* request, ::grpcICovisibilityGraphManager::removeEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_removeEdge_, context, request, response, reactor);
 }
 
@@ -140,11 +140,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::removeEdge(::grpc::Clien
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::getEdgeRequest, ::grpcICovisibilityGraphManager::getEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getEdge_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::getEdgeRequest, ::grpcICovisibilityGraphManager::getEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getEdge_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getEdgeRequest* request, ::grpcICovisibilityGraphManager::getEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getEdge_, context, request, response, reactor);
 }
 
@@ -163,11 +163,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::getEdge(::grpc::ClientCo
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::isEdgeRequest, ::grpcICovisibilityGraphManager::isEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isEdge_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::isEdgeRequest, ::grpcICovisibilityGraphManager::isEdgeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isEdge_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::isEdge(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::isEdgeRequest* request, ::grpcICovisibilityGraphManager::isEdgeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isEdge_, context, request, response, reactor);
 }
 
@@ -186,11 +186,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::isEdge(::grpc::ClientCon
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::getAllNodesRequest, ::grpcICovisibilityGraphManager::getAllNodesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getAllNodes_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::getAllNodesRequest, ::grpcICovisibilityGraphManager::getAllNodesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAllNodes_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getAllNodes(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getAllNodesRequest* request, ::grpcICovisibilityGraphManager::getAllNodesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAllNodes_, context, request, response, reactor);
 }
 
@@ -209,11 +209,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::getAllNodes(::grpc::Clie
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::suppressNodeRequest, ::grpcICovisibilityGraphManager::suppressNodeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_suppressNode_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::suppressNodeRequest, ::grpcICovisibilityGraphManager::suppressNodeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_suppressNode_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::suppressNode(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::suppressNodeRequest* request, ::grpcICovisibilityGraphManager::suppressNodeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_suppressNode_, context, request, response, reactor);
 }
 
@@ -232,11 +232,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::suppressNode(::grpc::Cli
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::getNeighborsRequest, ::grpcICovisibilityGraphManager::getNeighborsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getNeighbors_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::getNeighborsRequest, ::grpcICovisibilityGraphManager::getNeighborsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNeighbors_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getNeighbors(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getNeighborsRequest* request, ::grpcICovisibilityGraphManager::getNeighborsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getNeighbors_, context, request, response, reactor);
 }
 
@@ -255,11 +255,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::getNeighbors(::grpc::Cli
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_minimalSpanningTree_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_minimalSpanningTree_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::minimalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_minimalSpanningTree_, context, request, response, reactor);
 }
 
@@ -278,11 +278,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::minimalSpanningTree(::gr
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_maximalSpanningTree_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_maximalSpanningTree_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::maximalSpanningTree(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_maximalSpanningTree_, context, request, response, reactor);
 }
 
@@ -301,11 +301,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::maximalSpanningTree(::gr
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::getShortestPathRequest, ::grpcICovisibilityGraphManager::getShortestPathResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getShortestPath_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::getShortestPathRequest, ::grpcICovisibilityGraphManager::getShortestPathResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getShortestPath_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getShortestPath_, context, request, response, reactor);
 }
 
@@ -324,11 +324,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::getShortestPath(::grpc::
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_display_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_display_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_display_, context, request, response, reactor);
 }
 
@@ -347,11 +347,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::display(::grpc::ClientCo
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::saveToFileRequest, ::grpcICovisibilityGraphManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_saveToFile_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::saveToFileRequest, ::grpcICovisibilityGraphManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_saveToFile_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_saveToFile_, context, request, response, reactor);
 }
 
@@ -370,11 +370,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::saveToFile(::grpc::Clien
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::loadFromFileRequest, ::grpcICovisibilityGraphManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_loadFromFile_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::loadFromFileRequest, ::grpcICovisibilityGraphManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadFromFile_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadFromFile_, context, request, response, reactor);
 }
 
@@ -393,11 +393,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::loadFromFile(::grpc::Cli
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getConstCovisibilityGraph_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getConstCovisibilityGraph_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getConstCovisibilityGraph_, context, request, response, reactor);
 }
 
@@ -416,11 +416,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::getConstCovisibilityGrap
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getCovisibilityGraph_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCovisibilityGraph_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCovisibilityGraph_, context, request, response, reactor);
 }
 
@@ -439,11 +439,11 @@ void grpcICovisibilityGraphManagerService::Stub::async::getCovisibilityGraph(::g
   return ::grpc::internal::BlockingUnaryCall< ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCovisibilityGraph_, context, request, response);
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCovisibilityGraph_, context, request, response, std::move(f));
 }
 
-void grpcICovisibilityGraphManagerService::Stub::async::setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICovisibilityGraphManagerService::Stub::experimental_async::setCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCovisibilityGraph_, context, request, response, reactor);
 }
 

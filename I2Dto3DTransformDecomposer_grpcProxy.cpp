@@ -45,7 +45,7 @@ void  I2Dto3DTransformDecomposer_grpcProxy::setCameraParameters(SolAR::datastruc
   reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2Dto3DTransformDecomposerService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -61,7 +61,7 @@ bool  I2Dto3DTransformDecomposer_grpcProxy::decompose(SolAR::datastructure::Tran
   reqIn.set_decomposedposes(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(decomposedPoses));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->decompose(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "decomposerpc failed." << std::endl;
+    std::cout << "decompose rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2Dto3DTransformDecomposerService","decompose",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

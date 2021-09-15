@@ -45,7 +45,7 @@ SolAR::FrameworkReturnCode  IPointCloudLoader_grpcProxy::load(std::string const&
   reqIn.set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->load(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "loadrpc failed." << std::endl;
+    std::cout << "load rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIPointCloudLoaderService","load",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

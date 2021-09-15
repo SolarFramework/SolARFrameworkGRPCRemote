@@ -47,7 +47,7 @@ SolAR::FrameworkReturnCode  IDescriptorsExtractorSBPattern_grpcProxy::extract(st
   reqIn.set_outcontours(xpcf::serialize<std::vector<SolAR::datastructure::Contour2Df>>(outContours));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->extract_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "extract_grpc0rpc failed." << std::endl;
+    std::cout << "extract_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDescriptorsExtractorSBPatternService","extract_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -66,7 +66,7 @@ SolAR::FrameworkReturnCode  IDescriptorsExtractorSBPattern_grpcProxy::extract(So
   reqIn.set_descriptorparam(xpcf::serialize<SRef<SolAR::datastructure::DescriptorBuffer>>(descriptorParam));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->extract_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "extract_grpc1rpc failed." << std::endl;
+    std::cout << "extract_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDescriptorsExtractorSBPatternService","extract_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

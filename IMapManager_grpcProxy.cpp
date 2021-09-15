@@ -44,7 +44,7 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::setMap(SRef<SolAR::datastruct
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setMap(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setMaprpc failed." << std::endl;
+    std::cout << "setMap rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","setMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -60,7 +60,7 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getMap(SRef<SolAR::datastruct
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getMap(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getMaprpc failed." << std::endl;
+    std::cout << "getMap rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","getMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -79,7 +79,7 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getLocalPointCloud(SRef<SolAR
   reqIn.set_localpointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(localPointCloud));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getLocalPointCloud(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getLocalPointCloudrpc failed." << std::endl;
+    std::cout << "getLocalPointCloud rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","getLocalPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -96,7 +96,7 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::addCloudPoint(SRef<SolAR::dat
   reqIn.set_cloudpoint(xpcf::serialize<SRef<SolAR::datastructure::CloudPoint>>(cloudPoint));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addCloudPoint(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addCloudPointrpc failed." << std::endl;
+    std::cout << "addCloudPoint rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","addCloudPoint",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -112,7 +112,7 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::removeCloudPoint(SRef<SolAR::
   reqIn.set_cloudpoint(xpcf::serialize<SRef<SolAR::datastructure::CloudPoint>>(cloudPoint));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->removeCloudPoint(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "removeCloudPointrpc failed." << std::endl;
+    std::cout << "removeCloudPoint rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","removeCloudPoint",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -128,7 +128,7 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::addKeyframe(SRef<SolAR::datas
   reqIn.set_keyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(keyframe));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->addKeyframe(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "addKeyframerpc failed." << std::endl;
+    std::cout << "addKeyframe rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","addKeyframe",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -144,7 +144,7 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::removeKeyframe(SRef<SolAR::da
   reqIn.set_keyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(keyframe));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->removeKeyframe(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "removeKeyframerpc failed." << std::endl;
+    std::cout << "removeKeyframe rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","removeKeyframe",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -160,7 +160,7 @@ int  IMapManager_grpcProxy::pointCloudPruning(std::vector<SRef<SolAR::datastruct
   reqIn.set_cloudpoints(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(cloudPoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->pointCloudPruning(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "pointCloudPruningrpc failed." << std::endl;
+    std::cout << "pointCloudPruning rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","pointCloudPruning",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -176,7 +176,7 @@ int  IMapManager_grpcProxy::keyframePruning(std::vector<SRef<SolAR::datastructur
   reqIn.set_keyframes(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Keyframe>>>(keyframes));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->keyframePruning(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "keyframePruningrpc failed." << std::endl;
+    std::cout << "keyframePruning rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","keyframePruning",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -191,7 +191,7 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::saveToFile() const
   ::grpcIMapManager::saveToFileResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->saveToFile(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "saveToFilerpc failed." << std::endl;
+    std::cout << "saveToFile rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","saveToFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -206,7 +206,7 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::loadFromFile()
   ::grpcIMapManager::loadFromFileResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->loadFromFile(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "loadFromFilerpc failed." << std::endl;
+    std::cout << "loadFromFile rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","loadFromFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

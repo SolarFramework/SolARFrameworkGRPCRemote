@@ -27,23 +27,23 @@ static const char* grpcITrackableLoaderService_method_names[] = {
 
 std::unique_ptr< grpcITrackableLoaderService::Stub> grpcITrackableLoaderService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcITrackableLoaderService::Stub> stub(new grpcITrackableLoaderService::Stub(channel, options));
+  std::unique_ptr< grpcITrackableLoaderService::Stub> stub(new grpcITrackableLoaderService::Stub(channel));
   return stub;
 }
 
-grpcITrackableLoaderService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_loadTrackable_(grpcITrackableLoaderService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcITrackableLoaderService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_loadTrackable_(grpcITrackableLoaderService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcITrackableLoaderService::Stub::loadTrackable(::grpc::ClientContext* context, const ::grpcITrackableLoader::loadTrackableRequest& request, ::grpcITrackableLoader::loadTrackableResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcITrackableLoader::loadTrackableRequest, ::grpcITrackableLoader::loadTrackableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_loadTrackable_, context, request, response);
 }
 
-void grpcITrackableLoaderService::Stub::async::loadTrackable(::grpc::ClientContext* context, const ::grpcITrackableLoader::loadTrackableRequest* request, ::grpcITrackableLoader::loadTrackableResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcITrackableLoaderService::Stub::experimental_async::loadTrackable(::grpc::ClientContext* context, const ::grpcITrackableLoader::loadTrackableRequest* request, ::grpcITrackableLoader::loadTrackableResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITrackableLoader::loadTrackableRequest, ::grpcITrackableLoader::loadTrackableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadTrackable_, context, request, response, std::move(f));
 }
 
-void grpcITrackableLoaderService::Stub::async::loadTrackable(::grpc::ClientContext* context, const ::grpcITrackableLoader::loadTrackableRequest* request, ::grpcITrackableLoader::loadTrackableResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcITrackableLoaderService::Stub::experimental_async::loadTrackable(::grpc::ClientContext* context, const ::grpcITrackableLoader::loadTrackableRequest* request, ::grpcITrackableLoader::loadTrackableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadTrackable_, context, request, response, reactor);
 }
 

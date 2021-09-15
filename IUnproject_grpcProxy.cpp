@@ -45,7 +45,7 @@ void  IUnproject_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibra
   reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIUnprojectService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -62,7 +62,7 @@ SolAR::FrameworkReturnCode  IUnproject_grpcProxy::unproject(std::vector<SolAR::d
   reqIn.set_worldpoints(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(worldPoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->unproject_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "unproject_grpc0rpc failed." << std::endl;
+    std::cout << "unproject_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIUnprojectService","unproject_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -81,7 +81,7 @@ SolAR::FrameworkReturnCode  IUnproject_grpcProxy::unproject(std::vector<SolAR::d
   reqIn.set_worldpoints(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(worldPoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->unproject_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "unproject_grpc1rpc failed." << std::endl;
+    std::cout << "unproject_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIUnprojectService","unproject_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

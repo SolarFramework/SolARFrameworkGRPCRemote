@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIBootstrapperStereo;
+
+message setCameraParametersRequest
+{
+bytes intrinsicParams = 1;
+}
+
+message processRequest
+{
+bytes frame = 1;
+bytes view = 2;
+}
+
+message processResponse
+{
+bytes view = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIBootstrapperStereoService {
+rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc process(processRequest) returns(processResponse) {}
+}
+

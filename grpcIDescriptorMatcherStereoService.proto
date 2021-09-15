@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIDescriptorMatcherStereo;
+
+message match_grpc0Request
+{
+bytes descriptors1 = 1;
+bytes descriptors2 = 2;
+bytes undistortedKeypoints1 = 3;
+bytes undistortedKeypoints2 = 4;
+bytes type = 5;
+bytes matches = 6;
+}
+
+message match_grpc0Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message match_grpc1Request
+{
+bytes frame1 = 1;
+bytes frame2 = 2;
+bytes type = 3;
+bytes matches = 4;
+}
+
+message match_grpc1Response
+{
+bytes matches = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIDescriptorMatcherStereoService {
+rpc match_grpc0(match_grpc0Request) returns(match_grpc0Response) {}
+rpc match_grpc1(match_grpc1Request) returns(match_grpc1Response) {}
+}
+

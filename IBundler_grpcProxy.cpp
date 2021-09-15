@@ -44,7 +44,7 @@ SolAR::FrameworkReturnCode  IBundler_grpcProxy::setMap(SRef<SolAR::datastructure
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setMap(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setMaprpc failed." << std::endl;
+    std::cout << "setMap rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIBundlerService","setMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -62,7 +62,7 @@ double  IBundler_grpcProxy::bundleAdjustment(SolAR::datastructure::CamCalibratio
   reqIn.set_d(xpcf::serialize<SolAR::datastructure::CamDistortion>(D));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->bundleAdjustment(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "bundleAdjustmentrpc failed." << std::endl;
+    std::cout << "bundleAdjustment rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIBundlerService","bundleAdjustment",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -87,7 +87,7 @@ double  IBundler_grpcProxy::optimizeSim3(SolAR::datastructure::CamCalibration& K
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->optimizeSim3(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "optimizeSim3rpc failed." << std::endl;
+    std::cout << "optimizeSim3 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIBundlerService","optimizeSim3",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

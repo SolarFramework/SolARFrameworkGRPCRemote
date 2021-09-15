@@ -28,24 +28,24 @@ static const char* grpcIImageViewerService_method_names[] = {
 
 std::unique_ptr< grpcIImageViewerService::Stub> grpcIImageViewerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIImageViewerService::Stub> stub(new grpcIImageViewerService::Stub(channel, options));
+  std::unique_ptr< grpcIImageViewerService::Stub> stub(new grpcIImageViewerService::Stub(channel));
   return stub;
 }
 
-grpcIImageViewerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_display_(grpcIImageViewerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_displayKey_(grpcIImageViewerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIImageViewerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_display_(grpcIImageViewerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_displayKey_(grpcIImageViewerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIImageViewerService::Stub::display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest& request, ::grpcIImageViewer::displayResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIImageViewer::displayRequest, ::grpcIImageViewer::displayResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_display_, context, request, response);
 }
 
-void grpcIImageViewerService::Stub::async::display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIImageViewerService::Stub::experimental_async::display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIImageViewer::displayRequest, ::grpcIImageViewer::displayResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_display_, context, request, response, std::move(f));
 }
 
-void grpcIImageViewerService::Stub::async::display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIImageViewerService::Stub::experimental_async::display(::grpc::ClientContext* context, const ::grpcIImageViewer::displayRequest* request, ::grpcIImageViewer::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_display_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIImageViewerService::Stub::async::display(::grpc::ClientContext* contex
   return ::grpc::internal::BlockingUnaryCall< ::grpcIImageViewer::displayKeyRequest, ::grpcIImageViewer::displayKeyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_displayKey_, context, request, response);
 }
 
-void grpcIImageViewerService::Stub::async::displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIImageViewerService::Stub::experimental_async::displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIImageViewer::displayKeyRequest, ::grpcIImageViewer::displayKeyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_displayKey_, context, request, response, std::move(f));
 }
 
-void grpcIImageViewerService::Stub::async::displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIImageViewerService::Stub::experimental_async::displayKey(::grpc::ClientContext* context, const ::grpcIImageViewer::displayKeyRequest* request, ::grpcIImageViewer::displayKeyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_displayKey_, context, request, response, reactor);
 }
 

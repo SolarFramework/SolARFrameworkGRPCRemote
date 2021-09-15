@@ -45,7 +45,7 @@ SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<So
   reqIn.set_outputpoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(outputPoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->undistort_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "undistort_grpc0rpc failed." << std::endl;
+    std::cout << "undistort_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIUndistortPointsService","undistort_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -63,7 +63,7 @@ SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<So
   reqIn.set_outputkeypoints(xpcf::serialize<std::vector<SolAR::datastructure::Keypoint>>(outputKeypoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->undistort_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "undistort_grpc1rpc failed." << std::endl;
+    std::cout << "undistort_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIUndistortPointsService","undistort_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -81,7 +81,7 @@ void  IUndistortPoints_grpcProxy::setCameraParameters(SolAR::datastructure::CamC
   reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParametersrpc failed." << std::endl;
+    std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIUndistortPointsService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

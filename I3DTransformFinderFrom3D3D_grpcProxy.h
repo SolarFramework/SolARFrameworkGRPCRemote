@@ -3,7 +3,7 @@
 
 #ifndef I3DTRANSFORMFINDERFROM3D3D_GRPCPROXY_H
 #define I3DTRANSFORMFINDERFROM3D3D_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformFinderFrom3D3D.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformFinderFrom3D3D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class I3DTransformFinderFrom3D3D_grpcProxy:  public org::bcom::xpcf::Configurabl
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DTransformFinderFrom3D3D::I3DTransformFinderFrom3D3D_grpcProxy>
 {
-  static constexpr const char * UUID = "3e561352-1326-4be3-8d4c-022c7fb49d54";
+  static constexpr const char * UUID = "dde0115e-cd97-4c8f-b500-49e5ac594f6e";
   static constexpr const char * NAME = "I3DTransformFinderFrom3D3D_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DTransformFinderFrom3D3D_grpcProxy grpc client proxy component";
 };

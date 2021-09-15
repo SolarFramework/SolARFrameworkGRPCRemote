@@ -44,7 +44,7 @@ SolAR::FrameworkReturnCode  IImageLoader_grpcProxy::getImage(SRef<SolAR::datastr
   reqIn.set_img(xpcf::serialize<SRef<SolAR::datastructure::Image>>(img));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getImage(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getImagerpc failed." << std::endl;
+    std::cout << "getImage rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIImageLoaderService","getImage",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -60,7 +60,7 @@ SolAR::FrameworkReturnCode  IImageLoader_grpcProxy::reloadImage()
   ::grpcIImageLoader::reloadImageResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->reloadImage(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "reloadImagerpc failed." << std::endl;
+    std::cout << "reloadImage rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIImageLoaderService","reloadImage",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

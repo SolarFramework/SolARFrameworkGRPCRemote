@@ -43,7 +43,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::start()
   ::grpcIRGBDCamera::startResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "startrpc failed." << std::endl;
+    std::cout << "start rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -58,7 +58,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::stop()
   ::grpcIRGBDCamera::stopResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "stoprpc failed." << std::endl;
+    std::cout << "stop rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -74,7 +74,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::getNextImage(SRef<SolAR::data
   reqIn.set_img(xpcf::serialize<SRef<SolAR::datastructure::Image>>(img));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getNextImage(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getNextImagerpc failed." << std::endl;
+    std::cout << "getNextImage rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getNextImage",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -91,7 +91,7 @@ void  IRGBDCamera_grpcProxy::setResolution(SolAR::datastructure::Sizei const& re
   reqIn.set_resolution(xpcf::serialize<SolAR::datastructure::Sizei>(resolution));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setResolution(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setResolutionrpc failed." << std::endl;
+    std::cout << "setResolution rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","setResolution",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -106,7 +106,7 @@ void  IRGBDCamera_grpcProxy::setIntrinsicParameters(SolAR::datastructure::CamCal
   reqIn.set_intrinsic_parameters(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsic_parameters));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setIntrinsicParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setIntrinsicParametersrpc failed." << std::endl;
+    std::cout << "setIntrinsicParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","setIntrinsicParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -121,7 +121,7 @@ void  IRGBDCamera_grpcProxy::setDistortionParameters(SolAR::datastructure::CamDi
   reqIn.set_distortion_parameters(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortion_parameters));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setDistortionParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setDistortionParametersrpc failed." << std::endl;
+    std::cout << "setDistortionParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","setDistortionParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -136,7 +136,7 @@ void  IRGBDCamera_grpcProxy::setParameters(SolAR::datastructure::CameraParameter
   reqIn.set_parameters(xpcf::serialize<SolAR::datastructure::CameraParameters>(parameters));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setParametersrpc failed." << std::endl;
+    std::cout << "setParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","setParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -150,7 +150,7 @@ SolAR::datastructure::Sizei  IRGBDCamera_grpcProxy::getResolution() const
   ::grpcIRGBDCamera::getResolutionResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getResolution(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getResolutionrpc failed." << std::endl;
+    std::cout << "getResolution rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getResolution",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -165,7 +165,7 @@ SolAR::datastructure::CamCalibration const&  IRGBDCamera_grpcProxy::getIntrinsic
   ::grpcIRGBDCamera::getIntrinsicsParametersResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getIntrinsicsParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getIntrinsicsParametersrpc failed." << std::endl;
+    std::cout << "getIntrinsicsParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getIntrinsicsParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -181,7 +181,7 @@ SolAR::datastructure::CameraParameters const&  IRGBDCamera_grpcProxy::getParamet
   ::grpcIRGBDCamera::getParametersResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getParametersrpc failed." << std::endl;
+    std::cout << "getParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -197,7 +197,7 @@ SolAR::datastructure::CamDistortion const&  IRGBDCamera_grpcProxy::getDistortion
   ::grpcIRGBDCamera::getDistortionParametersResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDistortionParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDistortionParametersrpc failed." << std::endl;
+    std::cout << "getDistortionParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getDistortionParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -214,7 +214,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::getNextDepthFrame(SRef<SolAR:
   reqIn.set_img(xpcf::serialize<SRef<SolAR::datastructure::Image>>(img));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getNextDepthFrame(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getNextDepthFramerpc failed." << std::endl;
+    std::cout << "getNextDepthFrame rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getNextDepthFrame",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -231,7 +231,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::getPointCloud(SRef<SolAR::dat
   reqIn.set_pc(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pc));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getPointCloud(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getPointCloudrpc failed." << std::endl;
+    std::cout << "getPointCloud rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -248,7 +248,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::setDepthResolution(SolAR::dat
   reqIn.set_resolution(xpcf::serialize<SolAR::datastructure::Sizei>(resolution));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setDepthResolution(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setDepthResolutionrpc failed." << std::endl;
+    std::cout << "setDepthResolution rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","setDepthResolution",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -264,7 +264,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::setIntrinsicDepthParameters(S
   reqIn.set_intrinsic_parameters(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsic_parameters));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setIntrinsicDepthParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setIntrinsicDepthParametersrpc failed." << std::endl;
+    std::cout << "setIntrinsicDepthParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","setIntrinsicDepthParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -280,7 +280,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::setDistortionDepthParameters(
   reqIn.set_distortion_parameters(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortion_parameters));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setDistortionDepthParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setDistortionDepthParametersrpc failed." << std::endl;
+    std::cout << "setDistortionDepthParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","setDistortionDepthParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -295,7 +295,7 @@ SolAR::datastructure::Sizei  IRGBDCamera_grpcProxy::getDepthResolution() const
   ::grpcIRGBDCamera::getDepthResolutionResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDepthResolution(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDepthResolutionrpc failed." << std::endl;
+    std::cout << "getDepthResolution rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getDepthResolution",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -310,7 +310,7 @@ float  IRGBDCamera_grpcProxy::getDepthMinDistance() const
   ::grpcIRGBDCamera::getDepthMinDistanceResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDepthMinDistance(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDepthMinDistancerpc failed." << std::endl;
+    std::cout << "getDepthMinDistance rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getDepthMinDistance",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -325,7 +325,7 @@ SolAR::datastructure::CamCalibration const&  IRGBDCamera_grpcProxy::getIntrinsic
   ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getIntrinsicsDepthParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getIntrinsicsDepthParametersrpc failed." << std::endl;
+    std::cout << "getIntrinsicsDepthParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getIntrinsicsDepthParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -341,7 +341,7 @@ SolAR::datastructure::CamDistortion const&  IRGBDCamera_grpcProxy::getDistortion
   ::grpcIRGBDCamera::getDistortionDepthParametersResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDistortionDepthParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDistortionDepthParametersrpc failed." << std::endl;
+    std::cout << "getDistortionDepthParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getDistortionDepthParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -359,7 +359,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::getNextRGBDFrame(SRef<SolAR::
   reqIn.set_depthimg(xpcf::serialize<SRef<SolAR::datastructure::Image>>(depthImg));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getNextRGBDFrame(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getNextRGBDFramerpc failed." << std::endl;
+    std::cout << "getNextRGBDFrame rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getNextRGBDFrame",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -377,7 +377,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::alignDepthToColor(SRef<SolAR:
   reqIn.set_aligneddepthimg(xpcf::serialize<SRef<SolAR::datastructure::Image>>(alignedDepthImg));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->alignDepthToColor(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "alignDepthToColorrpc failed." << std::endl;
+    std::cout << "alignDepthToColor rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","alignDepthToColor",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -394,7 +394,7 @@ SolAR::FrameworkReturnCode  IRGBDCamera_grpcProxy::alignColorToDepth(SRef<SolAR:
   reqIn.set_alignedcolorimg(xpcf::serialize<SRef<SolAR::datastructure::Image>>(alignedColorImg));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->alignColorToDepth(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "alignColorToDepthrpc failed." << std::endl;
+    std::cout << "alignColorToDepth rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","alignColorToDepth",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -411,7 +411,7 @@ SolAR::datastructure::Point3Df  IRGBDCamera_grpcProxy::getPixelToWorld(SolAR::da
   reqIn.set_inpixel(xpcf::serialize<SolAR::datastructure::Point2Di>(inPixel));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getPixelToWorld(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getPixelToWorldrpc failed." << std::endl;
+    std::cout << "getPixelToWorld rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getPixelToWorld",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -427,7 +427,7 @@ SolAR::datastructure::Point2Di  IRGBDCamera_grpcProxy::getWorldToPixel(SolAR::da
   reqIn.set_in3dpoint(xpcf::serialize<SolAR::datastructure::CloudPoint>(in3DPoint));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getWorldToPixel(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getWorldToPixelrpc failed." << std::endl;
+    std::cout << "getWorldToPixel rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getWorldToPixel",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -443,7 +443,7 @@ std::vector<SolAR::datastructure::Point2Df>  IRGBDCamera_grpcProxy::getWorldToPi
   reqIn.set_in3dpoints(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(in3DPoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getWorldToPixels(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getWorldToPixelsrpc failed." << std::endl;
+    std::cout << "getWorldToPixels rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIRGBDCameraService","getWorldToPixels",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

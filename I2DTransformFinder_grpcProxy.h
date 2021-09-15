@@ -3,7 +3,7 @@
 
 #ifndef I2DTRANSFORMFINDER_GRPCPROXY_H
 #define I2DTRANSFORMFINDER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2DTransformFinder.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2DTransformFinder.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class I2DTransformFinder_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2DTransformFinder::I2DTransformFinder_grpcProxy>
 {
-  static constexpr const char * UUID = "92cf96f7-3e36-4ac9-bca6-9b351c2b621f";
+  static constexpr const char * UUID = "dcf28746-4e9c-49cd-98a2-35b5844e49d6";
   static constexpr const char * NAME = "I2DTransformFinder_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2DTransformFinder_grpcProxy grpc client proxy component";
 };

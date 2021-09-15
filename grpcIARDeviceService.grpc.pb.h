@@ -7,6 +7,7 @@
 #include "grpcIARDeviceService.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
@@ -49,13 +50,6 @@ class grpcIARDeviceService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
-    virtual ::grpc::Status getNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIARDevice::getNbCamerasResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getNbCamerasResponse>> AsyncgetNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getNbCamerasResponse>>(AsyncgetNbCamerasRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getNbCamerasResponse>> PrepareAsyncgetNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getNbCamerasResponse>>(PrepareAsyncgetNbCamerasRaw(context, request, cq));
-    }
     virtual ::grpc::Status getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpcIARDevice::getDataResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getDataResponse>> AsyncgetData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getDataResponse>>(AsyncgetDataRaw(context, request, cq));
@@ -63,56 +57,61 @@ class grpcIARDeviceService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getDataResponse>> PrepareAsyncgetData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getDataResponse>>(PrepareAsyncgetDataRaw(context, request, cq));
     }
-    virtual ::grpc::Status getParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpcIARDevice::getParametersResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getParametersResponse>> AsyncgetParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getParametersResponse>>(AsyncgetParametersRaw(context, request, cq));
+    virtual ::grpc::Status getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIARDevice::getCameraParametersResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getCameraParametersResponse>> AsyncgetCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getCameraParametersResponse>>(AsyncgetCameraParametersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getParametersResponse>> PrepareAsyncgetParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getParametersResponse>>(PrepareAsyncgetParametersRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getCameraParametersResponse>> PrepareAsyncgetCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getCameraParametersResponse>>(PrepareAsyncgetCameraParametersRaw(context, request, cq));
     }
-    virtual ::grpc::Status setParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::google::protobuf::Empty* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncsetParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncsetParametersRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncsetParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncsetParametersRaw(context, request, cq));
-    }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void getNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void getNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void getParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void getParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void setParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void setParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getNbCamerasResponse>* AsyncgetNbCamerasRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getNbCamerasResponse>* PrepareAsyncgetNbCamerasRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getDataResponse>* AsyncgetDataRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getDataResponse>* PrepareAsyncgetDataRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getParametersResponse>* AsyncgetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getParametersResponse>* PrepareAsyncgetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncsetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncsetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getCameraParametersResponse>* AsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getCameraParametersResponse>* PrepareAsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIARDevice::startResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::startResponse>>(AsyncstartRaw(context, request, cq));
@@ -127,13 +126,6 @@ class grpcIARDeviceService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
-    ::grpc::Status getNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIARDevice::getNbCamerasResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getNbCamerasResponse>> AsyncgetNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getNbCamerasResponse>>(AsyncgetNbCamerasRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getNbCamerasResponse>> PrepareAsyncgetNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getNbCamerasResponse>>(PrepareAsyncgetNbCamerasRaw(context, request, cq));
-    }
     ::grpc::Status getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpcIARDevice::getDataResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getDataResponse>> AsyncgetData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getDataResponse>>(AsyncgetDataRaw(context, request, cq));
@@ -141,64 +133,63 @@ class grpcIARDeviceService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getDataResponse>> PrepareAsyncgetData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getDataResponse>>(PrepareAsyncgetDataRaw(context, request, cq));
     }
-    ::grpc::Status getParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpcIARDevice::getParametersResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getParametersResponse>> AsyncgetParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getParametersResponse>>(AsyncgetParametersRaw(context, request, cq));
+    ::grpc::Status getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIARDevice::getCameraParametersResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>> AsyncgetCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>>(AsyncgetCameraParametersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getParametersResponse>> PrepareAsyncgetParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getParametersResponse>>(PrepareAsyncgetParametersRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>> PrepareAsyncgetCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>>(PrepareAsyncgetCameraParametersRaw(context, request, cq));
     }
-    ::grpc::Status setParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::google::protobuf::Empty* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncsetParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncsetParametersRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncsetParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncsetParametersRaw(context, request, cq));
-    }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void getNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response, std::function<void(::grpc::Status)>) override;
-      void getNbCameras(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void getParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response, std::function<void(::grpc::Status)>) override;
-      void getParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void setParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      void setParameters(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getCameraParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getNbCamerasResponse>* AsyncgetNbCamerasRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getNbCamerasResponse>* PrepareAsyncgetNbCamerasRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getDataResponse>* AsyncgetDataRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getDataResponse>* PrepareAsyncgetDataRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getParametersResponse>* AsyncgetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getParametersResponse>* PrepareAsyncgetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::getParametersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncsetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncsetParametersRaw(::grpc::ClientContext* context, const ::grpcIARDevice::setParametersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>* AsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>* PrepareAsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_start_;
     const ::grpc::internal::RpcMethod rpcmethod_stop_;
-    const ::grpc::internal::RpcMethod rpcmethod_getNbCameras_;
     const ::grpc::internal::RpcMethod rpcmethod_getData_;
-    const ::grpc::internal::RpcMethod rpcmethod_getParameters_;
-    const ::grpc::internal::RpcMethod rpcmethod_setParameters_;
+    const ::grpc::internal::RpcMethod rpcmethod_getCameraParameters_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -208,10 +199,8 @@ class grpcIARDeviceService final {
     virtual ~Service();
     virtual ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response);
     virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response);
-    virtual ::grpc::Status getNbCameras(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response);
     virtual ::grpc::Status getData(::grpc::ServerContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response);
-    virtual ::grpc::Status getParameters(::grpc::ServerContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response);
-    virtual ::grpc::Status setParameters(::grpc::ServerContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response);
+    virtual ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_start : public BaseClass {
@@ -254,32 +243,12 @@ class grpcIARDeviceService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_getNbCameras : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_getNbCameras() {
-      ::grpc::Service::MarkMethodAsync(2);
-    }
-    ~WithAsyncMethod_getNbCameras() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getNbCameras(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getNbCamerasResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestgetNbCameras(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIARDevice::getNbCamerasResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_getData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getData() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_getData() override {
       BaseClassMustBeDerivedFromService(this);
@@ -290,67 +259,61 @@ class grpcIARDeviceService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetData(::grpc::ServerContext* context, ::grpcIARDevice::getDataRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIARDevice::getDataResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_getCameraParameters : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_getCameraParameters() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_getCameraParameters() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getCameraParameters(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetCameraParameters(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIARDevice::getCameraParametersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
+  typedef WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_getData<WithAsyncMethod_getCameraParameters<Service > > > > AsyncService;
   template <class BaseClass>
-  class WithAsyncMethod_getParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_getParameters() {
-      ::grpc::Service::MarkMethodAsync(4);
-    }
-    ~WithAsyncMethod_getParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::getParametersRequest* /*request*/, ::grpcIARDevice::getParametersResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestgetParameters(::grpc::ServerContext* context, ::grpcIARDevice::getParametersRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIARDevice::getParametersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_setParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_setParameters() {
-      ::grpc::Service::MarkMethodAsync(5);
-    }
-    ~WithAsyncMethod_setParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestsetParameters(::grpc::ServerContext* context, ::grpcIARDevice::setParametersRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  typedef WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_getNbCameras<WithAsyncMethod_getData<WithAsyncMethod_getParameters<WithAsyncMethod_setParameters<Service > > > > > > AsyncService;
-  template <class BaseClass>
-  class WithCallbackMethod_start : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_start() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_start() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIARDevice::startResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response) { return this->start(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIARDevice::startResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIARDevice::startResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIARDevice::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_start() override {
+    ~ExperimentalWithCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -358,26 +321,46 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::startResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::startResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* start(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::startResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_stop : public BaseClass {
+  class ExperimentalWithCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_stop() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_stop() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIARDevice::stopResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response) { return this->stop(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIARDevice::stopResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIARDevice::stopResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIARDevice::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_stop() override {
+    ~ExperimentalWithCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -385,53 +368,46 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::stopResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::stopResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* stop(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::stopResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getNbCameras : public BaseClass {
+  class ExperimentalWithCallbackMethod_getData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getNbCameras() {
-      ::grpc::Service::MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIARDevice::getNbCamerasResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getNbCamerasResponse* response) { return this->getNbCameras(context, request, response); }));}
-    void SetMessageAllocatorFor_getNbCameras(
-        ::grpc::MessageAllocator< ::google::protobuf::Empty, ::grpcIARDevice::getNbCamerasResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIARDevice::getNbCamerasResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_getNbCameras() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getNbCameras(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getNbCamerasResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* getNbCameras(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getNbCamerasResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_getData : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_getData() {
-      ::grpc::Service::MarkMethodCallback(3,
+    ExperimentalWithCallbackMethod_getData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response) { return this->getData(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response) { return this->getData(context, request, response); }));}
     void SetMessageAllocatorFor_getData(
-        ::grpc::MessageAllocator< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+        ::grpc::experimental::MessageAllocator< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getData() override {
+    ~ExperimentalWithCallbackMethod_getData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -439,65 +415,67 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::getDataRequest* /*request*/, ::grpcIARDevice::getDataResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::getDataRequest* /*request*/, ::grpcIARDevice::getDataResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIARDevice::getDataRequest* /*request*/, ::grpcIARDevice::getDataResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getParameters : public BaseClass {
+  class ExperimentalWithCallbackMethod_getCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getParameters() {
-      ::grpc::Service::MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::getParametersRequest, ::grpcIARDevice::getParametersResponse>(
+    ExperimentalWithCallbackMethod_getCameraParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIARDevice::getCameraParametersResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIARDevice::getParametersRequest* request, ::grpcIARDevice::getParametersResponse* response) { return this->getParameters(context, request, response); }));}
-    void SetMessageAllocatorFor_getParameters(
-        ::grpc::MessageAllocator< ::grpcIARDevice::getParametersRequest, ::grpcIARDevice::getParametersResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::getParametersRequest, ::grpcIARDevice::getParametersResponse>*>(handler)
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response) { return this->getCameraParameters(context, request, response); }));}
+    void SetMessageAllocatorFor_getCameraParameters(
+        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIARDevice::getCameraParametersResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIARDevice::getCameraParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getParameters() override {
+    ~ExperimentalWithCallbackMethod_getCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::getParametersRequest* /*request*/, ::grpcIARDevice::getParametersResponse* /*response*/) override {
+    ::grpc::Status getCameraParameters(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* getParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::getParametersRequest* /*request*/, ::grpcIARDevice::getParametersResponse* /*response*/)  { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getCameraParameters(
+      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getCameraParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  template <class BaseClass>
-  class WithCallbackMethod_setParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_setParameters() {
-      ::grpc::Service::MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::setParametersRequest, ::google::protobuf::Empty>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIARDevice::setParametersRequest* request, ::google::protobuf::Empty* response) { return this->setParameters(context, request, response); }));}
-    void SetMessageAllocatorFor_setParameters(
-        ::grpc::MessageAllocator< ::grpcIARDevice::setParametersRequest, ::google::protobuf::Empty>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::setParametersRequest, ::google::protobuf::Empty>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_setParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* setParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
-  };
-  typedef WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_getNbCameras<WithCallbackMethod_getData<WithCallbackMethod_getParameters<WithCallbackMethod_setParameters<Service > > > > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_getData<ExperimentalWithCallbackMethod_getCameraParameters<Service > > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_getData<ExperimentalWithCallbackMethod_getCameraParameters<Service > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_start : public BaseClass {
    private:
@@ -533,29 +511,12 @@ class grpcIARDeviceService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_getNbCameras : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_getNbCameras() {
-      ::grpc::Service::MarkMethodGeneric(2);
-    }
-    ~WithGenericMethod_getNbCameras() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getNbCameras(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getNbCamerasResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_getData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getData() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_getData() override {
       BaseClassMustBeDerivedFromService(this);
@@ -567,35 +528,18 @@ class grpcIARDeviceService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_getParameters : public BaseClass {
+  class WithGenericMethod_getCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_getParameters() {
-      ::grpc::Service::MarkMethodGeneric(4);
+    WithGenericMethod_getCameraParameters() {
+      ::grpc::Service::MarkMethodGeneric(3);
     }
-    ~WithGenericMethod_getParameters() override {
+    ~WithGenericMethod_getCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::getParametersRequest* /*request*/, ::grpcIARDevice::getParametersResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_setParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_setParameters() {
-      ::grpc::Service::MarkMethodGeneric(5);
-    }
-    ~WithGenericMethod_setParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
+    ::grpc::Status getCameraParameters(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -641,32 +585,12 @@ class grpcIARDeviceService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_getNbCameras : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_getNbCameras() {
-      ::grpc::Service::MarkMethodRaw(2);
-    }
-    ~WithRawMethod_getNbCameras() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getNbCameras(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getNbCamerasResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestgetNbCameras(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_getData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getData() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_getData() override {
       BaseClassMustBeDerivedFromService(this);
@@ -677,61 +601,51 @@ class grpcIARDeviceService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetData(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_getCameraParameters : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_getCameraParameters() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_getCameraParameters() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getCameraParameters(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetCameraParameters(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithRawMethod_getParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_getParameters() {
-      ::grpc::Service::MarkMethodRaw(4);
-    }
-    ~WithRawMethod_getParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::getParametersRequest* /*request*/, ::grpcIARDevice::getParametersResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestgetParameters(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_setParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_setParameters() {
-      ::grpc::Service::MarkMethodRaw(5);
-    }
-    ~WithRawMethod_setParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestsetParameters(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_start : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_start() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_start() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
     }
-    ~WithRawCallbackMethod_start() override {
+    ~ExperimentalWithRawCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -739,21 +653,37 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* start(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_stop : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_stop() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_stop() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
     }
-    ~WithRawCallbackMethod_stop() override {
+    ~ExperimentalWithRawCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -761,43 +691,37 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* stop(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getNbCameras : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getNbCameras() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+    ExperimentalWithRawCallbackMethod_getData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getNbCameras(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getData(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getNbCameras() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status getNbCameras(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getNbCamerasResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* getNbCameras(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_getData : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_getData() {
-      ::grpc::Service::MarkMethodRawCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getData(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_getData() override {
+    ~ExperimentalWithRawCallbackMethod_getData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -805,52 +729,52 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getParameters : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getParameters() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+    ExperimentalWithRawCallbackMethod_getCameraParameters() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getParameters(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getCameraParameters(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getParameters() override {
+    ~ExperimentalWithRawCallbackMethod_getCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::getParametersRequest* /*request*/, ::grpcIARDevice::getParametersResponse* /*response*/) override {
+    ::grpc::Status getCameraParameters(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* getParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_setParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_setParameters() {
-      ::grpc::Service::MarkMethodRawCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setParameters(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_setParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* setParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getCameraParameters(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getCameraParameters(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_start : public BaseClass {
@@ -907,39 +831,12 @@ class grpcIARDeviceService final {
     virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIARDevice::stopResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_getNbCameras : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_getNbCameras() {
-      ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIARDevice::getNbCamerasResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIARDevice::getNbCamerasResponse>* streamer) {
-                       return this->StreamedgetNbCameras(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_getNbCameras() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status getNbCameras(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getNbCamerasResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetNbCameras(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIARDevice::getNbCamerasResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_getData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getData() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse>(
             [this](::grpc::ServerContext* context,
@@ -961,62 +858,35 @@ class grpcIARDeviceService final {
     virtual ::grpc::Status StreamedgetData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIARDevice::getDataRequest,::grpcIARDevice::getDataResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_getParameters : public BaseClass {
+  class WithStreamedUnaryMethod_getCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_getParameters() {
-      ::grpc::Service::MarkMethodStreamed(4,
+    WithStreamedUnaryMethod_getCameraParameters() {
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIARDevice::getParametersRequest, ::grpcIARDevice::getParametersResponse>(
+          ::google::protobuf::Empty, ::grpcIARDevice::getCameraParametersResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::grpcIARDevice::getParametersRequest, ::grpcIARDevice::getParametersResponse>* streamer) {
-                       return this->StreamedgetParameters(context,
+                     ::google::protobuf::Empty, ::grpcIARDevice::getCameraParametersResponse>* streamer) {
+                       return this->StreamedgetCameraParameters(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_getParameters() override {
+    ~WithStreamedUnaryMethod_getCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::getParametersRequest* /*request*/, ::grpcIARDevice::getParametersResponse* /*response*/) override {
+    ::grpc::Status getCameraParameters(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetParameters(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIARDevice::getParametersRequest,::grpcIARDevice::getParametersResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetCameraParameters(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIARDevice::getCameraParametersResponse>* server_unary_streamer) = 0;
   };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_setParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_setParameters() {
-      ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIARDevice::setParametersRequest, ::google::protobuf::Empty>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::grpcIARDevice::setParametersRequest, ::google::protobuf::Empty>* streamer) {
-                       return this->StreamedsetParameters(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_setParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status setParameters(::grpc::ServerContext* /*context*/, const ::grpcIARDevice::setParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedsetParameters(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIARDevice::setParametersRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
-  };
-  typedef WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getNbCameras<WithStreamedUnaryMethod_getData<WithStreamedUnaryMethod_getParameters<WithStreamedUnaryMethod_setParameters<Service > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getData<WithStreamedUnaryMethod_getCameraParameters<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getNbCameras<WithStreamedUnaryMethod_getData<WithStreamedUnaryMethod_getParameters<WithStreamedUnaryMethod_setParameters<Service > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getData<WithStreamedUnaryMethod_getCameraParameters<Service > > > > StreamedService;
 };
 
 }  // namespace grpcIARDevice

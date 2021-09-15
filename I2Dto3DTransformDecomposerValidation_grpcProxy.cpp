@@ -43,7 +43,7 @@ void  I2Dto3DTransformDecomposerValidation_grpcProxy::testMethod()
   ::google::protobuf::Empty respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->testMethod(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "testMethodrpc failed." << std::endl;
+    std::cout << "testMethod rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2Dto3DTransformDecomposerValidationService","testMethod",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

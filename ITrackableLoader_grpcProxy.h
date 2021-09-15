@@ -3,7 +3,7 @@
 
 #ifndef ITRACKABLELOADER_GRPCPROXY_H
 #define ITRACKABLELOADER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/files/ITrackableLoader.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/files/ITrackableLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class ITrackableLoader_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyITrackableLoader::ITrackableLoader_grpcProxy>
 {
-  static constexpr const char * UUID = "e8d15055-d554-44c8-9258-8a5af5996873";
+  static constexpr const char * UUID = "87323ffc-9655-4824-b429-887fd9c355af";
   static constexpr const char * NAME = "ITrackableLoader_grpcProxy";
   static constexpr const char * DESCRIPTION = "ITrackableLoader_grpcProxy grpc client proxy component";
 };

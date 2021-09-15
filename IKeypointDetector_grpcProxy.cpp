@@ -44,7 +44,7 @@ void  IKeypointDetector_grpcProxy::setType(SolAR::api::features::IKeypointDetect
   reqIn.set_type(static_cast<int32_t>(type));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setType(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setTyperpc failed." << std::endl;
+    std::cout << "setType rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeypointDetectorService","setType",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -58,7 +58,7 @@ SolAR::api::features::IKeypointDetector::KeypointDetectorType  IKeypointDetector
   ::grpcIKeypointDetector::getTypeResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getType(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getTyperpc failed." << std::endl;
+    std::cout << "getType rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeypointDetectorService","getType",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -75,7 +75,7 @@ void  IKeypointDetector_grpcProxy::detect(SRef<SolAR::datastructure::Image> cons
   reqIn.set_keypoints(xpcf::serialize<std::vector<SolAR::datastructure::Keypoint>>(keypoints));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->detect(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "detectrpc failed." << std::endl;
+    std::cout << "detect rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIKeypointDetectorService","detect",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

@@ -2,7 +2,7 @@
 
 #ifndef ICONTOURSEXTRACTOR_GRPCSERVER_H
 #define ICONTOURSEXTRACTOR_GRPCSERVER_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IContoursExtractor.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IContoursExtractor.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIContoursExtractorService.grpc.pb.h"
@@ -41,7 +41,7 @@ class IContoursExtractor_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIContoursExtractor::IContoursExtractor_grpcServer>
 {
-  static constexpr const char * UUID = "0a810e8a-c913-405b-af16-9d31cb903088";
+  static constexpr const char * UUID = "495602df-054c-4fcc-8992-7d028ed06931";
   static constexpr const char * NAME = "IContoursExtractor_grpcServer";
   static constexpr const char * DESCRIPTION = "IContoursExtractor_grpcServer grpc server component";
 };

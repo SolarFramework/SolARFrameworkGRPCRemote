@@ -28,24 +28,24 @@ static const char* grpcIDeviceService_method_names[] = {
 
 std::unique_ptr< grpcIDeviceService::Stub> grpcIDeviceService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIDeviceService::Stub> stub(new grpcIDeviceService::Stub(channel, options));
+  std::unique_ptr< grpcIDeviceService::Stub> stub(new grpcIDeviceService::Stub(channel));
   return stub;
 }
 
-grpcIDeviceService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_start_(grpcIDeviceService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIDeviceService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIDeviceService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_start_(grpcIDeviceService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcIDeviceService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIDeviceService::Stub::start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDevice::startResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIDevice::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcIDeviceService::Stub::async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDeviceService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIDevice::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcIDeviceService::Stub::async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIDeviceService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIDeviceService::Stub::async::start(::grpc::ClientContext* context, cons
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIDevice::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcIDeviceService::Stub::async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDeviceService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIDevice::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcIDeviceService::Stub::async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIDeviceService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 

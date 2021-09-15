@@ -28,24 +28,24 @@ static const char* grpcIPerspectiveControllerService_method_names[] = {
 
 std::unique_ptr< grpcIPerspectiveControllerService::Stub> grpcIPerspectiveControllerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIPerspectiveControllerService::Stub> stub(new grpcIPerspectiveControllerService::Stub(channel, options));
+  std::unique_ptr< grpcIPerspectiveControllerService::Stub> stub(new grpcIPerspectiveControllerService::Stub(channel));
   return stub;
 }
 
-grpcIPerspectiveControllerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_correct_grpc0_(grpcIPerspectiveControllerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_correct_grpc1_(grpcIPerspectiveControllerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIPerspectiveControllerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_correct_grpc0_(grpcIPerspectiveControllerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_correct_grpc1_(grpcIPerspectiveControllerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIPerspectiveControllerService::Stub::correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request& request, ::grpcIPerspectiveController::correct_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPerspectiveController::correct_grpc0Request, ::grpcIPerspectiveController::correct_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_correct_grpc0_, context, request, response);
 }
 
-void grpcIPerspectiveControllerService::Stub::async::correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIPerspectiveControllerService::Stub::experimental_async::correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPerspectiveController::correct_grpc0Request, ::grpcIPerspectiveController::correct_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIPerspectiveControllerService::Stub::async::correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIPerspectiveControllerService::Stub::experimental_async::correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_grpc0_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIPerspectiveControllerService::Stub::async::correct_grpc0(::grpc::Clien
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPerspectiveController::correct_grpc1Request, ::grpcIPerspectiveController::correct_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_correct_grpc1_, context, request, response);
 }
 
-void grpcIPerspectiveControllerService::Stub::async::correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIPerspectiveControllerService::Stub::experimental_async::correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPerspectiveController::correct_grpc1Request, ::grpcIPerspectiveController::correct_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIPerspectiveControllerService::Stub::async::correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIPerspectiveControllerService::Stub::experimental_async::correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_grpc1_, context, request, response, reactor);
 }
 

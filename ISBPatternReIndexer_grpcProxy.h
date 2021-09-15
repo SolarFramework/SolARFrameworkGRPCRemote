@@ -3,7 +3,7 @@
 
 #ifndef ISBPATTERNREINDEXER_GRPCPROXY_H
 #define ISBPATTERNREINDEXER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/ISBPatternReIndexer.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/ISBPatternReIndexer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class ISBPatternReIndexer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyISBPatternReIndexer::ISBPatternReIndexer_grpcProxy>
 {
-  static constexpr const char * UUID = "d14bd11b-e460-41c7-8ee8-c2964950892b";
+  static constexpr const char * UUID = "3980f79f-b67e-42b4-a1f4-6d30c34fedf0";
   static constexpr const char * NAME = "ISBPatternReIndexer_grpcProxy";
   static constexpr const char * DESCRIPTION = "ISBPatternReIndexer_grpcProxy grpc client proxy component";
 };

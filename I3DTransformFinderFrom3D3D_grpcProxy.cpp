@@ -47,7 +47,7 @@ SolAR::FrameworkReturnCode  I3DTransformFinderFrom3D3D_grpcProxy::estimate(SRef<
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->estimate(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "estimaterpc failed." << std::endl;
+    std::cout << "estimate rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformFinderFrom3D3DService","estimate",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

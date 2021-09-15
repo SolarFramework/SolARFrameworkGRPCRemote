@@ -31,27 +31,27 @@ static const char* grpcITriangulatorService_method_names[] = {
 
 std::unique_ptr< grpcITriangulatorService::Stub> grpcITriangulatorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcITriangulatorService::Stub> stub(new grpcITriangulatorService::Stub(channel, options));
+  std::unique_ptr< grpcITriangulatorService::Stub> stub(new grpcITriangulatorService::Stub(channel));
   return stub;
 }
 
-grpcITriangulatorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcITriangulatorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_triangulate_grpc0_(grpcITriangulatorService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_triangulate_grpc1_(grpcITriangulatorService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_triangulate_grpc2_(grpcITriangulatorService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_triangulate_grpc3_(grpcITriangulatorService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcITriangulatorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_setCameraParameters_(grpcITriangulatorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_triangulate_grpc0_(grpcITriangulatorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_triangulate_grpc1_(grpcITriangulatorService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_triangulate_grpc2_(grpcITriangulatorService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_triangulate_grpc3_(grpcITriangulatorService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcITriangulatorService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcITriangulatorService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcITriangulatorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcITriangulatorService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcITriangulatorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -70,11 +70,11 @@ void grpcITriangulatorService::Stub::async::setCameraParameters(::grpc::ClientCo
   return ::grpc::internal::BlockingUnaryCall< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_triangulate_grpc0_, context, request, response);
 }
 
-void grpcITriangulatorService::Stub::async::triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcITriangulatorService::Stub::experimental_async::triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_triangulate_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcITriangulatorService::Stub::async::triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcITriangulatorService::Stub::experimental_async::triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_triangulate_grpc0_, context, request, response, reactor);
 }
 
@@ -93,11 +93,11 @@ void grpcITriangulatorService::Stub::async::triangulate_grpc0(::grpc::ClientCont
   return ::grpc::internal::BlockingUnaryCall< ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_triangulate_grpc1_, context, request, response);
 }
 
-void grpcITriangulatorService::Stub::async::triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcITriangulatorService::Stub::experimental_async::triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_triangulate_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcITriangulatorService::Stub::async::triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcITriangulatorService::Stub::experimental_async::triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_triangulate_grpc1_, context, request, response, reactor);
 }
 
@@ -116,11 +116,11 @@ void grpcITriangulatorService::Stub::async::triangulate_grpc1(::grpc::ClientCont
   return ::grpc::internal::BlockingUnaryCall< ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_triangulate_grpc2_, context, request, response);
 }
 
-void grpcITriangulatorService::Stub::async::triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, std::function<void(::grpc::Status)> f) {
+void grpcITriangulatorService::Stub::experimental_async::triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_triangulate_grpc2_, context, request, response, std::move(f));
 }
 
-void grpcITriangulatorService::Stub::async::triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcITriangulatorService::Stub::experimental_async::triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_triangulate_grpc2_, context, request, response, reactor);
 }
 
@@ -139,11 +139,11 @@ void grpcITriangulatorService::Stub::async::triangulate_grpc2(::grpc::ClientCont
   return ::grpc::internal::BlockingUnaryCall< ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_triangulate_grpc3_, context, request, response);
 }
 
-void grpcITriangulatorService::Stub::async::triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, std::function<void(::grpc::Status)> f) {
+void grpcITriangulatorService::Stub::experimental_async::triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_triangulate_grpc3_, context, request, response, std::move(f));
 }
 
-void grpcITriangulatorService::Stub::async::triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcITriangulatorService::Stub::experimental_async::triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_triangulate_grpc3_, context, request, response, reactor);
 }
 

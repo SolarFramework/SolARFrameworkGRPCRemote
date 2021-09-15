@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIFeatureWithDepthFromStereo;
+
+message setRectificationParametersRequest
+{
+bytes camParams1 = 1;
+bytes camParams2 = 2;
+bytes rectParams1 = 3;
+bytes rectParams2 = 4;
+}
+
+message computeRequest
+{
+bytes image1 = 1;
+bytes image2 = 2;
+bytes frame1 = 3;
+bytes frame2 = 4;
+}
+
+message computeResponse
+{
+bytes frame1 = 1;
+bytes frame2 = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+service grpcIFeatureWithDepthFromStereoService {
+rpc setRectificationParameters(setRectificationParametersRequest) returns(google.protobuf.Empty) {}
+rpc compute(computeRequest) returns(computeResponse) {}
+}
+

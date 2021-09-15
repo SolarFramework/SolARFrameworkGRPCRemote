@@ -3,7 +3,7 @@
 
 #ifndef ICORNERREFINEMENT_GRPCPROXY_H
 #define ICORNERREFINEMENT_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/ICornerRefinement.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/ICornerRefinement.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class ICornerRefinement_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyICornerRefinement::ICornerRefinement_grpcProxy>
 {
-  static constexpr const char * UUID = "96f4f5cd-239e-4476-9ca2-1a1525324ac3";
+  static constexpr const char * UUID = "98aa58d0-5232-4823-bd31-e4bc12ee4503";
   static constexpr const char * NAME = "ICornerRefinement_grpcProxy";
   static constexpr const char * DESCRIPTION = "ICornerRefinement_grpcProxy grpc client proxy component";
 };

@@ -43,7 +43,7 @@ std::string  IDescriptorsExtractor_grpcProxy::getTypeString()
   ::grpcIDescriptorsExtractor::getTypeStringResponse respOut;
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getTypeString(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getTypeStringrpc failed." << std::endl;
+    std::cout << "getTypeString rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDescriptorsExtractorService","getTypeString",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -60,7 +60,7 @@ void  IDescriptorsExtractor_grpcProxy::extract(SRef<SolAR::datastructure::Image>
   reqIn.set_descriptors(xpcf::serialize<SRef<SolAR::datastructure::DescriptorBuffer>>(descriptors));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->extract(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "extractrpc failed." << std::endl;
+    std::cout << "extract rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIDescriptorsExtractorService","extract",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

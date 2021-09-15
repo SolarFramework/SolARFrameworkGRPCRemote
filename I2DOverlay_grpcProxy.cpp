@@ -45,7 +45,7 @@ void  I2DOverlay_grpcProxy::drawCircle(SolAR::datastructure::Point2Df const& poi
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawCircle(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "drawCirclerpc failed." << std::endl;
+    std::cout << "drawCircle rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawCircle",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -61,7 +61,7 @@ void  I2DOverlay_grpcProxy::drawCircles(std::vector<SolAR::datastructure::Point2
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawCircles_grpc0(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "drawCircles_grpc0rpc failed." << std::endl;
+    std::cout << "drawCircles_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawCircles_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -77,7 +77,7 @@ void  I2DOverlay_grpcProxy::drawCircles(std::vector<SolAR::datastructure::Keypoi
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawCircles_grpc1(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "drawCircles_grpc1rpc failed." << std::endl;
+    std::cout << "drawCircles_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawCircles_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -93,7 +93,7 @@ void  I2DOverlay_grpcProxy::drawContour(SolAR::datastructure::Contour2Df const& 
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawContour(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "drawContourrpc failed." << std::endl;
+    std::cout << "drawContour rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawContour",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -109,7 +109,7 @@ void  I2DOverlay_grpcProxy::drawContours(std::vector<SolAR::datastructure::Conto
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawContours(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "drawContoursrpc failed." << std::endl;
+    std::cout << "drawContours rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawContours",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
@@ -125,7 +125,7 @@ void  I2DOverlay_grpcProxy::drawSBPattern(SolAR::datastructure::SquaredBinaryPat
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawSBPattern(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "drawSBPatternrpc failed." << std::endl;
+    std::cout << "drawSBPattern rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawSBPattern",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 

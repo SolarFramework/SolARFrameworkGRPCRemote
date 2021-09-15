@@ -115,8 +115,10 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcII
   schemas, file_default_instances, TableStruct_grpcIImageLoaderService_2eproto::offsets,
   file_level_metadata_grpcIImageLoaderService_2eproto, file_level_enum_descriptors_grpcIImageLoaderService_2eproto, file_level_service_descriptors_grpcIImageLoaderService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grpcIImageLoaderService_2eproto_getter() {
-  return &descriptor_table_grpcIImageLoaderService_2eproto;
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_grpcIImageLoaderService_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcIImageLoaderService_2eproto);
+  return descriptor_table_grpcIImageLoaderService_2eproto.file_level_metadata[index];
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -129,13 +131,10 @@ class getImageRequest::_Internal {
  public:
 };
 
-getImageRequest::getImageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getImageRequest::getImageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIImageLoader.getImageRequest)
 }
 getImageRequest::getImageRequest(const getImageRequest& from)
@@ -144,24 +143,23 @@ getImageRequest::getImageRequest(const getImageRequest& from)
   img_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_img().empty()) {
     img_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_img(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIImageLoader.getImageRequest)
 }
 
-inline void getImageRequest::SharedCtor() {
+void getImageRequest::SharedCtor() {
 img_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 getImageRequest::~getImageRequest() {
   // @@protoc_insertion_point(destructor:grpcIImageLoader.getImageRequest)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getImageRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getImageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   img_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -190,6 +188,7 @@ const char* getImageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes img = 1;
       case 1:
@@ -201,8 +200,7 @@ const char* getImageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -229,7 +227,7 @@ failure:
   (void) cached_has_bits;
 
   // bytes img = 1;
-  if (!this->_internal_img().empty()) {
+  if (this->img().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_img(), target);
   }
@@ -251,7 +249,7 @@ size_t getImageRequest::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes img = 1;
-  if (!this->_internal_img().empty()) {
+  if (this->img().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_img());
@@ -266,29 +264,38 @@ size_t getImageRequest::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getImageRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getImageRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getImageRequest::GetClassData() const { return &_class_data_; }
-
-void getImageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getImageRequest *>(to)->MergeFrom(
-      static_cast<const getImageRequest &>(from));
+void getImageRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageLoader.getImageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getImageRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getImageRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageLoader.getImageRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageLoader.getImageRequest)
+    MergeFrom(*source);
+  }
 }
-
 
 void getImageRequest::MergeFrom(const getImageRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.getImageRequest)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_img().empty()) {
+  if (from.img().size() > 0) {
     _internal_set_img(from._internal_img());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getImageRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageLoader.getImageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getImageRequest::CopyFrom(const getImageRequest& from) {
@@ -304,19 +311,14 @@ bool getImageRequest::IsInitialized() const {
 
 void getImageRequest::InternalSwap(getImageRequest* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &img_, GetArenaForAllocation(),
-      &other->img_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  img_.Swap(&other->img_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getImageRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIImageLoaderService_2eproto_getter, &descriptor_table_grpcIImageLoaderService_2eproto_once,
-      file_level_metadata_grpcIImageLoaderService_2eproto[0]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -324,13 +326,10 @@ class getImageResponse::_Internal {
  public:
 };
 
-getImageResponse::getImageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+getImageResponse::getImageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIImageLoader.getImageResponse)
 }
 getImageResponse::getImageResponse(const getImageResponse& from)
@@ -339,26 +338,25 @@ getImageResponse::getImageResponse(const getImageResponse& from)
   img_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_img().empty()) {
     img_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_img(), 
-      GetArenaForAllocation());
+      GetArena());
   }
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageLoader.getImageResponse)
 }
 
-inline void getImageResponse::SharedCtor() {
+void getImageResponse::SharedCtor() {
 img_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 xpcfgrpcreturnvalue_ = 0;
 }
 
 getImageResponse::~getImageResponse() {
   // @@protoc_insertion_point(destructor:grpcIImageLoader.getImageResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void getImageResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void getImageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   img_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -388,6 +386,7 @@ const char* getImageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes img = 1;
       case 1:
@@ -406,8 +405,7 @@ const char* getImageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -434,13 +432,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes img = 1;
-  if (!this->_internal_img().empty()) {
+  if (this->img().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_img(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -462,14 +460,14 @@ size_t getImageResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes img = 1;
-  if (!this->_internal_img().empty()) {
+  if (this->img().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_img());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -484,32 +482,41 @@ size_t getImageResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getImageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    getImageResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getImageResponse::GetClassData() const { return &_class_data_; }
-
-void getImageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<getImageResponse *>(to)->MergeFrom(
-      static_cast<const getImageResponse &>(from));
+void getImageResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageLoader.getImageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getImageResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getImageResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageLoader.getImageResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageLoader.getImageResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void getImageResponse::MergeFrom(const getImageResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.getImageResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_img().empty()) {
+  if (from.img().size() > 0) {
     _internal_set_img(from._internal_img());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getImageResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageLoader.getImageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void getImageResponse::CopyFrom(const getImageResponse& from) {
@@ -525,20 +532,15 @@ bool getImageResponse::IsInitialized() const {
 
 void getImageResponse::InternalSwap(getImageResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &img_, GetArenaForAllocation(),
-      &other->img_, other->GetArenaForAllocation()
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  img_.Swap(&other->img_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getImageResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIImageLoaderService_2eproto_getter, &descriptor_table_grpcIImageLoaderService_2eproto_once,
-      file_level_metadata_grpcIImageLoaderService_2eproto[1]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -546,13 +548,10 @@ class reloadImageResponse::_Internal {
  public:
 };
 
-reloadImageResponse::reloadImageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+reloadImageResponse::reloadImageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIImageLoader.reloadImageResponse)
 }
 reloadImageResponse::reloadImageResponse(const reloadImageResponse& from)
@@ -562,19 +561,18 @@ reloadImageResponse::reloadImageResponse(const reloadImageResponse& from)
   // @@protoc_insertion_point(copy_constructor:grpcIImageLoader.reloadImageResponse)
 }
 
-inline void reloadImageResponse::SharedCtor() {
+void reloadImageResponse::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
 reloadImageResponse::~reloadImageResponse() {
   // @@protoc_insertion_point(destructor:grpcIImageLoader.reloadImageResponse)
-  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void reloadImageResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void reloadImageResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
 void reloadImageResponse::ArenaDtor(void* object) {
@@ -602,6 +600,7 @@ const char* reloadImageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
@@ -612,8 +611,7 @@ const char* reloadImageResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         continue;
       default: {
       handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -640,7 +638,7 @@ failure:
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
@@ -662,7 +660,7 @@ size_t reloadImageResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_xpcfgrpcreturnvalue());
@@ -677,29 +675,38 @@ size_t reloadImageResponse::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData reloadImageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    reloadImageResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*reloadImageResponse::GetClassData() const { return &_class_data_; }
-
-void reloadImageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<reloadImageResponse *>(to)->MergeFrom(
-      static_cast<const reloadImageResponse &>(from));
+void reloadImageResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageLoader.reloadImageResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const reloadImageResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<reloadImageResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageLoader.reloadImageResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageLoader.reloadImageResponse)
+    MergeFrom(*source);
+  }
 }
-
 
 void reloadImageResponse::MergeFrom(const reloadImageResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.reloadImageResponse)
   GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+  if (from.xpcfgrpcreturnvalue() != 0) {
     _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void reloadImageResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageLoader.reloadImageResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void reloadImageResponse::CopyFrom(const reloadImageResponse& from) {
@@ -715,15 +722,14 @@ bool reloadImageResponse::IsInitialized() const {
 
 void reloadImageResponse::InternalSwap(reloadImageResponse* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata reloadImageResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_grpcIImageLoaderService_2eproto_getter, &descriptor_table_grpcIImageLoaderService_2eproto_once,
-      file_level_metadata_grpcIImageLoaderService_2eproto[2]);
+  return GetMetadataStatic();
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIImageLoader

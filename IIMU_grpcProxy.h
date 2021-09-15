@@ -3,7 +3,7 @@
 
 #ifndef IIMU_GRPCPROXY_H
 #define IIMU_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IIMU.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IIMU.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -44,7 +44,7 @@ class IIMU_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIIMU::IIMU_grpcProxy>
 {
-  static constexpr const char * UUID = "3a7ea0b6-19a3-4394-b6dc-21b596fab9e4";
+  static constexpr const char * UUID = "81ca7bd7-f4d0-42ea-9ebc-ab6812c427ae";
   static constexpr const char * NAME = "IIMU_grpcProxy";
   static constexpr const char * DESCRIPTION = "IIMU_grpcProxy grpc client proxy component";
 };

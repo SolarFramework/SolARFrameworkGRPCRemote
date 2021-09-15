@@ -3,7 +3,7 @@
 
 #ifndef IKEYPOINTSREINDEXER_GRPCPROXY_H
 #define IKEYPOINTSREINDEXER_GRPCPROXY_H
-#include "/home/ccutullic/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointsReIndexer.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointsReIndexer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -36,7 +36,7 @@ class IKeypointsReIndexer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIKeypointsReIndexer::IKeypointsReIndexer_grpcProxy>
 {
-  static constexpr const char * UUID = "c3c7e63a-389a-4ec5-b58e-7db9ab1522bd";
+  static constexpr const char * UUID = "4db479d1-383f-4a8d-888b-055b0fd216a7";
   static constexpr const char * NAME = "IKeypointsReIndexer_grpcProxy";
   static constexpr const char * DESCRIPTION = "IKeypointsReIndexer_grpcProxy grpc client proxy component";
 };
