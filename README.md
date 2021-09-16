@@ -14,7 +14,7 @@ For more informations see :
 
 **Process to generate the gRPC module**
 
-Generate the compilation database from the SolAR project (for example, using *Qt Creator*: "Build->Generate Compilation Database"). Do not forget to build the SOlAR Framework with the parameters *qmake system() behaviour when parsing* set at *run* before generating the compilation database. When done, come back to the "ignore" setting to avoir issues. 
+Generate the compilation database from the SolAR project (for example, using *Qt Creator*: "Build->Generate Compilation Database"). Do not forget to build the SolAR Framework with the parameters *qmake system() behaviour when parsing* set at *run* before generating the compilation database. When done, come back to the "ignore" setting to avoir issues. 
 
 You will need to install the *xpcf_grpc_gen* tool to generate the remoting code. This *xpcf_grpc_gen* tool is available on the github of XPCF: https://github.com/b-com-software-basis/xpcf/tree/feature/remoting/tools/generators/grpc. 
 
