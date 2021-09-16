@@ -16,21 +16,25 @@ For more informations see :
 
 Generate the compilation database from the SolAR project (for example, using *Qt Creator*: "Build->Generate Compilation Database"). Do not forget to build the SOlAR Framework with the parameters *qmake system() behaviour when parsing* set at *run* before generating the compilation database. When done, come back to the "ignore" setting to avoir issues. 
 
-You will need to install the *xpcf\_grpc\_gen* tool to generate the remoting code. This xpcf_grpc_gen is available on the github of XPCF: https://github.com/b-com-software-basis/xpcf/tree/feature/remoting/tools/generators/grpc. 
+You will need to install the *xpcf_grpc_gen* tool to generate the remoting code. This *xpcf_grpc_gen* tool is available on the github of XPCF: https://github.com/b-com-software-basis/xpcf/tree/feature/remoting/tools/generators/grpc. 
 
-You must build and install this *xpcf\_grc\_gen* tool to use it (a binary is coming soon).
+You must build and install this *xpcf_grc_gen* tool to use it (a binary is coming soon).
 
 Then, just launch the script *generate.sh* (check that the path to your compilation database is the good one in this script).
 
-*xpcf\_grpc\_gen* parses all the SolAR interfaces and creates a **Qt Creator** development project to compile all the generated code in a XPCF module.
+*xpcf_grpc_gen* parses all the SolAR interfaces and creates a **Qt Creator** development project to compile all the generated code in a XPCF module.
 It also creates a client and a server XPCF configuration file.
 
-Then, you can open in your IDE the generated XPCF remoting project (*~/Dev/SolAR/core/SolARFrameworkGRPCRemote/SolARFrameworkGRPCRemote.pro*) for building and installing it (with qmake *install* and *install\_deps* steps).
+Then, you can open in your IDE the generated XPCF remoting project (*~/Dev/SolAR/core/SolARFrameworkGRPCRemote/SolARFrameworkGRPCRemote.pro*) for building and installing it (with qmake *install* and *install_deps* steps).
 
 **xpcf_grpc_gen syntax**
 
+```console
 xpcf\_grpc\_gen -n <project name> -v <project version> -r <repository type> -u <host repository url> --std <C++ standard> --database_dir <compilation database path> --remove_comments_in_macro -o <destination folder> -g <message format>
+```
 
 Example:
 
+```console
 xpcf_grpc_gen -n SolARFramework -v 0.10.0 -r SolARbuild@github -u https://github.com/SolarFramework/SolARFramework --database_dir ~/Dev/SolAR/core/build-SolARFramework-Desktop_Qt_5_15_2_GCC_64bit-Release/ --std c++1z --remove_comments_in_macro -g protobuf -o ~/Dev/SolAR/core/SolARFrameworkGRPCRemote
+```
