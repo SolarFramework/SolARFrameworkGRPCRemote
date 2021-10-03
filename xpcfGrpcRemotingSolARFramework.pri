@@ -236,10 +236,6 @@ IBootstrapper_grpcProxy.h \
 IBootstrapper_grpcServer.h \
 grpcIBootstrapperService.pb.h \
 grpcIBootstrapperService.grpc.pb.h \
-IBootstrapperStereo_grpcProxy.h \
-IBootstrapperStereo_grpcServer.h \
-grpcIBootstrapperStereoService.pb.h \
-grpcIBootstrapperStereoService.grpc.pb.h \
 IMapping_grpcProxy.h \
 IMapping_grpcServer.h \
 grpcIMappingService.pb.h \
@@ -571,10 +567,6 @@ IBootstrapper_grpcProxy.cpp \
 IBootstrapper_grpcServer.cpp \
 grpcIBootstrapperService.pb.cc \
 grpcIBootstrapperService.grpc.pb.cc \
-IBootstrapperStereo_grpcProxy.cpp \
-IBootstrapperStereo_grpcServer.cpp \
-grpcIBootstrapperStereoService.pb.cc \
-grpcIBootstrapperStereoService.grpc.pb.cc \
 IMapping_grpcProxy.cpp \
 IMapping_grpcServer.cpp \
 grpcIMappingService.pb.cc \
