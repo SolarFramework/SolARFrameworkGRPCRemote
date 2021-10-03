@@ -37,7 +37,7 @@ class IFeatureWithDepthFromStereo_grpcProxy:  public org::bcom::xpcf::Configurab
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIFeatureWithDepthFromStereo::IFeatureWithDepthFromStereo_grpcProxy>
 {
-  static constexpr const char * UUID = "e5c18ce7-5216-4eb7-8585-b3983bef0e75";
+  static constexpr const char * UUID = "23c6b83f-d6a2-415b-a7ba-21556d28cad9";
   static constexpr const char * NAME = "IFeatureWithDepthFromStereo_grpcProxy";
   static constexpr const char * DESCRIPTION = "IFeatureWithDepthFromStereo_grpcProxy grpc client proxy component";
 };

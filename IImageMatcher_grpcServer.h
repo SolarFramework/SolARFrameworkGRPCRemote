@@ -41,7 +41,7 @@ class IImageMatcher_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImageMatcher::IImageMatcher_grpcServer>
 {
-  static constexpr const char * UUID = "8924467d-22a9-41f3-9cc6-6bcb44b8ce79";
+  static constexpr const char * UUID = "6b8f3e75-1745-45aa-a3bc-ac9c76c4d7db";
   static constexpr const char * NAME = "IImageMatcher_grpcServer";
   static constexpr const char * DESCRIPTION = "IImageMatcher_grpcServer grpc server component";
 };

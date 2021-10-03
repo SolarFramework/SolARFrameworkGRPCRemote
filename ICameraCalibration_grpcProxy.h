@@ -36,7 +36,7 @@ class ICameraCalibration_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyICameraCalibration::ICameraCalibration_grpcProxy>
 {
-  static constexpr const char * UUID = "9b9bae89-5148-4d78-b217-83a4db455bca";
+  static constexpr const char * UUID = "b3774427-f712-483b-bbed-060d2ce6134a";
   static constexpr const char * NAME = "ICameraCalibration_grpcProxy";
   static constexpr const char * DESCRIPTION = "ICameraCalibration_grpcProxy grpc client proxy component";
 };

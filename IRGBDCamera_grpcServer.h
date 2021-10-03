@@ -66,7 +66,7 @@ class IRGBDCamera_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIRGBDCamera::IRGBDCamera_grpcServer>
 {
-  static constexpr const char * UUID = "8a0cc5ed-7fb3-4881-86ba-0c4451dd74d8";
+  static constexpr const char * UUID = "01bb552a-9e6c-47fe-8b57-bce2a4c0ce42";
   static constexpr const char * NAME = "IRGBDCamera_grpcServer";
   static constexpr const char * DESCRIPTION = "IRGBDCamera_grpcServer grpc server component";
 };

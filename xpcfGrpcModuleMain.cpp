@@ -1,7 +1,7 @@
 #include "xpcfGrpcModuleMain.h"
 #include <xpcf/module/ModuleFactory.h>
 namespace xpcf=org::bcom::xpcf;
-XPCF_DECLARE_MODULE("ef6f8ecc-9aae-40bd-9179-3b6596a09539", "xpcfGrpcRemotingSolARFramework","xpcf remoting module for project SolARFramework");
+XPCF_DECLARE_MODULE("363244dd-41ec-4b08-9e0a-e0a93a45505a", "xpcfGrpcRemotingSolARFramework","xpcf remoting module for project SolARFramework");
 
 extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boost::uuids::uuid& componentUUID,SRef<xpcf::IComponentIntrospect>& interfaceRef)
 {
@@ -598,16 +598,6 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIBootstrapperStereo::IBootstrapperStereo_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIBootstrapperStereo::IBootstrapperStereo_grpcServer>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIMapping::IMapping_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -959,8 +949,6 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizer::IRelocalizer_grpcPr
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRelocalizer::IRelocalizer_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIBootstrapper::IBootstrapper_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIBootstrapper::IBootstrapper_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIBootstrapperStereo::IBootstrapperStereo_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIBootstrapperStereo::IBootstrapperStereo_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapping::IMapping_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapping::IMapping_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyITracking::ITracking_grpcProxy)

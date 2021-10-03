@@ -36,13 +36,13 @@ XPCFErrorCode IBootstrapper_grpcProxy::onConfigured()
 }
 
 
-void  IBootstrapper_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distortionParams)
+void  IBootstrapper_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)
 {
   ::grpc::ClientContext context;
   ::grpcIBootstrapper::setCameraParametersRequest reqIn;
   ::google::protobuf::Empty respOut;
   reqIn.set_intrinsicparams(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsicParams));
-  reqIn.set_distortionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortionParams));
+  reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
     std::cout << "setCameraParameters rpc failed." << std::endl;
@@ -52,13 +52,12 @@ void  IBootstrapper_grpcProxy::setCameraParameters(SolAR::datastructure::CamCali
 }
 
 
-SolAR::FrameworkReturnCode  IBootstrapper_grpcProxy::process(SRef<SolAR::datastructure::Image> const image, SRef<SolAR::datastructure::Image>& view, SolAR::datastructure::Transform3Df const& pose)
+SolAR::FrameworkReturnCode  IBootstrapper_grpcProxy::process(SRef<SolAR::datastructure::Frame> const& frame, SRef<SolAR::datastructure::Image>& view)
 {
   ::grpc::ClientContext context;
   ::grpcIBootstrapper::processRequest reqIn;
   ::grpcIBootstrapper::processResponse respOut;
-  reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
-  reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
+  reqIn.set_frame(xpcf::serialize<SRef<SolAR::datastructure::Frame>>(frame));
   reqIn.set_view(xpcf::serialize<SRef<SolAR::datastructure::Image>>(view));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->process(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {

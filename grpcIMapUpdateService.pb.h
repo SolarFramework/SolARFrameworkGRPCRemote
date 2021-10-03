@@ -188,39 +188,22 @@ class setCameraParametersRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIntrinsicParamsFieldNumber = 1,
-    kDistortionParamsFieldNumber = 2,
+    kCamParamsFieldNumber = 1,
   };
-  // bytes intrinsicParams = 1;
-  void clear_intrinsicparams();
-  const std::string& intrinsicparams() const;
-  void set_intrinsicparams(const std::string& value);
-  void set_intrinsicparams(std::string&& value);
-  void set_intrinsicparams(const char* value);
-  void set_intrinsicparams(const void* value, size_t size);
-  std::string* mutable_intrinsicparams();
-  std::string* release_intrinsicparams();
-  void set_allocated_intrinsicparams(std::string* intrinsicparams);
+  // bytes camParams = 1;
+  void clear_camparams();
+  const std::string& camparams() const;
+  void set_camparams(const std::string& value);
+  void set_camparams(std::string&& value);
+  void set_camparams(const char* value);
+  void set_camparams(const void* value, size_t size);
+  std::string* mutable_camparams();
+  std::string* release_camparams();
+  void set_allocated_camparams(std::string* camparams);
   private:
-  const std::string& _internal_intrinsicparams() const;
-  void _internal_set_intrinsicparams(const std::string& value);
-  std::string* _internal_mutable_intrinsicparams();
-  public:
-
-  // bytes distortionParams = 2;
-  void clear_distortionparams();
-  const std::string& distortionparams() const;
-  void set_distortionparams(const std::string& value);
-  void set_distortionparams(std::string&& value);
-  void set_distortionparams(const char* value);
-  void set_distortionparams(const void* value, size_t size);
-  std::string* mutable_distortionparams();
-  std::string* release_distortionparams();
-  void set_allocated_distortionparams(std::string* distortionparams);
-  private:
-  const std::string& _internal_distortionparams() const;
-  void _internal_set_distortionparams(const std::string& value);
-  std::string* _internal_mutable_distortionparams();
+  const std::string& _internal_camparams() const;
+  void _internal_set_camparams(const std::string& value);
+  std::string* _internal_mutable_camparams();
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIMapUpdate.setCameraParametersRequest)
@@ -230,8 +213,7 @@ class setCameraParametersRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr intrinsicparams_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr distortionparams_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapUpdateService_2eproto;
 };
@@ -545,126 +527,65 @@ class updateResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // setCameraParametersRequest
 
-// bytes intrinsicParams = 1;
-inline void setCameraParametersRequest::clear_intrinsicparams() {
-  intrinsicparams_.ClearToEmpty();
+// bytes camParams = 1;
+inline void setCameraParametersRequest::clear_camparams() {
+  camparams_.ClearToEmpty();
 }
-inline const std::string& setCameraParametersRequest::intrinsicparams() const {
-  // @@protoc_insertion_point(field_get:grpcIMapUpdate.setCameraParametersRequest.intrinsicParams)
-  return _internal_intrinsicparams();
+inline const std::string& setCameraParametersRequest::camparams() const {
+  // @@protoc_insertion_point(field_get:grpcIMapUpdate.setCameraParametersRequest.camParams)
+  return _internal_camparams();
 }
-inline void setCameraParametersRequest::set_intrinsicparams(const std::string& value) {
-  _internal_set_intrinsicparams(value);
-  // @@protoc_insertion_point(field_set:grpcIMapUpdate.setCameraParametersRequest.intrinsicParams)
+inline void setCameraParametersRequest::set_camparams(const std::string& value) {
+  _internal_set_camparams(value);
+  // @@protoc_insertion_point(field_set:grpcIMapUpdate.setCameraParametersRequest.camParams)
 }
-inline std::string* setCameraParametersRequest::mutable_intrinsicparams() {
-  // @@protoc_insertion_point(field_mutable:grpcIMapUpdate.setCameraParametersRequest.intrinsicParams)
-  return _internal_mutable_intrinsicparams();
+inline std::string* setCameraParametersRequest::mutable_camparams() {
+  // @@protoc_insertion_point(field_mutable:grpcIMapUpdate.setCameraParametersRequest.camParams)
+  return _internal_mutable_camparams();
 }
-inline const std::string& setCameraParametersRequest::_internal_intrinsicparams() const {
-  return intrinsicparams_.Get();
+inline const std::string& setCameraParametersRequest::_internal_camparams() const {
+  return camparams_.Get();
 }
-inline void setCameraParametersRequest::_internal_set_intrinsicparams(const std::string& value) {
+inline void setCameraParametersRequest::_internal_set_camparams(const std::string& value) {
   
-  intrinsicparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void setCameraParametersRequest::set_intrinsicparams(std::string&& value) {
+inline void setCameraParametersRequest::set_camparams(std::string&& value) {
   
-  intrinsicparams_.Set(
+  camparams_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIMapUpdate.setCameraParametersRequest.intrinsicParams)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMapUpdate.setCameraParametersRequest.camParams)
 }
-inline void setCameraParametersRequest::set_intrinsicparams(const char* value) {
+inline void setCameraParametersRequest::set_camparams(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  intrinsicparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIMapUpdate.setCameraParametersRequest.intrinsicParams)
+  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMapUpdate.setCameraParametersRequest.camParams)
 }
-inline void setCameraParametersRequest::set_intrinsicparams(const void* value,
+inline void setCameraParametersRequest::set_camparams(const void* value,
     size_t size) {
   
-  intrinsicparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIMapUpdate.setCameraParametersRequest.intrinsicParams)
+  // @@protoc_insertion_point(field_set_pointer:grpcIMapUpdate.setCameraParametersRequest.camParams)
 }
-inline std::string* setCameraParametersRequest::_internal_mutable_intrinsicparams() {
+inline std::string* setCameraParametersRequest::_internal_mutable_camparams() {
   
-  return intrinsicparams_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return camparams_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* setCameraParametersRequest::release_intrinsicparams() {
-  // @@protoc_insertion_point(field_release:grpcIMapUpdate.setCameraParametersRequest.intrinsicParams)
-  return intrinsicparams_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* setCameraParametersRequest::release_camparams() {
+  // @@protoc_insertion_point(field_release:grpcIMapUpdate.setCameraParametersRequest.camParams)
+  return camparams_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void setCameraParametersRequest::set_allocated_intrinsicparams(std::string* intrinsicparams) {
-  if (intrinsicparams != nullptr) {
+inline void setCameraParametersRequest::set_allocated_camparams(std::string* camparams) {
+  if (camparams != nullptr) {
     
   } else {
     
   }
-  intrinsicparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), intrinsicparams,
+  camparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapUpdate.setCameraParametersRequest.intrinsicParams)
-}
-
-// bytes distortionParams = 2;
-inline void setCameraParametersRequest::clear_distortionparams() {
-  distortionparams_.ClearToEmpty();
-}
-inline const std::string& setCameraParametersRequest::distortionparams() const {
-  // @@protoc_insertion_point(field_get:grpcIMapUpdate.setCameraParametersRequest.distortionParams)
-  return _internal_distortionparams();
-}
-inline void setCameraParametersRequest::set_distortionparams(const std::string& value) {
-  _internal_set_distortionparams(value);
-  // @@protoc_insertion_point(field_set:grpcIMapUpdate.setCameraParametersRequest.distortionParams)
-}
-inline std::string* setCameraParametersRequest::mutable_distortionparams() {
-  // @@protoc_insertion_point(field_mutable:grpcIMapUpdate.setCameraParametersRequest.distortionParams)
-  return _internal_mutable_distortionparams();
-}
-inline const std::string& setCameraParametersRequest::_internal_distortionparams() const {
-  return distortionparams_.Get();
-}
-inline void setCameraParametersRequest::_internal_set_distortionparams(const std::string& value) {
-  
-  distortionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void setCameraParametersRequest::set_distortionparams(std::string&& value) {
-  
-  distortionparams_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIMapUpdate.setCameraParametersRequest.distortionParams)
-}
-inline void setCameraParametersRequest::set_distortionparams(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  distortionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIMapUpdate.setCameraParametersRequest.distortionParams)
-}
-inline void setCameraParametersRequest::set_distortionparams(const void* value,
-    size_t size) {
-  
-  distortionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIMapUpdate.setCameraParametersRequest.distortionParams)
-}
-inline std::string* setCameraParametersRequest::_internal_mutable_distortionparams() {
-  
-  return distortionparams_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* setCameraParametersRequest::release_distortionparams() {
-  // @@protoc_insertion_point(field_release:grpcIMapUpdate.setCameraParametersRequest.distortionParams)
-  return distortionparams_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void setCameraParametersRequest::set_allocated_distortionparams(std::string* distortionparams) {
-  if (distortionparams != nullptr) {
-    
-  } else {
-    
-  }
-  distortionparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), distortionparams,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapUpdate.setCameraParametersRequest.distortionParams)
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapUpdate.setCameraParametersRequest.camParams)
 }
 
 // -------------------------------------------------------------------

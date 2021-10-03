@@ -20,8 +20,8 @@ class IBootstrapper_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtua
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distortionParams)     override;
-    SolAR::FrameworkReturnCode process(SRef<SolAR::datastructure::Image> const image, SRef<SolAR::datastructure::Image>& view, SolAR::datastructure::Transform3Df const& pose)     override;
+    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
+    SolAR::FrameworkReturnCode process(SRef<SolAR::datastructure::Frame> const& frame, SRef<SolAR::datastructure::Image>& view)     override;
 
 
   private:
@@ -37,7 +37,7 @@ class IBootstrapper_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtua
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIBootstrapper::IBootstrapper_grpcProxy>
 {
-  static constexpr const char * UUID = "5bd1ebe1-9a41-41f0-bfe3-d2b4b2c82686";
+  static constexpr const char * UUID = "d593b615-efcf-4b4c-82eb-148065f85008";
   static constexpr const char * NAME = "IBootstrapper_grpcProxy";
   static constexpr const char * DESCRIPTION = "IBootstrapper_grpcProxy grpc client proxy component";
 };

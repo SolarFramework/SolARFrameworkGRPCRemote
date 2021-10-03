@@ -36,7 +36,7 @@ class IImageRectification_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIImageRectification::IImageRectification_grpcProxy>
 {
-  static constexpr const char * UUID = "a8aafd7e-1b0e-4779-849d-845a89d4c85b";
+  static constexpr const char * UUID = "9f68e2e0-33a6-4ce5-9b6e-bbe8088f9bc5";
   static constexpr const char * NAME = "IImageRectification_grpcProxy";
   static constexpr const char * DESCRIPTION = "IImageRectification_grpcProxy grpc client proxy component";
 };

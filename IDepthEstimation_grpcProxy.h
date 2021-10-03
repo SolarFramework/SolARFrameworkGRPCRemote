@@ -36,7 +36,7 @@ class IDepthEstimation_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDepthEstimation::IDepthEstimation_grpcProxy>
 {
-  static constexpr const char * UUID = "f20b5a4f-f1c4-476c-abd7-90cf67baddbd";
+  static constexpr const char * UUID = "a0d958fd-53ed-490b-aec4-2a5a93a60d98";
   static constexpr const char * NAME = "IDepthEstimation_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDepthEstimation_grpcProxy grpc client proxy component";
 };

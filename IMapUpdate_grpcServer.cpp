@@ -35,9 +35,8 @@ XPCFErrorCode IMapUpdate_grpcServer::onConfigured()
 
 ::grpc::Status IMapUpdate_grpcServer::grpcIMapUpdateServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapUpdate::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
 {
-  SolAR::datastructure::CamCalibration intrinsicParams = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsicparams());
-  SolAR::datastructure::CamDistortion distortionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distortionparams());
-  m_xpcfComponent->setCameraParameters(intrinsicParams, distortionParams);
+  SolAR::datastructure::CameraParameters camParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams());
+  m_xpcfComponent->setCameraParameters(camParams);
   return ::grpc::Status::OK;
 }
 

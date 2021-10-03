@@ -57,7 +57,7 @@ class ICovisibilityGraphManager_grpcServer:  public org::bcom::xpcf::Configurabl
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverICovisibilityGraphManager::ICovisibilityGraphManager_grpcServer>
 {
-  static constexpr const char * UUID = "d00b5f20-a792-44f6-aa85-7aee918df33e";
+  static constexpr const char * UUID = "e41e71f3-08e4-4599-8cbc-a3021d1096f5";
   static constexpr const char * NAME = "ICovisibilityGraphManager_grpcServer";
   static constexpr const char * DESCRIPTION = "ICovisibilityGraphManager_grpcServer grpc server component";
 };

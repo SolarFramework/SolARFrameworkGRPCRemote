@@ -42,7 +42,7 @@ class ILoopCorrector_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverILoopCorrector::ILoopCorrector_grpcServer>
 {
-  static constexpr const char * UUID = "9a73b0a4-7a40-425d-b713-0b504ffb3ba9";
+  static constexpr const char * UUID = "7dc30f5b-c61f-4eea-81d9-265a2a2b3b93";
   static constexpr const char * NAME = "ILoopCorrector_grpcServer";
   static constexpr const char * DESCRIPTION = "ILoopCorrector_grpcServer grpc server component";
 };

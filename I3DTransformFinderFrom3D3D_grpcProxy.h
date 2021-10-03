@@ -36,7 +36,7 @@ class I3DTransformFinderFrom3D3D_grpcProxy:  public org::bcom::xpcf::Configurabl
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DTransformFinderFrom3D3D::I3DTransformFinderFrom3D3D_grpcProxy>
 {
-  static constexpr const char * UUID = "dde0115e-cd97-4c8f-b500-49e5ac594f6e";
+  static constexpr const char * UUID = "894e87bc-c3a1-4728-844f-a8c565d06522";
   static constexpr const char * NAME = "I3DTransformFinderFrom3D3D_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DTransformFinderFrom3D3D_grpcProxy grpc client proxy component";
 };

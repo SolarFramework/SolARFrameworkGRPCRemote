@@ -38,7 +38,7 @@ class I3DTransformSACFinderFrom3D3D_grpcProxy:  public org::bcom::xpcf::Configur
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI3DTransformSACFinderFrom3D3D::I3DTransformSACFinderFrom3D3D_grpcProxy>
 {
-  static constexpr const char * UUID = "92bbdace-2636-4424-8280-935b71ca8d4f";
+  static constexpr const char * UUID = "c5d93531-de0c-4424-b48f-00709822dd4a";
   static constexpr const char * NAME = "I3DTransformSACFinderFrom3D3D_grpcProxy";
   static constexpr const char * DESCRIPTION = "I3DTransformSACFinderFrom3D3D_grpcProxy grpc client proxy component";
 };

@@ -51,7 +51,7 @@ class IKeyframeRetriever_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIKeyframeRetriever::IKeyframeRetriever_grpcServer>
 {
-  static constexpr const char * UUID = "b98ea0fc-dd09-47da-9e42-cdae0a529a3e";
+  static constexpr const char * UUID = "e17374fc-bac7-42cf-b732-5d1222da7e9d";
   static constexpr const char * NAME = "IKeyframeRetriever_grpcServer";
   static constexpr const char * DESCRIPTION = "IKeyframeRetriever_grpcServer grpc server component";
 };

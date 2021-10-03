@@ -36,7 +36,7 @@ class I2DTransformFinder_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2DTransformFinder::I2DTransformFinder_grpcProxy>
 {
-  static constexpr const char * UUID = "dcf28746-4e9c-49cd-98a2-35b5844e49d6";
+  static constexpr const char * UUID = "bb9d839b-4304-44f3-ac09-b6d965e65b6e";
   static constexpr const char * NAME = "I2DTransformFinder_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2DTransformFinder_grpcProxy grpc client proxy component";
 };

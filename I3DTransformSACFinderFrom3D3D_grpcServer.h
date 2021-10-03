@@ -43,7 +43,7 @@ class I3DTransformSACFinderFrom3D3D_grpcServer:  public org::bcom::xpcf::Configu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DTransformSACFinderFrom3D3D::I3DTransformSACFinderFrom3D3D_grpcServer>
 {
-  static constexpr const char * UUID = "aa2b88a0-b3a1-4d63-9624-f9f5d048e752";
+  static constexpr const char * UUID = "22e36805-4596-4440-b87d-18114e73ff6d";
   static constexpr const char * NAME = "I3DTransformSACFinderFrom3D3D_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DTransformSACFinderFrom3D3D_grpcServer grpc server component";
 };

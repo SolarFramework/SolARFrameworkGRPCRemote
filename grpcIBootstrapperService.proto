@@ -7,14 +7,13 @@ package grpcIBootstrapper;
 message setCameraParametersRequest
 {
 bytes intrinsicParams = 1;
-bytes distortionParams = 2;
+bytes distorsionParams = 2;
 }
 
 message processRequest
 {
-bytes image = 1;
-bytes pose = 2;
-bytes view = 3;
+bytes frame = 1;
+bytes view = 2;
 }
 
 message processResponse

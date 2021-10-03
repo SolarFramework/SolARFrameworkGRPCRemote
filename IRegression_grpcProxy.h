@@ -43,7 +43,7 @@ class IRegression_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIRegression::IRegression_grpcProxy>
 {
-  static constexpr const char * UUID = "eac2dbd5-87b3-460c-aa15-0a45d6b6f308";
+  static constexpr const char * UUID = "8dc16e57-5f95-474b-8ff8-bb7570e02230";
   static constexpr const char * NAME = "IRegression_grpcProxy";
   static constexpr const char * DESCRIPTION = "IRegression_grpcProxy grpc client proxy component";
 };

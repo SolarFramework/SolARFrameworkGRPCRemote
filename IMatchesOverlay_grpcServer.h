@@ -44,7 +44,7 @@ class IMatchesOverlay_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIMatchesOverlay::IMatchesOverlay_grpcServer>
 {
-  static constexpr const char * UUID = "53c67064-3ec6-44a6-8dc6-9c42504b292c";
+  static constexpr const char * UUID = "ef9096d0-c4ec-430d-8424-993b9010e3e3";
   static constexpr const char * NAME = "IMatchesOverlay_grpcServer";
   static constexpr const char * DESCRIPTION = "IMatchesOverlay_grpcServer grpc server component";
 };

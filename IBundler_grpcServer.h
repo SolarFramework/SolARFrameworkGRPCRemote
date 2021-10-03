@@ -43,7 +43,7 @@ class IBundler_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIBundler::IBundler_grpcServer>
 {
-  static constexpr const char * UUID = "a0f22aba-eec1-4e58-8744-d2477d19666c";
+  static constexpr const char * UUID = "96d272a9-fbc8-4a77-83ad-63edd60a8065";
   static constexpr const char * NAME = "IBundler_grpcServer";
   static constexpr const char * DESCRIPTION = "IBundler_grpcServer grpc server component";
 };

@@ -36,13 +36,12 @@ XPCFErrorCode IMapUpdate_grpcProxy::onConfigured()
 }
 
 
-void  IMapUpdate_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distortionParams)
+void  IMapUpdate_grpcProxy::setCameraParameters(SolAR::datastructure::CameraParameters const& camParams)
 {
   ::grpc::ClientContext context;
   ::grpcIMapUpdate::setCameraParametersRequest reqIn;
   ::google::protobuf::Empty respOut;
-  reqIn.set_intrinsicparams(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsicParams));
-  reqIn.set_distortionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortionParams));
+  reqIn.set_camparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
     std::cout << "setCameraParameters rpc failed." << std::endl;

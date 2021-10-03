@@ -42,7 +42,7 @@ class I2DPointsRectification_grpcServer:  public org::bcom::xpcf::ConfigurableBa
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI2DPointsRectification::I2DPointsRectification_grpcServer>
 {
-  static constexpr const char * UUID = "2d7fd8fd-b891-4a2b-8985-0d0c890dda02";
+  static constexpr const char * UUID = "e02ef0d2-b3b1-4a2d-b088-f236b9447fed";
   static constexpr const char * NAME = "I2DPointsRectification_grpcServer";
   static constexpr const char * DESCRIPTION = "I2DPointsRectification_grpcServer grpc server component";
 };

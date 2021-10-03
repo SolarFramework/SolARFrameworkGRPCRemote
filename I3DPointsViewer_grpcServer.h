@@ -42,7 +42,7 @@ class I3DPointsViewer_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverI3DPointsViewer::I3DPointsViewer_grpcServer>
 {
-  static constexpr const char * UUID = "95262dab-fe4e-4014-9ad9-c7b4abe7da7d";
+  static constexpr const char * UUID = "15e7a40b-9269-40a1-b95d-7139cff7ee4c";
   static constexpr const char * NAME = "I3DPointsViewer_grpcServer";
   static constexpr const char * DESCRIPTION = "I3DPointsViewer_grpcServer grpc server component";
 };

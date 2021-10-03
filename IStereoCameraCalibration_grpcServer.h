@@ -41,7 +41,7 @@ class IStereoCameraCalibration_grpcServer:  public org::bcom::xpcf::Configurable
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIStereoCameraCalibration::IStereoCameraCalibration_grpcServer>
 {
-  static constexpr const char * UUID = "250c8362-c70c-4a4c-9a24-dd361a270a29";
+  static constexpr const char * UUID = "d8ac896d-772d-4ce1-b7be-a8f08020eeb6";
   static constexpr const char * NAME = "IStereoCameraCalibration_grpcServer";
   static constexpr const char * DESCRIPTION = "IStereoCameraCalibration_grpcServer grpc server component";
 };

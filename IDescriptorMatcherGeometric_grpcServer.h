@@ -42,7 +42,7 @@ class IDescriptorMatcherGeometric_grpcServer:  public org::bcom::xpcf::Configura
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIDescriptorMatcherGeometric::IDescriptorMatcherGeometric_grpcServer>
 {
-  static constexpr const char * UUID = "58f97e18-cb0d-49bd-b051-08ea65654e68";
+  static constexpr const char * UUID = "75930efc-a96e-4d07-86b0-2ab2d9ea0102";
   static constexpr const char * NAME = "IDescriptorMatcherGeometric_grpcServer";
   static constexpr const char * DESCRIPTION = "IDescriptorMatcherGeometric_grpcServer grpc server component";
 };

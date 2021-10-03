@@ -38,7 +38,7 @@ class IKeypointDetector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIKeypointDetector::IKeypointDetector_grpcProxy>
 {
-  static constexpr const char * UUID = "06b332a0-1c63-4bd5-9cbc-9e2b84c38153";
+  static constexpr const char * UUID = "e16c54b9-bec7-46f3-9118-e884f60792e8";
   static constexpr const char * NAME = "IKeypointDetector_grpcProxy";
   static constexpr const char * DESCRIPTION = "IKeypointDetector_grpcProxy grpc client proxy component";
 };

@@ -6,8 +6,7 @@ package grpcIMapUpdate;
 
 message setCameraParametersRequest
 {
-bytes intrinsicParams = 1;
-bytes distortionParams = 2;
+bytes camParams = 1;
 }
 
 message updateRequest

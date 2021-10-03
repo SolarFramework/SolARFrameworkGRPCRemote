@@ -19,8 +19,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcIMapUpdate {
 constexpr setCameraParametersRequest::setCameraParametersRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : intrinsicparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , distortionparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : camparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct setCameraParametersRequestDefaultTypeInternal {
   constexpr setCameraParametersRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -66,8 +65,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIMapUpdateService_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIMapUpdate::setCameraParametersRequest, intrinsicparams_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMapUpdate::setCameraParametersRequest, distortionparams_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapUpdate::setCameraParametersRequest, camparams_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMapUpdate::updateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -84,8 +82,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIMapUpdateService_2eproto:
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIMapUpdate::setCameraParametersRequest)},
-  { 7, -1, sizeof(::grpcIMapUpdate::updateRequest)},
-  { 14, -1, sizeof(::grpcIMapUpdate::updateResponse)},
+  { 6, -1, sizeof(::grpcIMapUpdate::updateRequest)},
+  { 13, -1, sizeof(::grpcIMapUpdate::updateResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -96,24 +94,23 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_grpcIMapUpdateService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\033grpcIMapUpdateService.proto\022\016grpcIMapU"
-  "pdate\032\033google/protobuf/empty.proto\"O\n\032se"
-  "tCameraParametersRequest\022\027\n\017intrinsicPar"
-  "ams\030\001 \001(\014\022\030\n\020distortionParams\030\002 \001(\014\":\n\ru"
-  "pdateRequest\022\021\n\tglobalMap\030\001 \001(\014\022\026\n\016newKe"
-  "yframeIds\030\002 \001(\014\"-\n\016updateResponse\022\033\n\023xpc"
-  "fGrpcReturnValue\030\001 \001(\0212\277\001\n\025grpcIMapUpdat"
-  "eService\022[\n\023setCameraParameters\022*.grpcIM"
-  "apUpdate.setCameraParametersRequest\032\026.go"
-  "ogle.protobuf.Empty\"\000\022I\n\006update\022\035.grpcIM"
-  "apUpdate.updateRequest\032\036.grpcIMapUpdate."
-  "updateResponse\"\000b\006proto3"
+  "pdate\032\033google/protobuf/empty.proto\"/\n\032se"
+  "tCameraParametersRequest\022\021\n\tcamParams\030\001 "
+  "\001(\014\":\n\rupdateRequest\022\021\n\tglobalMap\030\001 \001(\014\022"
+  "\026\n\016newKeyframeIds\030\002 \001(\014\"-\n\016updateRespons"
+  "e\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\0212\277\001\n\025grpcI"
+  "MapUpdateService\022[\n\023setCameraParameters\022"
+  "*.grpcIMapUpdate.setCameraParametersRequ"
+  "est\032\026.google.protobuf.Empty\"\000\022I\n\006update\022"
+  "\035.grpcIMapUpdate.updateRequest\032\036.grpcIMa"
+  "pUpdate.updateResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIMapUpdateService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIMapUpdateService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIMapUpdateService_2eproto = {
-  false, false, 464, descriptor_table_protodef_grpcIMapUpdateService_2eproto, "grpcIMapUpdateService.proto", 
+  false, false, 432, descriptor_table_protodef_grpcIMapUpdateService_2eproto, "grpcIMapUpdateService.proto", 
   &descriptor_table_grpcIMapUpdateService_2eproto_once, descriptor_table_grpcIMapUpdateService_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_grpcIMapUpdateService_2eproto::offsets,
   file_level_metadata_grpcIMapUpdateService_2eproto, file_level_enum_descriptors_grpcIMapUpdateService_2eproto, file_level_service_descriptors_grpcIMapUpdateService_2eproto,
@@ -143,22 +140,16 @@ setCameraParametersRequest::setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::
 setCameraParametersRequest::setCameraParametersRequest(const setCameraParametersRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  intrinsicparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_intrinsicparams().empty()) {
-    intrinsicparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_intrinsicparams(), 
-      GetArena());
-  }
-  distortionparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_distortionparams().empty()) {
-    distortionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_distortionparams(), 
+  camparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_camparams().empty()) {
+    camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_camparams(), 
       GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIMapUpdate.setCameraParametersRequest)
 }
 
 void setCameraParametersRequest::SharedCtor() {
-intrinsicparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-distortionparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+camparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 setCameraParametersRequest::~setCameraParametersRequest() {
@@ -169,8 +160,7 @@ setCameraParametersRequest::~setCameraParametersRequest() {
 
 void setCameraParametersRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  intrinsicparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  distortionparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  camparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void setCameraParametersRequest::ArenaDtor(void* object) {
@@ -189,8 +179,7 @@ void setCameraParametersRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  intrinsicparams_.ClearToEmpty();
-  distortionparams_.ClearToEmpty();
+  camparams_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -201,18 +190,10 @@ const char* setCameraParametersRequest::_InternalParse(const char* ptr, ::PROTOB
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes intrinsicParams = 1;
+      // bytes camParams = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_intrinsicparams();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bytes distortionParams = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_distortionparams();
+          auto str = _internal_mutable_camparams();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -245,16 +226,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes intrinsicParams = 1;
-  if (this->intrinsicparams().size() > 0) {
+  // bytes camParams = 1;
+  if (this->camparams().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_intrinsicparams(), target);
-  }
-
-  // bytes distortionParams = 2;
-  if (this->distortionparams().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_distortionparams(), target);
+        1, this->_internal_camparams(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -273,18 +248,11 @@ size_t setCameraParametersRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes intrinsicParams = 1;
-  if (this->intrinsicparams().size() > 0) {
+  // bytes camParams = 1;
+  if (this->camparams().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_intrinsicparams());
-  }
-
-  // bytes distortionParams = 2;
-  if (this->distortionparams().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_distortionparams());
+        this->_internal_camparams());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -318,11 +286,8 @@ void setCameraParametersRequest::MergeFrom(const setCameraParametersRequest& fro
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.intrinsicparams().size() > 0) {
-    _internal_set_intrinsicparams(from._internal_intrinsicparams());
-  }
-  if (from.distortionparams().size() > 0) {
-    _internal_set_distortionparams(from._internal_distortionparams());
+  if (from.camparams().size() > 0) {
+    _internal_set_camparams(from._internal_camparams());
   }
 }
 
@@ -347,8 +312,7 @@ bool setCameraParametersRequest::IsInitialized() const {
 void setCameraParametersRequest::InternalSwap(setCameraParametersRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  intrinsicparams_.Swap(&other->intrinsicparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  distortionparams_.Swap(&other->distortionparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  camparams_.Swap(&other->camparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata setCameraParametersRequest::GetMetadata() const {

@@ -48,7 +48,7 @@ class IRegression_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIRegression::IRegression_grpcServer>
 {
-  static constexpr const char * UUID = "bb953ee8-f209-4c7b-8537-5731be42904b";
+  static constexpr const char * UUID = "d991baa9-3e57-4377-b244-7690091cea9e";
   static constexpr const char * NAME = "IRegression_grpcServer";
   static constexpr const char * DESCRIPTION = "IRegression_grpcServer grpc server component";
 };

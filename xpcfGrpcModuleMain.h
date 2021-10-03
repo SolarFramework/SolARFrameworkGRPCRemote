@@ -121,8 +121,6 @@
 #include "IRelocalizer_grpcServer.h"
 #include "IBootstrapper_grpcProxy.h"
 #include "IBootstrapper_grpcServer.h"
-#include "IBootstrapperStereo_grpcProxy.h"
-#include "IBootstrapperStereo_grpcServer.h"
 #include "IMapping_grpcProxy.h"
 #include "IMapping_grpcServer.h"
 #include "ITracking_grpcProxy.h"

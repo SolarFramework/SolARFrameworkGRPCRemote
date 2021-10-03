@@ -41,7 +41,7 @@ class IDepthEstimation_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIDepthEstimation::IDepthEstimation_grpcServer>
 {
-  static constexpr const char * UUID = "774f2e28-fb12-4767-9471-ef529f301b1f";
+  static constexpr const char * UUID = "d47a2503-e1c6-4db2-9bff-52a3259bcbe1";
   static constexpr const char * NAME = "IDepthEstimation_grpcServer";
   static constexpr const char * DESCRIPTION = "IDepthEstimation_grpcServer grpc server component";
 };

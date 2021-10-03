@@ -42,7 +42,7 @@ class IFeatureWithDepthFromStereo_grpcServer:  public org::bcom::xpcf::Configura
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIFeatureWithDepthFromStereo::IFeatureWithDepthFromStereo_grpcServer>
 {
-  static constexpr const char * UUID = "f93ffd7a-c8bc-4346-bd09-86d92438354e";
+  static constexpr const char * UUID = "a5a81922-7bac-44b1-a561-9c7b83a07589";
   static constexpr const char * NAME = "IFeatureWithDepthFromStereo_grpcServer";
   static constexpr const char * DESCRIPTION = "IFeatureWithDepthFromStereo_grpcServer grpc server component";
 };

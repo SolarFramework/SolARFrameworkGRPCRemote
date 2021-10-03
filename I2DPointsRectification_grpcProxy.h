@@ -37,7 +37,7 @@ class I2DPointsRectification_grpcProxy:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyI2DPointsRectification::I2DPointsRectification_grpcProxy>
 {
-  static constexpr const char * UUID = "15b309b0-677d-49f0-abc9-6816aaf98298";
+  static constexpr const char * UUID = "7ec39cd6-c0e1-4b4d-a064-e42e56fc258b";
   static constexpr const char * NAME = "I2DPointsRectification_grpcProxy";
   static constexpr const char * DESCRIPTION = "I2DPointsRectification_grpcProxy grpc client proxy component";
 };

@@ -39,7 +39,7 @@ class IMatchesOverlay_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virt
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMatchesOverlay::IMatchesOverlay_grpcProxy>
 {
-  static constexpr const char * UUID = "67689442-262b-4b7c-9391-c21dcdf6c427";
+  static constexpr const char * UUID = "a35aa6c7-ce39-4158-866d-5b0210267c12";
   static constexpr const char * NAME = "IMatchesOverlay_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMatchesOverlay_grpcProxy grpc client proxy component";
 };

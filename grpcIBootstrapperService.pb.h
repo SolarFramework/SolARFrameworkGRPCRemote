@@ -189,7 +189,7 @@ class setCameraParametersRequest PROTOBUF_FINAL :
 
   enum : int {
     kIntrinsicParamsFieldNumber = 1,
-    kDistortionParamsFieldNumber = 2,
+    kDistorsionParamsFieldNumber = 2,
   };
   // bytes intrinsicParams = 1;
   void clear_intrinsicparams();
@@ -207,20 +207,20 @@ class setCameraParametersRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_intrinsicparams();
   public:
 
-  // bytes distortionParams = 2;
-  void clear_distortionparams();
-  const std::string& distortionparams() const;
-  void set_distortionparams(const std::string& value);
-  void set_distortionparams(std::string&& value);
-  void set_distortionparams(const char* value);
-  void set_distortionparams(const void* value, size_t size);
-  std::string* mutable_distortionparams();
-  std::string* release_distortionparams();
-  void set_allocated_distortionparams(std::string* distortionparams);
+  // bytes distorsionParams = 2;
+  void clear_distorsionparams();
+  const std::string& distorsionparams() const;
+  void set_distorsionparams(const std::string& value);
+  void set_distorsionparams(std::string&& value);
+  void set_distorsionparams(const char* value);
+  void set_distorsionparams(const void* value, size_t size);
+  std::string* mutable_distorsionparams();
+  std::string* release_distorsionparams();
+  void set_allocated_distorsionparams(std::string* distorsionparams);
   private:
-  const std::string& _internal_distortionparams() const;
-  void _internal_set_distortionparams(const std::string& value);
-  std::string* _internal_mutable_distortionparams();
+  const std::string& _internal_distorsionparams() const;
+  void _internal_set_distorsionparams(const std::string& value);
+  std::string* _internal_mutable_distorsionparams();
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIBootstrapper.setCameraParametersRequest)
@@ -231,7 +231,7 @@ class setCameraParametersRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr intrinsicparams_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr distortionparams_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr distorsionparams_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIBootstrapperService_2eproto;
 };
@@ -350,43 +350,26 @@ class processRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImageFieldNumber = 1,
-    kPoseFieldNumber = 2,
-    kViewFieldNumber = 3,
+    kFrameFieldNumber = 1,
+    kViewFieldNumber = 2,
   };
-  // bytes image = 1;
-  void clear_image();
-  const std::string& image() const;
-  void set_image(const std::string& value);
-  void set_image(std::string&& value);
-  void set_image(const char* value);
-  void set_image(const void* value, size_t size);
-  std::string* mutable_image();
-  std::string* release_image();
-  void set_allocated_image(std::string* image);
+  // bytes frame = 1;
+  void clear_frame();
+  const std::string& frame() const;
+  void set_frame(const std::string& value);
+  void set_frame(std::string&& value);
+  void set_frame(const char* value);
+  void set_frame(const void* value, size_t size);
+  std::string* mutable_frame();
+  std::string* release_frame();
+  void set_allocated_frame(std::string* frame);
   private:
-  const std::string& _internal_image() const;
-  void _internal_set_image(const std::string& value);
-  std::string* _internal_mutable_image();
+  const std::string& _internal_frame() const;
+  void _internal_set_frame(const std::string& value);
+  std::string* _internal_mutable_frame();
   public:
 
-  // bytes pose = 2;
-  void clear_pose();
-  const std::string& pose() const;
-  void set_pose(const std::string& value);
-  void set_pose(std::string&& value);
-  void set_pose(const char* value);
-  void set_pose(const void* value, size_t size);
-  std::string* mutable_pose();
-  std::string* release_pose();
-  void set_allocated_pose(std::string* pose);
-  private:
-  const std::string& _internal_pose() const;
-  void _internal_set_pose(const std::string& value);
-  std::string* _internal_mutable_pose();
-  public:
-
-  // bytes view = 3;
+  // bytes view = 2;
   void clear_view();
   const std::string& view() const;
   void set_view(const std::string& value);
@@ -409,8 +392,7 @@ class processRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr view_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIBootstrapperService_2eproto;
@@ -642,194 +624,133 @@ inline void setCameraParametersRequest::set_allocated_intrinsicparams(std::strin
   // @@protoc_insertion_point(field_set_allocated:grpcIBootstrapper.setCameraParametersRequest.intrinsicParams)
 }
 
-// bytes distortionParams = 2;
-inline void setCameraParametersRequest::clear_distortionparams() {
-  distortionparams_.ClearToEmpty();
+// bytes distorsionParams = 2;
+inline void setCameraParametersRequest::clear_distorsionparams() {
+  distorsionparams_.ClearToEmpty();
 }
-inline const std::string& setCameraParametersRequest::distortionparams() const {
-  // @@protoc_insertion_point(field_get:grpcIBootstrapper.setCameraParametersRequest.distortionParams)
-  return _internal_distortionparams();
+inline const std::string& setCameraParametersRequest::distorsionparams() const {
+  // @@protoc_insertion_point(field_get:grpcIBootstrapper.setCameraParametersRequest.distorsionParams)
+  return _internal_distorsionparams();
 }
-inline void setCameraParametersRequest::set_distortionparams(const std::string& value) {
-  _internal_set_distortionparams(value);
-  // @@protoc_insertion_point(field_set:grpcIBootstrapper.setCameraParametersRequest.distortionParams)
+inline void setCameraParametersRequest::set_distorsionparams(const std::string& value) {
+  _internal_set_distorsionparams(value);
+  // @@protoc_insertion_point(field_set:grpcIBootstrapper.setCameraParametersRequest.distorsionParams)
 }
-inline std::string* setCameraParametersRequest::mutable_distortionparams() {
-  // @@protoc_insertion_point(field_mutable:grpcIBootstrapper.setCameraParametersRequest.distortionParams)
-  return _internal_mutable_distortionparams();
+inline std::string* setCameraParametersRequest::mutable_distorsionparams() {
+  // @@protoc_insertion_point(field_mutable:grpcIBootstrapper.setCameraParametersRequest.distorsionParams)
+  return _internal_mutable_distorsionparams();
 }
-inline const std::string& setCameraParametersRequest::_internal_distortionparams() const {
-  return distortionparams_.Get();
+inline const std::string& setCameraParametersRequest::_internal_distorsionparams() const {
+  return distorsionparams_.Get();
 }
-inline void setCameraParametersRequest::_internal_set_distortionparams(const std::string& value) {
+inline void setCameraParametersRequest::_internal_set_distorsionparams(const std::string& value) {
   
-  distortionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  distorsionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void setCameraParametersRequest::set_distortionparams(std::string&& value) {
+inline void setCameraParametersRequest::set_distorsionparams(std::string&& value) {
   
-  distortionparams_.Set(
+  distorsionparams_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBootstrapper.setCameraParametersRequest.distortionParams)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBootstrapper.setCameraParametersRequest.distorsionParams)
 }
-inline void setCameraParametersRequest::set_distortionparams(const char* value) {
+inline void setCameraParametersRequest::set_distorsionparams(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  distortionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBootstrapper.setCameraParametersRequest.distortionParams)
+  distorsionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBootstrapper.setCameraParametersRequest.distorsionParams)
 }
-inline void setCameraParametersRequest::set_distortionparams(const void* value,
+inline void setCameraParametersRequest::set_distorsionparams(const void* value,
     size_t size) {
   
-  distortionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  distorsionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBootstrapper.setCameraParametersRequest.distortionParams)
+  // @@protoc_insertion_point(field_set_pointer:grpcIBootstrapper.setCameraParametersRequest.distorsionParams)
 }
-inline std::string* setCameraParametersRequest::_internal_mutable_distortionparams() {
+inline std::string* setCameraParametersRequest::_internal_mutable_distorsionparams() {
   
-  return distortionparams_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return distorsionparams_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* setCameraParametersRequest::release_distortionparams() {
-  // @@protoc_insertion_point(field_release:grpcIBootstrapper.setCameraParametersRequest.distortionParams)
-  return distortionparams_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* setCameraParametersRequest::release_distorsionparams() {
+  // @@protoc_insertion_point(field_release:grpcIBootstrapper.setCameraParametersRequest.distorsionParams)
+  return distorsionparams_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void setCameraParametersRequest::set_allocated_distortionparams(std::string* distortionparams) {
-  if (distortionparams != nullptr) {
+inline void setCameraParametersRequest::set_allocated_distorsionparams(std::string* distorsionparams) {
+  if (distorsionparams != nullptr) {
     
   } else {
     
   }
-  distortionparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), distortionparams,
+  distorsionparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), distorsionparams,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBootstrapper.setCameraParametersRequest.distortionParams)
+  // @@protoc_insertion_point(field_set_allocated:grpcIBootstrapper.setCameraParametersRequest.distorsionParams)
 }
 
 // -------------------------------------------------------------------
 
 // processRequest
 
-// bytes image = 1;
-inline void processRequest::clear_image() {
-  image_.ClearToEmpty();
+// bytes frame = 1;
+inline void processRequest::clear_frame() {
+  frame_.ClearToEmpty();
 }
-inline const std::string& processRequest::image() const {
-  // @@protoc_insertion_point(field_get:grpcIBootstrapper.processRequest.image)
-  return _internal_image();
+inline const std::string& processRequest::frame() const {
+  // @@protoc_insertion_point(field_get:grpcIBootstrapper.processRequest.frame)
+  return _internal_frame();
 }
-inline void processRequest::set_image(const std::string& value) {
-  _internal_set_image(value);
-  // @@protoc_insertion_point(field_set:grpcIBootstrapper.processRequest.image)
+inline void processRequest::set_frame(const std::string& value) {
+  _internal_set_frame(value);
+  // @@protoc_insertion_point(field_set:grpcIBootstrapper.processRequest.frame)
 }
-inline std::string* processRequest::mutable_image() {
-  // @@protoc_insertion_point(field_mutable:grpcIBootstrapper.processRequest.image)
-  return _internal_mutable_image();
+inline std::string* processRequest::mutable_frame() {
+  // @@protoc_insertion_point(field_mutable:grpcIBootstrapper.processRequest.frame)
+  return _internal_mutable_frame();
 }
-inline const std::string& processRequest::_internal_image() const {
-  return image_.Get();
+inline const std::string& processRequest::_internal_frame() const {
+  return frame_.Get();
 }
-inline void processRequest::_internal_set_image(const std::string& value) {
+inline void processRequest::_internal_set_frame(const std::string& value) {
   
-  image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void processRequest::set_image(std::string&& value) {
+inline void processRequest::set_frame(std::string&& value) {
   
-  image_.Set(
+  frame_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBootstrapper.processRequest.image)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIBootstrapper.processRequest.frame)
 }
-inline void processRequest::set_image(const char* value) {
+inline void processRequest::set_frame(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBootstrapper.processRequest.image)
+  frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIBootstrapper.processRequest.frame)
 }
-inline void processRequest::set_image(const void* value,
+inline void processRequest::set_frame(const void* value,
     size_t size) {
   
-  image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  frame_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBootstrapper.processRequest.image)
+  // @@protoc_insertion_point(field_set_pointer:grpcIBootstrapper.processRequest.frame)
 }
-inline std::string* processRequest::_internal_mutable_image() {
+inline std::string* processRequest::_internal_mutable_frame() {
   
-  return image_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return frame_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* processRequest::release_image() {
-  // @@protoc_insertion_point(field_release:grpcIBootstrapper.processRequest.image)
-  return image_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* processRequest::release_frame() {
+  // @@protoc_insertion_point(field_release:grpcIBootstrapper.processRequest.frame)
+  return frame_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void processRequest::set_allocated_image(std::string* image) {
-  if (image != nullptr) {
+inline void processRequest::set_allocated_frame(std::string* frame) {
+  if (frame != nullptr) {
     
   } else {
     
   }
-  image_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), image,
+  frame_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), frame,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBootstrapper.processRequest.image)
+  // @@protoc_insertion_point(field_set_allocated:grpcIBootstrapper.processRequest.frame)
 }
 
-// bytes pose = 2;
-inline void processRequest::clear_pose() {
-  pose_.ClearToEmpty();
-}
-inline const std::string& processRequest::pose() const {
-  // @@protoc_insertion_point(field_get:grpcIBootstrapper.processRequest.pose)
-  return _internal_pose();
-}
-inline void processRequest::set_pose(const std::string& value) {
-  _internal_set_pose(value);
-  // @@protoc_insertion_point(field_set:grpcIBootstrapper.processRequest.pose)
-}
-inline std::string* processRequest::mutable_pose() {
-  // @@protoc_insertion_point(field_mutable:grpcIBootstrapper.processRequest.pose)
-  return _internal_mutable_pose();
-}
-inline const std::string& processRequest::_internal_pose() const {
-  return pose_.Get();
-}
-inline void processRequest::_internal_set_pose(const std::string& value) {
-  
-  pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void processRequest::set_pose(std::string&& value) {
-  
-  pose_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBootstrapper.processRequest.pose)
-}
-inline void processRequest::set_pose(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBootstrapper.processRequest.pose)
-}
-inline void processRequest::set_pose(const void* value,
-    size_t size) {
-  
-  pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBootstrapper.processRequest.pose)
-}
-inline std::string* processRequest::_internal_mutable_pose() {
-  
-  return pose_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* processRequest::release_pose() {
-  // @@protoc_insertion_point(field_release:grpcIBootstrapper.processRequest.pose)
-  return pose_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void processRequest::set_allocated_pose(std::string* pose) {
-  if (pose != nullptr) {
-    
-  } else {
-    
-  }
-  pose_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), pose,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBootstrapper.processRequest.pose)
-}
-
-// bytes view = 3;
+// bytes view = 2;
 inline void processRequest::clear_view() {
   view_.ClearToEmpty();
 }

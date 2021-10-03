@@ -41,7 +41,7 @@ class IImageRectification_grpcServer:  public org::bcom::xpcf::ConfigurableBase,
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImageRectification::IImageRectification_grpcServer>
 {
-  static constexpr const char * UUID = "16488218-db0c-49ca-9f2b-93e968df7b8e";
+  static constexpr const char * UUID = "f74f803c-4ea2-4420-962f-4803bc200da5";
   static constexpr const char * NAME = "IImageRectification_grpcServer";
   static constexpr const char * DESCRIPTION = "IImageRectification_grpcServer grpc server component";
 };

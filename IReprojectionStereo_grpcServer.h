@@ -43,7 +43,7 @@ class IReprojectionStereo_grpcServer:  public org::bcom::xpcf::ConfigurableBase,
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIReprojectionStereo::IReprojectionStereo_grpcServer>
 {
-  static constexpr const char * UUID = "c3c612d7-b7a9-4a24-a327-e2060e7697d2";
+  static constexpr const char * UUID = "f9ebdfd6-1066-475a-8b72-d51ef3ceadb8";
   static constexpr const char * NAME = "IReprojectionStereo_grpcServer";
   static constexpr const char * DESCRIPTION = "IReprojectionStereo_grpcServer grpc server component";
 };

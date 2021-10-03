@@ -43,7 +43,7 @@ class IImageConvertor_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImageConvertor::IImageConvertor_grpcServer>
 {
-  static constexpr const char * UUID = "c5ec40b5-6b13-4696-9e6b-58adde767bb6";
+  static constexpr const char * UUID = "36458944-2986-49be-8ebf-55f2d12cc9dc";
   static constexpr const char * NAME = "IImageConvertor_grpcServer";
   static constexpr const char * DESCRIPTION = "IImageConvertor_grpcServer grpc server component";
 };

@@ -42,7 +42,7 @@ class IOpticalFlowEstimator_grpcServer:  public org::bcom::xpcf::ConfigurableBas
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIOpticalFlowEstimator::IOpticalFlowEstimator_grpcServer>
 {
-  static constexpr const char * UUID = "798a9f01-8d4e-43de-85c6-e0907626cc1c";
+  static constexpr const char * UUID = "af06b587-5be2-4d1a-87ed-ad900d47fe82";
   static constexpr const char * NAME = "IOpticalFlowEstimator_grpcServer";
   static constexpr const char * DESCRIPTION = "IOpticalFlowEstimator_grpcServer grpc server component";
 };

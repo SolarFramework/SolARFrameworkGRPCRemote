@@ -41,7 +41,7 @@ class ICameraCalibration_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverICameraCalibration::ICameraCalibration_grpcServer>
 {
-  static constexpr const char * UUID = "c6130c06-5a33-48f5-928e-680af61b251a";
+  static constexpr const char * UUID = "ee5fc0d6-281e-4185-9898-c41606a7a0fc";
   static constexpr const char * NAME = "ICameraCalibration_grpcServer";
   static constexpr const char * DESCRIPTION = "ICameraCalibration_grpcServer grpc server component";
 };

@@ -41,7 +41,7 @@ class IImage2WorldMapper_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIImage2WorldMapper::IImage2WorldMapper_grpcServer>
 {
-  static constexpr const char * UUID = "639b6628-b3fa-4261-9dff-6ff7132c8974";
+  static constexpr const char * UUID = "2dcd37ad-0c08-4793-b249-b0dd56b5bf12";
   static constexpr const char * NAME = "IImage2WorldMapper_grpcServer";
   static constexpr const char * DESCRIPTION = "IImage2WorldMapper_grpcServer grpc server component";
 };

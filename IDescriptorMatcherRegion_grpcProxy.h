@@ -38,7 +38,7 @@ class IDescriptorMatcherRegion_grpcProxy:  public org::bcom::xpcf::ConfigurableB
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDescriptorMatcherRegion::IDescriptorMatcherRegion_grpcProxy>
 {
-  static constexpr const char * UUID = "c760fc70-63af-4fb3-9c41-cc73cf8e1825";
+  static constexpr const char * UUID = "92474130-2e1c-471c-aafe-c84c5144552f";
   static constexpr const char * NAME = "IDescriptorMatcherRegion_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDescriptorMatcherRegion_grpcProxy grpc client proxy component";
 };

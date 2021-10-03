@@ -43,7 +43,7 @@ class IDescriptorMatcherRegion_grpcServer:  public org::bcom::xpcf::Configurable
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIDescriptorMatcherRegion::IDescriptorMatcherRegion_grpcServer>
 {
-  static constexpr const char * UUID = "deb77976-14a4-4b1b-b93e-f982661cbc65";
+  static constexpr const char * UUID = "b4ca2b4f-cbcc-4688-be15-301b3d4b081c";
   static constexpr const char * NAME = "IDescriptorMatcherRegion_grpcServer";
   static constexpr const char * DESCRIPTION = "IDescriptorMatcherRegion_grpcServer grpc server component";
 };

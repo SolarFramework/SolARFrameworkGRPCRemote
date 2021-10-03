@@ -37,7 +37,7 @@ class IDescriptorMatcherStereo_grpcProxy:  public org::bcom::xpcf::ConfigurableB
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIDescriptorMatcherStereo::IDescriptorMatcherStereo_grpcProxy>
 {
-  static constexpr const char * UUID = "89ce8afc-5c6c-41b4-a4ca-2bb8ffadc5cd";
+  static constexpr const char * UUID = "06bc0b35-6240-4bb9-ae8a-1de2c5f77a13";
   static constexpr const char * NAME = "IDescriptorMatcherStereo_grpcProxy";
   static constexpr const char * DESCRIPTION = "IDescriptorMatcherStereo_grpcProxy grpc client proxy component";
 };

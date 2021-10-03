@@ -38,7 +38,7 @@ class IReprojectionStereo_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIReprojectionStereo::IReprojectionStereo_grpcProxy>
 {
-  static constexpr const char * UUID = "62901af1-0dd3-48c0-99e5-b7980a59c4b3";
+  static constexpr const char * UUID = "6bb5443e-ffa3-47f1-9276-54577fcd5368";
   static constexpr const char * NAME = "IReprojectionStereo_grpcProxy";
   static constexpr const char * DESCRIPTION = "IReprojectionStereo_grpcProxy grpc client proxy component";
 };

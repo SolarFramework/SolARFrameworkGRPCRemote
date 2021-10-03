@@ -36,7 +36,7 @@ class IContoursExtractor_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIContoursExtractor::IContoursExtractor_grpcProxy>
 {
-  static constexpr const char * UUID = "6686948e-7303-482e-bd30-19dfe3c9c5f7";
+  static constexpr const char * UUID = "892788ad-8366-4d79-aec8-92aa4ed34665";
   static constexpr const char * NAME = "IContoursExtractor_grpcProxy";
   static constexpr const char * DESCRIPTION = "IContoursExtractor_grpcProxy grpc client proxy component";
 };

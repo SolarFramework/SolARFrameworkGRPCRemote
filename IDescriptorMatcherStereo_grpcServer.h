@@ -42,7 +42,7 @@ class IDescriptorMatcherStereo_grpcServer:  public org::bcom::xpcf::Configurable
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::serverIDescriptorMatcherStereo::IDescriptorMatcherStereo_grpcServer>
 {
-  static constexpr const char * UUID = "e7e4e46a-e3fa-4c5e-bcde-09d19c658b72";
+  static constexpr const char * UUID = "9f72e88e-ca7a-4ac9-af81-cf08382dda03";
   static constexpr const char * NAME = "IDescriptorMatcherStereo_grpcServer";
   static constexpr const char * DESCRIPTION = "IDescriptorMatcherStereo_grpcServer grpc server component";
 };
