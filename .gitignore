@@ -3,7 +3,7 @@ build/debug/
 
 build/release/
 
-SolARFrameworkGRPCRemote.pro.user
+*.pro.user
 
 xpcfGrpcRemotingSolARFramework.pro
 
