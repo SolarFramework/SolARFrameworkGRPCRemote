@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <xpcf-registry>
-  <module uuid="0be8137e-b795-41e0-99be-0996ea6a1106" name="SolARFrameworkGRPCRemote" description="xpcf remoting module for project SolARFramework" path="$REMAKENROOT/modules">
-    <component uuid="f7d538cd-1d6f-4daa-8701-3e31357c213e" name="I2DOverlay_grpcProxy" description="I2DOverlay_grpcProxy">
+  <module uuid="a0f522d1-b70e-4d0f-ad78-84e78a9af6bf" name="xpcfGrpcRemotingSolARFramework" description="xpcf remoting module for project SolARFramework" path="$REMAKENROOT/modules">
+        <component uuid="f7d538cd-1d6f-4daa-8701-3e31357c213e" name="I2DOverlay_grpcProxy" description="I2DOverlay_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="62b8b0b5-9344-40e6-a288-e609eb3ff0f1" name="I2DOverlay" description="SolAR::I2DOverlay interface"/>
     </component>
@@ -189,7 +189,7 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="8e54d5d0-f7a3-4d62-b012-728e5704b46a" name="ITrackableLoader" description="Interface for Trackable objects"/>
     </component>
-    <component uuid="0ba23705-0b6e-4fa0-b0c3-0e5626951e52" name="ILoopClosureDetector_grpcProxy" description="ILoopClosureDetector_grpcProxy">
+    <component uuid="ee57ff66-30d0-11ec-8d3d-0242ac130003" name="ILoopClosureDetector_grpcProxy" description="ILoopClosureDetector_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="a267c93a-c1c6-11ea-b3de-0242ac130004" name="ILoopClosureDetector" description="SolAR::api::loop::ILoopClosureDetector interface for a loop closure detection."/>
     </component>
@@ -328,8 +328,7 @@
     <component uuid="acc7cbc7-ea8d-4034-a568-363d9b820eed" name="IOpticalFlowEstimator_grpcProxy" description="IOpticalFlowEstimator_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="3c74cd7f-950c-43ee-8886-9f4ddf763c27" name="IOpticalFlowEstimator" description="A interface for optical flow estimation between two images"/>
-    </component>
-    <component uuid="ad47d50c-83d6-4b63-af31-8cf3642addd0" name="I2DOverlay_grpcServer" description="I2DOverlay_grpcServer">
+    </component><component uuid="ad47d50c-83d6-4b63-af31-8cf3642addd0" name="I2DOverlay_grpcServer" description="I2DOverlay_grpcServer">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
@@ -425,7 +424,7 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
-    <component uuid="d8dc1ca0-1c91-4fba-92fd-f908f16bf847" name="I2DTransform_grpcServer" description="I2DTransform_grpcServer">
+    <component uuid="e59ed354-1ddc-4f89-b445-31001e0acc67" name="I2DTransform_grpcServer" description="I2DTransform_grpcServer">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
@@ -517,7 +516,7 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
-    <component uuid="95a82220-1f6d-40d2-8aa6-bf977b1aad27" name="ILoopClosureDetector_grpcServer" description="ILoopClosureDetector_grpcServer">
+    <component uuid="fd612992-30d0-11ec-8d3d-0242ac130003" name="ILoopClosureDetector_grpcServer" description="ILoopClosureDetector_grpcServer">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
@@ -657,8 +656,8 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
-</module>
-<factory>
+  </module>
+  <factory>
     <bindings>
       <bind interface="org::bcom::xpcf::IGrpcService">
         <component to="I2DOverlay_grpcServer"/>
