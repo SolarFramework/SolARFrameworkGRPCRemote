@@ -6,5 +6,6 @@ build/release/
 *.pro.user
 
 xpcfGrpcRemotingSolARFramework.pro
+xpcfGrpcRemotingSolARFramework*.xml
 
 build/*
