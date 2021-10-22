@@ -2,7 +2,7 @@
 
 #ifndef IRELOCALIZER_GRPCSERVER_H
 #define IRELOCALIZER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRelocalizer.h"
+#include "api/reloc/IRelocalizer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIRelocalizerService.grpc.pb.h"

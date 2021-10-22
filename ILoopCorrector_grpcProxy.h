@@ -3,7 +3,7 @@
 
 #ifndef ILOOPCORRECTOR_GRPCPROXY_H
 #define ILOOPCORRECTOR_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopCorrector.h"
+#include "api/loop/ILoopCorrector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

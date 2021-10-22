@@ -2,7 +2,7 @@
 
 #ifndef IVISUALINERTIALFUSION_GRPCSERVER_H
 #define IVISUALINERTIALFUSION_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/fusion/IVisualInertialFusion.h"
+#include "api/fusion/IVisualInertialFusion.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIVisualInertialFusionService.grpc.pb.h"

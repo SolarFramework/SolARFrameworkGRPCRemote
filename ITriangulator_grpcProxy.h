@@ -3,7 +3,7 @@
 
 #ifndef ITRIANGULATOR_GRPCPROXY_H
 #define ITRIANGULATOR_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/ITriangulator.h"
+#include "api/solver/map/ITriangulator.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

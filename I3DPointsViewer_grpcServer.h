@@ -2,7 +2,7 @@
 
 #ifndef I3DPOINTSVIEWER_GRPCSERVER_H
 #define I3DPOINTSVIEWER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DPointsViewer.h"
+#include "api/display/I3DPointsViewer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcI3DPointsViewerService.grpc.pb.h"

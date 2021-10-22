@@ -2,7 +2,7 @@
 
 #ifndef IPCFILTERCENTROID_GRPCSERVER_H
 #define IPCFILTERCENTROID_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilterCentroid.h"
+#include "api/pointCloud/IPCFilterCentroid.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIPCFilterCentroidService.grpc.pb.h"

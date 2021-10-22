@@ -2,7 +2,7 @@
 
 #ifndef ITRACKING_GRPCSERVER_H
 #define ITRACKING_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/slam/ITracking.h"
+#include "api/slam/ITracking.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcITrackingService.grpc.pb.h"

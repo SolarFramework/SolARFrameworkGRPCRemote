@@ -3,7 +3,7 @@
 
 #ifndef IDEPTHESTIMATION_GRPCPROXY_H
 #define IDEPTHESTIMATION_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IDepthEstimation.h"
+#include "api/geom/IDepthEstimation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

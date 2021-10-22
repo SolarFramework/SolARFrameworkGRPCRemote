@@ -2,7 +2,7 @@
 
 #ifndef IMAPPING_GRPCSERVER_H
 #define IMAPPING_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IMapping.h"
+#include "api/slam/IMapping.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMappingService.grpc.pb.h"

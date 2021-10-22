@@ -3,7 +3,7 @@
 
 #ifndef IHOMOGRAPHYVALIDATION_GRPCPROXY_H
 #define IHOMOGRAPHYVALIDATION_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/IHomographyValidation.h"
+#include "api/solver/pose/IHomographyValidation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

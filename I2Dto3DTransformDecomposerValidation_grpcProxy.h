@@ -3,7 +3,7 @@
 
 #ifndef I2DTO3DTRANSFORMDECOMPOSERVALIDATION_GRPCPROXY_H
 #define I2DTO3DTRANSFORMDECOMPOSERVALIDATION_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2Dto3DTransformDecomposerValidation.h"
+#include "api/solver/pose/I2Dto3DTransformDecomposerValidation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -3,7 +3,7 @@
 
 #ifndef IDEVICE_GRPCPROXY_H
 #define IDEVICE_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IDevice.h"
+#include "api/input/devices/IDevice.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

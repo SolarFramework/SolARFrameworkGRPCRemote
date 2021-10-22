@@ -3,7 +3,7 @@
 
 #ifndef IUNDISTORTPOINTS_GRPCPROXY_H
 #define IUNDISTORTPOINTS_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IUndistortPoints.h"
+#include "api/geom/IUndistortPoints.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -3,7 +3,7 @@
 
 #ifndef IOPTICALFLOWESTIMATOR_GRPCPROXY_H
 #define IOPTICALFLOWESTIMATOR_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/tracking/IOpticalFlowEstimator.h"
+#include "api/tracking/IOpticalFlowEstimator.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -2,7 +2,7 @@
 
 #ifndef IBOOTSTRAPPER_GRPCSERVER_H
 #define IBOOTSTRAPPER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/slam/IBootstrapper.h"
+#include "api/slam/IBootstrapper.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIBootstrapperService.grpc.pb.h"

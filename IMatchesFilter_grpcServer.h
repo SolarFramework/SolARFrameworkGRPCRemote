@@ -2,7 +2,7 @@
 
 #ifndef IMATCHESFILTER_GRPCSERVER_H
 #define IMATCHESFILTER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IMatchesFilter.h"
+#include "api/features/IMatchesFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMatchesFilterService.grpc.pb.h"

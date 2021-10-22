@@ -2,7 +2,7 @@
 
 #ifndef IIMAGEVIEWER_GRPCSERVER_H
 #define IIMAGEVIEWER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/display/IImageViewer.h"
+#include "api/display/IImageViewer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIImageViewerService.grpc.pb.h"
