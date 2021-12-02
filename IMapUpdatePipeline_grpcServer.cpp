@@ -79,7 +79,7 @@ XPCFErrorCode IMapUpdatePipeline_grpcServer::onConfigured()
 {
   // Set message compression
   context->set_compression_algorithm(GRPC_COMPRESS_DEFLATE);
-  std::cout << "IMapUpdatePipeline_grpcServer::grpcIMapUpdatePipelineServiceImpl compression: GRPC_COMPRESSION_DEFLATE" << std::endl;
+  std::cout << "IMapUpdatePipeline_grpcServer::grpcIMapUpdatePipelineServiceImpl::getMapRequest compression: GRPC_COMPRESSION_DEFLATE" << std::endl;
   SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(map);
   response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
