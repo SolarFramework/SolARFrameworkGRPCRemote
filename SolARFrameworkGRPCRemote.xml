@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <xpcf-registry>
-  <module uuid="a0f522d1-b70e-4d0f-ad78-84e78a9af6bf" name="SolARFrameworkGRPCRemote" description="xpcf remoting module for project SolARFramework" path="$REMAKENROOT/modules">
+  <module uuid="eb99d6a0-3026-4a26-bb44-7eb9dc99f7dd" name="SolARFrameworkGRPCRemote" description="xpcf remoting module for project SolARFramework" path="$REMAKENROOT/modules">
         <component uuid="f7d538cd-1d6f-4daa-8701-3e31357c213e" name="I2DOverlay_grpcProxy" description="I2DOverlay_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="62b8b0b5-9344-40e6-a288-e609eb3ff0f1" name="I2DOverlay" description="SolAR::I2DOverlay interface"/>
