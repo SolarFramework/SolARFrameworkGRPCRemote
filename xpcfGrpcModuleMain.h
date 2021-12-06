@@ -9,4 +9,6 @@
 #include "IMappingPipeline_grpcServer.h"
 #include "IRelocalizationPipeline_grpcProxy.h"
 #include "IRelocalizationPipeline_grpcServer.h"
+#include "IAsyncRelocalizationPipeline_grpcProxy.h"
+#include "IAsyncRelocalizationPipeline_grpcServer.h"
 #endif

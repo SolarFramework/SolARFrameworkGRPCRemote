@@ -213,6 +213,10 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="ef2a631d-93c9-4979-ad1e-5fa16d5d00ef" name="IRelocalizationPipeline" description="The interface to define a relocalization processing pipeline"/>
     </component>
+    <component uuid="95913e8e-5695-11ec-bf63-0242ac130002" name="IAsyncRelocalizationPipeline_grpcServer" description="IAsyncRelocalizationPipeline_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
     <component uuid="34192941-748e-4521-8d30-e12c06f5e226" name="IPCFilter_grpcProxy" description="IPCFilter_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="3e068943-5230-4e6c-abd7-959f293f9829" name="IPCFilter" description="Interface for point cloud filtering"/>

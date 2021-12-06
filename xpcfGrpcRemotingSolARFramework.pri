@@ -12,6 +12,10 @@ IRelocalizationPipeline_grpcProxy.h \
 IRelocalizationPipeline_grpcServer.h \
 grpcIRelocalizationPipelineService.pb.h \
 grpcIRelocalizationPipelineService.grpc.pb.h \
+IAsyncRelocalizationPipeline_grpcProxy.h \
+IAsyncRelocalizationPipeline_grpcServer.h \
+grpcIAsyncRelocalizationPipelineService.pb.h \
+grpcIAsyncRelocalizationPipelineService.grpc.pb.h \
 xpcfGrpcModuleMain.h
 
 SOURCES += \
@@ -27,4 +31,8 @@ IRelocalizationPipeline_grpcProxy.cpp \
 IRelocalizationPipeline_grpcServer.cpp \
 grpcIRelocalizationPipelineService.pb.cc \
 grpcIRelocalizationPipelineService.grpc.pb.cc \
+IAsyncRelocalizationPipeline_grpcProxy.cpp \
+IAsyncRelocalizationPipeline_grpcServer.cpp \
+grpcIAsyncRelocalizationPipelineService.pb.cc \
+grpcIAsyncRelocalizationPipelineService.grpc.pb.cc \
 xpcfGrpcModuleMain.cpp

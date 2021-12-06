@@ -106,8 +106,8 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::mapUpdateRequest(SRef<
 {
   ::grpc::ClientContext context;
   // Set message compression
-  context.set_compression_algorithm(GRPC_COMPRESS_DEFLATE);
-  std::cout << "IMapUpdatePipeline_grpcProxy::mapUpdateRequest compression: GRPC_COMPRESSION_DEFLATE" << std::endl;
+  context.set_compression_algorithm(GRPC_COMPRESS_NONE);
+  std::cout << "IMapUpdatePipeline_grpcProxy::mapUpdateRequest compression: GRPC_COMPRESS_NONE" << std::endl;
   ::grpcIMapUpdatePipeline::mapUpdateRequestRequest reqIn;
   ::grpcIMapUpdatePipeline::mapUpdateRequestResponse respOut;
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));

@@ -37,6 +37,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIRelocalizationPipeline::IRelocalizationPipeline_grpcServer>(componentUUID,interfaceRef);
   }
 
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcServer>(componentUUID,interfaceRef);
+  }
+
   return errCode;
 }
 
@@ -48,4 +58,6 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMappingPipeline::IMappingPipelin
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMappingPipeline::IMappingPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizationPipeline::IRelocalizationPipeline_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRelocalizationPipeline::IRelocalizationPipeline_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcServer)
 XPCF_END_COMPONENTS_DECLARATION

@@ -80,7 +80,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
 {
   // Set message compression
   context->set_compression_algorithm(GRPC_COMPRESS_DEFLATE);
-  std::cout << "IMapUpdatePipeline_grpcServer::grpcIMapUpdatePipelineServiceImpl compression: GRPC_COMPRESSION_DEFLATE" << std::endl;
+  std::cout << "IMappingPipeline_grpcServer::grpcIMappingPipelineServiceImpl::getDataForVisualization compression: GRPC_COMPRESSION_DEFLATE" << std::endl;
   std::vector<SRef<SolAR::datastructure::CloudPoint>> outputPointClouds = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->outputpointclouds());
   std::vector<SolAR::datastructure::Transform3Df> keyframePoses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->keyframeposes());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getDataForVisualization(outputPointClouds, keyframePoses);

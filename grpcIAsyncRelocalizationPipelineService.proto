@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIAsyncRelocalizationPipeline;
+
+message initResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setCameraParametersRequest
+{
+bytes cameraParams = 1;
+}
+
+message setCameraParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getCameraParametersRequest
+{
+bytes cameraParams = 1;
+}
+
+message getCameraParametersResponse
+{
+bytes cameraParams = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message relocalizeProcessRequestRequest
+{
+bytes image = 1;
+bytes pose = 2;
+bytes timestamp = 3;
+}
+
+message relocalizeProcessRequestResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message get3DTransformRequestRequest
+{
+bytes transform3D = 1;
+bytes confidence = 2;
+}
+
+message get3DTransformRequestResponse
+{
+bytes transform3D = 1;
+bytes confidence = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+service grpcIAsyncRelocalizationPipelineService {
+rpc init(google.protobuf.Empty) returns(initResponse) {}
+rpc start(google.protobuf.Empty) returns(startResponse) {}
+rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
+rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
+rpc relocalizeProcessRequest(relocalizeProcessRequestRequest) returns(relocalizeProcessRequestResponse) {}
+rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRequestResponse) {}
+}
+
