@@ -81,7 +81,13 @@ XPCFErrorCode IAsyncRelocalizationPipeline_grpcServer::onConfigured()
   SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
   std::chrono::system_clock::time_point timestamp = xpcf::deserialize<std::chrono::system_clock::time_point>(request->timestamp());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(image, pose, timestamp);
+  SolAR::api::pipeline::TransformStatus transform3DStatus = xpcf::deserialize<SolAR::api::pipeline::TransformStatus>(request->transform3dstatus());
+  SolAR::datastructure::Transform3Df transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->transform3d());
+  float_t confidence = xpcf::deserialize<float_t>(request->confidence());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(image, pose, timestamp, transform3DStatus, transform3D, confidence);
+  response->set_transform3dstatus(xpcf::serialize<SolAR::api::pipeline::TransformStatus>(transform3DStatus));
+  response->set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
+  response->set_confidence(xpcf::serialize<float_t>(confidence));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   return ::grpc::Status::OK;
 }
@@ -89,9 +95,11 @@ XPCFErrorCode IAsyncRelocalizationPipeline_grpcServer::onConfigured()
 
 ::grpc::Status IAsyncRelocalizationPipeline_grpcServer::grpcIAsyncRelocalizationPipelineServiceImpl::get3DTransformRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestResponse* response)
 {
+  SolAR::api::pipeline::TransformStatus transform3DStatus = xpcf::deserialize<SolAR::api::pipeline::TransformStatus>(request->transform3dstatus());
   SolAR::datastructure::Transform3Df transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->transform3d());
   float_t confidence = xpcf::deserialize<float_t>(request->confidence());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->get3DTransformRequest(transform3D, confidence);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->get3DTransformRequest(transform3DStatus, transform3D, confidence);
+  response->set_transform3dstatus(xpcf::serialize<SolAR::api::pipeline::TransformStatus>(transform3DStatus));
   response->set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
   response->set_confidence(xpcf::serialize<float_t>(confidence));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));

@@ -1214,6 +1214,9 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
     kImageFieldNumber = 1,
     kPoseFieldNumber = 2,
     kTimestampFieldNumber = 3,
+    kTransform3DStatusFieldNumber = 4,
+    kTransform3DFieldNumber = 5,
+    kConfidenceFieldNumber = 6,
   };
   // bytes image = 1;
   void clear_image();
@@ -1263,6 +1266,54 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_timestamp();
   public:
 
+  // bytes transform3DStatus = 4;
+  void clear_transform3dstatus();
+  const std::string& transform3dstatus() const;
+  void set_transform3dstatus(const std::string& value);
+  void set_transform3dstatus(std::string&& value);
+  void set_transform3dstatus(const char* value);
+  void set_transform3dstatus(const void* value, size_t size);
+  std::string* mutable_transform3dstatus();
+  std::string* release_transform3dstatus();
+  void set_allocated_transform3dstatus(std::string* transform3dstatus);
+  private:
+  const std::string& _internal_transform3dstatus() const;
+  void _internal_set_transform3dstatus(const std::string& value);
+  std::string* _internal_mutable_transform3dstatus();
+  public:
+
+  // bytes transform3D = 5;
+  void clear_transform3d();
+  const std::string& transform3d() const;
+  void set_transform3d(const std::string& value);
+  void set_transform3d(std::string&& value);
+  void set_transform3d(const char* value);
+  void set_transform3d(const void* value, size_t size);
+  std::string* mutable_transform3d();
+  std::string* release_transform3d();
+  void set_allocated_transform3d(std::string* transform3d);
+  private:
+  const std::string& _internal_transform3d() const;
+  void _internal_set_transform3d(const std::string& value);
+  std::string* _internal_mutable_transform3d();
+  public:
+
+  // bytes confidence = 6;
+  void clear_confidence();
+  const std::string& confidence() const;
+  void set_confidence(const std::string& value);
+  void set_confidence(std::string&& value);
+  void set_confidence(const char* value);
+  void set_confidence(const void* value, size_t size);
+  std::string* mutable_confidence();
+  std::string* release_confidence();
+  void set_allocated_confidence(std::string* confidence);
+  private:
+  const std::string& _internal_confidence() const;
+  void _internal_set_confidence(const std::string& value);
+  std::string* _internal_mutable_confidence();
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest)
  private:
   class _Internal;
@@ -1273,6 +1324,9 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr timestamp_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIAsyncRelocalizationPipelineService_2eproto;
 };
@@ -1391,9 +1445,60 @@ class relocalizeProcessRequestResponse PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kXpcfGrpcReturnValueFieldNumber = 1,
+    kTransform3DStatusFieldNumber = 1,
+    kTransform3DFieldNumber = 2,
+    kConfidenceFieldNumber = 3,
+    kXpcfGrpcReturnValueFieldNumber = 4,
   };
-  // sint32 xpcfGrpcReturnValue = 1;
+  // bytes transform3DStatus = 1;
+  void clear_transform3dstatus();
+  const std::string& transform3dstatus() const;
+  void set_transform3dstatus(const std::string& value);
+  void set_transform3dstatus(std::string&& value);
+  void set_transform3dstatus(const char* value);
+  void set_transform3dstatus(const void* value, size_t size);
+  std::string* mutable_transform3dstatus();
+  std::string* release_transform3dstatus();
+  void set_allocated_transform3dstatus(std::string* transform3dstatus);
+  private:
+  const std::string& _internal_transform3dstatus() const;
+  void _internal_set_transform3dstatus(const std::string& value);
+  std::string* _internal_mutable_transform3dstatus();
+  public:
+
+  // bytes transform3D = 2;
+  void clear_transform3d();
+  const std::string& transform3d() const;
+  void set_transform3d(const std::string& value);
+  void set_transform3d(std::string&& value);
+  void set_transform3d(const char* value);
+  void set_transform3d(const void* value, size_t size);
+  std::string* mutable_transform3d();
+  std::string* release_transform3d();
+  void set_allocated_transform3d(std::string* transform3d);
+  private:
+  const std::string& _internal_transform3d() const;
+  void _internal_set_transform3d(const std::string& value);
+  std::string* _internal_mutable_transform3d();
+  public:
+
+  // bytes confidence = 3;
+  void clear_confidence();
+  const std::string& confidence() const;
+  void set_confidence(const std::string& value);
+  void set_confidence(std::string&& value);
+  void set_confidence(const char* value);
+  void set_confidence(const void* value, size_t size);
+  std::string* mutable_confidence();
+  std::string* release_confidence();
+  void set_allocated_confidence(std::string* confidence);
+  private:
+  const std::string& _internal_confidence() const;
+  void _internal_set_confidence(const std::string& value);
+  std::string* _internal_mutable_confidence();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 4;
   void clear_xpcfgrpcreturnvalue();
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -1409,6 +1514,9 @@ class relocalizeProcessRequestResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIAsyncRelocalizationPipelineService_2eproto;
@@ -1528,10 +1636,27 @@ class get3DTransformRequestRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTransform3DFieldNumber = 1,
-    kConfidenceFieldNumber = 2,
+    kTransform3DStatusFieldNumber = 1,
+    kTransform3DFieldNumber = 2,
+    kConfidenceFieldNumber = 3,
   };
-  // bytes transform3D = 1;
+  // bytes transform3DStatus = 1;
+  void clear_transform3dstatus();
+  const std::string& transform3dstatus() const;
+  void set_transform3dstatus(const std::string& value);
+  void set_transform3dstatus(std::string&& value);
+  void set_transform3dstatus(const char* value);
+  void set_transform3dstatus(const void* value, size_t size);
+  std::string* mutable_transform3dstatus();
+  std::string* release_transform3dstatus();
+  void set_allocated_transform3dstatus(std::string* transform3dstatus);
+  private:
+  const std::string& _internal_transform3dstatus() const;
+  void _internal_set_transform3dstatus(const std::string& value);
+  std::string* _internal_mutable_transform3dstatus();
+  public:
+
+  // bytes transform3D = 2;
   void clear_transform3d();
   const std::string& transform3d() const;
   void set_transform3d(const std::string& value);
@@ -1547,7 +1672,7 @@ class get3DTransformRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_transform3d();
   public:
 
-  // bytes confidence = 2;
+  // bytes confidence = 3;
   void clear_confidence();
   const std::string& confidence() const;
   void set_confidence(const std::string& value);
@@ -1570,6 +1695,7 @@ class get3DTransformRequestRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1690,11 +1816,28 @@ class get3DTransformRequestResponse PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTransform3DFieldNumber = 1,
-    kConfidenceFieldNumber = 2,
-    kXpcfGrpcReturnValueFieldNumber = 3,
+    kTransform3DStatusFieldNumber = 1,
+    kTransform3DFieldNumber = 2,
+    kConfidenceFieldNumber = 3,
+    kXpcfGrpcReturnValueFieldNumber = 4,
   };
-  // bytes transform3D = 1;
+  // bytes transform3DStatus = 1;
+  void clear_transform3dstatus();
+  const std::string& transform3dstatus() const;
+  void set_transform3dstatus(const std::string& value);
+  void set_transform3dstatus(std::string&& value);
+  void set_transform3dstatus(const char* value);
+  void set_transform3dstatus(const void* value, size_t size);
+  std::string* mutable_transform3dstatus();
+  std::string* release_transform3dstatus();
+  void set_allocated_transform3dstatus(std::string* transform3dstatus);
+  private:
+  const std::string& _internal_transform3dstatus() const;
+  void _internal_set_transform3dstatus(const std::string& value);
+  std::string* _internal_mutable_transform3dstatus();
+  public:
+
+  // bytes transform3D = 2;
   void clear_transform3d();
   const std::string& transform3d() const;
   void set_transform3d(const std::string& value);
@@ -1710,7 +1853,7 @@ class get3DTransformRequestResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_transform3d();
   public:
 
-  // bytes confidence = 2;
+  // bytes confidence = 3;
   void clear_confidence();
   const std::string& confidence() const;
   void set_confidence(const std::string& value);
@@ -1726,7 +1869,7 @@ class get3DTransformRequestResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_confidence();
   public:
 
-  // sint32 xpcfGrpcReturnValue = 3;
+  // sint32 xpcfGrpcReturnValue = 4;
   void clear_xpcfgrpcreturnvalue();
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -1742,6 +1885,7 @@ class get3DTransformRequestResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
@@ -2253,11 +2397,377 @@ inline void relocalizeProcessRequestRequest::set_allocated_timestamp(std::string
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.timestamp)
 }
 
+// bytes transform3DStatus = 4;
+inline void relocalizeProcessRequestRequest::clear_transform3dstatus() {
+  transform3dstatus_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestRequest::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
+  return _internal_transform3dstatus();
+}
+inline void relocalizeProcessRequestRequest::set_transform3dstatus(const std::string& value) {
+  _internal_set_transform3dstatus(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
+}
+inline std::string* relocalizeProcessRequestRequest::mutable_transform3dstatus() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
+  return _internal_mutable_transform3dstatus();
+}
+inline const std::string& relocalizeProcessRequestRequest::_internal_transform3dstatus() const {
+  return transform3dstatus_.Get();
+}
+inline void relocalizeProcessRequestRequest::_internal_set_transform3dstatus(const std::string& value) {
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_transform3dstatus(std::string&& value) {
+  
+  transform3dstatus_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
+}
+inline void relocalizeProcessRequestRequest::set_transform3dstatus(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
+}
+inline void relocalizeProcessRequestRequest::set_transform3dstatus(const void* value,
+    size_t size) {
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
+}
+inline std::string* relocalizeProcessRequestRequest::_internal_mutable_transform3dstatus() {
+  
+  return transform3dstatus_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestRequest::release_transform3dstatus() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
+  return transform3dstatus_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_allocated_transform3dstatus(std::string* transform3dstatus) {
+  if (transform3dstatus != nullptr) {
+    
+  } else {
+    
+  }
+  transform3dstatus_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transform3dstatus,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
+}
+
+// bytes transform3D = 5;
+inline void relocalizeProcessRequestRequest::clear_transform3d() {
+  transform3d_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestRequest::transform3d() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
+  return _internal_transform3d();
+}
+inline void relocalizeProcessRequestRequest::set_transform3d(const std::string& value) {
+  _internal_set_transform3d(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
+}
+inline std::string* relocalizeProcessRequestRequest::mutable_transform3d() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
+  return _internal_mutable_transform3d();
+}
+inline const std::string& relocalizeProcessRequestRequest::_internal_transform3d() const {
+  return transform3d_.Get();
+}
+inline void relocalizeProcessRequestRequest::_internal_set_transform3d(const std::string& value) {
+  
+  transform3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_transform3d(std::string&& value) {
+  
+  transform3d_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
+}
+inline void relocalizeProcessRequestRequest::set_transform3d(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transform3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
+}
+inline void relocalizeProcessRequestRequest::set_transform3d(const void* value,
+    size_t size) {
+  
+  transform3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
+}
+inline std::string* relocalizeProcessRequestRequest::_internal_mutable_transform3d() {
+  
+  return transform3d_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestRequest::release_transform3d() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
+  return transform3d_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_allocated_transform3d(std::string* transform3d) {
+  if (transform3d != nullptr) {
+    
+  } else {
+    
+  }
+  transform3d_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transform3d,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
+}
+
+// bytes confidence = 6;
+inline void relocalizeProcessRequestRequest::clear_confidence() {
+  confidence_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestRequest::confidence() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
+  return _internal_confidence();
+}
+inline void relocalizeProcessRequestRequest::set_confidence(const std::string& value) {
+  _internal_set_confidence(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
+}
+inline std::string* relocalizeProcessRequestRequest::mutable_confidence() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
+  return _internal_mutable_confidence();
+}
+inline const std::string& relocalizeProcessRequestRequest::_internal_confidence() const {
+  return confidence_.Get();
+}
+inline void relocalizeProcessRequestRequest::_internal_set_confidence(const std::string& value) {
+  
+  confidence_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_confidence(std::string&& value) {
+  
+  confidence_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
+}
+inline void relocalizeProcessRequestRequest::set_confidence(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  confidence_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
+}
+inline void relocalizeProcessRequestRequest::set_confidence(const void* value,
+    size_t size) {
+  
+  confidence_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
+}
+inline std::string* relocalizeProcessRequestRequest::_internal_mutable_confidence() {
+  
+  return confidence_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestRequest::release_confidence() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
+  return confidence_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_allocated_confidence(std::string* confidence) {
+  if (confidence != nullptr) {
+    
+  } else {
+    
+  }
+  confidence_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), confidence,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
+}
+
 // -------------------------------------------------------------------
 
 // relocalizeProcessRequestResponse
 
-// sint32 xpcfGrpcReturnValue = 1;
+// bytes transform3DStatus = 1;
+inline void relocalizeProcessRequestResponse::clear_transform3dstatus() {
+  transform3dstatus_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestResponse::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3DStatus)
+  return _internal_transform3dstatus();
+}
+inline void relocalizeProcessRequestResponse::set_transform3dstatus(const std::string& value) {
+  _internal_set_transform3dstatus(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3DStatus)
+}
+inline std::string* relocalizeProcessRequestResponse::mutable_transform3dstatus() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3DStatus)
+  return _internal_mutable_transform3dstatus();
+}
+inline const std::string& relocalizeProcessRequestResponse::_internal_transform3dstatus() const {
+  return transform3dstatus_.Get();
+}
+inline void relocalizeProcessRequestResponse::_internal_set_transform3dstatus(const std::string& value) {
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestResponse::set_transform3dstatus(std::string&& value) {
+  
+  transform3dstatus_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3DStatus)
+}
+inline void relocalizeProcessRequestResponse::set_transform3dstatus(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3DStatus)
+}
+inline void relocalizeProcessRequestResponse::set_transform3dstatus(const void* value,
+    size_t size) {
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3DStatus)
+}
+inline std::string* relocalizeProcessRequestResponse::_internal_mutable_transform3dstatus() {
+  
+  return transform3dstatus_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestResponse::release_transform3dstatus() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3DStatus)
+  return transform3dstatus_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestResponse::set_allocated_transform3dstatus(std::string* transform3dstatus) {
+  if (transform3dstatus != nullptr) {
+    
+  } else {
+    
+  }
+  transform3dstatus_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transform3dstatus,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3DStatus)
+}
+
+// bytes transform3D = 2;
+inline void relocalizeProcessRequestResponse::clear_transform3d() {
+  transform3d_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestResponse::transform3d() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3D)
+  return _internal_transform3d();
+}
+inline void relocalizeProcessRequestResponse::set_transform3d(const std::string& value) {
+  _internal_set_transform3d(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3D)
+}
+inline std::string* relocalizeProcessRequestResponse::mutable_transform3d() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3D)
+  return _internal_mutable_transform3d();
+}
+inline const std::string& relocalizeProcessRequestResponse::_internal_transform3d() const {
+  return transform3d_.Get();
+}
+inline void relocalizeProcessRequestResponse::_internal_set_transform3d(const std::string& value) {
+  
+  transform3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestResponse::set_transform3d(std::string&& value) {
+  
+  transform3d_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3D)
+}
+inline void relocalizeProcessRequestResponse::set_transform3d(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transform3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3D)
+}
+inline void relocalizeProcessRequestResponse::set_transform3d(const void* value,
+    size_t size) {
+  
+  transform3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3D)
+}
+inline std::string* relocalizeProcessRequestResponse::_internal_mutable_transform3d() {
+  
+  return transform3d_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestResponse::release_transform3d() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3D)
+  return transform3d_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestResponse::set_allocated_transform3d(std::string* transform3d) {
+  if (transform3d != nullptr) {
+    
+  } else {
+    
+  }
+  transform3d_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transform3d,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.transform3D)
+}
+
+// bytes confidence = 3;
+inline void relocalizeProcessRequestResponse::clear_confidence() {
+  confidence_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestResponse::confidence() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
+  return _internal_confidence();
+}
+inline void relocalizeProcessRequestResponse::set_confidence(const std::string& value) {
+  _internal_set_confidence(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
+}
+inline std::string* relocalizeProcessRequestResponse::mutable_confidence() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
+  return _internal_mutable_confidence();
+}
+inline const std::string& relocalizeProcessRequestResponse::_internal_confidence() const {
+  return confidence_.Get();
+}
+inline void relocalizeProcessRequestResponse::_internal_set_confidence(const std::string& value) {
+  
+  confidence_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestResponse::set_confidence(std::string&& value) {
+  
+  confidence_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
+}
+inline void relocalizeProcessRequestResponse::set_confidence(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  confidence_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
+}
+inline void relocalizeProcessRequestResponse::set_confidence(const void* value,
+    size_t size) {
+  
+  confidence_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
+}
+inline std::string* relocalizeProcessRequestResponse::_internal_mutable_confidence() {
+  
+  return confidence_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestResponse::release_confidence() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
+  return confidence_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestResponse::set_allocated_confidence(std::string* confidence) {
+  if (confidence != nullptr) {
+    
+  } else {
+    
+  }
+  confidence_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), confidence,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
+}
+
+// sint32 xpcfGrpcReturnValue = 4;
 inline void relocalizeProcessRequestResponse::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }
@@ -2281,7 +2791,68 @@ inline void relocalizeProcessRequestResponse::set_xpcfgrpcreturnvalue(::PROTOBUF
 
 // get3DTransformRequestRequest
 
-// bytes transform3D = 1;
+// bytes transform3DStatus = 1;
+inline void get3DTransformRequestRequest::clear_transform3dstatus() {
+  transform3dstatus_.ClearToEmpty();
+}
+inline const std::string& get3DTransformRequestRequest::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.get3DTransformRequestRequest.transform3DStatus)
+  return _internal_transform3dstatus();
+}
+inline void get3DTransformRequestRequest::set_transform3dstatus(const std::string& value) {
+  _internal_set_transform3dstatus(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.get3DTransformRequestRequest.transform3DStatus)
+}
+inline std::string* get3DTransformRequestRequest::mutable_transform3dstatus() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.get3DTransformRequestRequest.transform3DStatus)
+  return _internal_mutable_transform3dstatus();
+}
+inline const std::string& get3DTransformRequestRequest::_internal_transform3dstatus() const {
+  return transform3dstatus_.Get();
+}
+inline void get3DTransformRequestRequest::_internal_set_transform3dstatus(const std::string& value) {
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void get3DTransformRequestRequest::set_transform3dstatus(std::string&& value) {
+  
+  transform3dstatus_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.get3DTransformRequestRequest.transform3DStatus)
+}
+inline void get3DTransformRequestRequest::set_transform3dstatus(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.get3DTransformRequestRequest.transform3DStatus)
+}
+inline void get3DTransformRequestRequest::set_transform3dstatus(const void* value,
+    size_t size) {
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.get3DTransformRequestRequest.transform3DStatus)
+}
+inline std::string* get3DTransformRequestRequest::_internal_mutable_transform3dstatus() {
+  
+  return transform3dstatus_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* get3DTransformRequestRequest::release_transform3dstatus() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.get3DTransformRequestRequest.transform3DStatus)
+  return transform3dstatus_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void get3DTransformRequestRequest::set_allocated_transform3dstatus(std::string* transform3dstatus) {
+  if (transform3dstatus != nullptr) {
+    
+  } else {
+    
+  }
+  transform3dstatus_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transform3dstatus,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.get3DTransformRequestRequest.transform3DStatus)
+}
+
+// bytes transform3D = 2;
 inline void get3DTransformRequestRequest::clear_transform3d() {
   transform3d_.ClearToEmpty();
 }
@@ -2342,7 +2913,7 @@ inline void get3DTransformRequestRequest::set_allocated_transform3d(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.get3DTransformRequestRequest.transform3D)
 }
 
-// bytes confidence = 2;
+// bytes confidence = 3;
 inline void get3DTransformRequestRequest::clear_confidence() {
   confidence_.ClearToEmpty();
 }
@@ -2407,7 +2978,68 @@ inline void get3DTransformRequestRequest::set_allocated_confidence(std::string* 
 
 // get3DTransformRequestResponse
 
-// bytes transform3D = 1;
+// bytes transform3DStatus = 1;
+inline void get3DTransformRequestResponse::clear_transform3dstatus() {
+  transform3dstatus_.ClearToEmpty();
+}
+inline const std::string& get3DTransformRequestResponse::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.transform3DStatus)
+  return _internal_transform3dstatus();
+}
+inline void get3DTransformRequestResponse::set_transform3dstatus(const std::string& value) {
+  _internal_set_transform3dstatus(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.transform3DStatus)
+}
+inline std::string* get3DTransformRequestResponse::mutable_transform3dstatus() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.transform3DStatus)
+  return _internal_mutable_transform3dstatus();
+}
+inline const std::string& get3DTransformRequestResponse::_internal_transform3dstatus() const {
+  return transform3dstatus_.Get();
+}
+inline void get3DTransformRequestResponse::_internal_set_transform3dstatus(const std::string& value) {
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void get3DTransformRequestResponse::set_transform3dstatus(std::string&& value) {
+  
+  transform3dstatus_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.transform3DStatus)
+}
+inline void get3DTransformRequestResponse::set_transform3dstatus(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.transform3DStatus)
+}
+inline void get3DTransformRequestResponse::set_transform3dstatus(const void* value,
+    size_t size) {
+  
+  transform3dstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.transform3DStatus)
+}
+inline std::string* get3DTransformRequestResponse::_internal_mutable_transform3dstatus() {
+  
+  return transform3dstatus_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* get3DTransformRequestResponse::release_transform3dstatus() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.transform3DStatus)
+  return transform3dstatus_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void get3DTransformRequestResponse::set_allocated_transform3dstatus(std::string* transform3dstatus) {
+  if (transform3dstatus != nullptr) {
+    
+  } else {
+    
+  }
+  transform3dstatus_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transform3dstatus,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.transform3DStatus)
+}
+
+// bytes transform3D = 2;
 inline void get3DTransformRequestResponse::clear_transform3d() {
   transform3d_.ClearToEmpty();
 }
@@ -2468,7 +3100,7 @@ inline void get3DTransformRequestResponse::set_allocated_transform3d(std::string
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.transform3D)
 }
 
-// bytes confidence = 2;
+// bytes confidence = 3;
 inline void get3DTransformRequestResponse::clear_confidence() {
   confidence_.ClearToEmpty();
 }
@@ -2529,7 +3161,7 @@ inline void get3DTransformRequestResponse::set_allocated_confidence(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.get3DTransformRequestResponse.confidence)
 }
 
-// sint32 xpcfGrpcReturnValue = 3;
+// sint32 xpcfGrpcReturnValue = 4;
 inline void get3DTransformRequestResponse::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }

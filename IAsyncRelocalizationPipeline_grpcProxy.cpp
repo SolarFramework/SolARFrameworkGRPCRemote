@@ -114,7 +114,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getCameraPar
 }
 
 
-SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df const& pose, std::chrono::system_clock::time_point const& timestamp)
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df const& pose, std::chrono::system_clock::time_point const& timestamp, SolAR::api::pipeline::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence)
 {
   ::grpc::ClientContext context;
   ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestRequest reqIn;
@@ -122,21 +122,28 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::relocalizePr
   reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   reqIn.set_timestamp(xpcf::serialize<std::chrono::system_clock::time_point>(timestamp));
+  reqIn.set_transform3dstatus(xpcf::serialize<SolAR::api::pipeline::TransformStatus>(transform3DStatus));
+  reqIn.set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
+  reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->relocalizeProcessRequest(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
     std::cout << "relocalizeProcessRequest rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIAsyncRelocalizationPipelineService","relocalizeProcessRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  transform3DStatus = xpcf::deserialize<SolAR::api::pipeline::TransformStatus>(respOut.transform3dstatus());
+  transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
+  confidence = xpcf::deserialize<float_t>(respOut.confidence());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
-SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::get3DTransformRequest(SolAR::datastructure::Transform3Df& transform3D, float_t& confidence) const
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::get3DTransformRequest(SolAR::api::pipeline::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence) const
 {
   ::grpc::ClientContext context;
   ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestRequest reqIn;
   ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestResponse respOut;
+  reqIn.set_transform3dstatus(xpcf::serialize<SolAR::api::pipeline::TransformStatus>(transform3DStatus));
   reqIn.set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
   reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->get3DTransformRequest(&context, reqIn, &respOut);
@@ -145,6 +152,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::get3DTransfo
     throw xpcf::RemotingException("grpcIAsyncRelocalizationPipelineService","get3DTransformRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  transform3DStatus = xpcf::deserialize<SolAR::api::pipeline::TransformStatus>(respOut.transform3dstatus());
   transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
