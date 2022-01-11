@@ -3,7 +3,7 @@
 
 #ifndef I3DTRANSFORM_GRPCPROXY_H
 #define I3DTRANSFORM_GRPCPROXY_H
-#include "api/geom/I3DTransform.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/I3DTransform.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -2,7 +2,7 @@
 
 #ifndef IPOINTCLOUDMANAGER_GRPCSERVER_H
 #define IPOINTCLOUDMANAGER_GRPCSERVER_H
-#include "api/storage/IPointCloudManager.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IPointCloudManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIPointCloudManagerService.grpc.pb.h"

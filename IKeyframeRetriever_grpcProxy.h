@@ -3,7 +3,7 @@
 
 #ifndef IKEYFRAMERETRIEVER_GRPCPROXY_H
 #define IKEYFRAMERETRIEVER_GRPCPROXY_H
-#include "api/reloc/IKeyframeRetriever.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IKeyframeRetriever.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

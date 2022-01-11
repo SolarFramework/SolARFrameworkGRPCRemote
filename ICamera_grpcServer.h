@@ -2,7 +2,7 @@
 
 #ifndef ICAMERA_GRPCSERVER_H
 #define ICAMERA_GRPCSERVER_H
-#include "api/input/devices/ICamera.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcICameraService.grpc.pb.h"

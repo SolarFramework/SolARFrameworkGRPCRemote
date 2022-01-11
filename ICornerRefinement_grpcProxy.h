@@ -3,7 +3,7 @@
 
 #ifndef ICORNERREFINEMENT_GRPCPROXY_H
 #define ICORNERREFINEMENT_GRPCPROXY_H
-#include "api/features/ICornerRefinement.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/ICornerRefinement.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

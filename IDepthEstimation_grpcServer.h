@@ -2,7 +2,7 @@
 
 #ifndef IDEPTHESTIMATION_GRPCSERVER_H
 #define IDEPTHESTIMATION_GRPCSERVER_H
-#include "api/geom/IDepthEstimation.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IDepthEstimation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIDepthEstimationService.grpc.pb.h"

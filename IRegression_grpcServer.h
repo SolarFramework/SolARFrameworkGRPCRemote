@@ -2,7 +2,7 @@
 
 #ifndef IREGRESSION_GRPCSERVER_H
 #define IREGRESSION_GRPCSERVER_H
-#include "api/reloc/IRegression.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRegression.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIRegressionService.grpc.pb.h"

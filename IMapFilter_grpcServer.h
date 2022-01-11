@@ -2,7 +2,7 @@
 
 #ifndef IMAPFILTER_GRPCSERVER_H
 #define IMAPFILTER_GRPCSERVER_H
-#include "api/solver/map/IMapFilter.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMapFilterService.grpc.pb.h"

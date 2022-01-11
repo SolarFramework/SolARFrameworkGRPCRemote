@@ -3,7 +3,7 @@
 
 #ifndef IVISUALINERTIALFUSION_GRPCPROXY_H
 #define IVISUALINERTIALFUSION_GRPCPROXY_H
-#include "api/fusion/IVisualInertialFusion.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/fusion/IVisualInertialFusion.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

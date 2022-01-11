@@ -3,7 +3,7 @@
 
 #ifndef ICAMERA_GRPCPROXY_H
 #define ICAMERA_GRPCPROXY_H
-#include "api/input/devices/ICamera.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

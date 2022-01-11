@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIWorldGraphLoader;
+
+message loadRequest
+{
+bytes trackables = 1;
+}
+
+message loadResponse
+{
+bytes trackables = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIWorldGraphLoaderService {
+rpc load(loadRequest) returns(loadResponse) {}
+}
+

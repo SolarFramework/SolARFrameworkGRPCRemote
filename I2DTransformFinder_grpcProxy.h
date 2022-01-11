@@ -3,7 +3,7 @@
 
 #ifndef I2DTRANSFORMFINDER_GRPCPROXY_H
 #define I2DTRANSFORMFINDER_GRPCPROXY_H
-#include "api/solver/pose/I2DTransformFinder.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2DTransformFinder.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

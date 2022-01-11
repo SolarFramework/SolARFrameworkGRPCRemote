@@ -3,7 +3,7 @@
 
 #ifndef IMAPMANAGER_GRPCPROXY_H
 #define IMAPMANAGER_GRPCPROXY_H
-#include "api/storage/IMapManager.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

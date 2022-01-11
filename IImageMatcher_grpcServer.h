@@ -2,7 +2,7 @@
 
 #ifndef IIMAGEMATCHER_GRPCSERVER_H
 #define IIMAGEMATCHER_GRPCSERVER_H
-#include "api/features/IImageMatcher.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IImageMatcher.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIImageMatcherService.grpc.pb.h"

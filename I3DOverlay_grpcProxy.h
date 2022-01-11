@@ -3,7 +3,7 @@
 
 #ifndef I3DOVERLAY_GRPCPROXY_H
 #define I3DOVERLAY_GRPCPROXY_H
-#include "api/display/I3DOverlay.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/display/I3DOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
