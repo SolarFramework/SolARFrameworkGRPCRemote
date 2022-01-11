@@ -96,5 +96,5 @@ echo "DATABASE_DIR=$DATABASE_DIR"
 
 # TODO generate compilation database for the SolAR Framework
 
-$XPCF_MODULE_ROOT/xpcf_grpc_gen/1.0.0/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v 0.10.0 -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -o .
+$XPCF_MODULE_ROOT/xpcf_grpc_gen/1.0.0/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v 0.11.0 -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -o .
 

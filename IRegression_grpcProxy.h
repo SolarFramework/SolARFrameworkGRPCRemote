@@ -3,7 +3,7 @@
 
 #ifndef IREGRESSION_GRPCPROXY_H
 #define IREGRESSION_GRPCPROXY_H
-#include "api/reloc/IRegression.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IRegression.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

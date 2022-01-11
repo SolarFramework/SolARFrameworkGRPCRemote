@@ -3,7 +3,7 @@
 
 #ifndef IMAPUPDATEPIPELINE_GRPCPROXY_H
 #define IMAPUPDATEPIPELINE_GRPCPROXY_H
-#include "api/pipeline/IMapUpdatePipeline.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IMapUpdatePipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -2,7 +2,7 @@
 
 #ifndef IIMAGERECTIFICATION_GRPCSERVER_H
 #define IIMAGERECTIFICATION_GRPCSERVER_H
-#include "api/image/IImageRectification.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/image/IImageRectification.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIImageRectificationService.grpc.pb.h"

@@ -3,7 +3,7 @@
 
 #ifndef I2DOVERLAY_GRPCPROXY_H
 #define I2DOVERLAY_GRPCPROXY_H
-#include "api/display/I2DOverlay.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/display/I2DOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

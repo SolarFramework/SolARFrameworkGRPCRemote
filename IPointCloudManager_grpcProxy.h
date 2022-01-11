@@ -3,7 +3,7 @@
 
 #ifndef IPOINTCLOUDMANAGER_GRPCPROXY_H
 #define IPOINTCLOUDMANAGER_GRPCPROXY_H
-#include "api/storage/IPointCloudManager.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IPointCloudManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

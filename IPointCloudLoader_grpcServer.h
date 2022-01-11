@@ -2,7 +2,7 @@
 
 #ifndef IPOINTCLOUDLOADER_GRPCSERVER_H
 #define IPOINTCLOUDLOADER_GRPCSERVER_H
-#include "api/input/files/IPointCloudLoader.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/files/IPointCloudLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIPointCloudLoaderService.grpc.pb.h"

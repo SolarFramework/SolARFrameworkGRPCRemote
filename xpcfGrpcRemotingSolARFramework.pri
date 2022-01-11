@@ -188,6 +188,10 @@ ITrackableLoader_grpcProxy.h \
 ITrackableLoader_grpcServer.h \
 grpcITrackableLoaderService.pb.h \
 grpcITrackableLoaderService.grpc.pb.h \
+IWorldGraphLoader_grpcProxy.h \
+IWorldGraphLoader_grpcServer.h \
+grpcIWorldGraphLoaderService.pb.h \
+grpcIWorldGraphLoaderService.grpc.pb.h \
 ILoopClosureDetector_grpcProxy.h \
 ILoopClosureDetector_grpcServer.h \
 grpcILoopClosureDetectorService.pb.h \
@@ -200,6 +204,10 @@ IOverlapDetector_grpcProxy.h \
 IOverlapDetector_grpcServer.h \
 grpcIOverlapDetectorService.pb.h \
 grpcIOverlapDetectorService.grpc.pb.h \
+IAsyncRelocalizationPipeline_grpcProxy.h \
+IAsyncRelocalizationPipeline_grpcServer.h \
+grpcIAsyncRelocalizationPipelineService.pb.h \
+grpcIAsyncRelocalizationPipelineService.grpc.pb.h \
 IMapUpdatePipeline_grpcProxy.h \
 IMapUpdatePipeline_grpcServer.h \
 grpcIMapUpdatePipelineService.pb.h \
@@ -519,6 +527,10 @@ ITrackableLoader_grpcProxy.cpp \
 ITrackableLoader_grpcServer.cpp \
 grpcITrackableLoaderService.pb.cc \
 grpcITrackableLoaderService.grpc.pb.cc \
+IWorldGraphLoader_grpcProxy.cpp \
+IWorldGraphLoader_grpcServer.cpp \
+grpcIWorldGraphLoaderService.pb.cc \
+grpcIWorldGraphLoaderService.grpc.pb.cc \
 ILoopClosureDetector_grpcProxy.cpp \
 ILoopClosureDetector_grpcServer.cpp \
 grpcILoopClosureDetectorService.pb.cc \
@@ -531,6 +543,10 @@ IOverlapDetector_grpcProxy.cpp \
 IOverlapDetector_grpcServer.cpp \
 grpcIOverlapDetectorService.pb.cc \
 grpcIOverlapDetectorService.grpc.pb.cc \
+IAsyncRelocalizationPipeline_grpcProxy.cpp \
+IAsyncRelocalizationPipeline_grpcServer.cpp \
+grpcIAsyncRelocalizationPipelineService.pb.cc \
+grpcIAsyncRelocalizationPipelineService.grpc.pb.cc \
 IMapUpdatePipeline_grpcProxy.cpp \
 IMapUpdatePipeline_grpcServer.cpp \
 grpcIMapUpdatePipelineService.pb.cc \

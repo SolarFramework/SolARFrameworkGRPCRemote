@@ -2,7 +2,7 @@
 
 #ifndef ITRACKABLEPOSE_GRPCSERVER_H
 #define ITRACKABLEPOSE_GRPCSERVER_H
-#include "api/solver/pose/ITrackablePose.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/ITrackablePose.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcITrackablePoseService.grpc.pb.h"

@@ -2,7 +2,7 @@
 
 #ifndef IDESCRIPTORSEXTRACTORFROMIMAGE_GRPCSERVER_H
 #define IDESCRIPTORSEXTRACTORFROMIMAGE_GRPCSERVER_H
-#include "api/features/IDescriptorsExtractorFromImage.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorsExtractorFromImage.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIDescriptorsExtractorFromImageService.grpc.pb.h"

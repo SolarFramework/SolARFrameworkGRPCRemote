@@ -3,7 +3,7 @@
 
 #ifndef ILOOPCLOSUREDETECTOR_GRPCPROXY_H
 #define ILOOPCLOSUREDETECTOR_GRPCPROXY_H
-#include "api/loop/ILoopClosureDetector.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopClosureDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

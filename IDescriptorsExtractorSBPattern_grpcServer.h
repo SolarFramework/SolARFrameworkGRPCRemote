@@ -2,7 +2,7 @@
 
 #ifndef IDESCRIPTORSEXTRACTORSBPATTERN_GRPCSERVER_H
 #define IDESCRIPTORSEXTRACTORSBPATTERN_GRPCSERVER_H
-#include "api/features/IDescriptorsExtractorSBPattern.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorsExtractorSBPattern.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIDescriptorsExtractorSBPatternService.grpc.pb.h"

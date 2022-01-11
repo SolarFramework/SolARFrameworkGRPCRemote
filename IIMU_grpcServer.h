@@ -2,7 +2,7 @@
 
 #ifndef IIMU_GRPCSERVER_H
 #define IIMU_GRPCSERVER_H
-#include "api/input/devices/IIMU.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IIMU.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIIMUService.grpc.pb.h"

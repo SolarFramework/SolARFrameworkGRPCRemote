@@ -1,7 +1,7 @@
 #include "xpcfGrpcModuleMain.h"
 #include <xpcf/module/ModuleFactory.h>
 namespace xpcf=org::bcom::xpcf;
-XPCF_DECLARE_MODULE("363244dd-41ec-4b08-9e0a-e0a93a45505a", "xpcfGrpcRemotingSolARFramework","xpcf remoting module for project SolARFramework");
+XPCF_DECLARE_MODULE("a0f522d1-b70e-4d0f-ad78-84e78a9af6bf", "xpcfGrpcRemotingSolARFramework","xpcf remoting module for project SolARFramework");
 
 extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boost::uuids::uuid& componentUUID,SRef<xpcf::IComponentIntrospect>& interfaceRef)
 {
@@ -478,6 +478,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIWorldGraphLoader::IWorldGraphLoader_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIWorldGraphLoader::IWorldGraphLoader_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyILoopClosureDetector::ILoopClosureDetector_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -504,6 +514,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIOverlapDetector::IOverlapDetector_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcServer>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
@@ -925,12 +945,16 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPointCloudLoader::IPointCloudLoa
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPointCloudLoader::IPointCloudLoader_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyITrackableLoader::ITrackableLoader_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverITrackableLoader::ITrackableLoader_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIWorldGraphLoader::IWorldGraphLoader_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIWorldGraphLoader::IWorldGraphLoader_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyILoopClosureDetector::ILoopClosureDetector_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverILoopClosureDetector::ILoopClosureDetector_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyILoopCorrector::ILoopCorrector_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverILoopCorrector::ILoopCorrector_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIOverlapDetector::IOverlapDetector_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIOverlapDetector::IOverlapDetector_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapUpdatePipeline::IMapUpdatePipeline_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapUpdatePipeline::IMapUpdatePipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMappingPipeline::IMappingPipeline_grpcProxy)

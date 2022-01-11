@@ -3,7 +3,7 @@
 
 #ifndef ISBPATTERNREINDEXER_GRPCPROXY_H
 #define ISBPATTERNREINDEXER_GRPCPROXY_H
-#include "api/features/ISBPatternReIndexer.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/ISBPatternReIndexer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

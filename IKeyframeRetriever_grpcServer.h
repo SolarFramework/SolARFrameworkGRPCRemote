@@ -2,7 +2,7 @@
 
 #ifndef IKEYFRAMERETRIEVER_GRPCSERVER_H
 #define IKEYFRAMERETRIEVER_GRPCSERVER_H
-#include "api/reloc/IKeyframeRetriever.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/reloc/IKeyframeRetriever.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIKeyframeRetrieverService.grpc.pb.h"

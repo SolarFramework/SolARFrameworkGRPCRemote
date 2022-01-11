@@ -3,7 +3,7 @@
 
 #ifndef IKEYFRAMESMANAGER_GRPCPROXY_H
 #define IKEYFRAMESMANAGER_GRPCPROXY_H
-#include "api/storage/IKeyframesManager.h"
+#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IKeyframesManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
