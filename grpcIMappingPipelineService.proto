@@ -4,14 +4,29 @@ import "google/protobuf/empty.proto";
 
 package grpcIMappingPipeline;
 
+message initRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message initResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message startResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message stopResponse
@@ -21,7 +36,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message setCameraParametersRequest
 {
-bytes cameraParams = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes cameraParams = 2;
 }
 
 message setCameraParametersResponse
@@ -31,8 +47,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message mappingProcessRequestRequest
 {
-bytes image = 1;
-bytes pose = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+bytes pose = 3;
 }
 
 message mappingProcessRequestResponse
@@ -42,8 +59,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getDataForVisualizationRequest
 {
-bytes outputPointClouds = 1;
-bytes keyframePoses = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes outputPointClouds = 2;
+bytes keyframePoses = 3;
 }
 
 message getDataForVisualizationResponse
@@ -54,9 +72,9 @@ sint32 xpcfGrpcReturnValue = 3;
 }
 
 service grpcIMappingPipelineService {
-rpc init(google.protobuf.Empty) returns(initResponse) {}
-rpc start(google.protobuf.Empty) returns(startResponse) {}
-rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc init(initRequest) returns(initResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
 rpc mappingProcessRequest(mappingProcessRequestRequest) returns(mappingProcessRequestResponse) {}
 rpc getDataForVisualization(getDataForVisualizationRequest) returns(getDataForVisualizationResponse) {}

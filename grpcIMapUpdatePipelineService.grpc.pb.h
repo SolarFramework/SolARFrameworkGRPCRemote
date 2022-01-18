@@ -36,25 +36,25 @@ class grpcIMapUpdatePipelineService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status init(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMapUpdatePipeline::initResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpcIMapUpdatePipeline::initResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>>(AsyncinitRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>>(PrepareAsyncinitRaw(context, request, cq));
     }
-    virtual ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMapUpdatePipeline::startResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpcIMapUpdatePipeline::startResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>>(AsyncstartRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>>(PrepareAsyncstartRaw(context, request, cq));
     }
-    virtual ::grpc::Status stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMapUpdatePipeline::stopResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpcIMapUpdatePipeline::stopResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>>(AsyncstopRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
     virtual ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest& request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response) = 0;
@@ -81,23 +81,23 @@ class grpcIMapUpdatePipelineService final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::initResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::startResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -126,12 +126,12 @@ class grpcIMapUpdatePipelineService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::setCameraParametersResponse>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::setCameraParametersResponse>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::mapUpdateRequestResponse>* AsyncmapUpdateRequestRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -142,25 +142,25 @@ class grpcIMapUpdatePipelineService final {
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status init(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMapUpdatePipeline::initResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpcIMapUpdatePipeline::initResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>>(AsyncinitRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>>(PrepareAsyncinitRaw(context, request, cq));
     }
-    ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMapUpdatePipeline::startResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpcIMapUpdatePipeline::startResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>>(AsyncstartRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>>(PrepareAsyncstartRaw(context, request, cq));
     }
-    ::grpc::Status stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMapUpdatePipeline::stopResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpcIMapUpdatePipeline::stopResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>>(AsyncstopRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
     ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest& request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response) override;
@@ -187,23 +187,23 @@ class grpcIMapUpdatePipelineService final {
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::initResponse* response, std::function<void(::grpc::Status)>) override;
+      void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::startResponse* response, std::function<void(::grpc::Status)>) override;
+      void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::stopResponse* response, std::function<void(::grpc::Status)>) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -234,12 +234,12 @@ class grpcIMapUpdatePipelineService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::setCameraParametersResponse>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::setCameraParametersResponse>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::mapUpdateRequestResponse>* AsyncmapUpdateRequestRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -259,9 +259,9 @@ class grpcIMapUpdatePipelineService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status init(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::initResponse* response);
-    virtual ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::startResponse* response);
-    virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::stopResponse* response);
+    virtual ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response);
+    virtual ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response);
+    virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response);
     virtual ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response);
     virtual ::grpc::Status mapUpdateRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response);
     virtual ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response);
@@ -278,11 +278,11 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requestinit(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapUpdatePipeline::initResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requestinit(::grpc::ServerContext* context, ::grpcIMapUpdatePipeline::initRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapUpdatePipeline::initResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -298,11 +298,11 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requeststart(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapUpdatePipeline::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requeststart(::grpc::ServerContext* context, ::grpcIMapUpdatePipeline::startRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapUpdatePipeline::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -318,11 +318,11 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requeststop(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapUpdatePipeline::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requeststop(::grpc::ServerContext* context, ::grpcIMapUpdatePipeline::stopRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapUpdatePipeline::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -399,38 +399,38 @@ class grpcIMapUpdatePipelineService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::initResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::initResponse* response) { return this->init(context, request, response); }));}
+                     context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response) { return this->init(context, request, response); }));}
     void SetMessageAllocatorFor_init(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::initResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::initResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* init(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* init(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -446,38 +446,38 @@ class grpcIMapUpdatePipelineService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::startResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::startResponse* response) { return this->start(context, request, response); }));}
+                     context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::startResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::startResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* start(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -493,38 +493,38 @@ class grpcIMapUpdatePipelineService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::stopResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIMapUpdatePipeline::stopResponse* response) { return this->stop(context, request, response); }));}
+                     context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::stopResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::stopResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* stop(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -686,7 +686,7 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -703,7 +703,7 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -720,7 +720,7 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -788,7 +788,7 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -808,7 +808,7 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -828,7 +828,7 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -921,7 +921,7 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -959,7 +959,7 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -997,7 +997,7 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1132,10 +1132,10 @@ class grpcIMapUpdatePipelineService final {
     WithStreamedUnaryMethod_init() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::initResponse>(
+          ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::initResponse>* streamer) {
+                     ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse>* streamer) {
                        return this->Streamedinit(context,
                          streamer);
                   }));
@@ -1144,12 +1144,12 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedinit(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIMapUpdatePipeline::initResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedinit(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapUpdatePipeline::initRequest,::grpcIMapUpdatePipeline::initResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_start : public BaseClass {
@@ -1159,10 +1159,10 @@ class grpcIMapUpdatePipelineService final {
     WithStreamedUnaryMethod_start() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::startResponse>(
+          ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::startResponse>* streamer) {
+                     ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse>* streamer) {
                        return this->Streamedstart(context,
                          streamer);
                   }));
@@ -1171,12 +1171,12 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedstart(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIMapUpdatePipeline::startResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedstart(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapUpdatePipeline::startRequest,::grpcIMapUpdatePipeline::startResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_stop : public BaseClass {
@@ -1186,10 +1186,10 @@ class grpcIMapUpdatePipelineService final {
     WithStreamedUnaryMethod_stop() {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::stopResponse>(
+          ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIMapUpdatePipeline::stopResponse>* streamer) {
+                     ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse>* streamer) {
                        return this->Streamedstop(context,
                          streamer);
                   }));
@@ -1198,12 +1198,12 @@ class grpcIMapUpdatePipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIMapUpdatePipeline::stopResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapUpdatePipeline::stopRequest,::grpcIMapUpdatePipeline::stopResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_setCameraParameters : public BaseClass {

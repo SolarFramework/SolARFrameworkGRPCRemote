@@ -3,10 +3,10 @@
 #include <cstddef>
 #include <xpcf/core/Exception.h>
 #include <xpcf/remoting/ISerializable.h>
-#include <xpcf/remoting/GrpcHelper.h>
 #include <grpcpp/client_context.h>
 #include <grpcpp/create_channel.h>
 #include <grpcpp/security/credentials.h>
+#include <boost/algorithm/string.hpp>
 namespace xpcf = org::bcom::xpcf;
 
 template<> org::bcom::xpcf::grpc::proxyIMapUpdatePipeline::IMapUpdatePipeline_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyIMapUpdatePipeline::IMapUpdatePipeline_grpcProxy>();
@@ -18,6 +18,8 @@ IMapUpdatePipeline_grpcProxy::IMapUpdatePipeline_grpcProxy():xpcf::ConfigurableB
   declareInterface<SolAR::api::pipeline::IMapUpdatePipeline>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
+  m_grpcProxyCompressionConfig.resize(7);
+  declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
 
@@ -37,6 +39,9 @@ XPCFErrorCode IMapUpdatePipeline_grpcProxy::onConfigured()
   xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)),
   ch_args);
   m_grpcStub = ::grpcIMapUpdatePipeline::grpcIMapUpdatePipelineService::NewStub(m_channel);
+  for (auto & compressionLine : m_grpcProxyCompressionConfig) {
+      translateClientConfiguration(compressionLine, m_serviceCompressionInfos, m_methodCompressionInfosMap);
+  }
   return xpcf::XPCFErrorCode::_SUCCESS;
 }
 
@@ -44,8 +49,11 @@ XPCFErrorCode IMapUpdatePipeline_grpcProxy::onConfigured()
 SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::init()
 {
   ::grpc::ClientContext context;
-  ::google::protobuf::Empty reqIn;
+  ::grpcIMapUpdatePipeline::initRequest reqIn;
   ::grpcIMapUpdatePipeline::initResponse respOut;
+  xpcf::grpcCompressionInfos serverCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, serverCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
     std::cout << "init rpc failed." << std::endl;
@@ -59,8 +67,11 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::init()
 SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::start()
 {
   ::grpc::ClientContext context;
-  ::google::protobuf::Empty reqIn;
+  ::grpcIMapUpdatePipeline::startRequest reqIn;
   ::grpcIMapUpdatePipeline::startResponse respOut;
+  xpcf::grpcCompressionInfos serverCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "start", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, serverCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
     std::cout << "start rpc failed." << std::endl;
@@ -74,8 +85,11 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::start()
 SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::stop()
 {
   ::grpc::ClientContext context;
-  ::google::protobuf::Empty reqIn;
+  ::grpcIMapUpdatePipeline::stopRequest reqIn;
   ::grpcIMapUpdatePipeline::stopResponse respOut;
+  xpcf::grpcCompressionInfos serverCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "stop", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, serverCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
     std::cout << "stop rpc failed." << std::endl;
@@ -91,6 +105,9 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::setCameraParameters(So
   ::grpc::ClientContext context;
   ::grpcIMapUpdatePipeline::setCameraParametersRequest reqIn;
   ::grpcIMapUpdatePipeline::setCameraParametersResponse respOut;
+  xpcf::grpcCompressionInfos serverCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "setCameraParameters", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, serverCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   reqIn.set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
@@ -107,6 +124,9 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::mapUpdateRequest(SRef<
   ::grpc::ClientContext context;
   ::grpcIMapUpdatePipeline::mapUpdateRequestRequest reqIn;
   ::grpcIMapUpdatePipeline::mapUpdateRequestResponse respOut;
+  xpcf::grpcCompressionInfos serverCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "mapUpdateRequest", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, serverCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->mapUpdateRequest(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {
@@ -123,6 +143,9 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::getMapRequest(SRef<Sol
   ::grpc::ClientContext context;
   ::grpcIMapUpdatePipeline::getMapRequestRequest reqIn;
   ::grpcIMapUpdatePipeline::getMapRequestResponse respOut;
+  xpcf::grpcCompressionInfos serverCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getMapRequest", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, serverCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getMapRequest(&context, reqIn, &respOut);
   if (!grpcRemoteStatus.ok())  {

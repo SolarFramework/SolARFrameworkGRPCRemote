@@ -3,13 +3,15 @@
 
 #ifndef IRELOCALIZATIONPIPELINE_GRPCPROXY_H
 #define IRELOCALIZATIONPIPELINE_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IRelocalizationPipeline.h"
+#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IRelocalizationPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
+#include <map>
 #include "grpcIRelocalizationPipelineService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
+#include <xpcf/remoting/GrpcHelper.h>
 
 namespace org::bcom::xpcf::grpc::proxyIRelocalizationPipeline {
 
@@ -32,6 +34,9 @@ class IRelocalizationPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBa
     std::string m_channelUrl;
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
+    xpcf::grpcCompressionInfos m_serviceCompressionInfos;
+    std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
+    std::vector<std::string> m_grpcProxyCompressionConfig;
     std::unique_ptr<::grpcIRelocalizationPipeline::grpcIRelocalizationPipelineService::Stub> m_grpcStub;
 
 };

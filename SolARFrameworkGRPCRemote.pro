@@ -70,10 +70,14 @@ android {
 
 OTHER_FILES += \n    packagedependencies.txt
 
-OTHER_FILES += \n    SolARFrameworkGRPCRemote.xml
+OTHER_FILES += \n   
 
 #NOTE : Must be placed at the end of the .pro
 include ($${QMAKE_REMAKEN_RULES_ROOT}/remaken_install_target.pri)
 
 DISTFILES += \
-    README.md
+    README.md \
+    xpcfGrpcRemotingSolARFrameworkClient.xml \
+    xpcfGrpcRemotingSolARFrameworkClient_properties.xml \
+    xpcfGrpcRemotingSolARFrameworkServer.xml \
+    xpcfGrpcRemotingSolARFrameworkServer_properties.xml
