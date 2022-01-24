@@ -2,7 +2,7 @@
 
 #ifndef ICOVISIBILITYGRAPHMANAGER_GRPCSERVER_H
 #define ICOVISIBILITYGRAPHMANAGER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/ICovisibilityGraphManager.h"
+#include "api/storage/ICovisibilityGraphManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcICovisibilityGraphManagerService.grpc.pb.h"

@@ -2,7 +2,7 @@
 
 #ifndef IKEYPOINTDETECTOR_GRPCSERVER_H
 #define IKEYPOINTDETECTOR_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointDetector.h"
+#include "api/features/IKeypointDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIKeypointDetectorService.grpc.pb.h"

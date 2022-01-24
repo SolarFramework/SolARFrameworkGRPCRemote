@@ -2,7 +2,7 @@
 
 #ifndef IOVERLAPDETECTOR_GRPCSERVER_H
 #define IOVERLAPDETECTOR_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/loop/IOverlapDetector.h"
+#include "api/loop/IOverlapDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIOverlapDetectorService.grpc.pb.h"

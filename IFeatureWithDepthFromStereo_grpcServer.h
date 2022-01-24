@@ -2,7 +2,7 @@
 
 #ifndef IFEATUREWITHDEPTHFROMSTEREO_GRPCSERVER_H
 #define IFEATUREWITHDEPTHFROMSTEREO_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IFeatureWithDepthFromStereo.h"
+#include "api/features/IFeatureWithDepthFromStereo.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIFeatureWithDepthFromStereoService.grpc.pb.h"

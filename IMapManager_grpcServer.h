@@ -2,7 +2,7 @@
 
 #ifndef IMAPMANAGER_GRPCSERVER_H
 #define IMAPMANAGER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
+#include "api/storage/IMapManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMapManagerService.grpc.pb.h"

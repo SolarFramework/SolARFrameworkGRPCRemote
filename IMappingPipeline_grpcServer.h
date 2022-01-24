@@ -2,7 +2,7 @@
 
 #ifndef IMAPPINGPIPELINE_GRPCSERVER_H
 #define IMAPPINGPIPELINE_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IMappingPipeline.h"
+#include "api/pipeline/IMappingPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIMappingPipelineService.grpc.pb.h"

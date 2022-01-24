@@ -3,7 +3,7 @@
 
 #ifndef IMATCHESFILTER_GRPCPROXY_H
 #define IMATCHESFILTER_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IMatchesFilter.h"
+#include "api/features/IMatchesFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

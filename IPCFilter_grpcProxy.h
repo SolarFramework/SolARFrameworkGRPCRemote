@@ -3,7 +3,7 @@
 
 #ifndef IPCFILTER_GRPCPROXY_H
 #define IPCFILTER_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pointCloud/IPCFilter.h"
+#include "api/pointCloud/IPCFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

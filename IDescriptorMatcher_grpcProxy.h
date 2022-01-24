@@ -3,7 +3,7 @@
 
 #ifndef IDESCRIPTORMATCHER_GRPCPROXY_H
 #define IDESCRIPTORMATCHER_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcher.h"
+#include "api/features/IDescriptorMatcher.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

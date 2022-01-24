@@ -3,7 +3,7 @@
 
 #ifndef I2DPOINTSRECTIFICATION_GRPCPROXY_H
 #define I2DPOINTSRECTIFICATION_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/I2DPointsRectification.h"
+#include "api/geom/I2DPointsRectification.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

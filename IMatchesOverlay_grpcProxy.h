@@ -3,7 +3,7 @@
 
 #ifndef IMATCHESOVERLAY_GRPCPROXY_H
 #define IMATCHESOVERLAY_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/display/IMatchesOverlay.h"
+#include "api/display/IMatchesOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

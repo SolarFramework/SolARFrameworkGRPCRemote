@@ -3,7 +3,7 @@
 
 #ifndef IIMU_GRPCPROXY_H
 #define IIMU_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IIMU.h"
+#include "api/input/devices/IIMU.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

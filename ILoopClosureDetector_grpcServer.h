@@ -2,7 +2,7 @@
 
 #ifndef ILOOPCLOSUREDETECTOR_GRPCSERVER_H
 #define ILOOPCLOSUREDETECTOR_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopClosureDetector.h"
+#include "api/loop/ILoopClosureDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcILoopClosureDetectorService.grpc.pb.h"

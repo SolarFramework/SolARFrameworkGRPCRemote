@@ -3,7 +3,7 @@
 
 #ifndef IBUNDLER_GRPCPROXY_H
 #define IBUNDLER_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IBundler.h"
+#include "api/solver/map/IBundler.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

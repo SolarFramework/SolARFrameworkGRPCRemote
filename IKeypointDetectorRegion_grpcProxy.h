@@ -3,7 +3,7 @@
 
 #ifndef IKEYPOINTDETECTORREGION_GRPCPROXY_H
 #define IKEYPOINTDETECTORREGION_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointDetectorRegion.h"
+#include "api/features/IKeypointDetectorRegion.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

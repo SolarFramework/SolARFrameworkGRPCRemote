@@ -2,7 +2,7 @@
 
 #ifndef IASYNCRELOCALIZATIONPIPELINE_GRPCSERVER_H
 #define IASYNCRELOCALIZATIONPIPELINE_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IAsyncRelocalizationPipeline.h"
+#include "api/pipeline/IAsyncRelocalizationPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include "grpcIAsyncRelocalizationPipelineService.grpc.pb.h"
