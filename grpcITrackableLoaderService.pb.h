@@ -184,9 +184,10 @@ class loadTrackableRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTrackableFieldNumber = 1,
+    kTrackableFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes trackable = 1;
+  // bytes trackable = 2;
   void clear_trackable();
   const std::string& trackable() const;
   void set_trackable(const std::string& value);
@@ -202,6 +203,15 @@ class loadTrackableRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_trackable();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcITrackableLoader.loadTrackableRequest)
  private:
   class _Internal;
@@ -210,6 +220,7 @@ class loadTrackableRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trackable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcITrackableLoaderService_2eproto;
 };
@@ -379,7 +390,27 @@ class loadTrackableResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // loadTrackableRequest
 
-// bytes trackable = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void loadTrackableRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadTrackableRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadTrackableRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcITrackableLoader.loadTrackableRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void loadTrackableRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void loadTrackableRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcITrackableLoader.loadTrackableRequest.grpcServerCompressionFormat)
+}
+
+// bytes trackable = 2;
 inline void loadTrackableRequest::clear_trackable() {
   trackable_.ClearToEmpty();
 }

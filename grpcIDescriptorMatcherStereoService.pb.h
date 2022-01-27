@@ -192,14 +192,15 @@ class match_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDescriptors1FieldNumber = 1,
-    kDescriptors2FieldNumber = 2,
-    kUndistortedKeypoints1FieldNumber = 3,
-    kUndistortedKeypoints2FieldNumber = 4,
-    kTypeFieldNumber = 5,
-    kMatchesFieldNumber = 6,
+    kDescriptors1FieldNumber = 2,
+    kDescriptors2FieldNumber = 3,
+    kUndistortedKeypoints1FieldNumber = 4,
+    kUndistortedKeypoints2FieldNumber = 5,
+    kTypeFieldNumber = 6,
+    kMatchesFieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes descriptors1 = 1;
+  // bytes descriptors1 = 2;
   void clear_descriptors1();
   const std::string& descriptors1() const;
   void set_descriptors1(const std::string& value);
@@ -215,7 +216,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors1();
   public:
 
-  // bytes descriptors2 = 2;
+  // bytes descriptors2 = 3;
   void clear_descriptors2();
   const std::string& descriptors2() const;
   void set_descriptors2(const std::string& value);
@@ -231,7 +232,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors2();
   public:
 
-  // bytes undistortedKeypoints1 = 3;
+  // bytes undistortedKeypoints1 = 4;
   void clear_undistortedkeypoints1();
   const std::string& undistortedkeypoints1() const;
   void set_undistortedkeypoints1(const std::string& value);
@@ -247,7 +248,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_undistortedkeypoints1();
   public:
 
-  // bytes undistortedKeypoints2 = 4;
+  // bytes undistortedKeypoints2 = 5;
   void clear_undistortedkeypoints2();
   const std::string& undistortedkeypoints2() const;
   void set_undistortedkeypoints2(const std::string& value);
@@ -263,7 +264,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_undistortedkeypoints2();
   public:
 
-  // bytes type = 5;
+  // bytes type = 6;
   void clear_type();
   const std::string& type() const;
   void set_type(const std::string& value);
@@ -279,7 +280,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_type();
   public:
 
-  // bytes matches = 6;
+  // bytes matches = 7;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -295,6 +296,15 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIDescriptorMatcherStereo.match_grpc0Request)
  private:
   class _Internal;
@@ -308,6 +318,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr undistortedkeypoints2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIDescriptorMatcherStereoService_2eproto;
 };
@@ -581,12 +592,13 @@ class match_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFrame1FieldNumber = 1,
-    kFrame2FieldNumber = 2,
-    kTypeFieldNumber = 3,
-    kMatchesFieldNumber = 4,
+    kFrame1FieldNumber = 2,
+    kFrame2FieldNumber = 3,
+    kTypeFieldNumber = 4,
+    kMatchesFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes frame1 = 1;
+  // bytes frame1 = 2;
   void clear_frame1();
   const std::string& frame1() const;
   void set_frame1(const std::string& value);
@@ -602,7 +614,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_frame1();
   public:
 
-  // bytes frame2 = 2;
+  // bytes frame2 = 3;
   void clear_frame2();
   const std::string& frame2() const;
   void set_frame2(const std::string& value);
@@ -618,7 +630,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_frame2();
   public:
 
-  // bytes type = 3;
+  // bytes type = 4;
   void clear_type();
   const std::string& type() const;
   void set_type(const std::string& value);
@@ -634,7 +646,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_type();
   public:
 
-  // bytes matches = 4;
+  // bytes matches = 5;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -650,6 +662,15 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIDescriptorMatcherStereo.match_grpc1Request)
  private:
   class _Internal;
@@ -661,6 +682,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIDescriptorMatcherStereoService_2eproto;
 };
@@ -830,7 +852,27 @@ class match_grpc1Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // match_grpc0Request
 
-// bytes descriptors1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void match_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherStereo.match_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void match_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void match_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherStereo.match_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes descriptors1 = 2;
 inline void match_grpc0Request::clear_descriptors1() {
   descriptors1_.ClearToEmpty();
 }
@@ -891,7 +933,7 @@ inline void match_grpc0Request::set_allocated_descriptors1(std::string* descript
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherStereo.match_grpc0Request.descriptors1)
 }
 
-// bytes descriptors2 = 2;
+// bytes descriptors2 = 3;
 inline void match_grpc0Request::clear_descriptors2() {
   descriptors2_.ClearToEmpty();
 }
@@ -952,7 +994,7 @@ inline void match_grpc0Request::set_allocated_descriptors2(std::string* descript
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherStereo.match_grpc0Request.descriptors2)
 }
 
-// bytes undistortedKeypoints1 = 3;
+// bytes undistortedKeypoints1 = 4;
 inline void match_grpc0Request::clear_undistortedkeypoints1() {
   undistortedkeypoints1_.ClearToEmpty();
 }
@@ -1013,7 +1055,7 @@ inline void match_grpc0Request::set_allocated_undistortedkeypoints1(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherStereo.match_grpc0Request.undistortedKeypoints1)
 }
 
-// bytes undistortedKeypoints2 = 4;
+// bytes undistortedKeypoints2 = 5;
 inline void match_grpc0Request::clear_undistortedkeypoints2() {
   undistortedkeypoints2_.ClearToEmpty();
 }
@@ -1074,7 +1116,7 @@ inline void match_grpc0Request::set_allocated_undistortedkeypoints2(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherStereo.match_grpc0Request.undistortedKeypoints2)
 }
 
-// bytes type = 5;
+// bytes type = 6;
 inline void match_grpc0Request::clear_type() {
   type_.ClearToEmpty();
 }
@@ -1135,7 +1177,7 @@ inline void match_grpc0Request::set_allocated_type(std::string* type) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherStereo.match_grpc0Request.type)
 }
 
-// bytes matches = 6;
+// bytes matches = 7;
 inline void match_grpc0Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -1285,7 +1327,27 @@ inline void match_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID
 
 // match_grpc1Request
 
-// bytes frame1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void match_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherStereo.match_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void match_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void match_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherStereo.match_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes frame1 = 2;
 inline void match_grpc1Request::clear_frame1() {
   frame1_.ClearToEmpty();
 }
@@ -1346,7 +1408,7 @@ inline void match_grpc1Request::set_allocated_frame1(std::string* frame1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherStereo.match_grpc1Request.frame1)
 }
 
-// bytes frame2 = 2;
+// bytes frame2 = 3;
 inline void match_grpc1Request::clear_frame2() {
   frame2_.ClearToEmpty();
 }
@@ -1407,7 +1469,7 @@ inline void match_grpc1Request::set_allocated_frame2(std::string* frame2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherStereo.match_grpc1Request.frame2)
 }
 
-// bytes type = 3;
+// bytes type = 4;
 inline void match_grpc1Request::clear_type() {
   type_.ClearToEmpty();
 }
@@ -1468,7 +1530,7 @@ inline void match_grpc1Request::set_allocated_type(std::string* type) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherStereo.match_grpc1Request.type)
 }
 
-// bytes matches = 4;
+// bytes matches = 5;
 inline void match_grpc1Request::clear_matches() {
   matches_.ClearToEmpty();
 }

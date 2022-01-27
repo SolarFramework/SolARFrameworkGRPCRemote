@@ -5,6 +5,7 @@
 #include "api/features/IKeypointDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIKeypointDetectorService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -25,16 +26,19 @@ class IKeypointDetector_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
       public:
         grpcIKeypointDetectorServiceImpl() = default;
         ::grpc::Status setType(::grpc::ServerContext* context, const ::grpcIKeypointDetector::setTypeRequest* request, ::google::protobuf::Empty* response) override;
-        ::grpc::Status getType(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response) override;
+        ::grpc::Status getType(::grpc::ServerContext* context, const ::grpcIKeypointDetector::getTypeRequest* request, ::grpcIKeypointDetector::getTypeResponse* response) override;
         ::grpc::Status detect(::grpc::ServerContext* context, const ::grpcIKeypointDetector::detectRequest* request, ::grpcIKeypointDetector::detectResponse* response) override;
 
         SRef<SolAR::api::features::IKeypointDetector> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIKeypointDetectorServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

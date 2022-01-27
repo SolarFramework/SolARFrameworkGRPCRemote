@@ -358,9 +358,10 @@ class setTrackableRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTrackableFieldNumber = 1,
+    kTrackableFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes trackable = 1;
+  // bytes trackable = 2;
   void clear_trackable();
   const std::string& trackable() const;
   void set_trackable(const std::string& value);
@@ -376,6 +377,15 @@ class setTrackableRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_trackable();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcITrackablePose.setTrackableRequest)
  private:
   class _Internal;
@@ -384,6 +394,7 @@ class setTrackableRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trackable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcITrackablePoseService_2eproto;
 };
@@ -639,10 +650,11 @@ class estimateRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImageFieldNumber = 1,
-    kPoseFieldNumber = 2,
+    kImageFieldNumber = 2,
+    kPoseFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image = 1;
+  // bytes image = 2;
   void clear_image();
   const std::string& image() const;
   void set_image(const std::string& value);
@@ -658,7 +670,7 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_image();
   public:
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -674,6 +686,15 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcITrackablePose.estimateRequest)
  private:
   class _Internal;
@@ -683,6 +704,7 @@ class estimateRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcITrackablePoseService_2eproto;
 };
@@ -978,7 +1000,27 @@ inline void setCameraParametersRequest::set_allocated_distorsionparams(std::stri
 
 // setTrackableRequest
 
-// bytes trackable = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void setTrackableRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setTrackableRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setTrackableRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcITrackablePose.setTrackableRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void setTrackableRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void setTrackableRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcITrackablePose.setTrackableRequest.grpcServerCompressionFormat)
+}
+
+// bytes trackable = 2;
 inline void setTrackableRequest::clear_trackable() {
   trackable_.ClearToEmpty();
 }
@@ -1067,7 +1109,27 @@ inline void setTrackableResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 
 // estimateRequest
 
-// bytes image = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void estimateRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimateRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimateRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcITrackablePose.estimateRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void estimateRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void estimateRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcITrackablePose.estimateRequest.grpcServerCompressionFormat)
+}
+
+// bytes image = 2;
 inline void estimateRequest::clear_image() {
   image_.ClearToEmpty();
 }
@@ -1128,7 +1190,7 @@ inline void estimateRequest::set_allocated_image(std::string* image) {
   // @@protoc_insertion_point(field_set_allocated:grpcITrackablePose.estimateRequest.image)
 }
 
-// bytes pose = 2;
+// bytes pose = 3;
 inline void estimateRequest::clear_pose() {
   pose_.ClearToEmpty();
 }

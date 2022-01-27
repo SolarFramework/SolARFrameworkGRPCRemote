@@ -20,7 +20,8 @@ namespace grpcIPCFilter {
 constexpr filterRequest::filterRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : inpointcloud_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , outpointcloud_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , outpointcloud_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct filterRequestDefaultTypeInternal {
   constexpr filterRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -54,6 +55,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIPCFilterService_2eproto::
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIPCFilter::filterRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIPCFilter::filterRequest, inpointcloud_),
   PROTOBUF_FIELD_OFFSET(::grpcIPCFilter::filterRequest, outpointcloud_),
   ~0u,  // no _has_bits_
@@ -66,7 +68,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIPCFilterService_2eproto::
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIPCFilter::filterRequest)},
-  { 7, -1, sizeof(::grpcIPCFilter::filterResponse)},
+  { 8, -1, sizeof(::grpcIPCFilter::filterResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -76,20 +78,21 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_grpcIPCFilterService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\032grpcIPCFilterService.proto\022\rgrpcIPCFil"
-  "ter\032\033google/protobuf/empty.proto\"<\n\rfilt"
-  "erRequest\022\024\n\014inPointCloud\030\001 \001(\014\022\025\n\routPo"
-  "intCloud\030\002 \001(\014\"D\n\016filterResponse\022\025\n\routP"
-  "ointCloud\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002"
-  " \001(\0212_\n\024grpcIPCFilterService\022G\n\006filter\022\034"
-  ".grpcIPCFilter.filterRequest\032\035.grpcIPCFi"
-  "lter.filterResponse\"\000b\006proto3"
+  "ter\032\033google/protobuf/empty.proto\"a\n\rfilt"
+  "erRequest\022#\n\033grpcServerCompressionFormat"
+  "\030\001 \001(\005\022\024\n\014inPointCloud\030\002 \001(\014\022\025\n\routPoint"
+  "Cloud\030\003 \001(\014\"D\n\016filterResponse\022\025\n\routPoin"
+  "tCloud\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001("
+  "\0212_\n\024grpcIPCFilterService\022G\n\006filter\022\034.gr"
+  "pcIPCFilter.filterRequest\032\035.grpcIPCFilte"
+  "r.filterResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIPCFilterService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIPCFilterService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIPCFilterService_2eproto = {
-  false, false, 309, descriptor_table_protodef_grpcIPCFilterService_2eproto, "grpcIPCFilterService.proto", 
+  false, false, 346, descriptor_table_protodef_grpcIPCFilterService_2eproto, "grpcIPCFilterService.proto", 
   &descriptor_table_grpcIPCFilterService_2eproto_once, descriptor_table_grpcIPCFilterService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcIPCFilterService_2eproto::offsets,
   file_level_metadata_grpcIPCFilterService_2eproto, file_level_enum_descriptors_grpcIPCFilterService_2eproto, file_level_service_descriptors_grpcIPCFilterService_2eproto,
@@ -129,12 +132,14 @@ filterRequest::filterRequest(const filterRequest& from)
     outpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_outpointcloud(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIPCFilter.filterRequest)
 }
 
 void filterRequest::SharedCtor() {
 inpointcloud_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 outpointcloud_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 filterRequest::~filterRequest() {
@@ -167,6 +172,7 @@ void filterRequest::Clear() {
 
   inpointcloud_.ClearToEmpty();
   outpointcloud_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -177,17 +183,24 @@ const char* filterRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes inPointCloud = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes inPointCloud = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_inpointcloud();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes outPointCloud = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes outPointCloud = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_outpointcloud();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -221,16 +234,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes inPointCloud = 1;
-  if (this->inpointcloud().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_inpointcloud(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes outPointCloud = 2;
+  // bytes inPointCloud = 2;
+  if (this->inpointcloud().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_inpointcloud(), target);
+  }
+
+  // bytes outPointCloud = 3;
   if (this->outpointcloud().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_outpointcloud(), target);
+        3, this->_internal_outpointcloud(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -249,18 +268,25 @@ size_t filterRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes inPointCloud = 1;
+  // bytes inPointCloud = 2;
   if (this->inpointcloud().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_inpointcloud());
   }
 
-  // bytes outPointCloud = 2;
+  // bytes outPointCloud = 3;
   if (this->outpointcloud().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_outpointcloud());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -300,6 +326,9 @@ void filterRequest::MergeFrom(const filterRequest& from) {
   if (from.outpointcloud().size() > 0) {
     _internal_set_outpointcloud(from._internal_outpointcloud());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void filterRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -325,6 +354,7 @@ void filterRequest::InternalSwap(filterRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   inpointcloud_.Swap(&other->inpointcloud_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   outpointcloud_.Swap(&other->outpointcloud_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata filterRequest::GetMetadata() const {

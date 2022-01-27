@@ -184,15 +184,16 @@ class matchRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImage1FieldNumber = 1,
-    kImage2FieldNumber = 2,
-    kDescriptors1FieldNumber = 3,
-    kDescriptors2FieldNumber = 4,
-    kKeypoints1FieldNumber = 5,
-    kKeypoints2FieldNumber = 6,
-    kMatchesFieldNumber = 7,
+    kImage1FieldNumber = 2,
+    kImage2FieldNumber = 3,
+    kDescriptors1FieldNumber = 4,
+    kDescriptors2FieldNumber = 5,
+    kKeypoints1FieldNumber = 6,
+    kKeypoints2FieldNumber = 7,
+    kMatchesFieldNumber = 8,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image1 = 1;
+  // bytes image1 = 2;
   void clear_image1();
   const std::string& image1() const;
   void set_image1(const std::string& value);
@@ -208,7 +209,7 @@ class matchRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_image1();
   public:
 
-  // bytes image2 = 2;
+  // bytes image2 = 3;
   void clear_image2();
   const std::string& image2() const;
   void set_image2(const std::string& value);
@@ -224,7 +225,7 @@ class matchRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_image2();
   public:
 
-  // bytes descriptors1 = 3;
+  // bytes descriptors1 = 4;
   void clear_descriptors1();
   const std::string& descriptors1() const;
   void set_descriptors1(const std::string& value);
@@ -240,7 +241,7 @@ class matchRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors1();
   public:
 
-  // bytes descriptors2 = 4;
+  // bytes descriptors2 = 5;
   void clear_descriptors2();
   const std::string& descriptors2() const;
   void set_descriptors2(const std::string& value);
@@ -256,7 +257,7 @@ class matchRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors2();
   public:
 
-  // bytes keypoints1 = 5;
+  // bytes keypoints1 = 6;
   void clear_keypoints1();
   const std::string& keypoints1() const;
   void set_keypoints1(const std::string& value);
@@ -272,7 +273,7 @@ class matchRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints1();
   public:
 
-  // bytes keypoints2 = 6;
+  // bytes keypoints2 = 7;
   void clear_keypoints2();
   const std::string& keypoints2() const;
   void set_keypoints2(const std::string& value);
@@ -288,7 +289,7 @@ class matchRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints2();
   public:
 
-  // bytes matches = 7;
+  // bytes matches = 8;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -302,6 +303,15 @@ class matchRequest PROTOBUF_FINAL :
   const std::string& _internal_matches() const;
   void _internal_set_matches(const std::string& value);
   std::string* _internal_mutable_matches();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIImageMatcher.matchRequest)
@@ -318,6 +328,7 @@ class matchRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keypoints1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keypoints2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIImageMatcherService_2eproto;
 };
@@ -523,7 +534,27 @@ class matchResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // matchRequest
 
-// bytes image1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void matchRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 matchRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 matchRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImageMatcher.matchRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void matchRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void matchRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImageMatcher.matchRequest.grpcServerCompressionFormat)
+}
+
+// bytes image1 = 2;
 inline void matchRequest::clear_image1() {
   image1_.ClearToEmpty();
 }
@@ -584,7 +615,7 @@ inline void matchRequest::set_allocated_image1(std::string* image1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageMatcher.matchRequest.image1)
 }
 
-// bytes image2 = 2;
+// bytes image2 = 3;
 inline void matchRequest::clear_image2() {
   image2_.ClearToEmpty();
 }
@@ -645,7 +676,7 @@ inline void matchRequest::set_allocated_image2(std::string* image2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageMatcher.matchRequest.image2)
 }
 
-// bytes descriptors1 = 3;
+// bytes descriptors1 = 4;
 inline void matchRequest::clear_descriptors1() {
   descriptors1_.ClearToEmpty();
 }
@@ -706,7 +737,7 @@ inline void matchRequest::set_allocated_descriptors1(std::string* descriptors1) 
   // @@protoc_insertion_point(field_set_allocated:grpcIImageMatcher.matchRequest.descriptors1)
 }
 
-// bytes descriptors2 = 4;
+// bytes descriptors2 = 5;
 inline void matchRequest::clear_descriptors2() {
   descriptors2_.ClearToEmpty();
 }
@@ -767,7 +798,7 @@ inline void matchRequest::set_allocated_descriptors2(std::string* descriptors2) 
   // @@protoc_insertion_point(field_set_allocated:grpcIImageMatcher.matchRequest.descriptors2)
 }
 
-// bytes keypoints1 = 5;
+// bytes keypoints1 = 6;
 inline void matchRequest::clear_keypoints1() {
   keypoints1_.ClearToEmpty();
 }
@@ -828,7 +859,7 @@ inline void matchRequest::set_allocated_keypoints1(std::string* keypoints1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageMatcher.matchRequest.keypoints1)
 }
 
-// bytes keypoints2 = 6;
+// bytes keypoints2 = 7;
 inline void matchRequest::clear_keypoints2() {
   keypoints2_.ClearToEmpty();
 }
@@ -889,7 +920,7 @@ inline void matchRequest::set_allocated_keypoints2(std::string* keypoints2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageMatcher.matchRequest.keypoints2)
 }
 
-// bytes matches = 7;
+// bytes matches = 8;
 inline void matchRequest::clear_matches() {
   matches_.ClearToEmpty();
 }

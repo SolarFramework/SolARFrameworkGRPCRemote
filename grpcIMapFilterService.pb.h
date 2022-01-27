@@ -192,12 +192,13 @@ class filter_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPose1FieldNumber = 1,
-    kPose2FieldNumber = 2,
-    kInputFieldNumber = 3,
-    kOutputFieldNumber = 4,
+    kPose1FieldNumber = 2,
+    kPose2FieldNumber = 3,
+    kInputFieldNumber = 4,
+    kOutputFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes pose1 = 1;
+  // bytes pose1 = 2;
   void clear_pose1();
   const std::string& pose1() const;
   void set_pose1(const std::string& value);
@@ -213,7 +214,7 @@ class filter_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose1();
   public:
 
-  // bytes pose2 = 2;
+  // bytes pose2 = 3;
   void clear_pose2();
   const std::string& pose2() const;
   void set_pose2(const std::string& value);
@@ -229,7 +230,7 @@ class filter_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose2();
   public:
 
-  // bytes input = 3;
+  // bytes input = 4;
   void clear_input();
   const std::string& input() const;
   void set_input(const std::string& value);
@@ -245,7 +246,7 @@ class filter_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_input();
   public:
 
-  // bytes output = 4;
+  // bytes output = 5;
   void clear_output();
   const std::string& output() const;
   void set_output(const std::string& value);
@@ -261,6 +262,15 @@ class filter_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_output();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapFilter.filter_grpc0Request)
  private:
   class _Internal;
@@ -272,6 +282,7 @@ class filter_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr input_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr output_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapFilterService_2eproto;
 };
@@ -534,13 +545,14 @@ class filter_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPose1FieldNumber = 1,
-    kPose2FieldNumber = 2,
-    kInputFieldNumber = 3,
-    kOutputFieldNumber = 4,
-    kIndexFieldNumber = 5,
+    kPose1FieldNumber = 2,
+    kPose2FieldNumber = 3,
+    kInputFieldNumber = 4,
+    kOutputFieldNumber = 5,
+    kIndexFieldNumber = 6,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes pose1 = 1;
+  // bytes pose1 = 2;
   void clear_pose1();
   const std::string& pose1() const;
   void set_pose1(const std::string& value);
@@ -556,7 +568,7 @@ class filter_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose1();
   public:
 
-  // bytes pose2 = 2;
+  // bytes pose2 = 3;
   void clear_pose2();
   const std::string& pose2() const;
   void set_pose2(const std::string& value);
@@ -572,7 +584,7 @@ class filter_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose2();
   public:
 
-  // bytes input = 3;
+  // bytes input = 4;
   void clear_input();
   const std::string& input() const;
   void set_input(const std::string& value);
@@ -588,7 +600,7 @@ class filter_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_input();
   public:
 
-  // bytes output = 4;
+  // bytes output = 5;
   void clear_output();
   const std::string& output() const;
   void set_output(const std::string& value);
@@ -604,7 +616,7 @@ class filter_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_output();
   public:
 
-  // bytes index = 5;
+  // bytes index = 6;
   void clear_index();
   const std::string& index() const;
   void set_index(const std::string& value);
@@ -620,6 +632,15 @@ class filter_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_index();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapFilter.filter_grpc1Request)
  private:
   class _Internal;
@@ -632,6 +653,7 @@ class filter_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr input_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr output_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr index_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapFilterService_2eproto;
 };
@@ -808,7 +830,27 @@ class filter_grpc1Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // filter_grpc0Request
 
-// bytes pose1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void filter_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filter_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filter_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapFilter.filter_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void filter_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void filter_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapFilter.filter_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes pose1 = 2;
 inline void filter_grpc0Request::clear_pose1() {
   pose1_.ClearToEmpty();
 }
@@ -869,7 +911,7 @@ inline void filter_grpc0Request::set_allocated_pose1(std::string* pose1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapFilter.filter_grpc0Request.pose1)
 }
 
-// bytes pose2 = 2;
+// bytes pose2 = 3;
 inline void filter_grpc0Request::clear_pose2() {
   pose2_.ClearToEmpty();
 }
@@ -930,7 +972,7 @@ inline void filter_grpc0Request::set_allocated_pose2(std::string* pose2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapFilter.filter_grpc0Request.pose2)
 }
 
-// bytes input = 3;
+// bytes input = 4;
 inline void filter_grpc0Request::clear_input() {
   input_.ClearToEmpty();
 }
@@ -991,7 +1033,7 @@ inline void filter_grpc0Request::set_allocated_input(std::string* input) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapFilter.filter_grpc0Request.input)
 }
 
-// bytes output = 4;
+// bytes output = 5;
 inline void filter_grpc0Request::clear_output() {
   output_.ClearToEmpty();
 }
@@ -1121,7 +1163,27 @@ inline void filter_grpc0Response::set_allocated_output(std::string* output) {
 
 // filter_grpc1Request
 
-// bytes pose1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void filter_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filter_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filter_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapFilter.filter_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void filter_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void filter_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapFilter.filter_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes pose1 = 2;
 inline void filter_grpc1Request::clear_pose1() {
   pose1_.ClearToEmpty();
 }
@@ -1182,7 +1244,7 @@ inline void filter_grpc1Request::set_allocated_pose1(std::string* pose1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapFilter.filter_grpc1Request.pose1)
 }
 
-// bytes pose2 = 2;
+// bytes pose2 = 3;
 inline void filter_grpc1Request::clear_pose2() {
   pose2_.ClearToEmpty();
 }
@@ -1243,7 +1305,7 @@ inline void filter_grpc1Request::set_allocated_pose2(std::string* pose2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapFilter.filter_grpc1Request.pose2)
 }
 
-// bytes input = 3;
+// bytes input = 4;
 inline void filter_grpc1Request::clear_input() {
   input_.ClearToEmpty();
 }
@@ -1304,7 +1366,7 @@ inline void filter_grpc1Request::set_allocated_input(std::string* input) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapFilter.filter_grpc1Request.input)
 }
 
-// bytes output = 4;
+// bytes output = 5;
 inline void filter_grpc1Request::clear_output() {
   output_.ClearToEmpty();
 }
@@ -1365,7 +1427,7 @@ inline void filter_grpc1Request::set_allocated_output(std::string* output) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapFilter.filter_grpc1Request.output)
 }
 
-// bytes index = 5;
+// bytes index = 6;
 inline void filter_grpc1Request::clear_index() {
   index_.ClearToEmpty();
 }

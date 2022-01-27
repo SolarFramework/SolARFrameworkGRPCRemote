@@ -4,9 +4,19 @@ import "google/protobuf/empty.proto";
 
 package grpcICamera;
 
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message startResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message stopResponse
@@ -16,7 +26,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getNextImageRequest
 {
-bytes img = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes img = 2;
 }
 
 message getNextImageResponse
@@ -45,9 +56,19 @@ message setParametersRequest
 bytes parameters = 1;
 }
 
+message getResolutionRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message getResolutionResponse
 {
 bytes xpcfGrpcReturnValue = 1;
+}
+
+message getIntrinsicsParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getIntrinsicsParametersResponse
@@ -55,9 +76,19 @@ message getIntrinsicsParametersResponse
 bytes xpcfGrpcReturnValue = 1;
 }
 
+message getParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message getParametersResponse
 {
 bytes xpcfGrpcReturnValue = 1;
+}
+
+message getDistortionParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getDistortionParametersResponse
@@ -66,16 +97,16 @@ bytes xpcfGrpcReturnValue = 1;
 }
 
 service grpcICameraService {
-rpc start(google.protobuf.Empty) returns(startResponse) {}
-rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
 rpc getNextImage(getNextImageRequest) returns(getNextImageResponse) {}
 rpc setResolution(setResolutionRequest) returns(google.protobuf.Empty) {}
 rpc setIntrinsicParameters(setIntrinsicParametersRequest) returns(google.protobuf.Empty) {}
 rpc setDistortionParameters(setDistortionParametersRequest) returns(google.protobuf.Empty) {}
 rpc setParameters(setParametersRequest) returns(google.protobuf.Empty) {}
-rpc getResolution(google.protobuf.Empty) returns(getResolutionResponse) {}
-rpc getIntrinsicsParameters(google.protobuf.Empty) returns(getIntrinsicsParametersResponse) {}
-rpc getParameters(google.protobuf.Empty) returns(getParametersResponse) {}
-rpc getDistortionParameters(google.protobuf.Empty) returns(getDistortionParametersResponse) {}
+rpc getResolution(getResolutionRequest) returns(getResolutionResponse) {}
+rpc getIntrinsicsParameters(getIntrinsicsParametersRequest) returns(getIntrinsicsParametersResponse) {}
+rpc getParameters(getParametersRequest) returns(getParametersResponse) {}
+rpc getDistortionParameters(getDistortionParametersRequest) returns(getDistortionParametersResponse) {}
 }
 

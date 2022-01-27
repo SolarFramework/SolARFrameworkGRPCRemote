@@ -5,6 +5,7 @@
 #include "api/solver/map/ITriangulator.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcITriangulatorService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -31,12 +32,15 @@ class ITriangulator_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtu
         ::grpc::Status triangulate_grpc3(::grpc::ServerContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response) override;
 
         SRef<SolAR::api::solver::map::ITriangulator> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcITriangulatorServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

@@ -5,6 +5,7 @@
 #include "api/input/files/IWorldGraphLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIWorldGraphLoaderService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -27,12 +28,15 @@ class IWorldGraphLoader_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
         ::grpc::Status load(::grpc::ServerContext* context, const ::grpcIWorldGraphLoader::loadRequest* request, ::grpcIWorldGraphLoader::loadResponse* response) override;
 
         SRef<SolAR::api::input::files::IWorldGraphLoader> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIWorldGraphLoaderServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

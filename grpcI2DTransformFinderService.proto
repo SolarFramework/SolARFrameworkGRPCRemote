@@ -6,9 +6,10 @@ package grpcI2DTransformFinder;
 
 message findTransform2DRequest
 {
-bytes srcPoints = 1;
-bytes dstPoints = 2;
-bytes fundamental = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes srcPoints = 2;
+bytes dstPoints = 3;
+bytes fundamental = 4;
 }
 
 message findTransform2DResponse

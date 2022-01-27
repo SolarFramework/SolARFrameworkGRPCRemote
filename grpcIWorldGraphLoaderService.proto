@@ -6,7 +6,8 @@ package grpcIWorldGraphLoader;
 
 message loadRequest
 {
-bytes trackables = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes trackables = 2;
 }
 
 message loadResponse

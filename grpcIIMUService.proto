@@ -4,9 +4,19 @@ import "google/protobuf/empty.proto";
 
 package grpcIIMU;
 
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message startResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message stopResponse
@@ -16,7 +26,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getGyroscopeDataRequest
 {
-bytes gyroData = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes gyroData = 2;
 }
 
 message getGyroscopeDataResponse
@@ -27,7 +38,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getAccelerometerDataRequest
 {
-bytes accelData = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes accelData = 2;
 }
 
 message getAccelerometerDataResponse
@@ -38,7 +50,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getMagnetometerDataRequest
 {
-bytes magData = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes magData = 2;
 }
 
 message getMagnetometerDataResponse
@@ -49,9 +62,10 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getAllSensorsDataRequest
 {
-bytes gyroData = 1;
-bytes accelData = 2;
-bytes magData = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes gyroData = 2;
+bytes accelData = 3;
+bytes magData = 4;
 }
 
 message getAllSensorsDataResponse
@@ -62,14 +76,29 @@ bytes magData = 3;
 sint32 xpcfGrpcReturnValue = 4;
 }
 
+message isGyroscopeAvailableRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message isGyroscopeAvailableResponse
 {
 bool xpcfGrpcReturnValue = 1;
 }
 
+message isAccelerometerAvailableRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message isAccelerometerAvailableResponse
 {
 bool xpcfGrpcReturnValue = 1;
+}
+
+message isMagnetometerAvailableRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message isMagnetometerAvailableResponse
@@ -78,14 +107,14 @@ bool xpcfGrpcReturnValue = 1;
 }
 
 service grpcIIMUService {
-rpc start(google.protobuf.Empty) returns(startResponse) {}
-rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
 rpc getGyroscopeData(getGyroscopeDataRequest) returns(getGyroscopeDataResponse) {}
 rpc getAccelerometerData(getAccelerometerDataRequest) returns(getAccelerometerDataResponse) {}
 rpc getMagnetometerData(getMagnetometerDataRequest) returns(getMagnetometerDataResponse) {}
 rpc getAllSensorsData(getAllSensorsDataRequest) returns(getAllSensorsDataResponse) {}
-rpc isGyroscopeAvailable(google.protobuf.Empty) returns(isGyroscopeAvailableResponse) {}
-rpc isAccelerometerAvailable(google.protobuf.Empty) returns(isAccelerometerAvailableResponse) {}
-rpc isMagnetometerAvailable(google.protobuf.Empty) returns(isMagnetometerAvailableResponse) {}
+rpc isGyroscopeAvailable(isGyroscopeAvailableRequest) returns(isGyroscopeAvailableResponse) {}
+rpc isAccelerometerAvailable(isAccelerometerAvailableRequest) returns(isAccelerometerAvailableResponse) {}
+rpc isMagnetometerAvailable(isMagnetometerAvailableRequest) returns(isMagnetometerAvailableResponse) {}
 }
 

@@ -5,6 +5,7 @@
 #include "api/image/IImageLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIImageLoaderService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -25,15 +26,18 @@ class IImageLoader_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
       public:
         grpcIImageLoaderServiceImpl() = default;
         ::grpc::Status getImage(::grpc::ServerContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response) override;
-        ::grpc::Status reloadImage(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIImageLoader::reloadImageResponse* response) override;
+        ::grpc::Status reloadImage(::grpc::ServerContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response) override;
 
         SRef<SolAR::api::image::IImageLoader> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIImageLoaderServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

@@ -184,16 +184,17 @@ class findRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLastFrameFieldNumber = 1,
-    kCurrentFrameFieldNumber = 2,
-    kCurrentMatchesFieldNumber = 3,
-    kShared3DpointFieldNumber = 4,
-    kShared2DpointFieldNumber = 5,
-    kCorres2D3DFieldNumber = 6,
-    kFoundMatchesFieldNumber = 7,
-    kRemainingMatchesFieldNumber = 8,
+    kLastFrameFieldNumber = 2,
+    kCurrentFrameFieldNumber = 3,
+    kCurrentMatchesFieldNumber = 4,
+    kShared3DpointFieldNumber = 5,
+    kShared2DpointFieldNumber = 6,
+    kCorres2D3DFieldNumber = 7,
+    kFoundMatchesFieldNumber = 8,
+    kRemainingMatchesFieldNumber = 9,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes lastFrame = 1;
+  // bytes lastFrame = 2;
   void clear_lastframe();
   const std::string& lastframe() const;
   void set_lastframe(const std::string& value);
@@ -209,7 +210,7 @@ class findRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_lastframe();
   public:
 
-  // bytes currentFrame = 2;
+  // bytes currentFrame = 3;
   void clear_currentframe();
   const std::string& currentframe() const;
   void set_currentframe(const std::string& value);
@@ -225,7 +226,7 @@ class findRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_currentframe();
   public:
 
-  // bytes current_matches = 3;
+  // bytes current_matches = 4;
   void clear_current_matches();
   const std::string& current_matches() const;
   void set_current_matches(const std::string& value);
@@ -241,7 +242,7 @@ class findRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_current_matches();
   public:
 
-  // bytes shared_3dpoint = 4;
+  // bytes shared_3dpoint = 5;
   void clear_shared_3dpoint();
   const std::string& shared_3dpoint() const;
   void set_shared_3dpoint(const std::string& value);
@@ -257,7 +258,7 @@ class findRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_shared_3dpoint();
   public:
 
-  // bytes shared_2dpoint = 5;
+  // bytes shared_2dpoint = 6;
   void clear_shared_2dpoint();
   const std::string& shared_2dpoint() const;
   void set_shared_2dpoint(const std::string& value);
@@ -273,7 +274,7 @@ class findRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_shared_2dpoint();
   public:
 
-  // bytes corres2D3D = 6;
+  // bytes corres2D3D = 7;
   void clear_corres2d3d();
   const std::string& corres2d3d() const;
   void set_corres2d3d(const std::string& value);
@@ -289,7 +290,7 @@ class findRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_corres2d3d();
   public:
 
-  // bytes found_matches = 7;
+  // bytes found_matches = 8;
   void clear_found_matches();
   const std::string& found_matches() const;
   void set_found_matches(const std::string& value);
@@ -305,7 +306,7 @@ class findRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_found_matches();
   public:
 
-  // bytes remaining_matches = 8;
+  // bytes remaining_matches = 9;
   void clear_remaining_matches();
   const std::string& remaining_matches() const;
   void set_remaining_matches(const std::string& value);
@@ -319,6 +320,15 @@ class findRequest PROTOBUF_FINAL :
   const std::string& _internal_remaining_matches() const;
   void _internal_set_remaining_matches(const std::string& value);
   std::string* _internal_mutable_remaining_matches();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcI2D3DCorrespondencesFinder.findRequest)
@@ -336,6 +346,7 @@ class findRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr corres2d3d_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr found_matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remaining_matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI2D3DCorrespondencesFinderService_2eproto;
 };
@@ -577,7 +588,27 @@ class findResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // findRequest
 
-// bytes lastFrame = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void findRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 findRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 findRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI2D3DCorrespondencesFinder.findRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void findRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void findRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI2D3DCorrespondencesFinder.findRequest.grpcServerCompressionFormat)
+}
+
+// bytes lastFrame = 2;
 inline void findRequest::clear_lastframe() {
   lastframe_.ClearToEmpty();
 }
@@ -638,7 +669,7 @@ inline void findRequest::set_allocated_lastframe(std::string* lastframe) {
   // @@protoc_insertion_point(field_set_allocated:grpcI2D3DCorrespondencesFinder.findRequest.lastFrame)
 }
 
-// bytes currentFrame = 2;
+// bytes currentFrame = 3;
 inline void findRequest::clear_currentframe() {
   currentframe_.ClearToEmpty();
 }
@@ -699,7 +730,7 @@ inline void findRequest::set_allocated_currentframe(std::string* currentframe) {
   // @@protoc_insertion_point(field_set_allocated:grpcI2D3DCorrespondencesFinder.findRequest.currentFrame)
 }
 
-// bytes current_matches = 3;
+// bytes current_matches = 4;
 inline void findRequest::clear_current_matches() {
   current_matches_.ClearToEmpty();
 }
@@ -760,7 +791,7 @@ inline void findRequest::set_allocated_current_matches(std::string* current_matc
   // @@protoc_insertion_point(field_set_allocated:grpcI2D3DCorrespondencesFinder.findRequest.current_matches)
 }
 
-// bytes shared_3dpoint = 4;
+// bytes shared_3dpoint = 5;
 inline void findRequest::clear_shared_3dpoint() {
   shared_3dpoint_.ClearToEmpty();
 }
@@ -821,7 +852,7 @@ inline void findRequest::set_allocated_shared_3dpoint(std::string* shared_3dpoin
   // @@protoc_insertion_point(field_set_allocated:grpcI2D3DCorrespondencesFinder.findRequest.shared_3dpoint)
 }
 
-// bytes shared_2dpoint = 5;
+// bytes shared_2dpoint = 6;
 inline void findRequest::clear_shared_2dpoint() {
   shared_2dpoint_.ClearToEmpty();
 }
@@ -882,7 +913,7 @@ inline void findRequest::set_allocated_shared_2dpoint(std::string* shared_2dpoin
   // @@protoc_insertion_point(field_set_allocated:grpcI2D3DCorrespondencesFinder.findRequest.shared_2dpoint)
 }
 
-// bytes corres2D3D = 6;
+// bytes corres2D3D = 7;
 inline void findRequest::clear_corres2d3d() {
   corres2d3d_.ClearToEmpty();
 }
@@ -943,7 +974,7 @@ inline void findRequest::set_allocated_corres2d3d(std::string* corres2d3d) {
   // @@protoc_insertion_point(field_set_allocated:grpcI2D3DCorrespondencesFinder.findRequest.corres2D3D)
 }
 
-// bytes found_matches = 7;
+// bytes found_matches = 8;
 inline void findRequest::clear_found_matches() {
   found_matches_.ClearToEmpty();
 }
@@ -1004,7 +1035,7 @@ inline void findRequest::set_allocated_found_matches(std::string* found_matches)
   // @@protoc_insertion_point(field_set_allocated:grpcI2D3DCorrespondencesFinder.findRequest.found_matches)
 }
 
-// bytes remaining_matches = 8;
+// bytes remaining_matches = 9;
 inline void findRequest::clear_remaining_matches() {
   remaining_matches_.ClearToEmpty();
 }

@@ -4,9 +4,19 @@ import "google/protobuf/empty.proto";
 
 package grpcIARDevice;
 
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message startResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message stopResponse
@@ -16,9 +26,10 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getDataRequest
 {
-bytes images = 1;
-bytes poses = 2;
-bytes timestamp = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes images = 2;
+bytes poses = 3;
+bytes timestamp = 4;
 }
 
 message getDataResponse
@@ -29,15 +40,20 @@ bytes timestamp = 3;
 sint32 xpcfGrpcReturnValue = 4;
 }
 
+message getCameraParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message getCameraParametersResponse
 {
 bytes xpcfGrpcReturnValue = 1;
 }
 
 service grpcIARDeviceService {
-rpc start(google.protobuf.Empty) returns(startResponse) {}
-rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
 rpc getData(getDataRequest) returns(getDataResponse) {}
-rpc getCameraParameters(google.protobuf.Empty) returns(getCameraParametersResponse) {}
+rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
 }
 

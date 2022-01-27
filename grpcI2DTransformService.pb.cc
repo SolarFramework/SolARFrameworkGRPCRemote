@@ -21,7 +21,8 @@ constexpr transformRequest::transformRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : inputpoints_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , transformation_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , outputpoints_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , outputpoints_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct transformRequestDefaultTypeInternal {
   constexpr transformRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -55,6 +56,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI2DTransformService_2eprot
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, inputpoints_),
   PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, transformation_),
   PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, outputpoints_),
@@ -68,7 +70,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI2DTransformService_2eprot
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcI2DTransform::transformRequest)},
-  { 8, -1, sizeof(::grpcI2DTransform::transformResponse)},
+  { 9, -1, sizeof(::grpcI2DTransform::transformResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -78,21 +80,22 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_grpcI2DTransformService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035grpcI2DTransformService.proto\022\020grpcI2D"
-  "Transform\032\033google/protobuf/empty.proto\"U"
-  "\n\020transformRequest\022\023\n\013inputPoints\030\001 \001(\014\022"
-  "\026\n\016transformation\030\002 \001(\014\022\024\n\014outputPoints\030"
-  "\003 \001(\014\"F\n\021transformResponse\022\024\n\014outputPoin"
-  "ts\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\0212q\n"
-  "\027grpcI2DTransformService\022V\n\ttransform\022\"."
-  "grpcI2DTransform.transformRequest\032#.grpc"
-  "I2DTransform.transformResponse\"\000b\006proto3"
+  "Transform\032\033google/protobuf/empty.proto\"z"
+  "\n\020transformRequest\022#\n\033grpcServerCompress"
+  "ionFormat\030\001 \001(\005\022\023\n\013inputPoints\030\002 \001(\014\022\026\n\016"
+  "transformation\030\003 \001(\014\022\024\n\014outputPoints\030\004 \001"
+  "(\014\"F\n\021transformResponse\022\024\n\014outputPoints\030"
+  "\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\0212q\n\027gr"
+  "pcI2DTransformService\022V\n\ttransform\022\".grp"
+  "cI2DTransform.transformRequest\032#.grpcI2D"
+  "Transform.transformResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcI2DTransformService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcI2DTransformService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcI2DTransformService_2eproto = {
-  false, false, 360, descriptor_table_protodef_grpcI2DTransformService_2eproto, "grpcI2DTransformService.proto", 
+  false, false, 397, descriptor_table_protodef_grpcI2DTransformService_2eproto, "grpcI2DTransformService.proto", 
   &descriptor_table_grpcI2DTransformService_2eproto_once, descriptor_table_grpcI2DTransformService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcI2DTransformService_2eproto::offsets,
   file_level_metadata_grpcI2DTransformService_2eproto, file_level_enum_descriptors_grpcI2DTransformService_2eproto, file_level_service_descriptors_grpcI2DTransformService_2eproto,
@@ -137,6 +140,7 @@ transformRequest::transformRequest(const transformRequest& from)
     outputpoints_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_outputpoints(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcI2DTransform.transformRequest)
 }
 
@@ -144,6 +148,7 @@ void transformRequest::SharedCtor() {
 inputpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 transformation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 outputpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 transformRequest::~transformRequest() {
@@ -178,6 +183,7 @@ void transformRequest::Clear() {
   inputpoints_.ClearToEmpty();
   transformation_.ClearToEmpty();
   outputpoints_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -188,25 +194,32 @@ const char* transformRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes inputPoints = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes inputPoints = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_inputpoints();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes transformation = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes transformation = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_transformation();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes outputPoints = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes outputPoints = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_outputpoints();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -240,22 +253,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes inputPoints = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes inputPoints = 2;
   if (this->inputpoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_inputpoints(), target);
+        2, this->_internal_inputpoints(), target);
   }
 
-  // bytes transformation = 2;
+  // bytes transformation = 3;
   if (this->transformation().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_transformation(), target);
+        3, this->_internal_transformation(), target);
   }
 
-  // bytes outputPoints = 3;
+  // bytes outputPoints = 4;
   if (this->outputpoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_outputpoints(), target);
+        4, this->_internal_outputpoints(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -274,25 +293,32 @@ size_t transformRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes inputPoints = 1;
+  // bytes inputPoints = 2;
   if (this->inputpoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_inputpoints());
   }
 
-  // bytes transformation = 2;
+  // bytes transformation = 3;
   if (this->transformation().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_transformation());
   }
 
-  // bytes outputPoints = 3;
+  // bytes outputPoints = 4;
   if (this->outputpoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_outputpoints());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -335,6 +361,9 @@ void transformRequest::MergeFrom(const transformRequest& from) {
   if (from.outputpoints().size() > 0) {
     _internal_set_outputpoints(from._internal_outputpoints());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void transformRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -361,6 +390,7 @@ void transformRequest::InternalSwap(transformRequest* other) {
   inputpoints_.Swap(&other->inputpoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   transformation_.Swap(&other->transformation_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   outputpoints_.Swap(&other->outputpoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata transformRequest::GetMetadata() const {

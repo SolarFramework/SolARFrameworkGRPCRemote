@@ -47,7 +47,7 @@ struct TableStruct_grpcIIMUService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[13]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -80,18 +80,33 @@ extern getMagnetometerDataRequestDefaultTypeInternal _getMagnetometerDataRequest
 class getMagnetometerDataResponse;
 struct getMagnetometerDataResponseDefaultTypeInternal;
 extern getMagnetometerDataResponseDefaultTypeInternal _getMagnetometerDataResponse_default_instance_;
+class isAccelerometerAvailableRequest;
+struct isAccelerometerAvailableRequestDefaultTypeInternal;
+extern isAccelerometerAvailableRequestDefaultTypeInternal _isAccelerometerAvailableRequest_default_instance_;
 class isAccelerometerAvailableResponse;
 struct isAccelerometerAvailableResponseDefaultTypeInternal;
 extern isAccelerometerAvailableResponseDefaultTypeInternal _isAccelerometerAvailableResponse_default_instance_;
+class isGyroscopeAvailableRequest;
+struct isGyroscopeAvailableRequestDefaultTypeInternal;
+extern isGyroscopeAvailableRequestDefaultTypeInternal _isGyroscopeAvailableRequest_default_instance_;
 class isGyroscopeAvailableResponse;
 struct isGyroscopeAvailableResponseDefaultTypeInternal;
 extern isGyroscopeAvailableResponseDefaultTypeInternal _isGyroscopeAvailableResponse_default_instance_;
+class isMagnetometerAvailableRequest;
+struct isMagnetometerAvailableRequestDefaultTypeInternal;
+extern isMagnetometerAvailableRequestDefaultTypeInternal _isMagnetometerAvailableRequest_default_instance_;
 class isMagnetometerAvailableResponse;
 struct isMagnetometerAvailableResponseDefaultTypeInternal;
 extern isMagnetometerAvailableResponseDefaultTypeInternal _isMagnetometerAvailableResponse_default_instance_;
+class startRequest;
+struct startRequestDefaultTypeInternal;
+extern startRequestDefaultTypeInternal _startRequest_default_instance_;
 class startResponse;
 struct startResponseDefaultTypeInternal;
 extern startResponseDefaultTypeInternal _startResponse_default_instance_;
+class stopRequest;
+struct stopRequestDefaultTypeInternal;
+extern stopRequestDefaultTypeInternal _stopRequest_default_instance_;
 class stopResponse;
 struct stopResponseDefaultTypeInternal;
 extern stopResponseDefaultTypeInternal _stopResponse_default_instance_;
@@ -105,15 +120,157 @@ template<> ::grpcIIMU::getGyroscopeDataRequest* Arena::CreateMaybeMessage<::grpc
 template<> ::grpcIIMU::getGyroscopeDataResponse* Arena::CreateMaybeMessage<::grpcIIMU::getGyroscopeDataResponse>(Arena*);
 template<> ::grpcIIMU::getMagnetometerDataRequest* Arena::CreateMaybeMessage<::grpcIIMU::getMagnetometerDataRequest>(Arena*);
 template<> ::grpcIIMU::getMagnetometerDataResponse* Arena::CreateMaybeMessage<::grpcIIMU::getMagnetometerDataResponse>(Arena*);
+template<> ::grpcIIMU::isAccelerometerAvailableRequest* Arena::CreateMaybeMessage<::grpcIIMU::isAccelerometerAvailableRequest>(Arena*);
 template<> ::grpcIIMU::isAccelerometerAvailableResponse* Arena::CreateMaybeMessage<::grpcIIMU::isAccelerometerAvailableResponse>(Arena*);
+template<> ::grpcIIMU::isGyroscopeAvailableRequest* Arena::CreateMaybeMessage<::grpcIIMU::isGyroscopeAvailableRequest>(Arena*);
 template<> ::grpcIIMU::isGyroscopeAvailableResponse* Arena::CreateMaybeMessage<::grpcIIMU::isGyroscopeAvailableResponse>(Arena*);
+template<> ::grpcIIMU::isMagnetometerAvailableRequest* Arena::CreateMaybeMessage<::grpcIIMU::isMagnetometerAvailableRequest>(Arena*);
 template<> ::grpcIIMU::isMagnetometerAvailableResponse* Arena::CreateMaybeMessage<::grpcIIMU::isMagnetometerAvailableResponse>(Arena*);
+template<> ::grpcIIMU::startRequest* Arena::CreateMaybeMessage<::grpcIIMU::startRequest>(Arena*);
 template<> ::grpcIIMU::startResponse* Arena::CreateMaybeMessage<::grpcIIMU::startResponse>(Arena*);
+template<> ::grpcIIMU::stopRequest* Arena::CreateMaybeMessage<::grpcIIMU::stopRequest>(Arena*);
 template<> ::grpcIIMU::stopResponse* Arena::CreateMaybeMessage<::grpcIIMU::stopResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIIMU {
 
 // ===================================================================
+
+class startRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.startRequest) */ {
+ public:
+  inline startRequest() : startRequest(nullptr) {}
+  virtual ~startRequest();
+  explicit constexpr startRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  startRequest(const startRequest& from);
+  startRequest(startRequest&& from) noexcept
+    : startRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline startRequest& operator=(const startRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline startRequest& operator=(startRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const startRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const startRequest* internal_default_instance() {
+    return reinterpret_cast<const startRequest*>(
+               &_startRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(startRequest& a, startRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(startRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(startRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline startRequest* New() const final {
+    return CreateMaybeMessage<startRequest>(nullptr);
+  }
+
+  startRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<startRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const startRequest& from);
+  void MergeFrom(const startRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(startRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIIMU.startRequest";
+  }
+  protected:
+  explicit startRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIIMUService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIIMU.startRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIIMUService_2eproto;
+};
+// -------------------------------------------------------------------
 
 class startResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.startResponse) */ {
@@ -158,7 +315,7 @@ class startResponse PROTOBUF_FINAL :
                &_startResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(startResponse& a, startResponse& b) {
     a.Swap(&b);
@@ -252,6 +409,143 @@ class startResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class stopRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.stopRequest) */ {
+ public:
+  inline stopRequest() : stopRequest(nullptr) {}
+  virtual ~stopRequest();
+  explicit constexpr stopRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  stopRequest(const stopRequest& from);
+  stopRequest(stopRequest&& from) noexcept
+    : stopRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline stopRequest& operator=(const stopRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline stopRequest& operator=(stopRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const stopRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const stopRequest* internal_default_instance() {
+    return reinterpret_cast<const stopRequest*>(
+               &_stopRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(stopRequest& a, stopRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(stopRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(stopRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline stopRequest* New() const final {
+    return CreateMaybeMessage<stopRequest>(nullptr);
+  }
+
+  stopRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<stopRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const stopRequest& from);
+  void MergeFrom(const stopRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(stopRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIIMU.stopRequest";
+  }
+  protected:
+  explicit stopRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIIMUService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIIMU.stopRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIIMUService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class stopResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.stopResponse) */ {
  public:
@@ -295,7 +589,7 @@ class stopResponse PROTOBUF_FINAL :
                &_stopResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(stopResponse& a, stopResponse& b) {
     a.Swap(&b);
@@ -432,7 +726,7 @@ class getGyroscopeDataRequest PROTOBUF_FINAL :
                &_getGyroscopeDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(getGyroscopeDataRequest& a, getGyroscopeDataRequest& b) {
     a.Swap(&b);
@@ -502,9 +796,10 @@ class getGyroscopeDataRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kGyroDataFieldNumber = 1,
+    kGyroDataFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes gyroData = 1;
+  // bytes gyroData = 2;
   void clear_gyrodata();
   const std::string& gyrodata() const;
   void set_gyrodata(const std::string& value);
@@ -520,6 +815,15 @@ class getGyroscopeDataRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_gyrodata();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIIMU.getGyroscopeDataRequest)
  private:
   class _Internal;
@@ -528,6 +832,7 @@ class getGyroscopeDataRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr gyrodata_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIIMUService_2eproto;
 };
@@ -576,7 +881,7 @@ class getGyroscopeDataResponse PROTOBUF_FINAL :
                &_getGyroscopeDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(getGyroscopeDataResponse& a, getGyroscopeDataResponse& b) {
     a.Swap(&b);
@@ -731,7 +1036,7 @@ class getAccelerometerDataRequest PROTOBUF_FINAL :
                &_getAccelerometerDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(getAccelerometerDataRequest& a, getAccelerometerDataRequest& b) {
     a.Swap(&b);
@@ -801,9 +1106,10 @@ class getAccelerometerDataRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAccelDataFieldNumber = 1,
+    kAccelDataFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes accelData = 1;
+  // bytes accelData = 2;
   void clear_acceldata();
   const std::string& acceldata() const;
   void set_acceldata(const std::string& value);
@@ -819,6 +1125,15 @@ class getAccelerometerDataRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_acceldata();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIIMU.getAccelerometerDataRequest)
  private:
   class _Internal;
@@ -827,6 +1142,7 @@ class getAccelerometerDataRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr acceldata_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIIMUService_2eproto;
 };
@@ -875,7 +1191,7 @@ class getAccelerometerDataResponse PROTOBUF_FINAL :
                &_getAccelerometerDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(getAccelerometerDataResponse& a, getAccelerometerDataResponse& b) {
     a.Swap(&b);
@@ -1030,7 +1346,7 @@ class getMagnetometerDataRequest PROTOBUF_FINAL :
                &_getMagnetometerDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(getMagnetometerDataRequest& a, getMagnetometerDataRequest& b) {
     a.Swap(&b);
@@ -1100,9 +1416,10 @@ class getMagnetometerDataRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMagDataFieldNumber = 1,
+    kMagDataFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes magData = 1;
+  // bytes magData = 2;
   void clear_magdata();
   const std::string& magdata() const;
   void set_magdata(const std::string& value);
@@ -1118,6 +1435,15 @@ class getMagnetometerDataRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_magdata();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIIMU.getMagnetometerDataRequest)
  private:
   class _Internal;
@@ -1126,6 +1452,7 @@ class getMagnetometerDataRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr magdata_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIIMUService_2eproto;
 };
@@ -1174,7 +1501,7 @@ class getMagnetometerDataResponse PROTOBUF_FINAL :
                &_getMagnetometerDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(getMagnetometerDataResponse& a, getMagnetometerDataResponse& b) {
     a.Swap(&b);
@@ -1329,7 +1656,7 @@ class getAllSensorsDataRequest PROTOBUF_FINAL :
                &_getAllSensorsDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(getAllSensorsDataRequest& a, getAllSensorsDataRequest& b) {
     a.Swap(&b);
@@ -1399,11 +1726,12 @@ class getAllSensorsDataRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kGyroDataFieldNumber = 1,
-    kAccelDataFieldNumber = 2,
-    kMagDataFieldNumber = 3,
+    kGyroDataFieldNumber = 2,
+    kAccelDataFieldNumber = 3,
+    kMagDataFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes gyroData = 1;
+  // bytes gyroData = 2;
   void clear_gyrodata();
   const std::string& gyrodata() const;
   void set_gyrodata(const std::string& value);
@@ -1419,7 +1747,7 @@ class getAllSensorsDataRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_gyrodata();
   public:
 
-  // bytes accelData = 2;
+  // bytes accelData = 3;
   void clear_acceldata();
   const std::string& acceldata() const;
   void set_acceldata(const std::string& value);
@@ -1435,7 +1763,7 @@ class getAllSensorsDataRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_acceldata();
   public:
 
-  // bytes magData = 3;
+  // bytes magData = 4;
   void clear_magdata();
   const std::string& magdata() const;
   void set_magdata(const std::string& value);
@@ -1451,6 +1779,15 @@ class getAllSensorsDataRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_magdata();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIIMU.getAllSensorsDataRequest)
  private:
   class _Internal;
@@ -1461,6 +1798,7 @@ class getAllSensorsDataRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr gyrodata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr acceldata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr magdata_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIIMUService_2eproto;
 };
@@ -1509,7 +1847,7 @@ class getAllSensorsDataResponse PROTOBUF_FINAL :
                &_getAllSensorsDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(getAllSensorsDataResponse& a, getAllSensorsDataResponse& b) {
     a.Swap(&b);
@@ -1657,6 +1995,143 @@ class getAllSensorsDataResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class isGyroscopeAvailableRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.isGyroscopeAvailableRequest) */ {
+ public:
+  inline isGyroscopeAvailableRequest() : isGyroscopeAvailableRequest(nullptr) {}
+  virtual ~isGyroscopeAvailableRequest();
+  explicit constexpr isGyroscopeAvailableRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  isGyroscopeAvailableRequest(const isGyroscopeAvailableRequest& from);
+  isGyroscopeAvailableRequest(isGyroscopeAvailableRequest&& from) noexcept
+    : isGyroscopeAvailableRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline isGyroscopeAvailableRequest& operator=(const isGyroscopeAvailableRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline isGyroscopeAvailableRequest& operator=(isGyroscopeAvailableRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const isGyroscopeAvailableRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const isGyroscopeAvailableRequest* internal_default_instance() {
+    return reinterpret_cast<const isGyroscopeAvailableRequest*>(
+               &_isGyroscopeAvailableRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(isGyroscopeAvailableRequest& a, isGyroscopeAvailableRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(isGyroscopeAvailableRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(isGyroscopeAvailableRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline isGyroscopeAvailableRequest* New() const final {
+    return CreateMaybeMessage<isGyroscopeAvailableRequest>(nullptr);
+  }
+
+  isGyroscopeAvailableRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<isGyroscopeAvailableRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const isGyroscopeAvailableRequest& from);
+  void MergeFrom(const isGyroscopeAvailableRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(isGyroscopeAvailableRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIIMU.isGyroscopeAvailableRequest";
+  }
+  protected:
+  explicit isGyroscopeAvailableRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIIMUService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIIMU.isGyroscopeAvailableRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIIMUService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class isGyroscopeAvailableResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.isGyroscopeAvailableResponse) */ {
  public:
@@ -1700,7 +2175,7 @@ class isGyroscopeAvailableResponse PROTOBUF_FINAL :
                &_isGyroscopeAvailableResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    13;
 
   friend void swap(isGyroscopeAvailableResponse& a, isGyroscopeAvailableResponse& b) {
     a.Swap(&b);
@@ -1794,6 +2269,143 @@ class isGyroscopeAvailableResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class isAccelerometerAvailableRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.isAccelerometerAvailableRequest) */ {
+ public:
+  inline isAccelerometerAvailableRequest() : isAccelerometerAvailableRequest(nullptr) {}
+  virtual ~isAccelerometerAvailableRequest();
+  explicit constexpr isAccelerometerAvailableRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  isAccelerometerAvailableRequest(const isAccelerometerAvailableRequest& from);
+  isAccelerometerAvailableRequest(isAccelerometerAvailableRequest&& from) noexcept
+    : isAccelerometerAvailableRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline isAccelerometerAvailableRequest& operator=(const isAccelerometerAvailableRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline isAccelerometerAvailableRequest& operator=(isAccelerometerAvailableRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const isAccelerometerAvailableRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const isAccelerometerAvailableRequest* internal_default_instance() {
+    return reinterpret_cast<const isAccelerometerAvailableRequest*>(
+               &_isAccelerometerAvailableRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(isAccelerometerAvailableRequest& a, isAccelerometerAvailableRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(isAccelerometerAvailableRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(isAccelerometerAvailableRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline isAccelerometerAvailableRequest* New() const final {
+    return CreateMaybeMessage<isAccelerometerAvailableRequest>(nullptr);
+  }
+
+  isAccelerometerAvailableRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<isAccelerometerAvailableRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const isAccelerometerAvailableRequest& from);
+  void MergeFrom(const isAccelerometerAvailableRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(isAccelerometerAvailableRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIIMU.isAccelerometerAvailableRequest";
+  }
+  protected:
+  explicit isAccelerometerAvailableRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIIMUService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIIMU.isAccelerometerAvailableRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIIMUService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class isAccelerometerAvailableResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.isAccelerometerAvailableResponse) */ {
  public:
@@ -1837,7 +2449,7 @@ class isAccelerometerAvailableResponse PROTOBUF_FINAL :
                &_isAccelerometerAvailableResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(isAccelerometerAvailableResponse& a, isAccelerometerAvailableResponse& b) {
     a.Swap(&b);
@@ -1931,6 +2543,143 @@ class isAccelerometerAvailableResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class isMagnetometerAvailableRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.isMagnetometerAvailableRequest) */ {
+ public:
+  inline isMagnetometerAvailableRequest() : isMagnetometerAvailableRequest(nullptr) {}
+  virtual ~isMagnetometerAvailableRequest();
+  explicit constexpr isMagnetometerAvailableRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  isMagnetometerAvailableRequest(const isMagnetometerAvailableRequest& from);
+  isMagnetometerAvailableRequest(isMagnetometerAvailableRequest&& from) noexcept
+    : isMagnetometerAvailableRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline isMagnetometerAvailableRequest& operator=(const isMagnetometerAvailableRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline isMagnetometerAvailableRequest& operator=(isMagnetometerAvailableRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const isMagnetometerAvailableRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const isMagnetometerAvailableRequest* internal_default_instance() {
+    return reinterpret_cast<const isMagnetometerAvailableRequest*>(
+               &_isMagnetometerAvailableRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(isMagnetometerAvailableRequest& a, isMagnetometerAvailableRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(isMagnetometerAvailableRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(isMagnetometerAvailableRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline isMagnetometerAvailableRequest* New() const final {
+    return CreateMaybeMessage<isMagnetometerAvailableRequest>(nullptr);
+  }
+
+  isMagnetometerAvailableRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<isMagnetometerAvailableRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const isMagnetometerAvailableRequest& from);
+  void MergeFrom(const isMagnetometerAvailableRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(isMagnetometerAvailableRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIIMU.isMagnetometerAvailableRequest";
+  }
+  protected:
+  explicit isMagnetometerAvailableRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIIMUService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIIMU.isMagnetometerAvailableRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIIMUService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class isMagnetometerAvailableResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIIMU.isMagnetometerAvailableResponse) */ {
  public:
@@ -1974,7 +2723,7 @@ class isMagnetometerAvailableResponse PROTOBUF_FINAL :
                &_isMagnetometerAvailableResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    17;
 
   friend void swap(isMagnetometerAvailableResponse& a, isMagnetometerAvailableResponse& b) {
     a.Swap(&b);
@@ -2075,6 +2824,30 @@ class isMagnetometerAvailableResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// startRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void startRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 startRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 startRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIIMU.startRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void startRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void startRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIIMU.startRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // startResponse
 
 // sint32 xpcfGrpcReturnValue = 1;
@@ -2095,6 +2868,30 @@ inline void startResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPAC
 inline void startResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIIMU.startResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// stopRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void stopRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 stopRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 stopRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIIMU.stopRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void stopRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void stopRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIIMU.stopRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -2125,7 +2922,27 @@ inline void stopResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32
 
 // getGyroscopeDataRequest
 
-// bytes gyroData = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getGyroscopeDataRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getGyroscopeDataRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getGyroscopeDataRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIIMU.getGyroscopeDataRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getGyroscopeDataRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getGyroscopeDataRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIIMU.getGyroscopeDataRequest.grpcServerCompressionFormat)
+}
+
+// bytes gyroData = 2;
 inline void getGyroscopeDataRequest::clear_gyrodata() {
   gyrodata_.ClearToEmpty();
 }
@@ -2275,7 +3092,27 @@ inline void getGyroscopeDataResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPA
 
 // getAccelerometerDataRequest
 
-// bytes accelData = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getAccelerometerDataRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAccelerometerDataRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAccelerometerDataRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIIMU.getAccelerometerDataRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getAccelerometerDataRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getAccelerometerDataRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIIMU.getAccelerometerDataRequest.grpcServerCompressionFormat)
+}
+
+// bytes accelData = 2;
 inline void getAccelerometerDataRequest::clear_acceldata() {
   acceldata_.ClearToEmpty();
 }
@@ -2425,7 +3262,27 @@ inline void getAccelerometerDataResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAM
 
 // getMagnetometerDataRequest
 
-// bytes magData = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getMagnetometerDataRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getMagnetometerDataRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getMagnetometerDataRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIIMU.getMagnetometerDataRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getMagnetometerDataRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getMagnetometerDataRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIIMU.getMagnetometerDataRequest.grpcServerCompressionFormat)
+}
+
+// bytes magData = 2;
 inline void getMagnetometerDataRequest::clear_magdata() {
   magdata_.ClearToEmpty();
 }
@@ -2575,7 +3432,27 @@ inline void getMagnetometerDataResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAME
 
 // getAllSensorsDataRequest
 
-// bytes gyroData = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getAllSensorsDataRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAllSensorsDataRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAllSensorsDataRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIIMU.getAllSensorsDataRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getAllSensorsDataRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getAllSensorsDataRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIIMU.getAllSensorsDataRequest.grpcServerCompressionFormat)
+}
+
+// bytes gyroData = 2;
 inline void getAllSensorsDataRequest::clear_gyrodata() {
   gyrodata_.ClearToEmpty();
 }
@@ -2636,7 +3513,7 @@ inline void getAllSensorsDataRequest::set_allocated_gyrodata(std::string* gyroda
   // @@protoc_insertion_point(field_set_allocated:grpcIIMU.getAllSensorsDataRequest.gyroData)
 }
 
-// bytes accelData = 2;
+// bytes accelData = 3;
 inline void getAllSensorsDataRequest::clear_acceldata() {
   acceldata_.ClearToEmpty();
 }
@@ -2697,7 +3574,7 @@ inline void getAllSensorsDataRequest::set_allocated_acceldata(std::string* accel
   // @@protoc_insertion_point(field_set_allocated:grpcIIMU.getAllSensorsDataRequest.accelData)
 }
 
-// bytes magData = 3;
+// bytes magData = 4;
 inline void getAllSensorsDataRequest::clear_magdata() {
   magdata_.ClearToEmpty();
 }
@@ -2967,6 +3844,30 @@ inline void getAllSensorsDataResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESP
 
 // -------------------------------------------------------------------
 
+// isGyroscopeAvailableRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void isGyroscopeAvailableRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isGyroscopeAvailableRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isGyroscopeAvailableRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIIMU.isGyroscopeAvailableRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void isGyroscopeAvailableRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void isGyroscopeAvailableRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIIMU.isGyroscopeAvailableRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // isGyroscopeAvailableResponse
 
 // bool xpcfGrpcReturnValue = 1;
@@ -2991,6 +3892,30 @@ inline void isGyroscopeAvailableResponse::set_xpcfgrpcreturnvalue(bool value) {
 
 // -------------------------------------------------------------------
 
+// isAccelerometerAvailableRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void isAccelerometerAvailableRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isAccelerometerAvailableRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isAccelerometerAvailableRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIIMU.isAccelerometerAvailableRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void isAccelerometerAvailableRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void isAccelerometerAvailableRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIIMU.isAccelerometerAvailableRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // isAccelerometerAvailableResponse
 
 // bool xpcfGrpcReturnValue = 1;
@@ -3011,6 +3936,30 @@ inline void isAccelerometerAvailableResponse::_internal_set_xpcfgrpcreturnvalue(
 inline void isAccelerometerAvailableResponse::set_xpcfgrpcreturnvalue(bool value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIIMU.isAccelerometerAvailableResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// isMagnetometerAvailableRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void isMagnetometerAvailableRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isMagnetometerAvailableRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isMagnetometerAvailableRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIIMU.isMagnetometerAvailableRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void isMagnetometerAvailableRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void isMagnetometerAvailableRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIIMU.isMagnetometerAvailableRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -3040,6 +3989,16 @@ inline void isMagnetometerAvailableResponse::set_xpcfgrpcreturnvalue(bool value)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

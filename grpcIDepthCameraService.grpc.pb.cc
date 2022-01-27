@@ -55,46 +55,46 @@ grpcIDepthCameraService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterf
   , rpcmethod_getDistortionDepthParameters_(grpcIDepthCameraService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status grpcIDepthCameraService::Stub::start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDepthCamera::startResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
+::grpc::Status grpcIDepthCameraService::Stub::start(::grpc::ClientContext* context, const ::grpcIDepthCamera::startRequest& request, ::grpcIDepthCamera::startResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIDepthCamera::startRequest, ::grpcIDepthCamera::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::startResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
+void grpcIDepthCameraService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIDepthCamera::startRequest* request, ::grpcIDepthCamera::startResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIDepthCamera::startRequest, ::grpcIDepthCamera::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDepthCameraService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIDepthCamera::startRequest* request, ::grpcIDepthCamera::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::startResponse>* grpcIDepthCameraService::Stub::PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::startResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::startResponse>* grpcIDepthCameraService::Stub::PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::startRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::startResponse, ::grpcIDepthCamera::startRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::startResponse>* grpcIDepthCameraService::Stub::AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::startResponse>* grpcIDepthCameraService::Stub::AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::startRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncstartRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIDepthCameraService::Stub::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDepthCamera::stopResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
+::grpc::Status grpcIDepthCameraService::Stub::stop(::grpc::ClientContext* context, const ::grpcIDepthCamera::stopRequest& request, ::grpcIDepthCamera::stopResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIDepthCamera::stopRequest, ::grpcIDepthCamera::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::stopResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
+void grpcIDepthCameraService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIDepthCamera::stopRequest* request, ::grpcIDepthCamera::stopResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIDepthCamera::stopRequest, ::grpcIDepthCamera::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDepthCameraService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIDepthCamera::stopRequest* request, ::grpcIDepthCamera::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::stopResponse>* grpcIDepthCameraService::Stub::PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::stopResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::stopResponse>* grpcIDepthCameraService::Stub::PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::stopRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::stopResponse, ::grpcIDepthCamera::stopRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::stopResponse>* grpcIDepthCameraService::Stub::AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::stopResponse>* grpcIDepthCameraService::Stub::AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::stopRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncstopRaw(context, request, cq);
   result->StartCall();
@@ -216,92 +216,92 @@ void grpcIDepthCameraService::Stub::experimental_async::setDistortionDepthParame
   return result;
 }
 
-::grpc::Status grpcIDepthCameraService::Stub::getDepthResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDepthCamera::getDepthResolutionResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::getDepthResolutionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDepthResolution_, context, request, response);
+::grpc::Status grpcIDepthCameraService::Stub::getDepthResolution(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthResolutionRequest& request, ::grpcIDepthCamera::getDepthResolutionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIDepthCamera::getDepthResolutionRequest, ::grpcIDepthCamera::getDepthResolutionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDepthResolution_, context, request, response);
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::getDepthResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getDepthResolutionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::getDepthResolutionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDepthResolution_, context, request, response, std::move(f));
+void grpcIDepthCameraService::Stub::experimental_async::getDepthResolution(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthResolutionRequest* request, ::grpcIDepthCamera::getDepthResolutionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIDepthCamera::getDepthResolutionRequest, ::grpcIDepthCamera::getDepthResolutionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDepthResolution_, context, request, response, std::move(f));
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::getDepthResolution(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getDepthResolutionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDepthCameraService::Stub::experimental_async::getDepthResolution(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthResolutionRequest* request, ::grpcIDepthCamera::getDepthResolutionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDepthResolution_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDepthResolutionResponse>* grpcIDepthCameraService::Stub::PrepareAsyncgetDepthResolutionRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::getDepthResolutionResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getDepthResolution_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDepthResolutionResponse>* grpcIDepthCameraService::Stub::PrepareAsyncgetDepthResolutionRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthResolutionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::getDepthResolutionResponse, ::grpcIDepthCamera::getDepthResolutionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getDepthResolution_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDepthResolutionResponse>* grpcIDepthCameraService::Stub::AsyncgetDepthResolutionRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDepthResolutionResponse>* grpcIDepthCameraService::Stub::AsyncgetDepthResolutionRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthResolutionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetDepthResolutionRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIDepthCameraService::Stub::getDepthMinDistance(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDepthCamera::getDepthMinDistanceResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::getDepthMinDistanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDepthMinDistance_, context, request, response);
+::grpc::Status grpcIDepthCameraService::Stub::getDepthMinDistance(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthMinDistanceRequest& request, ::grpcIDepthCamera::getDepthMinDistanceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIDepthCamera::getDepthMinDistanceRequest, ::grpcIDepthCamera::getDepthMinDistanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDepthMinDistance_, context, request, response);
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::getDepthMinDistance(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getDepthMinDistanceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::getDepthMinDistanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDepthMinDistance_, context, request, response, std::move(f));
+void grpcIDepthCameraService::Stub::experimental_async::getDepthMinDistance(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthMinDistanceRequest* request, ::grpcIDepthCamera::getDepthMinDistanceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIDepthCamera::getDepthMinDistanceRequest, ::grpcIDepthCamera::getDepthMinDistanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDepthMinDistance_, context, request, response, std::move(f));
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::getDepthMinDistance(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getDepthMinDistanceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDepthCameraService::Stub::experimental_async::getDepthMinDistance(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthMinDistanceRequest* request, ::grpcIDepthCamera::getDepthMinDistanceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDepthMinDistance_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDepthMinDistanceResponse>* grpcIDepthCameraService::Stub::PrepareAsyncgetDepthMinDistanceRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::getDepthMinDistanceResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getDepthMinDistance_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDepthMinDistanceResponse>* grpcIDepthCameraService::Stub::PrepareAsyncgetDepthMinDistanceRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthMinDistanceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::getDepthMinDistanceResponse, ::grpcIDepthCamera::getDepthMinDistanceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getDepthMinDistance_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDepthMinDistanceResponse>* grpcIDepthCameraService::Stub::AsyncgetDepthMinDistanceRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDepthMinDistanceResponse>* grpcIDepthCameraService::Stub::AsyncgetDepthMinDistanceRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDepthMinDistanceRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetDepthMinDistanceRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIDepthCameraService::Stub::getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getIntrinsicsDepthParameters_, context, request, response);
+::grpc::Status grpcIDepthCameraService::Stub::getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest& request, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getIntrinsicsDepthParameters_, context, request, response);
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getIntrinsicsDepthParameters_, context, request, response, std::move(f));
+void grpcIDepthCameraService::Stub::experimental_async::getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest* request, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getIntrinsicsDepthParameters_, context, request, response, std::move(f));
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDepthCameraService::Stub::experimental_async::getIntrinsicsDepthParameters(::grpc::ClientContext* context, const ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest* request, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getIntrinsicsDepthParameters_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse>* grpcIDepthCameraService::Stub::PrepareAsyncgetIntrinsicsDepthParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getIntrinsicsDepthParameters_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse>* grpcIDepthCameraService::Stub::PrepareAsyncgetIntrinsicsDepthParametersRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse, ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getIntrinsicsDepthParameters_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse>* grpcIDepthCameraService::Stub::AsyncgetIntrinsicsDepthParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse>* grpcIDepthCameraService::Stub::AsyncgetIntrinsicsDepthParametersRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetIntrinsicsDepthParametersRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIDepthCameraService::Stub::getDistortionDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDepthCamera::getDistortionDepthParametersResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::getDistortionDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDistortionDepthParameters_, context, request, response);
+::grpc::Status grpcIDepthCameraService::Stub::getDistortionDepthParameters(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDistortionDepthParametersRequest& request, ::grpcIDepthCamera::getDistortionDepthParametersResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIDepthCamera::getDistortionDepthParametersRequest, ::grpcIDepthCamera::getDistortionDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDistortionDepthParameters_, context, request, response);
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::getDistortionDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getDistortionDepthParametersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIDepthCamera::getDistortionDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDistortionDepthParameters_, context, request, response, std::move(f));
+void grpcIDepthCameraService::Stub::experimental_async::getDistortionDepthParameters(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDistortionDepthParametersRequest* request, ::grpcIDepthCamera::getDistortionDepthParametersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIDepthCamera::getDistortionDepthParametersRequest, ::grpcIDepthCamera::getDistortionDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDistortionDepthParameters_, context, request, response, std::move(f));
 }
 
-void grpcIDepthCameraService::Stub::experimental_async::getDistortionDepthParameters(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getDistortionDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDepthCameraService::Stub::experimental_async::getDistortionDepthParameters(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDistortionDepthParametersRequest* request, ::grpcIDepthCamera::getDistortionDepthParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDistortionDepthParameters_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDistortionDepthParametersResponse>* grpcIDepthCameraService::Stub::PrepareAsyncgetDistortionDepthParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::getDistortionDepthParametersResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getDistortionDepthParameters_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDistortionDepthParametersResponse>* grpcIDepthCameraService::Stub::PrepareAsyncgetDistortionDepthParametersRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDistortionDepthParametersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDepthCamera::getDistortionDepthParametersResponse, ::grpcIDepthCamera::getDistortionDepthParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getDistortionDepthParameters_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDistortionDepthParametersResponse>* grpcIDepthCameraService::Stub::AsyncgetDistortionDepthParametersRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIDepthCamera::getDistortionDepthParametersResponse>* grpcIDepthCameraService::Stub::AsyncgetDistortionDepthParametersRaw(::grpc::ClientContext* context, const ::grpcIDepthCamera::getDistortionDepthParametersRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetDistortionDepthParametersRaw(context, request, cq);
   result->StartCall();
@@ -312,20 +312,20 @@ grpcIDepthCameraService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIDepthCameraService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::google::protobuf::Empty, ::grpcIDepthCamera::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::grpcIDepthCamera::startRequest, ::grpcIDepthCamera::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDepthCameraService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIDepthCamera::startRequest* req,
              ::grpcIDepthCamera::startResponse* resp) {
                return service->start(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIDepthCameraService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::google::protobuf::Empty, ::grpcIDepthCamera::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::grpcIDepthCamera::stopRequest, ::grpcIDepthCamera::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDepthCameraService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIDepthCamera::stopRequest* req,
              ::grpcIDepthCamera::stopResponse* resp) {
                return service->stop(ctx, req, resp);
              }, this)));
@@ -382,40 +382,40 @@ grpcIDepthCameraService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIDepthCameraService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::google::protobuf::Empty, ::grpcIDepthCamera::getDepthResolutionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::grpcIDepthCamera::getDepthResolutionRequest, ::grpcIDepthCamera::getDepthResolutionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDepthCameraService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIDepthCamera::getDepthResolutionRequest* req,
              ::grpcIDepthCamera::getDepthResolutionResponse* resp) {
                return service->getDepthResolution(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIDepthCameraService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::google::protobuf::Empty, ::grpcIDepthCamera::getDepthMinDistanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::grpcIDepthCamera::getDepthMinDistanceRequest, ::grpcIDepthCamera::getDepthMinDistanceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDepthCameraService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIDepthCamera::getDepthMinDistanceRequest* req,
              ::grpcIDepthCamera::getDepthMinDistanceResponse* resp) {
                return service->getDepthMinDistance(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIDepthCameraService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::google::protobuf::Empty, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDepthCameraService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest* req,
              ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse* resp) {
                return service->getIntrinsicsDepthParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIDepthCameraService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::google::protobuf::Empty, ::grpcIDepthCamera::getDistortionDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIDepthCameraService::Service, ::grpcIDepthCamera::getDistortionDepthParametersRequest, ::grpcIDepthCamera::getDistortionDepthParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDepthCameraService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIDepthCamera::getDistortionDepthParametersRequest* req,
              ::grpcIDepthCamera::getDistortionDepthParametersResponse* resp) {
                return service->getDistortionDepthParameters(ctx, req, resp);
              }, this)));
@@ -424,14 +424,14 @@ grpcIDepthCameraService::Service::Service() {
 grpcIDepthCameraService::Service::~Service() {
 }
 
-::grpc::Status grpcIDepthCameraService::Service::start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::startResponse* response) {
+::grpc::Status grpcIDepthCameraService::Service::start(::grpc::ServerContext* context, const ::grpcIDepthCamera::startRequest* request, ::grpcIDepthCamera::startResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIDepthCameraService::Service::stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::stopResponse* response) {
+::grpc::Status grpcIDepthCameraService::Service::stop(::grpc::ServerContext* context, const ::grpcIDepthCamera::stopRequest* request, ::grpcIDepthCamera::stopResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -473,28 +473,28 @@ grpcIDepthCameraService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIDepthCameraService::Service::getDepthResolution(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getDepthResolutionResponse* response) {
+::grpc::Status grpcIDepthCameraService::Service::getDepthResolution(::grpc::ServerContext* context, const ::grpcIDepthCamera::getDepthResolutionRequest* request, ::grpcIDepthCamera::getDepthResolutionResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIDepthCameraService::Service::getDepthMinDistance(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getDepthMinDistanceResponse* response) {
+::grpc::Status grpcIDepthCameraService::Service::getDepthMinDistance(::grpc::ServerContext* context, const ::grpcIDepthCamera::getDepthMinDistanceRequest* request, ::grpcIDepthCamera::getDepthMinDistanceResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIDepthCameraService::Service::getIntrinsicsDepthParameters(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse* response) {
+::grpc::Status grpcIDepthCameraService::Service::getIntrinsicsDepthParameters(::grpc::ServerContext* context, const ::grpcIDepthCamera::getIntrinsicsDepthParametersRequest* request, ::grpcIDepthCamera::getIntrinsicsDepthParametersResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIDepthCameraService::Service::getDistortionDepthParameters(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDepthCamera::getDistortionDepthParametersResponse* response) {
+::grpc::Status grpcIDepthCameraService::Service::getDistortionDepthParameters(::grpc::ServerContext* context, const ::grpcIDepthCamera::getDistortionDepthParametersRequest* request, ::grpcIDepthCamera::getDistortionDepthParametersResponse* response) {
   (void) context;
   (void) request;
   (void) response;

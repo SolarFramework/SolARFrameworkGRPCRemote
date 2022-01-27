@@ -5,6 +5,7 @@
 #include "api/input/devices/IARDevice.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIARDeviceService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -24,18 +25,21 @@ class IARDevice_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
     {
       public:
         grpcIARDeviceServiceImpl() = default;
-        ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::startResponse* response) override;
-        ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::stopResponse* response) override;
+        ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIARDevice::startRequest* request, ::grpcIARDevice::startResponse* response) override;
+        ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIARDevice::stopRequest* request, ::grpcIARDevice::stopResponse* response) override;
         ::grpc::Status getData(::grpc::ServerContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response) override;
-        ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIARDevice::getCameraParametersResponse* response) override;
+        ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::grpcIARDevice::getCameraParametersRequest* request, ::grpcIARDevice::getCameraParametersResponse* response) override;
 
         SRef<SolAR::api::input::devices::IARDevice> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIARDeviceServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

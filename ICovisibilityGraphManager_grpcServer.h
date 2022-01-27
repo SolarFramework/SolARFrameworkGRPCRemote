@@ -5,6 +5,7 @@
 #include "api/storage/ICovisibilityGraphManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcICovisibilityGraphManagerService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -35,20 +36,23 @@ class ICovisibilityGraphManager_grpcServer:  public org::bcom::xpcf::Configurabl
         ::grpc::Status minimalSpanningTree(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response) override;
         ::grpc::Status maximalSpanningTree(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response) override;
         ::grpc::Status getShortestPath(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response) override;
-        ::grpc::Status display(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response) override;
+        ::grpc::Status display(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::displayRequest* request, ::grpcICovisibilityGraphManager::displayResponse* response) override;
         ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response) override;
         ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response) override;
-        ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) override;
+        ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) override;
         ::grpc::Status getCovisibilityGraph(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response) override;
         ::grpc::Status setCovisibilityGraph(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response) override;
 
         SRef<SolAR::api::storage::ICovisibilityGraphManager> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcICovisibilityGraphManagerServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

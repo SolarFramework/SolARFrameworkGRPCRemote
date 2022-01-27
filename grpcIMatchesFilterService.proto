@@ -6,10 +6,11 @@ package grpcIMatchesFilter;
 
 message filterRequest
 {
-bytes inputMatches = 1;
-bytes keyPoints_1 = 2;
-bytes keyPoints_2 = 3;
-bytes outputMatches = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputMatches = 2;
+bytes keyPoints_1 = 3;
+bytes keyPoints_2 = 4;
+bytes outputMatches = 5;
 }
 
 message filterResponse

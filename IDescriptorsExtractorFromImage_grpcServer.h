@@ -5,6 +5,7 @@
 #include "api/features/IDescriptorsExtractorFromImage.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIDescriptorsExtractorFromImageService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -24,16 +25,19 @@ class IDescriptorsExtractorFromImage_grpcServer:  public org::bcom::xpcf::Config
     {
       public:
         grpcIDescriptorsExtractorFromImageServiceImpl() = default;
-        ::grpc::Status getTypeString(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response) override;
+        ::grpc::Status getTypeString(::grpc::ServerContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response) override;
         ::grpc::Status extract(::grpc::ServerContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest* request, ::grpcIDescriptorsExtractorFromImage::extractResponse* response) override;
 
         SRef<SolAR::api::features::IDescriptorsExtractorFromImage> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIDescriptorsExtractorFromImageServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

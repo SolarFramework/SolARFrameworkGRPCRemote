@@ -20,7 +20,8 @@ namespace grpcICornerRefinement {
 constexpr refineRequest::refineRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , corners_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , corners_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct refineRequestDefaultTypeInternal {
   constexpr refineRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -53,6 +54,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICornerRefinementService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineRequest, image_),
   PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineRequest, corners_),
   ~0u,  // no _has_bits_
@@ -64,7 +66,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICornerRefinementService_2
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcICornerRefinement::refineRequest)},
-  { 7, -1, sizeof(::grpcICornerRefinement::refineResponse)},
+  { 8, -1, sizeof(::grpcICornerRefinement::refineResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -75,19 +77,20 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcICornerRefinementService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"grpcICornerRefinementService.proto\022\025gr"
   "pcICornerRefinement\032\033google/protobuf/emp"
-  "ty.proto\"/\n\rrefineRequest\022\r\n\005image\030\001 \001(\014"
-  "\022\017\n\007corners\030\002 \001(\014\"!\n\016refineResponse\022\017\n\007c"
-  "orners\030\001 \001(\0142w\n\034grpcICornerRefinementSer"
-  "vice\022W\n\006refine\022$.grpcICornerRefinement.r"
-  "efineRequest\032%.grpcICornerRefinement.ref"
-  "ineResponse\"\000b\006proto3"
+  "ty.proto\"T\n\rrefineRequest\022#\n\033grpcServerC"
+  "ompressionFormat\030\001 \001(\005\022\r\n\005image\030\002 \001(\014\022\017\n"
+  "\007corners\030\003 \001(\014\"!\n\016refineResponse\022\017\n\007corn"
+  "ers\030\001 \001(\0142w\n\034grpcICornerRefinementServic"
+  "e\022W\n\006refine\022$.grpcICornerRefinement.refi"
+  "neRequest\032%.grpcICornerRefinement.refine"
+  "Response\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcICornerRefinementService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcICornerRefinementService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcICornerRefinementService_2eproto = {
-  false, false, 301, descriptor_table_protodef_grpcICornerRefinementService_2eproto, "grpcICornerRefinementService.proto", 
+  false, false, 338, descriptor_table_protodef_grpcICornerRefinementService_2eproto, "grpcICornerRefinementService.proto", 
   &descriptor_table_grpcICornerRefinementService_2eproto_once, descriptor_table_grpcICornerRefinementService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcICornerRefinementService_2eproto::offsets,
   file_level_metadata_grpcICornerRefinementService_2eproto, file_level_enum_descriptors_grpcICornerRefinementService_2eproto, file_level_service_descriptors_grpcICornerRefinementService_2eproto,
@@ -127,12 +130,14 @@ refineRequest::refineRequest(const refineRequest& from)
     corners_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_corners(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcICornerRefinement.refineRequest)
 }
 
 void refineRequest::SharedCtor() {
 image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 corners_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 refineRequest::~refineRequest() {
@@ -165,6 +170,7 @@ void refineRequest::Clear() {
 
   image_.ClearToEmpty();
   corners_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -175,17 +181,24 @@ const char* refineRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes image = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes image = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_image();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes corners = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes corners = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_corners();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -219,16 +232,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes image = 1;
-  if (this->image().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_image(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes corners = 2;
+  // bytes image = 2;
+  if (this->image().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_image(), target);
+  }
+
+  // bytes corners = 3;
   if (this->corners().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_corners(), target);
+        3, this->_internal_corners(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -247,18 +266,25 @@ size_t refineRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes image = 1;
+  // bytes image = 2;
   if (this->image().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_image());
   }
 
-  // bytes corners = 2;
+  // bytes corners = 3;
   if (this->corners().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_corners());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -298,6 +324,9 @@ void refineRequest::MergeFrom(const refineRequest& from) {
   if (from.corners().size() > 0) {
     _internal_set_corners(from._internal_corners());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void refineRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -323,6 +352,7 @@ void refineRequest::InternalSwap(refineRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   image_.Swap(&other->image_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   corners_.Swap(&other->corners_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata refineRequest::GetMetadata() const {

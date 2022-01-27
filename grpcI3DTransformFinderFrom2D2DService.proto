@@ -12,11 +12,12 @@ bytes distorsionParams = 2;
 
 message estimate_grpc0Request
 {
-bytes pointsView1 = 1;
-bytes pointsView2 = 2;
-bytes poseView1 = 3;
-bytes poseView2 = 4;
-bytes inlierMatches = 5;
+int32 grpcServerCompressionFormat  = 1;
+bytes pointsView1 = 2;
+bytes pointsView2 = 3;
+bytes poseView1 = 4;
+bytes poseView2 = 5;
+bytes inlierMatches = 6;
 }
 
 message estimate_grpc0Response
@@ -28,11 +29,12 @@ sint32 xpcfGrpcReturnValue = 3;
 
 message estimate_grpc1Request
 {
-bytes pointsView1 = 1;
-bytes pointsView2 = 2;
-bytes poseView1 = 3;
-bytes poseView2 = 4;
-bytes inlierMatches = 5;
+int32 grpcServerCompressionFormat  = 1;
+bytes pointsView1 = 2;
+bytes pointsView2 = 3;
+bytes poseView1 = 4;
+bytes poseView2 = 5;
+bytes inlierMatches = 6;
 }
 
 message estimate_grpc1Response

@@ -11,8 +11,9 @@ bytes camParams = 1;
 
 message processRequest
 {
-bytes frame = 1;
-bytes keyframe = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes frame = 2;
+bytes keyframe = 3;
 }
 
 message processResponse

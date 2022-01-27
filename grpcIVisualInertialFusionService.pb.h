@@ -628,9 +628,10 @@ class processRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOutputDataFieldNumber = 1,
+    kOutputDataFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes outputData = 1;
+  // bytes outputData = 2;
   void clear_outputdata();
   const std::string& outputdata() const;
   void set_outputdata(const std::string& value);
@@ -646,6 +647,15 @@ class processRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_outputdata();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIVisualInertialFusion.processRequest)
  private:
   class _Internal;
@@ -654,6 +664,7 @@ class processRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputdata_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIVisualInertialFusionService_2eproto;
 };
@@ -1018,7 +1029,27 @@ inline void addVisionDataRequest::set_allocated_visiondata(std::string* visionda
 
 // processRequest
 
-// bytes outputData = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void processRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 processRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 processRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIVisualInertialFusion.processRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void processRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void processRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIVisualInertialFusion.processRequest.grpcServerCompressionFormat)
+}
+
+// bytes outputData = 2;
 inline void processRequest::clear_outputdata() {
   outputdata_.ClearToEmpty();
 }

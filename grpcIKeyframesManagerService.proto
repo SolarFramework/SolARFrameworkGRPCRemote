@@ -6,7 +6,8 @@ package grpcIKeyframesManager;
 
 message addKeyframe_grpc0Request
 {
-bytes keyframe = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframe = 2;
 }
 
 message addKeyframe_grpc0Response
@@ -16,7 +17,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message addKeyframe_grpc1Request
 {
-bytes keyframe = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframe = 2;
 }
 
 message addKeyframe_grpc1Response
@@ -26,8 +28,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getKeyframeRequest
 {
-uint32 id = 1;
-bytes keyframe = 2;
+int32 grpcServerCompressionFormat  = 1;
+uint32 id = 2;
+bytes keyframe = 3;
 }
 
 message getKeyframeResponse
@@ -38,8 +41,9 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getKeyframesRequest
 {
-bytes ids = 1;
-bytes keyframes = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes ids = 2;
+bytes keyframes = 3;
 }
 
 message getKeyframesResponse
@@ -50,7 +54,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getAllKeyframesRequest
 {
-bytes keyframes = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframes = 2;
 }
 
 message getAllKeyframesResponse
@@ -61,12 +66,18 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message suppressKeyframeRequest
 {
-uint32 id = 1;
+int32 grpcServerCompressionFormat  = 1;
+uint32 id = 2;
 }
 
 message suppressKeyframeResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getDescriptorTypeRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getDescriptorTypeResponse
@@ -76,7 +87,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message setDescriptorTypeRequest
 {
-sint32 type = 1;
+int32 grpcServerCompressionFormat  = 1;
+sint32 type = 2;
 }
 
 message setDescriptorTypeResponse
@@ -86,12 +98,18 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message isExistKeyframeRequest
 {
-uint32 id = 1;
+int32 grpcServerCompressionFormat  = 1;
+uint32 id = 2;
 }
 
 message isExistKeyframeResponse
 {
 bool xpcfGrpcReturnValue = 1;
+}
+
+message getNbKeyframesRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getNbKeyframesResponse
@@ -101,7 +119,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message saveToFileRequest
 {
-string file = 1;
+int32 grpcServerCompressionFormat  = 1;
+string file = 2;
 }
 
 message saveToFileResponse
@@ -111,12 +130,18 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message loadFromFileRequest
 {
-string file = 1;
+int32 grpcServerCompressionFormat  = 1;
+string file = 2;
 }
 
 message loadFromFileResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getConstKeyframeCollectionRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getConstKeyframeCollectionResponse
@@ -126,7 +151,8 @@ bytes xpcfGrpcReturnValue = 1;
 
 message getKeyframeCollectionRequest
 {
-bytes keyframeCollection = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframeCollection = 2;
 }
 
 message getKeyframeCollectionResponse
@@ -147,13 +173,13 @@ rpc getKeyframe(getKeyframeRequest) returns(getKeyframeResponse) {}
 rpc getKeyframes(getKeyframesRequest) returns(getKeyframesResponse) {}
 rpc getAllKeyframes(getAllKeyframesRequest) returns(getAllKeyframesResponse) {}
 rpc suppressKeyframe(suppressKeyframeRequest) returns(suppressKeyframeResponse) {}
-rpc getDescriptorType(google.protobuf.Empty) returns(getDescriptorTypeResponse) {}
+rpc getDescriptorType(getDescriptorTypeRequest) returns(getDescriptorTypeResponse) {}
 rpc setDescriptorType(setDescriptorTypeRequest) returns(setDescriptorTypeResponse) {}
 rpc isExistKeyframe(isExistKeyframeRequest) returns(isExistKeyframeResponse) {}
-rpc getNbKeyframes(google.protobuf.Empty) returns(getNbKeyframesResponse) {}
+rpc getNbKeyframes(getNbKeyframesRequest) returns(getNbKeyframesResponse) {}
 rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
-rpc getConstKeyframeCollection(google.protobuf.Empty) returns(getConstKeyframeCollectionResponse) {}
+rpc getConstKeyframeCollection(getConstKeyframeCollectionRequest) returns(getConstKeyframeCollectionResponse) {}
 rpc getKeyframeCollection(getKeyframeCollectionRequest) returns(getKeyframeCollectionResponse) {}
 rpc setKeyframeCollection(setKeyframeCollectionRequest) returns(google.protobuf.Empty) {}
 }

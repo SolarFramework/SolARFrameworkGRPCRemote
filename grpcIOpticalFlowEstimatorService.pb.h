@@ -192,14 +192,15 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPreviousImageFieldNumber = 1,
-    kCurrentImageFieldNumber = 2,
-    kPointsToTrackFieldNumber = 3,
-    kTrackedPointsFieldNumber = 4,
-    kStatusFieldNumber = 5,
-    kErrorFieldNumber = 6,
+    kPreviousImageFieldNumber = 2,
+    kCurrentImageFieldNumber = 3,
+    kPointsToTrackFieldNumber = 4,
+    kTrackedPointsFieldNumber = 5,
+    kStatusFieldNumber = 6,
+    kErrorFieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes previousImage = 1;
+  // bytes previousImage = 2;
   void clear_previousimage();
   const std::string& previousimage() const;
   void set_previousimage(const std::string& value);
@@ -215,7 +216,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_previousimage();
   public:
 
-  // bytes currentImage = 2;
+  // bytes currentImage = 3;
   void clear_currentimage();
   const std::string& currentimage() const;
   void set_currentimage(const std::string& value);
@@ -231,7 +232,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_currentimage();
   public:
 
-  // bytes pointsToTrack = 3;
+  // bytes pointsToTrack = 4;
   void clear_pointstotrack();
   const std::string& pointstotrack() const;
   void set_pointstotrack(const std::string& value);
@@ -247,7 +248,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pointstotrack();
   public:
 
-  // bytes trackedPoints = 4;
+  // bytes trackedPoints = 5;
   void clear_trackedpoints();
   const std::string& trackedpoints() const;
   void set_trackedpoints(const std::string& value);
@@ -263,7 +264,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_trackedpoints();
   public:
 
-  // bytes status = 5;
+  // bytes status = 6;
   void clear_status();
   const std::string& status() const;
   void set_status(const std::string& value);
@@ -279,7 +280,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_status();
   public:
 
-  // bytes error = 6;
+  // bytes error = 7;
   void clear_error();
   const std::string& error() const;
   void set_error(const std::string& value);
@@ -295,6 +296,15 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_error();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIOpticalFlowEstimator.estimate_grpc0Request)
  private:
   class _Internal;
@@ -308,6 +318,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trackedpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIOpticalFlowEstimatorService_2eproto;
 };
@@ -617,14 +628,15 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPreviousImageFieldNumber = 1,
-    kCurrentImageFieldNumber = 2,
-    kPointsToTrackFieldNumber = 3,
-    kTrackedPointsFieldNumber = 4,
-    kStatusFieldNumber = 5,
-    kErrorFieldNumber = 6,
+    kPreviousImageFieldNumber = 2,
+    kCurrentImageFieldNumber = 3,
+    kPointsToTrackFieldNumber = 4,
+    kTrackedPointsFieldNumber = 5,
+    kStatusFieldNumber = 6,
+    kErrorFieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes previousImage = 1;
+  // bytes previousImage = 2;
   void clear_previousimage();
   const std::string& previousimage() const;
   void set_previousimage(const std::string& value);
@@ -640,7 +652,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_previousimage();
   public:
 
-  // bytes currentImage = 2;
+  // bytes currentImage = 3;
   void clear_currentimage();
   const std::string& currentimage() const;
   void set_currentimage(const std::string& value);
@@ -656,7 +668,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_currentimage();
   public:
 
-  // bytes pointsToTrack = 3;
+  // bytes pointsToTrack = 4;
   void clear_pointstotrack();
   const std::string& pointstotrack() const;
   void set_pointstotrack(const std::string& value);
@@ -672,7 +684,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pointstotrack();
   public:
 
-  // bytes trackedPoints = 4;
+  // bytes trackedPoints = 5;
   void clear_trackedpoints();
   const std::string& trackedpoints() const;
   void set_trackedpoints(const std::string& value);
@@ -688,7 +700,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_trackedpoints();
   public:
 
-  // bytes status = 5;
+  // bytes status = 6;
   void clear_status();
   const std::string& status() const;
   void set_status(const std::string& value);
@@ -704,7 +716,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_status();
   public:
 
-  // bytes error = 6;
+  // bytes error = 7;
   void clear_error();
   const std::string& error() const;
   void set_error(const std::string& value);
@@ -720,6 +732,15 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_error();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIOpticalFlowEstimator.estimate_grpc1Request)
  private:
   class _Internal;
@@ -733,6 +754,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trackedpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIOpticalFlowEstimatorService_2eproto;
 };
@@ -938,7 +960,27 @@ class estimate_grpc1Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // estimate_grpc0Request
 
-// bytes previousImage = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void estimate_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimate_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimate_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIOpticalFlowEstimator.estimate_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void estimate_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void estimate_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIOpticalFlowEstimator.estimate_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes previousImage = 2;
 inline void estimate_grpc0Request::clear_previousimage() {
   previousimage_.ClearToEmpty();
 }
@@ -999,7 +1041,7 @@ inline void estimate_grpc0Request::set_allocated_previousimage(std::string* prev
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc0Request.previousImage)
 }
 
-// bytes currentImage = 2;
+// bytes currentImage = 3;
 inline void estimate_grpc0Request::clear_currentimage() {
   currentimage_.ClearToEmpty();
 }
@@ -1060,7 +1102,7 @@ inline void estimate_grpc0Request::set_allocated_currentimage(std::string* curre
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc0Request.currentImage)
 }
 
-// bytes pointsToTrack = 3;
+// bytes pointsToTrack = 4;
 inline void estimate_grpc0Request::clear_pointstotrack() {
   pointstotrack_.ClearToEmpty();
 }
@@ -1121,7 +1163,7 @@ inline void estimate_grpc0Request::set_allocated_pointstotrack(std::string* poin
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc0Request.pointsToTrack)
 }
 
-// bytes trackedPoints = 4;
+// bytes trackedPoints = 5;
 inline void estimate_grpc0Request::clear_trackedpoints() {
   trackedpoints_.ClearToEmpty();
 }
@@ -1182,7 +1224,7 @@ inline void estimate_grpc0Request::set_allocated_trackedpoints(std::string* trac
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc0Request.trackedPoints)
 }
 
-// bytes status = 5;
+// bytes status = 6;
 inline void estimate_grpc0Request::clear_status() {
   status_.ClearToEmpty();
 }
@@ -1243,7 +1285,7 @@ inline void estimate_grpc0Request::set_allocated_status(std::string* status) {
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc0Request.status)
 }
 
-// bytes error = 6;
+// bytes error = 7;
 inline void estimate_grpc0Request::clear_error() {
   error_.ClearToEmpty();
 }
@@ -1515,7 +1557,27 @@ inline void estimate_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE
 
 // estimate_grpc1Request
 
-// bytes previousImage = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void estimate_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimate_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimate_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIOpticalFlowEstimator.estimate_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void estimate_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void estimate_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIOpticalFlowEstimator.estimate_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes previousImage = 2;
 inline void estimate_grpc1Request::clear_previousimage() {
   previousimage_.ClearToEmpty();
 }
@@ -1576,7 +1638,7 @@ inline void estimate_grpc1Request::set_allocated_previousimage(std::string* prev
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc1Request.previousImage)
 }
 
-// bytes currentImage = 2;
+// bytes currentImage = 3;
 inline void estimate_grpc1Request::clear_currentimage() {
   currentimage_.ClearToEmpty();
 }
@@ -1637,7 +1699,7 @@ inline void estimate_grpc1Request::set_allocated_currentimage(std::string* curre
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc1Request.currentImage)
 }
 
-// bytes pointsToTrack = 3;
+// bytes pointsToTrack = 4;
 inline void estimate_grpc1Request::clear_pointstotrack() {
   pointstotrack_.ClearToEmpty();
 }
@@ -1698,7 +1760,7 @@ inline void estimate_grpc1Request::set_allocated_pointstotrack(std::string* poin
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc1Request.pointsToTrack)
 }
 
-// bytes trackedPoints = 4;
+// bytes trackedPoints = 5;
 inline void estimate_grpc1Request::clear_trackedpoints() {
   trackedpoints_.ClearToEmpty();
 }
@@ -1759,7 +1821,7 @@ inline void estimate_grpc1Request::set_allocated_trackedpoints(std::string* trac
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc1Request.trackedPoints)
 }
 
-// bytes status = 5;
+// bytes status = 6;
 inline void estimate_grpc1Request::clear_status() {
   status_.ClearToEmpty();
 }
@@ -1820,7 +1882,7 @@ inline void estimate_grpc1Request::set_allocated_status(std::string* status) {
   // @@protoc_insertion_point(field_set_allocated:grpcIOpticalFlowEstimator.estimate_grpc1Request.status)
 }
 
-// bytes error = 6;
+// bytes error = 7;
 inline void estimate_grpc1Request::clear_error() {
   error_.ClearToEmpty();
 }

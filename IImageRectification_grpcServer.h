@@ -5,6 +5,7 @@
 #include "api/image/IImageRectification.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIImageRectificationService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -27,12 +28,15 @@ class IImageRectification_grpcServer:  public org::bcom::xpcf::ConfigurableBase,
         ::grpc::Status rectify(::grpc::ServerContext* context, const ::grpcIImageRectification::rectifyRequest* request, ::grpcIImageRectification::rectifyResponse* response) override;
 
         SRef<SolAR::api::image::IImageRectification> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIImageRectificationServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

@@ -6,10 +6,11 @@ package grpcI2DPointsRectification;
 
 message rectify_grpc0Request
 {
-bytes points2D = 1;
-bytes camParams = 2;
-bytes rectParams = 3;
-bytes rectifiedPoints2D = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes points2D = 2;
+bytes camParams = 3;
+bytes rectParams = 4;
+bytes rectifiedPoints2D = 5;
 }
 
 message rectify_grpc0Response
@@ -20,10 +21,11 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message rectify_grpc1Request
 {
-bytes keypoints = 1;
-bytes camParams = 2;
-bytes rectParams = 3;
-bytes rectifiedKeypoints = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes keypoints = 2;
+bytes camParams = 3;
+bytes rectParams = 4;
+bytes rectifiedKeypoints = 5;
 }
 
 message rectify_grpc1Response

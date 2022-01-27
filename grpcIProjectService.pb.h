@@ -358,11 +358,12 @@ class project_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputPointsFieldNumber = 1,
-    kPoseFieldNumber = 2,
-    kImagePointsFieldNumber = 3,
+    kInputPointsFieldNumber = 2,
+    kPoseFieldNumber = 3,
+    kImagePointsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputPoints = 1;
+  // bytes inputPoints = 2;
   void clear_inputpoints();
   const std::string& inputpoints() const;
   void set_inputpoints(const std::string& value);
@@ -378,7 +379,7 @@ class project_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_inputpoints();
   public:
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -394,7 +395,7 @@ class project_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes imagePoints = 3;
+  // bytes imagePoints = 4;
   void clear_imagepoints();
   const std::string& imagepoints() const;
   void set_imagepoints(const std::string& value);
@@ -410,6 +411,15 @@ class project_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_imagepoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIProject.project_grpc0Request)
  private:
   class _Internal;
@@ -420,6 +430,7 @@ class project_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imagepoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIProjectService_2eproto;
 };
@@ -693,11 +704,12 @@ class project_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputPointsFieldNumber = 1,
-    kPoseFieldNumber = 2,
-    kImagePointsFieldNumber = 3,
+    kInputPointsFieldNumber = 2,
+    kPoseFieldNumber = 3,
+    kImagePointsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputPoints = 1;
+  // bytes inputPoints = 2;
   void clear_inputpoints();
   const std::string& inputpoints() const;
   void set_inputpoints(const std::string& value);
@@ -713,7 +725,7 @@ class project_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_inputpoints();
   public:
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -729,7 +741,7 @@ class project_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes imagePoints = 3;
+  // bytes imagePoints = 4;
   void clear_imagepoints();
   const std::string& imagepoints() const;
   void set_imagepoints(const std::string& value);
@@ -745,6 +757,15 @@ class project_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_imagepoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIProject.project_grpc1Request)
  private:
   class _Internal;
@@ -755,6 +776,7 @@ class project_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imagepoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIProjectService_2eproto;
 };
@@ -1050,7 +1072,27 @@ inline void setCameraParametersRequest::set_allocated_distorsionparams(std::stri
 
 // project_grpc0Request
 
-// bytes inputPoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void project_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 project_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 project_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIProject.project_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void project_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void project_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIProject.project_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes inputPoints = 2;
 inline void project_grpc0Request::clear_inputpoints() {
   inputpoints_.ClearToEmpty();
 }
@@ -1111,7 +1153,7 @@ inline void project_grpc0Request::set_allocated_inputpoints(std::string* inputpo
   // @@protoc_insertion_point(field_set_allocated:grpcIProject.project_grpc0Request.inputPoints)
 }
 
-// bytes pose = 2;
+// bytes pose = 3;
 inline void project_grpc0Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -1172,7 +1214,7 @@ inline void project_grpc0Request::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcIProject.project_grpc0Request.pose)
 }
 
-// bytes imagePoints = 3;
+// bytes imagePoints = 4;
 inline void project_grpc0Request::clear_imagepoints() {
   imagepoints_.ClearToEmpty();
 }
@@ -1322,7 +1364,27 @@ inline void project_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_
 
 // project_grpc1Request
 
-// bytes inputPoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void project_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 project_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 project_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIProject.project_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void project_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void project_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIProject.project_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes inputPoints = 2;
 inline void project_grpc1Request::clear_inputpoints() {
   inputpoints_.ClearToEmpty();
 }
@@ -1383,7 +1445,7 @@ inline void project_grpc1Request::set_allocated_inputpoints(std::string* inputpo
   // @@protoc_insertion_point(field_set_allocated:grpcIProject.project_grpc1Request.inputPoints)
 }
 
-// bytes pose = 2;
+// bytes pose = 3;
 inline void project_grpc1Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -1444,7 +1506,7 @@ inline void project_grpc1Request::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcIProject.project_grpc1Request.pose)
 }
 
-// bytes imagePoints = 3;
+// bytes imagePoints = 4;
 inline void project_grpc1Request::clear_imagepoints() {
   imagepoints_.ClearToEmpty();
 }

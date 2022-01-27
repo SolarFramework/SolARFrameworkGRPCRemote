@@ -1,7 +1,9 @@
 // GRPC Server Class implementation generated with xpcf_grpc_gen
 #include "I2D3DCorrespondencesFinder_grpcServer.h"
 #include <cstddef>
+#include <boost/date_time.hpp>
 #include <xpcf/remoting/ISerializable.h>
+#include <xpcf/remoting/GrpcHelper.h>
 namespace xpcf = org::bcom::xpcf;
 
 template<> org::bcom::xpcf::grpc::serverI2D3DCorrespondencesFinder::I2D3DCorrespondencesFinder_grpcServer* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::serverI2D3DCorrespondencesFinder::I2D3DCorrespondencesFinder_grpcServer>();
@@ -12,6 +14,8 @@ I2D3DCorrespondencesFinder_grpcServer::I2D3DCorrespondencesFinder_grpcServer():x
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::solver::pose::I2D3DCorrespondencesFinder>(m_grpcService.m_xpcfComponent);
+  m_grpcServerCompressionConfig.resize(2);
+  declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
 
@@ -24,6 +28,9 @@ void I2D3DCorrespondencesFinder_grpcServer::unloadComponent ()
 
 XPCFErrorCode I2D3DCorrespondencesFinder_grpcServer::onConfigured()
 {
+  for (auto & grpcCompressionLine : m_grpcServerCompressionConfig) {
+;        translateServerConfiguration(grpcCompressionLine, m_grpcService.m_serviceCompressionInfos, m_grpcService.m_methodCompressionInfosMap);
+  }
   return xpcf::XPCFErrorCode::_SUCCESS;
 }
 
@@ -35,6 +42,15 @@ XPCFErrorCode I2D3DCorrespondencesFinder_grpcServer::onConfigured()
 
 ::grpc::Status I2D3DCorrespondencesFinder_grpcServer::grpcI2D3DCorrespondencesFinderServiceImpl::find(::grpc::ServerContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response)
 {
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "find", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2D3DCorrespondencesFinder_grpcServer::find request received at " << to_simple_string(start) << std::endl;
+  #endif
   SRef<SolAR::datastructure::Frame> lastFrame = xpcf::deserialize<SRef<SolAR::datastructure::Frame>>(request->lastframe());
   SRef<SolAR::datastructure::Frame> currentFrame = xpcf::deserialize<SRef<SolAR::datastructure::Frame>>(request->currentframe());
   std::vector<SolAR::datastructure::DescriptorMatch> current_matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->current_matches());
@@ -50,6 +66,11 @@ XPCFErrorCode I2D3DCorrespondencesFinder_grpcServer::onConfigured()
   response->set_found_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(found_matches));
   response->set_remaining_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(remaining_matches));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2D3DCorrespondencesFinder_grpcServer::find response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   return ::grpc::Status::OK;
 }
 

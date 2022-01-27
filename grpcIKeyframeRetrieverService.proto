@@ -6,7 +6,8 @@ package grpcIKeyframeRetriever;
 
 message addKeyframeRequest
 {
-bytes keyframe = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframe = 2;
 }
 
 message addKeyframeResponse
@@ -16,7 +17,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message suppressKeyframeRequest
 {
-uint32 keyframe_id = 1;
+int32 grpcServerCompressionFormat  = 1;
+uint32 keyframe_id = 2;
 }
 
 message suppressKeyframeResponse
@@ -26,8 +28,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message retrieve_grpc0Request
 {
-bytes frame = 1;
-bytes retKeyframes_id = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes frame = 2;
+bytes retKeyframes_id = 3;
 }
 
 message retrieve_grpc0Response
@@ -38,9 +41,10 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message retrieve_grpc1Request
 {
-bytes frame = 1;
-bytes canKeyframes_id = 2;
-bytes retKeyframes_id = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes frame = 2;
+bytes canKeyframes_id = 3;
+bytes retKeyframes_id = 4;
 }
 
 message retrieve_grpc1Response
@@ -51,7 +55,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message saveToFileRequest
 {
-string file = 1;
+int32 grpcServerCompressionFormat  = 1;
+string file = 2;
 }
 
 message saveToFileResponse
@@ -61,7 +66,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message loadFromFileRequest
 {
-string file = 1;
+int32 grpcServerCompressionFormat  = 1;
+string file = 2;
 }
 
 message loadFromFileResponse
@@ -71,9 +77,10 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message match_grpc0Request
 {
-bytes frame = 1;
-bytes keyframe = 2;
-bytes matches = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes frame = 2;
+bytes keyframe = 3;
+bytes matches = 4;
 }
 
 message match_grpc0Response
@@ -84,16 +91,22 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message match_grpc1Request
 {
-bytes indexDescriptors = 1;
-bytes descriptors = 2;
-bytes keyframe = 3;
-bytes matches = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes indexDescriptors = 2;
+bytes descriptors = 3;
+bytes keyframe = 4;
+bytes matches = 5;
 }
 
 message match_grpc1Response
 {
 bytes matches = 1;
 sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getConstKeyframeRetrievalRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getConstKeyframeRetrievalResponse
@@ -103,7 +116,8 @@ bytes xpcfGrpcReturnValue = 1;
 
 message getKeyframeRetrievalRequest
 {
-bytes keyframeRetrieval = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframeRetrieval = 2;
 }
 
 message getKeyframeRetrievalResponse
@@ -126,7 +140,7 @@ rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
 rpc match_grpc0(match_grpc0Request) returns(match_grpc0Response) {}
 rpc match_grpc1(match_grpc1Request) returns(match_grpc1Response) {}
-rpc getConstKeyframeRetrieval(google.protobuf.Empty) returns(getConstKeyframeRetrievalResponse) {}
+rpc getConstKeyframeRetrieval(getConstKeyframeRetrievalRequest) returns(getConstKeyframeRetrievalResponse) {}
 rpc getKeyframeRetrieval(getKeyframeRetrievalRequest) returns(getKeyframeRetrievalResponse) {}
 rpc setKeyframeRetrieval(setKeyframeRetrievalRequest) returns(google.protobuf.Empty) {}
 }

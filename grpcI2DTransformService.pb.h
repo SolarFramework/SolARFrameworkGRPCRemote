@@ -184,11 +184,12 @@ class transformRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputPointsFieldNumber = 1,
-    kTransformationFieldNumber = 2,
-    kOutputPointsFieldNumber = 3,
+    kInputPointsFieldNumber = 2,
+    kTransformationFieldNumber = 3,
+    kOutputPointsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputPoints = 1;
+  // bytes inputPoints = 2;
   void clear_inputpoints();
   const std::string& inputpoints() const;
   void set_inputpoints(const std::string& value);
@@ -204,7 +205,7 @@ class transformRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_inputpoints();
   public:
 
-  // bytes transformation = 2;
+  // bytes transformation = 3;
   void clear_transformation();
   const std::string& transformation() const;
   void set_transformation(const std::string& value);
@@ -220,7 +221,7 @@ class transformRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes outputPoints = 3;
+  // bytes outputPoints = 4;
   void clear_outputpoints();
   const std::string& outputpoints() const;
   void set_outputpoints(const std::string& value);
@@ -236,6 +237,15 @@ class transformRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_outputpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI2DTransform.transformRequest)
  private:
   class _Internal;
@@ -246,6 +256,7 @@ class transformRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI2DTransformService_2eproto;
 };
@@ -415,7 +426,27 @@ class transformResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // transformRequest
 
-// bytes inputPoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void transformRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI2DTransform.transformRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void transformRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void transformRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI2DTransform.transformRequest.grpcServerCompressionFormat)
+}
+
+// bytes inputPoints = 2;
 inline void transformRequest::clear_inputpoints() {
   inputpoints_.ClearToEmpty();
 }
@@ -476,7 +507,7 @@ inline void transformRequest::set_allocated_inputpoints(std::string* inputpoints
   // @@protoc_insertion_point(field_set_allocated:grpcI2DTransform.transformRequest.inputPoints)
 }
 
-// bytes transformation = 2;
+// bytes transformation = 3;
 inline void transformRequest::clear_transformation() {
   transformation_.ClearToEmpty();
 }
@@ -537,7 +568,7 @@ inline void transformRequest::set_allocated_transformation(std::string* transfor
   // @@protoc_insertion_point(field_set_allocated:grpcI2DTransform.transformRequest.transformation)
 }
 
-// bytes outputPoints = 3;
+// bytes outputPoints = 4;
 inline void transformRequest::clear_outputpoints() {
   outputpoints_.ClearToEmpty();
 }

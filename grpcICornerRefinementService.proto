@@ -6,8 +6,9 @@ package grpcICornerRefinement;
 
 message refineRequest
 {
-bytes image = 1;
-bytes corners = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+bytes corners = 3;
 }
 
 message refineResponse

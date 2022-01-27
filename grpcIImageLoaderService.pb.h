@@ -47,7 +47,7 @@ struct TableStruct_grpcIImageLoaderService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,6 +62,9 @@ extern getImageRequestDefaultTypeInternal _getImageRequest_default_instance_;
 class getImageResponse;
 struct getImageResponseDefaultTypeInternal;
 extern getImageResponseDefaultTypeInternal _getImageResponse_default_instance_;
+class reloadImageRequest;
+struct reloadImageRequestDefaultTypeInternal;
+extern reloadImageRequestDefaultTypeInternal _reloadImageRequest_default_instance_;
 class reloadImageResponse;
 struct reloadImageResponseDefaultTypeInternal;
 extern reloadImageResponseDefaultTypeInternal _reloadImageResponse_default_instance_;
@@ -69,6 +72,7 @@ extern reloadImageResponseDefaultTypeInternal _reloadImageResponse_default_insta
 PROTOBUF_NAMESPACE_OPEN
 template<> ::grpcIImageLoader::getImageRequest* Arena::CreateMaybeMessage<::grpcIImageLoader::getImageRequest>(Arena*);
 template<> ::grpcIImageLoader::getImageResponse* Arena::CreateMaybeMessage<::grpcIImageLoader::getImageResponse>(Arena*);
+template<> ::grpcIImageLoader::reloadImageRequest* Arena::CreateMaybeMessage<::grpcIImageLoader::reloadImageRequest>(Arena*);
 template<> ::grpcIImageLoader::reloadImageResponse* Arena::CreateMaybeMessage<::grpcIImageLoader::reloadImageResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIImageLoader {
@@ -188,9 +192,10 @@ class getImageRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImgFieldNumber = 1,
+    kImgFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes img = 1;
+  // bytes img = 2;
   void clear_img();
   const std::string& img() const;
   void set_img(const std::string& value);
@@ -206,6 +211,15 @@ class getImageRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_img();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIImageLoader.getImageRequest)
  private:
   class _Internal;
@@ -214,6 +228,7 @@ class getImageRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr img_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIImageLoaderService_2eproto;
 };
@@ -374,6 +389,143 @@ class getImageResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class reloadImageRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIImageLoader.reloadImageRequest) */ {
+ public:
+  inline reloadImageRequest() : reloadImageRequest(nullptr) {}
+  virtual ~reloadImageRequest();
+  explicit constexpr reloadImageRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  reloadImageRequest(const reloadImageRequest& from);
+  reloadImageRequest(reloadImageRequest&& from) noexcept
+    : reloadImageRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline reloadImageRequest& operator=(const reloadImageRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline reloadImageRequest& operator=(reloadImageRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const reloadImageRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const reloadImageRequest* internal_default_instance() {
+    return reinterpret_cast<const reloadImageRequest*>(
+               &_reloadImageRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(reloadImageRequest& a, reloadImageRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(reloadImageRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(reloadImageRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline reloadImageRequest* New() const final {
+    return CreateMaybeMessage<reloadImageRequest>(nullptr);
+  }
+
+  reloadImageRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<reloadImageRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const reloadImageRequest& from);
+  void MergeFrom(const reloadImageRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(reloadImageRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIImageLoader.reloadImageRequest";
+  }
+  protected:
+  explicit reloadImageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIImageLoaderService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIImageLoader.reloadImageRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIImageLoaderService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class reloadImageResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIImageLoader.reloadImageResponse) */ {
  public:
@@ -417,7 +569,7 @@ class reloadImageResponse PROTOBUF_FINAL :
                &_reloadImageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(reloadImageResponse& a, reloadImageResponse& b) {
     a.Swap(&b);
@@ -520,7 +672,27 @@ class reloadImageResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // getImageRequest
 
-// bytes img = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getImageRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getImageRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getImageRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImageLoader.getImageRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getImageRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getImageRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImageLoader.getImageRequest.grpcServerCompressionFormat)
+}
+
+// bytes img = 2;
 inline void getImageRequest::clear_img() {
   img_.ClearToEmpty();
 }
@@ -668,6 +840,30 @@ inline void getImageResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::i
 
 // -------------------------------------------------------------------
 
+// reloadImageRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void reloadImageRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reloadImageRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reloadImageRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImageLoader.reloadImageRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void reloadImageRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void reloadImageRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImageLoader.reloadImageRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // reloadImageResponse
 
 // sint32 xpcfGrpcReturnValue = 1;
@@ -693,6 +889,8 @@ inline void reloadImageResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

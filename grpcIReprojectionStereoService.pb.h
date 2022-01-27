@@ -200,11 +200,12 @@ class reprojectToUnrectificationRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRectifiedKeypointsFieldNumber = 1,
-    kRectParamsFieldNumber = 2,
-    kUnrectifiedKeypointsFieldNumber = 3,
+    kRectifiedKeypointsFieldNumber = 2,
+    kRectParamsFieldNumber = 3,
+    kUnrectifiedKeypointsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes rectifiedKeypoints = 1;
+  // bytes rectifiedKeypoints = 2;
   void clear_rectifiedkeypoints();
   const std::string& rectifiedkeypoints() const;
   void set_rectifiedkeypoints(const std::string& value);
@@ -220,7 +221,7 @@ class reprojectToUnrectificationRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_rectifiedkeypoints();
   public:
 
-  // bytes rectParams = 2;
+  // bytes rectParams = 3;
   void clear_rectparams();
   const std::string& rectparams() const;
   void set_rectparams(const std::string& value);
@@ -236,7 +237,7 @@ class reprojectToUnrectificationRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_rectparams();
   public:
 
-  // bytes unrectifiedKeypoints = 3;
+  // bytes unrectifiedKeypoints = 4;
   void clear_unrectifiedkeypoints();
   const std::string& unrectifiedkeypoints() const;
   void set_unrectifiedkeypoints(const std::string& value);
@@ -252,6 +253,15 @@ class reprojectToUnrectificationRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_unrectifiedkeypoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIReprojectionStereo.reprojectToUnrectificationRequest)
  private:
   class _Internal;
@@ -262,6 +272,7 @@ class reprojectToUnrectificationRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectifiedkeypoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr unrectifiedkeypoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIReprojectionStereoService_2eproto;
 };
@@ -535,13 +546,14 @@ class reprojectToCloudPoints_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUndistortedKeypointsFieldNumber = 1,
-    kDescriptorsFieldNumber = 2,
-    kPoseFieldNumber = 3,
-    kIntrinsicParamsFieldNumber = 4,
-    kCloudPointsFieldNumber = 5,
+    kUndistortedKeypointsFieldNumber = 2,
+    kDescriptorsFieldNumber = 3,
+    kPoseFieldNumber = 4,
+    kIntrinsicParamsFieldNumber = 5,
+    kCloudPointsFieldNumber = 6,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes undistortedKeypoints = 1;
+  // bytes undistortedKeypoints = 2;
   void clear_undistortedkeypoints();
   const std::string& undistortedkeypoints() const;
   void set_undistortedkeypoints(const std::string& value);
@@ -557,7 +569,7 @@ class reprojectToCloudPoints_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_undistortedkeypoints();
   public:
 
-  // bytes descriptors = 2;
+  // bytes descriptors = 3;
   void clear_descriptors();
   const std::string& descriptors() const;
   void set_descriptors(const std::string& value);
@@ -573,7 +585,7 @@ class reprojectToCloudPoints_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors();
   public:
 
-  // bytes pose = 3;
+  // bytes pose = 4;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -589,7 +601,7 @@ class reprojectToCloudPoints_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes intrinsicParams = 4;
+  // bytes intrinsicParams = 5;
   void clear_intrinsicparams();
   const std::string& intrinsicparams() const;
   void set_intrinsicparams(const std::string& value);
@@ -605,7 +617,7 @@ class reprojectToCloudPoints_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_intrinsicparams();
   public:
 
-  // bytes cloudPoints = 5;
+  // bytes cloudPoints = 6;
   void clear_cloudpoints();
   const std::string& cloudpoints() const;
   void set_cloudpoints(const std::string& value);
@@ -621,6 +633,15 @@ class reprojectToCloudPoints_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_cloudpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIReprojectionStereo.reprojectToCloudPoints_grpc0Request)
  private:
   class _Internal;
@@ -633,6 +654,7 @@ class reprojectToCloudPoints_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr intrinsicparams_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cloudpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIReprojectionStereoService_2eproto;
 };
@@ -906,11 +928,12 @@ class reprojectToCloudPoints_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFrameFieldNumber = 1,
-    kIntrinsicParamsFieldNumber = 2,
-    kCloudPointsFieldNumber = 3,
+    kFrameFieldNumber = 2,
+    kIntrinsicParamsFieldNumber = 3,
+    kCloudPointsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes frame = 1;
+  // bytes frame = 2;
   void clear_frame();
   const std::string& frame() const;
   void set_frame(const std::string& value);
@@ -926,7 +949,7 @@ class reprojectToCloudPoints_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_frame();
   public:
 
-  // bytes intrinsicParams = 2;
+  // bytes intrinsicParams = 3;
   void clear_intrinsicparams();
   const std::string& intrinsicparams() const;
   void set_intrinsicparams(const std::string& value);
@@ -942,7 +965,7 @@ class reprojectToCloudPoints_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_intrinsicparams();
   public:
 
-  // bytes cloudPoints = 3;
+  // bytes cloudPoints = 4;
   void clear_cloudpoints();
   const std::string& cloudpoints() const;
   void set_cloudpoints(const std::string& value);
@@ -958,6 +981,15 @@ class reprojectToCloudPoints_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_cloudpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIReprojectionStereo.reprojectToCloudPoints_grpc1Request)
  private:
   class _Internal;
@@ -968,6 +1000,7 @@ class reprojectToCloudPoints_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr intrinsicparams_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cloudpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIReprojectionStereoService_2eproto;
 };
@@ -1137,7 +1170,27 @@ class reprojectToCloudPoints_grpc1Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // reprojectToUnrectificationRequest
 
-// bytes rectifiedKeypoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void reprojectToUnrectificationRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reprojectToUnrectificationRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reprojectToUnrectificationRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIReprojectionStereo.reprojectToUnrectificationRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void reprojectToUnrectificationRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void reprojectToUnrectificationRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIReprojectionStereo.reprojectToUnrectificationRequest.grpcServerCompressionFormat)
+}
+
+// bytes rectifiedKeypoints = 2;
 inline void reprojectToUnrectificationRequest::clear_rectifiedkeypoints() {
   rectifiedkeypoints_.ClearToEmpty();
 }
@@ -1198,7 +1251,7 @@ inline void reprojectToUnrectificationRequest::set_allocated_rectifiedkeypoints(
   // @@protoc_insertion_point(field_set_allocated:grpcIReprojectionStereo.reprojectToUnrectificationRequest.rectifiedKeypoints)
 }
 
-// bytes rectParams = 2;
+// bytes rectParams = 3;
 inline void reprojectToUnrectificationRequest::clear_rectparams() {
   rectparams_.ClearToEmpty();
 }
@@ -1259,7 +1312,7 @@ inline void reprojectToUnrectificationRequest::set_allocated_rectparams(std::str
   // @@protoc_insertion_point(field_set_allocated:grpcIReprojectionStereo.reprojectToUnrectificationRequest.rectParams)
 }
 
-// bytes unrectifiedKeypoints = 3;
+// bytes unrectifiedKeypoints = 4;
 inline void reprojectToUnrectificationRequest::clear_unrectifiedkeypoints() {
   unrectifiedkeypoints_.ClearToEmpty();
 }
@@ -1409,7 +1462,27 @@ inline void reprojectToUnrectificationResponse::set_xpcfgrpcreturnvalue(::PROTOB
 
 // reprojectToCloudPoints_grpc0Request
 
-// bytes undistortedKeypoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void reprojectToCloudPoints_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reprojectToCloudPoints_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reprojectToCloudPoints_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIReprojectionStereo.reprojectToCloudPoints_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void reprojectToCloudPoints_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void reprojectToCloudPoints_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIReprojectionStereo.reprojectToCloudPoints_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes undistortedKeypoints = 2;
 inline void reprojectToCloudPoints_grpc0Request::clear_undistortedkeypoints() {
   undistortedkeypoints_.ClearToEmpty();
 }
@@ -1470,7 +1543,7 @@ inline void reprojectToCloudPoints_grpc0Request::set_allocated_undistortedkeypoi
   // @@protoc_insertion_point(field_set_allocated:grpcIReprojectionStereo.reprojectToCloudPoints_grpc0Request.undistortedKeypoints)
 }
 
-// bytes descriptors = 2;
+// bytes descriptors = 3;
 inline void reprojectToCloudPoints_grpc0Request::clear_descriptors() {
   descriptors_.ClearToEmpty();
 }
@@ -1531,7 +1604,7 @@ inline void reprojectToCloudPoints_grpc0Request::set_allocated_descriptors(std::
   // @@protoc_insertion_point(field_set_allocated:grpcIReprojectionStereo.reprojectToCloudPoints_grpc0Request.descriptors)
 }
 
-// bytes pose = 3;
+// bytes pose = 4;
 inline void reprojectToCloudPoints_grpc0Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -1592,7 +1665,7 @@ inline void reprojectToCloudPoints_grpc0Request::set_allocated_pose(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIReprojectionStereo.reprojectToCloudPoints_grpc0Request.pose)
 }
 
-// bytes intrinsicParams = 4;
+// bytes intrinsicParams = 5;
 inline void reprojectToCloudPoints_grpc0Request::clear_intrinsicparams() {
   intrinsicparams_.ClearToEmpty();
 }
@@ -1653,7 +1726,7 @@ inline void reprojectToCloudPoints_grpc0Request::set_allocated_intrinsicparams(s
   // @@protoc_insertion_point(field_set_allocated:grpcIReprojectionStereo.reprojectToCloudPoints_grpc0Request.intrinsicParams)
 }
 
-// bytes cloudPoints = 5;
+// bytes cloudPoints = 6;
 inline void reprojectToCloudPoints_grpc0Request::clear_cloudpoints() {
   cloudpoints_.ClearToEmpty();
 }
@@ -1803,7 +1876,27 @@ inline void reprojectToCloudPoints_grpc0Response::set_xpcfgrpcreturnvalue(::PROT
 
 // reprojectToCloudPoints_grpc1Request
 
-// bytes frame = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void reprojectToCloudPoints_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reprojectToCloudPoints_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reprojectToCloudPoints_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIReprojectionStereo.reprojectToCloudPoints_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void reprojectToCloudPoints_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void reprojectToCloudPoints_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIReprojectionStereo.reprojectToCloudPoints_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes frame = 2;
 inline void reprojectToCloudPoints_grpc1Request::clear_frame() {
   frame_.ClearToEmpty();
 }
@@ -1864,7 +1957,7 @@ inline void reprojectToCloudPoints_grpc1Request::set_allocated_frame(std::string
   // @@protoc_insertion_point(field_set_allocated:grpcIReprojectionStereo.reprojectToCloudPoints_grpc1Request.frame)
 }
 
-// bytes intrinsicParams = 2;
+// bytes intrinsicParams = 3;
 inline void reprojectToCloudPoints_grpc1Request::clear_intrinsicparams() {
   intrinsicparams_.ClearToEmpty();
 }
@@ -1925,7 +2018,7 @@ inline void reprojectToCloudPoints_grpc1Request::set_allocated_intrinsicparams(s
   // @@protoc_insertion_point(field_set_allocated:grpcIReprojectionStereo.reprojectToCloudPoints_grpc1Request.intrinsicParams)
 }
 
-// bytes cloudPoints = 3;
+// bytes cloudPoints = 4;
 inline void reprojectToCloudPoints_grpc1Request::clear_cloudpoints() {
   cloudpoints_.ClearToEmpty();
 }

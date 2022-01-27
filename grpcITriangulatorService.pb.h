@@ -374,15 +374,16 @@ class triangulate_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPointsView1FieldNumber = 1,
-    kPointView2FieldNumber = 2,
-    kMatchesFieldNumber = 3,
-    kWorkingViewsFieldNumber = 4,
-    kPoseView1FieldNumber = 5,
-    kPoseView2FieldNumber = 6,
-    kPcloudFieldNumber = 7,
+    kPointsView1FieldNumber = 2,
+    kPointView2FieldNumber = 3,
+    kMatchesFieldNumber = 4,
+    kWorkingViewsFieldNumber = 5,
+    kPoseView1FieldNumber = 6,
+    kPoseView2FieldNumber = 7,
+    kPcloudFieldNumber = 8,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes pointsView1 = 1;
+  // bytes pointsView1 = 2;
   void clear_pointsview1();
   const std::string& pointsview1() const;
   void set_pointsview1(const std::string& value);
@@ -398,7 +399,7 @@ class triangulate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pointsview1();
   public:
 
-  // bytes pointView2 = 2;
+  // bytes pointView2 = 3;
   void clear_pointview2();
   const std::string& pointview2() const;
   void set_pointview2(const std::string& value);
@@ -414,7 +415,7 @@ class triangulate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pointview2();
   public:
 
-  // bytes matches = 3;
+  // bytes matches = 4;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -430,7 +431,7 @@ class triangulate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes working_views = 4;
+  // bytes working_views = 5;
   void clear_working_views();
   const std::string& working_views() const;
   void set_working_views(const std::string& value);
@@ -446,7 +447,7 @@ class triangulate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_working_views();
   public:
 
-  // bytes poseView1 = 5;
+  // bytes poseView1 = 6;
   void clear_poseview1();
   const std::string& poseview1() const;
   void set_poseview1(const std::string& value);
@@ -462,7 +463,7 @@ class triangulate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_poseview1();
   public:
 
-  // bytes poseView2 = 6;
+  // bytes poseView2 = 7;
   void clear_poseview2();
   const std::string& poseview2() const;
   void set_poseview2(const std::string& value);
@@ -478,7 +479,7 @@ class triangulate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_poseview2();
   public:
 
-  // bytes pcloud = 7;
+  // bytes pcloud = 8;
   void clear_pcloud();
   const std::string& pcloud() const;
   void set_pcloud(const std::string& value);
@@ -492,6 +493,15 @@ class triangulate_grpc0Request PROTOBUF_FINAL :
   const std::string& _internal_pcloud() const;
   void _internal_set_pcloud(const std::string& value);
   std::string* _internal_mutable_pcloud();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcITriangulator.triangulate_grpc0Request)
@@ -508,6 +518,7 @@ class triangulate_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poseview1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poseview2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcITriangulatorService_2eproto;
 };
@@ -781,15 +792,16 @@ class triangulate_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKeypointsView1FieldNumber = 1,
-    kKeypointsView2FieldNumber = 2,
-    kMatchesFieldNumber = 3,
-    kWorkingViewsFieldNumber = 4,
-    kPoseView1FieldNumber = 5,
-    kPoseView2FieldNumber = 6,
-    kPcloudFieldNumber = 7,
+    kKeypointsView1FieldNumber = 2,
+    kKeypointsView2FieldNumber = 3,
+    kMatchesFieldNumber = 4,
+    kWorkingViewsFieldNumber = 5,
+    kPoseView1FieldNumber = 6,
+    kPoseView2FieldNumber = 7,
+    kPcloudFieldNumber = 8,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes keypointsView1 = 1;
+  // bytes keypointsView1 = 2;
   void clear_keypointsview1();
   const std::string& keypointsview1() const;
   void set_keypointsview1(const std::string& value);
@@ -805,7 +817,7 @@ class triangulate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keypointsview1();
   public:
 
-  // bytes keypointsView2 = 2;
+  // bytes keypointsView2 = 3;
   void clear_keypointsview2();
   const std::string& keypointsview2() const;
   void set_keypointsview2(const std::string& value);
@@ -821,7 +833,7 @@ class triangulate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keypointsview2();
   public:
 
-  // bytes matches = 3;
+  // bytes matches = 4;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -837,7 +849,7 @@ class triangulate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes working_views = 4;
+  // bytes working_views = 5;
   void clear_working_views();
   const std::string& working_views() const;
   void set_working_views(const std::string& value);
@@ -853,7 +865,7 @@ class triangulate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_working_views();
   public:
 
-  // bytes poseView1 = 5;
+  // bytes poseView1 = 6;
   void clear_poseview1();
   const std::string& poseview1() const;
   void set_poseview1(const std::string& value);
@@ -869,7 +881,7 @@ class triangulate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_poseview1();
   public:
 
-  // bytes poseView2 = 6;
+  // bytes poseView2 = 7;
   void clear_poseview2();
   const std::string& poseview2() const;
   void set_poseview2(const std::string& value);
@@ -885,7 +897,7 @@ class triangulate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_poseview2();
   public:
 
-  // bytes pcloud = 7;
+  // bytes pcloud = 8;
   void clear_pcloud();
   const std::string& pcloud() const;
   void set_pcloud(const std::string& value);
@@ -899,6 +911,15 @@ class triangulate_grpc1Request PROTOBUF_FINAL :
   const std::string& _internal_pcloud() const;
   void _internal_set_pcloud(const std::string& value);
   std::string* _internal_mutable_pcloud();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcITriangulator.triangulate_grpc1Request)
@@ -915,6 +936,7 @@ class triangulate_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poseview1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poseview2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcITriangulatorService_2eproto;
 };
@@ -1188,17 +1210,18 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKeypointsView1FieldNumber = 1,
-    kKeypointsView2FieldNumber = 2,
-    kDescriptor1FieldNumber = 3,
-    kDescriptor2FieldNumber = 4,
-    kMatchesFieldNumber = 5,
-    kWorkingViewsFieldNumber = 6,
-    kPoseView1FieldNumber = 7,
-    kPoseView2FieldNumber = 8,
-    kPcloudFieldNumber = 9,
+    kKeypointsView1FieldNumber = 2,
+    kKeypointsView2FieldNumber = 3,
+    kDescriptor1FieldNumber = 4,
+    kDescriptor2FieldNumber = 5,
+    kMatchesFieldNumber = 6,
+    kWorkingViewsFieldNumber = 7,
+    kPoseView1FieldNumber = 8,
+    kPoseView2FieldNumber = 9,
+    kPcloudFieldNumber = 10,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes keypointsView1 = 1;
+  // bytes keypointsView1 = 2;
   void clear_keypointsview1();
   const std::string& keypointsview1() const;
   void set_keypointsview1(const std::string& value);
@@ -1214,7 +1237,7 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keypointsview1();
   public:
 
-  // bytes keypointsView2 = 2;
+  // bytes keypointsView2 = 3;
   void clear_keypointsview2();
   const std::string& keypointsview2() const;
   void set_keypointsview2(const std::string& value);
@@ -1230,7 +1253,7 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keypointsview2();
   public:
 
-  // bytes descriptor1 = 3;
+  // bytes descriptor1 = 4;
   void clear_descriptor1();
   const std::string& descriptor1() const;
   void set_descriptor1(const std::string& value);
@@ -1246,7 +1269,7 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptor1();
   public:
 
-  // bytes descriptor2 = 4;
+  // bytes descriptor2 = 5;
   void clear_descriptor2();
   const std::string& descriptor2() const;
   void set_descriptor2(const std::string& value);
@@ -1262,7 +1285,7 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptor2();
   public:
 
-  // bytes matches = 5;
+  // bytes matches = 6;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -1278,7 +1301,7 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes working_views = 6;
+  // bytes working_views = 7;
   void clear_working_views();
   const std::string& working_views() const;
   void set_working_views(const std::string& value);
@@ -1294,7 +1317,7 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_working_views();
   public:
 
-  // bytes poseView1 = 7;
+  // bytes poseView1 = 8;
   void clear_poseview1();
   const std::string& poseview1() const;
   void set_poseview1(const std::string& value);
@@ -1310,7 +1333,7 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_poseview1();
   public:
 
-  // bytes poseView2 = 8;
+  // bytes poseView2 = 9;
   void clear_poseview2();
   const std::string& poseview2() const;
   void set_poseview2(const std::string& value);
@@ -1326,7 +1349,7 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_poseview2();
   public:
 
-  // bytes pcloud = 9;
+  // bytes pcloud = 10;
   void clear_pcloud();
   const std::string& pcloud() const;
   void set_pcloud(const std::string& value);
@@ -1340,6 +1363,15 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   const std::string& _internal_pcloud() const;
   void _internal_set_pcloud(const std::string& value);
   std::string* _internal_mutable_pcloud();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcITriangulator.triangulate_grpc2Request)
@@ -1358,6 +1390,7 @@ class triangulate_grpc2Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poseview1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poseview2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcITriangulatorService_2eproto;
 };
@@ -1631,14 +1664,15 @@ class triangulate_grpc3Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFrame1FieldNumber = 1,
-    kFrame2FieldNumber = 2,
-    kMatchesFieldNumber = 3,
-    kWorkingViewsFieldNumber = 4,
-    kPcloudFieldNumber = 6,
-    kOnlyDepthFieldNumber = 5,
+    kFrame1FieldNumber = 2,
+    kFrame2FieldNumber = 3,
+    kMatchesFieldNumber = 4,
+    kWorkingViewsFieldNumber = 5,
+    kPcloudFieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kOnlyDepthFieldNumber = 6,
   };
-  // bytes frame1 = 1;
+  // bytes frame1 = 2;
   void clear_frame1();
   const std::string& frame1() const;
   void set_frame1(const std::string& value);
@@ -1654,7 +1688,7 @@ class triangulate_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_frame1();
   public:
 
-  // bytes frame2 = 2;
+  // bytes frame2 = 3;
   void clear_frame2();
   const std::string& frame2() const;
   void set_frame2(const std::string& value);
@@ -1670,7 +1704,7 @@ class triangulate_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_frame2();
   public:
 
-  // bytes matches = 3;
+  // bytes matches = 4;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -1686,7 +1720,7 @@ class triangulate_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes working_views = 4;
+  // bytes working_views = 5;
   void clear_working_views();
   const std::string& working_views() const;
   void set_working_views(const std::string& value);
@@ -1702,7 +1736,7 @@ class triangulate_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_working_views();
   public:
 
-  // bytes pcloud = 6;
+  // bytes pcloud = 7;
   void clear_pcloud();
   const std::string& pcloud() const;
   void set_pcloud(const std::string& value);
@@ -1718,7 +1752,16 @@ class triangulate_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pcloud();
   public:
 
-  // bool onlyDepth = 5;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // bool onlyDepth = 6;
   void clear_onlydepth();
   bool onlydepth() const;
   void set_onlydepth(bool value);
@@ -1739,6 +1782,7 @@ class triangulate_grpc3Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr working_views_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   bool onlydepth_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcITriangulatorService_2eproto;
@@ -2035,7 +2079,27 @@ inline void setCameraParametersRequest::set_allocated_distorsionparams(std::stri
 
 // triangulate_grpc0Request
 
-// bytes pointsView1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void triangulate_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 triangulate_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 triangulate_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcITriangulator.triangulate_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void triangulate_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void triangulate_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcITriangulator.triangulate_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes pointsView1 = 2;
 inline void triangulate_grpc0Request::clear_pointsview1() {
   pointsview1_.ClearToEmpty();
 }
@@ -2096,7 +2160,7 @@ inline void triangulate_grpc0Request::set_allocated_pointsview1(std::string* poi
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc0Request.pointsView1)
 }
 
-// bytes pointView2 = 2;
+// bytes pointView2 = 3;
 inline void triangulate_grpc0Request::clear_pointview2() {
   pointview2_.ClearToEmpty();
 }
@@ -2157,7 +2221,7 @@ inline void triangulate_grpc0Request::set_allocated_pointview2(std::string* poin
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc0Request.pointView2)
 }
 
-// bytes matches = 3;
+// bytes matches = 4;
 inline void triangulate_grpc0Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -2218,7 +2282,7 @@ inline void triangulate_grpc0Request::set_allocated_matches(std::string* matches
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc0Request.matches)
 }
 
-// bytes working_views = 4;
+// bytes working_views = 5;
 inline void triangulate_grpc0Request::clear_working_views() {
   working_views_.ClearToEmpty();
 }
@@ -2279,7 +2343,7 @@ inline void triangulate_grpc0Request::set_allocated_working_views(std::string* w
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc0Request.working_views)
 }
 
-// bytes poseView1 = 5;
+// bytes poseView1 = 6;
 inline void triangulate_grpc0Request::clear_poseview1() {
   poseview1_.ClearToEmpty();
 }
@@ -2340,7 +2404,7 @@ inline void triangulate_grpc0Request::set_allocated_poseview1(std::string* posev
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc0Request.poseView1)
 }
 
-// bytes poseView2 = 6;
+// bytes poseView2 = 7;
 inline void triangulate_grpc0Request::clear_poseview2() {
   poseview2_.ClearToEmpty();
 }
@@ -2401,7 +2465,7 @@ inline void triangulate_grpc0Request::set_allocated_poseview2(std::string* posev
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc0Request.poseView2)
 }
 
-// bytes pcloud = 7;
+// bytes pcloud = 8;
 inline void triangulate_grpc0Request::clear_pcloud() {
   pcloud_.ClearToEmpty();
 }
@@ -2551,7 +2615,27 @@ inline void triangulate_grpc0Response::set_xpcfgrpcreturnvalue(double value) {
 
 // triangulate_grpc1Request
 
-// bytes keypointsView1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void triangulate_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 triangulate_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 triangulate_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcITriangulator.triangulate_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void triangulate_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void triangulate_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcITriangulator.triangulate_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes keypointsView1 = 2;
 inline void triangulate_grpc1Request::clear_keypointsview1() {
   keypointsview1_.ClearToEmpty();
 }
@@ -2612,7 +2696,7 @@ inline void triangulate_grpc1Request::set_allocated_keypointsview1(std::string* 
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc1Request.keypointsView1)
 }
 
-// bytes keypointsView2 = 2;
+// bytes keypointsView2 = 3;
 inline void triangulate_grpc1Request::clear_keypointsview2() {
   keypointsview2_.ClearToEmpty();
 }
@@ -2673,7 +2757,7 @@ inline void triangulate_grpc1Request::set_allocated_keypointsview2(std::string* 
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc1Request.keypointsView2)
 }
 
-// bytes matches = 3;
+// bytes matches = 4;
 inline void triangulate_grpc1Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -2734,7 +2818,7 @@ inline void triangulate_grpc1Request::set_allocated_matches(std::string* matches
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc1Request.matches)
 }
 
-// bytes working_views = 4;
+// bytes working_views = 5;
 inline void triangulate_grpc1Request::clear_working_views() {
   working_views_.ClearToEmpty();
 }
@@ -2795,7 +2879,7 @@ inline void triangulate_grpc1Request::set_allocated_working_views(std::string* w
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc1Request.working_views)
 }
 
-// bytes poseView1 = 5;
+// bytes poseView1 = 6;
 inline void triangulate_grpc1Request::clear_poseview1() {
   poseview1_.ClearToEmpty();
 }
@@ -2856,7 +2940,7 @@ inline void triangulate_grpc1Request::set_allocated_poseview1(std::string* posev
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc1Request.poseView1)
 }
 
-// bytes poseView2 = 6;
+// bytes poseView2 = 7;
 inline void triangulate_grpc1Request::clear_poseview2() {
   poseview2_.ClearToEmpty();
 }
@@ -2917,7 +3001,7 @@ inline void triangulate_grpc1Request::set_allocated_poseview2(std::string* posev
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc1Request.poseView2)
 }
 
-// bytes pcloud = 7;
+// bytes pcloud = 8;
 inline void triangulate_grpc1Request::clear_pcloud() {
   pcloud_.ClearToEmpty();
 }
@@ -3067,7 +3151,27 @@ inline void triangulate_grpc1Response::set_xpcfgrpcreturnvalue(double value) {
 
 // triangulate_grpc2Request
 
-// bytes keypointsView1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void triangulate_grpc2Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 triangulate_grpc2Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 triangulate_grpc2Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcITriangulator.triangulate_grpc2Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void triangulate_grpc2Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void triangulate_grpc2Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcITriangulator.triangulate_grpc2Request.grpcServerCompressionFormat)
+}
+
+// bytes keypointsView1 = 2;
 inline void triangulate_grpc2Request::clear_keypointsview1() {
   keypointsview1_.ClearToEmpty();
 }
@@ -3128,7 +3232,7 @@ inline void triangulate_grpc2Request::set_allocated_keypointsview1(std::string* 
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc2Request.keypointsView1)
 }
 
-// bytes keypointsView2 = 2;
+// bytes keypointsView2 = 3;
 inline void triangulate_grpc2Request::clear_keypointsview2() {
   keypointsview2_.ClearToEmpty();
 }
@@ -3189,7 +3293,7 @@ inline void triangulate_grpc2Request::set_allocated_keypointsview2(std::string* 
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc2Request.keypointsView2)
 }
 
-// bytes descriptor1 = 3;
+// bytes descriptor1 = 4;
 inline void triangulate_grpc2Request::clear_descriptor1() {
   descriptor1_.ClearToEmpty();
 }
@@ -3250,7 +3354,7 @@ inline void triangulate_grpc2Request::set_allocated_descriptor1(std::string* des
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc2Request.descriptor1)
 }
 
-// bytes descriptor2 = 4;
+// bytes descriptor2 = 5;
 inline void triangulate_grpc2Request::clear_descriptor2() {
   descriptor2_.ClearToEmpty();
 }
@@ -3311,7 +3415,7 @@ inline void triangulate_grpc2Request::set_allocated_descriptor2(std::string* des
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc2Request.descriptor2)
 }
 
-// bytes matches = 5;
+// bytes matches = 6;
 inline void triangulate_grpc2Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -3372,7 +3476,7 @@ inline void triangulate_grpc2Request::set_allocated_matches(std::string* matches
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc2Request.matches)
 }
 
-// bytes working_views = 6;
+// bytes working_views = 7;
 inline void triangulate_grpc2Request::clear_working_views() {
   working_views_.ClearToEmpty();
 }
@@ -3433,7 +3537,7 @@ inline void triangulate_grpc2Request::set_allocated_working_views(std::string* w
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc2Request.working_views)
 }
 
-// bytes poseView1 = 7;
+// bytes poseView1 = 8;
 inline void triangulate_grpc2Request::clear_poseview1() {
   poseview1_.ClearToEmpty();
 }
@@ -3494,7 +3598,7 @@ inline void triangulate_grpc2Request::set_allocated_poseview1(std::string* posev
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc2Request.poseView1)
 }
 
-// bytes poseView2 = 8;
+// bytes poseView2 = 9;
 inline void triangulate_grpc2Request::clear_poseview2() {
   poseview2_.ClearToEmpty();
 }
@@ -3555,7 +3659,7 @@ inline void triangulate_grpc2Request::set_allocated_poseview2(std::string* posev
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc2Request.poseView2)
 }
 
-// bytes pcloud = 9;
+// bytes pcloud = 10;
 inline void triangulate_grpc2Request::clear_pcloud() {
   pcloud_.ClearToEmpty();
 }
@@ -3705,7 +3809,27 @@ inline void triangulate_grpc2Response::set_xpcfgrpcreturnvalue(double value) {
 
 // triangulate_grpc3Request
 
-// bytes frame1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void triangulate_grpc3Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 triangulate_grpc3Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 triangulate_grpc3Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcITriangulator.triangulate_grpc3Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void triangulate_grpc3Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void triangulate_grpc3Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcITriangulator.triangulate_grpc3Request.grpcServerCompressionFormat)
+}
+
+// bytes frame1 = 2;
 inline void triangulate_grpc3Request::clear_frame1() {
   frame1_.ClearToEmpty();
 }
@@ -3766,7 +3890,7 @@ inline void triangulate_grpc3Request::set_allocated_frame1(std::string* frame1) 
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc3Request.frame1)
 }
 
-// bytes frame2 = 2;
+// bytes frame2 = 3;
 inline void triangulate_grpc3Request::clear_frame2() {
   frame2_.ClearToEmpty();
 }
@@ -3827,7 +3951,7 @@ inline void triangulate_grpc3Request::set_allocated_frame2(std::string* frame2) 
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc3Request.frame2)
 }
 
-// bytes matches = 3;
+// bytes matches = 4;
 inline void triangulate_grpc3Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -3888,7 +4012,7 @@ inline void triangulate_grpc3Request::set_allocated_matches(std::string* matches
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc3Request.matches)
 }
 
-// bytes working_views = 4;
+// bytes working_views = 5;
 inline void triangulate_grpc3Request::clear_working_views() {
   working_views_.ClearToEmpty();
 }
@@ -3949,7 +4073,7 @@ inline void triangulate_grpc3Request::set_allocated_working_views(std::string* w
   // @@protoc_insertion_point(field_set_allocated:grpcITriangulator.triangulate_grpc3Request.working_views)
 }
 
-// bool onlyDepth = 5;
+// bool onlyDepth = 6;
 inline void triangulate_grpc3Request::clear_onlydepth() {
   onlydepth_ = false;
 }
@@ -3969,7 +4093,7 @@ inline void triangulate_grpc3Request::set_onlydepth(bool value) {
   // @@protoc_insertion_point(field_set:grpcITriangulator.triangulate_grpc3Request.onlyDepth)
 }
 
-// bytes pcloud = 6;
+// bytes pcloud = 7;
 inline void triangulate_grpc3Request::clear_pcloud() {
   pcloud_.ClearToEmpty();
 }

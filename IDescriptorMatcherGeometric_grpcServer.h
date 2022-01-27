@@ -5,6 +5,7 @@
 #include "api/features/IDescriptorMatcherGeometric.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIDescriptorMatcherGeometricService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -28,12 +29,15 @@ class IDescriptorMatcherGeometric_grpcServer:  public org::bcom::xpcf::Configura
         ::grpc::Status match_grpc1(::grpc::ServerContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response) override;
 
         SRef<SolAR::api::features::IDescriptorMatcherGeometric> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIDescriptorMatcherGeometricServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

@@ -184,9 +184,10 @@ class loadRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTrackablesFieldNumber = 1,
+    kTrackablesFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes trackables = 1;
+  // bytes trackables = 2;
   void clear_trackables();
   const std::string& trackables() const;
   void set_trackables(const std::string& value);
@@ -202,6 +203,15 @@ class loadRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_trackables();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIWorldGraphLoader.loadRequest)
  private:
   class _Internal;
@@ -210,6 +220,7 @@ class loadRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr trackables_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIWorldGraphLoaderService_2eproto;
 };
@@ -379,7 +390,27 @@ class loadResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // loadRequest
 
-// bytes trackables = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void loadRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIWorldGraphLoader.loadRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void loadRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void loadRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIWorldGraphLoader.loadRequest.grpcServerCompressionFormat)
+}
+
+// bytes trackables = 2;
 inline void loadRequest::clear_trackables() {
   trackables_.ClearToEmpty();
 }

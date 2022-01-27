@@ -62,23 +62,23 @@ void grpcIKeypointDetectorRegionService::Stub::experimental_async::setType(::grp
   return result;
 }
 
-::grpc::Status grpcIKeypointDetectorRegionService::Stub::getType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIKeypointDetectorRegion::getTypeResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIKeypointDetectorRegion::getTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getType_, context, request, response);
+::grpc::Status grpcIKeypointDetectorRegionService::Stub::getType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest& request, ::grpcIKeypointDetectorRegion::getTypeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIKeypointDetectorRegion::getTypeRequest, ::grpcIKeypointDetectorRegion::getTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getType_, context, request, response);
 }
 
-void grpcIKeypointDetectorRegionService::Stub::experimental_async::getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIKeypointDetectorRegion::getTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getType_, context, request, response, std::move(f));
+void grpcIKeypointDetectorRegionService::Stub::experimental_async::getType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIKeypointDetectorRegion::getTypeRequest, ::grpcIKeypointDetectorRegion::getTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getType_, context, request, response, std::move(f));
 }
 
-void grpcIKeypointDetectorRegionService::Stub::experimental_async::getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIKeypointDetectorRegionService::Stub::experimental_async::getType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getType_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetectorRegion::getTypeResponse>* grpcIKeypointDetectorRegionService::Stub::PrepareAsyncgetTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIKeypointDetectorRegion::getTypeResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getType_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetectorRegion::getTypeResponse>* grpcIKeypointDetectorRegionService::Stub::PrepareAsyncgetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIKeypointDetectorRegion::getTypeResponse, ::grpcIKeypointDetectorRegion::getTypeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getType_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetectorRegion::getTypeResponse>* grpcIKeypointDetectorRegionService::Stub::AsyncgetTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetectorRegion::getTypeResponse>* grpcIKeypointDetectorRegionService::Stub::AsyncgetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetTypeRaw(context, request, cq);
   result->StartCall();
@@ -122,10 +122,10 @@ grpcIKeypointDetectorRegionService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIKeypointDetectorRegionService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIKeypointDetectorRegionService::Service, ::google::protobuf::Empty, ::grpcIKeypointDetectorRegion::getTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIKeypointDetectorRegionService::Service, ::grpcIKeypointDetectorRegion::getTypeRequest, ::grpcIKeypointDetectorRegion::getTypeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIKeypointDetectorRegionService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIKeypointDetectorRegion::getTypeRequest* req,
              ::grpcIKeypointDetectorRegion::getTypeResponse* resp) {
                return service->getType(ctx, req, resp);
              }, this)));
@@ -151,7 +151,7 @@ grpcIKeypointDetectorRegionService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIKeypointDetectorRegionService::Service::getType(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response) {
+::grpc::Status grpcIKeypointDetectorRegionService::Service::getType(::grpc::ServerContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -4,14 +4,29 @@ import "google/protobuf/empty.proto";
 
 package grpcIMapUpdatePipeline;
 
+message initRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message initResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message startResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message stopResponse
@@ -21,7 +36,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message setCameraParametersRequest
 {
-bytes cameraParams = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes cameraParams = 2;
 }
 
 message setCameraParametersResponse
@@ -31,7 +47,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message mapUpdateRequestRequest
 {
-bytes map = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes map = 2;
 }
 
 message mapUpdateRequestResponse
@@ -41,7 +58,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getMapRequestRequest
 {
-bytes map = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes map = 2;
 }
 
 message getMapRequestResponse
@@ -50,12 +68,26 @@ bytes map = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message getSubmapRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes frame = 2;
+bytes map = 3;
+}
+
+message getSubmapRequestResponse
+{
+bytes map = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 service grpcIMapUpdatePipelineService {
-rpc init(google.protobuf.Empty) returns(initResponse) {}
-rpc start(google.protobuf.Empty) returns(startResponse) {}
-rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc init(initRequest) returns(initResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
 rpc mapUpdateRequest(mapUpdateRequestRequest) returns(mapUpdateRequestResponse) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
+rpc getSubmapRequest(getSubmapRequestRequest) returns(getSubmapRequestResponse) {}
 }
 

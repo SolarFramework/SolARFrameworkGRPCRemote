@@ -6,14 +6,15 @@ package grpcI2D3DCorrespondencesFinder;
 
 message findRequest
 {
-bytes lastFrame = 1;
-bytes currentFrame = 2;
-bytes current_matches = 3;
-bytes shared_3dpoint = 4;
-bytes shared_2dpoint = 5;
-bytes corres2D3D = 6;
-bytes found_matches = 7;
-bytes remaining_matches = 8;
+int32 grpcServerCompressionFormat  = 1;
+bytes lastFrame = 2;
+bytes currentFrame = 3;
+bytes current_matches = 4;
+bytes shared_3dpoint = 5;
+bytes shared_2dpoint = 6;
+bytes corres2D3D = 7;
+bytes found_matches = 8;
+bytes remaining_matches = 9;
 }
 
 message findResponse

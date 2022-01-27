@@ -24,6 +24,7 @@ constexpr match_grpc0Request::match_grpc0Request(
   , points2d1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , points2d2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
   , radius_(0)
   , matchingdistancemax_(0){}
 struct match_grpc0RequestDefaultTypeInternal {
@@ -54,6 +55,7 @@ constexpr match_grpc1Request::match_grpc1Request(
   , descriptors_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
   , radius_(0)
   , matchingdistancemax_(0){}
 struct match_grpc1RequestDefaultTypeInternal {
@@ -83,6 +85,7 @@ constexpr match_grpc2Request::match_grpc2Request(
   : currentframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , lastframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
   , radius_(0)
   , matchingdistancemax_(0){}
 struct match_grpc2RequestDefaultTypeInternal {
@@ -118,6 +121,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIDescriptorMatcherRegionSe
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, descriptors1_),
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, descriptors2_),
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, points2d1_),
@@ -137,6 +141,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIDescriptorMatcherRegionSe
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, points2d_),
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, descriptors_),
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, frame_),
@@ -155,6 +160,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIDescriptorMatcherRegionSe
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, currentframe_),
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, lastframe_),
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, radius_),
@@ -170,11 +176,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIDescriptorMatcherRegionSe
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc0Request)},
-  { 12, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc0Response)},
-  { 19, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc1Request)},
-  { 30, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc1Response)},
-  { 37, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc2Request)},
-  { 47, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc2Response)},
+  { 13, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc0Response)},
+  { 20, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc1Request)},
+  { 32, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc1Response)},
+  { 39, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc2Request)},
+  { 50, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc2Response)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -189,40 +195,43 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIDescriptorMatcherRegionService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n)grpcIDescriptorMatcherRegionService.pr"
   "oto\022\034grpcIDescriptorMatcherRegion\032\033googl"
-  "e/protobuf/empty.proto\"\244\001\n\022match_grpc0Re"
-  "quest\022\024\n\014descriptors1\030\001 \001(\014\022\024\n\014descripto"
-  "rs2\030\002 \001(\014\022\021\n\tpoints2D1\030\003 \001(\014\022\021\n\tpoints2D"
-  "2\030\004 \001(\014\022\016\n\006radius\030\005 \001(\002\022\033\n\023matchingDista"
-  "nceMax\030\006 \001(\002\022\017\n\007matches\030\007 \001(\014\"C\n\023match_g"
-  "rpc0Response\022\017\n\007matches\030\001 \001(\014\022\033\n\023xpcfGrp"
-  "cReturnValue\030\002 \001(\021\"\210\001\n\022match_grpc1Reques"
-  "t\022\020\n\010points2D\030\001 \001(\014\022\023\n\013descriptors\030\002 \001(\014"
-  "\022\r\n\005frame\030\003 \001(\014\022\016\n\006radius\030\004 \001(\002\022\033\n\023match"
-  "ingDistanceMax\030\005 \001(\002\022\017\n\007matches\030\006 \001(\014\"C\n"
-  "\023match_grpc1Response\022\017\n\007matches\030\001 \001(\014\022\033\n"
-  "\023xpcfGrpcReturnValue\030\002 \001(\021\"{\n\022match_grpc"
-  "2Request\022\024\n\014currentFrame\030\001 \001(\014\022\021\n\tlastFr"
-  "ame\030\002 \001(\014\022\016\n\006radius\030\003 \001(\002\022\033\n\023matchingDis"
-  "tanceMax\030\004 \001(\002\022\017\n\007matches\030\005 \001(\014\"C\n\023match"
-  "_grpc2Response\022\017\n\007matches\030\001 \001(\014\022\033\n\023xpcfG"
-  "rpcReturnValue\030\002 \001(\0212\207\003\n#grpcIDescriptor"
-  "MatcherRegionService\022t\n\013match_grpc0\0220.gr"
-  "pcIDescriptorMatcherRegion.match_grpc0Re"
-  "quest\0321.grpcIDescriptorMatcherRegion.mat"
-  "ch_grpc0Response\"\000\022t\n\013match_grpc1\0220.grpc"
-  "IDescriptorMatcherRegion.match_grpc1Requ"
-  "est\0321.grpcIDescriptorMatcherRegion.match"
-  "_grpc1Response\"\000\022t\n\013match_grpc2\0220.grpcID"
-  "escriptorMatcherRegion.match_grpc2Reques"
-  "t\0321.grpcIDescriptorMatcherRegion.match_g"
-  "rpc2Response\"\000b\006proto3"
+  "e/protobuf/empty.proto\"\311\001\n\022match_grpc0Re"
+  "quest\022#\n\033grpcServerCompressionFormat\030\001 \001"
+  "(\005\022\024\n\014descriptors1\030\002 \001(\014\022\024\n\014descriptors2"
+  "\030\003 \001(\014\022\021\n\tpoints2D1\030\004 \001(\014\022\021\n\tpoints2D2\030\005"
+  " \001(\014\022\016\n\006radius\030\006 \001(\002\022\033\n\023matchingDistance"
+  "Max\030\007 \001(\002\022\017\n\007matches\030\010 \001(\014\"C\n\023match_grpc"
+  "0Response\022\017\n\007matches\030\001 \001(\014\022\033\n\023xpcfGrpcRe"
+  "turnValue\030\002 \001(\021\"\255\001\n\022match_grpc1Request\022#"
+  "\n\033grpcServerCompressionFormat\030\001 \001(\005\022\020\n\010p"
+  "oints2D\030\002 \001(\014\022\023\n\013descriptors\030\003 \001(\014\022\r\n\005fr"
+  "ame\030\004 \001(\014\022\016\n\006radius\030\005 \001(\002\022\033\n\023matchingDis"
+  "tanceMax\030\006 \001(\002\022\017\n\007matches\030\007 \001(\014\"C\n\023match"
+  "_grpc1Response\022\017\n\007matches\030\001 \001(\014\022\033\n\023xpcfG"
+  "rpcReturnValue\030\002 \001(\021\"\240\001\n\022match_grpc2Requ"
+  "est\022#\n\033grpcServerCompressionFormat\030\001 \001(\005"
+  "\022\024\n\014currentFrame\030\002 \001(\014\022\021\n\tlastFrame\030\003 \001("
+  "\014\022\016\n\006radius\030\004 \001(\002\022\033\n\023matchingDistanceMax"
+  "\030\005 \001(\002\022\017\n\007matches\030\006 \001(\014\"C\n\023match_grpc2Re"
+  "sponse\022\017\n\007matches\030\001 \001(\014\022\033\n\023xpcfGrpcRetur"
+  "nValue\030\002 \001(\0212\207\003\n#grpcIDescriptorMatcherR"
+  "egionService\022t\n\013match_grpc0\0220.grpcIDescr"
+  "iptorMatcherRegion.match_grpc0Request\0321."
+  "grpcIDescriptorMatcherRegion.match_grpc0"
+  "Response\"\000\022t\n\013match_grpc1\0220.grpcIDescrip"
+  "torMatcherRegion.match_grpc1Request\0321.gr"
+  "pcIDescriptorMatcherRegion.match_grpc1Re"
+  "sponse\"\000\022t\n\013match_grpc2\0220.grpcIDescripto"
+  "rMatcherRegion.match_grpc2Request\0321.grpc"
+  "IDescriptorMatcherRegion.match_grpc2Resp"
+  "onse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIDescriptorMatcherRegionService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIDescriptorMatcherRegionService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIDescriptorMatcherRegionService_2eproto = {
-  false, false, 1142, descriptor_table_protodef_grpcIDescriptorMatcherRegionService_2eproto, "grpcIDescriptorMatcherRegionService.proto", 
+  false, false, 1254, descriptor_table_protodef_grpcIDescriptorMatcherRegionService_2eproto, "grpcIDescriptorMatcherRegionService.proto", 
   &descriptor_table_grpcIDescriptorMatcherRegionService_2eproto_once, descriptor_table_grpcIDescriptorMatcherRegionService_2eproto_deps, 1, 6,
   schemas, file_default_instances, TableStruct_grpcIDescriptorMatcherRegionService_2eproto::offsets,
   file_level_metadata_grpcIDescriptorMatcherRegionService_2eproto, file_level_enum_descriptors_grpcIDescriptorMatcherRegionService_2eproto, file_level_service_descriptors_grpcIDescriptorMatcherRegionService_2eproto,
@@ -277,9 +286,9 @@ match_grpc0Request::match_grpc0Request(const match_grpc0Request& from)
     matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matches(), 
       GetArena());
   }
-  ::memcpy(&radius_, &from.radius_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
-    reinterpret_cast<char*>(&radius_)) + sizeof(matchingdistancemax_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   // @@protoc_insertion_point(copy_constructor:grpcIDescriptorMatcherRegion.match_grpc0Request)
 }
 
@@ -290,9 +299,9 @@ points2d1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAl
 points2d2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&radius_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
-    reinterpret_cast<char*>(&radius_)) + sizeof(matchingdistancemax_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
 }
 
 match_grpc0Request::~match_grpc0Request() {
@@ -331,9 +340,9 @@ void match_grpc0Request::Clear() {
   points2d1_.ClearToEmpty();
   points2d2_.ClearToEmpty();
   matches_.ClearToEmpty();
-  ::memset(&radius_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&matchingdistancemax_) -
-      reinterpret_cast<char*>(&radius_)) + sizeof(matchingdistancemax_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -344,55 +353,62 @@ const char* match_grpc0Request::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes descriptors1 = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes descriptors1 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_descriptors1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes descriptors2 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes descriptors2 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_descriptors2();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes points2D1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes points2D1 = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_points2d1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes points2D2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes points2D2 = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_points2d2();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float radius = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+      // float radius = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
           radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float matchingDistanceMax = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+      // float matchingDistanceMax = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
           matchingdistancemax_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // bytes matches = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+      // bytes matches = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_matches();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -426,46 +442,52 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes descriptors1 = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes descriptors1 = 2;
   if (this->descriptors1().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_descriptors1(), target);
+        2, this->_internal_descriptors1(), target);
   }
 
-  // bytes descriptors2 = 2;
+  // bytes descriptors2 = 3;
   if (this->descriptors2().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_descriptors2(), target);
+        3, this->_internal_descriptors2(), target);
   }
 
-  // bytes points2D1 = 3;
+  // bytes points2D1 = 4;
   if (this->points2d1().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_points2d1(), target);
+        4, this->_internal_points2d1(), target);
   }
 
-  // bytes points2D2 = 4;
+  // bytes points2D2 = 5;
   if (this->points2d2().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_points2d2(), target);
+        5, this->_internal_points2d2(), target);
   }
 
-  // float radius = 5;
+  // float radius = 6;
   if (!(this->radius() <= 0 && this->radius() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_radius(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_radius(), target);
   }
 
-  // float matchingDistanceMax = 6;
+  // float matchingDistanceMax = 7;
   if (!(this->matchingdistancemax() <= 0 && this->matchingdistancemax() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_matchingdistancemax(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_matchingdistancemax(), target);
   }
 
-  // bytes matches = 7;
+  // bytes matches = 8;
   if (this->matches().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        7, this->_internal_matches(), target);
+        8, this->_internal_matches(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -484,47 +506,54 @@ size_t match_grpc0Request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes descriptors1 = 1;
+  // bytes descriptors1 = 2;
   if (this->descriptors1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_descriptors1());
   }
 
-  // bytes descriptors2 = 2;
+  // bytes descriptors2 = 3;
   if (this->descriptors2().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_descriptors2());
   }
 
-  // bytes points2D1 = 3;
+  // bytes points2D1 = 4;
   if (this->points2d1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points2d1());
   }
 
-  // bytes points2D2 = 4;
+  // bytes points2D2 = 5;
   if (this->points2d2().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points2d2());
   }
 
-  // bytes matches = 7;
+  // bytes matches = 8;
   if (this->matches().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matches());
   }
 
-  // float radius = 5;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // float radius = 6;
   if (!(this->radius() <= 0 && this->radius() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float matchingDistanceMax = 6;
+  // float matchingDistanceMax = 7;
   if (!(this->matchingdistancemax() <= 0 && this->matchingdistancemax() >= 0)) {
     total_size += 1 + 4;
   }
@@ -575,6 +604,9 @@ void match_grpc0Request::MergeFrom(const match_grpc0Request& from) {
   if (from.matches().size() > 0) {
     _internal_set_matches(from._internal_matches());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (!(from.radius() <= 0 && from.radius() >= 0)) {
     _internal_set_radius(from._internal_radius());
   }
@@ -612,9 +644,9 @@ void match_grpc0Request::InternalSwap(match_grpc0Request* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(match_grpc0Request, matchingdistancemax_)
       + sizeof(match_grpc0Request::matchingdistancemax_)
-      - PROTOBUF_FIELD_OFFSET(match_grpc0Request, radius_)>(
-          reinterpret_cast<char*>(&radius_),
-          reinterpret_cast<char*>(&other->radius_));
+      - PROTOBUF_FIELD_OFFSET(match_grpc0Request, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata match_grpc0Request::GetMetadata() const {
@@ -879,9 +911,9 @@ match_grpc1Request::match_grpc1Request(const match_grpc1Request& from)
     matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matches(), 
       GetArena());
   }
-  ::memcpy(&radius_, &from.radius_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
-    reinterpret_cast<char*>(&radius_)) + sizeof(matchingdistancemax_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   // @@protoc_insertion_point(copy_constructor:grpcIDescriptorMatcherRegion.match_grpc1Request)
 }
 
@@ -891,9 +923,9 @@ descriptors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString
 frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&radius_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
-    reinterpret_cast<char*>(&radius_)) + sizeof(matchingdistancemax_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
 }
 
 match_grpc1Request::~match_grpc1Request() {
@@ -930,9 +962,9 @@ void match_grpc1Request::Clear() {
   descriptors_.ClearToEmpty();
   frame_.ClearToEmpty();
   matches_.ClearToEmpty();
-  ::memset(&radius_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&matchingdistancemax_) -
-      reinterpret_cast<char*>(&radius_)) + sizeof(matchingdistancemax_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -943,47 +975,54 @@ const char* match_grpc1Request::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes points2D = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes points2D = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_points2d();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes descriptors = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes descriptors = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_descriptors();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes frame = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes frame = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_frame();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float radius = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+      // float radius = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
           radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float matchingDistanceMax = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+      // float matchingDistanceMax = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
           matchingdistancemax_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // bytes matches = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // bytes matches = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_matches();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1017,40 +1056,46 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes points2D = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes points2D = 2;
   if (this->points2d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_points2d(), target);
+        2, this->_internal_points2d(), target);
   }
 
-  // bytes descriptors = 2;
+  // bytes descriptors = 3;
   if (this->descriptors().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_descriptors(), target);
+        3, this->_internal_descriptors(), target);
   }
 
-  // bytes frame = 3;
+  // bytes frame = 4;
   if (this->frame().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_frame(), target);
+        4, this->_internal_frame(), target);
   }
 
-  // float radius = 4;
+  // float radius = 5;
   if (!(this->radius() <= 0 && this->radius() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_radius(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_radius(), target);
   }
 
-  // float matchingDistanceMax = 5;
+  // float matchingDistanceMax = 6;
   if (!(this->matchingdistancemax() <= 0 && this->matchingdistancemax() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_matchingdistancemax(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_matchingdistancemax(), target);
   }
 
-  // bytes matches = 6;
+  // bytes matches = 7;
   if (this->matches().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        6, this->_internal_matches(), target);
+        7, this->_internal_matches(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1069,40 +1114,47 @@ size_t match_grpc1Request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes points2D = 1;
+  // bytes points2D = 2;
   if (this->points2d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points2d());
   }
 
-  // bytes descriptors = 2;
+  // bytes descriptors = 3;
   if (this->descriptors().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_descriptors());
   }
 
-  // bytes frame = 3;
+  // bytes frame = 4;
   if (this->frame().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_frame());
   }
 
-  // bytes matches = 6;
+  // bytes matches = 7;
   if (this->matches().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matches());
   }
 
-  // float radius = 4;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // float radius = 5;
   if (!(this->radius() <= 0 && this->radius() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float matchingDistanceMax = 5;
+  // float matchingDistanceMax = 6;
   if (!(this->matchingdistancemax() <= 0 && this->matchingdistancemax() >= 0)) {
     total_size += 1 + 4;
   }
@@ -1150,6 +1202,9 @@ void match_grpc1Request::MergeFrom(const match_grpc1Request& from) {
   if (from.matches().size() > 0) {
     _internal_set_matches(from._internal_matches());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (!(from.radius() <= 0 && from.radius() >= 0)) {
     _internal_set_radius(from._internal_radius());
   }
@@ -1186,9 +1241,9 @@ void match_grpc1Request::InternalSwap(match_grpc1Request* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(match_grpc1Request, matchingdistancemax_)
       + sizeof(match_grpc1Request::matchingdistancemax_)
-      - PROTOBUF_FIELD_OFFSET(match_grpc1Request, radius_)>(
-          reinterpret_cast<char*>(&radius_),
-          reinterpret_cast<char*>(&other->radius_));
+      - PROTOBUF_FIELD_OFFSET(match_grpc1Request, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata match_grpc1Request::GetMetadata() const {
@@ -1448,9 +1503,9 @@ match_grpc2Request::match_grpc2Request(const match_grpc2Request& from)
     matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matches(), 
       GetArena());
   }
-  ::memcpy(&radius_, &from.radius_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
-    reinterpret_cast<char*>(&radius_)) + sizeof(matchingdistancemax_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   // @@protoc_insertion_point(copy_constructor:grpcIDescriptorMatcherRegion.match_grpc2Request)
 }
 
@@ -1459,9 +1514,9 @@ currentframe_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStrin
 lastframe_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&radius_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
-    reinterpret_cast<char*>(&radius_)) + sizeof(matchingdistancemax_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
 }
 
 match_grpc2Request::~match_grpc2Request() {
@@ -1496,9 +1551,9 @@ void match_grpc2Request::Clear() {
   currentframe_.ClearToEmpty();
   lastframe_.ClearToEmpty();
   matches_.ClearToEmpty();
-  ::memset(&radius_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&matchingdistancemax_) -
-      reinterpret_cast<char*>(&radius_)) + sizeof(matchingdistancemax_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1509,39 +1564,46 @@ const char* match_grpc2Request::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes currentFrame = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes currentFrame = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_currentframe();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes lastFrame = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes lastFrame = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_lastframe();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float radius = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+      // float radius = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float matchingDistanceMax = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+      // float matchingDistanceMax = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
           matchingdistancemax_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // bytes matches = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes matches = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_matches();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1575,34 +1637,40 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes currentFrame = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes currentFrame = 2;
   if (this->currentframe().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_currentframe(), target);
+        2, this->_internal_currentframe(), target);
   }
 
-  // bytes lastFrame = 2;
+  // bytes lastFrame = 3;
   if (this->lastframe().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_lastframe(), target);
+        3, this->_internal_lastframe(), target);
   }
 
-  // float radius = 3;
+  // float radius = 4;
   if (!(this->radius() <= 0 && this->radius() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_radius(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_radius(), target);
   }
 
-  // float matchingDistanceMax = 4;
+  // float matchingDistanceMax = 5;
   if (!(this->matchingdistancemax() <= 0 && this->matchingdistancemax() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_matchingdistancemax(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_matchingdistancemax(), target);
   }
 
-  // bytes matches = 5;
+  // bytes matches = 6;
   if (this->matches().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_matches(), target);
+        6, this->_internal_matches(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1621,33 +1689,40 @@ size_t match_grpc2Request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes currentFrame = 1;
+  // bytes currentFrame = 2;
   if (this->currentframe().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_currentframe());
   }
 
-  // bytes lastFrame = 2;
+  // bytes lastFrame = 3;
   if (this->lastframe().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_lastframe());
   }
 
-  // bytes matches = 5;
+  // bytes matches = 6;
   if (this->matches().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matches());
   }
 
-  // float radius = 3;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // float radius = 4;
   if (!(this->radius() <= 0 && this->radius() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float matchingDistanceMax = 4;
+  // float matchingDistanceMax = 5;
   if (!(this->matchingdistancemax() <= 0 && this->matchingdistancemax() >= 0)) {
     total_size += 1 + 4;
   }
@@ -1692,6 +1767,9 @@ void match_grpc2Request::MergeFrom(const match_grpc2Request& from) {
   if (from.matches().size() > 0) {
     _internal_set_matches(from._internal_matches());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (!(from.radius() <= 0 && from.radius() >= 0)) {
     _internal_set_radius(from._internal_radius());
   }
@@ -1727,9 +1805,9 @@ void match_grpc2Request::InternalSwap(match_grpc2Request* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(match_grpc2Request, matchingdistancemax_)
       + sizeof(match_grpc2Request::matchingdistancemax_)
-      - PROTOBUF_FIELD_OFFSET(match_grpc2Request, radius_)>(
-          reinterpret_cast<char*>(&radius_),
-          reinterpret_cast<char*>(&other->radius_));
+      - PROTOBUF_FIELD_OFFSET(match_grpc2Request, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata match_grpc2Request::GetMetadata() const {

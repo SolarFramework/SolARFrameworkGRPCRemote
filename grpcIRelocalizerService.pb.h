@@ -192,9 +192,10 @@ class addKeyframeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKeyframeFieldNumber = 1,
+    kKeyframeFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes keyframe = 1;
+  // bytes keyframe = 2;
   void clear_keyframe();
   const std::string& keyframe() const;
   void set_keyframe(const std::string& value);
@@ -210,6 +211,15 @@ class addKeyframeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframe();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRelocalizer.addKeyframeRequest)
  private:
   class _Internal;
@@ -218,6 +228,7 @@ class addKeyframeRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframe_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRelocalizerService_2eproto;
 };
@@ -473,10 +484,11 @@ class relocalizeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFrameFieldNumber = 1,
-    kPoseFieldNumber = 2,
+    kFrameFieldNumber = 2,
+    kPoseFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes frame = 1;
+  // bytes frame = 2;
   void clear_frame();
   const std::string& frame() const;
   void set_frame(const std::string& value);
@@ -492,7 +504,7 @@ class relocalizeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_frame();
   public:
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -508,6 +520,15 @@ class relocalizeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRelocalizer.relocalizeRequest)
  private:
   class _Internal;
@@ -517,6 +538,7 @@ class relocalizeRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRelocalizerService_2eproto;
 };
@@ -686,7 +708,27 @@ class relocalizeResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // addKeyframeRequest
 
-// bytes keyframe = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void addKeyframeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 addKeyframeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 addKeyframeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRelocalizer.addKeyframeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void addKeyframeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void addKeyframeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRelocalizer.addKeyframeRequest.grpcServerCompressionFormat)
+}
+
+// bytes keyframe = 2;
 inline void addKeyframeRequest::clear_keyframe() {
   keyframe_.ClearToEmpty();
 }
@@ -775,7 +817,27 @@ inline void addKeyframeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID
 
 // relocalizeRequest
 
-// bytes frame = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void relocalizeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 relocalizeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 relocalizeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRelocalizer.relocalizeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void relocalizeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void relocalizeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRelocalizer.relocalizeRequest.grpcServerCompressionFormat)
+}
+
+// bytes frame = 2;
 inline void relocalizeRequest::clear_frame() {
   frame_.ClearToEmpty();
 }
@@ -836,7 +898,7 @@ inline void relocalizeRequest::set_allocated_frame(std::string* frame) {
   // @@protoc_insertion_point(field_set_allocated:grpcIRelocalizer.relocalizeRequest.frame)
 }
 
-// bytes pose = 2;
+// bytes pose = 3;
 inline void relocalizeRequest::clear_pose() {
   pose_.ClearToEmpty();
 }

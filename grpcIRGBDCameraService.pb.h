@@ -47,7 +47,7 @@ struct TableStruct_grpcIRGBDCameraService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[38]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[48]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -68,21 +68,39 @@ extern alignDepthToColorRequestDefaultTypeInternal _alignDepthToColorRequest_def
 class alignDepthToColorResponse;
 struct alignDepthToColorResponseDefaultTypeInternal;
 extern alignDepthToColorResponseDefaultTypeInternal _alignDepthToColorResponse_default_instance_;
+class getDepthMinDistanceRequest;
+struct getDepthMinDistanceRequestDefaultTypeInternal;
+extern getDepthMinDistanceRequestDefaultTypeInternal _getDepthMinDistanceRequest_default_instance_;
 class getDepthMinDistanceResponse;
 struct getDepthMinDistanceResponseDefaultTypeInternal;
 extern getDepthMinDistanceResponseDefaultTypeInternal _getDepthMinDistanceResponse_default_instance_;
+class getDepthResolutionRequest;
+struct getDepthResolutionRequestDefaultTypeInternal;
+extern getDepthResolutionRequestDefaultTypeInternal _getDepthResolutionRequest_default_instance_;
 class getDepthResolutionResponse;
 struct getDepthResolutionResponseDefaultTypeInternal;
 extern getDepthResolutionResponseDefaultTypeInternal _getDepthResolutionResponse_default_instance_;
+class getDistortionDepthParametersRequest;
+struct getDistortionDepthParametersRequestDefaultTypeInternal;
+extern getDistortionDepthParametersRequestDefaultTypeInternal _getDistortionDepthParametersRequest_default_instance_;
 class getDistortionDepthParametersResponse;
 struct getDistortionDepthParametersResponseDefaultTypeInternal;
 extern getDistortionDepthParametersResponseDefaultTypeInternal _getDistortionDepthParametersResponse_default_instance_;
+class getDistortionParametersRequest;
+struct getDistortionParametersRequestDefaultTypeInternal;
+extern getDistortionParametersRequestDefaultTypeInternal _getDistortionParametersRequest_default_instance_;
 class getDistortionParametersResponse;
 struct getDistortionParametersResponseDefaultTypeInternal;
 extern getDistortionParametersResponseDefaultTypeInternal _getDistortionParametersResponse_default_instance_;
+class getIntrinsicsDepthParametersRequest;
+struct getIntrinsicsDepthParametersRequestDefaultTypeInternal;
+extern getIntrinsicsDepthParametersRequestDefaultTypeInternal _getIntrinsicsDepthParametersRequest_default_instance_;
 class getIntrinsicsDepthParametersResponse;
 struct getIntrinsicsDepthParametersResponseDefaultTypeInternal;
 extern getIntrinsicsDepthParametersResponseDefaultTypeInternal _getIntrinsicsDepthParametersResponse_default_instance_;
+class getIntrinsicsParametersRequest;
+struct getIntrinsicsParametersRequestDefaultTypeInternal;
+extern getIntrinsicsParametersRequestDefaultTypeInternal _getIntrinsicsParametersRequest_default_instance_;
 class getIntrinsicsParametersResponse;
 struct getIntrinsicsParametersResponseDefaultTypeInternal;
 extern getIntrinsicsParametersResponseDefaultTypeInternal _getIntrinsicsParametersResponse_default_instance_;
@@ -104,6 +122,9 @@ extern getNextRGBDFrameRequestDefaultTypeInternal _getNextRGBDFrameRequest_defau
 class getNextRGBDFrameResponse;
 struct getNextRGBDFrameResponseDefaultTypeInternal;
 extern getNextRGBDFrameResponseDefaultTypeInternal _getNextRGBDFrameResponse_default_instance_;
+class getParametersRequest;
+struct getParametersRequestDefaultTypeInternal;
+extern getParametersRequestDefaultTypeInternal _getParametersRequest_default_instance_;
 class getParametersResponse;
 struct getParametersResponseDefaultTypeInternal;
 extern getParametersResponseDefaultTypeInternal _getParametersResponse_default_instance_;
@@ -119,6 +140,9 @@ extern getPointCloudRequestDefaultTypeInternal _getPointCloudRequest_default_ins
 class getPointCloudResponse;
 struct getPointCloudResponseDefaultTypeInternal;
 extern getPointCloudResponseDefaultTypeInternal _getPointCloudResponse_default_instance_;
+class getResolutionRequest;
+struct getResolutionRequestDefaultTypeInternal;
+extern getResolutionRequestDefaultTypeInternal _getResolutionRequest_default_instance_;
 class getResolutionResponse;
 struct getResolutionResponseDefaultTypeInternal;
 extern getResolutionResponseDefaultTypeInternal _getResolutionResponse_default_instance_;
@@ -164,9 +188,15 @@ extern setParametersRequestDefaultTypeInternal _setParametersRequest_default_ins
 class setResolutionRequest;
 struct setResolutionRequestDefaultTypeInternal;
 extern setResolutionRequestDefaultTypeInternal _setResolutionRequest_default_instance_;
+class startRequest;
+struct startRequestDefaultTypeInternal;
+extern startRequestDefaultTypeInternal _startRequest_default_instance_;
 class startResponse;
 struct startResponseDefaultTypeInternal;
 extern startResponseDefaultTypeInternal _startResponse_default_instance_;
+class stopRequest;
+struct stopRequestDefaultTypeInternal;
+extern stopRequestDefaultTypeInternal _stopRequest_default_instance_;
 class stopResponse;
 struct stopResponseDefaultTypeInternal;
 extern stopResponseDefaultTypeInternal _stopResponse_default_instance_;
@@ -176,11 +206,17 @@ template<> ::grpcIRGBDCamera::alignColorToDepthRequest* Arena::CreateMaybeMessag
 template<> ::grpcIRGBDCamera::alignColorToDepthResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::alignColorToDepthResponse>(Arena*);
 template<> ::grpcIRGBDCamera::alignDepthToColorRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::alignDepthToColorRequest>(Arena*);
 template<> ::grpcIRGBDCamera::alignDepthToColorResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::alignDepthToColorResponse>(Arena*);
+template<> ::grpcIRGBDCamera::getDepthMinDistanceRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getDepthMinDistanceRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getDepthMinDistanceResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getDepthMinDistanceResponse>(Arena*);
+template<> ::grpcIRGBDCamera::getDepthResolutionRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getDepthResolutionRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getDepthResolutionResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getDepthResolutionResponse>(Arena*);
+template<> ::grpcIRGBDCamera::getDistortionDepthParametersRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getDistortionDepthParametersRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getDistortionDepthParametersResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getDistortionDepthParametersResponse>(Arena*);
+template<> ::grpcIRGBDCamera::getDistortionParametersRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getDistortionParametersRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getDistortionParametersResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getDistortionParametersResponse>(Arena*);
+template<> ::grpcIRGBDCamera::getIntrinsicsDepthParametersRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getIntrinsicsDepthParametersRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getIntrinsicsDepthParametersResponse>(Arena*);
+template<> ::grpcIRGBDCamera::getIntrinsicsParametersRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getIntrinsicsParametersRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getIntrinsicsParametersResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getIntrinsicsParametersResponse>(Arena*);
 template<> ::grpcIRGBDCamera::getNextDepthFrameRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getNextDepthFrameRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getNextDepthFrameResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getNextDepthFrameResponse>(Arena*);
@@ -188,11 +224,13 @@ template<> ::grpcIRGBDCamera::getNextImageRequest* Arena::CreateMaybeMessage<::g
 template<> ::grpcIRGBDCamera::getNextImageResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getNextImageResponse>(Arena*);
 template<> ::grpcIRGBDCamera::getNextRGBDFrameRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getNextRGBDFrameRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getNextRGBDFrameResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getNextRGBDFrameResponse>(Arena*);
+template<> ::grpcIRGBDCamera::getParametersRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getParametersRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getParametersResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getParametersResponse>(Arena*);
 template<> ::grpcIRGBDCamera::getPixelToWorldRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getPixelToWorldRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getPixelToWorldResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getPixelToWorldResponse>(Arena*);
 template<> ::grpcIRGBDCamera::getPointCloudRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getPointCloudRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getPointCloudResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getPointCloudResponse>(Arena*);
+template<> ::grpcIRGBDCamera::getResolutionRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getResolutionRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getResolutionResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getResolutionResponse>(Arena*);
 template<> ::grpcIRGBDCamera::getWorldToPixelRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getWorldToPixelRequest>(Arena*);
 template<> ::grpcIRGBDCamera::getWorldToPixelResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::getWorldToPixelResponse>(Arena*);
@@ -208,12 +246,151 @@ template<> ::grpcIRGBDCamera::setIntrinsicDepthParametersResponse* Arena::Create
 template<> ::grpcIRGBDCamera::setIntrinsicParametersRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::setIntrinsicParametersRequest>(Arena*);
 template<> ::grpcIRGBDCamera::setParametersRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::setParametersRequest>(Arena*);
 template<> ::grpcIRGBDCamera::setResolutionRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::setResolutionRequest>(Arena*);
+template<> ::grpcIRGBDCamera::startRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::startRequest>(Arena*);
 template<> ::grpcIRGBDCamera::startResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::startResponse>(Arena*);
+template<> ::grpcIRGBDCamera::stopRequest* Arena::CreateMaybeMessage<::grpcIRGBDCamera::stopRequest>(Arena*);
 template<> ::grpcIRGBDCamera::stopResponse* Arena::CreateMaybeMessage<::grpcIRGBDCamera::stopResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIRGBDCamera {
 
 // ===================================================================
+
+class startRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.startRequest) */ {
+ public:
+  inline startRequest() : startRequest(nullptr) {}
+  virtual ~startRequest();
+  explicit constexpr startRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  startRequest(const startRequest& from);
+  startRequest(startRequest&& from) noexcept
+    : startRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline startRequest& operator=(const startRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline startRequest& operator=(startRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const startRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const startRequest* internal_default_instance() {
+    return reinterpret_cast<const startRequest*>(
+               &_startRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(startRequest& a, startRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(startRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(startRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline startRequest* New() const final {
+    return CreateMaybeMessage<startRequest>(nullptr);
+  }
+
+  startRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<startRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const startRequest& from);
+  void MergeFrom(const startRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(startRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.startRequest";
+  }
+  protected:
+  explicit startRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.startRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
 
 class startResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.startResponse) */ {
@@ -258,7 +435,7 @@ class startResponse PROTOBUF_FINAL :
                &_startResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(startResponse& a, startResponse& b) {
     a.Swap(&b);
@@ -352,6 +529,143 @@ class startResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class stopRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.stopRequest) */ {
+ public:
+  inline stopRequest() : stopRequest(nullptr) {}
+  virtual ~stopRequest();
+  explicit constexpr stopRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  stopRequest(const stopRequest& from);
+  stopRequest(stopRequest&& from) noexcept
+    : stopRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline stopRequest& operator=(const stopRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline stopRequest& operator=(stopRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const stopRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const stopRequest* internal_default_instance() {
+    return reinterpret_cast<const stopRequest*>(
+               &_stopRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(stopRequest& a, stopRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(stopRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(stopRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline stopRequest* New() const final {
+    return CreateMaybeMessage<stopRequest>(nullptr);
+  }
+
+  stopRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<stopRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const stopRequest& from);
+  void MergeFrom(const stopRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(stopRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.stopRequest";
+  }
+  protected:
+  explicit stopRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.stopRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class stopResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.stopResponse) */ {
  public:
@@ -395,7 +709,7 @@ class stopResponse PROTOBUF_FINAL :
                &_stopResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(stopResponse& a, stopResponse& b) {
     a.Swap(&b);
@@ -532,7 +846,7 @@ class getNextImageRequest PROTOBUF_FINAL :
                &_getNextImageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(getNextImageRequest& a, getNextImageRequest& b) {
     a.Swap(&b);
@@ -602,9 +916,10 @@ class getNextImageRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImgFieldNumber = 1,
+    kImgFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes img = 1;
+  // bytes img = 2;
   void clear_img();
   const std::string& img() const;
   void set_img(const std::string& value);
@@ -620,6 +935,15 @@ class getNextImageRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_img();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getNextImageRequest)
  private:
   class _Internal;
@@ -628,6 +952,7 @@ class getNextImageRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr img_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -676,7 +1001,7 @@ class getNextImageResponse PROTOBUF_FINAL :
                &_getNextImageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(getNextImageResponse& a, getNextImageResponse& b) {
     a.Swap(&b);
@@ -831,7 +1156,7 @@ class setResolutionRequest PROTOBUF_FINAL :
                &_setResolutionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(setResolutionRequest& a, setResolutionRequest& b) {
     a.Swap(&b);
@@ -975,7 +1300,7 @@ class setIntrinsicParametersRequest PROTOBUF_FINAL :
                &_setIntrinsicParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(setIntrinsicParametersRequest& a, setIntrinsicParametersRequest& b) {
     a.Swap(&b);
@@ -1119,7 +1444,7 @@ class setDistortionParametersRequest PROTOBUF_FINAL :
                &_setDistortionParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(setDistortionParametersRequest& a, setDistortionParametersRequest& b) {
     a.Swap(&b);
@@ -1263,7 +1588,7 @@ class setParametersRequest PROTOBUF_FINAL :
                &_setParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(setParametersRequest& a, setParametersRequest& b) {
     a.Swap(&b);
@@ -1364,6 +1689,143 @@ class setParametersRequest PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getResolutionRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getResolutionRequest) */ {
+ public:
+  inline getResolutionRequest() : getResolutionRequest(nullptr) {}
+  virtual ~getResolutionRequest();
+  explicit constexpr getResolutionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getResolutionRequest(const getResolutionRequest& from);
+  getResolutionRequest(getResolutionRequest&& from) noexcept
+    : getResolutionRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getResolutionRequest& operator=(const getResolutionRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getResolutionRequest& operator=(getResolutionRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getResolutionRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getResolutionRequest* internal_default_instance() {
+    return reinterpret_cast<const getResolutionRequest*>(
+               &_getResolutionRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(getResolutionRequest& a, getResolutionRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getResolutionRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getResolutionRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getResolutionRequest* New() const final {
+    return CreateMaybeMessage<getResolutionRequest>(nullptr);
+  }
+
+  getResolutionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getResolutionRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getResolutionRequest& from);
+  void MergeFrom(const getResolutionRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getResolutionRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.getResolutionRequest";
+  }
+  protected:
+  explicit getResolutionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getResolutionRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getResolutionResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getResolutionResponse) */ {
  public:
@@ -1407,7 +1869,7 @@ class getResolutionResponse PROTOBUF_FINAL :
                &_getResolutionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    11;
 
   friend void swap(getResolutionResponse& a, getResolutionResponse& b) {
     a.Swap(&b);
@@ -1508,6 +1970,143 @@ class getResolutionResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getIntrinsicsParametersRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getIntrinsicsParametersRequest) */ {
+ public:
+  inline getIntrinsicsParametersRequest() : getIntrinsicsParametersRequest(nullptr) {}
+  virtual ~getIntrinsicsParametersRequest();
+  explicit constexpr getIntrinsicsParametersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getIntrinsicsParametersRequest(const getIntrinsicsParametersRequest& from);
+  getIntrinsicsParametersRequest(getIntrinsicsParametersRequest&& from) noexcept
+    : getIntrinsicsParametersRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getIntrinsicsParametersRequest& operator=(const getIntrinsicsParametersRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getIntrinsicsParametersRequest& operator=(getIntrinsicsParametersRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getIntrinsicsParametersRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getIntrinsicsParametersRequest* internal_default_instance() {
+    return reinterpret_cast<const getIntrinsicsParametersRequest*>(
+               &_getIntrinsicsParametersRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(getIntrinsicsParametersRequest& a, getIntrinsicsParametersRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getIntrinsicsParametersRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getIntrinsicsParametersRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getIntrinsicsParametersRequest* New() const final {
+    return CreateMaybeMessage<getIntrinsicsParametersRequest>(nullptr);
+  }
+
+  getIntrinsicsParametersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getIntrinsicsParametersRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getIntrinsicsParametersRequest& from);
+  void MergeFrom(const getIntrinsicsParametersRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getIntrinsicsParametersRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.getIntrinsicsParametersRequest";
+  }
+  protected:
+  explicit getIntrinsicsParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getIntrinsicsParametersRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getIntrinsicsParametersResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getIntrinsicsParametersResponse) */ {
  public:
@@ -1551,7 +2150,7 @@ class getIntrinsicsParametersResponse PROTOBUF_FINAL :
                &_getIntrinsicsParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    13;
 
   friend void swap(getIntrinsicsParametersResponse& a, getIntrinsicsParametersResponse& b) {
     a.Swap(&b);
@@ -1652,6 +2251,143 @@ class getIntrinsicsParametersResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getParametersRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getParametersRequest) */ {
+ public:
+  inline getParametersRequest() : getParametersRequest(nullptr) {}
+  virtual ~getParametersRequest();
+  explicit constexpr getParametersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getParametersRequest(const getParametersRequest& from);
+  getParametersRequest(getParametersRequest&& from) noexcept
+    : getParametersRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getParametersRequest& operator=(const getParametersRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getParametersRequest& operator=(getParametersRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getParametersRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getParametersRequest* internal_default_instance() {
+    return reinterpret_cast<const getParametersRequest*>(
+               &_getParametersRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(getParametersRequest& a, getParametersRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getParametersRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getParametersRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getParametersRequest* New() const final {
+    return CreateMaybeMessage<getParametersRequest>(nullptr);
+  }
+
+  getParametersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getParametersRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getParametersRequest& from);
+  void MergeFrom(const getParametersRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getParametersRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.getParametersRequest";
+  }
+  protected:
+  explicit getParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getParametersRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getParametersResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getParametersResponse) */ {
  public:
@@ -1695,7 +2431,7 @@ class getParametersResponse PROTOBUF_FINAL :
                &_getParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    15;
 
   friend void swap(getParametersResponse& a, getParametersResponse& b) {
     a.Swap(&b);
@@ -1796,6 +2532,143 @@ class getParametersResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getDistortionParametersRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getDistortionParametersRequest) */ {
+ public:
+  inline getDistortionParametersRequest() : getDistortionParametersRequest(nullptr) {}
+  virtual ~getDistortionParametersRequest();
+  explicit constexpr getDistortionParametersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getDistortionParametersRequest(const getDistortionParametersRequest& from);
+  getDistortionParametersRequest(getDistortionParametersRequest&& from) noexcept
+    : getDistortionParametersRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getDistortionParametersRequest& operator=(const getDistortionParametersRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getDistortionParametersRequest& operator=(getDistortionParametersRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getDistortionParametersRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getDistortionParametersRequest* internal_default_instance() {
+    return reinterpret_cast<const getDistortionParametersRequest*>(
+               &_getDistortionParametersRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(getDistortionParametersRequest& a, getDistortionParametersRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getDistortionParametersRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getDistortionParametersRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getDistortionParametersRequest* New() const final {
+    return CreateMaybeMessage<getDistortionParametersRequest>(nullptr);
+  }
+
+  getDistortionParametersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getDistortionParametersRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getDistortionParametersRequest& from);
+  void MergeFrom(const getDistortionParametersRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getDistortionParametersRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.getDistortionParametersRequest";
+  }
+  protected:
+  explicit getDistortionParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getDistortionParametersRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getDistortionParametersResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getDistortionParametersResponse) */ {
  public:
@@ -1839,7 +2712,7 @@ class getDistortionParametersResponse PROTOBUF_FINAL :
                &_getDistortionParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    17;
 
   friend void swap(getDistortionParametersResponse& a, getDistortionParametersResponse& b) {
     a.Swap(&b);
@@ -1983,7 +2856,7 @@ class getNextDepthFrameRequest PROTOBUF_FINAL :
                &_getNextDepthFrameRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    18;
 
   friend void swap(getNextDepthFrameRequest& a, getNextDepthFrameRequest& b) {
     a.Swap(&b);
@@ -2053,9 +2926,10 @@ class getNextDepthFrameRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImgFieldNumber = 1,
+    kImgFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes img = 1;
+  // bytes img = 2;
   void clear_img();
   const std::string& img() const;
   void set_img(const std::string& value);
@@ -2071,6 +2945,15 @@ class getNextDepthFrameRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_img();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getNextDepthFrameRequest)
  private:
   class _Internal;
@@ -2079,6 +2962,7 @@ class getNextDepthFrameRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr img_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -2127,7 +3011,7 @@ class getNextDepthFrameResponse PROTOBUF_FINAL :
                &_getNextDepthFrameResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    19;
 
   friend void swap(getNextDepthFrameResponse& a, getNextDepthFrameResponse& b) {
     a.Swap(&b);
@@ -2282,7 +3166,7 @@ class getPointCloudRequest PROTOBUF_FINAL :
                &_getPointCloudRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    20;
 
   friend void swap(getPointCloudRequest& a, getPointCloudRequest& b) {
     a.Swap(&b);
@@ -2352,9 +3236,10 @@ class getPointCloudRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPcFieldNumber = 1,
+    kPcFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes pc = 1;
+  // bytes pc = 2;
   void clear_pc();
   const std::string& pc() const;
   void set_pc(const std::string& value);
@@ -2370,6 +3255,15 @@ class getPointCloudRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_pc();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getPointCloudRequest)
  private:
   class _Internal;
@@ -2378,6 +3272,7 @@ class getPointCloudRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pc_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -2426,7 +3321,7 @@ class getPointCloudResponse PROTOBUF_FINAL :
                &_getPointCloudResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    21;
 
   friend void swap(getPointCloudResponse& a, getPointCloudResponse& b) {
     a.Swap(&b);
@@ -2581,7 +3476,7 @@ class setDepthResolutionRequest PROTOBUF_FINAL :
                &_setDepthResolutionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    22;
 
   friend void swap(setDepthResolutionRequest& a, setDepthResolutionRequest& b) {
     a.Swap(&b);
@@ -2651,9 +3546,10 @@ class setDepthResolutionRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResolutionFieldNumber = 1,
+    kResolutionFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes resolution = 1;
+  // bytes resolution = 2;
   void clear_resolution();
   const std::string& resolution() const;
   void set_resolution(const std::string& value);
@@ -2669,6 +3565,15 @@ class setDepthResolutionRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_resolution();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.setDepthResolutionRequest)
  private:
   class _Internal;
@@ -2677,6 +3582,7 @@ class setDepthResolutionRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr resolution_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -2725,7 +3631,7 @@ class setDepthResolutionResponse PROTOBUF_FINAL :
                &_setDepthResolutionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    23;
 
   friend void swap(setDepthResolutionResponse& a, setDepthResolutionResponse& b) {
     a.Swap(&b);
@@ -2862,7 +3768,7 @@ class setIntrinsicDepthParametersRequest PROTOBUF_FINAL :
                &_setIntrinsicDepthParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    24;
 
   friend void swap(setIntrinsicDepthParametersRequest& a, setIntrinsicDepthParametersRequest& b) {
     a.Swap(&b);
@@ -2932,9 +3838,10 @@ class setIntrinsicDepthParametersRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIntrinsicParametersFieldNumber = 1,
+    kIntrinsicParametersFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes intrinsic_parameters = 1;
+  // bytes intrinsic_parameters = 2;
   void clear_intrinsic_parameters();
   const std::string& intrinsic_parameters() const;
   void set_intrinsic_parameters(const std::string& value);
@@ -2950,6 +3857,15 @@ class setIntrinsicDepthParametersRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_intrinsic_parameters();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.setIntrinsicDepthParametersRequest)
  private:
   class _Internal;
@@ -2958,6 +3874,7 @@ class setIntrinsicDepthParametersRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr intrinsic_parameters_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -3006,7 +3923,7 @@ class setIntrinsicDepthParametersResponse PROTOBUF_FINAL :
                &_setIntrinsicDepthParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    25;
 
   friend void swap(setIntrinsicDepthParametersResponse& a, setIntrinsicDepthParametersResponse& b) {
     a.Swap(&b);
@@ -3143,7 +4060,7 @@ class setDistortionDepthParametersRequest PROTOBUF_FINAL :
                &_setDistortionDepthParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    26;
 
   friend void swap(setDistortionDepthParametersRequest& a, setDistortionDepthParametersRequest& b) {
     a.Swap(&b);
@@ -3213,9 +4130,10 @@ class setDistortionDepthParametersRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDistortionParametersFieldNumber = 1,
+    kDistortionParametersFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes distortion_parameters = 1;
+  // bytes distortion_parameters = 2;
   void clear_distortion_parameters();
   const std::string& distortion_parameters() const;
   void set_distortion_parameters(const std::string& value);
@@ -3231,6 +4149,15 @@ class setDistortionDepthParametersRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_distortion_parameters();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.setDistortionDepthParametersRequest)
  private:
   class _Internal;
@@ -3239,6 +4166,7 @@ class setDistortionDepthParametersRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr distortion_parameters_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -3287,7 +4215,7 @@ class setDistortionDepthParametersResponse PROTOBUF_FINAL :
                &_setDistortionDepthParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    27;
 
   friend void swap(setDistortionDepthParametersResponse& a, setDistortionDepthParametersResponse& b) {
     a.Swap(&b);
@@ -3381,6 +4309,143 @@ class setDistortionDepthParametersResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getDepthResolutionRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getDepthResolutionRequest) */ {
+ public:
+  inline getDepthResolutionRequest() : getDepthResolutionRequest(nullptr) {}
+  virtual ~getDepthResolutionRequest();
+  explicit constexpr getDepthResolutionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getDepthResolutionRequest(const getDepthResolutionRequest& from);
+  getDepthResolutionRequest(getDepthResolutionRequest&& from) noexcept
+    : getDepthResolutionRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getDepthResolutionRequest& operator=(const getDepthResolutionRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getDepthResolutionRequest& operator=(getDepthResolutionRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getDepthResolutionRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getDepthResolutionRequest* internal_default_instance() {
+    return reinterpret_cast<const getDepthResolutionRequest*>(
+               &_getDepthResolutionRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  friend void swap(getDepthResolutionRequest& a, getDepthResolutionRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getDepthResolutionRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getDepthResolutionRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getDepthResolutionRequest* New() const final {
+    return CreateMaybeMessage<getDepthResolutionRequest>(nullptr);
+  }
+
+  getDepthResolutionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getDepthResolutionRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getDepthResolutionRequest& from);
+  void MergeFrom(const getDepthResolutionRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getDepthResolutionRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.getDepthResolutionRequest";
+  }
+  protected:
+  explicit getDepthResolutionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getDepthResolutionRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getDepthResolutionResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getDepthResolutionResponse) */ {
  public:
@@ -3424,7 +4489,7 @@ class getDepthResolutionResponse PROTOBUF_FINAL :
                &_getDepthResolutionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    29;
 
   friend void swap(getDepthResolutionResponse& a, getDepthResolutionResponse& b) {
     a.Swap(&b);
@@ -3525,6 +4590,143 @@ class getDepthResolutionResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getDepthMinDistanceRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getDepthMinDistanceRequest) */ {
+ public:
+  inline getDepthMinDistanceRequest() : getDepthMinDistanceRequest(nullptr) {}
+  virtual ~getDepthMinDistanceRequest();
+  explicit constexpr getDepthMinDistanceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getDepthMinDistanceRequest(const getDepthMinDistanceRequest& from);
+  getDepthMinDistanceRequest(getDepthMinDistanceRequest&& from) noexcept
+    : getDepthMinDistanceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getDepthMinDistanceRequest& operator=(const getDepthMinDistanceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getDepthMinDistanceRequest& operator=(getDepthMinDistanceRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getDepthMinDistanceRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getDepthMinDistanceRequest* internal_default_instance() {
+    return reinterpret_cast<const getDepthMinDistanceRequest*>(
+               &_getDepthMinDistanceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  friend void swap(getDepthMinDistanceRequest& a, getDepthMinDistanceRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getDepthMinDistanceRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getDepthMinDistanceRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getDepthMinDistanceRequest* New() const final {
+    return CreateMaybeMessage<getDepthMinDistanceRequest>(nullptr);
+  }
+
+  getDepthMinDistanceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getDepthMinDistanceRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getDepthMinDistanceRequest& from);
+  void MergeFrom(const getDepthMinDistanceRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getDepthMinDistanceRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.getDepthMinDistanceRequest";
+  }
+  protected:
+  explicit getDepthMinDistanceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getDepthMinDistanceRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getDepthMinDistanceResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getDepthMinDistanceResponse) */ {
  public:
@@ -3568,7 +4770,7 @@ class getDepthMinDistanceResponse PROTOBUF_FINAL :
                &_getDepthMinDistanceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    31;
 
   friend void swap(getDepthMinDistanceResponse& a, getDepthMinDistanceResponse& b) {
     a.Swap(&b);
@@ -3662,6 +4864,143 @@ class getDepthMinDistanceResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getIntrinsicsDepthParametersRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getIntrinsicsDepthParametersRequest) */ {
+ public:
+  inline getIntrinsicsDepthParametersRequest() : getIntrinsicsDepthParametersRequest(nullptr) {}
+  virtual ~getIntrinsicsDepthParametersRequest();
+  explicit constexpr getIntrinsicsDepthParametersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getIntrinsicsDepthParametersRequest(const getIntrinsicsDepthParametersRequest& from);
+  getIntrinsicsDepthParametersRequest(getIntrinsicsDepthParametersRequest&& from) noexcept
+    : getIntrinsicsDepthParametersRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getIntrinsicsDepthParametersRequest& operator=(const getIntrinsicsDepthParametersRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getIntrinsicsDepthParametersRequest& operator=(getIntrinsicsDepthParametersRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getIntrinsicsDepthParametersRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getIntrinsicsDepthParametersRequest* internal_default_instance() {
+    return reinterpret_cast<const getIntrinsicsDepthParametersRequest*>(
+               &_getIntrinsicsDepthParametersRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    32;
+
+  friend void swap(getIntrinsicsDepthParametersRequest& a, getIntrinsicsDepthParametersRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getIntrinsicsDepthParametersRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getIntrinsicsDepthParametersRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getIntrinsicsDepthParametersRequest* New() const final {
+    return CreateMaybeMessage<getIntrinsicsDepthParametersRequest>(nullptr);
+  }
+
+  getIntrinsicsDepthParametersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getIntrinsicsDepthParametersRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getIntrinsicsDepthParametersRequest& from);
+  void MergeFrom(const getIntrinsicsDepthParametersRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getIntrinsicsDepthParametersRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.getIntrinsicsDepthParametersRequest";
+  }
+  protected:
+  explicit getIntrinsicsDepthParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getIntrinsicsDepthParametersRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getIntrinsicsDepthParametersResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getIntrinsicsDepthParametersResponse) */ {
  public:
@@ -3705,7 +5044,7 @@ class getIntrinsicsDepthParametersResponse PROTOBUF_FINAL :
                &_getIntrinsicsDepthParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    33;
 
   friend void swap(getIntrinsicsDepthParametersResponse& a, getIntrinsicsDepthParametersResponse& b) {
     a.Swap(&b);
@@ -3806,6 +5145,143 @@ class getIntrinsicsDepthParametersResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getDistortionDepthParametersRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getDistortionDepthParametersRequest) */ {
+ public:
+  inline getDistortionDepthParametersRequest() : getDistortionDepthParametersRequest(nullptr) {}
+  virtual ~getDistortionDepthParametersRequest();
+  explicit constexpr getDistortionDepthParametersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getDistortionDepthParametersRequest(const getDistortionDepthParametersRequest& from);
+  getDistortionDepthParametersRequest(getDistortionDepthParametersRequest&& from) noexcept
+    : getDistortionDepthParametersRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getDistortionDepthParametersRequest& operator=(const getDistortionDepthParametersRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getDistortionDepthParametersRequest& operator=(getDistortionDepthParametersRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getDistortionDepthParametersRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getDistortionDepthParametersRequest* internal_default_instance() {
+    return reinterpret_cast<const getDistortionDepthParametersRequest*>(
+               &_getDistortionDepthParametersRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    34;
+
+  friend void swap(getDistortionDepthParametersRequest& a, getDistortionDepthParametersRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getDistortionDepthParametersRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getDistortionDepthParametersRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getDistortionDepthParametersRequest* New() const final {
+    return CreateMaybeMessage<getDistortionDepthParametersRequest>(nullptr);
+  }
+
+  getDistortionDepthParametersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getDistortionDepthParametersRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getDistortionDepthParametersRequest& from);
+  void MergeFrom(const getDistortionDepthParametersRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getDistortionDepthParametersRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRGBDCamera.getDistortionDepthParametersRequest";
+  }
+  protected:
+  explicit getDistortionDepthParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRGBDCameraService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getDistortionDepthParametersRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getDistortionDepthParametersResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRGBDCamera.getDistortionDepthParametersResponse) */ {
  public:
@@ -3849,7 +5325,7 @@ class getDistortionDepthParametersResponse PROTOBUF_FINAL :
                &_getDistortionDepthParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    35;
 
   friend void swap(getDistortionDepthParametersResponse& a, getDistortionDepthParametersResponse& b) {
     a.Swap(&b);
@@ -3993,7 +5469,7 @@ class getNextRGBDFrameRequest PROTOBUF_FINAL :
                &_getNextRGBDFrameRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    36;
 
   friend void swap(getNextRGBDFrameRequest& a, getNextRGBDFrameRequest& b) {
     a.Swap(&b);
@@ -4063,10 +5539,11 @@ class getNextRGBDFrameRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kColorImgFieldNumber = 1,
-    kDepthImgFieldNumber = 2,
+    kColorImgFieldNumber = 2,
+    kDepthImgFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes colorImg = 1;
+  // bytes colorImg = 2;
   void clear_colorimg();
   const std::string& colorimg() const;
   void set_colorimg(const std::string& value);
@@ -4082,7 +5559,7 @@ class getNextRGBDFrameRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_colorimg();
   public:
 
-  // bytes depthImg = 2;
+  // bytes depthImg = 3;
   void clear_depthimg();
   const std::string& depthimg() const;
   void set_depthimg(const std::string& value);
@@ -4098,6 +5575,15 @@ class getNextRGBDFrameRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_depthimg();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getNextRGBDFrameRequest)
  private:
   class _Internal;
@@ -4107,6 +5593,7 @@ class getNextRGBDFrameRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr colorimg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr depthimg_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -4155,7 +5642,7 @@ class getNextRGBDFrameResponse PROTOBUF_FINAL :
                &_getNextRGBDFrameResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    37;
 
   friend void swap(getNextRGBDFrameResponse& a, getNextRGBDFrameResponse& b) {
     a.Swap(&b);
@@ -4328,7 +5815,7 @@ class alignDepthToColorRequest PROTOBUF_FINAL :
                &_alignDepthToColorRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    38;
 
   friend void swap(alignDepthToColorRequest& a, alignDepthToColorRequest& b) {
     a.Swap(&b);
@@ -4398,9 +5885,10 @@ class alignDepthToColorRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAlignedDepthImgFieldNumber = 1,
+    kAlignedDepthImgFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes alignedDepthImg = 1;
+  // bytes alignedDepthImg = 2;
   void clear_aligneddepthimg();
   const std::string& aligneddepthimg() const;
   void set_aligneddepthimg(const std::string& value);
@@ -4416,6 +5904,15 @@ class alignDepthToColorRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_aligneddepthimg();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.alignDepthToColorRequest)
  private:
   class _Internal;
@@ -4424,6 +5921,7 @@ class alignDepthToColorRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr aligneddepthimg_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -4472,7 +5970,7 @@ class alignDepthToColorResponse PROTOBUF_FINAL :
                &_alignDepthToColorResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    39;
 
   friend void swap(alignDepthToColorResponse& a, alignDepthToColorResponse& b) {
     a.Swap(&b);
@@ -4627,7 +6125,7 @@ class alignColorToDepthRequest PROTOBUF_FINAL :
                &_alignColorToDepthRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    40;
 
   friend void swap(alignColorToDepthRequest& a, alignColorToDepthRequest& b) {
     a.Swap(&b);
@@ -4697,9 +6195,10 @@ class alignColorToDepthRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAlignedColorImgFieldNumber = 1,
+    kAlignedColorImgFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes alignedColorImg = 1;
+  // bytes alignedColorImg = 2;
   void clear_alignedcolorimg();
   const std::string& alignedcolorimg() const;
   void set_alignedcolorimg(const std::string& value);
@@ -4715,6 +6214,15 @@ class alignColorToDepthRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_alignedcolorimg();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.alignColorToDepthRequest)
  private:
   class _Internal;
@@ -4723,6 +6231,7 @@ class alignColorToDepthRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr alignedcolorimg_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -4771,7 +6280,7 @@ class alignColorToDepthResponse PROTOBUF_FINAL :
                &_alignColorToDepthResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    41;
 
   friend void swap(alignColorToDepthResponse& a, alignColorToDepthResponse& b) {
     a.Swap(&b);
@@ -4926,7 +6435,7 @@ class getPixelToWorldRequest PROTOBUF_FINAL :
                &_getPixelToWorldRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    42;
 
   friend void swap(getPixelToWorldRequest& a, getPixelToWorldRequest& b) {
     a.Swap(&b);
@@ -4996,9 +6505,10 @@ class getPixelToWorldRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInPixelFieldNumber = 1,
+    kInPixelFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inPixel = 1;
+  // bytes inPixel = 2;
   void clear_inpixel();
   const std::string& inpixel() const;
   void set_inpixel(const std::string& value);
@@ -5014,6 +6524,15 @@ class getPixelToWorldRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_inpixel();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getPixelToWorldRequest)
  private:
   class _Internal;
@@ -5022,6 +6541,7 @@ class getPixelToWorldRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inpixel_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -5070,7 +6590,7 @@ class getPixelToWorldResponse PROTOBUF_FINAL :
                &_getPixelToWorldResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    43;
 
   friend void swap(getPixelToWorldResponse& a, getPixelToWorldResponse& b) {
     a.Swap(&b);
@@ -5214,7 +6734,7 @@ class getWorldToPixelRequest PROTOBUF_FINAL :
                &_getWorldToPixelRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    44;
 
   friend void swap(getWorldToPixelRequest& a, getWorldToPixelRequest& b) {
     a.Swap(&b);
@@ -5284,9 +6804,10 @@ class getWorldToPixelRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIn3DPointFieldNumber = 1,
+    kIn3DPointFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes in3DPoint = 1;
+  // bytes in3DPoint = 2;
   void clear_in3dpoint();
   const std::string& in3dpoint() const;
   void set_in3dpoint(const std::string& value);
@@ -5302,6 +6823,15 @@ class getWorldToPixelRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_in3dpoint();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getWorldToPixelRequest)
  private:
   class _Internal;
@@ -5310,6 +6840,7 @@ class getWorldToPixelRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr in3dpoint_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -5358,7 +6889,7 @@ class getWorldToPixelResponse PROTOBUF_FINAL :
                &_getWorldToPixelResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    45;
 
   friend void swap(getWorldToPixelResponse& a, getWorldToPixelResponse& b) {
     a.Swap(&b);
@@ -5502,7 +7033,7 @@ class getWorldToPixelsRequest PROTOBUF_FINAL :
                &_getWorldToPixelsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    46;
 
   friend void swap(getWorldToPixelsRequest& a, getWorldToPixelsRequest& b) {
     a.Swap(&b);
@@ -5572,9 +7103,10 @@ class getWorldToPixelsRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kIn3DPointsFieldNumber = 1,
+    kIn3DPointsFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes in3DPoints = 1;
+  // bytes in3DPoints = 2;
   void clear_in3dpoints();
   const std::string& in3dpoints() const;
   void set_in3dpoints(const std::string& value);
@@ -5590,6 +7122,15 @@ class getWorldToPixelsRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_in3dpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRGBDCamera.getWorldToPixelsRequest)
  private:
   class _Internal;
@@ -5598,6 +7139,7 @@ class getWorldToPixelsRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr in3dpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRGBDCameraService_2eproto;
 };
@@ -5646,7 +7188,7 @@ class getWorldToPixelsResponse PROTOBUF_FINAL :
                &_getWorldToPixelsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    47;
 
   friend void swap(getWorldToPixelsResponse& a, getWorldToPixelsResponse& b) {
     a.Swap(&b);
@@ -5754,6 +7296,30 @@ class getWorldToPixelsResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// startRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void startRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 startRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 startRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.startRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void startRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void startRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.startRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // startResponse
 
 // sint32 xpcfGrpcReturnValue = 1;
@@ -5774,6 +7340,30 @@ inline void startResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPAC
 inline void startResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIRGBDCamera.startResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// stopRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void stopRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 stopRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 stopRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.stopRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void stopRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void stopRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.stopRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -5804,7 +7394,27 @@ inline void stopResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32
 
 // getNextImageRequest
 
-// bytes img = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getNextImageRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNextImageRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNextImageRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getNextImageRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getNextImageRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getNextImageRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getNextImageRequest.grpcServerCompressionFormat)
+}
+
+// bytes img = 2;
 inline void getNextImageRequest::clear_img() {
   img_.ClearToEmpty();
 }
@@ -6212,6 +7822,30 @@ inline void setParametersRequest::set_allocated_parameters(std::string* paramete
 
 // -------------------------------------------------------------------
 
+// getResolutionRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getResolutionRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getResolutionRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getResolutionRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getResolutionRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getResolutionRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getResolutionRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getResolutionRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // getResolutionResponse
 
 // bytes xpcfGrpcReturnValue = 1;
@@ -6273,6 +7907,30 @@ inline void getResolutionResponse::set_allocated_xpcfgrpcreturnvalue(std::string
   xpcfgrpcreturnvalue_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), xpcfgrpcreturnvalue,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:grpcIRGBDCamera.getResolutionResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getIntrinsicsParametersRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getIntrinsicsParametersRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getIntrinsicsParametersRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getIntrinsicsParametersRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getIntrinsicsParametersRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getIntrinsicsParametersRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getIntrinsicsParametersRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getIntrinsicsParametersRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -6342,6 +8000,30 @@ inline void getIntrinsicsParametersResponse::set_allocated_xpcfgrpcreturnvalue(s
 
 // -------------------------------------------------------------------
 
+// getParametersRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getParametersRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getParametersRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getParametersRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getParametersRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getParametersRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getParametersRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getParametersRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // getParametersResponse
 
 // bytes xpcfGrpcReturnValue = 1;
@@ -6403,6 +8085,30 @@ inline void getParametersResponse::set_allocated_xpcfgrpcreturnvalue(std::string
   xpcfgrpcreturnvalue_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), xpcfgrpcreturnvalue,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:grpcIRGBDCamera.getParametersResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getDistortionParametersRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getDistortionParametersRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getDistortionParametersRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getDistortionParametersRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getDistortionParametersRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getDistortionParametersRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getDistortionParametersRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getDistortionParametersRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -6474,7 +8180,27 @@ inline void getDistortionParametersResponse::set_allocated_xpcfgrpcreturnvalue(s
 
 // getNextDepthFrameRequest
 
-// bytes img = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getNextDepthFrameRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNextDepthFrameRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNextDepthFrameRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getNextDepthFrameRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getNextDepthFrameRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getNextDepthFrameRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getNextDepthFrameRequest.grpcServerCompressionFormat)
+}
+
+// bytes img = 2;
 inline void getNextDepthFrameRequest::clear_img() {
   img_.ClearToEmpty();
 }
@@ -6624,7 +8350,27 @@ inline void getNextDepthFrameResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESP
 
 // getPointCloudRequest
 
-// bytes pc = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getPointCloudRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getPointCloudRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getPointCloudRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getPointCloudRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getPointCloudRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getPointCloudRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getPointCloudRequest.grpcServerCompressionFormat)
+}
+
+// bytes pc = 2;
 inline void getPointCloudRequest::clear_pc() {
   pc_.ClearToEmpty();
 }
@@ -6774,7 +8520,27 @@ inline void getPointCloudResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_
 
 // setDepthResolutionRequest
 
-// bytes resolution = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void setDepthResolutionRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setDepthResolutionRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setDepthResolutionRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.setDepthResolutionRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void setDepthResolutionRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void setDepthResolutionRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.setDepthResolutionRequest.grpcServerCompressionFormat)
+}
+
+// bytes resolution = 2;
 inline void setDepthResolutionRequest::clear_resolution() {
   resolution_.ClearToEmpty();
 }
@@ -6863,7 +8629,27 @@ inline void setDepthResolutionResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMES
 
 // setIntrinsicDepthParametersRequest
 
-// bytes intrinsic_parameters = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void setIntrinsicDepthParametersRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setIntrinsicDepthParametersRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setIntrinsicDepthParametersRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.setIntrinsicDepthParametersRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void setIntrinsicDepthParametersRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void setIntrinsicDepthParametersRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.setIntrinsicDepthParametersRequest.grpcServerCompressionFormat)
+}
+
+// bytes intrinsic_parameters = 2;
 inline void setIntrinsicDepthParametersRequest::clear_intrinsic_parameters() {
   intrinsic_parameters_.ClearToEmpty();
 }
@@ -6952,7 +8738,27 @@ inline void setIntrinsicDepthParametersResponse::set_xpcfgrpcreturnvalue(::PROTO
 
 // setDistortionDepthParametersRequest
 
-// bytes distortion_parameters = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void setDistortionDepthParametersRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setDistortionDepthParametersRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setDistortionDepthParametersRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.setDistortionDepthParametersRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void setDistortionDepthParametersRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void setDistortionDepthParametersRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.setDistortionDepthParametersRequest.grpcServerCompressionFormat)
+}
+
+// bytes distortion_parameters = 2;
 inline void setDistortionDepthParametersRequest::clear_distortion_parameters() {
   distortion_parameters_.ClearToEmpty();
 }
@@ -7039,6 +8845,30 @@ inline void setDistortionDepthParametersResponse::set_xpcfgrpcreturnvalue(::PROT
 
 // -------------------------------------------------------------------
 
+// getDepthResolutionRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getDepthResolutionRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getDepthResolutionRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getDepthResolutionRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getDepthResolutionRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getDepthResolutionRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getDepthResolutionRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getDepthResolutionRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // getDepthResolutionResponse
 
 // bytes xpcfGrpcReturnValue = 1;
@@ -7104,6 +8934,30 @@ inline void getDepthResolutionResponse::set_allocated_xpcfgrpcreturnvalue(std::s
 
 // -------------------------------------------------------------------
 
+// getDepthMinDistanceRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getDepthMinDistanceRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getDepthMinDistanceRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getDepthMinDistanceRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getDepthMinDistanceRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getDepthMinDistanceRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getDepthMinDistanceRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getDepthMinDistanceRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // getDepthMinDistanceResponse
 
 // float xpcfGrpcReturnValue = 1;
@@ -7124,6 +8978,30 @@ inline void getDepthMinDistanceResponse::_internal_set_xpcfgrpcreturnvalue(float
 inline void getDepthMinDistanceResponse::set_xpcfgrpcreturnvalue(float value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getDepthMinDistanceResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getIntrinsicsDepthParametersRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getIntrinsicsDepthParametersRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getIntrinsicsDepthParametersRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getIntrinsicsDepthParametersRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getIntrinsicsDepthParametersRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getIntrinsicsDepthParametersRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getIntrinsicsDepthParametersRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getIntrinsicsDepthParametersRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -7189,6 +9067,30 @@ inline void getIntrinsicsDepthParametersResponse::set_allocated_xpcfgrpcreturnva
   xpcfgrpcreturnvalue_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), xpcfgrpcreturnvalue,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:grpcIRGBDCamera.getIntrinsicsDepthParametersResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getDistortionDepthParametersRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getDistortionDepthParametersRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getDistortionDepthParametersRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getDistortionDepthParametersRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getDistortionDepthParametersRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getDistortionDepthParametersRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getDistortionDepthParametersRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getDistortionDepthParametersRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -7260,7 +9162,27 @@ inline void getDistortionDepthParametersResponse::set_allocated_xpcfgrpcreturnva
 
 // getNextRGBDFrameRequest
 
-// bytes colorImg = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getNextRGBDFrameRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNextRGBDFrameRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNextRGBDFrameRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getNextRGBDFrameRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getNextRGBDFrameRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getNextRGBDFrameRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getNextRGBDFrameRequest.grpcServerCompressionFormat)
+}
+
+// bytes colorImg = 2;
 inline void getNextRGBDFrameRequest::clear_colorimg() {
   colorimg_.ClearToEmpty();
 }
@@ -7321,7 +9243,7 @@ inline void getNextRGBDFrameRequest::set_allocated_colorimg(std::string* colorim
   // @@protoc_insertion_point(field_set_allocated:grpcIRGBDCamera.getNextRGBDFrameRequest.colorImg)
 }
 
-// bytes depthImg = 2;
+// bytes depthImg = 3;
 inline void getNextRGBDFrameRequest::clear_depthimg() {
   depthimg_.ClearToEmpty();
 }
@@ -7532,7 +9454,27 @@ inline void getNextRGBDFrameResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPA
 
 // alignDepthToColorRequest
 
-// bytes alignedDepthImg = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void alignDepthToColorRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 alignDepthToColorRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 alignDepthToColorRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.alignDepthToColorRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void alignDepthToColorRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void alignDepthToColorRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.alignDepthToColorRequest.grpcServerCompressionFormat)
+}
+
+// bytes alignedDepthImg = 2;
 inline void alignDepthToColorRequest::clear_aligneddepthimg() {
   aligneddepthimg_.ClearToEmpty();
 }
@@ -7682,7 +9624,27 @@ inline void alignDepthToColorResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESP
 
 // alignColorToDepthRequest
 
-// bytes alignedColorImg = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void alignColorToDepthRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 alignColorToDepthRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 alignColorToDepthRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.alignColorToDepthRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void alignColorToDepthRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void alignColorToDepthRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.alignColorToDepthRequest.grpcServerCompressionFormat)
+}
+
+// bytes alignedColorImg = 2;
 inline void alignColorToDepthRequest::clear_alignedcolorimg() {
   alignedcolorimg_.ClearToEmpty();
 }
@@ -7832,7 +9794,27 @@ inline void alignColorToDepthResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESP
 
 // getPixelToWorldRequest
 
-// bytes inPixel = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getPixelToWorldRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getPixelToWorldRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getPixelToWorldRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getPixelToWorldRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getPixelToWorldRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getPixelToWorldRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getPixelToWorldRequest.grpcServerCompressionFormat)
+}
+
+// bytes inPixel = 2;
 inline void getPixelToWorldRequest::clear_inpixel() {
   inpixel_.ClearToEmpty();
 }
@@ -7962,7 +9944,27 @@ inline void getPixelToWorldResponse::set_allocated_xpcfgrpcreturnvalue(std::stri
 
 // getWorldToPixelRequest
 
-// bytes in3DPoint = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getWorldToPixelRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getWorldToPixelRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getWorldToPixelRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getWorldToPixelRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getWorldToPixelRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getWorldToPixelRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getWorldToPixelRequest.grpcServerCompressionFormat)
+}
+
+// bytes in3DPoint = 2;
 inline void getWorldToPixelRequest::clear_in3dpoint() {
   in3dpoint_.ClearToEmpty();
 }
@@ -8092,7 +10094,27 @@ inline void getWorldToPixelResponse::set_allocated_xpcfgrpcreturnvalue(std::stri
 
 // getWorldToPixelsRequest
 
-// bytes in3DPoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getWorldToPixelsRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getWorldToPixelsRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getWorldToPixelsRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRGBDCamera.getWorldToPixelsRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getWorldToPixelsRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getWorldToPixelsRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRGBDCamera.getWorldToPixelsRequest.grpcServerCompressionFormat)
+}
+
+// bytes in3DPoints = 2;
 inline void getWorldToPixelsRequest::clear_in3dpoints() {
   in3dpoints_.ClearToEmpty();
 }
@@ -8221,6 +10243,26 @@ inline void getWorldToPixelsResponse::set_allocated_xpcfgrpcreturnvalue(std::str
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -6,7 +6,8 @@ package grpcIPointCloudManager;
 
 message addPoint_grpc0Request
 {
-bytes point = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes point = 2;
 }
 
 message addPoint_grpc0Response
@@ -16,7 +17,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message addPoints_grpc0Request
 {
-bytes points = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes points = 2;
 }
 
 message addPoints_grpc0Response
@@ -26,7 +28,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message addPoint_grpc1Request
 {
-bytes point = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes point = 2;
 }
 
 message addPoint_grpc1Response
@@ -36,7 +39,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message addPoints_grpc1Request
 {
-bytes points = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes points = 2;
 }
 
 message addPoints_grpc1Response
@@ -46,8 +50,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getPointRequest
 {
-uint32 id = 1;
-bytes point = 2;
+int32 grpcServerCompressionFormat  = 1;
+uint32 id = 2;
+bytes point = 3;
 }
 
 message getPointResponse
@@ -58,8 +63,9 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getPointsRequest
 {
-bytes ids = 1;
-bytes points = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes ids = 2;
+bytes points = 3;
 }
 
 message getPointsResponse
@@ -70,7 +76,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getAllPointsRequest
 {
-bytes points = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes points = 2;
 }
 
 message getAllPointsResponse
@@ -81,7 +88,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message suppressPointRequest
 {
-uint32 id = 1;
+int32 grpcServerCompressionFormat  = 1;
+uint32 id = 2;
 }
 
 message suppressPointResponse
@@ -91,12 +99,18 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message suppressPointsRequest
 {
-bytes ids = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes ids = 2;
 }
 
 message suppressPointsResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getDescriptorTypeRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getDescriptorTypeResponse
@@ -106,7 +120,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message setDescriptorTypeRequest
 {
-sint32 type = 1;
+int32 grpcServerCompressionFormat  = 1;
+sint32 type = 2;
 }
 
 message setDescriptorTypeResponse
@@ -116,12 +131,18 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message isExistPointRequest
 {
-uint32 id = 1;
+int32 grpcServerCompressionFormat  = 1;
+uint32 id = 2;
 }
 
 message isExistPointResponse
 {
 bool xpcfGrpcReturnValue = 1;
+}
+
+message getNbPointsRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getNbPointsResponse
@@ -131,7 +152,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message saveToFileRequest
 {
-string file = 1;
+int32 grpcServerCompressionFormat  = 1;
+string file = 2;
 }
 
 message saveToFileResponse
@@ -141,12 +163,18 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message loadFromFileRequest
 {
-string file = 1;
+int32 grpcServerCompressionFormat  = 1;
+string file = 2;
 }
 
 message loadFromFileResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getConstPointCloudRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getConstPointCloudResponse
@@ -156,7 +184,8 @@ bytes xpcfGrpcReturnValue = 1;
 
 message getPointCloudRequest
 {
-bytes pointCloud = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes pointCloud = 2;
 }
 
 message getPointCloudResponse
@@ -180,13 +209,13 @@ rpc getPoints(getPointsRequest) returns(getPointsResponse) {}
 rpc getAllPoints(getAllPointsRequest) returns(getAllPointsResponse) {}
 rpc suppressPoint(suppressPointRequest) returns(suppressPointResponse) {}
 rpc suppressPoints(suppressPointsRequest) returns(suppressPointsResponse) {}
-rpc getDescriptorType(google.protobuf.Empty) returns(getDescriptorTypeResponse) {}
+rpc getDescriptorType(getDescriptorTypeRequest) returns(getDescriptorTypeResponse) {}
 rpc setDescriptorType(setDescriptorTypeRequest) returns(setDescriptorTypeResponse) {}
 rpc isExistPoint(isExistPointRequest) returns(isExistPointResponse) {}
-rpc getNbPoints(google.protobuf.Empty) returns(getNbPointsResponse) {}
+rpc getNbPoints(getNbPointsRequest) returns(getNbPointsResponse) {}
 rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
-rpc getConstPointCloud(google.protobuf.Empty) returns(getConstPointCloudResponse) {}
+rpc getConstPointCloud(getConstPointCloudRequest) returns(getConstPointCloudResponse) {}
 rpc getPointCloud(getPointCloudRequest) returns(getPointCloudResponse) {}
 rpc setPointCloud(setPointCloudRequest) returns(google.protobuf.Empty) {}
 }

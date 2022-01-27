@@ -358,12 +358,13 @@ class detect_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kGlobalMapFieldNumber = 1,
-    kFloatingMapFieldNumber = 2,
-    kSim3TransformFieldNumber = 3,
-    kCpOverlapIndicesFieldNumber = 4,
+    kGlobalMapFieldNumber = 2,
+    kFloatingMapFieldNumber = 3,
+    kSim3TransformFieldNumber = 4,
+    kCpOverlapIndicesFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes globalMap = 1;
+  // bytes globalMap = 2;
   void clear_globalmap();
   const std::string& globalmap() const;
   void set_globalmap(const std::string& value);
@@ -379,7 +380,7 @@ class detect_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_globalmap();
   public:
 
-  // bytes floatingMap = 2;
+  // bytes floatingMap = 3;
   void clear_floatingmap();
   const std::string& floatingmap() const;
   void set_floatingmap(const std::string& value);
@@ -395,7 +396,7 @@ class detect_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_floatingmap();
   public:
 
-  // bytes sim3Transform = 3;
+  // bytes sim3Transform = 4;
   void clear_sim3transform();
   const std::string& sim3transform() const;
   void set_sim3transform(const std::string& value);
@@ -411,7 +412,7 @@ class detect_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_sim3transform();
   public:
 
-  // bytes cpOverlapIndices = 4;
+  // bytes cpOverlapIndices = 5;
   void clear_cpoverlapindices();
   const std::string& cpoverlapindices() const;
   void set_cpoverlapindices(const std::string& value);
@@ -427,6 +428,15 @@ class detect_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_cpoverlapindices();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIOverlapDetector.detect_grpc0Request)
  private:
   class _Internal;
@@ -438,6 +448,7 @@ class detect_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr floatingmap_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sim3transform_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cpoverlapindices_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIOverlapDetectorService_2eproto;
 };
@@ -729,13 +740,14 @@ class detect_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kGlobalMapFieldNumber = 1,
-    kFloatingMapFieldNumber = 2,
-    kSim3TransformFieldNumber = 3,
-    kOverlapIndicesFieldNumber = 4,
-    kScoresFieldNumber = 5,
+    kGlobalMapFieldNumber = 2,
+    kFloatingMapFieldNumber = 3,
+    kSim3TransformFieldNumber = 4,
+    kOverlapIndicesFieldNumber = 5,
+    kScoresFieldNumber = 6,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes globalMap = 1;
+  // bytes globalMap = 2;
   void clear_globalmap();
   const std::string& globalmap() const;
   void set_globalmap(const std::string& value);
@@ -751,7 +763,7 @@ class detect_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_globalmap();
   public:
 
-  // bytes floatingMap = 2;
+  // bytes floatingMap = 3;
   void clear_floatingmap();
   const std::string& floatingmap() const;
   void set_floatingmap(const std::string& value);
@@ -767,7 +779,7 @@ class detect_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_floatingmap();
   public:
 
-  // bytes sim3Transform = 3;
+  // bytes sim3Transform = 4;
   void clear_sim3transform();
   const std::string& sim3transform() const;
   void set_sim3transform(const std::string& value);
@@ -783,7 +795,7 @@ class detect_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_sim3transform();
   public:
 
-  // bytes overlapIndices = 4;
+  // bytes overlapIndices = 5;
   void clear_overlapindices();
   const std::string& overlapindices() const;
   void set_overlapindices(const std::string& value);
@@ -799,7 +811,7 @@ class detect_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_overlapindices();
   public:
 
-  // bytes scores = 5;
+  // bytes scores = 6;
   void clear_scores();
   const std::string& scores() const;
   void set_scores(const std::string& value);
@@ -815,6 +827,15 @@ class detect_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_scores();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIOverlapDetector.detect_grpc1Request)
  private:
   class _Internal;
@@ -827,6 +848,7 @@ class detect_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sim3transform_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr overlapindices_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr scores_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIOverlapDetectorService_2eproto;
 };
@@ -1158,7 +1180,27 @@ inline void setCameraParametersRequest::set_allocated_distortionparams(std::stri
 
 // detect_grpc0Request
 
-// bytes globalMap = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void detect_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 detect_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 detect_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIOverlapDetector.detect_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void detect_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void detect_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIOverlapDetector.detect_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes globalMap = 2;
 inline void detect_grpc0Request::clear_globalmap() {
   globalmap_.ClearToEmpty();
 }
@@ -1219,7 +1261,7 @@ inline void detect_grpc0Request::set_allocated_globalmap(std::string* globalmap)
   // @@protoc_insertion_point(field_set_allocated:grpcIOverlapDetector.detect_grpc0Request.globalMap)
 }
 
-// bytes floatingMap = 2;
+// bytes floatingMap = 3;
 inline void detect_grpc0Request::clear_floatingmap() {
   floatingmap_.ClearToEmpty();
 }
@@ -1280,7 +1322,7 @@ inline void detect_grpc0Request::set_allocated_floatingmap(std::string* floating
   // @@protoc_insertion_point(field_set_allocated:grpcIOverlapDetector.detect_grpc0Request.floatingMap)
 }
 
-// bytes sim3Transform = 3;
+// bytes sim3Transform = 4;
 inline void detect_grpc0Request::clear_sim3transform() {
   sim3transform_.ClearToEmpty();
 }
@@ -1341,7 +1383,7 @@ inline void detect_grpc0Request::set_allocated_sim3transform(std::string* sim3tr
   // @@protoc_insertion_point(field_set_allocated:grpcIOverlapDetector.detect_grpc0Request.sim3Transform)
 }
 
-// bytes cpOverlapIndices = 4;
+// bytes cpOverlapIndices = 5;
 inline void detect_grpc0Request::clear_cpoverlapindices() {
   cpoverlapindices_.ClearToEmpty();
 }
@@ -1552,7 +1594,27 @@ inline void detect_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 
 // detect_grpc1Request
 
-// bytes globalMap = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void detect_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 detect_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 detect_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIOverlapDetector.detect_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void detect_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void detect_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIOverlapDetector.detect_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes globalMap = 2;
 inline void detect_grpc1Request::clear_globalmap() {
   globalmap_.ClearToEmpty();
 }
@@ -1613,7 +1675,7 @@ inline void detect_grpc1Request::set_allocated_globalmap(std::string* globalmap)
   // @@protoc_insertion_point(field_set_allocated:grpcIOverlapDetector.detect_grpc1Request.globalMap)
 }
 
-// bytes floatingMap = 2;
+// bytes floatingMap = 3;
 inline void detect_grpc1Request::clear_floatingmap() {
   floatingmap_.ClearToEmpty();
 }
@@ -1674,7 +1736,7 @@ inline void detect_grpc1Request::set_allocated_floatingmap(std::string* floating
   // @@protoc_insertion_point(field_set_allocated:grpcIOverlapDetector.detect_grpc1Request.floatingMap)
 }
 
-// bytes sim3Transform = 3;
+// bytes sim3Transform = 4;
 inline void detect_grpc1Request::clear_sim3transform() {
   sim3transform_.ClearToEmpty();
 }
@@ -1735,7 +1797,7 @@ inline void detect_grpc1Request::set_allocated_sim3transform(std::string* sim3tr
   // @@protoc_insertion_point(field_set_allocated:grpcIOverlapDetector.detect_grpc1Request.sim3Transform)
 }
 
-// bytes overlapIndices = 4;
+// bytes overlapIndices = 5;
 inline void detect_grpc1Request::clear_overlapindices() {
   overlapindices_.ClearToEmpty();
 }
@@ -1796,7 +1858,7 @@ inline void detect_grpc1Request::set_allocated_overlapindices(std::string* overl
   // @@protoc_insertion_point(field_set_allocated:grpcIOverlapDetector.detect_grpc1Request.overlapIndices)
 }
 
-// bytes scores = 5;
+// bytes scores = 6;
 inline void detect_grpc1Request::clear_scores() {
   scores_.ClearToEmpty();
 }

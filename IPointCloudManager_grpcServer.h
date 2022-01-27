@@ -5,6 +5,7 @@
 #include "api/storage/IPointCloudManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIPointCloudManagerService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -33,23 +34,26 @@ class IPointCloudManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
         ::grpc::Status getAllPoints(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response) override;
         ::grpc::Status suppressPoint(::grpc::ServerContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response) override;
         ::grpc::Status suppressPoints(::grpc::ServerContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response) override;
-        ::grpc::Status getDescriptorType(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) override;
+        ::grpc::Status getDescriptorType(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) override;
         ::grpc::Status setDescriptorType(::grpc::ServerContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response) override;
         ::grpc::Status isExistPoint(::grpc::ServerContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response) override;
-        ::grpc::Status getNbPoints(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response) override;
+        ::grpc::Status getNbPoints(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpcIPointCloudManager::getNbPointsResponse* response) override;
         ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response) override;
         ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response) override;
-        ::grpc::Status getConstPointCloud(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) override;
+        ::grpc::Status getConstPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) override;
         ::grpc::Status getPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response) override;
         ::grpc::Status setPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response) override;
 
         SRef<SolAR::api::storage::IPointCloudManager> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIPointCloudManagerServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

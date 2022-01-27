@@ -1,7 +1,7 @@
 #include "xpcfGrpcModuleMain.h"
 #include <xpcf/module/ModuleFactory.h>
 namespace xpcf=org::bcom::xpcf;
-XPCF_DECLARE_MODULE("a0f522d1-b70e-4d0f-ad78-84e78a9af6bf", "xpcfGrpcRemotingSolARFramework","xpcf remoting module for project SolARFramework");
+XPCF_DECLARE_MODULE("bff5d9b9-6acf-4c62-a1b1-ec81329cee46", "xpcfGrpcRemotingSolARFramework","xpcf remoting module for project SolARFramework");
 
 extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boost::uuids::uuid& componentUUID,SRef<xpcf::IComponentIntrospect>& interfaceRef)
 {
@@ -578,16 +578,6 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIKeyframeRetriever::IKeyframeRetriever_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIKeyframeRetriever::IKeyframeRetriever_grpcServer>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIRegression::IRegression_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -798,42 +788,12 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyICovisibilityGraphManager::ICovisibilityGraphManager_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverICovisibilityGraphManager::ICovisibilityGraphManager_grpcServer>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIKeyframesManager::IKeyframesManager_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIKeyframesManager::IKeyframesManager_grpcServer>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIMapManager::IMapManager_grpcProxy>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIMapManager::IMapManager_grpcServer>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIPointCloudManager::IPointCloudManager_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIPointCloudManager::IPointCloudManager_grpcServer>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
@@ -965,8 +925,6 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPCFilter::IPCFilter_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPCFilter::IPCFilter_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPCFilterCentroid::IPCFilterCentroid_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPCFilterCentroid::IPCFilterCentroid_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIKeyframeRetriever::IKeyframeRetriever_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIKeyframeRetriever::IKeyframeRetriever_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRegression::IRegression_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRegression::IRegression_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizer::IRelocalizer_grpcProxy)
@@ -1009,14 +967,8 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIHomographyValidation::IHomograph
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIHomographyValidation::IHomographyValidation_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyITrackablePose::ITrackablePose_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverITrackablePose::ITrackablePose_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyICovisibilityGraphManager::ICovisibilityGraphManager_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverICovisibilityGraphManager::ICovisibilityGraphManager_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIKeyframesManager::IKeyframesManager_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIKeyframesManager::IKeyframesManager_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapManager::IMapManager_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapManager::IMapManager_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPointCloudManager::IPointCloudManager_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPointCloudManager::IPointCloudManager_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIOpticalFlowEstimator::IOpticalFlowEstimator_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIOpticalFlowEstimator::IOpticalFlowEstimator_grpcServer)
 XPCF_END_COMPONENTS_DECLARATION

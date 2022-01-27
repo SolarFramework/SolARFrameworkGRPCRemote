@@ -5,6 +5,7 @@
 #include "api/reloc/IRegression.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIRegressionService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -28,18 +29,21 @@ class IRegression_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
         ::grpc::Status add(::grpc::ServerContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response) override;
         ::grpc::Status regress(::grpc::ServerContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response) override;
         ::grpc::Status update(::grpc::ServerContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response) override;
-        ::grpc::Status loadModel(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response) override;
-        ::grpc::Status getTrainingStatus(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response) override;
-        ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response) override;
-        ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response) override;
+        ::grpc::Status loadModel(::grpc::ServerContext* context, const ::grpcIRegression::loadModelRequest* request, ::grpcIRegression::loadModelResponse* response) override;
+        ::grpc::Status getTrainingStatus(::grpc::ServerContext* context, const ::grpcIRegression::getTrainingStatusRequest* request, ::grpcIRegression::getTrainingStatusResponse* response) override;
+        ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* context, const ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpcIRegression::getNumActiveLeavesResponse* response) override;
+        ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpcIRegression::getNumPassiveLeavesResponse* response) override;
 
         SRef<SolAR::api::reloc::IRegression> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIRegressionServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

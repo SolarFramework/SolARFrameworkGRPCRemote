@@ -5,6 +5,7 @@
 #include "api/storage/IKeyframesManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIKeyframesManagerService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -30,23 +31,26 @@ class IKeyframesManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
         ::grpc::Status getKeyframes(::grpc::ServerContext* context, const ::grpcIKeyframesManager::getKeyframesRequest* request, ::grpcIKeyframesManager::getKeyframesResponse* response) override;
         ::grpc::Status getAllKeyframes(::grpc::ServerContext* context, const ::grpcIKeyframesManager::getAllKeyframesRequest* request, ::grpcIKeyframesManager::getAllKeyframesResponse* response) override;
         ::grpc::Status suppressKeyframe(::grpc::ServerContext* context, const ::grpcIKeyframesManager::suppressKeyframeRequest* request, ::grpcIKeyframesManager::suppressKeyframeResponse* response) override;
-        ::grpc::Status getDescriptorType(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getDescriptorTypeResponse* response) override;
+        ::grpc::Status getDescriptorType(::grpc::ServerContext* context, const ::grpcIKeyframesManager::getDescriptorTypeRequest* request, ::grpcIKeyframesManager::getDescriptorTypeResponse* response) override;
         ::grpc::Status setDescriptorType(::grpc::ServerContext* context, const ::grpcIKeyframesManager::setDescriptorTypeRequest* request, ::grpcIKeyframesManager::setDescriptorTypeResponse* response) override;
         ::grpc::Status isExistKeyframe(::grpc::ServerContext* context, const ::grpcIKeyframesManager::isExistKeyframeRequest* request, ::grpcIKeyframesManager::isExistKeyframeResponse* response) override;
-        ::grpc::Status getNbKeyframes(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getNbKeyframesResponse* response) override;
+        ::grpc::Status getNbKeyframes(::grpc::ServerContext* context, const ::grpcIKeyframesManager::getNbKeyframesRequest* request, ::grpcIKeyframesManager::getNbKeyframesResponse* response) override;
         ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcIKeyframesManager::saveToFileRequest* request, ::grpcIKeyframesManager::saveToFileResponse* response) override;
         ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIKeyframesManager::loadFromFileRequest* request, ::grpcIKeyframesManager::loadFromFileResponse* response) override;
-        ::grpc::Status getConstKeyframeCollection(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* response) override;
+        ::grpc::Status getConstKeyframeCollection(::grpc::ServerContext* context, const ::grpcIKeyframesManager::getConstKeyframeCollectionRequest* request, ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* response) override;
         ::grpc::Status getKeyframeCollection(::grpc::ServerContext* context, const ::grpcIKeyframesManager::getKeyframeCollectionRequest* request, ::grpcIKeyframesManager::getKeyframeCollectionResponse* response) override;
         ::grpc::Status setKeyframeCollection(::grpc::ServerContext* context, const ::grpcIKeyframesManager::setKeyframeCollectionRequest* request, ::google::protobuf::Empty* response) override;
 
         SRef<SolAR::api::storage::IKeyframesManager> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIKeyframesManagerServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 
