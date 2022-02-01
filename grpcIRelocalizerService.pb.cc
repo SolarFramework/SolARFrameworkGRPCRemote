@@ -19,7 +19,8 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcIRelocalizer {
 constexpr addKeyframeRequest::addKeyframeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : keyframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : keyframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct addKeyframeRequestDefaultTypeInternal {
   constexpr addKeyframeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -44,7 +45,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT addKeyframeResponseDefaultTypeI
 constexpr relocalizeRequest::relocalizeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct relocalizeRequestDefaultTypeInternal {
   constexpr relocalizeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -78,6 +80,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIRelocalizerService_2eprot
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIRelocalizer::addKeyframeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIRelocalizer::addKeyframeRequest, keyframe_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIRelocalizer::addKeyframeResponse, _internal_metadata_),
@@ -90,6 +93,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIRelocalizerService_2eprot
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIRelocalizer::relocalizeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIRelocalizer::relocalizeRequest, frame_),
   PROTOBUF_FIELD_OFFSET(::grpcIRelocalizer::relocalizeRequest, pose_),
   ~0u,  // no _has_bits_
@@ -102,9 +106,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIRelocalizerService_2eprot
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIRelocalizer::addKeyframeRequest)},
-  { 6, -1, sizeof(::grpcIRelocalizer::addKeyframeResponse)},
-  { 12, -1, sizeof(::grpcIRelocalizer::relocalizeRequest)},
-  { 19, -1, sizeof(::grpcIRelocalizer::relocalizeResponse)},
+  { 7, -1, sizeof(::grpcIRelocalizer::addKeyframeResponse)},
+  { 13, -1, sizeof(::grpcIRelocalizer::relocalizeRequest)},
+  { 21, -1, sizeof(::grpcIRelocalizer::relocalizeResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -116,25 +120,27 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_grpcIRelocalizerService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035grpcIRelocalizerService.proto\022\020grpcIRe"
-  "localizer\032\033google/protobuf/empty.proto\"&"
-  "\n\022addKeyframeRequest\022\020\n\010keyframe\030\001 \001(\014\"2"
-  "\n\023addKeyframeResponse\022\033\n\023xpcfGrpcReturnV"
-  "alue\030\001 \001(\021\"0\n\021relocalizeRequest\022\r\n\005frame"
-  "\030\001 \001(\014\022\014\n\004pose\030\002 \001(\014\"\?\n\022relocalizeRespon"
-  "se\022\014\n\004pose\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030"
-  "\002 \001(\0212\322\001\n\027grpcIRelocalizerService\022\\\n\013add"
-  "Keyframe\022$.grpcIRelocalizer.addKeyframeR"
-  "equest\032%.grpcIRelocalizer.addKeyframeRes"
-  "ponse\"\000\022Y\n\nrelocalize\022#.grpcIRelocalizer"
-  ".relocalizeRequest\032$.grpcIRelocalizer.re"
-  "localizeResponse\"\000b\006proto3"
+  "localizer\032\033google/protobuf/empty.proto\"K"
+  "\n\022addKeyframeRequest\022#\n\033grpcServerCompre"
+  "ssionFormat\030\001 \001(\005\022\020\n\010keyframe\030\002 \001(\014\"2\n\023a"
+  "ddKeyframeResponse\022\033\n\023xpcfGrpcReturnValu"
+  "e\030\001 \001(\021\"U\n\021relocalizeRequest\022#\n\033grpcServ"
+  "erCompressionFormat\030\001 \001(\005\022\r\n\005frame\030\002 \001(\014"
+  "\022\014\n\004pose\030\003 \001(\014\"\?\n\022relocalizeResponse\022\014\n\004"
+  "pose\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\0212"
+  "\322\001\n\027grpcIRelocalizerService\022\\\n\013addKeyfra"
+  "me\022$.grpcIRelocalizer.addKeyframeRequest"
+  "\032%.grpcIRelocalizer.addKeyframeResponse\""
+  "\000\022Y\n\nrelocalize\022#.grpcIRelocalizer.reloc"
+  "alizeRequest\032$.grpcIRelocalizer.relocali"
+  "zeResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIRelocalizerService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIRelocalizerService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIRelocalizerService_2eproto = {
-  false, false, 506, descriptor_table_protodef_grpcIRelocalizerService_2eproto, "grpcIRelocalizerService.proto", 
+  false, false, 580, descriptor_table_protodef_grpcIRelocalizerService_2eproto, "grpcIRelocalizerService.proto", 
   &descriptor_table_grpcIRelocalizerService_2eproto_once, descriptor_table_grpcIRelocalizerService_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_grpcIRelocalizerService_2eproto::offsets,
   file_level_metadata_grpcIRelocalizerService_2eproto, file_level_enum_descriptors_grpcIRelocalizerService_2eproto, file_level_service_descriptors_grpcIRelocalizerService_2eproto,
@@ -169,11 +175,13 @@ addKeyframeRequest::addKeyframeRequest(const addKeyframeRequest& from)
     keyframe_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframe(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIRelocalizer.addKeyframeRequest)
 }
 
 void addKeyframeRequest::SharedCtor() {
 keyframe_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 addKeyframeRequest::~addKeyframeRequest() {
@@ -204,6 +212,7 @@ void addKeyframeRequest::Clear() {
   (void) cached_has_bits;
 
   keyframe_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -214,9 +223,16 @@ const char* addKeyframeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes keyframe = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes keyframe = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_keyframe();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -250,10 +266,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes keyframe = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes keyframe = 2;
   if (this->keyframe().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_keyframe(), target);
+        2, this->_internal_keyframe(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -272,11 +294,18 @@ size_t addKeyframeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes keyframe = 1;
+  // bytes keyframe = 2;
   if (this->keyframe().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keyframe());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -313,6 +342,9 @@ void addKeyframeRequest::MergeFrom(const addKeyframeRequest& from) {
   if (from.keyframe().size() > 0) {
     _internal_set_keyframe(from._internal_keyframe());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void addKeyframeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -337,6 +369,7 @@ void addKeyframeRequest::InternalSwap(addKeyframeRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   keyframe_.Swap(&other->keyframe_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata addKeyframeRequest::GetMetadata() const {
@@ -558,12 +591,14 @@ relocalizeRequest::relocalizeRequest(const relocalizeRequest& from)
     pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pose(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIRelocalizer.relocalizeRequest)
 }
 
 void relocalizeRequest::SharedCtor() {
 frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 relocalizeRequest::~relocalizeRequest() {
@@ -596,6 +631,7 @@ void relocalizeRequest::Clear() {
 
   frame_.ClearToEmpty();
   pose_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -606,17 +642,24 @@ const char* relocalizeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes frame = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes frame = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_frame();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes pose = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes pose = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_pose();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -650,16 +693,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes frame = 1;
-  if (this->frame().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_frame(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes pose = 2;
+  // bytes frame = 2;
+  if (this->frame().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_frame(), target);
+  }
+
+  // bytes pose = 3;
   if (this->pose().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_pose(), target);
+        3, this->_internal_pose(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -678,18 +727,25 @@ size_t relocalizeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes frame = 1;
+  // bytes frame = 2;
   if (this->frame().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_frame());
   }
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   if (this->pose().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_pose());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -729,6 +785,9 @@ void relocalizeRequest::MergeFrom(const relocalizeRequest& from) {
   if (from.pose().size() > 0) {
     _internal_set_pose(from._internal_pose());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void relocalizeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -754,6 +813,7 @@ void relocalizeRequest::InternalSwap(relocalizeRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   frame_.Swap(&other->frame_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   pose_.Swap(&other->pose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata relocalizeRequest::GetMetadata() const {

@@ -184,11 +184,12 @@ class findTransform2DRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSrcPointsFieldNumber = 1,
-    kDstPointsFieldNumber = 2,
-    kFundamentalFieldNumber = 3,
+    kSrcPointsFieldNumber = 2,
+    kDstPointsFieldNumber = 3,
+    kFundamentalFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes srcPoints = 1;
+  // bytes srcPoints = 2;
   void clear_srcpoints();
   const std::string& srcpoints() const;
   void set_srcpoints(const std::string& value);
@@ -204,7 +205,7 @@ class findTransform2DRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_srcpoints();
   public:
 
-  // bytes dstPoints = 2;
+  // bytes dstPoints = 3;
   void clear_dstpoints();
   const std::string& dstpoints() const;
   void set_dstpoints(const std::string& value);
@@ -220,7 +221,7 @@ class findTransform2DRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_dstpoints();
   public:
 
-  // bytes fundamental = 3;
+  // bytes fundamental = 4;
   void clear_fundamental();
   const std::string& fundamental() const;
   void set_fundamental(const std::string& value);
@@ -236,6 +237,15 @@ class findTransform2DRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_fundamental();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI2DTransformFinder.findTransform2DRequest)
  private:
   class _Internal;
@@ -246,6 +256,7 @@ class findTransform2DRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr srcpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr dstpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr fundamental_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI2DTransformFinderService_2eproto;
 };
@@ -415,7 +426,27 @@ class findTransform2DResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // findTransform2DRequest
 
-// bytes srcPoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void findTransform2DRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 findTransform2DRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 findTransform2DRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI2DTransformFinder.findTransform2DRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void findTransform2DRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void findTransform2DRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI2DTransformFinder.findTransform2DRequest.grpcServerCompressionFormat)
+}
+
+// bytes srcPoints = 2;
 inline void findTransform2DRequest::clear_srcpoints() {
   srcpoints_.ClearToEmpty();
 }
@@ -476,7 +507,7 @@ inline void findTransform2DRequest::set_allocated_srcpoints(std::string* srcpoin
   // @@protoc_insertion_point(field_set_allocated:grpcI2DTransformFinder.findTransform2DRequest.srcPoints)
 }
 
-// bytes dstPoints = 2;
+// bytes dstPoints = 3;
 inline void findTransform2DRequest::clear_dstpoints() {
   dstpoints_.ClearToEmpty();
 }
@@ -537,7 +568,7 @@ inline void findTransform2DRequest::set_allocated_dstpoints(std::string* dstpoin
   // @@protoc_insertion_point(field_set_allocated:grpcI2DTransformFinder.findTransform2DRequest.dstPoints)
 }
 
-// bytes fundamental = 3;
+// bytes fundamental = 4;
 inline void findTransform2DRequest::clear_fundamental() {
   fundamental_.ClearToEmpty();
 }

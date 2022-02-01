@@ -332,10 +332,11 @@ class updateRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kGlobalMapFieldNumber = 1,
-    kNewKeyframeIdsFieldNumber = 2,
+    kGlobalMapFieldNumber = 2,
+    kNewKeyframeIdsFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes globalMap = 1;
+  // bytes globalMap = 2;
   void clear_globalmap();
   const std::string& globalmap() const;
   void set_globalmap(const std::string& value);
@@ -351,7 +352,7 @@ class updateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_globalmap();
   public:
 
-  // bytes newKeyframeIds = 2;
+  // bytes newKeyframeIds = 3;
   void clear_newkeyframeids();
   const std::string& newkeyframeids() const;
   void set_newkeyframeids(const std::string& value);
@@ -367,6 +368,15 @@ class updateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_newkeyframeids();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapUpdate.updateRequest)
  private:
   class _Internal;
@@ -376,6 +386,7 @@ class updateRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr globalmap_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr newkeyframeids_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapUpdateService_2eproto;
 };
@@ -592,7 +603,27 @@ inline void setCameraParametersRequest::set_allocated_camparams(std::string* cam
 
 // updateRequest
 
-// bytes globalMap = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void updateRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 updateRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 updateRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapUpdate.updateRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void updateRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void updateRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapUpdate.updateRequest.grpcServerCompressionFormat)
+}
+
+// bytes globalMap = 2;
 inline void updateRequest::clear_globalmap() {
   globalmap_.ClearToEmpty();
 }
@@ -653,7 +684,7 @@ inline void updateRequest::set_allocated_globalmap(std::string* globalmap) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapUpdate.updateRequest.globalMap)
 }
 
-// bytes newKeyframeIds = 2;
+// bytes newKeyframeIds = 3;
 inline void updateRequest::clear_newkeyframeids() {
   newkeyframeids_.ClearToEmpty();
 }

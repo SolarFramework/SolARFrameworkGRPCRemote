@@ -6,8 +6,9 @@ package grpcIHomographyValidation;
 
 message isValidRequest
 {
-bytes ref2DSquaredMarkerCorners = 1;
-bytes projected2DSquaredMarkerCorners = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes ref2DSquaredMarkerCorners = 2;
+bytes projected2DSquaredMarkerCorners = 3;
 }
 
 message isValidResponse

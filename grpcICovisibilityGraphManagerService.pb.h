@@ -47,7 +47,7 @@ struct TableStruct_grpcICovisibilityGraphManagerService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[31]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[33]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,6 +62,9 @@ extern decreaseEdgeRequestDefaultTypeInternal _decreaseEdgeRequest_default_insta
 class decreaseEdgeResponse;
 struct decreaseEdgeResponseDefaultTypeInternal;
 extern decreaseEdgeResponseDefaultTypeInternal _decreaseEdgeResponse_default_instance_;
+class displayRequest;
+struct displayRequestDefaultTypeInternal;
+extern displayRequestDefaultTypeInternal _displayRequest_default_instance_;
 class displayResponse;
 struct displayResponseDefaultTypeInternal;
 extern displayResponseDefaultTypeInternal _displayResponse_default_instance_;
@@ -71,6 +74,9 @@ extern getAllNodesRequestDefaultTypeInternal _getAllNodesRequest_default_instanc
 class getAllNodesResponse;
 struct getAllNodesResponseDefaultTypeInternal;
 extern getAllNodesResponseDefaultTypeInternal _getAllNodesResponse_default_instance_;
+class getConstCovisibilityGraphRequest;
+struct getConstCovisibilityGraphRequestDefaultTypeInternal;
+extern getConstCovisibilityGraphRequestDefaultTypeInternal _getConstCovisibilityGraphRequest_default_instance_;
 class getConstCovisibilityGraphResponse;
 struct getConstCovisibilityGraphResponseDefaultTypeInternal;
 extern getConstCovisibilityGraphResponseDefaultTypeInternal _getConstCovisibilityGraphResponse_default_instance_;
@@ -153,9 +159,11 @@ extern suppressNodeResponseDefaultTypeInternal _suppressNodeResponse_default_ins
 PROTOBUF_NAMESPACE_OPEN
 template<> ::grpcICovisibilityGraphManager::decreaseEdgeRequest* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::decreaseEdgeRequest>(Arena*);
 template<> ::grpcICovisibilityGraphManager::decreaseEdgeResponse* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::decreaseEdgeResponse>(Arena*);
+template<> ::grpcICovisibilityGraphManager::displayRequest* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::displayRequest>(Arena*);
 template<> ::grpcICovisibilityGraphManager::displayResponse* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::displayResponse>(Arena*);
 template<> ::grpcICovisibilityGraphManager::getAllNodesRequest* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::getAllNodesRequest>(Arena*);
 template<> ::grpcICovisibilityGraphManager::getAllNodesResponse* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::getAllNodesResponse>(Arena*);
+template<> ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest>(Arena*);
 template<> ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>(Arena*);
 template<> ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::getCovisibilityGraphRequest>(Arena*);
 template<> ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* Arena::CreateMaybeMessage<::grpcICovisibilityGraphManager::getCovisibilityGraphResponse>(Arena*);
@@ -300,11 +308,21 @@ class increaseEdgeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNode1IdFieldNumber = 1,
-    kNode2IdFieldNumber = 2,
-    kWeightFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kNode1IdFieldNumber = 2,
+    kNode2IdFieldNumber = 3,
+    kWeightFieldNumber = 4,
   };
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 node1_id = 2;
   void clear_node1_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id() const;
   void set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -313,7 +331,7 @@ class increaseEdgeRequest PROTOBUF_FINAL :
   void _internal_set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   void clear_node2_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id() const;
   void set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -322,7 +340,7 @@ class increaseEdgeRequest PROTOBUF_FINAL :
   void _internal_set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // float weight = 3;
+  // float weight = 4;
   void clear_weight();
   float weight() const;
   void set_weight(float value);
@@ -338,6 +356,7 @@ class increaseEdgeRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id_;
   float weight_;
@@ -596,11 +615,21 @@ class decreaseEdgeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNode1IdFieldNumber = 1,
-    kNode2IdFieldNumber = 2,
-    kWeightFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kNode1IdFieldNumber = 2,
+    kNode2IdFieldNumber = 3,
+    kWeightFieldNumber = 4,
   };
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 node1_id = 2;
   void clear_node1_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id() const;
   void set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -609,7 +638,7 @@ class decreaseEdgeRequest PROTOBUF_FINAL :
   void _internal_set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   void clear_node2_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id() const;
   void set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -618,7 +647,7 @@ class decreaseEdgeRequest PROTOBUF_FINAL :
   void _internal_set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // float weight = 3;
+  // float weight = 4;
   void clear_weight();
   float weight() const;
   void set_weight(float value);
@@ -634,6 +663,7 @@ class decreaseEdgeRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id_;
   float weight_;
@@ -892,10 +922,20 @@ class removeEdgeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNode1IdFieldNumber = 1,
-    kNode2IdFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kNode1IdFieldNumber = 2,
+    kNode2IdFieldNumber = 3,
   };
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 node1_id = 2;
   void clear_node1_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id() const;
   void set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -904,7 +944,7 @@ class removeEdgeRequest PROTOBUF_FINAL :
   void _internal_set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   void clear_node2_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id() const;
   void set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -920,6 +960,7 @@ class removeEdgeRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1177,11 +1218,21 @@ class getEdgeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNode1IdFieldNumber = 1,
-    kNode2IdFieldNumber = 2,
-    kWeightFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kNode1IdFieldNumber = 2,
+    kNode2IdFieldNumber = 3,
+    kWeightFieldNumber = 4,
   };
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 node1_id = 2;
   void clear_node1_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id() const;
   void set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -1190,7 +1241,7 @@ class getEdgeRequest PROTOBUF_FINAL :
   void _internal_set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   void clear_node2_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id() const;
   void set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -1199,7 +1250,7 @@ class getEdgeRequest PROTOBUF_FINAL :
   void _internal_set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // float weight = 3;
+  // float weight = 4;
   void clear_weight();
   float weight() const;
   void set_weight(float value);
@@ -1215,6 +1266,7 @@ class getEdgeRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id_;
   float weight_;
@@ -1484,10 +1536,20 @@ class isEdgeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNode1IdFieldNumber = 1,
-    kNode2IdFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kNode1IdFieldNumber = 2,
+    kNode2IdFieldNumber = 3,
   };
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 node1_id = 2;
   void clear_node1_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id() const;
   void set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -1496,7 +1558,7 @@ class isEdgeRequest PROTOBUF_FINAL :
   void _internal_set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   void clear_node2_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id() const;
   void set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -1512,6 +1574,7 @@ class isEdgeRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1769,9 +1832,10 @@ class getAllNodesRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNodesIdFieldNumber = 1,
+    kNodesIdFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes nodes_id = 1;
+  // bytes nodes_id = 2;
   void clear_nodes_id();
   const std::string& nodes_id() const;
   void set_nodes_id(const std::string& value);
@@ -1787,6 +1851,15 @@ class getAllNodesRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_nodes_id();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcICovisibilityGraphManager.getAllNodesRequest)
  private:
   class _Internal;
@@ -1795,6 +1868,7 @@ class getAllNodesRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nodes_id_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcICovisibilityGraphManagerService_2eproto;
 };
@@ -2068,9 +2142,19 @@ class suppressNodeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNodeIdFieldNumber = 1,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kNodeIdFieldNumber = 2,
   };
-  // uint32 node_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 node_id = 2;
   void clear_node_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node_id() const;
   void set_node_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -2086,6 +2170,7 @@ class suppressNodeRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcICovisibilityGraphManagerService_2eproto;
@@ -2342,11 +2427,12 @@ class getNeighborsRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNeighborsFieldNumber = 3,
-    kNodeIdFieldNumber = 1,
-    kMinWeightFieldNumber = 2,
+    kNeighborsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kNodeIdFieldNumber = 2,
+    kMinWeightFieldNumber = 3,
   };
-  // bytes neighbors = 3;
+  // bytes neighbors = 4;
   void clear_neighbors();
   const std::string& neighbors() const;
   void set_neighbors(const std::string& value);
@@ -2362,7 +2448,16 @@ class getNeighborsRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_neighbors();
   public:
 
-  // uint32 node_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 node_id = 2;
   void clear_node_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node_id() const;
   void set_node_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -2371,7 +2466,7 @@ class getNeighborsRequest PROTOBUF_FINAL :
   void _internal_set_node_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // float minWeight = 2;
+  // float minWeight = 3;
   void clear_minweight();
   float minweight() const;
   void set_minweight(float value);
@@ -2388,6 +2483,7 @@ class getNeighborsRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr neighbors_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node_id_;
   float minweight_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2663,10 +2759,11 @@ class minimalSpanningTreeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kEdgesWeightsFieldNumber = 1,
-    kMinTotalWeightsFieldNumber = 2,
+    kEdgesWeightsFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kMinTotalWeightsFieldNumber = 3,
   };
-  // bytes edges_weights = 1;
+  // bytes edges_weights = 2;
   void clear_edges_weights();
   const std::string& edges_weights() const;
   void set_edges_weights(const std::string& value);
@@ -2682,7 +2779,16 @@ class minimalSpanningTreeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_edges_weights();
   public:
 
-  // float minTotalWeights = 2;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float minTotalWeights = 3;
   void clear_mintotalweights();
   float mintotalweights() const;
   void set_mintotalweights(float value);
@@ -2699,6 +2805,7 @@ class minimalSpanningTreeRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr edges_weights_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   float mintotalweights_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcICovisibilityGraphManagerService_2eproto;
@@ -2984,10 +3091,11 @@ class maximalSpanningTreeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kEdgesWeightsFieldNumber = 1,
-    kMaxTotalWeightsFieldNumber = 2,
+    kEdgesWeightsFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kMaxTotalWeightsFieldNumber = 3,
   };
-  // bytes edges_weights = 1;
+  // bytes edges_weights = 2;
   void clear_edges_weights();
   const std::string& edges_weights() const;
   void set_edges_weights(const std::string& value);
@@ -3003,7 +3111,16 @@ class maximalSpanningTreeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_edges_weights();
   public:
 
-  // float maxTotalWeights = 2;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float maxTotalWeights = 3;
   void clear_maxtotalweights();
   float maxtotalweights() const;
   void set_maxtotalweights(float value);
@@ -3020,6 +3137,7 @@ class maximalSpanningTreeRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr edges_weights_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   float maxtotalweights_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcICovisibilityGraphManagerService_2eproto;
@@ -3305,11 +3423,12 @@ class getShortestPathRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPathFieldNumber = 3,
-    kNode1IdFieldNumber = 1,
-    kNode2IdFieldNumber = 2,
+    kPathFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kNode1IdFieldNumber = 2,
+    kNode2IdFieldNumber = 3,
   };
-  // bytes path = 3;
+  // bytes path = 4;
   void clear_path();
   const std::string& path() const;
   void set_path(const std::string& value);
@@ -3325,7 +3444,16 @@ class getShortestPathRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_path();
   public:
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 node1_id = 2;
   void clear_node1_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id() const;
   void set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -3334,7 +3462,7 @@ class getShortestPathRequest PROTOBUF_FINAL :
   void _internal_set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   void clear_node2_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id() const;
   void set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -3351,6 +3479,7 @@ class getShortestPathRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr path_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node1_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 node2_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3513,6 +3642,143 @@ class getShortestPathResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class displayRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcICovisibilityGraphManager.displayRequest) */ {
+ public:
+  inline displayRequest() : displayRequest(nullptr) {}
+  virtual ~displayRequest();
+  explicit constexpr displayRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  displayRequest(const displayRequest& from);
+  displayRequest(displayRequest&& from) noexcept
+    : displayRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline displayRequest& operator=(const displayRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline displayRequest& operator=(displayRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const displayRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const displayRequest* internal_default_instance() {
+    return reinterpret_cast<const displayRequest*>(
+               &_displayRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(displayRequest& a, displayRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(displayRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(displayRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline displayRequest* New() const final {
+    return CreateMaybeMessage<displayRequest>(nullptr);
+  }
+
+  displayRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<displayRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const displayRequest& from);
+  void MergeFrom(const displayRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(displayRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcICovisibilityGraphManager.displayRequest";
+  }
+  protected:
+  explicit displayRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcICovisibilityGraphManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcICovisibilityGraphManager.displayRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcICovisibilityGraphManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class displayResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcICovisibilityGraphManager.displayResponse) */ {
  public:
@@ -3556,7 +3822,7 @@ class displayResponse PROTOBUF_FINAL :
                &_displayResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(displayResponse& a, displayResponse& b) {
     a.Swap(&b);
@@ -3693,7 +3959,7 @@ class saveToFileRequest PROTOBUF_FINAL :
                &_saveToFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(saveToFileRequest& a, saveToFileRequest& b) {
     a.Swap(&b);
@@ -3763,9 +4029,10 @@ class saveToFileRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFileFieldNumber = 1,
+    kFileFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string file = 1;
+  // string file = 2;
   void clear_file();
   const std::string& file() const;
   void set_file(const std::string& value);
@@ -3781,6 +4048,15 @@ class saveToFileRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_file();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcICovisibilityGraphManager.saveToFileRequest)
  private:
   class _Internal;
@@ -3789,6 +4065,7 @@ class saveToFileRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr file_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcICovisibilityGraphManagerService_2eproto;
 };
@@ -3837,7 +4114,7 @@ class saveToFileResponse PROTOBUF_FINAL :
                &_saveToFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(saveToFileResponse& a, saveToFileResponse& b) {
     a.Swap(&b);
@@ -3974,7 +4251,7 @@ class loadFromFileRequest PROTOBUF_FINAL :
                &_loadFromFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(loadFromFileRequest& a, loadFromFileRequest& b) {
     a.Swap(&b);
@@ -4044,9 +4321,10 @@ class loadFromFileRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFileFieldNumber = 1,
+    kFileFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string file = 1;
+  // string file = 2;
   void clear_file();
   const std::string& file() const;
   void set_file(const std::string& value);
@@ -4062,6 +4340,15 @@ class loadFromFileRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_file();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcICovisibilityGraphManager.loadFromFileRequest)
  private:
   class _Internal;
@@ -4070,6 +4357,7 @@ class loadFromFileRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr file_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcICovisibilityGraphManagerService_2eproto;
 };
@@ -4118,7 +4406,7 @@ class loadFromFileResponse PROTOBUF_FINAL :
                &_loadFromFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(loadFromFileResponse& a, loadFromFileResponse& b) {
     a.Swap(&b);
@@ -4212,6 +4500,143 @@ class loadFromFileResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getConstCovisibilityGraphRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest) */ {
+ public:
+  inline getConstCovisibilityGraphRequest() : getConstCovisibilityGraphRequest(nullptr) {}
+  virtual ~getConstCovisibilityGraphRequest();
+  explicit constexpr getConstCovisibilityGraphRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getConstCovisibilityGraphRequest(const getConstCovisibilityGraphRequest& from);
+  getConstCovisibilityGraphRequest(getConstCovisibilityGraphRequest&& from) noexcept
+    : getConstCovisibilityGraphRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getConstCovisibilityGraphRequest& operator=(const getConstCovisibilityGraphRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getConstCovisibilityGraphRequest& operator=(getConstCovisibilityGraphRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getConstCovisibilityGraphRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getConstCovisibilityGraphRequest* internal_default_instance() {
+    return reinterpret_cast<const getConstCovisibilityGraphRequest*>(
+               &_getConstCovisibilityGraphRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  friend void swap(getConstCovisibilityGraphRequest& a, getConstCovisibilityGraphRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getConstCovisibilityGraphRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getConstCovisibilityGraphRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getConstCovisibilityGraphRequest* New() const final {
+    return CreateMaybeMessage<getConstCovisibilityGraphRequest>(nullptr);
+  }
+
+  getConstCovisibilityGraphRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getConstCovisibilityGraphRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getConstCovisibilityGraphRequest& from);
+  void MergeFrom(const getConstCovisibilityGraphRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getConstCovisibilityGraphRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest";
+  }
+  protected:
+  explicit getConstCovisibilityGraphRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcICovisibilityGraphManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcICovisibilityGraphManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getConstCovisibilityGraphResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcICovisibilityGraphManager.getConstCovisibilityGraphResponse) */ {
  public:
@@ -4255,7 +4680,7 @@ class getConstCovisibilityGraphResponse PROTOBUF_FINAL :
                &_getConstCovisibilityGraphResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(getConstCovisibilityGraphResponse& a, getConstCovisibilityGraphResponse& b) {
     a.Swap(&b);
@@ -4399,7 +4824,7 @@ class getCovisibilityGraphRequest PROTOBUF_FINAL :
                &_getCovisibilityGraphRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(getCovisibilityGraphRequest& a, getCovisibilityGraphRequest& b) {
     a.Swap(&b);
@@ -4469,9 +4894,10 @@ class getCovisibilityGraphRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCovisibilityGraphFieldNumber = 1,
+    kCovisibilityGraphFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes covisibilityGraph = 1;
+  // bytes covisibilityGraph = 2;
   void clear_covisibilitygraph();
   const std::string& covisibilitygraph() const;
   void set_covisibilitygraph(const std::string& value);
@@ -4487,6 +4913,15 @@ class getCovisibilityGraphRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_covisibilitygraph();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
  private:
   class _Internal;
@@ -4495,6 +4930,7 @@ class getCovisibilityGraphRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr covisibilitygraph_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcICovisibilityGraphManagerService_2eproto;
 };
@@ -4543,7 +4979,7 @@ class getCovisibilityGraphResponse PROTOBUF_FINAL :
                &_getCovisibilityGraphResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(getCovisibilityGraphResponse& a, getCovisibilityGraphResponse& b) {
     a.Swap(&b);
@@ -4705,7 +5141,7 @@ class setCovisibilityGraphRequest PROTOBUF_FINAL :
                &_setCovisibilityGraphRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(setCovisibilityGraphRequest& a, setCovisibilityGraphRequest& b) {
     a.Swap(&b);
@@ -4815,7 +5251,27 @@ class setCovisibilityGraphRequest PROTOBUF_FINAL :
 #endif  // __GNUC__
 // increaseEdgeRequest
 
-// uint32 node1_id = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void increaseEdgeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 increaseEdgeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 increaseEdgeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.increaseEdgeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void increaseEdgeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void increaseEdgeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.increaseEdgeRequest.grpcServerCompressionFormat)
+}
+
+// uint32 node1_id = 2;
 inline void increaseEdgeRequest::clear_node1_id() {
   node1_id_ = 0u;
 }
@@ -4835,7 +5291,7 @@ inline void increaseEdgeRequest::set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 va
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.increaseEdgeRequest.node1_id)
 }
 
-// uint32 node2_id = 2;
+// uint32 node2_id = 3;
 inline void increaseEdgeRequest::clear_node2_id() {
   node2_id_ = 0u;
 }
@@ -4855,7 +5311,7 @@ inline void increaseEdgeRequest::set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 va
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.increaseEdgeRequest.node2_id)
 }
 
-// float weight = 3;
+// float weight = 4;
 inline void increaseEdgeRequest::clear_weight() {
   weight_ = 0;
 }
@@ -4903,7 +5359,27 @@ inline void increaseEdgeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 
 // decreaseEdgeRequest
 
-// uint32 node1_id = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void decreaseEdgeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 decreaseEdgeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 decreaseEdgeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.decreaseEdgeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void decreaseEdgeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void decreaseEdgeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.decreaseEdgeRequest.grpcServerCompressionFormat)
+}
+
+// uint32 node1_id = 2;
 inline void decreaseEdgeRequest::clear_node1_id() {
   node1_id_ = 0u;
 }
@@ -4923,7 +5399,7 @@ inline void decreaseEdgeRequest::set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 va
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.decreaseEdgeRequest.node1_id)
 }
 
-// uint32 node2_id = 2;
+// uint32 node2_id = 3;
 inline void decreaseEdgeRequest::clear_node2_id() {
   node2_id_ = 0u;
 }
@@ -4943,7 +5419,7 @@ inline void decreaseEdgeRequest::set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 va
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.decreaseEdgeRequest.node2_id)
 }
 
-// float weight = 3;
+// float weight = 4;
 inline void decreaseEdgeRequest::clear_weight() {
   weight_ = 0;
 }
@@ -4991,7 +5467,27 @@ inline void decreaseEdgeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 
 // removeEdgeRequest
 
-// uint32 node1_id = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void removeEdgeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 removeEdgeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 removeEdgeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.removeEdgeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void removeEdgeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void removeEdgeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.removeEdgeRequest.grpcServerCompressionFormat)
+}
+
+// uint32 node1_id = 2;
 inline void removeEdgeRequest::clear_node1_id() {
   node1_id_ = 0u;
 }
@@ -5011,7 +5507,7 @@ inline void removeEdgeRequest::set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 valu
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.removeEdgeRequest.node1_id)
 }
 
-// uint32 node2_id = 2;
+// uint32 node2_id = 3;
 inline void removeEdgeRequest::clear_node2_id() {
   node2_id_ = 0u;
 }
@@ -5059,7 +5555,27 @@ inline void removeEdgeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID:
 
 // getEdgeRequest
 
-// uint32 node1_id = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getEdgeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getEdgeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getEdgeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.getEdgeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getEdgeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getEdgeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getEdgeRequest.grpcServerCompressionFormat)
+}
+
+// uint32 node1_id = 2;
 inline void getEdgeRequest::clear_node1_id() {
   node1_id_ = 0u;
 }
@@ -5079,7 +5595,7 @@ inline void getEdgeRequest::set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getEdgeRequest.node1_id)
 }
 
-// uint32 node2_id = 2;
+// uint32 node2_id = 3;
 inline void getEdgeRequest::clear_node2_id() {
   node2_id_ = 0u;
 }
@@ -5099,7 +5615,7 @@ inline void getEdgeRequest::set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getEdgeRequest.node2_id)
 }
 
-// float weight = 3;
+// float weight = 4;
 inline void getEdgeRequest::clear_weight() {
   weight_ = 0;
 }
@@ -5167,7 +5683,27 @@ inline void getEdgeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::in
 
 // isEdgeRequest
 
-// uint32 node1_id = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void isEdgeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isEdgeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isEdgeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.isEdgeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void isEdgeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void isEdgeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.isEdgeRequest.grpcServerCompressionFormat)
+}
+
+// uint32 node1_id = 2;
 inline void isEdgeRequest::clear_node1_id() {
   node1_id_ = 0u;
 }
@@ -5187,7 +5723,7 @@ inline void isEdgeRequest::set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.isEdgeRequest.node1_id)
 }
 
-// uint32 node2_id = 2;
+// uint32 node2_id = 3;
 inline void isEdgeRequest::clear_node2_id() {
   node2_id_ = 0u;
 }
@@ -5235,7 +5771,27 @@ inline void isEdgeResponse::set_xpcfgrpcreturnvalue(bool value) {
 
 // getAllNodesRequest
 
-// bytes nodes_id = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getAllNodesRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAllNodesRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAllNodesRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.getAllNodesRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getAllNodesRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getAllNodesRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getAllNodesRequest.grpcServerCompressionFormat)
+}
+
+// bytes nodes_id = 2;
 inline void getAllNodesRequest::clear_nodes_id() {
   nodes_id_.ClearToEmpty();
 }
@@ -5385,7 +5941,27 @@ inline void getAllNodesResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID
 
 // suppressNodeRequest
 
-// uint32 node_id = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void suppressNodeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 suppressNodeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 suppressNodeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.suppressNodeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void suppressNodeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void suppressNodeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.suppressNodeRequest.grpcServerCompressionFormat)
+}
+
+// uint32 node_id = 2;
 inline void suppressNodeRequest::clear_node_id() {
   node_id_ = 0u;
 }
@@ -5433,7 +6009,27 @@ inline void suppressNodeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 
 // getNeighborsRequest
 
-// uint32 node_id = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getNeighborsRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNeighborsRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNeighborsRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.getNeighborsRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getNeighborsRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getNeighborsRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getNeighborsRequest.grpcServerCompressionFormat)
+}
+
+// uint32 node_id = 2;
 inline void getNeighborsRequest::clear_node_id() {
   node_id_ = 0u;
 }
@@ -5453,7 +6049,7 @@ inline void getNeighborsRequest::set_node_id(::PROTOBUF_NAMESPACE_ID::uint32 val
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getNeighborsRequest.node_id)
 }
 
-// float minWeight = 2;
+// float minWeight = 3;
 inline void getNeighborsRequest::clear_minweight() {
   minweight_ = 0;
 }
@@ -5473,7 +6069,7 @@ inline void getNeighborsRequest::set_minweight(float value) {
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getNeighborsRequest.minWeight)
 }
 
-// bytes neighbors = 3;
+// bytes neighbors = 4;
 inline void getNeighborsRequest::clear_neighbors() {
   neighbors_.ClearToEmpty();
 }
@@ -5623,7 +6219,27 @@ inline void getNeighborsResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 
 // minimalSpanningTreeRequest
 
-// bytes edges_weights = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void minimalSpanningTreeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 minimalSpanningTreeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 minimalSpanningTreeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.minimalSpanningTreeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void minimalSpanningTreeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void minimalSpanningTreeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.minimalSpanningTreeRequest.grpcServerCompressionFormat)
+}
+
+// bytes edges_weights = 2;
 inline void minimalSpanningTreeRequest::clear_edges_weights() {
   edges_weights_.ClearToEmpty();
 }
@@ -5684,7 +6300,7 @@ inline void minimalSpanningTreeRequest::set_allocated_edges_weights(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcICovisibilityGraphManager.minimalSpanningTreeRequest.edges_weights)
 }
 
-// float minTotalWeights = 2;
+// float minTotalWeights = 3;
 inline void minimalSpanningTreeRequest::clear_mintotalweights() {
   mintotalweights_ = 0;
 }
@@ -5813,7 +6429,27 @@ inline void minimalSpanningTreeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAME
 
 // maximalSpanningTreeRequest
 
-// bytes edges_weights = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void maximalSpanningTreeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 maximalSpanningTreeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 maximalSpanningTreeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.maximalSpanningTreeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void maximalSpanningTreeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void maximalSpanningTreeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.maximalSpanningTreeRequest.grpcServerCompressionFormat)
+}
+
+// bytes edges_weights = 2;
 inline void maximalSpanningTreeRequest::clear_edges_weights() {
   edges_weights_.ClearToEmpty();
 }
@@ -5874,7 +6510,7 @@ inline void maximalSpanningTreeRequest::set_allocated_edges_weights(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcICovisibilityGraphManager.maximalSpanningTreeRequest.edges_weights)
 }
 
-// float maxTotalWeights = 2;
+// float maxTotalWeights = 3;
 inline void maximalSpanningTreeRequest::clear_maxtotalweights() {
   maxtotalweights_ = 0;
 }
@@ -6003,7 +6639,27 @@ inline void maximalSpanningTreeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAME
 
 // getShortestPathRequest
 
-// uint32 node1_id = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getShortestPathRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getShortestPathRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getShortestPathRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.getShortestPathRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getShortestPathRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getShortestPathRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getShortestPathRequest.grpcServerCompressionFormat)
+}
+
+// uint32 node1_id = 2;
 inline void getShortestPathRequest::clear_node1_id() {
   node1_id_ = 0u;
 }
@@ -6023,7 +6679,7 @@ inline void getShortestPathRequest::set_node1_id(::PROTOBUF_NAMESPACE_ID::uint32
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getShortestPathRequest.node1_id)
 }
 
-// uint32 node2_id = 2;
+// uint32 node2_id = 3;
 inline void getShortestPathRequest::clear_node2_id() {
   node2_id_ = 0u;
 }
@@ -6043,7 +6699,7 @@ inline void getShortestPathRequest::set_node2_id(::PROTOBUF_NAMESPACE_ID::uint32
   // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getShortestPathRequest.node2_id)
 }
 
-// bytes path = 3;
+// bytes path = 4;
 inline void getShortestPathRequest::clear_path() {
   path_.ClearToEmpty();
 }
@@ -6191,6 +6847,30 @@ inline void getShortestPathResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPAC
 
 // -------------------------------------------------------------------
 
+// displayRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void displayRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 displayRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 displayRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.displayRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void displayRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void displayRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.displayRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // displayResponse
 
 // sint32 xpcfGrpcReturnValue = 1;
@@ -6217,7 +6897,27 @@ inline void displayResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::in
 
 // saveToFileRequest
 
-// string file = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void saveToFileRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 saveToFileRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 saveToFileRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.saveToFileRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void saveToFileRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void saveToFileRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.saveToFileRequest.grpcServerCompressionFormat)
+}
+
+// string file = 2;
 inline void saveToFileRequest::clear_file() {
   file_.ClearToEmpty();
 }
@@ -6306,7 +7006,27 @@ inline void saveToFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID:
 
 // loadFromFileRequest
 
-// string file = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void loadFromFileRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadFromFileRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadFromFileRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.loadFromFileRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void loadFromFileRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void loadFromFileRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.loadFromFileRequest.grpcServerCompressionFormat)
+}
+
+// string file = 2;
 inline void loadFromFileRequest::clear_file() {
   file_.ClearToEmpty();
 }
@@ -6393,6 +7113,30 @@ inline void loadFromFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 
 // -------------------------------------------------------------------
 
+// getConstCovisibilityGraphRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getConstCovisibilityGraphRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getConstCovisibilityGraphRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getConstCovisibilityGraphRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getConstCovisibilityGraphRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getConstCovisibilityGraphRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // getConstCovisibilityGraphResponse
 
 // bytes xpcfGrpcReturnValue = 1;
@@ -6460,7 +7204,27 @@ inline void getConstCovisibilityGraphResponse::set_allocated_xpcfgrpcreturnvalue
 
 // getCovisibilityGraphRequest
 
-// bytes covisibilityGraph = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getCovisibilityGraphRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getCovisibilityGraphRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getCovisibilityGraphRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICovisibilityGraphManager.getCovisibilityGraphRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getCovisibilityGraphRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getCovisibilityGraphRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICovisibilityGraphManager.getCovisibilityGraphRequest.grpcServerCompressionFormat)
+}
+
+// bytes covisibilityGraph = 2;
 inline void getCovisibilityGraphRequest::clear_covisibilitygraph() {
   covisibilitygraph_.ClearToEmpty();
 }
@@ -6715,6 +7479,10 @@ inline void setCovisibilityGraphRequest::set_allocated_covisibilitygraph(std::st
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

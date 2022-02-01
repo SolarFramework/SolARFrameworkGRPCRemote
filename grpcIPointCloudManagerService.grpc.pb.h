@@ -99,11 +99,11 @@ class grpcIPointCloudManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::suppressPointsResponse>> PrepareAsyncsuppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::suppressPointsResponse>>(PrepareAsyncsuppressPointsRaw(context, request, cq));
     }
-    virtual ::grpc::Status getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>> AsyncgetDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status getDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>> AsyncgetDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>>(AsyncgetDescriptorTypeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>> PrepareAsyncgetDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>> PrepareAsyncgetDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>>(PrepareAsyncgetDescriptorTypeRaw(context, request, cq));
     }
     virtual ::grpc::Status setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest& request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response) = 0;
@@ -120,11 +120,11 @@ class grpcIPointCloudManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::isExistPointResponse>> PrepareAsyncisExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::isExistPointResponse>>(PrepareAsyncisExistPointRaw(context, request, cq));
     }
-    virtual ::grpc::Status getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIPointCloudManager::getNbPointsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>> AsyncgetNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status getNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpcIPointCloudManager::getNbPointsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>> AsyncgetNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>>(AsyncgetNbPointsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>> PrepareAsyncgetNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>> PrepareAsyncgetNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>>(PrepareAsyncgetNbPointsRaw(context, request, cq));
     }
     virtual ::grpc::Status saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest& request, ::grpcIPointCloudManager::saveToFileResponse* response) = 0;
@@ -141,11 +141,11 @@ class grpcIPointCloudManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::loadFromFileResponse>> PrepareAsyncloadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::loadFromFileResponse>>(PrepareAsyncloadFromFileRaw(context, request, cq));
     }
-    virtual ::grpc::Status getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>> AsyncgetConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status getConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>> AsyncgetConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>>(AsyncgetConstPointCloudRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>> PrepareAsyncgetConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>> PrepareAsyncgetConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>>(PrepareAsyncgetConstPointCloudRaw(context, request, cq));
     }
     virtual ::grpc::Status getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest& request, ::grpcIPointCloudManager::getPointCloudResponse* response) = 0;
@@ -219,11 +219,11 @@ class grpcIPointCloudManagerService final {
       #else
       virtual void suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void getDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -237,11 +237,11 @@ class grpcIPointCloudManagerService final {
       #else
       virtual void isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpcIPointCloudManager::getNbPointsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void getNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -255,11 +255,11 @@ class grpcIPointCloudManagerService final {
       #else
       virtual void loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void getConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -300,20 +300,20 @@ class grpcIPointCloudManagerService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::suppressPointResponse>* PrepareAsyncsuppressPointRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::suppressPointsResponse>* AsyncsuppressPointsRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::suppressPointsResponse>* PrepareAsyncsuppressPointsRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>* AsyncgetDescriptorTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>* PrepareAsyncgetDescriptorTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>* AsyncgetDescriptorTypeRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getDescriptorTypeResponse>* PrepareAsyncgetDescriptorTypeRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::setDescriptorTypeResponse>* AsyncsetDescriptorTypeRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::setDescriptorTypeResponse>* PrepareAsyncsetDescriptorTypeRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::isExistPointResponse>* AsyncisExistPointRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::isExistPointResponse>* PrepareAsyncisExistPointRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>* AsyncgetNbPointsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>* PrepareAsyncgetNbPointsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>* AsyncgetNbPointsRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getNbPointsResponse>* PrepareAsyncgetNbPointsRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::saveToFileResponse>* AsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::saveToFileResponse>* PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::loadFromFileResponse>* AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::loadFromFileResponse>* PrepareAsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>* AsyncgetConstPointCloudRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>* PrepareAsyncgetConstPointCloudRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>* AsyncgetConstPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getConstPointCloudResponse>* PrepareAsyncgetConstPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getPointCloudResponse>* AsyncgetPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudManager::getPointCloudResponse>* PrepareAsyncgetPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncsetPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -385,11 +385,11 @@ class grpcIPointCloudManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::suppressPointsResponse>> PrepareAsyncsuppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::suppressPointsResponse>>(PrepareAsyncsuppressPointsRaw(context, request, cq));
     }
-    ::grpc::Status getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>> AsyncgetDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status getDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>> AsyncgetDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>>(AsyncgetDescriptorTypeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>> PrepareAsyncgetDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>> PrepareAsyncgetDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>>(PrepareAsyncgetDescriptorTypeRaw(context, request, cq));
     }
     ::grpc::Status setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest& request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response) override;
@@ -406,11 +406,11 @@ class grpcIPointCloudManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::isExistPointResponse>> PrepareAsyncisExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::isExistPointResponse>>(PrepareAsyncisExistPointRaw(context, request, cq));
     }
-    ::grpc::Status getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIPointCloudManager::getNbPointsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>> AsyncgetNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status getNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpcIPointCloudManager::getNbPointsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>> AsyncgetNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>>(AsyncgetNbPointsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>> PrepareAsyncgetNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>> PrepareAsyncgetNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>>(PrepareAsyncgetNbPointsRaw(context, request, cq));
     }
     ::grpc::Status saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest& request, ::grpcIPointCloudManager::saveToFileResponse* response) override;
@@ -427,11 +427,11 @@ class grpcIPointCloudManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::loadFromFileResponse>> PrepareAsyncloadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::loadFromFileResponse>>(PrepareAsyncloadFromFileRaw(context, request, cq));
     }
-    ::grpc::Status getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>> AsyncgetConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status getConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>> AsyncgetConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>>(AsyncgetConstPointCloudRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>> PrepareAsyncgetConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>> PrepareAsyncgetConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>>(PrepareAsyncgetConstPointCloudRaw(context, request, cq));
     }
     ::grpc::Status getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest& request, ::grpcIPointCloudManager::getPointCloudResponse* response) override;
@@ -505,11 +505,11 @@ class grpcIPointCloudManagerService final {
       #else
       void suppressPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) override;
+      void getDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void getDescriptorType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void getDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void setDescriptorType(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -523,11 +523,11 @@ class grpcIPointCloudManagerService final {
       #else
       void isExistPoint(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, std::function<void(::grpc::Status)>) override;
+      void getNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpcIPointCloudManager::getNbPointsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void getNbPoints(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void getNbPoints(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpcIPointCloudManager::getNbPointsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void saveToFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -541,11 +541,11 @@ class grpcIPointCloudManagerService final {
       #else
       void loadFromFile(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, std::function<void(::grpc::Status)>) override;
+      void getConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void getConstPointCloud(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void getConstPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void getPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -588,20 +588,20 @@ class grpcIPointCloudManagerService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::suppressPointResponse>* PrepareAsyncsuppressPointRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::suppressPointsResponse>* AsyncsuppressPointsRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::suppressPointsResponse>* PrepareAsyncsuppressPointsRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::suppressPointsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>* AsyncgetDescriptorTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>* PrepareAsyncgetDescriptorTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>* AsyncgetDescriptorTypeRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getDescriptorTypeResponse>* PrepareAsyncgetDescriptorTypeRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::setDescriptorTypeResponse>* AsyncsetDescriptorTypeRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::setDescriptorTypeResponse>* PrepareAsyncsetDescriptorTypeRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::isExistPointResponse>* AsyncisExistPointRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::isExistPointResponse>* PrepareAsyncisExistPointRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::isExistPointRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>* AsyncgetNbPointsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>* PrepareAsyncgetNbPointsRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>* AsyncgetNbPointsRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getNbPointsResponse>* PrepareAsyncgetNbPointsRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getNbPointsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::saveToFileResponse>* AsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::saveToFileResponse>* PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::loadFromFileResponse>* AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::loadFromFileResponse>* PrepareAsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>* AsyncgetConstPointCloudRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>* PrepareAsyncgetConstPointCloudRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>* AsyncgetConstPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getConstPointCloudResponse>* PrepareAsyncgetConstPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getPointCloudResponse>* AsyncgetPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudManager::getPointCloudResponse>* PrepareAsyncgetPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::getPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncsetPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudManager::setPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -640,13 +640,13 @@ class grpcIPointCloudManagerService final {
     virtual ::grpc::Status getAllPoints(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getAllPointsRequest* request, ::grpcIPointCloudManager::getAllPointsResponse* response);
     virtual ::grpc::Status suppressPoint(::grpc::ServerContext* context, const ::grpcIPointCloudManager::suppressPointRequest* request, ::grpcIPointCloudManager::suppressPointResponse* response);
     virtual ::grpc::Status suppressPoints(::grpc::ServerContext* context, const ::grpcIPointCloudManager::suppressPointsRequest* request, ::grpcIPointCloudManager::suppressPointsResponse* response);
-    virtual ::grpc::Status getDescriptorType(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response);
+    virtual ::grpc::Status getDescriptorType(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response);
     virtual ::grpc::Status setDescriptorType(::grpc::ServerContext* context, const ::grpcIPointCloudManager::setDescriptorTypeRequest* request, ::grpcIPointCloudManager::setDescriptorTypeResponse* response);
     virtual ::grpc::Status isExistPoint(::grpc::ServerContext* context, const ::grpcIPointCloudManager::isExistPointRequest* request, ::grpcIPointCloudManager::isExistPointResponse* response);
-    virtual ::grpc::Status getNbPoints(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response);
+    virtual ::grpc::Status getNbPoints(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpcIPointCloudManager::getNbPointsResponse* response);
     virtual ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcIPointCloudManager::saveToFileRequest* request, ::grpcIPointCloudManager::saveToFileResponse* response);
     virtual ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIPointCloudManager::loadFromFileRequest* request, ::grpcIPointCloudManager::loadFromFileResponse* response);
-    virtual ::grpc::Status getConstPointCloud(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response);
+    virtual ::grpc::Status getConstPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response);
     virtual ::grpc::Status getPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::getPointCloudRequest* request, ::grpcIPointCloudManager::getPointCloudResponse* response);
     virtual ::grpc::Status setPointCloud(::grpc::ServerContext* context, const ::grpcIPointCloudManager::setPointCloudRequest* request, ::google::protobuf::Empty* response);
   };
@@ -842,11 +842,11 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
+    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetDescriptorType(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIPointCloudManager::getDescriptorTypeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetDescriptorType(::grpc::ServerContext* context, ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIPointCloudManager::getDescriptorTypeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -902,11 +902,11 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
+    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getNbPointsRequest* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetNbPoints(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIPointCloudManager::getNbPointsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetNbPoints(::grpc::ServerContext* context, ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIPointCloudManager::getNbPointsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -962,11 +962,11 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
+    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getConstPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetConstPointCloud(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIPointCloudManager::getConstPointCloudResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetConstPointCloud(::grpc::ServerContext* context, ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIPointCloudManager::getConstPointCloudResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1446,38 +1446,38 @@ class grpcIPointCloudManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(9,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getDescriptorTypeRequest, ::grpcIPointCloudManager::getDescriptorTypeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) { return this->getDescriptorType(context, request, response); }));}
+                     context, const ::grpcIPointCloudManager::getDescriptorTypeRequest* request, ::grpcIPointCloudManager::getDescriptorTypeResponse* response) { return this->getDescriptorType(context, request, response); }));}
     void SetMessageAllocatorFor_getDescriptorType(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::getDescriptorTypeRequest, ::grpcIPointCloudManager::getDescriptorTypeResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getDescriptorTypeRequest, ::grpcIPointCloudManager::getDescriptorTypeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_getDescriptorType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
+    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getDescriptorType(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* getDescriptorType(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1587,38 +1587,38 @@ class grpcIPointCloudManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(12,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getNbPointsRequest, ::grpcIPointCloudManager::getNbPointsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getNbPointsResponse* response) { return this->getNbPoints(context, request, response); }));}
+                     context, const ::grpcIPointCloudManager::getNbPointsRequest* request, ::grpcIPointCloudManager::getNbPointsResponse* response) { return this->getNbPoints(context, request, response); }));}
     void SetMessageAllocatorFor_getNbPoints(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::getNbPointsRequest, ::grpcIPointCloudManager::getNbPointsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getNbPointsRequest, ::grpcIPointCloudManager::getNbPointsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_getNbPoints() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
+    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getNbPointsRequest* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNbPoints(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getNbPointsRequest* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* getNbPoints(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getNbPointsRequest* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1728,38 +1728,38 @@ class grpcIPointCloudManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(15,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getConstPointCloudRequest, ::grpcIPointCloudManager::getConstPointCloudResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) { return this->getConstPointCloud(context, request, response); }));}
+                     context, const ::grpcIPointCloudManager::getConstPointCloudRequest* request, ::grpcIPointCloudManager::getConstPointCloudResponse* response) { return this->getConstPointCloud(context, request, response); }));}
     void SetMessageAllocatorFor_getConstPointCloud(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudManager::getConstPointCloudRequest, ::grpcIPointCloudManager::getConstPointCloudResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudManager::getConstPointCloudRequest, ::grpcIPointCloudManager::getConstPointCloudResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_getConstPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
+    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getConstPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getConstPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getConstPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* getConstPointCloud(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudManager::getConstPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2027,7 +2027,7 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
+    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2078,7 +2078,7 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
+    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getNbPointsRequest* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2129,7 +2129,7 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
+    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getConstPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2360,7 +2360,7 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
+    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2420,7 +2420,7 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
+    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getNbPointsRequest* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2480,7 +2480,7 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
+    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getConstPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2895,7 +2895,7 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
+    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3009,7 +3009,7 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
+    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getNbPointsRequest* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3123,7 +3123,7 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
+    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getConstPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3463,10 +3463,10 @@ class grpcIPointCloudManagerService final {
     WithStreamedUnaryMethod_getDescriptorType() {
       ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse>(
+          ::grpcIPointCloudManager::getDescriptorTypeRequest, ::grpcIPointCloudManager::getDescriptorTypeResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIPointCloudManager::getDescriptorTypeResponse>* streamer) {
+                     ::grpcIPointCloudManager::getDescriptorTypeRequest, ::grpcIPointCloudManager::getDescriptorTypeResponse>* streamer) {
                        return this->StreamedgetDescriptorType(context,
                          streamer);
                   }));
@@ -3475,12 +3475,12 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
+    ::grpc::Status getDescriptorType(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getDescriptorTypeRequest* /*request*/, ::grpcIPointCloudManager::getDescriptorTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetDescriptorType(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIPointCloudManager::getDescriptorTypeResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetDescriptorType(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIPointCloudManager::getDescriptorTypeRequest,::grpcIPointCloudManager::getDescriptorTypeResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_setDescriptorType : public BaseClass {
@@ -3544,10 +3544,10 @@ class grpcIPointCloudManagerService final {
     WithStreamedUnaryMethod_getNbPoints() {
       ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse>(
+          ::grpcIPointCloudManager::getNbPointsRequest, ::grpcIPointCloudManager::getNbPointsResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIPointCloudManager::getNbPointsResponse>* streamer) {
+                     ::grpcIPointCloudManager::getNbPointsRequest, ::grpcIPointCloudManager::getNbPointsResponse>* streamer) {
                        return this->StreamedgetNbPoints(context,
                          streamer);
                   }));
@@ -3556,12 +3556,12 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
+    ::grpc::Status getNbPoints(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getNbPointsRequest* /*request*/, ::grpcIPointCloudManager::getNbPointsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetNbPoints(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIPointCloudManager::getNbPointsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetNbPoints(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIPointCloudManager::getNbPointsRequest,::grpcIPointCloudManager::getNbPointsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_saveToFile : public BaseClass {
@@ -3625,10 +3625,10 @@ class grpcIPointCloudManagerService final {
     WithStreamedUnaryMethod_getConstPointCloud() {
       ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse>(
+          ::grpcIPointCloudManager::getConstPointCloudRequest, ::grpcIPointCloudManager::getConstPointCloudResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIPointCloudManager::getConstPointCloudResponse>* streamer) {
+                     ::grpcIPointCloudManager::getConstPointCloudRequest, ::grpcIPointCloudManager::getConstPointCloudResponse>* streamer) {
                        return this->StreamedgetConstPointCloud(context,
                          streamer);
                   }));
@@ -3637,12 +3637,12 @@ class grpcIPointCloudManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
+    ::grpc::Status getConstPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIPointCloudManager::getConstPointCloudRequest* /*request*/, ::grpcIPointCloudManager::getConstPointCloudResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetConstPointCloud(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIPointCloudManager::getConstPointCloudResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetConstPointCloud(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIPointCloudManager::getConstPointCloudRequest,::grpcIPointCloudManager::getConstPointCloudResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getPointCloud : public BaseClass {

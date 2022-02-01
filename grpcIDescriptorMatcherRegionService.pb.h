@@ -200,15 +200,16 @@ class match_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDescriptors1FieldNumber = 1,
-    kDescriptors2FieldNumber = 2,
-    kPoints2D1FieldNumber = 3,
-    kPoints2D2FieldNumber = 4,
-    kMatchesFieldNumber = 7,
-    kRadiusFieldNumber = 5,
-    kMatchingDistanceMaxFieldNumber = 6,
+    kDescriptors1FieldNumber = 2,
+    kDescriptors2FieldNumber = 3,
+    kPoints2D1FieldNumber = 4,
+    kPoints2D2FieldNumber = 5,
+    kMatchesFieldNumber = 8,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kRadiusFieldNumber = 6,
+    kMatchingDistanceMaxFieldNumber = 7,
   };
-  // bytes descriptors1 = 1;
+  // bytes descriptors1 = 2;
   void clear_descriptors1();
   const std::string& descriptors1() const;
   void set_descriptors1(const std::string& value);
@@ -224,7 +225,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors1();
   public:
 
-  // bytes descriptors2 = 2;
+  // bytes descriptors2 = 3;
   void clear_descriptors2();
   const std::string& descriptors2() const;
   void set_descriptors2(const std::string& value);
@@ -240,7 +241,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors2();
   public:
 
-  // bytes points2D1 = 3;
+  // bytes points2D1 = 4;
   void clear_points2d1();
   const std::string& points2d1() const;
   void set_points2d1(const std::string& value);
@@ -256,7 +257,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points2d1();
   public:
 
-  // bytes points2D2 = 4;
+  // bytes points2D2 = 5;
   void clear_points2d2();
   const std::string& points2d2() const;
   void set_points2d2(const std::string& value);
@@ -272,7 +273,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points2d2();
   public:
 
-  // bytes matches = 7;
+  // bytes matches = 8;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -288,7 +289,16 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // float radius = 5;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float radius = 6;
   void clear_radius();
   float radius() const;
   void set_radius(float value);
@@ -297,7 +307,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   void _internal_set_radius(float value);
   public:
 
-  // float matchingDistanceMax = 6;
+  // float matchingDistanceMax = 7;
   void clear_matchingdistancemax();
   float matchingdistancemax() const;
   void set_matchingdistancemax(float value);
@@ -318,6 +328,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr points2d1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr points2d2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   float radius_;
   float matchingdistancemax_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -593,14 +604,15 @@ class match_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPoints2DFieldNumber = 1,
-    kDescriptorsFieldNumber = 2,
-    kFrameFieldNumber = 3,
-    kMatchesFieldNumber = 6,
-    kRadiusFieldNumber = 4,
-    kMatchingDistanceMaxFieldNumber = 5,
+    kPoints2DFieldNumber = 2,
+    kDescriptorsFieldNumber = 3,
+    kFrameFieldNumber = 4,
+    kMatchesFieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kRadiusFieldNumber = 5,
+    kMatchingDistanceMaxFieldNumber = 6,
   };
-  // bytes points2D = 1;
+  // bytes points2D = 2;
   void clear_points2d();
   const std::string& points2d() const;
   void set_points2d(const std::string& value);
@@ -616,7 +628,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points2d();
   public:
 
-  // bytes descriptors = 2;
+  // bytes descriptors = 3;
   void clear_descriptors();
   const std::string& descriptors() const;
   void set_descriptors(const std::string& value);
@@ -632,7 +644,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors();
   public:
 
-  // bytes frame = 3;
+  // bytes frame = 4;
   void clear_frame();
   const std::string& frame() const;
   void set_frame(const std::string& value);
@@ -648,7 +660,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_frame();
   public:
 
-  // bytes matches = 6;
+  // bytes matches = 7;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -664,7 +676,16 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // float radius = 4;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float radius = 5;
   void clear_radius();
   float radius() const;
   void set_radius(float value);
@@ -673,7 +694,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   void _internal_set_radius(float value);
   public:
 
-  // float matchingDistanceMax = 5;
+  // float matchingDistanceMax = 6;
   void clear_matchingdistancemax();
   float matchingdistancemax() const;
   void set_matchingdistancemax(float value);
@@ -693,6 +714,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr descriptors_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   float radius_;
   float matchingdistancemax_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -968,13 +990,14 @@ class match_grpc2Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCurrentFrameFieldNumber = 1,
-    kLastFrameFieldNumber = 2,
-    kMatchesFieldNumber = 5,
-    kRadiusFieldNumber = 3,
-    kMatchingDistanceMaxFieldNumber = 4,
+    kCurrentFrameFieldNumber = 2,
+    kLastFrameFieldNumber = 3,
+    kMatchesFieldNumber = 6,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kRadiusFieldNumber = 4,
+    kMatchingDistanceMaxFieldNumber = 5,
   };
-  // bytes currentFrame = 1;
+  // bytes currentFrame = 2;
   void clear_currentframe();
   const std::string& currentframe() const;
   void set_currentframe(const std::string& value);
@@ -990,7 +1013,7 @@ class match_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_currentframe();
   public:
 
-  // bytes lastFrame = 2;
+  // bytes lastFrame = 3;
   void clear_lastframe();
   const std::string& lastframe() const;
   void set_lastframe(const std::string& value);
@@ -1006,7 +1029,7 @@ class match_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_lastframe();
   public:
 
-  // bytes matches = 5;
+  // bytes matches = 6;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -1022,7 +1045,16 @@ class match_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // float radius = 3;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float radius = 4;
   void clear_radius();
   float radius() const;
   void set_radius(float value);
@@ -1031,7 +1063,7 @@ class match_grpc2Request PROTOBUF_FINAL :
   void _internal_set_radius(float value);
   public:
 
-  // float matchingDistanceMax = 4;
+  // float matchingDistanceMax = 5;
   void clear_matchingdistancemax();
   float matchingdistancemax() const;
   void set_matchingdistancemax(float value);
@@ -1050,6 +1082,7 @@ class match_grpc2Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr currentframe_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr lastframe_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   float radius_;
   float matchingdistancemax_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1221,7 +1254,27 @@ class match_grpc2Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // match_grpc0Request
 
-// bytes descriptors1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void match_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherRegion.match_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void match_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void match_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherRegion.match_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes descriptors1 = 2;
 inline void match_grpc0Request::clear_descriptors1() {
   descriptors1_.ClearToEmpty();
 }
@@ -1282,7 +1335,7 @@ inline void match_grpc0Request::set_allocated_descriptors1(std::string* descript
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherRegion.match_grpc0Request.descriptors1)
 }
 
-// bytes descriptors2 = 2;
+// bytes descriptors2 = 3;
 inline void match_grpc0Request::clear_descriptors2() {
   descriptors2_.ClearToEmpty();
 }
@@ -1343,7 +1396,7 @@ inline void match_grpc0Request::set_allocated_descriptors2(std::string* descript
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherRegion.match_grpc0Request.descriptors2)
 }
 
-// bytes points2D1 = 3;
+// bytes points2D1 = 4;
 inline void match_grpc0Request::clear_points2d1() {
   points2d1_.ClearToEmpty();
 }
@@ -1404,7 +1457,7 @@ inline void match_grpc0Request::set_allocated_points2d1(std::string* points2d1) 
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherRegion.match_grpc0Request.points2D1)
 }
 
-// bytes points2D2 = 4;
+// bytes points2D2 = 5;
 inline void match_grpc0Request::clear_points2d2() {
   points2d2_.ClearToEmpty();
 }
@@ -1465,7 +1518,7 @@ inline void match_grpc0Request::set_allocated_points2d2(std::string* points2d2) 
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherRegion.match_grpc0Request.points2D2)
 }
 
-// float radius = 5;
+// float radius = 6;
 inline void match_grpc0Request::clear_radius() {
   radius_ = 0;
 }
@@ -1485,7 +1538,7 @@ inline void match_grpc0Request::set_radius(float value) {
   // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherRegion.match_grpc0Request.radius)
 }
 
-// float matchingDistanceMax = 6;
+// float matchingDistanceMax = 7;
 inline void match_grpc0Request::clear_matchingdistancemax() {
   matchingdistancemax_ = 0;
 }
@@ -1505,7 +1558,7 @@ inline void match_grpc0Request::set_matchingdistancemax(float value) {
   // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherRegion.match_grpc0Request.matchingDistanceMax)
 }
 
-// bytes matches = 7;
+// bytes matches = 8;
 inline void match_grpc0Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -1655,7 +1708,27 @@ inline void match_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID
 
 // match_grpc1Request
 
-// bytes points2D = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void match_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherRegion.match_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void match_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void match_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherRegion.match_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes points2D = 2;
 inline void match_grpc1Request::clear_points2d() {
   points2d_.ClearToEmpty();
 }
@@ -1716,7 +1789,7 @@ inline void match_grpc1Request::set_allocated_points2d(std::string* points2d) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherRegion.match_grpc1Request.points2D)
 }
 
-// bytes descriptors = 2;
+// bytes descriptors = 3;
 inline void match_grpc1Request::clear_descriptors() {
   descriptors_.ClearToEmpty();
 }
@@ -1777,7 +1850,7 @@ inline void match_grpc1Request::set_allocated_descriptors(std::string* descripto
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherRegion.match_grpc1Request.descriptors)
 }
 
-// bytes frame = 3;
+// bytes frame = 4;
 inline void match_grpc1Request::clear_frame() {
   frame_.ClearToEmpty();
 }
@@ -1838,7 +1911,7 @@ inline void match_grpc1Request::set_allocated_frame(std::string* frame) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherRegion.match_grpc1Request.frame)
 }
 
-// float radius = 4;
+// float radius = 5;
 inline void match_grpc1Request::clear_radius() {
   radius_ = 0;
 }
@@ -1858,7 +1931,7 @@ inline void match_grpc1Request::set_radius(float value) {
   // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherRegion.match_grpc1Request.radius)
 }
 
-// float matchingDistanceMax = 5;
+// float matchingDistanceMax = 6;
 inline void match_grpc1Request::clear_matchingdistancemax() {
   matchingdistancemax_ = 0;
 }
@@ -1878,7 +1951,7 @@ inline void match_grpc1Request::set_matchingdistancemax(float value) {
   // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherRegion.match_grpc1Request.matchingDistanceMax)
 }
 
-// bytes matches = 6;
+// bytes matches = 7;
 inline void match_grpc1Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -2028,7 +2101,27 @@ inline void match_grpc1Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID
 
 // match_grpc2Request
 
-// bytes currentFrame = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void match_grpc2Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc2Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc2Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherRegion.match_grpc2Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void match_grpc2Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void match_grpc2Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherRegion.match_grpc2Request.grpcServerCompressionFormat)
+}
+
+// bytes currentFrame = 2;
 inline void match_grpc2Request::clear_currentframe() {
   currentframe_.ClearToEmpty();
 }
@@ -2089,7 +2182,7 @@ inline void match_grpc2Request::set_allocated_currentframe(std::string* currentf
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherRegion.match_grpc2Request.currentFrame)
 }
 
-// bytes lastFrame = 2;
+// bytes lastFrame = 3;
 inline void match_grpc2Request::clear_lastframe() {
   lastframe_.ClearToEmpty();
 }
@@ -2150,7 +2243,7 @@ inline void match_grpc2Request::set_allocated_lastframe(std::string* lastframe) 
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherRegion.match_grpc2Request.lastFrame)
 }
 
-// float radius = 3;
+// float radius = 4;
 inline void match_grpc2Request::clear_radius() {
   radius_ = 0;
 }
@@ -2170,7 +2263,7 @@ inline void match_grpc2Request::set_radius(float value) {
   // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherRegion.match_grpc2Request.radius)
 }
 
-// float matchingDistanceMax = 4;
+// float matchingDistanceMax = 5;
 inline void match_grpc2Request::clear_matchingdistancemax() {
   matchingdistancemax_ = 0;
 }
@@ -2190,7 +2283,7 @@ inline void match_grpc2Request::set_matchingdistancemax(float value) {
   // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherRegion.match_grpc2Request.matchingDistanceMax)
 }
 
-// bytes matches = 5;
+// bytes matches = 6;
 inline void match_grpc2Request::clear_matches() {
   matches_.ClearToEmpty();
 }

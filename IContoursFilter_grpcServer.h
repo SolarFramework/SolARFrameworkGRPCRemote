@@ -2,9 +2,10 @@
 
 #ifndef ICONTOURSFILTER_GRPCSERVER_H
 #define ICONTOURSFILTER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IContoursFilter.h"
+#include "api/features/IContoursFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIContoursFilterService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -27,12 +28,15 @@ class IContoursFilter_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
         ::grpc::Status filter(::grpc::ServerContext* context, const ::grpcIContoursFilter::filterRequest* request, ::grpcIContoursFilter::filterResponse* response) override;
 
         SRef<SolAR::api::features::IContoursFilter> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIContoursFilterServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

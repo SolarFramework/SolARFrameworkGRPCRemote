@@ -19,7 +19,8 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcIWorldGraphLoader {
 constexpr loadRequest::loadRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : trackables_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : trackables_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct loadRequestDefaultTypeInternal {
   constexpr loadRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -53,6 +54,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIWorldGraphLoaderService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIWorldGraphLoader::loadRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIWorldGraphLoader::loadRequest, trackables_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIWorldGraphLoader::loadResponse, _internal_metadata_),
@@ -64,7 +66,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIWorldGraphLoaderService_2
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIWorldGraphLoader::loadRequest)},
-  { 6, -1, sizeof(::grpcIWorldGraphLoader::loadResponse)},
+  { 7, -1, sizeof(::grpcIWorldGraphLoader::loadResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -75,19 +77,20 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIWorldGraphLoaderService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"grpcIWorldGraphLoaderService.proto\022\025gr"
   "pcIWorldGraphLoader\032\033google/protobuf/emp"
-  "ty.proto\"!\n\013loadRequest\022\022\n\ntrackables\030\001 "
-  "\001(\014\"\?\n\014loadResponse\022\022\n\ntrackables\030\001 \001(\014\022"
-  "\033\n\023xpcfGrpcReturnValue\030\002 \001(\0212q\n\034grpcIWor"
-  "ldGraphLoaderService\022Q\n\004load\022\".grpcIWorl"
-  "dGraphLoader.loadRequest\032#.grpcIWorldGra"
-  "phLoader.loadResponse\"\000b\006proto3"
+  "ty.proto\"F\n\013loadRequest\022#\n\033grpcServerCom"
+  "pressionFormat\030\001 \001(\005\022\022\n\ntrackables\030\002 \001(\014"
+  "\"\?\n\014loadResponse\022\022\n\ntrackables\030\001 \001(\014\022\033\n\023"
+  "xpcfGrpcReturnValue\030\002 \001(\0212q\n\034grpcIWorldG"
+  "raphLoaderService\022Q\n\004load\022\".grpcIWorldGr"
+  "aphLoader.loadRequest\032#.grpcIWorldGraphL"
+  "oader.loadResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIWorldGraphLoaderService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIWorldGraphLoaderService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIWorldGraphLoaderService_2eproto = {
-  false, false, 311, descriptor_table_protodef_grpcIWorldGraphLoaderService_2eproto, "grpcIWorldGraphLoaderService.proto", 
+  false, false, 348, descriptor_table_protodef_grpcIWorldGraphLoaderService_2eproto, "grpcIWorldGraphLoaderService.proto", 
   &descriptor_table_grpcIWorldGraphLoaderService_2eproto_once, descriptor_table_grpcIWorldGraphLoaderService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcIWorldGraphLoaderService_2eproto::offsets,
   file_level_metadata_grpcIWorldGraphLoaderService_2eproto, file_level_enum_descriptors_grpcIWorldGraphLoaderService_2eproto, file_level_service_descriptors_grpcIWorldGraphLoaderService_2eproto,
@@ -122,11 +125,13 @@ loadRequest::loadRequest(const loadRequest& from)
     trackables_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_trackables(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIWorldGraphLoader.loadRequest)
 }
 
 void loadRequest::SharedCtor() {
 trackables_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 loadRequest::~loadRequest() {
@@ -157,6 +162,7 @@ void loadRequest::Clear() {
   (void) cached_has_bits;
 
   trackables_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -167,9 +173,16 @@ const char* loadRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes trackables = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes trackables = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_trackables();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -203,10 +216,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes trackables = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes trackables = 2;
   if (this->trackables().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_trackables(), target);
+        2, this->_internal_trackables(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -225,11 +244,18 @@ size_t loadRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes trackables = 1;
+  // bytes trackables = 2;
   if (this->trackables().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_trackables());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -266,6 +292,9 @@ void loadRequest::MergeFrom(const loadRequest& from) {
   if (from.trackables().size() > 0) {
     _internal_set_trackables(from._internal_trackables());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void loadRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -290,6 +319,7 @@ void loadRequest::InternalSwap(loadRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   trackables_.Swap(&other->trackables_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadRequest::GetMetadata() const {

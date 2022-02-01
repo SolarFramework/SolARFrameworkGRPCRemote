@@ -20,7 +20,8 @@ namespace grpcIImageFilter {
 constexpr filterRequest::filterRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : input_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , output_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , output_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct filterRequestDefaultTypeInternal {
   constexpr filterRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -54,6 +55,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIImageFilterService_2eprot
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIImageFilter::filterRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIImageFilter::filterRequest, input_),
   PROTOBUF_FIELD_OFFSET(::grpcIImageFilter::filterRequest, output_),
   ~0u,  // no _has_bits_
@@ -66,7 +68,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIImageFilterService_2eprot
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIImageFilter::filterRequest)},
-  { 7, -1, sizeof(::grpcIImageFilter::filterResponse)},
+  { 8, -1, sizeof(::grpcIImageFilter::filterResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -76,20 +78,21 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_grpcIImageFilterService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035grpcIImageFilterService.proto\022\020grpcIIm"
-  "ageFilter\032\033google/protobuf/empty.proto\"."
-  "\n\rfilterRequest\022\r\n\005input\030\001 \001(\014\022\016\n\006output"
-  "\030\002 \001(\014\"=\n\016filterResponse\022\016\n\006output\030\001 \001(\014"
-  "\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\0212h\n\027grpcIIm"
-  "ageFilterService\022M\n\006filter\022\037.grpcIImageF"
-  "ilter.filterRequest\032 .grpcIImageFilter.f"
-  "ilterResponse\"\000b\006proto3"
+  "ageFilter\032\033google/protobuf/empty.proto\"S"
+  "\n\rfilterRequest\022#\n\033grpcServerCompression"
+  "Format\030\001 \001(\005\022\r\n\005input\030\002 \001(\014\022\016\n\006output\030\003 "
+  "\001(\014\"=\n\016filterResponse\022\016\n\006output\030\001 \001(\014\022\033\n"
+  "\023xpcfGrpcReturnValue\030\002 \001(\0212h\n\027grpcIImage"
+  "FilterService\022M\n\006filter\022\037.grpcIImageFilt"
+  "er.filterRequest\032 .grpcIImageFilter.filt"
+  "erResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIImageFilterService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIImageFilterService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIImageFilterService_2eproto = {
-  false, false, 303, descriptor_table_protodef_grpcIImageFilterService_2eproto, "grpcIImageFilterService.proto", 
+  false, false, 340, descriptor_table_protodef_grpcIImageFilterService_2eproto, "grpcIImageFilterService.proto", 
   &descriptor_table_grpcIImageFilterService_2eproto_once, descriptor_table_grpcIImageFilterService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcIImageFilterService_2eproto::offsets,
   file_level_metadata_grpcIImageFilterService_2eproto, file_level_enum_descriptors_grpcIImageFilterService_2eproto, file_level_service_descriptors_grpcIImageFilterService_2eproto,
@@ -129,12 +132,14 @@ filterRequest::filterRequest(const filterRequest& from)
     output_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_output(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageFilter.filterRequest)
 }
 
 void filterRequest::SharedCtor() {
 input_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 output_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 filterRequest::~filterRequest() {
@@ -167,6 +172,7 @@ void filterRequest::Clear() {
 
   input_.ClearToEmpty();
   output_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -177,17 +183,24 @@ const char* filterRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes input = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes input = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_input();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes output = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes output = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_output();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -221,16 +234,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes input = 1;
-  if (this->input().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_input(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes output = 2;
+  // bytes input = 2;
+  if (this->input().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_input(), target);
+  }
+
+  // bytes output = 3;
   if (this->output().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_output(), target);
+        3, this->_internal_output(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -249,18 +268,25 @@ size_t filterRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes input = 1;
+  // bytes input = 2;
   if (this->input().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_input());
   }
 
-  // bytes output = 2;
+  // bytes output = 3;
   if (this->output().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_output());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -300,6 +326,9 @@ void filterRequest::MergeFrom(const filterRequest& from) {
   if (from.output().size() > 0) {
     _internal_set_output(from._internal_output());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void filterRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -325,6 +354,7 @@ void filterRequest::InternalSwap(filterRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   input_.Swap(&other->input_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   output_.Swap(&other->output_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata filterRequest::GetMetadata() const {

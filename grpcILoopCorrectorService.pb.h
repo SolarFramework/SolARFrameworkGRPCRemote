@@ -350,12 +350,13 @@ class correctRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kQueryKeyframeFieldNumber = 1,
-    kDetectedLoopKeyframeFieldNumber = 2,
-    kSWlWcFieldNumber = 3,
-    kDuplicatedPointsIndicesFieldNumber = 4,
+    kQueryKeyframeFieldNumber = 2,
+    kDetectedLoopKeyframeFieldNumber = 3,
+    kSWlWcFieldNumber = 4,
+    kDuplicatedPointsIndicesFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes queryKeyframe = 1;
+  // bytes queryKeyframe = 2;
   void clear_querykeyframe();
   const std::string& querykeyframe() const;
   void set_querykeyframe(const std::string& value);
@@ -371,7 +372,7 @@ class correctRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_querykeyframe();
   public:
 
-  // bytes detectedLoopKeyframe = 2;
+  // bytes detectedLoopKeyframe = 3;
   void clear_detectedloopkeyframe();
   const std::string& detectedloopkeyframe() const;
   void set_detectedloopkeyframe(const std::string& value);
@@ -387,7 +388,7 @@ class correctRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_detectedloopkeyframe();
   public:
 
-  // bytes S_wl_wc = 3;
+  // bytes S_wl_wc = 4;
   void clear_s_wl_wc();
   const std::string& s_wl_wc() const;
   void set_s_wl_wc(const std::string& value);
@@ -403,7 +404,7 @@ class correctRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_s_wl_wc();
   public:
 
-  // bytes duplicatedPointsIndices = 4;
+  // bytes duplicatedPointsIndices = 5;
   void clear_duplicatedpointsindices();
   const std::string& duplicatedpointsindices() const;
   void set_duplicatedpointsindices(const std::string& value);
@@ -419,6 +420,15 @@ class correctRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_duplicatedpointsindices();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcILoopCorrector.correctRequest)
  private:
   class _Internal;
@@ -430,6 +440,7 @@ class correctRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detectedloopkeyframe_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr s_wl_wc_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr duplicatedpointsindices_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcILoopCorrectorService_2eproto;
 };
@@ -707,7 +718,27 @@ inline void setCameraParametersRequest::set_allocated_distortionparams(std::stri
 
 // correctRequest
 
-// bytes queryKeyframe = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void correctRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 correctRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 correctRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void correctRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void correctRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctRequest.grpcServerCompressionFormat)
+}
+
+// bytes queryKeyframe = 2;
 inline void correctRequest::clear_querykeyframe() {
   querykeyframe_.ClearToEmpty();
 }
@@ -768,7 +799,7 @@ inline void correctRequest::set_allocated_querykeyframe(std::string* querykeyfra
   // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.queryKeyframe)
 }
 
-// bytes detectedLoopKeyframe = 2;
+// bytes detectedLoopKeyframe = 3;
 inline void correctRequest::clear_detectedloopkeyframe() {
   detectedloopkeyframe_.ClearToEmpty();
 }
@@ -829,7 +860,7 @@ inline void correctRequest::set_allocated_detectedloopkeyframe(std::string* dete
   // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.detectedLoopKeyframe)
 }
 
-// bytes S_wl_wc = 3;
+// bytes S_wl_wc = 4;
 inline void correctRequest::clear_s_wl_wc() {
   s_wl_wc_.ClearToEmpty();
 }
@@ -890,7 +921,7 @@ inline void correctRequest::set_allocated_s_wl_wc(std::string* s_wl_wc) {
   // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.S_wl_wc)
 }
 
-// bytes duplicatedPointsIndices = 4;
+// bytes duplicatedPointsIndices = 5;
 inline void correctRequest::clear_duplicatedpointsindices() {
   duplicatedpointsindices_.ClearToEmpty();
 }

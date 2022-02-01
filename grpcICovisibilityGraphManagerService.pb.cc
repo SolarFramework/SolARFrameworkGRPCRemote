@@ -19,7 +19,8 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcICovisibilityGraphManager {
 constexpr increaseEdgeRequest::increaseEdgeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : node1_id_(0u)
+  : grpcservercompressionformat_(0)
+  , node1_id_(0u)
   , node2_id_(0u)
   , weight_(0){}
 struct increaseEdgeRequestDefaultTypeInternal {
@@ -45,7 +46,8 @@ struct increaseEdgeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT increaseEdgeResponseDefaultTypeInternal _increaseEdgeResponse_default_instance_;
 constexpr decreaseEdgeRequest::decreaseEdgeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : node1_id_(0u)
+  : grpcservercompressionformat_(0)
+  , node1_id_(0u)
   , node2_id_(0u)
   , weight_(0){}
 struct decreaseEdgeRequestDefaultTypeInternal {
@@ -71,7 +73,8 @@ struct decreaseEdgeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT decreaseEdgeResponseDefaultTypeInternal _decreaseEdgeResponse_default_instance_;
 constexpr removeEdgeRequest::removeEdgeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : node1_id_(0u)
+  : grpcservercompressionformat_(0)
+  , node1_id_(0u)
   , node2_id_(0u){}
 struct removeEdgeRequestDefaultTypeInternal {
   constexpr removeEdgeRequestDefaultTypeInternal()
@@ -96,7 +99,8 @@ struct removeEdgeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT removeEdgeResponseDefaultTypeInternal _removeEdgeResponse_default_instance_;
 constexpr getEdgeRequest::getEdgeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : node1_id_(0u)
+  : grpcservercompressionformat_(0)
+  , node1_id_(0u)
   , node2_id_(0u)
   , weight_(0){}
 struct getEdgeRequestDefaultTypeInternal {
@@ -123,7 +127,8 @@ struct getEdgeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getEdgeResponseDefaultTypeInternal _getEdgeResponse_default_instance_;
 constexpr isEdgeRequest::isEdgeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : node1_id_(0u)
+  : grpcservercompressionformat_(0)
+  , node1_id_(0u)
   , node2_id_(0u){}
 struct isEdgeRequestDefaultTypeInternal {
   constexpr isEdgeRequestDefaultTypeInternal()
@@ -148,7 +153,8 @@ struct isEdgeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT isEdgeResponseDefaultTypeInternal _isEdgeResponse_default_instance_;
 constexpr getAllNodesRequest::getAllNodesRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : nodes_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : nodes_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct getAllNodesRequestDefaultTypeInternal {
   constexpr getAllNodesRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -173,7 +179,8 @@ struct getAllNodesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getAllNodesResponseDefaultTypeInternal _getAllNodesResponse_default_instance_;
 constexpr suppressNodeRequest::suppressNodeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : node_id_(0u){}
+  : grpcservercompressionformat_(0)
+  , node_id_(0u){}
 struct suppressNodeRequestDefaultTypeInternal {
   constexpr suppressNodeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -198,6 +205,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT suppressNodeResponseDefaultType
 constexpr getNeighborsRequest::getNeighborsRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : neighbors_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
   , node_id_(0u)
   , minweight_(0){}
 struct getNeighborsRequestDefaultTypeInternal {
@@ -225,6 +233,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getNeighborsResponseDefaultType
 constexpr minimalSpanningTreeRequest::minimalSpanningTreeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : edges_weights_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
   , mintotalweights_(0){}
 struct minimalSpanningTreeRequestDefaultTypeInternal {
   constexpr minimalSpanningTreeRequestDefaultTypeInternal()
@@ -252,6 +261,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT minimalSpanningTreeResponseDefa
 constexpr maximalSpanningTreeRequest::maximalSpanningTreeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : edges_weights_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
   , maxtotalweights_(0){}
 struct maximalSpanningTreeRequestDefaultTypeInternal {
   constexpr maximalSpanningTreeRequestDefaultTypeInternal()
@@ -279,6 +289,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT maximalSpanningTreeResponseDefa
 constexpr getShortestPathRequest::getShortestPathRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : path_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
   , node1_id_(0u)
   , node2_id_(0u){}
 struct getShortestPathRequestDefaultTypeInternal {
@@ -303,6 +314,18 @@ struct getShortestPathResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getShortestPathResponseDefaultTypeInternal _getShortestPathResponse_default_instance_;
+constexpr displayRequest::displayRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct displayRequestDefaultTypeInternal {
+  constexpr displayRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~displayRequestDefaultTypeInternal() {}
+  union {
+    displayRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT displayRequestDefaultTypeInternal _displayRequest_default_instance_;
 constexpr displayResponse::displayResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(0){}
@@ -317,7 +340,8 @@ struct displayResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT displayResponseDefaultTypeInternal _displayResponse_default_instance_;
 constexpr saveToFileRequest::saveToFileRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : file_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : file_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct saveToFileRequestDefaultTypeInternal {
   constexpr saveToFileRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -341,7 +365,8 @@ struct saveToFileResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT saveToFileResponseDefaultTypeInternal _saveToFileResponse_default_instance_;
 constexpr loadFromFileRequest::loadFromFileRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : file_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : file_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct loadFromFileRequestDefaultTypeInternal {
   constexpr loadFromFileRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -363,6 +388,18 @@ struct loadFromFileResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT loadFromFileResponseDefaultTypeInternal _loadFromFileResponse_default_instance_;
+constexpr getConstCovisibilityGraphRequest::getConstCovisibilityGraphRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct getConstCovisibilityGraphRequestDefaultTypeInternal {
+  constexpr getConstCovisibilityGraphRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getConstCovisibilityGraphRequestDefaultTypeInternal() {}
+  union {
+    getConstCovisibilityGraphRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getConstCovisibilityGraphRequestDefaultTypeInternal _getConstCovisibilityGraphRequest_default_instance_;
 constexpr getConstCovisibilityGraphResponse::getConstCovisibilityGraphResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
@@ -377,7 +414,8 @@ struct getConstCovisibilityGraphResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getConstCovisibilityGraphResponseDefaultTypeInternal _getConstCovisibilityGraphResponse_default_instance_;
 constexpr getCovisibilityGraphRequest::getCovisibilityGraphRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : covisibilitygraph_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : covisibilitygraph_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct getCovisibilityGraphRequestDefaultTypeInternal {
   constexpr getCovisibilityGraphRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -413,7 +451,7 @@ struct setCovisibilityGraphRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCovisibilityGraphRequestDefaultTypeInternal _setCovisibilityGraphRequest_default_instance_;
 }  // namespace grpcICovisibilityGraphManager
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[31];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcICovisibilityGraphManagerService_2eproto[33];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcICovisibilityGraphManagerService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcICovisibilityGraphManagerService_2eproto = nullptr;
 
@@ -423,6 +461,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::increaseEdgeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::increaseEdgeRequest, node1_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::increaseEdgeRequest, node2_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::increaseEdgeRequest, weight_),
@@ -437,6 +476,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::decreaseEdgeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::decreaseEdgeRequest, node1_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::decreaseEdgeRequest, node2_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::decreaseEdgeRequest, weight_),
@@ -451,6 +491,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::removeEdgeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::removeEdgeRequest, node1_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::removeEdgeRequest, node2_id_),
   ~0u,  // no _has_bits_
@@ -464,6 +505,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getEdgeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getEdgeRequest, node1_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getEdgeRequest, node2_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getEdgeRequest, weight_),
@@ -479,6 +521,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::isEdgeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::isEdgeRequest, node1_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::isEdgeRequest, node2_id_),
   ~0u,  // no _has_bits_
@@ -492,6 +535,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getAllNodesRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getAllNodesRequest, nodes_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getAllNodesResponse, _internal_metadata_),
@@ -505,6 +549,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::suppressNodeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::suppressNodeRequest, node_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::suppressNodeResponse, _internal_metadata_),
@@ -517,6 +562,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getNeighborsRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getNeighborsRequest, node_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getNeighborsRequest, minweight_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getNeighborsRequest, neighbors_),
@@ -532,6 +578,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::minimalSpanningTreeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::minimalSpanningTreeRequest, edges_weights_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::minimalSpanningTreeRequest, mintotalweights_),
   ~0u,  // no _has_bits_
@@ -547,6 +594,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::maximalSpanningTreeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::maximalSpanningTreeRequest, edges_weights_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::maximalSpanningTreeRequest, maxtotalweights_),
   ~0u,  // no _has_bits_
@@ -562,6 +610,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getShortestPathRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getShortestPathRequest, node1_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getShortestPathRequest, node2_id_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getShortestPathRequest, path_),
@@ -573,6 +622,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getShortestPathResponse, path_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getShortestPathResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::displayRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::displayRequest, grpcservercompressionformat_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::displayResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -583,6 +638,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::saveToFileRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::saveToFileRequest, file_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::saveToFileResponse, _internal_metadata_),
@@ -595,6 +651,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::loadFromFileRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::loadFromFileRequest, file_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::loadFromFileResponse, _internal_metadata_),
@@ -602,6 +659,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::loadFromFileResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest, grpcservercompressionformat_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -613,6 +676,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getCovisibilityGraphRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getCovisibilityGraphRequest, covisibilitygraph_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcICovisibilityGraphManager::getCovisibilityGraphResponse, _internal_metadata_),
@@ -630,36 +694,38 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcICovisibilityGraphManagerS
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcICovisibilityGraphManager::increaseEdgeRequest)},
-  { 8, -1, sizeof(::grpcICovisibilityGraphManager::increaseEdgeResponse)},
-  { 14, -1, sizeof(::grpcICovisibilityGraphManager::decreaseEdgeRequest)},
-  { 22, -1, sizeof(::grpcICovisibilityGraphManager::decreaseEdgeResponse)},
-  { 28, -1, sizeof(::grpcICovisibilityGraphManager::removeEdgeRequest)},
-  { 35, -1, sizeof(::grpcICovisibilityGraphManager::removeEdgeResponse)},
-  { 41, -1, sizeof(::grpcICovisibilityGraphManager::getEdgeRequest)},
-  { 49, -1, sizeof(::grpcICovisibilityGraphManager::getEdgeResponse)},
-  { 56, -1, sizeof(::grpcICovisibilityGraphManager::isEdgeRequest)},
-  { 63, -1, sizeof(::grpcICovisibilityGraphManager::isEdgeResponse)},
-  { 69, -1, sizeof(::grpcICovisibilityGraphManager::getAllNodesRequest)},
-  { 75, -1, sizeof(::grpcICovisibilityGraphManager::getAllNodesResponse)},
-  { 82, -1, sizeof(::grpcICovisibilityGraphManager::suppressNodeRequest)},
-  { 88, -1, sizeof(::grpcICovisibilityGraphManager::suppressNodeResponse)},
-  { 94, -1, sizeof(::grpcICovisibilityGraphManager::getNeighborsRequest)},
-  { 102, -1, sizeof(::grpcICovisibilityGraphManager::getNeighborsResponse)},
-  { 109, -1, sizeof(::grpcICovisibilityGraphManager::minimalSpanningTreeRequest)},
-  { 116, -1, sizeof(::grpcICovisibilityGraphManager::minimalSpanningTreeResponse)},
-  { 124, -1, sizeof(::grpcICovisibilityGraphManager::maximalSpanningTreeRequest)},
-  { 131, -1, sizeof(::grpcICovisibilityGraphManager::maximalSpanningTreeResponse)},
-  { 139, -1, sizeof(::grpcICovisibilityGraphManager::getShortestPathRequest)},
-  { 147, -1, sizeof(::grpcICovisibilityGraphManager::getShortestPathResponse)},
-  { 154, -1, sizeof(::grpcICovisibilityGraphManager::displayResponse)},
-  { 160, -1, sizeof(::grpcICovisibilityGraphManager::saveToFileRequest)},
-  { 166, -1, sizeof(::grpcICovisibilityGraphManager::saveToFileResponse)},
-  { 172, -1, sizeof(::grpcICovisibilityGraphManager::loadFromFileRequest)},
-  { 178, -1, sizeof(::grpcICovisibilityGraphManager::loadFromFileResponse)},
-  { 184, -1, sizeof(::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse)},
-  { 190, -1, sizeof(::grpcICovisibilityGraphManager::getCovisibilityGraphRequest)},
-  { 196, -1, sizeof(::grpcICovisibilityGraphManager::getCovisibilityGraphResponse)},
-  { 203, -1, sizeof(::grpcICovisibilityGraphManager::setCovisibilityGraphRequest)},
+  { 9, -1, sizeof(::grpcICovisibilityGraphManager::increaseEdgeResponse)},
+  { 15, -1, sizeof(::grpcICovisibilityGraphManager::decreaseEdgeRequest)},
+  { 24, -1, sizeof(::grpcICovisibilityGraphManager::decreaseEdgeResponse)},
+  { 30, -1, sizeof(::grpcICovisibilityGraphManager::removeEdgeRequest)},
+  { 38, -1, sizeof(::grpcICovisibilityGraphManager::removeEdgeResponse)},
+  { 44, -1, sizeof(::grpcICovisibilityGraphManager::getEdgeRequest)},
+  { 53, -1, sizeof(::grpcICovisibilityGraphManager::getEdgeResponse)},
+  { 60, -1, sizeof(::grpcICovisibilityGraphManager::isEdgeRequest)},
+  { 68, -1, sizeof(::grpcICovisibilityGraphManager::isEdgeResponse)},
+  { 74, -1, sizeof(::grpcICovisibilityGraphManager::getAllNodesRequest)},
+  { 81, -1, sizeof(::grpcICovisibilityGraphManager::getAllNodesResponse)},
+  { 88, -1, sizeof(::grpcICovisibilityGraphManager::suppressNodeRequest)},
+  { 95, -1, sizeof(::grpcICovisibilityGraphManager::suppressNodeResponse)},
+  { 101, -1, sizeof(::grpcICovisibilityGraphManager::getNeighborsRequest)},
+  { 110, -1, sizeof(::grpcICovisibilityGraphManager::getNeighborsResponse)},
+  { 117, -1, sizeof(::grpcICovisibilityGraphManager::minimalSpanningTreeRequest)},
+  { 125, -1, sizeof(::grpcICovisibilityGraphManager::minimalSpanningTreeResponse)},
+  { 133, -1, sizeof(::grpcICovisibilityGraphManager::maximalSpanningTreeRequest)},
+  { 141, -1, sizeof(::grpcICovisibilityGraphManager::maximalSpanningTreeResponse)},
+  { 149, -1, sizeof(::grpcICovisibilityGraphManager::getShortestPathRequest)},
+  { 158, -1, sizeof(::grpcICovisibilityGraphManager::getShortestPathResponse)},
+  { 165, -1, sizeof(::grpcICovisibilityGraphManager::displayRequest)},
+  { 171, -1, sizeof(::grpcICovisibilityGraphManager::displayResponse)},
+  { 177, -1, sizeof(::grpcICovisibilityGraphManager::saveToFileRequest)},
+  { 184, -1, sizeof(::grpcICovisibilityGraphManager::saveToFileResponse)},
+  { 190, -1, sizeof(::grpcICovisibilityGraphManager::loadFromFileRequest)},
+  { 197, -1, sizeof(::grpcICovisibilityGraphManager::loadFromFileResponse)},
+  { 203, -1, sizeof(::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest)},
+  { 209, -1, sizeof(::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse)},
+  { 215, -1, sizeof(::grpcICovisibilityGraphManager::getCovisibilityGraphRequest)},
+  { 222, -1, sizeof(::grpcICovisibilityGraphManager::getCovisibilityGraphResponse)},
+  { 229, -1, sizeof(::grpcICovisibilityGraphManager::setCovisibilityGraphRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -685,11 +751,13 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_maximalSpanningTreeResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_getShortestPathRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_getShortestPathResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_displayRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_displayResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_saveToFileRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_saveToFileResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_loadFromFileRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_loadFromFileResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_getConstCovisibilityGraphRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_getConstCovisibilityGraphResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_getCovisibilityGraphRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcICovisibilityGraphManager::_getCovisibilityGraphResponse_default_instance_),
@@ -699,117 +767,135 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcICovisibilityGraphManagerService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n*grpcICovisibilityGraphManagerService.p"
   "roto\022\035grpcICovisibilityGraphManager\032\033goo"
-  "gle/protobuf/empty.proto\"I\n\023increaseEdge"
-  "Request\022\020\n\010node1_id\030\001 \001(\r\022\020\n\010node2_id\030\002 "
-  "\001(\r\022\016\n\006weight\030\003 \001(\002\"3\n\024increaseEdgeRespo"
-  "nse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"I\n\023decr"
-  "easeEdgeRequest\022\020\n\010node1_id\030\001 \001(\r\022\020\n\010nod"
-  "e2_id\030\002 \001(\r\022\016\n\006weight\030\003 \001(\002\"3\n\024decreaseE"
-  "dgeResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021"
-  "\"7\n\021removeEdgeRequest\022\020\n\010node1_id\030\001 \001(\r\022"
-  "\020\n\010node2_id\030\002 \001(\r\"1\n\022removeEdgeResponse\022"
-  "\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"D\n\016getEdgeR"
-  "equest\022\020\n\010node1_id\030\001 \001(\r\022\020\n\010node2_id\030\002 \001"
-  "(\r\022\016\n\006weight\030\003 \001(\002\">\n\017getEdgeResponse\022\016\n"
-  "\006weight\030\001 \001(\002\022\033\n\023xpcfGrpcReturnValue\030\002 \001"
-  "(\021\"3\n\risEdgeRequest\022\020\n\010node1_id\030\001 \001(\r\022\020\n"
-  "\010node2_id\030\002 \001(\r\"-\n\016isEdgeResponse\022\033\n\023xpc"
-  "fGrpcReturnValue\030\001 \001(\010\"&\n\022getAllNodesReq"
-  "uest\022\020\n\010nodes_id\030\001 \001(\014\"D\n\023getAllNodesRes"
-  "ponse\022\020\n\010nodes_id\030\001 \001(\014\022\033\n\023xpcfGrpcRetur"
-  "nValue\030\002 \001(\021\"&\n\023suppressNodeRequest\022\017\n\007n"
-  "ode_id\030\001 \001(\r\"3\n\024suppressNodeResponse\022\033\n\023"
-  "xpcfGrpcReturnValue\030\001 \001(\021\"L\n\023getNeighbor"
-  "sRequest\022\017\n\007node_id\030\001 \001(\r\022\021\n\tminWeight\030\002"
-  " \001(\002\022\021\n\tneighbors\030\003 \001(\014\"F\n\024getNeighborsR"
-  "esponse\022\021\n\tneighbors\030\001 \001(\014\022\033\n\023xpcfGrpcRe"
-  "turnValue\030\002 \001(\021\"L\n\032minimalSpanningTreeRe"
-  "quest\022\025\n\redges_weights\030\001 \001(\014\022\027\n\017minTotal"
-  "Weights\030\002 \001(\002\"j\n\033minimalSpanningTreeResp"
-  "onse\022\025\n\redges_weights\030\001 \001(\014\022\027\n\017minTotalW"
-  "eights\030\002 \001(\002\022\033\n\023xpcfGrpcReturnValue\030\003 \001("
-  "\021\"L\n\032maximalSpanningTreeRequest\022\025\n\redges"
-  "_weights\030\001 \001(\014\022\027\n\017maxTotalWeights\030\002 \001(\002\""
-  "j\n\033maximalSpanningTreeResponse\022\025\n\redges_"
-  "weights\030\001 \001(\014\022\027\n\017maxTotalWeights\030\002 \001(\002\022\033"
-  "\n\023xpcfGrpcReturnValue\030\003 \001(\021\"J\n\026getShorte"
-  "stPathRequest\022\020\n\010node1_id\030\001 \001(\r\022\020\n\010node2"
-  "_id\030\002 \001(\r\022\014\n\004path\030\003 \001(\014\"D\n\027getShortestPa"
-  "thResponse\022\014\n\004path\030\001 \001(\014\022\033\n\023xpcfGrpcRetu"
-  "rnValue\030\002 \001(\021\".\n\017displayResponse\022\033\n\023xpcf"
-  "GrpcReturnValue\030\001 \001(\021\"!\n\021saveToFileReque"
-  "st\022\014\n\004file\030\001 \001(\t\"1\n\022saveToFileResponse\022\033"
-  "\n\023xpcfGrpcReturnValue\030\001 \001(\021\"#\n\023loadFromF"
-  "ileRequest\022\014\n\004file\030\001 \001(\t\"3\n\024loadFromFile"
-  "Response\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"@\n"
-  "!getConstCovisibilityGraphResponse\022\033\n\023xp"
-  "cfGrpcReturnValue\030\001 \001(\014\"8\n\033getCovisibili"
-  "tyGraphRequest\022\031\n\021covisibilityGraph\030\001 \001("
-  "\014\"V\n\034getCovisibilityGraphResponse\022\031\n\021cov"
-  "isibilityGraph\030\001 \001(\014\022\033\n\023xpcfGrpcReturnVa"
-  "lue\030\002 \001(\014\"8\n\033setCovisibilityGraphRequest"
-  "\022\031\n\021covisibilityGraph\030\001 \001(\0142\273\020\n$grpcICov"
-  "isibilityGraphManagerService\022y\n\014increase"
-  "Edge\0222.grpcICovisibilityGraphManager.inc"
-  "reaseEdgeRequest\0323.grpcICovisibilityGrap"
-  "hManager.increaseEdgeResponse\"\000\022y\n\014decre"
-  "aseEdge\0222.grpcICovisibilityGraphManager."
-  "decreaseEdgeRequest\0323.grpcICovisibilityG"
-  "raphManager.decreaseEdgeResponse\"\000\022s\n\nre"
-  "moveEdge\0220.grpcICovisibilityGraphManager"
-  ".removeEdgeRequest\0321.grpcICovisibilityGr"
-  "aphManager.removeEdgeResponse\"\000\022j\n\007getEd"
-  "ge\022-.grpcICovisibilityGraphManager.getEd"
-  "geRequest\032..grpcICovisibilityGraphManage"
-  "r.getEdgeResponse\"\000\022g\n\006isEdge\022,.grpcICov"
-  "isibilityGraphManager.isEdgeRequest\032-.gr"
-  "pcICovisibilityGraphManager.isEdgeRespon"
-  "se\"\000\022v\n\013getAllNodes\0221.grpcICovisibilityG"
-  "raphManager.getAllNodesRequest\0322.grpcICo"
-  "visibilityGraphManager.getAllNodesRespon"
-  "se\"\000\022y\n\014suppressNode\0222.grpcICovisibility"
-  "GraphManager.suppressNodeRequest\0323.grpcI"
-  "CovisibilityGraphManager.suppressNodeRes"
-  "ponse\"\000\022y\n\014getNeighbors\0222.grpcICovisibil"
-  "ityGraphManager.getNeighborsRequest\0323.gr"
-  "pcICovisibilityGraphManager.getNeighbors"
-  "Response\"\000\022\216\001\n\023minimalSpanningTree\0229.grp"
-  "cICovisibilityGraphManager.minimalSpanni"
-  "ngTreeRequest\032:.grpcICovisibilityGraphMa"
-  "nager.minimalSpanningTreeResponse\"\000\022\216\001\n\023"
-  "maximalSpanningTree\0229.grpcICovisibilityG"
-  "raphManager.maximalSpanningTreeRequest\032:"
-  ".grpcICovisibilityGraphManager.maximalSp"
-  "anningTreeResponse\"\000\022\202\001\n\017getShortestPath"
-  "\0225.grpcICovisibilityGraphManager.getShor"
-  "testPathRequest\0326.grpcICovisibilityGraph"
-  "Manager.getShortestPathResponse\"\000\022S\n\007dis"
-  "play\022\026.google.protobuf.Empty\032..grpcICovi"
-  "sibilityGraphManager.displayResponse\"\000\022s"
-  "\n\nsaveToFile\0220.grpcICovisibilityGraphMan"
-  "ager.saveToFileRequest\0321.grpcICovisibili"
-  "tyGraphManager.saveToFileResponse\"\000\022y\n\014l"
-  "oadFromFile\0222.grpcICovisibilityGraphMana"
-  "ger.loadFromFileRequest\0323.grpcICovisibil"
-  "ityGraphManager.loadFromFileResponse\"\000\022w"
-  "\n\031getConstCovisibilityGraph\022\026.google.pro"
-  "tobuf.Empty\032@.grpcICovisibilityGraphMana"
-  "ger.getConstCovisibilityGraphResponse\"\000\022"
-  "\221\001\n\024getCovisibilityGraph\022:.grpcICovisibi"
-  "lityGraphManager.getCovisibilityGraphReq"
-  "uest\032;.grpcICovisibilityGraphManager.get"
-  "CovisibilityGraphResponse\"\000\022l\n\024setCovisi"
-  "bilityGraph\022:.grpcICovisibilityGraphMana"
-  "ger.setCovisibilityGraphRequest\032\026.google"
-  ".protobuf.Empty\"\000b\006proto3"
+  "gle/protobuf/empty.proto\"n\n\023increaseEdge"
+  "Request\022#\n\033grpcServerCompressionFormat\030\001"
+  " \001(\005\022\020\n\010node1_id\030\002 \001(\r\022\020\n\010node2_id\030\003 \001(\r"
+  "\022\016\n\006weight\030\004 \001(\002\"3\n\024increaseEdgeResponse"
+  "\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"n\n\023decreas"
+  "eEdgeRequest\022#\n\033grpcServerCompressionFor"
+  "mat\030\001 \001(\005\022\020\n\010node1_id\030\002 \001(\r\022\020\n\010node2_id\030"
+  "\003 \001(\r\022\016\n\006weight\030\004 \001(\002\"3\n\024decreaseEdgeRes"
+  "ponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"\\\n\021re"
+  "moveEdgeRequest\022#\n\033grpcServerCompression"
+  "Format\030\001 \001(\005\022\020\n\010node1_id\030\002 \001(\r\022\020\n\010node2_"
+  "id\030\003 \001(\r\"1\n\022removeEdgeResponse\022\033\n\023xpcfGr"
+  "pcReturnValue\030\001 \001(\021\"i\n\016getEdgeRequest\022#\n"
+  "\033grpcServerCompressionFormat\030\001 \001(\005\022\020\n\010no"
+  "de1_id\030\002 \001(\r\022\020\n\010node2_id\030\003 \001(\r\022\016\n\006weight"
+  "\030\004 \001(\002\">\n\017getEdgeResponse\022\016\n\006weight\030\001 \001("
+  "\002\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"X\n\risEdge"
+  "Request\022#\n\033grpcServerCompressionFormat\030\001"
+  " \001(\005\022\020\n\010node1_id\030\002 \001(\r\022\020\n\010node2_id\030\003 \001(\r"
+  "\"-\n\016isEdgeResponse\022\033\n\023xpcfGrpcReturnValu"
+  "e\030\001 \001(\010\"K\n\022getAllNodesRequest\022#\n\033grpcSer"
+  "verCompressionFormat\030\001 \001(\005\022\020\n\010nodes_id\030\002"
+  " \001(\014\"D\n\023getAllNodesResponse\022\020\n\010nodes_id\030"
+  "\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"K\n\023su"
+  "ppressNodeRequest\022#\n\033grpcServerCompressi"
+  "onFormat\030\001 \001(\005\022\017\n\007node_id\030\002 \001(\r\"3\n\024suppr"
+  "essNodeResponse\022\033\n\023xpcfGrpcReturnValue\030\001"
+  " \001(\021\"q\n\023getNeighborsRequest\022#\n\033grpcServe"
+  "rCompressionFormat\030\001 \001(\005\022\017\n\007node_id\030\002 \001("
+  "\r\022\021\n\tminWeight\030\003 \001(\002\022\021\n\tneighbors\030\004 \001(\014\""
+  "F\n\024getNeighborsResponse\022\021\n\tneighbors\030\001 \001"
+  "(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"q\n\032minim"
+  "alSpanningTreeRequest\022#\n\033grpcServerCompr"
+  "essionFormat\030\001 \001(\005\022\025\n\redges_weights\030\002 \001("
+  "\014\022\027\n\017minTotalWeights\030\003 \001(\002\"j\n\033minimalSpa"
+  "nningTreeResponse\022\025\n\redges_weights\030\001 \001(\014"
+  "\022\027\n\017minTotalWeights\030\002 \001(\002\022\033\n\023xpcfGrpcRet"
+  "urnValue\030\003 \001(\021\"q\n\032maximalSpanningTreeReq"
+  "uest\022#\n\033grpcServerCompressionFormat\030\001 \001("
+  "\005\022\025\n\redges_weights\030\002 \001(\014\022\027\n\017maxTotalWeig"
+  "hts\030\003 \001(\002\"j\n\033maximalSpanningTreeResponse"
+  "\022\025\n\redges_weights\030\001 \001(\014\022\027\n\017maxTotalWeigh"
+  "ts\030\002 \001(\002\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\021\"o\n"
+  "\026getShortestPathRequest\022#\n\033grpcServerCom"
+  "pressionFormat\030\001 \001(\005\022\020\n\010node1_id\030\002 \001(\r\022\020"
+  "\n\010node2_id\030\003 \001(\r\022\014\n\004path\030\004 \001(\014\"D\n\027getSho"
+  "rtestPathResponse\022\014\n\004path\030\001 \001(\014\022\033\n\023xpcfG"
+  "rpcReturnValue\030\002 \001(\021\"5\n\016displayRequest\022#"
+  "\n\033grpcServerCompressionFormat\030\001 \001(\005\".\n\017d"
+  "isplayResponse\022\033\n\023xpcfGrpcReturnValue\030\001 "
+  "\001(\021\"F\n\021saveToFileRequest\022#\n\033grpcServerCo"
+  "mpressionFormat\030\001 \001(\005\022\014\n\004file\030\002 \001(\t\"1\n\022s"
+  "aveToFileResponse\022\033\n\023xpcfGrpcReturnValue"
+  "\030\001 \001(\021\"H\n\023loadFromFileRequest\022#\n\033grpcSer"
+  "verCompressionFormat\030\001 \001(\005\022\014\n\004file\030\002 \001(\t"
+  "\"3\n\024loadFromFileResponse\022\033\n\023xpcfGrpcRetu"
+  "rnValue\030\001 \001(\021\"G\n getConstCovisibilityGra"
+  "phRequest\022#\n\033grpcServerCompressionFormat"
+  "\030\001 \001(\005\"@\n!getConstCovisibilityGraphRespo"
+  "nse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\014\"]\n\033getC"
+  "ovisibilityGraphRequest\022#\n\033grpcServerCom"
+  "pressionFormat\030\001 \001(\005\022\031\n\021covisibilityGrap"
+  "h\030\002 \001(\014\"V\n\034getCovisibilityGraphResponse\022"
+  "\031\n\021covisibilityGraph\030\001 \001(\014\022\033\n\023xpcfGrpcRe"
+  "turnValue\030\002 \001(\014\"8\n\033setCovisibilityGraphR"
+  "equest\022\031\n\021covisibilityGraph\030\001 \001(\0142\374\020\n$gr"
+  "pcICovisibilityGraphManagerService\022y\n\014in"
+  "creaseEdge\0222.grpcICovisibilityGraphManag"
+  "er.increaseEdgeRequest\0323.grpcICovisibili"
+  "tyGraphManager.increaseEdgeResponse\"\000\022y\n"
+  "\014decreaseEdge\0222.grpcICovisibilityGraphMa"
+  "nager.decreaseEdgeRequest\0323.grpcICovisib"
+  "ilityGraphManager.decreaseEdgeResponse\"\000"
+  "\022s\n\nremoveEdge\0220.grpcICovisibilityGraphM"
+  "anager.removeEdgeRequest\0321.grpcICovisibi"
+  "lityGraphManager.removeEdgeResponse\"\000\022j\n"
+  "\007getEdge\022-.grpcICovisibilityGraphManager"
+  ".getEdgeRequest\032..grpcICovisibilityGraph"
+  "Manager.getEdgeResponse\"\000\022g\n\006isEdge\022,.gr"
+  "pcICovisibilityGraphManager.isEdgeReques"
+  "t\032-.grpcICovisibilityGraphManager.isEdge"
+  "Response\"\000\022v\n\013getAllNodes\0221.grpcICovisib"
+  "ilityGraphManager.getAllNodesRequest\0322.g"
+  "rpcICovisibilityGraphManager.getAllNodes"
+  "Response\"\000\022y\n\014suppressNode\0222.grpcICovisi"
+  "bilityGraphManager.suppressNodeRequest\0323"
+  ".grpcICovisibilityGraphManager.suppressN"
+  "odeResponse\"\000\022y\n\014getNeighbors\0222.grpcICov"
+  "isibilityGraphManager.getNeighborsReques"
+  "t\0323.grpcICovisibilityGraphManager.getNei"
+  "ghborsResponse\"\000\022\216\001\n\023minimalSpanningTree"
+  "\0229.grpcICovisibilityGraphManager.minimal"
+  "SpanningTreeRequest\032:.grpcICovisibilityG"
+  "raphManager.minimalSpanningTreeResponse\""
+  "\000\022\216\001\n\023maximalSpanningTree\0229.grpcICovisib"
+  "ilityGraphManager.maximalSpanningTreeReq"
+  "uest\032:.grpcICovisibilityGraphManager.max"
+  "imalSpanningTreeResponse\"\000\022\202\001\n\017getShorte"
+  "stPath\0225.grpcICovisibilityGraphManager.g"
+  "etShortestPathRequest\0326.grpcICovisibilit"
+  "yGraphManager.getShortestPathResponse\"\000\022"
+  "j\n\007display\022-.grpcICovisibilityGraphManag"
+  "er.displayRequest\032..grpcICovisibilityGra"
+  "phManager.displayResponse\"\000\022s\n\nsaveToFil"
+  "e\0220.grpcICovisibilityGraphManager.saveTo"
+  "FileRequest\0321.grpcICovisibilityGraphMana"
+  "ger.saveToFileResponse\"\000\022y\n\014loadFromFile"
+  "\0222.grpcICovisibilityGraphManager.loadFro"
+  "mFileRequest\0323.grpcICovisibilityGraphMan"
+  "ager.loadFromFileResponse\"\000\022\240\001\n\031getConst"
+  "CovisibilityGraph\022\?.grpcICovisibilityGra"
+  "phManager.getConstCovisibilityGraphReque"
+  "st\032@.grpcICovisibilityGraphManager.getCo"
+  "nstCovisibilityGraphResponse\"\000\022\221\001\n\024getCo"
+  "visibilityGraph\022:.grpcICovisibilityGraph"
+  "Manager.getCovisibilityGraphRequest\032;.gr"
+  "pcICovisibilityGraphManager.getCovisibil"
+  "ityGraphResponse\"\000\022l\n\024setCovisibilityGra"
+  "ph\022:.grpcICovisibilityGraphManager.setCo"
+  "visibilityGraphRequest\032\026.google.protobuf"
+  ".Empty\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcICovisibilityGraphManagerService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcICovisibilityGraphManagerService_2eproto = {
-  false, false, 4185, descriptor_table_protodef_grpcICovisibilityGraphManagerService_2eproto, "grpcICovisibilityGraphManagerService.proto", 
-  &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once, descriptor_table_grpcICovisibilityGraphManagerService_2eproto_deps, 1, 31,
+  false, false, 4896, descriptor_table_protodef_grpcICovisibilityGraphManagerService_2eproto, "grpcICovisibilityGraphManagerService.proto", 
+  &descriptor_table_grpcICovisibilityGraphManagerService_2eproto_once, descriptor_table_grpcICovisibilityGraphManagerService_2eproto_deps, 1, 33,
   schemas, file_default_instances, TableStruct_grpcICovisibilityGraphManagerService_2eproto::offsets,
   file_level_metadata_grpcICovisibilityGraphManagerService_2eproto, file_level_enum_descriptors_grpcICovisibilityGraphManagerService_2eproto, file_level_service_descriptors_grpcICovisibilityGraphManagerService_2eproto,
 };
@@ -838,17 +924,17 @@ increaseEdgeRequest::increaseEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 increaseEdgeRequest::increaseEdgeRequest(const increaseEdgeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&node1_id_, &from.node1_id_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&weight_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(weight_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(weight_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.increaseEdgeRequest)
 }
 
 void increaseEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&weight_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(weight_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(weight_));
 }
 
 increaseEdgeRequest::~increaseEdgeRequest() {
@@ -877,9 +963,9 @@ void increaseEdgeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&node1_id_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&weight_) -
-      reinterpret_cast<char*>(&node1_id_)) + sizeof(weight_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(weight_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -890,23 +976,30 @@ const char* increaseEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 node1_id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 node1_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           node1_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 node2_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint32 node2_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           node2_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float weight = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+      // float weight = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           weight_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -939,22 +1032,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node1_id(), target);
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_node2_id(), target);
   }
 
-  // float weight = 3;
+  // float weight = 4;
   if (!(this->weight() <= 0 && this->weight() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_weight(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_weight(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -973,21 +1072,28 @@ size_t increaseEdgeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node2_id());
   }
 
-  // float weight = 3;
+  // float weight = 4;
   if (!(this->weight() <= 0 && this->weight() >= 0)) {
     total_size += 1 + 4;
   }
@@ -1023,6 +1129,9 @@ void increaseEdgeRequest::MergeFrom(const increaseEdgeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
@@ -1058,9 +1167,9 @@ void increaseEdgeRequest::InternalSwap(increaseEdgeRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(increaseEdgeRequest, weight_)
       + sizeof(increaseEdgeRequest::weight_)
-      - PROTOBUF_FIELD_OFFSET(increaseEdgeRequest, node1_id_)>(
-          reinterpret_cast<char*>(&node1_id_),
-          reinterpret_cast<char*>(&other->node1_id_));
+      - PROTOBUF_FIELD_OFFSET(increaseEdgeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata increaseEdgeRequest::GetMetadata() const {
@@ -1272,17 +1381,17 @@ decreaseEdgeRequest::decreaseEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 decreaseEdgeRequest::decreaseEdgeRequest(const decreaseEdgeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&node1_id_, &from.node1_id_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&weight_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(weight_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(weight_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.decreaseEdgeRequest)
 }
 
 void decreaseEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&weight_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(weight_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(weight_));
 }
 
 decreaseEdgeRequest::~decreaseEdgeRequest() {
@@ -1311,9 +1420,9 @@ void decreaseEdgeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&node1_id_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&weight_) -
-      reinterpret_cast<char*>(&node1_id_)) + sizeof(weight_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(weight_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1324,23 +1433,30 @@ const char* decreaseEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 node1_id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 node1_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           node1_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 node2_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint32 node2_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           node2_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float weight = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+      // float weight = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           weight_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -1373,22 +1489,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node1_id(), target);
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_node2_id(), target);
   }
 
-  // float weight = 3;
+  // float weight = 4;
   if (!(this->weight() <= 0 && this->weight() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_weight(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_weight(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1407,21 +1529,28 @@ size_t decreaseEdgeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node2_id());
   }
 
-  // float weight = 3;
+  // float weight = 4;
   if (!(this->weight() <= 0 && this->weight() >= 0)) {
     total_size += 1 + 4;
   }
@@ -1457,6 +1586,9 @@ void decreaseEdgeRequest::MergeFrom(const decreaseEdgeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
@@ -1492,9 +1624,9 @@ void decreaseEdgeRequest::InternalSwap(decreaseEdgeRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(decreaseEdgeRequest, weight_)
       + sizeof(decreaseEdgeRequest::weight_)
-      - PROTOBUF_FIELD_OFFSET(decreaseEdgeRequest, node1_id_)>(
-          reinterpret_cast<char*>(&node1_id_),
-          reinterpret_cast<char*>(&other->node1_id_));
+      - PROTOBUF_FIELD_OFFSET(decreaseEdgeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata decreaseEdgeRequest::GetMetadata() const {
@@ -1706,17 +1838,17 @@ removeEdgeRequest::removeEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 removeEdgeRequest::removeEdgeRequest(const removeEdgeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&node1_id_, &from.node1_id_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&node2_id_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(node2_id_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node2_id_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.removeEdgeRequest)
 }
 
 void removeEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&node2_id_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(node2_id_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node2_id_));
 }
 
 removeEdgeRequest::~removeEdgeRequest() {
@@ -1745,9 +1877,9 @@ void removeEdgeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&node1_id_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&node2_id_) -
-      reinterpret_cast<char*>(&node1_id_)) + sizeof(node2_id_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node2_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1758,16 +1890,23 @@ const char* removeEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 node1_id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 node1_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           node1_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 node2_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint32 node2_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           node2_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -1800,16 +1939,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
-  if (this->node1_id() != 0) {
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node1_id = 2;
+  if (this->node1_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node1_id(), target);
+  }
+
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_node2_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1828,14 +1973,21 @@ size_t removeEdgeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
@@ -1873,6 +2025,9 @@ void removeEdgeRequest::MergeFrom(const removeEdgeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
@@ -1905,9 +2060,9 @@ void removeEdgeRequest::InternalSwap(removeEdgeRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(removeEdgeRequest, node2_id_)
       + sizeof(removeEdgeRequest::node2_id_)
-      - PROTOBUF_FIELD_OFFSET(removeEdgeRequest, node1_id_)>(
-          reinterpret_cast<char*>(&node1_id_),
-          reinterpret_cast<char*>(&other->node1_id_));
+      - PROTOBUF_FIELD_OFFSET(removeEdgeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata removeEdgeRequest::GetMetadata() const {
@@ -2119,17 +2274,17 @@ getEdgeRequest::getEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 getEdgeRequest::getEdgeRequest(const getEdgeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&node1_id_, &from.node1_id_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&weight_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(weight_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(weight_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getEdgeRequest)
 }
 
 void getEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&weight_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(weight_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(weight_));
 }
 
 getEdgeRequest::~getEdgeRequest() {
@@ -2158,9 +2313,9 @@ void getEdgeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&node1_id_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&weight_) -
-      reinterpret_cast<char*>(&node1_id_)) + sizeof(weight_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(weight_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2171,23 +2326,30 @@ const char* getEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 node1_id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 node1_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           node1_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 node2_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint32 node2_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           node2_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float weight = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+      // float weight = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           weight_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -2220,22 +2382,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node1_id(), target);
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_node2_id(), target);
   }
 
-  // float weight = 3;
+  // float weight = 4;
   if (!(this->weight() <= 0 && this->weight() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_weight(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_weight(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2254,21 +2422,28 @@ size_t getEdgeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node2_id());
   }
 
-  // float weight = 3;
+  // float weight = 4;
   if (!(this->weight() <= 0 && this->weight() >= 0)) {
     total_size += 1 + 4;
   }
@@ -2304,6 +2479,9 @@ void getEdgeRequest::MergeFrom(const getEdgeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
@@ -2339,9 +2517,9 @@ void getEdgeRequest::InternalSwap(getEdgeRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getEdgeRequest, weight_)
       + sizeof(getEdgeRequest::weight_)
-      - PROTOBUF_FIELD_OFFSET(getEdgeRequest, node1_id_)>(
-          reinterpret_cast<char*>(&node1_id_),
-          reinterpret_cast<char*>(&other->node1_id_));
+      - PROTOBUF_FIELD_OFFSET(getEdgeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getEdgeRequest::GetMetadata() const {
@@ -2586,17 +2764,17 @@ isEdgeRequest::isEdgeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 isEdgeRequest::isEdgeRequest(const isEdgeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&node1_id_, &from.node1_id_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&node2_id_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(node2_id_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node2_id_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.isEdgeRequest)
 }
 
 void isEdgeRequest::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&node2_id_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(node2_id_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node2_id_));
 }
 
 isEdgeRequest::~isEdgeRequest() {
@@ -2625,9 +2803,9 @@ void isEdgeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&node1_id_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&node2_id_) -
-      reinterpret_cast<char*>(&node1_id_)) + sizeof(node2_id_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node2_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2638,16 +2816,23 @@ const char* isEdgeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 node1_id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 node1_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           node1_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 node2_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint32 node2_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           node2_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -2680,16 +2865,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
-  if (this->node1_id() != 0) {
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node1_id = 2;
+  if (this->node1_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node1_id(), target);
+  }
+
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_node2_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2708,14 +2899,21 @@ size_t isEdgeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
@@ -2753,6 +2951,9 @@ void isEdgeRequest::MergeFrom(const isEdgeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
@@ -2785,9 +2986,9 @@ void isEdgeRequest::InternalSwap(isEdgeRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(isEdgeRequest, node2_id_)
       + sizeof(isEdgeRequest::node2_id_)
-      - PROTOBUF_FIELD_OFFSET(isEdgeRequest, node1_id_)>(
-          reinterpret_cast<char*>(&node1_id_),
-          reinterpret_cast<char*>(&other->node1_id_));
+      - PROTOBUF_FIELD_OFFSET(isEdgeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isEdgeRequest::GetMetadata() const {
@@ -3002,11 +3203,13 @@ getAllNodesRequest::getAllNodesRequest(const getAllNodesRequest& from)
     nodes_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nodes_id(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getAllNodesRequest)
 }
 
 void getAllNodesRequest::SharedCtor() {
 nodes_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 getAllNodesRequest::~getAllNodesRequest() {
@@ -3037,6 +3240,7 @@ void getAllNodesRequest::Clear() {
   (void) cached_has_bits;
 
   nodes_id_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3047,9 +3251,16 @@ const char* getAllNodesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes nodes_id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes nodes_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_nodes_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -3083,10 +3294,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes nodes_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes nodes_id = 2;
   if (this->nodes_id().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_nodes_id(), target);
+        2, this->_internal_nodes_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3105,11 +3322,18 @@ size_t getAllNodesRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes nodes_id = 1;
+  // bytes nodes_id = 2;
   if (this->nodes_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_nodes_id());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3146,6 +3370,9 @@ void getAllNodesRequest::MergeFrom(const getAllNodesRequest& from) {
   if (from.nodes_id().size() > 0) {
     _internal_set_nodes_id(from._internal_nodes_id());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void getAllNodesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -3170,6 +3397,7 @@ void getAllNodesRequest::InternalSwap(getAllNodesRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   nodes_id_.Swap(&other->nodes_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getAllNodesRequest::GetMetadata() const {
@@ -3414,12 +3642,17 @@ suppressNodeRequest::suppressNodeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 suppressNodeRequest::suppressNodeRequest(const suppressNodeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  node_id_ = from.node_id_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&node_id_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node_id_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.suppressNodeRequest)
 }
 
 void suppressNodeRequest::SharedCtor() {
-node_id_ = 0u;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&node_id_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node_id_));
 }
 
 suppressNodeRequest::~suppressNodeRequest() {
@@ -3448,7 +3681,9 @@ void suppressNodeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  node_id_ = 0u;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&node_id_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3459,9 +3694,16 @@ const char* suppressNodeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 node_id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 node_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           node_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -3494,10 +3736,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 node_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // uint32 node_id = 2;
   if (this->node_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3516,7 +3764,14 @@ size_t suppressNodeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 node_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 node_id = 2;
   if (this->node_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
@@ -3554,6 +3809,9 @@ void suppressNodeRequest::MergeFrom(const suppressNodeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.node_id() != 0) {
     _internal_set_node_id(from._internal_node_id());
   }
@@ -3580,7 +3838,12 @@ bool suppressNodeRequest::IsInitialized() const {
 void suppressNodeRequest::InternalSwap(suppressNodeRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(node_id_, other->node_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(suppressNodeRequest, node_id_)
+      + sizeof(suppressNodeRequest::node_id_)
+      - PROTOBUF_FIELD_OFFSET(suppressNodeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata suppressNodeRequest::GetMetadata() const {
@@ -3797,18 +4060,18 @@ getNeighborsRequest::getNeighborsRequest(const getNeighborsRequest& from)
     neighbors_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_neighbors(), 
       GetArena());
   }
-  ::memcpy(&node_id_, &from.node_id_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&minweight_) -
-    reinterpret_cast<char*>(&node_id_)) + sizeof(minweight_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(minweight_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getNeighborsRequest)
 }
 
 void getNeighborsRequest::SharedCtor() {
 neighbors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&node_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&minweight_) -
-    reinterpret_cast<char*>(&node_id_)) + sizeof(minweight_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(minweight_));
 }
 
 getNeighborsRequest::~getNeighborsRequest() {
@@ -3839,9 +4102,9 @@ void getNeighborsRequest::Clear() {
   (void) cached_has_bits;
 
   neighbors_.ClearToEmpty();
-  ::memset(&node_id_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&minweight_) -
-      reinterpret_cast<char*>(&node_id_)) + sizeof(minweight_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(minweight_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3852,23 +4115,30 @@ const char* getNeighborsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 node_id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 node_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           node_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float minWeight = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float minWeight = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           minweight_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // bytes neighbors = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes neighbors = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_neighbors();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -3902,22 +4172,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 node_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // uint32 node_id = 2;
   if (this->node_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node_id(), target);
   }
 
-  // float minWeight = 2;
+  // float minWeight = 3;
   if (!(this->minweight() <= 0 && this->minweight() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_minweight(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_minweight(), target);
   }
 
-  // bytes neighbors = 3;
+  // bytes neighbors = 4;
   if (this->neighbors().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_neighbors(), target);
+        4, this->_internal_neighbors(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3936,21 +4212,28 @@ size_t getNeighborsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes neighbors = 3;
+  // bytes neighbors = 4;
   if (this->neighbors().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_neighbors());
   }
 
-  // uint32 node_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 node_id = 2;
   if (this->node_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node_id());
   }
 
-  // float minWeight = 2;
+  // float minWeight = 3;
   if (!(this->minweight() <= 0 && this->minweight() >= 0)) {
     total_size += 1 + 4;
   }
@@ -3989,6 +4272,9 @@ void getNeighborsRequest::MergeFrom(const getNeighborsRequest& from) {
   if (from.neighbors().size() > 0) {
     _internal_set_neighbors(from._internal_neighbors());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.node_id() != 0) {
     _internal_set_node_id(from._internal_node_id());
   }
@@ -4022,9 +4308,9 @@ void getNeighborsRequest::InternalSwap(getNeighborsRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getNeighborsRequest, minweight_)
       + sizeof(getNeighborsRequest::minweight_)
-      - PROTOBUF_FIELD_OFFSET(getNeighborsRequest, node_id_)>(
-          reinterpret_cast<char*>(&node_id_),
-          reinterpret_cast<char*>(&other->node_id_));
+      - PROTOBUF_FIELD_OFFSET(getNeighborsRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getNeighborsRequest::GetMetadata() const {
@@ -4274,13 +4560,18 @@ minimalSpanningTreeRequest::minimalSpanningTreeRequest(const minimalSpanningTree
     edges_weights_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_edges_weights(), 
       GetArena());
   }
-  mintotalweights_ = from.mintotalweights_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&mintotalweights_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(mintotalweights_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.minimalSpanningTreeRequest)
 }
 
 void minimalSpanningTreeRequest::SharedCtor() {
 edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-mintotalweights_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&mintotalweights_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(mintotalweights_));
 }
 
 minimalSpanningTreeRequest::~minimalSpanningTreeRequest() {
@@ -4311,7 +4602,9 @@ void minimalSpanningTreeRequest::Clear() {
   (void) cached_has_bits;
 
   edges_weights_.ClearToEmpty();
-  mintotalweights_ = 0;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&mintotalweights_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(mintotalweights_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4322,17 +4615,24 @@ const char* minimalSpanningTreeRequest::_InternalParse(const char* ptr, ::PROTOB
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes edges_weights = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes edges_weights = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_edges_weights();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float minTotalWeights = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float minTotalWeights = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           mintotalweights_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -4365,16 +4665,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes edges_weights = 1;
-  if (this->edges_weights().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_edges_weights(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // float minTotalWeights = 2;
+  // bytes edges_weights = 2;
+  if (this->edges_weights().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_edges_weights(), target);
+  }
+
+  // float minTotalWeights = 3;
   if (!(this->mintotalweights() <= 0 && this->mintotalweights() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_mintotalweights(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_mintotalweights(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4393,14 +4699,21 @@ size_t minimalSpanningTreeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes edges_weights = 1;
+  // bytes edges_weights = 2;
   if (this->edges_weights().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_edges_weights());
   }
 
-  // float minTotalWeights = 2;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // float minTotalWeights = 3;
   if (!(this->mintotalweights() <= 0 && this->mintotalweights() >= 0)) {
     total_size += 1 + 4;
   }
@@ -4439,6 +4752,9 @@ void minimalSpanningTreeRequest::MergeFrom(const minimalSpanningTreeRequest& fro
   if (from.edges_weights().size() > 0) {
     _internal_set_edges_weights(from._internal_edges_weights());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (!(from.mintotalweights() <= 0 && from.mintotalweights() >= 0)) {
     _internal_set_mintotalweights(from._internal_mintotalweights());
   }
@@ -4466,7 +4782,12 @@ void minimalSpanningTreeRequest::InternalSwap(minimalSpanningTreeRequest* other)
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   edges_weights_.Swap(&other->edges_weights_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(mintotalweights_, other->mintotalweights_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(minimalSpanningTreeRequest, mintotalweights_)
+      + sizeof(minimalSpanningTreeRequest::mintotalweights_)
+      - PROTOBUF_FIELD_OFFSET(minimalSpanningTreeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata minimalSpanningTreeRequest::GetMetadata() const {
@@ -4749,13 +5070,18 @@ maximalSpanningTreeRequest::maximalSpanningTreeRequest(const maximalSpanningTree
     edges_weights_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_edges_weights(), 
       GetArena());
   }
-  maxtotalweights_ = from.maxtotalweights_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&maxtotalweights_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(maxtotalweights_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.maximalSpanningTreeRequest)
 }
 
 void maximalSpanningTreeRequest::SharedCtor() {
 edges_weights_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-maxtotalweights_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&maxtotalweights_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(maxtotalweights_));
 }
 
 maximalSpanningTreeRequest::~maximalSpanningTreeRequest() {
@@ -4786,7 +5112,9 @@ void maximalSpanningTreeRequest::Clear() {
   (void) cached_has_bits;
 
   edges_weights_.ClearToEmpty();
-  maxtotalweights_ = 0;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&maxtotalweights_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(maxtotalweights_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4797,17 +5125,24 @@ const char* maximalSpanningTreeRequest::_InternalParse(const char* ptr, ::PROTOB
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes edges_weights = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes edges_weights = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_edges_weights();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float maxTotalWeights = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float maxTotalWeights = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           maxtotalweights_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
@@ -4840,16 +5175,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes edges_weights = 1;
-  if (this->edges_weights().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_edges_weights(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // float maxTotalWeights = 2;
+  // bytes edges_weights = 2;
+  if (this->edges_weights().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_edges_weights(), target);
+  }
+
+  // float maxTotalWeights = 3;
   if (!(this->maxtotalweights() <= 0 && this->maxtotalweights() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_maxtotalweights(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_maxtotalweights(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4868,14 +5209,21 @@ size_t maximalSpanningTreeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes edges_weights = 1;
+  // bytes edges_weights = 2;
   if (this->edges_weights().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_edges_weights());
   }
 
-  // float maxTotalWeights = 2;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // float maxTotalWeights = 3;
   if (!(this->maxtotalweights() <= 0 && this->maxtotalweights() >= 0)) {
     total_size += 1 + 4;
   }
@@ -4914,6 +5262,9 @@ void maximalSpanningTreeRequest::MergeFrom(const maximalSpanningTreeRequest& fro
   if (from.edges_weights().size() > 0) {
     _internal_set_edges_weights(from._internal_edges_weights());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (!(from.maxtotalweights() <= 0 && from.maxtotalweights() >= 0)) {
     _internal_set_maxtotalweights(from._internal_maxtotalweights());
   }
@@ -4941,7 +5292,12 @@ void maximalSpanningTreeRequest::InternalSwap(maximalSpanningTreeRequest* other)
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   edges_weights_.Swap(&other->edges_weights_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(maxtotalweights_, other->maxtotalweights_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(maximalSpanningTreeRequest, maxtotalweights_)
+      + sizeof(maximalSpanningTreeRequest::maxtotalweights_)
+      - PROTOBUF_FIELD_OFFSET(maximalSpanningTreeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata maximalSpanningTreeRequest::GetMetadata() const {
@@ -5224,18 +5580,18 @@ getShortestPathRequest::getShortestPathRequest(const getShortestPathRequest& fro
     path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_path(), 
       GetArena());
   }
-  ::memcpy(&node1_id_, &from.node1_id_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&node2_id_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(node2_id_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node2_id_));
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getShortestPathRequest)
 }
 
 void getShortestPathRequest::SharedCtor() {
 path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&node1_id_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&node2_id_) -
-    reinterpret_cast<char*>(&node1_id_)) + sizeof(node2_id_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node2_id_));
 }
 
 getShortestPathRequest::~getShortestPathRequest() {
@@ -5266,9 +5622,9 @@ void getShortestPathRequest::Clear() {
   (void) cached_has_bits;
 
   path_.ClearToEmpty();
-  ::memset(&node1_id_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&node2_id_) -
-      reinterpret_cast<char*>(&node1_id_)) + sizeof(node2_id_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(node2_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5279,23 +5635,30 @@ const char* getShortestPathRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 node1_id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 node1_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           node1_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 node2_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint32 node2_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           node2_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes path = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes path = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_path();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -5329,22 +5692,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_node1_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node1_id(), target);
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_node2_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_node2_id(), target);
   }
 
-  // bytes path = 3;
+  // bytes path = 4;
   if (this->path().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_path(), target);
+        4, this->_internal_path(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5363,21 +5732,28 @@ size_t getShortestPathRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes path = 3;
+  // bytes path = 4;
   if (this->path().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_path());
   }
 
-  // uint32 node1_id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 node1_id = 2;
   if (this->node1_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_node1_id());
   }
 
-  // uint32 node2_id = 2;
+  // uint32 node2_id = 3;
   if (this->node2_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
@@ -5418,6 +5794,9 @@ void getShortestPathRequest::MergeFrom(const getShortestPathRequest& from) {
   if (from.path().size() > 0) {
     _internal_set_path(from._internal_path());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.node1_id() != 0) {
     _internal_set_node1_id(from._internal_node1_id());
   }
@@ -5451,9 +5830,9 @@ void getShortestPathRequest::InternalSwap(getShortestPathRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getShortestPathRequest, node2_id_)
       + sizeof(getShortestPathRequest::node2_id_)
-      - PROTOBUF_FIELD_OFFSET(getShortestPathRequest, node1_id_)>(
-          reinterpret_cast<char*>(&node1_id_),
-          reinterpret_cast<char*>(&other->node1_id_));
+      - PROTOBUF_FIELD_OFFSET(getShortestPathRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getShortestPathRequest::GetMetadata() const {
@@ -5685,6 +6064,195 @@ void getShortestPathResponse::InternalSwap(getShortestPathResponse* other) {
 
 // ===================================================================
 
+class displayRequest::_Internal {
+ public:
+};
+
+displayRequest::displayRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.displayRequest)
+}
+displayRequest::displayRequest(const displayRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.displayRequest)
+}
+
+void displayRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+displayRequest::~displayRequest() {
+  // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.displayRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void displayRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void displayRequest::ArenaDtor(void* object) {
+  displayRequest* _this = reinterpret_cast< displayRequest* >(object);
+  (void)_this;
+}
+void displayRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void displayRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void displayRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcICovisibilityGraphManager.displayRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* displayRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* displayRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcICovisibilityGraphManager.displayRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcICovisibilityGraphManager.displayRequest)
+  return target;
+}
+
+size_t displayRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcICovisibilityGraphManager.displayRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void displayRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.displayRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const displayRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<displayRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.displayRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.displayRequest)
+    MergeFrom(*source);
+  }
+}
+
+void displayRequest::MergeFrom(const displayRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.displayRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void displayRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.displayRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void displayRequest::CopyFrom(const displayRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcICovisibilityGraphManager.displayRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool displayRequest::IsInitialized() const {
+  return true;
+}
+
+void displayRequest::InternalSwap(displayRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata displayRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 class displayResponse::_Internal {
  public:
 };
@@ -5892,11 +6460,13 @@ saveToFileRequest::saveToFileRequest(const saveToFileRequest& from)
     file_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_file(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.saveToFileRequest)
 }
 
 void saveToFileRequest::SharedCtor() {
 file_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 saveToFileRequest::~saveToFileRequest() {
@@ -5927,6 +6497,7 @@ void saveToFileRequest::Clear() {
   (void) cached_has_bits;
 
   file_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5937,9 +6508,16 @@ const char* saveToFileRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string file = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string file = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_file();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "grpcICovisibilityGraphManager.saveToFileRequest.file"));
@@ -5974,14 +6552,20 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string file = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string file = 2;
   if (this->file().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_file().data(), static_cast<int>(this->_internal_file().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "grpcICovisibilityGraphManager.saveToFileRequest.file");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_file(), target);
+        2, this->_internal_file(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6000,11 +6584,18 @@ size_t saveToFileRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string file = 1;
+  // string file = 2;
   if (this->file().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_file());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6041,6 +6632,9 @@ void saveToFileRequest::MergeFrom(const saveToFileRequest& from) {
   if (from.file().size() > 0) {
     _internal_set_file(from._internal_file());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void saveToFileRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -6065,6 +6659,7 @@ void saveToFileRequest::InternalSwap(saveToFileRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   file_.Swap(&other->file_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata saveToFileRequest::GetMetadata() const {
@@ -6281,11 +6876,13 @@ loadFromFileRequest::loadFromFileRequest(const loadFromFileRequest& from)
     file_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_file(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.loadFromFileRequest)
 }
 
 void loadFromFileRequest::SharedCtor() {
 file_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 loadFromFileRequest::~loadFromFileRequest() {
@@ -6316,6 +6913,7 @@ void loadFromFileRequest::Clear() {
   (void) cached_has_bits;
 
   file_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6326,9 +6924,16 @@ const char* loadFromFileRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string file = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string file = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_file();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "grpcICovisibilityGraphManager.loadFromFileRequest.file"));
@@ -6363,14 +6968,20 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string file = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string file = 2;
   if (this->file().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_file().data(), static_cast<int>(this->_internal_file().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "grpcICovisibilityGraphManager.loadFromFileRequest.file");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_file(), target);
+        2, this->_internal_file(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6389,11 +7000,18 @@ size_t loadFromFileRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string file = 1;
+  // string file = 2;
   if (this->file().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_file());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6430,6 +7048,9 @@ void loadFromFileRequest::MergeFrom(const loadFromFileRequest& from) {
   if (from.file().size() > 0) {
     _internal_set_file(from._internal_file());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void loadFromFileRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -6454,6 +7075,7 @@ void loadFromFileRequest::InternalSwap(loadFromFileRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   file_.Swap(&other->file_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadFromFileRequest::GetMetadata() const {
@@ -6646,6 +7268,195 @@ void loadFromFileResponse::InternalSwap(loadFromFileResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadFromFileResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getConstCovisibilityGraphRequest::_Internal {
+ public:
+};
+
+getConstCovisibilityGraphRequest::getConstCovisibilityGraphRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+}
+getConstCovisibilityGraphRequest::getConstCovisibilityGraphRequest(const getConstCovisibilityGraphRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+}
+
+void getConstCovisibilityGraphRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+getConstCovisibilityGraphRequest::~getConstCovisibilityGraphRequest() {
+  // @@protoc_insertion_point(destructor:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getConstCovisibilityGraphRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void getConstCovisibilityGraphRequest::ArenaDtor(void* object) {
+  getConstCovisibilityGraphRequest* _this = reinterpret_cast< getConstCovisibilityGraphRequest* >(object);
+  (void)_this;
+}
+void getConstCovisibilityGraphRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getConstCovisibilityGraphRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getConstCovisibilityGraphRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getConstCovisibilityGraphRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getConstCovisibilityGraphRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+  return target;
+}
+
+size_t getConstCovisibilityGraphRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getConstCovisibilityGraphRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getConstCovisibilityGraphRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getConstCovisibilityGraphRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+    MergeFrom(*source);
+  }
+}
+
+void getConstCovisibilityGraphRequest::MergeFrom(const getConstCovisibilityGraphRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void getConstCovisibilityGraphRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getConstCovisibilityGraphRequest::CopyFrom(const getConstCovisibilityGraphRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcICovisibilityGraphManager.getConstCovisibilityGraphRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getConstCovisibilityGraphRequest::IsInitialized() const {
+  return true;
+}
+
+void getConstCovisibilityGraphRequest::InternalSwap(getConstCovisibilityGraphRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getConstCovisibilityGraphRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -6865,11 +7676,13 @@ getCovisibilityGraphRequest::getCovisibilityGraphRequest(const getCovisibilityGr
     covisibilitygraph_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_covisibilitygraph(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcICovisibilityGraphManager.getCovisibilityGraphRequest)
 }
 
 void getCovisibilityGraphRequest::SharedCtor() {
 covisibilitygraph_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 getCovisibilityGraphRequest::~getCovisibilityGraphRequest() {
@@ -6900,6 +7713,7 @@ void getCovisibilityGraphRequest::Clear() {
   (void) cached_has_bits;
 
   covisibilitygraph_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6910,9 +7724,16 @@ const char* getCovisibilityGraphRequest::_InternalParse(const char* ptr, ::PROTO
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes covisibilityGraph = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes covisibilityGraph = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_covisibilitygraph();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -6946,10 +7767,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes covisibilityGraph = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes covisibilityGraph = 2;
   if (this->covisibilitygraph().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_covisibilitygraph(), target);
+        2, this->_internal_covisibilitygraph(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6968,11 +7795,18 @@ size_t getCovisibilityGraphRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes covisibilityGraph = 1;
+  // bytes covisibilityGraph = 2;
   if (this->covisibilitygraph().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_covisibilitygraph());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7009,6 +7843,9 @@ void getCovisibilityGraphRequest::MergeFrom(const getCovisibilityGraphRequest& f
   if (from.covisibilitygraph().size() > 0) {
     _internal_set_covisibilitygraph(from._internal_covisibilitygraph());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void getCovisibilityGraphRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -7033,6 +7870,7 @@ void getCovisibilityGraphRequest::InternalSwap(getCovisibilityGraphRequest* othe
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   covisibilitygraph_.Swap(&other->covisibilitygraph_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getCovisibilityGraphRequest::GetMetadata() const {
@@ -7532,6 +8370,9 @@ template<> PROTOBUF_NOINLINE ::grpcICovisibilityGraphManager::getShortestPathReq
 template<> PROTOBUF_NOINLINE ::grpcICovisibilityGraphManager::getShortestPathResponse* Arena::CreateMaybeMessage< ::grpcICovisibilityGraphManager::getShortestPathResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcICovisibilityGraphManager::getShortestPathResponse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::grpcICovisibilityGraphManager::displayRequest* Arena::CreateMaybeMessage< ::grpcICovisibilityGraphManager::displayRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcICovisibilityGraphManager::displayRequest >(arena);
+}
 template<> PROTOBUF_NOINLINE ::grpcICovisibilityGraphManager::displayResponse* Arena::CreateMaybeMessage< ::grpcICovisibilityGraphManager::displayResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcICovisibilityGraphManager::displayResponse >(arena);
 }
@@ -7546,6 +8387,9 @@ template<> PROTOBUF_NOINLINE ::grpcICovisibilityGraphManager::loadFromFileReques
 }
 template<> PROTOBUF_NOINLINE ::grpcICovisibilityGraphManager::loadFromFileResponse* Arena::CreateMaybeMessage< ::grpcICovisibilityGraphManager::loadFromFileResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcICovisibilityGraphManager::loadFromFileResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* Arena::CreateMaybeMessage< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* Arena::CreateMaybeMessage< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse >(arena);

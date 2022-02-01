@@ -2,9 +2,10 @@
 
 #ifndef ICORNERREFINEMENT_GRPCSERVER_H
 #define ICORNERREFINEMENT_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/ICornerRefinement.h"
+#include "api/features/ICornerRefinement.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcICornerRefinementService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -27,12 +28,15 @@ class ICornerRefinement_grpcServer:  public org::bcom::xpcf::ConfigurableBase, v
         ::grpc::Status refine(::grpc::ServerContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response) override;
 
         SRef<SolAR::api::features::ICornerRefinement> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcICornerRefinementServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

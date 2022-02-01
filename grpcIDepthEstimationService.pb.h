@@ -184,14 +184,15 @@ class estimateRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMatchesFieldNumber = 1,
-    kTypeFieldNumber = 4,
-    kRectKeypoints1FieldNumber = 5,
-    kRectKeypoints2FieldNumber = 6,
-    kFocalFieldNumber = 2,
-    kBaselineFieldNumber = 3,
+    kMatchesFieldNumber = 2,
+    kTypeFieldNumber = 5,
+    kRectKeypoints1FieldNumber = 6,
+    kRectKeypoints2FieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kFocalFieldNumber = 3,
+    kBaselineFieldNumber = 4,
   };
-  // bytes matches = 1;
+  // bytes matches = 2;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -207,7 +208,7 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes type = 4;
+  // bytes type = 5;
   void clear_type();
   const std::string& type() const;
   void set_type(const std::string& value);
@@ -223,7 +224,7 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_type();
   public:
 
-  // bytes rectKeypoints1 = 5;
+  // bytes rectKeypoints1 = 6;
   void clear_rectkeypoints1();
   const std::string& rectkeypoints1() const;
   void set_rectkeypoints1(const std::string& value);
@@ -239,7 +240,7 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_rectkeypoints1();
   public:
 
-  // bytes rectKeypoints2 = 6;
+  // bytes rectKeypoints2 = 7;
   void clear_rectkeypoints2();
   const std::string& rectkeypoints2() const;
   void set_rectkeypoints2(const std::string& value);
@@ -255,7 +256,16 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_rectkeypoints2();
   public:
 
-  // float focal = 2;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float focal = 3;
   void clear_focal();
   float focal() const;
   void set_focal(float value);
@@ -264,7 +274,7 @@ class estimateRequest PROTOBUF_FINAL :
   void _internal_set_focal(float value);
   public:
 
-  // float baseline = 3;
+  // float baseline = 4;
   void clear_baseline();
   float baseline() const;
   void set_baseline(float value);
@@ -284,6 +294,7 @@ class estimateRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectkeypoints1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectkeypoints2_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   float focal_;
   float baseline_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -473,7 +484,27 @@ class estimateResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // estimateRequest
 
-// bytes matches = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void estimateRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimateRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimateRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDepthEstimation.estimateRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void estimateRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void estimateRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDepthEstimation.estimateRequest.grpcServerCompressionFormat)
+}
+
+// bytes matches = 2;
 inline void estimateRequest::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -534,7 +565,7 @@ inline void estimateRequest::set_allocated_matches(std::string* matches) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDepthEstimation.estimateRequest.matches)
 }
 
-// float focal = 2;
+// float focal = 3;
 inline void estimateRequest::clear_focal() {
   focal_ = 0;
 }
@@ -554,7 +585,7 @@ inline void estimateRequest::set_focal(float value) {
   // @@protoc_insertion_point(field_set:grpcIDepthEstimation.estimateRequest.focal)
 }
 
-// float baseline = 3;
+// float baseline = 4;
 inline void estimateRequest::clear_baseline() {
   baseline_ = 0;
 }
@@ -574,7 +605,7 @@ inline void estimateRequest::set_baseline(float value) {
   // @@protoc_insertion_point(field_set:grpcIDepthEstimation.estimateRequest.baseline)
 }
 
-// bytes type = 4;
+// bytes type = 5;
 inline void estimateRequest::clear_type() {
   type_.ClearToEmpty();
 }
@@ -635,7 +666,7 @@ inline void estimateRequest::set_allocated_type(std::string* type) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDepthEstimation.estimateRequest.type)
 }
 
-// bytes rectKeypoints1 = 5;
+// bytes rectKeypoints1 = 6;
 inline void estimateRequest::clear_rectkeypoints1() {
   rectkeypoints1_.ClearToEmpty();
 }
@@ -696,7 +727,7 @@ inline void estimateRequest::set_allocated_rectkeypoints1(std::string* rectkeypo
   // @@protoc_insertion_point(field_set_allocated:grpcIDepthEstimation.estimateRequest.rectKeypoints1)
 }
 
-// bytes rectKeypoints2 = 6;
+// bytes rectKeypoints2 = 7;
 inline void estimateRequest::clear_rectkeypoints2() {
   rectkeypoints2_.ClearToEmpty();
 }

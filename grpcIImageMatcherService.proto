@@ -6,13 +6,14 @@ package grpcIImageMatcher;
 
 message matchRequest
 {
-bytes image1 = 1;
-bytes image2 = 2;
-bytes descriptors1 = 3;
-bytes descriptors2 = 4;
-bytes keypoints1 = 5;
-bytes keypoints2 = 6;
-bytes matches = 7;
+int32 grpcServerCompressionFormat  = 1;
+bytes image1 = 2;
+bytes image2 = 3;
+bytes descriptors1 = 4;
+bytes descriptors2 = 5;
+bytes keypoints1 = 6;
+bytes keypoints2 = 7;
+bytes matches = 8;
 }
 
 message matchResponse

@@ -1,12 +1,13 @@
 // GRPC Proxy Class implementation generated with xpcf_grpc_gen
 #include "I3DTransformSACFinderFrom3D3D_grpcProxy.h"
 #include <cstddef>
+#include <boost/date_time.hpp>
 #include <xpcf/core/Exception.h>
 #include <xpcf/remoting/ISerializable.h>
-#include <xpcf/remoting/GrpcHelper.h>
 #include <grpcpp/client_context.h>
 #include <grpcpp/create_channel.h>
 #include <grpcpp/security/credentials.h>
+#include <boost/algorithm/string.hpp>
 namespace xpcf = org::bcom::xpcf;
 
 template<> org::bcom::xpcf::grpc::proxyI3DTransformSACFinderFrom3D3D::I3DTransformSACFinderFrom3D3D_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyI3DTransformSACFinderFrom3D3D::I3DTransformSACFinderFrom3D3D_grpcProxy>();
@@ -18,6 +19,8 @@ I3DTransformSACFinderFrom3D3D_grpcProxy::I3DTransformSACFinderFrom3D3D_grpcProxy
   declareInterface<SolAR::api::solver::pose::I3DTransformSACFinderFrom3D3D>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
+  m_grpcProxyCompressionConfig.resize(4);
+  declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
 
@@ -32,6 +35,9 @@ XPCFErrorCode I3DTransformSACFinderFrom3D3D_grpcProxy::onConfigured()
 {
   m_channel = ::grpc::CreateChannel(m_channelUrl, xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)));
   m_grpcStub = ::grpcI3DTransformSACFinderFrom3D3D::grpcI3DTransformSACFinderFrom3D3DService::NewStub(m_channel);
+  for (auto & compressionLine : m_grpcProxyCompressionConfig) {
+      translateClientConfiguration(compressionLine, m_serviceCompressionInfos, m_methodCompressionInfosMap);
+  }
   return xpcf::XPCFErrorCode::_SUCCESS;
 }
 
@@ -43,7 +49,16 @@ void  I3DTransformSACFinderFrom3D3D_grpcProxy::setCameraParameters(SolAR::datast
   ::google::protobuf::Empty respOut;
   reqIn.set_intrinsicparams(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsicParams));
   reqIn.set_distortionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortionParams));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I3DTransformSACFinderFrom3D3D_grpcProxy::setCameraParameters request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I3DTransformSACFinderFrom3D3D_grpcProxy::setCameraParameters response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformSACFinderFrom3D3DService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -57,11 +72,25 @@ SolAR::FrameworkReturnCode  I3DTransformSACFinderFrom3D3D_grpcProxy::estimate(st
   ::grpc::ClientContext context;
   ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request reqIn;
   ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "estimate", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
   reqIn.set_firstpoints3d(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(firstPoints3D));
   reqIn.set_secondpoints3d(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(secondPoints3D));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   reqIn.set_inliers(xpcf::serialize<std::vector<int>>(inliers));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I3DTransformSACFinderFrom3D3D_grpcProxy::estimate request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->estimate_grpc0(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I3DTransformSACFinderFrom3D3D_grpcProxy::estimate response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "estimate_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformSACFinderFrom3D3DService","estimate_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -78,6 +107,11 @@ SolAR::FrameworkReturnCode  I3DTransformSACFinderFrom3D3D_grpcProxy::estimate(SR
   ::grpc::ClientContext context;
   ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Request reqIn;
   ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "estimate", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
   reqIn.set_firstkeyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(firstKeyframe));
   reqIn.set_secondkeyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(secondKeyframe));
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
@@ -85,7 +119,16 @@ SolAR::FrameworkReturnCode  I3DTransformSACFinderFrom3D3D_grpcProxy::estimate(SR
   reqIn.set_secondpoints3d(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(secondPoints3D));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   reqIn.set_inliers(xpcf::serialize<std::vector<int>>(inliers));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I3DTransformSACFinderFrom3D3D_grpcProxy::estimate request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->estimate_grpc1(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I3DTransformSACFinderFrom3D3D_grpcProxy::estimate response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "estimate_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI3DTransformSACFinderFrom3D3DService","estimate_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));

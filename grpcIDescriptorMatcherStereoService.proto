@@ -6,12 +6,13 @@ package grpcIDescriptorMatcherStereo;
 
 message match_grpc0Request
 {
-bytes descriptors1 = 1;
-bytes descriptors2 = 2;
-bytes undistortedKeypoints1 = 3;
-bytes undistortedKeypoints2 = 4;
-bytes type = 5;
-bytes matches = 6;
+int32 grpcServerCompressionFormat  = 1;
+bytes descriptors1 = 2;
+bytes descriptors2 = 3;
+bytes undistortedKeypoints1 = 4;
+bytes undistortedKeypoints2 = 5;
+bytes type = 6;
+bytes matches = 7;
 }
 
 message match_grpc0Response
@@ -22,10 +23,11 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message match_grpc1Request
 {
-bytes frame1 = 1;
-bytes frame2 = 2;
-bytes type = 3;
-bytes matches = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes frame1 = 2;
+bytes frame2 = 3;
+bytes type = 4;
+bytes matches = 5;
 }
 
 message match_grpc1Response

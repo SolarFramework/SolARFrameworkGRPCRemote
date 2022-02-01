@@ -6,9 +6,10 @@ package grpcIPerspectiveController;
 
 message correct_grpc0Request
 {
-bytes inputImg = 1;
-bytes contours = 2;
-bytes patches = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputImg = 2;
+bytes contours = 3;
+bytes patches = 4;
 }
 
 message correct_grpc0Response
@@ -19,9 +20,10 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message correct_grpc1Request
 {
-bytes inputImg = 1;
-bytes contour = 2;
-bytes patch = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputImg = 2;
+bytes contour = 3;
+bytes patch = 4;
 }
 
 message correct_grpc1Response

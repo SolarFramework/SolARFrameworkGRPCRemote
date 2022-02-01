@@ -12,13 +12,14 @@ bytes distorsionParams = 2;
 
 message triangulate_grpc0Request
 {
-bytes pointsView1 = 1;
-bytes pointView2 = 2;
-bytes matches = 3;
-bytes working_views = 4;
-bytes poseView1 = 5;
-bytes poseView2 = 6;
-bytes pcloud = 7;
+int32 grpcServerCompressionFormat  = 1;
+bytes pointsView1 = 2;
+bytes pointView2 = 3;
+bytes matches = 4;
+bytes working_views = 5;
+bytes poseView1 = 6;
+bytes poseView2 = 7;
+bytes pcloud = 8;
 }
 
 message triangulate_grpc0Response
@@ -29,13 +30,14 @@ double xpcfGrpcReturnValue = 2;
 
 message triangulate_grpc1Request
 {
-bytes keypointsView1 = 1;
-bytes keypointsView2 = 2;
-bytes matches = 3;
-bytes working_views = 4;
-bytes poseView1 = 5;
-bytes poseView2 = 6;
-bytes pcloud = 7;
+int32 grpcServerCompressionFormat  = 1;
+bytes keypointsView1 = 2;
+bytes keypointsView2 = 3;
+bytes matches = 4;
+bytes working_views = 5;
+bytes poseView1 = 6;
+bytes poseView2 = 7;
+bytes pcloud = 8;
 }
 
 message triangulate_grpc1Response
@@ -46,15 +48,16 @@ double xpcfGrpcReturnValue = 2;
 
 message triangulate_grpc2Request
 {
-bytes keypointsView1 = 1;
-bytes keypointsView2 = 2;
-bytes descriptor1 = 3;
-bytes descriptor2 = 4;
-bytes matches = 5;
-bytes working_views = 6;
-bytes poseView1 = 7;
-bytes poseView2 = 8;
-bytes pcloud = 9;
+int32 grpcServerCompressionFormat  = 1;
+bytes keypointsView1 = 2;
+bytes keypointsView2 = 3;
+bytes descriptor1 = 4;
+bytes descriptor2 = 5;
+bytes matches = 6;
+bytes working_views = 7;
+bytes poseView1 = 8;
+bytes poseView2 = 9;
+bytes pcloud = 10;
 }
 
 message triangulate_grpc2Response
@@ -65,12 +68,13 @@ double xpcfGrpcReturnValue = 2;
 
 message triangulate_grpc3Request
 {
-bytes frame1 = 1;
-bytes frame2 = 2;
-bytes matches = 3;
-bytes working_views = 4;
-bool onlyDepth = 5;
-bytes pcloud = 6;
+int32 grpcServerCompressionFormat  = 1;
+bytes frame1 = 2;
+bytes frame2 = 3;
+bytes matches = 4;
+bytes working_views = 5;
+bool onlyDepth = 6;
+bytes pcloud = 7;
 }
 
 message triangulate_grpc3Response

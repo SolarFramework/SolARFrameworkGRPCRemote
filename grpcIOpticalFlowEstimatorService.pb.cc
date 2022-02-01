@@ -24,7 +24,8 @@ constexpr estimate_grpc0Request::estimate_grpc0Request(
   , pointstotrack_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , trackedpoints_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct estimate_grpc0RequestDefaultTypeInternal {
   constexpr estimate_grpc0RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -56,7 +57,8 @@ constexpr estimate_grpc1Request::estimate_grpc1Request(
   , pointstotrack_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , trackedpoints_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct estimate_grpc1RequestDefaultTypeInternal {
   constexpr estimate_grpc1RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -92,6 +94,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIOpticalFlowEstimatorServi
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, previousimage_),
   PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, currentimage_),
   PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, pointstotrack_),
@@ -112,6 +115,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIOpticalFlowEstimatorServi
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, previousimage_),
   PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, currentimage_),
   PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, pointstotrack_),
@@ -130,9 +134,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIOpticalFlowEstimatorServi
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIOpticalFlowEstimator::estimate_grpc0Request)},
-  { 11, -1, sizeof(::grpcIOpticalFlowEstimator::estimate_grpc0Response)},
-  { 20, -1, sizeof(::grpcIOpticalFlowEstimator::estimate_grpc1Request)},
-  { 31, -1, sizeof(::grpcIOpticalFlowEstimator::estimate_grpc1Response)},
+  { 12, -1, sizeof(::grpcIOpticalFlowEstimator::estimate_grpc0Response)},
+  { 21, -1, sizeof(::grpcIOpticalFlowEstimator::estimate_grpc1Request)},
+  { 33, -1, sizeof(::grpcIOpticalFlowEstimator::estimate_grpc1Response)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -145,34 +149,36 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIOpticalFlowEstimatorService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n&grpcIOpticalFlowEstimatorService.proto"
   "\022\031grpcIOpticalFlowEstimator\032\033google/prot"
-  "obuf/empty.proto\"\221\001\n\025estimate_grpc0Reque"
-  "st\022\025\n\rpreviousImage\030\001 \001(\014\022\024\n\014currentImag"
-  "e\030\002 \001(\014\022\025\n\rpointsToTrack\030\003 \001(\014\022\025\n\rtracke"
-  "dPoints\030\004 \001(\014\022\016\n\006status\030\005 \001(\014\022\r\n\005error\030\006"
-  " \001(\014\"k\n\026estimate_grpc0Response\022\025\n\rtracke"
-  "dPoints\030\001 \001(\014\022\016\n\006status\030\002 \001(\014\022\r\n\005error\030\003"
-  " \001(\014\022\033\n\023xpcfGrpcReturnValue\030\004 \001(\021\"\221\001\n\025es"
-  "timate_grpc1Request\022\025\n\rpreviousImage\030\001 \001"
-  "(\014\022\024\n\014currentImage\030\002 \001(\014\022\025\n\rpointsToTrac"
-  "k\030\003 \001(\014\022\025\n\rtrackedPoints\030\004 \001(\014\022\016\n\006status"
-  "\030\005 \001(\014\022\r\n\005error\030\006 \001(\014\"k\n\026estimate_grpc1R"
-  "esponse\022\025\n\rtrackedPoints\030\001 \001(\014\022\016\n\006status"
-  "\030\002 \001(\014\022\r\n\005error\030\003 \001(\014\022\033\n\023xpcfGrpcReturnV"
-  "alue\030\004 \001(\0212\224\002\n grpcIOpticalFlowEstimator"
-  "Service\022w\n\016estimate_grpc0\0220.grpcIOptical"
-  "FlowEstimator.estimate_grpc0Request\0321.gr"
-  "pcIOpticalFlowEstimator.estimate_grpc0Re"
-  "sponse\"\000\022w\n\016estimate_grpc1\0220.grpcIOptica"
-  "lFlowEstimator.estimate_grpc1Request\0321.g"
-  "rpcIOpticalFlowEstimator.estimate_grpc1R"
-  "esponse\"\000b\006proto3"
+  "obuf/empty.proto\"\266\001\n\025estimate_grpc0Reque"
+  "st\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022"
+  "\025\n\rpreviousImage\030\002 \001(\014\022\024\n\014currentImage\030\003"
+  " \001(\014\022\025\n\rpointsToTrack\030\004 \001(\014\022\025\n\rtrackedPo"
+  "ints\030\005 \001(\014\022\016\n\006status\030\006 \001(\014\022\r\n\005error\030\007 \001("
+  "\014\"k\n\026estimate_grpc0Response\022\025\n\rtrackedPo"
+  "ints\030\001 \001(\014\022\016\n\006status\030\002 \001(\014\022\r\n\005error\030\003 \001("
+  "\014\022\033\n\023xpcfGrpcReturnValue\030\004 \001(\021\"\266\001\n\025estim"
+  "ate_grpc1Request\022#\n\033grpcServerCompressio"
+  "nFormat\030\001 \001(\005\022\025\n\rpreviousImage\030\002 \001(\014\022\024\n\014"
+  "currentImage\030\003 \001(\014\022\025\n\rpointsToTrack\030\004 \001("
+  "\014\022\025\n\rtrackedPoints\030\005 \001(\014\022\016\n\006status\030\006 \001(\014"
+  "\022\r\n\005error\030\007 \001(\014\"k\n\026estimate_grpc1Respons"
+  "e\022\025\n\rtrackedPoints\030\001 \001(\014\022\016\n\006status\030\002 \001(\014"
+  "\022\r\n\005error\030\003 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\004"
+  " \001(\0212\224\002\n grpcIOpticalFlowEstimatorServic"
+  "e\022w\n\016estimate_grpc0\0220.grpcIOpticalFlowEs"
+  "timator.estimate_grpc0Request\0321.grpcIOpt"
+  "icalFlowEstimator.estimate_grpc0Response"
+  "\"\000\022w\n\016estimate_grpc1\0220.grpcIOpticalFlowE"
+  "stimator.estimate_grpc1Request\0321.grpcIOp"
+  "ticalFlowEstimator.estimate_grpc1Respons"
+  "e\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIOpticalFlowEstimatorService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIOpticalFlowEstimatorService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIOpticalFlowEstimatorService_2eproto = {
-  false, false, 897, descriptor_table_protodef_grpcIOpticalFlowEstimatorService_2eproto, "grpcIOpticalFlowEstimatorService.proto", 
+  false, false, 971, descriptor_table_protodef_grpcIOpticalFlowEstimatorService_2eproto, "grpcIOpticalFlowEstimatorService.proto", 
   &descriptor_table_grpcIOpticalFlowEstimatorService_2eproto_once, descriptor_table_grpcIOpticalFlowEstimatorService_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_grpcIOpticalFlowEstimatorService_2eproto::offsets,
   file_level_metadata_grpcIOpticalFlowEstimatorService_2eproto, file_level_enum_descriptors_grpcIOpticalFlowEstimatorService_2eproto, file_level_service_descriptors_grpcIOpticalFlowEstimatorService_2eproto,
@@ -232,6 +238,7 @@ estimate_grpc0Request::estimate_grpc0Request(const estimate_grpc0Request& from)
     error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIOpticalFlowEstimator.estimate_grpc0Request)
 }
 
@@ -242,6 +249,7 @@ pointstotrack_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStri
 trackedpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 estimate_grpc0Request::~estimate_grpc0Request() {
@@ -282,6 +290,7 @@ void estimate_grpc0Request::Clear() {
   trackedpoints_.ClearToEmpty();
   status_.ClearToEmpty();
   error_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -292,49 +301,56 @@ const char* estimate_grpc0Request::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes previousImage = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes previousImage = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_previousimage();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes currentImage = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes currentImage = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_currentimage();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes pointsToTrack = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes pointsToTrack = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_pointstotrack();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes trackedPoints = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes trackedPoints = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_trackedpoints();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes status = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes status = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes error = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // bytes error = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_error();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -368,40 +384,46 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes previousImage = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes previousImage = 2;
   if (this->previousimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_previousimage(), target);
+        2, this->_internal_previousimage(), target);
   }
 
-  // bytes currentImage = 2;
+  // bytes currentImage = 3;
   if (this->currentimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_currentimage(), target);
+        3, this->_internal_currentimage(), target);
   }
 
-  // bytes pointsToTrack = 3;
+  // bytes pointsToTrack = 4;
   if (this->pointstotrack().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_pointstotrack(), target);
+        4, this->_internal_pointstotrack(), target);
   }
 
-  // bytes trackedPoints = 4;
+  // bytes trackedPoints = 5;
   if (this->trackedpoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_trackedpoints(), target);
+        5, this->_internal_trackedpoints(), target);
   }
 
-  // bytes status = 5;
+  // bytes status = 6;
   if (this->status().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_status(), target);
+        6, this->_internal_status(), target);
   }
 
-  // bytes error = 6;
+  // bytes error = 7;
   if (this->error().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        6, this->_internal_error(), target);
+        7, this->_internal_error(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -420,46 +442,53 @@ size_t estimate_grpc0Request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes previousImage = 1;
+  // bytes previousImage = 2;
   if (this->previousimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_previousimage());
   }
 
-  // bytes currentImage = 2;
+  // bytes currentImage = 3;
   if (this->currentimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_currentimage());
   }
 
-  // bytes pointsToTrack = 3;
+  // bytes pointsToTrack = 4;
   if (this->pointstotrack().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_pointstotrack());
   }
 
-  // bytes trackedPoints = 4;
+  // bytes trackedPoints = 5;
   if (this->trackedpoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_trackedpoints());
   }
 
-  // bytes status = 5;
+  // bytes status = 6;
   if (this->status().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_status());
   }
 
-  // bytes error = 6;
+  // bytes error = 7;
   if (this->error().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_error());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -511,6 +540,9 @@ void estimate_grpc0Request::MergeFrom(const estimate_grpc0Request& from) {
   if (from.error().size() > 0) {
     _internal_set_error(from._internal_error());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void estimate_grpc0Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -540,6 +572,7 @@ void estimate_grpc0Request::InternalSwap(estimate_grpc0Request* other) {
   trackedpoints_.Swap(&other->trackedpoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   status_.Swap(&other->status_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   error_.Swap(&other->error_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimate_grpc0Request::GetMetadata() const {
@@ -880,6 +913,7 @@ estimate_grpc1Request::estimate_grpc1Request(const estimate_grpc1Request& from)
     error_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_error(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIOpticalFlowEstimator.estimate_grpc1Request)
 }
 
@@ -890,6 +924,7 @@ pointstotrack_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStri
 trackedpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 error_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 estimate_grpc1Request::~estimate_grpc1Request() {
@@ -930,6 +965,7 @@ void estimate_grpc1Request::Clear() {
   trackedpoints_.ClearToEmpty();
   status_.ClearToEmpty();
   error_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -940,49 +976,56 @@ const char* estimate_grpc1Request::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes previousImage = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes previousImage = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_previousimage();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes currentImage = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes currentImage = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_currentimage();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes pointsToTrack = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes pointsToTrack = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_pointstotrack();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes trackedPoints = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes trackedPoints = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_trackedpoints();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes status = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes status = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes error = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // bytes error = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_error();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1016,40 +1059,46 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes previousImage = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes previousImage = 2;
   if (this->previousimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_previousimage(), target);
+        2, this->_internal_previousimage(), target);
   }
 
-  // bytes currentImage = 2;
+  // bytes currentImage = 3;
   if (this->currentimage().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_currentimage(), target);
+        3, this->_internal_currentimage(), target);
   }
 
-  // bytes pointsToTrack = 3;
+  // bytes pointsToTrack = 4;
   if (this->pointstotrack().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_pointstotrack(), target);
+        4, this->_internal_pointstotrack(), target);
   }
 
-  // bytes trackedPoints = 4;
+  // bytes trackedPoints = 5;
   if (this->trackedpoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_trackedpoints(), target);
+        5, this->_internal_trackedpoints(), target);
   }
 
-  // bytes status = 5;
+  // bytes status = 6;
   if (this->status().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_status(), target);
+        6, this->_internal_status(), target);
   }
 
-  // bytes error = 6;
+  // bytes error = 7;
   if (this->error().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        6, this->_internal_error(), target);
+        7, this->_internal_error(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1068,46 +1117,53 @@ size_t estimate_grpc1Request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes previousImage = 1;
+  // bytes previousImage = 2;
   if (this->previousimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_previousimage());
   }
 
-  // bytes currentImage = 2;
+  // bytes currentImage = 3;
   if (this->currentimage().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_currentimage());
   }
 
-  // bytes pointsToTrack = 3;
+  // bytes pointsToTrack = 4;
   if (this->pointstotrack().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_pointstotrack());
   }
 
-  // bytes trackedPoints = 4;
+  // bytes trackedPoints = 5;
   if (this->trackedpoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_trackedpoints());
   }
 
-  // bytes status = 5;
+  // bytes status = 6;
   if (this->status().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_status());
   }
 
-  // bytes error = 6;
+  // bytes error = 7;
   if (this->error().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_error());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1159,6 +1215,9 @@ void estimate_grpc1Request::MergeFrom(const estimate_grpc1Request& from) {
   if (from.error().size() > 0) {
     _internal_set_error(from._internal_error());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void estimate_grpc1Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1188,6 +1247,7 @@ void estimate_grpc1Request::InternalSwap(estimate_grpc1Request* other) {
   trackedpoints_.Swap(&other->trackedpoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   status_.Swap(&other->status_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   error_.Swap(&other->error_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimate_grpc1Request::GetMetadata() const {

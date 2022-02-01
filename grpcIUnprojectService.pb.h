@@ -358,11 +358,12 @@ class unproject_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImagePointsFieldNumber = 1,
-    kPoseFieldNumber = 2,
-    kWorldPointsFieldNumber = 3,
+    kImagePointsFieldNumber = 2,
+    kPoseFieldNumber = 3,
+    kWorldPointsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes imagePoints = 1;
+  // bytes imagePoints = 2;
   void clear_imagepoints();
   const std::string& imagepoints() const;
   void set_imagepoints(const std::string& value);
@@ -378,7 +379,7 @@ class unproject_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_imagepoints();
   public:
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -394,7 +395,7 @@ class unproject_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes worldPoints = 3;
+  // bytes worldPoints = 4;
   void clear_worldpoints();
   const std::string& worldpoints() const;
   void set_worldpoints(const std::string& value);
@@ -410,6 +411,15 @@ class unproject_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_worldpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIUnproject.unproject_grpc0Request)
  private:
   class _Internal;
@@ -420,6 +430,7 @@ class unproject_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imagepoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr worldpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIUnprojectService_2eproto;
 };
@@ -693,11 +704,12 @@ class unproject_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImageKeypointsFieldNumber = 1,
-    kPoseFieldNumber = 2,
-    kWorldPointsFieldNumber = 3,
+    kImageKeypointsFieldNumber = 2,
+    kPoseFieldNumber = 3,
+    kWorldPointsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes imageKeypoints = 1;
+  // bytes imageKeypoints = 2;
   void clear_imagekeypoints();
   const std::string& imagekeypoints() const;
   void set_imagekeypoints(const std::string& value);
@@ -713,7 +725,7 @@ class unproject_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_imagekeypoints();
   public:
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -729,7 +741,7 @@ class unproject_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes worldPoints = 3;
+  // bytes worldPoints = 4;
   void clear_worldpoints();
   const std::string& worldpoints() const;
   void set_worldpoints(const std::string& value);
@@ -745,6 +757,15 @@ class unproject_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_worldpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIUnproject.unproject_grpc1Request)
  private:
   class _Internal;
@@ -755,6 +776,7 @@ class unproject_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imagekeypoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr worldpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIUnprojectService_2eproto;
 };
@@ -1050,7 +1072,27 @@ inline void setCameraParametersRequest::set_allocated_distorsionparams(std::stri
 
 // unproject_grpc0Request
 
-// bytes imagePoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void unproject_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unproject_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unproject_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIUnproject.unproject_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void unproject_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void unproject_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIUnproject.unproject_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes imagePoints = 2;
 inline void unproject_grpc0Request::clear_imagepoints() {
   imagepoints_.ClearToEmpty();
 }
@@ -1111,7 +1153,7 @@ inline void unproject_grpc0Request::set_allocated_imagepoints(std::string* image
   // @@protoc_insertion_point(field_set_allocated:grpcIUnproject.unproject_grpc0Request.imagePoints)
 }
 
-// bytes pose = 2;
+// bytes pose = 3;
 inline void unproject_grpc0Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -1172,7 +1214,7 @@ inline void unproject_grpc0Request::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcIUnproject.unproject_grpc0Request.pose)
 }
 
-// bytes worldPoints = 3;
+// bytes worldPoints = 4;
 inline void unproject_grpc0Request::clear_worldpoints() {
   worldpoints_.ClearToEmpty();
 }
@@ -1322,7 +1364,27 @@ inline void unproject_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPAC
 
 // unproject_grpc1Request
 
-// bytes imageKeypoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void unproject_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unproject_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unproject_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIUnproject.unproject_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void unproject_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void unproject_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIUnproject.unproject_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes imageKeypoints = 2;
 inline void unproject_grpc1Request::clear_imagekeypoints() {
   imagekeypoints_.ClearToEmpty();
 }
@@ -1383,7 +1445,7 @@ inline void unproject_grpc1Request::set_allocated_imagekeypoints(std::string* im
   // @@protoc_insertion_point(field_set_allocated:grpcIUnproject.unproject_grpc1Request.imageKeypoints)
 }
 
-// bytes pose = 2;
+// bytes pose = 3;
 inline void unproject_grpc1Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -1444,7 +1506,7 @@ inline void unproject_grpc1Request::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcIUnproject.unproject_grpc1Request.pose)
 }
 
-// bytes worldPoints = 3;
+// bytes worldPoints = 4;
 inline void unproject_grpc1Request::clear_worldpoints() {
   worldpoints_.ClearToEmpty();
 }

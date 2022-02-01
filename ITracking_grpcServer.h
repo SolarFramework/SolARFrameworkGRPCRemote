@@ -2,9 +2,10 @@
 
 #ifndef ITRACKING_GRPCSERVER_H
 #define ITRACKING_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/slam/ITracking.h"
+#include "api/slam/ITracking.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcITrackingService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -29,12 +30,15 @@ class ITracking_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
         ::grpc::Status process(::grpc::ServerContext* context, const ::grpcITracking::processRequest* request, ::grpcITracking::processResponse* response) override;
 
         SRef<SolAR::api::slam::ITracking> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcITrackingServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

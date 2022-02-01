@@ -64,32 +64,32 @@ class grpcIRegressionService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::updateResponse>> PrepareAsyncupdate(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::updateResponse>>(PrepareAsyncupdateRaw(context, request, cq));
     }
-    virtual ::grpc::Status loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRegression::loadModelResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>> AsyncloadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status loadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpcIRegression::loadModelResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>> AsyncloadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>>(AsyncloadModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>> PrepareAsyncloadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>> PrepareAsyncloadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>>(PrepareAsyncloadModelRaw(context, request, cq));
     }
-    virtual ::grpc::Status getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRegression::getTrainingStatusResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>> AsyncgetTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status getTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpcIRegression::getTrainingStatusResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>> AsyncgetTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>>(AsyncgetTrainingStatusRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>> PrepareAsyncgetTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>> PrepareAsyncgetTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>>(PrepareAsyncgetTrainingStatusRaw(context, request, cq));
     }
-    virtual ::grpc::Status getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRegression::getNumActiveLeavesResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>> AsyncgetNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status getNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpcIRegression::getNumActiveLeavesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>> AsyncgetNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>>(AsyncgetNumActiveLeavesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>> PrepareAsyncgetNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>> PrepareAsyncgetNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>>(PrepareAsyncgetNumActiveLeavesRaw(context, request, cq));
     }
-    virtual ::grpc::Status getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRegression::getNumPassiveLeavesResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>> AsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status getNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpcIRegression::getNumPassiveLeavesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>> AsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>>(AsyncgetNumPassiveLeavesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>> PrepareAsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>> PrepareAsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>>(PrepareAsyncgetNumPassiveLeavesRaw(context, request, cq));
     }
     class experimental_async_interface {
@@ -119,29 +119,29 @@ class grpcIRegressionService final {
       #else
       virtual void update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void loadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest* request, ::grpcIRegression::loadModelResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void loadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest* request, ::grpcIRegression::loadModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void loadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest* request, ::grpcIRegression::loadModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest* request, ::grpcIRegression::getTrainingStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void getTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpcIRegression::getNumActiveLeavesResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void getNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void getNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -160,14 +160,14 @@ class grpcIRegressionService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::regressResponse>* PrepareAsyncregressRaw(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::updateResponse>* AsyncupdateRaw(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::updateResponse>* PrepareAsyncupdateRaw(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>* AsyncloadModelRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>* PrepareAsyncloadModelRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>* AsyncgetTrainingStatusRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>* PrepareAsyncgetTrainingStatusRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>* AsyncgetNumActiveLeavesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>* PrepareAsyncgetNumActiveLeavesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>* AsyncgetNumPassiveLeavesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>* PrepareAsyncgetNumPassiveLeavesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>* AsyncloadModelRaw(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::loadModelResponse>* PrepareAsyncloadModelRaw(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>* AsyncgetTrainingStatusRaw(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getTrainingStatusResponse>* PrepareAsyncgetTrainingStatusRaw(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>* AsyncgetNumActiveLeavesRaw(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumActiveLeavesResponse>* PrepareAsyncgetNumActiveLeavesRaw(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>* AsyncgetNumPassiveLeavesRaw(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRegression::getNumPassiveLeavesResponse>* PrepareAsyncgetNumPassiveLeavesRaw(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -200,32 +200,32 @@ class grpcIRegressionService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::updateResponse>> PrepareAsyncupdate(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::updateResponse>>(PrepareAsyncupdateRaw(context, request, cq));
     }
-    ::grpc::Status loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRegression::loadModelResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>> AsyncloadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status loadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpcIRegression::loadModelResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>> AsyncloadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>>(AsyncloadModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>> PrepareAsyncloadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>> PrepareAsyncloadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>>(PrepareAsyncloadModelRaw(context, request, cq));
     }
-    ::grpc::Status getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRegression::getTrainingStatusResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>> AsyncgetTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status getTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpcIRegression::getTrainingStatusResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>> AsyncgetTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>>(AsyncgetTrainingStatusRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>> PrepareAsyncgetTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>> PrepareAsyncgetTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>>(PrepareAsyncgetTrainingStatusRaw(context, request, cq));
     }
-    ::grpc::Status getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRegression::getNumActiveLeavesResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>> AsyncgetNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status getNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpcIRegression::getNumActiveLeavesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>> AsyncgetNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>>(AsyncgetNumActiveLeavesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>> PrepareAsyncgetNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>> PrepareAsyncgetNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>>(PrepareAsyncgetNumActiveLeavesRaw(context, request, cq));
     }
-    ::grpc::Status getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRegression::getNumPassiveLeavesResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>> AsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status getNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpcIRegression::getNumPassiveLeavesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>> AsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>>(AsyncgetNumPassiveLeavesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>> PrepareAsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>> PrepareAsyncgetNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>>(PrepareAsyncgetNumPassiveLeavesRaw(context, request, cq));
     }
     class experimental_async final :
@@ -255,29 +255,29 @@ class grpcIRegressionService final {
       #else
       void update(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, std::function<void(::grpc::Status)>) override;
+      void loadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest* request, ::grpcIRegression::loadModelResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void loadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest* request, ::grpcIRegression::loadModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void loadModel(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void loadModel(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest* request, ::grpcIRegression::loadModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, std::function<void(::grpc::Status)>) override;
+      void getTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest* request, ::grpcIRegression::getTrainingStatusResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void getTrainingStatus(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void getTrainingStatus(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest* request, ::grpcIRegression::getTrainingStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, std::function<void(::grpc::Status)>) override;
+      void getNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpcIRegression::getNumActiveLeavesResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void getNumActiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void getNumActiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpcIRegression::getNumActiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, std::function<void(::grpc::Status)>) override;
+      void getNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void getNumPassiveLeaves(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void getNumPassiveLeaves(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpcIRegression::getNumPassiveLeavesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -298,14 +298,14 @@ class grpcIRegressionService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIRegression::regressResponse>* PrepareAsyncregressRaw(::grpc::ClientContext* context, const ::grpcIRegression::regressRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIRegression::updateResponse>* AsyncupdateRaw(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIRegression::updateResponse>* PrepareAsyncupdateRaw(::grpc::ClientContext* context, const ::grpcIRegression::updateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>* AsyncloadModelRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>* PrepareAsyncloadModelRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>* AsyncgetTrainingStatusRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>* PrepareAsyncgetTrainingStatusRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>* AsyncgetNumActiveLeavesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>* PrepareAsyncgetNumActiveLeavesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>* AsyncgetNumPassiveLeavesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>* PrepareAsyncgetNumPassiveLeavesRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>* AsyncloadModelRaw(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::loadModelResponse>* PrepareAsyncloadModelRaw(::grpc::ClientContext* context, const ::grpcIRegression::loadModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>* AsyncgetTrainingStatusRaw(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getTrainingStatusResponse>* PrepareAsyncgetTrainingStatusRaw(::grpc::ClientContext* context, const ::grpcIRegression::getTrainingStatusRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>* AsyncgetNumActiveLeavesRaw(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumActiveLeavesResponse>* PrepareAsyncgetNumActiveLeavesRaw(::grpc::ClientContext* context, const ::grpcIRegression::getNumActiveLeavesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>* AsyncgetNumPassiveLeavesRaw(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRegression::getNumPassiveLeavesResponse>* PrepareAsyncgetNumPassiveLeavesRaw(::grpc::ClientContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_setCameraParameters_;
     const ::grpc::internal::RpcMethod rpcmethod_add_;
     const ::grpc::internal::RpcMethod rpcmethod_regress_;
@@ -325,10 +325,10 @@ class grpcIRegressionService final {
     virtual ::grpc::Status add(::grpc::ServerContext* context, const ::grpcIRegression::addRequest* request, ::grpcIRegression::addResponse* response);
     virtual ::grpc::Status regress(::grpc::ServerContext* context, const ::grpcIRegression::regressRequest* request, ::grpcIRegression::regressResponse* response);
     virtual ::grpc::Status update(::grpc::ServerContext* context, const ::grpcIRegression::updateRequest* request, ::grpcIRegression::updateResponse* response);
-    virtual ::grpc::Status loadModel(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response);
-    virtual ::grpc::Status getTrainingStatus(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response);
-    virtual ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response);
-    virtual ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response);
+    virtual ::grpc::Status loadModel(::grpc::ServerContext* context, const ::grpcIRegression::loadModelRequest* request, ::grpcIRegression::loadModelResponse* response);
+    virtual ::grpc::Status getTrainingStatus(::grpc::ServerContext* context, const ::grpcIRegression::getTrainingStatusRequest* request, ::grpcIRegression::getTrainingStatusResponse* response);
+    virtual ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* context, const ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpcIRegression::getNumActiveLeavesResponse* response);
+    virtual ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* context, const ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpcIRegression::getNumPassiveLeavesResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_setCameraParameters : public BaseClass {
@@ -422,11 +422,11 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
+    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::grpcIRegression::loadModelRequest* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestloadModel(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRegression::loadModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestloadModel(::grpc::ServerContext* context, ::grpcIRegression::loadModelRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRegression::loadModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -442,11 +442,11 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
+    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getTrainingStatusRequest* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetTrainingStatus(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRegression::getTrainingStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetTrainingStatus(::grpc::ServerContext* context, ::grpcIRegression::getTrainingStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRegression::getTrainingStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -462,11 +462,11 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumActiveLeavesRequest* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetNumActiveLeaves(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRegression::getNumActiveLeavesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetNumActiveLeaves(::grpc::ServerContext* context, ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRegression::getNumActiveLeavesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -482,11 +482,11 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumPassiveLeavesRequest* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetNumPassiveLeaves(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRegression::getNumPassiveLeavesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetNumPassiveLeaves(::grpc::ServerContext* context, ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRegression::getNumPassiveLeavesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -691,38 +691,38 @@ class grpcIRegressionService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::loadModelRequest, ::grpcIRegression::loadModelResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIRegression::loadModelResponse* response) { return this->loadModel(context, request, response); }));}
+                     context, const ::grpcIRegression::loadModelRequest* request, ::grpcIRegression::loadModelResponse* response) { return this->loadModel(context, request, response); }));}
     void SetMessageAllocatorFor_loadModel(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRegression::loadModelRequest, ::grpcIRegression::loadModelResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::loadModelRequest, ::grpcIRegression::loadModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_loadModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
+    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::grpcIRegression::loadModelRequest* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* loadModel(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::loadModelRequest* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* loadModel(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRegression::loadModelRequest* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -738,38 +738,38 @@ class grpcIRegressionService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::getTrainingStatusRequest, ::grpcIRegression::getTrainingStatusResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIRegression::getTrainingStatusResponse* response) { return this->getTrainingStatus(context, request, response); }));}
+                     context, const ::grpcIRegression::getTrainingStatusRequest* request, ::grpcIRegression::getTrainingStatusResponse* response) { return this->getTrainingStatus(context, request, response); }));}
     void SetMessageAllocatorFor_getTrainingStatus(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRegression::getTrainingStatusRequest, ::grpcIRegression::getTrainingStatusResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::getTrainingStatusRequest, ::grpcIRegression::getTrainingStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_getTrainingStatus() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
+    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getTrainingStatusRequest* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getTrainingStatus(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::getTrainingStatusRequest* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* getTrainingStatus(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRegression::getTrainingStatusRequest* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -785,38 +785,38 @@ class grpcIRegressionService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::getNumActiveLeavesRequest, ::grpcIRegression::getNumActiveLeavesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumActiveLeavesResponse* response) { return this->getNumActiveLeaves(context, request, response); }));}
+                     context, const ::grpcIRegression::getNumActiveLeavesRequest* request, ::grpcIRegression::getNumActiveLeavesResponse* response) { return this->getNumActiveLeaves(context, request, response); }));}
     void SetMessageAllocatorFor_getNumActiveLeaves(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRegression::getNumActiveLeavesRequest, ::grpcIRegression::getNumActiveLeavesResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::getNumActiveLeavesRequest, ::grpcIRegression::getNumActiveLeavesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_getNumActiveLeaves() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumActiveLeavesRequest* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNumActiveLeaves(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::getNumActiveLeavesRequest* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* getNumActiveLeaves(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRegression::getNumActiveLeavesRequest* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -832,38 +832,38 @@ class grpcIRegressionService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::getNumPassiveLeavesRequest, ::grpcIRegression::getNumPassiveLeavesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIRegression::getNumPassiveLeavesResponse* response) { return this->getNumPassiveLeaves(context, request, response); }));}
+                     context, const ::grpcIRegression::getNumPassiveLeavesRequest* request, ::grpcIRegression::getNumPassiveLeavesResponse* response) { return this->getNumPassiveLeaves(context, request, response); }));}
     void SetMessageAllocatorFor_getNumPassiveLeaves(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRegression::getNumPassiveLeavesRequest, ::grpcIRegression::getNumPassiveLeavesResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRegression::getNumPassiveLeavesRequest, ::grpcIRegression::getNumPassiveLeavesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_getNumPassiveLeaves() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumPassiveLeavesRequest* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getNumPassiveLeaves(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRegression::getNumPassiveLeavesRequest* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* getNumPassiveLeaves(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRegression::getNumPassiveLeavesRequest* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -952,7 +952,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
+    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::grpcIRegression::loadModelRequest* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -969,7 +969,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
+    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getTrainingStatusRequest* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -986,7 +986,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumActiveLeavesRequest* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1003,7 +1003,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumPassiveLeavesRequest* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1100,7 +1100,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
+    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::grpcIRegression::loadModelRequest* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1120,7 +1120,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
+    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getTrainingStatusRequest* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1140,7 +1140,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumActiveLeavesRequest* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1160,7 +1160,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumPassiveLeavesRequest* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1345,7 +1345,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
+    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::grpcIRegression::loadModelRequest* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1383,7 +1383,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
+    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getTrainingStatusRequest* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1421,7 +1421,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumActiveLeavesRequest* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1459,7 +1459,7 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumPassiveLeavesRequest* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1588,10 +1588,10 @@ class grpcIRegressionService final {
     WithStreamedUnaryMethod_loadModel() {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse>(
+          ::grpcIRegression::loadModelRequest, ::grpcIRegression::loadModelResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIRegression::loadModelResponse>* streamer) {
+                     ::grpcIRegression::loadModelRequest, ::grpcIRegression::loadModelResponse>* streamer) {
                        return this->StreamedloadModel(context,
                          streamer);
                   }));
@@ -1600,12 +1600,12 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
+    ::grpc::Status loadModel(::grpc::ServerContext* /*context*/, const ::grpcIRegression::loadModelRequest* /*request*/, ::grpcIRegression::loadModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedloadModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIRegression::loadModelResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedloadModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIRegression::loadModelRequest,::grpcIRegression::loadModelResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getTrainingStatus : public BaseClass {
@@ -1615,10 +1615,10 @@ class grpcIRegressionService final {
     WithStreamedUnaryMethod_getTrainingStatus() {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse>(
+          ::grpcIRegression::getTrainingStatusRequest, ::grpcIRegression::getTrainingStatusResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIRegression::getTrainingStatusResponse>* streamer) {
+                     ::grpcIRegression::getTrainingStatusRequest, ::grpcIRegression::getTrainingStatusResponse>* streamer) {
                        return this->StreamedgetTrainingStatus(context,
                          streamer);
                   }));
@@ -1627,12 +1627,12 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
+    ::grpc::Status getTrainingStatus(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getTrainingStatusRequest* /*request*/, ::grpcIRegression::getTrainingStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetTrainingStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIRegression::getTrainingStatusResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetTrainingStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIRegression::getTrainingStatusRequest,::grpcIRegression::getTrainingStatusResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getNumActiveLeaves : public BaseClass {
@@ -1642,10 +1642,10 @@ class grpcIRegressionService final {
     WithStreamedUnaryMethod_getNumActiveLeaves() {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse>(
+          ::grpcIRegression::getNumActiveLeavesRequest, ::grpcIRegression::getNumActiveLeavesResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIRegression::getNumActiveLeavesResponse>* streamer) {
+                     ::grpcIRegression::getNumActiveLeavesRequest, ::grpcIRegression::getNumActiveLeavesResponse>* streamer) {
                        return this->StreamedgetNumActiveLeaves(context,
                          streamer);
                   }));
@@ -1654,12 +1654,12 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumActiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumActiveLeavesRequest* /*request*/, ::grpcIRegression::getNumActiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetNumActiveLeaves(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIRegression::getNumActiveLeavesResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetNumActiveLeaves(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIRegression::getNumActiveLeavesRequest,::grpcIRegression::getNumActiveLeavesResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getNumPassiveLeaves : public BaseClass {
@@ -1669,10 +1669,10 @@ class grpcIRegressionService final {
     WithStreamedUnaryMethod_getNumPassiveLeaves() {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse>(
+          ::grpcIRegression::getNumPassiveLeavesRequest, ::grpcIRegression::getNumPassiveLeavesResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIRegression::getNumPassiveLeavesResponse>* streamer) {
+                     ::grpcIRegression::getNumPassiveLeavesRequest, ::grpcIRegression::getNumPassiveLeavesResponse>* streamer) {
                        return this->StreamedgetNumPassiveLeaves(context,
                          streamer);
                   }));
@@ -1681,12 +1681,12 @@ class grpcIRegressionService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
+    ::grpc::Status getNumPassiveLeaves(::grpc::ServerContext* /*context*/, const ::grpcIRegression::getNumPassiveLeavesRequest* /*request*/, ::grpcIRegression::getNumPassiveLeavesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetNumPassiveLeaves(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIRegression::getNumPassiveLeavesResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetNumPassiveLeaves(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIRegression::getNumPassiveLeavesRequest,::grpcIRegression::getNumPassiveLeavesResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_add<WithStreamedUnaryMethod_regress<WithStreamedUnaryMethod_update<WithStreamedUnaryMethod_loadModel<WithStreamedUnaryMethod_getTrainingStatus<WithStreamedUnaryMethod_getNumActiveLeaves<WithStreamedUnaryMethod_getNumPassiveLeaves<Service > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;

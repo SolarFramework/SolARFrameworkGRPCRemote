@@ -2,9 +2,10 @@
 
 #ifndef IFEATUREWITHDEPTHFROMSTEREO_GRPCSERVER_H
 #define IFEATUREWITHDEPTHFROMSTEREO_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IFeatureWithDepthFromStereo.h"
+#include "api/features/IFeatureWithDepthFromStereo.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIFeatureWithDepthFromStereoService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -28,12 +29,15 @@ class IFeatureWithDepthFromStereo_grpcServer:  public org::bcom::xpcf::Configura
         ::grpc::Status compute(::grpc::ServerContext* context, const ::grpcIFeatureWithDepthFromStereo::computeRequest* request, ::grpcIFeatureWithDepthFromStereo::computeResponse* response) override;
 
         SRef<SolAR::api::features::IFeatureWithDepthFromStereo> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIFeatureWithDepthFromStereoServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

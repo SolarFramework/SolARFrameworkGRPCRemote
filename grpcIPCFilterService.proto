@@ -6,8 +6,9 @@ package grpcIPCFilter;
 
 message filterRequest
 {
-bytes inPointCloud = 1;
-bytes outPointCloud = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes inPointCloud = 2;
+bytes outPointCloud = 3;
 }
 
 message filterResponse

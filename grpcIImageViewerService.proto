@@ -6,7 +6,8 @@ package grpcIImageViewer;
 
 message displayRequest
 {
-bytes img = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes img = 2;
 }
 
 message displayResponse
@@ -16,8 +17,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message displayKeyRequest
 {
-bytes img = 1;
-sint32 key = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes img = 2;
+sint32 key = 3;
 }
 
 message displayKeyResponse

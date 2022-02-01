@@ -6,13 +6,14 @@ package grpcI3D3DCorrespondencesFinder;
 
 message find_grpc0Request
 {
-bytes firstKeyframe = 1;
-bytes secondKeyframe = 2;
-bytes current_matches = 3;
-bytes firstCloudPoints = 4;
-bytes secondCloudPoints = 5;
-bytes found_matches = 6;
-bytes remaining_matches = 7;
+int32 grpcServerCompressionFormat  = 1;
+bytes firstKeyframe = 2;
+bytes secondKeyframe = 3;
+bytes current_matches = 4;
+bytes firstCloudPoints = 5;
+bytes secondCloudPoints = 6;
+bytes found_matches = 7;
+bytes remaining_matches = 8;
 }
 
 message find_grpc0Response
@@ -26,12 +27,13 @@ sint32 xpcfGrpcReturnValue = 5;
 
 message find_grpc1Request
 {
-bytes firstKeyframe = 1;
-bytes secondKeyframe = 2;
-bytes current_matches = 3;
-bytes firstCloudPointsIndices = 4;
-bytes secondCloudPointsIndices = 5;
-bytes found_matches = 6;
+int32 grpcServerCompressionFormat  = 1;
+bytes firstKeyframe = 2;
+bytes secondKeyframe = 3;
+bytes current_matches = 4;
+bytes firstCloudPointsIndices = 5;
+bytes secondCloudPointsIndices = 6;
+bytes found_matches = 7;
 }
 
 message find_grpc1Response

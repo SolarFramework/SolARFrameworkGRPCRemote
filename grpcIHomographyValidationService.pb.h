@@ -184,10 +184,11 @@ class isValidRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRef2DSquaredMarkerCornersFieldNumber = 1,
-    kProjected2DSquaredMarkerCornersFieldNumber = 2,
+    kRef2DSquaredMarkerCornersFieldNumber = 2,
+    kProjected2DSquaredMarkerCornersFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes ref2DSquaredMarkerCorners = 1;
+  // bytes ref2DSquaredMarkerCorners = 2;
   void clear_ref2dsquaredmarkercorners();
   const std::string& ref2dsquaredmarkercorners() const;
   void set_ref2dsquaredmarkercorners(const std::string& value);
@@ -203,7 +204,7 @@ class isValidRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_ref2dsquaredmarkercorners();
   public:
 
-  // bytes projected2DSquaredMarkerCorners = 2;
+  // bytes projected2DSquaredMarkerCorners = 3;
   void clear_projected2dsquaredmarkercorners();
   const std::string& projected2dsquaredmarkercorners() const;
   void set_projected2dsquaredmarkercorners(const std::string& value);
@@ -219,6 +220,15 @@ class isValidRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_projected2dsquaredmarkercorners();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIHomographyValidation.isValidRequest)
  private:
   class _Internal;
@@ -228,6 +238,7 @@ class isValidRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ref2dsquaredmarkercorners_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr projected2dsquaredmarkercorners_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIHomographyValidationService_2eproto;
 };
@@ -379,7 +390,27 @@ class isValidResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // isValidRequest
 
-// bytes ref2DSquaredMarkerCorners = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void isValidRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isValidRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isValidRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIHomographyValidation.isValidRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void isValidRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void isValidRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIHomographyValidation.isValidRequest.grpcServerCompressionFormat)
+}
+
+// bytes ref2DSquaredMarkerCorners = 2;
 inline void isValidRequest::clear_ref2dsquaredmarkercorners() {
   ref2dsquaredmarkercorners_.ClearToEmpty();
 }
@@ -440,7 +471,7 @@ inline void isValidRequest::set_allocated_ref2dsquaredmarkercorners(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIHomographyValidation.isValidRequest.ref2DSquaredMarkerCorners)
 }
 
-// bytes projected2DSquaredMarkerCorners = 2;
+// bytes projected2DSquaredMarkerCorners = 3;
 inline void isValidRequest::clear_projected2dsquaredmarkercorners() {
   projected2dsquaredmarkercorners_.ClearToEmpty();
 }

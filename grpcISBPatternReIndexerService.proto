@@ -6,10 +6,11 @@ package grpcISBPatternReIndexer;
 
 message reindexRequest
 {
-bytes candidateContours = 1;
-bytes matches = 2;
-bytes patternPoints = 3;
-bytes imagePoints = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes candidateContours = 2;
+bytes matches = 3;
+bytes patternPoints = 4;
+bytes imagePoints = 5;
 }
 
 message reindexResponse

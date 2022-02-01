@@ -184,12 +184,13 @@ class filterRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputMatchesFieldNumber = 1,
-    kKeyPoints1FieldNumber = 2,
-    kKeyPoints2FieldNumber = 3,
-    kOutputMatchesFieldNumber = 4,
+    kInputMatchesFieldNumber = 2,
+    kKeyPoints1FieldNumber = 3,
+    kKeyPoints2FieldNumber = 4,
+    kOutputMatchesFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputMatches = 1;
+  // bytes inputMatches = 2;
   void clear_inputmatches();
   const std::string& inputmatches() const;
   void set_inputmatches(const std::string& value);
@@ -205,7 +206,7 @@ class filterRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_inputmatches();
   public:
 
-  // bytes keyPoints_1 = 2;
+  // bytes keyPoints_1 = 3;
   void clear_keypoints_1();
   const std::string& keypoints_1() const;
   void set_keypoints_1(const std::string& value);
@@ -221,7 +222,7 @@ class filterRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints_1();
   public:
 
-  // bytes keyPoints_2 = 3;
+  // bytes keyPoints_2 = 4;
   void clear_keypoints_2();
   const std::string& keypoints_2() const;
   void set_keypoints_2(const std::string& value);
@@ -237,7 +238,7 @@ class filterRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints_2();
   public:
 
-  // bytes outputMatches = 4;
+  // bytes outputMatches = 5;
   void clear_outputmatches();
   const std::string& outputmatches() const;
   void set_outputmatches(const std::string& value);
@@ -253,6 +254,15 @@ class filterRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_outputmatches();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMatchesFilter.filterRequest)
  private:
   class _Internal;
@@ -264,6 +274,7 @@ class filterRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keypoints_1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keypoints_2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputmatches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMatchesFilterService_2eproto;
 };
@@ -422,7 +433,27 @@ class filterResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // filterRequest
 
-// bytes inputMatches = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void filterRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filterRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filterRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMatchesFilter.filterRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void filterRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void filterRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMatchesFilter.filterRequest.grpcServerCompressionFormat)
+}
+
+// bytes inputMatches = 2;
 inline void filterRequest::clear_inputmatches() {
   inputmatches_.ClearToEmpty();
 }
@@ -483,7 +514,7 @@ inline void filterRequest::set_allocated_inputmatches(std::string* inputmatches)
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesFilter.filterRequest.inputMatches)
 }
 
-// bytes keyPoints_1 = 2;
+// bytes keyPoints_1 = 3;
 inline void filterRequest::clear_keypoints_1() {
   keypoints_1_.ClearToEmpty();
 }
@@ -544,7 +575,7 @@ inline void filterRequest::set_allocated_keypoints_1(std::string* keypoints_1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesFilter.filterRequest.keyPoints_1)
 }
 
-// bytes keyPoints_2 = 3;
+// bytes keyPoints_2 = 4;
 inline void filterRequest::clear_keypoints_2() {
   keypoints_2_.ClearToEmpty();
 }
@@ -605,7 +636,7 @@ inline void filterRequest::set_allocated_keypoints_2(std::string* keypoints_2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesFilter.filterRequest.keyPoints_2)
 }
 
-// bytes outputMatches = 4;
+// bytes outputMatches = 5;
 inline void filterRequest::clear_outputmatches() {
   outputmatches_.ClearToEmpty();
 }

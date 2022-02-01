@@ -36,25 +36,25 @@ class grpcIRelocalizationPipelineService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status init(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRelocalizationPipeline::initResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpcIRelocalizationPipeline::initResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>>(AsyncinitRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>>(PrepareAsyncinitRaw(context, request, cq));
     }
-    virtual ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRelocalizationPipeline::startResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpcIRelocalizationPipeline::startResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>>(AsyncstartRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>>(PrepareAsyncstartRaw(context, request, cq));
     }
-    virtual ::grpc::Status stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRelocalizationPipeline::stopResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpcIRelocalizationPipeline::stopResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>>(AsyncstopRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
     virtual ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest& request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response) = 0;
@@ -81,23 +81,23 @@ class grpcIRelocalizationPipelineService final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -126,12 +126,12 @@ class grpcIRelocalizationPipelineService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::setCameraParametersResponse>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::setCameraParametersResponse>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIRelocalizationPipeline::getCameraParametersResponse>* AsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -142,25 +142,25 @@ class grpcIRelocalizationPipelineService final {
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status init(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRelocalizationPipeline::initResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpcIRelocalizationPipeline::initResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>>(AsyncinitRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>>(PrepareAsyncinitRaw(context, request, cq));
     }
-    ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRelocalizationPipeline::startResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpcIRelocalizationPipeline::startResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>>(AsyncstartRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>>(PrepareAsyncstartRaw(context, request, cq));
     }
-    ::grpc::Status stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRelocalizationPipeline::stopResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpcIRelocalizationPipeline::stopResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>>(AsyncstopRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
     ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest& request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response) override;
@@ -187,23 +187,23 @@ class grpcIRelocalizationPipelineService final {
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)>) override;
+      void init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)>) override;
+      void start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response, std::function<void(::grpc::Status)>) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void setCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -234,12 +234,12 @@ class grpcIRelocalizationPipelineService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::setCameraParametersResponse>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::setCameraParametersResponse>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::getCameraParametersResponse>* AsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -259,9 +259,9 @@ class grpcIRelocalizationPipelineService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status init(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response);
-    virtual ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response);
-    virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response);
+    virtual ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response);
+    virtual ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response);
+    virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response);
     virtual ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response);
     virtual ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIRelocalizationPipeline::getCameraParametersResponse* response);
     virtual ::grpc::Status relocalizeProcessRequest(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse* response);
@@ -278,11 +278,11 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::initRequest* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requestinit(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRelocalizationPipeline::initResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requestinit(::grpc::ServerContext* context, ::grpcIRelocalizationPipeline::initRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRelocalizationPipeline::initResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -298,11 +298,11 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::startRequest* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requeststart(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRelocalizationPipeline::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requeststart(::grpc::ServerContext* context, ::grpcIRelocalizationPipeline::startRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRelocalizationPipeline::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -318,11 +318,11 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::stopRequest* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requeststop(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRelocalizationPipeline::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requeststop(::grpc::ServerContext* context, ::grpcIRelocalizationPipeline::stopRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIRelocalizationPipeline::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -399,38 +399,38 @@ class grpcIRelocalizationPipelineService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::initResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response) { return this->init(context, request, response); }));}
+                     context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response) { return this->init(context, request, response); }));}
     void SetMessageAllocatorFor_init(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::initResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::initResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::initRequest* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* init(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRelocalizationPipeline::initRequest* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* init(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRelocalizationPipeline::initRequest* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -446,38 +446,38 @@ class grpcIRelocalizationPipelineService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::startResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response) { return this->start(context, request, response); }));}
+                     context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::startResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::startResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::startRequest* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRelocalizationPipeline::startRequest* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* start(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRelocalizationPipeline::startRequest* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -493,38 +493,38 @@ class grpcIRelocalizationPipelineService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::stopResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response) { return this->stop(context, request, response); }));}
+                     context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::stopResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::stopResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::stopRequest* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIRelocalizationPipeline::stopRequest* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* stop(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIRelocalizationPipeline::stopRequest* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -686,7 +686,7 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::initRequest* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -703,7 +703,7 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::startRequest* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -720,7 +720,7 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::stopRequest* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -788,7 +788,7 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::initRequest* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -808,7 +808,7 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::startRequest* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -828,7 +828,7 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::stopRequest* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -921,7 +921,7 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::initRequest* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -959,7 +959,7 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::startRequest* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -997,7 +997,7 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::stopRequest* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1132,10 +1132,10 @@ class grpcIRelocalizationPipelineService final {
     WithStreamedUnaryMethod_init() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::initResponse>(
+          ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::initResponse>* streamer) {
+                     ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse>* streamer) {
                        return this->Streamedinit(context,
                          streamer);
                   }));
@@ -1144,12 +1144,12 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::initRequest* /*request*/, ::grpcIRelocalizationPipeline::initResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedinit(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIRelocalizationPipeline::initResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedinit(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIRelocalizationPipeline::initRequest,::grpcIRelocalizationPipeline::initResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_start : public BaseClass {
@@ -1159,10 +1159,10 @@ class grpcIRelocalizationPipelineService final {
     WithStreamedUnaryMethod_start() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::startResponse>(
+          ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::startResponse>* streamer) {
+                     ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse>* streamer) {
                        return this->Streamedstart(context,
                          streamer);
                   }));
@@ -1171,12 +1171,12 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::startRequest* /*request*/, ::grpcIRelocalizationPipeline::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedstart(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIRelocalizationPipeline::startResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedstart(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIRelocalizationPipeline::startRequest,::grpcIRelocalizationPipeline::startResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_stop : public BaseClass {
@@ -1186,10 +1186,10 @@ class grpcIRelocalizationPipelineService final {
     WithStreamedUnaryMethod_stop() {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::stopResponse>(
+          ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::stopResponse>* streamer) {
+                     ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse>* streamer) {
                        return this->Streamedstop(context,
                          streamer);
                   }));
@@ -1198,12 +1198,12 @@ class grpcIRelocalizationPipelineService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIRelocalizationPipeline::stopRequest* /*request*/, ::grpcIRelocalizationPipeline::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIRelocalizationPipeline::stopResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIRelocalizationPipeline::stopRequest,::grpcIRelocalizationPipeline::stopResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_setCameraParameters : public BaseClass {

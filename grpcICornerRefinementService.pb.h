@@ -184,10 +184,11 @@ class refineRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImageFieldNumber = 1,
-    kCornersFieldNumber = 2,
+    kImageFieldNumber = 2,
+    kCornersFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image = 1;
+  // bytes image = 2;
   void clear_image();
   const std::string& image() const;
   void set_image(const std::string& value);
@@ -203,7 +204,7 @@ class refineRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_image();
   public:
 
-  // bytes corners = 2;
+  // bytes corners = 3;
   void clear_corners();
   const std::string& corners() const;
   void set_corners(const std::string& value);
@@ -219,6 +220,15 @@ class refineRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_corners();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcICornerRefinement.refineRequest)
  private:
   class _Internal;
@@ -228,6 +238,7 @@ class refineRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr corners_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcICornerRefinementService_2eproto;
 };
@@ -386,7 +397,27 @@ class refineResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // refineRequest
 
-// bytes image = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void refineRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 refineRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 refineRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICornerRefinement.refineRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void refineRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void refineRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICornerRefinement.refineRequest.grpcServerCompressionFormat)
+}
+
+// bytes image = 2;
 inline void refineRequest::clear_image() {
   image_.ClearToEmpty();
 }
@@ -447,7 +478,7 @@ inline void refineRequest::set_allocated_image(std::string* image) {
   // @@protoc_insertion_point(field_set_allocated:grpcICornerRefinement.refineRequest.image)
 }
 
-// bytes corners = 2;
+// bytes corners = 3;
 inline void refineRequest::clear_corners() {
   corners_.ClearToEmpty();
 }

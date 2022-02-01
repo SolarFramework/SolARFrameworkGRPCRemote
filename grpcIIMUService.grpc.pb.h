@@ -36,18 +36,18 @@ class grpcIIMUService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::startResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpcIIMU::startResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>>(AsyncstartRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>>(PrepareAsyncstartRaw(context, request, cq));
     }
-    virtual ::grpc::Status stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::stopResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpcIIMU::stopResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>>(AsyncstopRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
     virtual ::grpc::Status getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest& request, ::grpcIIMU::getGyroscopeDataResponse* response) = 0;
@@ -78,41 +78,41 @@ class grpcIIMUService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::getAllSensorsDataResponse>> PrepareAsyncgetAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::getAllSensorsDataResponse>>(PrepareAsyncgetAllSensorsDataRaw(context, request, cq));
     }
-    virtual ::grpc::Status isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::isGyroscopeAvailableResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>> AsyncisGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpcIIMU::isGyroscopeAvailableResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>> AsyncisGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>>(AsyncisGyroscopeAvailableRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>> PrepareAsyncisGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>> PrepareAsyncisGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>>(PrepareAsyncisGyroscopeAvailableRaw(context, request, cq));
     }
-    virtual ::grpc::Status isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::isAccelerometerAvailableResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>> AsyncisAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpcIIMU::isAccelerometerAvailableResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>> AsyncisAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>>(AsyncisAccelerometerAvailableRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>> PrepareAsyncisAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>> PrepareAsyncisAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>>(PrepareAsyncisAccelerometerAvailableRaw(context, request, cq));
     }
-    virtual ::grpc::Status isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::isMagnetometerAvailableResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>> AsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpcIIMU::isMagnetometerAvailableResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>> AsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>>(AsyncisMagnetometerAvailableRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>> PrepareAsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>> PrepareAsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>>(PrepareAsyncisMagnetometerAvailableRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -138,23 +138,23 @@ class grpcIIMUService final {
       #else
       virtual void getAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -165,10 +165,10 @@ class grpcIIMUService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::getGyroscopeDataResponse>* AsyncgetGyroscopeDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::getGyroscopeDataResponse>* PrepareAsyncgetGyroscopeDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::getAccelerometerDataResponse>* AsyncgetAccelerometerDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getAccelerometerDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -177,28 +177,28 @@ class grpcIIMUService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::getMagnetometerDataResponse>* PrepareAsyncgetMagnetometerDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getMagnetometerDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::getAllSensorsDataResponse>* AsyncgetAllSensorsDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::getAllSensorsDataResponse>* PrepareAsyncgetAllSensorsDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>* AsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>* PrepareAsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>* AsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>* PrepareAsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>* AsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>* PrepareAsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>* AsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isGyroscopeAvailableResponse>* PrepareAsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>* AsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isAccelerometerAvailableResponse>* PrepareAsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>* AsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>* PrepareAsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::startResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpcIIMU::startResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>>(AsyncstartRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>>(PrepareAsyncstartRaw(context, request, cq));
     }
-    ::grpc::Status stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::stopResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpcIIMU::stopResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>>(AsyncstopRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
     ::grpc::Status getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest& request, ::grpcIIMU::getGyroscopeDataResponse* response) override;
@@ -229,41 +229,41 @@ class grpcIIMUService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::getAllSensorsDataResponse>> PrepareAsyncgetAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::getAllSensorsDataResponse>>(PrepareAsyncgetAllSensorsDataRaw(context, request, cq));
     }
-    ::grpc::Status isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::isGyroscopeAvailableResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>> AsyncisGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpcIIMU::isGyroscopeAvailableResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>> AsyncisGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>>(AsyncisGyroscopeAvailableRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>> PrepareAsyncisGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>> PrepareAsyncisGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>>(PrepareAsyncisGyroscopeAvailableRaw(context, request, cq));
     }
-    ::grpc::Status isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::isAccelerometerAvailableResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>> AsyncisAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpcIIMU::isAccelerometerAvailableResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>> AsyncisAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>>(AsyncisAccelerometerAvailableRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>> PrepareAsyncisAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>> PrepareAsyncisAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>>(PrepareAsyncisAccelerometerAvailableRaw(context, request, cq));
     }
-    ::grpc::Status isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::isMagnetometerAvailableResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>> AsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpcIIMU::isMagnetometerAvailableResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>> AsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>>(AsyncisMagnetometerAvailableRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>> PrepareAsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>> PrepareAsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>>(PrepareAsyncisMagnetometerAvailableRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response, std::function<void(::grpc::Status)>) override;
+      void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response, std::function<void(::grpc::Status)>) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -289,23 +289,23 @@ class grpcIIMUService final {
       #else
       void getAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, std::function<void(::grpc::Status)>) override;
+      void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, std::function<void(::grpc::Status)>) override;
+      void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, std::function<void(::grpc::Status)>) override;
+      void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -318,10 +318,10 @@ class grpcIIMUService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIIMU::getGyroscopeDataResponse>* AsyncgetGyroscopeDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIIMU::getGyroscopeDataResponse>* PrepareAsyncgetGyroscopeDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIIMU::getAccelerometerDataResponse>* AsyncgetAccelerometerDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getAccelerometerDataRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -330,12 +330,12 @@ class grpcIIMUService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIIMU::getMagnetometerDataResponse>* PrepareAsyncgetMagnetometerDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getMagnetometerDataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIIMU::getAllSensorsDataResponse>* AsyncgetAllSensorsDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIIMU::getAllSensorsDataResponse>* PrepareAsyncgetAllSensorsDataRaw(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>* AsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>* PrepareAsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>* AsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>* PrepareAsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>* AsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>* PrepareAsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>* AsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>* PrepareAsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>* AsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>* PrepareAsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>* AsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>* PrepareAsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_start_;
     const ::grpc::internal::RpcMethod rpcmethod_stop_;
     const ::grpc::internal::RpcMethod rpcmethod_getGyroscopeData_;
@@ -352,15 +352,15 @@ class grpcIIMUService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response);
-    virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response);
+    virtual ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response);
+    virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response);
     virtual ::grpc::Status getGyroscopeData(::grpc::ServerContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response);
     virtual ::grpc::Status getAccelerometerData(::grpc::ServerContext* context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response);
     virtual ::grpc::Status getMagnetometerData(::grpc::ServerContext* context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response);
     virtual ::grpc::Status getAllSensorsData(::grpc::ServerContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response);
-    virtual ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response);
-    virtual ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response);
-    virtual ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response);
+    virtual ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response);
+    virtual ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response);
+    virtual ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_start : public BaseClass {
@@ -374,11 +374,11 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requeststart(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requeststart(::grpc::ServerContext* context, ::grpcIIMU::startRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -394,11 +394,11 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requeststop(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requeststop(::grpc::ServerContext* context, ::grpcIIMU::stopRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -494,11 +494,11 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
+    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestisGyroscopeAvailable(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::isGyroscopeAvailableResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestisGyroscopeAvailable(::grpc::ServerContext* context, ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::isGyroscopeAvailableResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -514,11 +514,11 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestisAccelerometerAvailable(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::isAccelerometerAvailableResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestisAccelerometerAvailable(::grpc::ServerContext* context, ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::isAccelerometerAvailableResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -534,11 +534,11 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestisMagnetometerAvailable(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::isMagnetometerAvailableResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestisMagnetometerAvailable(::grpc::ServerContext* context, ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIIMU::isMagnetometerAvailableResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -555,38 +555,38 @@ class grpcIIMUService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::startResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::startRequest, ::grpcIIMU::startResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response) { return this->start(context, request, response); }));}
+                     context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIIMU::startResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::startRequest, ::grpcIIMU::startResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::startResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::startRequest, ::grpcIIMU::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::startResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* start(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::startResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -602,38 +602,38 @@ class grpcIIMUService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::stopResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response) { return this->stop(context, request, response); }));}
+                     context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIIMU::stopResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::stopResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::stopResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* stop(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::stopResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -837,38 +837,38 @@ class grpcIIMUService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::isGyroscopeAvailableResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response) { return this->isGyroscopeAvailable(context, request, response); }));}
+                     context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response) { return this->isGyroscopeAvailable(context, request, response); }));}
     void SetMessageAllocatorFor_isGyroscopeAvailable(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIIMU::isGyroscopeAvailableResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::isGyroscopeAvailableResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_isGyroscopeAvailable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
+    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isGyroscopeAvailable(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* isGyroscopeAvailable(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -884,38 +884,38 @@ class grpcIIMUService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::isAccelerometerAvailableResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response) { return this->isAccelerometerAvailable(context, request, response); }));}
+                     context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response) { return this->isAccelerometerAvailable(context, request, response); }));}
     void SetMessageAllocatorFor_isAccelerometerAvailable(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIIMU::isAccelerometerAvailableResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::isAccelerometerAvailableResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_isAccelerometerAvailable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isAccelerometerAvailable(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* isAccelerometerAvailable(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -931,38 +931,38 @@ class grpcIIMUService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(8,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::isMagnetometerAvailableResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response) { return this->isMagnetometerAvailable(context, request, response); }));}
+                     context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response) { return this->isMagnetometerAvailable(context, request, response); }));}
     void SetMessageAllocatorFor_isMagnetometerAvailable(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIIMU::isMagnetometerAvailableResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIIMU::isMagnetometerAvailableResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_isMagnetometerAvailable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isMagnetometerAvailable(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* isMagnetometerAvailable(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -983,7 +983,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1000,7 +1000,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1085,7 +1085,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
+    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1102,7 +1102,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1119,7 +1119,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1136,7 +1136,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1156,7 +1156,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1256,7 +1256,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
+    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1276,7 +1276,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1296,7 +1296,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1329,7 +1329,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1367,7 +1367,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1557,7 +1557,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
+    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1595,7 +1595,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1633,7 +1633,7 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1654,10 +1654,10 @@ class grpcIIMUService final {
     WithStreamedUnaryMethod_start() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIIMU::startResponse>(
+          ::grpcIIMU::startRequest, ::grpcIIMU::startResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIIMU::startResponse>* streamer) {
+                     ::grpcIIMU::startRequest, ::grpcIIMU::startResponse>* streamer) {
                        return this->Streamedstart(context,
                          streamer);
                   }));
@@ -1666,12 +1666,12 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedstart(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIIMU::startResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedstart(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIIMU::startRequest,::grpcIIMU::startResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_stop : public BaseClass {
@@ -1681,10 +1681,10 @@ class grpcIIMUService final {
     WithStreamedUnaryMethod_stop() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIIMU::stopResponse>(
+          ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIIMU::stopResponse>* streamer) {
+                     ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse>* streamer) {
                        return this->Streamedstop(context,
                          streamer);
                   }));
@@ -1693,12 +1693,12 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIIMU::stopResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIIMU::stopRequest,::grpcIIMU::stopResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getGyroscopeData : public BaseClass {
@@ -1816,10 +1816,10 @@ class grpcIIMUService final {
     WithStreamedUnaryMethod_isGyroscopeAvailable() {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIIMU::isGyroscopeAvailableResponse>(
+          ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIIMU::isGyroscopeAvailableResponse>* streamer) {
+                     ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse>* streamer) {
                        return this->StreamedisGyroscopeAvailable(context,
                          streamer);
                   }));
@@ -1828,12 +1828,12 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
+    ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedisGyroscopeAvailable(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIIMU::isGyroscopeAvailableResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedisGyroscopeAvailable(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIIMU::isGyroscopeAvailableRequest,::grpcIIMU::isGyroscopeAvailableResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_isAccelerometerAvailable : public BaseClass {
@@ -1843,10 +1843,10 @@ class grpcIIMUService final {
     WithStreamedUnaryMethod_isAccelerometerAvailable() {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIIMU::isAccelerometerAvailableResponse>(
+          ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIIMU::isAccelerometerAvailableResponse>* streamer) {
+                     ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse>* streamer) {
                        return this->StreamedisAccelerometerAvailable(context,
                          streamer);
                   }));
@@ -1855,12 +1855,12 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedisAccelerometerAvailable(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIIMU::isAccelerometerAvailableResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedisAccelerometerAvailable(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIIMU::isAccelerometerAvailableRequest,::grpcIIMU::isAccelerometerAvailableResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_isMagnetometerAvailable : public BaseClass {
@@ -1870,10 +1870,10 @@ class grpcIIMUService final {
     WithStreamedUnaryMethod_isMagnetometerAvailable() {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIIMU::isMagnetometerAvailableResponse>(
+          ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIIMU::isMagnetometerAvailableResponse>* streamer) {
+                     ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse>* streamer) {
                        return this->StreamedisMagnetometerAvailable(context,
                          streamer);
                   }));
@@ -1882,12 +1882,12 @@ class grpcIIMUService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
+    ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedisMagnetometerAvailable(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIIMU::isMagnetometerAvailableResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedisMagnetometerAvailable(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIIMU::isMagnetometerAvailableRequest,::grpcIIMU::isMagnetometerAvailableResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getGyroscopeData<WithStreamedUnaryMethod_getAccelerometerData<WithStreamedUnaryMethod_getMagnetometerData<WithStreamedUnaryMethod_getAllSensorsData<WithStreamedUnaryMethod_isGyroscopeAvailable<WithStreamedUnaryMethod_isAccelerometerAvailable<WithStreamedUnaryMethod_isMagnetometerAvailable<Service > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;

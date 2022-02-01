@@ -23,6 +23,7 @@ constexpr estimateRequest::estimateRequest(
   , type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , rectkeypoints1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , rectkeypoints2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
   , focal_(0)
   , baseline_(0){}
 struct estimateRequestDefaultTypeInternal {
@@ -59,6 +60,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIDepthEstimationService_2e
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIDepthEstimation::estimateRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIDepthEstimation::estimateRequest, matches_),
   PROTOBUF_FIELD_OFFSET(::grpcIDepthEstimation::estimateRequest, focal_),
   PROTOBUF_FIELD_OFFSET(::grpcIDepthEstimation::estimateRequest, baseline_),
@@ -76,7 +78,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIDepthEstimationService_2e
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIDepthEstimation::estimateRequest)},
-  { 11, -1, sizeof(::grpcIDepthEstimation::estimateResponse)},
+  { 12, -1, sizeof(::grpcIDepthEstimation::estimateResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -87,23 +89,24 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIDepthEstimationService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n!grpcIDepthEstimationService.proto\022\024grp"
   "cIDepthEstimation\032\033google/protobuf/empty"
-  ".proto\"\201\001\n\017estimateRequest\022\017\n\007matches\030\001 "
-  "\001(\014\022\r\n\005focal\030\002 \001(\002\022\020\n\010baseline\030\003 \001(\002\022\014\n\004"
-  "type\030\004 \001(\014\022\026\n\016rectKeypoints1\030\005 \001(\014\022\026\n\016re"
-  "ctKeypoints2\030\006 \001(\014\"_\n\020estimateResponse\022\026"
-  "\n\016rectKeypoints1\030\001 \001(\014\022\026\n\016rectKeypoints2"
-  "\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\0212z\n\033g"
-  "rpcIDepthEstimationService\022[\n\010estimate\022%"
-  ".grpcIDepthEstimation.estimateRequest\032&."
-  "grpcIDepthEstimation.estimateResponse\"\000b"
-  "\006proto3"
+  ".proto\"\246\001\n\017estimateRequest\022#\n\033grpcServer"
+  "CompressionFormat\030\001 \001(\005\022\017\n\007matches\030\002 \001(\014"
+  "\022\r\n\005focal\030\003 \001(\002\022\020\n\010baseline\030\004 \001(\002\022\014\n\004typ"
+  "e\030\005 \001(\014\022\026\n\016rectKeypoints1\030\006 \001(\014\022\026\n\016rectK"
+  "eypoints2\030\007 \001(\014\"_\n\020estimateResponse\022\026\n\016r"
+  "ectKeypoints1\030\001 \001(\014\022\026\n\016rectKeypoints2\030\002 "
+  "\001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\0212z\n\033grpc"
+  "IDepthEstimationService\022[\n\010estimate\022%.gr"
+  "pcIDepthEstimation.estimateRequest\032&.grp"
+  "cIDepthEstimation.estimateResponse\"\000b\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIDepthEstimationService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIDepthEstimationService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIDepthEstimationService_2eproto = {
-  false, false, 447, descriptor_table_protodef_grpcIDepthEstimationService_2eproto, "grpcIDepthEstimationService.proto", 
+  false, false, 484, descriptor_table_protodef_grpcIDepthEstimationService_2eproto, "grpcIDepthEstimationService.proto", 
   &descriptor_table_grpcIDepthEstimationService_2eproto_once, descriptor_table_grpcIDepthEstimationService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcIDepthEstimationService_2eproto::offsets,
   file_level_metadata_grpcIDepthEstimationService_2eproto, file_level_enum_descriptors_grpcIDepthEstimationService_2eproto, file_level_service_descriptors_grpcIDepthEstimationService_2eproto,
@@ -153,9 +156,9 @@ estimateRequest::estimateRequest(const estimateRequest& from)
     rectkeypoints2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rectkeypoints2(), 
       GetArena());
   }
-  ::memcpy(&focal_, &from.focal_,
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&baseline_) -
-    reinterpret_cast<char*>(&focal_)) + sizeof(baseline_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(baseline_));
   // @@protoc_insertion_point(copy_constructor:grpcIDepthEstimation.estimateRequest)
 }
 
@@ -165,9 +168,9 @@ type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 rectkeypoints1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 rectkeypoints2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&focal_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&baseline_) -
-    reinterpret_cast<char*>(&focal_)) + sizeof(baseline_));
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(baseline_));
 }
 
 estimateRequest::~estimateRequest() {
@@ -204,9 +207,9 @@ void estimateRequest::Clear() {
   type_.ClearToEmpty();
   rectkeypoints1_.ClearToEmpty();
   rectkeypoints2_.ClearToEmpty();
-  ::memset(&focal_, 0, static_cast<size_t>(
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&baseline_) -
-      reinterpret_cast<char*>(&focal_)) + sizeof(baseline_));
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(baseline_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -217,47 +220,54 @@ const char* estimateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes matches = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes matches = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_matches();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float focal = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float focal = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           focal_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float baseline = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+      // float baseline = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           baseline_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // bytes type = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes type = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_type();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes rectKeypoints1 = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes rectKeypoints1 = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_rectkeypoints1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes rectKeypoints2 = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // bytes rectKeypoints2 = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_rectkeypoints2();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -291,40 +301,46 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes matches = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes matches = 2;
   if (this->matches().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_matches(), target);
+        2, this->_internal_matches(), target);
   }
 
-  // float focal = 2;
+  // float focal = 3;
   if (!(this->focal() <= 0 && this->focal() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_focal(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_focal(), target);
   }
 
-  // float baseline = 3;
+  // float baseline = 4;
   if (!(this->baseline() <= 0 && this->baseline() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_baseline(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_baseline(), target);
   }
 
-  // bytes type = 4;
+  // bytes type = 5;
   if (this->type().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_type(), target);
+        5, this->_internal_type(), target);
   }
 
-  // bytes rectKeypoints1 = 5;
+  // bytes rectKeypoints1 = 6;
   if (this->rectkeypoints1().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_rectkeypoints1(), target);
+        6, this->_internal_rectkeypoints1(), target);
   }
 
-  // bytes rectKeypoints2 = 6;
+  // bytes rectKeypoints2 = 7;
   if (this->rectkeypoints2().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        6, this->_internal_rectkeypoints2(), target);
+        7, this->_internal_rectkeypoints2(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -343,40 +359,47 @@ size_t estimateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes matches = 1;
+  // bytes matches = 2;
   if (this->matches().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matches());
   }
 
-  // bytes type = 4;
+  // bytes type = 5;
   if (this->type().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_type());
   }
 
-  // bytes rectKeypoints1 = 5;
+  // bytes rectKeypoints1 = 6;
   if (this->rectkeypoints1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_rectkeypoints1());
   }
 
-  // bytes rectKeypoints2 = 6;
+  // bytes rectKeypoints2 = 7;
   if (this->rectkeypoints2().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_rectkeypoints2());
   }
 
-  // float focal = 2;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // float focal = 3;
   if (!(this->focal() <= 0 && this->focal() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float baseline = 3;
+  // float baseline = 4;
   if (!(this->baseline() <= 0 && this->baseline() >= 0)) {
     total_size += 1 + 4;
   }
@@ -424,6 +447,9 @@ void estimateRequest::MergeFrom(const estimateRequest& from) {
   if (from.rectkeypoints2().size() > 0) {
     _internal_set_rectkeypoints2(from._internal_rectkeypoints2());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (!(from.focal() <= 0 && from.focal() >= 0)) {
     _internal_set_focal(from._internal_focal());
   }
@@ -460,9 +486,9 @@ void estimateRequest::InternalSwap(estimateRequest* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(estimateRequest, baseline_)
       + sizeof(estimateRequest::baseline_)
-      - PROTOBUF_FIELD_OFFSET(estimateRequest, focal_)>(
-          reinterpret_cast<char*>(&focal_),
-          reinterpret_cast<char*>(&other->focal_));
+      - PROTOBUF_FIELD_OFFSET(estimateRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimateRequest::GetMetadata() const {

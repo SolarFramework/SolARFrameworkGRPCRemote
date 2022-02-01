@@ -2,9 +2,10 @@
 
 #ifndef IHOMOGRAPHYVALIDATION_GRPCSERVER_H
 #define IHOMOGRAPHYVALIDATION_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/IHomographyValidation.h"
+#include "api/solver/pose/IHomographyValidation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIHomographyValidationService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -27,12 +28,15 @@ class IHomographyValidation_grpcServer:  public org::bcom::xpcf::ConfigurableBas
         ::grpc::Status isValid(::grpc::ServerContext* context, const ::grpcIHomographyValidation::isValidRequest* request, ::grpcIHomographyValidation::isValidResponse* response) override;
 
         SRef<SolAR::api::solver::pose::IHomographyValidation> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIHomographyValidationServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

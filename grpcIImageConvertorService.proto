@@ -6,8 +6,9 @@ package grpcIImageConvertor;
 
 message convert_grpc0Request
 {
-bytes imgSrc = 1;
-bytes imgDst = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes imgSrc = 2;
+bytes imgDst = 3;
 }
 
 message convert_grpc0Response
@@ -18,9 +19,10 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message convert_grpc1Request
 {
-bytes imgSrc = 1;
-sint32 destLayout = 2;
-bytes imgDst = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes imgSrc = 2;
+sint32 destLayout = 3;
+bytes imgDst = 4;
 }
 
 message convert_grpc1Response
@@ -31,8 +33,9 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message convertLookUpTableRequest
 {
-bytes imgSrc = 1;
-bytes imgDst = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes imgSrc = 2;
+bytes imgDst = 3;
 }
 
 message convertLookUpTableResponse

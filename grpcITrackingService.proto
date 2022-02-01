@@ -17,8 +17,9 @@ bytes refKeyframe = 1;
 
 message processRequest
 {
-bytes frame = 1;
-bytes displayImage = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes frame = 2;
+bytes displayImage = 3;
 }
 
 message processResponse

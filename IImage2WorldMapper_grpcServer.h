@@ -2,9 +2,10 @@
 
 #ifndef IIMAGE2WORLDMAPPER_GRPCSERVER_H
 #define IIMAGE2WORLDMAPPER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IImage2WorldMapper.h"
+#include "api/geom/IImage2WorldMapper.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIImage2WorldMapperService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -27,12 +28,15 @@ class IImage2WorldMapper_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
         ::grpc::Status map(::grpc::ServerContext* context, const ::grpcIImage2WorldMapper::mapRequest* request, ::grpcIImage2WorldMapper::mapResponse* response) override;
 
         SRef<SolAR::api::geom::IImage2WorldMapper> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIImage2WorldMapperServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

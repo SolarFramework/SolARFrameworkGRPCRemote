@@ -2,9 +2,10 @@
 
 #ifndef ICAMERACALIBRATION_GRPCSERVER_H
 #define ICAMERACALIBRATION_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICameraCalibration.h"
+#include "api/input/devices/ICameraCalibration.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcICameraCalibrationService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -27,12 +28,15 @@ class ICameraCalibration_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
         ::grpc::Status calibrate(::grpc::ServerContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response) override;
 
         SRef<SolAR::api::input::devices::ICameraCalibration> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcICameraCalibrationServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

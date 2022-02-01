@@ -184,10 +184,11 @@ class extractRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputImgFieldNumber = 1,
-    kContoursFieldNumber = 2,
+    kInputImgFieldNumber = 2,
+    kContoursFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputImg = 1;
+  // bytes inputImg = 2;
   void clear_inputimg();
   const std::string& inputimg() const;
   void set_inputimg(const std::string& value);
@@ -203,7 +204,7 @@ class extractRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_inputimg();
   public:
 
-  // bytes contours = 2;
+  // bytes contours = 3;
   void clear_contours();
   const std::string& contours() const;
   void set_contours(const std::string& value);
@@ -219,6 +220,15 @@ class extractRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_contours();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIContoursExtractor.extractRequest)
  private:
   class _Internal;
@@ -228,6 +238,7 @@ class extractRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputimg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contours_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIContoursExtractorService_2eproto;
 };
@@ -397,7 +408,27 @@ class extractResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // extractRequest
 
-// bytes inputImg = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void extractRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 extractRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 extractRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIContoursExtractor.extractRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void extractRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void extractRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIContoursExtractor.extractRequest.grpcServerCompressionFormat)
+}
+
+// bytes inputImg = 2;
 inline void extractRequest::clear_inputimg() {
   inputimg_.ClearToEmpty();
 }
@@ -458,7 +489,7 @@ inline void extractRequest::set_allocated_inputimg(std::string* inputimg) {
   // @@protoc_insertion_point(field_set_allocated:grpcIContoursExtractor.extractRequest.inputImg)
 }
 
-// bytes contours = 2;
+// bytes contours = 3;
 inline void extractRequest::clear_contours() {
   contours_.ClearToEmpty();
 }

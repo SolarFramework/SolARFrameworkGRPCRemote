@@ -33,7 +33,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParametersRequestDefau
 constexpr addRequest::addRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : descriptors_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , points3d_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , points3d_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct addRequestDefaultTypeInternal {
   constexpr addRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -59,7 +60,8 @@ constexpr regressRequest::regressRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , points2d_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , points3d_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , points3d_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct regressRequestDefaultTypeInternal {
   constexpr regressRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -86,7 +88,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT regressResponseDefaultTypeInter
 constexpr updateRequest::updateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : inliers_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , camerapose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , camerapose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct updateRequestDefaultTypeInternal {
   constexpr updateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -110,6 +113,18 @@ struct updateResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT updateResponseDefaultTypeInternal _updateResponse_default_instance_;
+constexpr loadModelRequest::loadModelRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct loadModelRequestDefaultTypeInternal {
+  constexpr loadModelRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~loadModelRequestDefaultTypeInternal() {}
+  union {
+    loadModelRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT loadModelRequestDefaultTypeInternal _loadModelRequest_default_instance_;
 constexpr loadModelResponse::loadModelResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(0){}
@@ -122,6 +137,18 @@ struct loadModelResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT loadModelResponseDefaultTypeInternal _loadModelResponse_default_instance_;
+constexpr getTrainingStatusRequest::getTrainingStatusRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct getTrainingStatusRequestDefaultTypeInternal {
+  constexpr getTrainingStatusRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getTrainingStatusRequestDefaultTypeInternal() {}
+  union {
+    getTrainingStatusRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getTrainingStatusRequestDefaultTypeInternal _getTrainingStatusRequest_default_instance_;
 constexpr getTrainingStatusResponse::getTrainingStatusResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
@@ -134,6 +161,18 @@ struct getTrainingStatusResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getTrainingStatusResponseDefaultTypeInternal _getTrainingStatusResponse_default_instance_;
+constexpr getNumActiveLeavesRequest::getNumActiveLeavesRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct getNumActiveLeavesRequestDefaultTypeInternal {
+  constexpr getNumActiveLeavesRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getNumActiveLeavesRequestDefaultTypeInternal() {}
+  union {
+    getNumActiveLeavesRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getNumActiveLeavesRequestDefaultTypeInternal _getNumActiveLeavesRequest_default_instance_;
 constexpr getNumActiveLeavesResponse::getNumActiveLeavesResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(0){}
@@ -146,6 +185,18 @@ struct getNumActiveLeavesResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getNumActiveLeavesResponseDefaultTypeInternal _getNumActiveLeavesResponse_default_instance_;
+constexpr getNumPassiveLeavesRequest::getNumPassiveLeavesRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct getNumPassiveLeavesRequestDefaultTypeInternal {
+  constexpr getNumPassiveLeavesRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getNumPassiveLeavesRequestDefaultTypeInternal() {}
+  union {
+    getNumPassiveLeavesRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getNumPassiveLeavesRequestDefaultTypeInternal _getNumPassiveLeavesRequest_default_instance_;
 constexpr getNumPassiveLeavesResponse::getNumPassiveLeavesResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(0){}
@@ -159,7 +210,7 @@ struct getNumPassiveLeavesResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getNumPassiveLeavesResponseDefaultTypeInternal _getNumPassiveLeavesResponse_default_instance_;
 }  // namespace grpcIRegression
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIRegressionService_2eproto[11];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIRegressionService_2eproto[15];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIRegressionService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIRegressionService_2eproto = nullptr;
 
@@ -176,6 +227,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIRegressionService_2eproto
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::addRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::addRequest, descriptors_),
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::addRequest, points3d_),
   ~0u,  // no _has_bits_
@@ -189,6 +241,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIRegressionService_2eproto
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::regressRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::regressRequest, frame_),
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::regressRequest, points2d_),
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::regressRequest, points3d_),
@@ -205,6 +258,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIRegressionService_2eproto
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::updateRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::updateRequest, inliers_),
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::updateRequest, camerapose_),
   ~0u,  // no _has_bits_
@@ -216,11 +270,23 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIRegressionService_2eproto
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::updateResponse, camerapose_),
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::updateResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::loadModelRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::loadModelRequest, grpcservercompressionformat_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::loadModelResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::loadModelResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::getTrainingStatusRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::getTrainingStatusRequest, grpcservercompressionformat_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::getTrainingStatusResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -228,11 +294,23 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIRegressionService_2eproto
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::getTrainingStatusResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::getNumActiveLeavesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::getNumActiveLeavesRequest, grpcservercompressionformat_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::getNumActiveLeavesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::getNumActiveLeavesResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::getNumPassiveLeavesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIRegression::getNumPassiveLeavesRequest, grpcservercompressionformat_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIRegression::getNumPassiveLeavesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -243,15 +321,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIRegressionService_2eproto
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIRegression::setCameraParametersRequest)},
   { 7, -1, sizeof(::grpcIRegression::addRequest)},
-  { 14, -1, sizeof(::grpcIRegression::addResponse)},
-  { 20, -1, sizeof(::grpcIRegression::regressRequest)},
-  { 28, -1, sizeof(::grpcIRegression::regressResponse)},
-  { 36, -1, sizeof(::grpcIRegression::updateRequest)},
-  { 43, -1, sizeof(::grpcIRegression::updateResponse)},
-  { 51, -1, sizeof(::grpcIRegression::loadModelResponse)},
-  { 57, -1, sizeof(::grpcIRegression::getTrainingStatusResponse)},
-  { 63, -1, sizeof(::grpcIRegression::getNumActiveLeavesResponse)},
-  { 69, -1, sizeof(::grpcIRegression::getNumPassiveLeavesResponse)},
+  { 15, -1, sizeof(::grpcIRegression::addResponse)},
+  { 21, -1, sizeof(::grpcIRegression::regressRequest)},
+  { 30, -1, sizeof(::grpcIRegression::regressResponse)},
+  { 38, -1, sizeof(::grpcIRegression::updateRequest)},
+  { 46, -1, sizeof(::grpcIRegression::updateResponse)},
+  { 54, -1, sizeof(::grpcIRegression::loadModelRequest)},
+  { 60, -1, sizeof(::grpcIRegression::loadModelResponse)},
+  { 66, -1, sizeof(::grpcIRegression::getTrainingStatusRequest)},
+  { 72, -1, sizeof(::grpcIRegression::getTrainingStatusResponse)},
+  { 78, -1, sizeof(::grpcIRegression::getNumActiveLeavesRequest)},
+  { 84, -1, sizeof(::grpcIRegression::getNumActiveLeavesResponse)},
+  { 90, -1, sizeof(::grpcIRegression::getNumPassiveLeavesRequest)},
+  { 96, -1, sizeof(::grpcIRegression::getNumPassiveLeavesResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -262,9 +344,13 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_regressResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_updateRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_updateResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_loadModelRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_loadModelResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_getTrainingStatusRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_getTrainingStatusResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_getNumActiveLeavesRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_getNumActiveLeavesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_getNumPassiveLeavesRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIRegression::_getNumPassiveLeavesResponse_default_instance_),
 };
 
@@ -272,48 +358,59 @@ const char descriptor_table_protodef_grpcIRegressionService_2eproto[] PROTOBUF_S
   "\n\034grpcIRegressionService.proto\022\017grpcIReg"
   "ression\032\033google/protobuf/empty.proto\"O\n\032"
   "setCameraParametersRequest\022\027\n\017intrinsicP"
-  "arams\030\001 \001(\014\022\030\n\020distorsionParams\030\002 \001(\014\"3\n"
-  "\naddRequest\022\023\n\013descriptors\030\001 \001(\014\022\020\n\010poin"
-  "ts3D\030\002 \001(\014\"*\n\013addResponse\022\033\n\023xpcfGrpcRet"
-  "urnValue\030\001 \001(\021\"C\n\016regressRequest\022\r\n\005fram"
-  "e\030\001 \001(\014\022\020\n\010points2D\030\002 \001(\014\022\020\n\010points3D\030\003 "
-  "\001(\014\"R\n\017regressResponse\022\020\n\010points2D\030\001 \001(\014"
-  "\022\020\n\010points3D\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValu"
-  "e\030\003 \001(\021\"4\n\rupdateRequest\022\017\n\007inliers\030\001 \001("
-  "\014\022\022\n\ncameraPose\030\002 \001(\014\"R\n\016updateResponse\022"
-  "\017\n\007inliers\030\001 \001(\014\022\022\n\ncameraPose\030\002 \001(\014\022\033\n\023"
-  "xpcfGrpcReturnValue\030\003 \001(\021\"0\n\021loadModelRe"
-  "sponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"8\n\031g"
-  "etTrainingStatusResponse\022\033\n\023xpcfGrpcRetu"
-  "rnValue\030\001 \001(\014\"9\n\032getNumActiveLeavesRespo"
-  "nse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\":\n\033getN"
-  "umPassiveLeavesResponse\022\033\n\023xpcfGrpcRetur"
-  "nValue\030\001 \001(\0212\271\005\n\026grpcIRegressionService\022"
-  "\\\n\023setCameraParameters\022+.grpcIRegression"
-  ".setCameraParametersRequest\032\026.google.pro"
-  "tobuf.Empty\"\000\022B\n\003add\022\033.grpcIRegression.a"
-  "ddRequest\032\034.grpcIRegression.addResponse\""
-  "\000\022N\n\007regress\022\037.grpcIRegression.regressRe"
-  "quest\032 .grpcIRegression.regressResponse\""
-  "\000\022K\n\006update\022\036.grpcIRegression.updateRequ"
-  "est\032\037.grpcIRegression.updateResponse\"\000\022I"
-  "\n\tloadModel\022\026.google.protobuf.Empty\032\".gr"
-  "pcIRegression.loadModelResponse\"\000\022Y\n\021get"
-  "TrainingStatus\022\026.google.protobuf.Empty\032*"
-  ".grpcIRegression.getTrainingStatusRespon"
-  "se\"\000\022[\n\022getNumActiveLeaves\022\026.google.prot"
-  "obuf.Empty\032+.grpcIRegression.getNumActiv"
-  "eLeavesResponse\"\000\022]\n\023getNumPassiveLeaves"
-  "\022\026.google.protobuf.Empty\032,.grpcIRegressi"
-  "on.getNumPassiveLeavesResponse\"\000b\006proto3"
+  "arams\030\001 \001(\014\022\030\n\020distorsionParams\030\002 \001(\014\"X\n"
+  "\naddRequest\022#\n\033grpcServerCompressionForm"
+  "at\030\001 \001(\005\022\023\n\013descriptors\030\002 \001(\014\022\020\n\010points3"
+  "D\030\003 \001(\014\"*\n\013addResponse\022\033\n\023xpcfGrpcReturn"
+  "Value\030\001 \001(\021\"h\n\016regressRequest\022#\n\033grpcSer"
+  "verCompressionFormat\030\001 \001(\005\022\r\n\005frame\030\002 \001("
+  "\014\022\020\n\010points2D\030\003 \001(\014\022\020\n\010points3D\030\004 \001(\014\"R\n"
+  "\017regressResponse\022\020\n\010points2D\030\001 \001(\014\022\020\n\010po"
+  "ints3D\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001("
+  "\021\"Y\n\rupdateRequest\022#\n\033grpcServerCompress"
+  "ionFormat\030\001 \001(\005\022\017\n\007inliers\030\002 \001(\014\022\022\n\ncame"
+  "raPose\030\003 \001(\014\"R\n\016updateResponse\022\017\n\007inlier"
+  "s\030\001 \001(\014\022\022\n\ncameraPose\030\002 \001(\014\022\033\n\023xpcfGrpcR"
+  "eturnValue\030\003 \001(\021\"7\n\020loadModelRequest\022#\n\033"
+  "grpcServerCompressionFormat\030\001 \001(\005\"0\n\021loa"
+  "dModelResponse\022\033\n\023xpcfGrpcReturnValue\030\001 "
+  "\001(\021\"\?\n\030getTrainingStatusRequest\022#\n\033grpcS"
+  "erverCompressionFormat\030\001 \001(\005\"8\n\031getTrain"
+  "ingStatusResponse\022\033\n\023xpcfGrpcReturnValue"
+  "\030\001 \001(\014\"@\n\031getNumActiveLeavesRequest\022#\n\033g"
+  "rpcServerCompressionFormat\030\001 \001(\005\"9\n\032getN"
+  "umActiveLeavesResponse\022\033\n\023xpcfGrpcReturn"
+  "Value\030\001 \001(\021\"A\n\032getNumPassiveLeavesReques"
+  "t\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\":"
+  "\n\033getNumPassiveLeavesResponse\022\033\n\023xpcfGrp"
+  "cReturnValue\030\001 \001(\0212\200\006\n\026grpcIRegressionSe"
+  "rvice\022\\\n\023setCameraParameters\022+.grpcIRegr"
+  "ession.setCameraParametersRequest\032\026.goog"
+  "le.protobuf.Empty\"\000\022B\n\003add\022\033.grpcIRegres"
+  "sion.addRequest\032\034.grpcIRegression.addRes"
+  "ponse\"\000\022N\n\007regress\022\037.grpcIRegression.reg"
+  "ressRequest\032 .grpcIRegression.regressRes"
+  "ponse\"\000\022K\n\006update\022\036.grpcIRegression.upda"
+  "teRequest\032\037.grpcIRegression.updateRespon"
+  "se\"\000\022T\n\tloadModel\022!.grpcIRegression.load"
+  "ModelRequest\032\".grpcIRegression.loadModel"
+  "Response\"\000\022l\n\021getTrainingStatus\022).grpcIR"
+  "egression.getTrainingStatusRequest\032*.grp"
+  "cIRegression.getTrainingStatusResponse\"\000"
+  "\022o\n\022getNumActiveLeaves\022*.grpcIRegression"
+  ".getNumActiveLeavesRequest\032+.grpcIRegres"
+  "sion.getNumActiveLeavesResponse\"\000\022r\n\023get"
+  "NumPassiveLeaves\022+.grpcIRegression.getNu"
+  "mPassiveLeavesRequest\032,.grpcIRegression."
+  "getNumPassiveLeavesResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIRegressionService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIRegressionService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIRegressionService_2eproto = {
-  false, false, 1480, descriptor_table_protodef_grpcIRegressionService_2eproto, "grpcIRegressionService.proto", 
-  &descriptor_table_grpcIRegressionService_2eproto_once, descriptor_table_grpcIRegressionService_2eproto_deps, 1, 11,
+  false, false, 1917, descriptor_table_protodef_grpcIRegressionService_2eproto, "grpcIRegressionService.proto", 
+  &descriptor_table_grpcIRegressionService_2eproto_once, descriptor_table_grpcIRegressionService_2eproto_deps, 1, 15,
   schemas, file_default_instances, TableStruct_grpcIRegressionService_2eproto::offsets,
   file_level_metadata_grpcIRegressionService_2eproto, file_level_enum_descriptors_grpcIRegressionService_2eproto, file_level_service_descriptors_grpcIRegressionService_2eproto,
 };
@@ -580,12 +677,14 @@ addRequest::addRequest(const addRequest& from)
     points3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_points3d(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.addRequest)
 }
 
 void addRequest::SharedCtor() {
 descriptors_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 points3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 addRequest::~addRequest() {
@@ -618,6 +717,7 @@ void addRequest::Clear() {
 
   descriptors_.ClearToEmpty();
   points3d_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -628,17 +728,24 @@ const char* addRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes descriptors = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes descriptors = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_descriptors();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes points3D = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes points3D = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_points3d();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -672,16 +779,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes descriptors = 1;
-  if (this->descriptors().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_descriptors(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes points3D = 2;
+  // bytes descriptors = 2;
+  if (this->descriptors().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_descriptors(), target);
+  }
+
+  // bytes points3D = 3;
   if (this->points3d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_points3d(), target);
+        3, this->_internal_points3d(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -700,18 +813,25 @@ size_t addRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes descriptors = 1;
+  // bytes descriptors = 2;
   if (this->descriptors().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_descriptors());
   }
 
-  // bytes points3D = 2;
+  // bytes points3D = 3;
   if (this->points3d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points3d());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -751,6 +871,9 @@ void addRequest::MergeFrom(const addRequest& from) {
   if (from.points3d().size() > 0) {
     _internal_set_points3d(from._internal_points3d());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void addRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -776,6 +899,7 @@ void addRequest::InternalSwap(addRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   descriptors_.Swap(&other->descriptors_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   points3d_.Swap(&other->points3d_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata addRequest::GetMetadata() const {
@@ -1002,6 +1126,7 @@ regressRequest::regressRequest(const regressRequest& from)
     points3d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_points3d(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.regressRequest)
 }
 
@@ -1009,6 +1134,7 @@ void regressRequest::SharedCtor() {
 frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 points2d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 points3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 regressRequest::~regressRequest() {
@@ -1043,6 +1169,7 @@ void regressRequest::Clear() {
   frame_.ClearToEmpty();
   points2d_.ClearToEmpty();
   points3d_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1053,25 +1180,32 @@ const char* regressRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes frame = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes frame = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_frame();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes points2D = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes points2D = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_points2d();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes points3D = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes points3D = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_points3d();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1105,22 +1239,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes frame = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes frame = 2;
   if (this->frame().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_frame(), target);
+        2, this->_internal_frame(), target);
   }
 
-  // bytes points2D = 2;
+  // bytes points2D = 3;
   if (this->points2d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_points2d(), target);
+        3, this->_internal_points2d(), target);
   }
 
-  // bytes points3D = 3;
+  // bytes points3D = 4;
   if (this->points3d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_points3d(), target);
+        4, this->_internal_points3d(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1139,25 +1279,32 @@ size_t regressRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes frame = 1;
+  // bytes frame = 2;
   if (this->frame().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_frame());
   }
 
-  // bytes points2D = 2;
+  // bytes points2D = 3;
   if (this->points2d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points2d());
   }
 
-  // bytes points3D = 3;
+  // bytes points3D = 4;
   if (this->points3d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_points3d());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1200,6 +1347,9 @@ void regressRequest::MergeFrom(const regressRequest& from) {
   if (from.points3d().size() > 0) {
     _internal_set_points3d(from._internal_points3d());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void regressRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1226,6 +1376,7 @@ void regressRequest::InternalSwap(regressRequest* other) {
   frame_.Swap(&other->frame_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   points2d_.Swap(&other->points2d_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   points3d_.Swap(&other->points3d_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata regressRequest::GetMetadata() const {
@@ -1513,12 +1664,14 @@ updateRequest::updateRequest(const updateRequest& from)
     camerapose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_camerapose(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIRegression.updateRequest)
 }
 
 void updateRequest::SharedCtor() {
 inliers_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 camerapose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 updateRequest::~updateRequest() {
@@ -1551,6 +1704,7 @@ void updateRequest::Clear() {
 
   inliers_.ClearToEmpty();
   camerapose_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1561,17 +1715,24 @@ const char* updateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes inliers = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes inliers = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_inliers();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes cameraPose = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes cameraPose = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_camerapose();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1605,16 +1766,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes inliers = 1;
-  if (this->inliers().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_inliers(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes cameraPose = 2;
+  // bytes inliers = 2;
+  if (this->inliers().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_inliers(), target);
+  }
+
+  // bytes cameraPose = 3;
   if (this->camerapose().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_camerapose(), target);
+        3, this->_internal_camerapose(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1633,18 +1800,25 @@ size_t updateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes inliers = 1;
+  // bytes inliers = 2;
   if (this->inliers().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_inliers());
   }
 
-  // bytes cameraPose = 2;
+  // bytes cameraPose = 3;
   if (this->camerapose().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_camerapose());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1684,6 +1858,9 @@ void updateRequest::MergeFrom(const updateRequest& from) {
   if (from.camerapose().size() > 0) {
     _internal_set_camerapose(from._internal_camerapose());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void updateRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1709,6 +1886,7 @@ void updateRequest::InternalSwap(updateRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   inliers_.Swap(&other->inliers_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   camerapose_.Swap(&other->camerapose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata updateRequest::GetMetadata() const {
@@ -1973,6 +2151,195 @@ void updateResponse::InternalSwap(updateResponse* other) {
 
 // ===================================================================
 
+class loadModelRequest::_Internal {
+ public:
+};
+
+loadModelRequest::loadModelRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIRegression.loadModelRequest)
+}
+loadModelRequest::loadModelRequest(const loadModelRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIRegression.loadModelRequest)
+}
+
+void loadModelRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+loadModelRequest::~loadModelRequest() {
+  // @@protoc_insertion_point(destructor:grpcIRegression.loadModelRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void loadModelRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void loadModelRequest::ArenaDtor(void* object) {
+  loadModelRequest* _this = reinterpret_cast< loadModelRequest* >(object);
+  (void)_this;
+}
+void loadModelRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void loadModelRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void loadModelRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIRegression.loadModelRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* loadModelRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* loadModelRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIRegression.loadModelRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIRegression.loadModelRequest)
+  return target;
+}
+
+size_t loadModelRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIRegression.loadModelRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void loadModelRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.loadModelRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const loadModelRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<loadModelRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.loadModelRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.loadModelRequest)
+    MergeFrom(*source);
+  }
+}
+
+void loadModelRequest::MergeFrom(const loadModelRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.loadModelRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void loadModelRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.loadModelRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void loadModelRequest::CopyFrom(const loadModelRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIRegression.loadModelRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool loadModelRequest::IsInitialized() const {
+  return true;
+}
+
+void loadModelRequest::InternalSwap(loadModelRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata loadModelRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 class loadModelResponse::_Internal {
  public:
 };
@@ -2156,6 +2523,195 @@ void loadModelResponse::InternalSwap(loadModelResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadModelResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getTrainingStatusRequest::_Internal {
+ public:
+};
+
+getTrainingStatusRequest::getTrainingStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIRegression.getTrainingStatusRequest)
+}
+getTrainingStatusRequest::getTrainingStatusRequest(const getTrainingStatusRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIRegression.getTrainingStatusRequest)
+}
+
+void getTrainingStatusRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+getTrainingStatusRequest::~getTrainingStatusRequest() {
+  // @@protoc_insertion_point(destructor:grpcIRegression.getTrainingStatusRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getTrainingStatusRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void getTrainingStatusRequest::ArenaDtor(void* object) {
+  getTrainingStatusRequest* _this = reinterpret_cast< getTrainingStatusRequest* >(object);
+  (void)_this;
+}
+void getTrainingStatusRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getTrainingStatusRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getTrainingStatusRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIRegression.getTrainingStatusRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getTrainingStatusRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getTrainingStatusRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIRegression.getTrainingStatusRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIRegression.getTrainingStatusRequest)
+  return target;
+}
+
+size_t getTrainingStatusRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIRegression.getTrainingStatusRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getTrainingStatusRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.getTrainingStatusRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getTrainingStatusRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getTrainingStatusRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.getTrainingStatusRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.getTrainingStatusRequest)
+    MergeFrom(*source);
+  }
+}
+
+void getTrainingStatusRequest::MergeFrom(const getTrainingStatusRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.getTrainingStatusRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void getTrainingStatusRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.getTrainingStatusRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getTrainingStatusRequest::CopyFrom(const getTrainingStatusRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIRegression.getTrainingStatusRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getTrainingStatusRequest::IsInitialized() const {
+  return true;
+}
+
+void getTrainingStatusRequest::InternalSwap(getTrainingStatusRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getTrainingStatusRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -2357,6 +2913,195 @@ void getTrainingStatusResponse::InternalSwap(getTrainingStatusResponse* other) {
 
 // ===================================================================
 
+class getNumActiveLeavesRequest::_Internal {
+ public:
+};
+
+getNumActiveLeavesRequest::getNumActiveLeavesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIRegression.getNumActiveLeavesRequest)
+}
+getNumActiveLeavesRequest::getNumActiveLeavesRequest(const getNumActiveLeavesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIRegression.getNumActiveLeavesRequest)
+}
+
+void getNumActiveLeavesRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+getNumActiveLeavesRequest::~getNumActiveLeavesRequest() {
+  // @@protoc_insertion_point(destructor:grpcIRegression.getNumActiveLeavesRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getNumActiveLeavesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void getNumActiveLeavesRequest::ArenaDtor(void* object) {
+  getNumActiveLeavesRequest* _this = reinterpret_cast< getNumActiveLeavesRequest* >(object);
+  (void)_this;
+}
+void getNumActiveLeavesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getNumActiveLeavesRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getNumActiveLeavesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIRegression.getNumActiveLeavesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getNumActiveLeavesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getNumActiveLeavesRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIRegression.getNumActiveLeavesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIRegression.getNumActiveLeavesRequest)
+  return target;
+}
+
+size_t getNumActiveLeavesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIRegression.getNumActiveLeavesRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getNumActiveLeavesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.getNumActiveLeavesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getNumActiveLeavesRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getNumActiveLeavesRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.getNumActiveLeavesRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.getNumActiveLeavesRequest)
+    MergeFrom(*source);
+  }
+}
+
+void getNumActiveLeavesRequest::MergeFrom(const getNumActiveLeavesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.getNumActiveLeavesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void getNumActiveLeavesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.getNumActiveLeavesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getNumActiveLeavesRequest::CopyFrom(const getNumActiveLeavesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIRegression.getNumActiveLeavesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getNumActiveLeavesRequest::IsInitialized() const {
+  return true;
+}
+
+void getNumActiveLeavesRequest::InternalSwap(getNumActiveLeavesRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getNumActiveLeavesRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 class getNumActiveLeavesResponse::_Internal {
  public:
 };
@@ -2540,6 +3285,195 @@ void getNumActiveLeavesResponse::InternalSwap(getNumActiveLeavesResponse* other)
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getNumActiveLeavesResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getNumPassiveLeavesRequest::_Internal {
+ public:
+};
+
+getNumPassiveLeavesRequest::getNumPassiveLeavesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIRegression.getNumPassiveLeavesRequest)
+}
+getNumPassiveLeavesRequest::getNumPassiveLeavesRequest(const getNumPassiveLeavesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIRegression.getNumPassiveLeavesRequest)
+}
+
+void getNumPassiveLeavesRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+getNumPassiveLeavesRequest::~getNumPassiveLeavesRequest() {
+  // @@protoc_insertion_point(destructor:grpcIRegression.getNumPassiveLeavesRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getNumPassiveLeavesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void getNumPassiveLeavesRequest::ArenaDtor(void* object) {
+  getNumPassiveLeavesRequest* _this = reinterpret_cast< getNumPassiveLeavesRequest* >(object);
+  (void)_this;
+}
+void getNumPassiveLeavesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getNumPassiveLeavesRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getNumPassiveLeavesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIRegression.getNumPassiveLeavesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getNumPassiveLeavesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getNumPassiveLeavesRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIRegression.getNumPassiveLeavesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIRegression.getNumPassiveLeavesRequest)
+  return target;
+}
+
+size_t getNumPassiveLeavesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIRegression.getNumPassiveLeavesRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getNumPassiveLeavesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIRegression.getNumPassiveLeavesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getNumPassiveLeavesRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getNumPassiveLeavesRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIRegression.getNumPassiveLeavesRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIRegression.getNumPassiveLeavesRequest)
+    MergeFrom(*source);
+  }
+}
+
+void getNumPassiveLeavesRequest::MergeFrom(const getNumPassiveLeavesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIRegression.getNumPassiveLeavesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void getNumPassiveLeavesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIRegression.getNumPassiveLeavesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getNumPassiveLeavesRequest::CopyFrom(const getNumPassiveLeavesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIRegression.getNumPassiveLeavesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getNumPassiveLeavesRequest::IsInitialized() const {
+  return true;
+}
+
+void getNumPassiveLeavesRequest::InternalSwap(getNumPassiveLeavesRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getNumPassiveLeavesRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -2757,14 +3691,26 @@ template<> PROTOBUF_NOINLINE ::grpcIRegression::updateRequest* Arena::CreateMayb
 template<> PROTOBUF_NOINLINE ::grpcIRegression::updateResponse* Arena::CreateMaybeMessage< ::grpcIRegression::updateResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIRegression::updateResponse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::grpcIRegression::loadModelRequest* Arena::CreateMaybeMessage< ::grpcIRegression::loadModelRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIRegression::loadModelRequest >(arena);
+}
 template<> PROTOBUF_NOINLINE ::grpcIRegression::loadModelResponse* Arena::CreateMaybeMessage< ::grpcIRegression::loadModelResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIRegression::loadModelResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIRegression::getTrainingStatusRequest* Arena::CreateMaybeMessage< ::grpcIRegression::getTrainingStatusRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIRegression::getTrainingStatusRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIRegression::getTrainingStatusResponse* Arena::CreateMaybeMessage< ::grpcIRegression::getTrainingStatusResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIRegression::getTrainingStatusResponse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::grpcIRegression::getNumActiveLeavesRequest* Arena::CreateMaybeMessage< ::grpcIRegression::getNumActiveLeavesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIRegression::getNumActiveLeavesRequest >(arena);
+}
 template<> PROTOBUF_NOINLINE ::grpcIRegression::getNumActiveLeavesResponse* Arena::CreateMaybeMessage< ::grpcIRegression::getNumActiveLeavesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIRegression::getNumActiveLeavesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIRegression::getNumPassiveLeavesRequest* Arena::CreateMaybeMessage< ::grpcIRegression::getNumPassiveLeavesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIRegression::getNumPassiveLeavesRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIRegression::getNumPassiveLeavesResponse* Arena::CreateMaybeMessage< ::grpcIRegression::getNumPassiveLeavesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIRegression::getNumPassiveLeavesResponse >(arena);

@@ -6,9 +6,10 @@ package grpcI3DTransform;
 
 message transformRequest
 {
-bytes inputPoints = 1;
-bytes transformation = 2;
-bytes outputPoints = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputPoints = 2;
+bytes transformation = 3;
+bytes outputPoints = 4;
 }
 
 message transformResponse
@@ -19,8 +20,9 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message transformInPlace_grpc0Request
 {
-bytes transformation = 1;
-bytes map = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes transformation = 2;
+bytes map = 3;
 }
 
 message transformInPlace_grpc0Response
@@ -30,8 +32,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message transformInPlace_grpc1Request
 {
-bytes transformation = 1;
-bytes pointCloud = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes transformation = 2;
+bytes pointCloud = 3;
 }
 
 message transformInPlace_grpc1Response
@@ -42,8 +45,9 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message transformInPlace_grpc2Request
 {
-bytes transformation = 1;
-bytes keyframes = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes transformation = 2;
+bytes keyframes = 3;
 }
 
 message transformInPlace_grpc2Response
@@ -54,8 +58,9 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message transformInPlace_grpc3Request
 {
-bytes transformation = 1;
-bytes pointCloud = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes transformation = 2;
+bytes pointCloud = 3;
 }
 
 message transformInPlace_grpc3Response
@@ -65,8 +70,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message transformInPlace_grpc4Request
 {
-bytes transformation = 1;
-bytes keyframeCollection = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes transformation = 2;
+bytes keyframeCollection = 3;
 }
 
 message transformInPlace_grpc4Response

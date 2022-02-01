@@ -192,11 +192,12 @@ class match_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDescriptors1FieldNumber = 1,
-    kDescriptors2FieldNumber = 2,
-    kMatchesFieldNumber = 3,
+    kDescriptors1FieldNumber = 2,
+    kDescriptors2FieldNumber = 3,
+    kMatchesFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes descriptors1 = 1;
+  // bytes descriptors1 = 2;
   void clear_descriptors1();
   const std::string& descriptors1() const;
   void set_descriptors1(const std::string& value);
@@ -212,7 +213,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors1();
   public:
 
-  // bytes descriptors2 = 2;
+  // bytes descriptors2 = 3;
   void clear_descriptors2();
   const std::string& descriptors2() const;
   void set_descriptors2(const std::string& value);
@@ -228,7 +229,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors2();
   public:
 
-  // bytes matches = 3;
+  // bytes matches = 4;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -244,6 +245,15 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIDescriptorMatcher.match_grpc0Request)
  private:
   class _Internal;
@@ -254,6 +264,7 @@ class match_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr descriptors1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr descriptors2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIDescriptorMatcherService_2eproto;
 };
@@ -527,11 +538,12 @@ class match_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDescriptors1FieldNumber = 1,
-    kDescriptors2FieldNumber = 2,
-    kMatchesFieldNumber = 3,
+    kDescriptors1FieldNumber = 2,
+    kDescriptors2FieldNumber = 3,
+    kMatchesFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes descriptors1 = 1;
+  // bytes descriptors1 = 2;
   void clear_descriptors1();
   const std::string& descriptors1() const;
   void set_descriptors1(const std::string& value);
@@ -547,7 +559,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors1();
   public:
 
-  // bytes descriptors2 = 2;
+  // bytes descriptors2 = 3;
   void clear_descriptors2();
   const std::string& descriptors2() const;
   void set_descriptors2(const std::string& value);
@@ -563,7 +575,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors2();
   public:
 
-  // bytes matches = 3;
+  // bytes matches = 4;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -579,6 +591,15 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIDescriptorMatcher.match_grpc1Request)
  private:
   class _Internal;
@@ -589,6 +610,7 @@ class match_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr descriptors1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr descriptors2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIDescriptorMatcherService_2eproto;
 };
@@ -758,7 +780,27 @@ class match_grpc1Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // match_grpc0Request
 
-// bytes descriptors1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void match_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcher.match_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void match_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void match_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcher.match_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes descriptors1 = 2;
 inline void match_grpc0Request::clear_descriptors1() {
   descriptors1_.ClearToEmpty();
 }
@@ -819,7 +861,7 @@ inline void match_grpc0Request::set_allocated_descriptors1(std::string* descript
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcher.match_grpc0Request.descriptors1)
 }
 
-// bytes descriptors2 = 2;
+// bytes descriptors2 = 3;
 inline void match_grpc0Request::clear_descriptors2() {
   descriptors2_.ClearToEmpty();
 }
@@ -880,7 +922,7 @@ inline void match_grpc0Request::set_allocated_descriptors2(std::string* descript
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcher.match_grpc0Request.descriptors2)
 }
 
-// bytes matches = 3;
+// bytes matches = 4;
 inline void match_grpc0Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -1030,7 +1072,27 @@ inline void match_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID
 
 // match_grpc1Request
 
-// bytes descriptors1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void match_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 match_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcher.match_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void match_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void match_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcher.match_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes descriptors1 = 2;
 inline void match_grpc1Request::clear_descriptors1() {
   descriptors1_.ClearToEmpty();
 }
@@ -1091,7 +1153,7 @@ inline void match_grpc1Request::set_allocated_descriptors1(std::string* descript
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcher.match_grpc1Request.descriptors1)
 }
 
-// bytes descriptors2 = 2;
+// bytes descriptors2 = 3;
 inline void match_grpc1Request::clear_descriptors2() {
   descriptors2_.ClearToEmpty();
 }
@@ -1152,7 +1214,7 @@ inline void match_grpc1Request::set_allocated_descriptors2(std::string* descript
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcher.match_grpc1Request.descriptors2)
 }
 
-// bytes matches = 3;
+// bytes matches = 4;
 inline void match_grpc1Request::clear_matches() {
   matches_.ClearToEmpty();
 }

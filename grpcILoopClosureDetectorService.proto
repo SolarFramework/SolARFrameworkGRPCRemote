@@ -12,10 +12,11 @@ bytes distortionParams = 2;
 
 message detectRequest
 {
-bytes queryKeyframe = 1;
-bytes detectedLoopKeyframe = 2;
-bytes sim3Transform = 3;
-bytes duplicatedPointsIndices = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes queryKeyframe = 2;
+bytes detectedLoopKeyframe = 3;
+bytes sim3Transform = 4;
+bytes duplicatedPointsIndices = 5;
 }
 
 message detectResponse

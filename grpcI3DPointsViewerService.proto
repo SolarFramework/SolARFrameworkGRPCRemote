@@ -6,12 +6,13 @@ package grpcI3DPointsViewer;
 
 message display_grpc0Request
 {
-bytes points = 1;
-bytes pose = 2;
-bytes keyframePoses = 3;
-bytes framePoses = 4;
-bytes points2 = 5;
-bytes keyframePoses2 = 6;
+int32 grpcServerCompressionFormat  = 1;
+bytes points = 2;
+bytes pose = 3;
+bytes keyframePoses = 4;
+bytes framePoses = 5;
+bytes points2 = 6;
+bytes keyframePoses2 = 7;
 }
 
 message display_grpc0Response
@@ -21,12 +22,13 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message display_grpc1Request
 {
-bytes points = 1;
-bytes pose = 2;
-bytes keyframePoses = 3;
-bytes framePoses = 4;
-bytes points2 = 5;
-bytes keyframePoses2 = 6;
+int32 grpcServerCompressionFormat  = 1;
+bytes points = 2;
+bytes pose = 3;
+bytes keyframePoses = 4;
+bytes framePoses = 5;
+bytes points2 = 6;
+bytes keyframePoses2 = 7;
 }
 
 message display_grpc1Response

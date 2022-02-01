@@ -184,10 +184,11 @@ class loadRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFilepathFieldNumber = 1,
-    kPointCloudFieldNumber = 2,
+    kFilepathFieldNumber = 2,
+    kPointCloudFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string filepath = 1;
+  // string filepath = 2;
   void clear_filepath();
   const std::string& filepath() const;
   void set_filepath(const std::string& value);
@@ -203,7 +204,7 @@ class loadRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_filepath();
   public:
 
-  // bytes pointCloud = 2;
+  // bytes pointCloud = 3;
   void clear_pointcloud();
   const std::string& pointcloud() const;
   void set_pointcloud(const std::string& value);
@@ -219,6 +220,15 @@ class loadRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_pointcloud();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIPointCloudLoader.loadRequest)
  private:
   class _Internal;
@@ -228,6 +238,7 @@ class loadRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr filepath_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIPointCloudLoaderService_2eproto;
 };
@@ -397,7 +408,27 @@ class loadResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // loadRequest
 
-// string filepath = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void loadRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIPointCloudLoader.loadRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void loadRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void loadRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIPointCloudLoader.loadRequest.grpcServerCompressionFormat)
+}
+
+// string filepath = 2;
 inline void loadRequest::clear_filepath() {
   filepath_.ClearToEmpty();
 }
@@ -458,7 +489,7 @@ inline void loadRequest::set_allocated_filepath(std::string* filepath) {
   // @@protoc_insertion_point(field_set_allocated:grpcIPointCloudLoader.loadRequest.filepath)
 }
 
-// bytes pointCloud = 2;
+// bytes pointCloud = 3;
 inline void loadRequest::clear_pointcloud() {
   pointcloud_.ClearToEmpty();
 }

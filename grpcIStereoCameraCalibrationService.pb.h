@@ -184,15 +184,16 @@ class calibrateRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImages1FieldNumber = 1,
-    kImages2FieldNumber = 2,
-    kCamParams1FieldNumber = 3,
-    kCamParams2FieldNumber = 4,
-    kTransformationFieldNumber = 5,
-    kRectParams1FieldNumber = 6,
-    kRectParams2FieldNumber = 7,
+    kImages1FieldNumber = 2,
+    kImages2FieldNumber = 3,
+    kCamParams1FieldNumber = 4,
+    kCamParams2FieldNumber = 5,
+    kTransformationFieldNumber = 6,
+    kRectParams1FieldNumber = 7,
+    kRectParams2FieldNumber = 8,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes images1 = 1;
+  // bytes images1 = 2;
   void clear_images1();
   const std::string& images1() const;
   void set_images1(const std::string& value);
@@ -208,7 +209,7 @@ class calibrateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_images1();
   public:
 
-  // bytes images2 = 2;
+  // bytes images2 = 3;
   void clear_images2();
   const std::string& images2() const;
   void set_images2(const std::string& value);
@@ -224,7 +225,7 @@ class calibrateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_images2();
   public:
 
-  // bytes camParams1 = 3;
+  // bytes camParams1 = 4;
   void clear_camparams1();
   const std::string& camparams1() const;
   void set_camparams1(const std::string& value);
@@ -240,7 +241,7 @@ class calibrateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_camparams1();
   public:
 
-  // bytes camParams2 = 4;
+  // bytes camParams2 = 5;
   void clear_camparams2();
   const std::string& camparams2() const;
   void set_camparams2(const std::string& value);
@@ -256,7 +257,7 @@ class calibrateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_camparams2();
   public:
 
-  // bytes transformation = 5;
+  // bytes transformation = 6;
   void clear_transformation();
   const std::string& transformation() const;
   void set_transformation(const std::string& value);
@@ -272,7 +273,7 @@ class calibrateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes rectParams1 = 6;
+  // bytes rectParams1 = 7;
   void clear_rectparams1();
   const std::string& rectparams1() const;
   void set_rectparams1(const std::string& value);
@@ -288,7 +289,7 @@ class calibrateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_rectparams1();
   public:
 
-  // bytes rectParams2 = 7;
+  // bytes rectParams2 = 8;
   void clear_rectparams2();
   const std::string& rectparams2() const;
   void set_rectparams2(const std::string& value);
@@ -302,6 +303,15 @@ class calibrateRequest PROTOBUF_FINAL :
   const std::string& _internal_rectparams2() const;
   void _internal_set_rectparams2(const std::string& value);
   std::string* _internal_mutable_rectparams2();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIStereoCameraCalibration.calibrateRequest)
@@ -318,6 +328,7 @@ class calibrateRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams2_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIStereoCameraCalibrationService_2eproto;
 };
@@ -523,7 +534,27 @@ class calibrateResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // calibrateRequest
 
-// bytes images1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void calibrateRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 calibrateRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 calibrateRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIStereoCameraCalibration.calibrateRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void calibrateRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void calibrateRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.calibrateRequest.grpcServerCompressionFormat)
+}
+
+// bytes images1 = 2;
 inline void calibrateRequest::clear_images1() {
   images1_.ClearToEmpty();
 }
@@ -584,7 +615,7 @@ inline void calibrateRequest::set_allocated_images1(std::string* images1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.calibrateRequest.images1)
 }
 
-// bytes images2 = 2;
+// bytes images2 = 3;
 inline void calibrateRequest::clear_images2() {
   images2_.ClearToEmpty();
 }
@@ -645,7 +676,7 @@ inline void calibrateRequest::set_allocated_images2(std::string* images2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.calibrateRequest.images2)
 }
 
-// bytes camParams1 = 3;
+// bytes camParams1 = 4;
 inline void calibrateRequest::clear_camparams1() {
   camparams1_.ClearToEmpty();
 }
@@ -706,7 +737,7 @@ inline void calibrateRequest::set_allocated_camparams1(std::string* camparams1) 
   // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.calibrateRequest.camParams1)
 }
 
-// bytes camParams2 = 4;
+// bytes camParams2 = 5;
 inline void calibrateRequest::clear_camparams2() {
   camparams2_.ClearToEmpty();
 }
@@ -767,7 +798,7 @@ inline void calibrateRequest::set_allocated_camparams2(std::string* camparams2) 
   // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.calibrateRequest.camParams2)
 }
 
-// bytes transformation = 5;
+// bytes transformation = 6;
 inline void calibrateRequest::clear_transformation() {
   transformation_.ClearToEmpty();
 }
@@ -828,7 +859,7 @@ inline void calibrateRequest::set_allocated_transformation(std::string* transfor
   // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.calibrateRequest.transformation)
 }
 
-// bytes rectParams1 = 6;
+// bytes rectParams1 = 7;
 inline void calibrateRequest::clear_rectparams1() {
   rectparams1_.ClearToEmpty();
 }
@@ -889,7 +920,7 @@ inline void calibrateRequest::set_allocated_rectparams1(std::string* rectparams1
   // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.calibrateRequest.rectParams1)
 }
 
-// bytes rectParams2 = 7;
+// bytes rectParams2 = 8;
 inline void calibrateRequest::clear_rectparams2() {
   rectparams2_.ClearToEmpty();
 }

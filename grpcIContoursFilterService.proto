@@ -6,8 +6,9 @@ package grpcIContoursFilter;
 
 message filterRequest
 {
-bytes inContours = 1;
-bytes outContours = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes inContours = 2;
+bytes outContours = 3;
 }
 
 message filterResponse

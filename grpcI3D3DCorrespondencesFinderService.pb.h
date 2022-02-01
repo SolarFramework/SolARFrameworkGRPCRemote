@@ -192,15 +192,16 @@ class find_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFirstKeyframeFieldNumber = 1,
-    kSecondKeyframeFieldNumber = 2,
-    kCurrentMatchesFieldNumber = 3,
-    kFirstCloudPointsFieldNumber = 4,
-    kSecondCloudPointsFieldNumber = 5,
-    kFoundMatchesFieldNumber = 6,
-    kRemainingMatchesFieldNumber = 7,
+    kFirstKeyframeFieldNumber = 2,
+    kSecondKeyframeFieldNumber = 3,
+    kCurrentMatchesFieldNumber = 4,
+    kFirstCloudPointsFieldNumber = 5,
+    kSecondCloudPointsFieldNumber = 6,
+    kFoundMatchesFieldNumber = 7,
+    kRemainingMatchesFieldNumber = 8,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes firstKeyframe = 1;
+  // bytes firstKeyframe = 2;
   void clear_firstkeyframe();
   const std::string& firstkeyframe() const;
   void set_firstkeyframe(const std::string& value);
@@ -216,7 +217,7 @@ class find_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_firstkeyframe();
   public:
 
-  // bytes secondKeyframe = 2;
+  // bytes secondKeyframe = 3;
   void clear_secondkeyframe();
   const std::string& secondkeyframe() const;
   void set_secondkeyframe(const std::string& value);
@@ -232,7 +233,7 @@ class find_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_secondkeyframe();
   public:
 
-  // bytes current_matches = 3;
+  // bytes current_matches = 4;
   void clear_current_matches();
   const std::string& current_matches() const;
   void set_current_matches(const std::string& value);
@@ -248,7 +249,7 @@ class find_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_current_matches();
   public:
 
-  // bytes firstCloudPoints = 4;
+  // bytes firstCloudPoints = 5;
   void clear_firstcloudpoints();
   const std::string& firstcloudpoints() const;
   void set_firstcloudpoints(const std::string& value);
@@ -264,7 +265,7 @@ class find_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_firstcloudpoints();
   public:
 
-  // bytes secondCloudPoints = 5;
+  // bytes secondCloudPoints = 6;
   void clear_secondcloudpoints();
   const std::string& secondcloudpoints() const;
   void set_secondcloudpoints(const std::string& value);
@@ -280,7 +281,7 @@ class find_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_secondcloudpoints();
   public:
 
-  // bytes found_matches = 6;
+  // bytes found_matches = 7;
   void clear_found_matches();
   const std::string& found_matches() const;
   void set_found_matches(const std::string& value);
@@ -296,7 +297,7 @@ class find_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_found_matches();
   public:
 
-  // bytes remaining_matches = 7;
+  // bytes remaining_matches = 8;
   void clear_remaining_matches();
   const std::string& remaining_matches() const;
   void set_remaining_matches(const std::string& value);
@@ -310,6 +311,15 @@ class find_grpc0Request PROTOBUF_FINAL :
   const std::string& _internal_remaining_matches() const;
   void _internal_set_remaining_matches(const std::string& value);
   std::string* _internal_mutable_remaining_matches();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcI3D3DCorrespondencesFinder.find_grpc0Request)
@@ -326,6 +336,7 @@ class find_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr secondcloudpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr found_matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr remaining_matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3D3DCorrespondencesFinderService_2eproto;
 };
@@ -653,14 +664,15 @@ class find_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFirstKeyframeFieldNumber = 1,
-    kSecondKeyframeFieldNumber = 2,
-    kCurrentMatchesFieldNumber = 3,
-    kFirstCloudPointsIndicesFieldNumber = 4,
-    kSecondCloudPointsIndicesFieldNumber = 5,
-    kFoundMatchesFieldNumber = 6,
+    kFirstKeyframeFieldNumber = 2,
+    kSecondKeyframeFieldNumber = 3,
+    kCurrentMatchesFieldNumber = 4,
+    kFirstCloudPointsIndicesFieldNumber = 5,
+    kSecondCloudPointsIndicesFieldNumber = 6,
+    kFoundMatchesFieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes firstKeyframe = 1;
+  // bytes firstKeyframe = 2;
   void clear_firstkeyframe();
   const std::string& firstkeyframe() const;
   void set_firstkeyframe(const std::string& value);
@@ -676,7 +688,7 @@ class find_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_firstkeyframe();
   public:
 
-  // bytes secondKeyframe = 2;
+  // bytes secondKeyframe = 3;
   void clear_secondkeyframe();
   const std::string& secondkeyframe() const;
   void set_secondkeyframe(const std::string& value);
@@ -692,7 +704,7 @@ class find_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_secondkeyframe();
   public:
 
-  // bytes current_matches = 3;
+  // bytes current_matches = 4;
   void clear_current_matches();
   const std::string& current_matches() const;
   void set_current_matches(const std::string& value);
@@ -708,7 +720,7 @@ class find_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_current_matches();
   public:
 
-  // bytes firstCloudPointsIndices = 4;
+  // bytes firstCloudPointsIndices = 5;
   void clear_firstcloudpointsindices();
   const std::string& firstcloudpointsindices() const;
   void set_firstcloudpointsindices(const std::string& value);
@@ -724,7 +736,7 @@ class find_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_firstcloudpointsindices();
   public:
 
-  // bytes secondCloudPointsIndices = 5;
+  // bytes secondCloudPointsIndices = 6;
   void clear_secondcloudpointsindices();
   const std::string& secondcloudpointsindices() const;
   void set_secondcloudpointsindices(const std::string& value);
@@ -740,7 +752,7 @@ class find_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_secondcloudpointsindices();
   public:
 
-  // bytes found_matches = 6;
+  // bytes found_matches = 7;
   void clear_found_matches();
   const std::string& found_matches() const;
   void set_found_matches(const std::string& value);
@@ -756,6 +768,15 @@ class find_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_found_matches();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3D3DCorrespondencesFinder.find_grpc1Request)
  private:
   class _Internal;
@@ -769,6 +790,7 @@ class find_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr firstcloudpointsindices_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr secondcloudpointsindices_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr found_matches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3D3DCorrespondencesFinderService_2eproto;
 };
@@ -974,7 +996,27 @@ class find_grpc1Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // find_grpc0Request
 
-// bytes firstKeyframe = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void find_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 find_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 find_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3D3DCorrespondencesFinder.find_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void find_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void find_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3D3DCorrespondencesFinder.find_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes firstKeyframe = 2;
 inline void find_grpc0Request::clear_firstkeyframe() {
   firstkeyframe_.ClearToEmpty();
 }
@@ -1035,7 +1077,7 @@ inline void find_grpc0Request::set_allocated_firstkeyframe(std::string* firstkey
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc0Request.firstKeyframe)
 }
 
-// bytes secondKeyframe = 2;
+// bytes secondKeyframe = 3;
 inline void find_grpc0Request::clear_secondkeyframe() {
   secondkeyframe_.ClearToEmpty();
 }
@@ -1096,7 +1138,7 @@ inline void find_grpc0Request::set_allocated_secondkeyframe(std::string* secondk
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc0Request.secondKeyframe)
 }
 
-// bytes current_matches = 3;
+// bytes current_matches = 4;
 inline void find_grpc0Request::clear_current_matches() {
   current_matches_.ClearToEmpty();
 }
@@ -1157,7 +1199,7 @@ inline void find_grpc0Request::set_allocated_current_matches(std::string* curren
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc0Request.current_matches)
 }
 
-// bytes firstCloudPoints = 4;
+// bytes firstCloudPoints = 5;
 inline void find_grpc0Request::clear_firstcloudpoints() {
   firstcloudpoints_.ClearToEmpty();
 }
@@ -1218,7 +1260,7 @@ inline void find_grpc0Request::set_allocated_firstcloudpoints(std::string* first
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc0Request.firstCloudPoints)
 }
 
-// bytes secondCloudPoints = 5;
+// bytes secondCloudPoints = 6;
 inline void find_grpc0Request::clear_secondcloudpoints() {
   secondcloudpoints_.ClearToEmpty();
 }
@@ -1279,7 +1321,7 @@ inline void find_grpc0Request::set_allocated_secondcloudpoints(std::string* seco
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc0Request.secondCloudPoints)
 }
 
-// bytes found_matches = 6;
+// bytes found_matches = 7;
 inline void find_grpc0Request::clear_found_matches() {
   found_matches_.ClearToEmpty();
 }
@@ -1340,7 +1382,7 @@ inline void find_grpc0Request::set_allocated_found_matches(std::string* found_ma
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc0Request.found_matches)
 }
 
-// bytes remaining_matches = 7;
+// bytes remaining_matches = 8;
 inline void find_grpc0Request::clear_remaining_matches() {
   remaining_matches_.ClearToEmpty();
 }
@@ -1673,7 +1715,27 @@ inline void find_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID:
 
 // find_grpc1Request
 
-// bytes firstKeyframe = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void find_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 find_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 find_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3D3DCorrespondencesFinder.find_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void find_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void find_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3D3DCorrespondencesFinder.find_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes firstKeyframe = 2;
 inline void find_grpc1Request::clear_firstkeyframe() {
   firstkeyframe_.ClearToEmpty();
 }
@@ -1734,7 +1796,7 @@ inline void find_grpc1Request::set_allocated_firstkeyframe(std::string* firstkey
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc1Request.firstKeyframe)
 }
 
-// bytes secondKeyframe = 2;
+// bytes secondKeyframe = 3;
 inline void find_grpc1Request::clear_secondkeyframe() {
   secondkeyframe_.ClearToEmpty();
 }
@@ -1795,7 +1857,7 @@ inline void find_grpc1Request::set_allocated_secondkeyframe(std::string* secondk
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc1Request.secondKeyframe)
 }
 
-// bytes current_matches = 3;
+// bytes current_matches = 4;
 inline void find_grpc1Request::clear_current_matches() {
   current_matches_.ClearToEmpty();
 }
@@ -1856,7 +1918,7 @@ inline void find_grpc1Request::set_allocated_current_matches(std::string* curren
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc1Request.current_matches)
 }
 
-// bytes firstCloudPointsIndices = 4;
+// bytes firstCloudPointsIndices = 5;
 inline void find_grpc1Request::clear_firstcloudpointsindices() {
   firstcloudpointsindices_.ClearToEmpty();
 }
@@ -1917,7 +1979,7 @@ inline void find_grpc1Request::set_allocated_firstcloudpointsindices(std::string
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc1Request.firstCloudPointsIndices)
 }
 
-// bytes secondCloudPointsIndices = 5;
+// bytes secondCloudPointsIndices = 6;
 inline void find_grpc1Request::clear_secondcloudpointsindices() {
   secondcloudpointsindices_.ClearToEmpty();
 }
@@ -1978,7 +2040,7 @@ inline void find_grpc1Request::set_allocated_secondcloudpointsindices(std::strin
   // @@protoc_insertion_point(field_set_allocated:grpcI3D3DCorrespondencesFinder.find_grpc1Request.secondCloudPointsIndices)
 }
 
-// bytes found_matches = 6;
+// bytes found_matches = 7;
 inline void find_grpc1Request::clear_found_matches() {
   found_matches_.ClearToEmpty();
 }

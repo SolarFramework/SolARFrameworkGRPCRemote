@@ -25,7 +25,8 @@ constexpr matchRequest::matchRequest(
   , descriptors2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , keypoints1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , keypoints2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct matchRequestDefaultTypeInternal {
   constexpr matchRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -61,6 +62,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIImageMatcherService_2epro
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIImageMatcher::matchRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIImageMatcher::matchRequest, image1_),
   PROTOBUF_FIELD_OFFSET(::grpcIImageMatcher::matchRequest, image2_),
   PROTOBUF_FIELD_OFFSET(::grpcIImageMatcher::matchRequest, descriptors1_),
@@ -80,7 +82,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIImageMatcherService_2epro
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIImageMatcher::matchRequest)},
-  { 12, -1, sizeof(::grpcIImageMatcher::matchResponse)},
+  { 13, -1, sizeof(::grpcIImageMatcher::matchResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -91,23 +93,24 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIImageMatcherService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036grpcIImageMatcherService.proto\022\021grpcII"
   "mageMatcher\032\033google/protobuf/empty.proto"
-  "\"\223\001\n\014matchRequest\022\016\n\006image1\030\001 \001(\014\022\016\n\006ima"
-  "ge2\030\002 \001(\014\022\024\n\014descriptors1\030\003 \001(\014\022\024\n\014descr"
-  "iptors2\030\004 \001(\014\022\022\n\nkeypoints1\030\005 \001(\014\022\022\n\nkey"
-  "points2\030\006 \001(\014\022\017\n\007matches\030\007 \001(\014\"e\n\rmatchR"
-  "esponse\022\022\n\nkeypoints1\030\001 \001(\014\022\022\n\nkeypoints"
-  "2\030\002 \001(\014\022\017\n\007matches\030\003 \001(\014\022\033\n\023xpcfGrpcRetu"
-  "rnValue\030\004 \001(\0212h\n\030grpcIImageMatcherServic"
-  "e\022L\n\005match\022\037.grpcIImageMatcher.matchRequ"
-  "est\032 .grpcIImageMatcher.matchResponse\"\000b"
-  "\006proto3"
+  "\"\270\001\n\014matchRequest\022#\n\033grpcServerCompressi"
+  "onFormat\030\001 \001(\005\022\016\n\006image1\030\002 \001(\014\022\016\n\006image2"
+  "\030\003 \001(\014\022\024\n\014descriptors1\030\004 \001(\014\022\024\n\014descript"
+  "ors2\030\005 \001(\014\022\022\n\nkeypoints1\030\006 \001(\014\022\022\n\nkeypoi"
+  "nts2\030\007 \001(\014\022\017\n\007matches\030\010 \001(\014\"e\n\rmatchResp"
+  "onse\022\022\n\nkeypoints1\030\001 \001(\014\022\022\n\nkeypoints2\030\002"
+  " \001(\014\022\017\n\007matches\030\003 \001(\014\022\033\n\023xpcfGrpcReturnV"
+  "alue\030\004 \001(\0212h\n\030grpcIImageMatcherService\022L"
+  "\n\005match\022\037.grpcIImageMatcher.matchRequest"
+  "\032 .grpcIImageMatcher.matchResponse\"\000b\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIImageMatcherService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIImageMatcherService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIImageMatcherService_2eproto = {
-  false, false, 447, descriptor_table_protodef_grpcIImageMatcherService_2eproto, "grpcIImageMatcherService.proto", 
+  false, false, 484, descriptor_table_protodef_grpcIImageMatcherService_2eproto, "grpcIImageMatcherService.proto", 
   &descriptor_table_grpcIImageMatcherService_2eproto_once, descriptor_table_grpcIImageMatcherService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcIImageMatcherService_2eproto::offsets,
   file_level_metadata_grpcIImageMatcherService_2eproto, file_level_enum_descriptors_grpcIImageMatcherService_2eproto, file_level_service_descriptors_grpcIImageMatcherService_2eproto,
@@ -172,6 +175,7 @@ matchRequest::matchRequest(const matchRequest& from)
     matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_matches(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageMatcher.matchRequest)
 }
 
@@ -183,6 +187,7 @@ descriptors2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStrin
 keypoints1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 keypoints2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 matchRequest::~matchRequest() {
@@ -225,6 +230,7 @@ void matchRequest::Clear() {
   keypoints1_.ClearToEmpty();
   keypoints2_.ClearToEmpty();
   matches_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -235,57 +241,64 @@ const char* matchRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes image1 = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes image1 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_image1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes image2 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes image2 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_image2();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes descriptors1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes descriptors1 = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_descriptors1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes descriptors2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes descriptors2 = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_descriptors2();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes keypoints1 = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes keypoints1 = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_keypoints1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes keypoints2 = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // bytes keypoints2 = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_keypoints2();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes matches = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+      // bytes matches = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_matches();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -319,46 +332,52 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes image1 = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes image1 = 2;
   if (this->image1().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_image1(), target);
+        2, this->_internal_image1(), target);
   }
 
-  // bytes image2 = 2;
+  // bytes image2 = 3;
   if (this->image2().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_image2(), target);
+        3, this->_internal_image2(), target);
   }
 
-  // bytes descriptors1 = 3;
+  // bytes descriptors1 = 4;
   if (this->descriptors1().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_descriptors1(), target);
+        4, this->_internal_descriptors1(), target);
   }
 
-  // bytes descriptors2 = 4;
+  // bytes descriptors2 = 5;
   if (this->descriptors2().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_descriptors2(), target);
+        5, this->_internal_descriptors2(), target);
   }
 
-  // bytes keypoints1 = 5;
+  // bytes keypoints1 = 6;
   if (this->keypoints1().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_keypoints1(), target);
+        6, this->_internal_keypoints1(), target);
   }
 
-  // bytes keypoints2 = 6;
+  // bytes keypoints2 = 7;
   if (this->keypoints2().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        6, this->_internal_keypoints2(), target);
+        7, this->_internal_keypoints2(), target);
   }
 
-  // bytes matches = 7;
+  // bytes matches = 8;
   if (this->matches().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        7, this->_internal_matches(), target);
+        8, this->_internal_matches(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -377,53 +396,60 @@ size_t matchRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes image1 = 1;
+  // bytes image1 = 2;
   if (this->image1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_image1());
   }
 
-  // bytes image2 = 2;
+  // bytes image2 = 3;
   if (this->image2().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_image2());
   }
 
-  // bytes descriptors1 = 3;
+  // bytes descriptors1 = 4;
   if (this->descriptors1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_descriptors1());
   }
 
-  // bytes descriptors2 = 4;
+  // bytes descriptors2 = 5;
   if (this->descriptors2().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_descriptors2());
   }
 
-  // bytes keypoints1 = 5;
+  // bytes keypoints1 = 6;
   if (this->keypoints1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keypoints1());
   }
 
-  // bytes keypoints2 = 6;
+  // bytes keypoints2 = 7;
   if (this->keypoints2().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keypoints2());
   }
 
-  // bytes matches = 7;
+  // bytes matches = 8;
   if (this->matches().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_matches());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -478,6 +504,9 @@ void matchRequest::MergeFrom(const matchRequest& from) {
   if (from.matches().size() > 0) {
     _internal_set_matches(from._internal_matches());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void matchRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -508,6 +537,7 @@ void matchRequest::InternalSwap(matchRequest* other) {
   keypoints1_.Swap(&other->keypoints1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   keypoints2_.Swap(&other->keypoints2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   matches_.Swap(&other->matches_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata matchRequest::GetMetadata() const {

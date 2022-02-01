@@ -3,13 +3,15 @@
 
 #ifndef IKEYPOINTSREINDEXER_GRPCPROXY_H
 #define IKEYPOINTSREINDEXER_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IKeypointsReIndexer.h"
+#include "api/features/IKeypointsReIndexer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
+#include <map>
 #include "grpcIKeypointsReIndexerService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
+#include <xpcf/remoting/GrpcHelper.h>
 
 namespace org::bcom::xpcf::grpc::proxyIKeypointsReIndexer {
 
@@ -27,6 +29,9 @@ class IKeypointsReIndexer_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, 
     std::string m_channelUrl;
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
+    xpcf::grpcCompressionInfos m_serviceCompressionInfos;
+    std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
+    std::vector<std::string> m_grpcProxyCompressionConfig;
     std::unique_ptr<::grpcIKeypointsReIndexer::grpcIKeypointsReIndexerService::Stub> m_grpcStub;
 
 };

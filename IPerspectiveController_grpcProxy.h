@@ -3,13 +3,15 @@
 
 #ifndef IPERSPECTIVECONTROLLER_GRPCPROXY_H
 #define IPERSPECTIVECONTROLLER_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/image/IPerspectiveController.h"
+#include "api/image/IPerspectiveController.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
+#include <map>
 #include "grpcIPerspectiveControllerService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
+#include <xpcf/remoting/GrpcHelper.h>
 
 namespace org::bcom::xpcf::grpc::proxyIPerspectiveController {
 
@@ -28,6 +30,9 @@ class IPerspectiveController_grpcProxy:  public org::bcom::xpcf::ConfigurableBas
     std::string m_channelUrl;
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
+    xpcf::grpcCompressionInfos m_serviceCompressionInfos;
+    std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
+    std::vector<std::string> m_grpcProxyCompressionConfig;
     std::unique_ptr<::grpcIPerspectiveController::grpcIPerspectiveControllerService::Stub> m_grpcStub;
 
 };

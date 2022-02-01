@@ -12,8 +12,9 @@ bytes distorsionParams = 2;
 
 message processRequest
 {
-bytes frame = 1;
-bytes view = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes frame = 2;
+bytes view = 3;
 }
 
 message processResponse

@@ -2,9 +2,10 @@
 
 #ifndef IIMU_GRPCSERVER_H
 #define IIMU_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IIMU.h"
+#include "api/input/devices/IIMU.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIIMUService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -24,23 +25,26 @@ class IIMU_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual public
     {
       public:
         grpcIIMUServiceImpl() = default;
-        ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response) override;
-        ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response) override;
+        ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response) override;
+        ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response) override;
         ::grpc::Status getGyroscopeData(::grpc::ServerContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response) override;
         ::grpc::Status getAccelerometerData(::grpc::ServerContext* context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response) override;
         ::grpc::Status getMagnetometerData(::grpc::ServerContext* context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response) override;
         ::grpc::Status getAllSensorsData(::grpc::ServerContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response) override;
-        ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response) override;
-        ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response) override;
-        ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response) override;
+        ::grpc::Status isGyroscopeAvailable(::grpc::ServerContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response) override;
+        ::grpc::Status isAccelerometerAvailable(::grpc::ServerContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response) override;
+        ::grpc::Status isMagnetometerAvailable(::grpc::ServerContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response) override;
 
         SRef<SolAR::api::input::devices::IIMU> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIIMUServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

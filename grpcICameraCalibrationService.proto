@@ -6,8 +6,9 @@ package grpcICameraCalibration;
 
 message calibrateRequest
 {
-bytes images = 1;
-bytes camParams = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes images = 2;
+bytes camParams = 3;
 }
 
 message calibrateResponse

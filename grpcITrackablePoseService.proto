@@ -12,7 +12,8 @@ bytes distorsionParams = 2;
 
 message setTrackableRequest
 {
-bytes trackable = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes trackable = 2;
 }
 
 message setTrackableResponse
@@ -22,8 +23,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message estimateRequest
 {
-bytes image = 1;
-bytes pose = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+bytes pose = 3;
 }
 
 message estimateResponse

@@ -2,9 +2,10 @@
 
 #ifndef IMAPMANAGER_GRPCSERVER_H
 #define IMAPMANAGER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
+#include "api/storage/IMapManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIMapManagerService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -33,16 +34,19 @@ class IMapManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
         ::grpc::Status removeKeyframe(::grpc::ServerContext* context, const ::grpcIMapManager::removeKeyframeRequest* request, ::grpcIMapManager::removeKeyframeResponse* response) override;
         ::grpc::Status pointCloudPruning(::grpc::ServerContext* context, const ::grpcIMapManager::pointCloudPruningRequest* request, ::grpcIMapManager::pointCloudPruningResponse* response) override;
         ::grpc::Status keyframePruning(::grpc::ServerContext* context, const ::grpcIMapManager::keyframePruningRequest* request, ::grpcIMapManager::keyframePruningResponse* response) override;
-        ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMapManager::saveToFileResponse* response) override;
-        ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMapManager::loadFromFileResponse* response) override;
+        ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response) override;
+        ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response) override;
 
         SRef<SolAR::api::storage::IMapManager> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIMapManagerServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

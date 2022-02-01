@@ -12,10 +12,11 @@ bytes distortionParams = 2;
 
 message estimate_grpc0Request
 {
-bytes firstPoints3D = 1;
-bytes secondPoints3D = 2;
-bytes pose = 3;
-bytes inliers = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes firstPoints3D = 2;
+bytes secondPoints3D = 3;
+bytes pose = 4;
+bytes inliers = 5;
 }
 
 message estimate_grpc0Response
@@ -27,13 +28,14 @@ sint32 xpcfGrpcReturnValue = 3;
 
 message estimate_grpc1Request
 {
-bytes firstKeyframe = 1;
-bytes secondKeyframe = 2;
-bytes matches = 3;
-bytes firstPoints3D = 4;
-bytes secondPoints3D = 5;
-bytes pose = 6;
-bytes inliers = 7;
+int32 grpcServerCompressionFormat  = 1;
+bytes firstKeyframe = 2;
+bytes secondKeyframe = 3;
+bytes matches = 4;
+bytes firstPoints3D = 5;
+bytes secondPoints3D = 6;
+bytes pose = 7;
+bytes inliers = 8;
 }
 
 message estimate_grpc1Response

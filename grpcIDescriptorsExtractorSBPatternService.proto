@@ -6,10 +6,11 @@ package grpcIDescriptorsExtractorSBPattern;
 
 message extract_grpc0Request
 {
-bytes images = 1;
-bytes inContours = 2;
-bytes descriptors = 3;
-bytes outContours = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes images = 2;
+bytes inContours = 3;
+bytes descriptors = 4;
+bytes outContours = 5;
 }
 
 message extract_grpc0Response
@@ -21,8 +22,9 @@ sint32 xpcfGrpcReturnValue = 3;
 
 message extract_grpc1Request
 {
-bytes pattern = 1;
-bytes descriptorParam = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes pattern = 2;
+bytes descriptorParam = 3;
 }
 
 message extract_grpc1Response

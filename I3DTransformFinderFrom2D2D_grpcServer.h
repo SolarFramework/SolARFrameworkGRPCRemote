@@ -2,9 +2,10 @@
 
 #ifndef I3DTRANSFORMFINDERFROM2D2D_GRPCSERVER_H
 #define I3DTRANSFORMFINDERFROM2D2D_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformFinderFrom2D2D.h"
+#include "api/solver/pose/I3DTransformFinderFrom2D2D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcI3DTransformFinderFrom2D2DService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -29,12 +30,15 @@ class I3DTransformFinderFrom2D2D_grpcServer:  public org::bcom::xpcf::Configurab
         ::grpc::Status estimate_grpc1(::grpc::ServerContext* context, const ::grpcI3DTransformFinderFrom2D2D::estimate_grpc1Request* request, ::grpcI3DTransformFinderFrom2D2D::estimate_grpc1Response* response) override;
 
         SRef<SolAR::api::solver::pose::I3DTransformFinderFrom2D2D> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcI3DTransformFinderFrom2D2DServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

@@ -3,13 +3,15 @@
 
 #ifndef I3DTRANSFORMFINDERFROM2D2D_GRPCPROXY_H
 #define I3DTRANSFORMFINDERFROM2D2D_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformFinderFrom2D2D.h"
+#include "api/solver/pose/I3DTransformFinderFrom2D2D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
+#include <map>
 #include "grpcI3DTransformFinderFrom2D2DService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
+#include <xpcf/remoting/GrpcHelper.h>
 
 namespace org::bcom::xpcf::grpc::proxyI3DTransformFinderFrom2D2D {
 
@@ -29,6 +31,9 @@ class I3DTransformFinderFrom2D2D_grpcProxy:  public org::bcom::xpcf::Configurabl
     std::string m_channelUrl;
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
+    xpcf::grpcCompressionInfos m_serviceCompressionInfos;
+    std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
+    std::vector<std::string> m_grpcProxyCompressionConfig;
     std::unique_ptr<::grpcI3DTransformFinderFrom2D2D::grpcI3DTransformFinderFrom2D2DService::Stub> m_grpcStub;
 
 };

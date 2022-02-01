@@ -2,9 +2,10 @@
 
 #ifndef IUNPROJECT_GRPCSERVER_H
 #define IUNPROJECT_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/IUnproject.h"
+#include "api/geom/IUnproject.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIUnprojectService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -29,12 +30,15 @@ class IUnproject_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
         ::grpc::Status unproject_grpc1(::grpc::ServerContext* context, const ::grpcIUnproject::unproject_grpc1Request* request, ::grpcIUnproject::unproject_grpc1Response* response) override;
 
         SRef<SolAR::api::geom::IUnproject> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIUnprojectServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

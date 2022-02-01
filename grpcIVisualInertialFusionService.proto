@@ -21,7 +21,8 @@ bytes visionData = 1;
 
 message processRequest
 {
-bytes outputData = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes outputData = 2;
 }
 
 message processResponse

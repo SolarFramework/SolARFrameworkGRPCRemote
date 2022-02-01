@@ -200,10 +200,11 @@ class convert_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImgSrcFieldNumber = 1,
-    kImgDstFieldNumber = 2,
+    kImgSrcFieldNumber = 2,
+    kImgDstFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes imgSrc = 1;
+  // bytes imgSrc = 2;
   void clear_imgsrc();
   const std::string& imgsrc() const;
   void set_imgsrc(const std::string& value);
@@ -219,7 +220,7 @@ class convert_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_imgsrc();
   public:
 
-  // bytes imgDst = 2;
+  // bytes imgDst = 3;
   void clear_imgdst();
   const std::string& imgdst() const;
   void set_imgdst(const std::string& value);
@@ -235,6 +236,15 @@ class convert_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_imgdst();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIImageConvertor.convert_grpc0Request)
  private:
   class _Internal;
@@ -244,6 +254,7 @@ class convert_grpc0Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imgsrc_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imgdst_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIImageConvertorService_2eproto;
 };
@@ -517,11 +528,12 @@ class convert_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImgSrcFieldNumber = 1,
-    kImgDstFieldNumber = 3,
-    kDestLayoutFieldNumber = 2,
+    kImgSrcFieldNumber = 2,
+    kImgDstFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kDestLayoutFieldNumber = 3,
   };
-  // bytes imgSrc = 1;
+  // bytes imgSrc = 2;
   void clear_imgsrc();
   const std::string& imgsrc() const;
   void set_imgsrc(const std::string& value);
@@ -537,7 +549,7 @@ class convert_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_imgsrc();
   public:
 
-  // bytes imgDst = 3;
+  // bytes imgDst = 4;
   void clear_imgdst();
   const std::string& imgdst() const;
   void set_imgdst(const std::string& value);
@@ -553,7 +565,16 @@ class convert_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_imgdst();
   public:
 
-  // sint32 destLayout = 2;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // sint32 destLayout = 3;
   void clear_destlayout();
   ::PROTOBUF_NAMESPACE_ID::int32 destlayout() const;
   void set_destlayout(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -571,6 +592,7 @@ class convert_grpc1Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imgsrc_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imgdst_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::int32 destlayout_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIImageConvertorService_2eproto;
@@ -845,10 +867,11 @@ class convertLookUpTableRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImgSrcFieldNumber = 1,
-    kImgDstFieldNumber = 2,
+    kImgSrcFieldNumber = 2,
+    kImgDstFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes imgSrc = 1;
+  // bytes imgSrc = 2;
   void clear_imgsrc();
   const std::string& imgsrc() const;
   void set_imgsrc(const std::string& value);
@@ -864,7 +887,7 @@ class convertLookUpTableRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_imgsrc();
   public:
 
-  // bytes imgDst = 2;
+  // bytes imgDst = 3;
   void clear_imgdst();
   const std::string& imgdst() const;
   void set_imgdst(const std::string& value);
@@ -880,6 +903,15 @@ class convertLookUpTableRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_imgdst();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIImageConvertor.convertLookUpTableRequest)
  private:
   class _Internal;
@@ -889,6 +921,7 @@ class convertLookUpTableRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imgsrc_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imgdst_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIImageConvertorService_2eproto;
 };
@@ -1058,7 +1091,27 @@ class convertLookUpTableResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // convert_grpc0Request
 
-// bytes imgSrc = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void convert_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 convert_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 convert_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImageConvertor.convert_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void convert_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void convert_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImageConvertor.convert_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes imgSrc = 2;
 inline void convert_grpc0Request::clear_imgsrc() {
   imgsrc_.ClearToEmpty();
 }
@@ -1119,7 +1172,7 @@ inline void convert_grpc0Request::set_allocated_imgsrc(std::string* imgsrc) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageConvertor.convert_grpc0Request.imgSrc)
 }
 
-// bytes imgDst = 2;
+// bytes imgDst = 3;
 inline void convert_grpc0Request::clear_imgdst() {
   imgdst_.ClearToEmpty();
 }
@@ -1269,7 +1322,27 @@ inline void convert_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_
 
 // convert_grpc1Request
 
-// bytes imgSrc = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void convert_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 convert_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 convert_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImageConvertor.convert_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void convert_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void convert_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImageConvertor.convert_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes imgSrc = 2;
 inline void convert_grpc1Request::clear_imgsrc() {
   imgsrc_.ClearToEmpty();
 }
@@ -1330,7 +1403,7 @@ inline void convert_grpc1Request::set_allocated_imgsrc(std::string* imgsrc) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageConvertor.convert_grpc1Request.imgSrc)
 }
 
-// sint32 destLayout = 2;
+// sint32 destLayout = 3;
 inline void convert_grpc1Request::clear_destlayout() {
   destlayout_ = 0;
 }
@@ -1350,7 +1423,7 @@ inline void convert_grpc1Request::set_destlayout(::PROTOBUF_NAMESPACE_ID::int32 
   // @@protoc_insertion_point(field_set:grpcIImageConvertor.convert_grpc1Request.destLayout)
 }
 
-// bytes imgDst = 3;
+// bytes imgDst = 4;
 inline void convert_grpc1Request::clear_imgdst() {
   imgdst_.ClearToEmpty();
 }
@@ -1500,7 +1573,27 @@ inline void convert_grpc1Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_
 
 // convertLookUpTableRequest
 
-// bytes imgSrc = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void convertLookUpTableRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 convertLookUpTableRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 convertLookUpTableRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImageConvertor.convertLookUpTableRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void convertLookUpTableRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void convertLookUpTableRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImageConvertor.convertLookUpTableRequest.grpcServerCompressionFormat)
+}
+
+// bytes imgSrc = 2;
 inline void convertLookUpTableRequest::clear_imgsrc() {
   imgsrc_.ClearToEmpty();
 }
@@ -1561,7 +1654,7 @@ inline void convertLookUpTableRequest::set_allocated_imgsrc(std::string* imgsrc)
   // @@protoc_insertion_point(field_set_allocated:grpcIImageConvertor.convertLookUpTableRequest.imgSrc)
 }
 
-// bytes imgDst = 2;
+// bytes imgDst = 3;
 inline void convertLookUpTableRequest::clear_imgdst() {
   imgdst_.ClearToEmpty();
 }

@@ -196,10 +196,11 @@ class undistort_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputPointsFieldNumber = 1,
-    kOutputPointsFieldNumber = 2,
+    kInputPointsFieldNumber = 2,
+    kOutputPointsFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputPoints = 1;
+  // bytes inputPoints = 2;
   void clear_inputpoints();
   const std::string& inputpoints() const;
   void set_inputpoints(const std::string& value);
@@ -215,7 +216,7 @@ class undistort_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_inputpoints();
   public:
 
-  // bytes outputPoints = 2;
+  // bytes outputPoints = 3;
   void clear_outputpoints();
   const std::string& outputpoints() const;
   void set_outputpoints(const std::string& value);
@@ -231,6 +232,15 @@ class undistort_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_outputpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIUndistortPoints.undistort_grpc0Request)
  private:
   class _Internal;
@@ -240,6 +250,7 @@ class undistort_grpc0Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIUndistortPointsService_2eproto;
 };
@@ -513,10 +524,11 @@ class undistort_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputKeypointsFieldNumber = 1,
-    kOutputKeypointsFieldNumber = 2,
+    kInputKeypointsFieldNumber = 2,
+    kOutputKeypointsFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputKeypoints = 1;
+  // bytes inputKeypoints = 2;
   void clear_inputkeypoints();
   const std::string& inputkeypoints() const;
   void set_inputkeypoints(const std::string& value);
@@ -532,7 +544,7 @@ class undistort_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_inputkeypoints();
   public:
 
-  // bytes outputKeypoints = 2;
+  // bytes outputKeypoints = 3;
   void clear_outputkeypoints();
   const std::string& outputkeypoints() const;
   void set_outputkeypoints(const std::string& value);
@@ -548,6 +560,15 @@ class undistort_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_outputkeypoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIUndistortPoints.undistort_grpc1Request)
  private:
   class _Internal;
@@ -557,6 +578,7 @@ class undistort_grpc1Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputkeypoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputkeypoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIUndistortPointsService_2eproto;
 };
@@ -888,7 +910,27 @@ class setCameraParametersRequest PROTOBUF_FINAL :
 #endif  // __GNUC__
 // undistort_grpc0Request
 
-// bytes inputPoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void undistort_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 undistort_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 undistort_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIUndistortPoints.undistort_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void undistort_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void undistort_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIUndistortPoints.undistort_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes inputPoints = 2;
 inline void undistort_grpc0Request::clear_inputpoints() {
   inputpoints_.ClearToEmpty();
 }
@@ -949,7 +991,7 @@ inline void undistort_grpc0Request::set_allocated_inputpoints(std::string* input
   // @@protoc_insertion_point(field_set_allocated:grpcIUndistortPoints.undistort_grpc0Request.inputPoints)
 }
 
-// bytes outputPoints = 2;
+// bytes outputPoints = 3;
 inline void undistort_grpc0Request::clear_outputpoints() {
   outputpoints_.ClearToEmpty();
 }
@@ -1099,7 +1141,27 @@ inline void undistort_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPAC
 
 // undistort_grpc1Request
 
-// bytes inputKeypoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void undistort_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 undistort_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 undistort_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIUndistortPoints.undistort_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void undistort_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void undistort_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIUndistortPoints.undistort_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes inputKeypoints = 2;
 inline void undistort_grpc1Request::clear_inputkeypoints() {
   inputkeypoints_.ClearToEmpty();
 }
@@ -1160,7 +1222,7 @@ inline void undistort_grpc1Request::set_allocated_inputkeypoints(std::string* in
   // @@protoc_insertion_point(field_set_allocated:grpcIUndistortPoints.undistort_grpc1Request.inputKeypoints)
 }
 
-// bytes outputKeypoints = 2;
+// bytes outputKeypoints = 3;
 inline void undistort_grpc1Request::clear_outputkeypoints() {
   outputkeypoints_.ClearToEmpty();
 }

@@ -192,14 +192,15 @@ class display_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPointsFieldNumber = 1,
-    kPoseFieldNumber = 2,
-    kKeyframePosesFieldNumber = 3,
-    kFramePosesFieldNumber = 4,
-    kPoints2FieldNumber = 5,
-    kKeyframePoses2FieldNumber = 6,
+    kPointsFieldNumber = 2,
+    kPoseFieldNumber = 3,
+    kKeyframePosesFieldNumber = 4,
+    kFramePosesFieldNumber = 5,
+    kPoints2FieldNumber = 6,
+    kKeyframePoses2FieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes points = 1;
+  // bytes points = 2;
   void clear_points();
   const std::string& points() const;
   void set_points(const std::string& value);
@@ -215,7 +216,7 @@ class display_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points();
   public:
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -231,7 +232,7 @@ class display_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes keyframePoses = 3;
+  // bytes keyframePoses = 4;
   void clear_keyframeposes();
   const std::string& keyframeposes() const;
   void set_keyframeposes(const std::string& value);
@@ -247,7 +248,7 @@ class display_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframeposes();
   public:
 
-  // bytes framePoses = 4;
+  // bytes framePoses = 5;
   void clear_frameposes();
   const std::string& frameposes() const;
   void set_frameposes(const std::string& value);
@@ -263,7 +264,7 @@ class display_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_frameposes();
   public:
 
-  // bytes points2 = 5;
+  // bytes points2 = 6;
   void clear_points2();
   const std::string& points2() const;
   void set_points2(const std::string& value);
@@ -279,7 +280,7 @@ class display_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points2();
   public:
 
-  // bytes keyframePoses2 = 6;
+  // bytes keyframePoses2 = 7;
   void clear_keyframeposes2();
   const std::string& keyframeposes2() const;
   void set_keyframeposes2(const std::string& value);
@@ -295,6 +296,15 @@ class display_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframeposes2();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DPointsViewer.display_grpc0Request)
  private:
   class _Internal;
@@ -308,6 +318,7 @@ class display_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frameposes_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr points2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframeposes2_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DPointsViewerService_2eproto;
 };
@@ -563,14 +574,15 @@ class display_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPointsFieldNumber = 1,
-    kPoseFieldNumber = 2,
-    kKeyframePosesFieldNumber = 3,
-    kFramePosesFieldNumber = 4,
-    kPoints2FieldNumber = 5,
-    kKeyframePoses2FieldNumber = 6,
+    kPointsFieldNumber = 2,
+    kPoseFieldNumber = 3,
+    kKeyframePosesFieldNumber = 4,
+    kFramePosesFieldNumber = 5,
+    kPoints2FieldNumber = 6,
+    kKeyframePoses2FieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes points = 1;
+  // bytes points = 2;
   void clear_points();
   const std::string& points() const;
   void set_points(const std::string& value);
@@ -586,7 +598,7 @@ class display_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points();
   public:
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -602,7 +614,7 @@ class display_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes keyframePoses = 3;
+  // bytes keyframePoses = 4;
   void clear_keyframeposes();
   const std::string& keyframeposes() const;
   void set_keyframeposes(const std::string& value);
@@ -618,7 +630,7 @@ class display_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframeposes();
   public:
 
-  // bytes framePoses = 4;
+  // bytes framePoses = 5;
   void clear_frameposes();
   const std::string& frameposes() const;
   void set_frameposes(const std::string& value);
@@ -634,7 +646,7 @@ class display_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_frameposes();
   public:
 
-  // bytes points2 = 5;
+  // bytes points2 = 6;
   void clear_points2();
   const std::string& points2() const;
   void set_points2(const std::string& value);
@@ -650,7 +662,7 @@ class display_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points2();
   public:
 
-  // bytes keyframePoses2 = 6;
+  // bytes keyframePoses2 = 7;
   void clear_keyframeposes2();
   const std::string& keyframeposes2() const;
   void set_keyframeposes2(const std::string& value);
@@ -666,6 +678,15 @@ class display_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframeposes2();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DPointsViewer.display_grpc1Request)
  private:
   class _Internal;
@@ -679,6 +700,7 @@ class display_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frameposes_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr points2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframeposes2_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DPointsViewerService_2eproto;
 };
@@ -830,7 +852,27 @@ class display_grpc1Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // display_grpc0Request
 
-// bytes points = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void display_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 display_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 display_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DPointsViewer.display_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void display_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void display_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DPointsViewer.display_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes points = 2;
 inline void display_grpc0Request::clear_points() {
   points_.ClearToEmpty();
 }
@@ -891,7 +933,7 @@ inline void display_grpc0Request::set_allocated_points(std::string* points) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc0Request.points)
 }
 
-// bytes pose = 2;
+// bytes pose = 3;
 inline void display_grpc0Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -952,7 +994,7 @@ inline void display_grpc0Request::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc0Request.pose)
 }
 
-// bytes keyframePoses = 3;
+// bytes keyframePoses = 4;
 inline void display_grpc0Request::clear_keyframeposes() {
   keyframeposes_.ClearToEmpty();
 }
@@ -1013,7 +1055,7 @@ inline void display_grpc0Request::set_allocated_keyframeposes(std::string* keyfr
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc0Request.keyframePoses)
 }
 
-// bytes framePoses = 4;
+// bytes framePoses = 5;
 inline void display_grpc0Request::clear_frameposes() {
   frameposes_.ClearToEmpty();
 }
@@ -1074,7 +1116,7 @@ inline void display_grpc0Request::set_allocated_frameposes(std::string* framepos
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc0Request.framePoses)
 }
 
-// bytes points2 = 5;
+// bytes points2 = 6;
 inline void display_grpc0Request::clear_points2() {
   points2_.ClearToEmpty();
 }
@@ -1135,7 +1177,7 @@ inline void display_grpc0Request::set_allocated_points2(std::string* points2) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc0Request.points2)
 }
 
-// bytes keyframePoses2 = 6;
+// bytes keyframePoses2 = 7;
 inline void display_grpc0Request::clear_keyframeposes2() {
   keyframeposes2_.ClearToEmpty();
 }
@@ -1224,7 +1266,27 @@ inline void display_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_
 
 // display_grpc1Request
 
-// bytes points = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void display_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 display_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 display_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DPointsViewer.display_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void display_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void display_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DPointsViewer.display_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes points = 2;
 inline void display_grpc1Request::clear_points() {
   points_.ClearToEmpty();
 }
@@ -1285,7 +1347,7 @@ inline void display_grpc1Request::set_allocated_points(std::string* points) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc1Request.points)
 }
 
-// bytes pose = 2;
+// bytes pose = 3;
 inline void display_grpc1Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -1346,7 +1408,7 @@ inline void display_grpc1Request::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc1Request.pose)
 }
 
-// bytes keyframePoses = 3;
+// bytes keyframePoses = 4;
 inline void display_grpc1Request::clear_keyframeposes() {
   keyframeposes_.ClearToEmpty();
 }
@@ -1407,7 +1469,7 @@ inline void display_grpc1Request::set_allocated_keyframeposes(std::string* keyfr
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc1Request.keyframePoses)
 }
 
-// bytes framePoses = 4;
+// bytes framePoses = 5;
 inline void display_grpc1Request::clear_frameposes() {
   frameposes_.ClearToEmpty();
 }
@@ -1468,7 +1530,7 @@ inline void display_grpc1Request::set_allocated_frameposes(std::string* framepos
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc1Request.framePoses)
 }
 
-// bytes points2 = 5;
+// bytes points2 = 6;
 inline void display_grpc1Request::clear_points2() {
   points2_.ClearToEmpty();
 }
@@ -1529,7 +1591,7 @@ inline void display_grpc1Request::set_allocated_points2(std::string* points2) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DPointsViewer.display_grpc1Request.points2)
 }
 
-// bytes keyframePoses2 = 6;
+// bytes keyframePoses2 = 7;
 inline void display_grpc1Request::clear_keyframeposes2() {
   keyframeposes2_.ClearToEmpty();
 }

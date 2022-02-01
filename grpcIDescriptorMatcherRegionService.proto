@@ -6,13 +6,14 @@ package grpcIDescriptorMatcherRegion;
 
 message match_grpc0Request
 {
-bytes descriptors1 = 1;
-bytes descriptors2 = 2;
-bytes points2D1 = 3;
-bytes points2D2 = 4;
-float radius = 5;
-float matchingDistanceMax = 6;
-bytes matches = 7;
+int32 grpcServerCompressionFormat  = 1;
+bytes descriptors1 = 2;
+bytes descriptors2 = 3;
+bytes points2D1 = 4;
+bytes points2D2 = 5;
+float radius = 6;
+float matchingDistanceMax = 7;
+bytes matches = 8;
 }
 
 message match_grpc0Response
@@ -23,12 +24,13 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message match_grpc1Request
 {
-bytes points2D = 1;
-bytes descriptors = 2;
-bytes frame = 3;
-float radius = 4;
-float matchingDistanceMax = 5;
-bytes matches = 6;
+int32 grpcServerCompressionFormat  = 1;
+bytes points2D = 2;
+bytes descriptors = 3;
+bytes frame = 4;
+float radius = 5;
+float matchingDistanceMax = 6;
+bytes matches = 7;
 }
 
 message match_grpc1Response
@@ -39,11 +41,12 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message match_grpc2Request
 {
-bytes currentFrame = 1;
-bytes lastFrame = 2;
-float radius = 3;
-float matchingDistanceMax = 4;
-bytes matches = 5;
+int32 grpcServerCompressionFormat  = 1;
+bytes currentFrame = 2;
+bytes lastFrame = 3;
+float radius = 4;
+float matchingDistanceMax = 5;
+bytes matches = 6;
 }
 
 message match_grpc2Response

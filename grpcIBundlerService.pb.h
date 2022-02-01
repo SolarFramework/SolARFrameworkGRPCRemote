@@ -200,9 +200,10 @@ class setMapRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapFieldNumber = 1,
+    kMapFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes map = 1;
+  // bytes map = 2;
   void clear_map();
   const std::string& map() const;
   void set_map(const std::string& value);
@@ -218,6 +219,15 @@ class setMapRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_map();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIBundler.setMapRequest)
  private:
   class _Internal;
@@ -226,6 +236,7 @@ class setMapRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr map_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIBundlerService_2eproto;
 };
@@ -481,11 +492,12 @@ class bundleAdjustmentRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSelectKeyframesFieldNumber = 1,
-    kKFieldNumber = 2,
-    kDFieldNumber = 3,
+    kSelectKeyframesFieldNumber = 2,
+    kKFieldNumber = 3,
+    kDFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes selectKeyframes = 1;
+  // bytes selectKeyframes = 2;
   void clear_selectkeyframes();
   const std::string& selectkeyframes() const;
   void set_selectkeyframes(const std::string& value);
@@ -501,7 +513,7 @@ class bundleAdjustmentRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_selectkeyframes();
   public:
 
-  // bytes K = 2;
+  // bytes K = 3;
   void clear_k();
   const std::string& k() const;
   void set_k(const std::string& value);
@@ -517,7 +529,7 @@ class bundleAdjustmentRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_k();
   public:
 
-  // bytes D = 3;
+  // bytes D = 4;
   void clear_d();
   const std::string& d() const;
   void set_d(const std::string& value);
@@ -533,6 +545,15 @@ class bundleAdjustmentRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_d();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIBundler.bundleAdjustmentRequest)
  private:
   class _Internal;
@@ -543,6 +564,7 @@ class bundleAdjustmentRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr selectkeyframes_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr d_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIBundlerService_2eproto;
 };
@@ -834,16 +856,17 @@ class optimizeSim3Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKeyframe1FieldNumber = 1,
-    kKeyframe2FieldNumber = 2,
-    kMatchesFieldNumber = 3,
-    kPts3D1FieldNumber = 4,
-    kPts3D2FieldNumber = 5,
-    kK1FieldNumber = 6,
-    kK2FieldNumber = 7,
-    kPoseFieldNumber = 8,
+    kKeyframe1FieldNumber = 2,
+    kKeyframe2FieldNumber = 3,
+    kMatchesFieldNumber = 4,
+    kPts3D1FieldNumber = 5,
+    kPts3D2FieldNumber = 6,
+    kK1FieldNumber = 7,
+    kK2FieldNumber = 8,
+    kPoseFieldNumber = 9,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes keyframe1 = 1;
+  // bytes keyframe1 = 2;
   void clear_keyframe1();
   const std::string& keyframe1() const;
   void set_keyframe1(const std::string& value);
@@ -859,7 +882,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframe1();
   public:
 
-  // bytes keyframe2 = 2;
+  // bytes keyframe2 = 3;
   void clear_keyframe2();
   const std::string& keyframe2() const;
   void set_keyframe2(const std::string& value);
@@ -875,7 +898,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframe2();
   public:
 
-  // bytes matches = 3;
+  // bytes matches = 4;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -891,7 +914,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes pts3D1 = 4;
+  // bytes pts3D1 = 5;
   void clear_pts3d1();
   const std::string& pts3d1() const;
   void set_pts3d1(const std::string& value);
@@ -907,7 +930,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pts3d1();
   public:
 
-  // bytes pts3D2 = 5;
+  // bytes pts3D2 = 6;
   void clear_pts3d2();
   const std::string& pts3d2() const;
   void set_pts3d2(const std::string& value);
@@ -923,7 +946,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pts3d2();
   public:
 
-  // bytes K1 = 6;
+  // bytes K1 = 7;
   void clear_k1();
   const std::string& k1() const;
   void set_k1(const std::string& value);
@@ -939,7 +962,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_k1();
   public:
 
-  // bytes K2 = 7;
+  // bytes K2 = 8;
   void clear_k2();
   const std::string& k2() const;
   void set_k2(const std::string& value);
@@ -955,7 +978,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_k2();
   public:
 
-  // bytes pose = 8;
+  // bytes pose = 9;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -969,6 +992,15 @@ class optimizeSim3Request PROTOBUF_FINAL :
   const std::string& _internal_pose() const;
   void _internal_set_pose(const std::string& value);
   std::string* _internal_mutable_pose();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIBundler.optimizeSim3Request)
@@ -986,6 +1018,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIBundlerService_2eproto;
 };
@@ -1191,7 +1224,27 @@ class optimizeSim3Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // setMapRequest
 
-// bytes map = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void setMapRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setMapRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setMapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.setMapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void setMapRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void setMapRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.setMapRequest.grpcServerCompressionFormat)
+}
+
+// bytes map = 2;
 inline void setMapRequest::clear_map() {
   map_.ClearToEmpty();
 }
@@ -1280,7 +1333,27 @@ inline void setMapResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int
 
 // bundleAdjustmentRequest
 
-// bytes selectKeyframes = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void bundleAdjustmentRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 bundleAdjustmentRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 bundleAdjustmentRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.bundleAdjustmentRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void bundleAdjustmentRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void bundleAdjustmentRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.bundleAdjustmentRequest.grpcServerCompressionFormat)
+}
+
+// bytes selectKeyframes = 2;
 inline void bundleAdjustmentRequest::clear_selectkeyframes() {
   selectkeyframes_.ClearToEmpty();
 }
@@ -1341,7 +1414,7 @@ inline void bundleAdjustmentRequest::set_allocated_selectkeyframes(std::string* 
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.bundleAdjustmentRequest.selectKeyframes)
 }
 
-// bytes K = 2;
+// bytes K = 3;
 inline void bundleAdjustmentRequest::clear_k() {
   k_.ClearToEmpty();
 }
@@ -1402,7 +1475,7 @@ inline void bundleAdjustmentRequest::set_allocated_k(std::string* k) {
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.bundleAdjustmentRequest.K)
 }
 
-// bytes D = 3;
+// bytes D = 4;
 inline void bundleAdjustmentRequest::clear_d() {
   d_.ClearToEmpty();
 }
@@ -1613,7 +1686,27 @@ inline void bundleAdjustmentResponse::set_xpcfgrpcreturnvalue(double value) {
 
 // optimizeSim3Request
 
-// bytes keyframe1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void optimizeSim3Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 optimizeSim3Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 optimizeSim3Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void optimizeSim3Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void optimizeSim3Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.grpcServerCompressionFormat)
+}
+
+// bytes keyframe1 = 2;
 inline void optimizeSim3Request::clear_keyframe1() {
   keyframe1_.ClearToEmpty();
 }
@@ -1674,7 +1767,7 @@ inline void optimizeSim3Request::set_allocated_keyframe1(std::string* keyframe1)
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.keyframe1)
 }
 
-// bytes keyframe2 = 2;
+// bytes keyframe2 = 3;
 inline void optimizeSim3Request::clear_keyframe2() {
   keyframe2_.ClearToEmpty();
 }
@@ -1735,7 +1828,7 @@ inline void optimizeSim3Request::set_allocated_keyframe2(std::string* keyframe2)
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.keyframe2)
 }
 
-// bytes matches = 3;
+// bytes matches = 4;
 inline void optimizeSim3Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -1796,7 +1889,7 @@ inline void optimizeSim3Request::set_allocated_matches(std::string* matches) {
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.matches)
 }
 
-// bytes pts3D1 = 4;
+// bytes pts3D1 = 5;
 inline void optimizeSim3Request::clear_pts3d1() {
   pts3d1_.ClearToEmpty();
 }
@@ -1857,7 +1950,7 @@ inline void optimizeSim3Request::set_allocated_pts3d1(std::string* pts3d1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.pts3D1)
 }
 
-// bytes pts3D2 = 5;
+// bytes pts3D2 = 6;
 inline void optimizeSim3Request::clear_pts3d2() {
   pts3d2_.ClearToEmpty();
 }
@@ -1918,7 +2011,7 @@ inline void optimizeSim3Request::set_allocated_pts3d2(std::string* pts3d2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.pts3D2)
 }
 
-// bytes K1 = 6;
+// bytes K1 = 7;
 inline void optimizeSim3Request::clear_k1() {
   k1_.ClearToEmpty();
 }
@@ -1979,7 +2072,7 @@ inline void optimizeSim3Request::set_allocated_k1(std::string* k1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.K1)
 }
 
-// bytes K2 = 7;
+// bytes K2 = 8;
 inline void optimizeSim3Request::clear_k2() {
   k2_.ClearToEmpty();
 }
@@ -2040,7 +2133,7 @@ inline void optimizeSim3Request::set_allocated_k2(std::string* k2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.K2)
 }
 
-// bytes pose = 8;
+// bytes pose = 9;
 inline void optimizeSim3Request::clear_pose() {
   pose_.ClearToEmpty();
 }

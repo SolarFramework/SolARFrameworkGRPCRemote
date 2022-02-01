@@ -184,12 +184,13 @@ class estimateRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSourcePointCloudFieldNumber = 1,
-    kTargetPointCloudFieldNumber = 2,
-    kInitialPoseFieldNumber = 3,
-    kPoseFieldNumber = 4,
+    kSourcePointCloudFieldNumber = 2,
+    kTargetPointCloudFieldNumber = 3,
+    kInitialPoseFieldNumber = 4,
+    kPoseFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes sourcePointCloud = 1;
+  // bytes sourcePointCloud = 2;
   void clear_sourcepointcloud();
   const std::string& sourcepointcloud() const;
   void set_sourcepointcloud(const std::string& value);
@@ -205,7 +206,7 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_sourcepointcloud();
   public:
 
-  // bytes targetPointCloud = 2;
+  // bytes targetPointCloud = 3;
   void clear_targetpointcloud();
   const std::string& targetpointcloud() const;
   void set_targetpointcloud(const std::string& value);
@@ -221,7 +222,7 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_targetpointcloud();
   public:
 
-  // bytes initialPose = 3;
+  // bytes initialPose = 4;
   void clear_initialpose();
   const std::string& initialpose() const;
   void set_initialpose(const std::string& value);
@@ -237,7 +238,7 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_initialpose();
   public:
 
-  // bytes pose = 4;
+  // bytes pose = 5;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -253,6 +254,15 @@ class estimateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DTransformFinderFrom3D3D.estimateRequest)
  private:
   class _Internal;
@@ -264,6 +274,7 @@ class estimateRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr targetpointcloud_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr initialpose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformFinderFrom3D3DService_2eproto;
 };
@@ -433,7 +444,27 @@ class estimateResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // estimateRequest
 
-// bytes sourcePointCloud = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void estimateRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimateRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimateRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransformFinderFrom3D3D.estimateRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void estimateRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void estimateRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransformFinderFrom3D3D.estimateRequest.grpcServerCompressionFormat)
+}
+
+// bytes sourcePointCloud = 2;
 inline void estimateRequest::clear_sourcepointcloud() {
   sourcepointcloud_.ClearToEmpty();
 }
@@ -494,7 +525,7 @@ inline void estimateRequest::set_allocated_sourcepointcloud(std::string* sourcep
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformFinderFrom3D3D.estimateRequest.sourcePointCloud)
 }
 
-// bytes targetPointCloud = 2;
+// bytes targetPointCloud = 3;
 inline void estimateRequest::clear_targetpointcloud() {
   targetpointcloud_.ClearToEmpty();
 }
@@ -555,7 +586,7 @@ inline void estimateRequest::set_allocated_targetpointcloud(std::string* targetp
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformFinderFrom3D3D.estimateRequest.targetPointCloud)
 }
 
-// bytes initialPose = 3;
+// bytes initialPose = 4;
 inline void estimateRequest::clear_initialpose() {
   initialpose_.ClearToEmpty();
 }
@@ -616,7 +647,7 @@ inline void estimateRequest::set_allocated_initialpose(std::string* initialpose)
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformFinderFrom3D3D.estimateRequest.initialPose)
 }
 
-// bytes pose = 4;
+// bytes pose = 5;
 inline void estimateRequest::clear_pose() {
   pose_.ClearToEmpty();
 }

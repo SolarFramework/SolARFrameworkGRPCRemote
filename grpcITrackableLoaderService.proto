@@ -6,7 +6,8 @@ package grpcITrackableLoader;
 
 message loadTrackableRequest
 {
-bytes trackable = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes trackable = 2;
 }
 
 message loadTrackableResponse

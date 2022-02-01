@@ -224,11 +224,12 @@ class transformRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputPointsFieldNumber = 1,
-    kTransformationFieldNumber = 2,
-    kOutputPointsFieldNumber = 3,
+    kInputPointsFieldNumber = 2,
+    kTransformationFieldNumber = 3,
+    kOutputPointsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputPoints = 1;
+  // bytes inputPoints = 2;
   void clear_inputpoints();
   const std::string& inputpoints() const;
   void set_inputpoints(const std::string& value);
@@ -244,7 +245,7 @@ class transformRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_inputpoints();
   public:
 
-  // bytes transformation = 2;
+  // bytes transformation = 3;
   void clear_transformation();
   const std::string& transformation() const;
   void set_transformation(const std::string& value);
@@ -260,7 +261,7 @@ class transformRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes outputPoints = 3;
+  // bytes outputPoints = 4;
   void clear_outputpoints();
   const std::string& outputpoints() const;
   void set_outputpoints(const std::string& value);
@@ -276,6 +277,15 @@ class transformRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_outputpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformRequest)
  private:
   class _Internal;
@@ -286,6 +296,7 @@ class transformRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
 };
@@ -559,10 +570,11 @@ class transformInPlace_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTransformationFieldNumber = 1,
-    kMapFieldNumber = 2,
+    kTransformationFieldNumber = 2,
+    kMapFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes transformation = 1;
+  // bytes transformation = 2;
   void clear_transformation();
   const std::string& transformation() const;
   void set_transformation(const std::string& value);
@@ -578,7 +590,7 @@ class transformInPlace_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes map = 2;
+  // bytes map = 3;
   void clear_map();
   const std::string& map() const;
   void set_map(const std::string& value);
@@ -594,6 +606,15 @@ class transformInPlace_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_map();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc0Request)
  private:
   class _Internal;
@@ -603,6 +624,7 @@ class transformInPlace_grpc0Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr map_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
 };
@@ -858,10 +880,11 @@ class transformInPlace_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTransformationFieldNumber = 1,
-    kPointCloudFieldNumber = 2,
+    kTransformationFieldNumber = 2,
+    kPointCloudFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes transformation = 1;
+  // bytes transformation = 2;
   void clear_transformation();
   const std::string& transformation() const;
   void set_transformation(const std::string& value);
@@ -877,7 +900,7 @@ class transformInPlace_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes pointCloud = 2;
+  // bytes pointCloud = 3;
   void clear_pointcloud();
   const std::string& pointcloud() const;
   void set_pointcloud(const std::string& value);
@@ -893,6 +916,15 @@ class transformInPlace_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pointcloud();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc1Request)
  private:
   class _Internal;
@@ -902,6 +934,7 @@ class transformInPlace_grpc1Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
 };
@@ -1175,10 +1208,11 @@ class transformInPlace_grpc2Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTransformationFieldNumber = 1,
-    kKeyframesFieldNumber = 2,
+    kTransformationFieldNumber = 2,
+    kKeyframesFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes transformation = 1;
+  // bytes transformation = 2;
   void clear_transformation();
   const std::string& transformation() const;
   void set_transformation(const std::string& value);
@@ -1194,7 +1228,7 @@ class transformInPlace_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes keyframes = 2;
+  // bytes keyframes = 3;
   void clear_keyframes();
   const std::string& keyframes() const;
   void set_keyframes(const std::string& value);
@@ -1210,6 +1244,15 @@ class transformInPlace_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframes();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc2Request)
  private:
   class _Internal;
@@ -1219,6 +1262,7 @@ class transformInPlace_grpc2Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframes_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
 };
@@ -1492,10 +1536,11 @@ class transformInPlace_grpc3Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTransformationFieldNumber = 1,
-    kPointCloudFieldNumber = 2,
+    kTransformationFieldNumber = 2,
+    kPointCloudFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes transformation = 1;
+  // bytes transformation = 2;
   void clear_transformation();
   const std::string& transformation() const;
   void set_transformation(const std::string& value);
@@ -1511,7 +1556,7 @@ class transformInPlace_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes pointCloud = 2;
+  // bytes pointCloud = 3;
   void clear_pointcloud();
   const std::string& pointcloud() const;
   void set_pointcloud(const std::string& value);
@@ -1527,6 +1572,15 @@ class transformInPlace_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pointcloud();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc3Request)
  private:
   class _Internal;
@@ -1536,6 +1590,7 @@ class transformInPlace_grpc3Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
 };
@@ -1791,10 +1846,11 @@ class transformInPlace_grpc4Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTransformationFieldNumber = 1,
-    kKeyframeCollectionFieldNumber = 2,
+    kTransformationFieldNumber = 2,
+    kKeyframeCollectionFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes transformation = 1;
+  // bytes transformation = 2;
   void clear_transformation();
   const std::string& transformation() const;
   void set_transformation(const std::string& value);
@@ -1810,7 +1866,7 @@ class transformInPlace_grpc4Request PROTOBUF_FINAL :
   std::string* _internal_mutable_transformation();
   public:
 
-  // bytes keyframeCollection = 2;
+  // bytes keyframeCollection = 3;
   void clear_keyframecollection();
   const std::string& keyframecollection() const;
   void set_keyframecollection(const std::string& value);
@@ -1826,6 +1882,15 @@ class transformInPlace_grpc4Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframecollection();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DTransform.transformInPlace_grpc4Request)
  private:
   class _Internal;
@@ -1835,6 +1900,7 @@ class transformInPlace_grpc4Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframecollection_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformService_2eproto;
 };
@@ -1986,7 +2052,27 @@ class transformInPlace_grpc4Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // transformRequest
 
-// bytes inputPoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void transformRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void transformRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void transformRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformRequest.grpcServerCompressionFormat)
+}
+
+// bytes inputPoints = 2;
 inline void transformRequest::clear_inputpoints() {
   inputpoints_.ClearToEmpty();
 }
@@ -2047,7 +2133,7 @@ inline void transformRequest::set_allocated_inputpoints(std::string* inputpoints
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformRequest.inputPoints)
 }
 
-// bytes transformation = 2;
+// bytes transformation = 3;
 inline void transformRequest::clear_transformation() {
   transformation_.ClearToEmpty();
 }
@@ -2108,7 +2194,7 @@ inline void transformRequest::set_allocated_transformation(std::string* transfor
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformRequest.transformation)
 }
 
-// bytes outputPoints = 3;
+// bytes outputPoints = 4;
 inline void transformRequest::clear_outputpoints() {
   outputpoints_.ClearToEmpty();
 }
@@ -2258,7 +2344,27 @@ inline void transformResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::
 
 // transformInPlace_grpc0Request
 
-// bytes transformation = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void transformInPlace_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void transformInPlace_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void transformInPlace_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes transformation = 2;
 inline void transformInPlace_grpc0Request::clear_transformation() {
   transformation_.ClearToEmpty();
 }
@@ -2319,7 +2425,7 @@ inline void transformInPlace_grpc0Request::set_allocated_transformation(std::str
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc0Request.transformation)
 }
 
-// bytes map = 2;
+// bytes map = 3;
 inline void transformInPlace_grpc0Request::clear_map() {
   map_.ClearToEmpty();
 }
@@ -2408,7 +2514,27 @@ inline void transformInPlace_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_N
 
 // transformInPlace_grpc1Request
 
-// bytes transformation = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void transformInPlace_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void transformInPlace_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void transformInPlace_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes transformation = 2;
 inline void transformInPlace_grpc1Request::clear_transformation() {
   transformation_.ClearToEmpty();
 }
@@ -2469,7 +2595,7 @@ inline void transformInPlace_grpc1Request::set_allocated_transformation(std::str
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc1Request.transformation)
 }
 
-// bytes pointCloud = 2;
+// bytes pointCloud = 3;
 inline void transformInPlace_grpc1Request::clear_pointcloud() {
   pointcloud_.ClearToEmpty();
 }
@@ -2619,7 +2745,27 @@ inline void transformInPlace_grpc1Response::set_xpcfgrpcreturnvalue(::PROTOBUF_N
 
 // transformInPlace_grpc2Request
 
-// bytes transformation = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void transformInPlace_grpc2Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc2Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc2Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc2Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void transformInPlace_grpc2Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void transformInPlace_grpc2Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc2Request.grpcServerCompressionFormat)
+}
+
+// bytes transformation = 2;
 inline void transformInPlace_grpc2Request::clear_transformation() {
   transformation_.ClearToEmpty();
 }
@@ -2680,7 +2826,7 @@ inline void transformInPlace_grpc2Request::set_allocated_transformation(std::str
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc2Request.transformation)
 }
 
-// bytes keyframes = 2;
+// bytes keyframes = 3;
 inline void transformInPlace_grpc2Request::clear_keyframes() {
   keyframes_.ClearToEmpty();
 }
@@ -2830,7 +2976,27 @@ inline void transformInPlace_grpc2Response::set_xpcfgrpcreturnvalue(::PROTOBUF_N
 
 // transformInPlace_grpc3Request
 
-// bytes transformation = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void transformInPlace_grpc3Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc3Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc3Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc3Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void transformInPlace_grpc3Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void transformInPlace_grpc3Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc3Request.grpcServerCompressionFormat)
+}
+
+// bytes transformation = 2;
 inline void transformInPlace_grpc3Request::clear_transformation() {
   transformation_.ClearToEmpty();
 }
@@ -2891,7 +3057,7 @@ inline void transformInPlace_grpc3Request::set_allocated_transformation(std::str
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc3Request.transformation)
 }
 
-// bytes pointCloud = 2;
+// bytes pointCloud = 3;
 inline void transformInPlace_grpc3Request::clear_pointcloud() {
   pointcloud_.ClearToEmpty();
 }
@@ -2980,7 +3146,27 @@ inline void transformInPlace_grpc3Response::set_xpcfgrpcreturnvalue(::PROTOBUF_N
 
 // transformInPlace_grpc4Request
 
-// bytes transformation = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void transformInPlace_grpc4Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc4Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 transformInPlace_grpc4Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransform.transformInPlace_grpc4Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void transformInPlace_grpc4Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void transformInPlace_grpc4Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransform.transformInPlace_grpc4Request.grpcServerCompressionFormat)
+}
+
+// bytes transformation = 2;
 inline void transformInPlace_grpc4Request::clear_transformation() {
   transformation_.ClearToEmpty();
 }
@@ -3041,7 +3227,7 @@ inline void transformInPlace_grpc4Request::set_allocated_transformation(std::str
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransform.transformInPlace_grpc4Request.transformation)
 }
 
-// bytes keyframeCollection = 2;
+// bytes keyframeCollection = 3;
 inline void transformInPlace_grpc4Request::clear_keyframecollection() {
   keyframecollection_.ClearToEmpty();
 }

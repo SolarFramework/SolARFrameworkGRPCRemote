@@ -2,9 +2,10 @@
 
 #ifndef IDESCRIPTORMATCHERSTEREO_GRPCSERVER_H
 #define IDESCRIPTORMATCHERSTEREO_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcherStereo.h"
+#include "api/features/IDescriptorMatcherStereo.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIDescriptorMatcherStereoService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -28,12 +29,15 @@ class IDescriptorMatcherStereo_grpcServer:  public org::bcom::xpcf::Configurable
         ::grpc::Status match_grpc1(::grpc::ServerContext* context, const ::grpcIDescriptorMatcherStereo::match_grpc1Request* request, ::grpcIDescriptorMatcherStereo::match_grpc1Response* response) override;
 
         SRef<SolAR::api::features::IDescriptorMatcherStereo> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIDescriptorMatcherStereoServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

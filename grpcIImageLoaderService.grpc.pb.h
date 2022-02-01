@@ -43,11 +43,11 @@ class grpcIImageLoaderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::getImageResponse>> PrepareAsyncgetImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::getImageResponse>>(PrepareAsyncgetImageRaw(context, request, cq));
     }
-    virtual ::grpc::Status reloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIImageLoader::reloadImageResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>> AsyncreloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpcIImageLoader::reloadImageResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>> AsyncreloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>>(AsyncreloadImageRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>> PrepareAsyncreloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>> PrepareAsyncreloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>>(PrepareAsyncreloadImageRaw(context, request, cq));
     }
     class experimental_async_interface {
@@ -59,11 +59,11 @@ class grpcIImageLoaderService final {
       #else
       virtual void getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void reloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIImageLoader::reloadImageResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void reloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void reloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -76,8 +76,8 @@ class grpcIImageLoaderService final {
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::getImageResponse>* AsyncgetImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::getImageResponse>* PrepareAsyncgetImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>* AsyncreloadImageRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>* PrepareAsyncreloadImageRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>* AsyncreloadImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>* PrepareAsyncreloadImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -89,11 +89,11 @@ class grpcIImageLoaderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::getImageResponse>> PrepareAsyncgetImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::getImageResponse>>(PrepareAsyncgetImageRaw(context, request, cq));
     }
-    ::grpc::Status reloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIImageLoader::reloadImageResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>> AsyncreloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpcIImageLoader::reloadImageResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>> AsyncreloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>>(AsyncreloadImageRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>> PrepareAsyncreloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>> PrepareAsyncreloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>>(PrepareAsyncreloadImageRaw(context, request, cq));
     }
     class experimental_async final :
@@ -105,11 +105,11 @@ class grpcIImageLoaderService final {
       #else
       void getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void reloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIImageLoader::reloadImageResponse* response, std::function<void(::grpc::Status)>) override;
+      void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void reloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void reloadImage(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -124,8 +124,8 @@ class grpcIImageLoaderService final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::getImageResponse>* AsyncgetImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::getImageResponse>* PrepareAsyncgetImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>* AsyncreloadImageRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>* PrepareAsyncreloadImageRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>* AsyncreloadImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>* PrepareAsyncreloadImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_getImage_;
     const ::grpc::internal::RpcMethod rpcmethod_reloadImage_;
   };
@@ -136,7 +136,7 @@ class grpcIImageLoaderService final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status getImage(::grpc::ServerContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response);
-    virtual ::grpc::Status reloadImage(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIImageLoader::reloadImageResponse* response);
+    virtual ::grpc::Status reloadImage(::grpc::ServerContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_getImage : public BaseClass {
@@ -170,11 +170,11 @@ class grpcIImageLoaderService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
+    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestreloadImage(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIImageLoader::reloadImageResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestreloadImage(::grpc::ServerContext* context, ::grpcIImageLoader::reloadImageRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIImageLoader::reloadImageResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -238,38 +238,38 @@ class grpcIImageLoaderService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIImageLoader::reloadImageResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIImageLoader::reloadImageResponse* response) { return this->reloadImage(context, request, response); }));}
+                     context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response) { return this->reloadImage(context, request, response); }));}
     void SetMessageAllocatorFor_reloadImage(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIImageLoader::reloadImageResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIImageLoader::reloadImageResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_reloadImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
+    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* reloadImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* reloadImage(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -307,7 +307,7 @@ class grpcIImageLoaderService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
+    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -344,7 +344,7 @@ class grpcIImageLoaderService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
+    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -415,7 +415,7 @@ class grpcIImageLoaderService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
+    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -463,10 +463,10 @@ class grpcIImageLoaderService final {
     WithStreamedUnaryMethod_reloadImage() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIImageLoader::reloadImageResponse>(
+          ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIImageLoader::reloadImageResponse>* streamer) {
+                     ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse>* streamer) {
                        return this->StreamedreloadImage(context,
                          streamer);
                   }));
@@ -475,12 +475,12 @@ class grpcIImageLoaderService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
+    ::grpc::Status reloadImage(::grpc::ServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedreloadImage(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIImageLoader::reloadImageResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedreloadImage(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIImageLoader::reloadImageRequest,::grpcIImageLoader::reloadImageResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_getImage<WithStreamedUnaryMethod_reloadImage<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;

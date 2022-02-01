@@ -6,10 +6,11 @@ package grpcI3DTransformFinderFrom3D3D;
 
 message estimateRequest
 {
-bytes sourcePointCloud = 1;
-bytes targetPointCloud = 2;
-bytes initialPose = 3;
-bytes pose = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes sourcePointCloud = 2;
+bytes targetPointCloud = 3;
+bytes initialPose = 4;
+bytes pose = 5;
 }
 
 message estimateResponse

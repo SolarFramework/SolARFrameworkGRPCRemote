@@ -20,7 +20,8 @@ namespace grpcIContoursExtractor {
 constexpr extractRequest::extractRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : inputimg_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , contours_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , contours_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct extractRequestDefaultTypeInternal {
   constexpr extractRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -54,6 +55,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIContoursExtractorService_
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIContoursExtractor::extractRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIContoursExtractor::extractRequest, inputimg_),
   PROTOBUF_FIELD_OFFSET(::grpcIContoursExtractor::extractRequest, contours_),
   ~0u,  // no _has_bits_
@@ -66,7 +68,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIContoursExtractorService_
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIContoursExtractor::extractRequest)},
-  { 7, -1, sizeof(::grpcIContoursExtractor::extractResponse)},
+  { 8, -1, sizeof(::grpcIContoursExtractor::extractResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -77,20 +79,21 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIContoursExtractorService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n#grpcIContoursExtractorService.proto\022\026g"
   "rpcIContoursExtractor\032\033google/protobuf/e"
-  "mpty.proto\"4\n\016extractRequest\022\020\n\010inputImg"
-  "\030\001 \001(\014\022\020\n\010contours\030\002 \001(\014\"@\n\017extractRespo"
-  "nse\022\020\n\010contours\030\001 \001(\014\022\033\n\023xpcfGrpcReturnV"
-  "alue\030\002 \001(\0212}\n\035grpcIContoursExtractorServ"
-  "ice\022\\\n\007extract\022&.grpcIContoursExtractor."
-  "extractRequest\032\'.grpcIContoursExtractor."
-  "extractResponse\"\000b\006proto3"
+  "mpty.proto\"Y\n\016extractRequest\022#\n\033grpcServ"
+  "erCompressionFormat\030\001 \001(\005\022\020\n\010inputImg\030\002 "
+  "\001(\014\022\020\n\010contours\030\003 \001(\014\"@\n\017extractResponse"
+  "\022\020\n\010contours\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValu"
+  "e\030\002 \001(\0212}\n\035grpcIContoursExtractorService"
+  "\022\\\n\007extract\022&.grpcIContoursExtractor.ext"
+  "ractRequest\032\'.grpcIContoursExtractor.ext"
+  "ractResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIContoursExtractorService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIContoursExtractorService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIContoursExtractorService_2eproto = {
-  false, false, 345, descriptor_table_protodef_grpcIContoursExtractorService_2eproto, "grpcIContoursExtractorService.proto", 
+  false, false, 382, descriptor_table_protodef_grpcIContoursExtractorService_2eproto, "grpcIContoursExtractorService.proto", 
   &descriptor_table_grpcIContoursExtractorService_2eproto_once, descriptor_table_grpcIContoursExtractorService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcIContoursExtractorService_2eproto::offsets,
   file_level_metadata_grpcIContoursExtractorService_2eproto, file_level_enum_descriptors_grpcIContoursExtractorService_2eproto, file_level_service_descriptors_grpcIContoursExtractorService_2eproto,
@@ -130,12 +133,14 @@ extractRequest::extractRequest(const extractRequest& from)
     contours_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_contours(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIContoursExtractor.extractRequest)
 }
 
 void extractRequest::SharedCtor() {
 inputimg_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 contours_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 extractRequest::~extractRequest() {
@@ -168,6 +173,7 @@ void extractRequest::Clear() {
 
   inputimg_.ClearToEmpty();
   contours_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -178,17 +184,24 @@ const char* extractRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes inputImg = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes inputImg = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_inputimg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes contours = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes contours = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_contours();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -222,16 +235,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes inputImg = 1;
-  if (this->inputimg().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_inputimg(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes contours = 2;
+  // bytes inputImg = 2;
+  if (this->inputimg().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_inputimg(), target);
+  }
+
+  // bytes contours = 3;
   if (this->contours().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_contours(), target);
+        3, this->_internal_contours(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -250,18 +269,25 @@ size_t extractRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes inputImg = 1;
+  // bytes inputImg = 2;
   if (this->inputimg().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_inputimg());
   }
 
-  // bytes contours = 2;
+  // bytes contours = 3;
   if (this->contours().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_contours());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -301,6 +327,9 @@ void extractRequest::MergeFrom(const extractRequest& from) {
   if (from.contours().size() > 0) {
     _internal_set_contours(from._internal_contours());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void extractRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -326,6 +355,7 @@ void extractRequest::InternalSwap(extractRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   inputimg_.Swap(&other->inputimg_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   contours_.Swap(&other->contours_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata extractRequest::GetMetadata() const {

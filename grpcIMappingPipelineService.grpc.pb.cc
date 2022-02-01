@@ -45,69 +45,69 @@ grpcIMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelIn
   , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status grpcIMappingPipelineService::Stub::init(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMappingPipeline::initResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
+::grpc::Status grpcIMappingPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIMappingPipeline::initRequest& request, ::grpcIMappingPipeline::initResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::initRequest, ::grpcIMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::initResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, std::move(f));
+void grpcIMappingPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIMappingPipeline::initRequest* request, ::grpcIMappingPipeline::initResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::initRequest, ::grpcIMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIMappingPipeline::initRequest* request, ::grpcIMappingPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::initResponse>* grpcIMappingPipelineService::Stub::PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::initResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::initResponse>* grpcIMappingPipelineService::Stub::PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::initResponse, ::grpcIMappingPipeline::initRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::initResponse>* grpcIMappingPipelineService::Stub::AsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::initResponse>* grpcIMappingPipelineService::Stub::AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncinitRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIMappingPipelineService::Stub::start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMappingPipeline::startResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
+::grpc::Status grpcIMappingPipelineService::Stub::start(::grpc::ClientContext* context, const ::grpcIMappingPipeline::startRequest& request, ::grpcIMappingPipeline::startResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::startRequest, ::grpcIMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
+void grpcIMappingPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIMappingPipeline::startRequest* request, ::grpcIMappingPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::startRequest, ::grpcIMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIMappingPipeline::startRequest* request, ::grpcIMappingPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::startResponse>* grpcIMappingPipelineService::Stub::PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::startResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::startResponse>* grpcIMappingPipelineService::Stub::PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::startResponse, ::grpcIMappingPipeline::startRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::startResponse>* grpcIMappingPipelineService::Stub::AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::startResponse>* grpcIMappingPipelineService::Stub::AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncstartRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIMappingPipelineService::Stub::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMappingPipeline::stopResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
+::grpc::Status grpcIMappingPipelineService::Stub::stop(::grpc::ClientContext* context, const ::grpcIMappingPipeline::stopRequest& request, ::grpcIMappingPipeline::stopResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::stopRequest, ::grpcIMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
+void grpcIMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIMappingPipeline::stopRequest* request, ::grpcIMappingPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::stopRequest, ::grpcIMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIMappingPipeline::stopRequest* request, ::grpcIMappingPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::stopResponse>* grpcIMappingPipelineService::Stub::PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::stopResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::stopResponse>* grpcIMappingPipelineService::Stub::PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::stopResponse, ::grpcIMappingPipeline::stopRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::stopResponse>* grpcIMappingPipelineService::Stub::AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::stopResponse>* grpcIMappingPipelineService::Stub::AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncstopRaw(context, request, cq);
   result->StartCall();
@@ -187,30 +187,30 @@ grpcIMappingPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMappingPipelineService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::google::protobuf::Empty, ::grpcIMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::initRequest, ::grpcIMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIMappingPipeline::initRequest* req,
              ::grpcIMappingPipeline::initResponse* resp) {
                return service->init(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMappingPipelineService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::google::protobuf::Empty, ::grpcIMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::startRequest, ::grpcIMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIMappingPipeline::startRequest* req,
              ::grpcIMappingPipeline::startResponse* resp) {
                return service->start(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMappingPipelineService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::google::protobuf::Empty, ::grpcIMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::stopRequest, ::grpcIMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIMappingPipeline::stopRequest* req,
              ::grpcIMappingPipeline::stopResponse* resp) {
                return service->stop(ctx, req, resp);
              }, this)));
@@ -249,21 +249,21 @@ grpcIMappingPipelineService::Service::Service() {
 grpcIMappingPipelineService::Service::~Service() {
 }
 
-::grpc::Status grpcIMappingPipelineService::Service::init(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::initResponse* response) {
+::grpc::Status grpcIMappingPipelineService::Service::init(::grpc::ServerContext* context, const ::grpcIMappingPipeline::initRequest* request, ::grpcIMappingPipeline::initResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIMappingPipelineService::Service::start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::startResponse* response) {
+::grpc::Status grpcIMappingPipelineService::Service::start(::grpc::ServerContext* context, const ::grpcIMappingPipeline::startRequest* request, ::grpcIMappingPipeline::startResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIMappingPipelineService::Service::stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMappingPipeline::stopResponse* response) {
+::grpc::Status grpcIMappingPipelineService::Service::stop(::grpc::ServerContext* context, const ::grpcIMappingPipeline::stopRequest* request, ::grpcIMappingPipeline::stopResponse* response) {
   (void) context;
   (void) request;
   (void) response;

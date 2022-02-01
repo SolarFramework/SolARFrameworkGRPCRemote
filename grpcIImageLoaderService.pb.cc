@@ -19,7 +19,8 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcIImageLoader {
 constexpr getImageRequest::getImageRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : img_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : img_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct getImageRequestDefaultTypeInternal {
   constexpr getImageRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -42,6 +43,18 @@ struct getImageResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getImageResponseDefaultTypeInternal _getImageResponse_default_instance_;
+constexpr reloadImageRequest::reloadImageRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct reloadImageRequestDefaultTypeInternal {
+  constexpr reloadImageRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~reloadImageRequestDefaultTypeInternal() {}
+  union {
+    reloadImageRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT reloadImageRequestDefaultTypeInternal _reloadImageRequest_default_instance_;
 constexpr reloadImageResponse::reloadImageResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(0){}
@@ -55,7 +68,7 @@ struct reloadImageResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT reloadImageResponseDefaultTypeInternal _reloadImageResponse_default_instance_;
 }  // namespace grpcIImageLoader
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIImageLoaderService_2eproto[3];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIImageLoaderService_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIImageLoaderService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIImageLoaderService_2eproto = nullptr;
 
@@ -65,6 +78,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIImageLoaderService_2eprot
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageRequest, img_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageResponse, _internal_metadata_),
@@ -74,6 +88,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIImageLoaderService_2eprot
   PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageResponse, img_),
   PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::reloadImageRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::reloadImageRequest, grpcservercompressionformat_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::reloadImageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -82,36 +102,41 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIImageLoaderService_2eprot
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIImageLoader::getImageRequest)},
-  { 6, -1, sizeof(::grpcIImageLoader::getImageResponse)},
-  { 13, -1, sizeof(::grpcIImageLoader::reloadImageResponse)},
+  { 7, -1, sizeof(::grpcIImageLoader::getImageResponse)},
+  { 14, -1, sizeof(::grpcIImageLoader::reloadImageRequest)},
+  { 20, -1, sizeof(::grpcIImageLoader::reloadImageResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIImageLoader::_getImageRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIImageLoader::_getImageResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIImageLoader::_reloadImageRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIImageLoader::_reloadImageResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_grpcIImageLoaderService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035grpcIImageLoaderService.proto\022\020grpcIIm"
-  "ageLoader\032\033google/protobuf/empty.proto\"\036"
-  "\n\017getImageRequest\022\013\n\003img\030\001 \001(\014\"<\n\020getIma"
-  "geResponse\022\013\n\003img\030\001 \001(\014\022\033\n\023xpcfGrpcRetur"
-  "nValue\030\002 \001(\021\"2\n\023reloadImageResponse\022\033\n\023x"
-  "pcfGrpcReturnValue\030\001 \001(\0212\276\001\n\027grpcIImageL"
-  "oaderService\022S\n\010getImage\022!.grpcIImageLoa"
-  "der.getImageRequest\032\".grpcIImageLoader.g"
-  "etImageResponse\"\000\022N\n\013reloadImage\022\026.googl"
-  "e.protobuf.Empty\032%.grpcIImageLoader.relo"
-  "adImageResponse\"\000b\006proto3"
+  "ageLoader\032\033google/protobuf/empty.proto\"C"
+  "\n\017getImageRequest\022#\n\033grpcServerCompressi"
+  "onFormat\030\001 \001(\005\022\013\n\003img\030\002 \001(\014\"<\n\020getImageR"
+  "esponse\022\013\n\003img\030\001 \001(\014\022\033\n\023xpcfGrpcReturnVa"
+  "lue\030\002 \001(\021\"9\n\022reloadImageRequest\022#\n\033grpcS"
+  "erverCompressionFormat\030\001 \001(\005\"2\n\023reloadIm"
+  "ageResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021"
+  "2\314\001\n\027grpcIImageLoaderService\022S\n\010getImage"
+  "\022!.grpcIImageLoader.getImageRequest\032\".gr"
+  "pcIImageLoader.getImageResponse\"\000\022\\\n\013rel"
+  "oadImage\022$.grpcIImageLoader.reloadImageR"
+  "equest\032%.grpcIImageLoader.reloadImageRes"
+  "ponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIImageLoaderService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIImageLoaderService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIImageLoaderService_2eproto = {
-  false, false, 425, descriptor_table_protodef_grpcIImageLoaderService_2eproto, "grpcIImageLoaderService.proto", 
-  &descriptor_table_grpcIImageLoaderService_2eproto_once, descriptor_table_grpcIImageLoaderService_2eproto_deps, 1, 3,
+  false, false, 535, descriptor_table_protodef_grpcIImageLoaderService_2eproto, "grpcIImageLoaderService.proto", 
+  &descriptor_table_grpcIImageLoaderService_2eproto_once, descriptor_table_grpcIImageLoaderService_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_grpcIImageLoaderService_2eproto::offsets,
   file_level_metadata_grpcIImageLoaderService_2eproto, file_level_enum_descriptors_grpcIImageLoaderService_2eproto, file_level_service_descriptors_grpcIImageLoaderService_2eproto,
 };
@@ -145,11 +170,13 @@ getImageRequest::getImageRequest(const getImageRequest& from)
     img_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_img(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageLoader.getImageRequest)
 }
 
 void getImageRequest::SharedCtor() {
 img_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 getImageRequest::~getImageRequest() {
@@ -180,6 +207,7 @@ void getImageRequest::Clear() {
   (void) cached_has_bits;
 
   img_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -190,9 +218,16 @@ const char* getImageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes img = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes img = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_img();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -226,10 +261,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes img = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes img = 2;
   if (this->img().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_img(), target);
+        2, this->_internal_img(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -248,11 +289,18 @@ size_t getImageRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes img = 1;
+  // bytes img = 2;
   if (this->img().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_img());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -289,6 +337,9 @@ void getImageRequest::MergeFrom(const getImageRequest& from) {
   if (from.img().size() > 0) {
     _internal_set_img(from._internal_img());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void getImageRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -313,6 +364,7 @@ void getImageRequest::InternalSwap(getImageRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   img_.Swap(&other->img_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getImageRequest::GetMetadata() const {
@@ -544,6 +596,195 @@ void getImageResponse::InternalSwap(getImageResponse* other) {
 
 // ===================================================================
 
+class reloadImageRequest::_Internal {
+ public:
+};
+
+reloadImageRequest::reloadImageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIImageLoader.reloadImageRequest)
+}
+reloadImageRequest::reloadImageRequest(const reloadImageRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIImageLoader.reloadImageRequest)
+}
+
+void reloadImageRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+reloadImageRequest::~reloadImageRequest() {
+  // @@protoc_insertion_point(destructor:grpcIImageLoader.reloadImageRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void reloadImageRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void reloadImageRequest::ArenaDtor(void* object) {
+  reloadImageRequest* _this = reinterpret_cast< reloadImageRequest* >(object);
+  (void)_this;
+}
+void reloadImageRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void reloadImageRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void reloadImageRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIImageLoader.reloadImageRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* reloadImageRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* reloadImageRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIImageLoader.reloadImageRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIImageLoader.reloadImageRequest)
+  return target;
+}
+
+size_t reloadImageRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIImageLoader.reloadImageRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void reloadImageRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIImageLoader.reloadImageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const reloadImageRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<reloadImageRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIImageLoader.reloadImageRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIImageLoader.reloadImageRequest)
+    MergeFrom(*source);
+  }
+}
+
+void reloadImageRequest::MergeFrom(const reloadImageRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.reloadImageRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void reloadImageRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIImageLoader.reloadImageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void reloadImageRequest::CopyFrom(const reloadImageRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIImageLoader.reloadImageRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool reloadImageRequest::IsInitialized() const {
+  return true;
+}
+
+void reloadImageRequest::InternalSwap(reloadImageRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata reloadImageRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 class reloadImageResponse::_Internal {
  public:
 };
@@ -739,6 +980,9 @@ template<> PROTOBUF_NOINLINE ::grpcIImageLoader::getImageRequest* Arena::CreateM
 }
 template<> PROTOBUF_NOINLINE ::grpcIImageLoader::getImageResponse* Arena::CreateMaybeMessage< ::grpcIImageLoader::getImageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIImageLoader::getImageResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIImageLoader::reloadImageRequest* Arena::CreateMaybeMessage< ::grpcIImageLoader::reloadImageRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIImageLoader::reloadImageRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIImageLoader::reloadImageResponse* Arena::CreateMaybeMessage< ::grpcIImageLoader::reloadImageResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIImageLoader::reloadImageResponse >(arena);

@@ -6,10 +6,11 @@ package grpcIMapFilter;
 
 message filter_grpc0Request
 {
-bytes pose1 = 1;
-bytes pose2 = 2;
-bytes input = 3;
-bytes output = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes pose1 = 2;
+bytes pose2 = 3;
+bytes input = 4;
+bytes output = 5;
 }
 
 message filter_grpc0Response
@@ -19,11 +20,12 @@ bytes output = 1;
 
 message filter_grpc1Request
 {
-bytes pose1 = 1;
-bytes pose2 = 2;
-bytes input = 3;
-bytes output = 4;
-bytes index = 5;
+int32 grpcServerCompressionFormat  = 1;
+bytes pose1 = 2;
+bytes pose2 = 3;
+bytes input = 4;
+bytes output = 5;
+bytes index = 6;
 }
 
 message filter_grpc1Response

@@ -26,7 +26,8 @@ constexpr findRequest::findRequest(
   , shared_2dpoint_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , corres2d3d_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , found_matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , remaining_matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , remaining_matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct findRequestDefaultTypeInternal {
   constexpr findRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -64,6 +65,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI2D3DCorrespondencesFinder
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, lastframe_),
   PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, currentframe_),
   PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, current_matches_),
@@ -86,7 +88,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI2D3DCorrespondencesFinder
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcI2D3DCorrespondencesFinder::findRequest)},
-  { 13, -1, sizeof(::grpcI2D3DCorrespondencesFinder::findResponse)},
+  { 14, -1, sizeof(::grpcI2D3DCorrespondencesFinder::findResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -97,27 +99,28 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcI2D3DCorrespondencesFinderService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n+grpcI2D3DCorrespondencesFinderService."
   "proto\022\036grpcI2D3DCorrespondencesFinder\032\033g"
-  "oogle/protobuf/empty.proto\"\305\001\n\013findReque"
-  "st\022\021\n\tlastFrame\030\001 \001(\014\022\024\n\014currentFrame\030\002 "
-  "\001(\014\022\027\n\017current_matches\030\003 \001(\014\022\026\n\016shared_3"
-  "dpoint\030\004 \001(\014\022\026\n\016shared_2dpoint\030\005 \001(\014\022\022\n\n"
-  "corres2D3D\030\006 \001(\014\022\025\n\rfound_matches\030\007 \001(\014\022"
-  "\031\n\021remaining_matches\030\010 \001(\014\"\241\001\n\014findRespo"
-  "nse\022\026\n\016shared_3dpoint\030\001 \001(\014\022\026\n\016shared_2d"
-  "point\030\002 \001(\014\022\022\n\ncorres2D3D\030\003 \001(\014\022\025\n\rfound"
-  "_matches\030\004 \001(\014\022\031\n\021remaining_matches\030\005 \001("
-  "\014\022\033\n\023xpcfGrpcReturnValue\030\006 \001(\0212\214\001\n%grpcI"
-  "2D3DCorrespondencesFinderService\022c\n\004find"
-  "\022+.grpcI2D3DCorrespondencesFinder.findRe"
-  "quest\032,.grpcI2D3DCorrespondencesFinder.f"
-  "indResponse\"\000b\006proto3"
+  "oogle/protobuf/empty.proto\"\352\001\n\013findReque"
+  "st\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022"
+  "\021\n\tlastFrame\030\002 \001(\014\022\024\n\014currentFrame\030\003 \001(\014"
+  "\022\027\n\017current_matches\030\004 \001(\014\022\026\n\016shared_3dpo"
+  "int\030\005 \001(\014\022\026\n\016shared_2dpoint\030\006 \001(\014\022\022\n\ncor"
+  "res2D3D\030\007 \001(\014\022\025\n\rfound_matches\030\010 \001(\014\022\031\n\021"
+  "remaining_matches\030\t \001(\014\"\241\001\n\014findResponse"
+  "\022\026\n\016shared_3dpoint\030\001 \001(\014\022\026\n\016shared_2dpoi"
+  "nt\030\002 \001(\014\022\022\n\ncorres2D3D\030\003 \001(\014\022\025\n\rfound_ma"
+  "tches\030\004 \001(\014\022\031\n\021remaining_matches\030\005 \001(\014\022\033"
+  "\n\023xpcfGrpcReturnValue\030\006 \001(\0212\214\001\n%grpcI2D3"
+  "DCorrespondencesFinderService\022c\n\004find\022+."
+  "grpcI2D3DCorrespondencesFinder.findReque"
+  "st\032,.grpcI2D3DCorrespondencesFinder.find"
+  "Response\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcI2D3DCorrespondencesFinderService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcI2D3DCorrespondencesFinderService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcI2D3DCorrespondencesFinderService_2eproto = {
-  false, false, 621, descriptor_table_protodef_grpcI2D3DCorrespondencesFinderService_2eproto, "grpcI2D3DCorrespondencesFinderService.proto", 
+  false, false, 658, descriptor_table_protodef_grpcI2D3DCorrespondencesFinderService_2eproto, "grpcI2D3DCorrespondencesFinderService.proto", 
   &descriptor_table_grpcI2D3DCorrespondencesFinderService_2eproto_once, descriptor_table_grpcI2D3DCorrespondencesFinderService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcI2D3DCorrespondencesFinderService_2eproto::offsets,
   file_level_metadata_grpcI2D3DCorrespondencesFinderService_2eproto, file_level_enum_descriptors_grpcI2D3DCorrespondencesFinderService_2eproto, file_level_service_descriptors_grpcI2D3DCorrespondencesFinderService_2eproto,
@@ -187,6 +190,7 @@ findRequest::findRequest(const findRequest& from)
     remaining_matches_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_remaining_matches(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcI2D3DCorrespondencesFinder.findRequest)
 }
 
@@ -199,6 +203,7 @@ shared_2dpoint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStr
 corres2d3d_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 found_matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 remaining_matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 findRequest::~findRequest() {
@@ -243,6 +248,7 @@ void findRequest::Clear() {
   corres2d3d_.ClearToEmpty();
   found_matches_.ClearToEmpty();
   remaining_matches_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -253,65 +259,72 @@ const char* findRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes lastFrame = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes lastFrame = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_lastframe();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes currentFrame = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes currentFrame = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_currentframe();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes current_matches = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes current_matches = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_current_matches();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes shared_3dpoint = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes shared_3dpoint = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_shared_3dpoint();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes shared_2dpoint = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes shared_2dpoint = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_shared_2dpoint();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes corres2D3D = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // bytes corres2D3D = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_corres2d3d();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes found_matches = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+      // bytes found_matches = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_found_matches();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes remaining_matches = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+      // bytes remaining_matches = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           auto str = _internal_mutable_remaining_matches();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -345,52 +358,58 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes lastFrame = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes lastFrame = 2;
   if (this->lastframe().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_lastframe(), target);
+        2, this->_internal_lastframe(), target);
   }
 
-  // bytes currentFrame = 2;
+  // bytes currentFrame = 3;
   if (this->currentframe().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_currentframe(), target);
+        3, this->_internal_currentframe(), target);
   }
 
-  // bytes current_matches = 3;
+  // bytes current_matches = 4;
   if (this->current_matches().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_current_matches(), target);
+        4, this->_internal_current_matches(), target);
   }
 
-  // bytes shared_3dpoint = 4;
+  // bytes shared_3dpoint = 5;
   if (this->shared_3dpoint().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_shared_3dpoint(), target);
+        5, this->_internal_shared_3dpoint(), target);
   }
 
-  // bytes shared_2dpoint = 5;
+  // bytes shared_2dpoint = 6;
   if (this->shared_2dpoint().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_shared_2dpoint(), target);
+        6, this->_internal_shared_2dpoint(), target);
   }
 
-  // bytes corres2D3D = 6;
+  // bytes corres2D3D = 7;
   if (this->corres2d3d().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        6, this->_internal_corres2d3d(), target);
+        7, this->_internal_corres2d3d(), target);
   }
 
-  // bytes found_matches = 7;
+  // bytes found_matches = 8;
   if (this->found_matches().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        7, this->_internal_found_matches(), target);
+        8, this->_internal_found_matches(), target);
   }
 
-  // bytes remaining_matches = 8;
+  // bytes remaining_matches = 9;
   if (this->remaining_matches().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        8, this->_internal_remaining_matches(), target);
+        9, this->_internal_remaining_matches(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -409,60 +428,67 @@ size_t findRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes lastFrame = 1;
+  // bytes lastFrame = 2;
   if (this->lastframe().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_lastframe());
   }
 
-  // bytes currentFrame = 2;
+  // bytes currentFrame = 3;
   if (this->currentframe().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_currentframe());
   }
 
-  // bytes current_matches = 3;
+  // bytes current_matches = 4;
   if (this->current_matches().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_current_matches());
   }
 
-  // bytes shared_3dpoint = 4;
+  // bytes shared_3dpoint = 5;
   if (this->shared_3dpoint().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_shared_3dpoint());
   }
 
-  // bytes shared_2dpoint = 5;
+  // bytes shared_2dpoint = 6;
   if (this->shared_2dpoint().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_shared_2dpoint());
   }
 
-  // bytes corres2D3D = 6;
+  // bytes corres2D3D = 7;
   if (this->corres2d3d().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_corres2d3d());
   }
 
-  // bytes found_matches = 7;
+  // bytes found_matches = 8;
   if (this->found_matches().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_found_matches());
   }
 
-  // bytes remaining_matches = 8;
+  // bytes remaining_matches = 9;
   if (this->remaining_matches().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_remaining_matches());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -520,6 +546,9 @@ void findRequest::MergeFrom(const findRequest& from) {
   if (from.remaining_matches().size() > 0) {
     _internal_set_remaining_matches(from._internal_remaining_matches());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void findRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -551,6 +580,7 @@ void findRequest::InternalSwap(findRequest* other) {
   corres2d3d_.Swap(&other->corres2d3d_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   found_matches_.Swap(&other->found_matches_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   remaining_matches_.Swap(&other->remaining_matches_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata findRequest::GetMetadata() const {

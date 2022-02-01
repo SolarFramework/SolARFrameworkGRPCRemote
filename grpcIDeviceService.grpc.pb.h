@@ -36,34 +36,34 @@ class grpcIDeviceService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDevice::startResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpcIDevice::startResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>>(AsyncstartRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>>(PrepareAsyncstartRaw(context, request, cq));
     }
-    virtual ::grpc::Status stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDevice::stopResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status stop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpcIDevice::stopResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>>(AsyncstopRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIDevice::startRequest* request, ::grpcIDevice::startResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIDevice::startRequest* request, ::grpcIDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void start(::grpc::ClientContext* context, const ::grpcIDevice::startRequest* request, ::grpcIDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest* request, ::grpcIDevice::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest* request, ::grpcIDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest* request, ::grpcIDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -74,42 +74,42 @@ class grpcIDeviceService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDevice::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDevice::startResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpcIDevice::startResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>>(AsyncstartRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>> PrepareAsyncstart(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>>(PrepareAsyncstartRaw(context, request, cq));
     }
-    ::grpc::Status stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDevice::stopResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status stop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpcIDevice::stopResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>> Asyncstop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>>(AsyncstopRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, std::function<void(::grpc::Status)>) override;
+      void start(::grpc::ClientContext* context, const ::grpcIDevice::startRequest* request, ::grpcIDevice::startResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void start(::grpc::ClientContext* context, const ::grpcIDevice::startRequest* request, ::grpcIDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void start(::grpc::ClientContext* context, const ::grpcIDevice::startRequest* request, ::grpcIDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, std::function<void(::grpc::Status)>) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest* request, ::grpcIDevice::stopResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest* request, ::grpcIDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void stop(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest* request, ::grpcIDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -122,10 +122,10 @@ class grpcIDeviceService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIDevice::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIDevice::startRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIDevice::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIDevice::stopRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_start_;
     const ::grpc::internal::RpcMethod rpcmethod_stop_;
   };
@@ -135,8 +135,8 @@ class grpcIDeviceService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response);
-    virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response);
+    virtual ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIDevice::startRequest* request, ::grpcIDevice::startResponse* response);
+    virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIDevice::stopRequest* request, ::grpcIDevice::stopResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_start : public BaseClass {
@@ -150,11 +150,11 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIDevice::startRequest* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requeststart(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDevice::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requeststart(::grpc::ServerContext* context, ::grpcIDevice::startRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDevice::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -170,11 +170,11 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIDevice::stopRequest* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requeststop(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDevice::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requeststop(::grpc::ServerContext* context, ::grpcIDevice::stopRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDevice::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -191,38 +191,38 @@ class grpcIDeviceService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIDevice::startResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIDevice::startRequest, ::grpcIDevice::startResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response) { return this->start(context, request, response); }));}
+                     context, const ::grpcIDevice::startRequest* request, ::grpcIDevice::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIDevice::startResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIDevice::startRequest, ::grpcIDevice::startResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIDevice::startResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDevice::startRequest, ::grpcIDevice::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIDevice::startRequest* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::startResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDevice::startRequest* /*request*/, ::grpcIDevice::startResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* start(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::startResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDevice::startRequest* /*request*/, ::grpcIDevice::startResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -238,38 +238,38 @@ class grpcIDeviceService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIDevice::stopResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIDevice::stopRequest, ::grpcIDevice::stopResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response) { return this->stop(context, request, response); }));}
+                     context, const ::grpcIDevice::stopRequest* request, ::grpcIDevice::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIDevice::stopResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIDevice::stopRequest, ::grpcIDevice::stopResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIDevice::stopResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDevice::stopRequest, ::grpcIDevice::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIDevice::stopRequest* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::stopResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDevice::stopRequest* /*request*/, ::grpcIDevice::stopResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* stop(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::stopResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDevice::stopRequest* /*request*/, ::grpcIDevice::stopResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -290,7 +290,7 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIDevice::startRequest* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -307,7 +307,7 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIDevice::stopRequest* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -324,7 +324,7 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIDevice::startRequest* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -344,7 +344,7 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIDevice::stopRequest* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -377,7 +377,7 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIDevice::startRequest* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -415,7 +415,7 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIDevice::stopRequest* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -436,10 +436,10 @@ class grpcIDeviceService final {
     WithStreamedUnaryMethod_start() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIDevice::startResponse>(
+          ::grpcIDevice::startRequest, ::grpcIDevice::startResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIDevice::startResponse>* streamer) {
+                     ::grpcIDevice::startRequest, ::grpcIDevice::startResponse>* streamer) {
                        return this->Streamedstart(context,
                          streamer);
                   }));
@@ -448,12 +448,12 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
+    ::grpc::Status start(::grpc::ServerContext* /*context*/, const ::grpcIDevice::startRequest* /*request*/, ::grpcIDevice::startResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedstart(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIDevice::startResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedstart(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIDevice::startRequest,::grpcIDevice::startResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_stop : public BaseClass {
@@ -463,10 +463,10 @@ class grpcIDeviceService final {
     WithStreamedUnaryMethod_stop() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIDevice::stopResponse>(
+          ::grpcIDevice::stopRequest, ::grpcIDevice::stopResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIDevice::stopResponse>* streamer) {
+                     ::grpcIDevice::stopRequest, ::grpcIDevice::stopResponse>* streamer) {
                        return this->Streamedstop(context,
                          streamer);
                   }));
@@ -475,12 +475,12 @@ class grpcIDeviceService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
+    ::grpc::Status stop(::grpc::ServerContext* /*context*/, const ::grpcIDevice::stopRequest* /*request*/, ::grpcIDevice::stopResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIDevice::stopResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIDevice::stopRequest,::grpcIDevice::stopResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;

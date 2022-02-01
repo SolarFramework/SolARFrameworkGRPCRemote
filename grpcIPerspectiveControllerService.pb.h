@@ -192,11 +192,12 @@ class correct_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputImgFieldNumber = 1,
-    kContoursFieldNumber = 2,
-    kPatchesFieldNumber = 3,
+    kInputImgFieldNumber = 2,
+    kContoursFieldNumber = 3,
+    kPatchesFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputImg = 1;
+  // bytes inputImg = 2;
   void clear_inputimg();
   const std::string& inputimg() const;
   void set_inputimg(const std::string& value);
@@ -212,7 +213,7 @@ class correct_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_inputimg();
   public:
 
-  // bytes contours = 2;
+  // bytes contours = 3;
   void clear_contours();
   const std::string& contours() const;
   void set_contours(const std::string& value);
@@ -228,7 +229,7 @@ class correct_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_contours();
   public:
 
-  // bytes patches = 3;
+  // bytes patches = 4;
   void clear_patches();
   const std::string& patches() const;
   void set_patches(const std::string& value);
@@ -244,6 +245,15 @@ class correct_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_patches();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIPerspectiveController.correct_grpc0Request)
  private:
   class _Internal;
@@ -254,6 +264,7 @@ class correct_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputimg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contours_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr patches_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIPerspectiveControllerService_2eproto;
 };
@@ -527,11 +538,12 @@ class correct_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInputImgFieldNumber = 1,
-    kContourFieldNumber = 2,
-    kPatchFieldNumber = 3,
+    kInputImgFieldNumber = 2,
+    kContourFieldNumber = 3,
+    kPatchFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inputImg = 1;
+  // bytes inputImg = 2;
   void clear_inputimg();
   const std::string& inputimg() const;
   void set_inputimg(const std::string& value);
@@ -547,7 +559,7 @@ class correct_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_inputimg();
   public:
 
-  // bytes contour = 2;
+  // bytes contour = 3;
   void clear_contour();
   const std::string& contour() const;
   void set_contour(const std::string& value);
@@ -563,7 +575,7 @@ class correct_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_contour();
   public:
 
-  // bytes patch = 3;
+  // bytes patch = 4;
   void clear_patch();
   const std::string& patch() const;
   void set_patch(const std::string& value);
@@ -579,6 +591,15 @@ class correct_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_patch();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIPerspectiveController.correct_grpc1Request)
  private:
   class _Internal;
@@ -589,6 +610,7 @@ class correct_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inputimg_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contour_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr patch_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIPerspectiveControllerService_2eproto;
 };
@@ -758,7 +780,27 @@ class correct_grpc1Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // correct_grpc0Request
 
-// bytes inputImg = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void correct_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 correct_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 correct_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIPerspectiveController.correct_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void correct_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void correct_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIPerspectiveController.correct_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes inputImg = 2;
 inline void correct_grpc0Request::clear_inputimg() {
   inputimg_.ClearToEmpty();
 }
@@ -819,7 +861,7 @@ inline void correct_grpc0Request::set_allocated_inputimg(std::string* inputimg) 
   // @@protoc_insertion_point(field_set_allocated:grpcIPerspectiveController.correct_grpc0Request.inputImg)
 }
 
-// bytes contours = 2;
+// bytes contours = 3;
 inline void correct_grpc0Request::clear_contours() {
   contours_.ClearToEmpty();
 }
@@ -880,7 +922,7 @@ inline void correct_grpc0Request::set_allocated_contours(std::string* contours) 
   // @@protoc_insertion_point(field_set_allocated:grpcIPerspectiveController.correct_grpc0Request.contours)
 }
 
-// bytes patches = 3;
+// bytes patches = 4;
 inline void correct_grpc0Request::clear_patches() {
   patches_.ClearToEmpty();
 }
@@ -1030,7 +1072,27 @@ inline void correct_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_
 
 // correct_grpc1Request
 
-// bytes inputImg = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void correct_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 correct_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 correct_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIPerspectiveController.correct_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void correct_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void correct_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIPerspectiveController.correct_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes inputImg = 2;
 inline void correct_grpc1Request::clear_inputimg() {
   inputimg_.ClearToEmpty();
 }
@@ -1091,7 +1153,7 @@ inline void correct_grpc1Request::set_allocated_inputimg(std::string* inputimg) 
   // @@protoc_insertion_point(field_set_allocated:grpcIPerspectiveController.correct_grpc1Request.inputImg)
 }
 
-// bytes contour = 2;
+// bytes contour = 3;
 inline void correct_grpc1Request::clear_contour() {
   contour_.ClearToEmpty();
 }
@@ -1152,7 +1214,7 @@ inline void correct_grpc1Request::set_allocated_contour(std::string* contour) {
   // @@protoc_insertion_point(field_set_allocated:grpcIPerspectiveController.correct_grpc1Request.contour)
 }
 
-// bytes patch = 3;
+// bytes patch = 4;
 inline void correct_grpc1Request::clear_patch() {
   patch_.ClearToEmpty();
 }

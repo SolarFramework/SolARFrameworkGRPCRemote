@@ -36,7 +36,8 @@ constexpr estimateRequest::estimateRequest(
   , worldpoints_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , initialpose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , inliers_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct estimateRequestDefaultTypeInternal {
   constexpr estimateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -78,6 +79,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI3DTransformSACFinderFrom2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcI3DTransformSACFinderFrom2D3D::estimateRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformSACFinderFrom2D3D::estimateRequest, imagepoints_),
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformSACFinderFrom2D3D::estimateRequest, worldpoints_),
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformSACFinderFrom2D3D::estimateRequest, initialpose_),
@@ -95,7 +97,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI3DTransformSACFinderFrom2
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcI3DTransformSACFinderFrom2D3D::setCameraParametersRequest)},
   { 7, -1, sizeof(::grpcI3DTransformSACFinderFrom2D3D::estimateRequest)},
-  { 17, -1, sizeof(::grpcI3DTransformSACFinderFrom2D3D::estimateResponse)},
+  { 18, -1, sizeof(::grpcI3DTransformSACFinderFrom2D3D::estimateResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -109,26 +111,27 @@ const char descriptor_table_protodef_grpcI3DTransformSACFinderFrom2D3DService_2e
   "ce.proto\022!grpcI3DTransformSACFinderFrom2"
   "D3D\032\033google/protobuf/empty.proto\"O\n\032setC"
   "ameraParametersRequest\022\027\n\017intrinsicParam"
-  "s\030\001 \001(\014\022\030\n\020distorsionParams\030\002 \001(\014\"o\n\017est"
-  "imateRequest\022\023\n\013imagePoints\030\001 \001(\014\022\023\n\013wor"
-  "ldPoints\030\002 \001(\014\022\023\n\013initialPose\030\003 \001(\014\022\017\n\007i"
-  "nliers\030\004 \001(\014\022\014\n\004pose\030\005 \001(\014\"N\n\020estimateRe"
-  "sponse\022\017\n\007inliers\030\001 \001(\014\022\014\n\004pose\030\002 \001(\014\022\033\n"
-  "\023xpcfGrpcReturnValue\030\003 \001(\0212\221\002\n(grpcI3DTr"
-  "ansformSACFinderFrom2D3DService\022n\n\023setCa"
-  "meraParameters\022=.grpcI3DTransformSACFind"
-  "erFrom2D3D.setCameraParametersRequest\032\026."
-  "google.protobuf.Empty\"\000\022u\n\010estimate\0222.gr"
-  "pcI3DTransformSACFinderFrom2D3D.estimate"
-  "Request\0323.grpcI3DTransformSACFinderFrom2"
-  "D3D.estimateResponse\"\000b\006proto3"
+  "s\030\001 \001(\014\022\030\n\020distorsionParams\030\002 \001(\014\"\224\001\n\017es"
+  "timateRequest\022#\n\033grpcServerCompressionFo"
+  "rmat\030\001 \001(\005\022\023\n\013imagePoints\030\002 \001(\014\022\023\n\013world"
+  "Points\030\003 \001(\014\022\023\n\013initialPose\030\004 \001(\014\022\017\n\007inl"
+  "iers\030\005 \001(\014\022\014\n\004pose\030\006 \001(\014\"N\n\020estimateResp"
+  "onse\022\017\n\007inliers\030\001 \001(\014\022\014\n\004pose\030\002 \001(\014\022\033\n\023x"
+  "pcfGrpcReturnValue\030\003 \001(\0212\221\002\n(grpcI3DTran"
+  "sformSACFinderFrom2D3DService\022n\n\023setCame"
+  "raParameters\022=.grpcI3DTransformSACFinder"
+  "From2D3D.setCameraParametersRequest\032\026.go"
+  "ogle.protobuf.Empty\"\000\022u\n\010estimate\0222.grpc"
+  "I3DTransformSACFinderFrom2D3D.estimateRe"
+  "quest\0323.grpcI3DTransformSACFinderFrom2D3"
+  "D.estimateResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcI3DTransformSACFinderFrom2D3DService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcI3DTransformSACFinderFrom2D3DService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcI3DTransformSACFinderFrom2D3DService_2eproto = {
-  false, false, 670, descriptor_table_protodef_grpcI3DTransformSACFinderFrom2D3DService_2eproto, "grpcI3DTransformSACFinderFrom2D3DService.proto", 
+  false, false, 708, descriptor_table_protodef_grpcI3DTransformSACFinderFrom2D3DService_2eproto, "grpcI3DTransformSACFinderFrom2D3DService.proto", 
   &descriptor_table_grpcI3DTransformSACFinderFrom2D3DService_2eproto_once, descriptor_table_grpcI3DTransformSACFinderFrom2D3DService_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_grpcI3DTransformSACFinderFrom2D3DService_2eproto::offsets,
   file_level_metadata_grpcI3DTransformSACFinderFrom2D3DService_2eproto, file_level_enum_descriptors_grpcI3DTransformSACFinderFrom2D3DService_2eproto, file_level_service_descriptors_grpcI3DTransformSACFinderFrom2D3DService_2eproto,
@@ -411,6 +414,7 @@ estimateRequest::estimateRequest(const estimateRequest& from)
     pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pose(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcI3DTransformSACFinderFrom2D3D.estimateRequest)
 }
 
@@ -420,6 +424,7 @@ worldpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString
 initialpose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 inliers_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 estimateRequest::~estimateRequest() {
@@ -458,6 +463,7 @@ void estimateRequest::Clear() {
   initialpose_.ClearToEmpty();
   inliers_.ClearToEmpty();
   pose_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -468,41 +474,48 @@ const char* estimateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes imagePoints = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes imagePoints = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_imagepoints();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes worldPoints = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes worldPoints = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_worldpoints();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes initialPose = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes initialPose = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_initialpose();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes inliers = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes inliers = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_inliers();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes pose = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes pose = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_pose();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -536,34 +549,40 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes imagePoints = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes imagePoints = 2;
   if (this->imagepoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_imagepoints(), target);
+        2, this->_internal_imagepoints(), target);
   }
 
-  // bytes worldPoints = 2;
+  // bytes worldPoints = 3;
   if (this->worldpoints().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_worldpoints(), target);
+        3, this->_internal_worldpoints(), target);
   }
 
-  // bytes initialPose = 3;
+  // bytes initialPose = 4;
   if (this->initialpose().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_initialpose(), target);
+        4, this->_internal_initialpose(), target);
   }
 
-  // bytes inliers = 4;
+  // bytes inliers = 5;
   if (this->inliers().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_inliers(), target);
+        5, this->_internal_inliers(), target);
   }
 
-  // bytes pose = 5;
+  // bytes pose = 6;
   if (this->pose().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_pose(), target);
+        6, this->_internal_pose(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -582,39 +601,46 @@ size_t estimateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes imagePoints = 1;
+  // bytes imagePoints = 2;
   if (this->imagepoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_imagepoints());
   }
 
-  // bytes worldPoints = 2;
+  // bytes worldPoints = 3;
   if (this->worldpoints().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_worldpoints());
   }
 
-  // bytes initialPose = 3;
+  // bytes initialPose = 4;
   if (this->initialpose().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_initialpose());
   }
 
-  // bytes inliers = 4;
+  // bytes inliers = 5;
   if (this->inliers().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_inliers());
   }
 
-  // bytes pose = 5;
+  // bytes pose = 6;
   if (this->pose().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_pose());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -663,6 +689,9 @@ void estimateRequest::MergeFrom(const estimateRequest& from) {
   if (from.pose().size() > 0) {
     _internal_set_pose(from._internal_pose());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void estimateRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -691,6 +720,7 @@ void estimateRequest::InternalSwap(estimateRequest* other) {
   initialpose_.Swap(&other->initialpose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   inliers_.Swap(&other->inliers_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   pose_.Swap(&other->pose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimateRequest::GetMetadata() const {

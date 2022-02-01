@@ -20,7 +20,8 @@ namespace grpcIHomographyValidation {
 constexpr isValidRequest::isValidRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : ref2dsquaredmarkercorners_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , projected2dsquaredmarkercorners_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , projected2dsquaredmarkercorners_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct isValidRequestDefaultTypeInternal {
   constexpr isValidRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -53,6 +54,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIHomographyValidationServi
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidRequest, ref2dsquaredmarkercorners_),
   PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidRequest, projected2dsquaredmarkercorners_),
   ~0u,  // no _has_bits_
@@ -64,7 +66,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIHomographyValidationServi
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIHomographyValidation::isValidRequest)},
-  { 7, -1, sizeof(::grpcIHomographyValidation::isValidResponse)},
+  { 8, -1, sizeof(::grpcIHomographyValidation::isValidResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -75,21 +77,22 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIHomographyValidationService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n&grpcIHomographyValidationService.proto"
   "\022\031grpcIHomographyValidation\032\033google/prot"
-  "obuf/empty.proto\"\\\n\016isValidRequest\022!\n\031re"
-  "f2DSquaredMarkerCorners\030\001 \001(\014\022\'\n\037project"
-  "ed2DSquaredMarkerCorners\030\002 \001(\014\".\n\017isVali"
-  "dResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\0102\206"
-  "\001\n grpcIHomographyValidationService\022b\n\007i"
-  "sValid\022).grpcIHomographyValidation.isVal"
-  "idRequest\032*.grpcIHomographyValidation.is"
-  "ValidResponse\"\000b\006proto3"
+  "obuf/empty.proto\"\201\001\n\016isValidRequest\022#\n\033g"
+  "rpcServerCompressionFormat\030\001 \001(\005\022!\n\031ref2"
+  "DSquaredMarkerCorners\030\002 \001(\014\022\'\n\037projected"
+  "2DSquaredMarkerCorners\030\003 \001(\014\".\n\017isValidR"
+  "esponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\0102\206\001\n"
+  " grpcIHomographyValidationService\022b\n\007isV"
+  "alid\022).grpcIHomographyValidation.isValid"
+  "Request\032*.grpcIHomographyValidation.isVa"
+  "lidResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIHomographyValidationService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIHomographyValidationService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIHomographyValidationService_2eproto = {
-  false, false, 383, descriptor_table_protodef_grpcIHomographyValidationService_2eproto, "grpcIHomographyValidationService.proto", 
+  false, false, 421, descriptor_table_protodef_grpcIHomographyValidationService_2eproto, "grpcIHomographyValidationService.proto", 
   &descriptor_table_grpcIHomographyValidationService_2eproto_once, descriptor_table_grpcIHomographyValidationService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcIHomographyValidationService_2eproto::offsets,
   file_level_metadata_grpcIHomographyValidationService_2eproto, file_level_enum_descriptors_grpcIHomographyValidationService_2eproto, file_level_service_descriptors_grpcIHomographyValidationService_2eproto,
@@ -129,12 +132,14 @@ isValidRequest::isValidRequest(const isValidRequest& from)
     projected2dsquaredmarkercorners_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_projected2dsquaredmarkercorners(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIHomographyValidation.isValidRequest)
 }
 
 void isValidRequest::SharedCtor() {
 ref2dsquaredmarkercorners_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 projected2dsquaredmarkercorners_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 isValidRequest::~isValidRequest() {
@@ -167,6 +172,7 @@ void isValidRequest::Clear() {
 
   ref2dsquaredmarkercorners_.ClearToEmpty();
   projected2dsquaredmarkercorners_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -177,17 +183,24 @@ const char* isValidRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes ref2DSquaredMarkerCorners = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes ref2DSquaredMarkerCorners = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_ref2dsquaredmarkercorners();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes projected2DSquaredMarkerCorners = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes projected2DSquaredMarkerCorners = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_projected2dsquaredmarkercorners();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -221,16 +234,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes ref2DSquaredMarkerCorners = 1;
-  if (this->ref2dsquaredmarkercorners().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_ref2dsquaredmarkercorners(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes projected2DSquaredMarkerCorners = 2;
+  // bytes ref2DSquaredMarkerCorners = 2;
+  if (this->ref2dsquaredmarkercorners().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_ref2dsquaredmarkercorners(), target);
+  }
+
+  // bytes projected2DSquaredMarkerCorners = 3;
   if (this->projected2dsquaredmarkercorners().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_projected2dsquaredmarkercorners(), target);
+        3, this->_internal_projected2dsquaredmarkercorners(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -249,18 +268,25 @@ size_t isValidRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes ref2DSquaredMarkerCorners = 1;
+  // bytes ref2DSquaredMarkerCorners = 2;
   if (this->ref2dsquaredmarkercorners().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_ref2dsquaredmarkercorners());
   }
 
-  // bytes projected2DSquaredMarkerCorners = 2;
+  // bytes projected2DSquaredMarkerCorners = 3;
   if (this->projected2dsquaredmarkercorners().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_projected2dsquaredmarkercorners());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -300,6 +326,9 @@ void isValidRequest::MergeFrom(const isValidRequest& from) {
   if (from.projected2dsquaredmarkercorners().size() > 0) {
     _internal_set_projected2dsquaredmarkercorners(from._internal_projected2dsquaredmarkercorners());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void isValidRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -325,6 +354,7 @@ void isValidRequest::InternalSwap(isValidRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ref2dsquaredmarkercorners_.Swap(&other->ref2dsquaredmarkercorners_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   projected2dsquaredmarkercorners_.Swap(&other->projected2dsquaredmarkercorners_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isValidRequest::GetMetadata() const {
