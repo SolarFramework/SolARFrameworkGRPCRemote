@@ -27,8 +27,10 @@ then
     echo "XPCF_MODULE_ROOT env var is defined to $XPCF_MODULE_ROOT"
 fi
 
-
+DEFAULT_VERSION_SOLAR="0.11.0"
+DEFAULT_VERSION_XPCF="2.5.1"
 DEFAULT_DATABASE_DIR="../build-SolARFramework-Desktop_Qt_5_15_2_GCC_64bit-Release"
+DEFAULT_SOLAR_FRAMEWORK_PATH="Dev/SolAR/core/SolARFramework"
 
 export PATH=$XPCF_MODULE_ROOT/grpc/1.37.1/bin/x86_64/shared/release:$PATH
 # echo "PATH=$PATH"
@@ -46,7 +48,10 @@ function usage()
     echo "`basename "$0"` [<option>=<value> ]+"
     echo "Options:"
     echo "   -x, --xpcf-module-root: path to XPCF modules (default: $DEFAULT_XPCF_MODULE_ROOT)"
+    echo "   -f, --framework-path: path to the SolAR Framework project (default: $DEFAULT_SOLAR_FRAMEWORK_PATH)" 
     echo "   -d, --database-dir: directory of SolAR framework generated database file (default: $DEFAULT_DATABASE_DIR)"
+    echo "   -sv, --solar-version: version number of the solar framework (default: $DEFAULT_VERSION_SOLAR)"
+    echo "   -xv, --xpcf-version: version number of xpcf (default: $DEFAULT_VERSION_XPCF)"  
 }
 
 # Parse args
@@ -64,6 +69,9 @@ while [ "$1" != "" ]; do
          -d | --database-dir)
             DATABASE_DIR=$VALUE
             ;;
+	-sv | --solar-version)
+	    VERSION_SOLAR=$VALUE
+	    ;;
         *)
             echo "ERROR: unknown parameter '$PARAM'"
             usage
@@ -94,7 +102,24 @@ then
 fi
 echo "DATABASE_DIR=$DATABASE_DIR"
 
+if [ "$VERSION_SOLAR" == "" ]
+then
+    VERSION_SOLAR=$DEFAULT_VERSION_SOLAR
+fi
+
+if [ "$VERSION_XPCF" == "" ]
+then
+    VERSION_XPCF=$DEFAULT_VERSION_XPCF
+fi
+
+if [ "$SOLAR_FRAMEWORK_PATH" == "" ]
+then
+    SOLAR_FRAMEWORK_PATH=$DEFAULT_SOLAR_FRAMEWORK_PATH
+fi
+
 # TODO generate compilation database for the SolAR Framework
 
-$XPCF_MODULE_ROOT/xpcf_grpc_gen/1.0.0/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v 0.11.0 -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -o .
+echo "$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v $VERSION_SOLAR -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -i ${SOLAR_FRAMEWORK_PATH}/interfaces/ -o ."
+
+$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v $VERSION_SOLAR -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -i ${SOLAR_FRAMEWORK_PATH}/interfaces/ -o . 
 
