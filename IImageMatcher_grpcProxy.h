@@ -3,13 +3,15 @@
 
 #ifndef IIMAGEMATCHER_GRPCPROXY_H
 #define IIMAGEMATCHER_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IImageMatcher.h"
+#include "api/features/IImageMatcher.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
+#include <map>
 #include "grpcIImageMatcherService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
+#include <xpcf/remoting/GrpcHelper.h>
 
 namespace org::bcom::xpcf::grpc::proxyIImageMatcher {
 
@@ -27,6 +29,9 @@ class IImageMatcher_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtua
     std::string m_channelUrl;
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
+    xpcf::grpcCompressionInfos m_serviceCompressionInfos;
+    std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
+    std::vector<std::string> m_grpcProxyCompressionConfig;
     std::unique_ptr<::grpcIImageMatcher::grpcIImageMatcherService::Stub> m_grpcStub;
 
 };

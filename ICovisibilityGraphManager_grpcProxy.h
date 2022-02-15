@@ -3,13 +3,15 @@
 
 #ifndef ICOVISIBILITYGRAPHMANAGER_GRPCPROXY_H
 #define ICOVISIBILITYGRAPHMANAGER_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/storage/ICovisibilityGraphManager.h"
+#include "api/storage/ICovisibilityGraphManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
+#include <map>
 #include "grpcICovisibilityGraphManagerService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
+#include <xpcf/remoting/GrpcHelper.h>
 
 namespace org::bcom::xpcf::grpc::proxyICovisibilityGraphManager {
 
@@ -43,6 +45,9 @@ class ICovisibilityGraphManager_grpcProxy:  public org::bcom::xpcf::Configurable
     std::string m_channelUrl;
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
+    xpcf::grpcCompressionInfos m_serviceCompressionInfos;
+    std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
+    std::vector<std::string> m_grpcProxyCompressionConfig;
     std::unique_ptr<::grpcICovisibilityGraphManager::grpcICovisibilityGraphManagerService::Stub> m_grpcStub;
     mutable     SRef<SolAR::datastructure::CovisibilityGraph> m_getConstCovisibilityGraph;
 

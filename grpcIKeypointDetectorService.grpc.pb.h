@@ -43,11 +43,11 @@ class grpcIKeypointDetectorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncsetType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncsetTypeRaw(context, request, cq));
     }
-    virtual ::grpc::Status getType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIKeypointDetector::getTypeResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>> AsyncgetType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status getType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpcIKeypointDetector::getTypeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>> AsyncgetType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>>(AsyncgetTypeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>> PrepareAsyncgetType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>> PrepareAsyncgetType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>>(PrepareAsyncgetTypeRaw(context, request, cq));
     }
     virtual ::grpc::Status detect(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest& request, ::grpcIKeypointDetector::detectResponse* response) = 0;
@@ -66,11 +66,11 @@ class grpcIKeypointDetectorService final {
       #else
       virtual void setType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest* request, ::grpcIKeypointDetector::getTypeResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void detect(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest* request, ::grpcIKeypointDetector::detectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -89,8 +89,8 @@ class grpcIKeypointDetectorService final {
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncsetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncsetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>* AsyncgetTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>* PrepareAsyncgetTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>* AsyncgetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::getTypeResponse>* PrepareAsyncgetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::detectResponse>* AsyncdetectRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetector::detectResponse>* PrepareAsyncdetectRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
@@ -104,11 +104,11 @@ class grpcIKeypointDetectorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncsetType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncsetTypeRaw(context, request, cq));
     }
-    ::grpc::Status getType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIKeypointDetector::getTypeResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>> AsyncgetType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status getType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpcIKeypointDetector::getTypeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>> AsyncgetType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>>(AsyncgetTypeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>> PrepareAsyncgetType(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>> PrepareAsyncgetType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>>(PrepareAsyncgetTypeRaw(context, request, cq));
     }
     ::grpc::Status detect(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest& request, ::grpcIKeypointDetector::detectResponse* response) override;
@@ -127,11 +127,11 @@ class grpcIKeypointDetectorService final {
       #else
       void setType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, std::function<void(::grpc::Status)>) override;
+      void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest* request, ::grpcIKeypointDetector::getTypeResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void getType(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest* request, ::grpcIKeypointDetector::getTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void detect(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest* request, ::grpcIKeypointDetector::detectResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -152,8 +152,8 @@ class grpcIKeypointDetectorService final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncsetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncsetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::setTypeRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>* AsyncgetTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>* PrepareAsyncgetTypeRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>* AsyncgetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::getTypeResponse>* PrepareAsyncgetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::getTypeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::detectResponse>* AsyncdetectRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetector::detectResponse>* PrepareAsyncdetectRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetector::detectRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_setType_;
@@ -167,7 +167,7 @@ class grpcIKeypointDetectorService final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status setType(::grpc::ServerContext* context, const ::grpcIKeypointDetector::setTypeRequest* request, ::google::protobuf::Empty* response);
-    virtual ::grpc::Status getType(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response);
+    virtual ::grpc::Status getType(::grpc::ServerContext* context, const ::grpcIKeypointDetector::getTypeRequest* request, ::grpcIKeypointDetector::getTypeResponse* response);
     virtual ::grpc::Status detect(::grpc::ServerContext* context, const ::grpcIKeypointDetector::detectRequest* request, ::grpcIKeypointDetector::detectResponse* response);
   };
   template <class BaseClass>
@@ -202,11 +202,11 @@ class grpcIKeypointDetectorService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
+    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::grpcIKeypointDetector::getTypeRequest* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetType(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcIKeypointDetector::getTypeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetType(::grpc::ServerContext* context, ::grpcIKeypointDetector::getTypeRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIKeypointDetector::getTypeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -290,38 +290,38 @@ class grpcIKeypointDetectorService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIKeypointDetector::getTypeResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIKeypointDetector::getTypeRequest, ::grpcIKeypointDetector::getTypeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcIKeypointDetector::getTypeResponse* response) { return this->getType(context, request, response); }));}
+                     context, const ::grpcIKeypointDetector::getTypeRequest* request, ::grpcIKeypointDetector::getTypeResponse* response) { return this->getType(context, request, response); }));}
     void SetMessageAllocatorFor_getType(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcIKeypointDetector::getTypeResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIKeypointDetector::getTypeRequest, ::grpcIKeypointDetector::getTypeResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcIKeypointDetector::getTypeResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIKeypointDetector::getTypeRequest, ::grpcIKeypointDetector::getTypeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_getType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
+    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::grpcIKeypointDetector::getTypeRequest* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getType(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIKeypointDetector::getTypeRequest* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* getType(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIKeypointDetector::getTypeRequest* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -406,7 +406,7 @@ class grpcIKeypointDetectorService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
+    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::grpcIKeypointDetector::getTypeRequest* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -460,7 +460,7 @@ class grpcIKeypointDetectorService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
+    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::grpcIKeypointDetector::getTypeRequest* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -551,7 +551,7 @@ class grpcIKeypointDetectorService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
+    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::grpcIKeypointDetector::getTypeRequest* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -637,10 +637,10 @@ class grpcIKeypointDetectorService final {
     WithStreamedUnaryMethod_getType() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcIKeypointDetector::getTypeResponse>(
+          ::grpcIKeypointDetector::getTypeRequest, ::grpcIKeypointDetector::getTypeResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcIKeypointDetector::getTypeResponse>* streamer) {
+                     ::grpcIKeypointDetector::getTypeRequest, ::grpcIKeypointDetector::getTypeResponse>* streamer) {
                        return this->StreamedgetType(context,
                          streamer);
                   }));
@@ -649,12 +649,12 @@ class grpcIKeypointDetectorService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
+    ::grpc::Status getType(::grpc::ServerContext* /*context*/, const ::grpcIKeypointDetector::getTypeRequest* /*request*/, ::grpcIKeypointDetector::getTypeResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetType(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcIKeypointDetector::getTypeResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetType(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIKeypointDetector::getTypeRequest,::grpcIKeypointDetector::getTypeResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_detect : public BaseClass {

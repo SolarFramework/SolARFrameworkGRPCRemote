@@ -47,7 +47,7 @@ struct TableStruct_grpcIRegressionService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[11]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[15]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,15 +62,27 @@ extern addRequestDefaultTypeInternal _addRequest_default_instance_;
 class addResponse;
 struct addResponseDefaultTypeInternal;
 extern addResponseDefaultTypeInternal _addResponse_default_instance_;
+class getNumActiveLeavesRequest;
+struct getNumActiveLeavesRequestDefaultTypeInternal;
+extern getNumActiveLeavesRequestDefaultTypeInternal _getNumActiveLeavesRequest_default_instance_;
 class getNumActiveLeavesResponse;
 struct getNumActiveLeavesResponseDefaultTypeInternal;
 extern getNumActiveLeavesResponseDefaultTypeInternal _getNumActiveLeavesResponse_default_instance_;
+class getNumPassiveLeavesRequest;
+struct getNumPassiveLeavesRequestDefaultTypeInternal;
+extern getNumPassiveLeavesRequestDefaultTypeInternal _getNumPassiveLeavesRequest_default_instance_;
 class getNumPassiveLeavesResponse;
 struct getNumPassiveLeavesResponseDefaultTypeInternal;
 extern getNumPassiveLeavesResponseDefaultTypeInternal _getNumPassiveLeavesResponse_default_instance_;
+class getTrainingStatusRequest;
+struct getTrainingStatusRequestDefaultTypeInternal;
+extern getTrainingStatusRequestDefaultTypeInternal _getTrainingStatusRequest_default_instance_;
 class getTrainingStatusResponse;
 struct getTrainingStatusResponseDefaultTypeInternal;
 extern getTrainingStatusResponseDefaultTypeInternal _getTrainingStatusResponse_default_instance_;
+class loadModelRequest;
+struct loadModelRequestDefaultTypeInternal;
+extern loadModelRequestDefaultTypeInternal _loadModelRequest_default_instance_;
 class loadModelResponse;
 struct loadModelResponseDefaultTypeInternal;
 extern loadModelResponseDefaultTypeInternal _loadModelResponse_default_instance_;
@@ -93,9 +105,13 @@ extern updateResponseDefaultTypeInternal _updateResponse_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::grpcIRegression::addRequest* Arena::CreateMaybeMessage<::grpcIRegression::addRequest>(Arena*);
 template<> ::grpcIRegression::addResponse* Arena::CreateMaybeMessage<::grpcIRegression::addResponse>(Arena*);
+template<> ::grpcIRegression::getNumActiveLeavesRequest* Arena::CreateMaybeMessage<::grpcIRegression::getNumActiveLeavesRequest>(Arena*);
 template<> ::grpcIRegression::getNumActiveLeavesResponse* Arena::CreateMaybeMessage<::grpcIRegression::getNumActiveLeavesResponse>(Arena*);
+template<> ::grpcIRegression::getNumPassiveLeavesRequest* Arena::CreateMaybeMessage<::grpcIRegression::getNumPassiveLeavesRequest>(Arena*);
 template<> ::grpcIRegression::getNumPassiveLeavesResponse* Arena::CreateMaybeMessage<::grpcIRegression::getNumPassiveLeavesResponse>(Arena*);
+template<> ::grpcIRegression::getTrainingStatusRequest* Arena::CreateMaybeMessage<::grpcIRegression::getTrainingStatusRequest>(Arena*);
 template<> ::grpcIRegression::getTrainingStatusResponse* Arena::CreateMaybeMessage<::grpcIRegression::getTrainingStatusResponse>(Arena*);
+template<> ::grpcIRegression::loadModelRequest* Arena::CreateMaybeMessage<::grpcIRegression::loadModelRequest>(Arena*);
 template<> ::grpcIRegression::loadModelResponse* Arena::CreateMaybeMessage<::grpcIRegression::loadModelResponse>(Arena*);
 template<> ::grpcIRegression::regressRequest* Arena::CreateMaybeMessage<::grpcIRegression::regressRequest>(Arena*);
 template<> ::grpcIRegression::regressResponse* Arena::CreateMaybeMessage<::grpcIRegression::regressResponse>(Arena*);
@@ -382,10 +398,11 @@ class addRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDescriptorsFieldNumber = 1,
-    kPoints3DFieldNumber = 2,
+    kDescriptorsFieldNumber = 2,
+    kPoints3DFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes descriptors = 1;
+  // bytes descriptors = 2;
   void clear_descriptors();
   const std::string& descriptors() const;
   void set_descriptors(const std::string& value);
@@ -401,7 +418,7 @@ class addRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors();
   public:
 
-  // bytes points3D = 2;
+  // bytes points3D = 3;
   void clear_points3d();
   const std::string& points3d() const;
   void set_points3d(const std::string& value);
@@ -417,6 +434,15 @@ class addRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_points3d();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRegression.addRequest)
  private:
   class _Internal;
@@ -426,6 +452,7 @@ class addRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr descriptors_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr points3d_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRegressionService_2eproto;
 };
@@ -681,11 +708,12 @@ class regressRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFrameFieldNumber = 1,
-    kPoints2DFieldNumber = 2,
-    kPoints3DFieldNumber = 3,
+    kFrameFieldNumber = 2,
+    kPoints2DFieldNumber = 3,
+    kPoints3DFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes frame = 1;
+  // bytes frame = 2;
   void clear_frame();
   const std::string& frame() const;
   void set_frame(const std::string& value);
@@ -701,7 +729,7 @@ class regressRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_frame();
   public:
 
-  // bytes points2D = 2;
+  // bytes points2D = 3;
   void clear_points2d();
   const std::string& points2d() const;
   void set_points2d(const std::string& value);
@@ -717,7 +745,7 @@ class regressRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_points2d();
   public:
 
-  // bytes points3D = 3;
+  // bytes points3D = 4;
   void clear_points3d();
   const std::string& points3d() const;
   void set_points3d(const std::string& value);
@@ -733,6 +761,15 @@ class regressRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_points3d();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRegression.regressRequest)
  private:
   class _Internal;
@@ -743,6 +780,7 @@ class regressRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr points2d_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr points3d_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRegressionService_2eproto;
 };
@@ -1034,10 +1072,11 @@ class updateRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInliersFieldNumber = 1,
-    kCameraPoseFieldNumber = 2,
+    kInliersFieldNumber = 2,
+    kCameraPoseFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inliers = 1;
+  // bytes inliers = 2;
   void clear_inliers();
   const std::string& inliers() const;
   void set_inliers(const std::string& value);
@@ -1053,7 +1092,7 @@ class updateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_inliers();
   public:
 
-  // bytes cameraPose = 2;
+  // bytes cameraPose = 3;
   void clear_camerapose();
   const std::string& camerapose() const;
   void set_camerapose(const std::string& value);
@@ -1069,6 +1108,15 @@ class updateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_camerapose();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIRegression.updateRequest)
  private:
   class _Internal;
@@ -1078,6 +1126,7 @@ class updateRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inliers_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camerapose_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIRegressionService_2eproto;
 };
@@ -1256,6 +1305,143 @@ class updateResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class loadModelRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRegression.loadModelRequest) */ {
+ public:
+  inline loadModelRequest() : loadModelRequest(nullptr) {}
+  virtual ~loadModelRequest();
+  explicit constexpr loadModelRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  loadModelRequest(const loadModelRequest& from);
+  loadModelRequest(loadModelRequest&& from) noexcept
+    : loadModelRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline loadModelRequest& operator=(const loadModelRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline loadModelRequest& operator=(loadModelRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const loadModelRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const loadModelRequest* internal_default_instance() {
+    return reinterpret_cast<const loadModelRequest*>(
+               &_loadModelRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(loadModelRequest& a, loadModelRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(loadModelRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(loadModelRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline loadModelRequest* New() const final {
+    return CreateMaybeMessage<loadModelRequest>(nullptr);
+  }
+
+  loadModelRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<loadModelRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const loadModelRequest& from);
+  void MergeFrom(const loadModelRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(loadModelRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRegression.loadModelRequest";
+  }
+  protected:
+  explicit loadModelRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRegressionService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRegression.loadModelRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRegressionService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class loadModelResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRegression.loadModelResponse) */ {
  public:
@@ -1299,7 +1485,7 @@ class loadModelResponse PROTOBUF_FINAL :
                &_loadModelResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(loadModelResponse& a, loadModelResponse& b) {
     a.Swap(&b);
@@ -1393,6 +1579,143 @@ class loadModelResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getTrainingStatusRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRegression.getTrainingStatusRequest) */ {
+ public:
+  inline getTrainingStatusRequest() : getTrainingStatusRequest(nullptr) {}
+  virtual ~getTrainingStatusRequest();
+  explicit constexpr getTrainingStatusRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getTrainingStatusRequest(const getTrainingStatusRequest& from);
+  getTrainingStatusRequest(getTrainingStatusRequest&& from) noexcept
+    : getTrainingStatusRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getTrainingStatusRequest& operator=(const getTrainingStatusRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getTrainingStatusRequest& operator=(getTrainingStatusRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getTrainingStatusRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getTrainingStatusRequest* internal_default_instance() {
+    return reinterpret_cast<const getTrainingStatusRequest*>(
+               &_getTrainingStatusRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(getTrainingStatusRequest& a, getTrainingStatusRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getTrainingStatusRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getTrainingStatusRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getTrainingStatusRequest* New() const final {
+    return CreateMaybeMessage<getTrainingStatusRequest>(nullptr);
+  }
+
+  getTrainingStatusRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getTrainingStatusRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getTrainingStatusRequest& from);
+  void MergeFrom(const getTrainingStatusRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getTrainingStatusRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRegression.getTrainingStatusRequest";
+  }
+  protected:
+  explicit getTrainingStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRegressionService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRegression.getTrainingStatusRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRegressionService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getTrainingStatusResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRegression.getTrainingStatusResponse) */ {
  public:
@@ -1436,7 +1759,7 @@ class getTrainingStatusResponse PROTOBUF_FINAL :
                &_getTrainingStatusResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(getTrainingStatusResponse& a, getTrainingStatusResponse& b) {
     a.Swap(&b);
@@ -1537,6 +1860,143 @@ class getTrainingStatusResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getNumActiveLeavesRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRegression.getNumActiveLeavesRequest) */ {
+ public:
+  inline getNumActiveLeavesRequest() : getNumActiveLeavesRequest(nullptr) {}
+  virtual ~getNumActiveLeavesRequest();
+  explicit constexpr getNumActiveLeavesRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getNumActiveLeavesRequest(const getNumActiveLeavesRequest& from);
+  getNumActiveLeavesRequest(getNumActiveLeavesRequest&& from) noexcept
+    : getNumActiveLeavesRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getNumActiveLeavesRequest& operator=(const getNumActiveLeavesRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getNumActiveLeavesRequest& operator=(getNumActiveLeavesRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getNumActiveLeavesRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getNumActiveLeavesRequest* internal_default_instance() {
+    return reinterpret_cast<const getNumActiveLeavesRequest*>(
+               &_getNumActiveLeavesRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(getNumActiveLeavesRequest& a, getNumActiveLeavesRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getNumActiveLeavesRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getNumActiveLeavesRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getNumActiveLeavesRequest* New() const final {
+    return CreateMaybeMessage<getNumActiveLeavesRequest>(nullptr);
+  }
+
+  getNumActiveLeavesRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getNumActiveLeavesRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getNumActiveLeavesRequest& from);
+  void MergeFrom(const getNumActiveLeavesRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getNumActiveLeavesRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRegression.getNumActiveLeavesRequest";
+  }
+  protected:
+  explicit getNumActiveLeavesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRegressionService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRegression.getNumActiveLeavesRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRegressionService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getNumActiveLeavesResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRegression.getNumActiveLeavesResponse) */ {
  public:
@@ -1580,7 +2040,7 @@ class getNumActiveLeavesResponse PROTOBUF_FINAL :
                &_getNumActiveLeavesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    12;
 
   friend void swap(getNumActiveLeavesResponse& a, getNumActiveLeavesResponse& b) {
     a.Swap(&b);
@@ -1674,6 +2134,143 @@ class getNumActiveLeavesResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getNumPassiveLeavesRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRegression.getNumPassiveLeavesRequest) */ {
+ public:
+  inline getNumPassiveLeavesRequest() : getNumPassiveLeavesRequest(nullptr) {}
+  virtual ~getNumPassiveLeavesRequest();
+  explicit constexpr getNumPassiveLeavesRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getNumPassiveLeavesRequest(const getNumPassiveLeavesRequest& from);
+  getNumPassiveLeavesRequest(getNumPassiveLeavesRequest&& from) noexcept
+    : getNumPassiveLeavesRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getNumPassiveLeavesRequest& operator=(const getNumPassiveLeavesRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getNumPassiveLeavesRequest& operator=(getNumPassiveLeavesRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getNumPassiveLeavesRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getNumPassiveLeavesRequest* internal_default_instance() {
+    return reinterpret_cast<const getNumPassiveLeavesRequest*>(
+               &_getNumPassiveLeavesRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(getNumPassiveLeavesRequest& a, getNumPassiveLeavesRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getNumPassiveLeavesRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getNumPassiveLeavesRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getNumPassiveLeavesRequest* New() const final {
+    return CreateMaybeMessage<getNumPassiveLeavesRequest>(nullptr);
+  }
+
+  getNumPassiveLeavesRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getNumPassiveLeavesRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getNumPassiveLeavesRequest& from);
+  void MergeFrom(const getNumPassiveLeavesRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getNumPassiveLeavesRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIRegression.getNumPassiveLeavesRequest";
+  }
+  protected:
+  explicit getNumPassiveLeavesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIRegressionService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIRegression.getNumPassiveLeavesRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIRegressionService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getNumPassiveLeavesResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIRegression.getNumPassiveLeavesResponse) */ {
  public:
@@ -1717,7 +2314,7 @@ class getNumPassiveLeavesResponse PROTOBUF_FINAL :
                &_getNumPassiveLeavesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(getNumPassiveLeavesResponse& a, getNumPassiveLeavesResponse& b) {
     a.Swap(&b);
@@ -1946,7 +2543,27 @@ inline void setCameraParametersRequest::set_allocated_distorsionparams(std::stri
 
 // addRequest
 
-// bytes descriptors = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void addRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 addRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 addRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRegression.addRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void addRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void addRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRegression.addRequest.grpcServerCompressionFormat)
+}
+
+// bytes descriptors = 2;
 inline void addRequest::clear_descriptors() {
   descriptors_.ClearToEmpty();
 }
@@ -2007,7 +2624,7 @@ inline void addRequest::set_allocated_descriptors(std::string* descriptors) {
   // @@protoc_insertion_point(field_set_allocated:grpcIRegression.addRequest.descriptors)
 }
 
-// bytes points3D = 2;
+// bytes points3D = 3;
 inline void addRequest::clear_points3d() {
   points3d_.ClearToEmpty();
 }
@@ -2096,7 +2713,27 @@ inline void addResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 
 
 // regressRequest
 
-// bytes frame = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void regressRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 regressRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 regressRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRegression.regressRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void regressRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void regressRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRegression.regressRequest.grpcServerCompressionFormat)
+}
+
+// bytes frame = 2;
 inline void regressRequest::clear_frame() {
   frame_.ClearToEmpty();
 }
@@ -2157,7 +2794,7 @@ inline void regressRequest::set_allocated_frame(std::string* frame) {
   // @@protoc_insertion_point(field_set_allocated:grpcIRegression.regressRequest.frame)
 }
 
-// bytes points2D = 2;
+// bytes points2D = 3;
 inline void regressRequest::clear_points2d() {
   points2d_.ClearToEmpty();
 }
@@ -2218,7 +2855,7 @@ inline void regressRequest::set_allocated_points2d(std::string* points2d) {
   // @@protoc_insertion_point(field_set_allocated:grpcIRegression.regressRequest.points2D)
 }
 
-// bytes points3D = 3;
+// bytes points3D = 4;
 inline void regressRequest::clear_points3d() {
   points3d_.ClearToEmpty();
 }
@@ -2429,7 +3066,27 @@ inline void regressResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::in
 
 // updateRequest
 
-// bytes inliers = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void updateRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 updateRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 updateRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRegression.updateRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void updateRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void updateRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRegression.updateRequest.grpcServerCompressionFormat)
+}
+
+// bytes inliers = 2;
 inline void updateRequest::clear_inliers() {
   inliers_.ClearToEmpty();
 }
@@ -2490,7 +3147,7 @@ inline void updateRequest::set_allocated_inliers(std::string* inliers) {
   // @@protoc_insertion_point(field_set_allocated:grpcIRegression.updateRequest.inliers)
 }
 
-// bytes cameraPose = 2;
+// bytes cameraPose = 3;
 inline void updateRequest::clear_camerapose() {
   camerapose_.ClearToEmpty();
 }
@@ -2699,6 +3356,30 @@ inline void updateResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int
 
 // -------------------------------------------------------------------
 
+// loadModelRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void loadModelRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadModelRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadModelRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRegression.loadModelRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void loadModelRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void loadModelRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRegression.loadModelRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // loadModelResponse
 
 // sint32 xpcfGrpcReturnValue = 1;
@@ -2719,6 +3400,30 @@ inline void loadModelResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAME
 inline void loadModelResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIRegression.loadModelResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getTrainingStatusRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getTrainingStatusRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getTrainingStatusRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getTrainingStatusRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRegression.getTrainingStatusRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getTrainingStatusRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getTrainingStatusRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRegression.getTrainingStatusRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -2788,6 +3493,30 @@ inline void getTrainingStatusResponse::set_allocated_xpcfgrpcreturnvalue(std::st
 
 // -------------------------------------------------------------------
 
+// getNumActiveLeavesRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getNumActiveLeavesRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNumActiveLeavesRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNumActiveLeavesRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRegression.getNumActiveLeavesRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getNumActiveLeavesRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getNumActiveLeavesRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRegression.getNumActiveLeavesRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // getNumActiveLeavesResponse
 
 // sint32 xpcfGrpcReturnValue = 1;
@@ -2808,6 +3537,30 @@ inline void getNumActiveLeavesResponse::_internal_set_xpcfgrpcreturnvalue(::PROT
 inline void getNumActiveLeavesResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIRegression.getNumActiveLeavesResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getNumPassiveLeavesRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getNumPassiveLeavesRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNumPassiveLeavesRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getNumPassiveLeavesRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIRegression.getNumPassiveLeavesRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getNumPassiveLeavesRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getNumPassiveLeavesRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIRegression.getNumPassiveLeavesRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -2837,6 +3590,14 @@ inline void getNumPassiveLeavesResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAME
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

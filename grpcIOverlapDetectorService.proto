@@ -12,10 +12,11 @@ bytes distortionParams = 2;
 
 message detect_grpc0Request
 {
-bytes globalMap = 1;
-bytes floatingMap = 2;
-bytes sim3Transform = 3;
-bytes cpOverlapIndices = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes globalMap = 2;
+bytes floatingMap = 3;
+bytes sim3Transform = 4;
+bytes cpOverlapIndices = 5;
 }
 
 message detect_grpc0Response
@@ -27,11 +28,12 @@ sint32 xpcfGrpcReturnValue = 3;
 
 message detect_grpc1Request
 {
-bytes globalMap = 1;
-bytes floatingMap = 2;
-bytes sim3Transform = 3;
-bytes overlapIndices = 4;
-bytes scores = 5;
+int32 grpcServerCompressionFormat  = 1;
+bytes globalMap = 2;
+bytes floatingMap = 3;
+bytes sim3Transform = 4;
+bytes overlapIndices = 5;
+bytes scores = 6;
 }
 
 message detect_grpc1Response

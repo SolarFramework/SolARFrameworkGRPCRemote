@@ -6,13 +6,14 @@ package grpcIStereoCameraCalibration;
 
 message calibrateRequest
 {
-bytes images1 = 1;
-bytes images2 = 2;
-bytes camParams1 = 3;
-bytes camParams2 = 4;
-bytes transformation = 5;
-bytes rectParams1 = 6;
-bytes rectParams2 = 7;
+int32 grpcServerCompressionFormat  = 1;
+bytes images1 = 2;
+bytes images2 = 3;
+bytes camParams1 = 4;
+bytes camParams2 = 5;
+bytes transformation = 6;
+bytes rectParams1 = 7;
+bytes rectParams2 = 8;
 }
 
 message calibrateResponse

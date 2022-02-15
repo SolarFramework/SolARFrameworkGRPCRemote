@@ -350,12 +350,13 @@ class detectRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kQueryKeyframeFieldNumber = 1,
-    kDetectedLoopKeyframeFieldNumber = 2,
-    kSim3TransformFieldNumber = 3,
-    kDuplicatedPointsIndicesFieldNumber = 4,
+    kQueryKeyframeFieldNumber = 2,
+    kDetectedLoopKeyframeFieldNumber = 3,
+    kSim3TransformFieldNumber = 4,
+    kDuplicatedPointsIndicesFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes queryKeyframe = 1;
+  // bytes queryKeyframe = 2;
   void clear_querykeyframe();
   const std::string& querykeyframe() const;
   void set_querykeyframe(const std::string& value);
@@ -371,7 +372,7 @@ class detectRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_querykeyframe();
   public:
 
-  // bytes detectedLoopKeyframe = 2;
+  // bytes detectedLoopKeyframe = 3;
   void clear_detectedloopkeyframe();
   const std::string& detectedloopkeyframe() const;
   void set_detectedloopkeyframe(const std::string& value);
@@ -387,7 +388,7 @@ class detectRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_detectedloopkeyframe();
   public:
 
-  // bytes sim3Transform = 3;
+  // bytes sim3Transform = 4;
   void clear_sim3transform();
   const std::string& sim3transform() const;
   void set_sim3transform(const std::string& value);
@@ -403,7 +404,7 @@ class detectRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_sim3transform();
   public:
 
-  // bytes duplicatedPointsIndices = 4;
+  // bytes duplicatedPointsIndices = 5;
   void clear_duplicatedpointsindices();
   const std::string& duplicatedpointsindices() const;
   void set_duplicatedpointsindices(const std::string& value);
@@ -419,6 +420,15 @@ class detectRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_duplicatedpointsindices();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcILoopClosureDetector.detectRequest)
  private:
   class _Internal;
@@ -430,6 +440,7 @@ class detectRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detectedloopkeyframe_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr sim3transform_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr duplicatedpointsindices_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcILoopClosureDetectorService_2eproto;
 };
@@ -761,7 +772,27 @@ inline void setCameraParametersRequest::set_allocated_distortionparams(std::stri
 
 // detectRequest
 
-// bytes queryKeyframe = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void detectRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 detectRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 detectRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcILoopClosureDetector.detectRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void detectRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void detectRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcILoopClosureDetector.detectRequest.grpcServerCompressionFormat)
+}
+
+// bytes queryKeyframe = 2;
 inline void detectRequest::clear_querykeyframe() {
   querykeyframe_.ClearToEmpty();
 }
@@ -822,7 +853,7 @@ inline void detectRequest::set_allocated_querykeyframe(std::string* querykeyfram
   // @@protoc_insertion_point(field_set_allocated:grpcILoopClosureDetector.detectRequest.queryKeyframe)
 }
 
-// bytes detectedLoopKeyframe = 2;
+// bytes detectedLoopKeyframe = 3;
 inline void detectRequest::clear_detectedloopkeyframe() {
   detectedloopkeyframe_.ClearToEmpty();
 }
@@ -883,7 +914,7 @@ inline void detectRequest::set_allocated_detectedloopkeyframe(std::string* detec
   // @@protoc_insertion_point(field_set_allocated:grpcILoopClosureDetector.detectRequest.detectedLoopKeyframe)
 }
 
-// bytes sim3Transform = 3;
+// bytes sim3Transform = 4;
 inline void detectRequest::clear_sim3transform() {
   sim3transform_.ClearToEmpty();
 }
@@ -944,7 +975,7 @@ inline void detectRequest::set_allocated_sim3transform(std::string* sim3transfor
   // @@protoc_insertion_point(field_set_allocated:grpcILoopClosureDetector.detectRequest.sim3Transform)
 }
 
-// bytes duplicatedPointsIndices = 4;
+// bytes duplicatedPointsIndices = 5;
 inline void detectRequest::clear_duplicatedpointsindices() {
   duplicatedpointsindices_.ClearToEmpty();
 }

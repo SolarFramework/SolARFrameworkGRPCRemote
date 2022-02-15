@@ -14,10 +14,11 @@ bytes rectParams2 = 4;
 
 message computeRequest
 {
-bytes image1 = 1;
-bytes image2 = 2;
-bytes frame1 = 3;
-bytes frame2 = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes image1 = 2;
+bytes image2 = 3;
+bytes frame1 = 4;
+bytes frame2 = 5;
 }
 
 message computeResponse

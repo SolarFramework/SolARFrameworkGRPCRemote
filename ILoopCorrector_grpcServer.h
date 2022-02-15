@@ -2,9 +2,10 @@
 
 #ifndef ILOOPCORRECTOR_GRPCSERVER_H
 #define ILOOPCORRECTOR_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/loop/ILoopCorrector.h"
+#include "api/loop/ILoopCorrector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcILoopCorrectorService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -28,12 +29,15 @@ class ILoopCorrector_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virt
         ::grpc::Status correct(::grpc::ServerContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response) override;
 
         SRef<SolAR::api::loop::ILoopCorrector> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcILoopCorrectorServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

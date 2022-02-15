@@ -2,9 +2,10 @@
 
 #ifndef IDESCRIPTORSEXTRACTORSBPATTERN_GRPCSERVER_H
 #define IDESCRIPTORSEXTRACTORSBPATTERN_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorsExtractorSBPattern.h"
+#include "api/features/IDescriptorsExtractorSBPattern.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIDescriptorsExtractorSBPatternService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -28,12 +29,15 @@ class IDescriptorsExtractorSBPattern_grpcServer:  public org::bcom::xpcf::Config
         ::grpc::Status extract_grpc1(::grpc::ServerContext* context, const ::grpcIDescriptorsExtractorSBPattern::extract_grpc1Request* request, ::grpcIDescriptorsExtractorSBPattern::extract_grpc1Response* response) override;
 
         SRef<SolAR::api::features::IDescriptorsExtractorSBPattern> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIDescriptorsExtractorSBPatternServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

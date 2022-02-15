@@ -35,7 +35,8 @@ constexpr detect_grpc0Request::detect_grpc0Request(
   : globalmap_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , floatingmap_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , sim3transform_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , cpoverlapindices_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , cpoverlapindices_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct detect_grpc0RequestDefaultTypeInternal {
   constexpr detect_grpc0RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -65,7 +66,8 @@ constexpr detect_grpc1Request::detect_grpc1Request(
   , floatingmap_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , sim3transform_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , overlapindices_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , scores_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , scores_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct detect_grpc1RequestDefaultTypeInternal {
   constexpr detect_grpc1RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -108,6 +110,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIOverlapDetectorService_2e
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, globalmap_),
   PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, floatingmap_),
   PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, sim3transform_),
@@ -125,6 +128,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIOverlapDetectorService_2e
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, globalmap_),
   PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, floatingmap_),
   PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, sim3transform_),
@@ -143,9 +147,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIOverlapDetectorService_2e
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIOverlapDetector::setCameraParametersRequest)},
   { 7, -1, sizeof(::grpcIOverlapDetector::detect_grpc0Request)},
-  { 16, -1, sizeof(::grpcIOverlapDetector::detect_grpc0Response)},
-  { 24, -1, sizeof(::grpcIOverlapDetector::detect_grpc1Request)},
-  { 34, -1, sizeof(::grpcIOverlapDetector::detect_grpc1Response)},
+  { 17, -1, sizeof(::grpcIOverlapDetector::detect_grpc0Response)},
+  { 25, -1, sizeof(::grpcIOverlapDetector::detect_grpc1Request)},
+  { 36, -1, sizeof(::grpcIOverlapDetector::detect_grpc1Response)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -161,34 +165,36 @@ const char descriptor_table_protodef_grpcIOverlapDetectorService_2eproto[] PROTO
   "cIOverlapDetector\032\033google/protobuf/empty"
   ".proto\"O\n\032setCameraParametersRequest\022\027\n\017"
   "intrinsicParams\030\001 \001(\014\022\030\n\020distortionParam"
-  "s\030\002 \001(\014\"n\n\023detect_grpc0Request\022\021\n\tglobal"
-  "Map\030\001 \001(\014\022\023\n\013floatingMap\030\002 \001(\014\022\025\n\rsim3Tr"
-  "ansform\030\003 \001(\014\022\030\n\020cpOverlapIndices\030\004 \001(\014\""
-  "d\n\024detect_grpc0Response\022\025\n\rsim3Transform"
-  "\030\001 \001(\014\022\030\n\020cpOverlapIndices\030\002 \001(\014\022\033\n\023xpcf"
-  "GrpcReturnValue\030\003 \001(\021\"|\n\023detect_grpc1Req"
-  "uest\022\021\n\tglobalMap\030\001 \001(\014\022\023\n\013floatingMap\030\002"
-  " \001(\014\022\025\n\rsim3Transform\030\003 \001(\014\022\026\n\016overlapIn"
-  "dices\030\004 \001(\014\022\016\n\006scores\030\005 \001(\014\"r\n\024detect_gr"
-  "pc1Response\022\025\n\rsim3Transform\030\001 \001(\014\022\026\n\016ov"
-  "erlapIndices\030\002 \001(\014\022\016\n\006scores\030\003 \001(\014\022\033\n\023xp"
-  "cfGrpcReturnValue\030\004 \001(\0212\322\002\n\033grpcIOverlap"
-  "DetectorService\022a\n\023setCameraParameters\0220"
-  ".grpcIOverlapDetector.setCameraParameter"
-  "sRequest\032\026.google.protobuf.Empty\"\000\022g\n\014de"
-  "tect_grpc0\022).grpcIOverlapDetector.detect"
-  "_grpc0Request\032*.grpcIOverlapDetector.det"
-  "ect_grpc0Response\"\000\022g\n\014detect_grpc1\022).gr"
-  "pcIOverlapDetector.detect_grpc1Request\032*"
-  ".grpcIOverlapDetector.detect_grpc1Respon"
-  "se\"\000b\006proto3"
+  "s\030\002 \001(\014\"\223\001\n\023detect_grpc0Request\022#\n\033grpcS"
+  "erverCompressionFormat\030\001 \001(\005\022\021\n\tglobalMa"
+  "p\030\002 \001(\014\022\023\n\013floatingMap\030\003 \001(\014\022\025\n\rsim3Tran"
+  "sform\030\004 \001(\014\022\030\n\020cpOverlapIndices\030\005 \001(\014\"d\n"
+  "\024detect_grpc0Response\022\025\n\rsim3Transform\030\001"
+  " \001(\014\022\030\n\020cpOverlapIndices\030\002 \001(\014\022\033\n\023xpcfGr"
+  "pcReturnValue\030\003 \001(\021\"\241\001\n\023detect_grpc1Requ"
+  "est\022#\n\033grpcServerCompressionFormat\030\001 \001(\005"
+  "\022\021\n\tglobalMap\030\002 \001(\014\022\023\n\013floatingMap\030\003 \001(\014"
+  "\022\025\n\rsim3Transform\030\004 \001(\014\022\026\n\016overlapIndice"
+  "s\030\005 \001(\014\022\016\n\006scores\030\006 \001(\014\"r\n\024detect_grpc1R"
+  "esponse\022\025\n\rsim3Transform\030\001 \001(\014\022\026\n\016overla"
+  "pIndices\030\002 \001(\014\022\016\n\006scores\030\003 \001(\014\022\033\n\023xpcfGr"
+  "pcReturnValue\030\004 \001(\0212\322\002\n\033grpcIOverlapDete"
+  "ctorService\022a\n\023setCameraParameters\0220.grp"
+  "cIOverlapDetector.setCameraParametersReq"
+  "uest\032\026.google.protobuf.Empty\"\000\022g\n\014detect"
+  "_grpc0\022).grpcIOverlapDetector.detect_grp"
+  "c0Request\032*.grpcIOverlapDetector.detect_"
+  "grpc0Response\"\000\022g\n\014detect_grpc1\022).grpcIO"
+  "verlapDetector.detect_grpc1Request\032*.grp"
+  "cIOverlapDetector.detect_grpc1Response\"\000"
+  "b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIOverlapDetectorService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIOverlapDetectorService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIOverlapDetectorService_2eproto = {
-  false, false, 972, descriptor_table_protodef_grpcIOverlapDetectorService_2eproto, "grpcIOverlapDetectorService.proto", 
+  false, false, 1048, descriptor_table_protodef_grpcIOverlapDetectorService_2eproto, "grpcIOverlapDetectorService.proto", 
   &descriptor_table_grpcIOverlapDetectorService_2eproto_once, descriptor_table_grpcIOverlapDetectorService_2eproto_deps, 1, 5,
   schemas, file_default_instances, TableStruct_grpcIOverlapDetectorService_2eproto::offsets,
   file_level_metadata_grpcIOverlapDetectorService_2eproto, file_level_enum_descriptors_grpcIOverlapDetectorService_2eproto, file_level_service_descriptors_grpcIOverlapDetectorService_2eproto,
@@ -466,6 +472,7 @@ detect_grpc0Request::detect_grpc0Request(const detect_grpc0Request& from)
     cpoverlapindices_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cpoverlapindices(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIOverlapDetector.detect_grpc0Request)
 }
 
@@ -474,6 +481,7 @@ globalmap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAl
 floatingmap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 sim3transform_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 cpoverlapindices_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 detect_grpc0Request::~detect_grpc0Request() {
@@ -510,6 +518,7 @@ void detect_grpc0Request::Clear() {
   floatingmap_.ClearToEmpty();
   sim3transform_.ClearToEmpty();
   cpoverlapindices_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -520,33 +529,40 @@ const char* detect_grpc0Request::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes globalMap = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes globalMap = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_globalmap();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes floatingMap = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes floatingMap = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_floatingmap();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes sim3Transform = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes sim3Transform = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_sim3transform();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes cpOverlapIndices = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes cpOverlapIndices = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_cpoverlapindices();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -580,28 +596,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes globalMap = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes globalMap = 2;
   if (this->globalmap().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_globalmap(), target);
+        2, this->_internal_globalmap(), target);
   }
 
-  // bytes floatingMap = 2;
+  // bytes floatingMap = 3;
   if (this->floatingmap().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_floatingmap(), target);
+        3, this->_internal_floatingmap(), target);
   }
 
-  // bytes sim3Transform = 3;
+  // bytes sim3Transform = 4;
   if (this->sim3transform().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_sim3transform(), target);
+        4, this->_internal_sim3transform(), target);
   }
 
-  // bytes cpOverlapIndices = 4;
+  // bytes cpOverlapIndices = 5;
   if (this->cpoverlapindices().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_cpoverlapindices(), target);
+        5, this->_internal_cpoverlapindices(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -620,32 +642,39 @@ size_t detect_grpc0Request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes globalMap = 1;
+  // bytes globalMap = 2;
   if (this->globalmap().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_globalmap());
   }
 
-  // bytes floatingMap = 2;
+  // bytes floatingMap = 3;
   if (this->floatingmap().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_floatingmap());
   }
 
-  // bytes sim3Transform = 3;
+  // bytes sim3Transform = 4;
   if (this->sim3transform().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_sim3transform());
   }
 
-  // bytes cpOverlapIndices = 4;
+  // bytes cpOverlapIndices = 5;
   if (this->cpoverlapindices().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_cpoverlapindices());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -691,6 +720,9 @@ void detect_grpc0Request::MergeFrom(const detect_grpc0Request& from) {
   if (from.cpoverlapindices().size() > 0) {
     _internal_set_cpoverlapindices(from._internal_cpoverlapindices());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void detect_grpc0Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -718,6 +750,7 @@ void detect_grpc0Request::InternalSwap(detect_grpc0Request* other) {
   floatingmap_.Swap(&other->floatingmap_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   sim3transform_.Swap(&other->sim3transform_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   cpoverlapindices_.Swap(&other->cpoverlapindices_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detect_grpc0Request::GetMetadata() const {
@@ -1020,6 +1053,7 @@ detect_grpc1Request::detect_grpc1Request(const detect_grpc1Request& from)
     scores_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_scores(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIOverlapDetector.detect_grpc1Request)
 }
 
@@ -1029,6 +1063,7 @@ floatingmap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString
 sim3transform_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 overlapindices_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 scores_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 detect_grpc1Request::~detect_grpc1Request() {
@@ -1067,6 +1102,7 @@ void detect_grpc1Request::Clear() {
   sim3transform_.ClearToEmpty();
   overlapindices_.ClearToEmpty();
   scores_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1077,41 +1113,48 @@ const char* detect_grpc1Request::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes globalMap = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes globalMap = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_globalmap();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes floatingMap = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes floatingMap = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_floatingmap();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes sim3Transform = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes sim3Transform = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_sim3transform();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes overlapIndices = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes overlapIndices = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_overlapindices();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes scores = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes scores = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_scores();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1145,34 +1188,40 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes globalMap = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes globalMap = 2;
   if (this->globalmap().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_globalmap(), target);
+        2, this->_internal_globalmap(), target);
   }
 
-  // bytes floatingMap = 2;
+  // bytes floatingMap = 3;
   if (this->floatingmap().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_floatingmap(), target);
+        3, this->_internal_floatingmap(), target);
   }
 
-  // bytes sim3Transform = 3;
+  // bytes sim3Transform = 4;
   if (this->sim3transform().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_sim3transform(), target);
+        4, this->_internal_sim3transform(), target);
   }
 
-  // bytes overlapIndices = 4;
+  // bytes overlapIndices = 5;
   if (this->overlapindices().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_overlapindices(), target);
+        5, this->_internal_overlapindices(), target);
   }
 
-  // bytes scores = 5;
+  // bytes scores = 6;
   if (this->scores().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_scores(), target);
+        6, this->_internal_scores(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1191,39 +1240,46 @@ size_t detect_grpc1Request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes globalMap = 1;
+  // bytes globalMap = 2;
   if (this->globalmap().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_globalmap());
   }
 
-  // bytes floatingMap = 2;
+  // bytes floatingMap = 3;
   if (this->floatingmap().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_floatingmap());
   }
 
-  // bytes sim3Transform = 3;
+  // bytes sim3Transform = 4;
   if (this->sim3transform().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_sim3transform());
   }
 
-  // bytes overlapIndices = 4;
+  // bytes overlapIndices = 5;
   if (this->overlapindices().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_overlapindices());
   }
 
-  // bytes scores = 5;
+  // bytes scores = 6;
   if (this->scores().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_scores());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1272,6 +1328,9 @@ void detect_grpc1Request::MergeFrom(const detect_grpc1Request& from) {
   if (from.scores().size() > 0) {
     _internal_set_scores(from._internal_scores());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void detect_grpc1Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1300,6 +1359,7 @@ void detect_grpc1Request::InternalSwap(detect_grpc1Request* other) {
   sim3transform_.Swap(&other->sim3transform_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   overlapindices_.Swap(&other->overlapindices_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   scores_.Swap(&other->scores_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detect_grpc1Request::GetMetadata() const {

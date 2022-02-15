@@ -6,8 +6,9 @@ package grpcIContoursExtractor;
 
 message extractRequest
 {
-bytes inputImg = 1;
-bytes contours = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputImg = 2;
+bytes contours = 3;
 }
 
 message extractResponse

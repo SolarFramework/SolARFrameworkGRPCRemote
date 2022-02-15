@@ -184,10 +184,11 @@ class calibrateRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImagesFieldNumber = 1,
-    kCamParamsFieldNumber = 2,
+    kImagesFieldNumber = 2,
+    kCamParamsFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes images = 1;
+  // bytes images = 2;
   void clear_images();
   const std::string& images() const;
   void set_images(const std::string& value);
@@ -203,7 +204,7 @@ class calibrateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_images();
   public:
 
-  // bytes camParams = 2;
+  // bytes camParams = 3;
   void clear_camparams();
   const std::string& camparams() const;
   void set_camparams(const std::string& value);
@@ -219,6 +220,15 @@ class calibrateRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_camparams();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcICameraCalibration.calibrateRequest)
  private:
   class _Internal;
@@ -228,6 +238,7 @@ class calibrateRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr images_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcICameraCalibrationService_2eproto;
 };
@@ -397,7 +408,27 @@ class calibrateResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // calibrateRequest
 
-// bytes images = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void calibrateRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 calibrateRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 calibrateRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcICameraCalibration.calibrateRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void calibrateRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void calibrateRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcICameraCalibration.calibrateRequest.grpcServerCompressionFormat)
+}
+
+// bytes images = 2;
 inline void calibrateRequest::clear_images() {
   images_.ClearToEmpty();
 }
@@ -458,7 +489,7 @@ inline void calibrateRequest::set_allocated_images(std::string* images) {
   // @@protoc_insertion_point(field_set_allocated:grpcICameraCalibration.calibrateRequest.images)
 }
 
-// bytes camParams = 2;
+// bytes camParams = 3;
 inline void calibrateRequest::clear_camparams() {
   camparams_.ClearToEmpty();
 }

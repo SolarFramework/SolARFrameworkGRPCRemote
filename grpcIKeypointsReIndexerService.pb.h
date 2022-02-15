@@ -184,13 +184,14 @@ class reindexRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKeypoints1FieldNumber = 1,
-    kKeypoints2FieldNumber = 2,
-    kMatchesFieldNumber = 3,
-    kMatchedKeypoints1FieldNumber = 4,
-    kMatchedKeypoints2FieldNumber = 5,
+    kKeypoints1FieldNumber = 2,
+    kKeypoints2FieldNumber = 3,
+    kMatchesFieldNumber = 4,
+    kMatchedKeypoints1FieldNumber = 5,
+    kMatchedKeypoints2FieldNumber = 6,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes keypoints1 = 1;
+  // bytes keypoints1 = 2;
   void clear_keypoints1();
   const std::string& keypoints1() const;
   void set_keypoints1(const std::string& value);
@@ -206,7 +207,7 @@ class reindexRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints1();
   public:
 
-  // bytes keypoints2 = 2;
+  // bytes keypoints2 = 3;
   void clear_keypoints2();
   const std::string& keypoints2() const;
   void set_keypoints2(const std::string& value);
@@ -222,7 +223,7 @@ class reindexRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints2();
   public:
 
-  // bytes matches = 3;
+  // bytes matches = 4;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -238,7 +239,7 @@ class reindexRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes matchedKeypoints1 = 4;
+  // bytes matchedKeypoints1 = 5;
   void clear_matchedkeypoints1();
   const std::string& matchedkeypoints1() const;
   void set_matchedkeypoints1(const std::string& value);
@@ -254,7 +255,7 @@ class reindexRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_matchedkeypoints1();
   public:
 
-  // bytes matchedKeypoints2 = 5;
+  // bytes matchedKeypoints2 = 6;
   void clear_matchedkeypoints2();
   const std::string& matchedkeypoints2() const;
   void set_matchedkeypoints2(const std::string& value);
@@ -270,6 +271,15 @@ class reindexRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_matchedkeypoints2();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIKeypointsReIndexer.reindexRequest)
  private:
   class _Internal;
@@ -282,6 +292,7 @@ class reindexRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matchedkeypoints1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matchedkeypoints2_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIKeypointsReIndexerService_2eproto;
 };
@@ -469,7 +480,27 @@ class reindexResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // reindexRequest
 
-// bytes keypoints1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void reindexRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reindexRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reindexRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIKeypointsReIndexer.reindexRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void reindexRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void reindexRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIKeypointsReIndexer.reindexRequest.grpcServerCompressionFormat)
+}
+
+// bytes keypoints1 = 2;
 inline void reindexRequest::clear_keypoints1() {
   keypoints1_.ClearToEmpty();
 }
@@ -530,7 +561,7 @@ inline void reindexRequest::set_allocated_keypoints1(std::string* keypoints1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIKeypointsReIndexer.reindexRequest.keypoints1)
 }
 
-// bytes keypoints2 = 2;
+// bytes keypoints2 = 3;
 inline void reindexRequest::clear_keypoints2() {
   keypoints2_.ClearToEmpty();
 }
@@ -591,7 +622,7 @@ inline void reindexRequest::set_allocated_keypoints2(std::string* keypoints2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIKeypointsReIndexer.reindexRequest.keypoints2)
 }
 
-// bytes matches = 3;
+// bytes matches = 4;
 inline void reindexRequest::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -652,7 +683,7 @@ inline void reindexRequest::set_allocated_matches(std::string* matches) {
   // @@protoc_insertion_point(field_set_allocated:grpcIKeypointsReIndexer.reindexRequest.matches)
 }
 
-// bytes matchedKeypoints1 = 4;
+// bytes matchedKeypoints1 = 5;
 inline void reindexRequest::clear_matchedkeypoints1() {
   matchedkeypoints1_.ClearToEmpty();
 }
@@ -713,7 +744,7 @@ inline void reindexRequest::set_allocated_matchedkeypoints1(std::string* matched
   // @@protoc_insertion_point(field_set_allocated:grpcIKeypointsReIndexer.reindexRequest.matchedKeypoints1)
 }
 
-// bytes matchedKeypoints2 = 5;
+// bytes matchedKeypoints2 = 6;
 inline void reindexRequest::clear_matchedkeypoints2() {
   matchedkeypoints2_.ClearToEmpty();
 }

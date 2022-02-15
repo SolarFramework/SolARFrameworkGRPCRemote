@@ -184,10 +184,11 @@ class filterRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInContoursFieldNumber = 1,
-    kOutContoursFieldNumber = 2,
+    kInContoursFieldNumber = 2,
+    kOutContoursFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inContours = 1;
+  // bytes inContours = 2;
   void clear_incontours();
   const std::string& incontours() const;
   void set_incontours(const std::string& value);
@@ -203,7 +204,7 @@ class filterRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_incontours();
   public:
 
-  // bytes outContours = 2;
+  // bytes outContours = 3;
   void clear_outcontours();
   const std::string& outcontours() const;
   void set_outcontours(const std::string& value);
@@ -219,6 +220,15 @@ class filterRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_outcontours();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIContoursFilter.filterRequest)
  private:
   class _Internal;
@@ -228,6 +238,7 @@ class filterRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr incontours_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outcontours_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIContoursFilterService_2eproto;
 };
@@ -397,7 +408,27 @@ class filterResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // filterRequest
 
-// bytes inContours = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void filterRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filterRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filterRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIContoursFilter.filterRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void filterRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void filterRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIContoursFilter.filterRequest.grpcServerCompressionFormat)
+}
+
+// bytes inContours = 2;
 inline void filterRequest::clear_incontours() {
   incontours_.ClearToEmpty();
 }
@@ -458,7 +489,7 @@ inline void filterRequest::set_allocated_incontours(std::string* incontours) {
   // @@protoc_insertion_point(field_set_allocated:grpcIContoursFilter.filterRequest.inContours)
 }
 
-// bytes outContours = 2;
+// bytes outContours = 3;
 inline void filterRequest::clear_outcontours() {
   outcontours_.ClearToEmpty();
 }

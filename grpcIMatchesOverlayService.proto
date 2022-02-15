@@ -6,12 +6,13 @@ package grpcIMatchesOverlay;
 
 message draw_grpc0Request
 {
-bytes image1 = 1;
-bytes image2 = 2;
-bytes points_image1 = 3;
-bytes points_image2 = 4;
-bytes matches = 5;
-bytes outImage = 6;
+int32 grpcServerCompressionFormat  = 1;
+bytes image1 = 2;
+bytes image2 = 3;
+bytes points_image1 = 4;
+bytes points_image2 = 5;
+bytes matches = 6;
+bytes outImage = 7;
 }
 
 message draw_grpc0Response
@@ -21,12 +22,13 @@ bytes outImage = 1;
 
 message draw_grpc1Request
 {
-bytes image1 = 1;
-bytes image2 = 2;
-bytes keypoints_image1 = 3;
-bytes keypoints_image2 = 4;
-bytes matches = 5;
-bytes outImage = 6;
+int32 grpcServerCompressionFormat  = 1;
+bytes image1 = 2;
+bytes image2 = 3;
+bytes keypoints_image1 = 4;
+bytes keypoints_image2 = 5;
+bytes matches = 6;
+bytes outImage = 7;
 }
 
 message draw_grpc1Response
@@ -36,11 +38,12 @@ bytes outImage = 1;
 
 message draw_grpc2Request
 {
-bytes image = 1;
-bytes points_image1 = 2;
-bytes points_image2 = 3;
-bytes matches = 4;
-bytes outImage = 5;
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+bytes points_image1 = 3;
+bytes points_image2 = 4;
+bytes matches = 5;
+bytes outImage = 6;
 }
 
 message draw_grpc2Response
@@ -50,11 +53,12 @@ bytes outImage = 1;
 
 message draw_grpc3Request
 {
-bytes image = 1;
-bytes keypoints_image1 = 2;
-bytes keypoints_image2 = 3;
-bytes matches = 4;
-bytes outImage = 5;
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+bytes keypoints_image1 = 3;
+bytes keypoints_image2 = 4;
+bytes matches = 5;
+bytes outImage = 6;
 }
 
 message draw_grpc3Response

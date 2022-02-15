@@ -33,7 +33,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParametersRequestDefau
 constexpr processRequest::processRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : frame_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , view_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , view_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct processRequestDefaultTypeInternal {
   constexpr processRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -74,6 +75,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIBootstrapperService_2epro
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processRequest, frame_),
   PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processRequest, view_),
   ~0u,  // no _has_bits_
@@ -87,7 +89,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIBootstrapperService_2epro
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIBootstrapper::setCameraParametersRequest)},
   { 7, -1, sizeof(::grpcIBootstrapper::processRequest)},
-  { 14, -1, sizeof(::grpcIBootstrapper::processResponse)},
+  { 15, -1, sizeof(::grpcIBootstrapper::processResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -101,22 +103,23 @@ const char descriptor_table_protodef_grpcIBootstrapperService_2eproto[] PROTOBUF
   "ootstrapper\032\033google/protobuf/empty.proto"
   "\"O\n\032setCameraParametersRequest\022\027\n\017intrin"
   "sicParams\030\001 \001(\014\022\030\n\020distorsionParams\030\002 \001("
-  "\014\"-\n\016processRequest\022\r\n\005frame\030\001 \001(\014\022\014\n\004vi"
-  "ew\030\002 \001(\014\"<\n\017processResponse\022\014\n\004view\030\001 \001("
-  "\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\0212\316\001\n\030grpcI"
-  "BootstrapperService\022^\n\023setCameraParamete"
-  "rs\022-.grpcIBootstrapper.setCameraParamete"
-  "rsRequest\032\026.google.protobuf.Empty\"\000\022R\n\007p"
-  "rocess\022!.grpcIBootstrapper.processReques"
-  "t\032\".grpcIBootstrapper.processResponse\"\000b"
-  "\006proto3"
+  "\014\"R\n\016processRequest\022#\n\033grpcServerCompres"
+  "sionFormat\030\001 \001(\005\022\r\n\005frame\030\002 \001(\014\022\014\n\004view\030"
+  "\003 \001(\014\"<\n\017processResponse\022\014\n\004view\030\001 \001(\014\022\033"
+  "\n\023xpcfGrpcReturnValue\030\002 \001(\0212\316\001\n\030grpcIBoo"
+  "tstrapperService\022^\n\023setCameraParameters\022"
+  "-.grpcIBootstrapper.setCameraParametersR"
+  "equest\032\026.google.protobuf.Empty\"\000\022R\n\007proc"
+  "ess\022!.grpcIBootstrapper.processRequest\032\""
+  ".grpcIBootstrapper.processResponse\"\000b\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIBootstrapperService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIBootstrapperService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIBootstrapperService_2eproto = {
-  false, false, 487, descriptor_table_protodef_grpcIBootstrapperService_2eproto, "grpcIBootstrapperService.proto", 
+  false, false, 524, descriptor_table_protodef_grpcIBootstrapperService_2eproto, "grpcIBootstrapperService.proto", 
   &descriptor_table_grpcIBootstrapperService_2eproto_once, descriptor_table_grpcIBootstrapperService_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_grpcIBootstrapperService_2eproto::offsets,
   file_level_metadata_grpcIBootstrapperService_2eproto, file_level_enum_descriptors_grpcIBootstrapperService_2eproto, file_level_service_descriptors_grpcIBootstrapperService_2eproto,
@@ -384,12 +387,14 @@ processRequest::processRequest(const processRequest& from)
     view_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_view(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIBootstrapper.processRequest)
 }
 
 void processRequest::SharedCtor() {
 frame_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 view_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 processRequest::~processRequest() {
@@ -422,6 +427,7 @@ void processRequest::Clear() {
 
   frame_.ClearToEmpty();
   view_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -432,17 +438,24 @@ const char* processRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes frame = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes frame = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_frame();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes view = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes view = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_view();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -476,16 +489,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes frame = 1;
-  if (this->frame().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_frame(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes view = 2;
+  // bytes frame = 2;
+  if (this->frame().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_frame(), target);
+  }
+
+  // bytes view = 3;
   if (this->view().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_view(), target);
+        3, this->_internal_view(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -504,18 +523,25 @@ size_t processRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes frame = 1;
+  // bytes frame = 2;
   if (this->frame().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_frame());
   }
 
-  // bytes view = 2;
+  // bytes view = 3;
   if (this->view().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_view());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -555,6 +581,9 @@ void processRequest::MergeFrom(const processRequest& from) {
   if (from.view().size() > 0) {
     _internal_set_view(from._internal_view());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void processRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -580,6 +609,7 @@ void processRequest::InternalSwap(processRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   frame_.Swap(&other->frame_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   view_.Swap(&other->view_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata processRequest::GetMetadata() const {

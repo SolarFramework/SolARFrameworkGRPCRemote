@@ -6,8 +6,9 @@ package grpcIUndistortPoints;
 
 message undistort_grpc0Request
 {
-bytes inputPoints = 1;
-bytes outputPoints = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputPoints = 2;
+bytes outputPoints = 3;
 }
 
 message undistort_grpc0Response
@@ -18,8 +19,9 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message undistort_grpc1Request
 {
-bytes inputKeypoints = 1;
-bytes outputKeypoints = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputKeypoints = 2;
+bytes outputKeypoints = 3;
 }
 
 message undistort_grpc1Response

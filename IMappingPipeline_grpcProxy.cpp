@@ -1,12 +1,13 @@
 // GRPC Proxy Class implementation generated with xpcf_grpc_gen
 #include "IMappingPipeline_grpcProxy.h"
 #include <cstddef>
+#include <boost/date_time.hpp>
 #include <xpcf/core/Exception.h>
 #include <xpcf/remoting/ISerializable.h>
-#include <xpcf/remoting/GrpcHelper.h>
 #include <grpcpp/client_context.h>
 #include <grpcpp/create_channel.h>
 #include <grpcpp/security/credentials.h>
+#include <boost/algorithm/string.hpp>
 namespace xpcf = org::bcom::xpcf;
 
 template<> org::bcom::xpcf::grpc::proxyIMappingPipeline::IMappingPipeline_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyIMappingPipeline::IMappingPipeline_grpcProxy>();
@@ -18,6 +19,8 @@ IMappingPipeline_grpcProxy::IMappingPipeline_grpcProxy():xpcf::ConfigurableBase(
   declareInterface<SolAR::api::pipeline::IMappingPipeline>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
+  m_grpcProxyCompressionConfig.resize(7);
+  declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
 
@@ -36,6 +39,9 @@ XPCFErrorCode IMappingPipeline_grpcProxy::onConfigured()
   xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)),
   ch_args);
   m_grpcStub = ::grpcIMappingPipeline::grpcIMappingPipelineService::NewStub(m_channel);
+  for (auto & compressionLine : m_grpcProxyCompressionConfig) {
+      translateClientConfiguration(compressionLine, m_serviceCompressionInfos, m_methodCompressionInfosMap);
+  }
   return xpcf::XPCFErrorCode::_SUCCESS;
 }
 
@@ -43,9 +49,23 @@ XPCFErrorCode IMappingPipeline_grpcProxy::onConfigured()
 SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init()
 {
   ::grpc::ClientContext context;
-  ::google::protobuf::Empty reqIn;
+  ::grpcIMappingPipeline::initRequest reqIn;
   ::grpcIMappingPipeline::initResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::init response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "init rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","init",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -58,9 +78,23 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init()
 SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::start()
 {
   ::grpc::ClientContext context;
-  ::google::protobuf::Empty reqIn;
+  ::grpcIMappingPipeline::startRequest reqIn;
   ::grpcIMappingPipeline::startResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "start", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::start request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::start response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "start rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -73,9 +107,23 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::start()
 SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::stop()
 {
   ::grpc::ClientContext context;
-  ::google::protobuf::Empty reqIn;
+  ::grpcIMappingPipeline::stopRequest reqIn;
   ::grpcIMappingPipeline::stopResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "stop", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::stop request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::stop response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "stop rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -90,8 +138,22 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setCameraParameters(SolA
   ::grpc::ClientContext context;
   ::grpcIMappingPipeline::setCameraParametersRequest reqIn;
   ::grpcIMappingPipeline::setCameraParametersResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "setCameraParameters", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
   reqIn.set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::setCameraParameters request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::setCameraParameters response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "setCameraParameters rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -106,9 +168,23 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(SR
   ::grpc::ClientContext context;
   ::grpcIMappingPipeline::mappingProcessRequestRequest reqIn;
   ::grpcIMappingPipeline::mappingProcessRequestResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "mappingProcessRequest", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
   reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::mappingProcessRequest request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->mappingProcessRequest(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::mappingProcessRequest response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "mappingProcessRequest rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","mappingProcessRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -123,9 +199,23 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::getDataForVisualization(
   ::grpc::ClientContext context;
   ::grpcIMappingPipeline::getDataForVisualizationRequest reqIn;
   ::grpcIMappingPipeline::getDataForVisualizationResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getDataForVisualization", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
   reqIn.set_outputpointclouds(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(outputPointClouds));
   reqIn.set_keyframeposes(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(keyframePoses));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::getDataForVisualization request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDataForVisualization(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcProxy::getDataForVisualization response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "getDataForVisualization rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMappingPipelineService","getDataForVisualization",static_cast<uint32_t>(grpcRemoteStatus.error_code()));

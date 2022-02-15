@@ -12,9 +12,10 @@ bytes distorsionParams = 2;
 
 message project_grpc0Request
 {
-bytes inputPoints = 1;
-bytes pose = 2;
-bytes imagePoints = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputPoints = 2;
+bytes pose = 3;
+bytes imagePoints = 4;
 }
 
 message project_grpc0Response
@@ -25,9 +26,10 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message project_grpc1Request
 {
-bytes inputPoints = 1;
-bytes pose = 2;
-bytes imagePoints = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputPoints = 2;
+bytes pose = 3;
+bytes imagePoints = 4;
 }
 
 message project_grpc1Response

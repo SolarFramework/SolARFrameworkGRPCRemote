@@ -6,9 +6,10 @@ package grpcI2DTransform;
 
 message transformRequest
 {
-bytes inputPoints = 1;
-bytes transformation = 2;
-bytes outputPoints = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes inputPoints = 2;
+bytes transformation = 3;
+bytes outputPoints = 4;
 }
 
 message transformResponse

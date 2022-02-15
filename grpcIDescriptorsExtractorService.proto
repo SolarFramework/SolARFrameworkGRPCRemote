@@ -4,6 +4,11 @@ import "google/protobuf/empty.proto";
 
 package grpcIDescriptorsExtractor;
 
+message getTypeStringRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message getTypeStringResponse
 {
 string xpcfGrpcReturnValue = 1;
@@ -11,9 +16,10 @@ string xpcfGrpcReturnValue = 1;
 
 message extractRequest
 {
-bytes image = 1;
-bytes keypoints = 2;
-bytes descriptors = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+bytes keypoints = 3;
+bytes descriptors = 4;
 }
 
 message extractResponse
@@ -22,7 +28,7 @@ bytes descriptors = 1;
 }
 
 service grpcIDescriptorsExtractorService {
-rpc getTypeString(google.protobuf.Empty) returns(getTypeStringResponse) {}
+rpc getTypeString(getTypeStringRequest) returns(getTypeStringResponse) {}
 rpc extract(extractRequest) returns(extractResponse) {}
 }
 

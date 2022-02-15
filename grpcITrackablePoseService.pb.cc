@@ -32,7 +32,8 @@ struct setCameraParametersRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParametersRequestDefaultTypeInternal _setCameraParametersRequest_default_instance_;
 constexpr setTrackableRequest::setTrackableRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : trackable_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : trackable_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct setTrackableRequestDefaultTypeInternal {
   constexpr setTrackableRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -57,7 +58,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setTrackableResponseDefaultType
 constexpr estimateRequest::estimateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct estimateRequestDefaultTypeInternal {
   constexpr estimateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -98,6 +100,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcITrackablePoseService_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcITrackablePose::setTrackableRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcITrackablePose::setTrackableRequest, trackable_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcITrackablePose::setTrackableResponse, _internal_metadata_),
@@ -110,6 +113,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcITrackablePoseService_2epr
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcITrackablePose::estimateRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcITrackablePose::estimateRequest, image_),
   PROTOBUF_FIELD_OFFSET(::grpcITrackablePose::estimateRequest, pose_),
   ~0u,  // no _has_bits_
@@ -123,9 +127,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcITrackablePoseService_2epr
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcITrackablePose::setCameraParametersRequest)},
   { 7, -1, sizeof(::grpcITrackablePose::setTrackableRequest)},
-  { 13, -1, sizeof(::grpcITrackablePose::setTrackableResponse)},
-  { 19, -1, sizeof(::grpcITrackablePose::estimateRequest)},
-  { 26, -1, sizeof(::grpcITrackablePose::estimateResponse)},
+  { 14, -1, sizeof(::grpcITrackablePose::setTrackableResponse)},
+  { 20, -1, sizeof(::grpcITrackablePose::estimateRequest)},
+  { 28, -1, sizeof(::grpcITrackablePose::estimateResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -141,27 +145,29 @@ const char descriptor_table_protodef_grpcITrackablePoseService_2eproto[] PROTOBU
   "TrackablePose\032\033google/protobuf/empty.pro"
   "to\"O\n\032setCameraParametersRequest\022\027\n\017intr"
   "insicParams\030\001 \001(\014\022\030\n\020distorsionParams\030\002 "
-  "\001(\014\"(\n\023setTrackableRequest\022\021\n\ttrackable\030"
-  "\001 \001(\014\"3\n\024setTrackableResponse\022\033\n\023xpcfGrp"
-  "cReturnValue\030\001 \001(\021\".\n\017estimateRequest\022\r\n"
-  "\005image\030\001 \001(\014\022\014\n\004pose\030\002 \001(\014\"=\n\020estimateRe"
-  "sponse\022\014\n\004pose\030\001 \001(\014\022\033\n\023xpcfGrpcReturnVa"
-  "lue\030\002 \001(\0212\272\002\n\031grpcITrackablePoseService\022"
-  "_\n\023setCameraParameters\022..grpcITrackableP"
-  "ose.setCameraParametersRequest\032\026.google."
-  "protobuf.Empty\"\000\022c\n\014setTrackable\022\'.grpcI"
-  "TrackablePose.setTrackableRequest\032(.grpc"
-  "ITrackablePose.setTrackableResponse\"\000\022W\n"
-  "\010estimate\022#.grpcITrackablePose.estimateR"
-  "equest\032$.grpcITrackablePose.estimateResp"
-  "onse\"\000b\006proto3"
+  "\001(\014\"M\n\023setTrackableRequest\022#\n\033grpcServer"
+  "CompressionFormat\030\001 \001(\005\022\021\n\ttrackable\030\002 \001"
+  "(\014\"3\n\024setTrackableResponse\022\033\n\023xpcfGrpcRe"
+  "turnValue\030\001 \001(\021\"S\n\017estimateRequest\022#\n\033gr"
+  "pcServerCompressionFormat\030\001 \001(\005\022\r\n\005image"
+  "\030\002 \001(\014\022\014\n\004pose\030\003 \001(\014\"=\n\020estimateResponse"
+  "\022\014\n\004pose\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 "
+  "\001(\0212\272\002\n\031grpcITrackablePoseService\022_\n\023set"
+  "CameraParameters\022..grpcITrackablePose.se"
+  "tCameraParametersRequest\032\026.google.protob"
+  "uf.Empty\"\000\022c\n\014setTrackable\022\'.grpcITracka"
+  "blePose.setTrackableRequest\032(.grpcITrack"
+  "ablePose.setTrackableResponse\"\000\022W\n\010estim"
+  "ate\022#.grpcITrackablePose.estimateRequest"
+  "\032$.grpcITrackablePose.estimateResponse\"\000"
+  "b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcITrackablePoseService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcITrackablePoseService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcITrackablePoseService_2eproto = {
-  false, false, 694, descriptor_table_protodef_grpcITrackablePoseService_2eproto, "grpcITrackablePoseService.proto", 
+  false, false, 768, descriptor_table_protodef_grpcITrackablePoseService_2eproto, "grpcITrackablePoseService.proto", 
   &descriptor_table_grpcITrackablePoseService_2eproto_once, descriptor_table_grpcITrackablePoseService_2eproto_deps, 1, 5,
   schemas, file_default_instances, TableStruct_grpcITrackablePoseService_2eproto::offsets,
   file_level_metadata_grpcITrackablePoseService_2eproto, file_level_enum_descriptors_grpcITrackablePoseService_2eproto, file_level_service_descriptors_grpcITrackablePoseService_2eproto,
@@ -424,11 +430,13 @@ setTrackableRequest::setTrackableRequest(const setTrackableRequest& from)
     trackable_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_trackable(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcITrackablePose.setTrackableRequest)
 }
 
 void setTrackableRequest::SharedCtor() {
 trackable_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 setTrackableRequest::~setTrackableRequest() {
@@ -459,6 +467,7 @@ void setTrackableRequest::Clear() {
   (void) cached_has_bits;
 
   trackable_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -469,9 +478,16 @@ const char* setTrackableRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes trackable = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes trackable = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_trackable();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -505,10 +521,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes trackable = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes trackable = 2;
   if (this->trackable().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_trackable(), target);
+        2, this->_internal_trackable(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -527,11 +549,18 @@ size_t setTrackableRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes trackable = 1;
+  // bytes trackable = 2;
   if (this->trackable().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_trackable());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -568,6 +597,9 @@ void setTrackableRequest::MergeFrom(const setTrackableRequest& from) {
   if (from.trackable().size() > 0) {
     _internal_set_trackable(from._internal_trackable());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void setTrackableRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -592,6 +624,7 @@ void setTrackableRequest::InternalSwap(setTrackableRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   trackable_.Swap(&other->trackable_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata setTrackableRequest::GetMetadata() const {
@@ -813,12 +846,14 @@ estimateRequest::estimateRequest(const estimateRequest& from)
     pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pose(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcITrackablePose.estimateRequest)
 }
 
 void estimateRequest::SharedCtor() {
 image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 estimateRequest::~estimateRequest() {
@@ -851,6 +886,7 @@ void estimateRequest::Clear() {
 
   image_.ClearToEmpty();
   pose_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -861,17 +897,24 @@ const char* estimateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes image = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes image = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_image();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes pose = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes pose = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_pose();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -905,16 +948,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes image = 1;
-  if (this->image().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_image(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes pose = 2;
+  // bytes image = 2;
+  if (this->image().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_image(), target);
+  }
+
+  // bytes pose = 3;
   if (this->pose().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_pose(), target);
+        3, this->_internal_pose(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -933,18 +982,25 @@ size_t estimateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes image = 1;
+  // bytes image = 2;
   if (this->image().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_image());
   }
 
-  // bytes pose = 2;
+  // bytes pose = 3;
   if (this->pose().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_pose());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -984,6 +1040,9 @@ void estimateRequest::MergeFrom(const estimateRequest& from) {
   if (from.pose().size() > 0) {
     _internal_set_pose(from._internal_pose());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void estimateRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1009,6 +1068,7 @@ void estimateRequest::InternalSwap(estimateRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   image_.Swap(&other->image_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   pose_.Swap(&other->pose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimateRequest::GetMetadata() const {

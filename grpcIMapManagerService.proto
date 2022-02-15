@@ -6,7 +6,8 @@ package grpcIMapManager;
 
 message setMapRequest
 {
-bytes map = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes map = 2;
 }
 
 message setMapResponse
@@ -16,7 +17,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getMapRequest
 {
-bytes map = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes map = 2;
 }
 
 message getMapResponse
@@ -27,9 +29,10 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getLocalPointCloudRequest
 {
-bytes keyframe = 1;
-float minWeightNeighbor = 2;
-bytes localPointCloud = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframe = 2;
+float minWeightNeighbor = 3;
+bytes localPointCloud = 4;
 }
 
 message getLocalPointCloudResponse
@@ -40,7 +43,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message addCloudPointRequest
 {
-bytes cloudPoint = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes cloudPoint = 2;
 }
 
 message addCloudPointResponse
@@ -50,7 +54,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message removeCloudPointRequest
 {
-bytes cloudPoint = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes cloudPoint = 2;
 }
 
 message removeCloudPointResponse
@@ -60,7 +65,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message addKeyframeRequest
 {
-bytes keyframe = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframe = 2;
 }
 
 message addKeyframeResponse
@@ -70,7 +76,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message removeKeyframeRequest
 {
-bytes keyframe = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframe = 2;
 }
 
 message removeKeyframeResponse
@@ -80,7 +87,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message pointCloudPruningRequest
 {
-bytes cloudPoints = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes cloudPoints = 2;
 }
 
 message pointCloudPruningResponse
@@ -90,7 +98,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message keyframePruningRequest
 {
-bytes keyframes = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframes = 2;
 }
 
 message keyframePruningResponse
@@ -98,9 +107,19 @@ message keyframePruningResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message saveToFileRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message saveToFileResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message loadFromFileRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message loadFromFileResponse
@@ -118,7 +137,7 @@ rpc addKeyframe(addKeyframeRequest) returns(addKeyframeResponse) {}
 rpc removeKeyframe(removeKeyframeRequest) returns(removeKeyframeResponse) {}
 rpc pointCloudPruning(pointCloudPruningRequest) returns(pointCloudPruningResponse) {}
 rpc keyframePruning(keyframePruningRequest) returns(keyframePruningResponse) {}
-rpc saveToFile(google.protobuf.Empty) returns(saveToFileResponse) {}
-rpc loadFromFile(google.protobuf.Empty) returns(loadFromFileResponse) {}
+rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
+rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
 }
 

@@ -2,9 +2,10 @@
 
 #ifndef ICAMERA_GRPCSERVER_H
 #define ICAMERA_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/ICamera.h"
+#include "api/input/devices/ICamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcICameraService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -24,25 +25,28 @@ class ICamera_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pub
     {
       public:
         grpcICameraServiceImpl() = default;
-        ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::startResponse* response) override;
-        ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::stopResponse* response) override;
+        ::grpc::Status start(::grpc::ServerContext* context, const ::grpcICamera::startRequest* request, ::grpcICamera::startResponse* response) override;
+        ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcICamera::stopRequest* request, ::grpcICamera::stopResponse* response) override;
         ::grpc::Status getNextImage(::grpc::ServerContext* context, const ::grpcICamera::getNextImageRequest* request, ::grpcICamera::getNextImageResponse* response) override;
         ::grpc::Status setResolution(::grpc::ServerContext* context, const ::grpcICamera::setResolutionRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status setIntrinsicParameters(::grpc::ServerContext* context, const ::grpcICamera::setIntrinsicParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status setDistortionParameters(::grpc::ServerContext* context, const ::grpcICamera::setDistortionParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status setParameters(::grpc::ServerContext* context, const ::grpcICamera::setParametersRequest* request, ::google::protobuf::Empty* response) override;
-        ::grpc::Status getResolution(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getResolutionResponse* response) override;
-        ::grpc::Status getIntrinsicsParameters(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getIntrinsicsParametersResponse* response) override;
-        ::grpc::Status getParameters(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getParametersResponse* response) override;
-        ::grpc::Status getDistortionParameters(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICamera::getDistortionParametersResponse* response) override;
+        ::grpc::Status getResolution(::grpc::ServerContext* context, const ::grpcICamera::getResolutionRequest* request, ::grpcICamera::getResolutionResponse* response) override;
+        ::grpc::Status getIntrinsicsParameters(::grpc::ServerContext* context, const ::grpcICamera::getIntrinsicsParametersRequest* request, ::grpcICamera::getIntrinsicsParametersResponse* response) override;
+        ::grpc::Status getParameters(::grpc::ServerContext* context, const ::grpcICamera::getParametersRequest* request, ::grpcICamera::getParametersResponse* response) override;
+        ::grpc::Status getDistortionParameters(::grpc::ServerContext* context, const ::grpcICamera::getDistortionParametersRequest* request, ::grpcICamera::getDistortionParametersResponse* response) override;
 
         SRef<SolAR::api::input::devices::ICamera> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcICameraServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

@@ -358,12 +358,13 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFirstPoints3DFieldNumber = 1,
-    kSecondPoints3DFieldNumber = 2,
-    kPoseFieldNumber = 3,
-    kInliersFieldNumber = 4,
+    kFirstPoints3DFieldNumber = 2,
+    kSecondPoints3DFieldNumber = 3,
+    kPoseFieldNumber = 4,
+    kInliersFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes firstPoints3D = 1;
+  // bytes firstPoints3D = 2;
   void clear_firstpoints3d();
   const std::string& firstpoints3d() const;
   void set_firstpoints3d(const std::string& value);
@@ -379,7 +380,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_firstpoints3d();
   public:
 
-  // bytes secondPoints3D = 2;
+  // bytes secondPoints3D = 3;
   void clear_secondpoints3d();
   const std::string& secondpoints3d() const;
   void set_secondpoints3d(const std::string& value);
@@ -395,7 +396,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_secondpoints3d();
   public:
 
-  // bytes pose = 3;
+  // bytes pose = 4;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -411,7 +412,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes inliers = 4;
+  // bytes inliers = 5;
   void clear_inliers();
   const std::string& inliers() const;
   void set_inliers(const std::string& value);
@@ -427,6 +428,15 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_inliers();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc0Request)
  private:
   class _Internal;
@@ -438,6 +448,7 @@ class estimate_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr secondpoints3d_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inliers_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformSACFinderFrom3D3DService_2eproto;
 };
@@ -729,15 +740,16 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFirstKeyframeFieldNumber = 1,
-    kSecondKeyframeFieldNumber = 2,
-    kMatchesFieldNumber = 3,
-    kFirstPoints3DFieldNumber = 4,
-    kSecondPoints3DFieldNumber = 5,
-    kPoseFieldNumber = 6,
-    kInliersFieldNumber = 7,
+    kFirstKeyframeFieldNumber = 2,
+    kSecondKeyframeFieldNumber = 3,
+    kMatchesFieldNumber = 4,
+    kFirstPoints3DFieldNumber = 5,
+    kSecondPoints3DFieldNumber = 6,
+    kPoseFieldNumber = 7,
+    kInliersFieldNumber = 8,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes firstKeyframe = 1;
+  // bytes firstKeyframe = 2;
   void clear_firstkeyframe();
   const std::string& firstkeyframe() const;
   void set_firstkeyframe(const std::string& value);
@@ -753,7 +765,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_firstkeyframe();
   public:
 
-  // bytes secondKeyframe = 2;
+  // bytes secondKeyframe = 3;
   void clear_secondkeyframe();
   const std::string& secondkeyframe() const;
   void set_secondkeyframe(const std::string& value);
@@ -769,7 +781,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_secondkeyframe();
   public:
 
-  // bytes matches = 3;
+  // bytes matches = 4;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -785,7 +797,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes firstPoints3D = 4;
+  // bytes firstPoints3D = 5;
   void clear_firstpoints3d();
   const std::string& firstpoints3d() const;
   void set_firstpoints3d(const std::string& value);
@@ -801,7 +813,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_firstpoints3d();
   public:
 
-  // bytes secondPoints3D = 5;
+  // bytes secondPoints3D = 6;
   void clear_secondpoints3d();
   const std::string& secondpoints3d() const;
   void set_secondpoints3d(const std::string& value);
@@ -817,7 +829,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_secondpoints3d();
   public:
 
-  // bytes pose = 6;
+  // bytes pose = 7;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -833,7 +845,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes inliers = 7;
+  // bytes inliers = 8;
   void clear_inliers();
   const std::string& inliers() const;
   void set_inliers(const std::string& value);
@@ -847,6 +859,15 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   const std::string& _internal_inliers() const;
   void _internal_set_inliers(const std::string& value);
   std::string* _internal_mutable_inliers();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc1Request)
@@ -863,6 +884,7 @@ class estimate_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr secondpoints3d_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inliers_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DTransformSACFinderFrom3D3DService_2eproto;
 };
@@ -1176,7 +1198,27 @@ inline void setCameraParametersRequest::set_allocated_distortionparams(std::stri
 
 // estimate_grpc0Request
 
-// bytes firstPoints3D = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void estimate_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimate_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimate_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void estimate_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void estimate_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes firstPoints3D = 2;
 inline void estimate_grpc0Request::clear_firstpoints3d() {
   firstpoints3d_.ClearToEmpty();
 }
@@ -1237,7 +1279,7 @@ inline void estimate_grpc0Request::set_allocated_firstpoints3d(std::string* firs
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc0Request.firstPoints3D)
 }
 
-// bytes secondPoints3D = 2;
+// bytes secondPoints3D = 3;
 inline void estimate_grpc0Request::clear_secondpoints3d() {
   secondpoints3d_.ClearToEmpty();
 }
@@ -1298,7 +1340,7 @@ inline void estimate_grpc0Request::set_allocated_secondpoints3d(std::string* sec
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc0Request.secondPoints3D)
 }
 
-// bytes pose = 3;
+// bytes pose = 4;
 inline void estimate_grpc0Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -1359,7 +1401,7 @@ inline void estimate_grpc0Request::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc0Request.pose)
 }
 
-// bytes inliers = 4;
+// bytes inliers = 5;
 inline void estimate_grpc0Request::clear_inliers() {
   inliers_.ClearToEmpty();
 }
@@ -1570,7 +1612,27 @@ inline void estimate_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE
 
 // estimate_grpc1Request
 
-// bytes firstKeyframe = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void estimate_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimate_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 estimate_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void estimate_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void estimate_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes firstKeyframe = 2;
 inline void estimate_grpc1Request::clear_firstkeyframe() {
   firstkeyframe_.ClearToEmpty();
 }
@@ -1631,7 +1693,7 @@ inline void estimate_grpc1Request::set_allocated_firstkeyframe(std::string* firs
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc1Request.firstKeyframe)
 }
 
-// bytes secondKeyframe = 2;
+// bytes secondKeyframe = 3;
 inline void estimate_grpc1Request::clear_secondkeyframe() {
   secondkeyframe_.ClearToEmpty();
 }
@@ -1692,7 +1754,7 @@ inline void estimate_grpc1Request::set_allocated_secondkeyframe(std::string* sec
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc1Request.secondKeyframe)
 }
 
-// bytes matches = 3;
+// bytes matches = 4;
 inline void estimate_grpc1Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -1753,7 +1815,7 @@ inline void estimate_grpc1Request::set_allocated_matches(std::string* matches) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc1Request.matches)
 }
 
-// bytes firstPoints3D = 4;
+// bytes firstPoints3D = 5;
 inline void estimate_grpc1Request::clear_firstpoints3d() {
   firstpoints3d_.ClearToEmpty();
 }
@@ -1814,7 +1876,7 @@ inline void estimate_grpc1Request::set_allocated_firstpoints3d(std::string* firs
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc1Request.firstPoints3D)
 }
 
-// bytes secondPoints3D = 5;
+// bytes secondPoints3D = 6;
 inline void estimate_grpc1Request::clear_secondpoints3d() {
   secondpoints3d_.ClearToEmpty();
 }
@@ -1875,7 +1937,7 @@ inline void estimate_grpc1Request::set_allocated_secondpoints3d(std::string* sec
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc1Request.secondPoints3D)
 }
 
-// bytes pose = 6;
+// bytes pose = 7;
 inline void estimate_grpc1Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -1936,7 +1998,7 @@ inline void estimate_grpc1Request::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DTransformSACFinderFrom3D3D.estimate_grpc1Request.pose)
 }
 
-// bytes inliers = 7;
+// bytes inliers = 8;
 inline void estimate_grpc1Request::clear_inliers() {
   inliers_.ClearToEmpty();
 }

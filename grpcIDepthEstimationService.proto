@@ -6,12 +6,13 @@ package grpcIDepthEstimation;
 
 message estimateRequest
 {
-bytes matches = 1;
-float focal = 2;
-float baseline = 3;
-bytes type = 4;
-bytes rectKeypoints1 = 5;
-bytes rectKeypoints2 = 6;
+int32 grpcServerCompressionFormat  = 1;
+bytes matches = 2;
+float focal = 3;
+float baseline = 4;
+bytes type = 5;
+bytes rectKeypoints1 = 6;
+bytes rectKeypoints2 = 7;
 }
 
 message estimateResponse

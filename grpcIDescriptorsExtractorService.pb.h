@@ -47,7 +47,7 @@ struct TableStruct_grpcIDescriptorsExtractorService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,6 +62,9 @@ extern extractRequestDefaultTypeInternal _extractRequest_default_instance_;
 class extractResponse;
 struct extractResponseDefaultTypeInternal;
 extern extractResponseDefaultTypeInternal _extractResponse_default_instance_;
+class getTypeStringRequest;
+struct getTypeStringRequestDefaultTypeInternal;
+extern getTypeStringRequestDefaultTypeInternal _getTypeStringRequest_default_instance_;
 class getTypeStringResponse;
 struct getTypeStringResponseDefaultTypeInternal;
 extern getTypeStringResponseDefaultTypeInternal _getTypeStringResponse_default_instance_;
@@ -69,11 +72,149 @@ extern getTypeStringResponseDefaultTypeInternal _getTypeStringResponse_default_i
 PROTOBUF_NAMESPACE_OPEN
 template<> ::grpcIDescriptorsExtractor::extractRequest* Arena::CreateMaybeMessage<::grpcIDescriptorsExtractor::extractRequest>(Arena*);
 template<> ::grpcIDescriptorsExtractor::extractResponse* Arena::CreateMaybeMessage<::grpcIDescriptorsExtractor::extractResponse>(Arena*);
+template<> ::grpcIDescriptorsExtractor::getTypeStringRequest* Arena::CreateMaybeMessage<::grpcIDescriptorsExtractor::getTypeStringRequest>(Arena*);
 template<> ::grpcIDescriptorsExtractor::getTypeStringResponse* Arena::CreateMaybeMessage<::grpcIDescriptorsExtractor::getTypeStringResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIDescriptorsExtractor {
 
 // ===================================================================
+
+class getTypeStringRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIDescriptorsExtractor.getTypeStringRequest) */ {
+ public:
+  inline getTypeStringRequest() : getTypeStringRequest(nullptr) {}
+  virtual ~getTypeStringRequest();
+  explicit constexpr getTypeStringRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getTypeStringRequest(const getTypeStringRequest& from);
+  getTypeStringRequest(getTypeStringRequest&& from) noexcept
+    : getTypeStringRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getTypeStringRequest& operator=(const getTypeStringRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getTypeStringRequest& operator=(getTypeStringRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getTypeStringRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getTypeStringRequest* internal_default_instance() {
+    return reinterpret_cast<const getTypeStringRequest*>(
+               &_getTypeStringRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(getTypeStringRequest& a, getTypeStringRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getTypeStringRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getTypeStringRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getTypeStringRequest* New() const final {
+    return CreateMaybeMessage<getTypeStringRequest>(nullptr);
+  }
+
+  getTypeStringRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getTypeStringRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getTypeStringRequest& from);
+  void MergeFrom(const getTypeStringRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getTypeStringRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIDescriptorsExtractor.getTypeStringRequest";
+  }
+  protected:
+  explicit getTypeStringRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIDescriptorsExtractorService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIDescriptorsExtractor.getTypeStringRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIDescriptorsExtractorService_2eproto;
+};
+// -------------------------------------------------------------------
 
 class getTypeStringResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIDescriptorsExtractor.getTypeStringResponse) */ {
@@ -118,7 +259,7 @@ class getTypeStringResponse PROTOBUF_FINAL :
                &_getTypeStringResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(getTypeStringResponse& a, getTypeStringResponse& b) {
     a.Swap(&b);
@@ -262,7 +403,7 @@ class extractRequest PROTOBUF_FINAL :
                &_extractRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(extractRequest& a, extractRequest& b) {
     a.Swap(&b);
@@ -332,11 +473,12 @@ class extractRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImageFieldNumber = 1,
-    kKeypointsFieldNumber = 2,
-    kDescriptorsFieldNumber = 3,
+    kImageFieldNumber = 2,
+    kKeypointsFieldNumber = 3,
+    kDescriptorsFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image = 1;
+  // bytes image = 2;
   void clear_image();
   const std::string& image() const;
   void set_image(const std::string& value);
@@ -352,7 +494,7 @@ class extractRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_image();
   public:
 
-  // bytes keypoints = 2;
+  // bytes keypoints = 3;
   void clear_keypoints();
   const std::string& keypoints() const;
   void set_keypoints(const std::string& value);
@@ -368,7 +510,7 @@ class extractRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints();
   public:
 
-  // bytes descriptors = 3;
+  // bytes descriptors = 4;
   void clear_descriptors();
   const std::string& descriptors() const;
   void set_descriptors(const std::string& value);
@@ -384,6 +526,15 @@ class extractRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_descriptors();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIDescriptorsExtractor.extractRequest)
  private:
   class _Internal;
@@ -394,6 +545,7 @@ class extractRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keypoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr descriptors_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIDescriptorsExtractorService_2eproto;
 };
@@ -442,7 +594,7 @@ class extractResponse PROTOBUF_FINAL :
                &_extractResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(extractResponse& a, extractResponse& b) {
     a.Swap(&b);
@@ -550,6 +702,30 @@ class extractResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// getTypeStringRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getTypeStringRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getTypeStringRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getTypeStringRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorsExtractor.getTypeStringRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getTypeStringRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getTypeStringRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorsExtractor.getTypeStringRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // getTypeStringResponse
 
 // string xpcfGrpcReturnValue = 1;
@@ -617,7 +793,27 @@ inline void getTypeStringResponse::set_allocated_xpcfgrpcreturnvalue(std::string
 
 // extractRequest
 
-// bytes image = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void extractRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 extractRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 extractRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorsExtractor.extractRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void extractRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void extractRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorsExtractor.extractRequest.grpcServerCompressionFormat)
+}
+
+// bytes image = 2;
 inline void extractRequest::clear_image() {
   image_.ClearToEmpty();
 }
@@ -678,7 +874,7 @@ inline void extractRequest::set_allocated_image(std::string* image) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorsExtractor.extractRequest.image)
 }
 
-// bytes keypoints = 2;
+// bytes keypoints = 3;
 inline void extractRequest::clear_keypoints() {
   keypoints_.ClearToEmpty();
 }
@@ -739,7 +935,7 @@ inline void extractRequest::set_allocated_keypoints(std::string* keypoints) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorsExtractor.extractRequest.keypoints)
 }
 
-// bytes descriptors = 3;
+// bytes descriptors = 4;
 inline void extractRequest::clear_descriptors() {
   descriptors_.ClearToEmpty();
 }
@@ -868,6 +1064,8 @@ inline void extractResponse::set_allocated_descriptors(std::string* descriptors)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

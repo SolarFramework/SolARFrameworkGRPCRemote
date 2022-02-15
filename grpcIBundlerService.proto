@@ -6,7 +6,8 @@ package grpcIBundler;
 
 message setMapRequest
 {
-bytes map = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes map = 2;
 }
 
 message setMapResponse
@@ -16,9 +17,10 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message bundleAdjustmentRequest
 {
-bytes selectKeyframes = 1;
-bytes K = 2;
-bytes D = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes selectKeyframes = 2;
+bytes K = 3;
+bytes D = 4;
 }
 
 message bundleAdjustmentResponse
@@ -30,14 +32,15 @@ double xpcfGrpcReturnValue = 3;
 
 message optimizeSim3Request
 {
-bytes keyframe1 = 1;
-bytes keyframe2 = 2;
-bytes matches = 3;
-bytes pts3D1 = 4;
-bytes pts3D2 = 5;
-bytes K1 = 6;
-bytes K2 = 7;
-bytes pose = 8;
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframe1 = 2;
+bytes keyframe2 = 3;
+bytes matches = 4;
+bytes pts3D1 = 5;
+bytes pts3D2 = 6;
+bytes K1 = 7;
+bytes K2 = 8;
+bytes pose = 9;
 }
 
 message optimizeSim3Response

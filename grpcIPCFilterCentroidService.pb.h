@@ -184,11 +184,12 @@ class filterRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInPointCloudFieldNumber = 1,
-    kCentroidFieldNumber = 2,
-    kOutPointCloudFieldNumber = 3,
+    kInPointCloudFieldNumber = 2,
+    kCentroidFieldNumber = 3,
+    kOutPointCloudFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes inPointCloud = 1;
+  // bytes inPointCloud = 2;
   void clear_inpointcloud();
   const std::string& inpointcloud() const;
   void set_inpointcloud(const std::string& value);
@@ -204,7 +205,7 @@ class filterRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_inpointcloud();
   public:
 
-  // bytes centroid = 2;
+  // bytes centroid = 3;
   void clear_centroid();
   const std::string& centroid() const;
   void set_centroid(const std::string& value);
@@ -220,7 +221,7 @@ class filterRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_centroid();
   public:
 
-  // bytes outPointCloud = 3;
+  // bytes outPointCloud = 4;
   void clear_outpointcloud();
   const std::string& outpointcloud() const;
   void set_outpointcloud(const std::string& value);
@@ -236,6 +237,15 @@ class filterRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_outpointcloud();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIPCFilterCentroid.filterRequest)
  private:
   class _Internal;
@@ -246,6 +256,7 @@ class filterRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr inpointcloud_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr centroid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outpointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIPCFilterCentroidService_2eproto;
 };
@@ -415,7 +426,27 @@ class filterResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // filterRequest
 
-// bytes inPointCloud = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void filterRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filterRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 filterRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIPCFilterCentroid.filterRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void filterRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void filterRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIPCFilterCentroid.filterRequest.grpcServerCompressionFormat)
+}
+
+// bytes inPointCloud = 2;
 inline void filterRequest::clear_inpointcloud() {
   inpointcloud_.ClearToEmpty();
 }
@@ -476,7 +507,7 @@ inline void filterRequest::set_allocated_inpointcloud(std::string* inpointcloud)
   // @@protoc_insertion_point(field_set_allocated:grpcIPCFilterCentroid.filterRequest.inPointCloud)
 }
 
-// bytes centroid = 2;
+// bytes centroid = 3;
 inline void filterRequest::clear_centroid() {
   centroid_.ClearToEmpty();
 }
@@ -537,7 +568,7 @@ inline void filterRequest::set_allocated_centroid(std::string* centroid) {
   // @@protoc_insertion_point(field_set_allocated:grpcIPCFilterCentroid.filterRequest.centroid)
 }
 
-// bytes outPointCloud = 3;
+// bytes outPointCloud = 4;
 inline void filterRequest::clear_outpointcloud() {
   outpointcloud_.ClearToEmpty();
 }

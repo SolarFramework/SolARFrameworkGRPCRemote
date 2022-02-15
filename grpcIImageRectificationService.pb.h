@@ -184,12 +184,13 @@ class rectifyRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImageFieldNumber = 1,
-    kCamParamsFieldNumber = 2,
-    kRectParamsFieldNumber = 3,
-    kRectifiedImageFieldNumber = 4,
+    kImageFieldNumber = 2,
+    kCamParamsFieldNumber = 3,
+    kRectParamsFieldNumber = 4,
+    kRectifiedImageFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image = 1;
+  // bytes image = 2;
   void clear_image();
   const std::string& image() const;
   void set_image(const std::string& value);
@@ -205,7 +206,7 @@ class rectifyRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_image();
   public:
 
-  // bytes camParams = 2;
+  // bytes camParams = 3;
   void clear_camparams();
   const std::string& camparams() const;
   void set_camparams(const std::string& value);
@@ -221,7 +222,7 @@ class rectifyRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_camparams();
   public:
 
-  // bytes rectParams = 3;
+  // bytes rectParams = 4;
   void clear_rectparams();
   const std::string& rectparams() const;
   void set_rectparams(const std::string& value);
@@ -237,7 +238,7 @@ class rectifyRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_rectparams();
   public:
 
-  // bytes rectifiedImage = 4;
+  // bytes rectifiedImage = 5;
   void clear_rectifiedimage();
   const std::string& rectifiedimage() const;
   void set_rectifiedimage(const std::string& value);
@@ -253,6 +254,15 @@ class rectifyRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_rectifiedimage();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIImageRectification.rectifyRequest)
  private:
   class _Internal;
@@ -264,6 +274,7 @@ class rectifyRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectifiedimage_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIImageRectificationService_2eproto;
 };
@@ -433,7 +444,27 @@ class rectifyResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // rectifyRequest
 
-// bytes image = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void rectifyRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 rectifyRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 rectifyRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImageRectification.rectifyRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void rectifyRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void rectifyRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImageRectification.rectifyRequest.grpcServerCompressionFormat)
+}
+
+// bytes image = 2;
 inline void rectifyRequest::clear_image() {
   image_.ClearToEmpty();
 }
@@ -494,7 +525,7 @@ inline void rectifyRequest::set_allocated_image(std::string* image) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageRectification.rectifyRequest.image)
 }
 
-// bytes camParams = 2;
+// bytes camParams = 3;
 inline void rectifyRequest::clear_camparams() {
   camparams_.ClearToEmpty();
 }
@@ -555,7 +586,7 @@ inline void rectifyRequest::set_allocated_camparams(std::string* camparams) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageRectification.rectifyRequest.camParams)
 }
 
-// bytes rectParams = 3;
+// bytes rectParams = 4;
 inline void rectifyRequest::clear_rectparams() {
   rectparams_.ClearToEmpty();
 }
@@ -616,7 +647,7 @@ inline void rectifyRequest::set_allocated_rectparams(std::string* rectparams) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageRectification.rectifyRequest.rectParams)
 }
 
-// bytes rectifiedImage = 4;
+// bytes rectifiedImage = 5;
 inline void rectifyRequest::clear_rectifiedimage() {
   rectifiedimage_.ClearToEmpty();
 }

@@ -6,9 +6,10 @@ package grpcICovisibilityGraphManager;
 
 message increaseEdgeRequest
 {
-uint32 node1_id = 1;
-uint32 node2_id = 2;
-float weight = 3;
+int32 grpcServerCompressionFormat  = 1;
+uint32 node1_id = 2;
+uint32 node2_id = 3;
+float weight = 4;
 }
 
 message increaseEdgeResponse
@@ -18,9 +19,10 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message decreaseEdgeRequest
 {
-uint32 node1_id = 1;
-uint32 node2_id = 2;
-float weight = 3;
+int32 grpcServerCompressionFormat  = 1;
+uint32 node1_id = 2;
+uint32 node2_id = 3;
+float weight = 4;
 }
 
 message decreaseEdgeResponse
@@ -30,8 +32,9 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message removeEdgeRequest
 {
-uint32 node1_id = 1;
-uint32 node2_id = 2;
+int32 grpcServerCompressionFormat  = 1;
+uint32 node1_id = 2;
+uint32 node2_id = 3;
 }
 
 message removeEdgeResponse
@@ -41,9 +44,10 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getEdgeRequest
 {
-uint32 node1_id = 1;
-uint32 node2_id = 2;
-float weight = 3;
+int32 grpcServerCompressionFormat  = 1;
+uint32 node1_id = 2;
+uint32 node2_id = 3;
+float weight = 4;
 }
 
 message getEdgeResponse
@@ -54,8 +58,9 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message isEdgeRequest
 {
-uint32 node1_id = 1;
-uint32 node2_id = 2;
+int32 grpcServerCompressionFormat  = 1;
+uint32 node1_id = 2;
+uint32 node2_id = 3;
 }
 
 message isEdgeResponse
@@ -65,7 +70,8 @@ bool xpcfGrpcReturnValue = 1;
 
 message getAllNodesRequest
 {
-bytes nodes_id = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes nodes_id = 2;
 }
 
 message getAllNodesResponse
@@ -76,7 +82,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message suppressNodeRequest
 {
-uint32 node_id = 1;
+int32 grpcServerCompressionFormat  = 1;
+uint32 node_id = 2;
 }
 
 message suppressNodeResponse
@@ -86,9 +93,10 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getNeighborsRequest
 {
-uint32 node_id = 1;
-float minWeight = 2;
-bytes neighbors = 3;
+int32 grpcServerCompressionFormat  = 1;
+uint32 node_id = 2;
+float minWeight = 3;
+bytes neighbors = 4;
 }
 
 message getNeighborsResponse
@@ -99,8 +107,9 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message minimalSpanningTreeRequest
 {
-bytes edges_weights = 1;
-float minTotalWeights = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes edges_weights = 2;
+float minTotalWeights = 3;
 }
 
 message minimalSpanningTreeResponse
@@ -112,8 +121,9 @@ sint32 xpcfGrpcReturnValue = 3;
 
 message maximalSpanningTreeRequest
 {
-bytes edges_weights = 1;
-float maxTotalWeights = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes edges_weights = 2;
+float maxTotalWeights = 3;
 }
 
 message maximalSpanningTreeResponse
@@ -125,15 +135,21 @@ sint32 xpcfGrpcReturnValue = 3;
 
 message getShortestPathRequest
 {
-uint32 node1_id = 1;
-uint32 node2_id = 2;
-bytes path = 3;
+int32 grpcServerCompressionFormat  = 1;
+uint32 node1_id = 2;
+uint32 node2_id = 3;
+bytes path = 4;
 }
 
 message getShortestPathResponse
 {
 bytes path = 1;
 sint32 xpcfGrpcReturnValue = 2;
+}
+
+message displayRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message displayResponse
@@ -143,7 +159,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message saveToFileRequest
 {
-string file = 1;
+int32 grpcServerCompressionFormat  = 1;
+string file = 2;
 }
 
 message saveToFileResponse
@@ -153,12 +170,18 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message loadFromFileRequest
 {
-string file = 1;
+int32 grpcServerCompressionFormat  = 1;
+string file = 2;
 }
 
 message loadFromFileResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getConstCovisibilityGraphRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getConstCovisibilityGraphResponse
@@ -168,7 +191,8 @@ bytes xpcfGrpcReturnValue = 1;
 
 message getCovisibilityGraphRequest
 {
-bytes covisibilityGraph = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes covisibilityGraph = 2;
 }
 
 message getCovisibilityGraphResponse
@@ -194,10 +218,10 @@ rpc getNeighbors(getNeighborsRequest) returns(getNeighborsResponse) {}
 rpc minimalSpanningTree(minimalSpanningTreeRequest) returns(minimalSpanningTreeResponse) {}
 rpc maximalSpanningTree(maximalSpanningTreeRequest) returns(maximalSpanningTreeResponse) {}
 rpc getShortestPath(getShortestPathRequest) returns(getShortestPathResponse) {}
-rpc display(google.protobuf.Empty) returns(displayResponse) {}
+rpc display(displayRequest) returns(displayResponse) {}
 rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
-rpc getConstCovisibilityGraph(google.protobuf.Empty) returns(getConstCovisibilityGraphResponse) {}
+rpc getConstCovisibilityGraph(getConstCovisibilityGraphRequest) returns(getConstCovisibilityGraphResponse) {}
 rpc getCovisibilityGraph(getCovisibilityGraphRequest) returns(getCovisibilityGraphResponse) {}
 rpc setCovisibilityGraph(setCovisibilityGraphRequest) returns(google.protobuf.Empty) {}
 }

@@ -6,9 +6,10 @@ package grpcIDescriptorMatcher;
 
 message match_grpc0Request
 {
-bytes descriptors1 = 1;
-bytes descriptors2 = 2;
-bytes matches = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes descriptors1 = 2;
+bytes descriptors2 = 3;
+bytes matches = 4;
 }
 
 message match_grpc0Response
@@ -19,9 +20,10 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message match_grpc1Request
 {
-bytes descriptors1 = 1;
-bytes descriptors2 = 2;
-bytes matches = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes descriptors1 = 2;
+bytes descriptors2 = 3;
+bytes matches = 4;
 }
 
 message match_grpc1Response

@@ -113,11 +113,11 @@ class grpcICovisibilityGraphManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getShortestPathResponse>> PrepareAsyncgetShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getShortestPathResponse>>(PrepareAsyncgetShortestPathRaw(context, request, cq));
     }
-    virtual ::grpc::Status display(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcICovisibilityGraphManager::displayResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>> Asyncdisplay(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status display(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpcICovisibilityGraphManager::displayResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>> Asyncdisplay(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>>(AsyncdisplayRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>> PrepareAsyncdisplay(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>> PrepareAsyncdisplay(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>>(PrepareAsyncdisplayRaw(context, request, cq));
     }
     virtual ::grpc::Status saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest& request, ::grpcICovisibilityGraphManager::saveToFileResponse* response) = 0;
@@ -134,11 +134,11 @@ class grpcICovisibilityGraphManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::loadFromFileResponse>> PrepareAsyncloadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::loadFromFileResponse>>(PrepareAsyncloadFromFileRaw(context, request, cq));
     }
-    virtual ::grpc::Status getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>> AsyncgetConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status getConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>> AsyncgetConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>>(AsyncgetConstCovisibilityGraphRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>> PrepareAsyncgetConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>> PrepareAsyncgetConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>>(PrepareAsyncgetConstCovisibilityGraphRaw(context, request, cq));
     }
     virtual ::grpc::Status getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest& request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response) = 0;
@@ -224,11 +224,11 @@ class grpcICovisibilityGraphManagerService final {
       #else
       virtual void getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void display(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest* request, ::grpcICovisibilityGraphManager::displayResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void display(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void display(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -242,11 +242,11 @@ class grpcICovisibilityGraphManagerService final {
       #else
       virtual void loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -291,14 +291,14 @@ class grpcICovisibilityGraphManagerService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse>* PrepareAsyncmaximalSpanningTreeRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getShortestPathResponse>* AsyncgetShortestPathRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getShortestPathResponse>* PrepareAsyncgetShortestPathRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>* AsyncdisplayRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>* PrepareAsyncdisplayRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>* AsyncdisplayRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::displayResponse>* PrepareAsyncdisplayRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::saveToFileResponse>* AsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::saveToFileResponse>* PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::loadFromFileResponse>* AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::loadFromFileResponse>* PrepareAsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* AsyncgetConstCovisibilityGraphRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* PrepareAsyncgetConstCovisibilityGraphRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* AsyncgetConstCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* PrepareAsyncgetConstCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse>* AsyncgetCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse>* PrepareAsyncgetCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncsetCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -384,11 +384,11 @@ class grpcICovisibilityGraphManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getShortestPathResponse>> PrepareAsyncgetShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getShortestPathResponse>>(PrepareAsyncgetShortestPathRaw(context, request, cq));
     }
-    ::grpc::Status display(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcICovisibilityGraphManager::displayResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>> Asyncdisplay(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status display(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpcICovisibilityGraphManager::displayResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>> Asyncdisplay(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>>(AsyncdisplayRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>> PrepareAsyncdisplay(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>> PrepareAsyncdisplay(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>>(PrepareAsyncdisplayRaw(context, request, cq));
     }
     ::grpc::Status saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest& request, ::grpcICovisibilityGraphManager::saveToFileResponse* response) override;
@@ -405,11 +405,11 @@ class grpcICovisibilityGraphManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::loadFromFileResponse>> PrepareAsyncloadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::loadFromFileResponse>>(PrepareAsyncloadFromFileRaw(context, request, cq));
     }
-    ::grpc::Status getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>> AsyncgetConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status getConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>> AsyncgetConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>>(AsyncgetConstCovisibilityGraphRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>> PrepareAsyncgetConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>> PrepareAsyncgetConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>>(PrepareAsyncgetConstCovisibilityGraphRaw(context, request, cq));
     }
     ::grpc::Status getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest& request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response) override;
@@ -495,11 +495,11 @@ class grpcICovisibilityGraphManagerService final {
       #else
       void getShortestPath(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, std::function<void(::grpc::Status)>) override;
+      void display(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest* request, ::grpcICovisibilityGraphManager::displayResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void display(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void display(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void display(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest* request, ::grpcICovisibilityGraphManager::displayResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void saveToFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -513,11 +513,11 @@ class grpcICovisibilityGraphManagerService final {
       #else
       void loadFromFile(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) override;
+      void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void getConstCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void getCovisibilityGraph(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -564,14 +564,14 @@ class grpcICovisibilityGraphManagerService final {
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse>* PrepareAsyncmaximalSpanningTreeRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getShortestPathResponse>* AsyncgetShortestPathRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getShortestPathResponse>* PrepareAsyncgetShortestPathRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>* AsyncdisplayRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>* PrepareAsyncdisplayRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>* AsyncdisplayRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::displayResponse>* PrepareAsyncdisplayRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::displayRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::saveToFileResponse>* AsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::saveToFileResponse>* PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::loadFromFileResponse>* AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::loadFromFileResponse>* PrepareAsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* AsyncgetConstCovisibilityGraphRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* PrepareAsyncgetConstCovisibilityGraphRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* AsyncgetConstCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* PrepareAsyncgetConstCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse>* AsyncgetCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse>* PrepareAsyncgetCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncsetCovisibilityGraphRaw(::grpc::ClientContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -611,10 +611,10 @@ class grpcICovisibilityGraphManagerService final {
     virtual ::grpc::Status minimalSpanningTree(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::minimalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::minimalSpanningTreeResponse* response);
     virtual ::grpc::Status maximalSpanningTree(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::maximalSpanningTreeRequest* request, ::grpcICovisibilityGraphManager::maximalSpanningTreeResponse* response);
     virtual ::grpc::Status getShortestPath(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::getShortestPathRequest* request, ::grpcICovisibilityGraphManager::getShortestPathResponse* response);
-    virtual ::grpc::Status display(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response);
+    virtual ::grpc::Status display(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::displayRequest* request, ::grpcICovisibilityGraphManager::displayResponse* response);
     virtual ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::saveToFileRequest* request, ::grpcICovisibilityGraphManager::saveToFileResponse* response);
     virtual ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::loadFromFileRequest* request, ::grpcICovisibilityGraphManager::loadFromFileResponse* response);
-    virtual ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response);
+    virtual ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response);
     virtual ::grpc::Status getCovisibilityGraph(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::getCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getCovisibilityGraphResponse* response);
     virtual ::grpc::Status setCovisibilityGraph(::grpc::ServerContext* context, const ::grpcICovisibilityGraphManager::setCovisibilityGraphRequest* request, ::google::protobuf::Empty* response);
   };
@@ -850,11 +850,11 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
+    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::displayRequest* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requestdisplay(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcICovisibilityGraphManager::displayResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requestdisplay(::grpc::ServerContext* context, ::grpcICovisibilityGraphManager::displayRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcICovisibilityGraphManager::displayResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -910,11 +910,11 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
+    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetConstCovisibilityGraph(::grpc::ServerContext* context, ::google::protobuf::Empty* request, ::grpc::ServerAsyncResponseWriter< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetConstCovisibilityGraph(::grpc::ServerContext* context, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1488,38 +1488,38 @@ class grpcICovisibilityGraphManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(11,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::displayRequest, ::grpcICovisibilityGraphManager::displayResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::displayResponse* response) { return this->display(context, request, response); }));}
+                     context, const ::grpcICovisibilityGraphManager::displayRequest* request, ::grpcICovisibilityGraphManager::displayResponse* response) { return this->display(context, request, response); }));}
     void SetMessageAllocatorFor_display(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::displayRequest, ::grpcICovisibilityGraphManager::displayResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::displayRequest, ::grpcICovisibilityGraphManager::displayResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_display() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
+    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::displayRequest* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* display(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::displayRequest* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* display(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::displayRequest* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1629,38 +1629,38 @@ class grpcICovisibilityGraphManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(14,
-          new ::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::google::protobuf::Empty* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) { return this->getConstCovisibilityGraph(context, request, response); }));}
+                     context, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* request, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* response) { return this->getConstCovisibilityGraph(context, request, response); }));}
     void SetMessageAllocatorFor_getConstCovisibilityGraph(
-        ::grpc::experimental::MessageAllocator< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_getConstCovisibilityGraph() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
+    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getConstCovisibilityGraph(
-      ::grpc::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* getConstCovisibilityGraph(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1962,7 +1962,7 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
+    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::displayRequest* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2013,7 +2013,7 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
+    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2284,7 +2284,7 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
+    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::displayRequest* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2344,7 +2344,7 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
+    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2835,7 +2835,7 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
+    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::displayRequest* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2949,7 +2949,7 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
+    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3343,10 +3343,10 @@ class grpcICovisibilityGraphManagerService final {
     WithStreamedUnaryMethod_display() {
       ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse>(
+          ::grpcICovisibilityGraphManager::displayRequest, ::grpcICovisibilityGraphManager::displayResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::displayResponse>* streamer) {
+                     ::grpcICovisibilityGraphManager::displayRequest, ::grpcICovisibilityGraphManager::displayResponse>* streamer) {
                        return this->Streameddisplay(context,
                          streamer);
                   }));
@@ -3355,12 +3355,12 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
+    ::grpc::Status display(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::displayRequest* /*request*/, ::grpcICovisibilityGraphManager::displayResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streameddisplay(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcICovisibilityGraphManager::displayResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streameddisplay(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcICovisibilityGraphManager::displayRequest,::grpcICovisibilityGraphManager::displayResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_saveToFile : public BaseClass {
@@ -3424,10 +3424,10 @@ class grpcICovisibilityGraphManagerService final {
     WithStreamedUnaryMethod_getConstCovisibilityGraph() {
       ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>(
+          ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::google::protobuf::Empty, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* streamer) {
+                     ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* streamer) {
                        return this->StreamedgetConstCovisibilityGraph(context,
                          streamer);
                   }));
@@ -3436,12 +3436,12 @@ class grpcICovisibilityGraphManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::google::protobuf::Empty* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
+    ::grpc::Status getConstCovisibilityGraph(::grpc::ServerContext* /*context*/, const ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest* /*request*/, ::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetConstCovisibilityGraph(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::google::protobuf::Empty,::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetConstCovisibilityGraph(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcICovisibilityGraphManager::getConstCovisibilityGraphRequest,::grpcICovisibilityGraphManager::getConstCovisibilityGraphResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getCovisibilityGraph : public BaseClass {

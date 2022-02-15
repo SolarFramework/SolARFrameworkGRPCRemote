@@ -262,46 +262,46 @@ void grpcIMapManagerService::Stub::experimental_async::keyframePruning(::grpc::C
   return result;
 }
 
-::grpc::Status grpcIMapManagerService::Stub::saveToFile(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMapManager::saveToFileResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_saveToFile_, context, request, response);
+::grpc::Status grpcIMapManagerService::Stub::saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpcIMapManager::saveToFileResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_saveToFile_, context, request, response);
 }
 
-void grpcIMapManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapManager::saveToFileResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_saveToFile_, context, request, response, std::move(f));
+void grpcIMapManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_saveToFile_, context, request, response, std::move(f));
 }
 
-void grpcIMapManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapManager::saveToFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMapManagerService::Stub::experimental_async::saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_saveToFile_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapManager::saveToFileResponse>* grpcIMapManagerService::Stub::PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::saveToFileResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_saveToFile_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::saveToFileResponse>* grpcIMapManagerService::Stub::PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::saveToFileResponse, ::grpcIMapManager::saveToFileRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_saveToFile_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapManager::saveToFileResponse>* grpcIMapManagerService::Stub::AsyncsaveToFileRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::saveToFileResponse>* grpcIMapManagerService::Stub::AsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncsaveToFileRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIMapManagerService::Stub::loadFromFile(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIMapManager::loadFromFileResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIMapManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_loadFromFile_, context, request, response);
+::grpc::Status grpcIMapManagerService::Stub::loadFromFile(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpcIMapManager::loadFromFileResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_loadFromFile_, context, request, response);
 }
 
-void grpcIMapManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapManager::loadFromFileResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIMapManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadFromFile_, context, request, response, std::move(f));
+void grpcIMapManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadFromFile_, context, request, response, std::move(f));
 }
 
-void grpcIMapManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIMapManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMapManagerService::Stub::experimental_async::loadFromFile(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_loadFromFile_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapManager::loadFromFileResponse>* grpcIMapManagerService::Stub::PrepareAsyncloadFromFileRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::loadFromFileResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_loadFromFile_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::loadFromFileResponse>* grpcIMapManagerService::Stub::PrepareAsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::loadFromFileResponse, ::grpcIMapManager::loadFromFileRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_loadFromFile_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapManager::loadFromFileResponse>* grpcIMapManagerService::Stub::AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::loadFromFileResponse>* grpcIMapManagerService::Stub::AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncloadFromFileRaw(context, request, cq);
   result->StartCall();
@@ -402,20 +402,20 @@ grpcIMapManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapManagerService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::google::protobuf::Empty, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIMapManager::saveToFileRequest* req,
              ::grpcIMapManager::saveToFileResponse* resp) {
                return service->saveToFile(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapManagerService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::google::protobuf::Empty, ::grpcIMapManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIMapManager::loadFromFileRequest* req,
              ::grpcIMapManager::loadFromFileResponse* resp) {
                return service->loadFromFile(ctx, req, resp);
              }, this)));
@@ -487,14 +487,14 @@ grpcIMapManagerService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIMapManagerService::Service::saveToFile(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMapManager::saveToFileResponse* response) {
+::grpc::Status grpcIMapManagerService::Service::saveToFile(::grpc::ServerContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIMapManagerService::Service::loadFromFile(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIMapManager::loadFromFileResponse* response) {
+::grpc::Status grpcIMapManagerService::Service::loadFromFile(::grpc::ServerContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response) {
   (void) context;
   (void) request;
   (void) response;

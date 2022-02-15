@@ -4,9 +4,19 @@ import "google/protobuf/empty.proto";
 
 package grpcIRGBDCamera;
 
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message startResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message stopResponse
@@ -16,7 +26,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message getNextImageRequest
 {
-bytes img = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes img = 2;
 }
 
 message getNextImageResponse
@@ -45,9 +56,19 @@ message setParametersRequest
 bytes parameters = 1;
 }
 
+message getResolutionRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message getResolutionResponse
 {
 bytes xpcfGrpcReturnValue = 1;
+}
+
+message getIntrinsicsParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getIntrinsicsParametersResponse
@@ -55,9 +76,19 @@ message getIntrinsicsParametersResponse
 bytes xpcfGrpcReturnValue = 1;
 }
 
+message getParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message getParametersResponse
 {
 bytes xpcfGrpcReturnValue = 1;
+}
+
+message getDistortionParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getDistortionParametersResponse
@@ -67,7 +98,8 @@ bytes xpcfGrpcReturnValue = 1;
 
 message getNextDepthFrameRequest
 {
-bytes img = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes img = 2;
 }
 
 message getNextDepthFrameResponse
@@ -78,7 +110,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getPointCloudRequest
 {
-bytes pc = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes pc = 2;
 }
 
 message getPointCloudResponse
@@ -89,7 +122,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message setDepthResolutionRequest
 {
-bytes resolution = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes resolution = 2;
 }
 
 message setDepthResolutionResponse
@@ -99,7 +133,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message setIntrinsicDepthParametersRequest
 {
-bytes intrinsic_parameters = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes intrinsic_parameters = 2;
 }
 
 message setIntrinsicDepthParametersResponse
@@ -109,7 +144,8 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message setDistortionDepthParametersRequest
 {
-bytes distortion_parameters = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes distortion_parameters = 2;
 }
 
 message setDistortionDepthParametersResponse
@@ -117,9 +153,19 @@ message setDistortionDepthParametersResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message getDepthResolutionRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message getDepthResolutionResponse
 {
 bytes xpcfGrpcReturnValue = 1;
+}
+
+message getDepthMinDistanceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getDepthMinDistanceResponse
@@ -127,9 +173,19 @@ message getDepthMinDistanceResponse
 float xpcfGrpcReturnValue = 1;
 }
 
+message getIntrinsicsDepthParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message getIntrinsicsDepthParametersResponse
 {
 bytes xpcfGrpcReturnValue = 1;
+}
+
+message getDistortionDepthParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getDistortionDepthParametersResponse
@@ -139,8 +195,9 @@ bytes xpcfGrpcReturnValue = 1;
 
 message getNextRGBDFrameRequest
 {
-bytes colorImg = 1;
-bytes depthImg = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes colorImg = 2;
+bytes depthImg = 3;
 }
 
 message getNextRGBDFrameResponse
@@ -152,7 +209,8 @@ sint32 xpcfGrpcReturnValue = 3;
 
 message alignDepthToColorRequest
 {
-bytes alignedDepthImg = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes alignedDepthImg = 2;
 }
 
 message alignDepthToColorResponse
@@ -163,7 +221,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message alignColorToDepthRequest
 {
-bytes alignedColorImg = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes alignedColorImg = 2;
 }
 
 message alignColorToDepthResponse
@@ -174,7 +233,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 message getPixelToWorldRequest
 {
-bytes inPixel = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes inPixel = 2;
 }
 
 message getPixelToWorldResponse
@@ -184,7 +244,8 @@ bytes xpcfGrpcReturnValue = 1;
 
 message getWorldToPixelRequest
 {
-bytes in3DPoint = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes in3DPoint = 2;
 }
 
 message getWorldToPixelResponse
@@ -194,7 +255,8 @@ bytes xpcfGrpcReturnValue = 1;
 
 message getWorldToPixelsRequest
 {
-bytes in3DPoints = 1;
+int32 grpcServerCompressionFormat  = 1;
+bytes in3DPoints = 2;
 }
 
 message getWorldToPixelsResponse
@@ -203,26 +265,26 @@ bytes xpcfGrpcReturnValue = 1;
 }
 
 service grpcIRGBDCameraService {
-rpc start(google.protobuf.Empty) returns(startResponse) {}
-rpc stop(google.protobuf.Empty) returns(stopResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
 rpc getNextImage(getNextImageRequest) returns(getNextImageResponse) {}
 rpc setResolution(setResolutionRequest) returns(google.protobuf.Empty) {}
 rpc setIntrinsicParameters(setIntrinsicParametersRequest) returns(google.protobuf.Empty) {}
 rpc setDistortionParameters(setDistortionParametersRequest) returns(google.protobuf.Empty) {}
 rpc setParameters(setParametersRequest) returns(google.protobuf.Empty) {}
-rpc getResolution(google.protobuf.Empty) returns(getResolutionResponse) {}
-rpc getIntrinsicsParameters(google.protobuf.Empty) returns(getIntrinsicsParametersResponse) {}
-rpc getParameters(google.protobuf.Empty) returns(getParametersResponse) {}
-rpc getDistortionParameters(google.protobuf.Empty) returns(getDistortionParametersResponse) {}
+rpc getResolution(getResolutionRequest) returns(getResolutionResponse) {}
+rpc getIntrinsicsParameters(getIntrinsicsParametersRequest) returns(getIntrinsicsParametersResponse) {}
+rpc getParameters(getParametersRequest) returns(getParametersResponse) {}
+rpc getDistortionParameters(getDistortionParametersRequest) returns(getDistortionParametersResponse) {}
 rpc getNextDepthFrame(getNextDepthFrameRequest) returns(getNextDepthFrameResponse) {}
 rpc getPointCloud(getPointCloudRequest) returns(getPointCloudResponse) {}
 rpc setDepthResolution(setDepthResolutionRequest) returns(setDepthResolutionResponse) {}
 rpc setIntrinsicDepthParameters(setIntrinsicDepthParametersRequest) returns(setIntrinsicDepthParametersResponse) {}
 rpc setDistortionDepthParameters(setDistortionDepthParametersRequest) returns(setDistortionDepthParametersResponse) {}
-rpc getDepthResolution(google.protobuf.Empty) returns(getDepthResolutionResponse) {}
-rpc getDepthMinDistance(google.protobuf.Empty) returns(getDepthMinDistanceResponse) {}
-rpc getIntrinsicsDepthParameters(google.protobuf.Empty) returns(getIntrinsicsDepthParametersResponse) {}
-rpc getDistortionDepthParameters(google.protobuf.Empty) returns(getDistortionDepthParametersResponse) {}
+rpc getDepthResolution(getDepthResolutionRequest) returns(getDepthResolutionResponse) {}
+rpc getDepthMinDistance(getDepthMinDistanceRequest) returns(getDepthMinDistanceResponse) {}
+rpc getIntrinsicsDepthParameters(getIntrinsicsDepthParametersRequest) returns(getIntrinsicsDepthParametersResponse) {}
+rpc getDistortionDepthParameters(getDistortionDepthParametersRequest) returns(getDistortionDepthParametersResponse) {}
 rpc getNextRGBDFrame(getNextRGBDFrameRequest) returns(getNextRGBDFrameResponse) {}
 rpc alignDepthToColor(alignDepthToColorRequest) returns(alignDepthToColorResponse) {}
 rpc alignColorToDepth(alignColorToDepthRequest) returns(alignColorToDepthResponse) {}

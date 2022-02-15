@@ -6,11 +6,12 @@ package grpcIKeypointsReIndexer;
 
 message reindexRequest
 {
-bytes keypoints1 = 1;
-bytes keypoints2 = 2;
-bytes matches = 3;
-bytes matchedKeypoints1 = 4;
-bytes matchedKeypoints2 = 5;
+int32 grpcServerCompressionFormat  = 1;
+bytes keypoints1 = 2;
+bytes keypoints2 = 3;
+bytes matches = 4;
+bytes matchedKeypoints1 = 5;
+bytes matchedKeypoints2 = 6;
 }
 
 message reindexResponse

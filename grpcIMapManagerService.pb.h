@@ -47,7 +47,7 @@ struct TableStruct_grpcIMapManagerService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -86,6 +86,9 @@ extern keyframePruningRequestDefaultTypeInternal _keyframePruningRequest_default
 class keyframePruningResponse;
 struct keyframePruningResponseDefaultTypeInternal;
 extern keyframePruningResponseDefaultTypeInternal _keyframePruningResponse_default_instance_;
+class loadFromFileRequest;
+struct loadFromFileRequestDefaultTypeInternal;
+extern loadFromFileRequestDefaultTypeInternal _loadFromFileRequest_default_instance_;
 class loadFromFileResponse;
 struct loadFromFileResponseDefaultTypeInternal;
 extern loadFromFileResponseDefaultTypeInternal _loadFromFileResponse_default_instance_;
@@ -107,6 +110,9 @@ extern removeKeyframeRequestDefaultTypeInternal _removeKeyframeRequest_default_i
 class removeKeyframeResponse;
 struct removeKeyframeResponseDefaultTypeInternal;
 extern removeKeyframeResponseDefaultTypeInternal _removeKeyframeResponse_default_instance_;
+class saveToFileRequest;
+struct saveToFileRequestDefaultTypeInternal;
+extern saveToFileRequestDefaultTypeInternal _saveToFileRequest_default_instance_;
 class saveToFileResponse;
 struct saveToFileResponseDefaultTypeInternal;
 extern saveToFileResponseDefaultTypeInternal _saveToFileResponse_default_instance_;
@@ -128,6 +134,7 @@ template<> ::grpcIMapManager::getMapRequest* Arena::CreateMaybeMessage<::grpcIMa
 template<> ::grpcIMapManager::getMapResponse* Arena::CreateMaybeMessage<::grpcIMapManager::getMapResponse>(Arena*);
 template<> ::grpcIMapManager::keyframePruningRequest* Arena::CreateMaybeMessage<::grpcIMapManager::keyframePruningRequest>(Arena*);
 template<> ::grpcIMapManager::keyframePruningResponse* Arena::CreateMaybeMessage<::grpcIMapManager::keyframePruningResponse>(Arena*);
+template<> ::grpcIMapManager::loadFromFileRequest* Arena::CreateMaybeMessage<::grpcIMapManager::loadFromFileRequest>(Arena*);
 template<> ::grpcIMapManager::loadFromFileResponse* Arena::CreateMaybeMessage<::grpcIMapManager::loadFromFileResponse>(Arena*);
 template<> ::grpcIMapManager::pointCloudPruningRequest* Arena::CreateMaybeMessage<::grpcIMapManager::pointCloudPruningRequest>(Arena*);
 template<> ::grpcIMapManager::pointCloudPruningResponse* Arena::CreateMaybeMessage<::grpcIMapManager::pointCloudPruningResponse>(Arena*);
@@ -135,6 +142,7 @@ template<> ::grpcIMapManager::removeCloudPointRequest* Arena::CreateMaybeMessage
 template<> ::grpcIMapManager::removeCloudPointResponse* Arena::CreateMaybeMessage<::grpcIMapManager::removeCloudPointResponse>(Arena*);
 template<> ::grpcIMapManager::removeKeyframeRequest* Arena::CreateMaybeMessage<::grpcIMapManager::removeKeyframeRequest>(Arena*);
 template<> ::grpcIMapManager::removeKeyframeResponse* Arena::CreateMaybeMessage<::grpcIMapManager::removeKeyframeResponse>(Arena*);
+template<> ::grpcIMapManager::saveToFileRequest* Arena::CreateMaybeMessage<::grpcIMapManager::saveToFileRequest>(Arena*);
 template<> ::grpcIMapManager::saveToFileResponse* Arena::CreateMaybeMessage<::grpcIMapManager::saveToFileResponse>(Arena*);
 template<> ::grpcIMapManager::setMapRequest* Arena::CreateMaybeMessage<::grpcIMapManager::setMapRequest>(Arena*);
 template<> ::grpcIMapManager::setMapResponse* Arena::CreateMaybeMessage<::grpcIMapManager::setMapResponse>(Arena*);
@@ -256,9 +264,10 @@ class setMapRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapFieldNumber = 1,
+    kMapFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes map = 1;
+  // bytes map = 2;
   void clear_map();
   const std::string& map() const;
   void set_map(const std::string& value);
@@ -274,6 +283,15 @@ class setMapRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_map();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapManager.setMapRequest)
  private:
   class _Internal;
@@ -282,6 +300,7 @@ class setMapRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr map_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
 };
@@ -537,9 +556,10 @@ class getMapRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapFieldNumber = 1,
+    kMapFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes map = 1;
+  // bytes map = 2;
   void clear_map();
   const std::string& map() const;
   void set_map(const std::string& value);
@@ -555,6 +575,15 @@ class getMapRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_map();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapManager.getMapRequest)
  private:
   class _Internal;
@@ -563,6 +592,7 @@ class getMapRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr map_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
 };
@@ -836,11 +866,12 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKeyframeFieldNumber = 1,
-    kLocalPointCloudFieldNumber = 3,
-    kMinWeightNeighborFieldNumber = 2,
+    kKeyframeFieldNumber = 2,
+    kLocalPointCloudFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kMinWeightNeighborFieldNumber = 3,
   };
-  // bytes keyframe = 1;
+  // bytes keyframe = 2;
   void clear_keyframe();
   const std::string& keyframe() const;
   void set_keyframe(const std::string& value);
@@ -856,7 +887,7 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframe();
   public:
 
-  // bytes localPointCloud = 3;
+  // bytes localPointCloud = 4;
   void clear_localpointcloud();
   const std::string& localpointcloud() const;
   void set_localpointcloud(const std::string& value);
@@ -872,7 +903,16 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_localpointcloud();
   public:
 
-  // float minWeightNeighbor = 2;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // float minWeightNeighbor = 3;
   void clear_minweightneighbor();
   float minweightneighbor() const;
   void set_minweightneighbor(float value);
@@ -890,6 +930,7 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframe_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr localpointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   float minweightneighbor_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
@@ -1164,9 +1205,10 @@ class addCloudPointRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCloudPointFieldNumber = 1,
+    kCloudPointFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes cloudPoint = 1;
+  // bytes cloudPoint = 2;
   void clear_cloudpoint();
   const std::string& cloudpoint() const;
   void set_cloudpoint(const std::string& value);
@@ -1182,6 +1224,15 @@ class addCloudPointRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_cloudpoint();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapManager.addCloudPointRequest)
  private:
   class _Internal;
@@ -1190,6 +1241,7 @@ class addCloudPointRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cloudpoint_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
 };
@@ -1445,9 +1497,10 @@ class removeCloudPointRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCloudPointFieldNumber = 1,
+    kCloudPointFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes cloudPoint = 1;
+  // bytes cloudPoint = 2;
   void clear_cloudpoint();
   const std::string& cloudpoint() const;
   void set_cloudpoint(const std::string& value);
@@ -1463,6 +1516,15 @@ class removeCloudPointRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_cloudpoint();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapManager.removeCloudPointRequest)
  private:
   class _Internal;
@@ -1471,6 +1533,7 @@ class removeCloudPointRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cloudpoint_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
 };
@@ -1726,9 +1789,10 @@ class addKeyframeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKeyframeFieldNumber = 1,
+    kKeyframeFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes keyframe = 1;
+  // bytes keyframe = 2;
   void clear_keyframe();
   const std::string& keyframe() const;
   void set_keyframe(const std::string& value);
@@ -1744,6 +1808,15 @@ class addKeyframeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframe();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapManager.addKeyframeRequest)
  private:
   class _Internal;
@@ -1752,6 +1825,7 @@ class addKeyframeRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframe_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
 };
@@ -2007,9 +2081,10 @@ class removeKeyframeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKeyframeFieldNumber = 1,
+    kKeyframeFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes keyframe = 1;
+  // bytes keyframe = 2;
   void clear_keyframe();
   const std::string& keyframe() const;
   void set_keyframe(const std::string& value);
@@ -2025,6 +2100,15 @@ class removeKeyframeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframe();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapManager.removeKeyframeRequest)
  private:
   class _Internal;
@@ -2033,6 +2117,7 @@ class removeKeyframeRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframe_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
 };
@@ -2288,9 +2373,10 @@ class pointCloudPruningRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCloudPointsFieldNumber = 1,
+    kCloudPointsFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes cloudPoints = 1;
+  // bytes cloudPoints = 2;
   void clear_cloudpoints();
   const std::string& cloudpoints() const;
   void set_cloudpoints(const std::string& value);
@@ -2306,6 +2392,15 @@ class pointCloudPruningRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_cloudpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapManager.pointCloudPruningRequest)
  private:
   class _Internal;
@@ -2314,6 +2409,7 @@ class pointCloudPruningRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cloudpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
 };
@@ -2569,9 +2665,10 @@ class keyframePruningRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKeyframesFieldNumber = 1,
+    kKeyframesFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes keyframes = 1;
+  // bytes keyframes = 2;
   void clear_keyframes();
   const std::string& keyframes() const;
   void set_keyframes(const std::string& value);
@@ -2587,6 +2684,15 @@ class keyframePruningRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframes();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapManager.keyframePruningRequest)
  private:
   class _Internal;
@@ -2595,6 +2701,7 @@ class keyframePruningRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframes_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
 };
@@ -2737,6 +2844,143 @@ class keyframePruningResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class saveToFileRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.saveToFileRequest) */ {
+ public:
+  inline saveToFileRequest() : saveToFileRequest(nullptr) {}
+  virtual ~saveToFileRequest();
+  explicit constexpr saveToFileRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  saveToFileRequest(const saveToFileRequest& from);
+  saveToFileRequest(saveToFileRequest&& from) noexcept
+    : saveToFileRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline saveToFileRequest& operator=(const saveToFileRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline saveToFileRequest& operator=(saveToFileRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const saveToFileRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const saveToFileRequest* internal_default_instance() {
+    return reinterpret_cast<const saveToFileRequest*>(
+               &_saveToFileRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(saveToFileRequest& a, saveToFileRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(saveToFileRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(saveToFileRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline saveToFileRequest* New() const final {
+    return CreateMaybeMessage<saveToFileRequest>(nullptr);
+  }
+
+  saveToFileRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<saveToFileRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const saveToFileRequest& from);
+  void MergeFrom(const saveToFileRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(saveToFileRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.saveToFileRequest";
+  }
+  protected:
+  explicit saveToFileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.saveToFileRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class saveToFileResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.saveToFileResponse) */ {
  public:
@@ -2780,7 +3024,7 @@ class saveToFileResponse PROTOBUF_FINAL :
                &_saveToFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(saveToFileResponse& a, saveToFileResponse& b) {
     a.Swap(&b);
@@ -2874,6 +3118,143 @@ class saveToFileResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class loadFromFileRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.loadFromFileRequest) */ {
+ public:
+  inline loadFromFileRequest() : loadFromFileRequest(nullptr) {}
+  virtual ~loadFromFileRequest();
+  explicit constexpr loadFromFileRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  loadFromFileRequest(const loadFromFileRequest& from);
+  loadFromFileRequest(loadFromFileRequest&& from) noexcept
+    : loadFromFileRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline loadFromFileRequest& operator=(const loadFromFileRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline loadFromFileRequest& operator=(loadFromFileRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const loadFromFileRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const loadFromFileRequest* internal_default_instance() {
+    return reinterpret_cast<const loadFromFileRequest*>(
+               &_loadFromFileRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(loadFromFileRequest& a, loadFromFileRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(loadFromFileRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(loadFromFileRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline loadFromFileRequest* New() const final {
+    return CreateMaybeMessage<loadFromFileRequest>(nullptr);
+  }
+
+  loadFromFileRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<loadFromFileRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const loadFromFileRequest& from);
+  void MergeFrom(const loadFromFileRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(loadFromFileRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.loadFromFileRequest";
+  }
+  protected:
+  explicit loadFromFileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.loadFromFileRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class loadFromFileResponse PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.loadFromFileResponse) */ {
  public:
@@ -2917,7 +3298,7 @@ class loadFromFileResponse PROTOBUF_FINAL :
                &_loadFromFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(loadFromFileResponse& a, loadFromFileResponse& b) {
     a.Swap(&b);
@@ -3020,7 +3401,27 @@ class loadFromFileResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // setMapRequest
 
-// bytes map = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void setMapRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setMapRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 setMapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.setMapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void setMapRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void setMapRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.setMapRequest.grpcServerCompressionFormat)
+}
+
+// bytes map = 2;
 inline void setMapRequest::clear_map() {
   map_.ClearToEmpty();
 }
@@ -3109,7 +3510,27 @@ inline void setMapResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int
 
 // getMapRequest
 
-// bytes map = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getMapRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getMapRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getMapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getMapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getMapRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getMapRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getMapRequest.grpcServerCompressionFormat)
+}
+
+// bytes map = 2;
 inline void getMapRequest::clear_map() {
   map_.ClearToEmpty();
 }
@@ -3259,7 +3680,27 @@ inline void getMapResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int
 
 // getLocalPointCloudRequest
 
-// bytes keyframe = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void getLocalPointCloudRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloudRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloudRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloudRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getLocalPointCloudRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getLocalPointCloudRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloudRequest.grpcServerCompressionFormat)
+}
+
+// bytes keyframe = 2;
 inline void getLocalPointCloudRequest::clear_keyframe() {
   keyframe_.ClearToEmpty();
 }
@@ -3320,7 +3761,7 @@ inline void getLocalPointCloudRequest::set_allocated_keyframe(std::string* keyfr
   // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloudRequest.keyframe)
 }
 
-// float minWeightNeighbor = 2;
+// float minWeightNeighbor = 3;
 inline void getLocalPointCloudRequest::clear_minweightneighbor() {
   minweightneighbor_ = 0;
 }
@@ -3340,7 +3781,7 @@ inline void getLocalPointCloudRequest::set_minweightneighbor(float value) {
   // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloudRequest.minWeightNeighbor)
 }
 
-// bytes localPointCloud = 3;
+// bytes localPointCloud = 4;
 inline void getLocalPointCloudRequest::clear_localpointcloud() {
   localpointcloud_.ClearToEmpty();
 }
@@ -3490,7 +3931,27 @@ inline void getLocalPointCloudResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMES
 
 // addCloudPointRequest
 
-// bytes cloudPoint = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void addCloudPointRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 addCloudPointRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 addCloudPointRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.addCloudPointRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void addCloudPointRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void addCloudPointRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.addCloudPointRequest.grpcServerCompressionFormat)
+}
+
+// bytes cloudPoint = 2;
 inline void addCloudPointRequest::clear_cloudpoint() {
   cloudpoint_.ClearToEmpty();
 }
@@ -3579,7 +4040,27 @@ inline void addCloudPointResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_
 
 // removeCloudPointRequest
 
-// bytes cloudPoint = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void removeCloudPointRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 removeCloudPointRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 removeCloudPointRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.removeCloudPointRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void removeCloudPointRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void removeCloudPointRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.removeCloudPointRequest.grpcServerCompressionFormat)
+}
+
+// bytes cloudPoint = 2;
 inline void removeCloudPointRequest::clear_cloudpoint() {
   cloudpoint_.ClearToEmpty();
 }
@@ -3668,7 +4149,27 @@ inline void removeCloudPointResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPA
 
 // addKeyframeRequest
 
-// bytes keyframe = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void addKeyframeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 addKeyframeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 addKeyframeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.addKeyframeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void addKeyframeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void addKeyframeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.addKeyframeRequest.grpcServerCompressionFormat)
+}
+
+// bytes keyframe = 2;
 inline void addKeyframeRequest::clear_keyframe() {
   keyframe_.ClearToEmpty();
 }
@@ -3757,7 +4258,27 @@ inline void addKeyframeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID
 
 // removeKeyframeRequest
 
-// bytes keyframe = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void removeKeyframeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 removeKeyframeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 removeKeyframeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.removeKeyframeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void removeKeyframeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void removeKeyframeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.removeKeyframeRequest.grpcServerCompressionFormat)
+}
+
+// bytes keyframe = 2;
 inline void removeKeyframeRequest::clear_keyframe() {
   keyframe_.ClearToEmpty();
 }
@@ -3846,7 +4367,27 @@ inline void removeKeyframeResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE
 
 // pointCloudPruningRequest
 
-// bytes cloudPoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void pointCloudPruningRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 pointCloudPruningRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 pointCloudPruningRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.pointCloudPruningRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void pointCloudPruningRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void pointCloudPruningRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.pointCloudPruningRequest.grpcServerCompressionFormat)
+}
+
+// bytes cloudPoints = 2;
 inline void pointCloudPruningRequest::clear_cloudpoints() {
   cloudpoints_.ClearToEmpty();
 }
@@ -3935,7 +4476,27 @@ inline void pointCloudPruningResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESP
 
 // keyframePruningRequest
 
-// bytes keyframes = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void keyframePruningRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 keyframePruningRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 keyframePruningRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.keyframePruningRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void keyframePruningRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void keyframePruningRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.keyframePruningRequest.grpcServerCompressionFormat)
+}
+
+// bytes keyframes = 2;
 inline void keyframePruningRequest::clear_keyframes() {
   keyframes_.ClearToEmpty();
 }
@@ -4022,6 +4583,30 @@ inline void keyframePruningResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPAC
 
 // -------------------------------------------------------------------
 
+// saveToFileRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void saveToFileRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 saveToFileRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 saveToFileRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.saveToFileRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void saveToFileRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void saveToFileRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.saveToFileRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
 // saveToFileResponse
 
 // sint32 xpcfGrpcReturnValue = 1;
@@ -4042,6 +4627,30 @@ inline void saveToFileResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAM
 inline void saveToFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIMapManager.saveToFileResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// loadFromFileRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void loadFromFileRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadFromFileRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 loadFromFileRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.loadFromFileRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void loadFromFileRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void loadFromFileRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.loadFromFileRequest.grpcServerCompressionFormat)
 }
 
 // -------------------------------------------------------------------
@@ -4071,6 +4680,10 @@ inline void loadFromFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

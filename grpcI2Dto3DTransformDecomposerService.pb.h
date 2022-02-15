@@ -350,10 +350,11 @@ class decomposeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFFieldNumber = 1,
-    kDecomposedPosesFieldNumber = 2,
+    kFFieldNumber = 2,
+    kDecomposedPosesFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes F = 1;
+  // bytes F = 2;
   void clear_f();
   const std::string& f() const;
   void set_f(const std::string& value);
@@ -369,7 +370,7 @@ class decomposeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_f();
   public:
 
-  // bytes decomposedPoses = 2;
+  // bytes decomposedPoses = 3;
   void clear_decomposedposes();
   const std::string& decomposedposes() const;
   void set_decomposedposes(const std::string& value);
@@ -385,6 +386,15 @@ class decomposeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_decomposedposes();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcI2Dto3DTransformDecomposer.decomposeRequest)
  private:
   class _Internal;
@@ -394,6 +404,7 @@ class decomposeRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr f_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr decomposedposes_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI2Dto3DTransformDecomposerService_2eproto;
 };
@@ -689,7 +700,27 @@ inline void setCameraParametersRequest::set_allocated_distorsionparams(std::stri
 
 // decomposeRequest
 
-// bytes F = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void decomposeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 decomposeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 decomposeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcI2Dto3DTransformDecomposer.decomposeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void decomposeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void decomposeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcI2Dto3DTransformDecomposer.decomposeRequest.grpcServerCompressionFormat)
+}
+
+// bytes F = 2;
 inline void decomposeRequest::clear_f() {
   f_.ClearToEmpty();
 }
@@ -750,7 +781,7 @@ inline void decomposeRequest::set_allocated_f(std::string* f) {
   // @@protoc_insertion_point(field_set_allocated:grpcI2Dto3DTransformDecomposer.decomposeRequest.F)
 }
 
-// bytes decomposedPoses = 2;
+// bytes decomposedPoses = 3;
 inline void decomposeRequest::clear_decomposedposes() {
   decomposedposes_.ClearToEmpty();
 }

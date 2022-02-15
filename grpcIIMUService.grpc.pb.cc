@@ -51,46 +51,46 @@ grpcIIMUService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& ch
   , rpcmethod_isMagnetometerAvailable_(grpcIIMUService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status grpcIIMUService::Stub::start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::startResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
+::grpc::Status grpcIIMUService::Stub::start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpcIIMU::startResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIIMU::startRequest, ::grpcIIMU::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcIIMUService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
+void grpcIIMUService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIIMU::startRequest, ::grpcIIMU::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcIIMUService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIIMUService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* grpcIIMUService::Stub::PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::startResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* grpcIIMUService::Stub::PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::startResponse, ::grpcIIMU::startRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* grpcIIMUService::Stub::AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* grpcIIMUService::Stub::AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncstartRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIIMUService::Stub::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::stopResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
+::grpc::Status grpcIIMUService::Stub::stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpcIIMU::stopResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcIIMUService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
+void grpcIIMUService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcIIMUService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIIMUService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>* grpcIIMUService::Stub::PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::stopResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>* grpcIIMUService::Stub::PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::stopResponse, ::grpcIIMU::stopRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>* grpcIIMUService::Stub::AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>* grpcIIMUService::Stub::AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncstopRaw(context, request, cq);
   result->StartCall();
@@ -189,69 +189,69 @@ void grpcIIMUService::Stub::experimental_async::getAllSensorsData(::grpc::Client
   return result;
 }
 
-::grpc::Status grpcIIMUService::Stub::isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::isGyroscopeAvailableResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::isGyroscopeAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isGyroscopeAvailable_, context, request, response);
+::grpc::Status grpcIIMUService::Stub::isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpcIIMU::isGyroscopeAvailableResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isGyroscopeAvailable_, context, request, response);
 }
 
-void grpcIIMUService::Stub::experimental_async::isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::isGyroscopeAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isGyroscopeAvailable_, context, request, response, std::move(f));
+void grpcIIMUService::Stub::experimental_async::isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isGyroscopeAvailable_, context, request, response, std::move(f));
 }
 
-void grpcIIMUService::Stub::experimental_async::isGyroscopeAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIIMUService::Stub::experimental_async::isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isGyroscopeAvailable_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>* grpcIIMUService::Stub::PrepareAsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::isGyroscopeAvailableResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_isGyroscopeAvailable_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>* grpcIIMUService::Stub::PrepareAsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::isGyroscopeAvailableResponse, ::grpcIIMU::isGyroscopeAvailableRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_isGyroscopeAvailable_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>* grpcIIMUService::Stub::AsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::isGyroscopeAvailableResponse>* grpcIIMUService::Stub::AsyncisGyroscopeAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncisGyroscopeAvailableRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIIMUService::Stub::isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::isAccelerometerAvailableResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::isAccelerometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isAccelerometerAvailable_, context, request, response);
+::grpc::Status grpcIIMUService::Stub::isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpcIIMU::isAccelerometerAvailableResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isAccelerometerAvailable_, context, request, response);
 }
 
-void grpcIIMUService::Stub::experimental_async::isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::isAccelerometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isAccelerometerAvailable_, context, request, response, std::move(f));
+void grpcIIMUService::Stub::experimental_async::isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isAccelerometerAvailable_, context, request, response, std::move(f));
 }
 
-void grpcIIMUService::Stub::experimental_async::isAccelerometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIIMUService::Stub::experimental_async::isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isAccelerometerAvailable_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>* grpcIIMUService::Stub::PrepareAsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::isAccelerometerAvailableResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_isAccelerometerAvailable_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>* grpcIIMUService::Stub::PrepareAsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::isAccelerometerAvailableResponse, ::grpcIIMU::isAccelerometerAvailableRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_isAccelerometerAvailable_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>* grpcIIMUService::Stub::AsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::isAccelerometerAvailableResponse>* grpcIIMUService::Stub::AsyncisAccelerometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncisAccelerometerAvailableRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIIMUService::Stub::isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIIMU::isMagnetometerAvailableResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::isMagnetometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isMagnetometerAvailable_, context, request, response);
+::grpc::Status grpcIIMUService::Stub::isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpcIIMU::isMagnetometerAvailableResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isMagnetometerAvailable_, context, request, response);
 }
 
-void grpcIIMUService::Stub::experimental_async::isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIIMU::isMagnetometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isMagnetometerAvailable_, context, request, response, std::move(f));
+void grpcIIMUService::Stub::experimental_async::isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isMagnetometerAvailable_, context, request, response, std::move(f));
 }
 
-void grpcIIMUService::Stub::experimental_async::isMagnetometerAvailable(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIIMUService::Stub::experimental_async::isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isMagnetometerAvailable_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>* grpcIIMUService::Stub::PrepareAsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::isMagnetometerAvailableResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_isMagnetometerAvailable_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>* grpcIIMUService::Stub::PrepareAsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIIMU::isMagnetometerAvailableResponse, ::grpcIIMU::isMagnetometerAvailableRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_isMagnetometerAvailable_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>* grpcIIMUService::Stub::AsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>* grpcIIMUService::Stub::AsyncisMagnetometerAvailableRaw(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncisMagnetometerAvailableRaw(context, request, cq);
   result->StartCall();
@@ -262,20 +262,20 @@ grpcIIMUService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIIMUService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::google::protobuf::Empty, ::grpcIIMU::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::grpcIIMU::startRequest, ::grpcIIMU::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIIMUService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIIMU::startRequest* req,
              ::grpcIIMU::startResponse* resp) {
                return service->start(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIIMUService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::google::protobuf::Empty, ::grpcIIMU::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIIMUService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIIMU::stopRequest* req,
              ::grpcIIMU::stopResponse* resp) {
                return service->stop(ctx, req, resp);
              }, this)));
@@ -322,30 +322,30 @@ grpcIIMUService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIIMUService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::google::protobuf::Empty, ::grpcIIMU::isGyroscopeAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIIMUService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIIMU::isGyroscopeAvailableRequest* req,
              ::grpcIIMU::isGyroscopeAvailableResponse* resp) {
                return service->isGyroscopeAvailable(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIIMUService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::google::protobuf::Empty, ::grpcIIMU::isAccelerometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIIMUService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIIMU::isAccelerometerAvailableRequest* req,
              ::grpcIIMU::isAccelerometerAvailableResponse* resp) {
                return service->isAccelerometerAvailable(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIIMUService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::google::protobuf::Empty, ::grpcIIMU::isMagnetometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIIMUService::Service, ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIIMUService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIIMU::isMagnetometerAvailableRequest* req,
              ::grpcIIMU::isMagnetometerAvailableResponse* resp) {
                return service->isMagnetometerAvailable(ctx, req, resp);
              }, this)));
@@ -354,14 +354,14 @@ grpcIIMUService::Service::Service() {
 grpcIIMUService::Service::~Service() {
 }
 
-::grpc::Status grpcIIMUService::Service::start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::startResponse* response) {
+::grpc::Status grpcIIMUService::Service::start(::grpc::ServerContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIIMUService::Service::stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::stopResponse* response) {
+::grpc::Status grpcIIMUService::Service::stop(::grpc::ServerContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -396,21 +396,21 @@ grpcIIMUService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIIMUService::Service::isGyroscopeAvailable(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isGyroscopeAvailableResponse* response) {
+::grpc::Status grpcIIMUService::Service::isGyroscopeAvailable(::grpc::ServerContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIIMUService::Service::isAccelerometerAvailable(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isAccelerometerAvailableResponse* response) {
+::grpc::Status grpcIIMUService::Service::isAccelerometerAvailable(::grpc::ServerContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIIMUService::Service::isMagnetometerAvailable(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIIMU::isMagnetometerAvailableResponse* response) {
+::grpc::Status grpcIIMUService::Service::isMagnetometerAvailable(::grpc::ServerContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response) {
   (void) context;
   (void) request;
   (void) response;

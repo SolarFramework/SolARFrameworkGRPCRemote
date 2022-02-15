@@ -6,8 +6,9 @@ package grpcIPointCloudLoader;
 
 message loadRequest
 {
-string filepath = 1;
-bytes pointCloud = 2;
+int32 grpcServerCompressionFormat  = 1;
+string filepath = 2;
+bytes pointCloud = 3;
 }
 
 message loadResponse

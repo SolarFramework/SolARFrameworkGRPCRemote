@@ -37,23 +37,23 @@ grpcIDescriptorsExtractorService::Stub::Stub(const std::shared_ptr< ::grpc::Chan
   , rpcmethod_extract_(grpcIDescriptorsExtractorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status grpcIDescriptorsExtractorService::Stub::getTypeString(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIDescriptorsExtractor::getTypeStringResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getTypeString_, context, request, response);
+::grpc::Status grpcIDescriptorsExtractorService::Stub::getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpcIDescriptorsExtractor::getTypeStringResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getTypeString_, context, request, response);
 }
 
-void grpcIDescriptorsExtractorService::Stub::experimental_async::getTypeString(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIDescriptorsExtractor::getTypeStringResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getTypeString_, context, request, response, std::move(f));
+void grpcIDescriptorsExtractorService::Stub::experimental_async::getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpcIDescriptorsExtractor::getTypeStringResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getTypeString_, context, request, response, std::move(f));
 }
 
-void grpcIDescriptorsExtractorService::Stub::experimental_async::getTypeString(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDescriptorsExtractorService::Stub::experimental_async::getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getTypeString_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::getTypeStringResponse>* grpcIDescriptorsExtractorService::Stub::PrepareAsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDescriptorsExtractor::getTypeStringResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getTypeString_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::getTypeStringResponse>* grpcIDescriptorsExtractorService::Stub::PrepareAsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDescriptorsExtractor::getTypeStringResponse, ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getTypeString_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::getTypeStringResponse>* grpcIDescriptorsExtractorService::Stub::AsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::getTypeStringResponse>* grpcIDescriptorsExtractorService::Stub::AsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetTypeStringRaw(context, request, cq);
   result->StartCall();
@@ -87,10 +87,10 @@ grpcIDescriptorsExtractorService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIDescriptorsExtractorService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIDescriptorsExtractorService::Service, ::google::protobuf::Empty, ::grpcIDescriptorsExtractor::getTypeStringResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIDescriptorsExtractorService::Service, ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpcIDescriptorsExtractor::getTypeStringResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDescriptorsExtractorService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIDescriptorsExtractor::getTypeStringRequest* req,
              ::grpcIDescriptorsExtractor::getTypeStringResponse* resp) {
                return service->getTypeString(ctx, req, resp);
              }, this)));
@@ -109,7 +109,7 @@ grpcIDescriptorsExtractorService::Service::Service() {
 grpcIDescriptorsExtractorService::Service::~Service() {
 }
 
-::grpc::Status grpcIDescriptorsExtractorService::Service::getTypeString(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response) {
+::grpc::Status grpcIDescriptorsExtractorService::Service::getTypeString(::grpc::ServerContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response) {
   (void) context;
   (void) request;
   (void) response;

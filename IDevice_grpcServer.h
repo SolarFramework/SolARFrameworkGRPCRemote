@@ -2,9 +2,10 @@
 
 #ifndef IDEVICE_GRPCSERVER_H
 #define IDEVICE_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IDevice.h"
+#include "api/input/devices/IDevice.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIDeviceService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -24,16 +25,19 @@ class IDevice_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pub
     {
       public:
         grpcIDeviceServiceImpl() = default;
-        ::grpc::Status start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::startResponse* response) override;
-        ::grpc::Status stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIDevice::stopResponse* response) override;
+        ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIDevice::startRequest* request, ::grpcIDevice::startResponse* response) override;
+        ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIDevice::stopRequest* request, ::grpcIDevice::stopResponse* response) override;
 
         SRef<SolAR::api::input::devices::IDevice> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIDeviceServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

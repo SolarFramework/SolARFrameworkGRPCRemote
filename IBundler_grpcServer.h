@@ -2,9 +2,10 @@
 
 #ifndef IBUNDLER_GRPCSERVER_H
 #define IBUNDLER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/map/IBundler.h"
+#include "api/solver/map/IBundler.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIBundlerService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -29,12 +30,15 @@ class IBundler_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
         ::grpc::Status optimizeSim3(::grpc::ServerContext* context, const ::grpcIBundler::optimizeSim3Request* request, ::grpcIBundler::optimizeSim3Response* response) override;
 
         SRef<SolAR::api::solver::map::IBundler> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIBundlerServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

@@ -2,9 +2,10 @@
 
 #ifndef I3D3DCORRESPONDENCESFINDER_GRPCSERVER_H
 #define I3D3DCORRESPONDENCESFINDER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3D3DCorrespondencesFinder.h"
+#include "api/solver/pose/I3D3DCorrespondencesFinder.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcI3D3DCorrespondencesFinderService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -28,12 +29,15 @@ class I3D3DCorrespondencesFinder_grpcServer:  public org::bcom::xpcf::Configurab
         ::grpc::Status find_grpc1(::grpc::ServerContext* context, const ::grpcI3D3DCorrespondencesFinder::find_grpc1Request* request, ::grpcI3D3DCorrespondencesFinder::find_grpc1Response* response) override;
 
         SRef<SolAR::api::solver::pose::I3D3DCorrespondencesFinder> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcI3D3DCorrespondencesFinderServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

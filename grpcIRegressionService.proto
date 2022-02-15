@@ -12,8 +12,9 @@ bytes distorsionParams = 2;
 
 message addRequest
 {
-bytes descriptors = 1;
-bytes points3D = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes descriptors = 2;
+bytes points3D = 3;
 }
 
 message addResponse
@@ -23,9 +24,10 @@ sint32 xpcfGrpcReturnValue = 1;
 
 message regressRequest
 {
-bytes frame = 1;
-bytes points2D = 2;
-bytes points3D = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes frame = 2;
+bytes points2D = 3;
+bytes points3D = 4;
 }
 
 message regressResponse
@@ -37,8 +39,9 @@ sint32 xpcfGrpcReturnValue = 3;
 
 message updateRequest
 {
-bytes inliers = 1;
-bytes cameraPose = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes inliers = 2;
+bytes cameraPose = 3;
 }
 
 message updateResponse
@@ -48,9 +51,19 @@ bytes cameraPose = 2;
 sint32 xpcfGrpcReturnValue = 3;
 }
 
+message loadModelRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message loadModelResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getTrainingStatusRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getTrainingStatusResponse
@@ -58,9 +71,19 @@ message getTrainingStatusResponse
 bytes xpcfGrpcReturnValue = 1;
 }
 
+message getNumActiveLeavesRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
 message getNumActiveLeavesResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getNumPassiveLeavesRequest
+{
+int32 grpcServerCompressionFormat  = 1;
 }
 
 message getNumPassiveLeavesResponse
@@ -73,9 +96,9 @@ rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empt
 rpc add(addRequest) returns(addResponse) {}
 rpc regress(regressRequest) returns(regressResponse) {}
 rpc update(updateRequest) returns(updateResponse) {}
-rpc loadModel(google.protobuf.Empty) returns(loadModelResponse) {}
-rpc getTrainingStatus(google.protobuf.Empty) returns(getTrainingStatusResponse) {}
-rpc getNumActiveLeaves(google.protobuf.Empty) returns(getNumActiveLeavesResponse) {}
-rpc getNumPassiveLeaves(google.protobuf.Empty) returns(getNumPassiveLeavesResponse) {}
+rpc loadModel(loadModelRequest) returns(loadModelResponse) {}
+rpc getTrainingStatus(getTrainingStatusRequest) returns(getTrainingStatusResponse) {}
+rpc getNumActiveLeaves(getNumActiveLeavesRequest) returns(getNumActiveLeavesResponse) {}
+rpc getNumPassiveLeaves(getNumPassiveLeavesRequest) returns(getNumPassiveLeavesResponse) {}
 }
 

@@ -386,12 +386,13 @@ class computeRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImage1FieldNumber = 1,
-    kImage2FieldNumber = 2,
-    kFrame1FieldNumber = 3,
-    kFrame2FieldNumber = 4,
+    kImage1FieldNumber = 2,
+    kImage2FieldNumber = 3,
+    kFrame1FieldNumber = 4,
+    kFrame2FieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image1 = 1;
+  // bytes image1 = 2;
   void clear_image1();
   const std::string& image1() const;
   void set_image1(const std::string& value);
@@ -407,7 +408,7 @@ class computeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_image1();
   public:
 
-  // bytes image2 = 2;
+  // bytes image2 = 3;
   void clear_image2();
   const std::string& image2() const;
   void set_image2(const std::string& value);
@@ -423,7 +424,7 @@ class computeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_image2();
   public:
 
-  // bytes frame1 = 3;
+  // bytes frame1 = 4;
   void clear_frame1();
   const std::string& frame1() const;
   void set_frame1(const std::string& value);
@@ -439,7 +440,7 @@ class computeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_frame1();
   public:
 
-  // bytes frame2 = 4;
+  // bytes frame2 = 5;
   void clear_frame2();
   const std::string& frame2() const;
   void set_frame2(const std::string& value);
@@ -455,6 +456,15 @@ class computeRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_frame2();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIFeatureWithDepthFromStereo.computeRequest)
  private:
   class _Internal;
@@ -466,6 +476,7 @@ class computeRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame2_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIFeatureWithDepthFromStereoService_2eproto;
 };
@@ -901,7 +912,27 @@ inline void setRectificationParametersRequest::set_allocated_rectparams2(std::st
 
 // computeRequest
 
-// bytes image1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void computeRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 computeRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 computeRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFeatureWithDepthFromStereo.computeRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void computeRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void computeRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIFeatureWithDepthFromStereo.computeRequest.grpcServerCompressionFormat)
+}
+
+// bytes image1 = 2;
 inline void computeRequest::clear_image1() {
   image1_.ClearToEmpty();
 }
@@ -962,7 +993,7 @@ inline void computeRequest::set_allocated_image1(std::string* image1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFeatureWithDepthFromStereo.computeRequest.image1)
 }
 
-// bytes image2 = 2;
+// bytes image2 = 3;
 inline void computeRequest::clear_image2() {
   image2_.ClearToEmpty();
 }
@@ -1023,7 +1054,7 @@ inline void computeRequest::set_allocated_image2(std::string* image2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFeatureWithDepthFromStereo.computeRequest.image2)
 }
 
-// bytes frame1 = 3;
+// bytes frame1 = 4;
 inline void computeRequest::clear_frame1() {
   frame1_.ClearToEmpty();
 }
@@ -1084,7 +1115,7 @@ inline void computeRequest::set_allocated_frame1(std::string* frame1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFeatureWithDepthFromStereo.computeRequest.frame1)
 }
 
-// bytes frame2 = 4;
+// bytes frame2 = 5;
 inline void computeRequest::clear_frame2() {
   frame2_.ClearToEmpty();
 }

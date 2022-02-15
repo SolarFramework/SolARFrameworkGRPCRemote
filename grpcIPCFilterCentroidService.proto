@@ -6,9 +6,10 @@ package grpcIPCFilterCentroid;
 
 message filterRequest
 {
-bytes inPointCloud = 1;
-bytes centroid = 2;
-bytes outPointCloud = 3;
+int32 grpcServerCompressionFormat  = 1;
+bytes inPointCloud = 2;
+bytes centroid = 3;
+bytes outPointCloud = 4;
 }
 
 message filterResponse

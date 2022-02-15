@@ -2,9 +2,10 @@
 
 #ifndef IPERSPECTIVECONTROLLER_GRPCSERVER_H
 #define IPERSPECTIVECONTROLLER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/image/IPerspectiveController.h"
+#include "api/image/IPerspectiveController.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIPerspectiveControllerService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -28,12 +29,15 @@ class IPerspectiveController_grpcServer:  public org::bcom::xpcf::ConfigurableBa
         ::grpc::Status correct_grpc1(::grpc::ServerContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response) override;
 
         SRef<SolAR::api::image::IPerspectiveController> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIPerspectiveControllerServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

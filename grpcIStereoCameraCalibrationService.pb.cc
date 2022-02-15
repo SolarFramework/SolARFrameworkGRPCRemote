@@ -25,7 +25,8 @@ constexpr calibrateRequest::calibrateRequest(
   , camparams2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , transformation_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , rectparams1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , rectparams2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , rectparams2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct calibrateRequestDefaultTypeInternal {
   constexpr calibrateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -61,6 +62,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIStereoCameraCalibrationSe
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIStereoCameraCalibration::calibrateRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIStereoCameraCalibration::calibrateRequest, images1_),
   PROTOBUF_FIELD_OFFSET(::grpcIStereoCameraCalibration::calibrateRequest, images2_),
   PROTOBUF_FIELD_OFFSET(::grpcIStereoCameraCalibration::calibrateRequest, camparams1_),
@@ -80,7 +82,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIStereoCameraCalibrationSe
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIStereoCameraCalibration::calibrateRequest)},
-  { 12, -1, sizeof(::grpcIStereoCameraCalibration::calibrateResponse)},
+  { 13, -1, sizeof(::grpcIStereoCameraCalibration::calibrateResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -91,25 +93,26 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIStereoCameraCalibrationService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n)grpcIStereoCameraCalibrationService.pr"
   "oto\022\034grpcIStereoCameraCalibration\032\033googl"
-  "e/protobuf/empty.proto\"\236\001\n\020calibrateRequ"
-  "est\022\017\n\007images1\030\001 \001(\014\022\017\n\007images2\030\002 \001(\014\022\022\n"
-  "\ncamParams1\030\003 \001(\014\022\022\n\ncamParams2\030\004 \001(\014\022\026\n"
-  "\016transformation\030\005 \001(\014\022\023\n\013rectParams1\030\006 \001"
-  "(\014\022\023\n\013rectParams2\030\007 \001(\014\"r\n\021calibrateResp"
-  "onse\022\026\n\016transformation\030\001 \001(\014\022\023\n\013rectPara"
-  "ms1\030\002 \001(\014\022\023\n\013rectParams2\030\003 \001(\014\022\033\n\023xpcfGr"
-  "pcReturnValue\030\004 \001(\0212\225\001\n#grpcIStereoCamer"
-  "aCalibrationService\022n\n\tcalibrate\022..grpcI"
-  "StereoCameraCalibration.calibrateRequest"
-  "\032/.grpcIStereoCameraCalibration.calibrat"
-  "eResponse\"\000b\006proto3"
+  "e/protobuf/empty.proto\"\303\001\n\020calibrateRequ"
+  "est\022#\n\033grpcServerCompressionFormat\030\001 \001(\005"
+  "\022\017\n\007images1\030\002 \001(\014\022\017\n\007images2\030\003 \001(\014\022\022\n\nca"
+  "mParams1\030\004 \001(\014\022\022\n\ncamParams2\030\005 \001(\014\022\026\n\016tr"
+  "ansformation\030\006 \001(\014\022\023\n\013rectParams1\030\007 \001(\014\022"
+  "\023\n\013rectParams2\030\010 \001(\014\"r\n\021calibrateRespons"
+  "e\022\026\n\016transformation\030\001 \001(\014\022\023\n\013rectParams1"
+  "\030\002 \001(\014\022\023\n\013rectParams2\030\003 \001(\014\022\033\n\023xpcfGrpcR"
+  "eturnValue\030\004 \001(\0212\225\001\n#grpcIStereoCameraCa"
+  "librationService\022n\n\tcalibrate\022..grpcISte"
+  "reoCameraCalibration.calibrateRequest\032/."
+  "grpcIStereoCameraCalibration.calibrateRe"
+  "sponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIStereoCameraCalibrationService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIStereoCameraCalibrationService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIStereoCameraCalibrationService_2eproto = {
-  false, false, 539, descriptor_table_protodef_grpcIStereoCameraCalibrationService_2eproto, "grpcIStereoCameraCalibrationService.proto", 
+  false, false, 576, descriptor_table_protodef_grpcIStereoCameraCalibrationService_2eproto, "grpcIStereoCameraCalibrationService.proto", 
   &descriptor_table_grpcIStereoCameraCalibrationService_2eproto_once, descriptor_table_grpcIStereoCameraCalibrationService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcIStereoCameraCalibrationService_2eproto::offsets,
   file_level_metadata_grpcIStereoCameraCalibrationService_2eproto, file_level_enum_descriptors_grpcIStereoCameraCalibrationService_2eproto, file_level_service_descriptors_grpcIStereoCameraCalibrationService_2eproto,
@@ -174,6 +177,7 @@ calibrateRequest::calibrateRequest(const calibrateRequest& from)
     rectparams2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rectparams2(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIStereoCameraCalibration.calibrateRequest)
 }
 
@@ -185,6 +189,7 @@ camparams2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 transformation_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 rectparams1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 rectparams2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 calibrateRequest::~calibrateRequest() {
@@ -227,6 +232,7 @@ void calibrateRequest::Clear() {
   transformation_.ClearToEmpty();
   rectparams1_.ClearToEmpty();
   rectparams2_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -237,57 +243,64 @@ const char* calibrateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes images1 = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes images1 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_images1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes images2 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes images2 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_images2();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes camParams1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+      // bytes camParams1 = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_camparams1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes camParams2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+      // bytes camParams2 = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_camparams2();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes transformation = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes transformation = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_transformation();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes rectParams1 = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // bytes rectParams1 = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_rectparams1();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes rectParams2 = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+      // bytes rectParams2 = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_rectparams2();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -321,46 +334,52 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes images1 = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes images1 = 2;
   if (this->images1().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_images1(), target);
+        2, this->_internal_images1(), target);
   }
 
-  // bytes images2 = 2;
+  // bytes images2 = 3;
   if (this->images2().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_images2(), target);
+        3, this->_internal_images2(), target);
   }
 
-  // bytes camParams1 = 3;
+  // bytes camParams1 = 4;
   if (this->camparams1().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_camparams1(), target);
+        4, this->_internal_camparams1(), target);
   }
 
-  // bytes camParams2 = 4;
+  // bytes camParams2 = 5;
   if (this->camparams2().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_camparams2(), target);
+        5, this->_internal_camparams2(), target);
   }
 
-  // bytes transformation = 5;
+  // bytes transformation = 6;
   if (this->transformation().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_transformation(), target);
+        6, this->_internal_transformation(), target);
   }
 
-  // bytes rectParams1 = 6;
+  // bytes rectParams1 = 7;
   if (this->rectparams1().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        6, this->_internal_rectparams1(), target);
+        7, this->_internal_rectparams1(), target);
   }
 
-  // bytes rectParams2 = 7;
+  // bytes rectParams2 = 8;
   if (this->rectparams2().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        7, this->_internal_rectparams2(), target);
+        8, this->_internal_rectparams2(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -379,53 +398,60 @@ size_t calibrateRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes images1 = 1;
+  // bytes images1 = 2;
   if (this->images1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_images1());
   }
 
-  // bytes images2 = 2;
+  // bytes images2 = 3;
   if (this->images2().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_images2());
   }
 
-  // bytes camParams1 = 3;
+  // bytes camParams1 = 4;
   if (this->camparams1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_camparams1());
   }
 
-  // bytes camParams2 = 4;
+  // bytes camParams2 = 5;
   if (this->camparams2().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_camparams2());
   }
 
-  // bytes transformation = 5;
+  // bytes transformation = 6;
   if (this->transformation().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_transformation());
   }
 
-  // bytes rectParams1 = 6;
+  // bytes rectParams1 = 7;
   if (this->rectparams1().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_rectparams1());
   }
 
-  // bytes rectParams2 = 7;
+  // bytes rectParams2 = 8;
   if (this->rectparams2().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_rectparams2());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -480,6 +506,9 @@ void calibrateRequest::MergeFrom(const calibrateRequest& from) {
   if (from.rectparams2().size() > 0) {
     _internal_set_rectparams2(from._internal_rectparams2());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void calibrateRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -510,6 +539,7 @@ void calibrateRequest::InternalSwap(calibrateRequest* other) {
   transformation_.Swap(&other->transformation_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   rectparams1_.Swap(&other->rectparams1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   rectparams2_.Swap(&other->rectparams2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata calibrateRequest::GetMetadata() const {

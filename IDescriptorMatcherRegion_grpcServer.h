@@ -2,9 +2,10 @@
 
 #ifndef IDESCRIPTORMATCHERREGION_GRPCSERVER_H
 #define IDESCRIPTORMATCHERREGION_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcherRegion.h"
+#include "api/features/IDescriptorMatcherRegion.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIDescriptorMatcherRegionService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -29,12 +30,15 @@ class IDescriptorMatcherRegion_grpcServer:  public org::bcom::xpcf::Configurable
         ::grpc::Status match_grpc2(::grpc::ServerContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc2Request* request, ::grpcIDescriptorMatcherRegion::match_grpc2Response* response) override;
 
         SRef<SolAR::api::features::IDescriptorMatcherRegion> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIDescriptorMatcherRegionServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

@@ -2,9 +2,10 @@
 
 #ifndef ISTEREOCAMERACALIBRATION_GRPCSERVER_H
 #define ISTEREOCAMERACALIBRATION_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/input/devices/IStereoCameraCalibration.h"
+#include "api/input/devices/IStereoCameraCalibration.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIStereoCameraCalibrationService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -27,12 +28,15 @@ class IStereoCameraCalibration_grpcServer:  public org::bcom::xpcf::Configurable
         ::grpc::Status calibrate(::grpc::ServerContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest* request, ::grpcIStereoCameraCalibration::calibrateResponse* response) override;
 
         SRef<SolAR::api::input::devices::IStereoCameraCalibration> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIStereoCameraCalibrationServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

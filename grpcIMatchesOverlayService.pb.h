@@ -208,14 +208,15 @@ class draw_grpc0Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImage1FieldNumber = 1,
-    kImage2FieldNumber = 2,
-    kPointsImage1FieldNumber = 3,
-    kPointsImage2FieldNumber = 4,
-    kMatchesFieldNumber = 5,
-    kOutImageFieldNumber = 6,
+    kImage1FieldNumber = 2,
+    kImage2FieldNumber = 3,
+    kPointsImage1FieldNumber = 4,
+    kPointsImage2FieldNumber = 5,
+    kMatchesFieldNumber = 6,
+    kOutImageFieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image1 = 1;
+  // bytes image1 = 2;
   void clear_image1();
   const std::string& image1() const;
   void set_image1(const std::string& value);
@@ -231,7 +232,7 @@ class draw_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_image1();
   public:
 
-  // bytes image2 = 2;
+  // bytes image2 = 3;
   void clear_image2();
   const std::string& image2() const;
   void set_image2(const std::string& value);
@@ -247,7 +248,7 @@ class draw_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_image2();
   public:
 
-  // bytes points_image1 = 3;
+  // bytes points_image1 = 4;
   void clear_points_image1();
   const std::string& points_image1() const;
   void set_points_image1(const std::string& value);
@@ -263,7 +264,7 @@ class draw_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points_image1();
   public:
 
-  // bytes points_image2 = 4;
+  // bytes points_image2 = 5;
   void clear_points_image2();
   const std::string& points_image2() const;
   void set_points_image2(const std::string& value);
@@ -279,7 +280,7 @@ class draw_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points_image2();
   public:
 
-  // bytes matches = 5;
+  // bytes matches = 6;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -295,7 +296,7 @@ class draw_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes outImage = 6;
+  // bytes outImage = 7;
   void clear_outimage();
   const std::string& outimage() const;
   void set_outimage(const std::string& value);
@@ -311,6 +312,15 @@ class draw_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_outimage();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMatchesOverlay.draw_grpc0Request)
  private:
   class _Internal;
@@ -324,6 +334,7 @@ class draw_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr points_image2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outimage_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMatchesOverlayService_2eproto;
 };
@@ -586,14 +597,15 @@ class draw_grpc1Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImage1FieldNumber = 1,
-    kImage2FieldNumber = 2,
-    kKeypointsImage1FieldNumber = 3,
-    kKeypointsImage2FieldNumber = 4,
-    kMatchesFieldNumber = 5,
-    kOutImageFieldNumber = 6,
+    kImage1FieldNumber = 2,
+    kImage2FieldNumber = 3,
+    kKeypointsImage1FieldNumber = 4,
+    kKeypointsImage2FieldNumber = 5,
+    kMatchesFieldNumber = 6,
+    kOutImageFieldNumber = 7,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image1 = 1;
+  // bytes image1 = 2;
   void clear_image1();
   const std::string& image1() const;
   void set_image1(const std::string& value);
@@ -609,7 +621,7 @@ class draw_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_image1();
   public:
 
-  // bytes image2 = 2;
+  // bytes image2 = 3;
   void clear_image2();
   const std::string& image2() const;
   void set_image2(const std::string& value);
@@ -625,7 +637,7 @@ class draw_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_image2();
   public:
 
-  // bytes keypoints_image1 = 3;
+  // bytes keypoints_image1 = 4;
   void clear_keypoints_image1();
   const std::string& keypoints_image1() const;
   void set_keypoints_image1(const std::string& value);
@@ -641,7 +653,7 @@ class draw_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints_image1();
   public:
 
-  // bytes keypoints_image2 = 4;
+  // bytes keypoints_image2 = 5;
   void clear_keypoints_image2();
   const std::string& keypoints_image2() const;
   void set_keypoints_image2(const std::string& value);
@@ -657,7 +669,7 @@ class draw_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints_image2();
   public:
 
-  // bytes matches = 5;
+  // bytes matches = 6;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -673,7 +685,7 @@ class draw_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes outImage = 6;
+  // bytes outImage = 7;
   void clear_outimage();
   const std::string& outimage() const;
   void set_outimage(const std::string& value);
@@ -689,6 +701,15 @@ class draw_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_outimage();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMatchesOverlay.draw_grpc1Request)
  private:
   class _Internal;
@@ -702,6 +723,7 @@ class draw_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keypoints_image2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outimage_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMatchesOverlayService_2eproto;
 };
@@ -964,13 +986,14 @@ class draw_grpc2Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImageFieldNumber = 1,
-    kPointsImage1FieldNumber = 2,
-    kPointsImage2FieldNumber = 3,
-    kMatchesFieldNumber = 4,
-    kOutImageFieldNumber = 5,
+    kImageFieldNumber = 2,
+    kPointsImage1FieldNumber = 3,
+    kPointsImage2FieldNumber = 4,
+    kMatchesFieldNumber = 5,
+    kOutImageFieldNumber = 6,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image = 1;
+  // bytes image = 2;
   void clear_image();
   const std::string& image() const;
   void set_image(const std::string& value);
@@ -986,7 +1009,7 @@ class draw_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_image();
   public:
 
-  // bytes points_image1 = 2;
+  // bytes points_image1 = 3;
   void clear_points_image1();
   const std::string& points_image1() const;
   void set_points_image1(const std::string& value);
@@ -1002,7 +1025,7 @@ class draw_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points_image1();
   public:
 
-  // bytes points_image2 = 3;
+  // bytes points_image2 = 4;
   void clear_points_image2();
   const std::string& points_image2() const;
   void set_points_image2(const std::string& value);
@@ -1018,7 +1041,7 @@ class draw_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_points_image2();
   public:
 
-  // bytes matches = 4;
+  // bytes matches = 5;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -1034,7 +1057,7 @@ class draw_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes outImage = 5;
+  // bytes outImage = 6;
   void clear_outimage();
   const std::string& outimage() const;
   void set_outimage(const std::string& value);
@@ -1050,6 +1073,15 @@ class draw_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_outimage();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMatchesOverlay.draw_grpc2Request)
  private:
   class _Internal;
@@ -1062,6 +1094,7 @@ class draw_grpc2Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr points_image2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outimage_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMatchesOverlayService_2eproto;
 };
@@ -1324,13 +1357,14 @@ class draw_grpc3Request PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImageFieldNumber = 1,
-    kKeypointsImage1FieldNumber = 2,
-    kKeypointsImage2FieldNumber = 3,
-    kMatchesFieldNumber = 4,
-    kOutImageFieldNumber = 5,
+    kImageFieldNumber = 2,
+    kKeypointsImage1FieldNumber = 3,
+    kKeypointsImage2FieldNumber = 4,
+    kMatchesFieldNumber = 5,
+    kOutImageFieldNumber = 6,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes image = 1;
+  // bytes image = 2;
   void clear_image();
   const std::string& image() const;
   void set_image(const std::string& value);
@@ -1346,7 +1380,7 @@ class draw_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_image();
   public:
 
-  // bytes keypoints_image1 = 2;
+  // bytes keypoints_image1 = 3;
   void clear_keypoints_image1();
   const std::string& keypoints_image1() const;
   void set_keypoints_image1(const std::string& value);
@@ -1362,7 +1396,7 @@ class draw_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints_image1();
   public:
 
-  // bytes keypoints_image2 = 3;
+  // bytes keypoints_image2 = 4;
   void clear_keypoints_image2();
   const std::string& keypoints_image2() const;
   void set_keypoints_image2(const std::string& value);
@@ -1378,7 +1412,7 @@ class draw_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_keypoints_image2();
   public:
 
-  // bytes matches = 4;
+  // bytes matches = 5;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -1394,7 +1428,7 @@ class draw_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes outImage = 5;
+  // bytes outImage = 6;
   void clear_outimage();
   const std::string& outimage() const;
   void set_outimage(const std::string& value);
@@ -1410,6 +1444,15 @@ class draw_grpc3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_outimage();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMatchesOverlay.draw_grpc3Request)
  private:
   class _Internal;
@@ -1422,6 +1465,7 @@ class draw_grpc3Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keypoints_image2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outimage_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMatchesOverlayService_2eproto;
 };
@@ -1580,7 +1624,27 @@ class draw_grpc3Response PROTOBUF_FINAL :
 #endif  // __GNUC__
 // draw_grpc0Request
 
-// bytes image1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void draw_grpc0Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 draw_grpc0Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 draw_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMatchesOverlay.draw_grpc0Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void draw_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void draw_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMatchesOverlay.draw_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes image1 = 2;
 inline void draw_grpc0Request::clear_image1() {
   image1_.ClearToEmpty();
 }
@@ -1641,7 +1705,7 @@ inline void draw_grpc0Request::set_allocated_image1(std::string* image1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc0Request.image1)
 }
 
-// bytes image2 = 2;
+// bytes image2 = 3;
 inline void draw_grpc0Request::clear_image2() {
   image2_.ClearToEmpty();
 }
@@ -1702,7 +1766,7 @@ inline void draw_grpc0Request::set_allocated_image2(std::string* image2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc0Request.image2)
 }
 
-// bytes points_image1 = 3;
+// bytes points_image1 = 4;
 inline void draw_grpc0Request::clear_points_image1() {
   points_image1_.ClearToEmpty();
 }
@@ -1763,7 +1827,7 @@ inline void draw_grpc0Request::set_allocated_points_image1(std::string* points_i
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc0Request.points_image1)
 }
 
-// bytes points_image2 = 4;
+// bytes points_image2 = 5;
 inline void draw_grpc0Request::clear_points_image2() {
   points_image2_.ClearToEmpty();
 }
@@ -1824,7 +1888,7 @@ inline void draw_grpc0Request::set_allocated_points_image2(std::string* points_i
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc0Request.points_image2)
 }
 
-// bytes matches = 5;
+// bytes matches = 6;
 inline void draw_grpc0Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -1885,7 +1949,7 @@ inline void draw_grpc0Request::set_allocated_matches(std::string* matches) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc0Request.matches)
 }
 
-// bytes outImage = 6;
+// bytes outImage = 7;
 inline void draw_grpc0Request::clear_outimage() {
   outimage_.ClearToEmpty();
 }
@@ -2015,7 +2079,27 @@ inline void draw_grpc0Response::set_allocated_outimage(std::string* outimage) {
 
 // draw_grpc1Request
 
-// bytes image1 = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void draw_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 draw_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 draw_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMatchesOverlay.draw_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void draw_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void draw_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMatchesOverlay.draw_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes image1 = 2;
 inline void draw_grpc1Request::clear_image1() {
   image1_.ClearToEmpty();
 }
@@ -2076,7 +2160,7 @@ inline void draw_grpc1Request::set_allocated_image1(std::string* image1) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc1Request.image1)
 }
 
-// bytes image2 = 2;
+// bytes image2 = 3;
 inline void draw_grpc1Request::clear_image2() {
   image2_.ClearToEmpty();
 }
@@ -2137,7 +2221,7 @@ inline void draw_grpc1Request::set_allocated_image2(std::string* image2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc1Request.image2)
 }
 
-// bytes keypoints_image1 = 3;
+// bytes keypoints_image1 = 4;
 inline void draw_grpc1Request::clear_keypoints_image1() {
   keypoints_image1_.ClearToEmpty();
 }
@@ -2198,7 +2282,7 @@ inline void draw_grpc1Request::set_allocated_keypoints_image1(std::string* keypo
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc1Request.keypoints_image1)
 }
 
-// bytes keypoints_image2 = 4;
+// bytes keypoints_image2 = 5;
 inline void draw_grpc1Request::clear_keypoints_image2() {
   keypoints_image2_.ClearToEmpty();
 }
@@ -2259,7 +2343,7 @@ inline void draw_grpc1Request::set_allocated_keypoints_image2(std::string* keypo
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc1Request.keypoints_image2)
 }
 
-// bytes matches = 5;
+// bytes matches = 6;
 inline void draw_grpc1Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -2320,7 +2404,7 @@ inline void draw_grpc1Request::set_allocated_matches(std::string* matches) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc1Request.matches)
 }
 
-// bytes outImage = 6;
+// bytes outImage = 7;
 inline void draw_grpc1Request::clear_outimage() {
   outimage_.ClearToEmpty();
 }
@@ -2450,7 +2534,27 @@ inline void draw_grpc1Response::set_allocated_outimage(std::string* outimage) {
 
 // draw_grpc2Request
 
-// bytes image = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void draw_grpc2Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 draw_grpc2Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 draw_grpc2Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMatchesOverlay.draw_grpc2Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void draw_grpc2Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void draw_grpc2Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMatchesOverlay.draw_grpc2Request.grpcServerCompressionFormat)
+}
+
+// bytes image = 2;
 inline void draw_grpc2Request::clear_image() {
   image_.ClearToEmpty();
 }
@@ -2511,7 +2615,7 @@ inline void draw_grpc2Request::set_allocated_image(std::string* image) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc2Request.image)
 }
 
-// bytes points_image1 = 2;
+// bytes points_image1 = 3;
 inline void draw_grpc2Request::clear_points_image1() {
   points_image1_.ClearToEmpty();
 }
@@ -2572,7 +2676,7 @@ inline void draw_grpc2Request::set_allocated_points_image1(std::string* points_i
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc2Request.points_image1)
 }
 
-// bytes points_image2 = 3;
+// bytes points_image2 = 4;
 inline void draw_grpc2Request::clear_points_image2() {
   points_image2_.ClearToEmpty();
 }
@@ -2633,7 +2737,7 @@ inline void draw_grpc2Request::set_allocated_points_image2(std::string* points_i
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc2Request.points_image2)
 }
 
-// bytes matches = 4;
+// bytes matches = 5;
 inline void draw_grpc2Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -2694,7 +2798,7 @@ inline void draw_grpc2Request::set_allocated_matches(std::string* matches) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc2Request.matches)
 }
 
-// bytes outImage = 5;
+// bytes outImage = 6;
 inline void draw_grpc2Request::clear_outimage() {
   outimage_.ClearToEmpty();
 }
@@ -2824,7 +2928,27 @@ inline void draw_grpc2Response::set_allocated_outimage(std::string* outimage) {
 
 // draw_grpc3Request
 
-// bytes image = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void draw_grpc3Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 draw_grpc3Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 draw_grpc3Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMatchesOverlay.draw_grpc3Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void draw_grpc3Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void draw_grpc3Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMatchesOverlay.draw_grpc3Request.grpcServerCompressionFormat)
+}
+
+// bytes image = 2;
 inline void draw_grpc3Request::clear_image() {
   image_.ClearToEmpty();
 }
@@ -2885,7 +3009,7 @@ inline void draw_grpc3Request::set_allocated_image(std::string* image) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc3Request.image)
 }
 
-// bytes keypoints_image1 = 2;
+// bytes keypoints_image1 = 3;
 inline void draw_grpc3Request::clear_keypoints_image1() {
   keypoints_image1_.ClearToEmpty();
 }
@@ -2946,7 +3070,7 @@ inline void draw_grpc3Request::set_allocated_keypoints_image1(std::string* keypo
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc3Request.keypoints_image1)
 }
 
-// bytes keypoints_image2 = 3;
+// bytes keypoints_image2 = 4;
 inline void draw_grpc3Request::clear_keypoints_image2() {
   keypoints_image2_.ClearToEmpty();
 }
@@ -3007,7 +3131,7 @@ inline void draw_grpc3Request::set_allocated_keypoints_image2(std::string* keypo
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc3Request.keypoints_image2)
 }
 
-// bytes matches = 4;
+// bytes matches = 5;
 inline void draw_grpc3Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -3068,7 +3192,7 @@ inline void draw_grpc3Request::set_allocated_matches(std::string* matches) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMatchesOverlay.draw_grpc3Request.matches)
 }
 
-// bytes outImage = 5;
+// bytes outImage = 6;
 inline void draw_grpc3Request::clear_outimage() {
   outimage_.ClearToEmpty();
 }

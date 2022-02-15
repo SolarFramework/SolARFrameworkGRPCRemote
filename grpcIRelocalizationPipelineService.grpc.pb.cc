@@ -45,69 +45,69 @@ grpcIRelocalizationPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::Ch
   , rpcmethod_relocalizeProcessRequest_(grpcIRelocalizationPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status grpcIRelocalizationPipelineService::Stub::init(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRelocalizationPipeline::initResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
+::grpc::Status grpcIRelocalizationPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpcIRelocalizationPipeline::initResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, std::move(f));
+void grpcIRelocalizationPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>* grpcIRelocalizationPipelineService::Stub::PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationPipeline::initResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>* grpcIRelocalizationPipelineService::Stub::PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationPipeline::initResponse, ::grpcIRelocalizationPipeline::initRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>* grpcIRelocalizationPipelineService::Stub::AsyncinitRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::initResponse>* grpcIRelocalizationPipelineService::Stub::AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncinitRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIRelocalizationPipelineService::Stub::start(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRelocalizationPipeline::startResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
+::grpc::Status grpcIRelocalizationPipelineService::Stub::start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpcIRelocalizationPipeline::startResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
+void grpcIRelocalizationPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>* grpcIRelocalizationPipelineService::Stub::PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationPipeline::startResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>* grpcIRelocalizationPipelineService::Stub::PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationPipeline::startResponse, ::grpcIRelocalizationPipeline::startRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>* grpcIRelocalizationPipelineService::Stub::AsyncstartRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::startResponse>* grpcIRelocalizationPipelineService::Stub::AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncstartRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIRelocalizationPipelineService::Stub::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpcIRelocalizationPipeline::stopResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
+::grpc::Status grpcIRelocalizationPipelineService::Stub::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpcIRelocalizationPipeline::stopResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
+void grpcIRelocalizationPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>* grpcIRelocalizationPipelineService::Stub::PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationPipeline::stopResponse, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>* grpcIRelocalizationPipelineService::Stub::PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationPipeline::stopResponse, ::grpcIRelocalizationPipeline::stopRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>* grpcIRelocalizationPipelineService::Stub::AsyncstopRaw(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::stopResponse>* grpcIRelocalizationPipelineService::Stub::AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncstopRaw(context, request, cq);
   result->StartCall();
@@ -187,30 +187,30 @@ grpcIRelocalizationPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIRelocalizationPipelineService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationPipelineService::Service, ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationPipelineService::Service, ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIRelocalizationPipeline::initRequest* req,
              ::grpcIRelocalizationPipeline::initResponse* resp) {
                return service->init(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIRelocalizationPipelineService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationPipelineService::Service, ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationPipelineService::Service, ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIRelocalizationPipeline::startRequest* req,
              ::grpcIRelocalizationPipeline::startResponse* resp) {
                return service->start(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIRelocalizationPipelineService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationPipelineService::Service, ::google::protobuf::Empty, ::grpcIRelocalizationPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationPipelineService::Service, ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::google::protobuf::Empty* req,
+             const ::grpcIRelocalizationPipeline::stopRequest* req,
              ::grpcIRelocalizationPipeline::stopResponse* resp) {
                return service->stop(ctx, req, resp);
              }, this)));
@@ -249,21 +249,21 @@ grpcIRelocalizationPipelineService::Service::Service() {
 grpcIRelocalizationPipelineService::Service::~Service() {
 }
 
-::grpc::Status grpcIRelocalizationPipelineService::Service::init(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::initResponse* response) {
+::grpc::Status grpcIRelocalizationPipelineService::Service::init(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIRelocalizationPipelineService::Service::start(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::startResponse* response) {
+::grpc::Status grpcIRelocalizationPipelineService::Service::start(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIRelocalizationPipelineService::Service::stop(::grpc::ServerContext* context, const ::google::protobuf::Empty* request, ::grpcIRelocalizationPipeline::stopResponse* response) {
+::grpc::Status grpcIRelocalizationPipelineService::Service::stop(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response) {
   (void) context;
   (void) request;
   (void) response;

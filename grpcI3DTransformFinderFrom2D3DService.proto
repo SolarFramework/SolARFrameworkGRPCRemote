@@ -12,10 +12,11 @@ bytes distorsionParams = 2;
 
 message estimateRequest
 {
-bytes imagePoints = 1;
-bytes worldPoints = 2;
-bytes initialPose = 3;
-bytes pose = 4;
+int32 grpcServerCompressionFormat  = 1;
+bytes imagePoints = 2;
+bytes worldPoints = 3;
+bytes initialPose = 4;
+bytes pose = 5;
 }
 
 message estimateResponse

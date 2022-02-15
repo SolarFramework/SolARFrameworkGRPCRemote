@@ -332,10 +332,11 @@ class processRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFrameFieldNumber = 1,
-    kKeyframeFieldNumber = 2,
+    kFrameFieldNumber = 2,
+    kKeyframeFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes frame = 1;
+  // bytes frame = 2;
   void clear_frame();
   const std::string& frame() const;
   void set_frame(const std::string& value);
@@ -351,7 +352,7 @@ class processRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_frame();
   public:
 
-  // bytes keyframe = 2;
+  // bytes keyframe = 3;
   void clear_keyframe();
   const std::string& keyframe() const;
   void set_keyframe(const std::string& value);
@@ -367,6 +368,15 @@ class processRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_keyframe();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapping.processRequest)
  private:
   class _Internal;
@@ -376,6 +386,7 @@ class processRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframe_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMappingService_2eproto;
 };
@@ -610,7 +621,27 @@ inline void setCameraParametersRequest::set_allocated_camparams(std::string* cam
 
 // processRequest
 
-// bytes frame = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void processRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 processRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 processRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapping.processRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void processRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void processRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapping.processRequest.grpcServerCompressionFormat)
+}
+
+// bytes frame = 2;
 inline void processRequest::clear_frame() {
   frame_.ClearToEmpty();
 }
@@ -671,7 +702,7 @@ inline void processRequest::set_allocated_frame(std::string* frame) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapping.processRequest.frame)
 }
 
-// bytes keyframe = 2;
+// bytes keyframe = 3;
 inline void processRequest::clear_keyframe() {
   keyframe_.ClearToEmpty();
 }

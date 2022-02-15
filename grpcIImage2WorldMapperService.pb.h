@@ -184,10 +184,11 @@ class mapRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDigitalPointsFieldNumber = 1,
-    kWorldPointsFieldNumber = 2,
+    kDigitalPointsFieldNumber = 2,
+    kWorldPointsFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes digitalPoints = 1;
+  // bytes digitalPoints = 2;
   void clear_digitalpoints();
   const std::string& digitalpoints() const;
   void set_digitalpoints(const std::string& value);
@@ -203,7 +204,7 @@ class mapRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_digitalpoints();
   public:
 
-  // bytes worldPoints = 2;
+  // bytes worldPoints = 3;
   void clear_worldpoints();
   const std::string& worldpoints() const;
   void set_worldpoints(const std::string& value);
@@ -219,6 +220,15 @@ class mapRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_worldpoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIImage2WorldMapper.mapRequest)
  private:
   class _Internal;
@@ -228,6 +238,7 @@ class mapRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr digitalpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr worldpoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIImage2WorldMapperService_2eproto;
 };
@@ -397,7 +408,27 @@ class mapResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // mapRequest
 
-// bytes digitalPoints = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void mapRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 mapRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 mapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImage2WorldMapper.mapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void mapRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void mapRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImage2WorldMapper.mapRequest.grpcServerCompressionFormat)
+}
+
+// bytes digitalPoints = 2;
 inline void mapRequest::clear_digitalpoints() {
   digitalpoints_.ClearToEmpty();
 }
@@ -458,7 +489,7 @@ inline void mapRequest::set_allocated_digitalpoints(std::string* digitalpoints) 
   // @@protoc_insertion_point(field_set_allocated:grpcIImage2WorldMapper.mapRequest.digitalPoints)
 }
 
-// bytes worldPoints = 2;
+// bytes worldPoints = 3;
 inline void mapRequest::clear_worldpoints() {
   worldpoints_.ClearToEmpty();
 }

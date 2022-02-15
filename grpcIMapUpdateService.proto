@@ -11,8 +11,9 @@ bytes camParams = 1;
 
 message updateRequest
 {
-bytes globalMap = 1;
-bytes newKeyframeIds = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes globalMap = 2;
+bytes newKeyframeIds = 3;
 }
 
 message updateResponse

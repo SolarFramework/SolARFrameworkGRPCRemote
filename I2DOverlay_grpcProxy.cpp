@@ -1,12 +1,13 @@
 // GRPC Proxy Class implementation generated with xpcf_grpc_gen
 #include "I2DOverlay_grpcProxy.h"
 #include <cstddef>
+#include <boost/date_time.hpp>
 #include <xpcf/core/Exception.h>
 #include <xpcf/remoting/ISerializable.h>
-#include <xpcf/remoting/GrpcHelper.h>
 #include <grpcpp/client_context.h>
 #include <grpcpp/create_channel.h>
 #include <grpcpp/security/credentials.h>
+#include <boost/algorithm/string.hpp>
 namespace xpcf = org::bcom::xpcf;
 
 template<> org::bcom::xpcf::grpc::proxyI2DOverlay::I2DOverlay_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyI2DOverlay::I2DOverlay_grpcProxy>();
@@ -18,6 +19,8 @@ I2DOverlay_grpcProxy::I2DOverlay_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<
   declareInterface<SolAR::api::display::I2DOverlay>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
+  m_grpcProxyCompressionConfig.resize(7);
+  declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
 
@@ -32,6 +35,9 @@ XPCFErrorCode I2DOverlay_grpcProxy::onConfigured()
 {
   m_channel = ::grpc::CreateChannel(m_channelUrl, xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)));
   m_grpcStub = ::grpcI2DOverlay::grpcI2DOverlayService::NewStub(m_channel);
+  for (auto & compressionLine : m_grpcProxyCompressionConfig) {
+      translateClientConfiguration(compressionLine, m_serviceCompressionInfos, m_methodCompressionInfosMap);
+  }
   return xpcf::XPCFErrorCode::_SUCCESS;
 }
 
@@ -43,7 +49,16 @@ void  I2DOverlay_grpcProxy::drawCircle(SolAR::datastructure::Point2Df const& poi
   ::google::protobuf::Empty respOut;
   reqIn.set_point(xpcf::serialize<SolAR::datastructure::Point2Df>(point));
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawCircle request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawCircle(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawCircle response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "drawCircle rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawCircle",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -59,7 +74,16 @@ void  I2DOverlay_grpcProxy::drawCircles(std::vector<SolAR::datastructure::Point2
   ::google::protobuf::Empty respOut;
   reqIn.set_points(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(points));
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawCircles request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawCircles_grpc0(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawCircles response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "drawCircles_grpc0 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawCircles_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -75,7 +99,16 @@ void  I2DOverlay_grpcProxy::drawCircles(std::vector<SolAR::datastructure::Keypoi
   ::google::protobuf::Empty respOut;
   reqIn.set_keypoints(xpcf::serialize<std::vector<SolAR::datastructure::Keypoint>>(keypoints));
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawCircles request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawCircles_grpc1(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawCircles response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "drawCircles_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawCircles_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -91,7 +124,16 @@ void  I2DOverlay_grpcProxy::drawContour(SolAR::datastructure::Contour2Df const& 
   ::google::protobuf::Empty respOut;
   reqIn.set_contours(xpcf::serialize<SolAR::datastructure::Contour2Df>(contours));
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawContour request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawContour(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawContour response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "drawContour rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawContour",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -107,7 +149,16 @@ void  I2DOverlay_grpcProxy::drawContours(std::vector<SolAR::datastructure::Conto
   ::google::protobuf::Empty respOut;
   reqIn.set_contours(xpcf::serialize<std::vector<SolAR::datastructure::Contour2Df>>(contours));
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawContours request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawContours(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawContours response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "drawContours rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawContours",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
@@ -123,7 +174,16 @@ void  I2DOverlay_grpcProxy::drawSBPattern(SolAR::datastructure::SquaredBinaryPat
   ::google::protobuf::Empty respOut;
   reqIn.set_pattern(xpcf::serialize<SolAR::datastructure::SquaredBinaryPattern>(pattern));
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawSBPattern request sent at " << to_simple_string(start) << std::endl;
+  #endif
   ::grpc::Status grpcRemoteStatus = m_grpcStub->drawSBPattern(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> I2DOverlay_grpcProxy::drawSBPattern response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "drawSBPattern rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcI2DOverlayService","drawSBPattern",static_cast<uint32_t>(grpcRemoteStatus.error_code()));

@@ -1,7 +1,9 @@
 // GRPC Server Class implementation generated with xpcf_grpc_gen
 #include "IStereoCameraCalibration_grpcServer.h"
 #include <cstddef>
+#include <boost/date_time.hpp>
 #include <xpcf/remoting/ISerializable.h>
+#include <xpcf/remoting/GrpcHelper.h>
 namespace xpcf = org::bcom::xpcf;
 
 template<> org::bcom::xpcf::grpc::serverIStereoCameraCalibration::IStereoCameraCalibration_grpcServer* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::serverIStereoCameraCalibration::IStereoCameraCalibration_grpcServer>();
@@ -12,6 +14,8 @@ IStereoCameraCalibration_grpcServer::IStereoCameraCalibration_grpcServer():xpcf:
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::input::devices::IStereoCameraCalibration>(m_grpcService.m_xpcfComponent);
+  m_grpcServerCompressionConfig.resize(2);
+  declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
 
@@ -24,6 +28,9 @@ void IStereoCameraCalibration_grpcServer::unloadComponent ()
 
 XPCFErrorCode IStereoCameraCalibration_grpcServer::onConfigured()
 {
+  for (auto & grpcCompressionLine : m_grpcServerCompressionConfig) {
+;        translateServerConfiguration(grpcCompressionLine, m_grpcService.m_serviceCompressionInfos, m_grpcService.m_methodCompressionInfosMap);
+  }
   return xpcf::XPCFErrorCode::_SUCCESS;
 }
 
@@ -35,6 +42,15 @@ XPCFErrorCode IStereoCameraCalibration_grpcServer::onConfigured()
 
 ::grpc::Status IStereoCameraCalibration_grpcServer::grpcIStereoCameraCalibrationServiceImpl::calibrate(::grpc::ServerContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest* request, ::grpcIStereoCameraCalibration::calibrateResponse* response)
 {
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "calibrate", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IStereoCameraCalibration_grpcServer::calibrate request received at " << to_simple_string(start) << std::endl;
+  #endif
   std::vector<SRef<SolAR::datastructure::Image>> images1 = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Image>>>(request->images1());
   std::vector<SRef<SolAR::datastructure::Image>> images2 = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Image>>>(request->images2());
   SolAR::datastructure::CameraParameters camParams1 = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams1());
@@ -47,6 +63,11 @@ XPCFErrorCode IStereoCameraCalibration_grpcServer::onConfigured()
   response->set_rectparams1(xpcf::serialize<SolAR::datastructure::RectificationParameters>(rectParams1));
   response->set_rectparams2(xpcf::serialize<SolAR::datastructure::RectificationParameters>(rectParams2));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IStereoCameraCalibration_grpcServer::calibrate response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
   return ::grpc::Status::OK;
 }
 

@@ -6,8 +6,9 @@ package grpcIImage2WorldMapper;
 
 message mapRequest
 {
-bytes digitalPoints = 1;
-bytes worldPoints = 2;
+int32 grpcServerCompressionFormat  = 1;
+bytes digitalPoints = 2;
+bytes worldPoints = 3;
 }
 
 message mapResponse

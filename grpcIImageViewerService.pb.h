@@ -192,9 +192,10 @@ class displayRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImgFieldNumber = 1,
+    kImgFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes img = 1;
+  // bytes img = 2;
   void clear_img();
   const std::string& img() const;
   void set_img(const std::string& value);
@@ -210,6 +211,15 @@ class displayRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_img();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIImageViewer.displayRequest)
  private:
   class _Internal;
@@ -218,6 +228,7 @@ class displayRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr img_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIImageViewerService_2eproto;
 };
@@ -473,10 +484,11 @@ class displayKeyRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kImgFieldNumber = 1,
-    kKeyFieldNumber = 2,
+    kImgFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kKeyFieldNumber = 3,
   };
-  // bytes img = 1;
+  // bytes img = 2;
   void clear_img();
   const std::string& img() const;
   void set_img(const std::string& value);
@@ -492,7 +504,16 @@ class displayKeyRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_img();
   public:
 
-  // sint32 key = 2;
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // sint32 key = 3;
   void clear_key();
   ::PROTOBUF_NAMESPACE_ID::int32 key() const;
   void set_key(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -509,6 +530,7 @@ class displayKeyRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr img_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   ::PROTOBUF_NAMESPACE_ID::int32 key_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIImageViewerService_2eproto;
@@ -672,7 +694,27 @@ class displayKeyResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // displayRequest
 
-// bytes img = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void displayRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 displayRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 displayRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImageViewer.displayRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void displayRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void displayRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImageViewer.displayRequest.grpcServerCompressionFormat)
+}
+
+// bytes img = 2;
 inline void displayRequest::clear_img() {
   img_.ClearToEmpty();
 }
@@ -761,7 +803,27 @@ inline void displayResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::in
 
 // displayKeyRequest
 
-// bytes img = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void displayKeyRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 displayKeyRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 displayKeyRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIImageViewer.displayKeyRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void displayKeyRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void displayKeyRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIImageViewer.displayKeyRequest.grpcServerCompressionFormat)
+}
+
+// bytes img = 2;
 inline void displayKeyRequest::clear_img() {
   img_.ClearToEmpty();
 }
@@ -822,7 +884,7 @@ inline void displayKeyRequest::set_allocated_img(std::string* img) {
   // @@protoc_insertion_point(field_set_allocated:grpcIImageViewer.displayKeyRequest.img)
 }
 
-// sint32 key = 2;
+// sint32 key = 3;
 inline void displayKeyRequest::clear_key() {
   key_ = 0;
 }

@@ -55,7 +55,8 @@ struct addVisionDataRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT addVisionDataRequestDefaultTypeInternal _addVisionDataRequest_default_instance_;
 constexpr processRequest::processRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : outputdata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : outputdata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct processRequestDefaultTypeInternal {
   constexpr processRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -107,6 +108,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIVisualInertialFusionServi
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processRequest, outputdata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processResponse, _internal_metadata_),
@@ -121,7 +123,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 6, -1, sizeof(::grpcIVisualInertialFusion::addInertialDataRequest)},
   { 12, -1, sizeof(::grpcIVisualInertialFusion::addVisionDataRequest)},
   { 18, -1, sizeof(::grpcIVisualInertialFusion::processRequest)},
-  { 24, -1, sizeof(::grpcIVisualInertialFusion::processResponse)},
+  { 25, -1, sizeof(::grpcIVisualInertialFusion::processResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -138,27 +140,28 @@ const char descriptor_table_protodef_grpcIVisualInertialFusionService_2eproto[] 
   "obuf/empty.proto\"(\n\013initRequest\022\031\n\021initi"
   "alVisionData\030\001 \001(\014\".\n\026addInertialDataReq"
   "uest\022\024\n\014inertialData\030\001 \001(\014\"*\n\024addVisionD"
-  "ataRequest\022\022\n\nvisionData\030\001 \001(\014\"$\n\016proces"
-  "sRequest\022\022\n\noutputData\030\001 \001(\014\"B\n\017processR"
-  "esponse\022\022\n\noutputData\030\001 \001(\014\022\033\n\023xpcfGrpcR"
-  "eturnValue\030\002 \001(\0212\214\003\n grpcIVisualInertial"
-  "FusionService\022H\n\004init\022&.grpcIVisualInert"
-  "ialFusion.initRequest\032\026.google.protobuf."
-  "Empty\"\000\022^\n\017addInertialData\0221.grpcIVisual"
-  "InertialFusion.addInertialDataRequest\032\026."
-  "google.protobuf.Empty\"\000\022Z\n\raddVisionData"
-  "\022/.grpcIVisualInertialFusion.addVisionDa"
-  "taRequest\032\026.google.protobuf.Empty\"\000\022b\n\007p"
-  "rocess\022).grpcIVisualInertialFusion.proce"
-  "ssRequest\032*.grpcIVisualInertialFusion.pr"
-  "ocessResponse\"\000b\006proto3"
+  "ataRequest\022\022\n\nvisionData\030\001 \001(\014\"I\n\016proces"
+  "sRequest\022#\n\033grpcServerCompressionFormat\030"
+  "\001 \001(\005\022\022\n\noutputData\030\002 \001(\014\"B\n\017processResp"
+  "onse\022\022\n\noutputData\030\001 \001(\014\022\033\n\023xpcfGrpcRetu"
+  "rnValue\030\002 \001(\0212\214\003\n grpcIVisualInertialFus"
+  "ionService\022H\n\004init\022&.grpcIVisualInertial"
+  "Fusion.initRequest\032\026.google.protobuf.Emp"
+  "ty\"\000\022^\n\017addInertialData\0221.grpcIVisualIne"
+  "rtialFusion.addInertialDataRequest\032\026.goo"
+  "gle.protobuf.Empty\"\000\022Z\n\raddVisionData\022/."
+  "grpcIVisualInertialFusion.addVisionDataR"
+  "equest\032\026.google.protobuf.Empty\"\000\022b\n\007proc"
+  "ess\022).grpcIVisualInertialFusion.processR"
+  "equest\032*.grpcIVisualInertialFusion.proce"
+  "ssResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIVisualInertialFusionService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIVisualInertialFusionService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIVisualInertialFusionService_2eproto = {
-  false, false, 743, descriptor_table_protodef_grpcIVisualInertialFusionService_2eproto, "grpcIVisualInertialFusionService.proto", 
+  false, false, 780, descriptor_table_protodef_grpcIVisualInertialFusionService_2eproto, "grpcIVisualInertialFusionService.proto", 
   &descriptor_table_grpcIVisualInertialFusionService_2eproto_once, descriptor_table_grpcIVisualInertialFusionService_2eproto_deps, 1, 5,
   schemas, file_default_instances, TableStruct_grpcIVisualInertialFusionService_2eproto::offsets,
   file_level_metadata_grpcIVisualInertialFusionService_2eproto, file_level_enum_descriptors_grpcIVisualInertialFusionService_2eproto, file_level_service_descriptors_grpcIVisualInertialFusionService_2eproto,
@@ -778,11 +781,13 @@ processRequest::processRequest(const processRequest& from)
     outputdata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_outputdata(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIVisualInertialFusion.processRequest)
 }
 
 void processRequest::SharedCtor() {
 outputdata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 processRequest::~processRequest() {
@@ -813,6 +818,7 @@ void processRequest::Clear() {
   (void) cached_has_bits;
 
   outputdata_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -823,9 +829,16 @@ const char* processRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes outputData = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes outputData = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_outputdata();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -859,10 +872,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes outputData = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes outputData = 2;
   if (this->outputdata().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_outputdata(), target);
+        2, this->_internal_outputdata(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -881,11 +900,18 @@ size_t processRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes outputData = 1;
+  // bytes outputData = 2;
   if (this->outputdata().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_outputdata());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -922,6 +948,9 @@ void processRequest::MergeFrom(const processRequest& from) {
   if (from.outputdata().size() > 0) {
     _internal_set_outputdata(from._internal_outputdata());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void processRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -946,6 +975,7 @@ void processRequest::InternalSwap(processRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   outputdata_.Swap(&other->outputdata_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata processRequest::GetMetadata() const {

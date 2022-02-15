@@ -3,13 +3,15 @@
 
 #ifndef IDESCRIPTORMATCHERSTEREO_GRPCPROXY_H
 #define IDESCRIPTORMATCHERSTEREO_GRPCPROXY_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcherStereo.h"
+#include "api/features/IDescriptorMatcherStereo.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
+#include <map>
 #include "grpcIDescriptorMatcherStereoService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
+#include <xpcf/remoting/GrpcHelper.h>
 
 namespace org::bcom::xpcf::grpc::proxyIDescriptorMatcherStereo {
 
@@ -28,6 +30,9 @@ class IDescriptorMatcherStereo_grpcProxy:  public org::bcom::xpcf::ConfigurableB
     std::string m_channelUrl;
     uint32_t m_channelCredentials;
     std::shared_ptr<::grpc::Channel> m_channel;
+    xpcf::grpcCompressionInfos m_serviceCompressionInfos;
+    std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
+    std::vector<std::string> m_grpcProxyCompressionConfig;
     std::unique_ptr<::grpcIDescriptorMatcherStereo::grpcIDescriptorMatcherStereoService::Stub> m_grpcStub;
 
 };

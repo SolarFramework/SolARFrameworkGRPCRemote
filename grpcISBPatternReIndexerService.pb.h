@@ -184,12 +184,13 @@ class reindexRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCandidateContoursFieldNumber = 1,
-    kMatchesFieldNumber = 2,
-    kPatternPointsFieldNumber = 3,
-    kImagePointsFieldNumber = 4,
+    kCandidateContoursFieldNumber = 2,
+    kMatchesFieldNumber = 3,
+    kPatternPointsFieldNumber = 4,
+    kImagePointsFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes candidateContours = 1;
+  // bytes candidateContours = 2;
   void clear_candidatecontours();
   const std::string& candidatecontours() const;
   void set_candidatecontours(const std::string& value);
@@ -205,7 +206,7 @@ class reindexRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_candidatecontours();
   public:
 
-  // bytes matches = 2;
+  // bytes matches = 3;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -221,7 +222,7 @@ class reindexRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_matches();
   public:
 
-  // bytes patternPoints = 3;
+  // bytes patternPoints = 4;
   void clear_patternpoints();
   const std::string& patternpoints() const;
   void set_patternpoints(const std::string& value);
@@ -237,7 +238,7 @@ class reindexRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_patternpoints();
   public:
 
-  // bytes imagePoints = 4;
+  // bytes imagePoints = 5;
   void clear_imagepoints();
   const std::string& imagepoints() const;
   void set_imagepoints(const std::string& value);
@@ -253,6 +254,15 @@ class reindexRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_imagepoints();
   public:
 
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcISBPatternReIndexer.reindexRequest)
  private:
   class _Internal;
@@ -264,6 +274,7 @@ class reindexRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr patternpoints_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imagepoints_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcISBPatternReIndexerService_2eproto;
 };
@@ -451,7 +462,27 @@ class reindexResponse PROTOBUF_FINAL :
 #endif  // __GNUC__
 // reindexRequest
 
-// bytes candidateContours = 1;
+// int32 grpcServerCompressionFormat = 1;
+inline void reindexRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reindexRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 reindexRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcISBPatternReIndexer.reindexRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void reindexRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void reindexRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcISBPatternReIndexer.reindexRequest.grpcServerCompressionFormat)
+}
+
+// bytes candidateContours = 2;
 inline void reindexRequest::clear_candidatecontours() {
   candidatecontours_.ClearToEmpty();
 }
@@ -512,7 +543,7 @@ inline void reindexRequest::set_allocated_candidatecontours(std::string* candida
   // @@protoc_insertion_point(field_set_allocated:grpcISBPatternReIndexer.reindexRequest.candidateContours)
 }
 
-// bytes matches = 2;
+// bytes matches = 3;
 inline void reindexRequest::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -573,7 +604,7 @@ inline void reindexRequest::set_allocated_matches(std::string* matches) {
   // @@protoc_insertion_point(field_set_allocated:grpcISBPatternReIndexer.reindexRequest.matches)
 }
 
-// bytes patternPoints = 3;
+// bytes patternPoints = 4;
 inline void reindexRequest::clear_patternpoints() {
   patternpoints_.ClearToEmpty();
 }
@@ -634,7 +665,7 @@ inline void reindexRequest::set_allocated_patternpoints(std::string* patternpoin
   // @@protoc_insertion_point(field_set_allocated:grpcISBPatternReIndexer.reindexRequest.patternPoints)
 }
 
-// bytes imagePoints = 4;
+// bytes imagePoints = 5;
 inline void reindexRequest::clear_imagepoints() {
   imagepoints_.ClearToEmpty();
 }

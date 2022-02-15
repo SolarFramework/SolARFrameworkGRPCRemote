@@ -2,9 +2,10 @@
 
 #ifndef I3DTRANSFORM_GRPCSERVER_H
 #define I3DTRANSFORM_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/geom/I3DTransform.h"
+#include "api/geom/I3DTransform.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcI3DTransformService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -32,12 +33,15 @@ class I3DTransform_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
         ::grpc::Status transformInPlace_grpc4(::grpc::ServerContext* context, const ::grpcI3DTransform::transformInPlace_grpc4Request* request, ::grpcI3DTransform::transformInPlace_grpc4Response* response) override;
 
         SRef<SolAR::api::geom::I3DTransform> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcI3DTransformServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 

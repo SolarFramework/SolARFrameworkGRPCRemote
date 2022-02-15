@@ -19,7 +19,8 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcIKeyframesManager {
 constexpr addKeyframe_grpc0Request::addKeyframe_grpc0Request(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : keyframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : keyframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct addKeyframe_grpc0RequestDefaultTypeInternal {
   constexpr addKeyframe_grpc0RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -43,7 +44,8 @@ struct addKeyframe_grpc0ResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT addKeyframe_grpc0ResponseDefaultTypeInternal _addKeyframe_grpc0Response_default_instance_;
 constexpr addKeyframe_grpc1Request::addKeyframe_grpc1Request(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : keyframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : keyframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct addKeyframe_grpc1RequestDefaultTypeInternal {
   constexpr addKeyframe_grpc1RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -68,6 +70,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT addKeyframe_grpc1ResponseDefaul
 constexpr getKeyframeRequest::getKeyframeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : keyframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
   , id_(0u){}
 struct getKeyframeRequestDefaultTypeInternal {
   constexpr getKeyframeRequestDefaultTypeInternal()
@@ -94,7 +97,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getKeyframeResponseDefaultTypeI
 constexpr getKeyframesRequest::getKeyframesRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : ids_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , keyframes_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , keyframes_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct getKeyframesRequestDefaultTypeInternal {
   constexpr getKeyframesRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -119,7 +123,8 @@ struct getKeyframesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getKeyframesResponseDefaultTypeInternal _getKeyframesResponse_default_instance_;
 constexpr getAllKeyframesRequest::getAllKeyframesRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : keyframes_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : keyframes_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct getAllKeyframesRequestDefaultTypeInternal {
   constexpr getAllKeyframesRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -144,7 +149,8 @@ struct getAllKeyframesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getAllKeyframesResponseDefaultTypeInternal _getAllKeyframesResponse_default_instance_;
 constexpr suppressKeyframeRequest::suppressKeyframeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(0u){}
+  : grpcservercompressionformat_(0)
+  , id_(0u){}
 struct suppressKeyframeRequestDefaultTypeInternal {
   constexpr suppressKeyframeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -166,6 +172,18 @@ struct suppressKeyframeResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT suppressKeyframeResponseDefaultTypeInternal _suppressKeyframeResponse_default_instance_;
+constexpr getDescriptorTypeRequest::getDescriptorTypeRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct getDescriptorTypeRequestDefaultTypeInternal {
+  constexpr getDescriptorTypeRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getDescriptorTypeRequestDefaultTypeInternal() {}
+  union {
+    getDescriptorTypeRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getDescriptorTypeRequestDefaultTypeInternal _getDescriptorTypeRequest_default_instance_;
 constexpr getDescriptorTypeResponse::getDescriptorTypeResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(0){}
@@ -180,7 +198,8 @@ struct getDescriptorTypeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getDescriptorTypeResponseDefaultTypeInternal _getDescriptorTypeResponse_default_instance_;
 constexpr setDescriptorTypeRequest::setDescriptorTypeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : type_(0){}
+  : grpcservercompressionformat_(0)
+  , type_(0){}
 struct setDescriptorTypeRequestDefaultTypeInternal {
   constexpr setDescriptorTypeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -204,7 +223,8 @@ struct setDescriptorTypeResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setDescriptorTypeResponseDefaultTypeInternal _setDescriptorTypeResponse_default_instance_;
 constexpr isExistKeyframeRequest::isExistKeyframeRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : id_(0u){}
+  : grpcservercompressionformat_(0)
+  , id_(0u){}
 struct isExistKeyframeRequestDefaultTypeInternal {
   constexpr isExistKeyframeRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -226,6 +246,18 @@ struct isExistKeyframeResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT isExistKeyframeResponseDefaultTypeInternal _isExistKeyframeResponse_default_instance_;
+constexpr getNbKeyframesRequest::getNbKeyframesRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct getNbKeyframesRequestDefaultTypeInternal {
+  constexpr getNbKeyframesRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getNbKeyframesRequestDefaultTypeInternal() {}
+  union {
+    getNbKeyframesRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getNbKeyframesRequestDefaultTypeInternal _getNbKeyframesRequest_default_instance_;
 constexpr getNbKeyframesResponse::getNbKeyframesResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(0){}
@@ -240,7 +272,8 @@ struct getNbKeyframesResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getNbKeyframesResponseDefaultTypeInternal _getNbKeyframesResponse_default_instance_;
 constexpr saveToFileRequest::saveToFileRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : file_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : file_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct saveToFileRequestDefaultTypeInternal {
   constexpr saveToFileRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -264,7 +297,8 @@ struct saveToFileResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT saveToFileResponseDefaultTypeInternal _saveToFileResponse_default_instance_;
 constexpr loadFromFileRequest::loadFromFileRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : file_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : file_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct loadFromFileRequestDefaultTypeInternal {
   constexpr loadFromFileRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -286,6 +320,18 @@ struct loadFromFileResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT loadFromFileResponseDefaultTypeInternal _loadFromFileResponse_default_instance_;
+constexpr getConstKeyframeCollectionRequest::getConstKeyframeCollectionRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct getConstKeyframeCollectionRequestDefaultTypeInternal {
+  constexpr getConstKeyframeCollectionRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getConstKeyframeCollectionRequestDefaultTypeInternal() {}
+  union {
+    getConstKeyframeCollectionRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getConstKeyframeCollectionRequestDefaultTypeInternal _getConstKeyframeCollectionRequest_default_instance_;
 constexpr getConstKeyframeCollectionResponse::getConstKeyframeCollectionResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
@@ -300,7 +346,8 @@ struct getConstKeyframeCollectionResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getConstKeyframeCollectionResponseDefaultTypeInternal _getConstKeyframeCollectionResponse_default_instance_;
 constexpr getKeyframeCollectionRequest::getKeyframeCollectionRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : keyframecollection_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : keyframecollection_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct getKeyframeCollectionRequestDefaultTypeInternal {
   constexpr getKeyframeCollectionRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -336,7 +383,7 @@ struct setKeyframeCollectionRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setKeyframeCollectionRequestDefaultTypeInternal _setKeyframeCollectionRequest_default_instance_;
 }  // namespace grpcIKeyframesManager
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIKeyframesManagerService_2eproto[26];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIKeyframesManagerService_2eproto[29];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIKeyframesManagerService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIKeyframesManagerService_2eproto = nullptr;
 
@@ -346,6 +393,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::addKeyframe_grpc0Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::addKeyframe_grpc0Request, keyframe_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::addKeyframe_grpc0Response, _internal_metadata_),
@@ -358,6 +406,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::addKeyframe_grpc1Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::addKeyframe_grpc1Request, keyframe_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::addKeyframe_grpc1Response, _internal_metadata_),
@@ -370,6 +419,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getKeyframeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getKeyframeRequest, id_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getKeyframeRequest, keyframe_),
   ~0u,  // no _has_bits_
@@ -384,6 +434,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getKeyframesRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getKeyframesRequest, ids_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getKeyframesRequest, keyframes_),
   ~0u,  // no _has_bits_
@@ -398,6 +449,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getAllKeyframesRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getAllKeyframesRequest, keyframes_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getAllKeyframesResponse, _internal_metadata_),
@@ -411,6 +463,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::suppressKeyframeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::suppressKeyframeRequest, id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::suppressKeyframeResponse, _internal_metadata_),
@@ -418,6 +471,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::suppressKeyframeResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getDescriptorTypeRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getDescriptorTypeRequest, grpcservercompressionformat_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getDescriptorTypeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -429,6 +488,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::setDescriptorTypeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::setDescriptorTypeRequest, type_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::setDescriptorTypeResponse, _internal_metadata_),
@@ -441,6 +501,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::isExistKeyframeRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::isExistKeyframeRequest, id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::isExistKeyframeResponse, _internal_metadata_),
@@ -448,6 +509,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::isExistKeyframeResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getNbKeyframesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getNbKeyframesRequest, grpcservercompressionformat_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getNbKeyframesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -459,6 +526,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::saveToFileRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::saveToFileRequest, file_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::saveToFileResponse, _internal_metadata_),
@@ -471,6 +539,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::loadFromFileRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::loadFromFileRequest, file_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::loadFromFileResponse, _internal_metadata_),
@@ -478,6 +547,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::loadFromFileResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getConstKeyframeCollectionRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getConstKeyframeCollectionRequest, grpcservercompressionformat_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getConstKeyframeCollectionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -489,6 +564,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getKeyframeCollectionRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getKeyframeCollectionRequest, keyframecollection_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIKeyframesManager::getKeyframeCollectionResponse, _internal_metadata_),
@@ -506,31 +582,34 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIKeyframesManagerService_2
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIKeyframesManager::addKeyframe_grpc0Request)},
-  { 6, -1, sizeof(::grpcIKeyframesManager::addKeyframe_grpc0Response)},
-  { 12, -1, sizeof(::grpcIKeyframesManager::addKeyframe_grpc1Request)},
-  { 18, -1, sizeof(::grpcIKeyframesManager::addKeyframe_grpc1Response)},
-  { 24, -1, sizeof(::grpcIKeyframesManager::getKeyframeRequest)},
-  { 31, -1, sizeof(::grpcIKeyframesManager::getKeyframeResponse)},
-  { 38, -1, sizeof(::grpcIKeyframesManager::getKeyframesRequest)},
-  { 45, -1, sizeof(::grpcIKeyframesManager::getKeyframesResponse)},
-  { 52, -1, sizeof(::grpcIKeyframesManager::getAllKeyframesRequest)},
-  { 58, -1, sizeof(::grpcIKeyframesManager::getAllKeyframesResponse)},
-  { 65, -1, sizeof(::grpcIKeyframesManager::suppressKeyframeRequest)},
-  { 71, -1, sizeof(::grpcIKeyframesManager::suppressKeyframeResponse)},
-  { 77, -1, sizeof(::grpcIKeyframesManager::getDescriptorTypeResponse)},
-  { 83, -1, sizeof(::grpcIKeyframesManager::setDescriptorTypeRequest)},
-  { 89, -1, sizeof(::grpcIKeyframesManager::setDescriptorTypeResponse)},
-  { 95, -1, sizeof(::grpcIKeyframesManager::isExistKeyframeRequest)},
-  { 101, -1, sizeof(::grpcIKeyframesManager::isExistKeyframeResponse)},
-  { 107, -1, sizeof(::grpcIKeyframesManager::getNbKeyframesResponse)},
-  { 113, -1, sizeof(::grpcIKeyframesManager::saveToFileRequest)},
-  { 119, -1, sizeof(::grpcIKeyframesManager::saveToFileResponse)},
-  { 125, -1, sizeof(::grpcIKeyframesManager::loadFromFileRequest)},
-  { 131, -1, sizeof(::grpcIKeyframesManager::loadFromFileResponse)},
-  { 137, -1, sizeof(::grpcIKeyframesManager::getConstKeyframeCollectionResponse)},
-  { 143, -1, sizeof(::grpcIKeyframesManager::getKeyframeCollectionRequest)},
-  { 149, -1, sizeof(::grpcIKeyframesManager::getKeyframeCollectionResponse)},
-  { 156, -1, sizeof(::grpcIKeyframesManager::setKeyframeCollectionRequest)},
+  { 7, -1, sizeof(::grpcIKeyframesManager::addKeyframe_grpc0Response)},
+  { 13, -1, sizeof(::grpcIKeyframesManager::addKeyframe_grpc1Request)},
+  { 20, -1, sizeof(::grpcIKeyframesManager::addKeyframe_grpc1Response)},
+  { 26, -1, sizeof(::grpcIKeyframesManager::getKeyframeRequest)},
+  { 34, -1, sizeof(::grpcIKeyframesManager::getKeyframeResponse)},
+  { 41, -1, sizeof(::grpcIKeyframesManager::getKeyframesRequest)},
+  { 49, -1, sizeof(::grpcIKeyframesManager::getKeyframesResponse)},
+  { 56, -1, sizeof(::grpcIKeyframesManager::getAllKeyframesRequest)},
+  { 63, -1, sizeof(::grpcIKeyframesManager::getAllKeyframesResponse)},
+  { 70, -1, sizeof(::grpcIKeyframesManager::suppressKeyframeRequest)},
+  { 77, -1, sizeof(::grpcIKeyframesManager::suppressKeyframeResponse)},
+  { 83, -1, sizeof(::grpcIKeyframesManager::getDescriptorTypeRequest)},
+  { 89, -1, sizeof(::grpcIKeyframesManager::getDescriptorTypeResponse)},
+  { 95, -1, sizeof(::grpcIKeyframesManager::setDescriptorTypeRequest)},
+  { 102, -1, sizeof(::grpcIKeyframesManager::setDescriptorTypeResponse)},
+  { 108, -1, sizeof(::grpcIKeyframesManager::isExistKeyframeRequest)},
+  { 115, -1, sizeof(::grpcIKeyframesManager::isExistKeyframeResponse)},
+  { 121, -1, sizeof(::grpcIKeyframesManager::getNbKeyframesRequest)},
+  { 127, -1, sizeof(::grpcIKeyframesManager::getNbKeyframesResponse)},
+  { 133, -1, sizeof(::grpcIKeyframesManager::saveToFileRequest)},
+  { 140, -1, sizeof(::grpcIKeyframesManager::saveToFileResponse)},
+  { 146, -1, sizeof(::grpcIKeyframesManager::loadFromFileRequest)},
+  { 153, -1, sizeof(::grpcIKeyframesManager::loadFromFileResponse)},
+  { 159, -1, sizeof(::grpcIKeyframesManager::getConstKeyframeCollectionRequest)},
+  { 165, -1, sizeof(::grpcIKeyframesManager::getConstKeyframeCollectionResponse)},
+  { 171, -1, sizeof(::grpcIKeyframesManager::getKeyframeCollectionRequest)},
+  { 178, -1, sizeof(::grpcIKeyframesManager::getKeyframeCollectionResponse)},
+  { 185, -1, sizeof(::grpcIKeyframesManager::setKeyframeCollectionRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -546,16 +625,19 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_getAllKeyframesResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_suppressKeyframeRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_suppressKeyframeResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_getDescriptorTypeRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_getDescriptorTypeResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_setDescriptorTypeRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_setDescriptorTypeResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_isExistKeyframeRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_isExistKeyframeResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_getNbKeyframesRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_getNbKeyframesResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_saveToFileRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_saveToFileResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_loadFromFileRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_loadFromFileResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_getConstKeyframeCollectionRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_getConstKeyframeCollectionResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_getKeyframeCollectionRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIKeyframesManager::_getKeyframeCollectionResponse_default_instance_),
@@ -565,93 +647,111 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIKeyframesManagerService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"grpcIKeyframesManagerService.proto\022\025gr"
   "pcIKeyframesManager\032\033google/protobuf/emp"
-  "ty.proto\",\n\030addKeyframe_grpc0Request\022\020\n\010"
-  "keyframe\030\001 \001(\014\"8\n\031addKeyframe_grpc0Respo"
-  "nse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\",\n\030addK"
-  "eyframe_grpc1Request\022\020\n\010keyframe\030\001 \001(\014\"8"
-  "\n\031addKeyframe_grpc1Response\022\033\n\023xpcfGrpcR"
-  "eturnValue\030\001 \001(\021\"2\n\022getKeyframeRequest\022\n"
-  "\n\002id\030\001 \001(\r\022\020\n\010keyframe\030\002 \001(\014\"D\n\023getKeyfr"
-  "ameResponse\022\020\n\010keyframe\030\001 \001(\014\022\033\n\023xpcfGrp"
-  "cReturnValue\030\002 \001(\021\"5\n\023getKeyframesReques"
-  "t\022\013\n\003ids\030\001 \001(\014\022\021\n\tkeyframes\030\002 \001(\014\"F\n\024get"
-  "KeyframesResponse\022\021\n\tkeyframes\030\001 \001(\014\022\033\n\023"
-  "xpcfGrpcReturnValue\030\002 \001(\021\"+\n\026getAllKeyfr"
-  "amesRequest\022\021\n\tkeyframes\030\001 \001(\014\"I\n\027getAll"
-  "KeyframesResponse\022\021\n\tkeyframes\030\001 \001(\014\022\033\n\023"
-  "xpcfGrpcReturnValue\030\002 \001(\021\"%\n\027suppressKey"
-  "frameRequest\022\n\n\002id\030\001 \001(\r\"7\n\030suppressKeyf"
-  "rameResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001("
-  "\021\"8\n\031getDescriptorTypeResponse\022\033\n\023xpcfGr"
-  "pcReturnValue\030\001 \001(\021\"(\n\030setDescriptorType"
-  "Request\022\014\n\004type\030\001 \001(\021\"8\n\031setDescriptorTy"
-  "peResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\""
-  "$\n\026isExistKeyframeRequest\022\n\n\002id\030\001 \001(\r\"6\n"
-  "\027isExistKeyframeResponse\022\033\n\023xpcfGrpcRetu"
-  "rnValue\030\001 \001(\010\"5\n\026getNbKeyframesResponse\022"
-  "\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"!\n\021saveToFi"
-  "leRequest\022\014\n\004file\030\001 \001(\t\"1\n\022saveToFileRes"
-  "ponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"#\n\023lo"
-  "adFromFileRequest\022\014\n\004file\030\001 \001(\t\"3\n\024loadF"
-  "romFileResponse\022\033\n\023xpcfGrpcReturnValue\030\001"
-  " \001(\021\"A\n\"getConstKeyframeCollectionRespon"
-  "se\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\014\":\n\034getKe"
-  "yframeCollectionRequest\022\032\n\022keyframeColle"
-  "ction\030\001 \001(\014\"X\n\035getKeyframeCollectionResp"
-  "onse\022\032\n\022keyframeCollection\030\001 \001(\014\022\033\n\023xpcf"
-  "GrpcReturnValue\030\002 \001(\014\":\n\034setKeyframeColl"
-  "ectionRequest\022\032\n\022keyframeCollection\030\001 \001("
-  "\0142\254\r\n\034grpcIKeyframesManagerService\022x\n\021ad"
-  "dKeyframe_grpc0\022/.grpcIKeyframesManager."
-  "addKeyframe_grpc0Request\0320.grpcIKeyframe"
-  "sManager.addKeyframe_grpc0Response\"\000\022x\n\021"
-  "addKeyframe_grpc1\022/.grpcIKeyframesManage"
-  "r.addKeyframe_grpc1Request\0320.grpcIKeyfra"
-  "mesManager.addKeyframe_grpc1Response\"\000\022f"
-  "\n\013getKeyframe\022).grpcIKeyframesManager.ge"
-  "tKeyframeRequest\032*.grpcIKeyframesManager"
-  ".getKeyframeResponse\"\000\022i\n\014getKeyframes\022*"
-  ".grpcIKeyframesManager.getKeyframesReque"
-  "st\032+.grpcIKeyframesManager.getKeyframesR"
-  "esponse\"\000\022r\n\017getAllKeyframes\022-.grpcIKeyf"
-  "ramesManager.getAllKeyframesRequest\032..gr"
-  "pcIKeyframesManager.getAllKeyframesRespo"
-  "nse\"\000\022u\n\020suppressKeyframe\022..grpcIKeyfram"
-  "esManager.suppressKeyframeRequest\032/.grpc"
-  "IKeyframesManager.suppressKeyframeRespon"
-  "se\"\000\022_\n\021getDescriptorType\022\026.google.proto"
-  "buf.Empty\0320.grpcIKeyframesManager.getDes"
-  "criptorTypeResponse\"\000\022x\n\021setDescriptorTy"
-  "pe\022/.grpcIKeyframesManager.setDescriptor"
-  "TypeRequest\0320.grpcIKeyframesManager.setD"
-  "escriptorTypeResponse\"\000\022r\n\017isExistKeyfra"
-  "me\022-.grpcIKeyframesManager.isExistKeyfra"
-  "meRequest\032..grpcIKeyframesManager.isExis"
-  "tKeyframeResponse\"\000\022Y\n\016getNbKeyframes\022\026."
-  "google.protobuf.Empty\032-.grpcIKeyframesMa"
-  "nager.getNbKeyframesResponse\"\000\022c\n\nsaveTo"
-  "File\022(.grpcIKeyframesManager.saveToFileR"
-  "equest\032).grpcIKeyframesManager.saveToFil"
-  "eResponse\"\000\022i\n\014loadFromFile\022*.grpcIKeyfr"
-  "amesManager.loadFromFileRequest\032+.grpcIK"
-  "eyframesManager.loadFromFileResponse\"\000\022q"
-  "\n\032getConstKeyframeCollection\022\026.google.pr"
-  "otobuf.Empty\0329.grpcIKeyframesManager.get"
-  "ConstKeyframeCollectionResponse\"\000\022\204\001\n\025ge"
-  "tKeyframeCollection\0223.grpcIKeyframesMana"
-  "ger.getKeyframeCollectionRequest\0324.grpcI"
-  "KeyframesManager.getKeyframeCollectionRe"
-  "sponse\"\000\022f\n\025setKeyframeCollection\0223.grpc"
-  "IKeyframesManager.setKeyframeCollectionR"
-  "equest\032\026.google.protobuf.Empty\"\000b\006proto3"
+  "ty.proto\"Q\n\030addKeyframe_grpc0Request\022#\n\033"
+  "grpcServerCompressionFormat\030\001 \001(\005\022\020\n\010key"
+  "frame\030\002 \001(\014\"8\n\031addKeyframe_grpc0Response"
+  "\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"Q\n\030addKeyf"
+  "rame_grpc1Request\022#\n\033grpcServerCompressi"
+  "onFormat\030\001 \001(\005\022\020\n\010keyframe\030\002 \001(\014\"8\n\031addK"
+  "eyframe_grpc1Response\022\033\n\023xpcfGrpcReturnV"
+  "alue\030\001 \001(\021\"W\n\022getKeyframeRequest\022#\n\033grpc"
+  "ServerCompressionFormat\030\001 \001(\005\022\n\n\002id\030\002 \001("
+  "\r\022\020\n\010keyframe\030\003 \001(\014\"D\n\023getKeyframeRespon"
+  "se\022\020\n\010keyframe\030\001 \001(\014\022\033\n\023xpcfGrpcReturnVa"
+  "lue\030\002 \001(\021\"Z\n\023getKeyframesRequest\022#\n\033grpc"
+  "ServerCompressionFormat\030\001 \001(\005\022\013\n\003ids\030\002 \001"
+  "(\014\022\021\n\tkeyframes\030\003 \001(\014\"F\n\024getKeyframesRes"
+  "ponse\022\021\n\tkeyframes\030\001 \001(\014\022\033\n\023xpcfGrpcRetu"
+  "rnValue\030\002 \001(\021\"P\n\026getAllKeyframesRequest\022"
+  "#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\021\n\t"
+  "keyframes\030\002 \001(\014\"I\n\027getAllKeyframesRespon"
+  "se\022\021\n\tkeyframes\030\001 \001(\014\022\033\n\023xpcfGrpcReturnV"
+  "alue\030\002 \001(\021\"J\n\027suppressKeyframeRequest\022#\n"
+  "\033grpcServerCompressionFormat\030\001 \001(\005\022\n\n\002id"
+  "\030\002 \001(\r\"7\n\030suppressKeyframeResponse\022\033\n\023xp"
+  "cfGrpcReturnValue\030\001 \001(\021\"\?\n\030getDescriptor"
+  "TypeRequest\022#\n\033grpcServerCompressionForm"
+  "at\030\001 \001(\005\"8\n\031getDescriptorTypeResponse\022\033\n"
+  "\023xpcfGrpcReturnValue\030\001 \001(\021\"M\n\030setDescrip"
+  "torTypeRequest\022#\n\033grpcServerCompressionF"
+  "ormat\030\001 \001(\005\022\014\n\004type\030\002 \001(\021\"8\n\031setDescript"
+  "orTypeResponse\022\033\n\023xpcfGrpcReturnValue\030\001 "
+  "\001(\021\"I\n\026isExistKeyframeRequest\022#\n\033grpcSer"
+  "verCompressionFormat\030\001 \001(\005\022\n\n\002id\030\002 \001(\r\"6"
+  "\n\027isExistKeyframeResponse\022\033\n\023xpcfGrpcRet"
+  "urnValue\030\001 \001(\010\"<\n\025getNbKeyframesRequest\022"
+  "#\n\033grpcServerCompressionFormat\030\001 \001(\005\"5\n\026"
+  "getNbKeyframesResponse\022\033\n\023xpcfGrpcReturn"
+  "Value\030\001 \001(\021\"F\n\021saveToFileRequest\022#\n\033grpc"
+  "ServerCompressionFormat\030\001 \001(\005\022\014\n\004file\030\002 "
+  "\001(\t\"1\n\022saveToFileResponse\022\033\n\023xpcfGrpcRet"
+  "urnValue\030\001 \001(\021\"H\n\023loadFromFileRequest\022#\n"
+  "\033grpcServerCompressionFormat\030\001 \001(\005\022\014\n\004fi"
+  "le\030\002 \001(\t\"3\n\024loadFromFileResponse\022\033\n\023xpcf"
+  "GrpcReturnValue\030\001 \001(\021\"H\n!getConstKeyfram"
+  "eCollectionRequest\022#\n\033grpcServerCompress"
+  "ionFormat\030\001 \001(\005\"A\n\"getConstKeyframeColle"
+  "ctionResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001"
+  "(\014\"_\n\034getKeyframeCollectionRequest\022#\n\033gr"
+  "pcServerCompressionFormat\030\001 \001(\005\022\032\n\022keyfr"
+  "ameCollection\030\002 \001(\014\"X\n\035getKeyframeCollec"
+  "tionResponse\022\032\n\022keyframeCollection\030\001 \001(\014"
+  "\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\014\":\n\034setKeyf"
+  "rameCollectionRequest\022\032\n\022keyframeCollect"
+  "ion\030\001 \001(\0142\376\r\n\034grpcIKeyframesManagerServi"
+  "ce\022x\n\021addKeyframe_grpc0\022/.grpcIKeyframes"
+  "Manager.addKeyframe_grpc0Request\0320.grpcI"
+  "KeyframesManager.addKeyframe_grpc0Respon"
+  "se\"\000\022x\n\021addKeyframe_grpc1\022/.grpcIKeyfram"
+  "esManager.addKeyframe_grpc1Request\0320.grp"
+  "cIKeyframesManager.addKeyframe_grpc1Resp"
+  "onse\"\000\022f\n\013getKeyframe\022).grpcIKeyframesMa"
+  "nager.getKeyframeRequest\032*.grpcIKeyframe"
+  "sManager.getKeyframeResponse\"\000\022i\n\014getKey"
+  "frames\022*.grpcIKeyframesManager.getKeyfra"
+  "mesRequest\032+.grpcIKeyframesManager.getKe"
+  "yframesResponse\"\000\022r\n\017getAllKeyframes\022-.g"
+  "rpcIKeyframesManager.getAllKeyframesRequ"
+  "est\032..grpcIKeyframesManager.getAllKeyfra"
+  "mesResponse\"\000\022u\n\020suppressKeyframe\022..grpc"
+  "IKeyframesManager.suppressKeyframeReques"
+  "t\032/.grpcIKeyframesManager.suppressKeyfra"
+  "meResponse\"\000\022x\n\021getDescriptorType\022/.grpc"
+  "IKeyframesManager.getDescriptorTypeReque"
+  "st\0320.grpcIKeyframesManager.getDescriptor"
+  "TypeResponse\"\000\022x\n\021setDescriptorType\022/.gr"
+  "pcIKeyframesManager.setDescriptorTypeReq"
+  "uest\0320.grpcIKeyframesManager.setDescript"
+  "orTypeResponse\"\000\022r\n\017isExistKeyframe\022-.gr"
+  "pcIKeyframesManager.isExistKeyframeReque"
+  "st\032..grpcIKeyframesManager.isExistKeyfra"
+  "meResponse\"\000\022o\n\016getNbKeyframes\022,.grpcIKe"
+  "yframesManager.getNbKeyframesRequest\032-.g"
+  "rpcIKeyframesManager.getNbKeyframesRespo"
+  "nse\"\000\022c\n\nsaveToFile\022(.grpcIKeyframesMana"
+  "ger.saveToFileRequest\032).grpcIKeyframesMa"
+  "nager.saveToFileResponse\"\000\022i\n\014loadFromFi"
+  "le\022*.grpcIKeyframesManager.loadFromFileR"
+  "equest\032+.grpcIKeyframesManager.loadFromF"
+  "ileResponse\"\000\022\223\001\n\032getConstKeyframeCollec"
+  "tion\0228.grpcIKeyframesManager.getConstKey"
+  "frameCollectionRequest\0329.grpcIKeyframesM"
+  "anager.getConstKeyframeCollectionRespons"
+  "e\"\000\022\204\001\n\025getKeyframeCollection\0223.grpcIKey"
+  "framesManager.getKeyframeCollectionReque"
+  "st\0324.grpcIKeyframesManager.getKeyframeCo"
+  "llectionResponse\"\000\022f\n\025setKeyframeCollect"
+  "ion\0223.grpcIKeyframesManager.setKeyframeC"
+  "ollectionRequest\032\026.google.protobuf.Empty"
+  "\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIKeyframesManagerService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIKeyframesManagerService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIKeyframesManagerService_2eproto = {
-  false, false, 3240, descriptor_table_protodef_grpcIKeyframesManagerService_2eproto, "grpcIKeyframesManagerService.proto", 
-  &descriptor_table_grpcIKeyframesManagerService_2eproto_once, descriptor_table_grpcIKeyframesManagerService_2eproto_deps, 1, 26,
+  false, false, 3930, descriptor_table_protodef_grpcIKeyframesManagerService_2eproto, "grpcIKeyframesManagerService.proto", 
+  &descriptor_table_grpcIKeyframesManagerService_2eproto_once, descriptor_table_grpcIKeyframesManagerService_2eproto_deps, 1, 29,
   schemas, file_default_instances, TableStruct_grpcIKeyframesManagerService_2eproto::offsets,
   file_level_metadata_grpcIKeyframesManagerService_2eproto, file_level_enum_descriptors_grpcIKeyframesManagerService_2eproto, file_level_service_descriptors_grpcIKeyframesManagerService_2eproto,
 };
@@ -685,11 +785,13 @@ addKeyframe_grpc0Request::addKeyframe_grpc0Request(const addKeyframe_grpc0Reques
     keyframe_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframe(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.addKeyframe_grpc0Request)
 }
 
 void addKeyframe_grpc0Request::SharedCtor() {
 keyframe_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 addKeyframe_grpc0Request::~addKeyframe_grpc0Request() {
@@ -720,6 +822,7 @@ void addKeyframe_grpc0Request::Clear() {
   (void) cached_has_bits;
 
   keyframe_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -730,9 +833,16 @@ const char* addKeyframe_grpc0Request::_InternalParse(const char* ptr, ::PROTOBUF
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes keyframe = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes keyframe = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_keyframe();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -766,10 +876,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes keyframe = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes keyframe = 2;
   if (this->keyframe().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_keyframe(), target);
+        2, this->_internal_keyframe(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -788,11 +904,18 @@ size_t addKeyframe_grpc0Request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes keyframe = 1;
+  // bytes keyframe = 2;
   if (this->keyframe().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keyframe());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -829,6 +952,9 @@ void addKeyframe_grpc0Request::MergeFrom(const addKeyframe_grpc0Request& from) {
   if (from.keyframe().size() > 0) {
     _internal_set_keyframe(from._internal_keyframe());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void addKeyframe_grpc0Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -853,6 +979,7 @@ void addKeyframe_grpc0Request::InternalSwap(addKeyframe_grpc0Request* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   keyframe_.Swap(&other->keyframe_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata addKeyframe_grpc0Request::GetMetadata() const {
@@ -1069,11 +1196,13 @@ addKeyframe_grpc1Request::addKeyframe_grpc1Request(const addKeyframe_grpc1Reques
     keyframe_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframe(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.addKeyframe_grpc1Request)
 }
 
 void addKeyframe_grpc1Request::SharedCtor() {
 keyframe_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 addKeyframe_grpc1Request::~addKeyframe_grpc1Request() {
@@ -1104,6 +1233,7 @@ void addKeyframe_grpc1Request::Clear() {
   (void) cached_has_bits;
 
   keyframe_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1114,9 +1244,16 @@ const char* addKeyframe_grpc1Request::_InternalParse(const char* ptr, ::PROTOBUF
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes keyframe = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes keyframe = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_keyframe();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1150,10 +1287,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes keyframe = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes keyframe = 2;
   if (this->keyframe().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_keyframe(), target);
+        2, this->_internal_keyframe(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1172,11 +1315,18 @@ size_t addKeyframe_grpc1Request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes keyframe = 1;
+  // bytes keyframe = 2;
   if (this->keyframe().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keyframe());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1213,6 +1363,9 @@ void addKeyframe_grpc1Request::MergeFrom(const addKeyframe_grpc1Request& from) {
   if (from.keyframe().size() > 0) {
     _internal_set_keyframe(from._internal_keyframe());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void addKeyframe_grpc1Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1237,6 +1390,7 @@ void addKeyframe_grpc1Request::InternalSwap(addKeyframe_grpc1Request* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   keyframe_.Swap(&other->keyframe_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata addKeyframe_grpc1Request::GetMetadata() const {
@@ -1453,13 +1607,18 @@ getKeyframeRequest::getKeyframeRequest(const getKeyframeRequest& from)
     keyframe_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframe(), 
       GetArena());
   }
-  id_ = from.id_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(id_));
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.getKeyframeRequest)
 }
 
 void getKeyframeRequest::SharedCtor() {
 keyframe_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-id_ = 0u;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(id_));
 }
 
 getKeyframeRequest::~getKeyframeRequest() {
@@ -1490,7 +1649,9 @@ void getKeyframeRequest::Clear() {
   (void) cached_has_bits;
 
   keyframe_.ClearToEmpty();
-  id_ = 0u;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&id_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1501,16 +1662,23 @@ const char* getKeyframeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes keyframe = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes keyframe = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_keyframe();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1544,16 +1712,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes keyframe = 2;
+  // uint32 id = 2;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_id(), target);
+  }
+
+  // bytes keyframe = 3;
   if (this->keyframe().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_keyframe(), target);
+        3, this->_internal_keyframe(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1572,14 +1746,21 @@ size_t getKeyframeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes keyframe = 2;
+  // bytes keyframe = 3;
   if (this->keyframe().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keyframe());
   }
 
-  // uint32 id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 id = 2;
   if (this->id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
@@ -1620,6 +1801,9 @@ void getKeyframeRequest::MergeFrom(const getKeyframeRequest& from) {
   if (from.keyframe().size() > 0) {
     _internal_set_keyframe(from._internal_keyframe());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.id() != 0) {
     _internal_set_id(from._internal_id());
   }
@@ -1647,7 +1831,12 @@ void getKeyframeRequest::InternalSwap(getKeyframeRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   keyframe_.Swap(&other->keyframe_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(id_, other->id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getKeyframeRequest, id_)
+      + sizeof(getKeyframeRequest::id_)
+      - PROTOBUF_FIELD_OFFSET(getKeyframeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getKeyframeRequest::GetMetadata() const {
@@ -1902,12 +2091,14 @@ getKeyframesRequest::getKeyframesRequest(const getKeyframesRequest& from)
     keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframes(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.getKeyframesRequest)
 }
 
 void getKeyframesRequest::SharedCtor() {
 ids_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 keyframes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 getKeyframesRequest::~getKeyframesRequest() {
@@ -1940,6 +2131,7 @@ void getKeyframesRequest::Clear() {
 
   ids_.ClearToEmpty();
   keyframes_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1950,17 +2142,24 @@ const char* getKeyframesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes ids = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes ids = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_ids();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes keyframes = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+      // bytes keyframes = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_keyframes();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1994,16 +2193,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes ids = 1;
-  if (this->ids().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_ids(), target);
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes keyframes = 2;
+  // bytes ids = 2;
+  if (this->ids().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_ids(), target);
+  }
+
+  // bytes keyframes = 3;
   if (this->keyframes().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_keyframes(), target);
+        3, this->_internal_keyframes(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2022,18 +2227,25 @@ size_t getKeyframesRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes ids = 1;
+  // bytes ids = 2;
   if (this->ids().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_ids());
   }
 
-  // bytes keyframes = 2;
+  // bytes keyframes = 3;
   if (this->keyframes().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keyframes());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2073,6 +2285,9 @@ void getKeyframesRequest::MergeFrom(const getKeyframesRequest& from) {
   if (from.keyframes().size() > 0) {
     _internal_set_keyframes(from._internal_keyframes());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void getKeyframesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -2098,6 +2313,7 @@ void getKeyframesRequest::InternalSwap(getKeyframesRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ids_.Swap(&other->ids_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   keyframes_.Swap(&other->keyframes_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getKeyframesRequest::GetMetadata() const {
@@ -2347,11 +2563,13 @@ getAllKeyframesRequest::getAllKeyframesRequest(const getAllKeyframesRequest& fro
     keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframes(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.getAllKeyframesRequest)
 }
 
 void getAllKeyframesRequest::SharedCtor() {
 keyframes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 getAllKeyframesRequest::~getAllKeyframesRequest() {
@@ -2382,6 +2600,7 @@ void getAllKeyframesRequest::Clear() {
   (void) cached_has_bits;
 
   keyframes_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2392,9 +2611,16 @@ const char* getAllKeyframesRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes keyframes = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes keyframes = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_keyframes();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -2428,10 +2654,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes keyframes = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes keyframes = 2;
   if (this->keyframes().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_keyframes(), target);
+        2, this->_internal_keyframes(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2450,11 +2682,18 @@ size_t getAllKeyframesRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes keyframes = 1;
+  // bytes keyframes = 2;
   if (this->keyframes().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keyframes());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2491,6 +2730,9 @@ void getAllKeyframesRequest::MergeFrom(const getAllKeyframesRequest& from) {
   if (from.keyframes().size() > 0) {
     _internal_set_keyframes(from._internal_keyframes());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void getAllKeyframesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -2515,6 +2757,7 @@ void getAllKeyframesRequest::InternalSwap(getAllKeyframesRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   keyframes_.Swap(&other->keyframes_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getAllKeyframesRequest::GetMetadata() const {
@@ -2759,12 +3002,17 @@ suppressKeyframeRequest::suppressKeyframeRequest(::PROTOBUF_NAMESPACE_ID::Arena*
 suppressKeyframeRequest::suppressKeyframeRequest(const suppressKeyframeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_ = from.id_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(id_));
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.suppressKeyframeRequest)
 }
 
 void suppressKeyframeRequest::SharedCtor() {
-id_ = 0u;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(id_));
 }
 
 suppressKeyframeRequest::~suppressKeyframeRequest() {
@@ -2793,7 +3041,9 @@ void suppressKeyframeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = 0u;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&id_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2804,9 +3054,16 @@ const char* suppressKeyframeRequest::_InternalParse(const char* ptr, ::PROTOBUF_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -2839,10 +3096,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // uint32 id = 2;
   if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2861,7 +3124,14 @@ size_t suppressKeyframeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 id = 2;
   if (this->id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
@@ -2899,6 +3169,9 @@ void suppressKeyframeRequest::MergeFrom(const suppressKeyframeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.id() != 0) {
     _internal_set_id(from._internal_id());
   }
@@ -2925,7 +3198,12 @@ bool suppressKeyframeRequest::IsInitialized() const {
 void suppressKeyframeRequest::InternalSwap(suppressKeyframeRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(id_, other->id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(suppressKeyframeRequest, id_)
+      + sizeof(suppressKeyframeRequest::id_)
+      - PROTOBUF_FIELD_OFFSET(suppressKeyframeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata suppressKeyframeRequest::GetMetadata() const {
@@ -3118,6 +3396,195 @@ void suppressKeyframeResponse::InternalSwap(suppressKeyframeResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata suppressKeyframeResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getDescriptorTypeRequest::_Internal {
+ public:
+};
+
+getDescriptorTypeRequest::getDescriptorTypeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIKeyframesManager.getDescriptorTypeRequest)
+}
+getDescriptorTypeRequest::getDescriptorTypeRequest(const getDescriptorTypeRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.getDescriptorTypeRequest)
+}
+
+void getDescriptorTypeRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+getDescriptorTypeRequest::~getDescriptorTypeRequest() {
+  // @@protoc_insertion_point(destructor:grpcIKeyframesManager.getDescriptorTypeRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getDescriptorTypeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void getDescriptorTypeRequest::ArenaDtor(void* object) {
+  getDescriptorTypeRequest* _this = reinterpret_cast< getDescriptorTypeRequest* >(object);
+  (void)_this;
+}
+void getDescriptorTypeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getDescriptorTypeRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getDescriptorTypeRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIKeyframesManager.getDescriptorTypeRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getDescriptorTypeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getDescriptorTypeRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIKeyframesManager.getDescriptorTypeRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIKeyframesManager.getDescriptorTypeRequest)
+  return target;
+}
+
+size_t getDescriptorTypeRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIKeyframesManager.getDescriptorTypeRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getDescriptorTypeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeyframesManager.getDescriptorTypeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getDescriptorTypeRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getDescriptorTypeRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeyframesManager.getDescriptorTypeRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeyframesManager.getDescriptorTypeRequest)
+    MergeFrom(*source);
+  }
+}
+
+void getDescriptorTypeRequest::MergeFrom(const getDescriptorTypeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeyframesManager.getDescriptorTypeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void getDescriptorTypeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeyframesManager.getDescriptorTypeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getDescriptorTypeRequest::CopyFrom(const getDescriptorTypeRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIKeyframesManager.getDescriptorTypeRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getDescriptorTypeRequest::IsInitialized() const {
+  return true;
+}
+
+void getDescriptorTypeRequest::InternalSwap(getDescriptorTypeRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getDescriptorTypeRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -3326,12 +3793,17 @@ setDescriptorTypeRequest::setDescriptorTypeRequest(::PROTOBUF_NAMESPACE_ID::Aren
 setDescriptorTypeRequest::setDescriptorTypeRequest(const setDescriptorTypeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  type_ = from.type_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(type_));
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.setDescriptorTypeRequest)
 }
 
 void setDescriptorTypeRequest::SharedCtor() {
-type_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(type_));
 }
 
 setDescriptorTypeRequest::~setDescriptorTypeRequest() {
@@ -3360,7 +3832,9 @@ void setDescriptorTypeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  type_ = 0;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&type_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3371,9 +3845,16 @@ const char* setDescriptorTypeRequest::_InternalParse(const char* ptr, ::PROTOBUF
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // sint32 type = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // sint32 type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           type_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -3406,10 +3887,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // sint32 type = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // sint32 type = 2;
   if (this->type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_type(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3428,7 +3915,14 @@ size_t setDescriptorTypeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // sint32 type = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // sint32 type = 2;
   if (this->type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
@@ -3466,6 +3960,9 @@ void setDescriptorTypeRequest::MergeFrom(const setDescriptorTypeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.type() != 0) {
     _internal_set_type(from._internal_type());
   }
@@ -3492,7 +3989,12 @@ bool setDescriptorTypeRequest::IsInitialized() const {
 void setDescriptorTypeRequest::InternalSwap(setDescriptorTypeRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(type_, other->type_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(setDescriptorTypeRequest, type_)
+      + sizeof(setDescriptorTypeRequest::type_)
+      - PROTOBUF_FIELD_OFFSET(setDescriptorTypeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata setDescriptorTypeRequest::GetMetadata() const {
@@ -3704,12 +4206,17 @@ isExistKeyframeRequest::isExistKeyframeRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
 isExistKeyframeRequest::isExistKeyframeRequest(const isExistKeyframeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  id_ = from.id_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(id_));
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.isExistKeyframeRequest)
 }
 
 void isExistKeyframeRequest::SharedCtor() {
-id_ = 0u;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(id_));
 }
 
 isExistKeyframeRequest::~isExistKeyframeRequest() {
@@ -3738,7 +4245,9 @@ void isExistKeyframeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = 0u;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&id_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3749,9 +4258,16 @@ const char* isExistKeyframeRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 id = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -3784,10 +4300,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // uint32 id = 2;
   if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3806,7 +4328,14 @@ size_t isExistKeyframeRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 id = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 id = 2;
   if (this->id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
@@ -3844,6 +4373,9 @@ void isExistKeyframeRequest::MergeFrom(const isExistKeyframeRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
   if (from.id() != 0) {
     _internal_set_id(from._internal_id());
   }
@@ -3870,7 +4402,12 @@ bool isExistKeyframeRequest::IsInitialized() const {
 void isExistKeyframeRequest::InternalSwap(isExistKeyframeRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(id_, other->id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(isExistKeyframeRequest, id_)
+      + sizeof(isExistKeyframeRequest::id_)
+      - PROTOBUF_FIELD_OFFSET(isExistKeyframeRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isExistKeyframeRequest::GetMetadata() const {
@@ -4061,6 +4598,195 @@ void isExistKeyframeResponse::InternalSwap(isExistKeyframeResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isExistKeyframeResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getNbKeyframesRequest::_Internal {
+ public:
+};
+
+getNbKeyframesRequest::getNbKeyframesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIKeyframesManager.getNbKeyframesRequest)
+}
+getNbKeyframesRequest::getNbKeyframesRequest(const getNbKeyframesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.getNbKeyframesRequest)
+}
+
+void getNbKeyframesRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+getNbKeyframesRequest::~getNbKeyframesRequest() {
+  // @@protoc_insertion_point(destructor:grpcIKeyframesManager.getNbKeyframesRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getNbKeyframesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void getNbKeyframesRequest::ArenaDtor(void* object) {
+  getNbKeyframesRequest* _this = reinterpret_cast< getNbKeyframesRequest* >(object);
+  (void)_this;
+}
+void getNbKeyframesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getNbKeyframesRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getNbKeyframesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIKeyframesManager.getNbKeyframesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getNbKeyframesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getNbKeyframesRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIKeyframesManager.getNbKeyframesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIKeyframesManager.getNbKeyframesRequest)
+  return target;
+}
+
+size_t getNbKeyframesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIKeyframesManager.getNbKeyframesRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getNbKeyframesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeyframesManager.getNbKeyframesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getNbKeyframesRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getNbKeyframesRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeyframesManager.getNbKeyframesRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeyframesManager.getNbKeyframesRequest)
+    MergeFrom(*source);
+  }
+}
+
+void getNbKeyframesRequest::MergeFrom(const getNbKeyframesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeyframesManager.getNbKeyframesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void getNbKeyframesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeyframesManager.getNbKeyframesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getNbKeyframesRequest::CopyFrom(const getNbKeyframesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIKeyframesManager.getNbKeyframesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getNbKeyframesRequest::IsInitialized() const {
+  return true;
+}
+
+void getNbKeyframesRequest::InternalSwap(getNbKeyframesRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getNbKeyframesRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -4274,11 +5000,13 @@ saveToFileRequest::saveToFileRequest(const saveToFileRequest& from)
     file_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_file(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.saveToFileRequest)
 }
 
 void saveToFileRequest::SharedCtor() {
 file_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 saveToFileRequest::~saveToFileRequest() {
@@ -4309,6 +5037,7 @@ void saveToFileRequest::Clear() {
   (void) cached_has_bits;
 
   file_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4319,9 +5048,16 @@ const char* saveToFileRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string file = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string file = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_file();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "grpcIKeyframesManager.saveToFileRequest.file"));
@@ -4356,14 +5092,20 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string file = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string file = 2;
   if (this->file().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_file().data(), static_cast<int>(this->_internal_file().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "grpcIKeyframesManager.saveToFileRequest.file");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_file(), target);
+        2, this->_internal_file(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4382,11 +5124,18 @@ size_t saveToFileRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string file = 1;
+  // string file = 2;
   if (this->file().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_file());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4423,6 +5172,9 @@ void saveToFileRequest::MergeFrom(const saveToFileRequest& from) {
   if (from.file().size() > 0) {
     _internal_set_file(from._internal_file());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void saveToFileRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -4447,6 +5199,7 @@ void saveToFileRequest::InternalSwap(saveToFileRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   file_.Swap(&other->file_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata saveToFileRequest::GetMetadata() const {
@@ -4663,11 +5416,13 @@ loadFromFileRequest::loadFromFileRequest(const loadFromFileRequest& from)
     file_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_file(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.loadFromFileRequest)
 }
 
 void loadFromFileRequest::SharedCtor() {
 file_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 loadFromFileRequest::~loadFromFileRequest() {
@@ -4698,6 +5453,7 @@ void loadFromFileRequest::Clear() {
   (void) cached_has_bits;
 
   file_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4708,9 +5464,16 @@ const char* loadFromFileRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string file = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string file = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_file();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "grpcIKeyframesManager.loadFromFileRequest.file"));
@@ -4745,14 +5508,20 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string file = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string file = 2;
   if (this->file().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_file().data(), static_cast<int>(this->_internal_file().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "grpcIKeyframesManager.loadFromFileRequest.file");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_file(), target);
+        2, this->_internal_file(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4771,11 +5540,18 @@ size_t loadFromFileRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string file = 1;
+  // string file = 2;
   if (this->file().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_file());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4812,6 +5588,9 @@ void loadFromFileRequest::MergeFrom(const loadFromFileRequest& from) {
   if (from.file().size() > 0) {
     _internal_set_file(from._internal_file());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void loadFromFileRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -4836,6 +5615,7 @@ void loadFromFileRequest::InternalSwap(loadFromFileRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   file_.Swap(&other->file_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadFromFileRequest::GetMetadata() const {
@@ -5028,6 +5808,195 @@ void loadFromFileResponse::InternalSwap(loadFromFileResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadFromFileResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getConstKeyframeCollectionRequest::_Internal {
+ public:
+};
+
+getConstKeyframeCollectionRequest::getConstKeyframeCollectionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+}
+getConstKeyframeCollectionRequest::getConstKeyframeCollectionRequest(const getConstKeyframeCollectionRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+}
+
+void getConstKeyframeCollectionRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+getConstKeyframeCollectionRequest::~getConstKeyframeCollectionRequest() {
+  // @@protoc_insertion_point(destructor:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getConstKeyframeCollectionRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void getConstKeyframeCollectionRequest::ArenaDtor(void* object) {
+  getConstKeyframeCollectionRequest* _this = reinterpret_cast< getConstKeyframeCollectionRequest* >(object);
+  (void)_this;
+}
+void getConstKeyframeCollectionRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getConstKeyframeCollectionRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getConstKeyframeCollectionRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getConstKeyframeCollectionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getConstKeyframeCollectionRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+  return target;
+}
+
+size_t getConstKeyframeCollectionRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getConstKeyframeCollectionRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getConstKeyframeCollectionRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getConstKeyframeCollectionRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+    MergeFrom(*source);
+  }
+}
+
+void getConstKeyframeCollectionRequest::MergeFrom(const getConstKeyframeCollectionRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void getConstKeyframeCollectionRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getConstKeyframeCollectionRequest::CopyFrom(const getConstKeyframeCollectionRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIKeyframesManager.getConstKeyframeCollectionRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getConstKeyframeCollectionRequest::IsInitialized() const {
+  return true;
+}
+
+void getConstKeyframeCollectionRequest::InternalSwap(getConstKeyframeCollectionRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getConstKeyframeCollectionRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -5247,11 +6216,13 @@ getKeyframeCollectionRequest::getKeyframeCollectionRequest(const getKeyframeColl
     keyframecollection_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_keyframecollection(), 
       GetArena());
   }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIKeyframesManager.getKeyframeCollectionRequest)
 }
 
 void getKeyframeCollectionRequest::SharedCtor() {
 keyframecollection_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 getKeyframeCollectionRequest::~getKeyframeCollectionRequest() {
@@ -5282,6 +6253,7 @@ void getKeyframeCollectionRequest::Clear() {
   (void) cached_has_bits;
 
   keyframecollection_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5292,9 +6264,16 @@ const char* getKeyframeCollectionRequest::_InternalParse(const char* ptr, ::PROT
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes keyframeCollection = 1;
+      // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes keyframeCollection = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_keyframecollection();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -5328,10 +6307,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes keyframeCollection = 1;
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes keyframeCollection = 2;
   if (this->keyframecollection().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_keyframecollection(), target);
+        2, this->_internal_keyframecollection(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5350,11 +6335,18 @@ size_t getKeyframeCollectionRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes keyframeCollection = 1;
+  // bytes keyframeCollection = 2;
   if (this->keyframecollection().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_keyframecollection());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5391,6 +6383,9 @@ void getKeyframeCollectionRequest::MergeFrom(const getKeyframeCollectionRequest&
   if (from.keyframecollection().size() > 0) {
     _internal_set_keyframecollection(from._internal_keyframecollection());
   }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
 }
 
 void getKeyframeCollectionRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -5415,6 +6410,7 @@ void getKeyframeCollectionRequest::InternalSwap(getKeyframeCollectionRequest* ot
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   keyframecollection_.Swap(&other->keyframecollection_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getKeyframeCollectionRequest::GetMetadata() const {
@@ -5884,6 +6880,9 @@ template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::suppressKeyframeRequest* A
 template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::suppressKeyframeResponse* Arena::CreateMaybeMessage< ::grpcIKeyframesManager::suppressKeyframeResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIKeyframesManager::suppressKeyframeResponse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::getDescriptorTypeRequest* Arena::CreateMaybeMessage< ::grpcIKeyframesManager::getDescriptorTypeRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIKeyframesManager::getDescriptorTypeRequest >(arena);
+}
 template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::getDescriptorTypeResponse* Arena::CreateMaybeMessage< ::grpcIKeyframesManager::getDescriptorTypeResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIKeyframesManager::getDescriptorTypeResponse >(arena);
 }
@@ -5899,6 +6898,9 @@ template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::isExistKeyframeRequest* Ar
 template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::isExistKeyframeResponse* Arena::CreateMaybeMessage< ::grpcIKeyframesManager::isExistKeyframeResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIKeyframesManager::isExistKeyframeResponse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::getNbKeyframesRequest* Arena::CreateMaybeMessage< ::grpcIKeyframesManager::getNbKeyframesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIKeyframesManager::getNbKeyframesRequest >(arena);
+}
 template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::getNbKeyframesResponse* Arena::CreateMaybeMessage< ::grpcIKeyframesManager::getNbKeyframesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIKeyframesManager::getNbKeyframesResponse >(arena);
 }
@@ -5913,6 +6915,9 @@ template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::loadFromFileRequest* Arena
 }
 template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::loadFromFileResponse* Arena::CreateMaybeMessage< ::grpcIKeyframesManager::loadFromFileResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIKeyframesManager::loadFromFileResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::getConstKeyframeCollectionRequest* Arena::CreateMaybeMessage< ::grpcIKeyframesManager::getConstKeyframeCollectionRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIKeyframesManager::getConstKeyframeCollectionRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIKeyframesManager::getConstKeyframeCollectionResponse* Arena::CreateMaybeMessage< ::grpcIKeyframesManager::getConstKeyframeCollectionResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIKeyframesManager::getConstKeyframeCollectionResponse >(arena);

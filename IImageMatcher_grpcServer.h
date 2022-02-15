@@ -2,9 +2,10 @@
 
 #ifndef IIMAGEMATCHER_GRPCSERVER_H
 #define IIMAGEMATCHER_GRPCSERVER_H
-#include "/home/solar/Dev/SolAR/core/SolARFramework/interfaces/api/features/IImageMatcher.h"
+#include "api/features/IImageMatcher.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
+#include <xpcf/remoting/GrpcHelper.h>
 #include "grpcIImageMatcherService.grpc.pb.h"
 #include <grpc/grpc.h>
 
@@ -27,12 +28,15 @@ class IImageMatcher_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtu
         ::grpc::Status match(::grpc::ServerContext* context, const ::grpcIImageMatcher::matchRequest* request, ::grpcIImageMatcher::matchResponse* response) override;
 
         SRef<SolAR::api::features::IImageMatcher> m_xpcfComponent;
+        xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
+        std::map<std::string, xpcf::grpcServerCompressionInfos> m_methodCompressionInfosMap;
 
     };
 
 
   private:
     grpcIImageMatcherServiceImpl m_grpcService;
+    std::vector<std::string> m_grpcServerCompressionConfig;
 
 };
 
