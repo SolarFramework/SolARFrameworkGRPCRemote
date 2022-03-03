@@ -3,7 +3,7 @@
 
 #ifndef IASYNCRELOCALIZATIONPIPELINE_GRPCPROXY_H
 #define IASYNCRELOCALIZATIONPIPELINE_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IAsyncRelocalizationPipeline.h"
+#include "Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IAsyncRelocalizationPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -25,10 +25,12 @@ class IAsyncRelocalizationPipeline_grpcProxy:  public org::bcom::xpcf::Configura
     SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
+    SolAR::FrameworkReturnCode initProcessingMode(SolAR::api::pipeline::PipelineMode const pipelineMode)     override;
     SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)     override;
     SolAR::FrameworkReturnCode getCameraParameters(SolAR::datastructure::CameraParameters& cameraParams)     const     override;
     SolAR::FrameworkReturnCode relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df const& pose, std::chrono::system_clock::time_point const& timestamp, SolAR::api::pipeline::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence)     override;
     SolAR::FrameworkReturnCode get3DTransformRequest(SolAR::api::pipeline::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence)     const     override;
+    SolAR::FrameworkReturnCode getLastPose(SolAR::datastructure::Transform3Df& pose, SolAR::api::pipeline::PoseType const poseType)     const     override;
 
 
   private:

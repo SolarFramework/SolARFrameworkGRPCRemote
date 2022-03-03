@@ -34,6 +34,17 @@ message stopResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message initProcessingModeRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes pipelineMode = 2;
+}
+
+message initProcessingModeResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message setCameraParametersRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -92,13 +103,28 @@ bytes confidence = 3;
 sint32 xpcfGrpcReturnValue = 4;
 }
 
+message getLastPoseRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes poseType = 2;
+bytes pose = 3;
+}
+
+message getLastPoseResponse
+{
+bytes pose = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 service grpcIAsyncRelocalizationPipelineService {
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
+rpc initProcessingMode(initProcessingModeRequest) returns(initProcessingModeResponse) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
 rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
 rpc relocalizeProcessRequest(relocalizeProcessRequestRequest) returns(relocalizeProcessRequestResponse) {}
 rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRequestResponse) {}
+rpc getLastPose(getLastPoseRequest) returns(getLastPoseResponse) {}
 }
 

@@ -2,7 +2,7 @@
 
 #ifndef IRELOCALIZATIONPIPELINE_GRPCSERVER_H
 #define IRELOCALIZATIONPIPELINE_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IRelocalizationPipeline.h"
+#include "Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IRelocalizationPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -31,6 +31,7 @@ class IRelocalizationPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableB
         ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response) override;
         ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIRelocalizationPipeline::getCameraParametersResponse* response) override;
         ::grpc::Status relocalizeProcessRequest(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse* response) override;
+        ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response) override;
 
         SRef<SolAR::api::pipeline::IRelocalizationPipeline> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

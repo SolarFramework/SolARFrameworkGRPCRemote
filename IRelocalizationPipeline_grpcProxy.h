@@ -3,7 +3,7 @@
 
 #ifndef IRELOCALIZATIONPIPELINE_GRPCPROXY_H
 #define IRELOCALIZATIONPIPELINE_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IRelocalizationPipeline.h"
+#include "Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IRelocalizationPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -28,6 +28,7 @@ class IRelocalizationPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBa
     SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)     override;
     SolAR::FrameworkReturnCode getCameraParameters(SolAR::datastructure::CameraParameters& cameraParams)     const     override;
     SolAR::FrameworkReturnCode relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence)     override;
+    SolAR::FrameworkReturnCode getMapRequest(SRef<SolAR::datastructure::Map>& map)     const     override;
 
 
   private:

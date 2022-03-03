@@ -2,7 +2,7 @@
 
 #ifndef IASYNCRELOCALIZATIONPIPELINE_GRPCSERVER_H
 #define IASYNCRELOCALIZATIONPIPELINE_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IAsyncRelocalizationPipeline.h"
+#include "Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IAsyncRelocalizationPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -28,10 +28,12 @@ class IAsyncRelocalizationPipeline_grpcServer:  public org::bcom::xpcf::Configur
         ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest* request, ::grpcIAsyncRelocalizationPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest* request, ::grpcIAsyncRelocalizationPipeline::stopResponse* response) override;
+        ::grpc::Status initProcessingMode(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response) override;
         ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse* response) override;
         ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIAsyncRelocalizationPipeline::getCameraParametersResponse* response) override;
         ::grpc::Status relocalizeProcessRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestResponse* response) override;
         ::grpc::Status get3DTransformRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestResponse* response) override;
+        ::grpc::Status getLastPose(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getLastPoseRequest* request, ::grpcIAsyncRelocalizationPipeline::getLastPoseResponse* response) override;
 
         SRef<SolAR::api::pipeline::IAsyncRelocalizationPipeline> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
