@@ -3,7 +3,7 @@
 
 #ifndef IRELOCALIZATIONPIPELINE_GRPCPROXY_H
 #define IRELOCALIZATIONPIPELINE_GRPCPROXY_H
-#include "Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IRelocalizationPipeline.h"
+#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IRelocalizationPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
