@@ -31,6 +31,7 @@ DEFAULT_VERSION_SOLAR="0.11.0"
 DEFAULT_VERSION_XPCF="2.5.1"
 DEFAULT_DATABASE_DIR="../build-SolARFramework-Desktop_Qt_5_15_2_GCC_64bit-Release"
 DEFAULT_SOLAR_FRAMEWORK_PATH="Dev/SolAR/core/SolARFramework"
+DEFAULT_MODULE_UUID="084a0405-6483-4bd2-8115-993b634533fa"
 
 export PATH=$XPCF_MODULE_ROOT/grpc/1.37.1/bin/x86_64/shared/release:$PATH
 # echo "PATH=$PATH"
@@ -51,7 +52,8 @@ function usage()
     echo "   -f, --framework-path: path to the SolAR Framework project (default: $DEFAULT_SOLAR_FRAMEWORK_PATH)" 
     echo "   -d, --database-dir: directory of SolAR framework generated database file (default: $DEFAULT_DATABASE_DIR)"
     echo "   -sv, --solar-version: version number of the solar framework (default: $DEFAULT_VERSION_SOLAR)"
-    echo "   -xv, --xpcf-version: version number of xpcf (default: $DEFAULT_VERSION_XPCF)"  
+    echo "   -xv, --xpcf-version: version number of xpcf (default: $DEFAULT_VERSION_XPCF)"
+    echo "   -m, --module-uuid: the UUIDto use for the generated GRPC module  (default: $DEFAULT_MODULE_UUID)"  
 }
 
 # Parse args
@@ -71,6 +73,9 @@ while [ "$1" != "" ]; do
             ;;
 	-sv | --solar-version)
 	    VERSION_SOLAR=$VALUE
+	    ;;
+	-m | --module-uuid)
+	    MODULE_UUID=$VALUE
 	    ;;
         *)
             echo "ERROR: unknown parameter '$PARAM'"
@@ -117,9 +122,14 @@ then
     SOLAR_FRAMEWORK_PATH=$DEFAULT_SOLAR_FRAMEWORK_PATH
 fi
 
+if [ "$MODULE_UUID" == "" ]
+then
+    MODULE_UUID=$DEFAULT_MODULE_UUID
+fi
+
 # TODO generate compilation database for the SolAR Framework
 
-echo "$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v $VERSION_SOLAR -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -i ${SOLAR_FRAMEWORK_PATH}/interfaces/ -o ."
+echo "$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v $VERSION_SOLAR -m $MODULE_UUID -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -i ${SOLAR_FRAMEWORK_PATH}/interfaces/ -o ."
 
-$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v $VERSION_SOLAR -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -i ${SOLAR_FRAMEWORK_PATH}/interfaces/ -o . 
+$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v $VERSION_SOLAR -m $MODULE_UUID -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -i ${SOLAR_FRAMEWORK_PATH}/interfaces/ -o . 
 
