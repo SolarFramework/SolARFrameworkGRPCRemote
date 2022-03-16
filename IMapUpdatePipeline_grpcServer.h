@@ -31,6 +31,7 @@ class IMapUpdatePipeline_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
         ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response) override;
         ::grpc::Status mapUpdateRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response) override;
         ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response) override;
+        ::grpc::Status getSubmapRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response) override;
 
         SRef<SolAR::api::pipeline::IMapUpdatePipeline> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

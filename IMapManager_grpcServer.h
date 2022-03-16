@@ -27,6 +27,7 @@ class IMapManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
         grpcIMapManagerServiceImpl() = default;
         ::grpc::Status setMap(::grpc::ServerContext* context, const ::grpcIMapManager::setMapRequest* request, ::grpcIMapManager::setMapResponse* response) override;
         ::grpc::Status getMap(::grpc::ServerContext* context, const ::grpcIMapManager::getMapRequest* request, ::grpcIMapManager::getMapResponse* response) override;
+        ::grpc::Status getSubmap(::grpc::ServerContext* context, const ::grpcIMapManager::getSubmapRequest* request, ::grpcIMapManager::getSubmapResponse* response) override;
         ::grpc::Status getLocalPointCloud(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response) override;
         ::grpc::Status addCloudPoint(::grpc::ServerContext* context, const ::grpcIMapManager::addCloudPointRequest* request, ::grpcIMapManager::addCloudPointResponse* response) override;
         ::grpc::Status removeCloudPoint(::grpc::ServerContext* context, const ::grpcIMapManager::removeCloudPointRequest* request, ::grpcIMapManager::removeCloudPointResponse* response) override;

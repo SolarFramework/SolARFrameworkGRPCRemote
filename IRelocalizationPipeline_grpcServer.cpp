@@ -14,7 +14,7 @@ IRelocalizationPipeline_grpcServer::IRelocalizationPipeline_grpcServer():xpcf::C
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::pipeline::IRelocalizationPipeline>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(7);
+  m_grpcServerCompressionConfig.resize(8);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -174,6 +174,30 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcServer::relocalizeProcessRequest response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::getMapRequest(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMapRequest", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcServer::getMapRequest request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(map);
+  response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcServer::getMapRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

@@ -28,6 +28,7 @@ static const char* grpcIRelocalizationPipelineService_method_names[] = {
   "/grpcIRelocalizationPipeline.grpcIRelocalizationPipelineService/setCameraParameters",
   "/grpcIRelocalizationPipeline.grpcIRelocalizationPipelineService/getCameraParameters",
   "/grpcIRelocalizationPipeline.grpcIRelocalizationPipelineService/relocalizeProcessRequest",
+  "/grpcIRelocalizationPipeline.grpcIRelocalizationPipelineService/getMapRequest",
 };
 
 std::unique_ptr< grpcIRelocalizationPipelineService::Stub> grpcIRelocalizationPipelineService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -43,6 +44,7 @@ grpcIRelocalizationPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::Ch
   , rpcmethod_setCameraParameters_(grpcIRelocalizationPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getCameraParameters_(grpcIRelocalizationPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_relocalizeProcessRequest_(grpcIRelocalizationPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapRequest_(grpcIRelocalizationPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIRelocalizationPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpcIRelocalizationPipeline::initResponse* response) {
@@ -183,6 +185,29 @@ void grpcIRelocalizationPipelineService::Stub::experimental_async::relocalizePro
   return result;
 }
 
+::grpc::Status grpcIRelocalizationPipelineService::Stub::getMapRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest& request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::getMapRequestRequest, ::grpcIRelocalizationPipeline::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getMapRequest_, context, request, response);
+}
+
+void grpcIRelocalizationPipelineService::Stub::experimental_async::getMapRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::getMapRequestRequest, ::grpcIRelocalizationPipeline::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getMapRequest_, context, request, response, std::move(f));
+}
+
+void grpcIRelocalizationPipelineService::Stub::experimental_async::getMapRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getMapRequest_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::getMapRequestResponse>* grpcIRelocalizationPipelineService::Stub::PrepareAsyncgetMapRequestRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationPipeline::getMapRequestResponse, ::grpcIRelocalizationPipeline::getMapRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getMapRequest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationPipeline::getMapRequestResponse>* grpcIRelocalizationPipelineService::Stub::AsyncgetMapRequestRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetMapRequestRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 grpcIRelocalizationPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIRelocalizationPipelineService_method_names[0],
@@ -244,6 +269,16 @@ grpcIRelocalizationPipelineService::Service::Service() {
              ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse* resp) {
                return service->relocalizeProcessRequest(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIRelocalizationPipelineService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationPipelineService::Service, ::grpcIRelocalizationPipeline::getMapRequestRequest, ::grpcIRelocalizationPipeline::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIRelocalizationPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIRelocalizationPipeline::getMapRequestRequest* req,
+             ::grpcIRelocalizationPipeline::getMapRequestResponse* resp) {
+               return service->getMapRequest(ctx, req, resp);
+             }, this)));
 }
 
 grpcIRelocalizationPipelineService::Service::~Service() {
@@ -285,6 +320,13 @@ grpcIRelocalizationPipelineService::Service::~Service() {
 }
 
 ::grpc::Status grpcIRelocalizationPipelineService::Service::relocalizeProcessRequest(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIRelocalizationPipelineService::Service::getMapRequest(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response) {
   (void) context;
   (void) request;
   (void) response;

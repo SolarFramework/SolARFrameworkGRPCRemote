@@ -47,7 +47,7 @@ struct TableStruct_grpcIMapManagerService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[24]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -80,6 +80,12 @@ extern getMapRequestDefaultTypeInternal _getMapRequest_default_instance_;
 class getMapResponse;
 struct getMapResponseDefaultTypeInternal;
 extern getMapResponseDefaultTypeInternal _getMapResponse_default_instance_;
+class getSubmapRequest;
+struct getSubmapRequestDefaultTypeInternal;
+extern getSubmapRequestDefaultTypeInternal _getSubmapRequest_default_instance_;
+class getSubmapResponse;
+struct getSubmapResponseDefaultTypeInternal;
+extern getSubmapResponseDefaultTypeInternal _getSubmapResponse_default_instance_;
 class keyframePruningRequest;
 struct keyframePruningRequestDefaultTypeInternal;
 extern keyframePruningRequestDefaultTypeInternal _keyframePruningRequest_default_instance_;
@@ -132,6 +138,8 @@ template<> ::grpcIMapManager::getLocalPointCloudRequest* Arena::CreateMaybeMessa
 template<> ::grpcIMapManager::getLocalPointCloudResponse* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloudResponse>(Arena*);
 template<> ::grpcIMapManager::getMapRequest* Arena::CreateMaybeMessage<::grpcIMapManager::getMapRequest>(Arena*);
 template<> ::grpcIMapManager::getMapResponse* Arena::CreateMaybeMessage<::grpcIMapManager::getMapResponse>(Arena*);
+template<> ::grpcIMapManager::getSubmapRequest* Arena::CreateMaybeMessage<::grpcIMapManager::getSubmapRequest>(Arena*);
+template<> ::grpcIMapManager::getSubmapResponse* Arena::CreateMaybeMessage<::grpcIMapManager::getSubmapResponse>(Arena*);
 template<> ::grpcIMapManager::keyframePruningRequest* Arena::CreateMaybeMessage<::grpcIMapManager::keyframePruningRequest>(Arena*);
 template<> ::grpcIMapManager::keyframePruningResponse* Arena::CreateMaybeMessage<::grpcIMapManager::keyframePruningResponse>(Arena*);
 template<> ::grpcIMapManager::loadFromFileRequest* Arena::CreateMaybeMessage<::grpcIMapManager::loadFromFileRequest>(Arena*);
@@ -753,6 +761,338 @@ class getMapResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class getSubmapRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.getSubmapRequest) */ {
+ public:
+  inline getSubmapRequest() : getSubmapRequest(nullptr) {}
+  virtual ~getSubmapRequest();
+  explicit constexpr getSubmapRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getSubmapRequest(const getSubmapRequest& from);
+  getSubmapRequest(getSubmapRequest&& from) noexcept
+    : getSubmapRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getSubmapRequest& operator=(const getSubmapRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getSubmapRequest& operator=(getSubmapRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getSubmapRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getSubmapRequest* internal_default_instance() {
+    return reinterpret_cast<const getSubmapRequest*>(
+               &_getSubmapRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(getSubmapRequest& a, getSubmapRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getSubmapRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getSubmapRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getSubmapRequest* New() const final {
+    return CreateMaybeMessage<getSubmapRequest>(nullptr);
+  }
+
+  getSubmapRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getSubmapRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getSubmapRequest& from);
+  void MergeFrom(const getSubmapRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getSubmapRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.getSubmapRequest";
+  }
+  protected:
+  explicit getSubmapRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSubmapFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kIdCenteredKeyframeFieldNumber = 2,
+    kNbKeyframesFieldNumber = 3,
+  };
+  // bytes submap = 4;
+  void clear_submap();
+  const std::string& submap() const;
+  void set_submap(const std::string& value);
+  void set_submap(std::string&& value);
+  void set_submap(const char* value);
+  void set_submap(const void* value, size_t size);
+  std::string* mutable_submap();
+  std::string* release_submap();
+  void set_allocated_submap(std::string* submap);
+  private:
+  const std::string& _internal_submap() const;
+  void _internal_set_submap(const std::string& value);
+  std::string* _internal_mutable_submap();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // uint32 idCenteredKeyframe = 2;
+  void clear_idcenteredkeyframe();
+  ::PROTOBUF_NAMESPACE_ID::uint32 idcenteredkeyframe() const;
+  void set_idcenteredkeyframe(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_idcenteredkeyframe() const;
+  void _internal_set_idcenteredkeyframe(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 nbKeyframes = 3;
+  void clear_nbkeyframes();
+  ::PROTOBUF_NAMESPACE_ID::uint32 nbkeyframes() const;
+  void set_nbkeyframes(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_nbkeyframes() const;
+  void _internal_set_nbkeyframes(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.getSubmapRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr submap_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 idcenteredkeyframe_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 nbkeyframes_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getSubmapResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.getSubmapResponse) */ {
+ public:
+  inline getSubmapResponse() : getSubmapResponse(nullptr) {}
+  virtual ~getSubmapResponse();
+  explicit constexpr getSubmapResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getSubmapResponse(const getSubmapResponse& from);
+  getSubmapResponse(getSubmapResponse&& from) noexcept
+    : getSubmapResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline getSubmapResponse& operator=(const getSubmapResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getSubmapResponse& operator=(getSubmapResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getSubmapResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getSubmapResponse* internal_default_instance() {
+    return reinterpret_cast<const getSubmapResponse*>(
+               &_getSubmapResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(getSubmapResponse& a, getSubmapResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getSubmapResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getSubmapResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getSubmapResponse* New() const final {
+    return CreateMaybeMessage<getSubmapResponse>(nullptr);
+  }
+
+  getSubmapResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getSubmapResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getSubmapResponse& from);
+  void MergeFrom(const getSubmapResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getSubmapResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.getSubmapResponse";
+  }
+  protected:
+  explicit getSubmapResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSubmapFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes submap = 1;
+  void clear_submap();
+  const std::string& submap() const;
+  void set_submap(const std::string& value);
+  void set_submap(std::string&& value);
+  void set_submap(const char* value);
+  void set_submap(const void* value, size_t size);
+  std::string* mutable_submap();
+  std::string* release_submap();
+  void set_allocated_submap(std::string* submap);
+  private:
+  const std::string& _internal_submap() const;
+  void _internal_set_submap(const std::string& value);
+  std::string* _internal_mutable_submap();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.getSubmapResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr submap_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getLocalPointCloudRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.getLocalPointCloudRequest) */ {
  public:
@@ -796,7 +1136,7 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
                &_getLocalPointCloudRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(getLocalPointCloudRequest& a, getLocalPointCloudRequest& b) {
     a.Swap(&b);
@@ -980,7 +1320,7 @@ class getLocalPointCloudResponse PROTOBUF_FINAL :
                &_getLocalPointCloudResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(getLocalPointCloudResponse& a, getLocalPointCloudResponse& b) {
     a.Swap(&b);
@@ -1135,7 +1475,7 @@ class addCloudPointRequest PROTOBUF_FINAL :
                &_addCloudPointRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(addCloudPointRequest& a, addCloudPointRequest& b) {
     a.Swap(&b);
@@ -1290,7 +1630,7 @@ class addCloudPointResponse PROTOBUF_FINAL :
                &_addCloudPointResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(addCloudPointResponse& a, addCloudPointResponse& b) {
     a.Swap(&b);
@@ -1427,7 +1767,7 @@ class removeCloudPointRequest PROTOBUF_FINAL :
                &_removeCloudPointRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(removeCloudPointRequest& a, removeCloudPointRequest& b) {
     a.Swap(&b);
@@ -1582,7 +1922,7 @@ class removeCloudPointResponse PROTOBUF_FINAL :
                &_removeCloudPointResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(removeCloudPointResponse& a, removeCloudPointResponse& b) {
     a.Swap(&b);
@@ -1719,7 +2059,7 @@ class addKeyframeRequest PROTOBUF_FINAL :
                &_addKeyframeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(addKeyframeRequest& a, addKeyframeRequest& b) {
     a.Swap(&b);
@@ -1874,7 +2214,7 @@ class addKeyframeResponse PROTOBUF_FINAL :
                &_addKeyframeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(addKeyframeResponse& a, addKeyframeResponse& b) {
     a.Swap(&b);
@@ -2011,7 +2351,7 @@ class removeKeyframeRequest PROTOBUF_FINAL :
                &_removeKeyframeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(removeKeyframeRequest& a, removeKeyframeRequest& b) {
     a.Swap(&b);
@@ -2166,7 +2506,7 @@ class removeKeyframeResponse PROTOBUF_FINAL :
                &_removeKeyframeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(removeKeyframeResponse& a, removeKeyframeResponse& b) {
     a.Swap(&b);
@@ -2303,7 +2643,7 @@ class pointCloudPruningRequest PROTOBUF_FINAL :
                &_pointCloudPruningRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(pointCloudPruningRequest& a, pointCloudPruningRequest& b) {
     a.Swap(&b);
@@ -2458,7 +2798,7 @@ class pointCloudPruningResponse PROTOBUF_FINAL :
                &_pointCloudPruningResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(pointCloudPruningResponse& a, pointCloudPruningResponse& b) {
     a.Swap(&b);
@@ -2595,7 +2935,7 @@ class keyframePruningRequest PROTOBUF_FINAL :
                &_keyframePruningRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(keyframePruningRequest& a, keyframePruningRequest& b) {
     a.Swap(&b);
@@ -2750,7 +3090,7 @@ class keyframePruningResponse PROTOBUF_FINAL :
                &_keyframePruningResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(keyframePruningResponse& a, keyframePruningResponse& b) {
     a.Swap(&b);
@@ -2887,7 +3227,7 @@ class saveToFileRequest PROTOBUF_FINAL :
                &_saveToFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(saveToFileRequest& a, saveToFileRequest& b) {
     a.Swap(&b);
@@ -3024,7 +3364,7 @@ class saveToFileResponse PROTOBUF_FINAL :
                &_saveToFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(saveToFileResponse& a, saveToFileResponse& b) {
     a.Swap(&b);
@@ -3161,7 +3501,7 @@ class loadFromFileRequest PROTOBUF_FINAL :
                &_loadFromFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(loadFromFileRequest& a, loadFromFileRequest& b) {
     a.Swap(&b);
@@ -3298,7 +3638,7 @@ class loadFromFileResponse PROTOBUF_FINAL :
                &_loadFromFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(loadFromFileResponse& a, loadFromFileResponse& b) {
     a.Swap(&b);
@@ -3674,6 +4014,216 @@ inline void getMapResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPA
 inline void getMapResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIMapManager.getMapResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getSubmapRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getSubmapRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getSubmapRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getSubmapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getSubmapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getSubmapRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getSubmapRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getSubmapRequest.grpcServerCompressionFormat)
+}
+
+// uint32 idCenteredKeyframe = 2;
+inline void getSubmapRequest::clear_idcenteredkeyframe() {
+  idcenteredkeyframe_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 getSubmapRequest::_internal_idcenteredkeyframe() const {
+  return idcenteredkeyframe_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 getSubmapRequest::idcenteredkeyframe() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getSubmapRequest.idCenteredKeyframe)
+  return _internal_idcenteredkeyframe();
+}
+inline void getSubmapRequest::_internal_set_idcenteredkeyframe(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  idcenteredkeyframe_ = value;
+}
+inline void getSubmapRequest::set_idcenteredkeyframe(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_idcenteredkeyframe(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getSubmapRequest.idCenteredKeyframe)
+}
+
+// uint32 nbKeyframes = 3;
+inline void getSubmapRequest::clear_nbkeyframes() {
+  nbkeyframes_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 getSubmapRequest::_internal_nbkeyframes() const {
+  return nbkeyframes_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 getSubmapRequest::nbkeyframes() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getSubmapRequest.nbKeyframes)
+  return _internal_nbkeyframes();
+}
+inline void getSubmapRequest::_internal_set_nbkeyframes(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  nbkeyframes_ = value;
+}
+inline void getSubmapRequest::set_nbkeyframes(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_nbkeyframes(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getSubmapRequest.nbKeyframes)
+}
+
+// bytes submap = 4;
+inline void getSubmapRequest::clear_submap() {
+  submap_.ClearToEmpty();
+}
+inline const std::string& getSubmapRequest::submap() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getSubmapRequest.submap)
+  return _internal_submap();
+}
+inline void getSubmapRequest::set_submap(const std::string& value) {
+  _internal_set_submap(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getSubmapRequest.submap)
+}
+inline std::string* getSubmapRequest::mutable_submap() {
+  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getSubmapRequest.submap)
+  return _internal_mutable_submap();
+}
+inline const std::string& getSubmapRequest::_internal_submap() const {
+  return submap_.Get();
+}
+inline void getSubmapRequest::_internal_set_submap(const std::string& value) {
+  
+  submap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getSubmapRequest::set_submap(std::string&& value) {
+  
+  submap_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getSubmapRequest.submap)
+}
+inline void getSubmapRequest::set_submap(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  submap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getSubmapRequest.submap)
+}
+inline void getSubmapRequest::set_submap(const void* value,
+    size_t size) {
+  
+  submap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getSubmapRequest.submap)
+}
+inline std::string* getSubmapRequest::_internal_mutable_submap() {
+  
+  return submap_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getSubmapRequest::release_submap() {
+  // @@protoc_insertion_point(field_release:grpcIMapManager.getSubmapRequest.submap)
+  return submap_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getSubmapRequest::set_allocated_submap(std::string* submap) {
+  if (submap != nullptr) {
+    
+  } else {
+    
+  }
+  submap_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), submap,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getSubmapRequest.submap)
+}
+
+// -------------------------------------------------------------------
+
+// getSubmapResponse
+
+// bytes submap = 1;
+inline void getSubmapResponse::clear_submap() {
+  submap_.ClearToEmpty();
+}
+inline const std::string& getSubmapResponse::submap() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getSubmapResponse.submap)
+  return _internal_submap();
+}
+inline void getSubmapResponse::set_submap(const std::string& value) {
+  _internal_set_submap(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getSubmapResponse.submap)
+}
+inline std::string* getSubmapResponse::mutable_submap() {
+  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getSubmapResponse.submap)
+  return _internal_mutable_submap();
+}
+inline const std::string& getSubmapResponse::_internal_submap() const {
+  return submap_.Get();
+}
+inline void getSubmapResponse::_internal_set_submap(const std::string& value) {
+  
+  submap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getSubmapResponse::set_submap(std::string&& value) {
+  
+  submap_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getSubmapResponse.submap)
+}
+inline void getSubmapResponse::set_submap(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  submap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getSubmapResponse.submap)
+}
+inline void getSubmapResponse::set_submap(const void* value,
+    size_t size) {
+  
+  submap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getSubmapResponse.submap)
+}
+inline std::string* getSubmapResponse::_internal_mutable_submap() {
+  
+  return submap_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getSubmapResponse::release_submap() {
+  // @@protoc_insertion_point(field_release:grpcIMapManager.getSubmapResponse.submap)
+  return submap_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getSubmapResponse::set_allocated_submap(std::string* submap) {
+  if (submap != nullptr) {
+    
+  } else {
+    
+  }
+  submap_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), submap,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getSubmapResponse.submap)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void getSubmapResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getSubmapResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getSubmapResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getSubmapResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getSubmapResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void getSubmapResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getSubmapResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -4680,6 +5230,10 @@ inline void loadFromFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

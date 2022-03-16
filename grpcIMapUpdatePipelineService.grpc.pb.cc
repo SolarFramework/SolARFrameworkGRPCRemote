@@ -28,6 +28,7 @@ static const char* grpcIMapUpdatePipelineService_method_names[] = {
   "/grpcIMapUpdatePipeline.grpcIMapUpdatePipelineService/setCameraParameters",
   "/grpcIMapUpdatePipeline.grpcIMapUpdatePipelineService/mapUpdateRequest",
   "/grpcIMapUpdatePipeline.grpcIMapUpdatePipelineService/getMapRequest",
+  "/grpcIMapUpdatePipeline.grpcIMapUpdatePipelineService/getSubmapRequest",
 };
 
 std::unique_ptr< grpcIMapUpdatePipelineService::Stub> grpcIMapUpdatePipelineService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -43,6 +44,7 @@ grpcIMapUpdatePipelineService::Stub::Stub(const std::shared_ptr< ::grpc::Channel
   , rpcmethod_setCameraParameters_(grpcIMapUpdatePipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_mapUpdateRequest_(grpcIMapUpdatePipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getMapRequest_(grpcIMapUpdatePipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getSubmapRequest_(grpcIMapUpdatePipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapUpdatePipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpcIMapUpdatePipeline::initResponse* response) {
@@ -183,6 +185,29 @@ void grpcIMapUpdatePipelineService::Stub::experimental_async::getMapRequest(::gr
   return result;
 }
 
+::grpc::Status grpcIMapUpdatePipelineService::Stub::getSubmapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest& request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapUpdatePipeline::getSubmapRequestRequest, ::grpcIMapUpdatePipeline::getSubmapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getSubmapRequest_, context, request, response);
+}
+
+void grpcIMapUpdatePipelineService::Stub::experimental_async::getSubmapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapUpdatePipeline::getSubmapRequestRequest, ::grpcIMapUpdatePipeline::getSubmapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getSubmapRequest_, context, request, response, std::move(f));
+}
+
+void grpcIMapUpdatePipelineService::Stub::experimental_async::getSubmapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getSubmapRequest_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::getSubmapRequestResponse>* grpcIMapUpdatePipelineService::Stub::PrepareAsyncgetSubmapRequestRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapUpdatePipeline::getSubmapRequestResponse, ::grpcIMapUpdatePipeline::getSubmapRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getSubmapRequest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::getSubmapRequestResponse>* grpcIMapUpdatePipelineService::Stub::AsyncgetSubmapRequestRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetSubmapRequestRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 grpcIMapUpdatePipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapUpdatePipelineService_method_names[0],
@@ -244,6 +269,16 @@ grpcIMapUpdatePipelineService::Service::Service() {
              ::grpcIMapUpdatePipeline::getMapRequestResponse* resp) {
                return service->getMapRequest(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapUpdatePipelineService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::getSubmapRequestRequest, ::grpcIMapUpdatePipeline::getSubmapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapUpdatePipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* req,
+             ::grpcIMapUpdatePipeline::getSubmapRequestResponse* resp) {
+               return service->getSubmapRequest(ctx, req, resp);
+             }, this)));
 }
 
 grpcIMapUpdatePipelineService::Service::~Service() {
@@ -285,6 +320,13 @@ grpcIMapUpdatePipelineService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMapUpdatePipelineService::Service::getMapRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapUpdatePipelineService::Service::getSubmapRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response) {
   (void) context;
   (void) request;
   (void) response;

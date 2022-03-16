@@ -19,7 +19,7 @@ IMapManager_grpcProxy::IMapManager_grpcProxy():xpcf::ConfigurableBase(xpcf::toMa
   declareInterface<SolAR::api::storage::IMapManager>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(12);
+  m_grpcProxyCompressionConfig.resize(13);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -99,6 +99,39 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getMap(SRef<SolAR::datastruct
   }
 
   map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(respOut.map());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getSubmap(uint32_t idCenteredKeyframe, uint32_t nbKeyframes, SRef<SolAR::datastructure::Map>& submap)
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapManager::getSubmapRequest reqIn;
+  ::grpcIMapManager::getSubmapResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getSubmap", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_idcenteredkeyframe(idCenteredKeyframe);
+  reqIn.set_nbkeyframes(nbKeyframes);
+  reqIn.set_submap(xpcf::serialize<SRef<SolAR::datastructure::Map>>(submap));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::getSubmap request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getSubmap(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::getSubmap response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getSubmap rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapManagerService","getSubmap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  submap = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(respOut.submap());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

@@ -68,6 +68,34 @@ struct getMapResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getMapResponseDefaultTypeInternal _getMapResponse_default_instance_;
+constexpr getSubmapRequest::getSubmapRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : submap_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0)
+  , idcenteredkeyframe_(0u)
+  , nbkeyframes_(0u){}
+struct getSubmapRequestDefaultTypeInternal {
+  constexpr getSubmapRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getSubmapRequestDefaultTypeInternal() {}
+  union {
+    getSubmapRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getSubmapRequestDefaultTypeInternal _getSubmapRequest_default_instance_;
+constexpr getSubmapResponse::getSubmapResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : submap_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , xpcfgrpcreturnvalue_(0){}
+struct getSubmapResponseDefaultTypeInternal {
+  constexpr getSubmapResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~getSubmapResponseDefaultTypeInternal() {}
+  union {
+    getSubmapResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getSubmapResponseDefaultTypeInternal _getSubmapResponse_default_instance_;
 constexpr getLocalPointCloudRequest::getLocalPointCloudRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : keyframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -295,7 +323,7 @@ struct loadFromFileResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT loadFromFileResponseDefaultTypeInternal _loadFromFileResponse_default_instance_;
 }  // namespace grpcIMapManager
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIMapManagerService_2eproto[22];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIMapManagerService_2eproto[24];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIMapManagerService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIMapManagerService_2eproto = nullptr;
 
@@ -327,6 +355,22 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIMapManagerService_2eproto
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getMapResponse, map_),
   PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getMapResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getSubmapRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getSubmapRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getSubmapRequest, idcenteredkeyframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getSubmapRequest, nbkeyframes_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getSubmapRequest, submap_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getSubmapResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getSubmapResponse, submap_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getSubmapResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMapManager::getLocalPointCloudRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -451,24 +495,26 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 7, -1, sizeof(::grpcIMapManager::setMapResponse)},
   { 13, -1, sizeof(::grpcIMapManager::getMapRequest)},
   { 20, -1, sizeof(::grpcIMapManager::getMapResponse)},
-  { 27, -1, sizeof(::grpcIMapManager::getLocalPointCloudRequest)},
-  { 36, -1, sizeof(::grpcIMapManager::getLocalPointCloudResponse)},
-  { 43, -1, sizeof(::grpcIMapManager::addCloudPointRequest)},
-  { 50, -1, sizeof(::grpcIMapManager::addCloudPointResponse)},
-  { 56, -1, sizeof(::grpcIMapManager::removeCloudPointRequest)},
-  { 63, -1, sizeof(::grpcIMapManager::removeCloudPointResponse)},
-  { 69, -1, sizeof(::grpcIMapManager::addKeyframeRequest)},
-  { 76, -1, sizeof(::grpcIMapManager::addKeyframeResponse)},
-  { 82, -1, sizeof(::grpcIMapManager::removeKeyframeRequest)},
-  { 89, -1, sizeof(::grpcIMapManager::removeKeyframeResponse)},
-  { 95, -1, sizeof(::grpcIMapManager::pointCloudPruningRequest)},
-  { 102, -1, sizeof(::grpcIMapManager::pointCloudPruningResponse)},
-  { 108, -1, sizeof(::grpcIMapManager::keyframePruningRequest)},
-  { 115, -1, sizeof(::grpcIMapManager::keyframePruningResponse)},
-  { 121, -1, sizeof(::grpcIMapManager::saveToFileRequest)},
-  { 127, -1, sizeof(::grpcIMapManager::saveToFileResponse)},
-  { 133, -1, sizeof(::grpcIMapManager::loadFromFileRequest)},
-  { 139, -1, sizeof(::grpcIMapManager::loadFromFileResponse)},
+  { 27, -1, sizeof(::grpcIMapManager::getSubmapRequest)},
+  { 36, -1, sizeof(::grpcIMapManager::getSubmapResponse)},
+  { 43, -1, sizeof(::grpcIMapManager::getLocalPointCloudRequest)},
+  { 52, -1, sizeof(::grpcIMapManager::getLocalPointCloudResponse)},
+  { 59, -1, sizeof(::grpcIMapManager::addCloudPointRequest)},
+  { 66, -1, sizeof(::grpcIMapManager::addCloudPointResponse)},
+  { 72, -1, sizeof(::grpcIMapManager::removeCloudPointRequest)},
+  { 79, -1, sizeof(::grpcIMapManager::removeCloudPointResponse)},
+  { 85, -1, sizeof(::grpcIMapManager::addKeyframeRequest)},
+  { 92, -1, sizeof(::grpcIMapManager::addKeyframeResponse)},
+  { 98, -1, sizeof(::grpcIMapManager::removeKeyframeRequest)},
+  { 105, -1, sizeof(::grpcIMapManager::removeKeyframeResponse)},
+  { 111, -1, sizeof(::grpcIMapManager::pointCloudPruningRequest)},
+  { 118, -1, sizeof(::grpcIMapManager::pointCloudPruningResponse)},
+  { 124, -1, sizeof(::grpcIMapManager::keyframePruningRequest)},
+  { 131, -1, sizeof(::grpcIMapManager::keyframePruningResponse)},
+  { 137, -1, sizeof(::grpcIMapManager::saveToFileRequest)},
+  { 143, -1, sizeof(::grpcIMapManager::saveToFileResponse)},
+  { 149, -1, sizeof(::grpcIMapManager::loadFromFileRequest)},
+  { 155, -1, sizeof(::grpcIMapManager::loadFromFileResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -476,6 +522,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_setMapResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_getMapRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_getMapResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_getSubmapRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_getSubmapResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_getLocalPointCloudRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_getLocalPointCloudResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_addCloudPointRequest_default_instance_),
@@ -504,74 +552,81 @@ const char descriptor_table_protodef_grpcIMapManagerService_2eproto[] PROTOBUF_S
   "e\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"A\n\rgetMap"
   "Request\022#\n\033grpcServerCompressionFormat\030\001"
   " \001(\005\022\013\n\003map\030\002 \001(\014\":\n\016getMapResponse\022\013\n\003m"
-  "ap\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"\206\001"
-  "\n\031getLocalPointCloudRequest\022#\n\033grpcServe"
-  "rCompressionFormat\030\001 \001(\005\022\020\n\010keyframe\030\002 \001"
-  "(\014\022\031\n\021minWeightNeighbor\030\003 \001(\002\022\027\n\017localPo"
-  "intCloud\030\004 \001(\014\"R\n\032getLocalPointCloudResp"
-  "onse\022\027\n\017localPointCloud\030\001 \001(\014\022\033\n\023xpcfGrp"
-  "cReturnValue\030\002 \001(\021\"O\n\024addCloudPointReque"
-  "st\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022"
-  "\022\n\ncloudPoint\030\002 \001(\014\"4\n\025addCloudPointResp"
-  "onse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"R\n\027rem"
-  "oveCloudPointRequest\022#\n\033grpcServerCompre"
-  "ssionFormat\030\001 \001(\005\022\022\n\ncloudPoint\030\002 \001(\014\"7\n"
-  "\030removeCloudPointResponse\022\033\n\023xpcfGrpcRet"
-  "urnValue\030\001 \001(\021\"K\n\022addKeyframeRequest\022#\n\033"
+  "ap\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"x\n"
+  "\020getSubmapRequest\022#\n\033grpcServerCompressi"
+  "onFormat\030\001 \001(\005\022\032\n\022idCenteredKeyframe\030\002 \001"
+  "(\r\022\023\n\013nbKeyframes\030\003 \001(\r\022\016\n\006submap\030\004 \001(\014\""
+  "@\n\021getSubmapResponse\022\016\n\006submap\030\001 \001(\014\022\033\n\023"
+  "xpcfGrpcReturnValue\030\002 \001(\021\"\206\001\n\031getLocalPo"
+  "intCloudRequest\022#\n\033grpcServerCompression"
+  "Format\030\001 \001(\005\022\020\n\010keyframe\030\002 \001(\014\022\031\n\021minWei"
+  "ghtNeighbor\030\003 \001(\002\022\027\n\017localPointCloud\030\004 \001"
+  "(\014\"R\n\032getLocalPointCloudResponse\022\027\n\017loca"
+  "lPointCloud\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue"
+  "\030\002 \001(\021\"O\n\024addCloudPointRequest\022#\n\033grpcSe"
+  "rverCompressionFormat\030\001 \001(\005\022\022\n\ncloudPoin"
+  "t\030\002 \001(\014\"4\n\025addCloudPointResponse\022\033\n\023xpcf"
+  "GrpcReturnValue\030\001 \001(\021\"R\n\027removeCloudPoin"
+  "tRequest\022#\n\033grpcServerCompressionFormat\030"
+  "\001 \001(\005\022\022\n\ncloudPoint\030\002 \001(\014\"7\n\030removeCloud"
+  "PointResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001"
+  "(\021\"K\n\022addKeyframeRequest\022#\n\033grpcServerCo"
+  "mpressionFormat\030\001 \001(\005\022\020\n\010keyframe\030\002 \001(\014\""
+  "2\n\023addKeyframeResponse\022\033\n\023xpcfGrpcReturn"
+  "Value\030\001 \001(\021\"N\n\025removeKeyframeRequest\022#\n\033"
   "grpcServerCompressionFormat\030\001 \001(\005\022\020\n\010key"
-  "frame\030\002 \001(\014\"2\n\023addKeyframeResponse\022\033\n\023xp"
-  "cfGrpcReturnValue\030\001 \001(\021\"N\n\025removeKeyfram"
-  "eRequest\022#\n\033grpcServerCompressionFormat\030"
-  "\001 \001(\005\022\020\n\010keyframe\030\002 \001(\014\"5\n\026removeKeyfram"
-  "eResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"T"
-  "\n\030pointCloudPruningRequest\022#\n\033grpcServer"
-  "CompressionFormat\030\001 \001(\005\022\023\n\013cloudPoints\030\002"
-  " \001(\014\"8\n\031pointCloudPruningResponse\022\033\n\023xpc"
-  "fGrpcReturnValue\030\001 \001(\021\"P\n\026keyframePrunin"
-  "gRequest\022#\n\033grpcServerCompressionFormat\030"
-  "\001 \001(\005\022\021\n\tkeyframes\030\002 \001(\014\"6\n\027keyframePrun"
-  "ingResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021"
-  "\"8\n\021saveToFileRequest\022#\n\033grpcServerCompr"
-  "essionFormat\030\001 \001(\005\"1\n\022saveToFileResponse"
-  "\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\":\n\023loadFro"
-  "mFileRequest\022#\n\033grpcServerCompressionFor"
-  "mat\030\001 \001(\005\"3\n\024loadFromFileResponse\022\033\n\023xpc"
-  "fGrpcReturnValue\030\001 \001(\0212\277\010\n\026grpcIMapManag"
-  "erService\022K\n\006setMap\022\036.grpcIMapManager.se"
-  "tMapRequest\032\037.grpcIMapManager.setMapResp"
-  "onse\"\000\022K\n\006getMap\022\036.grpcIMapManager.getMa"
-  "pRequest\032\037.grpcIMapManager.getMapRespons"
-  "e\"\000\022o\n\022getLocalPointCloud\022*.grpcIMapMana"
-  "ger.getLocalPointCloudRequest\032+.grpcIMap"
-  "Manager.getLocalPointCloudResponse\"\000\022`\n\r"
-  "addCloudPoint\022%.grpcIMapManager.addCloud"
-  "PointRequest\032&.grpcIMapManager.addCloudP"
-  "ointResponse\"\000\022i\n\020removeCloudPoint\022(.grp"
-  "cIMapManager.removeCloudPointRequest\032).g"
-  "rpcIMapManager.removeCloudPointResponse\""
-  "\000\022Z\n\013addKeyframe\022#.grpcIMapManager.addKe"
-  "yframeRequest\032$.grpcIMapManager.addKeyfr"
-  "ameResponse\"\000\022c\n\016removeKeyframe\022&.grpcIM"
-  "apManager.removeKeyframeRequest\032\'.grpcIM"
-  "apManager.removeKeyframeResponse\"\000\022l\n\021po"
-  "intCloudPruning\022).grpcIMapManager.pointC"
-  "loudPruningRequest\032*.grpcIMapManager.poi"
-  "ntCloudPruningResponse\"\000\022f\n\017keyframePrun"
-  "ing\022\'.grpcIMapManager.keyframePruningReq"
-  "uest\032(.grpcIMapManager.keyframePruningRe"
-  "sponse\"\000\022W\n\nsaveToFile\022\".grpcIMapManager"
-  ".saveToFileRequest\032#.grpcIMapManager.sav"
-  "eToFileResponse\"\000\022]\n\014loadFromFile\022$.grpc"
-  "IMapManager.loadFromFileRequest\032%.grpcIM"
-  "apManager.loadFromFileResponse\"\000b\006proto3"
+  "frame\030\002 \001(\014\"5\n\026removeKeyframeResponse\022\033\n"
+  "\023xpcfGrpcReturnValue\030\001 \001(\021\"T\n\030pointCloud"
+  "PruningRequest\022#\n\033grpcServerCompressionF"
+  "ormat\030\001 \001(\005\022\023\n\013cloudPoints\030\002 \001(\014\"8\n\031poin"
+  "tCloudPruningResponse\022\033\n\023xpcfGrpcReturnV"
+  "alue\030\001 \001(\021\"P\n\026keyframePruningRequest\022#\n\033"
+  "grpcServerCompressionFormat\030\001 \001(\005\022\021\n\tkey"
+  "frames\030\002 \001(\014\"6\n\027keyframePruningResponse\022"
+  "\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"8\n\021saveToFi"
+  "leRequest\022#\n\033grpcServerCompressionFormat"
+  "\030\001 \001(\005\"1\n\022saveToFileResponse\022\033\n\023xpcfGrpc"
+  "ReturnValue\030\001 \001(\021\":\n\023loadFromFileRequest"
+  "\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\"3\n"
+  "\024loadFromFileResponse\022\033\n\023xpcfGrpcReturnV"
+  "alue\030\001 \001(\0212\225\t\n\026grpcIMapManagerService\022K\n"
+  "\006setMap\022\036.grpcIMapManager.setMapRequest\032"
+  "\037.grpcIMapManager.setMapResponse\"\000\022K\n\006ge"
+  "tMap\022\036.grpcIMapManager.getMapRequest\032\037.g"
+  "rpcIMapManager.getMapResponse\"\000\022T\n\tgetSu"
+  "bmap\022!.grpcIMapManager.getSubmapRequest\032"
+  "\".grpcIMapManager.getSubmapResponse\"\000\022o\n"
+  "\022getLocalPointCloud\022*.grpcIMapManager.ge"
+  "tLocalPointCloudRequest\032+.grpcIMapManage"
+  "r.getLocalPointCloudResponse\"\000\022`\n\raddClo"
+  "udPoint\022%.grpcIMapManager.addCloudPointR"
+  "equest\032&.grpcIMapManager.addCloudPointRe"
+  "sponse\"\000\022i\n\020removeCloudPoint\022(.grpcIMapM"
+  "anager.removeCloudPointRequest\032).grpcIMa"
+  "pManager.removeCloudPointResponse\"\000\022Z\n\013a"
+  "ddKeyframe\022#.grpcIMapManager.addKeyframe"
+  "Request\032$.grpcIMapManager.addKeyframeRes"
+  "ponse\"\000\022c\n\016removeKeyframe\022&.grpcIMapMana"
+  "ger.removeKeyframeRequest\032\'.grpcIMapMana"
+  "ger.removeKeyframeResponse\"\000\022l\n\021pointClo"
+  "udPruning\022).grpcIMapManager.pointCloudPr"
+  "uningRequest\032*.grpcIMapManager.pointClou"
+  "dPruningResponse\"\000\022f\n\017keyframePruning\022\'."
+  "grpcIMapManager.keyframePruningRequest\032("
+  ".grpcIMapManager.keyframePruningResponse"
+  "\"\000\022W\n\nsaveToFile\022\".grpcIMapManager.saveT"
+  "oFileRequest\032#.grpcIMapManager.saveToFil"
+  "eResponse\"\000\022]\n\014loadFromFile\022$.grpcIMapMa"
+  "nager.loadFromFileRequest\032%.grpcIMapMana"
+  "ger.loadFromFileResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIMapManagerService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIMapManagerService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIMapManagerService_2eproto = {
-  false, false, 2680, descriptor_table_protodef_grpcIMapManagerService_2eproto, "grpcIMapManagerService.proto", 
-  &descriptor_table_grpcIMapManagerService_2eproto_once, descriptor_table_grpcIMapManagerService_2eproto_deps, 1, 22,
+  false, false, 2954, descriptor_table_protodef_grpcIMapManagerService_2eproto, "grpcIMapManagerService.proto", 
+  &descriptor_table_grpcIMapManagerService_2eproto_once, descriptor_table_grpcIMapManagerService_2eproto_deps, 1, 24,
   schemas, file_default_instances, TableStruct_grpcIMapManagerService_2eproto::offsets,
   file_level_metadata_grpcIMapManagerService_2eproto, file_level_enum_descriptors_grpcIMapManagerService_2eproto, file_level_service_descriptors_grpcIMapManagerService_2eproto,
 };
@@ -1436,6 +1491,508 @@ void getMapResponse::InternalSwap(getMapResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getMapResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getSubmapRequest::_Internal {
+ public:
+};
+
+getSubmapRequest::getSubmapRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIMapManager.getSubmapRequest)
+}
+getSubmapRequest::getSubmapRequest(const getSubmapRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  submap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_submap().empty()) {
+    submap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_submap(), 
+      GetArena());
+  }
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&nbkeyframes_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(nbkeyframes_));
+  // @@protoc_insertion_point(copy_constructor:grpcIMapManager.getSubmapRequest)
+}
+
+void getSubmapRequest::SharedCtor() {
+submap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&nbkeyframes_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(nbkeyframes_));
+}
+
+getSubmapRequest::~getSubmapRequest() {
+  // @@protoc_insertion_point(destructor:grpcIMapManager.getSubmapRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getSubmapRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  submap_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void getSubmapRequest::ArenaDtor(void* object) {
+  getSubmapRequest* _this = reinterpret_cast< getSubmapRequest* >(object);
+  (void)_this;
+}
+void getSubmapRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getSubmapRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getSubmapRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapManager.getSubmapRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  submap_.ClearToEmpty();
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&nbkeyframes_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(nbkeyframes_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getSubmapRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 idCenteredKeyframe = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          idcenteredkeyframe_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 nbKeyframes = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          nbkeyframes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes submap = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_submap();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getSubmapRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapManager.getSubmapRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // uint32 idCenteredKeyframe = 2;
+  if (this->idcenteredkeyframe() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_idcenteredkeyframe(), target);
+  }
+
+  // uint32 nbKeyframes = 3;
+  if (this->nbkeyframes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_nbkeyframes(), target);
+  }
+
+  // bytes submap = 4;
+  if (this->submap().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        4, this->_internal_submap(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapManager.getSubmapRequest)
+  return target;
+}
+
+size_t getSubmapRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapManager.getSubmapRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes submap = 4;
+  if (this->submap().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_submap());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // uint32 idCenteredKeyframe = 2;
+  if (this->idcenteredkeyframe() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_idcenteredkeyframe());
+  }
+
+  // uint32 nbKeyframes = 3;
+  if (this->nbkeyframes() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_nbkeyframes());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getSubmapRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIMapManager.getSubmapRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getSubmapRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getSubmapRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMapManager.getSubmapRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMapManager.getSubmapRequest)
+    MergeFrom(*source);
+  }
+}
+
+void getSubmapRequest::MergeFrom(const getSubmapRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapManager.getSubmapRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.submap().size() > 0) {
+    _internal_set_submap(from._internal_submap());
+  }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+  if (from.idcenteredkeyframe() != 0) {
+    _internal_set_idcenteredkeyframe(from._internal_idcenteredkeyframe());
+  }
+  if (from.nbkeyframes() != 0) {
+    _internal_set_nbkeyframes(from._internal_nbkeyframes());
+  }
+}
+
+void getSubmapRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIMapManager.getSubmapRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getSubmapRequest::CopyFrom(const getSubmapRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapManager.getSubmapRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getSubmapRequest::IsInitialized() const {
+  return true;
+}
+
+void getSubmapRequest::InternalSwap(getSubmapRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  submap_.Swap(&other->submap_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getSubmapRequest, nbkeyframes_)
+      + sizeof(getSubmapRequest::nbkeyframes_)
+      - PROTOBUF_FIELD_OFFSET(getSubmapRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getSubmapRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class getSubmapResponse::_Internal {
+ public:
+};
+
+getSubmapResponse::getSubmapResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIMapManager.getSubmapResponse)
+}
+getSubmapResponse::getSubmapResponse(const getSubmapResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  submap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_submap().empty()) {
+    submap_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_submap(), 
+      GetArena());
+  }
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  // @@protoc_insertion_point(copy_constructor:grpcIMapManager.getSubmapResponse)
+}
+
+void getSubmapResponse::SharedCtor() {
+submap_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+xpcfgrpcreturnvalue_ = 0;
+}
+
+getSubmapResponse::~getSubmapResponse() {
+  // @@protoc_insertion_point(destructor:grpcIMapManager.getSubmapResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void getSubmapResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  submap_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void getSubmapResponse::ArenaDtor(void* object) {
+  getSubmapResponse* _this = reinterpret_cast< getSubmapResponse* >(object);
+  (void)_this;
+}
+void getSubmapResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void getSubmapResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void getSubmapResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapManager.getSubmapResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  submap_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* getSubmapResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bytes submap = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_submap();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // sint32 xpcfGrpcReturnValue = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* getSubmapResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapManager.getSubmapResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes submap = 1;
+  if (this->submap().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_submap(), target);
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  if (this->xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapManager.getSubmapResponse)
+  return target;
+}
+
+size_t getSubmapResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapManager.getSubmapResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes submap = 1;
+  if (this->submap().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_submap());
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  if (this->xpcfgrpcreturnvalue() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void getSubmapResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIMapManager.getSubmapResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const getSubmapResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<getSubmapResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMapManager.getSubmapResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMapManager.getSubmapResponse)
+    MergeFrom(*source);
+  }
+}
+
+void getSubmapResponse::MergeFrom(const getSubmapResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapManager.getSubmapResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.submap().size() > 0) {
+    _internal_set_submap(from._internal_submap());
+  }
+  if (from.xpcfgrpcreturnvalue() != 0) {
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  }
+}
+
+void getSubmapResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIMapManager.getSubmapResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void getSubmapResponse::CopyFrom(const getSubmapResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapManager.getSubmapResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool getSubmapResponse::IsInitialized() const {
+  return true;
+}
+
+void getSubmapResponse::InternalSwap(getSubmapResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  submap_.Swap(&other->submap_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata getSubmapResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -5186,6 +5743,12 @@ template<> PROTOBUF_NOINLINE ::grpcIMapManager::getMapRequest* Arena::CreateMayb
 }
 template<> PROTOBUF_NOINLINE ::grpcIMapManager::getMapResponse* Arena::CreateMaybeMessage< ::grpcIMapManager::getMapResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMapManager::getMapResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIMapManager::getSubmapRequest* Arena::CreateMaybeMessage< ::grpcIMapManager::getSubmapRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIMapManager::getSubmapRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIMapManager::getSubmapResponse* Arena::CreateMaybeMessage< ::grpcIMapManager::getSubmapResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIMapManager::getSubmapResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIMapManager::getLocalPointCloudRequest* Arena::CreateMaybeMessage< ::grpcIMapManager::getLocalPointCloudRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMapManager::getLocalPointCloudRequest >(arena);

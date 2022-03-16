@@ -27,6 +27,20 @@ bytes map = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message getSubmapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+uint32 idCenteredKeyframe = 2;
+uint32 nbKeyframes = 3;
+bytes submap = 4;
+}
+
+message getSubmapResponse
+{
+bytes submap = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 message getLocalPointCloudRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -130,6 +144,7 @@ sint32 xpcfGrpcReturnValue = 1;
 service grpcIMapManagerService {
 rpc setMap(setMapRequest) returns(setMapResponse) {}
 rpc getMap(getMapRequest) returns(getMapResponse) {}
+rpc getSubmap(getSubmapRequest) returns(getSubmapResponse) {}
 rpc getLocalPointCloud(getLocalPointCloudRequest) returns(getLocalPointCloudResponse) {}
 rpc addCloudPoint(addCloudPointRequest) returns(addCloudPointResponse) {}
 rpc removeCloudPoint(removeCloudPointRequest) returns(removeCloudPointResponse) {}
