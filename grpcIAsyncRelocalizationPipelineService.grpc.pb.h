@@ -36,12 +36,12 @@ class grpcIAsyncRelocalizationPipelineService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpcIAsyncRelocalizationPipeline::initResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initResponse>>(AsyncinitRaw(context, request, cq));
+    virtual ::grpc::Status init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>> Asyncinit_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>>(Asyncinit_grpc0Raw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initResponse>>(PrepareAsyncinitRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>> PrepareAsyncinit_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>>(PrepareAsyncinit_grpc0Raw(context, request, cq));
     }
     virtual ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest& request, ::grpcIAsyncRelocalizationPipeline::startResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
@@ -57,12 +57,12 @@ class grpcIAsyncRelocalizationPipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
-    virtual ::grpc::Status initProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>> AsyncinitProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>>(AsyncinitProcessingModeRaw(context, request, cq));
+    virtual ::grpc::Status init_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>> Asyncinit_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>>(Asyncinit_grpc1Raw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>> PrepareAsyncinitProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>>(PrepareAsyncinitProcessingModeRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>> PrepareAsyncinit_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>>(PrepareAsyncinit_grpc1Raw(context, request, cq));
     }
     virtual ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest& request, ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse>> AsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
@@ -102,11 +102,11 @@ class grpcIAsyncRelocalizationPipelineService final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void init(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void init(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void init(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void start(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest* request, ::grpcIAsyncRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -120,11 +120,11 @@ class grpcIAsyncRelocalizationPipelineService final {
       #else
       virtual void stop(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest* request, ::grpcIAsyncRelocalizationPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void initProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void init_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void initProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void init_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void initProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void init_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -165,14 +165,14 @@ class grpcIAsyncRelocalizationPipelineService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>* Asyncinit_grpc0Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>* PrepareAsyncinit_grpc0Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>* AsyncinitProcessingModeRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>* PrepareAsyncinitProcessingModeRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>* Asyncinit_grpc1Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>* PrepareAsyncinit_grpc1Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIAsyncRelocalizationPipeline::getCameraParametersResponse>* AsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::getCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -187,12 +187,12 @@ class grpcIAsyncRelocalizationPipelineService final {
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpcIAsyncRelocalizationPipeline::initResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initResponse>>(AsyncinitRaw(context, request, cq));
+    ::grpc::Status init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>> Asyncinit_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>>(Asyncinit_grpc0Raw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initResponse>>(PrepareAsyncinitRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>> PrepareAsyncinit_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>>(PrepareAsyncinit_grpc0Raw(context, request, cq));
     }
     ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest& request, ::grpcIAsyncRelocalizationPipeline::startResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
@@ -208,12 +208,12 @@ class grpcIAsyncRelocalizationPipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
-    ::grpc::Status initProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>> AsyncinitProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>>(AsyncinitProcessingModeRaw(context, request, cq));
+    ::grpc::Status init_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>> Asyncinit_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>>(Asyncinit_grpc1Raw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>> PrepareAsyncinitProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>>(PrepareAsyncinitProcessingModeRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>> PrepareAsyncinit_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>>(PrepareAsyncinit_grpc1Raw(context, request, cq));
     }
     ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest& request, ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse>> AsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
@@ -253,11 +253,11 @@ class grpcIAsyncRelocalizationPipelineService final {
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void init(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)>) override;
+      void init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void init(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void init(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void start(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest* request, ::grpcIAsyncRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -271,11 +271,11 @@ class grpcIAsyncRelocalizationPipelineService final {
       #else
       void stop(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest* request, ::grpcIAsyncRelocalizationPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void initProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response, std::function<void(::grpc::Status)>) override;
+      void init_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void initProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void init_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void initProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void init_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void setCameraParameters(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -318,14 +318,14 @@ class grpcIAsyncRelocalizationPipelineService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>* Asyncinit_grpc0Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>* PrepareAsyncinit_grpc0Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>* AsyncinitProcessingModeRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>* PrepareAsyncinitProcessingModeRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>* Asyncinit_grpc1Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>* PrepareAsyncinit_grpc1Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::getCameraParametersResponse>* AsyncgetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::getCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -336,10 +336,10 @@ class grpcIAsyncRelocalizationPipelineService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestResponse>* PrepareAsyncget3DTransformRequestRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::getLastPoseResponse>* AsyncgetLastPoseRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::getLastPoseRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::getLastPoseResponse>* PrepareAsyncgetLastPoseRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::getLastPoseRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_init_;
+    const ::grpc::internal::RpcMethod rpcmethod_init_grpc0_;
     const ::grpc::internal::RpcMethod rpcmethod_start_;
     const ::grpc::internal::RpcMethod rpcmethod_stop_;
-    const ::grpc::internal::RpcMethod rpcmethod_initProcessingMode_;
+    const ::grpc::internal::RpcMethod rpcmethod_init_grpc1_;
     const ::grpc::internal::RpcMethod rpcmethod_setCameraParameters_;
     const ::grpc::internal::RpcMethod rpcmethod_getCameraParameters_;
     const ::grpc::internal::RpcMethod rpcmethod_relocalizeProcessRequest_;
@@ -352,10 +352,10 @@ class grpcIAsyncRelocalizationPipelineService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response);
+    virtual ::grpc::Status init_grpc0(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response);
     virtual ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest* request, ::grpcIAsyncRelocalizationPipeline::startResponse* response);
     virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest* request, ::grpcIAsyncRelocalizationPipeline::stopResponse* response);
-    virtual ::grpc::Status initProcessingMode(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response);
+    virtual ::grpc::Status init_grpc1(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response);
     virtual ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse* response);
     virtual ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIAsyncRelocalizationPipeline::getCameraParametersResponse* response);
     virtual ::grpc::Status relocalizeProcessRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestResponse* response);
@@ -363,22 +363,22 @@ class grpcIAsyncRelocalizationPipelineService final {
     virtual ::grpc::Status getLastPose(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getLastPoseRequest* request, ::grpcIAsyncRelocalizationPipeline::getLastPoseResponse* response);
   };
   template <class BaseClass>
-  class WithAsyncMethod_init : public BaseClass {
+  class WithAsyncMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_init() {
+    WithAsyncMethod_init_grpc0() {
       ::grpc::Service::MarkMethodAsync(0);
     }
-    ~WithAsyncMethod_init() override {
+    ~WithAsyncMethod_init_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requestinit(::grpc::ServerContext* context, ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIAsyncRelocalizationPipeline::initResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requestinit_grpc0(::grpc::ServerContext* context, ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -423,22 +423,22 @@ class grpcIAsyncRelocalizationPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_initProcessingMode : public BaseClass {
+  class WithAsyncMethod_init_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_initProcessingMode() {
+    WithAsyncMethod_init_grpc1() {
       ::grpc::Service::MarkMethodAsync(3);
     }
-    ~WithAsyncMethod_initProcessingMode() override {
+    ~WithAsyncMethod_init_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status initProcessingMode(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* /*response*/) override {
+    ::grpc::Status init_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestinitProcessingMode(::grpc::ServerContext* context, ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requestinit_grpc1(::grpc::ServerContext* context, ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -542,51 +542,51 @@ class grpcIAsyncRelocalizationPipelineService final {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_initProcessingMode<WithAsyncMethod_setCameraParameters<WithAsyncMethod_getCameraParameters<WithAsyncMethod_relocalizeProcessRequest<WithAsyncMethod_get3DTransformRequest<WithAsyncMethod_getLastPose<Service > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_init_grpc0<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_init_grpc1<WithAsyncMethod_setCameraParameters<WithAsyncMethod_getCameraParameters<WithAsyncMethod_relocalizeProcessRequest<WithAsyncMethod_get3DTransformRequest<WithAsyncMethod_getLastPose<Service > > > > > > > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_init : public BaseClass {
+  class ExperimentalWithCallbackMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_init() {
+    ExperimentalWithCallbackMethod_init_grpc0() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIAsyncRelocalizationPipeline::initRequest, ::grpcIAsyncRelocalizationPipeline::initResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIAsyncRelocalizationPipeline::init_grpc0Request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response) { return this->init(context, request, response); }));}
-    void SetMessageAllocatorFor_init(
-        ::grpc::experimental::MessageAllocator< ::grpcIAsyncRelocalizationPipeline::initRequest, ::grpcIAsyncRelocalizationPipeline::initResponse>* allocator) {
+                     context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response) { return this->init_grpc0(context, request, response); }));}
+    void SetMessageAllocatorFor_init_grpc0(
+        ::grpc::experimental::MessageAllocator< ::grpcIAsyncRelocalizationPipeline::init_grpc0Request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIAsyncRelocalizationPipeline::initRequest, ::grpcIAsyncRelocalizationPipeline::initResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIAsyncRelocalizationPipeline::init_grpc0Request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_init() override {
+    ~ExperimentalWithCallbackMethod_init_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* init(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initResponse* /*response*/)
+    virtual ::grpc::ServerUnaryReactor* init_grpc0(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* init(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initResponse* /*response*/)
+    virtual ::grpc::experimental::ServerUnaryReactor* init_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -685,49 +685,49 @@ class grpcIAsyncRelocalizationPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_initProcessingMode : public BaseClass {
+  class ExperimentalWithCallbackMethod_init_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_initProcessingMode() {
+    ExperimentalWithCallbackMethod_init_grpc1() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIAsyncRelocalizationPipeline::init_grpc1Request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response) { return this->initProcessingMode(context, request, response); }));}
-    void SetMessageAllocatorFor_initProcessingMode(
-        ::grpc::experimental::MessageAllocator< ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>* allocator) {
+                     context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response) { return this->init_grpc1(context, request, response); }));}
+    void SetMessageAllocatorFor_init_grpc1(
+        ::grpc::experimental::MessageAllocator< ::grpcIAsyncRelocalizationPipeline::init_grpc1Request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIAsyncRelocalizationPipeline::init_grpc1Request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_initProcessingMode() override {
+    ~ExperimentalWithCallbackMethod_init_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status initProcessingMode(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* /*response*/) override {
+    ::grpc::Status init_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* initProcessingMode(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* /*response*/)
+    virtual ::grpc::ServerUnaryReactor* init_grpc1(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* initProcessingMode(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* /*response*/)
+    virtual ::grpc::experimental::ServerUnaryReactor* init_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -967,23 +967,23 @@ class grpcIAsyncRelocalizationPipelineService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_initProcessingMode<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_getCameraParameters<ExperimentalWithCallbackMethod_relocalizeProcessRequest<ExperimentalWithCallbackMethod_get3DTransformRequest<ExperimentalWithCallbackMethod_getLastPose<Service > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_init_grpc0<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_init_grpc1<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_getCameraParameters<ExperimentalWithCallbackMethod_relocalizeProcessRequest<ExperimentalWithCallbackMethod_get3DTransformRequest<ExperimentalWithCallbackMethod_getLastPose<Service > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_initProcessingMode<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_getCameraParameters<ExperimentalWithCallbackMethod_relocalizeProcessRequest<ExperimentalWithCallbackMethod_get3DTransformRequest<ExperimentalWithCallbackMethod_getLastPose<Service > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_init_grpc0<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_init_grpc1<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_getCameraParameters<ExperimentalWithCallbackMethod_relocalizeProcessRequest<ExperimentalWithCallbackMethod_get3DTransformRequest<ExperimentalWithCallbackMethod_getLastPose<Service > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
-  class WithGenericMethod_init : public BaseClass {
+  class WithGenericMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_init() {
+    WithGenericMethod_init_grpc0() {
       ::grpc::Service::MarkMethodGeneric(0);
     }
-    ~WithGenericMethod_init() override {
+    ~WithGenericMethod_init_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1023,18 +1023,18 @@ class grpcIAsyncRelocalizationPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_initProcessingMode : public BaseClass {
+  class WithGenericMethod_init_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_initProcessingMode() {
+    WithGenericMethod_init_grpc1() {
       ::grpc::Service::MarkMethodGeneric(3);
     }
-    ~WithGenericMethod_initProcessingMode() override {
+    ~WithGenericMethod_init_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status initProcessingMode(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* /*response*/) override {
+    ::grpc::Status init_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1125,22 +1125,22 @@ class grpcIAsyncRelocalizationPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_init : public BaseClass {
+  class WithRawMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_init() {
+    WithRawMethod_init_grpc0() {
       ::grpc::Service::MarkMethodRaw(0);
     }
-    ~WithRawMethod_init() override {
+    ~WithRawMethod_init_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requestinit(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requestinit_grpc0(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1185,22 +1185,22 @@ class grpcIAsyncRelocalizationPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_initProcessingMode : public BaseClass {
+  class WithRawMethod_init_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_initProcessingMode() {
+    WithRawMethod_init_grpc1() {
       ::grpc::Service::MarkMethodRaw(3);
     }
-    ~WithRawMethod_initProcessingMode() override {
+    ~WithRawMethod_init_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status initProcessingMode(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* /*response*/) override {
+    ::grpc::Status init_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestinitProcessingMode(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void Requestinit_grpc1(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1305,11 +1305,11 @@ class grpcIAsyncRelocalizationPipelineService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_init : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_init() {
+    ExperimentalWithRawCallbackMethod_init_grpc0() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -1323,21 +1323,21 @@ class grpcIAsyncRelocalizationPipelineService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->init(context, request, response); }));
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->init_grpc0(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_init() override {
+    ~ExperimentalWithRawCallbackMethod_init_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* init(
+    virtual ::grpc::ServerUnaryReactor* init_grpc0(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* init(
+    virtual ::grpc::experimental::ServerUnaryReactor* init_grpc0(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #endif
       { return nullptr; }
@@ -1419,11 +1419,11 @@ class grpcIAsyncRelocalizationPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_initProcessingMode : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_init_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_initProcessingMode() {
+    ExperimentalWithRawCallbackMethod_init_grpc1() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -1437,21 +1437,21 @@ class grpcIAsyncRelocalizationPipelineService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->initProcessingMode(context, request, response); }));
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->init_grpc1(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_initProcessingMode() override {
+    ~ExperimentalWithRawCallbackMethod_init_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status initProcessingMode(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* /*response*/) override {
+    ::grpc::Status init_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* initProcessingMode(
+    virtual ::grpc::ServerUnaryReactor* init_grpc1(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* initProcessingMode(
+    virtual ::grpc::experimental::ServerUnaryReactor* init_grpc1(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #endif
       { return nullptr; }
@@ -1647,31 +1647,31 @@ class grpcIAsyncRelocalizationPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_init : public BaseClass {
+  class WithStreamedUnaryMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_init() {
+    WithStreamedUnaryMethod_init_grpc0() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIAsyncRelocalizationPipeline::initRequest, ::grpcIAsyncRelocalizationPipeline::initResponse>(
+          ::grpcIAsyncRelocalizationPipeline::init_grpc0Request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::grpcIAsyncRelocalizationPipeline::initRequest, ::grpcIAsyncRelocalizationPipeline::initResponse>* streamer) {
-                       return this->Streamedinit(context,
+                     ::grpcIAsyncRelocalizationPipeline::init_grpc0Request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response>* streamer) {
+                       return this->Streamedinit_grpc0(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_init() override {
+    ~WithStreamedUnaryMethod_init_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initResponse* /*response*/) override {
+    ::grpc::Status init_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedinit(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIAsyncRelocalizationPipeline::initRequest,::grpcIAsyncRelocalizationPipeline::initResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedinit_grpc0(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIAsyncRelocalizationPipeline::init_grpc0Request,::grpcIAsyncRelocalizationPipeline::init_grpc0Response>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_start : public BaseClass {
@@ -1728,31 +1728,31 @@ class grpcIAsyncRelocalizationPipelineService final {
     virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIAsyncRelocalizationPipeline::stopRequest,::grpcIAsyncRelocalizationPipeline::stopResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_initProcessingMode : public BaseClass {
+  class WithStreamedUnaryMethod_init_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_initProcessingMode() {
+    WithStreamedUnaryMethod_init_grpc1() {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>(
+          ::grpcIAsyncRelocalizationPipeline::init_grpc1Request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>* streamer) {
-                       return this->StreamedinitProcessingMode(context,
+                     ::grpcIAsyncRelocalizationPipeline::init_grpc1Request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response>* streamer) {
+                       return this->Streamedinit_grpc1(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_initProcessingMode() override {
+    ~WithStreamedUnaryMethod_init_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status initProcessingMode(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* /*request*/, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* /*response*/) override {
+    ::grpc::Status init_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* /*request*/, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedinitProcessingMode(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest,::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status Streamedinit_grpc1(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIAsyncRelocalizationPipeline::init_grpc1Request,::grpcIAsyncRelocalizationPipeline::init_grpc1Response>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_setCameraParameters : public BaseClass {
@@ -1889,9 +1889,9 @@ class grpcIAsyncRelocalizationPipelineService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedgetLastPose(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIAsyncRelocalizationPipeline::getLastPoseRequest,::grpcIAsyncRelocalizationPipeline::getLastPoseResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_initProcessingMode<WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_relocalizeProcessRequest<WithStreamedUnaryMethod_get3DTransformRequest<WithStreamedUnaryMethod_getLastPose<Service > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_relocalizeProcessRequest<WithStreamedUnaryMethod_get3DTransformRequest<WithStreamedUnaryMethod_getLastPose<Service > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_initProcessingMode<WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_relocalizeProcessRequest<WithStreamedUnaryMethod_get3DTransformRequest<WithStreamedUnaryMethod_getLastPose<Service > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_relocalizeProcessRequest<WithStreamedUnaryMethod_get3DTransformRequest<WithStreamedUnaryMethod_getLastPose<Service > > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIAsyncRelocalizationPipeline

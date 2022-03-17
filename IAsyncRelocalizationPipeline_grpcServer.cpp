@@ -40,7 +40,7 @@ XPCFErrorCode IAsyncRelocalizationPipeline_grpcServer::onConfigured()
   return &m_grpcService;
 }
 
-::grpc::Status IAsyncRelocalizationPipeline_grpcServer::grpcIAsyncRelocalizationPipelineServiceImpl::init(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::initRequest* request, ::grpcIAsyncRelocalizationPipeline::initResponse* response)
+::grpc::Status IAsyncRelocalizationPipeline_grpcServer::grpcIAsyncRelocalizationPipelineServiceImpl::init_grpc0(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
@@ -106,23 +106,23 @@ XPCFErrorCode IAsyncRelocalizationPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IAsyncRelocalizationPipeline_grpcServer::grpcIAsyncRelocalizationPipelineServiceImpl::initProcessingMode(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::initProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::initProcessingModeResponse* response)
+::grpc::Status IAsyncRelocalizationPipeline_grpcServer::grpcIAsyncRelocalizationPipelineServiceImpl::init_grpc1(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "initProcessingMode", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::initProcessingMode request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::init request received at " << to_simple_string(start) << std::endl;
   #endif
   SolAR::api::pipeline::PipelineMode pipelineMode = xpcf::deserialize<SolAR::api::pipeline::PipelineMode>(request->pipelinemode());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->initProcessingMode(pipelineMode);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(pipelineMode);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::initProcessingMode response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

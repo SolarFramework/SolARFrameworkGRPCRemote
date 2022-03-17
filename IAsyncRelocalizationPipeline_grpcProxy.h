@@ -25,7 +25,7 @@ class IAsyncRelocalizationPipeline_grpcProxy:  public org::bcom::xpcf::Configura
     SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
-    SolAR::FrameworkReturnCode initProcessingMode(SolAR::api::pipeline::PipelineMode const pipelineMode)     override;
+    SolAR::FrameworkReturnCode init(SolAR::api::pipeline::PipelineMode pipelineMode)     override;
     SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)     override;
     SolAR::FrameworkReturnCode getCameraParameters(SolAR::datastructure::CameraParameters& cameraParams)     const     override;
     SolAR::FrameworkReturnCode relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df const& pose, std::chrono::system_clock::time_point const& timestamp, SolAR::api::pipeline::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence)     override;
