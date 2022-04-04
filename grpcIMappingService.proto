@@ -9,6 +9,16 @@ message setCameraParametersRequest
 bytes camParams = 1;
 }
 
+message idleRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message idleResponse
+{
+bool xpcfGrpcReturnValue = 1;
+}
+
 message processRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -24,6 +34,7 @@ sint32 xpcfGrpcReturnValue = 2;
 
 service grpcIMappingService {
 rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
+rpc idle(idleRequest) returns(idleResponse) {}
 rpc process(processRequest) returns(processResponse) {}
 }
 

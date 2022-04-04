@@ -19,7 +19,7 @@ IMapping_grpcProxy::IMapping_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IMap
   declareInterface<SolAR::api::slam::IMapping>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(3);
+  m_grpcProxyCompressionConfig.resize(4);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -63,6 +63,35 @@ void  IMapping_grpcProxy::setCameraParameters(SolAR::datastructure::CameraParame
     throw xpcf::RemotingException("grpcIMappingService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+}
+
+
+bool  IMapping_grpcProxy::idle()
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapping::idleRequest reqIn;
+  ::grpcIMapping::idleResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "idle", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapping_grpcProxy::idle request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->idle(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapping_grpcProxy::idle response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "idle rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMappingService","idle",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return respOut.xpcfgrpcreturnvalue();
 }
 
 

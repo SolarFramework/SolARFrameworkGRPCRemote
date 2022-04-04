@@ -3,7 +3,7 @@
 
 #ifndef IPOINTCLOUDLOADER_GRPCPROXY_H
 #define IPOINTCLOUDLOADER_GRPCPROXY_H
-#include "api/input/files/IPointCloudLoader.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/input/files/IPointCloudLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -1340,6 +1340,9 @@ class mappingProcessRequestRequest PROTOBUF_FINAL :
   enum : int {
     kImageFieldNumber = 2,
     kPoseFieldNumber = 3,
+    kTransformFieldNumber = 4,
+    kUpdatedTransformFieldNumber = 5,
+    kStatusFieldNumber = 6,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes image = 2;
@@ -1374,6 +1377,54 @@ class mappingProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
+  // bytes transform = 4;
+  void clear_transform();
+  const std::string& transform() const;
+  void set_transform(const std::string& value);
+  void set_transform(std::string&& value);
+  void set_transform(const char* value);
+  void set_transform(const void* value, size_t size);
+  std::string* mutable_transform();
+  std::string* release_transform();
+  void set_allocated_transform(std::string* transform);
+  private:
+  const std::string& _internal_transform() const;
+  void _internal_set_transform(const std::string& value);
+  std::string* _internal_mutable_transform();
+  public:
+
+  // bytes updatedTransform = 5;
+  void clear_updatedtransform();
+  const std::string& updatedtransform() const;
+  void set_updatedtransform(const std::string& value);
+  void set_updatedtransform(std::string&& value);
+  void set_updatedtransform(const char* value);
+  void set_updatedtransform(const void* value, size_t size);
+  std::string* mutable_updatedtransform();
+  std::string* release_updatedtransform();
+  void set_allocated_updatedtransform(std::string* updatedtransform);
+  private:
+  const std::string& _internal_updatedtransform() const;
+  void _internal_set_updatedtransform(const std::string& value);
+  std::string* _internal_mutable_updatedtransform();
+  public:
+
+  // bytes status = 6;
+  void clear_status();
+  const std::string& status() const;
+  void set_status(const std::string& value);
+  void set_status(std::string&& value);
+  void set_status(const char* value);
+  void set_status(const void* value, size_t size);
+  std::string* mutable_status();
+  std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
@@ -1392,6 +1443,9 @@ class mappingProcessRequestRequest PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updatedtransform_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
@@ -1511,9 +1565,43 @@ class mappingProcessRequestResponse PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kXpcfGrpcReturnValueFieldNumber = 1,
+    kUpdatedTransformFieldNumber = 1,
+    kStatusFieldNumber = 2,
+    kXpcfGrpcReturnValueFieldNumber = 3,
   };
-  // sint32 xpcfGrpcReturnValue = 1;
+  // bytes updatedTransform = 1;
+  void clear_updatedtransform();
+  const std::string& updatedtransform() const;
+  void set_updatedtransform(const std::string& value);
+  void set_updatedtransform(std::string&& value);
+  void set_updatedtransform(const char* value);
+  void set_updatedtransform(const void* value, size_t size);
+  std::string* mutable_updatedtransform();
+  std::string* release_updatedtransform();
+  void set_allocated_updatedtransform(std::string* updatedtransform);
+  private:
+  const std::string& _internal_updatedtransform() const;
+  void _internal_set_updatedtransform(const std::string& value);
+  std::string* _internal_mutable_updatedtransform();
+  public:
+
+  // bytes status = 2;
+  void clear_status();
+  const std::string& status() const;
+  void set_status(const std::string& value);
+  void set_status(std::string&& value);
+  void set_status(const char* value);
+  void set_status(const void* value, size_t size);
+  std::string* mutable_status();
+  std::string* release_status();
+  void set_allocated_status(std::string* status);
+  private:
+  const std::string& _internal_status() const;
+  void _internal_set_status(const std::string& value);
+  std::string* _internal_mutable_status();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 3;
   void clear_xpcfgrpcreturnvalue();
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -1529,6 +1617,8 @@ class mappingProcessRequestResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updatedtransform_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
@@ -2285,11 +2375,316 @@ inline void mappingProcessRequestRequest::set_allocated_pose(std::string* pose) 
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequestRequest.pose)
 }
 
+// bytes transform = 4;
+inline void mappingProcessRequestRequest::clear_transform() {
+  transform_.ClearToEmpty();
+}
+inline const std::string& mappingProcessRequestRequest::transform() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequestRequest.transform)
+  return _internal_transform();
+}
+inline void mappingProcessRequestRequest::set_transform(const std::string& value) {
+  _internal_set_transform(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequestRequest.transform)
+}
+inline std::string* mappingProcessRequestRequest::mutable_transform() {
+  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequestRequest.transform)
+  return _internal_mutable_transform();
+}
+inline const std::string& mappingProcessRequestRequest::_internal_transform() const {
+  return transform_.Get();
+}
+inline void mappingProcessRequestRequest::_internal_set_transform(const std::string& value) {
+  
+  transform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void mappingProcessRequestRequest::set_transform(std::string&& value) {
+  
+  transform_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMappingPipeline.mappingProcessRequestRequest.transform)
+}
+inline void mappingProcessRequestRequest::set_transform(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMappingPipeline.mappingProcessRequestRequest.transform)
+}
+inline void mappingProcessRequestRequest::set_transform(const void* value,
+    size_t size) {
+  
+  transform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMappingPipeline.mappingProcessRequestRequest.transform)
+}
+inline std::string* mappingProcessRequestRequest::_internal_mutable_transform() {
+  
+  return transform_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* mappingProcessRequestRequest::release_transform() {
+  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequestRequest.transform)
+  return transform_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void mappingProcessRequestRequest::set_allocated_transform(std::string* transform) {
+  if (transform != nullptr) {
+    
+  } else {
+    
+  }
+  transform_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transform,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequestRequest.transform)
+}
+
+// bytes updatedTransform = 5;
+inline void mappingProcessRequestRequest::clear_updatedtransform() {
+  updatedtransform_.ClearToEmpty();
+}
+inline const std::string& mappingProcessRequestRequest::updatedtransform() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequestRequest.updatedTransform)
+  return _internal_updatedtransform();
+}
+inline void mappingProcessRequestRequest::set_updatedtransform(const std::string& value) {
+  _internal_set_updatedtransform(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequestRequest.updatedTransform)
+}
+inline std::string* mappingProcessRequestRequest::mutable_updatedtransform() {
+  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequestRequest.updatedTransform)
+  return _internal_mutable_updatedtransform();
+}
+inline const std::string& mappingProcessRequestRequest::_internal_updatedtransform() const {
+  return updatedtransform_.Get();
+}
+inline void mappingProcessRequestRequest::_internal_set_updatedtransform(const std::string& value) {
+  
+  updatedtransform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void mappingProcessRequestRequest::set_updatedtransform(std::string&& value) {
+  
+  updatedtransform_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMappingPipeline.mappingProcessRequestRequest.updatedTransform)
+}
+inline void mappingProcessRequestRequest::set_updatedtransform(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  updatedtransform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMappingPipeline.mappingProcessRequestRequest.updatedTransform)
+}
+inline void mappingProcessRequestRequest::set_updatedtransform(const void* value,
+    size_t size) {
+  
+  updatedtransform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMappingPipeline.mappingProcessRequestRequest.updatedTransform)
+}
+inline std::string* mappingProcessRequestRequest::_internal_mutable_updatedtransform() {
+  
+  return updatedtransform_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* mappingProcessRequestRequest::release_updatedtransform() {
+  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequestRequest.updatedTransform)
+  return updatedtransform_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void mappingProcessRequestRequest::set_allocated_updatedtransform(std::string* updatedtransform) {
+  if (updatedtransform != nullptr) {
+    
+  } else {
+    
+  }
+  updatedtransform_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updatedtransform,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequestRequest.updatedTransform)
+}
+
+// bytes status = 6;
+inline void mappingProcessRequestRequest::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& mappingProcessRequestRequest::status() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequestRequest.status)
+  return _internal_status();
+}
+inline void mappingProcessRequestRequest::set_status(const std::string& value) {
+  _internal_set_status(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequestRequest.status)
+}
+inline std::string* mappingProcessRequestRequest::mutable_status() {
+  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequestRequest.status)
+  return _internal_mutable_status();
+}
+inline const std::string& mappingProcessRequestRequest::_internal_status() const {
+  return status_.Get();
+}
+inline void mappingProcessRequestRequest::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void mappingProcessRequestRequest::set_status(std::string&& value) {
+  
+  status_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMappingPipeline.mappingProcessRequestRequest.status)
+}
+inline void mappingProcessRequestRequest::set_status(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMappingPipeline.mappingProcessRequestRequest.status)
+}
+inline void mappingProcessRequestRequest::set_status(const void* value,
+    size_t size) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMappingPipeline.mappingProcessRequestRequest.status)
+}
+inline std::string* mappingProcessRequestRequest::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* mappingProcessRequestRequest::release_status() {
+  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequestRequest.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void mappingProcessRequestRequest::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequestRequest.status)
+}
+
 // -------------------------------------------------------------------
 
 // mappingProcessRequestResponse
 
-// sint32 xpcfGrpcReturnValue = 1;
+// bytes updatedTransform = 1;
+inline void mappingProcessRequestResponse::clear_updatedtransform() {
+  updatedtransform_.ClearToEmpty();
+}
+inline const std::string& mappingProcessRequestResponse::updatedtransform() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequestResponse.updatedTransform)
+  return _internal_updatedtransform();
+}
+inline void mappingProcessRequestResponse::set_updatedtransform(const std::string& value) {
+  _internal_set_updatedtransform(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequestResponse.updatedTransform)
+}
+inline std::string* mappingProcessRequestResponse::mutable_updatedtransform() {
+  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequestResponse.updatedTransform)
+  return _internal_mutable_updatedtransform();
+}
+inline const std::string& mappingProcessRequestResponse::_internal_updatedtransform() const {
+  return updatedtransform_.Get();
+}
+inline void mappingProcessRequestResponse::_internal_set_updatedtransform(const std::string& value) {
+  
+  updatedtransform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void mappingProcessRequestResponse::set_updatedtransform(std::string&& value) {
+  
+  updatedtransform_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMappingPipeline.mappingProcessRequestResponse.updatedTransform)
+}
+inline void mappingProcessRequestResponse::set_updatedtransform(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  updatedtransform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMappingPipeline.mappingProcessRequestResponse.updatedTransform)
+}
+inline void mappingProcessRequestResponse::set_updatedtransform(const void* value,
+    size_t size) {
+  
+  updatedtransform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMappingPipeline.mappingProcessRequestResponse.updatedTransform)
+}
+inline std::string* mappingProcessRequestResponse::_internal_mutable_updatedtransform() {
+  
+  return updatedtransform_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* mappingProcessRequestResponse::release_updatedtransform() {
+  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequestResponse.updatedTransform)
+  return updatedtransform_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void mappingProcessRequestResponse::set_allocated_updatedtransform(std::string* updatedtransform) {
+  if (updatedtransform != nullptr) {
+    
+  } else {
+    
+  }
+  updatedtransform_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), updatedtransform,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequestResponse.updatedTransform)
+}
+
+// bytes status = 2;
+inline void mappingProcessRequestResponse::clear_status() {
+  status_.ClearToEmpty();
+}
+inline const std::string& mappingProcessRequestResponse::status() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequestResponse.status)
+  return _internal_status();
+}
+inline void mappingProcessRequestResponse::set_status(const std::string& value) {
+  _internal_set_status(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequestResponse.status)
+}
+inline std::string* mappingProcessRequestResponse::mutable_status() {
+  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequestResponse.status)
+  return _internal_mutable_status();
+}
+inline const std::string& mappingProcessRequestResponse::_internal_status() const {
+  return status_.Get();
+}
+inline void mappingProcessRequestResponse::_internal_set_status(const std::string& value) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void mappingProcessRequestResponse::set_status(std::string&& value) {
+  
+  status_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMappingPipeline.mappingProcessRequestResponse.status)
+}
+inline void mappingProcessRequestResponse::set_status(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMappingPipeline.mappingProcessRequestResponse.status)
+}
+inline void mappingProcessRequestResponse::set_status(const void* value,
+    size_t size) {
+  
+  status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMappingPipeline.mappingProcessRequestResponse.status)
+}
+inline std::string* mappingProcessRequestResponse::_internal_mutable_status() {
+  
+  return status_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* mappingProcessRequestResponse::release_status() {
+  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequestResponse.status)
+  return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void mappingProcessRequestResponse::set_allocated_status(std::string* status) {
+  if (status != nullptr) {
+    
+  } else {
+    
+  }
+  status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequestResponse.status)
+}
+
+// sint32 xpcfGrpcReturnValue = 3;
 inline void mappingProcessRequestResponse::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }

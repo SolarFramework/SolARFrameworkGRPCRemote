@@ -23,7 +23,8 @@ namespace grpcITracking {
 
 static const char* grpcITrackingService_method_names[] = {
   "/grpcITracking.grpcITrackingService/setCameraParameters",
-  "/grpcITracking.grpcITrackingService/updateReferenceKeyframe",
+  "/grpcITracking.grpcITrackingService/setNewKeyframe",
+  "/grpcITracking.grpcITrackingService/checkNeedNewKeyframe",
   "/grpcITracking.grpcITrackingService/process",
 };
 
@@ -35,8 +36,9 @@ std::unique_ptr< grpcITrackingService::Stub> grpcITrackingService::NewStub(const
 
 grpcITrackingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_setCameraParameters_(grpcITrackingService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_updateReferenceKeyframe_(grpcITrackingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_process_(grpcITrackingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setNewKeyframe_(grpcITrackingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_checkNeedNewKeyframe_(grpcITrackingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_process_(grpcITrackingService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcITrackingService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcITracking::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
@@ -62,25 +64,48 @@ void grpcITrackingService::Stub::experimental_async::setCameraParameters(::grpc:
   return result;
 }
 
-::grpc::Status grpcITrackingService::Stub::updateReferenceKeyframe(::grpc::ClientContext* context, const ::grpcITracking::updateReferenceKeyframeRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcITracking::updateReferenceKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_updateReferenceKeyframe_, context, request, response);
+::grpc::Status grpcITrackingService::Stub::setNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest& request, ::google::protobuf::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcITracking::setNewKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setNewKeyframe_, context, request, response);
 }
 
-void grpcITrackingService::Stub::experimental_async::updateReferenceKeyframe(::grpc::ClientContext* context, const ::grpcITracking::updateReferenceKeyframeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcITracking::updateReferenceKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_updateReferenceKeyframe_, context, request, response, std::move(f));
+void grpcITrackingService::Stub::experimental_async::setNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcITracking::setNewKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setNewKeyframe_, context, request, response, std::move(f));
 }
 
-void grpcITrackingService::Stub::experimental_async::updateReferenceKeyframe(::grpc::ClientContext* context, const ::grpcITracking::updateReferenceKeyframeRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_updateReferenceKeyframe_, context, request, response, reactor);
+void grpcITrackingService::Stub::experimental_async::setNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setNewKeyframe_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcITrackingService::Stub::PrepareAsyncupdateReferenceKeyframeRaw(::grpc::ClientContext* context, const ::grpcITracking::updateReferenceKeyframeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcITracking::updateReferenceKeyframeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_updateReferenceKeyframe_, context, request);
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcITrackingService::Stub::PrepareAsyncsetNewKeyframeRaw(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcITracking::setNewKeyframeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setNewKeyframe_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcITrackingService::Stub::AsyncupdateReferenceKeyframeRaw(::grpc::ClientContext* context, const ::grpcITracking::updateReferenceKeyframeRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcITrackingService::Stub::AsyncsetNewKeyframeRaw(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncupdateReferenceKeyframeRaw(context, request, cq);
+    this->PrepareAsyncsetNewKeyframeRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcITrackingService::Stub::checkNeedNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest& request, ::grpcITracking::checkNeedNewKeyframeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcITracking::checkNeedNewKeyframeRequest, ::grpcITracking::checkNeedNewKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_checkNeedNewKeyframe_, context, request, response);
+}
+
+void grpcITrackingService::Stub::experimental_async::checkNeedNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest* request, ::grpcITracking::checkNeedNewKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcITracking::checkNeedNewKeyframeRequest, ::grpcITracking::checkNeedNewKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_checkNeedNewKeyframe_, context, request, response, std::move(f));
+}
+
+void grpcITrackingService::Stub::experimental_async::checkNeedNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest* request, ::grpcITracking::checkNeedNewKeyframeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_checkNeedNewKeyframe_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcITracking::checkNeedNewKeyframeResponse>* grpcITrackingService::Stub::PrepareAsynccheckNeedNewKeyframeRaw(::grpc::ClientContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcITracking::checkNeedNewKeyframeResponse, ::grpcITracking::checkNeedNewKeyframeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_checkNeedNewKeyframe_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcITracking::checkNeedNewKeyframeResponse>* grpcITrackingService::Stub::AsynccheckNeedNewKeyframeRaw(::grpc::ClientContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsynccheckNeedNewKeyframeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -122,15 +147,25 @@ grpcITrackingService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcITrackingService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcITrackingService::Service, ::grpcITracking::updateReferenceKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcITrackingService::Service, ::grpcITracking::setNewKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcITrackingService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcITracking::updateReferenceKeyframeRequest* req,
+             const ::grpcITracking::setNewKeyframeRequest* req,
              ::google::protobuf::Empty* resp) {
-               return service->updateReferenceKeyframe(ctx, req, resp);
+               return service->setNewKeyframe(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcITrackingService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcITrackingService::Service, ::grpcITracking::checkNeedNewKeyframeRequest, ::grpcITracking::checkNeedNewKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcITrackingService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcITracking::checkNeedNewKeyframeRequest* req,
+             ::grpcITracking::checkNeedNewKeyframeResponse* resp) {
+               return service->checkNeedNewKeyframe(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcITrackingService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcITrackingService::Service, ::grpcITracking::processRequest, ::grpcITracking::processResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcITrackingService::Service* service,
@@ -151,7 +186,14 @@ grpcITrackingService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcITrackingService::Service::updateReferenceKeyframe(::grpc::ServerContext* context, const ::grpcITracking::updateReferenceKeyframeRequest* request, ::google::protobuf::Empty* response) {
+::grpc::Status grpcITrackingService::Service::setNewKeyframe(::grpc::ServerContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcITrackingService::Service::checkNeedNewKeyframe(::grpc::ServerContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest* request, ::grpcITracking::checkNeedNewKeyframeResponse* response) {
   (void) context;
   (void) request;
   (void) response;

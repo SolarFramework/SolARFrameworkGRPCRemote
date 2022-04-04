@@ -57,12 +57,19 @@ class grpcIMapManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getSubmapResponse>> PrepareAsyncgetSubmap(::grpc::ClientContext* context, const ::grpcIMapManager::getSubmapRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getSubmapResponse>>(PrepareAsyncgetSubmapRaw(context, request, cq));
     }
-    virtual ::grpc::Status getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpcIMapManager::getLocalPointCloudResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloudResponse>> AsyncgetLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloudResponse>>(AsyncgetLocalPointCloudRaw(context, request, cq));
+    virtual ::grpc::Status getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc0Response>> AsyncgetLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc0Response>>(AsyncgetLocalPointCloud_grpc0Raw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloudResponse>> PrepareAsyncgetLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloudResponse>>(PrepareAsyncgetLocalPointCloudRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc0Response>> PrepareAsyncgetLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc0Response>>(PrepareAsyncgetLocalPointCloud_grpc0Raw(context, request, cq));
+    }
+    virtual ::grpc::Status getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc1Response>> AsyncgetLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc1Response>>(AsyncgetLocalPointCloud_grpc1Raw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc1Response>> PrepareAsyncgetLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc1Response>>(PrepareAsyncgetLocalPointCloud_grpc1Raw(context, request, cq));
     }
     virtual ::grpc::Status addCloudPoint(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest& request, ::grpcIMapManager::addCloudPointResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::addCloudPointResponse>> AsyncaddCloudPoint(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest& request, ::grpc::CompletionQueue* cq) {
@@ -141,11 +148,17 @@ class grpcIMapManagerService final {
       #else
       virtual void getSubmap(::grpc::ClientContext* context, const ::grpcIMapManager::getSubmapRequest* request, ::grpcIMapManager::getSubmapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       virtual void addCloudPoint(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest* request, ::grpcIMapManager::addCloudPointResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -210,8 +223,10 @@ class grpcIMapManagerService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getMapResponse>* PrepareAsyncgetMapRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getSubmapResponse>* AsyncgetSubmapRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getSubmapRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getSubmapResponse>* PrepareAsyncgetSubmapRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getSubmapRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloudResponse>* AsyncgetLocalPointCloudRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloudResponse>* PrepareAsyncgetLocalPointCloudRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc0Response>* AsyncgetLocalPointCloud_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc0Response>* PrepareAsyncgetLocalPointCloud_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc1Response>* AsyncgetLocalPointCloud_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::getLocalPointCloud_grpc1Response>* PrepareAsyncgetLocalPointCloud_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::addCloudPointResponse>* AsyncaddCloudPointRaw(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::addCloudPointResponse>* PrepareAsyncaddCloudPointRaw(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::removeCloudPointResponse>* AsyncremoveCloudPointRaw(::grpc::ClientContext* context, const ::grpcIMapManager::removeCloudPointRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -253,12 +268,19 @@ class grpcIMapManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getSubmapResponse>> PrepareAsyncgetSubmap(::grpc::ClientContext* context, const ::grpcIMapManager::getSubmapRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getSubmapResponse>>(PrepareAsyncgetSubmapRaw(context, request, cq));
     }
-    ::grpc::Status getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpcIMapManager::getLocalPointCloudResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloudResponse>> AsyncgetLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloudResponse>>(AsyncgetLocalPointCloudRaw(context, request, cq));
+    ::grpc::Status getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc0Response>> AsyncgetLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc0Response>>(AsyncgetLocalPointCloud_grpc0Raw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloudResponse>> PrepareAsyncgetLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloudResponse>>(PrepareAsyncgetLocalPointCloudRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc0Response>> PrepareAsyncgetLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc0Response>>(PrepareAsyncgetLocalPointCloud_grpc0Raw(context, request, cq));
+    }
+    ::grpc::Status getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc1Response>> AsyncgetLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc1Response>>(AsyncgetLocalPointCloud_grpc1Raw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc1Response>> PrepareAsyncgetLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc1Response>>(PrepareAsyncgetLocalPointCloud_grpc1Raw(context, request, cq));
     }
     ::grpc::Status addCloudPoint(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest& request, ::grpcIMapManager::addCloudPointResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::addCloudPointResponse>> AsyncaddCloudPoint(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest& request, ::grpc::CompletionQueue* cq) {
@@ -337,11 +359,17 @@ class grpcIMapManagerService final {
       #else
       void getSubmap(::grpc::ClientContext* context, const ::grpcIMapManager::getSubmapRequest* request, ::grpcIMapManager::getSubmapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response, std::function<void(::grpc::Status)>) override;
+      void getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void addCloudPoint(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest* request, ::grpcIMapManager::addCloudPointResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -408,8 +436,10 @@ class grpcIMapManagerService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getMapResponse>* PrepareAsyncgetMapRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getMapRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getSubmapResponse>* AsyncgetSubmapRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getSubmapRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getSubmapResponse>* PrepareAsyncgetSubmapRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getSubmapRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloudResponse>* AsyncgetLocalPointCloudRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloudResponse>* PrepareAsyncgetLocalPointCloudRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc0Response>* AsyncgetLocalPointCloud_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc0Response>* PrepareAsyncgetLocalPointCloud_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc1Response>* AsyncgetLocalPointCloud_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc1Response>* PrepareAsyncgetLocalPointCloud_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::addCloudPointResponse>* AsyncaddCloudPointRaw(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::addCloudPointResponse>* PrepareAsyncaddCloudPointRaw(::grpc::ClientContext* context, const ::grpcIMapManager::addCloudPointRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::removeCloudPointResponse>* AsyncremoveCloudPointRaw(::grpc::ClientContext* context, const ::grpcIMapManager::removeCloudPointRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -429,7 +459,8 @@ class grpcIMapManagerService final {
     const ::grpc::internal::RpcMethod rpcmethod_setMap_;
     const ::grpc::internal::RpcMethod rpcmethod_getMap_;
     const ::grpc::internal::RpcMethod rpcmethod_getSubmap_;
-    const ::grpc::internal::RpcMethod rpcmethod_getLocalPointCloud_;
+    const ::grpc::internal::RpcMethod rpcmethod_getLocalPointCloud_grpc0_;
+    const ::grpc::internal::RpcMethod rpcmethod_getLocalPointCloud_grpc1_;
     const ::grpc::internal::RpcMethod rpcmethod_addCloudPoint_;
     const ::grpc::internal::RpcMethod rpcmethod_removeCloudPoint_;
     const ::grpc::internal::RpcMethod rpcmethod_addKeyframe_;
@@ -448,7 +479,8 @@ class grpcIMapManagerService final {
     virtual ::grpc::Status setMap(::grpc::ServerContext* context, const ::grpcIMapManager::setMapRequest* request, ::grpcIMapManager::setMapResponse* response);
     virtual ::grpc::Status getMap(::grpc::ServerContext* context, const ::grpcIMapManager::getMapRequest* request, ::grpcIMapManager::getMapResponse* response);
     virtual ::grpc::Status getSubmap(::grpc::ServerContext* context, const ::grpcIMapManager::getSubmapRequest* request, ::grpcIMapManager::getSubmapResponse* response);
-    virtual ::grpc::Status getLocalPointCloud(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response);
+    virtual ::grpc::Status getLocalPointCloud_grpc0(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response);
+    virtual ::grpc::Status getLocalPointCloud_grpc1(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response);
     virtual ::grpc::Status addCloudPoint(::grpc::ServerContext* context, const ::grpcIMapManager::addCloudPointRequest* request, ::grpcIMapManager::addCloudPointResponse* response);
     virtual ::grpc::Status removeCloudPoint(::grpc::ServerContext* context, const ::grpcIMapManager::removeCloudPointRequest* request, ::grpcIMapManager::removeCloudPointResponse* response);
     virtual ::grpc::Status addKeyframe(::grpc::ServerContext* context, const ::grpcIMapManager::addKeyframeRequest* request, ::grpcIMapManager::addKeyframeResponse* response);
@@ -519,23 +551,43 @@ class grpcIMapManagerService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_getLocalPointCloud : public BaseClass {
+  class WithAsyncMethod_getLocalPointCloud_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_getLocalPointCloud() {
+    WithAsyncMethod_getLocalPointCloud_grpc0() {
       ::grpc::Service::MarkMethodAsync(3);
     }
-    ~WithAsyncMethod_getLocalPointCloud() override {
+    ~WithAsyncMethod_getLocalPointCloud_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getLocalPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloudRequest* /*request*/, ::grpcIMapManager::getLocalPointCloudResponse* /*response*/) override {
+    ::grpc::Status getLocalPointCloud_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetLocalPointCloud(::grpc::ServerContext* context, ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::getLocalPointCloudResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetLocalPointCloud_grpc0(::grpc::ServerContext* context, ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::getLocalPointCloud_grpc0Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_getLocalPointCloud_grpc1 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_getLocalPointCloud_grpc1() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_getLocalPointCloud_grpc1() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getLocalPointCloud_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc1Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetLocalPointCloud_grpc1(::grpc::ServerContext* context, ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::getLocalPointCloud_grpc1Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -544,7 +596,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_addCloudPoint() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_addCloudPoint() override {
       BaseClassMustBeDerivedFromService(this);
@@ -555,7 +607,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestaddCloudPoint(::grpc::ServerContext* context, ::grpcIMapManager::addCloudPointRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::addCloudPointResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -564,7 +616,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_removeCloudPoint() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_removeCloudPoint() override {
       BaseClassMustBeDerivedFromService(this);
@@ -575,7 +627,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestremoveCloudPoint(::grpc::ServerContext* context, ::grpcIMapManager::removeCloudPointRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::removeCloudPointResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -584,7 +636,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_addKeyframe() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_addKeyframe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -595,7 +647,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestaddKeyframe(::grpc::ServerContext* context, ::grpcIMapManager::addKeyframeRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::addKeyframeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -604,7 +656,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_removeKeyframe() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_removeKeyframe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -615,7 +667,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestremoveKeyframe(::grpc::ServerContext* context, ::grpcIMapManager::removeKeyframeRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::removeKeyframeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -624,7 +676,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_pointCloudPruning() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_pointCloudPruning() override {
       BaseClassMustBeDerivedFromService(this);
@@ -635,7 +687,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestpointCloudPruning(::grpc::ServerContext* context, ::grpcIMapManager::pointCloudPruningRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::pointCloudPruningResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -644,7 +696,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_keyframePruning() {
-      ::grpc::Service::MarkMethodAsync(9);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_keyframePruning() override {
       BaseClassMustBeDerivedFromService(this);
@@ -655,7 +707,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestkeyframePruning(::grpc::ServerContext* context, ::grpcIMapManager::keyframePruningRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::keyframePruningResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -664,7 +716,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_saveToFile() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -675,7 +727,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsaveToFile(::grpc::ServerContext* context, ::grpcIMapManager::saveToFileRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::saveToFileResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -684,7 +736,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -695,10 +747,10 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestloadFromFile(::grpc::ServerContext* context, ::grpcIMapManager::loadFromFileRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::loadFromFileResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_setMap<WithAsyncMethod_getMap<WithAsyncMethod_getSubmap<WithAsyncMethod_getLocalPointCloud<WithAsyncMethod_addCloudPoint<WithAsyncMethod_removeCloudPoint<WithAsyncMethod_addKeyframe<WithAsyncMethod_removeKeyframe<WithAsyncMethod_pointCloudPruning<WithAsyncMethod_keyframePruning<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<Service > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_setMap<WithAsyncMethod_getMap<WithAsyncMethod_getSubmap<WithAsyncMethod_getLocalPointCloud_grpc0<WithAsyncMethod_getLocalPointCloud_grpc1<WithAsyncMethod_addCloudPoint<WithAsyncMethod_removeCloudPoint<WithAsyncMethod_addKeyframe<WithAsyncMethod_removeKeyframe<WithAsyncMethod_pointCloudPruning<WithAsyncMethod_keyframePruning<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<Service > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_setMap : public BaseClass {
    private:
@@ -841,49 +893,96 @@ class grpcIMapManagerService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getLocalPointCloud : public BaseClass {
+  class ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getLocalPointCloud() {
+    ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::getLocalPointCloudRequest, ::grpcIMapManager::getLocalPointCloudResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::getLocalPointCloud_grpc0Request, ::grpcIMapManager::getLocalPointCloud_grpc0Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response) { return this->getLocalPointCloud(context, request, response); }));}
-    void SetMessageAllocatorFor_getLocalPointCloud(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapManager::getLocalPointCloudRequest, ::grpcIMapManager::getLocalPointCloudResponse>* allocator) {
+                     context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response) { return this->getLocalPointCloud_grpc0(context, request, response); }));}
+    void SetMessageAllocatorFor_getLocalPointCloud_grpc0(
+        ::grpc::experimental::MessageAllocator< ::grpcIMapManager::getLocalPointCloud_grpc0Request, ::grpcIMapManager::getLocalPointCloud_grpc0Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::getLocalPointCloudRequest, ::grpcIMapManager::getLocalPointCloudResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::getLocalPointCloud_grpc0Request, ::grpcIMapManager::getLocalPointCloud_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getLocalPointCloud() override {
+    ~ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getLocalPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloudRequest* /*request*/, ::grpcIMapManager::getLocalPointCloudResponse* /*response*/) override {
+    ::grpc::Status getLocalPointCloud_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* getLocalPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloudRequest* /*request*/, ::grpcIMapManager::getLocalPointCloudResponse* /*response*/)
+    virtual ::grpc::ServerUnaryReactor* getLocalPointCloud_grpc0(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc0Response* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getLocalPointCloud(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloudRequest* /*request*/, ::grpcIMapManager::getLocalPointCloudResponse* /*response*/)
+    virtual ::grpc::experimental::ServerUnaryReactor* getLocalPointCloud_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc0Response* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::getLocalPointCloud_grpc1Request, ::grpcIMapManager::getLocalPointCloud_grpc1Response>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response) { return this->getLocalPointCloud_grpc1(context, request, response); }));}
+    void SetMessageAllocatorFor_getLocalPointCloud_grpc1(
+        ::grpc::experimental::MessageAllocator< ::grpcIMapManager::getLocalPointCloud_grpc1Request, ::grpcIMapManager::getLocalPointCloud_grpc1Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::getLocalPointCloud_grpc1Request, ::grpcIMapManager::getLocalPointCloud_grpc1Response>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getLocalPointCloud_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc1Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getLocalPointCloud_grpc1(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc1Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getLocalPointCloud_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc1Response* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -898,7 +997,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(4,
+        MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::addCloudPointRequest, ::grpcIMapManager::addCloudPointResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -910,9 +1009,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_addCloudPoint(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::addCloudPointRequest, ::grpcIMapManager::addCloudPointResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::addCloudPointRequest, ::grpcIMapManager::addCloudPointResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -945,7 +1044,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(5,
+        MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::removeCloudPointRequest, ::grpcIMapManager::removeCloudPointResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -957,9 +1056,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_removeCloudPoint(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::removeCloudPointRequest, ::grpcIMapManager::removeCloudPointResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::removeCloudPointRequest, ::grpcIMapManager::removeCloudPointResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -992,7 +1091,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(6,
+        MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::addKeyframeRequest, ::grpcIMapManager::addKeyframeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1004,9 +1103,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_addKeyframe(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::addKeyframeRequest, ::grpcIMapManager::addKeyframeResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::addKeyframeRequest, ::grpcIMapManager::addKeyframeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1039,7 +1138,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(7,
+        MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::removeKeyframeRequest, ::grpcIMapManager::removeKeyframeResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1051,9 +1150,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_removeKeyframe(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::removeKeyframeRequest, ::grpcIMapManager::removeKeyframeResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::removeKeyframeRequest, ::grpcIMapManager::removeKeyframeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1086,7 +1185,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(8,
+        MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::pointCloudPruningRequest, ::grpcIMapManager::pointCloudPruningResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1098,9 +1197,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_pointCloudPruning(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::pointCloudPruningRequest, ::grpcIMapManager::pointCloudPruningResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::pointCloudPruningRequest, ::grpcIMapManager::pointCloudPruningResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1133,7 +1232,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(9,
+        MarkMethodCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::keyframePruningRequest, ::grpcIMapManager::keyframePruningResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1145,9 +1244,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_keyframePruning(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::keyframePruningRequest, ::grpcIMapManager::keyframePruningResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::keyframePruningRequest, ::grpcIMapManager::keyframePruningResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1180,7 +1279,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(10,
+        MarkMethodCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1192,9 +1291,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_saveToFile(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1227,7 +1326,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(11,
+        MarkMethodCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1239,9 +1338,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_loadFromFile(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1264,10 +1363,10 @@ class grpcIMapManagerService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<Service > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<Service > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<Service > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<Service > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_setMap : public BaseClass {
    private:
@@ -1320,18 +1419,35 @@ class grpcIMapManagerService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_getLocalPointCloud : public BaseClass {
+  class WithGenericMethod_getLocalPointCloud_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_getLocalPointCloud() {
+    WithGenericMethod_getLocalPointCloud_grpc0() {
       ::grpc::Service::MarkMethodGeneric(3);
     }
-    ~WithGenericMethod_getLocalPointCloud() override {
+    ~WithGenericMethod_getLocalPointCloud_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getLocalPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloudRequest* /*request*/, ::grpcIMapManager::getLocalPointCloudResponse* /*response*/) override {
+    ::grpc::Status getLocalPointCloud_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc0Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_getLocalPointCloud_grpc1 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_getLocalPointCloud_grpc1() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_getLocalPointCloud_grpc1() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getLocalPointCloud_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc1Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1342,7 +1458,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_addCloudPoint() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_addCloudPoint() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1359,7 +1475,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_removeCloudPoint() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_removeCloudPoint() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1376,7 +1492,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_addKeyframe() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_addKeyframe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1393,7 +1509,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_removeKeyframe() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_removeKeyframe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1410,7 +1526,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_pointCloudPruning() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_pointCloudPruning() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1427,7 +1543,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_keyframePruning() {
-      ::grpc::Service::MarkMethodGeneric(9);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_keyframePruning() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1444,7 +1560,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_saveToFile() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1461,7 +1577,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1533,23 +1649,43 @@ class grpcIMapManagerService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_getLocalPointCloud : public BaseClass {
+  class WithRawMethod_getLocalPointCloud_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_getLocalPointCloud() {
+    WithRawMethod_getLocalPointCloud_grpc0() {
       ::grpc::Service::MarkMethodRaw(3);
     }
-    ~WithRawMethod_getLocalPointCloud() override {
+    ~WithRawMethod_getLocalPointCloud_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getLocalPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloudRequest* /*request*/, ::grpcIMapManager::getLocalPointCloudResponse* /*response*/) override {
+    ::grpc::Status getLocalPointCloud_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetLocalPointCloud(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetLocalPointCloud_grpc0(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_getLocalPointCloud_grpc1 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_getLocalPointCloud_grpc1() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_getLocalPointCloud_grpc1() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getLocalPointCloud_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc1Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetLocalPointCloud_grpc1(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1558,7 +1694,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_addCloudPoint() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_addCloudPoint() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1569,7 +1705,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestaddCloudPoint(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1578,7 +1714,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_removeCloudPoint() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_removeCloudPoint() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1589,7 +1725,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestremoveCloudPoint(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1598,7 +1734,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_addKeyframe() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_addKeyframe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1609,7 +1745,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestaddKeyframe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1618,7 +1754,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_removeKeyframe() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_removeKeyframe() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1629,7 +1765,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestremoveKeyframe(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1638,7 +1774,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_pointCloudPruning() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_pointCloudPruning() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1649,7 +1785,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestpointCloudPruning(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1658,7 +1794,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_keyframePruning() {
-      ::grpc::Service::MarkMethodRaw(9);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_keyframePruning() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1669,7 +1805,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestkeyframePruning(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1678,7 +1814,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_saveToFile() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1689,7 +1825,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsaveToFile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1698,7 +1834,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1709,7 +1845,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestloadFromFile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1827,11 +1963,11 @@ class grpcIMapManagerService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getLocalPointCloud : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getLocalPointCloud_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getLocalPointCloud() {
+    ExperimentalWithRawCallbackMethod_getLocalPointCloud_grpc0() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -1845,21 +1981,59 @@ class grpcIMapManagerService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getLocalPointCloud(context, request, response); }));
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getLocalPointCloud_grpc0(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getLocalPointCloud() override {
+    ~ExperimentalWithRawCallbackMethod_getLocalPointCloud_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getLocalPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloudRequest* /*request*/, ::grpcIMapManager::getLocalPointCloudResponse* /*response*/) override {
+    ::grpc::Status getLocalPointCloud_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* getLocalPointCloud(
+    virtual ::grpc::ServerUnaryReactor* getLocalPointCloud_grpc0(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getLocalPointCloud(
+    virtual ::grpc::experimental::ServerUnaryReactor* getLocalPointCloud_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_getLocalPointCloud_grpc1 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_getLocalPointCloud_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getLocalPointCloud_grpc1(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_getLocalPointCloud_grpc1() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getLocalPointCloud_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc1Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getLocalPointCloud_grpc1(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getLocalPointCloud_grpc1(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #endif
       { return nullptr; }
@@ -1875,7 +2049,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(4,
+        MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1913,7 +2087,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(5,
+        MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1951,7 +2125,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(6,
+        MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1989,7 +2163,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(7,
+        MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -2027,7 +2201,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(8,
+        MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -2065,7 +2239,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(9,
+        MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -2103,7 +2277,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(10,
+        MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -2141,7 +2315,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(11,
+        MarkMethodRawCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -2250,31 +2424,58 @@ class grpcIMapManagerService final {
     virtual ::grpc::Status StreamedgetSubmap(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::getSubmapRequest,::grpcIMapManager::getSubmapResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_getLocalPointCloud : public BaseClass {
+  class WithStreamedUnaryMethod_getLocalPointCloud_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_getLocalPointCloud() {
+    WithStreamedUnaryMethod_getLocalPointCloud_grpc0() {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIMapManager::getLocalPointCloudRequest, ::grpcIMapManager::getLocalPointCloudResponse>(
+          ::grpcIMapManager::getLocalPointCloud_grpc0Request, ::grpcIMapManager::getLocalPointCloud_grpc0Response>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::grpcIMapManager::getLocalPointCloudRequest, ::grpcIMapManager::getLocalPointCloudResponse>* streamer) {
-                       return this->StreamedgetLocalPointCloud(context,
+                     ::grpcIMapManager::getLocalPointCloud_grpc0Request, ::grpcIMapManager::getLocalPointCloud_grpc0Response>* streamer) {
+                       return this->StreamedgetLocalPointCloud_grpc0(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_getLocalPointCloud() override {
+    ~WithStreamedUnaryMethod_getLocalPointCloud_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getLocalPointCloud(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloudRequest* /*request*/, ::grpcIMapManager::getLocalPointCloudResponse* /*response*/) override {
+    ::grpc::Status getLocalPointCloud_grpc0(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc0Response* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetLocalPointCloud(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::getLocalPointCloudRequest,::grpcIMapManager::getLocalPointCloudResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetLocalPointCloud_grpc0(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::getLocalPointCloud_grpc0Request,::grpcIMapManager::getLocalPointCloud_grpc0Response>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_getLocalPointCloud_grpc1 : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_getLocalPointCloud_grpc1() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIMapManager::getLocalPointCloud_grpc1Request, ::grpcIMapManager::getLocalPointCloud_grpc1Response>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIMapManager::getLocalPointCloud_grpc1Request, ::grpcIMapManager::getLocalPointCloud_grpc1Response>* streamer) {
+                       return this->StreamedgetLocalPointCloud_grpc1(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_getLocalPointCloud_grpc1() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status getLocalPointCloud_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* /*request*/, ::grpcIMapManager::getLocalPointCloud_grpc1Response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedgetLocalPointCloud_grpc1(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::getLocalPointCloud_grpc1Request,::grpcIMapManager::getLocalPointCloud_grpc1Response>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_addCloudPoint : public BaseClass {
@@ -2282,7 +2483,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_addCloudPoint() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::addCloudPointRequest, ::grpcIMapManager::addCloudPointResponse>(
             [this](::grpc::ServerContext* context,
@@ -2309,7 +2510,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_removeCloudPoint() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::removeCloudPointRequest, ::grpcIMapManager::removeCloudPointResponse>(
             [this](::grpc::ServerContext* context,
@@ -2336,7 +2537,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_addKeyframe() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::addKeyframeRequest, ::grpcIMapManager::addKeyframeResponse>(
             [this](::grpc::ServerContext* context,
@@ -2363,7 +2564,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_removeKeyframe() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::removeKeyframeRequest, ::grpcIMapManager::removeKeyframeResponse>(
             [this](::grpc::ServerContext* context,
@@ -2390,7 +2591,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_pointCloudPruning() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::pointCloudPruningRequest, ::grpcIMapManager::pointCloudPruningResponse>(
             [this](::grpc::ServerContext* context,
@@ -2417,7 +2618,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_keyframePruning() {
-      ::grpc::Service::MarkMethodStreamed(9,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::keyframePruningRequest, ::grpcIMapManager::keyframePruningResponse>(
             [this](::grpc::ServerContext* context,
@@ -2444,7 +2645,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_saveToFile() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse>(
             [this](::grpc::ServerContext* context,
@@ -2471,7 +2672,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse>(
             [this](::grpc::ServerContext* context,
@@ -2492,9 +2693,9 @@ class grpcIMapManagerService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedloadFromFile(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::loadFromFileRequest,::grpcIMapManager::loadFromFileResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<Service > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<Service > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<Service > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<Service > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIMapManager

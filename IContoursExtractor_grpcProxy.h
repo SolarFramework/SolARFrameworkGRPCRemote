@@ -3,7 +3,7 @@
 
 #ifndef ICONTOURSEXTRACTOR_GRPCPROXY_H
 #define ICONTOURSEXTRACTOR_GRPCPROXY_H
-#include "api/features/IContoursExtractor.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/IContoursExtractor.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

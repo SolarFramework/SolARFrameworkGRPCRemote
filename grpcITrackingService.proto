@@ -10,9 +10,19 @@ bytes intrinsicParams = 1;
 bytes distorsionParams = 2;
 }
 
-message updateReferenceKeyframeRequest
+message setNewKeyframeRequest
 {
-bytes refKeyframe = 1;
+bytes newKeyframe = 1;
+}
+
+message checkNeedNewKeyframeRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message checkNeedNewKeyframeResponse
+{
+bool xpcfGrpcReturnValue = 1;
 }
 
 message processRequest
@@ -30,7 +40,8 @@ sint32 xpcfGrpcReturnValue = 2;
 
 service grpcITrackingService {
 rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
-rpc updateReferenceKeyframe(updateReferenceKeyframeRequest) returns(google.protobuf.Empty) {}
+rpc setNewKeyframe(setNewKeyframeRequest) returns(google.protobuf.Empty) {}
+rpc checkNeedNewKeyframe(checkNeedNewKeyframeRequest) returns(checkNeedNewKeyframeResponse) {}
 rpc process(processRequest) returns(processResponse) {}
 }
 

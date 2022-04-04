@@ -3,7 +3,7 @@
 
 #ifndef IMAPMANAGER_GRPCPROXY_H
 #define IMAPMANAGER_GRPCPROXY_H
-#include "api/storage/IMapManager.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -25,6 +25,7 @@ class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
     SolAR::FrameworkReturnCode setMap(SRef<SolAR::datastructure::Map> const map)     override;
     SolAR::FrameworkReturnCode getMap(SRef<SolAR::datastructure::Map>& map)     override;
     SolAR::FrameworkReturnCode getSubmap(uint32_t idCenteredKeyframe, uint32_t nbKeyframes, SRef<SolAR::datastructure::Map>& submap)     override;
+    SolAR::FrameworkReturnCode getLocalPointCloud(std::vector<SRef<SolAR::datastructure::Keyframe>> const& keyframes, std::vector<SRef<SolAR::datastructure::CloudPoint>>& localPointCloud)     const     override;
     SolAR::FrameworkReturnCode getLocalPointCloud(SRef<SolAR::datastructure::Keyframe> const keyframe, float const minWeightNeighbor, std::vector<SRef<SolAR::datastructure::CloudPoint>>& localPointCloud)     const     override;
     SolAR::FrameworkReturnCode addCloudPoint(SRef<SolAR::datastructure::CloudPoint> const cloudPoint)     override;
     SolAR::FrameworkReturnCode removeCloudPoint(SRef<SolAR::datastructure::CloudPoint> const cloudPoint)     override;

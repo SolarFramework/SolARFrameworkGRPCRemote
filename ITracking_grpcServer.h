@@ -2,7 +2,7 @@
 
 #ifndef ITRACKING_GRPCSERVER_H
 #define ITRACKING_GRPCSERVER_H
-#include "api/slam/ITracking.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/slam/ITracking.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -26,7 +26,8 @@ class ITracking_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
       public:
         grpcITrackingServiceImpl() = default;
         ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcITracking::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
-        ::grpc::Status updateReferenceKeyframe(::grpc::ServerContext* context, const ::grpcITracking::updateReferenceKeyframeRequest* request, ::google::protobuf::Empty* response) override;
+        ::grpc::Status setNewKeyframe(::grpc::ServerContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response) override;
+        ::grpc::Status checkNeedNewKeyframe(::grpc::ServerContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest* request, ::grpcITracking::checkNeedNewKeyframeResponse* response) override;
         ::grpc::Status process(::grpc::ServerContext* context, const ::grpcITracking::processRequest* request, ::grpcITracking::processResponse* response) override;
 
         SRef<SolAR::api::slam::ITracking> m_xpcfComponent;

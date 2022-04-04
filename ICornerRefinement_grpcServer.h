@@ -2,7 +2,7 @@
 
 #ifndef ICORNERREFINEMENT_GRPCSERVER_H
 #define ICORNERREFINEMENT_GRPCSERVER_H
-#include "api/features/ICornerRefinement.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/ICornerRefinement.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

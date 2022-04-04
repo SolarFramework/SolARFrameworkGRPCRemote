@@ -47,7 +47,7 @@ struct TableStruct_grpcIMappingService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,6 +56,12 @@ struct TableStruct_grpcIMappingService_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIMappingService_2eproto;
 ::PROTOBUF_NAMESPACE_ID::Metadata descriptor_table_grpcIMappingService_2eproto_metadata_getter(int index);
 namespace grpcIMapping {
+class idleRequest;
+struct idleRequestDefaultTypeInternal;
+extern idleRequestDefaultTypeInternal _idleRequest_default_instance_;
+class idleResponse;
+struct idleResponseDefaultTypeInternal;
+extern idleResponseDefaultTypeInternal _idleResponse_default_instance_;
 class processRequest;
 struct processRequestDefaultTypeInternal;
 extern processRequestDefaultTypeInternal _processRequest_default_instance_;
@@ -67,6 +73,8 @@ struct setCameraParametersRequestDefaultTypeInternal;
 extern setCameraParametersRequestDefaultTypeInternal _setCameraParametersRequest_default_instance_;
 }  // namespace grpcIMapping
 PROTOBUF_NAMESPACE_OPEN
+template<> ::grpcIMapping::idleRequest* Arena::CreateMaybeMessage<::grpcIMapping::idleRequest>(Arena*);
+template<> ::grpcIMapping::idleResponse* Arena::CreateMaybeMessage<::grpcIMapping::idleResponse>(Arena*);
 template<> ::grpcIMapping::processRequest* Arena::CreateMaybeMessage<::grpcIMapping::processRequest>(Arena*);
 template<> ::grpcIMapping::processResponse* Arena::CreateMaybeMessage<::grpcIMapping::processResponse>(Arena*);
 template<> ::grpcIMapping::setCameraParametersRequest* Arena::CreateMaybeMessage<::grpcIMapping::setCameraParametersRequest>(Arena*);
@@ -219,6 +227,280 @@ class setCameraParametersRequest PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class idleRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapping.idleRequest) */ {
+ public:
+  inline idleRequest() : idleRequest(nullptr) {}
+  virtual ~idleRequest();
+  explicit constexpr idleRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  idleRequest(const idleRequest& from);
+  idleRequest(idleRequest&& from) noexcept
+    : idleRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline idleRequest& operator=(const idleRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline idleRequest& operator=(idleRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const idleRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const idleRequest* internal_default_instance() {
+    return reinterpret_cast<const idleRequest*>(
+               &_idleRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(idleRequest& a, idleRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(idleRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(idleRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline idleRequest* New() const final {
+    return CreateMaybeMessage<idleRequest>(nullptr);
+  }
+
+  idleRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<idleRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const idleRequest& from);
+  void MergeFrom(const idleRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(idleRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapping.idleRequest";
+  }
+  protected:
+  explicit idleRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMappingService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapping.idleRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMappingService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class idleResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapping.idleResponse) */ {
+ public:
+  inline idleResponse() : idleResponse(nullptr) {}
+  virtual ~idleResponse();
+  explicit constexpr idleResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  idleResponse(const idleResponse& from);
+  idleResponse(idleResponse&& from) noexcept
+    : idleResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline idleResponse& operator=(const idleResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline idleResponse& operator=(idleResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const idleResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const idleResponse* internal_default_instance() {
+    return reinterpret_cast<const idleResponse*>(
+               &_idleResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(idleResponse& a, idleResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(idleResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(idleResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline idleResponse* New() const final {
+    return CreateMaybeMessage<idleResponse>(nullptr);
+  }
+
+  idleResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<idleResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const idleResponse& from);
+  void MergeFrom(const idleResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(idleResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapping.idleResponse";
+  }
+  protected:
+  explicit idleResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMappingService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // bool xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  bool xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(bool value);
+  private:
+  bool _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapping.idleResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  bool xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMappingService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class processRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapping.processRequest) */ {
  public:
@@ -262,7 +544,7 @@ class processRequest PROTOBUF_FINAL :
                &_processRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(processRequest& a, processRequest& b) {
     a.Swap(&b);
@@ -435,7 +717,7 @@ class processResponse PROTOBUF_FINAL :
                &_processResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(processResponse& a, processResponse& b) {
     a.Swap(&b);
@@ -615,6 +897,54 @@ inline void setCameraParametersRequest::set_allocated_camparams(std::string* cam
   camparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:grpcIMapping.setCameraParametersRequest.camParams)
+}
+
+// -------------------------------------------------------------------
+
+// idleRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void idleRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 idleRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 idleRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapping.idleRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void idleRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void idleRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapping.idleRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
+// idleResponse
+
+// bool xpcfGrpcReturnValue = 1;
+inline void idleResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = false;
+}
+inline bool idleResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline bool idleResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapping.idleResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void idleResponse::_internal_set_xpcfgrpcreturnvalue(bool value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void idleResponse::set_xpcfgrpcreturnvalue(bool value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIMapping.idleResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -851,6 +1181,10 @@ inline void processResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::in
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

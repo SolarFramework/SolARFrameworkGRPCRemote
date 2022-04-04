@@ -23,6 +23,7 @@ namespace grpcIMapping {
 
 static const char* grpcIMappingService_method_names[] = {
   "/grpcIMapping.grpcIMappingService/setCameraParameters",
+  "/grpcIMapping.grpcIMappingService/idle",
   "/grpcIMapping.grpcIMappingService/process",
 };
 
@@ -34,7 +35,8 @@ std::unique_ptr< grpcIMappingService::Stub> grpcIMappingService::NewStub(const s
 
 grpcIMappingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_setCameraParameters_(grpcIMappingService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_process_(grpcIMappingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_idle_(grpcIMappingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_process_(grpcIMappingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMappingService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapping::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
@@ -56,6 +58,29 @@ void grpcIMappingService::Stub::experimental_async::setCameraParameters(::grpc::
 ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIMappingService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapping::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMappingService::Stub::idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest& request, ::grpcIMapping::idleResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapping::idleRequest, ::grpcIMapping::idleResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_idle_, context, request, response);
+}
+
+void grpcIMappingService::Stub::experimental_async::idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapping::idleRequest, ::grpcIMapping::idleResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_idle_, context, request, response, std::move(f));
+}
+
+void grpcIMappingService::Stub::experimental_async::idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_idle_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapping::idleResponse>* grpcIMappingService::Stub::PrepareAsyncidleRaw(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapping::idleResponse, ::grpcIMapping::idleRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_idle_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapping::idleResponse>* grpcIMappingService::Stub::AsyncidleRaw(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncidleRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -97,6 +122,16 @@ grpcIMappingService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMappingService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMappingService::Service, ::grpcIMapping::idleRequest, ::grpcIMapping::idleResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMappingService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapping::idleRequest* req,
+             ::grpcIMapping::idleResponse* resp) {
+               return service->idle(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMappingService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingService::Service, ::grpcIMapping::processRequest, ::grpcIMapping::processResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -110,6 +145,13 @@ grpcIMappingService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMappingService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapping::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMappingService::Service::idle(::grpc::ServerContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response) {
   (void) context;
   (void) request;
   (void) response;

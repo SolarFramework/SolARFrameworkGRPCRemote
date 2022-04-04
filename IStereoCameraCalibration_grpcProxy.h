@@ -3,7 +3,7 @@
 
 #ifndef ISTEREOCAMERACALIBRATION_GRPCPROXY_H
 #define ISTEREOCAMERACALIBRATION_GRPCPROXY_H
-#include "api/input/devices/IStereoCameraCalibration.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/input/devices/IStereoCameraCalibration.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -178,7 +178,7 @@ class init_grpc0Request PROTOBUF_FINAL :
                &_init_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   friend void swap(init_grpc0Request& a, init_grpc0Request& b) {
     a.Swap(&b);

@@ -19,7 +19,7 @@ IMapManager_grpcProxy::IMapManager_grpcProxy():xpcf::ConfigurableBase(xpcf::toMa
   declareInterface<SolAR::api::storage::IMapManager>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(13);
+  m_grpcProxyCompressionConfig.resize(14);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -136,11 +136,43 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getSubmap(uint32_t idCentered
 }
 
 
+SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getLocalPointCloud(std::vector<SRef<SolAR::datastructure::Keyframe>> const& keyframes, std::vector<SRef<SolAR::datastructure::CloudPoint>>& localPointCloud) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapManager::getLocalPointCloud_grpc0Request reqIn;
+  ::grpcIMapManager::getLocalPointCloud_grpc0Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getLocalPointCloud", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_keyframes(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Keyframe>>>(keyframes));
+  reqIn.set_localpointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(localPointCloud));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::getLocalPointCloud request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getLocalPointCloud_grpc0(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::getLocalPointCloud response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getLocalPointCloud_grpc0 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapManagerService","getLocalPointCloud_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  localPointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(respOut.localpointcloud());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
 SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getLocalPointCloud(SRef<SolAR::datastructure::Keyframe> const keyframe, float const minWeightNeighbor, std::vector<SRef<SolAR::datastructure::CloudPoint>>& localPointCloud) const
 {
   ::grpc::ClientContext context;
-  ::grpcIMapManager::getLocalPointCloudRequest reqIn;
-  ::grpcIMapManager::getLocalPointCloudResponse respOut;
+  ::grpcIMapManager::getLocalPointCloud_grpc1Request reqIn;
+  ::grpcIMapManager::getLocalPointCloud_grpc1Response respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getLocalPointCloud", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
@@ -153,15 +185,15 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getLocalPointCloud(SRef<SolAR
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapManager_grpcProxy::getLocalPointCloud request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->getLocalPointCloud(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getLocalPointCloud_grpc1(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapManager_grpcProxy::getLocalPointCloud response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getLocalPointCloud rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMapManagerService","getLocalPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "getLocalPointCloud_grpc1 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapManagerService","getLocalPointCloud_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   localPointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(respOut.localpointcloud());

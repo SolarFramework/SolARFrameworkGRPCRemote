@@ -2,7 +2,7 @@
 
 #ifndef IMAPPING_GRPCSERVER_H
 #define IMAPPING_GRPCSERVER_H
-#include "api/slam/IMapping.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/slam/IMapping.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -26,6 +26,7 @@ class IMapping_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
       public:
         grpcIMappingServiceImpl() = default;
         ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapping::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
+        ::grpc::Status idle(::grpc::ServerContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response) override;
         ::grpc::Status process(::grpc::ServerContext* context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response) override;
 
         SRef<SolAR::api::slam::IMapping> m_xpcfComponent;

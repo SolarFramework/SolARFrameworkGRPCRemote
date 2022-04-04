@@ -50,11 +50,16 @@ message mappingProcessRequestRequest
 int32 grpcServerCompressionFormat  = 1;
 bytes image = 2;
 bytes pose = 3;
+bytes transform = 4;
+bytes updatedTransform = 5;
+bytes status = 6;
 }
 
 message mappingProcessRequestResponse
 {
-sint32 xpcfGrpcReturnValue = 1;
+bytes updatedTransform = 1;
+bytes status = 2;
+sint32 xpcfGrpcReturnValue = 3;
 }
 
 message getDataForVisualizationRequest

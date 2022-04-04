@@ -163,7 +163,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setCameraParameters(SolA
 }
 
 
-SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df const& pose)
+SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df const& pose, SolAR::datastructure::Transform3Df const& transform, SolAR::datastructure::Transform3Df& updatedTransform, SolAR::api::pipeline::MappingStatus& status)
 {
   ::grpc::ClientContext context;
   ::grpcIMappingPipeline::mappingProcessRequestRequest reqIn;
@@ -175,6 +175,9 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(SR
   #endif
   reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
+  reqIn.set_transform(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform));
+  reqIn.set_updatedtransform(xpcf::serialize<SolAR::datastructure::Transform3Df>(updatedTransform));
+  reqIn.set_status(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(status));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::mappingProcessRequest request sent at " << to_simple_string(start) << std::endl;
@@ -190,6 +193,8 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(SR
     throw xpcf::RemotingException("grpcIMappingPipelineService","mappingProcessRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  updatedTransform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.updatedtransform());
+  status = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(respOut.status());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

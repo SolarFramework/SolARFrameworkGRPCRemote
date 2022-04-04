@@ -19,7 +19,7 @@ ITracking_grpcProxy::ITracking_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IT
   declareInterface<SolAR::api::slam::ITracking>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(4);
+  m_grpcProxyCompressionConfig.resize(5);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -67,27 +67,56 @@ void  ITracking_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibrat
 }
 
 
-void  ITracking_grpcProxy::updateReferenceKeyframe(SRef<SolAR::datastructure::Keyframe> const refKeyframe)
+void  ITracking_grpcProxy::setNewKeyframe(SRef<SolAR::datastructure::Keyframe> const newKeyframe)
 {
   ::grpc::ClientContext context;
-  ::grpcITracking::updateReferenceKeyframeRequest reqIn;
+  ::grpcITracking::setNewKeyframeRequest reqIn;
   ::google::protobuf::Empty respOut;
-  reqIn.set_refkeyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(refKeyframe));
+  reqIn.set_newkeyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(newKeyframe));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ITracking_grpcProxy::updateReferenceKeyframe request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> ITracking_grpcProxy::setNewKeyframe request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->updateReferenceKeyframe(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->setNewKeyframe(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ITracking_grpcProxy::updateReferenceKeyframe response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> ITracking_grpcProxy::setNewKeyframe response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "updateReferenceKeyframe rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcITrackingService","updateReferenceKeyframe",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "setNewKeyframe rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcITrackingService","setNewKeyframe",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+}
+
+
+bool  ITracking_grpcProxy::checkNeedNewKeyframe()
+{
+  ::grpc::ClientContext context;
+  ::grpcITracking::checkNeedNewKeyframeRequest reqIn;
+  ::grpcITracking::checkNeedNewKeyframeResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "checkNeedNewKeyframe", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> ITracking_grpcProxy::checkNeedNewKeyframe request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->checkNeedNewKeyframe(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> ITracking_grpcProxy::checkNeedNewKeyframe response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "checkNeedNewKeyframe rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcITrackingService","checkNeedNewKeyframe",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return respOut.xpcfgrpcreturnvalue();
 }
 
 

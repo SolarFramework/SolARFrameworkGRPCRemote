@@ -47,7 +47,7 @@ struct TableStruct_grpcIMapManagerService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[24]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[26]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -68,12 +68,18 @@ extern addKeyframeRequestDefaultTypeInternal _addKeyframeRequest_default_instanc
 class addKeyframeResponse;
 struct addKeyframeResponseDefaultTypeInternal;
 extern addKeyframeResponseDefaultTypeInternal _addKeyframeResponse_default_instance_;
-class getLocalPointCloudRequest;
-struct getLocalPointCloudRequestDefaultTypeInternal;
-extern getLocalPointCloudRequestDefaultTypeInternal _getLocalPointCloudRequest_default_instance_;
-class getLocalPointCloudResponse;
-struct getLocalPointCloudResponseDefaultTypeInternal;
-extern getLocalPointCloudResponseDefaultTypeInternal _getLocalPointCloudResponse_default_instance_;
+class getLocalPointCloud_grpc0Request;
+struct getLocalPointCloud_grpc0RequestDefaultTypeInternal;
+extern getLocalPointCloud_grpc0RequestDefaultTypeInternal _getLocalPointCloud_grpc0Request_default_instance_;
+class getLocalPointCloud_grpc0Response;
+struct getLocalPointCloud_grpc0ResponseDefaultTypeInternal;
+extern getLocalPointCloud_grpc0ResponseDefaultTypeInternal _getLocalPointCloud_grpc0Response_default_instance_;
+class getLocalPointCloud_grpc1Request;
+struct getLocalPointCloud_grpc1RequestDefaultTypeInternal;
+extern getLocalPointCloud_grpc1RequestDefaultTypeInternal _getLocalPointCloud_grpc1Request_default_instance_;
+class getLocalPointCloud_grpc1Response;
+struct getLocalPointCloud_grpc1ResponseDefaultTypeInternal;
+extern getLocalPointCloud_grpc1ResponseDefaultTypeInternal _getLocalPointCloud_grpc1Response_default_instance_;
 class getMapRequest;
 struct getMapRequestDefaultTypeInternal;
 extern getMapRequestDefaultTypeInternal _getMapRequest_default_instance_;
@@ -134,8 +140,10 @@ template<> ::grpcIMapManager::addCloudPointRequest* Arena::CreateMaybeMessage<::
 template<> ::grpcIMapManager::addCloudPointResponse* Arena::CreateMaybeMessage<::grpcIMapManager::addCloudPointResponse>(Arena*);
 template<> ::grpcIMapManager::addKeyframeRequest* Arena::CreateMaybeMessage<::grpcIMapManager::addKeyframeRequest>(Arena*);
 template<> ::grpcIMapManager::addKeyframeResponse* Arena::CreateMaybeMessage<::grpcIMapManager::addKeyframeResponse>(Arena*);
-template<> ::grpcIMapManager::getLocalPointCloudRequest* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloudRequest>(Arena*);
-template<> ::grpcIMapManager::getLocalPointCloudResponse* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloudResponse>(Arena*);
+template<> ::grpcIMapManager::getLocalPointCloud_grpc0Request* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloud_grpc0Request>(Arena*);
+template<> ::grpcIMapManager::getLocalPointCloud_grpc0Response* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloud_grpc0Response>(Arena*);
+template<> ::grpcIMapManager::getLocalPointCloud_grpc1Request* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloud_grpc1Request>(Arena*);
+template<> ::grpcIMapManager::getLocalPointCloud_grpc1Response* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloud_grpc1Response>(Arena*);
 template<> ::grpcIMapManager::getMapRequest* Arena::CreateMaybeMessage<::grpcIMapManager::getMapRequest>(Arena*);
 template<> ::grpcIMapManager::getMapResponse* Arena::CreateMaybeMessage<::grpcIMapManager::getMapResponse>(Arena*);
 template<> ::grpcIMapManager::getSubmapRequest* Arena::CreateMaybeMessage<::grpcIMapManager::getSubmapRequest>(Arena*);
@@ -1093,24 +1101,24 @@ class getSubmapResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class getLocalPointCloudRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.getLocalPointCloudRequest) */ {
+class getLocalPointCloud_grpc0Request PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.getLocalPointCloud_grpc0Request) */ {
  public:
-  inline getLocalPointCloudRequest() : getLocalPointCloudRequest(nullptr) {}
-  virtual ~getLocalPointCloudRequest();
-  explicit constexpr getLocalPointCloudRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline getLocalPointCloud_grpc0Request() : getLocalPointCloud_grpc0Request(nullptr) {}
+  virtual ~getLocalPointCloud_grpc0Request();
+  explicit constexpr getLocalPointCloud_grpc0Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  getLocalPointCloudRequest(const getLocalPointCloudRequest& from);
-  getLocalPointCloudRequest(getLocalPointCloudRequest&& from) noexcept
-    : getLocalPointCloudRequest() {
+  getLocalPointCloud_grpc0Request(const getLocalPointCloud_grpc0Request& from);
+  getLocalPointCloud_grpc0Request(getLocalPointCloud_grpc0Request&& from) noexcept
+    : getLocalPointCloud_grpc0Request() {
     *this = ::std::move(from);
   }
 
-  inline getLocalPointCloudRequest& operator=(const getLocalPointCloudRequest& from) {
+  inline getLocalPointCloud_grpc0Request& operator=(const getLocalPointCloud_grpc0Request& from) {
     CopyFrom(from);
     return *this;
   }
-  inline getLocalPointCloudRequest& operator=(getLocalPointCloudRequest&& from) noexcept {
+  inline getLocalPointCloud_grpc0Request& operator=(getLocalPointCloud_grpc0Request&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1128,20 +1136,20 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const getLocalPointCloudRequest& default_instance() {
+  static const getLocalPointCloud_grpc0Request& default_instance() {
     return *internal_default_instance();
   }
-  static inline const getLocalPointCloudRequest* internal_default_instance() {
-    return reinterpret_cast<const getLocalPointCloudRequest*>(
-               &_getLocalPointCloudRequest_default_instance_);
+  static inline const getLocalPointCloud_grpc0Request* internal_default_instance() {
+    return reinterpret_cast<const getLocalPointCloud_grpc0Request*>(
+               &_getLocalPointCloud_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  friend void swap(getLocalPointCloudRequest& a, getLocalPointCloudRequest& b) {
+  friend void swap(getLocalPointCloud_grpc0Request& a, getLocalPointCloud_grpc0Request& b) {
     a.Swap(&b);
   }
-  inline void Swap(getLocalPointCloudRequest* other) {
+  inline void Swap(getLocalPointCloud_grpc0Request* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -1149,7 +1157,7 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(getLocalPointCloudRequest* other) {
+  void UnsafeArenaSwap(getLocalPointCloud_grpc0Request* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -1157,17 +1165,17 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline getLocalPointCloudRequest* New() const final {
-    return CreateMaybeMessage<getLocalPointCloudRequest>(nullptr);
+  inline getLocalPointCloud_grpc0Request* New() const final {
+    return CreateMaybeMessage<getLocalPointCloud_grpc0Request>(nullptr);
   }
 
-  getLocalPointCloudRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<getLocalPointCloudRequest>(arena);
+  getLocalPointCloud_grpc0Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getLocalPointCloud_grpc0Request>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const getLocalPointCloudRequest& from);
-  void MergeFrom(const getLocalPointCloudRequest& from);
+  void CopyFrom(const getLocalPointCloud_grpc0Request& from);
+  void MergeFrom(const getLocalPointCloud_grpc0Request& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1181,13 +1189,341 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(getLocalPointCloudRequest* other);
+  void InternalSwap(getLocalPointCloud_grpc0Request* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIMapManager.getLocalPointCloudRequest";
+    return "grpcIMapManager.getLocalPointCloud_grpc0Request";
   }
   protected:
-  explicit getLocalPointCloudRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit getLocalPointCloud_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKeyframesFieldNumber = 2,
+    kLocalPointCloudFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes keyframes = 2;
+  void clear_keyframes();
+  const std::string& keyframes() const;
+  void set_keyframes(const std::string& value);
+  void set_keyframes(std::string&& value);
+  void set_keyframes(const char* value);
+  void set_keyframes(const void* value, size_t size);
+  std::string* mutable_keyframes();
+  std::string* release_keyframes();
+  void set_allocated_keyframes(std::string* keyframes);
+  private:
+  const std::string& _internal_keyframes() const;
+  void _internal_set_keyframes(const std::string& value);
+  std::string* _internal_mutable_keyframes();
+  public:
+
+  // bytes localPointCloud = 3;
+  void clear_localpointcloud();
+  const std::string& localpointcloud() const;
+  void set_localpointcloud(const std::string& value);
+  void set_localpointcloud(std::string&& value);
+  void set_localpointcloud(const char* value);
+  void set_localpointcloud(const void* value, size_t size);
+  std::string* mutable_localpointcloud();
+  std::string* release_localpointcloud();
+  void set_allocated_localpointcloud(std::string* localpointcloud);
+  private:
+  const std::string& _internal_localpointcloud() const;
+  void _internal_set_localpointcloud(const std::string& value);
+  std::string* _internal_mutable_localpointcloud();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.getLocalPointCloud_grpc0Request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframes_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr localpointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getLocalPointCloud_grpc0Response PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.getLocalPointCloud_grpc0Response) */ {
+ public:
+  inline getLocalPointCloud_grpc0Response() : getLocalPointCloud_grpc0Response(nullptr) {}
+  virtual ~getLocalPointCloud_grpc0Response();
+  explicit constexpr getLocalPointCloud_grpc0Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getLocalPointCloud_grpc0Response(const getLocalPointCloud_grpc0Response& from);
+  getLocalPointCloud_grpc0Response(getLocalPointCloud_grpc0Response&& from) noexcept
+    : getLocalPointCloud_grpc0Response() {
+    *this = ::std::move(from);
+  }
+
+  inline getLocalPointCloud_grpc0Response& operator=(const getLocalPointCloud_grpc0Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getLocalPointCloud_grpc0Response& operator=(getLocalPointCloud_grpc0Response&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getLocalPointCloud_grpc0Response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getLocalPointCloud_grpc0Response* internal_default_instance() {
+    return reinterpret_cast<const getLocalPointCloud_grpc0Response*>(
+               &_getLocalPointCloud_grpc0Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(getLocalPointCloud_grpc0Response& a, getLocalPointCloud_grpc0Response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getLocalPointCloud_grpc0Response* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getLocalPointCloud_grpc0Response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getLocalPointCloud_grpc0Response* New() const final {
+    return CreateMaybeMessage<getLocalPointCloud_grpc0Response>(nullptr);
+  }
+
+  getLocalPointCloud_grpc0Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getLocalPointCloud_grpc0Response>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getLocalPointCloud_grpc0Response& from);
+  void MergeFrom(const getLocalPointCloud_grpc0Response& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getLocalPointCloud_grpc0Response* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.getLocalPointCloud_grpc0Response";
+  }
+  protected:
+  explicit getLocalPointCloud_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLocalPointCloudFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes localPointCloud = 1;
+  void clear_localpointcloud();
+  const std::string& localpointcloud() const;
+  void set_localpointcloud(const std::string& value);
+  void set_localpointcloud(std::string&& value);
+  void set_localpointcloud(const char* value);
+  void set_localpointcloud(const void* value, size_t size);
+  std::string* mutable_localpointcloud();
+  std::string* release_localpointcloud();
+  void set_allocated_localpointcloud(std::string* localpointcloud);
+  private:
+  const std::string& _internal_localpointcloud() const;
+  void _internal_set_localpointcloud(const std::string& value);
+  std::string* _internal_mutable_localpointcloud();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.getLocalPointCloud_grpc0Response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr localpointcloud_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getLocalPointCloud_grpc1Request PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.getLocalPointCloud_grpc1Request) */ {
+ public:
+  inline getLocalPointCloud_grpc1Request() : getLocalPointCloud_grpc1Request(nullptr) {}
+  virtual ~getLocalPointCloud_grpc1Request();
+  explicit constexpr getLocalPointCloud_grpc1Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getLocalPointCloud_grpc1Request(const getLocalPointCloud_grpc1Request& from);
+  getLocalPointCloud_grpc1Request(getLocalPointCloud_grpc1Request&& from) noexcept
+    : getLocalPointCloud_grpc1Request() {
+    *this = ::std::move(from);
+  }
+
+  inline getLocalPointCloud_grpc1Request& operator=(const getLocalPointCloud_grpc1Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getLocalPointCloud_grpc1Request& operator=(getLocalPointCloud_grpc1Request&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getLocalPointCloud_grpc1Request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getLocalPointCloud_grpc1Request* internal_default_instance() {
+    return reinterpret_cast<const getLocalPointCloud_grpc1Request*>(
+               &_getLocalPointCloud_grpc1Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(getLocalPointCloud_grpc1Request& a, getLocalPointCloud_grpc1Request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getLocalPointCloud_grpc1Request* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getLocalPointCloud_grpc1Request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getLocalPointCloud_grpc1Request* New() const final {
+    return CreateMaybeMessage<getLocalPointCloud_grpc1Request>(nullptr);
+  }
+
+  getLocalPointCloud_grpc1Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getLocalPointCloud_grpc1Request>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getLocalPointCloud_grpc1Request& from);
+  void MergeFrom(const getLocalPointCloud_grpc1Request& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getLocalPointCloud_grpc1Request* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.getLocalPointCloud_grpc1Request";
+  }
+  protected:
+  explicit getLocalPointCloud_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1261,7 +1597,7 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
   void _internal_set_minweightneighbor(float value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIMapManager.getLocalPointCloudRequest)
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.getLocalPointCloud_grpc1Request)
  private:
   class _Internal;
 
@@ -1277,24 +1613,24 @@ class getLocalPointCloudRequest PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class getLocalPointCloudResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.getLocalPointCloudResponse) */ {
+class getLocalPointCloud_grpc1Response PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.getLocalPointCloud_grpc1Response) */ {
  public:
-  inline getLocalPointCloudResponse() : getLocalPointCloudResponse(nullptr) {}
-  virtual ~getLocalPointCloudResponse();
-  explicit constexpr getLocalPointCloudResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline getLocalPointCloud_grpc1Response() : getLocalPointCloud_grpc1Response(nullptr) {}
+  virtual ~getLocalPointCloud_grpc1Response();
+  explicit constexpr getLocalPointCloud_grpc1Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  getLocalPointCloudResponse(const getLocalPointCloudResponse& from);
-  getLocalPointCloudResponse(getLocalPointCloudResponse&& from) noexcept
-    : getLocalPointCloudResponse() {
+  getLocalPointCloud_grpc1Response(const getLocalPointCloud_grpc1Response& from);
+  getLocalPointCloud_grpc1Response(getLocalPointCloud_grpc1Response&& from) noexcept
+    : getLocalPointCloud_grpc1Response() {
     *this = ::std::move(from);
   }
 
-  inline getLocalPointCloudResponse& operator=(const getLocalPointCloudResponse& from) {
+  inline getLocalPointCloud_grpc1Response& operator=(const getLocalPointCloud_grpc1Response& from) {
     CopyFrom(from);
     return *this;
   }
-  inline getLocalPointCloudResponse& operator=(getLocalPointCloudResponse&& from) noexcept {
+  inline getLocalPointCloud_grpc1Response& operator=(getLocalPointCloud_grpc1Response&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1312,20 +1648,20 @@ class getLocalPointCloudResponse PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const getLocalPointCloudResponse& default_instance() {
+  static const getLocalPointCloud_grpc1Response& default_instance() {
     return *internal_default_instance();
   }
-  static inline const getLocalPointCloudResponse* internal_default_instance() {
-    return reinterpret_cast<const getLocalPointCloudResponse*>(
-               &_getLocalPointCloudResponse_default_instance_);
+  static inline const getLocalPointCloud_grpc1Response* internal_default_instance() {
+    return reinterpret_cast<const getLocalPointCloud_grpc1Response*>(
+               &_getLocalPointCloud_grpc1Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
-  friend void swap(getLocalPointCloudResponse& a, getLocalPointCloudResponse& b) {
+  friend void swap(getLocalPointCloud_grpc1Response& a, getLocalPointCloud_grpc1Response& b) {
     a.Swap(&b);
   }
-  inline void Swap(getLocalPointCloudResponse* other) {
+  inline void Swap(getLocalPointCloud_grpc1Response* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -1333,7 +1669,7 @@ class getLocalPointCloudResponse PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(getLocalPointCloudResponse* other) {
+  void UnsafeArenaSwap(getLocalPointCloud_grpc1Response* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -1341,17 +1677,17 @@ class getLocalPointCloudResponse PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline getLocalPointCloudResponse* New() const final {
-    return CreateMaybeMessage<getLocalPointCloudResponse>(nullptr);
+  inline getLocalPointCloud_grpc1Response* New() const final {
+    return CreateMaybeMessage<getLocalPointCloud_grpc1Response>(nullptr);
   }
 
-  getLocalPointCloudResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<getLocalPointCloudResponse>(arena);
+  getLocalPointCloud_grpc1Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getLocalPointCloud_grpc1Response>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const getLocalPointCloudResponse& from);
-  void MergeFrom(const getLocalPointCloudResponse& from);
+  void CopyFrom(const getLocalPointCloud_grpc1Response& from);
+  void MergeFrom(const getLocalPointCloud_grpc1Response& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1365,13 +1701,13 @@ class getLocalPointCloudResponse PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(getLocalPointCloudResponse* other);
+  void InternalSwap(getLocalPointCloud_grpc1Response* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIMapManager.getLocalPointCloudResponse";
+    return "grpcIMapManager.getLocalPointCloud_grpc1Response";
   }
   protected:
-  explicit getLocalPointCloudResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit getLocalPointCloud_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1418,7 +1754,7 @@ class getLocalPointCloudResponse PROTOBUF_FINAL :
   void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIMapManager.getLocalPointCloudResponse)
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.getLocalPointCloud_grpc1Response)
  private:
   class _Internal;
 
@@ -1475,7 +1811,7 @@ class addCloudPointRequest PROTOBUF_FINAL :
                &_addCloudPointRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(addCloudPointRequest& a, addCloudPointRequest& b) {
     a.Swap(&b);
@@ -1630,7 +1966,7 @@ class addCloudPointResponse PROTOBUF_FINAL :
                &_addCloudPointResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(addCloudPointResponse& a, addCloudPointResponse& b) {
     a.Swap(&b);
@@ -1767,7 +2103,7 @@ class removeCloudPointRequest PROTOBUF_FINAL :
                &_removeCloudPointRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(removeCloudPointRequest& a, removeCloudPointRequest& b) {
     a.Swap(&b);
@@ -1922,7 +2258,7 @@ class removeCloudPointResponse PROTOBUF_FINAL :
                &_removeCloudPointResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(removeCloudPointResponse& a, removeCloudPointResponse& b) {
     a.Swap(&b);
@@ -2059,7 +2395,7 @@ class addKeyframeRequest PROTOBUF_FINAL :
                &_addKeyframeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(addKeyframeRequest& a, addKeyframeRequest& b) {
     a.Swap(&b);
@@ -2214,7 +2550,7 @@ class addKeyframeResponse PROTOBUF_FINAL :
                &_addKeyframeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(addKeyframeResponse& a, addKeyframeResponse& b) {
     a.Swap(&b);
@@ -2351,7 +2687,7 @@ class removeKeyframeRequest PROTOBUF_FINAL :
                &_removeKeyframeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(removeKeyframeRequest& a, removeKeyframeRequest& b) {
     a.Swap(&b);
@@ -2506,7 +2842,7 @@ class removeKeyframeResponse PROTOBUF_FINAL :
                &_removeKeyframeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(removeKeyframeResponse& a, removeKeyframeResponse& b) {
     a.Swap(&b);
@@ -2643,7 +2979,7 @@ class pointCloudPruningRequest PROTOBUF_FINAL :
                &_pointCloudPruningRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(pointCloudPruningRequest& a, pointCloudPruningRequest& b) {
     a.Swap(&b);
@@ -2798,7 +3134,7 @@ class pointCloudPruningResponse PROTOBUF_FINAL :
                &_pointCloudPruningResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(pointCloudPruningResponse& a, pointCloudPruningResponse& b) {
     a.Swap(&b);
@@ -2935,7 +3271,7 @@ class keyframePruningRequest PROTOBUF_FINAL :
                &_keyframePruningRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(keyframePruningRequest& a, keyframePruningRequest& b) {
     a.Swap(&b);
@@ -3090,7 +3426,7 @@ class keyframePruningResponse PROTOBUF_FINAL :
                &_keyframePruningResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(keyframePruningResponse& a, keyframePruningResponse& b) {
     a.Swap(&b);
@@ -3227,7 +3563,7 @@ class saveToFileRequest PROTOBUF_FINAL :
                &_saveToFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(saveToFileRequest& a, saveToFileRequest& b) {
     a.Swap(&b);
@@ -3364,7 +3700,7 @@ class saveToFileResponse PROTOBUF_FINAL :
                &_saveToFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(saveToFileResponse& a, saveToFileResponse& b) {
     a.Swap(&b);
@@ -3501,7 +3837,7 @@ class loadFromFileRequest PROTOBUF_FINAL :
                &_loadFromFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(loadFromFileRequest& a, loadFromFileRequest& b) {
     a.Swap(&b);
@@ -3638,7 +3974,7 @@ class loadFromFileResponse PROTOBUF_FINAL :
                &_loadFromFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(loadFromFileResponse& a, loadFromFileResponse& b) {
     a.Swap(&b);
@@ -4228,79 +4564,310 @@ inline void getSubmapResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::
 
 // -------------------------------------------------------------------
 
-// getLocalPointCloudRequest
+// getLocalPointCloud_grpc0Request
 
 // int32 grpcServerCompressionFormat = 1;
-inline void getLocalPointCloudRequest::clear_grpcservercompressionformat() {
+inline void getLocalPointCloud_grpc0Request::clear_grpcservercompressionformat() {
   grpcservercompressionformat_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloudRequest::_internal_grpcservercompressionformat() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloud_grpc0Request::_internal_grpcservercompressionformat() const {
   return grpcservercompressionformat_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloudRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloudRequest.grpcServerCompressionFormat)
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloud_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc0Request.grpcServerCompressionFormat)
   return _internal_grpcservercompressionformat();
 }
-inline void getLocalPointCloudRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void getLocalPointCloud_grpc0Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   grpcservercompressionformat_ = value;
 }
-inline void getLocalPointCloudRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void getLocalPointCloud_grpc0Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloudRequest.grpcServerCompressionFormat)
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc0Request.grpcServerCompressionFormat)
+}
+
+// bytes keyframes = 2;
+inline void getLocalPointCloud_grpc0Request::clear_keyframes() {
+  keyframes_.ClearToEmpty();
+}
+inline const std::string& getLocalPointCloud_grpc0Request::keyframes() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc0Request.keyframes)
+  return _internal_keyframes();
+}
+inline void getLocalPointCloud_grpc0Request::set_keyframes(const std::string& value) {
+  _internal_set_keyframes(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc0Request.keyframes)
+}
+inline std::string* getLocalPointCloud_grpc0Request::mutable_keyframes() {
+  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getLocalPointCloud_grpc0Request.keyframes)
+  return _internal_mutable_keyframes();
+}
+inline const std::string& getLocalPointCloud_grpc0Request::_internal_keyframes() const {
+  return keyframes_.Get();
+}
+inline void getLocalPointCloud_grpc0Request::_internal_set_keyframes(const std::string& value) {
+  
+  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getLocalPointCloud_grpc0Request::set_keyframes(std::string&& value) {
+  
+  keyframes_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getLocalPointCloud_grpc0Request.keyframes)
+}
+inline void getLocalPointCloud_grpc0Request::set_keyframes(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getLocalPointCloud_grpc0Request.keyframes)
+}
+inline void getLocalPointCloud_grpc0Request::set_keyframes(const void* value,
+    size_t size) {
+  
+  keyframes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getLocalPointCloud_grpc0Request.keyframes)
+}
+inline std::string* getLocalPointCloud_grpc0Request::_internal_mutable_keyframes() {
+  
+  return keyframes_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getLocalPointCloud_grpc0Request::release_keyframes() {
+  // @@protoc_insertion_point(field_release:grpcIMapManager.getLocalPointCloud_grpc0Request.keyframes)
+  return keyframes_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getLocalPointCloud_grpc0Request::set_allocated_keyframes(std::string* keyframes) {
+  if (keyframes != nullptr) {
+    
+  } else {
+    
+  }
+  keyframes_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframes,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloud_grpc0Request.keyframes)
+}
+
+// bytes localPointCloud = 3;
+inline void getLocalPointCloud_grpc0Request::clear_localpointcloud() {
+  localpointcloud_.ClearToEmpty();
+}
+inline const std::string& getLocalPointCloud_grpc0Request::localpointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc0Request.localPointCloud)
+  return _internal_localpointcloud();
+}
+inline void getLocalPointCloud_grpc0Request::set_localpointcloud(const std::string& value) {
+  _internal_set_localpointcloud(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc0Request.localPointCloud)
+}
+inline std::string* getLocalPointCloud_grpc0Request::mutable_localpointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getLocalPointCloud_grpc0Request.localPointCloud)
+  return _internal_mutable_localpointcloud();
+}
+inline const std::string& getLocalPointCloud_grpc0Request::_internal_localpointcloud() const {
+  return localpointcloud_.Get();
+}
+inline void getLocalPointCloud_grpc0Request::_internal_set_localpointcloud(const std::string& value) {
+  
+  localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getLocalPointCloud_grpc0Request::set_localpointcloud(std::string&& value) {
+  
+  localpointcloud_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getLocalPointCloud_grpc0Request.localPointCloud)
+}
+inline void getLocalPointCloud_grpc0Request::set_localpointcloud(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getLocalPointCloud_grpc0Request.localPointCloud)
+}
+inline void getLocalPointCloud_grpc0Request::set_localpointcloud(const void* value,
+    size_t size) {
+  
+  localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getLocalPointCloud_grpc0Request.localPointCloud)
+}
+inline std::string* getLocalPointCloud_grpc0Request::_internal_mutable_localpointcloud() {
+  
+  return localpointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getLocalPointCloud_grpc0Request::release_localpointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIMapManager.getLocalPointCloud_grpc0Request.localPointCloud)
+  return localpointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getLocalPointCloud_grpc0Request::set_allocated_localpointcloud(std::string* localpointcloud) {
+  if (localpointcloud != nullptr) {
+    
+  } else {
+    
+  }
+  localpointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), localpointcloud,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloud_grpc0Request.localPointCloud)
+}
+
+// -------------------------------------------------------------------
+
+// getLocalPointCloud_grpc0Response
+
+// bytes localPointCloud = 1;
+inline void getLocalPointCloud_grpc0Response::clear_localpointcloud() {
+  localpointcloud_.ClearToEmpty();
+}
+inline const std::string& getLocalPointCloud_grpc0Response::localpointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc0Response.localPointCloud)
+  return _internal_localpointcloud();
+}
+inline void getLocalPointCloud_grpc0Response::set_localpointcloud(const std::string& value) {
+  _internal_set_localpointcloud(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc0Response.localPointCloud)
+}
+inline std::string* getLocalPointCloud_grpc0Response::mutable_localpointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getLocalPointCloud_grpc0Response.localPointCloud)
+  return _internal_mutable_localpointcloud();
+}
+inline const std::string& getLocalPointCloud_grpc0Response::_internal_localpointcloud() const {
+  return localpointcloud_.Get();
+}
+inline void getLocalPointCloud_grpc0Response::_internal_set_localpointcloud(const std::string& value) {
+  
+  localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getLocalPointCloud_grpc0Response::set_localpointcloud(std::string&& value) {
+  
+  localpointcloud_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getLocalPointCloud_grpc0Response.localPointCloud)
+}
+inline void getLocalPointCloud_grpc0Response::set_localpointcloud(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getLocalPointCloud_grpc0Response.localPointCloud)
+}
+inline void getLocalPointCloud_grpc0Response::set_localpointcloud(const void* value,
+    size_t size) {
+  
+  localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getLocalPointCloud_grpc0Response.localPointCloud)
+}
+inline std::string* getLocalPointCloud_grpc0Response::_internal_mutable_localpointcloud() {
+  
+  return localpointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getLocalPointCloud_grpc0Response::release_localpointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIMapManager.getLocalPointCloud_grpc0Response.localPointCloud)
+  return localpointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getLocalPointCloud_grpc0Response::set_allocated_localpointcloud(std::string* localpointcloud) {
+  if (localpointcloud != nullptr) {
+    
+  } else {
+    
+  }
+  localpointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), localpointcloud,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloud_grpc0Response.localPointCloud)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void getLocalPointCloud_grpc0Response::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloud_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloud_grpc0Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc0Response.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getLocalPointCloud_grpc0Response::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void getLocalPointCloud_grpc0Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc0Response.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getLocalPointCloud_grpc1Request
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getLocalPointCloud_grpc1Request::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloud_grpc1Request::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloud_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getLocalPointCloud_grpc1Request::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getLocalPointCloud_grpc1Request::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc1Request.grpcServerCompressionFormat)
 }
 
 // bytes keyframe = 2;
-inline void getLocalPointCloudRequest::clear_keyframe() {
+inline void getLocalPointCloud_grpc1Request::clear_keyframe() {
   keyframe_.ClearToEmpty();
 }
-inline const std::string& getLocalPointCloudRequest::keyframe() const {
-  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloudRequest.keyframe)
+inline const std::string& getLocalPointCloud_grpc1Request::keyframe() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc1Request.keyframe)
   return _internal_keyframe();
 }
-inline void getLocalPointCloudRequest::set_keyframe(const std::string& value) {
+inline void getLocalPointCloud_grpc1Request::set_keyframe(const std::string& value) {
   _internal_set_keyframe(value);
-  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloudRequest.keyframe)
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc1Request.keyframe)
 }
-inline std::string* getLocalPointCloudRequest::mutable_keyframe() {
-  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getLocalPointCloudRequest.keyframe)
+inline std::string* getLocalPointCloud_grpc1Request::mutable_keyframe() {
+  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getLocalPointCloud_grpc1Request.keyframe)
   return _internal_mutable_keyframe();
 }
-inline const std::string& getLocalPointCloudRequest::_internal_keyframe() const {
+inline const std::string& getLocalPointCloud_grpc1Request::_internal_keyframe() const {
   return keyframe_.Get();
 }
-inline void getLocalPointCloudRequest::_internal_set_keyframe(const std::string& value) {
+inline void getLocalPointCloud_grpc1Request::_internal_set_keyframe(const std::string& value) {
   
   keyframe_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void getLocalPointCloudRequest::set_keyframe(std::string&& value) {
+inline void getLocalPointCloud_grpc1Request::set_keyframe(std::string&& value) {
   
   keyframe_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getLocalPointCloudRequest.keyframe)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getLocalPointCloud_grpc1Request.keyframe)
 }
-inline void getLocalPointCloudRequest::set_keyframe(const char* value) {
+inline void getLocalPointCloud_grpc1Request::set_keyframe(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   keyframe_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getLocalPointCloudRequest.keyframe)
+  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getLocalPointCloud_grpc1Request.keyframe)
 }
-inline void getLocalPointCloudRequest::set_keyframe(const void* value,
+inline void getLocalPointCloud_grpc1Request::set_keyframe(const void* value,
     size_t size) {
   
   keyframe_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getLocalPointCloudRequest.keyframe)
+  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getLocalPointCloud_grpc1Request.keyframe)
 }
-inline std::string* getLocalPointCloudRequest::_internal_mutable_keyframe() {
+inline std::string* getLocalPointCloud_grpc1Request::_internal_mutable_keyframe() {
   
   return keyframe_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* getLocalPointCloudRequest::release_keyframe() {
-  // @@protoc_insertion_point(field_release:grpcIMapManager.getLocalPointCloudRequest.keyframe)
+inline std::string* getLocalPointCloud_grpc1Request::release_keyframe() {
+  // @@protoc_insertion_point(field_release:grpcIMapManager.getLocalPointCloud_grpc1Request.keyframe)
   return keyframe_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void getLocalPointCloudRequest::set_allocated_keyframe(std::string* keyframe) {
+inline void getLocalPointCloud_grpc1Request::set_allocated_keyframe(std::string* keyframe) {
   if (keyframe != nullptr) {
     
   } else {
@@ -4308,80 +4875,80 @@ inline void getLocalPointCloudRequest::set_allocated_keyframe(std::string* keyfr
   }
   keyframe_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), keyframe,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloudRequest.keyframe)
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloud_grpc1Request.keyframe)
 }
 
 // float minWeightNeighbor = 3;
-inline void getLocalPointCloudRequest::clear_minweightneighbor() {
+inline void getLocalPointCloud_grpc1Request::clear_minweightneighbor() {
   minweightneighbor_ = 0;
 }
-inline float getLocalPointCloudRequest::_internal_minweightneighbor() const {
+inline float getLocalPointCloud_grpc1Request::_internal_minweightneighbor() const {
   return minweightneighbor_;
 }
-inline float getLocalPointCloudRequest::minweightneighbor() const {
-  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloudRequest.minWeightNeighbor)
+inline float getLocalPointCloud_grpc1Request::minweightneighbor() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc1Request.minWeightNeighbor)
   return _internal_minweightneighbor();
 }
-inline void getLocalPointCloudRequest::_internal_set_minweightneighbor(float value) {
+inline void getLocalPointCloud_grpc1Request::_internal_set_minweightneighbor(float value) {
   
   minweightneighbor_ = value;
 }
-inline void getLocalPointCloudRequest::set_minweightneighbor(float value) {
+inline void getLocalPointCloud_grpc1Request::set_minweightneighbor(float value) {
   _internal_set_minweightneighbor(value);
-  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloudRequest.minWeightNeighbor)
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc1Request.minWeightNeighbor)
 }
 
 // bytes localPointCloud = 4;
-inline void getLocalPointCloudRequest::clear_localpointcloud() {
+inline void getLocalPointCloud_grpc1Request::clear_localpointcloud() {
   localpointcloud_.ClearToEmpty();
 }
-inline const std::string& getLocalPointCloudRequest::localpointcloud() const {
-  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloudRequest.localPointCloud)
+inline const std::string& getLocalPointCloud_grpc1Request::localpointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc1Request.localPointCloud)
   return _internal_localpointcloud();
 }
-inline void getLocalPointCloudRequest::set_localpointcloud(const std::string& value) {
+inline void getLocalPointCloud_grpc1Request::set_localpointcloud(const std::string& value) {
   _internal_set_localpointcloud(value);
-  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloudRequest.localPointCloud)
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc1Request.localPointCloud)
 }
-inline std::string* getLocalPointCloudRequest::mutable_localpointcloud() {
-  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getLocalPointCloudRequest.localPointCloud)
+inline std::string* getLocalPointCloud_grpc1Request::mutable_localpointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getLocalPointCloud_grpc1Request.localPointCloud)
   return _internal_mutable_localpointcloud();
 }
-inline const std::string& getLocalPointCloudRequest::_internal_localpointcloud() const {
+inline const std::string& getLocalPointCloud_grpc1Request::_internal_localpointcloud() const {
   return localpointcloud_.Get();
 }
-inline void getLocalPointCloudRequest::_internal_set_localpointcloud(const std::string& value) {
+inline void getLocalPointCloud_grpc1Request::_internal_set_localpointcloud(const std::string& value) {
   
   localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void getLocalPointCloudRequest::set_localpointcloud(std::string&& value) {
+inline void getLocalPointCloud_grpc1Request::set_localpointcloud(std::string&& value) {
   
   localpointcloud_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getLocalPointCloudRequest.localPointCloud)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getLocalPointCloud_grpc1Request.localPointCloud)
 }
-inline void getLocalPointCloudRequest::set_localpointcloud(const char* value) {
+inline void getLocalPointCloud_grpc1Request::set_localpointcloud(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getLocalPointCloudRequest.localPointCloud)
+  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getLocalPointCloud_grpc1Request.localPointCloud)
 }
-inline void getLocalPointCloudRequest::set_localpointcloud(const void* value,
+inline void getLocalPointCloud_grpc1Request::set_localpointcloud(const void* value,
     size_t size) {
   
   localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getLocalPointCloudRequest.localPointCloud)
+  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getLocalPointCloud_grpc1Request.localPointCloud)
 }
-inline std::string* getLocalPointCloudRequest::_internal_mutable_localpointcloud() {
+inline std::string* getLocalPointCloud_grpc1Request::_internal_mutable_localpointcloud() {
   
   return localpointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* getLocalPointCloudRequest::release_localpointcloud() {
-  // @@protoc_insertion_point(field_release:grpcIMapManager.getLocalPointCloudRequest.localPointCloud)
+inline std::string* getLocalPointCloud_grpc1Request::release_localpointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIMapManager.getLocalPointCloud_grpc1Request.localPointCloud)
   return localpointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void getLocalPointCloudRequest::set_allocated_localpointcloud(std::string* localpointcloud) {
+inline void getLocalPointCloud_grpc1Request::set_allocated_localpointcloud(std::string* localpointcloud) {
   if (localpointcloud != nullptr) {
     
   } else {
@@ -4389,64 +4956,64 @@ inline void getLocalPointCloudRequest::set_allocated_localpointcloud(std::string
   }
   localpointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), localpointcloud,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloudRequest.localPointCloud)
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloud_grpc1Request.localPointCloud)
 }
 
 // -------------------------------------------------------------------
 
-// getLocalPointCloudResponse
+// getLocalPointCloud_grpc1Response
 
 // bytes localPointCloud = 1;
-inline void getLocalPointCloudResponse::clear_localpointcloud() {
+inline void getLocalPointCloud_grpc1Response::clear_localpointcloud() {
   localpointcloud_.ClearToEmpty();
 }
-inline const std::string& getLocalPointCloudResponse::localpointcloud() const {
-  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloudResponse.localPointCloud)
+inline const std::string& getLocalPointCloud_grpc1Response::localpointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc1Response.localPointCloud)
   return _internal_localpointcloud();
 }
-inline void getLocalPointCloudResponse::set_localpointcloud(const std::string& value) {
+inline void getLocalPointCloud_grpc1Response::set_localpointcloud(const std::string& value) {
   _internal_set_localpointcloud(value);
-  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloudResponse.localPointCloud)
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc1Response.localPointCloud)
 }
-inline std::string* getLocalPointCloudResponse::mutable_localpointcloud() {
-  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getLocalPointCloudResponse.localPointCloud)
+inline std::string* getLocalPointCloud_grpc1Response::mutable_localpointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcIMapManager.getLocalPointCloud_grpc1Response.localPointCloud)
   return _internal_mutable_localpointcloud();
 }
-inline const std::string& getLocalPointCloudResponse::_internal_localpointcloud() const {
+inline const std::string& getLocalPointCloud_grpc1Response::_internal_localpointcloud() const {
   return localpointcloud_.Get();
 }
-inline void getLocalPointCloudResponse::_internal_set_localpointcloud(const std::string& value) {
+inline void getLocalPointCloud_grpc1Response::_internal_set_localpointcloud(const std::string& value) {
   
   localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void getLocalPointCloudResponse::set_localpointcloud(std::string&& value) {
+inline void getLocalPointCloud_grpc1Response::set_localpointcloud(std::string&& value) {
   
   localpointcloud_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getLocalPointCloudResponse.localPointCloud)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMapManager.getLocalPointCloud_grpc1Response.localPointCloud)
 }
-inline void getLocalPointCloudResponse::set_localpointcloud(const char* value) {
+inline void getLocalPointCloud_grpc1Response::set_localpointcloud(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getLocalPointCloudResponse.localPointCloud)
+  // @@protoc_insertion_point(field_set_char:grpcIMapManager.getLocalPointCloud_grpc1Response.localPointCloud)
 }
-inline void getLocalPointCloudResponse::set_localpointcloud(const void* value,
+inline void getLocalPointCloud_grpc1Response::set_localpointcloud(const void* value,
     size_t size) {
   
   localpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getLocalPointCloudResponse.localPointCloud)
+  // @@protoc_insertion_point(field_set_pointer:grpcIMapManager.getLocalPointCloud_grpc1Response.localPointCloud)
 }
-inline std::string* getLocalPointCloudResponse::_internal_mutable_localpointcloud() {
+inline std::string* getLocalPointCloud_grpc1Response::_internal_mutable_localpointcloud() {
   
   return localpointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* getLocalPointCloudResponse::release_localpointcloud() {
-  // @@protoc_insertion_point(field_release:grpcIMapManager.getLocalPointCloudResponse.localPointCloud)
+inline std::string* getLocalPointCloud_grpc1Response::release_localpointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIMapManager.getLocalPointCloud_grpc1Response.localPointCloud)
   return localpointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void getLocalPointCloudResponse::set_allocated_localpointcloud(std::string* localpointcloud) {
+inline void getLocalPointCloud_grpc1Response::set_allocated_localpointcloud(std::string* localpointcloud) {
   if (localpointcloud != nullptr) {
     
   } else {
@@ -4454,27 +5021,27 @@ inline void getLocalPointCloudResponse::set_allocated_localpointcloud(std::strin
   }
   localpointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), localpointcloud,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloudResponse.localPointCloud)
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapManager.getLocalPointCloud_grpc1Response.localPointCloud)
 }
 
 // sint32 xpcfGrpcReturnValue = 2;
-inline void getLocalPointCloudResponse::clear_xpcfgrpcreturnvalue() {
+inline void getLocalPointCloud_grpc1Response::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloudResponse::_internal_xpcfgrpcreturnvalue() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloud_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
   return xpcfgrpcreturnvalue_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloudResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloudResponse.xpcfGrpcReturnValue)
+inline ::PROTOBUF_NAMESPACE_ID::int32 getLocalPointCloud_grpc1Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.getLocalPointCloud_grpc1Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-inline void getLocalPointCloudResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void getLocalPointCloud_grpc1Response::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   xpcfgrpcreturnvalue_ = value;
 }
-inline void getLocalPointCloudResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void getLocalPointCloud_grpc1Response::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloudResponse.xpcfGrpcReturnValue)
+  // @@protoc_insertion_point(field_set:grpcIMapManager.getLocalPointCloud_grpc1Response.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -5230,6 +5797,10 @@ inline void loadFromFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

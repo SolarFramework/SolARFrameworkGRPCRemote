@@ -3,7 +3,7 @@
 
 #ifndef I3DPOINTSVIEWER_GRPCPROXY_H
 #define I3DPOINTSVIEWER_GRPCPROXY_H
-#include "api/display/I3DPointsViewer.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/display/I3DPointsViewer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

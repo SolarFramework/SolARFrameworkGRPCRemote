@@ -3,7 +3,7 @@
 
 #ifndef IBOOTSTRAPPER_GRPCPROXY_H
 #define IBOOTSTRAPPER_GRPCPROXY_H
-#include "api/slam/IBootstrapper.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/slam/IBootstrapper.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

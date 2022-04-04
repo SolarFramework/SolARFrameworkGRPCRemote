@@ -142,7 +142,12 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   #endif
   SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->mappingProcessRequest(image, pose);
+  SolAR::datastructure::Transform3Df transform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->transform());
+  SolAR::datastructure::Transform3Df updatedTransform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->updatedtransform());
+  SolAR::api::pipeline::MappingStatus status = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(request->status());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->mappingProcessRequest(image, pose, transform, updatedTransform, status);
+  response->set_updatedtransform(xpcf::serialize<SolAR::datastructure::Transform3Df>(updatedTransform));
+  response->set_status(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(status));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
