@@ -56,6 +56,18 @@ message setCameraParametersResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message setRectificationParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes rectCam1 = 2;
+bytes rectCam2 = 3;
+}
+
+message setRectificationParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message getCameraParametersRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -71,8 +83,8 @@ sint32 xpcfGrpcReturnValue = 2;
 message relocalizeProcessRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes image = 2;
-bytes pose = 3;
+bytes images = 2;
+bytes poses = 3;
 bytes timestamp = 4;
 bytes transform3DStatus = 5;
 bytes transform3D = 6;
@@ -122,6 +134,7 @@ rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
 rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
+rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
 rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
 rpc relocalizeProcessRequest(relocalizeProcessRequestRequest) returns(relocalizeProcessRequestResponse) {}
 rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRequestResponse) {}

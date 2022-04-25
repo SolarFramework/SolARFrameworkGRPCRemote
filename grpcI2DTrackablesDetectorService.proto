@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcI2DTrackablesDetector;
+
+message setTrackablesRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes trackables = 2;
+}
+
+message setTrackablesResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message detectRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+bytes corners = 3;
+}
+
+message detectResponse
+{
+bytes corners = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcI2DTrackablesDetectorService {
+rpc setTrackables(setTrackablesRequest) returns(setTrackablesResponse) {}
+rpc detect(detectRequest) returns(detectResponse) {}
+}
+

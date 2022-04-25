@@ -45,11 +45,23 @@ message setCameraParametersResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message setRectificationParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes rectCam1 = 2;
+bytes rectCam2 = 3;
+}
+
+message setRectificationParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message mappingProcessRequest_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes image = 2;
-bytes pose = 3;
+bytes images = 2;
+bytes poses = 3;
 bytes transform = 4;
 bytes updatedTransform = 5;
 bytes status = 6;
@@ -65,8 +77,8 @@ sint32 xpcfGrpcReturnValue = 3;
 message mappingProcessRequest_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes image = 2;
-bytes pose = 3;
+bytes images = 2;
+bytes poses = 3;
 bytes status = 4;
 }
 
@@ -79,8 +91,8 @@ sint32 xpcfGrpcReturnValue = 2;
 message mappingProcessRequest_grpc2Request
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes image = 2;
-bytes pose = 3;
+bytes images = 2;
+bytes poses = 3;
 bytes updatedTransform = 4;
 bytes status = 5;
 }
@@ -111,6 +123,7 @@ rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
+rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
 rpc mappingProcessRequest_grpc0(mappingProcessRequest_grpc0Request) returns(mappingProcessRequest_grpc0Response) {}
 rpc mappingProcessRequest_grpc1(mappingProcessRequest_grpc1Request) returns(mappingProcessRequest_grpc1Response) {}
 rpc mappingProcessRequest_grpc2(mappingProcessRequest_grpc2Request) returns(mappingProcessRequest_grpc2Response) {}

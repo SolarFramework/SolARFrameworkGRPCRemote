@@ -8,4 +8,4 @@ build/release/
 xpcfGrpcRemotingSolARFramework.pro
 xpcfGrpcRemotingSolARFramework*.xml
 
-build/*
+*build*
