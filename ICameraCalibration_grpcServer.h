@@ -2,7 +2,7 @@
 
 #ifndef ICAMERACALIBRATION_GRPCSERVER_H
 #define ICAMERACALIBRATION_GRPCSERVER_H
-#include "api/input/devices/ICameraCalibration.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/input/devices/ICameraCalibration.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

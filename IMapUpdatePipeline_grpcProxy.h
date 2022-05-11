@@ -3,7 +3,7 @@
 
 #ifndef IMAPUPDATEPIPELINE_GRPCPROXY_H
 #define IMAPUPDATEPIPELINE_GRPCPROXY_H
-#include "api/pipeline/IMapUpdatePipeline.h"
+#include "/home/christophe/Dev/SolAR/core/SolARFramework/interfaces/api/pipeline/IMapUpdatePipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -29,6 +29,7 @@ class IMapUpdatePipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
     SolAR::FrameworkReturnCode mapUpdateRequest(SRef<SolAR::datastructure::Map> const map)     override;
     SolAR::FrameworkReturnCode getMapRequest(SRef<SolAR::datastructure::Map>& map)     const     override;
     SolAR::FrameworkReturnCode getSubmapRequest(SRef<SolAR::datastructure::Frame> const frame, SRef<SolAR::datastructure::Map>& map)     const     override;
+    SolAR::FrameworkReturnCode resetMap()     override;
 
 
   private:

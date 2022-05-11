@@ -14,7 +14,7 @@ IMapManager_grpcServer::IMapManager_grpcServer():xpcf::ConfigurableBase(xpcf::to
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::storage::IMapManager>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(13);
+  m_grpcServerCompressionConfig.resize(14);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -113,7 +113,32 @@ XPCFErrorCode IMapManager_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getLocalPointCloud(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response)
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getLocalPointCloud_grpc0(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getLocalPointCloud", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::getLocalPointCloud request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::vector<SRef<SolAR::datastructure::Keyframe>> keyframes = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Keyframe>>>(request->keyframes());
+  std::vector<SRef<SolAR::datastructure::CloudPoint>> localPointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->localpointcloud());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getLocalPointCloud(keyframes, localPointCloud);
+  response->set_localpointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(localPointCloud));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::getLocalPointCloud response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getLocalPointCloud_grpc1(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());

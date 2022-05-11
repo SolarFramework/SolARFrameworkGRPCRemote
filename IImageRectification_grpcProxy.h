@@ -3,7 +3,7 @@
 
 #ifndef IIMAGERECTIFICATION_GRPCPROXY_H
 #define IIMAGERECTIFICATION_GRPCPROXY_H
-#include "api/image/IImageRectification.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/image/IImageRectification.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

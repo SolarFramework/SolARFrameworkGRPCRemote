@@ -14,7 +14,7 @@ ITracking_grpcServer::ITracking_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::slam::ITracking>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(4);
+  m_grpcServerCompressionConfig.resize(5);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -58,17 +58,39 @@ XPCFErrorCode ITracking_grpcServer::onConfigured()
 }
 
 
-::grpc::Status ITracking_grpcServer::grpcITrackingServiceImpl::updateReferenceKeyframe(::grpc::ServerContext* context, const ::grpcITracking::updateReferenceKeyframeRequest* request, ::google::protobuf::Empty* response)
+::grpc::Status ITracking_grpcServer::grpcITrackingServiceImpl::setNewKeyframe(::grpc::ServerContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response)
 {
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ITracking_grpcServer::updateReferenceKeyframe request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> ITracking_grpcServer::setNewKeyframe request received at " << to_simple_string(start) << std::endl;
   #endif
-  SRef<SolAR::datastructure::Keyframe> refKeyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->refkeyframe());
-  m_xpcfComponent->updateReferenceKeyframe(refKeyframe);
+  SRef<SolAR::datastructure::Keyframe> newKeyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->newkeyframe());
+  m_xpcfComponent->setNewKeyframe(newKeyframe);
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ITracking_grpcServer::updateReferenceKeyframe response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> ITracking_grpcServer::setNewKeyframe response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status ITracking_grpcServer::grpcITrackingServiceImpl::checkNeedNewKeyframe(::grpc::ServerContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest* request, ::grpcITracking::checkNeedNewKeyframeResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "checkNeedNewKeyframe", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> ITracking_grpcServer::checkNeedNewKeyframe request received at " << to_simple_string(start) << std::endl;
+  #endif
+  bool returnValue = m_xpcfComponent->checkNeedNewKeyframe();
+  response->set_xpcfgrpcreturnvalue(returnValue);
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> ITracking_grpcServer::checkNeedNewKeyframe response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

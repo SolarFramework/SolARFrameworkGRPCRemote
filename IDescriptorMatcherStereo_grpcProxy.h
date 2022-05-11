@@ -3,7 +3,7 @@
 
 #ifndef IDESCRIPTORMATCHERSTEREO_GRPCPROXY_H
 #define IDESCRIPTORMATCHERSTEREO_GRPCPROXY_H
-#include "api/features/IDescriptorMatcherStereo.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcherStereo.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

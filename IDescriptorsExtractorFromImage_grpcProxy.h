@@ -3,7 +3,7 @@
 
 #ifndef IDESCRIPTORSEXTRACTORFROMIMAGE_GRPCPROXY_H
 #define IDESCRIPTORSEXTRACTORFROMIMAGE_GRPCPROXY_H
-#include "api/features/IDescriptorsExtractorFromImage.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorsExtractorFromImage.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

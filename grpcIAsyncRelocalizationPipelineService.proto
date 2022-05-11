@@ -116,6 +116,16 @@ bytes pose = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message resetMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message resetMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 service grpcIAsyncRelocalizationPipelineService {
 rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
 rpc start(startRequest) returns(startResponse) {}
@@ -126,5 +136,6 @@ rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersR
 rpc relocalizeProcessRequest(relocalizeProcessRequestRequest) returns(relocalizeProcessRequestResponse) {}
 rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRequestResponse) {}
 rpc getLastPose(getLastPoseRequest) returns(getLastPoseResponse) {}
+rpc resetMap(resetMapRequest) returns(resetMapResponse) {}
 }
 

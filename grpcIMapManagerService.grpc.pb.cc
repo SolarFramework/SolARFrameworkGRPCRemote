@@ -25,7 +25,8 @@ static const char* grpcIMapManagerService_method_names[] = {
   "/grpcIMapManager.grpcIMapManagerService/setMap",
   "/grpcIMapManager.grpcIMapManagerService/getMap",
   "/grpcIMapManager.grpcIMapManagerService/getSubmap",
-  "/grpcIMapManager.grpcIMapManagerService/getLocalPointCloud",
+  "/grpcIMapManager.grpcIMapManagerService/getLocalPointCloud_grpc0",
+  "/grpcIMapManager.grpcIMapManagerService/getLocalPointCloud_grpc1",
   "/grpcIMapManager.grpcIMapManagerService/addCloudPoint",
   "/grpcIMapManager.grpcIMapManagerService/removeCloudPoint",
   "/grpcIMapManager.grpcIMapManagerService/addKeyframe",
@@ -46,15 +47,16 @@ grpcIMapManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterfa
   : channel_(channel), rpcmethod_setMap_(grpcIMapManagerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getMap_(grpcIMapManagerService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getSubmap_(grpcIMapManagerService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getLocalPointCloud_(grpcIMapManagerService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_addCloudPoint_(grpcIMapManagerService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_removeCloudPoint_(grpcIMapManagerService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_addKeyframe_(grpcIMapManagerService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_removeKeyframe_(grpcIMapManagerService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_pointCloudPruning_(grpcIMapManagerService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_keyframePruning_(grpcIMapManagerService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_saveToFile_(grpcIMapManagerService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_loadFromFile_(grpcIMapManagerService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getLocalPointCloud_grpc0_(grpcIMapManagerService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getLocalPointCloud_grpc1_(grpcIMapManagerService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_addCloudPoint_(grpcIMapManagerService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_removeCloudPoint_(grpcIMapManagerService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_addKeyframe_(grpcIMapManagerService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_removeKeyframe_(grpcIMapManagerService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_pointCloudPruning_(grpcIMapManagerService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_keyframePruning_(grpcIMapManagerService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_saveToFile_(grpcIMapManagerService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_loadFromFile_(grpcIMapManagerService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapManagerService::Stub::setMap(::grpc::ClientContext* context, const ::grpcIMapManager::setMapRequest& request, ::grpcIMapManager::setMapResponse* response) {
@@ -126,25 +128,48 @@ void grpcIMapManagerService::Stub::experimental_async::getSubmap(::grpc::ClientC
   return result;
 }
 
-::grpc::Status grpcIMapManagerService::Stub::getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpcIMapManager::getLocalPointCloudResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::getLocalPointCloudRequest, ::grpcIMapManager::getLocalPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getLocalPointCloud_, context, request, response);
+::grpc::Status grpcIMapManagerService::Stub::getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::getLocalPointCloud_grpc0Request, ::grpcIMapManager::getLocalPointCloud_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getLocalPointCloud_grpc0_, context, request, response);
 }
 
-void grpcIMapManagerService::Stub::experimental_async::getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::getLocalPointCloudRequest, ::grpcIMapManager::getLocalPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getLocalPointCloud_, context, request, response, std::move(f));
+void grpcIMapManagerService::Stub::experimental_async::getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::getLocalPointCloud_grpc0Request, ::grpcIMapManager::getLocalPointCloud_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getLocalPointCloud_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIMapManagerService::Stub::experimental_async::getLocalPointCloud(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getLocalPointCloud_, context, request, response, reactor);
+void grpcIMapManagerService::Stub::experimental_async::getLocalPointCloud_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getLocalPointCloud_grpc0_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloudResponse>* grpcIMapManagerService::Stub::PrepareAsyncgetLocalPointCloudRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::getLocalPointCloudResponse, ::grpcIMapManager::getLocalPointCloudRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getLocalPointCloud_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc0Response>* grpcIMapManagerService::Stub::PrepareAsyncgetLocalPointCloud_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::getLocalPointCloud_grpc0Response, ::grpcIMapManager::getLocalPointCloud_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getLocalPointCloud_grpc0_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloudResponse>* grpcIMapManagerService::Stub::AsyncgetLocalPointCloudRaw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc0Response>* grpcIMapManagerService::Stub::AsyncgetLocalPointCloud_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncgetLocalPointCloudRaw(context, request, cq);
+    this->PrepareAsyncgetLocalPointCloud_grpc0Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapManagerService::Stub::getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::getLocalPointCloud_grpc1Request, ::grpcIMapManager::getLocalPointCloud_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getLocalPointCloud_grpc1_, context, request, response);
+}
+
+void grpcIMapManagerService::Stub::experimental_async::getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::getLocalPointCloud_grpc1Request, ::grpcIMapManager::getLocalPointCloud_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getLocalPointCloud_grpc1_, context, request, response, std::move(f));
+}
+
+void grpcIMapManagerService::Stub::experimental_async::getLocalPointCloud_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getLocalPointCloud_grpc1_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc1Response>* grpcIMapManagerService::Stub::PrepareAsyncgetLocalPointCloud_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::getLocalPointCloud_grpc1Response, ::grpcIMapManager::getLocalPointCloud_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getLocalPointCloud_grpc1_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getLocalPointCloud_grpc1Response>* grpcIMapManagerService::Stub::AsyncgetLocalPointCloud_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetLocalPointCloud_grpc1Raw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -367,15 +392,25 @@ grpcIMapManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapManagerService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::getLocalPointCloudRequest, ::grpcIMapManager::getLocalPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::getLocalPointCloud_grpc0Request, ::grpcIMapManager::getLocalPointCloud_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIMapManager::getLocalPointCloudRequest* req,
-             ::grpcIMapManager::getLocalPointCloudResponse* resp) {
-               return service->getLocalPointCloud(ctx, req, resp);
+             const ::grpcIMapManager::getLocalPointCloud_grpc0Request* req,
+             ::grpcIMapManager::getLocalPointCloud_grpc0Response* resp) {
+               return service->getLocalPointCloud_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapManagerService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::getLocalPointCloud_grpc1Request, ::grpcIMapManager::getLocalPointCloud_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapManager::getLocalPointCloud_grpc1Request* req,
+             ::grpcIMapManager::getLocalPointCloud_grpc1Response* resp) {
+               return service->getLocalPointCloud_grpc1(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapManagerService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::addCloudPointRequest, ::grpcIMapManager::addCloudPointResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -385,7 +420,7 @@ grpcIMapManagerService::Service::Service() {
                return service->addCloudPoint(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[5],
+      grpcIMapManagerService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::removeCloudPointRequest, ::grpcIMapManager::removeCloudPointResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -395,7 +430,7 @@ grpcIMapManagerService::Service::Service() {
                return service->removeCloudPoint(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[6],
+      grpcIMapManagerService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::addKeyframeRequest, ::grpcIMapManager::addKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -405,7 +440,7 @@ grpcIMapManagerService::Service::Service() {
                return service->addKeyframe(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[7],
+      grpcIMapManagerService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::removeKeyframeRequest, ::grpcIMapManager::removeKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -415,7 +450,7 @@ grpcIMapManagerService::Service::Service() {
                return service->removeKeyframe(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[8],
+      grpcIMapManagerService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::pointCloudPruningRequest, ::grpcIMapManager::pointCloudPruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -425,7 +460,7 @@ grpcIMapManagerService::Service::Service() {
                return service->pointCloudPruning(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[9],
+      grpcIMapManagerService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::keyframePruningRequest, ::grpcIMapManager::keyframePruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -435,7 +470,7 @@ grpcIMapManagerService::Service::Service() {
                return service->keyframePruning(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[10],
+      grpcIMapManagerService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -445,7 +480,7 @@ grpcIMapManagerService::Service::Service() {
                return service->saveToFile(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[11],
+      grpcIMapManagerService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -480,7 +515,14 @@ grpcIMapManagerService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIMapManagerService::Service::getLocalPointCloud(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloudRequest* request, ::grpcIMapManager::getLocalPointCloudResponse* response) {
+::grpc::Status grpcIMapManagerService::Service::getLocalPointCloud_grpc0(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapManagerService::Service::getLocalPointCloud_grpc1(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response) {
   (void) context;
   (void) request;
   (void) response;

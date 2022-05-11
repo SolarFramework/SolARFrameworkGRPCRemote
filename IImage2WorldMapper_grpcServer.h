@@ -2,7 +2,7 @@
 
 #ifndef IIMAGE2WORLDMAPPER_GRPCSERVER_H
 #define IIMAGE2WORLDMAPPER_GRPCSERVER_H
-#include "api/geom/IImage2WorldMapper.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/geom/IImage2WorldMapper.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

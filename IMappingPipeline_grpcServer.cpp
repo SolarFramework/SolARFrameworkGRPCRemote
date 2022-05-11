@@ -14,7 +14,7 @@ IMappingPipeline_grpcServer::IMappingPipeline_grpcServer():xpcf::ConfigurableBas
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::pipeline::IMappingPipeline>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(7);
+  m_grpcServerCompressionConfig.resize(9);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -129,7 +129,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IMappingPipeline_grpcServer::grpcIMappingPipelineServiceImpl::mappingProcessRequest(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequestRequest* request, ::grpcIMappingPipeline::mappingProcessRequestResponse* response)
+::grpc::Status IMappingPipeline_grpcServer::grpcIMappingPipelineServiceImpl::mappingProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
@@ -142,7 +142,66 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   #endif
   SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->mappingProcessRequest(image, pose);
+  SolAR::datastructure::Transform3Df transform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->transform());
+  SolAR::datastructure::Transform3Df updatedTransform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->updatedtransform());
+  SolAR::api::pipeline::MappingStatus status = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(request->status());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->mappingProcessRequest(image, pose, transform, updatedTransform, status);
+  response->set_updatedtransform(xpcf::serialize<SolAR::datastructure::Transform3Df>(updatedTransform));
+  response->set_status(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(status));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcServer::mappingProcessRequest response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMappingPipeline_grpcServer::grpcIMappingPipelineServiceImpl::mappingProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "mappingProcessRequest", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcServer::mappingProcessRequest request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
+  SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
+  SolAR::api::pipeline::MappingStatus status = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(request->status());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->mappingProcessRequest(image, pose, status);
+  response->set_status(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(status));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcServer::mappingProcessRequest response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMappingPipeline_grpcServer::grpcIMappingPipelineServiceImpl::mappingProcessRequest_grpc2(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "mappingProcessRequest", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcServer::mappingProcessRequest request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
+  SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
+  SolAR::datastructure::Transform3Df updatedTransform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->updatedtransform());
+  SolAR::api::pipeline::MappingStatus status = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(request->status());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->mappingProcessRequest(image, pose, updatedTransform, status);
+  response->set_updatedtransform(xpcf::serialize<SolAR::datastructure::Transform3Df>(updatedTransform));
+  response->set_status(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(status));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

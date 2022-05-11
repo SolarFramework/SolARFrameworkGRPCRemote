@@ -3,7 +3,7 @@
 
 #ifndef IPROJECT_GRPCPROXY_H
 #define IPROJECT_GRPCPROXY_H
-#include "api/geom/IProject.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/geom/IProject.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

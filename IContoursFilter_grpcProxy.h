@@ -3,7 +3,7 @@
 
 #ifndef ICONTOURSFILTER_GRPCPROXY_H
 #define ICONTOURSFILTER_GRPCPROXY_H
-#include "api/features/IContoursFilter.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/IContoursFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

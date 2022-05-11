@@ -3,7 +3,7 @@
 
 #ifndef IIMAGELOADER_GRPCPROXY_H
 #define IIMAGELOADER_GRPCPROXY_H
-#include "api/image/IImageLoader.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/image/IImageLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -3,7 +3,7 @@
 
 #ifndef IRELOCALIZER_GRPCPROXY_H
 #define IRELOCALIZER_GRPCPROXY_H
-#include "api/reloc/IRelocalizer.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/reloc/IRelocalizer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

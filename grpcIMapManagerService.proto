@@ -41,7 +41,20 @@ bytes submap = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message getLocalPointCloudRequest
+message getLocalPointCloud_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes keyframes = 2;
+bytes localPointCloud = 3;
+}
+
+message getLocalPointCloud_grpc0Response
+{
+bytes localPointCloud = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getLocalPointCloud_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes keyframe = 2;
@@ -49,7 +62,7 @@ float minWeightNeighbor = 3;
 bytes localPointCloud = 4;
 }
 
-message getLocalPointCloudResponse
+message getLocalPointCloud_grpc1Response
 {
 bytes localPointCloud = 1;
 sint32 xpcfGrpcReturnValue = 2;
@@ -145,7 +158,8 @@ service grpcIMapManagerService {
 rpc setMap(setMapRequest) returns(setMapResponse) {}
 rpc getMap(getMapRequest) returns(getMapResponse) {}
 rpc getSubmap(getSubmapRequest) returns(getSubmapResponse) {}
-rpc getLocalPointCloud(getLocalPointCloudRequest) returns(getLocalPointCloudResponse) {}
+rpc getLocalPointCloud_grpc0(getLocalPointCloud_grpc0Request) returns(getLocalPointCloud_grpc0Response) {}
+rpc getLocalPointCloud_grpc1(getLocalPointCloud_grpc1Request) returns(getLocalPointCloud_grpc1Response) {}
 rpc addCloudPoint(addCloudPointRequest) returns(addCloudPointResponse) {}
 rpc removeCloudPoint(removeCloudPointRequest) returns(removeCloudPointResponse) {}
 rpc addKeyframe(addKeyframeRequest) returns(addKeyframeResponse) {}

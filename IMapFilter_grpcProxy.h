@@ -3,7 +3,7 @@
 
 #ifndef IMAPFILTER_GRPCPROXY_H
 #define IMAPFILTER_GRPCPROXY_H
-#include "api/solver/map/IMapFilter.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -2,7 +2,7 @@
 
 #ifndef ICONTOURSEXTRACTOR_GRPCSERVER_H
 #define ICONTOURSEXTRACTOR_GRPCSERVER_H
-#include "api/features/IContoursExtractor.h"
+#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/IContoursExtractor.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
