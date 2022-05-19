@@ -19,7 +19,7 @@ IAsyncRelocalizationPipeline_grpcProxy::IAsyncRelocalizationPipeline_grpcProxy()
   declareInterface<SolAR::api::pipeline::IAsyncRelocalizationPipeline>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(11);
+  m_grpcProxyCompressionConfig.resize(12);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -352,6 +352,35 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getLastPose(
   }
 
   pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.pose());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::resetMap() const
+{
+  ::grpc::ClientContext context;
+  ::grpcIAsyncRelocalizationPipeline::resetMapRequest reqIn;
+  ::grpcIAsyncRelocalizationPipeline::resetMapResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "resetMap", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::resetMap request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->resetMap(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::resetMap response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "resetMap rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIAsyncRelocalizationPipelineService","resetMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

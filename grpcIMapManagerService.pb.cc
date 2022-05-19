@@ -349,8 +349,32 @@ struct loadFromFileResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT loadFromFileResponseDefaultTypeInternal _loadFromFileResponse_default_instance_;
+constexpr deleteFileRequest::deleteFileRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct deleteFileRequestDefaultTypeInternal {
+  constexpr deleteFileRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~deleteFileRequestDefaultTypeInternal() {}
+  union {
+    deleteFileRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT deleteFileRequestDefaultTypeInternal _deleteFileRequest_default_instance_;
+constexpr deleteFileResponse::deleteFileResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : xpcfgrpcreturnvalue_(0){}
+struct deleteFileResponseDefaultTypeInternal {
+  constexpr deleteFileResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~deleteFileResponseDefaultTypeInternal() {}
+  union {
+    deleteFileResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT deleteFileResponseDefaultTypeInternal _deleteFileResponse_default_instance_;
 }  // namespace grpcIMapManager
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIMapManagerService_2eproto[26];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIMapManagerService_2eproto[28];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIMapManagerService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIMapManagerService_2eproto = nullptr;
 
@@ -531,6 +555,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIMapManagerService_2eproto
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIMapManager::loadFromFileResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::deleteFileRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::deleteFileRequest, grpcservercompressionformat_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::deleteFileResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIMapManager::deleteFileResponse, xpcfgrpcreturnvalue_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIMapManager::setMapRequest)},
@@ -559,6 +595,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 158, -1, sizeof(::grpcIMapManager::saveToFileResponse)},
   { 164, -1, sizeof(::grpcIMapManager::loadFromFileRequest)},
   { 170, -1, sizeof(::grpcIMapManager::loadFromFileResponse)},
+  { 176, -1, sizeof(::grpcIMapManager::deleteFileRequest)},
+  { 182, -1, sizeof(::grpcIMapManager::deleteFileResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -588,6 +626,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_saveToFileResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_loadFromFileRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_loadFromFileResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_deleteFileRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMapManager::_deleteFileResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_grpcIMapManagerService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -640,49 +680,54 @@ const char descriptor_table_protodef_grpcIMapManagerService_2eproto[] PROTOBUF_S
   "sponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\":\n\023l"
   "oadFromFileRequest\022#\n\033grpcServerCompress"
   "ionFormat\030\001 \001(\005\"3\n\024loadFromFileResponse\022"
-  "\033\n\023xpcfGrpcReturnValue\030\001 \001(\0212\254\n\n\026grpcIMa"
-  "pManagerService\022K\n\006setMap\022\036.grpcIMapMana"
-  "ger.setMapRequest\032\037.grpcIMapManager.setM"
-  "apResponse\"\000\022K\n\006getMap\022\036.grpcIMapManager"
-  ".getMapRequest\032\037.grpcIMapManager.getMapR"
-  "esponse\"\000\022T\n\tgetSubmap\022!.grpcIMapManager"
-  ".getSubmapRequest\032\".grpcIMapManager.getS"
-  "ubmapResponse\"\000\022\201\001\n\030getLocalPointCloud_g"
-  "rpc0\0220.grpcIMapManager.getLocalPointClou"
-  "d_grpc0Request\0321.grpcIMapManager.getLoca"
-  "lPointCloud_grpc0Response\"\000\022\201\001\n\030getLocal"
-  "PointCloud_grpc1\0220.grpcIMapManager.getLo"
-  "calPointCloud_grpc1Request\0321.grpcIMapMan"
-  "ager.getLocalPointCloud_grpc1Response\"\000\022"
-  "`\n\raddCloudPoint\022%.grpcIMapManager.addCl"
-  "oudPointRequest\032&.grpcIMapManager.addClo"
-  "udPointResponse\"\000\022i\n\020removeCloudPoint\022(."
-  "grpcIMapManager.removeCloudPointRequest\032"
-  ").grpcIMapManager.removeCloudPointRespon"
-  "se\"\000\022Z\n\013addKeyframe\022#.grpcIMapManager.ad"
-  "dKeyframeRequest\032$.grpcIMapManager.addKe"
-  "yframeResponse\"\000\022c\n\016removeKeyframe\022&.grp"
-  "cIMapManager.removeKeyframeRequest\032\'.grp"
-  "cIMapManager.removeKeyframeResponse\"\000\022l\n"
-  "\021pointCloudPruning\022).grpcIMapManager.poi"
-  "ntCloudPruningRequest\032*.grpcIMapManager."
-  "pointCloudPruningResponse\"\000\022f\n\017keyframeP"
-  "runing\022\'.grpcIMapManager.keyframePruning"
-  "Request\032(.grpcIMapManager.keyframePrunin"
-  "gResponse\"\000\022W\n\nsaveToFile\022\".grpcIMapMana"
-  "ger.saveToFileRequest\032#.grpcIMapManager."
-  "saveToFileResponse\"\000\022]\n\014loadFromFile\022$.g"
-  "rpcIMapManager.loadFromFileRequest\032%.grp"
-  "cIMapManager.loadFromFileResponse\"\000b\006pro"
-  "to3"
+  "\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"8\n\021deleteFi"
+  "leRequest\022#\n\033grpcServerCompressionFormat"
+  "\030\001 \001(\005\"1\n\022deleteFileResponse\022\033\n\023xpcfGrpc"
+  "ReturnValue\030\001 \001(\0212\205\013\n\026grpcIMapManagerSer"
+  "vice\022K\n\006setMap\022\036.grpcIMapManager.setMapR"
+  "equest\032\037.grpcIMapManager.setMapResponse\""
+  "\000\022K\n\006getMap\022\036.grpcIMapManager.getMapRequ"
+  "est\032\037.grpcIMapManager.getMapResponse\"\000\022T"
+  "\n\tgetSubmap\022!.grpcIMapManager.getSubmapR"
+  "equest\032\".grpcIMapManager.getSubmapRespon"
+  "se\"\000\022\201\001\n\030getLocalPointCloud_grpc0\0220.grpc"
+  "IMapManager.getLocalPointCloud_grpc0Requ"
+  "est\0321.grpcIMapManager.getLocalPointCloud"
+  "_grpc0Response\"\000\022\201\001\n\030getLocalPointCloud_"
+  "grpc1\0220.grpcIMapManager.getLocalPointClo"
+  "ud_grpc1Request\0321.grpcIMapManager.getLoc"
+  "alPointCloud_grpc1Response\"\000\022`\n\raddCloud"
+  "Point\022%.grpcIMapManager.addCloudPointReq"
+  "uest\032&.grpcIMapManager.addCloudPointResp"
+  "onse\"\000\022i\n\020removeCloudPoint\022(.grpcIMapMan"
+  "ager.removeCloudPointRequest\032).grpcIMapM"
+  "anager.removeCloudPointResponse\"\000\022Z\n\013add"
+  "Keyframe\022#.grpcIMapManager.addKeyframeRe"
+  "quest\032$.grpcIMapManager.addKeyframeRespo"
+  "nse\"\000\022c\n\016removeKeyframe\022&.grpcIMapManage"
+  "r.removeKeyframeRequest\032\'.grpcIMapManage"
+  "r.removeKeyframeResponse\"\000\022l\n\021pointCloud"
+  "Pruning\022).grpcIMapManager.pointCloudPrun"
+  "ingRequest\032*.grpcIMapManager.pointCloudP"
+  "runingResponse\"\000\022f\n\017keyframePruning\022\'.gr"
+  "pcIMapManager.keyframePruningRequest\032(.g"
+  "rpcIMapManager.keyframePruningResponse\"\000"
+  "\022W\n\nsaveToFile\022\".grpcIMapManager.saveToF"
+  "ileRequest\032#.grpcIMapManager.saveToFileR"
+  "esponse\"\000\022]\n\014loadFromFile\022$.grpcIMapMana"
+  "ger.loadFromFileRequest\032%.grpcIMapManage"
+  "r.loadFromFileResponse\"\000\022W\n\ndeleteFile\022\""
+  ".grpcIMapManager.deleteFileRequest\032#.grp"
+  "cIMapManager.deleteFileResponse\"\000b\006proto"
+  "3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIMapManagerService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIMapManagerService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIMapManagerService_2eproto = {
-  false, false, 3323, descriptor_table_protodef_grpcIMapManagerService_2eproto, "grpcIMapManagerService.proto", 
-  &descriptor_table_grpcIMapManagerService_2eproto_once, descriptor_table_grpcIMapManagerService_2eproto_deps, 1, 26,
+  false, false, 3521, descriptor_table_protodef_grpcIMapManagerService_2eproto, "grpcIMapManagerService.proto", 
+  &descriptor_table_grpcIMapManagerService_2eproto_once, descriptor_table_grpcIMapManagerService_2eproto_deps, 1, 28,
   schemas, file_default_instances, TableStruct_grpcIMapManagerService_2eproto::offsets,
   file_level_metadata_grpcIMapManagerService_2eproto, file_level_enum_descriptors_grpcIMapManagerService_2eproto, file_level_service_descriptors_grpcIMapManagerService_2eproto,
 };
@@ -6262,6 +6307,384 @@ void loadFromFileResponse::InternalSwap(loadFromFileResponse* other) {
 }
 
 
+// ===================================================================
+
+class deleteFileRequest::_Internal {
+ public:
+};
+
+deleteFileRequest::deleteFileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIMapManager.deleteFileRequest)
+}
+deleteFileRequest::deleteFileRequest(const deleteFileRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIMapManager.deleteFileRequest)
+}
+
+void deleteFileRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+deleteFileRequest::~deleteFileRequest() {
+  // @@protoc_insertion_point(destructor:grpcIMapManager.deleteFileRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void deleteFileRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void deleteFileRequest::ArenaDtor(void* object) {
+  deleteFileRequest* _this = reinterpret_cast< deleteFileRequest* >(object);
+  (void)_this;
+}
+void deleteFileRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void deleteFileRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void deleteFileRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapManager.deleteFileRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* deleteFileRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* deleteFileRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapManager.deleteFileRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapManager.deleteFileRequest)
+  return target;
+}
+
+size_t deleteFileRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapManager.deleteFileRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void deleteFileRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIMapManager.deleteFileRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const deleteFileRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<deleteFileRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMapManager.deleteFileRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMapManager.deleteFileRequest)
+    MergeFrom(*source);
+  }
+}
+
+void deleteFileRequest::MergeFrom(const deleteFileRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapManager.deleteFileRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void deleteFileRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIMapManager.deleteFileRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void deleteFileRequest::CopyFrom(const deleteFileRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapManager.deleteFileRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool deleteFileRequest::IsInitialized() const {
+  return true;
+}
+
+void deleteFileRequest::InternalSwap(deleteFileRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata deleteFileRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class deleteFileResponse::_Internal {
+ public:
+};
+
+deleteFileResponse::deleteFileResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIMapManager.deleteFileResponse)
+}
+deleteFileResponse::deleteFileResponse(const deleteFileResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  // @@protoc_insertion_point(copy_constructor:grpcIMapManager.deleteFileResponse)
+}
+
+void deleteFileResponse::SharedCtor() {
+xpcfgrpcreturnvalue_ = 0;
+}
+
+deleteFileResponse::~deleteFileResponse() {
+  // @@protoc_insertion_point(destructor:grpcIMapManager.deleteFileResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void deleteFileResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void deleteFileResponse::ArenaDtor(void* object) {
+  deleteFileResponse* _this = reinterpret_cast< deleteFileResponse* >(object);
+  (void)_this;
+}
+void deleteFileResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void deleteFileResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void deleteFileResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapManager.deleteFileResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* deleteFileResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // sint32 xpcfGrpcReturnValue = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* deleteFileResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapManager.deleteFileResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapManager.deleteFileResponse)
+  return target;
+}
+
+size_t deleteFileResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapManager.deleteFileResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->xpcfgrpcreturnvalue() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void deleteFileResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIMapManager.deleteFileResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const deleteFileResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<deleteFileResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMapManager.deleteFileResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMapManager.deleteFileResponse)
+    MergeFrom(*source);
+  }
+}
+
+void deleteFileResponse::MergeFrom(const deleteFileResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapManager.deleteFileResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.xpcfgrpcreturnvalue() != 0) {
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  }
+}
+
+void deleteFileResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIMapManager.deleteFileResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void deleteFileResponse::CopyFrom(const deleteFileResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapManager.deleteFileResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool deleteFileResponse::IsInitialized() const {
+  return true;
+}
+
+void deleteFileResponse::InternalSwap(deleteFileResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata deleteFileResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIMapManager
 PROTOBUF_NAMESPACE_OPEN
@@ -6342,6 +6765,12 @@ template<> PROTOBUF_NOINLINE ::grpcIMapManager::loadFromFileRequest* Arena::Crea
 }
 template<> PROTOBUF_NOINLINE ::grpcIMapManager::loadFromFileResponse* Arena::CreateMaybeMessage< ::grpcIMapManager::loadFromFileResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMapManager::loadFromFileResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIMapManager::deleteFileRequest* Arena::CreateMaybeMessage< ::grpcIMapManager::deleteFileRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIMapManager::deleteFileRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIMapManager::deleteFileResponse* Arena::CreateMaybeMessage< ::grpcIMapManager::deleteFileResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIMapManager::deleteFileResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

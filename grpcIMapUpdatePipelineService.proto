@@ -81,6 +81,16 @@ bytes map = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message resetMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message resetMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 service grpcIMapUpdatePipelineService {
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
@@ -89,5 +99,6 @@ rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersR
 rpc mapUpdateRequest(mapUpdateRequestRequest) returns(mapUpdateRequestResponse) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc getSubmapRequest(getSubmapRequestRequest) returns(getSubmapRequestResponse) {}
+rpc resetMap(resetMapRequest) returns(resetMapResponse) {}
 }
 

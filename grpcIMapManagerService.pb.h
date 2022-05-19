@@ -47,7 +47,7 @@ struct TableStruct_grpcIMapManagerService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[26]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[28]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -68,6 +68,12 @@ extern addKeyframeRequestDefaultTypeInternal _addKeyframeRequest_default_instanc
 class addKeyframeResponse;
 struct addKeyframeResponseDefaultTypeInternal;
 extern addKeyframeResponseDefaultTypeInternal _addKeyframeResponse_default_instance_;
+class deleteFileRequest;
+struct deleteFileRequestDefaultTypeInternal;
+extern deleteFileRequestDefaultTypeInternal _deleteFileRequest_default_instance_;
+class deleteFileResponse;
+struct deleteFileResponseDefaultTypeInternal;
+extern deleteFileResponseDefaultTypeInternal _deleteFileResponse_default_instance_;
 class getLocalPointCloud_grpc0Request;
 struct getLocalPointCloud_grpc0RequestDefaultTypeInternal;
 extern getLocalPointCloud_grpc0RequestDefaultTypeInternal _getLocalPointCloud_grpc0Request_default_instance_;
@@ -140,6 +146,8 @@ template<> ::grpcIMapManager::addCloudPointRequest* Arena::CreateMaybeMessage<::
 template<> ::grpcIMapManager::addCloudPointResponse* Arena::CreateMaybeMessage<::grpcIMapManager::addCloudPointResponse>(Arena*);
 template<> ::grpcIMapManager::addKeyframeRequest* Arena::CreateMaybeMessage<::grpcIMapManager::addKeyframeRequest>(Arena*);
 template<> ::grpcIMapManager::addKeyframeResponse* Arena::CreateMaybeMessage<::grpcIMapManager::addKeyframeResponse>(Arena*);
+template<> ::grpcIMapManager::deleteFileRequest* Arena::CreateMaybeMessage<::grpcIMapManager::deleteFileRequest>(Arena*);
+template<> ::grpcIMapManager::deleteFileResponse* Arena::CreateMaybeMessage<::grpcIMapManager::deleteFileResponse>(Arena*);
 template<> ::grpcIMapManager::getLocalPointCloud_grpc0Request* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloud_grpc0Request>(Arena*);
 template<> ::grpcIMapManager::getLocalPointCloud_grpc0Response* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloud_grpc0Response>(Arena*);
 template<> ::grpcIMapManager::getLocalPointCloud_grpc1Request* Arena::CreateMaybeMessage<::grpcIMapManager::getLocalPointCloud_grpc1Request>(Arena*);
@@ -4066,6 +4074,280 @@ class loadFromFileResponse PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMapManagerService_2eproto;
 };
+// -------------------------------------------------------------------
+
+class deleteFileRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.deleteFileRequest) */ {
+ public:
+  inline deleteFileRequest() : deleteFileRequest(nullptr) {}
+  virtual ~deleteFileRequest();
+  explicit constexpr deleteFileRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  deleteFileRequest(const deleteFileRequest& from);
+  deleteFileRequest(deleteFileRequest&& from) noexcept
+    : deleteFileRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline deleteFileRequest& operator=(const deleteFileRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline deleteFileRequest& operator=(deleteFileRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const deleteFileRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const deleteFileRequest* internal_default_instance() {
+    return reinterpret_cast<const deleteFileRequest*>(
+               &_deleteFileRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  friend void swap(deleteFileRequest& a, deleteFileRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(deleteFileRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(deleteFileRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline deleteFileRequest* New() const final {
+    return CreateMaybeMessage<deleteFileRequest>(nullptr);
+  }
+
+  deleteFileRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<deleteFileRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const deleteFileRequest& from);
+  void MergeFrom(const deleteFileRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(deleteFileRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.deleteFileRequest";
+  }
+  protected:
+  explicit deleteFileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.deleteFileRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class deleteFileResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.deleteFileResponse) */ {
+ public:
+  inline deleteFileResponse() : deleteFileResponse(nullptr) {}
+  virtual ~deleteFileResponse();
+  explicit constexpr deleteFileResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  deleteFileResponse(const deleteFileResponse& from);
+  deleteFileResponse(deleteFileResponse&& from) noexcept
+    : deleteFileResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline deleteFileResponse& operator=(const deleteFileResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline deleteFileResponse& operator=(deleteFileResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const deleteFileResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const deleteFileResponse* internal_default_instance() {
+    return reinterpret_cast<const deleteFileResponse*>(
+               &_deleteFileResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  friend void swap(deleteFileResponse& a, deleteFileResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(deleteFileResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(deleteFileResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline deleteFileResponse* New() const final {
+    return CreateMaybeMessage<deleteFileResponse>(nullptr);
+  }
+
+  deleteFileResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<deleteFileResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const deleteFileResponse& from);
+  void MergeFrom(const deleteFileResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(deleteFileResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.deleteFileResponse";
+  }
+  protected:
+  explicit deleteFileResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.deleteFileResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
 // ===================================================================
 
 
@@ -5794,9 +6076,61 @@ inline void loadFromFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_I
   // @@protoc_insertion_point(field_set:grpcIMapManager.loadFromFileResponse.xpcfGrpcReturnValue)
 }
 
+// -------------------------------------------------------------------
+
+// deleteFileRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void deleteFileRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 deleteFileRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 deleteFileRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.deleteFileRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void deleteFileRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void deleteFileRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.deleteFileRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
+// deleteFileResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void deleteFileResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 deleteFileResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 deleteFileResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.deleteFileResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void deleteFileResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void deleteFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.deleteFileResponse.xpcfGrpcReturnValue)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

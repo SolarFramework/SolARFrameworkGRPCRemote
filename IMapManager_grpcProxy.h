@@ -35,6 +35,7 @@ class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
     int keyframePruning(std::vector<SRef<SolAR::datastructure::Keyframe>> const& keyframes)     override;
     SolAR::FrameworkReturnCode saveToFile()     const     override;
     SolAR::FrameworkReturnCode loadFromFile()     override;
+    SolAR::FrameworkReturnCode deleteFile()     override;
 
 
   private:

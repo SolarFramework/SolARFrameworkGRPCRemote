@@ -154,6 +154,16 @@ message loadFromFileResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message deleteFileRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message deleteFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 service grpcIMapManagerService {
 rpc setMap(setMapRequest) returns(setMapResponse) {}
 rpc getMap(getMapRequest) returns(getMapResponse) {}
@@ -168,5 +178,6 @@ rpc pointCloudPruning(pointCloudPruningRequest) returns(pointCloudPruningRespons
 rpc keyframePruning(keyframePruningRequest) returns(keyframePruningResponse) {}
 rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
+rpc deleteFile(deleteFileRequest) returns(deleteFileResponse) {}
 }
 
