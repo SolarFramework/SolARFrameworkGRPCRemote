@@ -35,6 +35,7 @@ static const char* grpcIMapManagerService_method_names[] = {
   "/grpcIMapManager.grpcIMapManagerService/keyframePruning",
   "/grpcIMapManager.grpcIMapManagerService/saveToFile",
   "/grpcIMapManager.grpcIMapManagerService/loadFromFile",
+  "/grpcIMapManager.grpcIMapManagerService/deleteFile",
 };
 
 std::unique_ptr< grpcIMapManagerService::Stub> grpcIMapManagerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -57,6 +58,7 @@ grpcIMapManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterfa
   , rpcmethod_keyframePruning_(grpcIMapManagerService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_saveToFile_(grpcIMapManagerService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_loadFromFile_(grpcIMapManagerService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteFile_(grpcIMapManagerService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapManagerService::Stub::setMap(::grpc::ClientContext* context, const ::grpcIMapManager::setMapRequest& request, ::grpcIMapManager::setMapResponse* response) {
@@ -358,6 +360,29 @@ void grpcIMapManagerService::Stub::experimental_async::loadFromFile(::grpc::Clie
   return result;
 }
 
+::grpc::Status grpcIMapManagerService::Stub::deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpcIMapManager::deleteFileResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_deleteFile_, context, request, response);
+}
+
+void grpcIMapManagerService::Stub::experimental_async::deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteFile_, context, request, response, std::move(f));
+}
+
+void grpcIMapManagerService::Stub::experimental_async::deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_deleteFile_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::deleteFileResponse>* grpcIMapManagerService::Stub::PrepareAsyncdeleteFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::deleteFileResponse, ::grpcIMapManager::deleteFileRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_deleteFile_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::deleteFileResponse>* grpcIMapManagerService::Stub::AsyncdeleteFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncdeleteFileRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 grpcIMapManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapManagerService_method_names[0],
@@ -489,6 +514,16 @@ grpcIMapManagerService::Service::Service() {
              ::grpcIMapManager::loadFromFileResponse* resp) {
                return service->loadFromFile(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapManagerService_method_names[13],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapManager::deleteFileRequest* req,
+             ::grpcIMapManager::deleteFileResponse* resp) {
+               return service->deleteFile(ctx, req, resp);
+             }, this)));
 }
 
 grpcIMapManagerService::Service::~Service() {
@@ -579,6 +614,13 @@ grpcIMapManagerService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMapManagerService::Service::loadFromFile(::grpc::ServerContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapManagerService::Service::deleteFile(::grpc::ServerContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response) {
   (void) context;
   (void) request;
   (void) response;

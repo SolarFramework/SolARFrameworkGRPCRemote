@@ -3,7 +3,7 @@
 
 #ifndef IMAPPING_GRPCPROXY_H
 #define IMAPPING_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/slam/IMapping.h"
+#include "api/slam/IMapping.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

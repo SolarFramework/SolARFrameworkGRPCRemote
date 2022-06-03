@@ -3,7 +3,7 @@
 
 #ifndef IMASKOVERLAY_GRPCPROXY_H
 #define IMASKOVERLAY_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/display/IMaskOverlay.h"
+#include "api/display/IMaskOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

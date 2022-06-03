@@ -2,7 +2,7 @@
 
 #ifndef ILOOPCORRECTOR_GRPCSERVER_H
 #define ILOOPCORRECTOR_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/loop/ILoopCorrector.h"
+#include "api/loop/ILoopCorrector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

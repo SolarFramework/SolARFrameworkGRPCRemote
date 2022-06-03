@@ -19,7 +19,7 @@ IMapManager_grpcProxy::IMapManager_grpcProxy():xpcf::ConfigurableBase(xpcf::toMa
   declareInterface<SolAR::api::storage::IMapManager>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(14);
+  m_grpcProxyCompressionConfig.resize(15);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -433,6 +433,35 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::loadFromFile()
   if (!grpcRemoteStatus.ok())  {
     std::cout << "loadFromFile rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIMapManagerService","loadFromFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IMapManager_grpcProxy::deleteFile()
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapManager::deleteFileRequest reqIn;
+  ::grpcIMapManager::deleteFileResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "deleteFile", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::deleteFile request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->deleteFile(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::deleteFile response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "deleteFile rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapManagerService","deleteFile",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());

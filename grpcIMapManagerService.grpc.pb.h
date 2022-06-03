@@ -127,6 +127,13 @@ class grpcIMapManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::loadFromFileResponse>> PrepareAsyncloadFromFile(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::loadFromFileResponse>>(PrepareAsyncloadFromFileRaw(context, request, cq));
     }
+    virtual ::grpc::Status deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpcIMapManager::deleteFileResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::deleteFileResponse>> AsyncdeleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::deleteFileResponse>>(AsyncdeleteFileRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::deleteFileResponse>> PrepareAsyncdeleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::deleteFileResponse>>(PrepareAsyncdeleteFileRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -208,6 +215,12 @@ class grpcIMapManagerService final {
       #else
       virtual void loadFromFile(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -243,6 +256,8 @@ class grpcIMapManagerService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::saveToFileResponse>* PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::loadFromFileResponse>* AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::loadFromFileResponse>* PrepareAsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::deleteFileResponse>* AsyncdeleteFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::deleteFileResponse>* PrepareAsyncdeleteFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -338,6 +353,13 @@ class grpcIMapManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::loadFromFileResponse>> PrepareAsyncloadFromFile(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::loadFromFileResponse>>(PrepareAsyncloadFromFileRaw(context, request, cq));
     }
+    ::grpc::Status deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpcIMapManager::deleteFileResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::deleteFileResponse>> AsyncdeleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::deleteFileResponse>>(AsyncdeleteFileRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::deleteFileResponse>> PrepareAsyncdeleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::deleteFileResponse>>(PrepareAsyncdeleteFileRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -419,6 +441,12 @@ class grpcIMapManagerService final {
       #else
       void loadFromFile(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void deleteFile(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -456,6 +484,8 @@ class grpcIMapManagerService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::saveToFileResponse>* PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::loadFromFileResponse>* AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::loadFromFileResponse>* PrepareAsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::deleteFileResponse>* AsyncdeleteFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::deleteFileResponse>* PrepareAsyncdeleteFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::deleteFileRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_setMap_;
     const ::grpc::internal::RpcMethod rpcmethod_getMap_;
     const ::grpc::internal::RpcMethod rpcmethod_getSubmap_;
@@ -469,6 +499,7 @@ class grpcIMapManagerService final {
     const ::grpc::internal::RpcMethod rpcmethod_keyframePruning_;
     const ::grpc::internal::RpcMethod rpcmethod_saveToFile_;
     const ::grpc::internal::RpcMethod rpcmethod_loadFromFile_;
+    const ::grpc::internal::RpcMethod rpcmethod_deleteFile_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -489,6 +520,7 @@ class grpcIMapManagerService final {
     virtual ::grpc::Status keyframePruning(::grpc::ServerContext* context, const ::grpcIMapManager::keyframePruningRequest* request, ::grpcIMapManager::keyframePruningResponse* response);
     virtual ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response);
     virtual ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response);
+    virtual ::grpc::Status deleteFile(::grpc::ServerContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_setMap : public BaseClass {
@@ -750,7 +782,27 @@ class grpcIMapManagerService final {
       ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_setMap<WithAsyncMethod_getMap<WithAsyncMethod_getSubmap<WithAsyncMethod_getLocalPointCloud_grpc0<WithAsyncMethod_getLocalPointCloud_grpc1<WithAsyncMethod_addCloudPoint<WithAsyncMethod_removeCloudPoint<WithAsyncMethod_addKeyframe<WithAsyncMethod_removeKeyframe<WithAsyncMethod_pointCloudPruning<WithAsyncMethod_keyframePruning<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<Service > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_deleteFile : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_deleteFile() {
+      ::grpc::Service::MarkMethodAsync(13);
+    }
+    ~WithAsyncMethod_deleteFile() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status deleteFile(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::deleteFileRequest* /*request*/, ::grpcIMapManager::deleteFileResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestdeleteFile(::grpc::ServerContext* context, ::grpcIMapManager::deleteFileRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::deleteFileResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_setMap<WithAsyncMethod_getMap<WithAsyncMethod_getSubmap<WithAsyncMethod_getLocalPointCloud_grpc0<WithAsyncMethod_getLocalPointCloud_grpc1<WithAsyncMethod_addCloudPoint<WithAsyncMethod_removeCloudPoint<WithAsyncMethod_addKeyframe<WithAsyncMethod_removeKeyframe<WithAsyncMethod_pointCloudPruning<WithAsyncMethod_keyframePruning<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<WithAsyncMethod_deleteFile<Service > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_setMap : public BaseClass {
    private:
@@ -1362,11 +1414,58 @@ class grpcIMapManagerService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_deleteFile : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_deleteFile() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(13,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response) { return this->deleteFile(context, request, response); }));}
+    void SetMessageAllocatorFor_deleteFile(
+        ::grpc::experimental::MessageAllocator< ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_deleteFile() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status deleteFile(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::deleteFileRequest* /*request*/, ::grpcIMapManager::deleteFileResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* deleteFile(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapManager::deleteFileRequest* /*request*/, ::grpcIMapManager::deleteFileResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* deleteFile(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapManager::deleteFileRequest* /*request*/, ::grpcIMapManager::deleteFileResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<Service > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_deleteFile<Service > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<Service > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_deleteFile<Service > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_setMap : public BaseClass {
    private:
@@ -1584,6 +1683,23 @@ class grpcIMapManagerService final {
     }
     // disable synchronous version of this method
     ::grpc::Status loadFromFile(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::loadFromFileRequest* /*request*/, ::grpcIMapManager::loadFromFileResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_deleteFile : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_deleteFile() {
+      ::grpc::Service::MarkMethodGeneric(13);
+    }
+    ~WithGenericMethod_deleteFile() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status deleteFile(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::deleteFileRequest* /*request*/, ::grpcIMapManager::deleteFileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1846,6 +1962,26 @@ class grpcIMapManagerService final {
     }
     void RequestloadFromFile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_deleteFile : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_deleteFile() {
+      ::grpc::Service::MarkMethodRaw(13);
+    }
+    ~WithRawMethod_deleteFile() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status deleteFile(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::deleteFileRequest* /*request*/, ::grpcIMapManager::deleteFileResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestdeleteFile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2343,6 +2479,44 @@ class grpcIMapManagerService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_deleteFile : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_deleteFile() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(13,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->deleteFile(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_deleteFile() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status deleteFile(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::deleteFileRequest* /*request*/, ::grpcIMapManager::deleteFileResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* deleteFile(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* deleteFile(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_setMap : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -2693,9 +2867,36 @@ class grpcIMapManagerService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedloadFromFile(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::loadFromFileRequest,::grpcIMapManager::loadFromFileResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<Service > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_deleteFile : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_deleteFile() {
+      ::grpc::Service::MarkMethodStreamed(13,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse>* streamer) {
+                       return this->StreameddeleteFile(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_deleteFile() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status deleteFile(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::deleteFileRequest* /*request*/, ::grpcIMapManager::deleteFileResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreameddeleteFile(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::deleteFileRequest,::grpcIMapManager::deleteFileResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_deleteFile<Service > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<Service > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_deleteFile<Service > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIMapManager

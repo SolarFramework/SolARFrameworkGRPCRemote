@@ -2,7 +2,7 @@
 
 #ifndef IMASKOVERLAY_GRPCSERVER_H
 #define IMASKOVERLAY_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/display/IMaskOverlay.h"
+#include "api/display/IMaskOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

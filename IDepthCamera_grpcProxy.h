@@ -3,7 +3,7 @@
 
 #ifndef IDEPTHCAMERA_GRPCPROXY_H
 #define IDEPTHCAMERA_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/input/devices/IDepthCamera.h"
+#include "api/input/devices/IDepthCamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

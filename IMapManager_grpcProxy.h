@@ -3,7 +3,7 @@
 
 #ifndef IMAPMANAGER_GRPCPROXY_H
 #define IMAPMANAGER_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
+#include "api/storage/IMapManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -35,6 +35,7 @@ class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
     int keyframePruning(std::vector<SRef<SolAR::datastructure::Keyframe>> const& keyframes)     override;
     SolAR::FrameworkReturnCode saveToFile()     const     override;
     SolAR::FrameworkReturnCode loadFromFile()     override;
+    SolAR::FrameworkReturnCode deleteFile()     override;
 
 
   private:

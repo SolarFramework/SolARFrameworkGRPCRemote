@@ -2,7 +2,7 @@
 
 #ifndef IPROJECT_GRPCSERVER_H
 #define IPROJECT_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/geom/IProject.h"
+#include "api/geom/IProject.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

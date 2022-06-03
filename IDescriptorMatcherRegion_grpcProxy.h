@@ -3,7 +3,7 @@
 
 #ifndef IDESCRIPTORMATCHERREGION_GRPCPROXY_H
 #define IDESCRIPTORMATCHERREGION_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/IDescriptorMatcherRegion.h"
+#include "api/features/IDescriptorMatcherRegion.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

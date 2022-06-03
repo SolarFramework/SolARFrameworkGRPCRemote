@@ -2,7 +2,7 @@
 
 #ifndef IMAPMANAGER_GRPCSERVER_H
 #define IMAPMANAGER_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/storage/IMapManager.h"
+#include "api/storage/IMapManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -38,6 +38,7 @@ class IMapManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual
         ::grpc::Status keyframePruning(::grpc::ServerContext* context, const ::grpcIMapManager::keyframePruningRequest* request, ::grpcIMapManager::keyframePruningResponse* response) override;
         ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response) override;
         ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response) override;
+        ::grpc::Status deleteFile(::grpc::ServerContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response) override;
 
         SRef<SolAR::api::storage::IMapManager> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

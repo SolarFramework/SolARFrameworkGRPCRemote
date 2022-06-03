@@ -3,7 +3,7 @@
 
 #ifndef IKEYPOINTSREINDEXER_GRPCPROXY_H
 #define IKEYPOINTSREINDEXER_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/IKeypointsReIndexer.h"
+#include "api/features/IKeypointsReIndexer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
