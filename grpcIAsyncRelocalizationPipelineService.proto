@@ -89,6 +89,7 @@ bytes timestamp = 4;
 bytes transform3DStatus = 5;
 bytes transform3D = 6;
 bytes confidence = 7;
+bytes mappingStatus = 8;
 }
 
 message relocalizeProcessRequestResponse
@@ -96,7 +97,8 @@ message relocalizeProcessRequestResponse
 bytes transform3DStatus = 1;
 bytes transform3D = 2;
 bytes confidence = 3;
-sint32 xpcfGrpcReturnValue = 4;
+bytes mappingStatus = 4;
+sint32 xpcfGrpcReturnValue = 5;
 }
 
 message get3DTransformRequestRequest

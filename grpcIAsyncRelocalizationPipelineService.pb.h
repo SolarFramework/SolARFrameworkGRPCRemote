@@ -2296,6 +2296,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
     kTransform3DStatusFieldNumber = 5,
     kTransform3DFieldNumber = 6,
     kConfidenceFieldNumber = 7,
+    kMappingStatusFieldNumber = 8,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes images = 2;
@@ -2394,6 +2395,22 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_confidence();
   public:
 
+  // bytes mappingStatus = 8;
+  void clear_mappingstatus();
+  const std::string& mappingstatus() const;
+  void set_mappingstatus(const std::string& value);
+  void set_mappingstatus(std::string&& value);
+  void set_mappingstatus(const char* value);
+  void set_mappingstatus(const void* value, size_t size);
+  std::string* mutable_mappingstatus();
+  std::string* release_mappingstatus();
+  void set_allocated_mappingstatus(std::string* mappingstatus);
+  private:
+  const std::string& _internal_mappingstatus() const;
+  void _internal_set_mappingstatus(const std::string& value);
+  std::string* _internal_mutable_mappingstatus();
+  public:
+
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
@@ -2416,6 +2433,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mappingstatus_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIAsyncRelocalizationPipelineService_2eproto;
@@ -2538,7 +2556,8 @@ class relocalizeProcessRequestResponse PROTOBUF_FINAL :
     kTransform3DStatusFieldNumber = 1,
     kTransform3DFieldNumber = 2,
     kConfidenceFieldNumber = 3,
-    kXpcfGrpcReturnValueFieldNumber = 4,
+    kMappingStatusFieldNumber = 4,
+    kXpcfGrpcReturnValueFieldNumber = 5,
   };
   // bytes transform3DStatus = 1;
   void clear_transform3dstatus();
@@ -2588,7 +2607,23 @@ class relocalizeProcessRequestResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_confidence();
   public:
 
-  // sint32 xpcfGrpcReturnValue = 4;
+  // bytes mappingStatus = 4;
+  void clear_mappingstatus();
+  const std::string& mappingstatus() const;
+  void set_mappingstatus(const std::string& value);
+  void set_mappingstatus(std::string&& value);
+  void set_mappingstatus(const char* value);
+  void set_mappingstatus(const void* value, size_t size);
+  std::string* mutable_mappingstatus();
+  std::string* release_mappingstatus();
+  void set_allocated_mappingstatus(std::string* mappingstatus);
+  private:
+  const std::string& _internal_mappingstatus() const;
+  void _internal_set_mappingstatus(const std::string& value);
+  std::string* _internal_mutable_mappingstatus();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 5;
   void clear_xpcfgrpcreturnvalue();
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -2607,6 +2642,7 @@ class relocalizeProcessRequestResponse PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mappingstatus_;
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIAsyncRelocalizationPipelineService_2eproto;
@@ -4694,6 +4730,67 @@ inline void relocalizeProcessRequestRequest::set_allocated_confidence(std::strin
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
 }
 
+// bytes mappingStatus = 8;
+inline void relocalizeProcessRequestRequest::clear_mappingstatus() {
+  mappingstatus_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestRequest::mappingstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.mappingStatus)
+  return _internal_mappingstatus();
+}
+inline void relocalizeProcessRequestRequest::set_mappingstatus(const std::string& value) {
+  _internal_set_mappingstatus(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.mappingStatus)
+}
+inline std::string* relocalizeProcessRequestRequest::mutable_mappingstatus() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.mappingStatus)
+  return _internal_mutable_mappingstatus();
+}
+inline const std::string& relocalizeProcessRequestRequest::_internal_mappingstatus() const {
+  return mappingstatus_.Get();
+}
+inline void relocalizeProcessRequestRequest::_internal_set_mappingstatus(const std::string& value) {
+  
+  mappingstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_mappingstatus(std::string&& value) {
+  
+  mappingstatus_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.mappingStatus)
+}
+inline void relocalizeProcessRequestRequest::set_mappingstatus(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  mappingstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.mappingStatus)
+}
+inline void relocalizeProcessRequestRequest::set_mappingstatus(const void* value,
+    size_t size) {
+  
+  mappingstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.mappingStatus)
+}
+inline std::string* relocalizeProcessRequestRequest::_internal_mutable_mappingstatus() {
+  
+  return mappingstatus_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestRequest::release_mappingstatus() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.mappingStatus)
+  return mappingstatus_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_allocated_mappingstatus(std::string* mappingstatus) {
+  if (mappingstatus != nullptr) {
+    
+  } else {
+    
+  }
+  mappingstatus_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mappingstatus,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.mappingStatus)
+}
+
 // -------------------------------------------------------------------
 
 // relocalizeProcessRequestResponse
@@ -4881,7 +4978,68 @@ inline void relocalizeProcessRequestResponse::set_allocated_confidence(std::stri
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
 }
 
-// sint32 xpcfGrpcReturnValue = 4;
+// bytes mappingStatus = 4;
+inline void relocalizeProcessRequestResponse::clear_mappingstatus() {
+  mappingstatus_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestResponse::mappingstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.mappingStatus)
+  return _internal_mappingstatus();
+}
+inline void relocalizeProcessRequestResponse::set_mappingstatus(const std::string& value) {
+  _internal_set_mappingstatus(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.mappingStatus)
+}
+inline std::string* relocalizeProcessRequestResponse::mutable_mappingstatus() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.mappingStatus)
+  return _internal_mutable_mappingstatus();
+}
+inline const std::string& relocalizeProcessRequestResponse::_internal_mappingstatus() const {
+  return mappingstatus_.Get();
+}
+inline void relocalizeProcessRequestResponse::_internal_set_mappingstatus(const std::string& value) {
+  
+  mappingstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestResponse::set_mappingstatus(std::string&& value) {
+  
+  mappingstatus_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.mappingStatus)
+}
+inline void relocalizeProcessRequestResponse::set_mappingstatus(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  mappingstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.mappingStatus)
+}
+inline void relocalizeProcessRequestResponse::set_mappingstatus(const void* value,
+    size_t size) {
+  
+  mappingstatus_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.mappingStatus)
+}
+inline std::string* relocalizeProcessRequestResponse::_internal_mutable_mappingstatus() {
+  
+  return mappingstatus_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestResponse::release_mappingstatus() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.mappingStatus)
+  return mappingstatus_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestResponse::set_allocated_mappingstatus(std::string* mappingstatus) {
+  if (mappingstatus != nullptr) {
+    
+  } else {
+    
+  }
+  mappingstatus_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mappingstatus,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestResponse.mappingStatus)
+}
+
+// sint32 xpcfGrpcReturnValue = 5;
 inline void relocalizeProcessRequestResponse::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }
