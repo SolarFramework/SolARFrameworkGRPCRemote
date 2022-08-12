@@ -493,8 +493,6 @@ class bundleAdjustmentRequest PROTOBUF_FINAL :
 
   enum : int {
     kSelectKeyframesFieldNumber = 2,
-    kKFieldNumber = 3,
-    kDFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes selectKeyframes = 2;
@@ -511,38 +509,6 @@ class bundleAdjustmentRequest PROTOBUF_FINAL :
   const std::string& _internal_selectkeyframes() const;
   void _internal_set_selectkeyframes(const std::string& value);
   std::string* _internal_mutable_selectkeyframes();
-  public:
-
-  // bytes K = 3;
-  void clear_k();
-  const std::string& k() const;
-  void set_k(const std::string& value);
-  void set_k(std::string&& value);
-  void set_k(const char* value);
-  void set_k(const void* value, size_t size);
-  std::string* mutable_k();
-  std::string* release_k();
-  void set_allocated_k(std::string* k);
-  private:
-  const std::string& _internal_k() const;
-  void _internal_set_k(const std::string& value);
-  std::string* _internal_mutable_k();
-  public:
-
-  // bytes D = 4;
-  void clear_d();
-  const std::string& d() const;
-  void set_d(const std::string& value);
-  void set_d(std::string&& value);
-  void set_d(const char* value);
-  void set_d(const void* value, size_t size);
-  std::string* mutable_d();
-  std::string* release_d();
-  void set_allocated_d(std::string* d);
-  private:
-  const std::string& _internal_d() const;
-  void _internal_set_d(const std::string& value);
-  std::string* _internal_mutable_d();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -562,8 +528,6 @@ class bundleAdjustmentRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr selectkeyframes_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr d_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIBundlerService_2eproto;
@@ -683,43 +647,9 @@ class bundleAdjustmentResponse PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kKFieldNumber = 1,
-    kDFieldNumber = 2,
-    kXpcfGrpcReturnValueFieldNumber = 3,
+    kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes K = 1;
-  void clear_k();
-  const std::string& k() const;
-  void set_k(const std::string& value);
-  void set_k(std::string&& value);
-  void set_k(const char* value);
-  void set_k(const void* value, size_t size);
-  std::string* mutable_k();
-  std::string* release_k();
-  void set_allocated_k(std::string* k);
-  private:
-  const std::string& _internal_k() const;
-  void _internal_set_k(const std::string& value);
-  std::string* _internal_mutable_k();
-  public:
-
-  // bytes D = 2;
-  void clear_d();
-  const std::string& d() const;
-  void set_d(const std::string& value);
-  void set_d(std::string&& value);
-  void set_d(const char* value);
-  void set_d(const void* value, size_t size);
-  std::string* mutable_d();
-  std::string* release_d();
-  void set_allocated_d(std::string* d);
-  private:
-  const std::string& _internal_d() const;
-  void _internal_set_d(const std::string& value);
-  std::string* _internal_mutable_d();
-  public:
-
-  // double xpcfGrpcReturnValue = 3;
+  // double xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
   double xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(double value);
@@ -735,8 +665,6 @@ class bundleAdjustmentResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr d_;
   double xpcfgrpcreturnvalue_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIBundlerService_2eproto;
@@ -861,9 +789,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
     kMatchesFieldNumber = 4,
     kPts3D1FieldNumber = 5,
     kPts3D2FieldNumber = 6,
-    kK1FieldNumber = 7,
-    kK2FieldNumber = 8,
-    kPoseFieldNumber = 9,
+    kPoseFieldNumber = 7,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes keyframe1 = 2;
@@ -946,39 +872,7 @@ class optimizeSim3Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pts3d2();
   public:
 
-  // bytes K1 = 7;
-  void clear_k1();
-  const std::string& k1() const;
-  void set_k1(const std::string& value);
-  void set_k1(std::string&& value);
-  void set_k1(const char* value);
-  void set_k1(const void* value, size_t size);
-  std::string* mutable_k1();
-  std::string* release_k1();
-  void set_allocated_k1(std::string* k1);
-  private:
-  const std::string& _internal_k1() const;
-  void _internal_set_k1(const std::string& value);
-  std::string* _internal_mutable_k1();
-  public:
-
-  // bytes K2 = 8;
-  void clear_k2();
-  const std::string& k2() const;
-  void set_k2(const std::string& value);
-  void set_k2(std::string&& value);
-  void set_k2(const char* value);
-  void set_k2(const void* value, size_t size);
-  std::string* mutable_k2();
-  std::string* release_k2();
-  void set_allocated_k2(std::string* k2);
-  private:
-  const std::string& _internal_k2() const;
-  void _internal_set_k2(const std::string& value);
-  std::string* _internal_mutable_k2();
-  public:
-
-  // bytes pose = 9;
+  // bytes pose = 7;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -1015,8 +909,6 @@ class optimizeSim3Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pts3d1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pts3d2_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k1_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1137,44 +1029,10 @@ class optimizeSim3Response PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kK1FieldNumber = 1,
-    kK2FieldNumber = 2,
-    kPoseFieldNumber = 3,
-    kXpcfGrpcReturnValueFieldNumber = 4,
+    kPoseFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
   };
-  // bytes K1 = 1;
-  void clear_k1();
-  const std::string& k1() const;
-  void set_k1(const std::string& value);
-  void set_k1(std::string&& value);
-  void set_k1(const char* value);
-  void set_k1(const void* value, size_t size);
-  std::string* mutable_k1();
-  std::string* release_k1();
-  void set_allocated_k1(std::string* k1);
-  private:
-  const std::string& _internal_k1() const;
-  void _internal_set_k1(const std::string& value);
-  std::string* _internal_mutable_k1();
-  public:
-
-  // bytes K2 = 2;
-  void clear_k2();
-  const std::string& k2() const;
-  void set_k2(const std::string& value);
-  void set_k2(std::string&& value);
-  void set_k2(const char* value);
-  void set_k2(const void* value, size_t size);
-  std::string* mutable_k2();
-  std::string* release_k2();
-  void set_allocated_k2(std::string* k2);
-  private:
-  const std::string& _internal_k2() const;
-  void _internal_set_k2(const std::string& value);
-  std::string* _internal_mutable_k2();
-  public:
-
-  // bytes pose = 3;
+  // bytes pose = 1;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -1190,7 +1048,7 @@ class optimizeSim3Response PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // double xpcfGrpcReturnValue = 4;
+  // double xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
   double xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(double value);
@@ -1206,8 +1064,6 @@ class optimizeSim3Response PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k1_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr k2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   double xpcfgrpcreturnvalue_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1414,255 +1270,11 @@ inline void bundleAdjustmentRequest::set_allocated_selectkeyframes(std::string* 
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.bundleAdjustmentRequest.selectKeyframes)
 }
 
-// bytes K = 3;
-inline void bundleAdjustmentRequest::clear_k() {
-  k_.ClearToEmpty();
-}
-inline const std::string& bundleAdjustmentRequest::k() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.bundleAdjustmentRequest.K)
-  return _internal_k();
-}
-inline void bundleAdjustmentRequest::set_k(const std::string& value) {
-  _internal_set_k(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.bundleAdjustmentRequest.K)
-}
-inline std::string* bundleAdjustmentRequest::mutable_k() {
-  // @@protoc_insertion_point(field_mutable:grpcIBundler.bundleAdjustmentRequest.K)
-  return _internal_mutable_k();
-}
-inline const std::string& bundleAdjustmentRequest::_internal_k() const {
-  return k_.Get();
-}
-inline void bundleAdjustmentRequest::_internal_set_k(const std::string& value) {
-  
-  k_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void bundleAdjustmentRequest::set_k(std::string&& value) {
-  
-  k_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.bundleAdjustmentRequest.K)
-}
-inline void bundleAdjustmentRequest::set_k(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  k_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBundler.bundleAdjustmentRequest.K)
-}
-inline void bundleAdjustmentRequest::set_k(const void* value,
-    size_t size) {
-  
-  k_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.bundleAdjustmentRequest.K)
-}
-inline std::string* bundleAdjustmentRequest::_internal_mutable_k() {
-  
-  return k_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* bundleAdjustmentRequest::release_k() {
-  // @@protoc_insertion_point(field_release:grpcIBundler.bundleAdjustmentRequest.K)
-  return k_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void bundleAdjustmentRequest::set_allocated_k(std::string* k) {
-  if (k != nullptr) {
-    
-  } else {
-    
-  }
-  k_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.bundleAdjustmentRequest.K)
-}
-
-// bytes D = 4;
-inline void bundleAdjustmentRequest::clear_d() {
-  d_.ClearToEmpty();
-}
-inline const std::string& bundleAdjustmentRequest::d() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.bundleAdjustmentRequest.D)
-  return _internal_d();
-}
-inline void bundleAdjustmentRequest::set_d(const std::string& value) {
-  _internal_set_d(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.bundleAdjustmentRequest.D)
-}
-inline std::string* bundleAdjustmentRequest::mutable_d() {
-  // @@protoc_insertion_point(field_mutable:grpcIBundler.bundleAdjustmentRequest.D)
-  return _internal_mutable_d();
-}
-inline const std::string& bundleAdjustmentRequest::_internal_d() const {
-  return d_.Get();
-}
-inline void bundleAdjustmentRequest::_internal_set_d(const std::string& value) {
-  
-  d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void bundleAdjustmentRequest::set_d(std::string&& value) {
-  
-  d_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.bundleAdjustmentRequest.D)
-}
-inline void bundleAdjustmentRequest::set_d(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBundler.bundleAdjustmentRequest.D)
-}
-inline void bundleAdjustmentRequest::set_d(const void* value,
-    size_t size) {
-  
-  d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.bundleAdjustmentRequest.D)
-}
-inline std::string* bundleAdjustmentRequest::_internal_mutable_d() {
-  
-  return d_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* bundleAdjustmentRequest::release_d() {
-  // @@protoc_insertion_point(field_release:grpcIBundler.bundleAdjustmentRequest.D)
-  return d_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void bundleAdjustmentRequest::set_allocated_d(std::string* d) {
-  if (d != nullptr) {
-    
-  } else {
-    
-  }
-  d_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), d,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.bundleAdjustmentRequest.D)
-}
-
 // -------------------------------------------------------------------
 
 // bundleAdjustmentResponse
 
-// bytes K = 1;
-inline void bundleAdjustmentResponse::clear_k() {
-  k_.ClearToEmpty();
-}
-inline const std::string& bundleAdjustmentResponse::k() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.bundleAdjustmentResponse.K)
-  return _internal_k();
-}
-inline void bundleAdjustmentResponse::set_k(const std::string& value) {
-  _internal_set_k(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.bundleAdjustmentResponse.K)
-}
-inline std::string* bundleAdjustmentResponse::mutable_k() {
-  // @@protoc_insertion_point(field_mutable:grpcIBundler.bundleAdjustmentResponse.K)
-  return _internal_mutable_k();
-}
-inline const std::string& bundleAdjustmentResponse::_internal_k() const {
-  return k_.Get();
-}
-inline void bundleAdjustmentResponse::_internal_set_k(const std::string& value) {
-  
-  k_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void bundleAdjustmentResponse::set_k(std::string&& value) {
-  
-  k_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.bundleAdjustmentResponse.K)
-}
-inline void bundleAdjustmentResponse::set_k(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  k_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBundler.bundleAdjustmentResponse.K)
-}
-inline void bundleAdjustmentResponse::set_k(const void* value,
-    size_t size) {
-  
-  k_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.bundleAdjustmentResponse.K)
-}
-inline std::string* bundleAdjustmentResponse::_internal_mutable_k() {
-  
-  return k_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* bundleAdjustmentResponse::release_k() {
-  // @@protoc_insertion_point(field_release:grpcIBundler.bundleAdjustmentResponse.K)
-  return k_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void bundleAdjustmentResponse::set_allocated_k(std::string* k) {
-  if (k != nullptr) {
-    
-  } else {
-    
-  }
-  k_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.bundleAdjustmentResponse.K)
-}
-
-// bytes D = 2;
-inline void bundleAdjustmentResponse::clear_d() {
-  d_.ClearToEmpty();
-}
-inline const std::string& bundleAdjustmentResponse::d() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.bundleAdjustmentResponse.D)
-  return _internal_d();
-}
-inline void bundleAdjustmentResponse::set_d(const std::string& value) {
-  _internal_set_d(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.bundleAdjustmentResponse.D)
-}
-inline std::string* bundleAdjustmentResponse::mutable_d() {
-  // @@protoc_insertion_point(field_mutable:grpcIBundler.bundleAdjustmentResponse.D)
-  return _internal_mutable_d();
-}
-inline const std::string& bundleAdjustmentResponse::_internal_d() const {
-  return d_.Get();
-}
-inline void bundleAdjustmentResponse::_internal_set_d(const std::string& value) {
-  
-  d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void bundleAdjustmentResponse::set_d(std::string&& value) {
-  
-  d_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.bundleAdjustmentResponse.D)
-}
-inline void bundleAdjustmentResponse::set_d(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBundler.bundleAdjustmentResponse.D)
-}
-inline void bundleAdjustmentResponse::set_d(const void* value,
-    size_t size) {
-  
-  d_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.bundleAdjustmentResponse.D)
-}
-inline std::string* bundleAdjustmentResponse::_internal_mutable_d() {
-  
-  return d_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* bundleAdjustmentResponse::release_d() {
-  // @@protoc_insertion_point(field_release:grpcIBundler.bundleAdjustmentResponse.D)
-  return d_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void bundleAdjustmentResponse::set_allocated_d(std::string* d) {
-  if (d != nullptr) {
-    
-  } else {
-    
-  }
-  d_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), d,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.bundleAdjustmentResponse.D)
-}
-
-// double xpcfGrpcReturnValue = 3;
+// double xpcfGrpcReturnValue = 1;
 inline void bundleAdjustmentResponse::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }
@@ -2011,129 +1623,7 @@ inline void optimizeSim3Request::set_allocated_pts3d2(std::string* pts3d2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.pts3D2)
 }
 
-// bytes K1 = 7;
-inline void optimizeSim3Request::clear_k1() {
-  k1_.ClearToEmpty();
-}
-inline const std::string& optimizeSim3Request::k1() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.K1)
-  return _internal_k1();
-}
-inline void optimizeSim3Request::set_k1(const std::string& value) {
-  _internal_set_k1(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.K1)
-}
-inline std::string* optimizeSim3Request::mutable_k1() {
-  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.K1)
-  return _internal_mutable_k1();
-}
-inline const std::string& optimizeSim3Request::_internal_k1() const {
-  return k1_.Get();
-}
-inline void optimizeSim3Request::_internal_set_k1(const std::string& value) {
-  
-  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void optimizeSim3Request::set_k1(std::string&& value) {
-  
-  k1_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.K1)
-}
-inline void optimizeSim3Request::set_k1(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.K1)
-}
-inline void optimizeSim3Request::set_k1(const void* value,
-    size_t size) {
-  
-  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.K1)
-}
-inline std::string* optimizeSim3Request::_internal_mutable_k1() {
-  
-  return k1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* optimizeSim3Request::release_k1() {
-  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.K1)
-  return k1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void optimizeSim3Request::set_allocated_k1(std::string* k1) {
-  if (k1 != nullptr) {
-    
-  } else {
-    
-  }
-  k1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k1,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.K1)
-}
-
-// bytes K2 = 8;
-inline void optimizeSim3Request::clear_k2() {
-  k2_.ClearToEmpty();
-}
-inline const std::string& optimizeSim3Request::k2() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Request.K2)
-  return _internal_k2();
-}
-inline void optimizeSim3Request::set_k2(const std::string& value) {
-  _internal_set_k2(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Request.K2)
-}
-inline std::string* optimizeSim3Request::mutable_k2() {
-  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Request.K2)
-  return _internal_mutable_k2();
-}
-inline const std::string& optimizeSim3Request::_internal_k2() const {
-  return k2_.Get();
-}
-inline void optimizeSim3Request::_internal_set_k2(const std::string& value) {
-  
-  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void optimizeSim3Request::set_k2(std::string&& value) {
-  
-  k2_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Request.K2)
-}
-inline void optimizeSim3Request::set_k2(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Request.K2)
-}
-inline void optimizeSim3Request::set_k2(const void* value,
-    size_t size) {
-  
-  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Request.K2)
-}
-inline std::string* optimizeSim3Request::_internal_mutable_k2() {
-  
-  return k2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* optimizeSim3Request::release_k2() {
-  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Request.K2)
-  return k2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void optimizeSim3Request::set_allocated_k2(std::string* k2) {
-  if (k2 != nullptr) {
-    
-  } else {
-    
-  }
-  k2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k2,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Request.K2)
-}
-
-// bytes pose = 9;
+// bytes pose = 7;
 inline void optimizeSim3Request::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -2198,129 +1688,7 @@ inline void optimizeSim3Request::set_allocated_pose(std::string* pose) {
 
 // optimizeSim3Response
 
-// bytes K1 = 1;
-inline void optimizeSim3Response::clear_k1() {
-  k1_.ClearToEmpty();
-}
-inline const std::string& optimizeSim3Response::k1() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Response.K1)
-  return _internal_k1();
-}
-inline void optimizeSim3Response::set_k1(const std::string& value) {
-  _internal_set_k1(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Response.K1)
-}
-inline std::string* optimizeSim3Response::mutable_k1() {
-  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Response.K1)
-  return _internal_mutable_k1();
-}
-inline const std::string& optimizeSim3Response::_internal_k1() const {
-  return k1_.Get();
-}
-inline void optimizeSim3Response::_internal_set_k1(const std::string& value) {
-  
-  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void optimizeSim3Response::set_k1(std::string&& value) {
-  
-  k1_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Response.K1)
-}
-inline void optimizeSim3Response::set_k1(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Response.K1)
-}
-inline void optimizeSim3Response::set_k1(const void* value,
-    size_t size) {
-  
-  k1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Response.K1)
-}
-inline std::string* optimizeSim3Response::_internal_mutable_k1() {
-  
-  return k1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* optimizeSim3Response::release_k1() {
-  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Response.K1)
-  return k1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void optimizeSim3Response::set_allocated_k1(std::string* k1) {
-  if (k1 != nullptr) {
-    
-  } else {
-    
-  }
-  k1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k1,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Response.K1)
-}
-
-// bytes K2 = 2;
-inline void optimizeSim3Response::clear_k2() {
-  k2_.ClearToEmpty();
-}
-inline const std::string& optimizeSim3Response::k2() const {
-  // @@protoc_insertion_point(field_get:grpcIBundler.optimizeSim3Response.K2)
-  return _internal_k2();
-}
-inline void optimizeSim3Response::set_k2(const std::string& value) {
-  _internal_set_k2(value);
-  // @@protoc_insertion_point(field_set:grpcIBundler.optimizeSim3Response.K2)
-}
-inline std::string* optimizeSim3Response::mutable_k2() {
-  // @@protoc_insertion_point(field_mutable:grpcIBundler.optimizeSim3Response.K2)
-  return _internal_mutable_k2();
-}
-inline const std::string& optimizeSim3Response::_internal_k2() const {
-  return k2_.Get();
-}
-inline void optimizeSim3Response::_internal_set_k2(const std::string& value) {
-  
-  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void optimizeSim3Response::set_k2(std::string&& value) {
-  
-  k2_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIBundler.optimizeSim3Response.K2)
-}
-inline void optimizeSim3Response::set_k2(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIBundler.optimizeSim3Response.K2)
-}
-inline void optimizeSim3Response::set_k2(const void* value,
-    size_t size) {
-  
-  k2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIBundler.optimizeSim3Response.K2)
-}
-inline std::string* optimizeSim3Response::_internal_mutable_k2() {
-  
-  return k2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* optimizeSim3Response::release_k2() {
-  // @@protoc_insertion_point(field_release:grpcIBundler.optimizeSim3Response.K2)
-  return k2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void optimizeSim3Response::set_allocated_k2(std::string* k2) {
-  if (k2 != nullptr) {
-    
-  } else {
-    
-  }
-  k2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), k2,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Response.K2)
-}
-
-// bytes pose = 3;
+// bytes pose = 1;
 inline void optimizeSim3Response::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -2381,7 +1749,7 @@ inline void optimizeSim3Response::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcIBundler.optimizeSim3Response.pose)
 }
 
-// double xpcfGrpcReturnValue = 4;
+// double xpcfGrpcReturnValue = 2;
 inline void optimizeSim3Response::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }

@@ -14,7 +14,7 @@ I3DOverlay_grpcServer::I3DOverlay_grpcServer():xpcf::ConfigurableBase(xpcf::toMa
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::display::I3DOverlay>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(3);
+  m_grpcServerCompressionConfig.resize(2);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -40,24 +40,6 @@ XPCFErrorCode I3DOverlay_grpcServer::onConfigured()
   return &m_grpcService;
 }
 
-::grpc::Status I3DOverlay_grpcServer::grpcI3DOverlayServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcI3DOverlay::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I3DOverlay_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::datastructure::CamCalibration intrinsic_parameters = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsic_parameters());
-  SolAR::datastructure::CamDistortion distorsion_parameters = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distorsion_parameters());
-  m_xpcfComponent->setCameraParameters(intrinsic_parameters, distorsion_parameters);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I3DOverlay_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
 ::grpc::Status I3DOverlay_grpcServer::grpcI3DOverlayServiceImpl::draw(::grpc::ServerContext* context, const ::grpcI3DOverlay::drawRequest* request, ::google::protobuf::Empty* response)
 {
   #ifdef ENABLE_SERVER_TIMERS
@@ -65,8 +47,9 @@ XPCFErrorCode I3DOverlay_grpcServer::onConfigured()
   std::cout << "====> I3DOverlay_grpcServer::draw request received at " << to_simple_string(start) << std::endl;
   #endif
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
+  SolAR::datastructure::CameraParameters camParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams());
   SRef<SolAR::datastructure::Image> displayImage = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->displayimage());
-  m_xpcfComponent->draw(pose, displayImage);
+  m_xpcfComponent->draw(pose, camParams, displayImage);
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> I3DOverlay_grpcServer::draw response sent at " << to_simple_string(end) << std::endl;

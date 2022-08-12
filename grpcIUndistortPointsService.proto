@@ -8,7 +8,8 @@ message undistort_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes inputPoints = 2;
-bytes outputPoints = 3;
+bytes camParams = 3;
+bytes outputPoints = 4;
 }
 
 message undistort_grpc0Response
@@ -21,7 +22,8 @@ message undistort_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes inputKeypoints = 2;
-bytes outputKeypoints = 3;
+bytes camParams = 3;
+bytes outputKeypoints = 4;
 }
 
 message undistort_grpc1Response
@@ -30,15 +32,8 @@ bytes outputKeypoints = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message setCameraParametersRequest
-{
-bytes intrinsicParams = 1;
-bytes distorsionParams = 2;
-}
-
 service grpcIUndistortPointsService {
 rpc undistort_grpc0(undistort_grpc0Request) returns(undistort_grpc0Response) {}
 rpc undistort_grpc1(undistort_grpc1Request) returns(undistort_grpc1Response) {}
-rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
 }
 

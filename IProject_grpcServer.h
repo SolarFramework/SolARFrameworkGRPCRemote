@@ -25,7 +25,6 @@ class IProject_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     {
       public:
         grpcIProjectServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status project_grpc0(::grpc::ServerContext* context, const ::grpcIProject::project_grpc0Request* request, ::grpcIProject::project_grpc0Response* response) override;
         ::grpc::Status project_grpc1(::grpc::ServerContext* context, const ::grpcIProject::project_grpc1Request* request, ::grpcIProject::project_grpc1Response* response) override;
 

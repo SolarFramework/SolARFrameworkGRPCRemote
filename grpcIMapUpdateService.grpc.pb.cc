@@ -22,7 +22,6 @@
 namespace grpcIMapUpdate {
 
 static const char* grpcIMapUpdateService_method_names[] = {
-  "/grpcIMapUpdate.grpcIMapUpdateService/setCameraParameters",
   "/grpcIMapUpdate.grpcIMapUpdateService/update",
 };
 
@@ -33,32 +32,8 @@ std::unique_ptr< grpcIMapUpdateService::Stub> grpcIMapUpdateService::NewStub(con
 }
 
 grpcIMapUpdateService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcIMapUpdateService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_update_(grpcIMapUpdateService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_update_(grpcIMapUpdateService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcIMapUpdateService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdate::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapUpdate::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcIMapUpdateService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdate::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMapUpdate::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcIMapUpdateService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdate::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIMapUpdateService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapUpdate::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcIMapUpdate::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIMapUpdateService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapUpdate::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcIMapUpdateService::Stub::update(::grpc::ClientContext* context, const ::grpcIMapUpdate::updateRequest& request, ::grpcIMapUpdate::updateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMapUpdate::updateRequest, ::grpcIMapUpdate::updateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_update_, context, request, response);
@@ -87,16 +62,6 @@ grpcIMapUpdateService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapUpdateService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMapUpdateService::Service, ::grpcIMapUpdate::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIMapUpdateService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIMapUpdate::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapUpdateService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdateService::Service, ::grpcIMapUpdate::updateRequest, ::grpcIMapUpdate::updateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdateService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -107,13 +72,6 @@ grpcIMapUpdateService::Service::Service() {
 }
 
 grpcIMapUpdateService::Service::~Service() {
-}
-
-::grpc::Status grpcIMapUpdateService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapUpdate::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcIMapUpdateService::Service::update(::grpc::ServerContext* context, const ::grpcIMapUpdate::updateRequest* request, ::grpcIMapUpdate::updateResponse* response) {

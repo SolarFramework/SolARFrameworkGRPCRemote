@@ -47,7 +47,7 @@ struct TableStruct_grpcI3DOverlayService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,179 +59,13 @@ namespace grpcI3DOverlay {
 class drawRequest;
 struct drawRequestDefaultTypeInternal;
 extern drawRequestDefaultTypeInternal _drawRequest_default_instance_;
-class setCameraParametersRequest;
-struct setCameraParametersRequestDefaultTypeInternal;
-extern setCameraParametersRequestDefaultTypeInternal _setCameraParametersRequest_default_instance_;
 }  // namespace grpcI3DOverlay
 PROTOBUF_NAMESPACE_OPEN
 template<> ::grpcI3DOverlay::drawRequest* Arena::CreateMaybeMessage<::grpcI3DOverlay::drawRequest>(Arena*);
-template<> ::grpcI3DOverlay::setCameraParametersRequest* Arena::CreateMaybeMessage<::grpcI3DOverlay::setCameraParametersRequest>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcI3DOverlay {
 
 // ===================================================================
-
-class setCameraParametersRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcI3DOverlay.setCameraParametersRequest) */ {
- public:
-  inline setCameraParametersRequest() : setCameraParametersRequest(nullptr) {}
-  virtual ~setCameraParametersRequest();
-  explicit constexpr setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  setCameraParametersRequest(const setCameraParametersRequest& from);
-  setCameraParametersRequest(setCameraParametersRequest&& from) noexcept
-    : setCameraParametersRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline setCameraParametersRequest& operator=(const setCameraParametersRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline setCameraParametersRequest& operator=(setCameraParametersRequest&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const setCameraParametersRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const setCameraParametersRequest* internal_default_instance() {
-    return reinterpret_cast<const setCameraParametersRequest*>(
-               &_setCameraParametersRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(setCameraParametersRequest& a, setCameraParametersRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(setCameraParametersRequest* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(setCameraParametersRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline setCameraParametersRequest* New() const final {
-    return CreateMaybeMessage<setCameraParametersRequest>(nullptr);
-  }
-
-  setCameraParametersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<setCameraParametersRequest>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const setCameraParametersRequest& from);
-  void MergeFrom(const setCameraParametersRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(setCameraParametersRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcI3DOverlay.setCameraParametersRequest";
-  }
-  protected:
-  explicit setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    return ::descriptor_table_grpcI3DOverlayService_2eproto_metadata_getter(kIndexInFileMessages);
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kIntrinsicParametersFieldNumber = 1,
-    kDistorsionParametersFieldNumber = 2,
-  };
-  // bytes intrinsic_parameters = 1;
-  void clear_intrinsic_parameters();
-  const std::string& intrinsic_parameters() const;
-  void set_intrinsic_parameters(const std::string& value);
-  void set_intrinsic_parameters(std::string&& value);
-  void set_intrinsic_parameters(const char* value);
-  void set_intrinsic_parameters(const void* value, size_t size);
-  std::string* mutable_intrinsic_parameters();
-  std::string* release_intrinsic_parameters();
-  void set_allocated_intrinsic_parameters(std::string* intrinsic_parameters);
-  private:
-  const std::string& _internal_intrinsic_parameters() const;
-  void _internal_set_intrinsic_parameters(const std::string& value);
-  std::string* _internal_mutable_intrinsic_parameters();
-  public:
-
-  // bytes distorsion_parameters = 2;
-  void clear_distorsion_parameters();
-  const std::string& distorsion_parameters() const;
-  void set_distorsion_parameters(const std::string& value);
-  void set_distorsion_parameters(std::string&& value);
-  void set_distorsion_parameters(const char* value);
-  void set_distorsion_parameters(const void* value, size_t size);
-  std::string* mutable_distorsion_parameters();
-  std::string* release_distorsion_parameters();
-  void set_allocated_distorsion_parameters(std::string* distorsion_parameters);
-  private:
-  const std::string& _internal_distorsion_parameters() const;
-  void _internal_set_distorsion_parameters(const std::string& value);
-  std::string* _internal_mutable_distorsion_parameters();
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcI3DOverlay.setCameraParametersRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr intrinsic_parameters_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr distorsion_parameters_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_grpcI3DOverlayService_2eproto;
-};
-// -------------------------------------------------------------------
 
 class drawRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcI3DOverlay.drawRequest) */ {
@@ -276,7 +110,7 @@ class drawRequest PROTOBUF_FINAL :
                &_drawRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   friend void swap(drawRequest& a, drawRequest& b) {
     a.Swap(&b);
@@ -347,7 +181,8 @@ class drawRequest PROTOBUF_FINAL :
 
   enum : int {
     kPoseFieldNumber = 1,
-    kDisplayImageFieldNumber = 2,
+    kCamParamsFieldNumber = 2,
+    kDisplayImageFieldNumber = 3,
   };
   // bytes pose = 1;
   void clear_pose();
@@ -365,7 +200,23 @@ class drawRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes displayImage = 2;
+  // bytes camParams = 2;
+  void clear_camparams();
+  const std::string& camparams() const;
+  void set_camparams(const std::string& value);
+  void set_camparams(std::string&& value);
+  void set_camparams(const char* value);
+  void set_camparams(const void* value, size_t size);
+  std::string* mutable_camparams();
+  std::string* release_camparams();
+  void set_allocated_camparams(std::string* camparams);
+  private:
+  const std::string& _internal_camparams() const;
+  void _internal_set_camparams(const std::string& value);
+  std::string* _internal_mutable_camparams();
+  public:
+
+  // bytes displayImage = 3;
   void clear_displayimage();
   const std::string& displayimage() const;
   void set_displayimage(const std::string& value);
@@ -389,6 +240,7 @@ class drawRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr displayimage_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcI3DOverlayService_2eproto;
@@ -402,132 +254,6 @@ class drawRequest PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// setCameraParametersRequest
-
-// bytes intrinsic_parameters = 1;
-inline void setCameraParametersRequest::clear_intrinsic_parameters() {
-  intrinsic_parameters_.ClearToEmpty();
-}
-inline const std::string& setCameraParametersRequest::intrinsic_parameters() const {
-  // @@protoc_insertion_point(field_get:grpcI3DOverlay.setCameraParametersRequest.intrinsic_parameters)
-  return _internal_intrinsic_parameters();
-}
-inline void setCameraParametersRequest::set_intrinsic_parameters(const std::string& value) {
-  _internal_set_intrinsic_parameters(value);
-  // @@protoc_insertion_point(field_set:grpcI3DOverlay.setCameraParametersRequest.intrinsic_parameters)
-}
-inline std::string* setCameraParametersRequest::mutable_intrinsic_parameters() {
-  // @@protoc_insertion_point(field_mutable:grpcI3DOverlay.setCameraParametersRequest.intrinsic_parameters)
-  return _internal_mutable_intrinsic_parameters();
-}
-inline const std::string& setCameraParametersRequest::_internal_intrinsic_parameters() const {
-  return intrinsic_parameters_.Get();
-}
-inline void setCameraParametersRequest::_internal_set_intrinsic_parameters(const std::string& value) {
-  
-  intrinsic_parameters_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void setCameraParametersRequest::set_intrinsic_parameters(std::string&& value) {
-  
-  intrinsic_parameters_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcI3DOverlay.setCameraParametersRequest.intrinsic_parameters)
-}
-inline void setCameraParametersRequest::set_intrinsic_parameters(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  intrinsic_parameters_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcI3DOverlay.setCameraParametersRequest.intrinsic_parameters)
-}
-inline void setCameraParametersRequest::set_intrinsic_parameters(const void* value,
-    size_t size) {
-  
-  intrinsic_parameters_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcI3DOverlay.setCameraParametersRequest.intrinsic_parameters)
-}
-inline std::string* setCameraParametersRequest::_internal_mutable_intrinsic_parameters() {
-  
-  return intrinsic_parameters_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* setCameraParametersRequest::release_intrinsic_parameters() {
-  // @@protoc_insertion_point(field_release:grpcI3DOverlay.setCameraParametersRequest.intrinsic_parameters)
-  return intrinsic_parameters_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void setCameraParametersRequest::set_allocated_intrinsic_parameters(std::string* intrinsic_parameters) {
-  if (intrinsic_parameters != nullptr) {
-    
-  } else {
-    
-  }
-  intrinsic_parameters_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), intrinsic_parameters,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcI3DOverlay.setCameraParametersRequest.intrinsic_parameters)
-}
-
-// bytes distorsion_parameters = 2;
-inline void setCameraParametersRequest::clear_distorsion_parameters() {
-  distorsion_parameters_.ClearToEmpty();
-}
-inline const std::string& setCameraParametersRequest::distorsion_parameters() const {
-  // @@protoc_insertion_point(field_get:grpcI3DOverlay.setCameraParametersRequest.distorsion_parameters)
-  return _internal_distorsion_parameters();
-}
-inline void setCameraParametersRequest::set_distorsion_parameters(const std::string& value) {
-  _internal_set_distorsion_parameters(value);
-  // @@protoc_insertion_point(field_set:grpcI3DOverlay.setCameraParametersRequest.distorsion_parameters)
-}
-inline std::string* setCameraParametersRequest::mutable_distorsion_parameters() {
-  // @@protoc_insertion_point(field_mutable:grpcI3DOverlay.setCameraParametersRequest.distorsion_parameters)
-  return _internal_mutable_distorsion_parameters();
-}
-inline const std::string& setCameraParametersRequest::_internal_distorsion_parameters() const {
-  return distorsion_parameters_.Get();
-}
-inline void setCameraParametersRequest::_internal_set_distorsion_parameters(const std::string& value) {
-  
-  distorsion_parameters_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void setCameraParametersRequest::set_distorsion_parameters(std::string&& value) {
-  
-  distorsion_parameters_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcI3DOverlay.setCameraParametersRequest.distorsion_parameters)
-}
-inline void setCameraParametersRequest::set_distorsion_parameters(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  distorsion_parameters_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcI3DOverlay.setCameraParametersRequest.distorsion_parameters)
-}
-inline void setCameraParametersRequest::set_distorsion_parameters(const void* value,
-    size_t size) {
-  
-  distorsion_parameters_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcI3DOverlay.setCameraParametersRequest.distorsion_parameters)
-}
-inline std::string* setCameraParametersRequest::_internal_mutable_distorsion_parameters() {
-  
-  return distorsion_parameters_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* setCameraParametersRequest::release_distorsion_parameters() {
-  // @@protoc_insertion_point(field_release:grpcI3DOverlay.setCameraParametersRequest.distorsion_parameters)
-  return distorsion_parameters_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void setCameraParametersRequest::set_allocated_distorsion_parameters(std::string* distorsion_parameters) {
-  if (distorsion_parameters != nullptr) {
-    
-  } else {
-    
-  }
-  distorsion_parameters_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), distorsion_parameters,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcI3DOverlay.setCameraParametersRequest.distorsion_parameters)
-}
-
-// -------------------------------------------------------------------
-
 // drawRequest
 
 // bytes pose = 1;
@@ -591,7 +317,68 @@ inline void drawRequest::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcI3DOverlay.drawRequest.pose)
 }
 
-// bytes displayImage = 2;
+// bytes camParams = 2;
+inline void drawRequest::clear_camparams() {
+  camparams_.ClearToEmpty();
+}
+inline const std::string& drawRequest::camparams() const {
+  // @@protoc_insertion_point(field_get:grpcI3DOverlay.drawRequest.camParams)
+  return _internal_camparams();
+}
+inline void drawRequest::set_camparams(const std::string& value) {
+  _internal_set_camparams(value);
+  // @@protoc_insertion_point(field_set:grpcI3DOverlay.drawRequest.camParams)
+}
+inline std::string* drawRequest::mutable_camparams() {
+  // @@protoc_insertion_point(field_mutable:grpcI3DOverlay.drawRequest.camParams)
+  return _internal_mutable_camparams();
+}
+inline const std::string& drawRequest::_internal_camparams() const {
+  return camparams_.Get();
+}
+inline void drawRequest::_internal_set_camparams(const std::string& value) {
+  
+  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void drawRequest::set_camparams(std::string&& value) {
+  
+  camparams_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcI3DOverlay.drawRequest.camParams)
+}
+inline void drawRequest::set_camparams(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcI3DOverlay.drawRequest.camParams)
+}
+inline void drawRequest::set_camparams(const void* value,
+    size_t size) {
+  
+  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcI3DOverlay.drawRequest.camParams)
+}
+inline std::string* drawRequest::_internal_mutable_camparams() {
+  
+  return camparams_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* drawRequest::release_camparams() {
+  // @@protoc_insertion_point(field_release:grpcI3DOverlay.drawRequest.camParams)
+  return camparams_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void drawRequest::set_allocated_camparams(std::string* camparams) {
+  if (camparams != nullptr) {
+    
+  } else {
+    
+  }
+  camparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcI3DOverlay.drawRequest.camParams)
+}
+
+// bytes displayImage = 3;
 inline void drawRequest::clear_displayimage() {
   displayimage_.ClearToEmpty();
 }
@@ -655,8 +442,6 @@ inline void drawRequest::set_allocated_displayimage(std::string* displayimage) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 
 // @@protoc_insertion_point(namespace_scope)
 

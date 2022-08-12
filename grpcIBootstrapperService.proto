@@ -4,12 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcIBootstrapper;
 
-message setCameraParametersRequest
-{
-bytes intrinsicParams = 1;
-bytes distorsionParams = 2;
-}
-
 message processRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -24,7 +18,6 @@ sint32 xpcfGrpcReturnValue = 2;
 }
 
 service grpcIBootstrapperService {
-rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
 rpc process(processRequest) returns(processResponse) {}
 }
 

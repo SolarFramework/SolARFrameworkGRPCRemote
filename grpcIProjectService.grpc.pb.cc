@@ -22,7 +22,6 @@
 namespace grpcIProject {
 
 static const char* grpcIProjectService_method_names[] = {
-  "/grpcIProject.grpcIProjectService/setCameraParameters",
   "/grpcIProject.grpcIProjectService/project_grpc0",
   "/grpcIProject.grpcIProjectService/project_grpc1",
 };
@@ -34,33 +33,9 @@ std::unique_ptr< grpcIProjectService::Stub> grpcIProjectService::NewStub(const s
 }
 
 grpcIProjectService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcIProjectService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_project_grpc0_(grpcIProjectService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_project_grpc1_(grpcIProjectService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_project_grpc0_(grpcIProjectService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_project_grpc1_(grpcIProjectService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcIProjectService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIProject::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcIProjectService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIProject::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcIProjectService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIProjectService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcIProject::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIProjectService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIProject::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcIProjectService::Stub::project_grpc0(::grpc::ClientContext* context, const ::grpcIProject::project_grpc0Request& request, ::grpcIProject::project_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIProject::project_grpc0Request, ::grpcIProject::project_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_project_grpc0_, context, request, response);
@@ -112,16 +87,6 @@ grpcIProjectService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIProjectService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIProjectService::Service, ::grpcIProject::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIProjectService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIProject::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIProjectService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIProjectService::Service, ::grpcIProject::project_grpc0Request, ::grpcIProject::project_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIProjectService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -130,7 +95,7 @@ grpcIProjectService::Service::Service() {
                return service->project_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIProjectService_method_names[2],
+      grpcIProjectService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIProjectService::Service, ::grpcIProject::project_grpc1Request, ::grpcIProject::project_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIProjectService::Service* service,
@@ -142,13 +107,6 @@ grpcIProjectService::Service::Service() {
 }
 
 grpcIProjectService::Service::~Service() {
-}
-
-::grpc::Status grpcIProjectService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcIProjectService::Service::project_grpc0(::grpc::ServerContext* context, const ::grpcIProject::project_grpc0Request* request, ::grpcIProject::project_grpc0Response* response) {

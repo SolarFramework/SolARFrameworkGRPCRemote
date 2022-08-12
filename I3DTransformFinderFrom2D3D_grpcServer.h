@@ -25,7 +25,6 @@ class I3DTransformFinderFrom2D3D_grpcServer:  public org::bcom::xpcf::Configurab
     {
       public:
         grpcI3DTransformFinderFrom2D3DServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status estimate(::grpc::ServerContext* context, const ::grpcI3DTransformFinderFrom2D3D::estimateRequest* request, ::grpcI3DTransformFinderFrom2D3D::estimateResponse* response) override;
 
         SRef<SolAR::api::solver::pose::I3DTransformFinderFrom2D3D> m_xpcfComponent;

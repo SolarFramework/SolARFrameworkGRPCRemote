@@ -22,9 +22,8 @@ class IProject_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pub
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
-    SolAR::FrameworkReturnCode project(std::vector<SolAR::datastructure::Point3Df> const& inputPoints, std::vector<SolAR::datastructure::Point2Df>& imagePoints, SolAR::datastructure::Transform3Df const& pose)     override;
-    SolAR::FrameworkReturnCode project(std::vector<SRef<SolAR::datastructure::CloudPoint>> const& inputPoints, std::vector<SolAR::datastructure::Point2Df>& imagePoints, SolAR::datastructure::Transform3Df const& pose)     override;
+    SolAR::FrameworkReturnCode project(std::vector<SolAR::datastructure::Point3Df> const& inputPoints, SolAR::datastructure::Transform3Df const& pose, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Point2Df>& imagePoints)     override;
+    SolAR::FrameworkReturnCode project(std::vector<SRef<SolAR::datastructure::CloudPoint>> const& inputPoints, SolAR::datastructure::Transform3Df const& pose, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Point2Df>& imagePoints)     override;
 
 
   private:

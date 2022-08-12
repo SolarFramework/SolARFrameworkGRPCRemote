@@ -22,7 +22,6 @@
 namespace grpcIMultiTrackablesPose {
 
 static const char* grpcIMultiTrackablesPoseService_method_names[] = {
-  "/grpcIMultiTrackablesPose.grpcIMultiTrackablesPoseService/setCameraParameters",
   "/grpcIMultiTrackablesPose.grpcIMultiTrackablesPoseService/setTrackables",
   "/grpcIMultiTrackablesPose.grpcIMultiTrackablesPoseService/estimate",
 };
@@ -34,33 +33,9 @@ std::unique_ptr< grpcIMultiTrackablesPoseService::Stub> grpcIMultiTrackablesPose
 }
 
 grpcIMultiTrackablesPoseService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcIMultiTrackablesPoseService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setTrackables_(grpcIMultiTrackablesPoseService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_estimate_(grpcIMultiTrackablesPoseService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_setTrackables_(grpcIMultiTrackablesPoseService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_estimate_(grpcIMultiTrackablesPoseService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcIMultiTrackablesPoseService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMultiTrackablesPose::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcIMultiTrackablesPoseService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMultiTrackablesPose::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcIMultiTrackablesPoseService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIMultiTrackablesPoseService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcIMultiTrackablesPose::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIMultiTrackablesPoseService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcIMultiTrackablesPoseService::Stub::setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest& request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMultiTrackablesPose::setTrackablesRequest, ::grpcIMultiTrackablesPose::setTrackablesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setTrackables_, context, request, response);
@@ -112,16 +87,6 @@ grpcIMultiTrackablesPoseService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMultiTrackablesPoseService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMultiTrackablesPoseService::Service, ::grpcIMultiTrackablesPose::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIMultiTrackablesPoseService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIMultiTrackablesPose::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMultiTrackablesPoseService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMultiTrackablesPoseService::Service, ::grpcIMultiTrackablesPose::setTrackablesRequest, ::grpcIMultiTrackablesPose::setTrackablesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMultiTrackablesPoseService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -130,7 +95,7 @@ grpcIMultiTrackablesPoseService::Service::Service() {
                return service->setTrackables(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMultiTrackablesPoseService_method_names[2],
+      grpcIMultiTrackablesPoseService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMultiTrackablesPoseService::Service, ::grpcIMultiTrackablesPose::estimateRequest, ::grpcIMultiTrackablesPose::estimateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMultiTrackablesPoseService::Service* service,
@@ -142,13 +107,6 @@ grpcIMultiTrackablesPoseService::Service::Service() {
 }
 
 grpcIMultiTrackablesPoseService::Service::~Service() {
-}
-
-::grpc::Status grpcIMultiTrackablesPoseService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcIMultiTrackablesPose::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcIMultiTrackablesPoseService::Service::setTrackables(::grpc::ServerContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response) {

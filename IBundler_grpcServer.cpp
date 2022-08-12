@@ -74,12 +74,8 @@ XPCFErrorCode IBundler_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IBundler_grpcServer::bundleAdjustment request received at " << to_simple_string(start) << std::endl;
   #endif
-  SolAR::datastructure::CamCalibration K = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->k());
-  SolAR::datastructure::CamDistortion D = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->d());
   std::vector<uint32_t> selectKeyframes = xpcf::deserialize<std::vector<uint32_t>>(request->selectkeyframes());
-  double returnValue = m_xpcfComponent->bundleAdjustment(K, D, selectKeyframes);
-  response->set_k(xpcf::serialize<SolAR::datastructure::CamCalibration>(K));
-  response->set_d(xpcf::serialize<SolAR::datastructure::CamDistortion>(D));
+  double returnValue = m_xpcfComponent->bundleAdjustment(selectKeyframes);
   response->set_xpcfgrpcreturnvalue(returnValue);
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -101,17 +97,13 @@ XPCFErrorCode IBundler_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IBundler_grpcServer::optimizeSim3 request received at " << to_simple_string(start) << std::endl;
   #endif
-  SolAR::datastructure::CamCalibration K1 = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->k1());
-  SolAR::datastructure::CamCalibration K2 = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->k2());
   SRef<SolAR::datastructure::Keyframe> keyframe1 = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->keyframe1());
   SRef<SolAR::datastructure::Keyframe> keyframe2 = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->keyframe2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
   std::vector<SolAR::datastructure::Point3Df> pts3D1 = xpcf::deserialize<std::vector<SolAR::datastructure::Point3Df>>(request->pts3d1());
   std::vector<SolAR::datastructure::Point3Df> pts3D2 = xpcf::deserialize<std::vector<SolAR::datastructure::Point3Df>>(request->pts3d2());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
-  double returnValue = m_xpcfComponent->optimizeSim3(K1, K2, keyframe1, keyframe2, matches, pts3D1, pts3D2, pose);
-  response->set_k1(xpcf::serialize<SolAR::datastructure::CamCalibration>(K1));
-  response->set_k2(xpcf::serialize<SolAR::datastructure::CamCalibration>(K2));
+  double returnValue = m_xpcfComponent->optimizeSim3(keyframe1, keyframe2, matches, pts3D1, pts3D2, pose);
   response->set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   response->set_xpcfgrpcreturnvalue(returnValue);
   #ifdef ENABLE_SERVER_TIMERS

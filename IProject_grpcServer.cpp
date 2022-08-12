@@ -14,7 +14,7 @@ IProject_grpcServer::IProject_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<IP
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::geom::IProject>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(4);
+  m_grpcServerCompressionConfig.resize(3);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -40,24 +40,6 @@ XPCFErrorCode IProject_grpcServer::onConfigured()
   return &m_grpcService;
 }
 
-::grpc::Status IProject_grpcServer::grpcIProjectServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IProject_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::datastructure::CamCalibration intrinsicParams = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsicparams());
-  SolAR::datastructure::CamDistortion distorsionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distorsionparams());
-  m_xpcfComponent->setCameraParameters(intrinsicParams, distorsionParams);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IProject_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
 ::grpc::Status IProject_grpcServer::grpcIProjectServiceImpl::project_grpc0(::grpc::ServerContext* context, const ::grpcIProject::project_grpc0Request* request, ::grpcIProject::project_grpc0Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -70,9 +52,10 @@ XPCFErrorCode IProject_grpcServer::onConfigured()
   std::cout << "====> IProject_grpcServer::project request received at " << to_simple_string(start) << std::endl;
   #endif
   std::vector<SolAR::datastructure::Point3Df> inputPoints = xpcf::deserialize<std::vector<SolAR::datastructure::Point3Df>>(request->inputpoints());
-  std::vector<SolAR::datastructure::Point2Df> imagePoints = xpcf::deserialize<std::vector<SolAR::datastructure::Point2Df>>(request->imagepoints());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->project(inputPoints, imagePoints, pose);
+  SolAR::datastructure::CameraParameters camParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams());
+  std::vector<SolAR::datastructure::Point2Df> imagePoints = xpcf::deserialize<std::vector<SolAR::datastructure::Point2Df>>(request->imagepoints());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->project(inputPoints, pose, camParams, imagePoints);
   response->set_imagepoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(imagePoints));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -96,9 +79,10 @@ XPCFErrorCode IProject_grpcServer::onConfigured()
   std::cout << "====> IProject_grpcServer::project request received at " << to_simple_string(start) << std::endl;
   #endif
   std::vector<SRef<SolAR::datastructure::CloudPoint>> inputPoints = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->inputpoints());
-  std::vector<SolAR::datastructure::Point2Df> imagePoints = xpcf::deserialize<std::vector<SolAR::datastructure::Point2Df>>(request->imagepoints());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->project(inputPoints, imagePoints, pose);
+  SolAR::datastructure::CameraParameters camParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams());
+  std::vector<SolAR::datastructure::Point2Df> imagePoints = xpcf::deserialize<std::vector<SolAR::datastructure::Point2Df>>(request->imagepoints());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->project(inputPoints, pose, camParams, imagePoints);
   response->set_imagepoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(imagePoints));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS

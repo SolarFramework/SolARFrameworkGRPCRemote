@@ -19,15 +19,11 @@ message bundleAdjustmentRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes selectKeyframes = 2;
-bytes K = 3;
-bytes D = 4;
 }
 
 message bundleAdjustmentResponse
 {
-bytes K = 1;
-bytes D = 2;
-double xpcfGrpcReturnValue = 3;
+double xpcfGrpcReturnValue = 1;
 }
 
 message optimizeSim3Request
@@ -38,17 +34,13 @@ bytes keyframe2 = 3;
 bytes matches = 4;
 bytes pts3D1 = 5;
 bytes pts3D2 = 6;
-bytes K1 = 7;
-bytes K2 = 8;
-bytes pose = 9;
+bytes pose = 7;
 }
 
 message optimizeSim3Response
 {
-bytes K1 = 1;
-bytes K2 = 2;
-bytes pose = 3;
-double xpcfGrpcReturnValue = 4;
+bytes pose = 1;
+double xpcfGrpcReturnValue = 2;
 }
 
 service grpcIBundlerService {

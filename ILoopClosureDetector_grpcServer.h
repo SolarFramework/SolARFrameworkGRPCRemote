@@ -25,7 +25,6 @@ class ILoopClosureDetector_grpcServer:  public org::bcom::xpcf::ConfigurableBase
     {
       public:
         grpcILoopClosureDetectorServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcILoopClosureDetector::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status detect(::grpc::ServerContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response) override;
 
         SRef<SolAR::api::loop::ILoopClosureDetector> m_xpcfComponent;

@@ -27,7 +27,6 @@ class IUndistortPoints_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
         grpcIUndistortPointsServiceImpl() = default;
         ::grpc::Status undistort_grpc0(::grpc::ServerContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request* request, ::grpcIUndistortPoints::undistort_grpc0Response* response) override;
         ::grpc::Status undistort_grpc1(::grpc::ServerContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response) override;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
 
         SRef<SolAR::api::geom::IUndistortPoints> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
