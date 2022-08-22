@@ -14,7 +14,7 @@ ILoopClosureDetector_grpcServer::ILoopClosureDetector_grpcServer():xpcf::Configu
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::loop::ILoopClosureDetector>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(3);
+  m_grpcServerCompressionConfig.resize(2);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -39,24 +39,6 @@ XPCFErrorCode ILoopClosureDetector_grpcServer::onConfigured()
 {
   return &m_grpcService;
 }
-
-::grpc::Status ILoopClosureDetector_grpcServer::grpcILoopClosureDetectorServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcILoopClosureDetector::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ILoopClosureDetector_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::datastructure::CamCalibration intrinsicParams = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsicparams());
-  SolAR::datastructure::CamDistortion distortionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distortionparams());
-  m_xpcfComponent->setCameraParameters(intrinsicParams, distortionParams);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ILoopClosureDetector_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
 
 ::grpc::Status ILoopClosureDetector_grpcServer::grpcILoopClosureDetectorServiceImpl::detect(::grpc::ServerContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response)
 {

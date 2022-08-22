@@ -2,7 +2,7 @@
 
 #ifndef IUNPROJECT_GRPCSERVER_H
 #define IUNPROJECT_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/geom/IUnproject.h"
+#include "api/geom/IUnproject.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -25,7 +25,6 @@ class IUnproject_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
     {
       public:
         grpcIUnprojectServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIUnproject::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status unproject_grpc0(::grpc::ServerContext* context, const ::grpcIUnproject::unproject_grpc0Request* request, ::grpcIUnproject::unproject_grpc0Response* response) override;
         ::grpc::Status unproject_grpc1(::grpc::ServerContext* context, const ::grpcIUnproject::unproject_grpc1Request* request, ::grpcIUnproject::unproject_grpc1Response* response) override;
 

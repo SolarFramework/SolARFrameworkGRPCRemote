@@ -2,7 +2,7 @@
 
 #ifndef IMULTITRACKABLESPOSE_GRPCSERVER_H
 #define IMULTITRACKABLESPOSE_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/solver/pose/IMultiTrackablesPose.h"
+#include "api/solver/pose/IMultiTrackablesPose.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -25,7 +25,6 @@ class IMultiTrackablesPose_grpcServer:  public org::bcom::xpcf::ConfigurableBase
     {
       public:
         grpcIMultiTrackablesPoseServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMultiTrackablesPose::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status setTrackables(::grpc::ServerContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response) override;
         ::grpc::Status estimate(::grpc::ServerContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response) override;
 

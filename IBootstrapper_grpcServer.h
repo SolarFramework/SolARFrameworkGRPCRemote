@@ -2,7 +2,7 @@
 
 #ifndef IBOOTSTRAPPER_GRPCSERVER_H
 #define IBOOTSTRAPPER_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/slam/IBootstrapper.h"
+#include "api/slam/IBootstrapper.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -25,7 +25,6 @@ class IBootstrapper_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtu
     {
       public:
         grpcIBootstrapperServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIBootstrapper::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status process(::grpc::ServerContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response) override;
 
         SRef<SolAR::api::slam::IBootstrapper> m_xpcfComponent;

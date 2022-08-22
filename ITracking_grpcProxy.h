@@ -3,7 +3,7 @@
 
 #ifndef ITRACKING_GRPCPROXY_H
 #define ITRACKING_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/slam/ITracking.h"
+#include "api/slam/ITracking.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,7 +22,6 @@ class ITracking_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
     void setNewKeyframe(SRef<SolAR::datastructure::Keyframe> const newKeyframe)     override;
     bool checkNeedNewKeyframe()     override;
     SolAR::FrameworkReturnCode process(SRef<SolAR::datastructure::Frame> const frame, SRef<SolAR::datastructure::Image>& displayImage)     override;

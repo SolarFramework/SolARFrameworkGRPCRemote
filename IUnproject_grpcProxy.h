@@ -3,7 +3,7 @@
 
 #ifndef IUNPROJECT_GRPCPROXY_H
 #define IUNPROJECT_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/geom/IUnproject.h"
+#include "api/geom/IUnproject.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,9 +22,8 @@ class IUnproject_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
-    SolAR::FrameworkReturnCode unproject(std::vector<SolAR::datastructure::Point2Df> const& imagePoints, std::vector<SolAR::datastructure::Point3Df>& worldPoints, SolAR::datastructure::Transform3Df const& pose)     override;
-    SolAR::FrameworkReturnCode unproject(std::vector<SolAR::datastructure::Keypoint> const& imageKeypoints, std::vector<SolAR::datastructure::Point3Df>& worldPoints, SolAR::datastructure::Transform3Df const& pose)     override;
+    SolAR::FrameworkReturnCode unproject(std::vector<SolAR::datastructure::Point2Df> const& imagePoints, SolAR::datastructure::Transform3Df const& pose, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Point3Df>& worldPoints)     override;
+    SolAR::FrameworkReturnCode unproject(std::vector<SolAR::datastructure::Keypoint> const& imageKeypoints, SolAR::datastructure::Transform3Df const& pose, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Point3Df>& worldPoints)     override;
 
 
   private:

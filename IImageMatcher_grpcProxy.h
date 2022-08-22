@@ -3,7 +3,7 @@
 
 #ifndef IIMAGEMATCHER_GRPCPROXY_H
 #define IIMAGEMATCHER_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/IImageMatcher.h"
+#include "api/features/IImageMatcher.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

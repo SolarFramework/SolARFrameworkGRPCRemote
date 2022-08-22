@@ -3,7 +3,7 @@
 
 #ifndef I3DTRANSFORMSACFINDERFROM3D3D_GRPCPROXY_H
 #define I3DTRANSFORMSACFINDERFROM3D3D_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformSACFinderFrom3D3D.h"
+#include "api/solver/pose/I3DTransformSACFinderFrom3D3D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,7 +22,6 @@ class I3DTransformSACFinderFrom3D3D_grpcProxy:  public org::bcom::xpcf::Configur
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distortionParams)     override;
     SolAR::FrameworkReturnCode estimate(std::vector<SolAR::datastructure::Point3Df> const& firstPoints3D, std::vector<SolAR::datastructure::Point3Df> const& secondPoints3D, SolAR::datastructure::Transform3Df& pose, std::vector<int>& inliers)     override;
     SolAR::FrameworkReturnCode estimate(SRef<SolAR::datastructure::Keyframe> const firstKeyframe, SRef<SolAR::datastructure::Keyframe> const secondKeyframe, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::vector<SolAR::datastructure::Point3Df> const& firstPoints3D, std::vector<SolAR::datastructure::Point3Df> const& secondPoints3D, SolAR::datastructure::Transform3Df& pose, std::vector<int>& inliers)     override;
 

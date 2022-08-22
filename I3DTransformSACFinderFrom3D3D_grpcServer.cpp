@@ -14,7 +14,7 @@ I3DTransformSACFinderFrom3D3D_grpcServer::I3DTransformSACFinderFrom3D3D_grpcServ
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::solver::pose::I3DTransformSACFinderFrom3D3D>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(4);
+  m_grpcServerCompressionConfig.resize(3);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -39,24 +39,6 @@ XPCFErrorCode I3DTransformSACFinderFrom3D3D_grpcServer::onConfigured()
 {
   return &m_grpcService;
 }
-
-::grpc::Status I3DTransformSACFinderFrom3D3D_grpcServer::grpcI3DTransformSACFinderFrom3D3DServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I3DTransformSACFinderFrom3D3D_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::datastructure::CamCalibration intrinsicParams = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsicparams());
-  SolAR::datastructure::CamDistortion distortionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distortionparams());
-  m_xpcfComponent->setCameraParameters(intrinsicParams, distortionParams);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I3DTransformSACFinderFrom3D3D_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
 
 ::grpc::Status I3DTransformSACFinderFrom3D3D_grpcServer::grpcI3DTransformSACFinderFrom3D3DServiceImpl::estimate_grpc0(::grpc::ServerContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response* response)
 {

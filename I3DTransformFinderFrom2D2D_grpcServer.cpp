@@ -14,7 +14,7 @@ I3DTransformFinderFrom2D2D_grpcServer::I3DTransformFinderFrom2D2D_grpcServer():x
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::solver::pose::I3DTransformFinderFrom2D2D>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(4);
+  m_grpcServerCompressionConfig.resize(3);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -40,24 +40,6 @@ XPCFErrorCode I3DTransformFinderFrom2D2D_grpcServer::onConfigured()
   return &m_grpcService;
 }
 
-::grpc::Status I3DTransformFinderFrom2D2D_grpcServer::grpcI3DTransformFinderFrom2D2DServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcI3DTransformFinderFrom2D2D::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I3DTransformFinderFrom2D2D_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::datastructure::CamCalibration intrinsicParams = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsicparams());
-  SolAR::datastructure::CamDistortion distorsionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distorsionparams());
-  m_xpcfComponent->setCameraParameters(intrinsicParams, distorsionParams);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I3DTransformFinderFrom2D2D_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
 ::grpc::Status I3DTransformFinderFrom2D2D_grpcServer::grpcI3DTransformFinderFrom2D2DServiceImpl::estimate_grpc0(::grpc::ServerContext* context, const ::grpcI3DTransformFinderFrom2D2D::estimate_grpc0Request* request, ::grpcI3DTransformFinderFrom2D2D::estimate_grpc0Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -71,10 +53,11 @@ XPCFErrorCode I3DTransformFinderFrom2D2D_grpcServer::onConfigured()
   #endif
   std::vector<SolAR::datastructure::Point2Df> pointsView1 = xpcf::deserialize<std::vector<SolAR::datastructure::Point2Df>>(request->pointsview1());
   std::vector<SolAR::datastructure::Point2Df> pointsView2 = xpcf::deserialize<std::vector<SolAR::datastructure::Point2Df>>(request->pointsview2());
+  SolAR::datastructure::CameraParameters camParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams());
   SolAR::datastructure::Transform3Df poseView1 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview1());
   SolAR::datastructure::Transform3Df poseView2 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview2());
   std::vector<SolAR::datastructure::DescriptorMatch> inlierMatches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->inliermatches());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->estimate(pointsView1, pointsView2, poseView1, poseView2, inlierMatches);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->estimate(pointsView1, pointsView2, camParams, poseView1, poseView2, inlierMatches);
   response->set_poseview2(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseView2));
   response->set_inliermatches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(inlierMatches));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
@@ -100,10 +83,11 @@ XPCFErrorCode I3DTransformFinderFrom2D2D_grpcServer::onConfigured()
   #endif
   std::vector<SolAR::datastructure::Keypoint> pointsView1 = xpcf::deserialize<std::vector<SolAR::datastructure::Keypoint>>(request->pointsview1());
   std::vector<SolAR::datastructure::Keypoint> pointsView2 = xpcf::deserialize<std::vector<SolAR::datastructure::Keypoint>>(request->pointsview2());
+  SolAR::datastructure::CameraParameters camParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams());
   SolAR::datastructure::Transform3Df poseView1 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview1());
   SolAR::datastructure::Transform3Df poseView2 = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->poseview2());
   std::vector<SolAR::datastructure::DescriptorMatch> inlierMatches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->inliermatches());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->estimate(pointsView1, pointsView2, poseView1, poseView2, inlierMatches);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->estimate(pointsView1, pointsView2, camParams, poseView1, poseView2, inlierMatches);
   response->set_poseview2(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseView2));
   response->set_inliermatches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(inlierMatches));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));

@@ -22,7 +22,6 @@
 namespace grpcI3DOverlay {
 
 static const char* grpcI3DOverlayService_method_names[] = {
-  "/grpcI3DOverlay.grpcI3DOverlayService/setCameraParameters",
   "/grpcI3DOverlay.grpcI3DOverlayService/draw",
 };
 
@@ -33,32 +32,8 @@ std::unique_ptr< grpcI3DOverlayService::Stub> grpcI3DOverlayService::NewStub(con
 }
 
 grpcI3DOverlayService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcI3DOverlayService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_draw_(grpcI3DOverlayService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_draw_(grpcI3DOverlayService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcI3DOverlayService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DOverlay::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcI3DOverlay::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcI3DOverlayService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DOverlay::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcI3DOverlay::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcI3DOverlayService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DOverlay::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcI3DOverlayService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcI3DOverlay::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcI3DOverlay::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcI3DOverlayService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcI3DOverlay::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcI3DOverlayService::Stub::draw(::grpc::ClientContext* context, const ::grpcI3DOverlay::drawRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcI3DOverlay::drawRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_draw_, context, request, response);
@@ -87,16 +62,6 @@ grpcI3DOverlayService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcI3DOverlayService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcI3DOverlayService::Service, ::grpcI3DOverlay::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcI3DOverlayService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcI3DOverlay::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcI3DOverlayService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcI3DOverlayService::Service, ::grpcI3DOverlay::drawRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcI3DOverlayService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -107,13 +72,6 @@ grpcI3DOverlayService::Service::Service() {
 }
 
 grpcI3DOverlayService::Service::~Service() {
-}
-
-::grpc::Status grpcI3DOverlayService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcI3DOverlay::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcI3DOverlayService::Service::draw(::grpc::ServerContext* context, const ::grpcI3DOverlay::drawRequest* request, ::google::protobuf::Empty* response) {

@@ -3,7 +3,7 @@
 
 #ifndef I2DTRACKABLESDETECTOR_GRPCPROXY_H
 #define I2DTRACKABLESDETECTOR_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/features/I2DTrackablesDetector.h"
+#include "api/features/I2DTrackablesDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

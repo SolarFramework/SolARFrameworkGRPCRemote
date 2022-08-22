@@ -36,13 +36,6 @@ class grpcITriangulatorService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::google::protobuf::Empty* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncsetCameraParametersRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncsetCameraParametersRaw(context, request, cq));
-    }
     virtual ::grpc::Status triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpcITriangulator::triangulate_grpc0Response* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc0Response>> Asynctriangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc0Response>>(Asynctriangulate_grpc0Raw(context, request, cq));
@@ -74,12 +67,6 @@ class grpcITriangulatorService final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -113,8 +100,6 @@ class grpcITriangulatorService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc0Response>* Asynctriangulate_grpc0Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc0Response>* PrepareAsynctriangulate_grpc0Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc1Response>* Asynctriangulate_grpc1Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -127,13 +112,6 @@ class grpcITriangulatorService final {
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::google::protobuf::Empty* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncsetCameraParametersRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncsetCameraParametersRaw(context, request, cq));
-    }
     ::grpc::Status triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpcITriangulator::triangulate_grpc0Response* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc0Response>> Asynctriangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc0Response>>(Asynctriangulate_grpc0Raw(context, request, cq));
@@ -165,12 +143,6 @@ class grpcITriangulatorService final {
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
@@ -206,8 +178,6 @@ class grpcITriangulatorService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc0Response>* Asynctriangulate_grpc0Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc0Response>* PrepareAsynctriangulate_grpc0Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc1Response>* Asynctriangulate_grpc1Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
@@ -216,7 +186,6 @@ class grpcITriangulatorService final {
     ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc2Response>* PrepareAsynctriangulate_grpc2Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc3Response>* Asynctriangulate_grpc3Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc3Response>* PrepareAsynctriangulate_grpc3Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_setCameraParameters_;
     const ::grpc::internal::RpcMethod rpcmethod_triangulate_grpc0_;
     const ::grpc::internal::RpcMethod rpcmethod_triangulate_grpc1_;
     const ::grpc::internal::RpcMethod rpcmethod_triangulate_grpc2_;
@@ -228,31 +197,10 @@ class grpcITriangulatorService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response);
     virtual ::grpc::Status triangulate_grpc0(::grpc::ServerContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response);
     virtual ::grpc::Status triangulate_grpc1(::grpc::ServerContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response);
     virtual ::grpc::Status triangulate_grpc2(::grpc::ServerContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response);
     virtual ::grpc::Status triangulate_grpc3(::grpc::ServerContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response);
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodAsync(0);
-    }
-    ~WithAsyncMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcITriangulator::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestsetCameraParameters(::grpc::ServerContext* context, ::grpcITriangulator::setCameraParametersRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
   };
   template <class BaseClass>
   class WithAsyncMethod_triangulate_grpc0 : public BaseClass {
@@ -260,7 +208,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_triangulate_grpc0() {
-      ::grpc::Service::MarkMethodAsync(1);
+      ::grpc::Service::MarkMethodAsync(0);
     }
     ~WithAsyncMethod_triangulate_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -271,7 +219,7 @@ class grpcITriangulatorService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requesttriangulate_grpc0(::grpc::ServerContext* context, ::grpcITriangulator::triangulate_grpc0Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcITriangulator::triangulate_grpc0Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -280,7 +228,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_triangulate_grpc1() {
-      ::grpc::Service::MarkMethodAsync(2);
+      ::grpc::Service::MarkMethodAsync(1);
     }
     ~WithAsyncMethod_triangulate_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -291,7 +239,7 @@ class grpcITriangulatorService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requesttriangulate_grpc1(::grpc::ServerContext* context, ::grpcITriangulator::triangulate_grpc1Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcITriangulator::triangulate_grpc1Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -300,7 +248,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_triangulate_grpc2() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_triangulate_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
@@ -311,7 +259,7 @@ class grpcITriangulatorService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requesttriangulate_grpc2(::grpc::ServerContext* context, ::grpcITriangulator::triangulate_grpc2Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcITriangulator::triangulate_grpc2Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -320,7 +268,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_triangulate_grpc3() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_triangulate_grpc3() override {
       BaseClassMustBeDerivedFromService(this);
@@ -331,57 +279,10 @@ class grpcITriangulatorService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requesttriangulate_grpc3(::grpc::ServerContext* context, ::grpcITriangulator::triangulate_grpc3Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcITriangulator::triangulate_grpc3Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_setCameraParameters<WithAsyncMethod_triangulate_grpc0<WithAsyncMethod_triangulate_grpc1<WithAsyncMethod_triangulate_grpc2<WithAsyncMethod_triangulate_grpc3<Service > > > > > AsyncService;
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_setCameraParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response) { return this->setCameraParameters(context, request, response); }));}
-    void SetMessageAllocatorFor_setCameraParameters(
-        ::grpc::experimental::MessageAllocator< ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcITriangulator::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* setCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcITriangulator::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setCameraParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcITriangulator::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
-  };
+  typedef WithAsyncMethod_triangulate_grpc0<WithAsyncMethod_triangulate_grpc1<WithAsyncMethod_triangulate_grpc2<WithAsyncMethod_triangulate_grpc3<Service > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_triangulate_grpc0 : public BaseClass {
    private:
@@ -393,7 +294,7 @@ class grpcITriangulatorService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(1,
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -405,9 +306,9 @@ class grpcITriangulatorService final {
     void SetMessageAllocatorFor_triangulate_grpc0(
         ::grpc::experimental::MessageAllocator< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -440,7 +341,7 @@ class grpcITriangulatorService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(2,
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -452,9 +353,9 @@ class grpcITriangulatorService final {
     void SetMessageAllocatorFor_triangulate_grpc1(
         ::grpc::experimental::MessageAllocator< ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -487,7 +388,7 @@ class grpcITriangulatorService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(3,
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -499,9 +400,9 @@ class grpcITriangulatorService final {
     void SetMessageAllocatorFor_triangulate_grpc2(
         ::grpc::experimental::MessageAllocator< ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -534,7 +435,7 @@ class grpcITriangulatorService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(4,
+        MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -546,9 +447,9 @@ class grpcITriangulatorService final {
     void SetMessageAllocatorFor_triangulate_grpc3(
         ::grpc::experimental::MessageAllocator< ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -571,34 +472,17 @@ class grpcITriangulatorService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_triangulate_grpc0<ExperimentalWithCallbackMethod_triangulate_grpc1<ExperimentalWithCallbackMethod_triangulate_grpc2<ExperimentalWithCallbackMethod_triangulate_grpc3<Service > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_triangulate_grpc0<ExperimentalWithCallbackMethod_triangulate_grpc1<ExperimentalWithCallbackMethod_triangulate_grpc2<ExperimentalWithCallbackMethod_triangulate_grpc3<Service > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_triangulate_grpc0<ExperimentalWithCallbackMethod_triangulate_grpc1<ExperimentalWithCallbackMethod_triangulate_grpc2<ExperimentalWithCallbackMethod_triangulate_grpc3<Service > > > > > ExperimentalCallbackService;
-  template <class BaseClass>
-  class WithGenericMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodGeneric(0);
-    }
-    ~WithGenericMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcITriangulator::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
+  typedef ExperimentalWithCallbackMethod_triangulate_grpc0<ExperimentalWithCallbackMethod_triangulate_grpc1<ExperimentalWithCallbackMethod_triangulate_grpc2<ExperimentalWithCallbackMethod_triangulate_grpc3<Service > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_triangulate_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_triangulate_grpc0() {
-      ::grpc::Service::MarkMethodGeneric(1);
+      ::grpc::Service::MarkMethodGeneric(0);
     }
     ~WithGenericMethod_triangulate_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -615,7 +499,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_triangulate_grpc1() {
-      ::grpc::Service::MarkMethodGeneric(2);
+      ::grpc::Service::MarkMethodGeneric(1);
     }
     ~WithGenericMethod_triangulate_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -632,7 +516,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_triangulate_grpc2() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_triangulate_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
@@ -649,7 +533,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_triangulate_grpc3() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_triangulate_grpc3() override {
       BaseClassMustBeDerivedFromService(this);
@@ -661,32 +545,12 @@ class grpcITriangulatorService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodRaw(0);
-    }
-    ~WithRawMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcITriangulator::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestsetCameraParameters(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_triangulate_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_triangulate_grpc0() {
-      ::grpc::Service::MarkMethodRaw(1);
+      ::grpc::Service::MarkMethodRaw(0);
     }
     ~WithRawMethod_triangulate_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -697,7 +561,7 @@ class grpcITriangulatorService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requesttriangulate_grpc0(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -706,7 +570,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_triangulate_grpc1() {
-      ::grpc::Service::MarkMethodRaw(2);
+      ::grpc::Service::MarkMethodRaw(1);
     }
     ~WithRawMethod_triangulate_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -717,7 +581,7 @@ class grpcITriangulatorService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requesttriangulate_grpc1(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -726,7 +590,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_triangulate_grpc2() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_triangulate_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
@@ -737,7 +601,7 @@ class grpcITriangulatorService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requesttriangulate_grpc2(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -746,7 +610,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_triangulate_grpc3() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_triangulate_grpc3() override {
       BaseClassMustBeDerivedFromService(this);
@@ -757,46 +621,8 @@ class grpcITriangulatorService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requesttriangulate_grpc3(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_setCameraParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCameraParameters(context, request, response); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcITriangulator::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* setCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setCameraParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_triangulate_grpc0 : public BaseClass {
@@ -809,7 +635,7 @@ class grpcITriangulatorService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(1,
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -847,7 +673,7 @@ class grpcITriangulatorService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(2,
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -885,7 +711,7 @@ class grpcITriangulatorService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(3,
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -923,7 +749,7 @@ class grpcITriangulatorService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(4,
+        MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -951,39 +777,12 @@ class grpcITriangulatorService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty>* streamer) {
-                       return this->StreamedsetCameraParameters(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcITriangulator::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedsetCameraParameters(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcITriangulator::setCameraParametersRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_triangulate_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_triangulate_grpc0() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response>(
             [this](::grpc::ServerContext* context,
@@ -1010,7 +809,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_triangulate_grpc1() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response>(
             [this](::grpc::ServerContext* context,
@@ -1037,7 +836,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_triangulate_grpc2() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response>(
             [this](::grpc::ServerContext* context,
@@ -1064,7 +863,7 @@ class grpcITriangulatorService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_triangulate_grpc3() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response>(
             [this](::grpc::ServerContext* context,
@@ -1085,9 +884,9 @@ class grpcITriangulatorService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status Streamedtriangulate_grpc3(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcITriangulator::triangulate_grpc3Request,::grpcITriangulator::triangulate_grpc3Response>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_triangulate_grpc0<WithStreamedUnaryMethod_triangulate_grpc1<WithStreamedUnaryMethod_triangulate_grpc2<WithStreamedUnaryMethod_triangulate_grpc3<Service > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_triangulate_grpc0<WithStreamedUnaryMethod_triangulate_grpc1<WithStreamedUnaryMethod_triangulate_grpc2<WithStreamedUnaryMethod_triangulate_grpc3<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_setCameraParameters<WithStreamedUnaryMethod_triangulate_grpc0<WithStreamedUnaryMethod_triangulate_grpc1<WithStreamedUnaryMethod_triangulate_grpc2<WithStreamedUnaryMethod_triangulate_grpc3<Service > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_triangulate_grpc0<WithStreamedUnaryMethod_triangulate_grpc1<WithStreamedUnaryMethod_triangulate_grpc2<WithStreamedUnaryMethod_triangulate_grpc3<Service > > > > StreamedService;
 };
 
 }  // namespace grpcITriangulator

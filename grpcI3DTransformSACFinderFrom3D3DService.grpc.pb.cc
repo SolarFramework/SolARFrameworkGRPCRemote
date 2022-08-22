@@ -22,7 +22,6 @@
 namespace grpcI3DTransformSACFinderFrom3D3D {
 
 static const char* grpcI3DTransformSACFinderFrom3D3DService_method_names[] = {
-  "/grpcI3DTransformSACFinderFrom3D3D.grpcI3DTransformSACFinderFrom3D3DService/setCameraParameters",
   "/grpcI3DTransformSACFinderFrom3D3D.grpcI3DTransformSACFinderFrom3D3DService/estimate_grpc0",
   "/grpcI3DTransformSACFinderFrom3D3D.grpcI3DTransformSACFinderFrom3D3DService/estimate_grpc1",
 };
@@ -34,33 +33,9 @@ std::unique_ptr< grpcI3DTransformSACFinderFrom3D3DService::Stub> grpcI3DTransfor
 }
 
 grpcI3DTransformSACFinderFrom3D3DService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcI3DTransformSACFinderFrom3D3DService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_estimate_grpc0_(grpcI3DTransformSACFinderFrom3D3DService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_estimate_grpc1_(grpcI3DTransformSACFinderFrom3D3DService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_estimate_grpc0_(grpcI3DTransformSACFinderFrom3D3DService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_estimate_grpc1_(grpcI3DTransformSACFinderFrom3D3DService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcI3DTransformSACFinderFrom3D3DService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcI3DTransformSACFinderFrom3D3DService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcI3DTransformSACFinderFrom3D3DService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcI3DTransformSACFinderFrom3D3DService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcI3DTransformSACFinderFrom3D3DService::Stub::estimate_grpc0(::grpc::ClientContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request& request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_estimate_grpc0_, context, request, response);
@@ -112,16 +87,6 @@ grpcI3DTransformSACFinderFrom3D3DService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcI3DTransformSACFinderFrom3D3DService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcI3DTransformSACFinderFrom3D3DService::Service, ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcI3DTransformSACFinderFrom3D3DService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcI3DTransformSACFinderFrom3D3DService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcI3DTransformSACFinderFrom3D3DService::Service, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcI3DTransformSACFinderFrom3D3DService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -130,7 +95,7 @@ grpcI3DTransformSACFinderFrom3D3DService::Service::Service() {
                return service->estimate_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcI3DTransformSACFinderFrom3D3DService_method_names[2],
+      grpcI3DTransformSACFinderFrom3D3DService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcI3DTransformSACFinderFrom3D3DService::Service, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcI3DTransformSACFinderFrom3D3DService::Service* service,
@@ -142,13 +107,6 @@ grpcI3DTransformSACFinderFrom3D3DService::Service::Service() {
 }
 
 grpcI3DTransformSACFinderFrom3D3DService::Service::~Service() {
-}
-
-::grpc::Status grpcI3DTransformSACFinderFrom3D3DService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcI3DTransformSACFinderFrom3D3DService::Service::estimate_grpc0(::grpc::ServerContext* context, const ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Request* request, ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc0Response* response) {

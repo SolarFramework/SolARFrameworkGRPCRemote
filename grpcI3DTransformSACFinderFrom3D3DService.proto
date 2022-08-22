@@ -4,12 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcI3DTransformSACFinderFrom3D3D;
 
-message setCameraParametersRequest
-{
-bytes intrinsicParams = 1;
-bytes distortionParams = 2;
-}
-
 message estimate_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -46,7 +40,6 @@ sint32 xpcfGrpcReturnValue = 3;
 }
 
 service grpcI3DTransformSACFinderFrom3D3DService {
-rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
 rpc estimate_grpc0(estimate_grpc0Request) returns(estimate_grpc0Response) {}
 rpc estimate_grpc1(estimate_grpc1Request) returns(estimate_grpc1Response) {}
 }

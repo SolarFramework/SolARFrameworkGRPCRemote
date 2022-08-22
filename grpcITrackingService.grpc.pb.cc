@@ -22,7 +22,6 @@
 namespace grpcITracking {
 
 static const char* grpcITrackingService_method_names[] = {
-  "/grpcITracking.grpcITrackingService/setCameraParameters",
   "/grpcITracking.grpcITrackingService/setNewKeyframe",
   "/grpcITracking.grpcITrackingService/checkNeedNewKeyframe",
   "/grpcITracking.grpcITrackingService/process",
@@ -35,34 +34,10 @@ std::unique_ptr< grpcITrackingService::Stub> grpcITrackingService::NewStub(const
 }
 
 grpcITrackingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcITrackingService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setNewKeyframe_(grpcITrackingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_checkNeedNewKeyframe_(grpcITrackingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_process_(grpcITrackingService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_setNewKeyframe_(grpcITrackingService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_checkNeedNewKeyframe_(grpcITrackingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_process_(grpcITrackingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcITrackingService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcITracking::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcITracking::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcITrackingService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITracking::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcITracking::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcITrackingService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITracking::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcITrackingService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcITracking::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcITracking::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcITrackingService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcITracking::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcITrackingService::Stub::setNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcITracking::setNewKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setNewKeyframe_, context, request, response);
@@ -137,16 +112,6 @@ grpcITrackingService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcITrackingService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcITrackingService::Service, ::grpcITracking::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcITrackingService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcITracking::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcITrackingService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcITrackingService::Service, ::grpcITracking::setNewKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcITrackingService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -155,7 +120,7 @@ grpcITrackingService::Service::Service() {
                return service->setNewKeyframe(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcITrackingService_method_names[2],
+      grpcITrackingService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcITrackingService::Service, ::grpcITracking::checkNeedNewKeyframeRequest, ::grpcITracking::checkNeedNewKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcITrackingService::Service* service,
@@ -165,7 +130,7 @@ grpcITrackingService::Service::Service() {
                return service->checkNeedNewKeyframe(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcITrackingService_method_names[3],
+      grpcITrackingService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcITrackingService::Service, ::grpcITracking::processRequest, ::grpcITracking::processResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcITrackingService::Service* service,
@@ -177,13 +142,6 @@ grpcITrackingService::Service::Service() {
 }
 
 grpcITrackingService::Service::~Service() {
-}
-
-::grpc::Status grpcITrackingService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcITracking::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcITrackingService::Service::setNewKeyframe(::grpc::ServerContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response) {

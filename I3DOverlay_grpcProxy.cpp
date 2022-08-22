@@ -19,7 +19,7 @@ I3DOverlay_grpcProxy::I3DOverlay_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<
   declareInterface<SolAR::api::display::I3DOverlay>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(3);
+  m_grpcProxyCompressionConfig.resize(2);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -42,37 +42,13 @@ XPCFErrorCode I3DOverlay_grpcProxy::onConfigured()
 }
 
 
-void  I3DOverlay_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsic_parameters, SolAR::datastructure::CamDistortion const& distorsion_parameters)
-{
-  ::grpc::ClientContext context;
-  ::grpcI3DOverlay::setCameraParametersRequest reqIn;
-  ::google::protobuf::Empty respOut;
-  reqIn.set_intrinsic_parameters(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsic_parameters));
-  reqIn.set_distorsion_parameters(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsion_parameters));
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I3DOverlay_grpcProxy::setCameraParameters request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I3DOverlay_grpcProxy::setCameraParameters response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParameters rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcI3DOverlayService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-}
-
-
-void  I3DOverlay_grpcProxy::draw(SolAR::datastructure::Transform3Df const& pose, SRef<SolAR::datastructure::Image> displayImage)
+void  I3DOverlay_grpcProxy::draw(SolAR::datastructure::Transform3Df const& pose, SolAR::datastructure::CameraParameters const& camParams, SRef<SolAR::datastructure::Image> displayImage)
 {
   ::grpc::ClientContext context;
   ::grpcI3DOverlay::drawRequest reqIn;
   ::google::protobuf::Empty respOut;
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
+  reqIn.set_camparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams));
   reqIn.set_displayimage(xpcf::serialize<SRef<SolAR::datastructure::Image>>(displayImage));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();

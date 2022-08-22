@@ -17,23 +17,11 @@
 
 PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcI3DTransformFinderFrom2D3D {
-constexpr setCameraParametersRequest::setCameraParametersRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : intrinsicparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , distorsionparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct setCameraParametersRequestDefaultTypeInternal {
-  constexpr setCameraParametersRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~setCameraParametersRequestDefaultTypeInternal() {}
-  union {
-    setCameraParametersRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParametersRequestDefaultTypeInternal _setCameraParametersRequest_default_instance_;
 constexpr estimateRequest::estimateRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : imagepoints_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , worldpoints_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , camparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , initialpose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , grpcservercompressionformat_(0){}
@@ -60,18 +48,11 @@ struct estimateResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT estimateResponseDefaultTypeInternal _estimateResponse_default_instance_;
 }  // namespace grpcI3DTransformFinderFrom2D3D
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcI3DTransformFinderFrom2D3DService_2eproto[3];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcI3DTransformFinderFrom2D3DService_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcI3DTransformFinderFrom2D3DService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcI3DTransformFinderFrom2D3DService_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI3DTransformFinderFrom2D3DService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest, intrinsicparams_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest, distorsionparams_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::estimateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -80,6 +61,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI3DTransformFinderFrom2D3D
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::estimateRequest, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::estimateRequest, imagepoints_),
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::estimateRequest, worldpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::estimateRequest, camparams_),
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::estimateRequest, initialpose_),
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::estimateRequest, pose_),
   ~0u,  // no _has_bits_
@@ -91,13 +73,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI3DTransformFinderFrom2D3D
   PROTOBUF_FIELD_OFFSET(::grpcI3DTransformFinderFrom2D3D::estimateResponse, xpcfgrpcreturnvalue_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest)},
-  { 7, -1, sizeof(::grpcI3DTransformFinderFrom2D3D::estimateRequest)},
-  { 17, -1, sizeof(::grpcI3DTransformFinderFrom2D3D::estimateResponse)},
+  { 0, -1, sizeof(::grpcI3DTransformFinderFrom2D3D::estimateRequest)},
+  { 11, -1, sizeof(::grpcI3DTransformFinderFrom2D3D::estimateResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcI3DTransformFinderFrom2D3D::_setCameraParametersRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcI3DTransformFinderFrom2D3D::_estimateRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcI3DTransformFinderFrom2D3D::_estimateResponse_default_instance_),
 };
@@ -105,29 +85,25 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcI3DTransformFinderFrom2D3DService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n+grpcI3DTransformFinderFrom2D3DService."
   "proto\022\036grpcI3DTransformFinderFrom2D3D\032\033g"
-  "oogle/protobuf/empty.proto\"O\n\032setCameraP"
-  "arametersRequest\022\027\n\017intrinsicParams\030\001 \001("
-  "\014\022\030\n\020distorsionParams\030\002 \001(\014\"\203\001\n\017estimate"
-  "Request\022#\n\033grpcServerCompressionFormat\030\001"
-  " \001(\005\022\023\n\013imagePoints\030\002 \001(\014\022\023\n\013worldPoints"
-  "\030\003 \001(\014\022\023\n\013initialPose\030\004 \001(\014\022\014\n\004pose\030\005 \001("
-  "\014\"=\n\020estimateResponse\022\014\n\004pose\030\001 \001(\014\022\033\n\023x"
-  "pcfGrpcReturnValue\030\002 \001(\0212\205\002\n%grpcI3DTran"
-  "sformFinderFrom2D3DService\022k\n\023setCameraP"
-  "arameters\022:.grpcI3DTransformFinderFrom2D"
-  "3D.setCameraParametersRequest\032\026.google.p"
-  "rotobuf.Empty\"\000\022o\n\010estimate\022/.grpcI3DTra"
-  "nsformFinderFrom2D3D.estimateRequest\0320.g"
-  "rpcI3DTransformFinderFrom2D3D.estimateRe"
-  "sponse\"\000b\006proto3"
+  "oogle/protobuf/empty.proto\"\226\001\n\017estimateR"
+  "equest\022#\n\033grpcServerCompressionFormat\030\001 "
+  "\001(\005\022\023\n\013imagePoints\030\002 \001(\014\022\023\n\013worldPoints\030"
+  "\003 \001(\014\022\021\n\tcamParams\030\004 \001(\014\022\023\n\013initialPose\030"
+  "\005 \001(\014\022\014\n\004pose\030\006 \001(\014\"=\n\020estimateResponse\022"
+  "\014\n\004pose\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001"
+  "(\0212\230\001\n%grpcI3DTransformFinderFrom2D3DSer"
+  "vice\022o\n\010estimate\022/.grpcI3DTransformFinde"
+  "rFrom2D3D.estimateRequest\0320.grpcI3DTrans"
+  "formFinderFrom2D3D.estimateResponse\"\000b\006p"
+  "roto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcI3DTransformFinderFrom2D3DService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcI3DTransformFinderFrom2D3DService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcI3DTransformFinderFrom2D3DService_2eproto = {
-  false, false, 656, descriptor_table_protodef_grpcI3DTransformFinderFrom2D3DService_2eproto, "grpcI3DTransformFinderFrom2D3DService.proto", 
-  &descriptor_table_grpcI3DTransformFinderFrom2D3DService_2eproto_once, descriptor_table_grpcI3DTransformFinderFrom2D3DService_2eproto_deps, 1, 3,
+  false, false, 485, descriptor_table_protodef_grpcI3DTransformFinderFrom2D3DService_2eproto, "grpcI3DTransformFinderFrom2D3DService.proto", 
+  &descriptor_table_grpcI3DTransformFinderFrom2D3DService_2eproto_once, descriptor_table_grpcI3DTransformFinderFrom2D3DService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcI3DTransformFinderFrom2D3DService_2eproto::offsets,
   file_level_metadata_grpcI3DTransformFinderFrom2D3DService_2eproto, file_level_enum_descriptors_grpcI3DTransformFinderFrom2D3DService_2eproto, file_level_service_descriptors_grpcI3DTransformFinderFrom2D3DService_2eproto,
 };
@@ -140,234 +116,6 @@ descriptor_table_grpcI3DTransformFinderFrom2D3DService_2eproto_metadata_getter(i
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_grpcI3DTransformFinderFrom2D3DService_2eproto(&descriptor_table_grpcI3DTransformFinderFrom2D3DService_2eproto);
 namespace grpcI3DTransformFinderFrom2D3D {
-
-// ===================================================================
-
-class setCameraParametersRequest::_Internal {
- public:
-};
-
-setCameraParametersRequest::setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-}
-setCameraParametersRequest::setCameraParametersRequest(const setCameraParametersRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  intrinsicparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_intrinsicparams().empty()) {
-    intrinsicparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_intrinsicparams(), 
-      GetArena());
-  }
-  distorsionparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_distorsionparams().empty()) {
-    distorsionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_distorsionparams(), 
-      GetArena());
-  }
-  // @@protoc_insertion_point(copy_constructor:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-}
-
-void setCameraParametersRequest::SharedCtor() {
-intrinsicparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-distorsionparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-setCameraParametersRequest::~setCameraParametersRequest() {
-  // @@protoc_insertion_point(destructor:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void setCameraParametersRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  intrinsicparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  distorsionparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void setCameraParametersRequest::ArenaDtor(void* object) {
-  setCameraParametersRequest* _this = reinterpret_cast< setCameraParametersRequest* >(object);
-  (void)_this;
-}
-void setCameraParametersRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void setCameraParametersRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void setCameraParametersRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  intrinsicparams_.ClearToEmpty();
-  distorsionparams_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* setCameraParametersRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // bytes intrinsicParams = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_intrinsicparams();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bytes distorsionParams = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_distorsionparams();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* setCameraParametersRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // bytes intrinsicParams = 1;
-  if (this->intrinsicparams().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_intrinsicparams(), target);
-  }
-
-  // bytes distorsionParams = 2;
-  if (this->distorsionparams().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_distorsionparams(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-  return target;
-}
-
-size_t setCameraParametersRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // bytes intrinsicParams = 1;
-  if (this->intrinsicparams().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_intrinsicparams());
-  }
-
-  // bytes distorsionParams = 2;
-  if (this->distorsionparams().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_distorsionparams());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void setCameraParametersRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const setCameraParametersRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCameraParametersRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-    MergeFrom(*source);
-  }
-}
-
-void setCameraParametersRequest::MergeFrom(const setCameraParametersRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.intrinsicparams().size() > 0) {
-    _internal_set_intrinsicparams(from._internal_intrinsicparams());
-  }
-  if (from.distorsionparams().size() > 0) {
-    _internal_set_distorsionparams(from._internal_distorsionparams());
-  }
-}
-
-void setCameraParametersRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void setCameraParametersRequest::CopyFrom(const setCameraParametersRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcI3DTransformFinderFrom2D3D.setCameraParametersRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool setCameraParametersRequest::IsInitialized() const {
-  return true;
-}
-
-void setCameraParametersRequest::InternalSwap(setCameraParametersRequest* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  intrinsicparams_.Swap(&other->intrinsicparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  distorsionparams_.Swap(&other->distorsionparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata setCameraParametersRequest::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
 
 // ===================================================================
 
@@ -394,6 +142,11 @@ estimateRequest::estimateRequest(const estimateRequest& from)
     worldpoints_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_worldpoints(), 
       GetArena());
   }
+  camparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_camparams().empty()) {
+    camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_camparams(), 
+      GetArena());
+  }
   initialpose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_initialpose().empty()) {
     initialpose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_initialpose(), 
@@ -411,6 +164,7 @@ estimateRequest::estimateRequest(const estimateRequest& from)
 void estimateRequest::SharedCtor() {
 imagepoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 worldpoints_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+camparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 initialpose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 grpcservercompressionformat_ = 0;
@@ -426,6 +180,7 @@ void estimateRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   imagepoints_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   worldpoints_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  camparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   initialpose_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   pose_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -448,6 +203,7 @@ void estimateRequest::Clear() {
 
   imagepoints_.ClearToEmpty();
   worldpoints_.ClearToEmpty();
+  camparams_.ClearToEmpty();
   initialpose_.ClearToEmpty();
   pose_.ClearToEmpty();
   grpcservercompressionformat_ = 0;
@@ -484,17 +240,25 @@ const char* estimateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes initialPose = 4;
+      // bytes camParams = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_camparams();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes initialPose = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_initialpose();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes pose = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes pose = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_pose();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -546,16 +310,22 @@ failure:
         3, this->_internal_worldpoints(), target);
   }
 
-  // bytes initialPose = 4;
-  if (this->initialpose().size() > 0) {
+  // bytes camParams = 4;
+  if (this->camparams().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_initialpose(), target);
+        4, this->_internal_camparams(), target);
   }
 
-  // bytes pose = 5;
+  // bytes initialPose = 5;
+  if (this->initialpose().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        5, this->_internal_initialpose(), target);
+  }
+
+  // bytes pose = 6;
   if (this->pose().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_pose(), target);
+        6, this->_internal_pose(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -588,14 +358,21 @@ size_t estimateRequest::ByteSizeLong() const {
         this->_internal_worldpoints());
   }
 
-  // bytes initialPose = 4;
+  // bytes camParams = 4;
+  if (this->camparams().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_camparams());
+  }
+
+  // bytes initialPose = 5;
   if (this->initialpose().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_initialpose());
   }
 
-  // bytes pose = 5;
+  // bytes pose = 6;
   if (this->pose().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -646,6 +423,9 @@ void estimateRequest::MergeFrom(const estimateRequest& from) {
   if (from.worldpoints().size() > 0) {
     _internal_set_worldpoints(from._internal_worldpoints());
   }
+  if (from.camparams().size() > 0) {
+    _internal_set_camparams(from._internal_camparams());
+  }
   if (from.initialpose().size() > 0) {
     _internal_set_initialpose(from._internal_initialpose());
   }
@@ -680,6 +460,7 @@ void estimateRequest::InternalSwap(estimateRequest* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   imagepoints_.Swap(&other->imagepoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   worldpoints_.Swap(&other->worldpoints_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  camparams_.Swap(&other->camparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   initialpose_.Swap(&other->initialpose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   pose_.Swap(&other->pose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
@@ -915,9 +696,6 @@ void estimateResponse::InternalSwap(estimateResponse* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcI3DTransformFinderFrom2D3D
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest* Arena::CreateMaybeMessage< ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcI3DTransformFinderFrom2D3D::setCameraParametersRequest >(arena);
-}
 template<> PROTOBUF_NOINLINE ::grpcI3DTransformFinderFrom2D3D::estimateRequest* Arena::CreateMaybeMessage< ::grpcI3DTransformFinderFrom2D3D::estimateRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcI3DTransformFinderFrom2D3D::estimateRequest >(arena);
 }

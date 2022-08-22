@@ -2,7 +2,7 @@
 
 #ifndef IARDEVICE_GRPCSERVER_H
 #define IARDEVICE_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/input/devices/IARDevice.h"
+#include "api/input/devices/IARDevice.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

@@ -50,13 +50,6 @@ class grpcIUndistortPointsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIUndistortPoints::undistort_grpc1Response>> PrepareAsyncundistort_grpc1(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIUndistortPoints::undistort_grpc1Response>>(PrepareAsyncundistort_grpc1Raw(context, request, cq));
     }
-    virtual ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::google::protobuf::Empty* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> AsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(AsyncsetCameraParametersRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncsetCameraParametersRaw(context, request, cq));
-    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -72,12 +65,6 @@ class grpcIUndistortPointsService final {
       #else
       virtual void undistort_grpc1(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -91,8 +78,6 @@ class grpcIUndistortPointsService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIUndistortPoints::undistort_grpc0Response>* PrepareAsyncundistort_grpc0Raw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIUndistortPoints::undistort_grpc1Response>* Asyncundistort_grpc1Raw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIUndistortPoints::undistort_grpc1Response>* PrepareAsyncundistort_grpc1Raw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -111,13 +96,6 @@ class grpcIUndistortPointsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIUndistortPoints::undistort_grpc1Response>> PrepareAsyncundistort_grpc1(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIUndistortPoints::undistort_grpc1Response>>(PrepareAsyncundistort_grpc1Raw(context, request, cq));
     }
-    ::grpc::Status setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::google::protobuf::Empty* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncsetCameraParametersRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncsetCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncsetCameraParametersRaw(context, request, cq));
-    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -132,12 +110,6 @@ class grpcIUndistortPointsService final {
       void undistort_grpc1(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void undistort_grpc1(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -154,11 +126,8 @@ class grpcIUndistortPointsService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIUndistortPoints::undistort_grpc0Response>* PrepareAsyncundistort_grpc0Raw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIUndistortPoints::undistort_grpc1Response>* Asyncundistort_grpc1Raw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIUndistortPoints::undistort_grpc1Response>* PrepareAsyncundistort_grpc1Raw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_undistort_grpc0_;
     const ::grpc::internal::RpcMethod rpcmethod_undistort_grpc1_;
-    const ::grpc::internal::RpcMethod rpcmethod_setCameraParameters_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -168,7 +137,6 @@ class grpcIUndistortPointsService final {
     virtual ~Service();
     virtual ::grpc::Status undistort_grpc0(::grpc::ServerContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request* request, ::grpcIUndistortPoints::undistort_grpc0Response* response);
     virtual ::grpc::Status undistort_grpc1(::grpc::ServerContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response);
-    virtual ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_undistort_grpc0 : public BaseClass {
@@ -210,27 +178,7 @@ class grpcIUndistortPointsService final {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  template <class BaseClass>
-  class WithAsyncMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodAsync(2);
-    }
-    ~WithAsyncMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcIUndistortPoints::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestsetCameraParameters(::grpc::ServerContext* context, ::grpcIUndistortPoints::setCameraParametersRequest* request, ::grpc::ServerAsyncResponseWriter< ::google::protobuf::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  typedef WithAsyncMethod_undistort_grpc0<WithAsyncMethod_undistort_grpc1<WithAsyncMethod_setCameraParameters<Service > > > AsyncService;
+  typedef WithAsyncMethod_undistort_grpc0<WithAsyncMethod_undistort_grpc1<Service > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_undistort_grpc0 : public BaseClass {
    private:
@@ -325,58 +273,11 @@ class grpcIUndistortPointsService final {
     #endif
       { return nullptr; }
   };
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_setCameraParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response) { return this->setCameraParameters(context, request, response); }));}
-    void SetMessageAllocatorFor_setCameraParameters(
-        ::grpc::experimental::MessageAllocator< ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
-    #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcIUndistortPoints::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* setCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIUndistortPoints::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setCameraParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIUndistortPoints::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
-  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_undistort_grpc0<ExperimentalWithCallbackMethod_undistort_grpc1<ExperimentalWithCallbackMethod_setCameraParameters<Service > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_undistort_grpc0<ExperimentalWithCallbackMethod_undistort_grpc1<Service > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_undistort_grpc0<ExperimentalWithCallbackMethod_undistort_grpc1<ExperimentalWithCallbackMethod_setCameraParameters<Service > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_undistort_grpc0<ExperimentalWithCallbackMethod_undistort_grpc1<Service > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_undistort_grpc0 : public BaseClass {
    private:
@@ -407,23 +308,6 @@ class grpcIUndistortPointsService final {
     }
     // disable synchronous version of this method
     ::grpc::Status undistort_grpc1(::grpc::ServerContext* /*context*/, const ::grpcIUndistortPoints::undistort_grpc1Request* /*request*/, ::grpcIUndistortPoints::undistort_grpc1Response* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodGeneric(2);
-    }
-    ~WithGenericMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcIUndistortPoints::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -466,26 +350,6 @@ class grpcIUndistortPointsService final {
     }
     void Requestundistort_grpc1(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodRaw(2);
-    }
-    ~WithRawMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcIUndistortPoints::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestsetCameraParameters(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -565,44 +429,6 @@ class grpcIUndistortPointsService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_setCameraParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCameraParameters(context, request, response); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcIUndistortPoints::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* setCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setCameraParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_undistort_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -656,36 +482,9 @@ class grpcIUndistortPointsService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status Streamedundistort_grpc1(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIUndistortPoints::undistort_grpc1Request,::grpcIUndistortPoints::undistort_grpc1Response>* server_unary_streamer) = 0;
   };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_setCameraParameters : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_setCameraParameters() {
-      ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty>* streamer) {
-                       return this->StreamedsetCameraParameters(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_setCameraParameters() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status setCameraParameters(::grpc::ServerContext* /*context*/, const ::grpcIUndistortPoints::setCameraParametersRequest* /*request*/, ::google::protobuf::Empty* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedsetCameraParameters(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIUndistortPoints::setCameraParametersRequest,::google::protobuf::Empty>* server_unary_streamer) = 0;
-  };
-  typedef WithStreamedUnaryMethod_undistort_grpc0<WithStreamedUnaryMethod_undistort_grpc1<WithStreamedUnaryMethod_setCameraParameters<Service > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_undistort_grpc0<WithStreamedUnaryMethod_undistort_grpc1<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_undistort_grpc0<WithStreamedUnaryMethod_undistort_grpc1<WithStreamedUnaryMethod_setCameraParameters<Service > > > StreamedService;
+  typedef WithStreamedUnaryMethod_undistort_grpc0<WithStreamedUnaryMethod_undistort_grpc1<Service > > StreamedService;
 };
 
 }  // namespace grpcIUndistortPoints

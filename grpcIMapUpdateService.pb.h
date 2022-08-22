@@ -47,7 +47,7 @@ struct TableStruct_grpcIMapUpdateService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,9 +56,6 @@ struct TableStruct_grpcIMapUpdateService_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIMapUpdateService_2eproto;
 ::PROTOBUF_NAMESPACE_ID::Metadata descriptor_table_grpcIMapUpdateService_2eproto_metadata_getter(int index);
 namespace grpcIMapUpdate {
-class setCameraParametersRequest;
-struct setCameraParametersRequestDefaultTypeInternal;
-extern setCameraParametersRequestDefaultTypeInternal _setCameraParametersRequest_default_instance_;
 class updateRequest;
 struct updateRequestDefaultTypeInternal;
 extern updateRequestDefaultTypeInternal _updateRequest_default_instance_;
@@ -67,157 +64,12 @@ struct updateResponseDefaultTypeInternal;
 extern updateResponseDefaultTypeInternal _updateResponse_default_instance_;
 }  // namespace grpcIMapUpdate
 PROTOBUF_NAMESPACE_OPEN
-template<> ::grpcIMapUpdate::setCameraParametersRequest* Arena::CreateMaybeMessage<::grpcIMapUpdate::setCameraParametersRequest>(Arena*);
 template<> ::grpcIMapUpdate::updateRequest* Arena::CreateMaybeMessage<::grpcIMapUpdate::updateRequest>(Arena*);
 template<> ::grpcIMapUpdate::updateResponse* Arena::CreateMaybeMessage<::grpcIMapUpdate::updateResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIMapUpdate {
 
 // ===================================================================
-
-class setCameraParametersRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapUpdate.setCameraParametersRequest) */ {
- public:
-  inline setCameraParametersRequest() : setCameraParametersRequest(nullptr) {}
-  virtual ~setCameraParametersRequest();
-  explicit constexpr setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  setCameraParametersRequest(const setCameraParametersRequest& from);
-  setCameraParametersRequest(setCameraParametersRequest&& from) noexcept
-    : setCameraParametersRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline setCameraParametersRequest& operator=(const setCameraParametersRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline setCameraParametersRequest& operator=(setCameraParametersRequest&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const setCameraParametersRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const setCameraParametersRequest* internal_default_instance() {
-    return reinterpret_cast<const setCameraParametersRequest*>(
-               &_setCameraParametersRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(setCameraParametersRequest& a, setCameraParametersRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(setCameraParametersRequest* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(setCameraParametersRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline setCameraParametersRequest* New() const final {
-    return CreateMaybeMessage<setCameraParametersRequest>(nullptr);
-  }
-
-  setCameraParametersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<setCameraParametersRequest>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const setCameraParametersRequest& from);
-  void MergeFrom(const setCameraParametersRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(setCameraParametersRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIMapUpdate.setCameraParametersRequest";
-  }
-  protected:
-  explicit setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    return ::descriptor_table_grpcIMapUpdateService_2eproto_metadata_getter(kIndexInFileMessages);
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kCamParamsFieldNumber = 1,
-  };
-  // bytes camParams = 1;
-  void clear_camparams();
-  const std::string& camparams() const;
-  void set_camparams(const std::string& value);
-  void set_camparams(std::string&& value);
-  void set_camparams(const char* value);
-  void set_camparams(const void* value, size_t size);
-  std::string* mutable_camparams();
-  std::string* release_camparams();
-  void set_allocated_camparams(std::string* camparams);
-  private:
-  const std::string& _internal_camparams() const;
-  void _internal_set_camparams(const std::string& value);
-  std::string* _internal_mutable_camparams();
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcIMapUpdate.setCameraParametersRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_grpcIMapUpdateService_2eproto;
-};
-// -------------------------------------------------------------------
 
 class updateRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapUpdate.updateRequest) */ {
@@ -262,7 +114,7 @@ class updateRequest PROTOBUF_FINAL :
                &_updateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   friend void swap(updateRequest& a, updateRequest& b) {
     a.Swap(&b);
@@ -435,7 +287,7 @@ class updateResponse PROTOBUF_FINAL :
                &_updateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   friend void swap(updateResponse& a, updateResponse& b) {
     a.Swap(&b);
@@ -536,71 +388,6 @@ class updateResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// setCameraParametersRequest
-
-// bytes camParams = 1;
-inline void setCameraParametersRequest::clear_camparams() {
-  camparams_.ClearToEmpty();
-}
-inline const std::string& setCameraParametersRequest::camparams() const {
-  // @@protoc_insertion_point(field_get:grpcIMapUpdate.setCameraParametersRequest.camParams)
-  return _internal_camparams();
-}
-inline void setCameraParametersRequest::set_camparams(const std::string& value) {
-  _internal_set_camparams(value);
-  // @@protoc_insertion_point(field_set:grpcIMapUpdate.setCameraParametersRequest.camParams)
-}
-inline std::string* setCameraParametersRequest::mutable_camparams() {
-  // @@protoc_insertion_point(field_mutable:grpcIMapUpdate.setCameraParametersRequest.camParams)
-  return _internal_mutable_camparams();
-}
-inline const std::string& setCameraParametersRequest::_internal_camparams() const {
-  return camparams_.Get();
-}
-inline void setCameraParametersRequest::_internal_set_camparams(const std::string& value) {
-  
-  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void setCameraParametersRequest::set_camparams(std::string&& value) {
-  
-  camparams_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIMapUpdate.setCameraParametersRequest.camParams)
-}
-inline void setCameraParametersRequest::set_camparams(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIMapUpdate.setCameraParametersRequest.camParams)
-}
-inline void setCameraParametersRequest::set_camparams(const void* value,
-    size_t size) {
-  
-  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIMapUpdate.setCameraParametersRequest.camParams)
-}
-inline std::string* setCameraParametersRequest::_internal_mutable_camparams() {
-  
-  return camparams_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* setCameraParametersRequest::release_camparams() {
-  // @@protoc_insertion_point(field_release:grpcIMapUpdate.setCameraParametersRequest.camParams)
-  return camparams_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void setCameraParametersRequest::set_allocated_camparams(std::string* camparams) {
-  if (camparams != nullptr) {
-    
-  } else {
-    
-  }
-  camparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapUpdate.setCameraParametersRequest.camParams)
-}
-
-// -------------------------------------------------------------------
-
 // updateRequest
 
 // int32 grpcServerCompressionFormat = 1;
@@ -772,8 +559,6 @@ inline void updateResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 

@@ -17,19 +17,6 @@
 
 PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcILoopCorrector {
-constexpr setCameraParametersRequest::setCameraParametersRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : intrinsicparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , distortionparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct setCameraParametersRequestDefaultTypeInternal {
-  constexpr setCameraParametersRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~setCameraParametersRequestDefaultTypeInternal() {}
-  union {
-    setCameraParametersRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParametersRequestDefaultTypeInternal _setCameraParametersRequest_default_instance_;
 constexpr correctRequest::correctRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : querykeyframe_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -59,18 +46,11 @@ struct correctResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT correctResponseDefaultTypeInternal _correctResponse_default_instance_;
 }  // namespace grpcILoopCorrector
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcILoopCorrectorService_2eproto[3];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcILoopCorrectorService_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcILoopCorrectorService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcILoopCorrectorService_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcILoopCorrectorService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::setCameraParametersRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::setCameraParametersRequest, intrinsicparams_),
-  PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::setCameraParametersRequest, distortionparams_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correctRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -89,13 +69,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcILoopCorrectorService_2epr
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correctResponse, xpcfgrpcreturnvalue_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::grpcILoopCorrector::setCameraParametersRequest)},
-  { 7, -1, sizeof(::grpcILoopCorrector::correctRequest)},
-  { 17, -1, sizeof(::grpcILoopCorrector::correctResponse)},
+  { 0, -1, sizeof(::grpcILoopCorrector::correctRequest)},
+  { 10, -1, sizeof(::grpcILoopCorrector::correctResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcILoopCorrector::_setCameraParametersRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcILoopCorrector::_correctRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcILoopCorrector::_correctResponse_default_instance_),
 };
@@ -103,27 +81,23 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcILoopCorrectorService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\037grpcILoopCorrectorService.proto\022\022grpcI"
   "LoopCorrector\032\033google/protobuf/empty.pro"
-  "to\"O\n\032setCameraParametersRequest\022\027\n\017intr"
-  "insicParams\030\001 \001(\014\022\030\n\020distortionParams\030\002 "
-  "\001(\014\"\234\001\n\016correctRequest\022#\n\033grpcServerComp"
-  "ressionFormat\030\001 \001(\005\022\025\n\rqueryKeyframe\030\002 \001"
-  "(\014\022\034\n\024detectedLoopKeyframe\030\003 \001(\014\022\017\n\007S_wl"
-  "_wc\030\004 \001(\014\022\037\n\027duplicatedPointsIndices\030\005 \001"
-  "(\014\".\n\017correctResponse\022\033\n\023xpcfGrpcReturnV"
-  "alue\030\001 \001(\0212\322\001\n\031grpcILoopCorrectorService"
-  "\022_\n\023setCameraParameters\022..grpcILoopCorre"
-  "ctor.setCameraParametersRequest\032\026.google"
-  ".protobuf.Empty\"\000\022T\n\007correct\022\".grpcILoop"
-  "Corrector.correctRequest\032#.grpcILoopCorr"
-  "ector.correctResponse\"\000b\006proto3"
+  "to\"\234\001\n\016correctRequest\022#\n\033grpcServerCompr"
+  "essionFormat\030\001 \001(\005\022\025\n\rqueryKeyframe\030\002 \001("
+  "\014\022\034\n\024detectedLoopKeyframe\030\003 \001(\014\022\017\n\007S_wl_"
+  "wc\030\004 \001(\014\022\037\n\027duplicatedPointsIndices\030\005 \001("
+  "\014\".\n\017correctResponse\022\033\n\023xpcfGrpcReturnVa"
+  "lue\030\001 \001(\0212q\n\031grpcILoopCorrectorService\022T"
+  "\n\007correct\022\".grpcILoopCorrector.correctRe"
+  "quest\032#.grpcILoopCorrector.correctRespon"
+  "se\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcILoopCorrectorService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcILoopCorrectorService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcILoopCorrectorService_2eproto = {
-  false, false, 591, descriptor_table_protodef_grpcILoopCorrectorService_2eproto, "grpcILoopCorrectorService.proto", 
-  &descriptor_table_grpcILoopCorrectorService_2eproto_once, descriptor_table_grpcILoopCorrectorService_2eproto_deps, 1, 3,
+  false, false, 412, descriptor_table_protodef_grpcILoopCorrectorService_2eproto, "grpcILoopCorrectorService.proto", 
+  &descriptor_table_grpcILoopCorrectorService_2eproto_once, descriptor_table_grpcILoopCorrectorService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcILoopCorrectorService_2eproto::offsets,
   file_level_metadata_grpcILoopCorrectorService_2eproto, file_level_enum_descriptors_grpcILoopCorrectorService_2eproto, file_level_service_descriptors_grpcILoopCorrectorService_2eproto,
 };
@@ -136,234 +110,6 @@ descriptor_table_grpcILoopCorrectorService_2eproto_metadata_getter(int index) {
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_grpcILoopCorrectorService_2eproto(&descriptor_table_grpcILoopCorrectorService_2eproto);
 namespace grpcILoopCorrector {
-
-// ===================================================================
-
-class setCameraParametersRequest::_Internal {
- public:
-};
-
-setCameraParametersRequest::setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcILoopCorrector.setCameraParametersRequest)
-}
-setCameraParametersRequest::setCameraParametersRequest(const setCameraParametersRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  intrinsicparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_intrinsicparams().empty()) {
-    intrinsicparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_intrinsicparams(), 
-      GetArena());
-  }
-  distortionparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_distortionparams().empty()) {
-    distortionparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_distortionparams(), 
-      GetArena());
-  }
-  // @@protoc_insertion_point(copy_constructor:grpcILoopCorrector.setCameraParametersRequest)
-}
-
-void setCameraParametersRequest::SharedCtor() {
-intrinsicparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-distortionparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-setCameraParametersRequest::~setCameraParametersRequest() {
-  // @@protoc_insertion_point(destructor:grpcILoopCorrector.setCameraParametersRequest)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void setCameraParametersRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  intrinsicparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  distortionparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void setCameraParametersRequest::ArenaDtor(void* object) {
-  setCameraParametersRequest* _this = reinterpret_cast< setCameraParametersRequest* >(object);
-  (void)_this;
-}
-void setCameraParametersRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void setCameraParametersRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void setCameraParametersRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcILoopCorrector.setCameraParametersRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  intrinsicparams_.ClearToEmpty();
-  distortionparams_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* setCameraParametersRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // bytes intrinsicParams = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_intrinsicparams();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bytes distortionParams = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_distortionparams();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* setCameraParametersRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcILoopCorrector.setCameraParametersRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // bytes intrinsicParams = 1;
-  if (this->intrinsicparams().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_intrinsicparams(), target);
-  }
-
-  // bytes distortionParams = 2;
-  if (this->distortionparams().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_distortionparams(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcILoopCorrector.setCameraParametersRequest)
-  return target;
-}
-
-size_t setCameraParametersRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcILoopCorrector.setCameraParametersRequest)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // bytes intrinsicParams = 1;
-  if (this->intrinsicparams().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_intrinsicparams());
-  }
-
-  // bytes distortionParams = 2;
-  if (this->distortionparams().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_distortionparams());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void setCameraParametersRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcILoopCorrector.setCameraParametersRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const setCameraParametersRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCameraParametersRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcILoopCorrector.setCameraParametersRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcILoopCorrector.setCameraParametersRequest)
-    MergeFrom(*source);
-  }
-}
-
-void setCameraParametersRequest::MergeFrom(const setCameraParametersRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcILoopCorrector.setCameraParametersRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.intrinsicparams().size() > 0) {
-    _internal_set_intrinsicparams(from._internal_intrinsicparams());
-  }
-  if (from.distortionparams().size() > 0) {
-    _internal_set_distortionparams(from._internal_distortionparams());
-  }
-}
-
-void setCameraParametersRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcILoopCorrector.setCameraParametersRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void setCameraParametersRequest::CopyFrom(const setCameraParametersRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcILoopCorrector.setCameraParametersRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool setCameraParametersRequest::IsInitialized() const {
-  return true;
-}
-
-void setCameraParametersRequest::InternalSwap(setCameraParametersRequest* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  intrinsicparams_.Swap(&other->intrinsicparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  distortionparams_.Swap(&other->distortionparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata setCameraParametersRequest::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
 
 // ===================================================================
 
@@ -878,9 +624,6 @@ void correctResponse::InternalSwap(correctResponse* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcILoopCorrector
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::grpcILoopCorrector::setCameraParametersRequest* Arena::CreateMaybeMessage< ::grpcILoopCorrector::setCameraParametersRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcILoopCorrector::setCameraParametersRequest >(arena);
-}
 template<> PROTOBUF_NOINLINE ::grpcILoopCorrector::correctRequest* Arena::CreateMaybeMessage< ::grpcILoopCorrector::correctRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcILoopCorrector::correctRequest >(arena);
 }

@@ -3,7 +3,7 @@
 
 #ifndef IMAPUPDATE_GRPCPROXY_H
 #define IMAPUPDATE_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/solver/map/IMapUpdate.h"
+#include "api/solver/map/IMapUpdate.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,7 +22,6 @@ class IMapUpdate_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CameraParameters const& camParams)     override;
     SolAR::FrameworkReturnCode update(SRef<SolAR::datastructure::Map> globalMap, std::vector<uint32_t> const& newKeyframeIds)     override;
 
 

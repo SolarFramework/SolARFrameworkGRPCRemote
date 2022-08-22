@@ -3,7 +3,7 @@
 
 #ifndef ITRACKABLELOADER_GRPCPROXY_H
 #define ITRACKABLELOADER_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/input/files/ITrackableLoader.h"
+#include "api/input/files/ITrackableLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

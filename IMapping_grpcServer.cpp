@@ -14,7 +14,7 @@ IMapping_grpcServer::IMapping_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<IM
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::slam::IMapping>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(4);
+  m_grpcServerCompressionConfig.resize(3);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -39,23 +39,6 @@ XPCFErrorCode IMapping_grpcServer::onConfigured()
 {
   return &m_grpcService;
 }
-
-::grpc::Status IMapping_grpcServer::grpcIMappingServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapping::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapping_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::datastructure::CameraParameters camParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams());
-  m_xpcfComponent->setCameraParameters(camParams);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapping_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
 
 ::grpc::Status IMapping_grpcServer::grpcIMappingServiceImpl::idle(::grpc::ServerContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response)
 {

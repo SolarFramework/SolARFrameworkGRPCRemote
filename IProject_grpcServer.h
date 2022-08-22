@@ -2,7 +2,7 @@
 
 #ifndef IPROJECT_GRPCSERVER_H
 #define IPROJECT_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/geom/IProject.h"
+#include "api/geom/IProject.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -25,7 +25,6 @@ class IProject_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     {
       public:
         grpcIProjectServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIProject::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status project_grpc0(::grpc::ServerContext* context, const ::grpcIProject::project_grpc0Request* request, ::grpcIProject::project_grpc0Response* response) override;
         ::grpc::Status project_grpc1(::grpc::ServerContext* context, const ::grpcIProject::project_grpc1Request* request, ::grpcIProject::project_grpc1Response* response) override;
 

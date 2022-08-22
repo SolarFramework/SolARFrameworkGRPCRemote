@@ -4,12 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcIOverlapDetector;
 
-message setCameraParametersRequest
-{
-bytes intrinsicParams = 1;
-bytes distortionParams = 2;
-}
-
 message detect_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -45,7 +39,6 @@ sint32 xpcfGrpcReturnValue = 4;
 }
 
 service grpcIOverlapDetectorService {
-rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
 rpc detect_grpc0(detect_grpc0Request) returns(detect_grpc0Response) {}
 rpc detect_grpc1(detect_grpc1Request) returns(detect_grpc1Response) {}
 }

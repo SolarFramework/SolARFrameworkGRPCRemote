@@ -3,7 +3,7 @@
 
 #ifndef IIMAGECONVERTOR_GRPCPROXY_H
 #define IIMAGECONVERTOR_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/image/IImageConvertor.h"
+#include "api/image/IImageConvertor.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -19,7 +19,7 @@ ITriangulator_grpcProxy::ITriangulator_grpcProxy():xpcf::ConfigurableBase(xpcf::
   declareInterface<SolAR::api::solver::map::ITriangulator>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(6);
+  m_grpcProxyCompressionConfig.resize(5);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -42,32 +42,7 @@ XPCFErrorCode ITriangulator_grpcProxy::onConfigured()
 }
 
 
-void  ITriangulator_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)
-{
-  ::grpc::ClientContext context;
-  ::grpcITriangulator::setCameraParametersRequest reqIn;
-  ::google::protobuf::Empty respOut;
-  reqIn.set_intrinsicparams(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsicParams));
-  reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ITriangulator_grpcProxy::setCameraParameters request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ITriangulator_grpcProxy::setCameraParameters response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParameters rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcITriangulatorService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-}
-
-
-double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::Point2Df> const& pointsView1, std::vector<SolAR::datastructure::Point2Df> const& pointView2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::pair<uint32_t,uint32_t> const& working_views, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df const& poseView2, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pcloud)
+double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::Point2Df> const& pointsView1, std::vector<SolAR::datastructure::Point2Df> const& pointView2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::pair<uint32_t,uint32_t> const& working_views, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df const& poseView2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pcloud)
 {
   ::grpc::ClientContext context;
   ::grpcITriangulator::triangulate_grpc0Request reqIn;
@@ -83,6 +58,8 @@ double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::P
   reqIn.set_working_views(xpcf::serialize<std::pair<uint32_t,uint32_t>>(working_views));
   reqIn.set_poseview1(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseView1));
   reqIn.set_poseview2(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseView2));
+  reqIn.set_camparams1(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams1));
+  reqIn.set_camparams2(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams2));
   reqIn.set_pcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pcloud));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -104,7 +81,7 @@ double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::P
 }
 
 
-double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::Keypoint> const& keypointsView1, std::vector<SolAR::datastructure::Keypoint> const& keypointsView2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::pair<uint32_t,uint32_t> const& working_views, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df const& poseView2, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pcloud)
+double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::Keypoint> const& keypointsView1, std::vector<SolAR::datastructure::Keypoint> const& keypointsView2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::pair<uint32_t,uint32_t> const& working_views, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df const& poseView2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pcloud)
 {
   ::grpc::ClientContext context;
   ::grpcITriangulator::triangulate_grpc1Request reqIn;
@@ -120,6 +97,8 @@ double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::K
   reqIn.set_working_views(xpcf::serialize<std::pair<uint32_t,uint32_t>>(working_views));
   reqIn.set_poseview1(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseView1));
   reqIn.set_poseview2(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseView2));
+  reqIn.set_camparams1(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams1));
+  reqIn.set_camparams2(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams2));
   reqIn.set_pcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pcloud));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -141,7 +120,7 @@ double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::K
 }
 
 
-double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::Keypoint> const& keypointsView1, std::vector<SolAR::datastructure::Keypoint> const& keypointsView2, SRef<SolAR::datastructure::DescriptorBuffer> const& descriptor1, SRef<SolAR::datastructure::DescriptorBuffer> const& descriptor2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::pair<uint32_t,uint32_t> const& working_views, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df const& poseView2, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pcloud)
+double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::Keypoint> const& keypointsView1, std::vector<SolAR::datastructure::Keypoint> const& keypointsView2, SRef<SolAR::datastructure::DescriptorBuffer> const& descriptor1, SRef<SolAR::datastructure::DescriptorBuffer> const& descriptor2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::pair<uint32_t,uint32_t> const& working_views, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df const& poseView2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pcloud)
 {
   ::grpc::ClientContext context;
   ::grpcITriangulator::triangulate_grpc2Request reqIn;
@@ -159,6 +138,8 @@ double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::K
   reqIn.set_working_views(xpcf::serialize<std::pair<uint32_t,uint32_t>>(working_views));
   reqIn.set_poseview1(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseView1));
   reqIn.set_poseview2(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseView2));
+  reqIn.set_camparams1(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams1));
+  reqIn.set_camparams2(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams2));
   reqIn.set_pcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pcloud));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();

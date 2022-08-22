@@ -3,7 +3,7 @@
 
 #ifndef IUNDISTORTPOINTS_GRPCPROXY_H
 #define IUNDISTORTPOINTS_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/geom/IUndistortPoints.h"
+#include "api/geom/IUndistortPoints.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,9 +22,8 @@ class IUndistortPoints_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode undistort(std::vector<SolAR::datastructure::Point2Df> const& inputPoints, std::vector<SolAR::datastructure::Point2Df>& outputPoints)     override;
-    SolAR::FrameworkReturnCode undistort(std::vector<SolAR::datastructure::Keypoint> const& inputKeypoints, std::vector<SolAR::datastructure::Keypoint>& outputKeypoints)     override;
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
+    SolAR::FrameworkReturnCode undistort(std::vector<SolAR::datastructure::Point2Df> const& inputPoints, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Point2Df>& outputPoints)     override;
+    SolAR::FrameworkReturnCode undistort(std::vector<SolAR::datastructure::Keypoint> const& inputKeypoints, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Keypoint>& outputKeypoints)     override;
 
 
   private:

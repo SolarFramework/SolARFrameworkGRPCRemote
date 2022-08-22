@@ -22,7 +22,6 @@
 namespace grpcIBootstrapper {
 
 static const char* grpcIBootstrapperService_method_names[] = {
-  "/grpcIBootstrapper.grpcIBootstrapperService/setCameraParameters",
   "/grpcIBootstrapper.grpcIBootstrapperService/process",
 };
 
@@ -33,32 +32,8 @@ std::unique_ptr< grpcIBootstrapperService::Stub> grpcIBootstrapperService::NewSt
 }
 
 grpcIBootstrapperService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcIBootstrapperService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_process_(grpcIBootstrapperService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_process_(grpcIBootstrapperService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcIBootstrapperService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcIBootstrapper::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIBootstrapper::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcIBootstrapperService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIBootstrapper::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIBootstrapper::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcIBootstrapperService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIBootstrapper::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIBootstrapperService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIBootstrapper::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcIBootstrapper::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIBootstrapperService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIBootstrapper::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcIBootstrapperService::Stub::process(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest& request, ::grpcIBootstrapper::processResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIBootstrapper::processRequest, ::grpcIBootstrapper::processResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_process_, context, request, response);
@@ -87,16 +62,6 @@ grpcIBootstrapperService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIBootstrapperService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIBootstrapperService::Service, ::grpcIBootstrapper::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIBootstrapperService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIBootstrapper::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIBootstrapperService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIBootstrapperService::Service, ::grpcIBootstrapper::processRequest, ::grpcIBootstrapper::processResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIBootstrapperService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -107,13 +72,6 @@ grpcIBootstrapperService::Service::Service() {
 }
 
 grpcIBootstrapperService::Service::~Service() {
-}
-
-::grpc::Status grpcIBootstrapperService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcIBootstrapper::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcIBootstrapperService::Service::process(::grpc::ServerContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response) {

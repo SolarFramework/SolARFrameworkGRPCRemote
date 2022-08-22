@@ -3,7 +3,7 @@
 
 #ifndef I3DOVERLAY_GRPCPROXY_H
 #define I3DOVERLAY_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/display/I3DOverlay.h"
+#include "api/display/I3DOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,8 +22,7 @@ class I3DOverlay_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual p
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsic_parameters, SolAR::datastructure::CamDistortion const& distorsion_parameters)     override;
-    void draw(SolAR::datastructure::Transform3Df const& pose, SRef<SolAR::datastructure::Image> displayImage)     override;
+    void draw(SolAR::datastructure::Transform3Df const& pose, SolAR::datastructure::CameraParameters const& camParams, SRef<SolAR::datastructure::Image> displayImage)     override;
 
 
   private:

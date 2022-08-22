@@ -24,7 +24,6 @@ namespace grpcIUndistortPoints {
 static const char* grpcIUndistortPointsService_method_names[] = {
   "/grpcIUndistortPoints.grpcIUndistortPointsService/undistort_grpc0",
   "/grpcIUndistortPoints.grpcIUndistortPointsService/undistort_grpc1",
-  "/grpcIUndistortPoints.grpcIUndistortPointsService/setCameraParameters",
 };
 
 std::unique_ptr< grpcIUndistortPointsService::Stub> grpcIUndistortPointsService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -36,7 +35,6 @@ std::unique_ptr< grpcIUndistortPointsService::Stub> grpcIUndistortPointsService:
 grpcIUndistortPointsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_undistort_grpc0_(grpcIUndistortPointsService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_undistort_grpc1_(grpcIUndistortPointsService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_(grpcIUndistortPointsService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIUndistortPointsService::Stub::undistort_grpc0(::grpc::ClientContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request& request, ::grpcIUndistortPoints::undistort_grpc0Response* response) {
@@ -85,29 +83,6 @@ void grpcIUndistortPointsService::Stub::experimental_async::undistort_grpc1(::gr
   return result;
 }
 
-::grpc::Status grpcIUndistortPointsService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcIUndistortPointsService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcIUndistortPointsService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIUndistortPointsService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcIUndistortPoints::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcIUndistortPointsService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
 grpcIUndistortPointsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIUndistortPointsService_method_names[0],
@@ -129,16 +104,6 @@ grpcIUndistortPointsService::Service::Service() {
              ::grpcIUndistortPoints::undistort_grpc1Response* resp) {
                return service->undistort_grpc1(ctx, req, resp);
              }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIUndistortPointsService_method_names[2],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIUndistortPointsService::Service, ::grpcIUndistortPoints::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIUndistortPointsService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIUndistortPoints::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
 }
 
 grpcIUndistortPointsService::Service::~Service() {
@@ -152,13 +117,6 @@ grpcIUndistortPointsService::Service::~Service() {
 }
 
 ::grpc::Status grpcIUndistortPointsService::Service::undistort_grpc1(::grpc::ServerContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status grpcIUndistortPointsService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
   (void) context;
   (void) request;
   (void) response;

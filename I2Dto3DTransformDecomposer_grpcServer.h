@@ -2,7 +2,7 @@
 
 #ifndef I2DTO3DTRANSFORMDECOMPOSER_GRPCSERVER_H
 #define I2DTO3DTRANSFORMDECOMPOSER_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/solver/pose/I2Dto3DTransformDecomposer.h"
+#include "api/solver/pose/I2Dto3DTransformDecomposer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -25,7 +25,6 @@ class I2Dto3DTransformDecomposer_grpcServer:  public org::bcom::xpcf::Configurab
     {
       public:
         grpcI2Dto3DTransformDecomposerServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcI2Dto3DTransformDecomposer::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status decompose(::grpc::ServerContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response) override;
 
         SRef<SolAR::api::solver::pose::I2Dto3DTransformDecomposer> m_xpcfComponent;

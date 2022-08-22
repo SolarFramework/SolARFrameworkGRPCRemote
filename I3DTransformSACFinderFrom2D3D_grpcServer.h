@@ -2,7 +2,7 @@
 
 #ifndef I3DTRANSFORMSACFINDERFROM2D3D_GRPCSERVER_H
 #define I3DTRANSFORMSACFINDERFROM2D3D_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/solver/pose/I3DTransformSACFinderFrom2D3D.h"
+#include "api/solver/pose/I3DTransformSACFinderFrom2D3D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -25,7 +25,6 @@ class I3DTransformSACFinderFrom2D3D_grpcServer:  public org::bcom::xpcf::Configu
     {
       public:
         grpcI3DTransformSACFinderFrom2D3DServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcI3DTransformSACFinderFrom2D3D::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status estimate(::grpc::ServerContext* context, const ::grpcI3DTransformSACFinderFrom2D3D::estimateRequest* request, ::grpcI3DTransformSACFinderFrom2D3D::estimateResponse* response) override;
 
         SRef<SolAR::api::solver::pose::I3DTransformSACFinderFrom2D3D> m_xpcfComponent;

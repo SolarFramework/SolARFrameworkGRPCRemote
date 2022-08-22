@@ -2,7 +2,7 @@
 
 #ifndef IUNDISTORTPOINTS_GRPCSERVER_H
 #define IUNDISTORTPOINTS_GRPCSERVER_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/geom/IUndistortPoints.h"
+#include "api/geom/IUndistortPoints.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
@@ -27,7 +27,6 @@ class IUndistortPoints_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
         grpcIUndistortPointsServiceImpl() = default;
         ::grpc::Status undistort_grpc0(::grpc::ServerContext* context, const ::grpcIUndistortPoints::undistort_grpc0Request* request, ::grpcIUndistortPoints::undistort_grpc0Response* response) override;
         ::grpc::Status undistort_grpc1(::grpc::ServerContext* context, const ::grpcIUndistortPoints::undistort_grpc1Request* request, ::grpcIUndistortPoints::undistort_grpc1Response* response) override;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIUndistortPoints::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
 
         SRef<SolAR::api::geom::IUndistortPoints> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

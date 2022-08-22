@@ -3,7 +3,7 @@
 
 #ifndef ICAMERACALIBRATION_GRPCPROXY_H
 #define ICAMERACALIBRATION_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/input/devices/ICameraCalibration.h"
+#include "api/input/devices/ICameraCalibration.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

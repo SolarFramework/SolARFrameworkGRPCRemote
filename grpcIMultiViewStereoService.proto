@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMultiViewStereo;
+
+message createDenseMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes map = 2;
+bytes densemap = 3;
+}
+
+message createDenseMapResponse
+{
+bytes densemap = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIMultiViewStereoService {
+rpc createDenseMap(createDenseMapRequest) returns(createDenseMapResponse) {}
+}
+

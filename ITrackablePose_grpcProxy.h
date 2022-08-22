@@ -3,7 +3,7 @@
 
 #ifndef ITRACKABLEPOSE_GRPCPROXY_H
 #define ITRACKABLEPOSE_GRPCPROXY_H
-#include "/mnt/c/Users/nduong/bcom/projects/Argo/SolARFramework/SolAR/core/SolARFramework/interfaces/api/solver/pose/ITrackablePose.h"
+#include "api/solver/pose/ITrackablePose.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,9 +22,8 @@ class ITrackablePose_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtu
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
     SolAR::FrameworkReturnCode setTrackable(SRef<SolAR::datastructure::Trackable> const trackable)     override;
-    SolAR::FrameworkReturnCode estimate(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose)     override;
+    SolAR::FrameworkReturnCode estimate(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::CameraParameters const& camParams, SolAR::datastructure::Transform3Df& pose)     override;
 
 
   private:

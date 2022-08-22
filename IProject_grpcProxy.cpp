@@ -19,7 +19,7 @@ IProject_grpcProxy::IProject_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IPro
   declareInterface<SolAR::api::geom::IProject>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(4);
+  m_grpcProxyCompressionConfig.resize(3);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -42,32 +42,7 @@ XPCFErrorCode IProject_grpcProxy::onConfigured()
 }
 
 
-void  IProject_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)
-{
-  ::grpc::ClientContext context;
-  ::grpcIProject::setCameraParametersRequest reqIn;
-  ::google::protobuf::Empty respOut;
-  reqIn.set_intrinsicparams(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsicParams));
-  reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IProject_grpcProxy::setCameraParameters request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IProject_grpcProxy::setCameraParameters response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParameters rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIProjectService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-}
-
-
-SolAR::FrameworkReturnCode  IProject_grpcProxy::project(std::vector<SolAR::datastructure::Point3Df> const& inputPoints, std::vector<SolAR::datastructure::Point2Df>& imagePoints, SolAR::datastructure::Transform3Df const& pose)
+SolAR::FrameworkReturnCode  IProject_grpcProxy::project(std::vector<SolAR::datastructure::Point3Df> const& inputPoints, SolAR::datastructure::Transform3Df const& pose, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Point2Df>& imagePoints)
 {
   ::grpc::ClientContext context;
   ::grpcIProject::project_grpc0Request reqIn;
@@ -79,6 +54,7 @@ SolAR::FrameworkReturnCode  IProject_grpcProxy::project(std::vector<SolAR::datas
   #endif
   reqIn.set_inputpoints(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(inputPoints));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
+  reqIn.set_camparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams));
   reqIn.set_imagepoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(imagePoints));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -100,7 +76,7 @@ SolAR::FrameworkReturnCode  IProject_grpcProxy::project(std::vector<SolAR::datas
 }
 
 
-SolAR::FrameworkReturnCode  IProject_grpcProxy::project(std::vector<SRef<SolAR::datastructure::CloudPoint>> const& inputPoints, std::vector<SolAR::datastructure::Point2Df>& imagePoints, SolAR::datastructure::Transform3Df const& pose)
+SolAR::FrameworkReturnCode  IProject_grpcProxy::project(std::vector<SRef<SolAR::datastructure::CloudPoint>> const& inputPoints, SolAR::datastructure::Transform3Df const& pose, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Point2Df>& imagePoints)
 {
   ::grpc::ClientContext context;
   ::grpcIProject::project_grpc1Request reqIn;
@@ -112,6 +88,7 @@ SolAR::FrameworkReturnCode  IProject_grpcProxy::project(std::vector<SRef<SolAR::
   #endif
   reqIn.set_inputpoints(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(inputPoints));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
+  reqIn.set_camparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams));
   reqIn.set_imagepoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(imagePoints));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
