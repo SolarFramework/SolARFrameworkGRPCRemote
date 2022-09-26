@@ -42,7 +42,7 @@ XPCFErrorCode IPointCloudExporter_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IPointCloudExporter_grpcProxy::exportPointCloud(std::string const& filepath, SRef<SolAR::datastructure::PointCloud const> const& pointCloud)
+SolAR::FrameworkReturnCode  IPointCloudExporter_grpcProxy::exportPointCloud(std::string const& filepath, SRef<SolAR::datastructure::PointCloud> const& pointCloud)
 {
   ::grpc::ClientContext context;
   ::grpcIPointCloudExporter::exportPointCloudRequest reqIn;
