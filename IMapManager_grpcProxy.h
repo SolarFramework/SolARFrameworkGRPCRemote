@@ -31,6 +31,10 @@ class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
     SolAR::FrameworkReturnCode removeCloudPoint(SRef<SolAR::datastructure::CloudPoint> const cloudPoint)     override;
     SolAR::FrameworkReturnCode addKeyframe(SRef<SolAR::datastructure::Keyframe> const keyframe)     override;
     SolAR::FrameworkReturnCode removeKeyframe(SRef<SolAR::datastructure::Keyframe> const keyframe)     override;
+    SolAR::FrameworkReturnCode addCameraParameters(SRef<SolAR::datastructure::CameraParameters> const cameraParameters)     override;
+    SolAR::FrameworkReturnCode removeCameraParameters(SRef<SolAR::datastructure::CameraParameters> const cameraParameters)     override;
+    SolAR::FrameworkReturnCode getCameraParameters(uint32_t const id, SRef<SolAR::datastructure::CameraParameters>& cameraParameters)     override;
+    SolAR::FrameworkReturnCode getCameraParameters(uint32_t const id, SolAR::datastructure::CameraParameters& cameraParameters)     override;
     int pointCloudPruning(std::vector<SRef<SolAR::datastructure::CloudPoint>> const& cloudPoints)     override;
     int keyframePruning(std::vector<SRef<SolAR::datastructure::Keyframe>> const& keyframes)     override;
     SolAR::FrameworkReturnCode saveToFile()     const     override;

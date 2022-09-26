@@ -81,12 +81,14 @@ XPCFErrorCode I3DTransformSACFinderFrom3D3D_grpcServer::onConfigured()
   #endif
   SRef<SolAR::datastructure::Keyframe> firstKeyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->firstkeyframe());
   SRef<SolAR::datastructure::Keyframe> secondKeyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->secondkeyframe());
+  SolAR::datastructure::CameraParameters firstCameraParameters = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->firstcameraparameters());
+  SolAR::datastructure::CameraParameters secondCameraParameters = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->secondcameraparameters());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
   std::vector<SolAR::datastructure::Point3Df> firstPoints3D = xpcf::deserialize<std::vector<SolAR::datastructure::Point3Df>>(request->firstpoints3d());
   std::vector<SolAR::datastructure::Point3Df> secondPoints3D = xpcf::deserialize<std::vector<SolAR::datastructure::Point3Df>>(request->secondpoints3d());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
   std::vector<int> inliers = xpcf::deserialize<std::vector<int>>(request->inliers());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->estimate(firstKeyframe, secondKeyframe, matches, firstPoints3D, secondPoints3D, pose, inliers);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->estimate(firstKeyframe, secondKeyframe, firstCameraParameters, secondCameraParameters, matches, firstPoints3D, secondPoints3D, pose, inliers);
   response->set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   response->set_inliers(xpcf::serialize<std::vector<int>>(inliers));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));

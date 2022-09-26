@@ -14,7 +14,7 @@ IMapManager_grpcServer::IMapManager_grpcServer():xpcf::ConfigurableBase(xpcf::to
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::storage::IMapManager>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(15);
+  m_grpcServerCompressionConfig.resize(19);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -250,6 +250,102 @@ XPCFErrorCode IMapManager_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapManager_grpcServer::removeKeyframe response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::addCameraParameters(::grpc::ServerContext* context, const ::grpcIMapManager::addCameraParametersRequest* request, ::grpcIMapManager::addCameraParametersResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "addCameraParameters", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::addCameraParameters request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SRef<SolAR::datastructure::CameraParameters> cameraParameters = xpcf::deserialize<SRef<SolAR::datastructure::CameraParameters>>(request->cameraparameters());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->addCameraParameters(cameraParameters);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::addCameraParameters response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::removeCameraParameters(::grpc::ServerContext* context, const ::grpcIMapManager::removeCameraParametersRequest* request, ::grpcIMapManager::removeCameraParametersResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "removeCameraParameters", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::removeCameraParameters request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SRef<SolAR::datastructure::CameraParameters> cameraParameters = xpcf::deserialize<SRef<SolAR::datastructure::CameraParameters>>(request->cameraparameters());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->removeCameraParameters(cameraParameters);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::removeCameraParameters response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getCameraParameters_grpc0(::grpc::ServerContext* context, const ::grpcIMapManager::getCameraParameters_grpc0Request* request, ::grpcIMapManager::getCameraParameters_grpc0Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getCameraParameters", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::getCameraParameters request received at " << to_simple_string(start) << std::endl;
+  #endif
+  uint32_t id = request->id();
+  SRef<SolAR::datastructure::CameraParameters> cameraParameters = xpcf::deserialize<SRef<SolAR::datastructure::CameraParameters>>(request->cameraparameters());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getCameraParameters(id, cameraParameters);
+  response->set_cameraparameters(xpcf::serialize<SRef<SolAR::datastructure::CameraParameters>>(cameraParameters));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::getCameraParameters response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getCameraParameters_grpc1(::grpc::ServerContext* context, const ::grpcIMapManager::getCameraParameters_grpc1Request* request, ::grpcIMapManager::getCameraParameters_grpc1Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getCameraParameters", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::getCameraParameters request received at " << to_simple_string(start) << std::endl;
+  #endif
+  uint32_t id = request->id();
+  SolAR::datastructure::CameraParameters cameraParameters = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->cameraparameters());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getCameraParameters(id, cameraParameters);
+  response->set_cameraparameters(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParameters));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::getCameraParameters response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

@@ -19,7 +19,7 @@ IAsyncRelocalizationPipeline_grpcProxy::IAsyncRelocalizationPipeline_grpcProxy()
   declareInterface<SolAR::api::pipeline::IAsyncRelocalizationPipeline>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(11);
+  m_grpcProxyCompressionConfig.resize(12);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -189,6 +189,37 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::setCameraPar
 }
 
 
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::setRectificationParameters(SolAR::datastructure::RectificationParameters const& rectCam1, SolAR::datastructure::RectificationParameters const& rectCam2)
+{
+  ::grpc::ClientContext context;
+  ::grpcIAsyncRelocalizationPipeline::setRectificationParametersRequest reqIn;
+  ::grpcIAsyncRelocalizationPipeline::setRectificationParametersResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "setRectificationParameters", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_rectcam1(xpcf::serialize<SolAR::datastructure::RectificationParameters>(rectCam1));
+  reqIn.set_rectcam2(xpcf::serialize<SolAR::datastructure::RectificationParameters>(rectCam2));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::setRectificationParameters request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->setRectificationParameters(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::setRectificationParameters response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "setRectificationParameters rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIAsyncRelocalizationPipelineService","setRectificationParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
 SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getCameraParameters(SolAR::datastructure::CameraParameters& cameraParams) const
 {
   ::grpc::ClientContext context;
@@ -220,7 +251,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getCameraPar
 }
 
 
-SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df const& pose, std::chrono::system_clock::time_point const& timestamp, SolAR::api::pipeline::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence)
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::relocalizeProcessRequest(std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, std::chrono::system_clock::time_point const& timestamp, SolAR::api::pipeline::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::api::pipeline::MappingStatus& mappingStatus)
 {
   ::grpc::ClientContext context;
   ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestRequest reqIn;
@@ -230,12 +261,13 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::relocalizePr
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
-  reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
+  reqIn.set_images(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Image>>>(images));
+  reqIn.set_poses(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(poses));
   reqIn.set_timestamp(xpcf::serialize<std::chrono::system_clock::time_point>(timestamp));
   reqIn.set_transform3dstatus(xpcf::serialize<SolAR::api::pipeline::TransformStatus>(transform3DStatus));
   reqIn.set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
   reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
+  reqIn.set_mappingstatus(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(mappingStatus));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::relocalizeProcessRequest request sent at " << to_simple_string(start) << std::endl;
@@ -254,6 +286,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::relocalizePr
   transform3DStatus = xpcf::deserialize<SolAR::api::pipeline::TransformStatus>(respOut.transform3dstatus());
   transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
+  mappingStatus = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(respOut.mappingstatus());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

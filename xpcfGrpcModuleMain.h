@@ -109,6 +109,8 @@
 #include "ILoopCorrector_grpcServer.h"
 #include "IOverlapDetector_grpcProxy.h"
 #include "IOverlapDetector_grpcServer.h"
+#include "IPointCloudExporter_grpcProxy.h"
+#include "IPointCloudExporter_grpcServer.h"
 #include "IAsyncRelocalizationPipeline_grpcProxy.h"
 #include "IAsyncRelocalizationPipeline_grpcServer.h"
 #include "IMapUpdatePipeline_grpcProxy.h"

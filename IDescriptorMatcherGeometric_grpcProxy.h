@@ -23,7 +23,7 @@ class IDescriptorMatcherGeometric_grpcProxy:  public org::bcom::xpcf::Configurab
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
     SolAR::FrameworkReturnCode match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, SRef<SolAR::datastructure::DescriptorBuffer> const descriptors2, std::vector<SolAR::datastructure::Keypoint> const& undistortedKeypoints1, std::vector<SolAR::datastructure::Keypoint> const& undistortedKeypoints2, SolAR::datastructure::Transform3Df const& pose1, SolAR::datastructure::Transform3Df const& pose2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SolAR::datastructure::DescriptorMatch>& matches, std::vector<uint32_t> const& mask)     override;
-    SolAR::FrameworkReturnCode match(SRef<SolAR::datastructure::Frame> const frame1, SRef<SolAR::datastructure::Frame> const frame2, std::vector<SolAR::datastructure::DescriptorMatch>& matches, std::vector<uint32_t> const& mask)     override;
+    SolAR::FrameworkReturnCode match(SRef<SolAR::datastructure::Frame> const frame1, SRef<SolAR::datastructure::Frame> const frame2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SolAR::datastructure::DescriptorMatch>& matches, std::vector<uint32_t> const& mask)     override;
 
 
   private:

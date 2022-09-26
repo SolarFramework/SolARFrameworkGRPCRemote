@@ -538,6 +538,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIPointCloudExporter::IPointCloudExporter_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIPointCloudExporter::IPointCloudExporter_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -967,6 +977,8 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyILoopCorrector::ILoopCorrector_gr
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverILoopCorrector::ILoopCorrector_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIOverlapDetector::IOverlapDetector_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIOverlapDetector::IOverlapDetector_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPointCloudExporter::IPointCloudExporter_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPointCloudExporter::IPointCloudExporter_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapUpdatePipeline::IMapUpdatePipeline_grpcProxy)

@@ -77,7 +77,7 @@ SolAR::FrameworkReturnCode  I3DTransformSACFinderFrom3D3D_grpcProxy::estimate(st
 }
 
 
-SolAR::FrameworkReturnCode  I3DTransformSACFinderFrom3D3D_grpcProxy::estimate(SRef<SolAR::datastructure::Keyframe> const firstKeyframe, SRef<SolAR::datastructure::Keyframe> const secondKeyframe, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::vector<SolAR::datastructure::Point3Df> const& firstPoints3D, std::vector<SolAR::datastructure::Point3Df> const& secondPoints3D, SolAR::datastructure::Transform3Df& pose, std::vector<int>& inliers)
+SolAR::FrameworkReturnCode  I3DTransformSACFinderFrom3D3D_grpcProxy::estimate(SRef<SolAR::datastructure::Keyframe> const firstKeyframe, SRef<SolAR::datastructure::Keyframe> const secondKeyframe, SolAR::datastructure::CameraParameters const& firstCameraParameters, SolAR::datastructure::CameraParameters const& secondCameraParameters, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::vector<SolAR::datastructure::Point3Df> const& firstPoints3D, std::vector<SolAR::datastructure::Point3Df> const& secondPoints3D, SolAR::datastructure::Transform3Df& pose, std::vector<int>& inliers)
 {
   ::grpc::ClientContext context;
   ::grpcI3DTransformSACFinderFrom3D3D::estimate_grpc1Request reqIn;
@@ -89,6 +89,8 @@ SolAR::FrameworkReturnCode  I3DTransformSACFinderFrom3D3D_grpcProxy::estimate(SR
   #endif
   reqIn.set_firstkeyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(firstKeyframe));
   reqIn.set_secondkeyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(secondKeyframe));
+  reqIn.set_firstcameraparameters(xpcf::serialize<SolAR::datastructure::CameraParameters>(firstCameraParameters));
+  reqIn.set_secondcameraparameters(xpcf::serialize<SolAR::datastructure::CameraParameters>(secondCameraParameters));
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   reqIn.set_firstpoints3d(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(firstPoints3D));
   reqIn.set_secondpoints3d(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(secondPoints3D));

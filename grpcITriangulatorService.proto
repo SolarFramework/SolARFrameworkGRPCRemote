@@ -73,8 +73,10 @@ bytes frame1 = 2;
 bytes frame2 = 3;
 bytes matches = 4;
 bytes working_views = 5;
-bool onlyDepth = 6;
-bytes pcloud = 7;
+bytes camParams1 = 6;
+bytes camParams2 = 7;
+bool onlyDepth = 8;
+bytes pcloud = 9;
 }
 
 message triangulate_grpc3Response

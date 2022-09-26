@@ -153,9 +153,11 @@ XPCFErrorCode ITriangulator_grpcServer::onConfigured()
   SRef<SolAR::datastructure::Frame> frame2 = xpcf::deserialize<SRef<SolAR::datastructure::Frame>>(request->frame2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
   std::pair<uint32_t,uint32_t> working_views = xpcf::deserialize<std::pair<uint32_t,uint32_t>>(request->working_views());
+  SolAR::datastructure::CameraParameters camParams1 = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams1());
+  SolAR::datastructure::CameraParameters camParams2 = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams2());
   std::vector<SRef<SolAR::datastructure::CloudPoint>> pcloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->pcloud());
   bool onlyDepth = request->onlydepth();
-  double returnValue = m_xpcfComponent->triangulate(frame1, frame2, matches, working_views, pcloud, onlyDepth);
+  double returnValue = m_xpcfComponent->triangulate(frame1, frame2, matches, working_views, camParams1, camParams2, pcloud, onlyDepth);
   response->set_pcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pcloud));
   response->set_xpcfgrpcreturnvalue(returnValue);
   #ifdef ENABLE_SERVER_TIMERS

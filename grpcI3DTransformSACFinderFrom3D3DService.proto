@@ -25,11 +25,13 @@ message estimate_grpc1Request
 int32 grpcServerCompressionFormat  = 1;
 bytes firstKeyframe = 2;
 bytes secondKeyframe = 3;
-bytes matches = 4;
-bytes firstPoints3D = 5;
-bytes secondPoints3D = 6;
-bytes pose = 7;
-bytes inliers = 8;
+bytes firstCameraParameters = 4;
+bytes secondCameraParameters = 5;
+bytes matches = 6;
+bytes firstPoints3D = 7;
+bytes secondPoints3D = 8;
+bytes pose = 9;
+bytes inliers = 10;
 }
 
 message estimate_grpc1Response

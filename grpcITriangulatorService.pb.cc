@@ -127,6 +127,8 @@ constexpr triangulate_grpc3Request::triangulate_grpc3Request(
   , frame2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , matches_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , working_views_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , camparams1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , camparams2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , pcloud_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , grpcservercompressionformat_(0)
   , onlydepth_(false){}
@@ -236,6 +238,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcITriangulatorService_2epro
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, frame2_),
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, matches_),
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, working_views_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, camparams1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, camparams2_),
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, onlydepth_),
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, pcloud_),
   ~0u,  // no _has_bits_
@@ -254,7 +258,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 44, -1, sizeof(::grpcITriangulator::triangulate_grpc2Request)},
   { 61, -1, sizeof(::grpcITriangulator::triangulate_grpc2Response)},
   { 68, -1, sizeof(::grpcITriangulator::triangulate_grpc3Request)},
-  { 80, -1, sizeof(::grpcITriangulator::triangulate_grpc3Response)},
+  { 82, -1, sizeof(::grpcITriangulator::triangulate_grpc3Response)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -296,11 +300,12 @@ const char descriptor_table_protodef_grpcITriangulatorService_2eproto[] PROTOBUF
   "rams1\030\n \001(\014\022\022\n\ncamParams2\030\013 \001(\014\022\016\n\006pclou"
   "d\030\014 \001(\014\"H\n\031triangulate_grpc2Response\022\016\n\006"
   "pcloud\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001("
-  "\001\"\252\001\n\030triangulate_grpc3Request\022#\n\033grpcSe"
+  "\001\"\322\001\n\030triangulate_grpc3Request\022#\n\033grpcSe"
   "rverCompressionFormat\030\001 \001(\005\022\016\n\006frame1\030\002 "
   "\001(\014\022\016\n\006frame2\030\003 \001(\014\022\017\n\007matches\030\004 \001(\014\022\025\n\r"
-  "working_views\030\005 \001(\014\022\021\n\tonlyDepth\030\006 \001(\010\022\016"
-  "\n\006pcloud\030\007 \001(\014\"H\n\031triangulate_grpc3Respo"
+  "working_views\030\005 \001(\014\022\022\n\ncamParams1\030\006 \001(\014\022"
+  "\022\n\ncamParams2\030\007 \001(\014\022\021\n\tonlyDepth\030\010 \001(\010\022\016"
+  "\n\006pcloud\030\t \001(\014\"H\n\031triangulate_grpc3Respo"
   "nse\022\016\n\006pcloud\030\001 \001(\014\022\033\n\023xpcfGrpcReturnVal"
   "ue\030\002 \001(\0012\342\003\n\030grpcITriangulatorService\022p\n"
   "\021triangulate_grpc0\022+.grpcITriangulator.t"
@@ -321,7 +326,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcITriangulatorService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcITriangulatorService_2eproto = {
-  false, false, 1821, descriptor_table_protodef_grpcITriangulatorService_2eproto, "grpcITriangulatorService.proto", 
+  false, false, 1861, descriptor_table_protodef_grpcITriangulatorService_2eproto, "grpcITriangulatorService.proto", 
   &descriptor_table_grpcITriangulatorService_2eproto_once, descriptor_table_grpcITriangulatorService_2eproto_deps, 1, 8,
   schemas, file_default_instances, TableStruct_grpcITriangulatorService_2eproto::offsets,
   file_level_metadata_grpcITriangulatorService_2eproto, file_level_enum_descriptors_grpcITriangulatorService_2eproto, file_level_service_descriptors_grpcITriangulatorService_2eproto,
@@ -2555,6 +2560,16 @@ triangulate_grpc3Request::triangulate_grpc3Request(const triangulate_grpc3Reques
     working_views_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_working_views(), 
       GetArena());
   }
+  camparams1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_camparams1().empty()) {
+    camparams1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_camparams1(), 
+      GetArena());
+  }
+  camparams2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_camparams2().empty()) {
+    camparams2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_camparams2(), 
+      GetArena());
+  }
   pcloud_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_pcloud().empty()) {
     pcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pcloud(), 
@@ -2571,6 +2586,8 @@ frame1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlrea
 frame2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 matches_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 working_views_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+camparams1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+camparams2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 pcloud_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
@@ -2590,6 +2607,8 @@ void triangulate_grpc3Request::SharedDtor() {
   frame2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   matches_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   working_views_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  camparams1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  camparams2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   pcloud_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -2613,6 +2632,8 @@ void triangulate_grpc3Request::Clear() {
   frame2_.ClearToEmpty();
   matches_.ClearToEmpty();
   working_views_.ClearToEmpty();
+  camparams1_.ClearToEmpty();
+  camparams2_.ClearToEmpty();
   pcloud_.ClearToEmpty();
   ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&onlydepth_) -
@@ -2666,16 +2687,32 @@ const char* triangulate_grpc3Request::_InternalParse(const char* ptr, ::PROTOBUF
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool onlyDepth = 6;
+      // bytes camParams1 = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_camparams1();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes camParams2 = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          auto str = _internal_mutable_camparams2();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool onlyDepth = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           onlydepth_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes pcloud = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+      // bytes pcloud = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           auto str = _internal_mutable_pcloud();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -2739,16 +2776,28 @@ failure:
         5, this->_internal_working_views(), target);
   }
 
-  // bool onlyDepth = 6;
-  if (this->onlydepth() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_onlydepth(), target);
+  // bytes camParams1 = 6;
+  if (this->camparams1().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        6, this->_internal_camparams1(), target);
   }
 
-  // bytes pcloud = 7;
+  // bytes camParams2 = 7;
+  if (this->camparams2().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        7, this->_internal_camparams2(), target);
+  }
+
+  // bool onlyDepth = 8;
+  if (this->onlydepth() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(8, this->_internal_onlydepth(), target);
+  }
+
+  // bytes pcloud = 9;
   if (this->pcloud().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        7, this->_internal_pcloud(), target);
+        9, this->_internal_pcloud(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2795,7 +2844,21 @@ size_t triangulate_grpc3Request::ByteSizeLong() const {
         this->_internal_working_views());
   }
 
-  // bytes pcloud = 7;
+  // bytes camParams1 = 6;
+  if (this->camparams1().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_camparams1());
+  }
+
+  // bytes camParams2 = 7;
+  if (this->camparams2().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_camparams2());
+  }
+
+  // bytes pcloud = 9;
   if (this->pcloud().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -2809,7 +2872,7 @@ size_t triangulate_grpc3Request::ByteSizeLong() const {
         this->_internal_grpcservercompressionformat());
   }
 
-  // bool onlyDepth = 6;
+  // bool onlyDepth = 8;
   if (this->onlydepth() != 0) {
     total_size += 1 + 1;
   }
@@ -2857,6 +2920,12 @@ void triangulate_grpc3Request::MergeFrom(const triangulate_grpc3Request& from) {
   if (from.working_views().size() > 0) {
     _internal_set_working_views(from._internal_working_views());
   }
+  if (from.camparams1().size() > 0) {
+    _internal_set_camparams1(from._internal_camparams1());
+  }
+  if (from.camparams2().size() > 0) {
+    _internal_set_camparams2(from._internal_camparams2());
+  }
   if (from.pcloud().size() > 0) {
     _internal_set_pcloud(from._internal_pcloud());
   }
@@ -2893,6 +2962,8 @@ void triangulate_grpc3Request::InternalSwap(triangulate_grpc3Request* other) {
   frame2_.Swap(&other->frame2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   matches_.Swap(&other->matches_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   working_views_.Swap(&other->working_views_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  camparams1_.Swap(&other->camparams1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  camparams2_.Swap(&other->camparams2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   pcloud_.Swap(&other->pcloud_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(triangulate_grpc3Request, onlydepth_)

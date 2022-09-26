@@ -212,6 +212,10 @@ IOverlapDetector_grpcProxy.h \
 IOverlapDetector_grpcServer.h \
 grpcIOverlapDetectorService.pb.h \
 grpcIOverlapDetectorService.grpc.pb.h \
+IPointCloudExporter_grpcProxy.h \
+IPointCloudExporter_grpcServer.h \
+grpcIPointCloudExporterService.pb.h \
+grpcIPointCloudExporterService.grpc.pb.h \
 IAsyncRelocalizationPipeline_grpcProxy.h \
 IAsyncRelocalizationPipeline_grpcServer.h \
 grpcIAsyncRelocalizationPipelineService.pb.h \
@@ -555,6 +559,10 @@ IOverlapDetector_grpcProxy.cpp \
 IOverlapDetector_grpcServer.cpp \
 grpcIOverlapDetectorService.pb.cc \
 grpcIOverlapDetectorService.grpc.pb.cc \
+IPointCloudExporter_grpcProxy.cpp \
+IPointCloudExporter_grpcServer.cpp \
+grpcIPointCloudExporterService.pb.cc \
+grpcIPointCloudExporterService.grpc.pb.cc \
 IAsyncRelocalizationPipeline_grpcProxy.cpp \
 IAsyncRelocalizationPipeline_grpcServer.cpp \
 grpcIAsyncRelocalizationPipelineService.pb.cc \

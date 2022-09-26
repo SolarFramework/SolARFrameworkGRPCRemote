@@ -161,7 +161,7 @@ double  ITriangulator_grpcProxy::triangulate(std::vector<SolAR::datastructure::K
 }
 
 
-double  ITriangulator_grpcProxy::triangulate(SRef<SolAR::datastructure::Frame> frame1, SRef<SolAR::datastructure::Frame> frame2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::pair<uint32_t,uint32_t> const& working_views, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pcloud, bool const& onlyDepth)
+double  ITriangulator_grpcProxy::triangulate(SRef<SolAR::datastructure::Frame> frame1, SRef<SolAR::datastructure::Frame> frame2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::pair<uint32_t,uint32_t> const& working_views, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pcloud, bool const& onlyDepth)
 {
   ::grpc::ClientContext context;
   ::grpcITriangulator::triangulate_grpc3Request reqIn;
@@ -175,6 +175,8 @@ double  ITriangulator_grpcProxy::triangulate(SRef<SolAR::datastructure::Frame> f
   reqIn.set_frame2(xpcf::serialize<SRef<SolAR::datastructure::Frame>>(frame2));
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   reqIn.set_working_views(xpcf::serialize<std::pair<uint32_t,uint32_t>>(working_views));
+  reqIn.set_camparams1(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams1));
+  reqIn.set_camparams2(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams2));
   reqIn.set_onlydepth(onlyDepth);
   reqIn.set_pcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pcloud));
   #ifdef ENABLE_PROXY_TIMERS

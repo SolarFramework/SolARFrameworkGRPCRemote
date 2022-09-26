@@ -30,8 +30,10 @@ message match_grpc1Request
 int32 grpcServerCompressionFormat  = 1;
 bytes frame1 = 2;
 bytes frame2 = 3;
-bytes mask = 4;
-bytes matches = 5;
+bytes camParams1 = 4;
+bytes camParams2 = 5;
+bytes mask = 6;
+bytes matches = 7;
 }
 
 message match_grpc1Response
