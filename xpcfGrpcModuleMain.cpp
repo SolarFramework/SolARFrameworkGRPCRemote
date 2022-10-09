@@ -478,6 +478,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIMeshLoader::IMeshLoader_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIMeshLoader::IMeshLoader_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIPointCloudLoader::IPointCloudLoader_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -538,6 +548,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIMeshExporter::IMeshExporter_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIMeshExporter::IMeshExporter_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIPointCloudExporter::IPointCloudExporter_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -554,6 +574,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIDenseMappingPipeline::IDenseMappingPipeline_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIDenseMappingPipeline::IDenseMappingPipeline_grpcServer>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
@@ -965,6 +995,8 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRGBDCamera::IRGBDCamera_grpcProx
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRGBDCamera::IRGBDCamera_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIStereoCameraCalibration::IStereoCameraCalibration_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIStereoCameraCalibration::IStereoCameraCalibration_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMeshLoader::IMeshLoader_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMeshLoader::IMeshLoader_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPointCloudLoader::IPointCloudLoader_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPointCloudLoader::IPointCloudLoader_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyITrackableLoader::ITrackableLoader_grpcProxy)
@@ -977,10 +1009,14 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyILoopCorrector::ILoopCorrector_gr
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverILoopCorrector::ILoopCorrector_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIOverlapDetector::IOverlapDetector_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIOverlapDetector::IOverlapDetector_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMeshExporter::IMeshExporter_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMeshExporter::IMeshExporter_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPointCloudExporter::IPointCloudExporter_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPointCloudExporter::IPointCloudExporter_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIDenseMappingPipeline::IDenseMappingPipeline_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIDenseMappingPipeline::IDenseMappingPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapUpdatePipeline::IMapUpdatePipeline_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapUpdatePipeline::IMapUpdatePipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMappingPipeline::IMappingPipeline_grpcProxy)

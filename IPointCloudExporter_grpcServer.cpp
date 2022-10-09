@@ -51,9 +51,8 @@ XPCFErrorCode IPointCloudExporter_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IPointCloudExporter_grpcServer::exportPointCloud request received at " << to_simple_string(start) << std::endl;
   #endif
-  std::string filepath = request->filepath();
   SRef<SolAR::datastructure::PointCloud> pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(request->pointcloud());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->exportPointCloud(filepath, pointCloud);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->exportPointCloud(pointCloud);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

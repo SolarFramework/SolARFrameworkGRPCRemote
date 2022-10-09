@@ -1,5 +1,5 @@
 // GRPC Proxy Class implementation generated with xpcf_grpc_gen
-#include "IPointCloudLoader_grpcProxy.h"
+#include "IMeshExporter_grpcProxy.h"
 #include <cstddef>
 #include <boost/date_time.hpp>
 #include <xpcf/core/Exception.h>
@@ -10,13 +10,13 @@
 #include <boost/algorithm/string.hpp>
 namespace xpcf = org::bcom::xpcf;
 
-template<> org::bcom::xpcf::grpc::proxyIPointCloudLoader::IPointCloudLoader_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyIPointCloudLoader::IPointCloudLoader_grpcProxy>();
+template<> org::bcom::xpcf::grpc::proxyIMeshExporter::IMeshExporter_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyIMeshExporter::IMeshExporter_grpcProxy>();
 
-namespace org::bcom::xpcf::grpc::proxyIPointCloudLoader {
+namespace org::bcom::xpcf::grpc::proxyIMeshExporter {
 
-IPointCloudLoader_grpcProxy::IPointCloudLoader_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IPointCloudLoader_grpcProxy>())
+IMeshExporter_grpcProxy::IMeshExporter_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IMeshExporter_grpcProxy>())
 {
-  declareInterface<SolAR::api::input::files::IPointCloudLoader>(this);
+  declareInterface<SolAR::api::output::files::IMeshExporter>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
   m_grpcProxyCompressionConfig.resize(2);
@@ -24,17 +24,17 @@ IPointCloudLoader_grpcProxy::IPointCloudLoader_grpcProxy():xpcf::ConfigurableBas
 }
 
 
-void IPointCloudLoader_grpcProxy::unloadComponent ()
+void IMeshExporter_grpcProxy::unloadComponent ()
 {
   delete this;
   return;
 }
 
 
-XPCFErrorCode IPointCloudLoader_grpcProxy::onConfigured()
+XPCFErrorCode IMeshExporter_grpcProxy::onConfigured()
 {
   m_channel = ::grpc::CreateChannel(m_channelUrl, xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)));
-  m_grpcStub = ::grpcIPointCloudLoader::grpcIPointCloudLoaderService::NewStub(m_channel);
+  m_grpcStub = ::grpcIMeshExporter::grpcIMeshExporterService::NewStub(m_channel);
   for (auto & compressionLine : m_grpcProxyCompressionConfig) {
       translateClientConfiguration(compressionLine, m_serviceCompressionInfos, m_methodCompressionInfosMap);
   }
@@ -42,33 +42,32 @@ XPCFErrorCode IPointCloudLoader_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IPointCloudLoader_grpcProxy::load(SRef<SolAR::datastructure::PointCloud>& pointCloud)
+SolAR::FrameworkReturnCode  IMeshExporter_grpcProxy::exportMesh(SRef<SolAR::datastructure::Mesh> const& mesh)
 {
   ::grpc::ClientContext context;
-  ::grpcIPointCloudLoader::loadRequest reqIn;
-  ::grpcIPointCloudLoader::loadResponse respOut;
+  ::grpcIMeshExporter::exportMeshRequest reqIn;
+  ::grpcIMeshExporter::exportMeshResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "load", m_methodCompressionInfosMap);
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "exportMesh", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
+  reqIn.set_mesh(xpcf::serialize<SRef<SolAR::datastructure::Mesh>>(mesh));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IPointCloudLoader_grpcProxy::load request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMeshExporter_grpcProxy::exportMesh request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->load(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->exportMesh(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IPointCloudLoader_grpcProxy::load response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMeshExporter_grpcProxy::exportMesh response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "load rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIPointCloudLoaderService","load",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "exportMesh rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMeshExporterService","exportMesh",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(respOut.pointcloud());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

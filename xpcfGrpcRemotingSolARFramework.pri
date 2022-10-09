@@ -188,6 +188,10 @@ IStereoCameraCalibration_grpcProxy.h \
 IStereoCameraCalibration_grpcServer.h \
 grpcIStereoCameraCalibrationService.pb.h \
 grpcIStereoCameraCalibrationService.grpc.pb.h \
+IMeshLoader_grpcProxy.h \
+IMeshLoader_grpcServer.h \
+grpcIMeshLoaderService.pb.h \
+grpcIMeshLoaderService.grpc.pb.h \
 IPointCloudLoader_grpcProxy.h \
 IPointCloudLoader_grpcServer.h \
 grpcIPointCloudLoaderService.pb.h \
@@ -212,6 +216,10 @@ IOverlapDetector_grpcProxy.h \
 IOverlapDetector_grpcServer.h \
 grpcIOverlapDetectorService.pb.h \
 grpcIOverlapDetectorService.grpc.pb.h \
+IMeshExporter_grpcProxy.h \
+IMeshExporter_grpcServer.h \
+grpcIMeshExporterService.pb.h \
+grpcIMeshExporterService.grpc.pb.h \
 IPointCloudExporter_grpcProxy.h \
 IPointCloudExporter_grpcServer.h \
 grpcIPointCloudExporterService.pb.h \
@@ -220,6 +228,10 @@ IAsyncRelocalizationPipeline_grpcProxy.h \
 IAsyncRelocalizationPipeline_grpcServer.h \
 grpcIAsyncRelocalizationPipelineService.pb.h \
 grpcIAsyncRelocalizationPipelineService.grpc.pb.h \
+IDenseMappingPipeline_grpcProxy.h \
+IDenseMappingPipeline_grpcServer.h \
+grpcIDenseMappingPipelineService.pb.h \
+grpcIDenseMappingPipelineService.grpc.pb.h \
 IMapUpdatePipeline_grpcProxy.h \
 IMapUpdatePipeline_grpcServer.h \
 grpcIMapUpdatePipelineService.pb.h \
@@ -535,6 +547,10 @@ IStereoCameraCalibration_grpcProxy.cpp \
 IStereoCameraCalibration_grpcServer.cpp \
 grpcIStereoCameraCalibrationService.pb.cc \
 grpcIStereoCameraCalibrationService.grpc.pb.cc \
+IMeshLoader_grpcProxy.cpp \
+IMeshLoader_grpcServer.cpp \
+grpcIMeshLoaderService.pb.cc \
+grpcIMeshLoaderService.grpc.pb.cc \
 IPointCloudLoader_grpcProxy.cpp \
 IPointCloudLoader_grpcServer.cpp \
 grpcIPointCloudLoaderService.pb.cc \
@@ -559,6 +575,10 @@ IOverlapDetector_grpcProxy.cpp \
 IOverlapDetector_grpcServer.cpp \
 grpcIOverlapDetectorService.pb.cc \
 grpcIOverlapDetectorService.grpc.pb.cc \
+IMeshExporter_grpcProxy.cpp \
+IMeshExporter_grpcServer.cpp \
+grpcIMeshExporterService.pb.cc \
+grpcIMeshExporterService.grpc.pb.cc \
 IPointCloudExporter_grpcProxy.cpp \
 IPointCloudExporter_grpcServer.cpp \
 grpcIPointCloudExporterService.pb.cc \
@@ -567,6 +587,10 @@ IAsyncRelocalizationPipeline_grpcProxy.cpp \
 IAsyncRelocalizationPipeline_grpcServer.cpp \
 grpcIAsyncRelocalizationPipelineService.pb.cc \
 grpcIAsyncRelocalizationPipelineService.grpc.pb.cc \
+IDenseMappingPipeline_grpcProxy.cpp \
+IDenseMappingPipeline_grpcServer.cpp \
+grpcIDenseMappingPipelineService.pb.cc \
+grpcIDenseMappingPipelineService.grpc.pb.cc \
 IMapUpdatePipeline_grpcProxy.cpp \
 IMapUpdatePipeline_grpcServer.cpp \
 grpcIMapUpdatePipelineService.pb.cc \

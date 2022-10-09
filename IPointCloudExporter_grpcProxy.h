@@ -22,7 +22,7 @@ class IPointCloudExporter_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, 
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode exportPointCloud(std::string const& filepath, SRef<SolAR::datastructure::PointCloud> const& pointCloud)     override;
+    SolAR::FrameworkReturnCode exportPointCloud(SRef<SolAR::datastructure::PointCloud> const& pointCloud)     override;
 
 
   private:

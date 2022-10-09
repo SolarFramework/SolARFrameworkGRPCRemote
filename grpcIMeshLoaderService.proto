@@ -2,21 +2,21 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 
-package grpcIPointCloudLoader;
+package grpcIMeshLoader;
 
 message loadRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes pointCloud = 2;
+bytes Mesh = 2;
 }
 
 message loadResponse
 {
-bytes pointCloud = 1;
+bytes Mesh = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-service grpcIPointCloudLoaderService {
+service grpcIMeshLoaderService {
 rpc load(loadRequest) returns(loadResponse) {}
 }
 

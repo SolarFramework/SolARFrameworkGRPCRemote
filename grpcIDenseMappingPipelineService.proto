@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIDenseMappingPipeline;
+
+message initRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message initResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message denseMappingProcessRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes sparseMap = 2;
+bool createMesh = 3;
+}
+
+message denseMappingProcessRequestResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getPointCloudRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes outputPointCloud = 2;
+bytes status = 3;
+}
+
+message getPointCloudResponse
+{
+bytes status = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getMeshRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes outputMesh = 2;
+bytes status = 3;
+}
+
+message getMeshResponse
+{
+bytes status = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIDenseMappingPipelineService {
+rpc init(initRequest) returns(initResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
+rpc denseMappingProcessRequest(denseMappingProcessRequestRequest) returns(denseMappingProcessRequestResponse) {}
+rpc getPointCloud(getPointCloudRequest) returns(getPointCloudResponse) {}
+rpc getMesh(getMeshRequest) returns(getMeshResponse) {}
+}
+
