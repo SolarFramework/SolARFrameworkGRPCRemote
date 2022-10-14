@@ -42,7 +42,7 @@ XPCFErrorCode IDescriptorMatcherGeometric_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IDescriptorMatcherGeometric_grpcProxy::match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, SRef<SolAR::datastructure::DescriptorBuffer> const descriptors2, std::vector<SolAR::datastructure::Keypoint> const& undistortedKeypoints1, std::vector<SolAR::datastructure::Keypoint> const& undistortedKeypoints2, SolAR::datastructure::Transform3Df const& pose1, SolAR::datastructure::Transform3Df const& pose2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SolAR::datastructure::DescriptorMatch>& matches, std::vector<uint32_t> const& mask)
+SolAR::FrameworkReturnCode  IDescriptorMatcherGeometric_grpcProxy::match(SRef<SolAR::datastructure::DescriptorBuffer> const descriptors1, SRef<SolAR::datastructure::DescriptorBuffer> const descriptors2, std::vector<SolAR::datastructure::Keypoint> const& undistortedKeypoints1, std::vector<SolAR::datastructure::Keypoint> const& undistortedKeypoints2, SolAR::datastructure::Transform3Df const& pose1, SolAR::datastructure::Transform3Df const& pose2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SolAR::datastructure::DescriptorMatch>& matches, std::vector<uint32_t> const& mask1, std::vector<uint32_t> const& mask2)
 {
   ::grpc::ClientContext context;
   ::grpcIDescriptorMatcherGeometric::match_grpc0Request reqIn;
@@ -60,7 +60,8 @@ SolAR::FrameworkReturnCode  IDescriptorMatcherGeometric_grpcProxy::match(SRef<So
   reqIn.set_pose2(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose2));
   reqIn.set_camparams1(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams1));
   reqIn.set_camparams2(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams2));
-  reqIn.set_mask(xpcf::serialize<std::vector<uint32_t>>(mask));
+  reqIn.set_mask1(xpcf::serialize<std::vector<uint32_t>>(mask1));
+  reqIn.set_mask2(xpcf::serialize<std::vector<uint32_t>>(mask2));
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -82,7 +83,7 @@ SolAR::FrameworkReturnCode  IDescriptorMatcherGeometric_grpcProxy::match(SRef<So
 }
 
 
-SolAR::FrameworkReturnCode  IDescriptorMatcherGeometric_grpcProxy::match(SRef<SolAR::datastructure::Frame> const frame1, SRef<SolAR::datastructure::Frame> const frame2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SolAR::datastructure::DescriptorMatch>& matches, std::vector<uint32_t> const& mask)
+SolAR::FrameworkReturnCode  IDescriptorMatcherGeometric_grpcProxy::match(SRef<SolAR::datastructure::Frame> const frame1, SRef<SolAR::datastructure::Frame> const frame2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, std::vector<SolAR::datastructure::DescriptorMatch>& matches, std::vector<uint32_t> const& mask1, std::vector<uint32_t> const& mask2)
 {
   ::grpc::ClientContext context;
   ::grpcIDescriptorMatcherGeometric::match_grpc1Request reqIn;
@@ -96,7 +97,8 @@ SolAR::FrameworkReturnCode  IDescriptorMatcherGeometric_grpcProxy::match(SRef<So
   reqIn.set_frame2(xpcf::serialize<SRef<SolAR::datastructure::Frame>>(frame2));
   reqIn.set_camparams1(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams1));
   reqIn.set_camparams2(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams2));
-  reqIn.set_mask(xpcf::serialize<std::vector<uint32_t>>(mask));
+  reqIn.set_mask1(xpcf::serialize<std::vector<uint32_t>>(mask1));
+  reqIn.set_mask2(xpcf::serialize<std::vector<uint32_t>>(mask2));
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();

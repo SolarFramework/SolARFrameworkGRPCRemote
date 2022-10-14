@@ -164,7 +164,7 @@ SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::denseMappingProcess
 }
 
 
-SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getPointCloud(SRef<SolAR::datastructure::PointCloud> const& outputPointCloud, SolAR::api::pipeline::DenseMappingStatus& status) const
+SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getPointCloud(SRef<SolAR::datastructure::PointCloud>& outputPointCloud, SolAR::api::pipeline::DenseMappingStatus& status) const
 {
   ::grpc::ClientContext context;
   ::grpcIDenseMappingPipeline::getPointCloudRequest reqIn;
@@ -191,12 +191,13 @@ SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getPointCloud(SRef<
     throw xpcf::RemotingException("grpcIDenseMappingPipelineService","getPointCloud",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  outputPointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(respOut.outputpointcloud());
   status = xpcf::deserialize<SolAR::api::pipeline::DenseMappingStatus>(respOut.status());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
-SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getMesh(SRef<SolAR::datastructure::Mesh> const& outputMesh, SolAR::api::pipeline::DenseMappingStatus& status) const
+SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getMesh(SRef<SolAR::datastructure::Mesh>& outputMesh, SolAR::api::pipeline::DenseMappingStatus& status) const
 {
   ::grpc::ClientContext context;
   ::grpcIDenseMappingPipeline::getMeshRequest reqIn;
@@ -223,6 +224,7 @@ SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getMesh(SRef<SolAR:
     throw xpcf::RemotingException("grpcIDenseMappingPipelineService","getMesh",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  outputMesh = xpcf::deserialize<SRef<SolAR::datastructure::Mesh>>(respOut.outputmesh());
   status = xpcf::deserialize<SolAR::api::pipeline::DenseMappingStatus>(respOut.status());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }

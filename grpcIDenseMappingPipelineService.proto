@@ -55,8 +55,9 @@ bytes status = 3;
 
 message getPointCloudResponse
 {
-bytes status = 1;
-sint32 xpcfGrpcReturnValue = 2;
+bytes outputPointCloud = 1;
+bytes status = 2;
+sint32 xpcfGrpcReturnValue = 3;
 }
 
 message getMeshRequest
@@ -68,8 +69,9 @@ bytes status = 3;
 
 message getMeshResponse
 {
-bytes status = 1;
-sint32 xpcfGrpcReturnValue = 2;
+bytes outputMesh = 1;
+bytes status = 2;
+sint32 xpcfGrpcReturnValue = 3;
 }
 
 service grpcIDenseMappingPipelineService {

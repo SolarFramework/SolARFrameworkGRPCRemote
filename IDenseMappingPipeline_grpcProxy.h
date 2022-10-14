@@ -26,8 +26,8 @@ class IDenseMappingPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
     SolAR::FrameworkReturnCode denseMappingProcessRequest(SRef<SolAR::datastructure::Map> const& sparseMap, bool const createMesh)     override;
-    SolAR::FrameworkReturnCode getPointCloud(SRef<SolAR::datastructure::PointCloud> const& outputPointCloud, SolAR::api::pipeline::DenseMappingStatus& status)     const     override;
-    SolAR::FrameworkReturnCode getMesh(SRef<SolAR::datastructure::Mesh> const& outputMesh, SolAR::api::pipeline::DenseMappingStatus& status)     const     override;
+    SolAR::FrameworkReturnCode getPointCloud(SRef<SolAR::datastructure::PointCloud>& outputPointCloud, SolAR::api::pipeline::DenseMappingStatus& status)     const     override;
+    SolAR::FrameworkReturnCode getMesh(SRef<SolAR::datastructure::Mesh>& outputMesh, SolAR::api::pipeline::DenseMappingStatus& status)     const     override;
 
 
   private:

@@ -60,8 +60,9 @@ XPCFErrorCode IDescriptorMatcherGeometric_grpcServer::onConfigured()
   SolAR::datastructure::CameraParameters camParams1 = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams1());
   SolAR::datastructure::CameraParameters camParams2 = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
-  std::vector<uint32_t> mask = xpcf::deserialize<std::vector<uint32_t>>(request->mask());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->match(descriptors1, descriptors2, undistortedKeypoints1, undistortedKeypoints2, pose1, pose2, camParams1, camParams2, matches, mask);
+  std::vector<uint32_t> mask1 = xpcf::deserialize<std::vector<uint32_t>>(request->mask1());
+  std::vector<uint32_t> mask2 = xpcf::deserialize<std::vector<uint32_t>>(request->mask2());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->match(descriptors1, descriptors2, undistortedKeypoints1, undistortedKeypoints2, pose1, pose2, camParams1, camParams2, matches, mask1, mask2);
   response->set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -89,8 +90,9 @@ XPCFErrorCode IDescriptorMatcherGeometric_grpcServer::onConfigured()
   SolAR::datastructure::CameraParameters camParams1 = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams1());
   SolAR::datastructure::CameraParameters camParams2 = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams2());
   std::vector<SolAR::datastructure::DescriptorMatch> matches = xpcf::deserialize<std::vector<SolAR::datastructure::DescriptorMatch>>(request->matches());
-  std::vector<uint32_t> mask = xpcf::deserialize<std::vector<uint32_t>>(request->mask());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->match(frame1, frame2, camParams1, camParams2, matches, mask);
+  std::vector<uint32_t> mask1 = xpcf::deserialize<std::vector<uint32_t>>(request->mask1());
+  std::vector<uint32_t> mask2 = xpcf::deserialize<std::vector<uint32_t>>(request->mask2());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->match(frame1, frame2, camParams1, camParams2, matches, mask1, mask2);
   response->set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS

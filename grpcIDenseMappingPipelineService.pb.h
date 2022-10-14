@@ -1522,10 +1522,27 @@ class getPointCloudResponse PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 1,
-    kXpcfGrpcReturnValueFieldNumber = 2,
+    kOutputPointCloudFieldNumber = 1,
+    kStatusFieldNumber = 2,
+    kXpcfGrpcReturnValueFieldNumber = 3,
   };
-  // bytes status = 1;
+  // bytes outputPointCloud = 1;
+  void clear_outputpointcloud();
+  const std::string& outputpointcloud() const;
+  void set_outputpointcloud(const std::string& value);
+  void set_outputpointcloud(std::string&& value);
+  void set_outputpointcloud(const char* value);
+  void set_outputpointcloud(const void* value, size_t size);
+  std::string* mutable_outputpointcloud();
+  std::string* release_outputpointcloud();
+  void set_allocated_outputpointcloud(std::string* outputpointcloud);
+  private:
+  const std::string& _internal_outputpointcloud() const;
+  void _internal_set_outputpointcloud(const std::string& value);
+  std::string* _internal_mutable_outputpointcloud();
+  public:
+
+  // bytes status = 2;
   void clear_status();
   const std::string& status() const;
   void set_status(const std::string& value);
@@ -1541,7 +1558,7 @@ class getPointCloudResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_status();
   public:
 
-  // sint32 xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 3;
   void clear_xpcfgrpcreturnvalue();
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -1557,6 +1574,7 @@ class getPointCloudResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpointcloud_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1850,10 +1868,27 @@ class getMeshResponse PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 1,
-    kXpcfGrpcReturnValueFieldNumber = 2,
+    kOutputMeshFieldNumber = 1,
+    kStatusFieldNumber = 2,
+    kXpcfGrpcReturnValueFieldNumber = 3,
   };
-  // bytes status = 1;
+  // bytes outputMesh = 1;
+  void clear_outputmesh();
+  const std::string& outputmesh() const;
+  void set_outputmesh(const std::string& value);
+  void set_outputmesh(std::string&& value);
+  void set_outputmesh(const char* value);
+  void set_outputmesh(const void* value, size_t size);
+  std::string* mutable_outputmesh();
+  std::string* release_outputmesh();
+  void set_allocated_outputmesh(std::string* outputmesh);
+  private:
+  const std::string& _internal_outputmesh() const;
+  void _internal_set_outputmesh(const std::string& value);
+  std::string* _internal_mutable_outputmesh();
+  public:
+
+  // bytes status = 2;
   void clear_status();
   const std::string& status() const;
   void set_status(const std::string& value);
@@ -1869,7 +1904,7 @@ class getMeshResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_status();
   public:
 
-  // sint32 xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 3;
   void clear_xpcfgrpcreturnvalue();
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -1885,6 +1920,7 @@ class getMeshResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputmesh_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2320,7 +2356,68 @@ inline void getPointCloudRequest::set_allocated_status(std::string* status) {
 
 // getPointCloudResponse
 
-// bytes status = 1;
+// bytes outputPointCloud = 1;
+inline void getPointCloudResponse::clear_outputpointcloud() {
+  outputpointcloud_.ClearToEmpty();
+}
+inline const std::string& getPointCloudResponse::outputpointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIDenseMappingPipeline.getPointCloudResponse.outputPointCloud)
+  return _internal_outputpointcloud();
+}
+inline void getPointCloudResponse::set_outputpointcloud(const std::string& value) {
+  _internal_set_outputpointcloud(value);
+  // @@protoc_insertion_point(field_set:grpcIDenseMappingPipeline.getPointCloudResponse.outputPointCloud)
+}
+inline std::string* getPointCloudResponse::mutable_outputpointcloud() {
+  // @@protoc_insertion_point(field_mutable:grpcIDenseMappingPipeline.getPointCloudResponse.outputPointCloud)
+  return _internal_mutable_outputpointcloud();
+}
+inline const std::string& getPointCloudResponse::_internal_outputpointcloud() const {
+  return outputpointcloud_.Get();
+}
+inline void getPointCloudResponse::_internal_set_outputpointcloud(const std::string& value) {
+  
+  outputpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getPointCloudResponse::set_outputpointcloud(std::string&& value) {
+  
+  outputpointcloud_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDenseMappingPipeline.getPointCloudResponse.outputPointCloud)
+}
+inline void getPointCloudResponse::set_outputpointcloud(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  outputpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDenseMappingPipeline.getPointCloudResponse.outputPointCloud)
+}
+inline void getPointCloudResponse::set_outputpointcloud(const void* value,
+    size_t size) {
+  
+  outputpointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIDenseMappingPipeline.getPointCloudResponse.outputPointCloud)
+}
+inline std::string* getPointCloudResponse::_internal_mutable_outputpointcloud() {
+  
+  return outputpointcloud_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getPointCloudResponse::release_outputpointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIDenseMappingPipeline.getPointCloudResponse.outputPointCloud)
+  return outputpointcloud_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getPointCloudResponse::set_allocated_outputpointcloud(std::string* outputpointcloud) {
+  if (outputpointcloud != nullptr) {
+    
+  } else {
+    
+  }
+  outputpointcloud_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), outputpointcloud,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getPointCloudResponse.outputPointCloud)
+}
+
+// bytes status = 2;
 inline void getPointCloudResponse::clear_status() {
   status_.ClearToEmpty();
 }
@@ -2381,7 +2478,7 @@ inline void getPointCloudResponse::set_allocated_status(std::string* status) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getPointCloudResponse.status)
 }
 
-// sint32 xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 3;
 inline void getPointCloudResponse::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }
@@ -2551,7 +2648,68 @@ inline void getMeshRequest::set_allocated_status(std::string* status) {
 
 // getMeshResponse
 
-// bytes status = 1;
+// bytes outputMesh = 1;
+inline void getMeshResponse::clear_outputmesh() {
+  outputmesh_.ClearToEmpty();
+}
+inline const std::string& getMeshResponse::outputmesh() const {
+  // @@protoc_insertion_point(field_get:grpcIDenseMappingPipeline.getMeshResponse.outputMesh)
+  return _internal_outputmesh();
+}
+inline void getMeshResponse::set_outputmesh(const std::string& value) {
+  _internal_set_outputmesh(value);
+  // @@protoc_insertion_point(field_set:grpcIDenseMappingPipeline.getMeshResponse.outputMesh)
+}
+inline std::string* getMeshResponse::mutable_outputmesh() {
+  // @@protoc_insertion_point(field_mutable:grpcIDenseMappingPipeline.getMeshResponse.outputMesh)
+  return _internal_mutable_outputmesh();
+}
+inline const std::string& getMeshResponse::_internal_outputmesh() const {
+  return outputmesh_.Get();
+}
+inline void getMeshResponse::_internal_set_outputmesh(const std::string& value) {
+  
+  outputmesh_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getMeshResponse::set_outputmesh(std::string&& value) {
+  
+  outputmesh_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDenseMappingPipeline.getMeshResponse.outputMesh)
+}
+inline void getMeshResponse::set_outputmesh(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  outputmesh_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDenseMappingPipeline.getMeshResponse.outputMesh)
+}
+inline void getMeshResponse::set_outputmesh(const void* value,
+    size_t size) {
+  
+  outputmesh_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIDenseMappingPipeline.getMeshResponse.outputMesh)
+}
+inline std::string* getMeshResponse::_internal_mutable_outputmesh() {
+  
+  return outputmesh_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getMeshResponse::release_outputmesh() {
+  // @@protoc_insertion_point(field_release:grpcIDenseMappingPipeline.getMeshResponse.outputMesh)
+  return outputmesh_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getMeshResponse::set_allocated_outputmesh(std::string* outputmesh) {
+  if (outputmesh != nullptr) {
+    
+  } else {
+    
+  }
+  outputmesh_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), outputmesh,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getMeshResponse.outputMesh)
+}
+
+// bytes status = 2;
 inline void getMeshResponse::clear_status() {
   status_.ClearToEmpty();
 }
@@ -2612,7 +2770,7 @@ inline void getMeshResponse::set_allocated_status(std::string* status) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getMeshResponse.status)
 }
 
-// sint32 xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 3;
 inline void getMeshResponse::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }

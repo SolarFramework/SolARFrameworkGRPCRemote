@@ -144,6 +144,7 @@ XPCFErrorCode IDenseMappingPipeline_grpcServer::onConfigured()
   SRef<SolAR::datastructure::PointCloud> outputPointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(request->outputpointcloud());
   SolAR::api::pipeline::DenseMappingStatus status = xpcf::deserialize<SolAR::api::pipeline::DenseMappingStatus>(request->status());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getPointCloud(outputPointCloud, status);
+  response->set_outputpointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(outputPointCloud));
   response->set_status(xpcf::serialize<SolAR::api::pipeline::DenseMappingStatus>(status));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -169,6 +170,7 @@ XPCFErrorCode IDenseMappingPipeline_grpcServer::onConfigured()
   SRef<SolAR::datastructure::Mesh> outputMesh = xpcf::deserialize<SRef<SolAR::datastructure::Mesh>>(request->outputmesh());
   SolAR::api::pipeline::DenseMappingStatus status = xpcf::deserialize<SolAR::api::pipeline::DenseMappingStatus>(request->status());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMesh(outputMesh, status);
+  response->set_outputmesh(xpcf::serialize<SRef<SolAR::datastructure::Mesh>>(outputMesh));
   response->set_status(xpcf::serialize<SolAR::api::pipeline::DenseMappingStatus>(status));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
