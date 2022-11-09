@@ -35,6 +35,7 @@ XPCFErrorCode IDenseMappingPipeline_grpcProxy::onConfigured()
 {
   ::grpc::ChannelArguments ch_args;
   ch_args.SetMaxReceiveMessageSize(-1);
+  ch_args.SetMaxSendMessageSize(-1);
   m_channel = ::grpc::CreateCustomChannel(m_channelUrl,
   xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)),
   ch_args);
