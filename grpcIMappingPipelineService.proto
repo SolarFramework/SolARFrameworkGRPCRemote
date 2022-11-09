@@ -34,13 +34,25 @@ message stopResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message setCameraParametersRequest
+message setCameraParameters_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes cameraParams = 2;
 }
 
-message setCameraParametersResponse
+message setCameraParameters_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setCameraParameters_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes cameraParams1 = 2;
+bytes cameraParams2 = 3;
+}
+
+message setCameraParameters_grpc1Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -122,7 +134,8 @@ service grpcIMappingPipelineService {
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
-rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
+rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCameraParameters_grpc0Response) {}
+rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
 rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
 rpc mappingProcessRequest_grpc0(mappingProcessRequest_grpc0Request) returns(mappingProcessRequest_grpc0Response) {}
 rpc mappingProcessRequest_grpc1(mappingProcessRequest_grpc1Request) returns(mappingProcessRequest_grpc1Response) {}

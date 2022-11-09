@@ -26,6 +26,7 @@ class IMappingPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
     SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)     override;
+    SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams1, SolAR::datastructure::CameraParameters const& cameraParams2)     override;
     SolAR::FrameworkReturnCode setRectificationParameters(SolAR::datastructure::RectificationParameters const& rectCam1, SolAR::datastructure::RectificationParameters const& rectCam2)     override;
     SolAR::FrameworkReturnCode mappingProcessRequest(std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, SolAR::datastructure::Transform3Df const& transform, SolAR::datastructure::Transform3Df& updatedTransform, SolAR::api::pipeline::MappingStatus& status)     override;
     SolAR::FrameworkReturnCode mappingProcessRequest(std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, SolAR::api::pipeline::MappingStatus& status)     override;

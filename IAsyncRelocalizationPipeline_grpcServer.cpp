@@ -14,7 +14,7 @@ IAsyncRelocalizationPipeline_grpcServer::IAsyncRelocalizationPipeline_grpcServer
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::pipeline::IAsyncRelocalizationPipeline>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(12);
+  m_grpcServerCompressionConfig.resize(14);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -286,6 +286,30 @@ XPCFErrorCode IAsyncRelocalizationPipeline_grpcServer::onConfigured()
 }
 
 
+::grpc::Status IAsyncRelocalizationPipeline_grpcServer::grpcIAsyncRelocalizationPipelineServiceImpl::getMapRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getMapRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::getMapRequestResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMapRequest", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::getMapRequest request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(map);
+  response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::getMapRequest response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
 ::grpc::Status IAsyncRelocalizationPipeline_grpcServer::grpcIAsyncRelocalizationPipelineServiceImpl::resetMap(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::resetMapRequest* request, ::grpcIAsyncRelocalizationPipeline::resetMapResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -302,6 +326,30 @@ XPCFErrorCode IAsyncRelocalizationPipeline_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::resetMap response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IAsyncRelocalizationPipeline_grpcServer::grpcIAsyncRelocalizationPipelineServiceImpl::getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getPointCloudRequest", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::getPointCloudRequest request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SRef<SolAR::datastructure::PointCloud> pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(request->pointcloud());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getPointCloudRequest(pointCloud);
+  response->set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::getPointCloudRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

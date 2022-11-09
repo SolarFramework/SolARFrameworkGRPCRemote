@@ -30,6 +30,7 @@ class IMapUpdatePipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
     SolAR::FrameworkReturnCode getMapRequest(SRef<SolAR::datastructure::Map>& map)     const     override;
     SolAR::FrameworkReturnCode getSubmapRequest(SRef<SolAR::datastructure::Frame> const frame, SRef<SolAR::datastructure::Map>& map)     const     override;
     SolAR::FrameworkReturnCode resetMap()     override;
+    SolAR::FrameworkReturnCode getPointCloudRequest(SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
 
 
   private:
