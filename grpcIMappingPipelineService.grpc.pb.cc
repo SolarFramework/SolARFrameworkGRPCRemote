@@ -25,7 +25,8 @@ static const char* grpcIMappingPipelineService_method_names[] = {
   "/grpcIMappingPipeline.grpcIMappingPipelineService/init",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/start",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/stop",
-  "/grpcIMappingPipeline.grpcIMappingPipelineService/setCameraParameters",
+  "/grpcIMappingPipeline.grpcIMappingPipelineService/setCameraParameters_grpc0",
+  "/grpcIMappingPipeline.grpcIMappingPipelineService/setCameraParameters_grpc1",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/setRectificationParameters",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/mappingProcessRequest_grpc0",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/mappingProcessRequest_grpc1",
@@ -43,12 +44,13 @@ grpcIMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelIn
   : channel_(channel), rpcmethod_init_(grpcIMappingPipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_start_(grpcIMappingPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_stop_(grpcIMappingPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_(grpcIMappingPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setRectificationParameters_(grpcIMappingPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc0_(grpcIMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc1_(grpcIMappingPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc2_(grpcIMappingPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc0_(grpcIMappingPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc1_(grpcIMappingPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setRectificationParameters_(grpcIMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc0_(grpcIMappingPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc1_(grpcIMappingPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc2_(grpcIMappingPipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMappingPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIMappingPipeline::initRequest& request, ::grpcIMappingPipeline::initResponse* response) {
@@ -120,25 +122,48 @@ void grpcIMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientC
   return result;
 }
 
-::grpc::Status grpcIMappingPipelineService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest& request, ::grpcIMappingPipeline::setCameraParametersResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::setCameraParametersRequest, ::grpcIMappingPipeline::setCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
+::grpc::Status grpcIMappingPipelineService::Stub::setCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request& request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::setCameraParameters_grpc0Request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_grpc0_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest* request, ::grpcIMappingPipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::setCameraParametersRequest, ::grpcIMappingPipeline::setCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
+void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::setCameraParameters_grpc0Request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest* request, ::grpcIMappingPipeline::setCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
+void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_grpc0_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParametersResponse>* grpcIMappingPipelineService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::setCameraParametersResponse, ::grpcIMappingPipeline::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParameters_grpc0Response>* grpcIMappingPipelineService::Stub::PrepareAsyncsetCameraParameters_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::setCameraParameters_grpc0Response, ::grpcIMappingPipeline::setCameraParameters_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_grpc0_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParametersResponse>* grpcIMappingPipelineService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParameters_grpc0Response>* grpcIMappingPipelineService::Stub::AsyncsetCameraParameters_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
+    this->PrepareAsyncsetCameraParameters_grpc0Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMappingPipelineService::Stub::setCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request& request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::setCameraParameters_grpc1Request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_grpc1_, context, request, response);
+}
+
+void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::setCameraParameters_grpc1Request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_grpc1_, context, request, response, std::move(f));
+}
+
+void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_grpc1_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParameters_grpc1Response>* grpcIMappingPipelineService::Stub::PrepareAsyncsetCameraParameters_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::setCameraParameters_grpc1Response, ::grpcIMappingPipeline::setCameraParameters_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_grpc1_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParameters_grpc1Response>* grpcIMappingPipelineService::Stub::AsyncsetCameraParameters_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncsetCameraParameters_grpc1Raw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -292,15 +317,25 @@ grpcIMappingPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMappingPipelineService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::setCameraParametersRequest, ::grpcIMappingPipeline::setCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::setCameraParameters_grpc0Request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIMappingPipeline::setCameraParametersRequest* req,
-             ::grpcIMappingPipeline::setCameraParametersResponse* resp) {
-               return service->setCameraParameters(ctx, req, resp);
+             const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* req,
+             ::grpcIMappingPipeline::setCameraParameters_grpc0Response* resp) {
+               return service->setCameraParameters_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMappingPipelineService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::setCameraParameters_grpc1Request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMappingPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* req,
+             ::grpcIMappingPipeline::setCameraParameters_grpc1Response* resp) {
+               return service->setCameraParameters_grpc1(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMappingPipelineService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::setRectificationParametersRequest, ::grpcIMappingPipeline::setRectificationParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -310,7 +345,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->setRectificationParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[5],
+      grpcIMappingPipelineService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -320,7 +355,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[6],
+      grpcIMappingPipelineService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -330,7 +365,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[7],
+      grpcIMappingPipelineService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -340,7 +375,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest_grpc2(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[8],
+      grpcIMappingPipelineService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -375,7 +410,14 @@ grpcIMappingPipelineService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIMappingPipelineService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest* request, ::grpcIMappingPipeline::setCameraParametersResponse* response) {
+::grpc::Status grpcIMappingPipelineService::Service::setCameraParameters_grpc0(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMappingPipelineService::Service::setCameraParameters_grpc1(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response) {
   (void) context;
   (void) request;
   (void) response;
