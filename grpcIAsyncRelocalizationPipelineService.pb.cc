@@ -114,31 +114,57 @@ struct init_grpc1ResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT init_grpc1ResponseDefaultTypeInternal _init_grpc1Response_default_instance_;
-constexpr setCameraParametersRequest::setCameraParametersRequest(
+constexpr setCameraParameters_grpc0Request::setCameraParameters_grpc0Request(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : cameraparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , grpcservercompressionformat_(0){}
-struct setCameraParametersRequestDefaultTypeInternal {
-  constexpr setCameraParametersRequestDefaultTypeInternal()
+struct setCameraParameters_grpc0RequestDefaultTypeInternal {
+  constexpr setCameraParameters_grpc0RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~setCameraParametersRequestDefaultTypeInternal() {}
+  ~setCameraParameters_grpc0RequestDefaultTypeInternal() {}
   union {
-    setCameraParametersRequest _instance;
+    setCameraParameters_grpc0Request _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParametersRequestDefaultTypeInternal _setCameraParametersRequest_default_instance_;
-constexpr setCameraParametersResponse::setCameraParametersResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParameters_grpc0RequestDefaultTypeInternal _setCameraParameters_grpc0Request_default_instance_;
+constexpr setCameraParameters_grpc0Response::setCameraParameters_grpc0Response(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : xpcfgrpcreturnvalue_(0){}
-struct setCameraParametersResponseDefaultTypeInternal {
-  constexpr setCameraParametersResponseDefaultTypeInternal()
+struct setCameraParameters_grpc0ResponseDefaultTypeInternal {
+  constexpr setCameraParameters_grpc0ResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~setCameraParametersResponseDefaultTypeInternal() {}
+  ~setCameraParameters_grpc0ResponseDefaultTypeInternal() {}
   union {
-    setCameraParametersResponse _instance;
+    setCameraParameters_grpc0Response _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParametersResponseDefaultTypeInternal _setCameraParametersResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParameters_grpc0ResponseDefaultTypeInternal _setCameraParameters_grpc0Response_default_instance_;
+constexpr setCameraParameters_grpc1Request::setCameraParameters_grpc1Request(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : cameraparams1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , cameraparams2_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
+struct setCameraParameters_grpc1RequestDefaultTypeInternal {
+  constexpr setCameraParameters_grpc1RequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~setCameraParameters_grpc1RequestDefaultTypeInternal() {}
+  union {
+    setCameraParameters_grpc1Request _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParameters_grpc1RequestDefaultTypeInternal _setCameraParameters_grpc1Request_default_instance_;
+constexpr setCameraParameters_grpc1Response::setCameraParameters_grpc1Response(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : xpcfgrpcreturnvalue_(0){}
+struct setCameraParameters_grpc1ResponseDefaultTypeInternal {
+  constexpr setCameraParameters_grpc1ResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~setCameraParameters_grpc1ResponseDefaultTypeInternal() {}
+  union {
+    setCameraParameters_grpc1Response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setCameraParameters_grpc1ResponseDefaultTypeInternal _setCameraParameters_grpc1Response_default_instance_;
 constexpr setRectificationParametersRequest::setRectificationParametersRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : rectcam1_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -360,7 +386,7 @@ struct getPointCloudRequestResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getPointCloudRequestResponseDefaultTypeInternal _getPointCloudRequestResponse_default_instance_;
 }  // namespace grpcIAsyncRelocalizationPipeline
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIAsyncRelocalizationPipelineService_2eproto[26];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIAsyncRelocalizationPipelineService_2eproto[28];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIAsyncRelocalizationPipelineService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIAsyncRelocalizationPipelineService_2eproto = nullptr;
 
@@ -415,18 +441,32 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIAsyncRelocalizationPipeli
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::init_grpc1Response, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Request, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest, cameraparams_),
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Request, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Request, cameraparams_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Response, xpcfgrpcreturnvalue_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request, cameraparams1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request, cameraparams2_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Response, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Response, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::setRectificationParametersRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -561,24 +601,26 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 30, -1, sizeof(::grpcIAsyncRelocalizationPipeline::stopResponse)},
   { 36, -1, sizeof(::grpcIAsyncRelocalizationPipeline::init_grpc1Request)},
   { 43, -1, sizeof(::grpcIAsyncRelocalizationPipeline::init_grpc1Response)},
-  { 49, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest)},
-  { 56, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse)},
-  { 62, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setRectificationParametersRequest)},
-  { 70, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setRectificationParametersResponse)},
-  { 76, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getCameraParametersRequest)},
-  { 83, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getCameraParametersResponse)},
-  { 90, -1, sizeof(::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestRequest)},
-  { 103, -1, sizeof(::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestResponse)},
-  { 113, -1, sizeof(::grpcIAsyncRelocalizationPipeline::get3DTransformRequestRequest)},
-  { 122, -1, sizeof(::grpcIAsyncRelocalizationPipeline::get3DTransformRequestResponse)},
-  { 131, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getLastPoseRequest)},
-  { 139, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getLastPoseResponse)},
-  { 146, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getMapRequestRequest)},
-  { 153, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getMapRequestResponse)},
-  { 160, -1, sizeof(::grpcIAsyncRelocalizationPipeline::resetMapRequest)},
-  { 166, -1, sizeof(::grpcIAsyncRelocalizationPipeline::resetMapResponse)},
-  { 172, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest)},
-  { 179, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse)},
+  { 49, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Request)},
+  { 56, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Response)},
+  { 62, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request)},
+  { 70, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Response)},
+  { 76, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setRectificationParametersRequest)},
+  { 84, -1, sizeof(::grpcIAsyncRelocalizationPipeline::setRectificationParametersResponse)},
+  { 90, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getCameraParametersRequest)},
+  { 97, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getCameraParametersResponse)},
+  { 104, -1, sizeof(::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestRequest)},
+  { 117, -1, sizeof(::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestResponse)},
+  { 127, -1, sizeof(::grpcIAsyncRelocalizationPipeline::get3DTransformRequestRequest)},
+  { 136, -1, sizeof(::grpcIAsyncRelocalizationPipeline::get3DTransformRequestResponse)},
+  { 145, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getLastPoseRequest)},
+  { 153, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getLastPoseResponse)},
+  { 160, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getMapRequestRequest)},
+  { 167, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getMapRequestResponse)},
+  { 174, -1, sizeof(::grpcIAsyncRelocalizationPipeline::resetMapRequest)},
+  { 180, -1, sizeof(::grpcIAsyncRelocalizationPipeline::resetMapResponse)},
+  { 186, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest)},
+  { 193, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -590,8 +632,10 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_stopResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_init_grpc1Request_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_init_grpc1Response_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_setCameraParametersRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_setCameraParametersResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_setCameraParameters_grpc0Request_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_setCameraParameters_grpc0Response_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_setCameraParameters_grpc1Request_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_setCameraParameters_grpc1Response_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_setRectificationParametersRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_setRectificationParametersResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIAsyncRelocalizationPipeline::_getCameraParametersRequest_default_instance_),
@@ -624,104 +668,113 @@ const char descriptor_table_protodef_grpcIAsyncRelocalizationPipelineService_2ep
   "turnValue\030\001 \001(\021\"N\n\021init_grpc1Request\022#\n\033"
   "grpcServerCompressionFormat\030\001 \001(\005\022\024\n\014pip"
   "elineMode\030\002 \001(\014\"1\n\022init_grpc1Response\022\033\n"
-  "\023xpcfGrpcReturnValue\030\001 \001(\021\"W\n\032setCameraP"
-  "arametersRequest\022#\n\033grpcServerCompressio"
-  "nFormat\030\001 \001(\005\022\024\n\014cameraParams\030\002 \001(\014\":\n\033s"
-  "etCameraParametersResponse\022\033\n\023xpcfGrpcRe"
-  "turnValue\030\001 \001(\021\"l\n!setRectificationParam"
-  "etersRequest\022#\n\033grpcServerCompressionFor"
-  "mat\030\001 \001(\005\022\020\n\010rectCam1\030\002 \001(\014\022\020\n\010rectCam2\030"
-  "\003 \001(\014\"A\n\"setRectificationParametersRespo"
-  "nse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"W\n\032getC"
-  "ameraParametersRequest\022#\n\033grpcServerComp"
+  "\023xpcfGrpcReturnValue\030\001 \001(\021\"]\n setCameraP"
+  "arameters_grpc0Request\022#\n\033grpcServerComp"
   "ressionFormat\030\001 \001(\005\022\024\n\014cameraParams\030\002 \001("
-  "\014\"P\n\033getCameraParametersResponse\022\024\n\014came"
-  "raParams\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 "
-  "\001(\021\"\323\001\n\037relocalizeProcessRequestRequest\022"
-  "#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\016\n\006"
-  "images\030\002 \001(\014\022\r\n\005poses\030\003 \001(\014\022\021\n\ttimestamp"
-  "\030\004 \001(\014\022\031\n\021transform3DStatus\030\005 \001(\014\022\023\n\013tra"
-  "nsform3D\030\006 \001(\014\022\022\n\nconfidence\030\007 \001(\014\022\025\n\rma"
-  "ppingStatus\030\010 \001(\014\"\232\001\n relocalizeProcessR"
-  "equestResponse\022\031\n\021transform3DStatus\030\001 \001("
-  "\014\022\023\n\013transform3D\030\002 \001(\014\022\022\n\nconfidence\030\003 \001"
-  "(\014\022\025\n\rmappingStatus\030\004 \001(\014\022\033\n\023xpcfGrpcRet"
-  "urnValue\030\005 \001(\021\"\207\001\n\034get3DTransformRequest"
-  "Request\022#\n\033grpcServerCompressionFormat\030\001"
-  " \001(\005\022\031\n\021transform3DStatus\030\002 \001(\014\022\023\n\013trans"
-  "form3D\030\003 \001(\014\022\022\n\nconfidence\030\004 \001(\014\"\200\001\n\035get"
-  "3DTransformRequestResponse\022\031\n\021transform3"
-  "DStatus\030\001 \001(\014\022\023\n\013transform3D\030\002 \001(\014\022\022\n\nco"
-  "nfidence\030\003 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\004 "
-  "\001(\021\"Y\n\022getLastPoseRequest\022#\n\033grpcServerC"
-  "ompressionFormat\030\001 \001(\005\022\020\n\010poseType\030\002 \001(\014"
-  "\022\014\n\004pose\030\003 \001(\014\"@\n\023getLastPoseResponse\022\014\n"
-  "\004pose\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021"
-  "\"H\n\024getMapRequestRequest\022#\n\033grpcServerCo"
-  "mpressionFormat\030\001 \001(\005\022\013\n\003map\030\002 \001(\014\"A\n\025ge"
-  "tMapRequestResponse\022\013\n\003map\030\001 \001(\014\022\033\n\023xpcf"
-  "GrpcReturnValue\030\002 \001(\021\"6\n\017resetMapRequest"
-  "\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\"/\n"
-  "\020resetMapResponse\022\033\n\023xpcfGrpcReturnValue"
-  "\030\001 \001(\021\"V\n\033getPointCloudRequestRequest\022#\n"
-  "\033grpcServerCompressionFormat\030\001 \001(\005\022\022\n\npo"
-  "intCloud\030\002 \001(\014\"O\n\034getPointCloudRequestRe"
-  "sponse\022\022\n\npointCloud\030\001 \001(\014\022\033\n\023xpcfGrpcRe"
-  "turnValue\030\002 \001(\0212\243\016\n\'grpcIAsyncRelocaliza"
-  "tionPipelineService\022y\n\ninit_grpc0\0223.grpc"
-  "IAsyncRelocalizationPipeline.init_grpc0R"
-  "equest\0324.grpcIAsyncRelocalizationPipelin"
-  "e.init_grpc0Response\"\000\022j\n\005start\022..grpcIA"
-  "syncRelocalizationPipeline.startRequest\032"
-  "/.grpcIAsyncRelocalizationPipeline.start"
-  "Response\"\000\022g\n\004stop\022-.grpcIAsyncRelocaliz"
-  "ationPipeline.stopRequest\032..grpcIAsyncRe"
-  "localizationPipeline.stopResponse\"\000\022y\n\ni"
-  "nit_grpc1\0223.grpcIAsyncRelocalizationPipe"
-  "line.init_grpc1Request\0324.grpcIAsyncReloc"
-  "alizationPipeline.init_grpc1Response\"\000\022\224"
-  "\001\n\023setCameraParameters\022<.grpcIAsyncReloc"
-  "alizationPipeline.setCameraParametersReq"
-  "uest\032=.grpcIAsyncRelocalizationPipeline."
-  "setCameraParametersResponse\"\000\022\251\001\n\032setRec"
-  "tificationParameters\022C.grpcIAsyncRelocal"
-  "izationPipeline.setRectificationParamete"
-  "rsRequest\032D.grpcIAsyncRelocalizationPipe"
-  "line.setRectificationParametersResponse\""
-  "\000\022\224\001\n\023getCameraParameters\022<.grpcIAsyncRe"
-  "localizationPipeline.getCameraParameters"
-  "Request\032=.grpcIAsyncRelocalizationPipeli"
-  "ne.getCameraParametersResponse\"\000\022\243\001\n\030rel"
-  "ocalizeProcessRequest\022A.grpcIAsyncReloca"
-  "lizationPipeline.relocalizeProcessReques"
-  "tRequest\032B.grpcIAsyncRelocalizationPipel"
-  "ine.relocalizeProcessRequestResponse\"\000\022\232"
-  "\001\n\025get3DTransformRequest\022>.grpcIAsyncRel"
-  "ocalizationPipeline.get3DTransformReques"
-  "tRequest\032\?.grpcIAsyncRelocalizationPipel"
-  "ine.get3DTransformRequestResponse\"\000\022|\n\013g"
-  "etLastPose\0224.grpcIAsyncRelocalizationPip"
-  "eline.getLastPoseRequest\0325.grpcIAsyncRel"
-  "ocalizationPipeline.getLastPoseResponse\""
-  "\000\022\202\001\n\rgetMapRequest\0226.grpcIAsyncRelocali"
-  "zationPipeline.getMapRequestRequest\0327.gr"
-  "pcIAsyncRelocalizationPipeline.getMapReq"
-  "uestResponse\"\000\022s\n\010resetMap\0221.grpcIAsyncR"
-  "elocalizationPipeline.resetMapRequest\0322."
-  "grpcIAsyncRelocalizationPipeline.resetMa"
-  "pResponse\"\000\022\227\001\n\024getPointCloudRequest\022=.g"
-  "rpcIAsyncRelocalizationPipeline.getPoint"
-  "CloudRequestRequest\032>.grpcIAsyncRelocali"
-  "zationPipeline.getPointCloudRequestRespo"
-  "nse\"\000b\006proto3"
+  "\014\"@\n!setCameraParameters_grpc0Response\022\033"
+  "\n\023xpcfGrpcReturnValue\030\001 \001(\021\"u\n setCamera"
+  "Parameters_grpc1Request\022#\n\033grpcServerCom"
+  "pressionFormat\030\001 \001(\005\022\025\n\rcameraParams1\030\002 "
+  "\001(\014\022\025\n\rcameraParams2\030\003 \001(\014\"@\n!setCameraP"
+  "arameters_grpc1Response\022\033\n\023xpcfGrpcRetur"
+  "nValue\030\001 \001(\021\"l\n!setRectificationParamete"
+  "rsRequest\022#\n\033grpcServerCompressionFormat"
+  "\030\001 \001(\005\022\020\n\010rectCam1\030\002 \001(\014\022\020\n\010rectCam2\030\003 \001"
+  "(\014\"A\n\"setRectificationParametersResponse"
+  "\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"W\n\032getCame"
+  "raParametersRequest\022#\n\033grpcServerCompres"
+  "sionFormat\030\001 \001(\005\022\024\n\014cameraParams\030\002 \001(\014\"P"
+  "\n\033getCameraParametersResponse\022\024\n\014cameraP"
+  "arams\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021"
+  "\"\323\001\n\037relocalizeProcessRequestRequest\022#\n\033"
+  "grpcServerCompressionFormat\030\001 \001(\005\022\016\n\006ima"
+  "ges\030\002 \001(\014\022\r\n\005poses\030\003 \001(\014\022\021\n\ttimestamp\030\004 "
+  "\001(\014\022\031\n\021transform3DStatus\030\005 \001(\014\022\023\n\013transf"
+  "orm3D\030\006 \001(\014\022\022\n\nconfidence\030\007 \001(\014\022\025\n\rmappi"
+  "ngStatus\030\010 \001(\014\"\232\001\n relocalizeProcessRequ"
+  "estResponse\022\031\n\021transform3DStatus\030\001 \001(\014\022\023"
+  "\n\013transform3D\030\002 \001(\014\022\022\n\nconfidence\030\003 \001(\014\022"
+  "\025\n\rmappingStatus\030\004 \001(\014\022\033\n\023xpcfGrpcReturn"
+  "Value\030\005 \001(\021\"\207\001\n\034get3DTransformRequestReq"
+  "uest\022#\n\033grpcServerCompressionFormat\030\001 \001("
+  "\005\022\031\n\021transform3DStatus\030\002 \001(\014\022\023\n\013transfor"
+  "m3D\030\003 \001(\014\022\022\n\nconfidence\030\004 \001(\014\"\200\001\n\035get3DT"
+  "ransformRequestResponse\022\031\n\021transform3DSt"
+  "atus\030\001 \001(\014\022\023\n\013transform3D\030\002 \001(\014\022\022\n\nconfi"
+  "dence\030\003 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\004 \001(\021"
+  "\"Y\n\022getLastPoseRequest\022#\n\033grpcServerComp"
+  "ressionFormat\030\001 \001(\005\022\020\n\010poseType\030\002 \001(\014\022\014\n"
+  "\004pose\030\003 \001(\014\"@\n\023getLastPoseResponse\022\014\n\004po"
+  "se\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"H\n"
+  "\024getMapRequestRequest\022#\n\033grpcServerCompr"
+  "essionFormat\030\001 \001(\005\022\013\n\003map\030\002 \001(\014\"A\n\025getMa"
+  "pRequestResponse\022\013\n\003map\030\001 \001(\014\022\033\n\023xpcfGrp"
+  "cReturnValue\030\002 \001(\021\"6\n\017resetMapRequest\022#\n"
+  "\033grpcServerCompressionFormat\030\001 \001(\005\"/\n\020re"
+  "setMapResponse\022\033\n\023xpcfGrpcReturnValue\030\001 "
+  "\001(\021\"V\n\033getPointCloudRequestRequest\022#\n\033gr"
+  "pcServerCompressionFormat\030\001 \001(\005\022\022\n\npoint"
+  "Cloud\030\002 \001(\014\"O\n\034getPointCloudRequestRespo"
+  "nse\022\022\n\npointCloud\030\001 \001(\014\022\033\n\023xpcfGrpcRetur"
+  "nValue\030\002 \001(\0212\336\017\n\'grpcIAsyncRelocalizatio"
+  "nPipelineService\022y\n\ninit_grpc0\0223.grpcIAs"
+  "yncRelocalizationPipeline.init_grpc0Requ"
+  "est\0324.grpcIAsyncRelocalizationPipeline.i"
+  "nit_grpc0Response\"\000\022j\n\005start\022..grpcIAsyn"
+  "cRelocalizationPipeline.startRequest\032/.g"
+  "rpcIAsyncRelocalizationPipeline.startRes"
+  "ponse\"\000\022g\n\004stop\022-.grpcIAsyncRelocalizati"
+  "onPipeline.stopRequest\032..grpcIAsyncReloc"
+  "alizationPipeline.stopResponse\"\000\022y\n\ninit"
+  "_grpc1\0223.grpcIAsyncRelocalizationPipelin"
+  "e.init_grpc1Request\0324.grpcIAsyncRelocali"
+  "zationPipeline.init_grpc1Response\"\000\022\246\001\n\031"
+  "setCameraParameters_grpc0\022B.grpcIAsyncRe"
+  "localizationPipeline.setCameraParameters"
+  "_grpc0Request\032C.grpcIAsyncRelocalization"
+  "Pipeline.setCameraParameters_grpc0Respon"
+  "se\"\000\022\246\001\n\031setCameraParameters_grpc1\022B.grp"
+  "cIAsyncRelocalizationPipeline.setCameraP"
+  "arameters_grpc1Request\032C.grpcIAsyncReloc"
+  "alizationPipeline.setCameraParameters_gr"
+  "pc1Response\"\000\022\251\001\n\032setRectificationParame"
+  "ters\022C.grpcIAsyncRelocalizationPipeline."
+  "setRectificationParametersRequest\032D.grpc"
+  "IAsyncRelocalizationPipeline.setRectific"
+  "ationParametersResponse\"\000\022\224\001\n\023getCameraP"
+  "arameters\022<.grpcIAsyncRelocalizationPipe"
+  "line.getCameraParametersRequest\032=.grpcIA"
+  "syncRelocalizationPipeline.getCameraPara"
+  "metersResponse\"\000\022\243\001\n\030relocalizeProcessRe"
+  "quest\022A.grpcIAsyncRelocalizationPipeline"
+  ".relocalizeProcessRequestRequest\032B.grpcI"
+  "AsyncRelocalizationPipeline.relocalizePr"
+  "ocessRequestResponse\"\000\022\232\001\n\025get3DTransfor"
+  "mRequest\022>.grpcIAsyncRelocalizationPipel"
+  "ine.get3DTransformRequestRequest\032\?.grpcI"
+  "AsyncRelocalizationPipeline.get3DTransfo"
+  "rmRequestResponse\"\000\022|\n\013getLastPose\0224.grp"
+  "cIAsyncRelocalizationPipeline.getLastPos"
+  "eRequest\0325.grpcIAsyncRelocalizationPipel"
+  "ine.getLastPoseResponse\"\000\022\202\001\n\rgetMapRequ"
+  "est\0226.grpcIAsyncRelocalizationPipeline.g"
+  "etMapRequestRequest\0327.grpcIAsyncRelocali"
+  "zationPipeline.getMapRequestResponse\"\000\022s"
+  "\n\010resetMap\0221.grpcIAsyncRelocalizationPip"
+  "eline.resetMapRequest\0322.grpcIAsyncReloca"
+  "lizationPipeline.resetMapResponse\"\000\022\227\001\n\024"
+  "getPointCloudRequest\022=.grpcIAsyncRelocal"
+  "izationPipeline.getPointCloudRequestRequ"
+  "est\032>.grpcIAsyncRelocalizationPipeline.g"
+  "etPointCloudRequestResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto = {
-  false, false, 4093, descriptor_table_protodef_grpcIAsyncRelocalizationPipelineService_2eproto, "grpcIAsyncRelocalizationPipelineService.proto", 
-  &descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_once, descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_deps, 1, 26,
+  false, false, 4477, descriptor_table_protodef_grpcIAsyncRelocalizationPipelineService_2eproto, "grpcIAsyncRelocalizationPipelineService.proto", 
+  &descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_once, descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_deps, 1, 28,
   schemas, file_default_instances, TableStruct_grpcIAsyncRelocalizationPipelineService_2eproto::offsets,
   file_level_metadata_grpcIAsyncRelocalizationPipelineService_2eproto, file_level_enum_descriptors_grpcIAsyncRelocalizationPipelineService_2eproto, file_level_service_descriptors_grpcIAsyncRelocalizationPipelineService_2eproto,
 };
@@ -2282,17 +2335,17 @@ void init_grpc1Response::InternalSwap(init_grpc1Response* other) {
 
 // ===================================================================
 
-class setCameraParametersRequest::_Internal {
+class setCameraParameters_grpc0Request::_Internal {
  public:
 };
 
-setCameraParametersRequest::setCameraParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+setCameraParameters_grpc0Request::setCameraParameters_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+  // @@protoc_insertion_point(arena_constructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
 }
-setCameraParametersRequest::setCameraParametersRequest(const setCameraParametersRequest& from)
+setCameraParameters_grpc0Request::setCameraParameters_grpc0Request(const setCameraParameters_grpc0Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   cameraparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -2301,37 +2354,37 @@ setCameraParametersRequest::setCameraParametersRequest(const setCameraParameters
       GetArena());
   }
   grpcservercompressionformat_ = from.grpcservercompressionformat_;
-  // @@protoc_insertion_point(copy_constructor:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+  // @@protoc_insertion_point(copy_constructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
 }
 
-void setCameraParametersRequest::SharedCtor() {
+void setCameraParameters_grpc0Request::SharedCtor() {
 cameraparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 grpcservercompressionformat_ = 0;
 }
 
-setCameraParametersRequest::~setCameraParametersRequest() {
-  // @@protoc_insertion_point(destructor:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+setCameraParameters_grpc0Request::~setCameraParameters_grpc0Request() {
+  // @@protoc_insertion_point(destructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void setCameraParametersRequest::SharedDtor() {
+void setCameraParameters_grpc0Request::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   cameraparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void setCameraParametersRequest::ArenaDtor(void* object) {
-  setCameraParametersRequest* _this = reinterpret_cast< setCameraParametersRequest* >(object);
+void setCameraParameters_grpc0Request::ArenaDtor(void* object) {
+  setCameraParameters_grpc0Request* _this = reinterpret_cast< setCameraParameters_grpc0Request* >(object);
   (void)_this;
 }
-void setCameraParametersRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void setCameraParameters_grpc0Request::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void setCameraParametersRequest::SetCachedSize(int size) const {
+void setCameraParameters_grpc0Request::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void setCameraParametersRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+void setCameraParameters_grpc0Request::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2341,7 +2394,7 @@ void setCameraParametersRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* setCameraParametersRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* setCameraParameters_grpc0Request::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -2385,9 +2438,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* setCameraParametersRequest::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* setCameraParameters_grpc0Request::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2407,12 +2460,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
   return target;
 }
 
-size_t setCameraParametersRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+size_t setCameraParameters_grpc0Request::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2442,23 +2495,23 @@ size_t setCameraParametersRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void setCameraParametersRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+void setCameraParameters_grpc0Request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
   GOOGLE_DCHECK_NE(&from, this);
-  const setCameraParametersRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCameraParametersRequest>(
+  const setCameraParameters_grpc0Request* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCameraParameters_grpc0Request>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
     MergeFrom(*source);
   }
 }
 
-void setCameraParametersRequest::MergeFrom(const setCameraParametersRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+void setCameraParameters_grpc0Request::MergeFrom(const setCameraParameters_grpc0Request& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2472,81 +2525,81 @@ void setCameraParametersRequest::MergeFrom(const setCameraParametersRequest& fro
   }
 }
 
-void setCameraParametersRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+void setCameraParameters_grpc0Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void setCameraParametersRequest::CopyFrom(const setCameraParametersRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParametersRequest)
+void setCameraParameters_grpc0Request::CopyFrom(const setCameraParameters_grpc0Request& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Request)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool setCameraParametersRequest::IsInitialized() const {
+bool setCameraParameters_grpc0Request::IsInitialized() const {
   return true;
 }
 
-void setCameraParametersRequest::InternalSwap(setCameraParametersRequest* other) {
+void setCameraParameters_grpc0Request::InternalSwap(setCameraParameters_grpc0Request* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   cameraparams_.Swap(&other->cameraparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata setCameraParametersRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata setCameraParameters_grpc0Request::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-class setCameraParametersResponse::_Internal {
+class setCameraParameters_grpc0Response::_Internal {
  public:
 };
 
-setCameraParametersResponse::setCameraParametersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+setCameraParameters_grpc0Response::setCameraParameters_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+  // @@protoc_insertion_point(arena_constructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
 }
-setCameraParametersResponse::setCameraParametersResponse(const setCameraParametersResponse& from)
+setCameraParameters_grpc0Response::setCameraParameters_grpc0Response(const setCameraParameters_grpc0Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
-  // @@protoc_insertion_point(copy_constructor:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+  // @@protoc_insertion_point(copy_constructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
 }
 
-void setCameraParametersResponse::SharedCtor() {
+void setCameraParameters_grpc0Response::SharedCtor() {
 xpcfgrpcreturnvalue_ = 0;
 }
 
-setCameraParametersResponse::~setCameraParametersResponse() {
-  // @@protoc_insertion_point(destructor:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+setCameraParameters_grpc0Response::~setCameraParameters_grpc0Response() {
+  // @@protoc_insertion_point(destructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void setCameraParametersResponse::SharedDtor() {
+void setCameraParameters_grpc0Response::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void setCameraParametersResponse::ArenaDtor(void* object) {
-  setCameraParametersResponse* _this = reinterpret_cast< setCameraParametersResponse* >(object);
+void setCameraParameters_grpc0Response::ArenaDtor(void* object) {
+  setCameraParameters_grpc0Response* _this = reinterpret_cast< setCameraParameters_grpc0Response* >(object);
   (void)_this;
 }
-void setCameraParametersResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void setCameraParameters_grpc0Response::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void setCameraParametersResponse::SetCachedSize(int size) const {
+void setCameraParameters_grpc0Response::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void setCameraParametersResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+void setCameraParameters_grpc0Response::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2555,7 +2608,7 @@ void setCameraParametersResponse::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* setCameraParametersResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* setCameraParameters_grpc0Response::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -2591,9 +2644,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* setCameraParametersResponse::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* setCameraParameters_grpc0Response::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2607,12 +2660,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
   return target;
 }
 
-size_t setCameraParametersResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+size_t setCameraParameters_grpc0Response::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2635,23 +2688,23 @@ size_t setCameraParametersResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void setCameraParametersResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+void setCameraParameters_grpc0Response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
   GOOGLE_DCHECK_NE(&from, this);
-  const setCameraParametersResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCameraParametersResponse>(
+  const setCameraParameters_grpc0Response* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCameraParameters_grpc0Response>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
     MergeFrom(*source);
   }
 }
 
-void setCameraParametersResponse::MergeFrom(const setCameraParametersResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+void setCameraParameters_grpc0Response::MergeFrom(const setCameraParameters_grpc0Response& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2662,31 +2715,475 @@ void setCameraParametersResponse::MergeFrom(const setCameraParametersResponse& f
   }
 }
 
-void setCameraParametersResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+void setCameraParameters_grpc0Response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void setCameraParametersResponse::CopyFrom(const setCameraParametersResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParametersResponse)
+void setCameraParameters_grpc0Response::CopyFrom(const setCameraParameters_grpc0Response& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc0Response)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool setCameraParametersResponse::IsInitialized() const {
+bool setCameraParameters_grpc0Response::IsInitialized() const {
   return true;
 }
 
-void setCameraParametersResponse::InternalSwap(setCameraParametersResponse* other) {
+void setCameraParameters_grpc0Response::InternalSwap(setCameraParameters_grpc0Response* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata setCameraParametersResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata setCameraParameters_grpc0Response::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class setCameraParameters_grpc1Request::_Internal {
+ public:
+};
+
+setCameraParameters_grpc1Request::setCameraParameters_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+}
+setCameraParameters_grpc1Request::setCameraParameters_grpc1Request(const setCameraParameters_grpc1Request& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  cameraparams1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_cameraparams1().empty()) {
+    cameraparams1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cameraparams1(), 
+      GetArena());
+  }
+  cameraparams2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_cameraparams2().empty()) {
+    cameraparams2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cameraparams2(), 
+      GetArena());
+  }
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+}
+
+void setCameraParameters_grpc1Request::SharedCtor() {
+cameraparams1_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+cameraparams2_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
+}
+
+setCameraParameters_grpc1Request::~setCameraParameters_grpc1Request() {
+  // @@protoc_insertion_point(destructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void setCameraParameters_grpc1Request::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  cameraparams1_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  cameraparams2_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void setCameraParameters_grpc1Request::ArenaDtor(void* object) {
+  setCameraParameters_grpc1Request* _this = reinterpret_cast< setCameraParameters_grpc1Request* >(object);
+  (void)_this;
+}
+void setCameraParameters_grpc1Request::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void setCameraParameters_grpc1Request::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void setCameraParameters_grpc1Request::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cameraparams1_.ClearToEmpty();
+  cameraparams2_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* setCameraParameters_grpc1Request::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes cameraParams1 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_cameraparams1();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes cameraParams2 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_cameraparams2();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* setCameraParameters_grpc1Request::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // bytes cameraParams1 = 2;
+  if (this->cameraparams1().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_cameraparams1(), target);
+  }
+
+  // bytes cameraParams2 = 3;
+  if (this->cameraparams2().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_cameraparams2(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+  return target;
+}
+
+size_t setCameraParameters_grpc1Request::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes cameraParams1 = 2;
+  if (this->cameraparams1().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_cameraparams1());
+  }
+
+  // bytes cameraParams2 = 3;
+  if (this->cameraparams2().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_cameraparams2());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void setCameraParameters_grpc1Request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+  GOOGLE_DCHECK_NE(&from, this);
+  const setCameraParameters_grpc1Request* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCameraParameters_grpc1Request>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+    MergeFrom(*source);
+  }
+}
+
+void setCameraParameters_grpc1Request::MergeFrom(const setCameraParameters_grpc1Request& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.cameraparams1().size() > 0) {
+    _internal_set_cameraparams1(from._internal_cameraparams1());
+  }
+  if (from.cameraparams2().size() > 0) {
+    _internal_set_cameraparams2(from._internal_cameraparams2());
+  }
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void setCameraParameters_grpc1Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void setCameraParameters_grpc1Request::CopyFrom(const setCameraParameters_grpc1Request& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool setCameraParameters_grpc1Request::IsInitialized() const {
+  return true;
+}
+
+void setCameraParameters_grpc1Request::InternalSwap(setCameraParameters_grpc1Request* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  cameraparams1_.Swap(&other->cameraparams1_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  cameraparams2_.Swap(&other->cameraparams2_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata setCameraParameters_grpc1Request::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class setCameraParameters_grpc1Response::_Internal {
+ public:
+};
+
+setCameraParameters_grpc1Response::setCameraParameters_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+}
+setCameraParameters_grpc1Response::setCameraParameters_grpc1Response(const setCameraParameters_grpc1Response& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  // @@protoc_insertion_point(copy_constructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+}
+
+void setCameraParameters_grpc1Response::SharedCtor() {
+xpcfgrpcreturnvalue_ = 0;
+}
+
+setCameraParameters_grpc1Response::~setCameraParameters_grpc1Response() {
+  // @@protoc_insertion_point(destructor:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void setCameraParameters_grpc1Response::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void setCameraParameters_grpc1Response::ArenaDtor(void* object) {
+  setCameraParameters_grpc1Response* _this = reinterpret_cast< setCameraParameters_grpc1Response* >(object);
+  (void)_this;
+}
+void setCameraParameters_grpc1Response::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void setCameraParameters_grpc1Response::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void setCameraParameters_grpc1Response::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* setCameraParameters_grpc1Response::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // sint32 xpcfGrpcReturnValue = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* setCameraParameters_grpc1Response::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+  return target;
+}
+
+size_t setCameraParameters_grpc1Response::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->xpcfgrpcreturnvalue() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void setCameraParameters_grpc1Response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+  GOOGLE_DCHECK_NE(&from, this);
+  const setCameraParameters_grpc1Response* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setCameraParameters_grpc1Response>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+    MergeFrom(*source);
+  }
+}
+
+void setCameraParameters_grpc1Response::MergeFrom(const setCameraParameters_grpc1Response& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.xpcfgrpcreturnvalue() != 0) {
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  }
+}
+
+void setCameraParameters_grpc1Response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void setCameraParameters_grpc1Response::CopyFrom(const setCameraParameters_grpc1Response& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIAsyncRelocalizationPipeline.setCameraParameters_grpc1Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool setCameraParameters_grpc1Response::IsInitialized() const {
+  return true;
+}
+
+void setCameraParameters_grpc1Response::InternalSwap(setCameraParameters_grpc1Response* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata setCameraParameters_grpc1Response::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -6666,11 +7163,17 @@ template<> PROTOBUF_NOINLINE ::grpcIAsyncRelocalizationPipeline::init_grpc1Reque
 template<> PROTOBUF_NOINLINE ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* Arena::CreateMaybeMessage< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIAsyncRelocalizationPipeline::init_grpc1Response >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest* Arena::CreateMaybeMessage< ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest >(arena);
+template<> PROTOBUF_NOINLINE ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Request* Arena::CreateMaybeMessage< ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Request >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Request >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse* Arena::CreateMaybeMessage< ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse >(arena);
+template<> PROTOBUF_NOINLINE ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Response* Arena::CreateMaybeMessage< ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Response >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Response >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request* Arena::CreateMaybeMessage< ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Response* Arena::CreateMaybeMessage< ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Response >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Response >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIAsyncRelocalizationPipeline::setRectificationParametersRequest* Arena::CreateMaybeMessage< ::grpcIAsyncRelocalizationPipeline::setRectificationParametersRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIAsyncRelocalizationPipeline::setRectificationParametersRequest >(arena);

@@ -45,13 +45,25 @@ message init_grpc1Response
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message setCameraParametersRequest
+message setCameraParameters_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes cameraParams = 2;
 }
 
-message setCameraParametersResponse
+message setCameraParameters_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setCameraParameters_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes cameraParams1 = 2;
+bytes cameraParams2 = 3;
+}
+
+message setCameraParameters_grpc1Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -169,7 +181,8 @@ rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
 rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
-rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
+rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCameraParameters_grpc0Response) {}
+rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
 rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
 rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
 rpc relocalizeProcessRequest(relocalizeProcessRequestRequest) returns(relocalizeProcessRequestResponse) {}
