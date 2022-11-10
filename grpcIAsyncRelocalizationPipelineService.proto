@@ -14,22 +14,44 @@ message init_grpc0Response
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message startRequest
+message start_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 }
 
-message startResponse
+message start_grpc0Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message stopRequest
+message stop_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 }
 
-message stopResponse
+message stop_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message registerClientRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+}
+
+message registerClientResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message unregisterClientRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+}
+
+message unregisterClientResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -37,7 +59,8 @@ sint32 xpcfGrpcReturnValue = 1;
 message init_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes pipelineMode = 2;
+string uuid = 2;
+bytes pipelineMode = 3;
 }
 
 message init_grpc1Response
@@ -45,10 +68,33 @@ message init_grpc1Response
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message start_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+}
+
+message start_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stop_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+}
+
+message stop_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message setCameraParameters_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes cameraParams = 2;
+string uuid = 2;
+bytes cameraParams = 3;
 }
 
 message setCameraParameters_grpc0Response
@@ -59,8 +105,9 @@ sint32 xpcfGrpcReturnValue = 1;
 message setCameraParameters_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes cameraParams1 = 2;
-bytes cameraParams2 = 3;
+string uuid = 2;
+bytes cameraParams1 = 3;
+bytes cameraParams2 = 4;
 }
 
 message setCameraParameters_grpc1Response
@@ -71,8 +118,9 @@ sint32 xpcfGrpcReturnValue = 1;
 message setRectificationParametersRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes rectCam1 = 2;
-bytes rectCam2 = 3;
+string uuid = 2;
+bytes rectCam1 = 3;
+bytes rectCam2 = 4;
 }
 
 message setRectificationParametersResponse
@@ -83,7 +131,8 @@ sint32 xpcfGrpcReturnValue = 1;
 message getCameraParametersRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes cameraParams = 2;
+string uuid = 2;
+bytes cameraParams = 3;
 }
 
 message getCameraParametersResponse
@@ -95,13 +144,14 @@ sint32 xpcfGrpcReturnValue = 2;
 message relocalizeProcessRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes images = 2;
-bytes poses = 3;
-bytes timestamp = 4;
-bytes transform3DStatus = 5;
-bytes transform3D = 6;
-bytes confidence = 7;
-bytes mappingStatus = 8;
+string uuid = 2;
+bytes images = 3;
+bytes poses = 4;
+bytes timestamp = 5;
+bytes transform3DStatus = 6;
+bytes transform3D = 7;
+bytes confidence = 8;
+bytes mappingStatus = 9;
 }
 
 message relocalizeProcessRequestResponse
@@ -116,9 +166,10 @@ sint32 xpcfGrpcReturnValue = 5;
 message get3DTransformRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes transform3DStatus = 2;
-bytes transform3D = 3;
-bytes confidence = 4;
+string uuid = 2;
+bytes transform3DStatus = 3;
+bytes transform3D = 4;
+bytes confidence = 5;
 }
 
 message get3DTransformRequestResponse
@@ -132,8 +183,9 @@ sint32 xpcfGrpcReturnValue = 4;
 message getLastPoseRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes poseType = 2;
-bytes pose = 3;
+string uuid = 2;
+bytes poseType = 3;
+bytes pose = 4;
 }
 
 message getLastPoseResponse
@@ -145,7 +197,8 @@ sint32 xpcfGrpcReturnValue = 2;
 message getMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes map = 2;
+string uuid = 2;
+bytes map = 3;
 }
 
 message getMapRequestResponse
@@ -157,6 +210,7 @@ sint32 xpcfGrpcReturnValue = 2;
 message resetMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
 }
 
 message resetMapResponse
@@ -167,7 +221,8 @@ sint32 xpcfGrpcReturnValue = 1;
 message getPointCloudRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes pointCloud = 2;
+string uuid = 2;
+bytes pointCloud = 3;
 }
 
 message getPointCloudRequestResponse
@@ -178,9 +233,13 @@ sint32 xpcfGrpcReturnValue = 2;
 
 service grpcIAsyncRelocalizationPipelineService {
 rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
-rpc start(startRequest) returns(startResponse) {}
-rpc stop(stopRequest) returns(stopResponse) {}
+rpc start_grpc0(start_grpc0Request) returns(start_grpc0Response) {}
+rpc stop_grpc0(stop_grpc0Request) returns(stop_grpc0Response) {}
+rpc registerClient(registerClientRequest) returns(registerClientResponse) {}
+rpc unregisterClient(unregisterClientRequest) returns(unregisterClientResponse) {}
 rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
+rpc start_grpc1(start_grpc1Request) returns(start_grpc1Response) {}
+rpc stop_grpc1(stop_grpc1Request) returns(stop_grpc1Response) {}
 rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCameraParameters_grpc0Response) {}
 rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
 rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
