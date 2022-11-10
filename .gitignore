@@ -10,3 +10,5 @@ xpcfGrpcRemotingSolARFramework*.xml
 
 build/*
 .build-rules/*
+
+*.o
