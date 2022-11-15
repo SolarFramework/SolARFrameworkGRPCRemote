@@ -19,7 +19,7 @@ IAsyncRelocalizationPipeline_grpcProxy::IAsyncRelocalizationPipeline_grpcProxy()
   declareInterface<SolAR::api::pipeline::IAsyncRelocalizationPipeline>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(19);
+  m_grpcProxyCompressionConfig.resize(21);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -129,7 +129,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::stop()
 }
 
 
-SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::registerClient(std::string uuid)
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::registerClient(std::string& uuid)
 {
   ::grpc::ClientContext context;
   ::grpcIAsyncRelocalizationPipeline::registerClientRequest reqIn;
@@ -155,6 +155,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::registerClie
     throw xpcf::RemotingException("grpcIAsyncRelocalizationPipelineService","registerClient",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  uuid = respOut.uuid();
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -189,7 +190,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::unregisterCl
 }
 
 
-SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::init(std::string const uuid, SolAR::api::pipeline::PipelineMode pipelineMode)
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::init(std::string const uuid)
 {
   ::grpc::ClientContext context;
   ::grpcIAsyncRelocalizationPipeline::init_grpc1Request reqIn;
@@ -200,7 +201,6 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::init(std::st
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_uuid(uuid);
-  reqIn.set_pipelinemode(xpcf::serialize<SolAR::api::pipeline::PipelineMode>(pipelineMode));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
@@ -214,6 +214,37 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::init(std::st
   if (!grpcRemoteStatus.ok())  {
     std::cout << "init_grpc1 rpc failed." << std::endl;
     throw xpcf::RemotingException("grpcIAsyncRelocalizationPipelineService","init_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::init(std::string const uuid, SolAR::api::pipeline::PipelineMode pipelineMode)
+{
+  ::grpc::ClientContext context;
+  ::grpcIAsyncRelocalizationPipeline::init_grpc2Request reqIn;
+  ::grpcIAsyncRelocalizationPipeline::init_grpc2Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_uuid(uuid);
+  reqIn.set_pipelinemode(xpcf::serialize<SolAR::api::pipeline::PipelineMode>(pipelineMode));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->init_grpc2(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::init response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "init_grpc2 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIAsyncRelocalizationPipelineService","init_grpc2",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
@@ -276,6 +307,38 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::stop(std::st
     throw xpcf::RemotingException("grpcIAsyncRelocalizationPipelineService","stop_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getProcessingMode(std::string const uuid, SolAR::api::pipeline::PipelineMode& pipelineMode) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest reqIn;
+  ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getProcessingMode", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_uuid(uuid);
+  reqIn.set_pipelinemode(xpcf::serialize<SolAR::api::pipeline::PipelineMode>(pipelineMode));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::getProcessingMode request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getProcessingMode(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::getProcessingMode response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getProcessingMode rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIAsyncRelocalizationPipelineService","getProcessingMode",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  pipelineMode = xpcf::deserialize<SolAR::api::pipeline::PipelineMode>(respOut.pipelinemode());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

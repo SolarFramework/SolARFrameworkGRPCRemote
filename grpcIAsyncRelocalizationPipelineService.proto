@@ -42,7 +42,8 @@ string uuid = 2;
 
 message registerClientResponse
 {
-sint32 xpcfGrpcReturnValue = 1;
+string uuid = 1;
+sint32 xpcfGrpcReturnValue = 2;
 }
 
 message unregisterClientRequest
@@ -60,10 +61,21 @@ message init_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
 string uuid = 2;
-bytes pipelineMode = 3;
 }
 
 message init_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message init_grpc2Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+bytes pipelineMode = 3;
+}
+
+message init_grpc2Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -88,6 +100,19 @@ string uuid = 2;
 message stop_grpc1Response
 {
 sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getProcessingModeRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+bytes pipelineMode = 3;
+}
+
+message getProcessingModeResponse
+{
+bytes pipelineMode = 1;
+sint32 xpcfGrpcReturnValue = 2;
 }
 
 message setCameraParameters_grpc0Request
@@ -238,8 +263,10 @@ rpc stop_grpc0(stop_grpc0Request) returns(stop_grpc0Response) {}
 rpc registerClient(registerClientRequest) returns(registerClientResponse) {}
 rpc unregisterClient(unregisterClientRequest) returns(unregisterClientResponse) {}
 rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
+rpc init_grpc2(init_grpc2Request) returns(init_grpc2Response) {}
 rpc start_grpc1(start_grpc1Request) returns(start_grpc1Response) {}
 rpc stop_grpc1(stop_grpc1Request) returns(stop_grpc1Response) {}
+rpc getProcessingMode(getProcessingModeRequest) returns(getProcessingModeResponse) {}
 rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCameraParameters_grpc0Response) {}
 rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
 rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}

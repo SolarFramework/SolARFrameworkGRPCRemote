@@ -25,11 +25,13 @@ class IAsyncRelocalizationPipeline_grpcProxy:  public org::bcom::xpcf::Configura
     SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
-    SolAR::FrameworkReturnCode registerClient(std::string uuid)     override;
+    SolAR::FrameworkReturnCode registerClient(std::string& uuid)     override;
     SolAR::FrameworkReturnCode unregisterClient(std::string const uuid)     override;
+    SolAR::FrameworkReturnCode init(std::string const uuid)     override;
     SolAR::FrameworkReturnCode init(std::string const uuid, SolAR::api::pipeline::PipelineMode pipelineMode)     override;
     SolAR::FrameworkReturnCode start(std::string const uuid)     override;
     SolAR::FrameworkReturnCode stop(std::string const uuid)     override;
+    SolAR::FrameworkReturnCode getProcessingMode(std::string const uuid, SolAR::api::pipeline::PipelineMode& pipelineMode)     const     override;
     SolAR::FrameworkReturnCode setCameraParameters(std::string const uuid, SolAR::datastructure::CameraParameters const& cameraParams)     override;
     SolAR::FrameworkReturnCode setCameraParameters(std::string const uuid, SolAR::datastructure::CameraParameters const& cameraParams1, SolAR::datastructure::CameraParameters const& cameraParams2)     override;
     SolAR::FrameworkReturnCode setRectificationParameters(std::string const uuid, SolAR::datastructure::RectificationParameters const& rectCam1, SolAR::datastructure::RectificationParameters const& rectCam2)     override;

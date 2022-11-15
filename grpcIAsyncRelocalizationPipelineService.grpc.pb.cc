@@ -28,8 +28,10 @@ static const char* grpcIAsyncRelocalizationPipelineService_method_names[] = {
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/registerClient",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/unregisterClient",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/init_grpc1",
+  "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/init_grpc2",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/start_grpc1",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/stop_grpc1",
+  "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/getProcessingMode",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/setCameraParameters_grpc0",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/setCameraParameters_grpc1",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/setRectificationParameters",
@@ -55,18 +57,20 @@ grpcIAsyncRelocalizationPipelineService::Stub::Stub(const std::shared_ptr< ::grp
   , rpcmethod_registerClient_(grpcIAsyncRelocalizationPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_unregisterClient_(grpcIAsyncRelocalizationPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_init_grpc1_(grpcIAsyncRelocalizationPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_start_grpc1_(grpcIAsyncRelocalizationPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_grpc1_(grpcIAsyncRelocalizationPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_grpc0_(grpcIAsyncRelocalizationPipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_grpc1_(grpcIAsyncRelocalizationPipelineService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setRectificationParameters_(grpcIAsyncRelocalizationPipelineService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getCameraParameters_(grpcIAsyncRelocalizationPipelineService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalizeProcessRequest_(grpcIAsyncRelocalizationPipelineService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_get3DTransformRequest_(grpcIAsyncRelocalizationPipelineService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getLastPose_(grpcIAsyncRelocalizationPipelineService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapRequest_(grpcIAsyncRelocalizationPipelineService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_resetMap_(grpcIAsyncRelocalizationPipelineService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPointCloudRequest_(grpcIAsyncRelocalizationPipelineService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_grpc2_(grpcIAsyncRelocalizationPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_grpc1_(grpcIAsyncRelocalizationPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_grpc1_(grpcIAsyncRelocalizationPipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getProcessingMode_(grpcIAsyncRelocalizationPipelineService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc0_(grpcIAsyncRelocalizationPipelineService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc1_(grpcIAsyncRelocalizationPipelineService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setRectificationParameters_(grpcIAsyncRelocalizationPipelineService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getCameraParameters_(grpcIAsyncRelocalizationPipelineService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_relocalizeProcessRequest_(grpcIAsyncRelocalizationPipelineService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_get3DTransformRequest_(grpcIAsyncRelocalizationPipelineService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getLastPose_(grpcIAsyncRelocalizationPipelineService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapRequest_(grpcIAsyncRelocalizationPipelineService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_resetMap_(grpcIAsyncRelocalizationPipelineService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloudRequest_(grpcIAsyncRelocalizationPipelineService_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIAsyncRelocalizationPipelineService::Stub::init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response) {
@@ -207,6 +211,29 @@ void grpcIAsyncRelocalizationPipelineService::Stub::experimental_async::init_grp
   return result;
 }
 
+::grpc::Status grpcIAsyncRelocalizationPipelineService::Stub::init_grpc2(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc2Request& request, ::grpcIAsyncRelocalizationPipeline::init_grpc2Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIAsyncRelocalizationPipeline::init_grpc2Request, ::grpcIAsyncRelocalizationPipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_grpc2_, context, request, response);
+}
+
+void grpcIAsyncRelocalizationPipelineService::Stub::experimental_async::init_grpc2(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc2Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc2Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIAsyncRelocalizationPipeline::init_grpc2Request, ::grpcIAsyncRelocalizationPipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc2_, context, request, response, std::move(f));
+}
+
+void grpcIAsyncRelocalizationPipelineService::Stub::experimental_async::init_grpc2(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc2Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc2_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc2Response>* grpcIAsyncRelocalizationPipelineService::Stub::PrepareAsyncinit_grpc2Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc2Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIAsyncRelocalizationPipeline::init_grpc2Response, ::grpcIAsyncRelocalizationPipeline::init_grpc2Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_grpc2_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::init_grpc2Response>* grpcIAsyncRelocalizationPipelineService::Stub::Asyncinit_grpc2Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc2Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncinit_grpc2Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status grpcIAsyncRelocalizationPipelineService::Stub::start_grpc1(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::start_grpc1Request& request, ::grpcIAsyncRelocalizationPipeline::start_grpc1Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIAsyncRelocalizationPipeline::start_grpc1Request, ::grpcIAsyncRelocalizationPipeline::start_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_grpc1_, context, request, response);
 }
@@ -249,6 +276,29 @@ void grpcIAsyncRelocalizationPipelineService::Stub::experimental_async::stop_grp
 ::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::stop_grpc1Response>* grpcIAsyncRelocalizationPipelineService::Stub::Asyncstop_grpc1Raw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::stop_grpc1Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncstop_grpc1Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIAsyncRelocalizationPipelineService::Stub::getProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest& request, ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest, ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getProcessingMode_, context, request, response);
+}
+
+void grpcIAsyncRelocalizationPipelineService::Stub::experimental_async::getProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest, ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getProcessingMode_, context, request, response, std::move(f));
+}
+
+void grpcIAsyncRelocalizationPipelineService::Stub::experimental_async::getProcessingMode(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getProcessingMode_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse>* grpcIAsyncRelocalizationPipelineService::Stub::PrepareAsyncgetProcessingModeRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse, ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getProcessingMode_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse>* grpcIAsyncRelocalizationPipelineService::Stub::AsyncgetProcessingModeRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetProcessingModeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -547,6 +597,16 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIAsyncRelocalizationPipelineService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::init_grpc2Request, ::grpcIAsyncRelocalizationPipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIAsyncRelocalizationPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIAsyncRelocalizationPipeline::init_grpc2Request* req,
+             ::grpcIAsyncRelocalizationPipeline::init_grpc2Response* resp) {
+               return service->init_grpc2(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIAsyncRelocalizationPipelineService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::start_grpc1Request, ::grpcIAsyncRelocalizationPipeline::start_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -555,7 +615,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->start_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[7],
+      grpcIAsyncRelocalizationPipelineService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::stop_grpc1Request, ::grpcIAsyncRelocalizationPipeline::stop_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -565,7 +625,17 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->stop_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[8],
+      grpcIAsyncRelocalizationPipelineService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest, ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIAsyncRelocalizationPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest* req,
+             ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse* resp) {
+               return service->getProcessingMode(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIAsyncRelocalizationPipelineService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Request, ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -575,7 +645,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->setCameraParameters_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[9],
+      grpcIAsyncRelocalizationPipelineService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request, ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -585,7 +655,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->setCameraParameters_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[10],
+      grpcIAsyncRelocalizationPipelineService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::setRectificationParametersRequest, ::grpcIAsyncRelocalizationPipeline::setRectificationParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -595,7 +665,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->setRectificationParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[11],
+      grpcIAsyncRelocalizationPipelineService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::getCameraParametersRequest, ::grpcIAsyncRelocalizationPipeline::getCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -605,7 +675,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->getCameraParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[12],
+      grpcIAsyncRelocalizationPipelineService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestRequest, ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -615,7 +685,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->relocalizeProcessRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[13],
+      grpcIAsyncRelocalizationPipelineService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestRequest, ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -625,7 +695,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->get3DTransformRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[14],
+      grpcIAsyncRelocalizationPipelineService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::getLastPoseRequest, ::grpcIAsyncRelocalizationPipeline::getLastPoseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -635,7 +705,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->getLastPose(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[15],
+      grpcIAsyncRelocalizationPipelineService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::getMapRequestRequest, ::grpcIAsyncRelocalizationPipeline::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -645,7 +715,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->getMapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[16],
+      grpcIAsyncRelocalizationPipelineService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::resetMapRequest, ::grpcIAsyncRelocalizationPipeline::resetMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -655,7 +725,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->resetMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[17],
+      grpcIAsyncRelocalizationPipelineService_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest, ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -711,6 +781,13 @@ grpcIAsyncRelocalizationPipelineService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status grpcIAsyncRelocalizationPipelineService::Service::init_grpc2(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc2Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc2Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status grpcIAsyncRelocalizationPipelineService::Service::start_grpc1(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::start_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::start_grpc1Response* response) {
   (void) context;
   (void) request;
@@ -719,6 +796,13 @@ grpcIAsyncRelocalizationPipelineService::Service::~Service() {
 }
 
 ::grpc::Status grpcIAsyncRelocalizationPipelineService::Service::stop_grpc1(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::stop_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::stop_grpc1Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIAsyncRelocalizationPipelineService::Service::getProcessingMode(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse* response) {
   (void) context;
   (void) request;
   (void) response;
