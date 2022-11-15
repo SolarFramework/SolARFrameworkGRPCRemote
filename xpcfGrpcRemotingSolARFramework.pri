@@ -244,6 +244,10 @@ IRelocalizationPipeline_grpcProxy.h \
 IRelocalizationPipeline_grpcServer.h \
 grpcIRelocalizationPipelineService.pb.h \
 grpcIRelocalizationPipelineService.grpc.pb.h \
+IServiceManager_grpcProxy.h \
+IServiceManager_grpcServer.h \
+grpcIServiceManagerService.pb.h \
+grpcIServiceManagerService.grpc.pb.h \
 IPCFilter_grpcProxy.h \
 IPCFilter_grpcServer.h \
 grpcIPCFilterService.pb.h \
@@ -603,6 +607,10 @@ IRelocalizationPipeline_grpcProxy.cpp \
 IRelocalizationPipeline_grpcServer.cpp \
 grpcIRelocalizationPipelineService.pb.cc \
 grpcIRelocalizationPipelineService.grpc.pb.cc \
+IServiceManager_grpcProxy.cpp \
+IServiceManager_grpcServer.cpp \
+grpcIServiceManagerService.pb.cc \
+grpcIServiceManagerService.grpc.pb.cc \
 IPCFilter_grpcProxy.cpp \
 IPCFilter_grpcServer.cpp \
 grpcIPCFilterService.pb.cc \

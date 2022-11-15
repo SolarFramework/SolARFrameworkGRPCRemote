@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIServiceManager;
+
+message initRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message initResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message testRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message testResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIServiceManagerService {
+rpc init(initRequest) returns(initResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
+rpc test(testRequest) returns(testResponse) {}
+}
+
