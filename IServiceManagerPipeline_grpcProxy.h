@@ -1,24 +1,24 @@
 // GRPC Proxy Class Header generated with xpcf_grpc_gen
 
 
-#ifndef ISERVICEMANAGER_GRPCPROXY_H
-#define ISERVICEMANAGER_GRPCPROXY_H
-#include "api/pipeline/IServiceManager.h"
+#ifndef ISERVICEMANAGERPIPELINE_GRPCPROXY_H
+#define ISERVICEMANAGERPIPELINE_GRPCPROXY_H
+#include "api/pipeline/IServiceManagerPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
 #include <map>
-#include "grpcIServiceManagerService.grpc.pb.h"
+#include "grpcIServiceManagerPipelineService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
 #include <xpcf/remoting/GrpcHelper.h>
 
-namespace org::bcom::xpcf::grpc::proxyIServiceManager {
+namespace org::bcom::xpcf::grpc::proxyIServiceManagerPipeline {
 
-class IServiceManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public SolAR::api::pipeline::IServiceManager {
+class IServiceManagerPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public SolAR::api::pipeline::IServiceManagerPipeline {
   public:
-    IServiceManager_grpcProxy();
-    ~IServiceManager_grpcProxy() override = default;
+    IServiceManagerPipeline_grpcProxy();
+    ~IServiceManagerPipeline_grpcProxy() override = default;
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
@@ -35,18 +35,18 @@ class IServiceManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virt
     xpcf::grpcCompressionInfos m_serviceCompressionInfos;
     std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
     std::vector<std::string> m_grpcProxyCompressionConfig;
-    std::unique_ptr<::grpcIServiceManager::grpcIServiceManagerService::Stub> m_grpcStub;
+    std::unique_ptr<::grpcIServiceManagerPipeline::grpcIServiceManagerPipelineService::Stub> m_grpcStub;
 
 };
 
 }
 
 
-template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIServiceManager::IServiceManager_grpcProxy>
+template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIServiceManagerPipeline::IServiceManagerPipeline_grpcProxy>
 {
   static constexpr const char * UUID = "600ca5f4-6432-11ed-81ce-0242ac120002";
-  static constexpr const char * NAME = "IServiceManager_grpcProxy";
-  static constexpr const char * DESCRIPTION = "IServiceManager_grpcProxy grpc client proxy component";
+  static constexpr const char * NAME = "IServiceManagerPipeline_grpcProxy";
+  static constexpr const char * DESCRIPTION = "IServiceManagerPipeline_grpcProxy grpc client proxy component";
 };
 
 

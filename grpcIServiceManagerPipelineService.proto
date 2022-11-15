@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 
-package grpcIServiceManager;
+package grpcIServiceManagerPipeline;
 
 message initRequest
 {
@@ -44,7 +44,7 @@ message testResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-service grpcIServiceManagerService {
+service grpcIServiceManagerPipelineService {
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
