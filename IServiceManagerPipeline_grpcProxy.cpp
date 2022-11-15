@@ -19,7 +19,7 @@ IServiceManagerPipeline_grpcProxy::IServiceManagerPipeline_grpcProxy():xpcf::Con
   declareInterface<SolAR::api::pipeline::IServiceManagerPipeline>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(5);
+  m_grpcProxyCompressionConfig.resize(9);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -129,29 +129,158 @@ SolAR::FrameworkReturnCode  IServiceManagerPipeline_grpcProxy::stop()
 }
 
 
-SolAR::FrameworkReturnCode  IServiceManagerPipeline_grpcProxy::test()
+SolAR::FrameworkReturnCode  IServiceManagerPipeline_grpcProxy::registerService(SolAR::api::pipeline::ServiceType const serviceType, std::string const serviceURL)
 {
   ::grpc::ClientContext context;
-  ::grpcIServiceManagerPipeline::testRequest reqIn;
-  ::grpcIServiceManagerPipeline::testResponse respOut;
+  ::grpcIServiceManagerPipeline::registerServiceRequest reqIn;
+  ::grpcIServiceManagerPipeline::registerServiceResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "test", m_methodCompressionInfosMap);
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "registerService", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
+  reqIn.set_servicetype(xpcf::serialize<SolAR::api::pipeline::ServiceType>(serviceType));
+  reqIn.set_serviceurl(serviceURL);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IServiceManagerPipeline_grpcProxy::test request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::registerService request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->test(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->registerService(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IServiceManagerPipeline_grpcProxy::test response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::registerService response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "test rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIServiceManagerPipelineService","test",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "registerService rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIServiceManagerPipelineService","registerService",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IServiceManagerPipeline_grpcProxy::unregisterService(SolAR::api::pipeline::ServiceType const serviceType, std::string const serviceURL)
+{
+  ::grpc::ClientContext context;
+  ::grpcIServiceManagerPipeline::unregisterServiceRequest reqIn;
+  ::grpcIServiceManagerPipeline::unregisterServiceResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "unregisterService", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_servicetype(xpcf::serialize<SolAR::api::pipeline::ServiceType>(serviceType));
+  reqIn.set_serviceurl(serviceURL);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::unregisterService request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->unregisterService(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::unregisterService response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "unregisterService rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIServiceManagerPipelineService","unregisterService",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IServiceManagerPipeline_grpcProxy::getService(SolAR::api::pipeline::ServiceType const serviceType, std::string& serviceURL) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIServiceManagerPipeline::getServiceRequest reqIn;
+  ::grpcIServiceManagerPipeline::getServiceResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getService", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_servicetype(xpcf::serialize<SolAR::api::pipeline::ServiceType>(serviceType));
+  reqIn.set_serviceurl(serviceURL);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::getService request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getService(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::getService response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getService rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIServiceManagerPipelineService","getService",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  serviceURL = respOut.serviceurl();
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IServiceManagerPipeline_grpcProxy::getAndLockService(SolAR::api::pipeline::ServiceType const serviceType, std::string const clientUUID, std::string& serviceURL)
+{
+  ::grpc::ClientContext context;
+  ::grpcIServiceManagerPipeline::getAndLockServiceRequest reqIn;
+  ::grpcIServiceManagerPipeline::getAndLockServiceResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getAndLockService", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_servicetype(xpcf::serialize<SolAR::api::pipeline::ServiceType>(serviceType));
+  reqIn.set_clientuuid(clientUUID);
+  reqIn.set_serviceurl(serviceURL);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::getAndLockService request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getAndLockService(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::getAndLockService response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getAndLockService rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIServiceManagerPipelineService","getAndLockService",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  serviceURL = respOut.serviceurl();
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IServiceManagerPipeline_grpcProxy::unlockService(SolAR::api::pipeline::ServiceType const serviceType, std::string const clientUUID)
+{
+  ::grpc::ClientContext context;
+  ::grpcIServiceManagerPipeline::unlockServiceRequest reqIn;
+  ::grpcIServiceManagerPipeline::unlockServiceResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "unlockService", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_servicetype(xpcf::serialize<SolAR::api::pipeline::ServiceType>(serviceType));
+  reqIn.set_clientuuid(clientUUID);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::unlockService request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->unlockService(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcProxy::unlockService response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "unlockService rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIServiceManagerPipelineService","unlockService",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());

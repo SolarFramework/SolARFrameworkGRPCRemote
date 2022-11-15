@@ -28,7 +28,11 @@ class IServiceManagerPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableB
         ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::startRequest* request, ::grpcIServiceManagerPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::stopRequest* request, ::grpcIServiceManagerPipeline::stopResponse* response) override;
-        ::grpc::Status test(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response) override;
+        ::grpc::Status registerService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response) override;
+        ::grpc::Status unregisterService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response) override;
+        ::grpc::Status getService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response) override;
+        ::grpc::Status getAndLockService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response) override;
+        ::grpc::Status unlockService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response) override;
 
         SRef<SolAR::api::pipeline::IServiceManagerPipeline> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

@@ -47,7 +47,7 @@ struct TableStruct_grpcIServiceManagerPipelineService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,12 +56,30 @@ struct TableStruct_grpcIServiceManagerPipelineService_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIServiceManagerPipelineService_2eproto;
 ::PROTOBUF_NAMESPACE_ID::Metadata descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(int index);
 namespace grpcIServiceManagerPipeline {
+class getAndLockServiceRequest;
+struct getAndLockServiceRequestDefaultTypeInternal;
+extern getAndLockServiceRequestDefaultTypeInternal _getAndLockServiceRequest_default_instance_;
+class getAndLockServiceResponse;
+struct getAndLockServiceResponseDefaultTypeInternal;
+extern getAndLockServiceResponseDefaultTypeInternal _getAndLockServiceResponse_default_instance_;
+class getServiceRequest;
+struct getServiceRequestDefaultTypeInternal;
+extern getServiceRequestDefaultTypeInternal _getServiceRequest_default_instance_;
+class getServiceResponse;
+struct getServiceResponseDefaultTypeInternal;
+extern getServiceResponseDefaultTypeInternal _getServiceResponse_default_instance_;
 class initRequest;
 struct initRequestDefaultTypeInternal;
 extern initRequestDefaultTypeInternal _initRequest_default_instance_;
 class initResponse;
 struct initResponseDefaultTypeInternal;
 extern initResponseDefaultTypeInternal _initResponse_default_instance_;
+class registerServiceRequest;
+struct registerServiceRequestDefaultTypeInternal;
+extern registerServiceRequestDefaultTypeInternal _registerServiceRequest_default_instance_;
+class registerServiceResponse;
+struct registerServiceResponseDefaultTypeInternal;
+extern registerServiceResponseDefaultTypeInternal _registerServiceResponse_default_instance_;
 class startRequest;
 struct startRequestDefaultTypeInternal;
 extern startRequestDefaultTypeInternal _startRequest_default_instance_;
@@ -74,22 +92,36 @@ extern stopRequestDefaultTypeInternal _stopRequest_default_instance_;
 class stopResponse;
 struct stopResponseDefaultTypeInternal;
 extern stopResponseDefaultTypeInternal _stopResponse_default_instance_;
-class testRequest;
-struct testRequestDefaultTypeInternal;
-extern testRequestDefaultTypeInternal _testRequest_default_instance_;
-class testResponse;
-struct testResponseDefaultTypeInternal;
-extern testResponseDefaultTypeInternal _testResponse_default_instance_;
+class unlockServiceRequest;
+struct unlockServiceRequestDefaultTypeInternal;
+extern unlockServiceRequestDefaultTypeInternal _unlockServiceRequest_default_instance_;
+class unlockServiceResponse;
+struct unlockServiceResponseDefaultTypeInternal;
+extern unlockServiceResponseDefaultTypeInternal _unlockServiceResponse_default_instance_;
+class unregisterServiceRequest;
+struct unregisterServiceRequestDefaultTypeInternal;
+extern unregisterServiceRequestDefaultTypeInternal _unregisterServiceRequest_default_instance_;
+class unregisterServiceResponse;
+struct unregisterServiceResponseDefaultTypeInternal;
+extern unregisterServiceResponseDefaultTypeInternal _unregisterServiceResponse_default_instance_;
 }  // namespace grpcIServiceManagerPipeline
 PROTOBUF_NAMESPACE_OPEN
+template<> ::grpcIServiceManagerPipeline::getAndLockServiceRequest* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::getAndLockServiceRequest>(Arena*);
+template<> ::grpcIServiceManagerPipeline::getAndLockServiceResponse* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::getAndLockServiceResponse>(Arena*);
+template<> ::grpcIServiceManagerPipeline::getServiceRequest* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::getServiceRequest>(Arena*);
+template<> ::grpcIServiceManagerPipeline::getServiceResponse* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::getServiceResponse>(Arena*);
 template<> ::grpcIServiceManagerPipeline::initRequest* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::initRequest>(Arena*);
 template<> ::grpcIServiceManagerPipeline::initResponse* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::initResponse>(Arena*);
+template<> ::grpcIServiceManagerPipeline::registerServiceRequest* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::registerServiceRequest>(Arena*);
+template<> ::grpcIServiceManagerPipeline::registerServiceResponse* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::registerServiceResponse>(Arena*);
 template<> ::grpcIServiceManagerPipeline::startRequest* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::startRequest>(Arena*);
 template<> ::grpcIServiceManagerPipeline::startResponse* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::startResponse>(Arena*);
 template<> ::grpcIServiceManagerPipeline::stopRequest* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::stopRequest>(Arena*);
 template<> ::grpcIServiceManagerPipeline::stopResponse* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::stopResponse>(Arena*);
-template<> ::grpcIServiceManagerPipeline::testRequest* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::testRequest>(Arena*);
-template<> ::grpcIServiceManagerPipeline::testResponse* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::testResponse>(Arena*);
+template<> ::grpcIServiceManagerPipeline::unlockServiceRequest* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::unlockServiceRequest>(Arena*);
+template<> ::grpcIServiceManagerPipeline::unlockServiceResponse* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::unlockServiceResponse>(Arena*);
+template<> ::grpcIServiceManagerPipeline::unregisterServiceRequest* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::unregisterServiceRequest>(Arena*);
+template<> ::grpcIServiceManagerPipeline::unregisterServiceResponse* Arena::CreateMaybeMessage<::grpcIServiceManagerPipeline::unregisterServiceResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIServiceManagerPipeline {
 
@@ -917,24 +949,24 @@ class stopResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class testRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.testRequest) */ {
+class registerServiceRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.registerServiceRequest) */ {
  public:
-  inline testRequest() : testRequest(nullptr) {}
-  virtual ~testRequest();
-  explicit constexpr testRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline registerServiceRequest() : registerServiceRequest(nullptr) {}
+  virtual ~registerServiceRequest();
+  explicit constexpr registerServiceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  testRequest(const testRequest& from);
-  testRequest(testRequest&& from) noexcept
-    : testRequest() {
+  registerServiceRequest(const registerServiceRequest& from);
+  registerServiceRequest(registerServiceRequest&& from) noexcept
+    : registerServiceRequest() {
     *this = ::std::move(from);
   }
 
-  inline testRequest& operator=(const testRequest& from) {
+  inline registerServiceRequest& operator=(const registerServiceRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline testRequest& operator=(testRequest&& from) noexcept {
+  inline registerServiceRequest& operator=(registerServiceRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -952,20 +984,20 @@ class testRequest PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const testRequest& default_instance() {
+  static const registerServiceRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const testRequest* internal_default_instance() {
-    return reinterpret_cast<const testRequest*>(
-               &_testRequest_default_instance_);
+  static inline const registerServiceRequest* internal_default_instance() {
+    return reinterpret_cast<const registerServiceRequest*>(
+               &_registerServiceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  friend void swap(testRequest& a, testRequest& b) {
+  friend void swap(registerServiceRequest& a, registerServiceRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(testRequest* other) {
+  inline void Swap(registerServiceRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -973,7 +1005,7 @@ class testRequest PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(testRequest* other) {
+  void UnsafeArenaSwap(registerServiceRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -981,17 +1013,17 @@ class testRequest PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline testRequest* New() const final {
-    return CreateMaybeMessage<testRequest>(nullptr);
+  inline registerServiceRequest* New() const final {
+    return CreateMaybeMessage<registerServiceRequest>(nullptr);
   }
 
-  testRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<testRequest>(arena);
+  registerServiceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<registerServiceRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const testRequest& from);
-  void MergeFrom(const testRequest& from);
+  void CopyFrom(const registerServiceRequest& from);
+  void MergeFrom(const registerServiceRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1005,13 +1037,13 @@ class testRequest PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(testRequest* other);
+  void InternalSwap(registerServiceRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIServiceManagerPipeline.testRequest";
+    return "grpcIServiceManagerPipeline.registerServiceRequest";
   }
   protected:
-  explicit testRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit registerServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1030,8 +1062,42 @@ class testRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kServiceTypeFieldNumber = 2,
+    kServiceURLFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
+  // bytes serviceType = 2;
+  void clear_servicetype();
+  const std::string& servicetype() const;
+  void set_servicetype(const std::string& value);
+  void set_servicetype(std::string&& value);
+  void set_servicetype(const char* value);
+  void set_servicetype(const void* value, size_t size);
+  std::string* mutable_servicetype();
+  std::string* release_servicetype();
+  void set_allocated_servicetype(std::string* servicetype);
+  private:
+  const std::string& _internal_servicetype() const;
+  void _internal_set_servicetype(const std::string& value);
+  std::string* _internal_mutable_servicetype();
+  public:
+
+  // string serviceURL = 3;
+  void clear_serviceurl();
+  const std::string& serviceurl() const;
+  void set_serviceurl(const std::string& value);
+  void set_serviceurl(std::string&& value);
+  void set_serviceurl(const char* value);
+  void set_serviceurl(const char* value, size_t size);
+  std::string* mutable_serviceurl();
+  std::string* release_serviceurl();
+  void set_allocated_serviceurl(std::string* serviceurl);
+  private:
+  const std::string& _internal_serviceurl() const;
+  void _internal_set_serviceurl(const std::string& value);
+  std::string* _internal_mutable_serviceurl();
+  public:
+
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
@@ -1041,37 +1107,39 @@ class testRequest PROTOBUF_FINAL :
   void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.testRequest)
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.registerServiceRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr servicetype_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serviceurl_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIServiceManagerPipelineService_2eproto;
 };
 // -------------------------------------------------------------------
 
-class testResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.testResponse) */ {
+class registerServiceResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.registerServiceResponse) */ {
  public:
-  inline testResponse() : testResponse(nullptr) {}
-  virtual ~testResponse();
-  explicit constexpr testResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline registerServiceResponse() : registerServiceResponse(nullptr) {}
+  virtual ~registerServiceResponse();
+  explicit constexpr registerServiceResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  testResponse(const testResponse& from);
-  testResponse(testResponse&& from) noexcept
-    : testResponse() {
+  registerServiceResponse(const registerServiceResponse& from);
+  registerServiceResponse(registerServiceResponse&& from) noexcept
+    : registerServiceResponse() {
     *this = ::std::move(from);
   }
 
-  inline testResponse& operator=(const testResponse& from) {
+  inline registerServiceResponse& operator=(const registerServiceResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline testResponse& operator=(testResponse&& from) noexcept {
+  inline registerServiceResponse& operator=(registerServiceResponse&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1089,20 +1157,20 @@ class testResponse PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const testResponse& default_instance() {
+  static const registerServiceResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const testResponse* internal_default_instance() {
-    return reinterpret_cast<const testResponse*>(
-               &_testResponse_default_instance_);
+  static inline const registerServiceResponse* internal_default_instance() {
+    return reinterpret_cast<const registerServiceResponse*>(
+               &_registerServiceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     7;
 
-  friend void swap(testResponse& a, testResponse& b) {
+  friend void swap(registerServiceResponse& a, registerServiceResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(testResponse* other) {
+  inline void Swap(registerServiceResponse* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -1110,7 +1178,7 @@ class testResponse PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(testResponse* other) {
+  void UnsafeArenaSwap(registerServiceResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -1118,17 +1186,17 @@ class testResponse PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline testResponse* New() const final {
-    return CreateMaybeMessage<testResponse>(nullptr);
+  inline registerServiceResponse* New() const final {
+    return CreateMaybeMessage<registerServiceResponse>(nullptr);
   }
 
-  testResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<testResponse>(arena);
+  registerServiceResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<registerServiceResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const testResponse& from);
-  void MergeFrom(const testResponse& from);
+  void CopyFrom(const registerServiceResponse& from);
+  void MergeFrom(const registerServiceResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1142,13 +1210,13 @@ class testResponse PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(testResponse* other);
+  void InternalSwap(registerServiceResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIServiceManagerPipeline.testResponse";
+    return "grpcIServiceManagerPipeline.registerServiceResponse";
   }
   protected:
-  explicit testResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit registerServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1178,7 +1246,1301 @@ class testResponse PROTOBUF_FINAL :
   void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.testResponse)
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.registerServiceResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIServiceManagerPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class unregisterServiceRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.unregisterServiceRequest) */ {
+ public:
+  inline unregisterServiceRequest() : unregisterServiceRequest(nullptr) {}
+  virtual ~unregisterServiceRequest();
+  explicit constexpr unregisterServiceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  unregisterServiceRequest(const unregisterServiceRequest& from);
+  unregisterServiceRequest(unregisterServiceRequest&& from) noexcept
+    : unregisterServiceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline unregisterServiceRequest& operator=(const unregisterServiceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline unregisterServiceRequest& operator=(unregisterServiceRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const unregisterServiceRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const unregisterServiceRequest* internal_default_instance() {
+    return reinterpret_cast<const unregisterServiceRequest*>(
+               &_unregisterServiceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(unregisterServiceRequest& a, unregisterServiceRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(unregisterServiceRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(unregisterServiceRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline unregisterServiceRequest* New() const final {
+    return CreateMaybeMessage<unregisterServiceRequest>(nullptr);
+  }
+
+  unregisterServiceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<unregisterServiceRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const unregisterServiceRequest& from);
+  void MergeFrom(const unregisterServiceRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(unregisterServiceRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIServiceManagerPipeline.unregisterServiceRequest";
+  }
+  protected:
+  explicit unregisterServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServiceTypeFieldNumber = 2,
+    kServiceURLFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes serviceType = 2;
+  void clear_servicetype();
+  const std::string& servicetype() const;
+  void set_servicetype(const std::string& value);
+  void set_servicetype(std::string&& value);
+  void set_servicetype(const char* value);
+  void set_servicetype(const void* value, size_t size);
+  std::string* mutable_servicetype();
+  std::string* release_servicetype();
+  void set_allocated_servicetype(std::string* servicetype);
+  private:
+  const std::string& _internal_servicetype() const;
+  void _internal_set_servicetype(const std::string& value);
+  std::string* _internal_mutable_servicetype();
+  public:
+
+  // string serviceURL = 3;
+  void clear_serviceurl();
+  const std::string& serviceurl() const;
+  void set_serviceurl(const std::string& value);
+  void set_serviceurl(std::string&& value);
+  void set_serviceurl(const char* value);
+  void set_serviceurl(const char* value, size_t size);
+  std::string* mutable_serviceurl();
+  std::string* release_serviceurl();
+  void set_allocated_serviceurl(std::string* serviceurl);
+  private:
+  const std::string& _internal_serviceurl() const;
+  void _internal_set_serviceurl(const std::string& value);
+  std::string* _internal_mutable_serviceurl();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.unregisterServiceRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr servicetype_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serviceurl_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIServiceManagerPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class unregisterServiceResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.unregisterServiceResponse) */ {
+ public:
+  inline unregisterServiceResponse() : unregisterServiceResponse(nullptr) {}
+  virtual ~unregisterServiceResponse();
+  explicit constexpr unregisterServiceResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  unregisterServiceResponse(const unregisterServiceResponse& from);
+  unregisterServiceResponse(unregisterServiceResponse&& from) noexcept
+    : unregisterServiceResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline unregisterServiceResponse& operator=(const unregisterServiceResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline unregisterServiceResponse& operator=(unregisterServiceResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const unregisterServiceResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const unregisterServiceResponse* internal_default_instance() {
+    return reinterpret_cast<const unregisterServiceResponse*>(
+               &_unregisterServiceResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(unregisterServiceResponse& a, unregisterServiceResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(unregisterServiceResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(unregisterServiceResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline unregisterServiceResponse* New() const final {
+    return CreateMaybeMessage<unregisterServiceResponse>(nullptr);
+  }
+
+  unregisterServiceResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<unregisterServiceResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const unregisterServiceResponse& from);
+  void MergeFrom(const unregisterServiceResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(unregisterServiceResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIServiceManagerPipeline.unregisterServiceResponse";
+  }
+  protected:
+  explicit unregisterServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.unregisterServiceResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIServiceManagerPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getServiceRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.getServiceRequest) */ {
+ public:
+  inline getServiceRequest() : getServiceRequest(nullptr) {}
+  virtual ~getServiceRequest();
+  explicit constexpr getServiceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getServiceRequest(const getServiceRequest& from);
+  getServiceRequest(getServiceRequest&& from) noexcept
+    : getServiceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getServiceRequest& operator=(const getServiceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getServiceRequest& operator=(getServiceRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getServiceRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getServiceRequest* internal_default_instance() {
+    return reinterpret_cast<const getServiceRequest*>(
+               &_getServiceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(getServiceRequest& a, getServiceRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getServiceRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getServiceRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getServiceRequest* New() const final {
+    return CreateMaybeMessage<getServiceRequest>(nullptr);
+  }
+
+  getServiceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getServiceRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getServiceRequest& from);
+  void MergeFrom(const getServiceRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getServiceRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIServiceManagerPipeline.getServiceRequest";
+  }
+  protected:
+  explicit getServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServiceTypeFieldNumber = 2,
+    kServiceURLFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes serviceType = 2;
+  void clear_servicetype();
+  const std::string& servicetype() const;
+  void set_servicetype(const std::string& value);
+  void set_servicetype(std::string&& value);
+  void set_servicetype(const char* value);
+  void set_servicetype(const void* value, size_t size);
+  std::string* mutable_servicetype();
+  std::string* release_servicetype();
+  void set_allocated_servicetype(std::string* servicetype);
+  private:
+  const std::string& _internal_servicetype() const;
+  void _internal_set_servicetype(const std::string& value);
+  std::string* _internal_mutable_servicetype();
+  public:
+
+  // string serviceURL = 3;
+  void clear_serviceurl();
+  const std::string& serviceurl() const;
+  void set_serviceurl(const std::string& value);
+  void set_serviceurl(std::string&& value);
+  void set_serviceurl(const char* value);
+  void set_serviceurl(const char* value, size_t size);
+  std::string* mutable_serviceurl();
+  std::string* release_serviceurl();
+  void set_allocated_serviceurl(std::string* serviceurl);
+  private:
+  const std::string& _internal_serviceurl() const;
+  void _internal_set_serviceurl(const std::string& value);
+  std::string* _internal_mutable_serviceurl();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.getServiceRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr servicetype_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serviceurl_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIServiceManagerPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getServiceResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.getServiceResponse) */ {
+ public:
+  inline getServiceResponse() : getServiceResponse(nullptr) {}
+  virtual ~getServiceResponse();
+  explicit constexpr getServiceResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getServiceResponse(const getServiceResponse& from);
+  getServiceResponse(getServiceResponse&& from) noexcept
+    : getServiceResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline getServiceResponse& operator=(const getServiceResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getServiceResponse& operator=(getServiceResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getServiceResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getServiceResponse* internal_default_instance() {
+    return reinterpret_cast<const getServiceResponse*>(
+               &_getServiceResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(getServiceResponse& a, getServiceResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getServiceResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getServiceResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getServiceResponse* New() const final {
+    return CreateMaybeMessage<getServiceResponse>(nullptr);
+  }
+
+  getServiceResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getServiceResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getServiceResponse& from);
+  void MergeFrom(const getServiceResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getServiceResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIServiceManagerPipeline.getServiceResponse";
+  }
+  protected:
+  explicit getServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServiceURLFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // string serviceURL = 1;
+  void clear_serviceurl();
+  const std::string& serviceurl() const;
+  void set_serviceurl(const std::string& value);
+  void set_serviceurl(std::string&& value);
+  void set_serviceurl(const char* value);
+  void set_serviceurl(const char* value, size_t size);
+  std::string* mutable_serviceurl();
+  std::string* release_serviceurl();
+  void set_allocated_serviceurl(std::string* serviceurl);
+  private:
+  const std::string& _internal_serviceurl() const;
+  void _internal_set_serviceurl(const std::string& value);
+  std::string* _internal_mutable_serviceurl();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.getServiceResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serviceurl_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIServiceManagerPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getAndLockServiceRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.getAndLockServiceRequest) */ {
+ public:
+  inline getAndLockServiceRequest() : getAndLockServiceRequest(nullptr) {}
+  virtual ~getAndLockServiceRequest();
+  explicit constexpr getAndLockServiceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getAndLockServiceRequest(const getAndLockServiceRequest& from);
+  getAndLockServiceRequest(getAndLockServiceRequest&& from) noexcept
+    : getAndLockServiceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getAndLockServiceRequest& operator=(const getAndLockServiceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getAndLockServiceRequest& operator=(getAndLockServiceRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getAndLockServiceRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getAndLockServiceRequest* internal_default_instance() {
+    return reinterpret_cast<const getAndLockServiceRequest*>(
+               &_getAndLockServiceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(getAndLockServiceRequest& a, getAndLockServiceRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getAndLockServiceRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getAndLockServiceRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getAndLockServiceRequest* New() const final {
+    return CreateMaybeMessage<getAndLockServiceRequest>(nullptr);
+  }
+
+  getAndLockServiceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getAndLockServiceRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getAndLockServiceRequest& from);
+  void MergeFrom(const getAndLockServiceRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getAndLockServiceRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIServiceManagerPipeline.getAndLockServiceRequest";
+  }
+  protected:
+  explicit getAndLockServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServiceTypeFieldNumber = 2,
+    kClientUUIDFieldNumber = 3,
+    kServiceURLFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes serviceType = 2;
+  void clear_servicetype();
+  const std::string& servicetype() const;
+  void set_servicetype(const std::string& value);
+  void set_servicetype(std::string&& value);
+  void set_servicetype(const char* value);
+  void set_servicetype(const void* value, size_t size);
+  std::string* mutable_servicetype();
+  std::string* release_servicetype();
+  void set_allocated_servicetype(std::string* servicetype);
+  private:
+  const std::string& _internal_servicetype() const;
+  void _internal_set_servicetype(const std::string& value);
+  std::string* _internal_mutable_servicetype();
+  public:
+
+  // string clientUUID = 3;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
+  void set_clientuuid(const std::string& value);
+  void set_clientuuid(std::string&& value);
+  void set_clientuuid(const char* value);
+  void set_clientuuid(const char* value, size_t size);
+  std::string* mutable_clientuuid();
+  std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
+  private:
+  const std::string& _internal_clientuuid() const;
+  void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
+  public:
+
+  // string serviceURL = 4;
+  void clear_serviceurl();
+  const std::string& serviceurl() const;
+  void set_serviceurl(const std::string& value);
+  void set_serviceurl(std::string&& value);
+  void set_serviceurl(const char* value);
+  void set_serviceurl(const char* value, size_t size);
+  std::string* mutable_serviceurl();
+  std::string* release_serviceurl();
+  void set_allocated_serviceurl(std::string* serviceurl);
+  private:
+  const std::string& _internal_serviceurl() const;
+  void _internal_set_serviceurl(const std::string& value);
+  std::string* _internal_mutable_serviceurl();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.getAndLockServiceRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr servicetype_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serviceurl_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIServiceManagerPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getAndLockServiceResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.getAndLockServiceResponse) */ {
+ public:
+  inline getAndLockServiceResponse() : getAndLockServiceResponse(nullptr) {}
+  virtual ~getAndLockServiceResponse();
+  explicit constexpr getAndLockServiceResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getAndLockServiceResponse(const getAndLockServiceResponse& from);
+  getAndLockServiceResponse(getAndLockServiceResponse&& from) noexcept
+    : getAndLockServiceResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline getAndLockServiceResponse& operator=(const getAndLockServiceResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getAndLockServiceResponse& operator=(getAndLockServiceResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const getAndLockServiceResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getAndLockServiceResponse* internal_default_instance() {
+    return reinterpret_cast<const getAndLockServiceResponse*>(
+               &_getAndLockServiceResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(getAndLockServiceResponse& a, getAndLockServiceResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getAndLockServiceResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getAndLockServiceResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline getAndLockServiceResponse* New() const final {
+    return CreateMaybeMessage<getAndLockServiceResponse>(nullptr);
+  }
+
+  getAndLockServiceResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<getAndLockServiceResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const getAndLockServiceResponse& from);
+  void MergeFrom(const getAndLockServiceResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getAndLockServiceResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIServiceManagerPipeline.getAndLockServiceResponse";
+  }
+  protected:
+  explicit getAndLockServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServiceURLFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // string serviceURL = 1;
+  void clear_serviceurl();
+  const std::string& serviceurl() const;
+  void set_serviceurl(const std::string& value);
+  void set_serviceurl(std::string&& value);
+  void set_serviceurl(const char* value);
+  void set_serviceurl(const char* value, size_t size);
+  std::string* mutable_serviceurl();
+  std::string* release_serviceurl();
+  void set_allocated_serviceurl(std::string* serviceurl);
+  private:
+  const std::string& _internal_serviceurl() const;
+  void _internal_set_serviceurl(const std::string& value);
+  std::string* _internal_mutable_serviceurl();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.getAndLockServiceResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serviceurl_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIServiceManagerPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class unlockServiceRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.unlockServiceRequest) */ {
+ public:
+  inline unlockServiceRequest() : unlockServiceRequest(nullptr) {}
+  virtual ~unlockServiceRequest();
+  explicit constexpr unlockServiceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  unlockServiceRequest(const unlockServiceRequest& from);
+  unlockServiceRequest(unlockServiceRequest&& from) noexcept
+    : unlockServiceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline unlockServiceRequest& operator=(const unlockServiceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline unlockServiceRequest& operator=(unlockServiceRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const unlockServiceRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const unlockServiceRequest* internal_default_instance() {
+    return reinterpret_cast<const unlockServiceRequest*>(
+               &_unlockServiceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(unlockServiceRequest& a, unlockServiceRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(unlockServiceRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(unlockServiceRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline unlockServiceRequest* New() const final {
+    return CreateMaybeMessage<unlockServiceRequest>(nullptr);
+  }
+
+  unlockServiceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<unlockServiceRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const unlockServiceRequest& from);
+  void MergeFrom(const unlockServiceRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(unlockServiceRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIServiceManagerPipeline.unlockServiceRequest";
+  }
+  protected:
+  explicit unlockServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServiceTypeFieldNumber = 2,
+    kClientUUIDFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes serviceType = 2;
+  void clear_servicetype();
+  const std::string& servicetype() const;
+  void set_servicetype(const std::string& value);
+  void set_servicetype(std::string&& value);
+  void set_servicetype(const char* value);
+  void set_servicetype(const void* value, size_t size);
+  std::string* mutable_servicetype();
+  std::string* release_servicetype();
+  void set_allocated_servicetype(std::string* servicetype);
+  private:
+  const std::string& _internal_servicetype() const;
+  void _internal_set_servicetype(const std::string& value);
+  std::string* _internal_mutable_servicetype();
+  public:
+
+  // string clientUUID = 3;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
+  void set_clientuuid(const std::string& value);
+  void set_clientuuid(std::string&& value);
+  void set_clientuuid(const char* value);
+  void set_clientuuid(const char* value, size_t size);
+  std::string* mutable_clientuuid();
+  std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
+  private:
+  const std::string& _internal_clientuuid() const;
+  void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.unlockServiceRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr servicetype_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIServiceManagerPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class unlockServiceResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManagerPipeline.unlockServiceResponse) */ {
+ public:
+  inline unlockServiceResponse() : unlockServiceResponse(nullptr) {}
+  virtual ~unlockServiceResponse();
+  explicit constexpr unlockServiceResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  unlockServiceResponse(const unlockServiceResponse& from);
+  unlockServiceResponse(unlockServiceResponse&& from) noexcept
+    : unlockServiceResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline unlockServiceResponse& operator=(const unlockServiceResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline unlockServiceResponse& operator=(unlockServiceResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const unlockServiceResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const unlockServiceResponse* internal_default_instance() {
+    return reinterpret_cast<const unlockServiceResponse*>(
+               &_unlockServiceResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(unlockServiceResponse& a, unlockServiceResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(unlockServiceResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(unlockServiceResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline unlockServiceResponse* New() const final {
+    return CreateMaybeMessage<unlockServiceResponse>(nullptr);
+  }
+
+  unlockServiceResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<unlockServiceResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const unlockServiceResponse& from);
+  void MergeFrom(const unlockServiceResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(unlockServiceResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIServiceManagerPipeline.unlockServiceResponse";
+  }
+  protected:
+  explicit unlockServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIServiceManagerPipeline.unlockServiceResponse)
  private:
   class _Internal;
 
@@ -1342,55 +2704,1056 @@ inline void stopResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32
 
 // -------------------------------------------------------------------
 
-// testRequest
+// registerServiceRequest
 
 // int32 grpcServerCompressionFormat = 1;
-inline void testRequest::clear_grpcservercompressionformat() {
+inline void registerServiceRequest::clear_grpcservercompressionformat() {
   grpcservercompressionformat_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 testRequest::_internal_grpcservercompressionformat() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 registerServiceRequest::_internal_grpcservercompressionformat() const {
   return grpcservercompressionformat_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 testRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.testRequest.grpcServerCompressionFormat)
+inline ::PROTOBUF_NAMESPACE_ID::int32 registerServiceRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.registerServiceRequest.grpcServerCompressionFormat)
   return _internal_grpcservercompressionformat();
 }
-inline void testRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void registerServiceRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   grpcservercompressionformat_ = value;
 }
-inline void testRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void registerServiceRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.testRequest.grpcServerCompressionFormat)
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.registerServiceRequest.grpcServerCompressionFormat)
+}
+
+// bytes serviceType = 2;
+inline void registerServiceRequest::clear_servicetype() {
+  servicetype_.ClearToEmpty();
+}
+inline const std::string& registerServiceRequest::servicetype() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.registerServiceRequest.serviceType)
+  return _internal_servicetype();
+}
+inline void registerServiceRequest::set_servicetype(const std::string& value) {
+  _internal_set_servicetype(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.registerServiceRequest.serviceType)
+}
+inline std::string* registerServiceRequest::mutable_servicetype() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.registerServiceRequest.serviceType)
+  return _internal_mutable_servicetype();
+}
+inline const std::string& registerServiceRequest::_internal_servicetype() const {
+  return servicetype_.Get();
+}
+inline void registerServiceRequest::_internal_set_servicetype(const std::string& value) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void registerServiceRequest::set_servicetype(std::string&& value) {
+  
+  servicetype_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.registerServiceRequest.serviceType)
+}
+inline void registerServiceRequest::set_servicetype(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.registerServiceRequest.serviceType)
+}
+inline void registerServiceRequest::set_servicetype(const void* value,
+    size_t size) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.registerServiceRequest.serviceType)
+}
+inline std::string* registerServiceRequest::_internal_mutable_servicetype() {
+  
+  return servicetype_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* registerServiceRequest::release_servicetype() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.registerServiceRequest.serviceType)
+  return servicetype_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void registerServiceRequest::set_allocated_servicetype(std::string* servicetype) {
+  if (servicetype != nullptr) {
+    
+  } else {
+    
+  }
+  servicetype_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), servicetype,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.registerServiceRequest.serviceType)
+}
+
+// string serviceURL = 3;
+inline void registerServiceRequest::clear_serviceurl() {
+  serviceurl_.ClearToEmpty();
+}
+inline const std::string& registerServiceRequest::serviceurl() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.registerServiceRequest.serviceURL)
+  return _internal_serviceurl();
+}
+inline void registerServiceRequest::set_serviceurl(const std::string& value) {
+  _internal_set_serviceurl(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.registerServiceRequest.serviceURL)
+}
+inline std::string* registerServiceRequest::mutable_serviceurl() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.registerServiceRequest.serviceURL)
+  return _internal_mutable_serviceurl();
+}
+inline const std::string& registerServiceRequest::_internal_serviceurl() const {
+  return serviceurl_.Get();
+}
+inline void registerServiceRequest::_internal_set_serviceurl(const std::string& value) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void registerServiceRequest::set_serviceurl(std::string&& value) {
+  
+  serviceurl_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.registerServiceRequest.serviceURL)
+}
+inline void registerServiceRequest::set_serviceurl(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.registerServiceRequest.serviceURL)
+}
+inline void registerServiceRequest::set_serviceurl(const char* value,
+    size_t size) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.registerServiceRequest.serviceURL)
+}
+inline std::string* registerServiceRequest::_internal_mutable_serviceurl() {
+  
+  return serviceurl_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* registerServiceRequest::release_serviceurl() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.registerServiceRequest.serviceURL)
+  return serviceurl_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void registerServiceRequest::set_allocated_serviceurl(std::string* serviceurl) {
+  if (serviceurl != nullptr) {
+    
+  } else {
+    
+  }
+  serviceurl_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serviceurl,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.registerServiceRequest.serviceURL)
 }
 
 // -------------------------------------------------------------------
 
-// testResponse
+// registerServiceResponse
 
 // sint32 xpcfGrpcReturnValue = 1;
-inline void testResponse::clear_xpcfgrpcreturnvalue() {
+inline void registerServiceResponse::clear_xpcfgrpcreturnvalue() {
   xpcfgrpcreturnvalue_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 testResponse::_internal_xpcfgrpcreturnvalue() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 registerServiceResponse::_internal_xpcfgrpcreturnvalue() const {
   return xpcfgrpcreturnvalue_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 testResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.testResponse.xpcfGrpcReturnValue)
+inline ::PROTOBUF_NAMESPACE_ID::int32 registerServiceResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.registerServiceResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-inline void testResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void registerServiceResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   xpcfgrpcreturnvalue_ = value;
 }
-inline void testResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void registerServiceResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.testResponse.xpcfGrpcReturnValue)
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.registerServiceResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// unregisterServiceRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void unregisterServiceRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unregisterServiceRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unregisterServiceRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.unregisterServiceRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void unregisterServiceRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void unregisterServiceRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.unregisterServiceRequest.grpcServerCompressionFormat)
+}
+
+// bytes serviceType = 2;
+inline void unregisterServiceRequest::clear_servicetype() {
+  servicetype_.ClearToEmpty();
+}
+inline const std::string& unregisterServiceRequest::servicetype() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceType)
+  return _internal_servicetype();
+}
+inline void unregisterServiceRequest::set_servicetype(const std::string& value) {
+  _internal_set_servicetype(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceType)
+}
+inline std::string* unregisterServiceRequest::mutable_servicetype() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceType)
+  return _internal_mutable_servicetype();
+}
+inline const std::string& unregisterServiceRequest::_internal_servicetype() const {
+  return servicetype_.Get();
+}
+inline void unregisterServiceRequest::_internal_set_servicetype(const std::string& value) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void unregisterServiceRequest::set_servicetype(std::string&& value) {
+  
+  servicetype_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceType)
+}
+inline void unregisterServiceRequest::set_servicetype(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceType)
+}
+inline void unregisterServiceRequest::set_servicetype(const void* value,
+    size_t size) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceType)
+}
+inline std::string* unregisterServiceRequest::_internal_mutable_servicetype() {
+  
+  return servicetype_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* unregisterServiceRequest::release_servicetype() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceType)
+  return servicetype_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void unregisterServiceRequest::set_allocated_servicetype(std::string* servicetype) {
+  if (servicetype != nullptr) {
+    
+  } else {
+    
+  }
+  servicetype_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), servicetype,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceType)
+}
+
+// string serviceURL = 3;
+inline void unregisterServiceRequest::clear_serviceurl() {
+  serviceurl_.ClearToEmpty();
+}
+inline const std::string& unregisterServiceRequest::serviceurl() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceURL)
+  return _internal_serviceurl();
+}
+inline void unregisterServiceRequest::set_serviceurl(const std::string& value) {
+  _internal_set_serviceurl(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceURL)
+}
+inline std::string* unregisterServiceRequest::mutable_serviceurl() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceURL)
+  return _internal_mutable_serviceurl();
+}
+inline const std::string& unregisterServiceRequest::_internal_serviceurl() const {
+  return serviceurl_.Get();
+}
+inline void unregisterServiceRequest::_internal_set_serviceurl(const std::string& value) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void unregisterServiceRequest::set_serviceurl(std::string&& value) {
+  
+  serviceurl_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceURL)
+}
+inline void unregisterServiceRequest::set_serviceurl(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceURL)
+}
+inline void unregisterServiceRequest::set_serviceurl(const char* value,
+    size_t size) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceURL)
+}
+inline std::string* unregisterServiceRequest::_internal_mutable_serviceurl() {
+  
+  return serviceurl_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* unregisterServiceRequest::release_serviceurl() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceURL)
+  return serviceurl_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void unregisterServiceRequest::set_allocated_serviceurl(std::string* serviceurl) {
+  if (serviceurl != nullptr) {
+    
+  } else {
+    
+  }
+  serviceurl_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serviceurl,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.unregisterServiceRequest.serviceURL)
+}
+
+// -------------------------------------------------------------------
+
+// unregisterServiceResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void unregisterServiceResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unregisterServiceResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unregisterServiceResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.unregisterServiceResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void unregisterServiceResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void unregisterServiceResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.unregisterServiceResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getServiceRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getServiceRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getServiceRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getServiceRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getServiceRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getServiceRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getServiceRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getServiceRequest.grpcServerCompressionFormat)
+}
+
+// bytes serviceType = 2;
+inline void getServiceRequest::clear_servicetype() {
+  servicetype_.ClearToEmpty();
+}
+inline const std::string& getServiceRequest::servicetype() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getServiceRequest.serviceType)
+  return _internal_servicetype();
+}
+inline void getServiceRequest::set_servicetype(const std::string& value) {
+  _internal_set_servicetype(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getServiceRequest.serviceType)
+}
+inline std::string* getServiceRequest::mutable_servicetype() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.getServiceRequest.serviceType)
+  return _internal_mutable_servicetype();
+}
+inline const std::string& getServiceRequest::_internal_servicetype() const {
+  return servicetype_.Get();
+}
+inline void getServiceRequest::_internal_set_servicetype(const std::string& value) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getServiceRequest::set_servicetype(std::string&& value) {
+  
+  servicetype_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.getServiceRequest.serviceType)
+}
+inline void getServiceRequest::set_servicetype(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.getServiceRequest.serviceType)
+}
+inline void getServiceRequest::set_servicetype(const void* value,
+    size_t size) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.getServiceRequest.serviceType)
+}
+inline std::string* getServiceRequest::_internal_mutable_servicetype() {
+  
+  return servicetype_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getServiceRequest::release_servicetype() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.getServiceRequest.serviceType)
+  return servicetype_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getServiceRequest::set_allocated_servicetype(std::string* servicetype) {
+  if (servicetype != nullptr) {
+    
+  } else {
+    
+  }
+  servicetype_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), servicetype,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.getServiceRequest.serviceType)
+}
+
+// string serviceURL = 3;
+inline void getServiceRequest::clear_serviceurl() {
+  serviceurl_.ClearToEmpty();
+}
+inline const std::string& getServiceRequest::serviceurl() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getServiceRequest.serviceURL)
+  return _internal_serviceurl();
+}
+inline void getServiceRequest::set_serviceurl(const std::string& value) {
+  _internal_set_serviceurl(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getServiceRequest.serviceURL)
+}
+inline std::string* getServiceRequest::mutable_serviceurl() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.getServiceRequest.serviceURL)
+  return _internal_mutable_serviceurl();
+}
+inline const std::string& getServiceRequest::_internal_serviceurl() const {
+  return serviceurl_.Get();
+}
+inline void getServiceRequest::_internal_set_serviceurl(const std::string& value) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getServiceRequest::set_serviceurl(std::string&& value) {
+  
+  serviceurl_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.getServiceRequest.serviceURL)
+}
+inline void getServiceRequest::set_serviceurl(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.getServiceRequest.serviceURL)
+}
+inline void getServiceRequest::set_serviceurl(const char* value,
+    size_t size) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.getServiceRequest.serviceURL)
+}
+inline std::string* getServiceRequest::_internal_mutable_serviceurl() {
+  
+  return serviceurl_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getServiceRequest::release_serviceurl() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.getServiceRequest.serviceURL)
+  return serviceurl_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getServiceRequest::set_allocated_serviceurl(std::string* serviceurl) {
+  if (serviceurl != nullptr) {
+    
+  } else {
+    
+  }
+  serviceurl_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serviceurl,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.getServiceRequest.serviceURL)
+}
+
+// -------------------------------------------------------------------
+
+// getServiceResponse
+
+// string serviceURL = 1;
+inline void getServiceResponse::clear_serviceurl() {
+  serviceurl_.ClearToEmpty();
+}
+inline const std::string& getServiceResponse::serviceurl() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getServiceResponse.serviceURL)
+  return _internal_serviceurl();
+}
+inline void getServiceResponse::set_serviceurl(const std::string& value) {
+  _internal_set_serviceurl(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getServiceResponse.serviceURL)
+}
+inline std::string* getServiceResponse::mutable_serviceurl() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.getServiceResponse.serviceURL)
+  return _internal_mutable_serviceurl();
+}
+inline const std::string& getServiceResponse::_internal_serviceurl() const {
+  return serviceurl_.Get();
+}
+inline void getServiceResponse::_internal_set_serviceurl(const std::string& value) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getServiceResponse::set_serviceurl(std::string&& value) {
+  
+  serviceurl_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.getServiceResponse.serviceURL)
+}
+inline void getServiceResponse::set_serviceurl(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.getServiceResponse.serviceURL)
+}
+inline void getServiceResponse::set_serviceurl(const char* value,
+    size_t size) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.getServiceResponse.serviceURL)
+}
+inline std::string* getServiceResponse::_internal_mutable_serviceurl() {
+  
+  return serviceurl_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getServiceResponse::release_serviceurl() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.getServiceResponse.serviceURL)
+  return serviceurl_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getServiceResponse::set_allocated_serviceurl(std::string* serviceurl) {
+  if (serviceurl != nullptr) {
+    
+  } else {
+    
+  }
+  serviceurl_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serviceurl,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.getServiceResponse.serviceURL)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void getServiceResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getServiceResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getServiceResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getServiceResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getServiceResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void getServiceResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getServiceResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getAndLockServiceRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getAndLockServiceRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAndLockServiceRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAndLockServiceRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getAndLockServiceRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getAndLockServiceRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void getAndLockServiceRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getAndLockServiceRequest.grpcServerCompressionFormat)
+}
+
+// bytes serviceType = 2;
+inline void getAndLockServiceRequest::clear_servicetype() {
+  servicetype_.ClearToEmpty();
+}
+inline const std::string& getAndLockServiceRequest::servicetype() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceType)
+  return _internal_servicetype();
+}
+inline void getAndLockServiceRequest::set_servicetype(const std::string& value) {
+  _internal_set_servicetype(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceType)
+}
+inline std::string* getAndLockServiceRequest::mutable_servicetype() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceType)
+  return _internal_mutable_servicetype();
+}
+inline const std::string& getAndLockServiceRequest::_internal_servicetype() const {
+  return servicetype_.Get();
+}
+inline void getAndLockServiceRequest::_internal_set_servicetype(const std::string& value) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getAndLockServiceRequest::set_servicetype(std::string&& value) {
+  
+  servicetype_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceType)
+}
+inline void getAndLockServiceRequest::set_servicetype(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceType)
+}
+inline void getAndLockServiceRequest::set_servicetype(const void* value,
+    size_t size) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceType)
+}
+inline std::string* getAndLockServiceRequest::_internal_mutable_servicetype() {
+  
+  return servicetype_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getAndLockServiceRequest::release_servicetype() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceType)
+  return servicetype_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getAndLockServiceRequest::set_allocated_servicetype(std::string* servicetype) {
+  if (servicetype != nullptr) {
+    
+  } else {
+    
+  }
+  servicetype_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), servicetype,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceType)
+}
+
+// string clientUUID = 3;
+inline void getAndLockServiceRequest::clear_clientuuid() {
+  clientuuid_.ClearToEmpty();
+}
+inline const std::string& getAndLockServiceRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getAndLockServiceRequest.clientUUID)
+  return _internal_clientuuid();
+}
+inline void getAndLockServiceRequest::set_clientuuid(const std::string& value) {
+  _internal_set_clientuuid(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getAndLockServiceRequest.clientUUID)
+}
+inline std::string* getAndLockServiceRequest::mutable_clientuuid() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.getAndLockServiceRequest.clientUUID)
+  return _internal_mutable_clientuuid();
+}
+inline const std::string& getAndLockServiceRequest::_internal_clientuuid() const {
+  return clientuuid_.Get();
+}
+inline void getAndLockServiceRequest::_internal_set_clientuuid(const std::string& value) {
+  
+  clientuuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getAndLockServiceRequest::set_clientuuid(std::string&& value) {
+  
+  clientuuid_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.getAndLockServiceRequest.clientUUID)
+}
+inline void getAndLockServiceRequest::set_clientuuid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  clientuuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.getAndLockServiceRequest.clientUUID)
+}
+inline void getAndLockServiceRequest::set_clientuuid(const char* value,
+    size_t size) {
+  
+  clientuuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.getAndLockServiceRequest.clientUUID)
+}
+inline std::string* getAndLockServiceRequest::_internal_mutable_clientuuid() {
+  
+  return clientuuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getAndLockServiceRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.getAndLockServiceRequest.clientUUID)
+  return clientuuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getAndLockServiceRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
+    
+  } else {
+    
+  }
+  clientuuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), clientuuid,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.getAndLockServiceRequest.clientUUID)
+}
+
+// string serviceURL = 4;
+inline void getAndLockServiceRequest::clear_serviceurl() {
+  serviceurl_.ClearToEmpty();
+}
+inline const std::string& getAndLockServiceRequest::serviceurl() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceURL)
+  return _internal_serviceurl();
+}
+inline void getAndLockServiceRequest::set_serviceurl(const std::string& value) {
+  _internal_set_serviceurl(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceURL)
+}
+inline std::string* getAndLockServiceRequest::mutable_serviceurl() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceURL)
+  return _internal_mutable_serviceurl();
+}
+inline const std::string& getAndLockServiceRequest::_internal_serviceurl() const {
+  return serviceurl_.Get();
+}
+inline void getAndLockServiceRequest::_internal_set_serviceurl(const std::string& value) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getAndLockServiceRequest::set_serviceurl(std::string&& value) {
+  
+  serviceurl_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceURL)
+}
+inline void getAndLockServiceRequest::set_serviceurl(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceURL)
+}
+inline void getAndLockServiceRequest::set_serviceurl(const char* value,
+    size_t size) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceURL)
+}
+inline std::string* getAndLockServiceRequest::_internal_mutable_serviceurl() {
+  
+  return serviceurl_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getAndLockServiceRequest::release_serviceurl() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceURL)
+  return serviceurl_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getAndLockServiceRequest::set_allocated_serviceurl(std::string* serviceurl) {
+  if (serviceurl != nullptr) {
+    
+  } else {
+    
+  }
+  serviceurl_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serviceurl,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.getAndLockServiceRequest.serviceURL)
+}
+
+// -------------------------------------------------------------------
+
+// getAndLockServiceResponse
+
+// string serviceURL = 1;
+inline void getAndLockServiceResponse::clear_serviceurl() {
+  serviceurl_.ClearToEmpty();
+}
+inline const std::string& getAndLockServiceResponse::serviceurl() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getAndLockServiceResponse.serviceURL)
+  return _internal_serviceurl();
+}
+inline void getAndLockServiceResponse::set_serviceurl(const std::string& value) {
+  _internal_set_serviceurl(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getAndLockServiceResponse.serviceURL)
+}
+inline std::string* getAndLockServiceResponse::mutable_serviceurl() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.getAndLockServiceResponse.serviceURL)
+  return _internal_mutable_serviceurl();
+}
+inline const std::string& getAndLockServiceResponse::_internal_serviceurl() const {
+  return serviceurl_.Get();
+}
+inline void getAndLockServiceResponse::_internal_set_serviceurl(const std::string& value) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void getAndLockServiceResponse::set_serviceurl(std::string&& value) {
+  
+  serviceurl_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.getAndLockServiceResponse.serviceURL)
+}
+inline void getAndLockServiceResponse::set_serviceurl(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.getAndLockServiceResponse.serviceURL)
+}
+inline void getAndLockServiceResponse::set_serviceurl(const char* value,
+    size_t size) {
+  
+  serviceurl_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.getAndLockServiceResponse.serviceURL)
+}
+inline std::string* getAndLockServiceResponse::_internal_mutable_serviceurl() {
+  
+  return serviceurl_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* getAndLockServiceResponse::release_serviceurl() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.getAndLockServiceResponse.serviceURL)
+  return serviceurl_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void getAndLockServiceResponse::set_allocated_serviceurl(std::string* serviceurl) {
+  if (serviceurl != nullptr) {
+    
+  } else {
+    
+  }
+  serviceurl_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serviceurl,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.getAndLockServiceResponse.serviceURL)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void getAndLockServiceResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAndLockServiceResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 getAndLockServiceResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.getAndLockServiceResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getAndLockServiceResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void getAndLockServiceResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.getAndLockServiceResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// unlockServiceRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void unlockServiceRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unlockServiceRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unlockServiceRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.unlockServiceRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void unlockServiceRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void unlockServiceRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.unlockServiceRequest.grpcServerCompressionFormat)
+}
+
+// bytes serviceType = 2;
+inline void unlockServiceRequest::clear_servicetype() {
+  servicetype_.ClearToEmpty();
+}
+inline const std::string& unlockServiceRequest::servicetype() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.unlockServiceRequest.serviceType)
+  return _internal_servicetype();
+}
+inline void unlockServiceRequest::set_servicetype(const std::string& value) {
+  _internal_set_servicetype(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.unlockServiceRequest.serviceType)
+}
+inline std::string* unlockServiceRequest::mutable_servicetype() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.unlockServiceRequest.serviceType)
+  return _internal_mutable_servicetype();
+}
+inline const std::string& unlockServiceRequest::_internal_servicetype() const {
+  return servicetype_.Get();
+}
+inline void unlockServiceRequest::_internal_set_servicetype(const std::string& value) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void unlockServiceRequest::set_servicetype(std::string&& value) {
+  
+  servicetype_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.unlockServiceRequest.serviceType)
+}
+inline void unlockServiceRequest::set_servicetype(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.unlockServiceRequest.serviceType)
+}
+inline void unlockServiceRequest::set_servicetype(const void* value,
+    size_t size) {
+  
+  servicetype_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.unlockServiceRequest.serviceType)
+}
+inline std::string* unlockServiceRequest::_internal_mutable_servicetype() {
+  
+  return servicetype_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* unlockServiceRequest::release_servicetype() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.unlockServiceRequest.serviceType)
+  return servicetype_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void unlockServiceRequest::set_allocated_servicetype(std::string* servicetype) {
+  if (servicetype != nullptr) {
+    
+  } else {
+    
+  }
+  servicetype_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), servicetype,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.unlockServiceRequest.serviceType)
+}
+
+// string clientUUID = 3;
+inline void unlockServiceRequest::clear_clientuuid() {
+  clientuuid_.ClearToEmpty();
+}
+inline const std::string& unlockServiceRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.unlockServiceRequest.clientUUID)
+  return _internal_clientuuid();
+}
+inline void unlockServiceRequest::set_clientuuid(const std::string& value) {
+  _internal_set_clientuuid(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.unlockServiceRequest.clientUUID)
+}
+inline std::string* unlockServiceRequest::mutable_clientuuid() {
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManagerPipeline.unlockServiceRequest.clientUUID)
+  return _internal_mutable_clientuuid();
+}
+inline const std::string& unlockServiceRequest::_internal_clientuuid() const {
+  return clientuuid_.Get();
+}
+inline void unlockServiceRequest::_internal_set_clientuuid(const std::string& value) {
+  
+  clientuuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void unlockServiceRequest::set_clientuuid(std::string&& value) {
+  
+  clientuuid_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIServiceManagerPipeline.unlockServiceRequest.clientUUID)
+}
+inline void unlockServiceRequest::set_clientuuid(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  clientuuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIServiceManagerPipeline.unlockServiceRequest.clientUUID)
+}
+inline void unlockServiceRequest::set_clientuuid(const char* value,
+    size_t size) {
+  
+  clientuuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIServiceManagerPipeline.unlockServiceRequest.clientUUID)
+}
+inline std::string* unlockServiceRequest::_internal_mutable_clientuuid() {
+  
+  return clientuuid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* unlockServiceRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManagerPipeline.unlockServiceRequest.clientUUID)
+  return clientuuid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void unlockServiceRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
+    
+  } else {
+    
+  }
+  clientuuid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), clientuuid,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManagerPipeline.unlockServiceRequest.clientUUID)
+}
+
+// -------------------------------------------------------------------
+
+// unlockServiceResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void unlockServiceResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unlockServiceResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 unlockServiceResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManagerPipeline.unlockServiceResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void unlockServiceResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void unlockServiceResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIServiceManagerPipeline.unlockServiceResponse.xpcfGrpcReturnValue)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

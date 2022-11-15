@@ -14,7 +14,7 @@ IServiceManagerPipeline_grpcServer::IServiceManagerPipeline_grpcServer():xpcf::C
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::pipeline::IServiceManagerPipeline>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(5);
+  m_grpcServerCompressionConfig.resize(9);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -106,22 +106,123 @@ XPCFErrorCode IServiceManagerPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IServiceManagerPipeline_grpcServer::grpcIServiceManagerPipelineServiceImpl::test(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response)
+::grpc::Status IServiceManagerPipeline_grpcServer::grpcIServiceManagerPipelineServiceImpl::registerService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "test", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "registerService", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IServiceManagerPipeline_grpcServer::test request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IServiceManagerPipeline_grpcServer::registerService request received at " << to_simple_string(start) << std::endl;
   #endif
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->test();
+  SolAR::api::pipeline::ServiceType serviceType = xpcf::deserialize<SolAR::api::pipeline::ServiceType>(request->servicetype());
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerService(serviceType, serviceURL);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IServiceManagerPipeline_grpcServer::test response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IServiceManagerPipeline_grpcServer::registerService response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IServiceManagerPipeline_grpcServer::grpcIServiceManagerPipelineServiceImpl::unregisterService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "unregisterService", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::unregisterService request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SolAR::api::pipeline::ServiceType serviceType = xpcf::deserialize<SolAR::api::pipeline::ServiceType>(request->servicetype());
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unregisterService(serviceType, serviceURL);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::unregisterService response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IServiceManagerPipeline_grpcServer::grpcIServiceManagerPipelineServiceImpl::getService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getService", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::getService request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SolAR::api::pipeline::ServiceType serviceType = xpcf::deserialize<SolAR::api::pipeline::ServiceType>(request->servicetype());
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getService(serviceType, serviceURL);
+  response->set_serviceurl(serviceURL);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::getService response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IServiceManagerPipeline_grpcServer::grpcIServiceManagerPipelineServiceImpl::getAndLockService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getAndLockService", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::getAndLockService request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SolAR::api::pipeline::ServiceType serviceType = xpcf::deserialize<SolAR::api::pipeline::ServiceType>(request->servicetype());
+  std::string clientUUID = request->clientuuid();
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAndLockService(serviceType, clientUUID, serviceURL);
+  response->set_serviceurl(serviceURL);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::getAndLockService response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IServiceManagerPipeline_grpcServer::grpcIServiceManagerPipelineServiceImpl::unlockService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "unlockService", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::unlockService request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SolAR::api::pipeline::ServiceType serviceType = xpcf::deserialize<SolAR::api::pipeline::ServiceType>(request->servicetype());
+  std::string clientUUID = request->clientuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unlockService(serviceType, clientUUID);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::unlockService response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

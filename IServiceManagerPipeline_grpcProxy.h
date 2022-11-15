@@ -25,7 +25,11 @@ class IServiceManagerPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBa
     SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
-    SolAR::FrameworkReturnCode test()     override;
+    SolAR::FrameworkReturnCode registerService(SolAR::api::pipeline::ServiceType const serviceType, std::string const serviceURL)     override;
+    SolAR::FrameworkReturnCode unregisterService(SolAR::api::pipeline::ServiceType const serviceType, std::string const serviceURL)     override;
+    SolAR::FrameworkReturnCode getService(SolAR::api::pipeline::ServiceType const serviceType, std::string& serviceURL)     const     override;
+    SolAR::FrameworkReturnCode getAndLockService(SolAR::api::pipeline::ServiceType const serviceType, std::string const clientUUID, std::string& serviceURL)     override;
+    SolAR::FrameworkReturnCode unlockService(SolAR::api::pipeline::ServiceType const serviceType, std::string const clientUUID)     override;
 
 
   private:

@@ -57,12 +57,40 @@ class grpcIServiceManagerPipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
-    virtual ::grpc::Status test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpcIServiceManagerPipeline::testResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::testResponse>> Asynctest(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::testResponse>>(AsynctestRaw(context, request, cq));
+    virtual ::grpc::Status registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpcIServiceManagerPipeline::registerServiceResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::registerServiceResponse>> AsyncregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::registerServiceResponse>>(AsyncregisterServiceRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::testResponse>> PrepareAsynctest(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::testResponse>>(PrepareAsynctestRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::registerServiceResponse>> PrepareAsyncregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::registerServiceResponse>>(PrepareAsyncregisterServiceRaw(context, request, cq));
+    }
+    virtual ::grpc::Status unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unregisterServiceResponse>> AsyncunregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unregisterServiceResponse>>(AsyncunregisterServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unregisterServiceResponse>> PrepareAsyncunregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unregisterServiceResponse>>(PrepareAsyncunregisterServiceRaw(context, request, cq));
+    }
+    virtual ::grpc::Status getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpcIServiceManagerPipeline::getServiceResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getServiceResponse>> AsyncgetService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getServiceResponse>>(AsyncgetServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getServiceResponse>> PrepareAsyncgetService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getServiceResponse>>(PrepareAsyncgetServiceRaw(context, request, cq));
+    }
+    virtual ::grpc::Status getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>> AsyncgetAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>>(AsyncgetAndLockServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>> PrepareAsyncgetAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>>(PrepareAsyncgetAndLockServiceRaw(context, request, cq));
+    }
+    virtual ::grpc::Status unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unlockServiceResponse>> AsyncunlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unlockServiceResponse>>(AsyncunlockServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unlockServiceResponse>> PrepareAsyncunlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unlockServiceResponse>>(PrepareAsyncunlockServiceRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
@@ -85,11 +113,35 @@ class grpcIServiceManagerPipelineService final {
       #else
       virtual void stop(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::stopRequest* request, ::grpcIServiceManagerPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      virtual void unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -106,8 +158,16 @@ class grpcIServiceManagerPipelineService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::testResponse>* AsynctestRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::testResponse>* PrepareAsynctestRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::registerServiceResponse>* AsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::registerServiceResponse>* PrepareAsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unregisterServiceResponse>* AsyncunregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unregisterServiceResponse>* PrepareAsyncunregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getServiceResponse>* AsyncgetServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getServiceResponse>* PrepareAsyncgetServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* AsyncgetAndLockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* PrepareAsyncgetAndLockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unlockServiceResponse>* AsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::unlockServiceResponse>* PrepareAsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -133,12 +193,40 @@ class grpcIServiceManagerPipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::stopResponse>> PrepareAsyncstop(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::stopResponse>>(PrepareAsyncstopRaw(context, request, cq));
     }
-    ::grpc::Status test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpcIServiceManagerPipeline::testResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::testResponse>> Asynctest(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::testResponse>>(AsynctestRaw(context, request, cq));
+    ::grpc::Status registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpcIServiceManagerPipeline::registerServiceResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::registerServiceResponse>> AsyncregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::registerServiceResponse>>(AsyncregisterServiceRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::testResponse>> PrepareAsynctest(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::testResponse>>(PrepareAsynctestRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::registerServiceResponse>> PrepareAsyncregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::registerServiceResponse>>(PrepareAsyncregisterServiceRaw(context, request, cq));
+    }
+    ::grpc::Status unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unregisterServiceResponse>> AsyncunregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unregisterServiceResponse>>(AsyncunregisterServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unregisterServiceResponse>> PrepareAsyncunregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unregisterServiceResponse>>(PrepareAsyncunregisterServiceRaw(context, request, cq));
+    }
+    ::grpc::Status getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpcIServiceManagerPipeline::getServiceResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getServiceResponse>> AsyncgetService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getServiceResponse>>(AsyncgetServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getServiceResponse>> PrepareAsyncgetService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getServiceResponse>>(PrepareAsyncgetServiceRaw(context, request, cq));
+    }
+    ::grpc::Status getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>> AsyncgetAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>>(AsyncgetAndLockServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>> PrepareAsyncgetAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>>(PrepareAsyncgetAndLockServiceRaw(context, request, cq));
+    }
+    ::grpc::Status unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>> AsyncunlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>>(AsyncunlockServiceRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>> PrepareAsyncunlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>>(PrepareAsyncunlockServiceRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -161,11 +249,35 @@ class grpcIServiceManagerPipelineService final {
       #else
       void stop(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::stopRequest* request, ::grpcIServiceManagerPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response, std::function<void(::grpc::Status)>) override;
+      void registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -184,12 +296,24 @@ class grpcIServiceManagerPipelineService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::stopResponse>* PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::stopRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::testResponse>* AsynctestRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::testResponse>* PrepareAsynctestRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::registerServiceResponse>* AsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::registerServiceResponse>* PrepareAsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unregisterServiceResponse>* AsyncunregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unregisterServiceResponse>* PrepareAsyncunregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getServiceResponse>* AsyncgetServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getServiceResponse>* PrepareAsyncgetServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* AsyncgetAndLockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* PrepareAsyncgetAndLockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>* AsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>* PrepareAsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_init_;
     const ::grpc::internal::RpcMethod rpcmethod_start_;
     const ::grpc::internal::RpcMethod rpcmethod_stop_;
-    const ::grpc::internal::RpcMethod rpcmethod_test_;
+    const ::grpc::internal::RpcMethod rpcmethod_registerService_;
+    const ::grpc::internal::RpcMethod rpcmethod_unregisterService_;
+    const ::grpc::internal::RpcMethod rpcmethod_getService_;
+    const ::grpc::internal::RpcMethod rpcmethod_getAndLockService_;
+    const ::grpc::internal::RpcMethod rpcmethod_unlockService_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -200,7 +324,11 @@ class grpcIServiceManagerPipelineService final {
     virtual ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response);
     virtual ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::startRequest* request, ::grpcIServiceManagerPipeline::startResponse* response);
     virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::stopRequest* request, ::grpcIServiceManagerPipeline::stopResponse* response);
-    virtual ::grpc::Status test(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response);
+    virtual ::grpc::Status registerService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response);
+    virtual ::grpc::Status unregisterService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response);
+    virtual ::grpc::Status getService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response);
+    virtual ::grpc::Status getAndLockService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response);
+    virtual ::grpc::Status unlockService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_init : public BaseClass {
@@ -263,26 +391,106 @@ class grpcIServiceManagerPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_test : public BaseClass {
+  class WithAsyncMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_test() {
+    WithAsyncMethod_registerService() {
       ::grpc::Service::MarkMethodAsync(3);
     }
-    ~WithAsyncMethod_test() override {
+    ~WithAsyncMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status test(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::testRequest* /*request*/, ::grpcIServiceManagerPipeline::testResponse* /*response*/) override {
+    ::grpc::Status registerService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::registerServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::registerServiceResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requesttest(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::testRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::testResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestregisterService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::registerServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_test<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_unregisterService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_unregisterService() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_unregisterService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unregisterService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unregisterServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestunregisterService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::unregisterServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_getService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_getService() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_getService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::getServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_getAndLockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_getAndLockService() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_getAndLockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getAndLockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetAndLockService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_unlockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_unlockService() {
+      ::grpc::Service::MarkMethodAsync(7);
+    }
+    ~WithAsyncMethod_unlockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unlockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unlockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unlockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestunlockService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::unlockServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_registerService<WithAsyncMethod_unregisterService<WithAsyncMethod_getService<WithAsyncMethod_getAndLockService<WithAsyncMethod_unlockService<Service > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_init : public BaseClass {
    private:
@@ -425,57 +633,245 @@ class grpcIServiceManagerPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_test : public BaseClass {
+  class ExperimentalWithCallbackMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_test() {
+    ExperimentalWithCallbackMethod_registerService() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::testRequest, ::grpcIServiceManagerPipeline::testResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response) { return this->test(context, request, response); }));}
-    void SetMessageAllocatorFor_test(
-        ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::testRequest, ::grpcIServiceManagerPipeline::testResponse>* allocator) {
+                     context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response) { return this->registerService(context, request, response); }));}
+    void SetMessageAllocatorFor_registerService(
+        ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::testRequest, ::grpcIServiceManagerPipeline::testResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_test() override {
+    ~ExperimentalWithCallbackMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status test(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::testRequest* /*request*/, ::grpcIServiceManagerPipeline::testResponse* /*response*/) override {
+    ::grpc::Status registerService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::registerServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::registerServiceResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* test(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::testRequest* /*request*/, ::grpcIServiceManagerPipeline::testResponse* /*response*/)
+    virtual ::grpc::ServerUnaryReactor* registerService(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::registerServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::registerServiceResponse* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* test(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::testRequest* /*request*/, ::grpcIServiceManagerPipeline::testResponse* /*response*/)
+    virtual ::grpc::experimental::ServerUnaryReactor* registerService(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::registerServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::registerServiceResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_unregisterService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_unregisterService() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response) { return this->unregisterService(context, request, response); }));}
+    void SetMessageAllocatorFor_unregisterService(
+        ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_unregisterService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unregisterService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unregisterServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* unregisterService(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unregisterServiceResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* unregisterService(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unregisterServiceResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_getService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_getService() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response) { return this->getService(context, request, response); }));}
+    void SetMessageAllocatorFor_getService(
+        ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_getService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getService(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getServiceResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getService(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getServiceResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_getAndLockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_getAndLockService() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response) { return this->getAndLockService(context, request, response); }));}
+    void SetMessageAllocatorFor_getAndLockService(
+        ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_getAndLockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getAndLockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getAndLockService(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getAndLockService(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_unlockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_unlockService() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response) { return this->unlockService(context, request, response); }));}
+    void SetMessageAllocatorFor_unlockService(
+        ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_unlockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unlockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unlockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unlockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* unlockService(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unlockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unlockServiceResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* unlockService(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unlockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unlockServiceResponse* /*response*/)
     #endif
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_test<Service > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_registerService<ExperimentalWithCallbackMethod_unregisterService<ExperimentalWithCallbackMethod_getService<ExperimentalWithCallbackMethod_getAndLockService<ExperimentalWithCallbackMethod_unlockService<Service > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_test<Service > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_registerService<ExperimentalWithCallbackMethod_unregisterService<ExperimentalWithCallbackMethod_getService<ExperimentalWithCallbackMethod_getAndLockService<ExperimentalWithCallbackMethod_unlockService<Service > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_init : public BaseClass {
    private:
@@ -528,18 +924,86 @@ class grpcIServiceManagerPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_test : public BaseClass {
+  class WithGenericMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_test() {
+    WithGenericMethod_registerService() {
       ::grpc::Service::MarkMethodGeneric(3);
     }
-    ~WithGenericMethod_test() override {
+    ~WithGenericMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status test(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::testRequest* /*request*/, ::grpcIServiceManagerPipeline::testResponse* /*response*/) override {
+    ::grpc::Status registerService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::registerServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::registerServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_unregisterService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_unregisterService() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_unregisterService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unregisterService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unregisterServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_getService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_getService() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_getService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_getAndLockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_getAndLockService() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_getAndLockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getAndLockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_unlockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_unlockService() {
+      ::grpc::Service::MarkMethodGeneric(7);
+    }
+    ~WithGenericMethod_unlockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unlockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unlockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unlockServiceResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -605,23 +1069,103 @@ class grpcIServiceManagerPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_test : public BaseClass {
+  class WithRawMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_test() {
+    WithRawMethod_registerService() {
       ::grpc::Service::MarkMethodRaw(3);
     }
-    ~WithRawMethod_test() override {
+    ~WithRawMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status test(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::testRequest* /*request*/, ::grpcIServiceManagerPipeline::testResponse* /*response*/) override {
+    ::grpc::Status registerService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::registerServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::registerServiceResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void Requesttest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestregisterService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_unregisterService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_unregisterService() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_unregisterService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unregisterService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unregisterServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestunregisterService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_getService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_getService() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_getService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_getAndLockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_getAndLockService() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_getAndLockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getAndLockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetAndLockService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_unlockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_unlockService() {
+      ::grpc::Service::MarkMethodRaw(7);
+    }
+    ~WithRawMethod_unlockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unlockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unlockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unlockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestunlockService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -739,11 +1283,11 @@ class grpcIServiceManagerPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_test : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_test() {
+    ExperimentalWithRawCallbackMethod_registerService() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -757,21 +1301,173 @@ class grpcIServiceManagerPipelineService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->test(context, request, response); }));
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->registerService(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_test() override {
+    ~ExperimentalWithRawCallbackMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status test(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::testRequest* /*request*/, ::grpcIServiceManagerPipeline::testResponse* /*response*/) override {
+    ::grpc::Status registerService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::registerServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::registerServiceResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* test(
+    virtual ::grpc::ServerUnaryReactor* registerService(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* test(
+    virtual ::grpc::experimental::ServerUnaryReactor* registerService(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_unregisterService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_unregisterService() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->unregisterService(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_unregisterService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unregisterService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unregisterServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* unregisterService(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* unregisterService(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_getService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_getService() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getService(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_getService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getService(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getService(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_getAndLockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_getAndLockService() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAndLockService(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_getAndLockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getAndLockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* getAndLockService(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getAndLockService(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_unlockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_unlockService() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->unlockService(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_unlockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status unlockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unlockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unlockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* unlockService(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* unlockService(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #endif
       { return nullptr; }
@@ -858,35 +1554,143 @@ class grpcIServiceManagerPipelineService final {
     virtual ::grpc::Status Streamedstop(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManagerPipeline::stopRequest,::grpcIServiceManagerPipeline::stopResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_test : public BaseClass {
+  class WithStreamedUnaryMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_test() {
+    WithStreamedUnaryMethod_registerService() {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIServiceManagerPipeline::testRequest, ::grpcIServiceManagerPipeline::testResponse>(
+          ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::grpcIServiceManagerPipeline::testRequest, ::grpcIServiceManagerPipeline::testResponse>* streamer) {
-                       return this->Streamedtest(context,
+                     ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse>* streamer) {
+                       return this->StreamedregisterService(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_test() override {
+    ~WithStreamedUnaryMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status test(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::testRequest* /*request*/, ::grpcIServiceManagerPipeline::testResponse* /*response*/) override {
+    ::grpc::Status registerService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::registerServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::registerServiceResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedtest(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManagerPipeline::testRequest,::grpcIServiceManagerPipeline::testResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedregisterService(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManagerPipeline::registerServiceRequest,::grpcIServiceManagerPipeline::registerServiceResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_test<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_unregisterService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_unregisterService() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse>* streamer) {
+                       return this->StreamedunregisterService(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_unregisterService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status unregisterService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unregisterServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedunregisterService(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManagerPipeline::unregisterServiceRequest,::grpcIServiceManagerPipeline::unregisterServiceResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_getService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_getService() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse>* streamer) {
+                       return this->StreamedgetService(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_getService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status getService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedgetService(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManagerPipeline::getServiceRequest,::grpcIServiceManagerPipeline::getServiceResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_getAndLockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_getAndLockService() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* streamer) {
+                       return this->StreamedgetAndLockService(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_getAndLockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status getAndLockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedgetAndLockService(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManagerPipeline::getAndLockServiceRequest,::grpcIServiceManagerPipeline::getAndLockServiceResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_unlockService : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_unlockService() {
+      ::grpc::Service::MarkMethodStreamed(7,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse>* streamer) {
+                       return this->StreamedunlockService(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_unlockService() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status unlockService(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::unlockServiceRequest* /*request*/, ::grpcIServiceManagerPipeline::unlockServiceResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedunlockService(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManagerPipeline::unlockServiceRequest,::grpcIServiceManagerPipeline::unlockServiceResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_test<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIServiceManagerPipeline

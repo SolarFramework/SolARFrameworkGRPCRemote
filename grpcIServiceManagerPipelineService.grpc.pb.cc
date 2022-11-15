@@ -25,7 +25,11 @@ static const char* grpcIServiceManagerPipelineService_method_names[] = {
   "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/init",
   "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/start",
   "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/stop",
-  "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/test",
+  "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/registerService",
+  "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/unregisterService",
+  "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/getService",
+  "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/getAndLockService",
+  "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/unlockService",
 };
 
 std::unique_ptr< grpcIServiceManagerPipelineService::Stub> grpcIServiceManagerPipelineService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -38,7 +42,11 @@ grpcIServiceManagerPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::Ch
   : channel_(channel), rpcmethod_init_(grpcIServiceManagerPipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_start_(grpcIServiceManagerPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_stop_(grpcIServiceManagerPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_test_(grpcIServiceManagerPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_registerService_(grpcIServiceManagerPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_unregisterService_(grpcIServiceManagerPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getService_(grpcIServiceManagerPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAndLockService_(grpcIServiceManagerPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_unlockService_(grpcIServiceManagerPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIServiceManagerPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpcIServiceManagerPipeline::initResponse* response) {
@@ -110,25 +118,117 @@ void grpcIServiceManagerPipelineService::Stub::experimental_async::stop(::grpc::
   return result;
 }
 
-::grpc::Status grpcIServiceManagerPipelineService::Stub::test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpcIServiceManagerPipeline::testResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManagerPipeline::testRequest, ::grpcIServiceManagerPipeline::testResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_test_, context, request, response);
+::grpc::Status grpcIServiceManagerPipelineService::Stub::registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpcIServiceManagerPipeline::registerServiceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_registerService_, context, request, response);
 }
 
-void grpcIServiceManagerPipelineService::Stub::experimental_async::test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIServiceManagerPipeline::testRequest, ::grpcIServiceManagerPipeline::testResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_test_, context, request, response, std::move(f));
+void grpcIServiceManagerPipelineService::Stub::experimental_async::registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_registerService_, context, request, response, std::move(f));
 }
 
-void grpcIServiceManagerPipelineService::Stub::experimental_async::test(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_test_, context, request, response, reactor);
+void grpcIServiceManagerPipelineService::Stub::experimental_async::registerService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_registerService_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::testResponse>* grpcIServiceManagerPipelineService::Stub::PrepareAsynctestRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIServiceManagerPipeline::testResponse, ::grpcIServiceManagerPipeline::testRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_test_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::registerServiceResponse>* grpcIServiceManagerPipelineService::Stub::PrepareAsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIServiceManagerPipeline::registerServiceResponse, ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_registerService_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::testResponse>* grpcIServiceManagerPipelineService::Stub::AsynctestRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::testRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::registerServiceResponse>* grpcIServiceManagerPipelineService::Stub::AsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsynctestRaw(context, request, cq);
+    this->PrepareAsyncregisterServiceRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIServiceManagerPipelineService::Stub::unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_unregisterService_, context, request, response);
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_unregisterService_, context, request, response, std::move(f));
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_unregisterService_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unregisterServiceResponse>* grpcIServiceManagerPipelineService::Stub::PrepareAsyncunregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIServiceManagerPipeline::unregisterServiceResponse, ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_unregisterService_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unregisterServiceResponse>* grpcIServiceManagerPipelineService::Stub::AsyncunregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncunregisterServiceRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIServiceManagerPipelineService::Stub::getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpcIServiceManagerPipeline::getServiceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getService_, context, request, response);
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getService_, context, request, response, std::move(f));
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::getService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getService_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getServiceResponse>* grpcIServiceManagerPipelineService::Stub::PrepareAsyncgetServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIServiceManagerPipeline::getServiceResponse, ::grpcIServiceManagerPipeline::getServiceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getService_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getServiceResponse>* grpcIServiceManagerPipelineService::Stub::AsyncgetServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetServiceRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIServiceManagerPipelineService::Stub::getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getAndLockService_, context, request, response);
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAndLockService_, context, request, response, std::move(f));
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::getAndLockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAndLockService_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* grpcIServiceManagerPipelineService::Stub::PrepareAsyncgetAndLockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIServiceManagerPipeline::getAndLockServiceResponse, ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getAndLockService_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* grpcIServiceManagerPipelineService::Stub::AsyncgetAndLockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetAndLockServiceRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIServiceManagerPipelineService::Stub::unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_unlockService_, context, request, response);
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_unlockService_, context, request, response, std::move(f));
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::unlockService(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_unlockService_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>* grpcIServiceManagerPipelineService::Stub::PrepareAsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIServiceManagerPipeline::unlockServiceResponse, ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_unlockService_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>* grpcIServiceManagerPipelineService::Stub::AsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncunlockServiceRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -167,12 +267,52 @@ grpcIServiceManagerPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIServiceManagerPipelineService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::testRequest, ::grpcIServiceManagerPipeline::testResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIServiceManagerPipeline::testRequest* req,
-             ::grpcIServiceManagerPipeline::testResponse* resp) {
-               return service->test(ctx, req, resp);
+             const ::grpcIServiceManagerPipeline::registerServiceRequest* req,
+             ::grpcIServiceManagerPipeline::registerServiceResponse* resp) {
+               return service->registerService(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIServiceManagerPipelineService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIServiceManagerPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIServiceManagerPipeline::unregisterServiceRequest* req,
+             ::grpcIServiceManagerPipeline::unregisterServiceResponse* resp) {
+               return service->unregisterService(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIServiceManagerPipelineService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIServiceManagerPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIServiceManagerPipeline::getServiceRequest* req,
+             ::grpcIServiceManagerPipeline::getServiceResponse* resp) {
+               return service->getService(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIServiceManagerPipelineService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIServiceManagerPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* req,
+             ::grpcIServiceManagerPipeline::getAndLockServiceResponse* resp) {
+               return service->getAndLockService(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIServiceManagerPipelineService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIServiceManagerPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIServiceManagerPipeline::unlockServiceRequest* req,
+             ::grpcIServiceManagerPipeline::unlockServiceResponse* resp) {
+               return service->unlockService(ctx, req, resp);
              }, this)));
 }
 
@@ -200,7 +340,35 @@ grpcIServiceManagerPipelineService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIServiceManagerPipelineService::Service::test(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::testRequest* request, ::grpcIServiceManagerPipeline::testResponse* response) {
+::grpc::Status grpcIServiceManagerPipelineService::Service::registerService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpcIServiceManagerPipeline::registerServiceResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIServiceManagerPipelineService::Service::unregisterService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpcIServiceManagerPipeline::unregisterServiceResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIServiceManagerPipelineService::Service::getService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpcIServiceManagerPipeline::getServiceResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIServiceManagerPipelineService::Service::getAndLockService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpcIServiceManagerPipeline::getAndLockServiceResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIServiceManagerPipelineService::Service::unlockService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response) {
   (void) context;
   (void) request;
   (void) response;
