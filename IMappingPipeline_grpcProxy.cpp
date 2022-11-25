@@ -225,7 +225,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setRectificationParamete
 }
 
 
-SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, SolAR::datastructure::Transform3Df const& transform, SolAR::datastructure::Transform3Df& updatedTransform, SolAR::api::pipeline::MappingStatus& status)
+SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df const& transform, SolAR::datastructure::Transform3Df& updatedTransform, SolAR::api::pipeline::MappingStatus& status)
 {
   ::grpc::ClientContext context;
   ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request reqIn;
@@ -237,6 +237,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
   #endif
   reqIn.set_images(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Image>>>(images));
   reqIn.set_poses(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(poses));
+  reqIn.set_fixedpose(fixedPose);
   reqIn.set_transform(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform));
   reqIn.set_updatedtransform(xpcf::serialize<SolAR::datastructure::Transform3Df>(updatedTransform));
   reqIn.set_status(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(status));
@@ -261,7 +262,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
 }
 
 
-SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, SolAR::api::pipeline::MappingStatus& status)
+SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::api::pipeline::MappingStatus& status)
 {
   ::grpc::ClientContext context;
   ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request reqIn;
@@ -273,6 +274,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
   #endif
   reqIn.set_images(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Image>>>(images));
   reqIn.set_poses(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(poses));
+  reqIn.set_fixedpose(fixedPose);
   reqIn.set_status(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(status));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -294,7 +296,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
 }
 
 
-SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, SolAR::datastructure::Transform3Df& updatedTransform, SolAR::api::pipeline::MappingStatus& status)
+SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df& updatedTransform, SolAR::api::pipeline::MappingStatus& status)
 {
   ::grpc::ClientContext context;
   ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request reqIn;
@@ -306,6 +308,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
   #endif
   reqIn.set_images(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Image>>>(images));
   reqIn.set_poses(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(poses));
+  reqIn.set_fixedpose(fixedPose);
   reqIn.set_updatedtransform(xpcf::serialize<SolAR::datastructure::Transform3Df>(updatedTransform));
   reqIn.set_status(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(status));
   #ifdef ENABLE_PROXY_TIMERS

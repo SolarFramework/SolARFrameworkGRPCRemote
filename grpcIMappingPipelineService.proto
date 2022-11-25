@@ -74,9 +74,10 @@ message mappingProcessRequest_grpc0Request
 int32 grpcServerCompressionFormat  = 1;
 bytes images = 2;
 bytes poses = 3;
-bytes transform = 4;
-bytes updatedTransform = 5;
-bytes status = 6;
+bool fixedPose = 4;
+bytes transform = 5;
+bytes updatedTransform = 6;
+bytes status = 7;
 }
 
 message mappingProcessRequest_grpc0Response
@@ -91,7 +92,8 @@ message mappingProcessRequest_grpc1Request
 int32 grpcServerCompressionFormat  = 1;
 bytes images = 2;
 bytes poses = 3;
-bytes status = 4;
+bool fixedPose = 4;
+bytes status = 5;
 }
 
 message mappingProcessRequest_grpc1Response
@@ -105,8 +107,9 @@ message mappingProcessRequest_grpc2Request
 int32 grpcServerCompressionFormat  = 1;
 bytes images = 2;
 bytes poses = 3;
-bytes updatedTransform = 4;
-bytes status = 5;
+bool fixedPose = 4;
+bytes updatedTransform = 5;
+bytes status = 6;
 }
 
 message mappingProcessRequest_grpc2Response

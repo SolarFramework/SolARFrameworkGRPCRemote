@@ -2626,12 +2626,13 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   enum : int {
     kImagesFieldNumber = 2,
     kPosesFieldNumber = 3,
-    kTimestampFieldNumber = 4,
-    kTransform3DStatusFieldNumber = 5,
-    kTransform3DFieldNumber = 6,
-    kConfidenceFieldNumber = 7,
-    kMappingStatusFieldNumber = 8,
+    kTimestampFieldNumber = 5,
+    kTransform3DStatusFieldNumber = 6,
+    kTransform3DFieldNumber = 7,
+    kConfidenceFieldNumber = 8,
+    kMappingStatusFieldNumber = 9,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kFixedPoseFieldNumber = 4,
   };
   // bytes images = 2;
   void clear_images();
@@ -2665,7 +2666,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_poses();
   public:
 
-  // bytes timestamp = 4;
+  // bytes timestamp = 5;
   void clear_timestamp();
   const std::string& timestamp() const;
   void set_timestamp(const std::string& value);
@@ -2681,7 +2682,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_timestamp();
   public:
 
-  // bytes transform3DStatus = 5;
+  // bytes transform3DStatus = 6;
   void clear_transform3dstatus();
   const std::string& transform3dstatus() const;
   void set_transform3dstatus(const std::string& value);
@@ -2697,7 +2698,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_transform3dstatus();
   public:
 
-  // bytes transform3D = 6;
+  // bytes transform3D = 7;
   void clear_transform3d();
   const std::string& transform3d() const;
   void set_transform3d(const std::string& value);
@@ -2713,7 +2714,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_transform3d();
   public:
 
-  // bytes confidence = 7;
+  // bytes confidence = 8;
   void clear_confidence();
   const std::string& confidence() const;
   void set_confidence(const std::string& value);
@@ -2729,7 +2730,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_confidence();
   public:
 
-  // bytes mappingStatus = 8;
+  // bytes mappingStatus = 9;
   void clear_mappingstatus();
   const std::string& mappingstatus() const;
   void set_mappingstatus(const std::string& value);
@@ -2754,6 +2755,15 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // bool fixedPose = 4;
+  void clear_fixedpose();
+  bool fixedpose() const;
+  void set_fixedpose(bool value);
+  private:
+  bool _internal_fixedpose() const;
+  void _internal_set_fixedpose(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest)
  private:
   class _Internal;
@@ -2769,6 +2779,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mappingstatus_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  bool fixedpose_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIAsyncRelocalizationPipelineService_2eproto;
 };
@@ -5610,7 +5621,27 @@ inline void relocalizeProcessRequestRequest::set_allocated_poses(std::string* po
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.poses)
 }
 
-// bytes timestamp = 4;
+// bool fixedPose = 4;
+inline void relocalizeProcessRequestRequest::clear_fixedpose() {
+  fixedpose_ = false;
+}
+inline bool relocalizeProcessRequestRequest::_internal_fixedpose() const {
+  return fixedpose_;
+}
+inline bool relocalizeProcessRequestRequest::fixedpose() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.fixedPose)
+  return _internal_fixedpose();
+}
+inline void relocalizeProcessRequestRequest::_internal_set_fixedpose(bool value) {
+  
+  fixedpose_ = value;
+}
+inline void relocalizeProcessRequestRequest::set_fixedpose(bool value) {
+  _internal_set_fixedpose(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.fixedPose)
+}
+
+// bytes timestamp = 5;
 inline void relocalizeProcessRequestRequest::clear_timestamp() {
   timestamp_.ClearToEmpty();
 }
@@ -5671,7 +5702,7 @@ inline void relocalizeProcessRequestRequest::set_allocated_timestamp(std::string
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.timestamp)
 }
 
-// bytes transform3DStatus = 5;
+// bytes transform3DStatus = 6;
 inline void relocalizeProcessRequestRequest::clear_transform3dstatus() {
   transform3dstatus_.ClearToEmpty();
 }
@@ -5732,7 +5763,7 @@ inline void relocalizeProcessRequestRequest::set_allocated_transform3dstatus(std
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
 }
 
-// bytes transform3D = 6;
+// bytes transform3D = 7;
 inline void relocalizeProcessRequestRequest::clear_transform3d() {
   transform3d_.ClearToEmpty();
 }
@@ -5793,7 +5824,7 @@ inline void relocalizeProcessRequestRequest::set_allocated_transform3d(std::stri
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
 }
 
-// bytes confidence = 7;
+// bytes confidence = 8;
 inline void relocalizeProcessRequestRequest::clear_confidence() {
   confidence_.ClearToEmpty();
 }
@@ -5854,7 +5885,7 @@ inline void relocalizeProcessRequestRequest::set_allocated_confidence(std::strin
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
 }
 
-// bytes mappingStatus = 8;
+// bytes mappingStatus = 9;
 inline void relocalizeProcessRequestRequest::clear_mappingstatus() {
   mappingstatus_.ClearToEmpty();
 }

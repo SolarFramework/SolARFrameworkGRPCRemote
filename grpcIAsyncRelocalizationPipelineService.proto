@@ -97,11 +97,12 @@ message relocalizeProcessRequestRequest
 int32 grpcServerCompressionFormat  = 1;
 bytes images = 2;
 bytes poses = 3;
-bytes timestamp = 4;
-bytes transform3DStatus = 5;
-bytes transform3D = 6;
-bytes confidence = 7;
-bytes mappingStatus = 8;
+bool fixedPose = 4;
+bytes timestamp = 5;
+bytes transform3DStatus = 6;
+bytes transform3D = 7;
+bytes confidence = 8;
+bytes mappingStatus = 9;
 }
 
 message relocalizeProcessRequestResponse

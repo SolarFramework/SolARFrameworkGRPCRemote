@@ -1992,10 +1992,11 @@ class mappingProcessRequest_grpc0Request PROTOBUF_FINAL :
   enum : int {
     kImagesFieldNumber = 2,
     kPosesFieldNumber = 3,
-    kTransformFieldNumber = 4,
-    kUpdatedTransformFieldNumber = 5,
-    kStatusFieldNumber = 6,
+    kTransformFieldNumber = 5,
+    kUpdatedTransformFieldNumber = 6,
+    kStatusFieldNumber = 7,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kFixedPoseFieldNumber = 4,
   };
   // bytes images = 2;
   void clear_images();
@@ -2029,7 +2030,7 @@ class mappingProcessRequest_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_poses();
   public:
 
-  // bytes transform = 4;
+  // bytes transform = 5;
   void clear_transform();
   const std::string& transform() const;
   void set_transform(const std::string& value);
@@ -2045,7 +2046,7 @@ class mappingProcessRequest_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_transform();
   public:
 
-  // bytes updatedTransform = 5;
+  // bytes updatedTransform = 6;
   void clear_updatedtransform();
   const std::string& updatedtransform() const;
   void set_updatedtransform(const std::string& value);
@@ -2061,7 +2062,7 @@ class mappingProcessRequest_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_updatedtransform();
   public:
 
-  // bytes status = 6;
+  // bytes status = 7;
   void clear_status();
   const std::string& status() const;
   void set_status(const std::string& value);
@@ -2086,6 +2087,15 @@ class mappingProcessRequest_grpc0Request PROTOBUF_FINAL :
   void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // bool fixedPose = 4;
+  void clear_fixedpose();
+  bool fixedpose() const;
+  void set_fixedpose(bool value);
+  private:
+  bool _internal_fixedpose() const;
+  void _internal_set_fixedpose(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.mappingProcessRequest_grpc0Request)
  private:
   class _Internal;
@@ -2099,6 +2109,7 @@ class mappingProcessRequest_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updatedtransform_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  bool fixedpose_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
 };
@@ -2392,8 +2403,9 @@ class mappingProcessRequest_grpc1Request PROTOBUF_FINAL :
   enum : int {
     kImagesFieldNumber = 2,
     kPosesFieldNumber = 3,
-    kStatusFieldNumber = 4,
+    kStatusFieldNumber = 5,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kFixedPoseFieldNumber = 4,
   };
   // bytes images = 2;
   void clear_images();
@@ -2427,7 +2439,7 @@ class mappingProcessRequest_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_poses();
   public:
 
-  // bytes status = 4;
+  // bytes status = 5;
   void clear_status();
   const std::string& status() const;
   void set_status(const std::string& value);
@@ -2452,6 +2464,15 @@ class mappingProcessRequest_grpc1Request PROTOBUF_FINAL :
   void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // bool fixedPose = 4;
+  void clear_fixedpose();
+  bool fixedpose() const;
+  void set_fixedpose(bool value);
+  private:
+  bool _internal_fixedpose() const;
+  void _internal_set_fixedpose(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.mappingProcessRequest_grpc1Request)
  private:
   class _Internal;
@@ -2463,6 +2484,7 @@ class mappingProcessRequest_grpc1Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poses_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  bool fixedpose_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
 };
@@ -2738,9 +2760,10 @@ class mappingProcessRequest_grpc2Request PROTOBUF_FINAL :
   enum : int {
     kImagesFieldNumber = 2,
     kPosesFieldNumber = 3,
-    kUpdatedTransformFieldNumber = 4,
-    kStatusFieldNumber = 5,
+    kUpdatedTransformFieldNumber = 5,
+    kStatusFieldNumber = 6,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kFixedPoseFieldNumber = 4,
   };
   // bytes images = 2;
   void clear_images();
@@ -2774,7 +2797,7 @@ class mappingProcessRequest_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_poses();
   public:
 
-  // bytes updatedTransform = 4;
+  // bytes updatedTransform = 5;
   void clear_updatedtransform();
   const std::string& updatedtransform() const;
   void set_updatedtransform(const std::string& value);
@@ -2790,7 +2813,7 @@ class mappingProcessRequest_grpc2Request PROTOBUF_FINAL :
   std::string* _internal_mutable_updatedtransform();
   public:
 
-  // bytes status = 5;
+  // bytes status = 6;
   void clear_status();
   const std::string& status() const;
   void set_status(const std::string& value);
@@ -2815,6 +2838,15 @@ class mappingProcessRequest_grpc2Request PROTOBUF_FINAL :
   void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // bool fixedPose = 4;
+  void clear_fixedpose();
+  bool fixedpose() const;
+  void set_fixedpose(bool value);
+  private:
+  bool _internal_fixedpose() const;
+  void _internal_set_fixedpose(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.mappingProcessRequest_grpc2Request)
  private:
   class _Internal;
@@ -2827,6 +2859,7 @@ class mappingProcessRequest_grpc2Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updatedtransform_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  bool fixedpose_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
 };
@@ -4095,7 +4128,27 @@ inline void mappingProcessRequest_grpc0Request::set_allocated_poses(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.poses)
 }
 
-// bytes transform = 4;
+// bool fixedPose = 4;
+inline void mappingProcessRequest_grpc0Request::clear_fixedpose() {
+  fixedpose_ = false;
+}
+inline bool mappingProcessRequest_grpc0Request::_internal_fixedpose() const {
+  return fixedpose_;
+}
+inline bool mappingProcessRequest_grpc0Request::fixedpose() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.fixedPose)
+  return _internal_fixedpose();
+}
+inline void mappingProcessRequest_grpc0Request::_internal_set_fixedpose(bool value) {
+  
+  fixedpose_ = value;
+}
+inline void mappingProcessRequest_grpc0Request::set_fixedpose(bool value) {
+  _internal_set_fixedpose(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.fixedPose)
+}
+
+// bytes transform = 5;
 inline void mappingProcessRequest_grpc0Request::clear_transform() {
   transform_.ClearToEmpty();
 }
@@ -4156,7 +4209,7 @@ inline void mappingProcessRequest_grpc0Request::set_allocated_transform(std::str
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.transform)
 }
 
-// bytes updatedTransform = 5;
+// bytes updatedTransform = 6;
 inline void mappingProcessRequest_grpc0Request::clear_updatedtransform() {
   updatedtransform_.ClearToEmpty();
 }
@@ -4217,7 +4270,7 @@ inline void mappingProcessRequest_grpc0Request::set_allocated_updatedtransform(s
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.updatedTransform)
 }
 
-// bytes status = 6;
+// bytes status = 7;
 inline void mappingProcessRequest_grpc0Request::clear_status() {
   status_.ClearToEmpty();
 }
@@ -4570,7 +4623,27 @@ inline void mappingProcessRequest_grpc1Request::set_allocated_poses(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc1Request.poses)
 }
 
-// bytes status = 4;
+// bool fixedPose = 4;
+inline void mappingProcessRequest_grpc1Request::clear_fixedpose() {
+  fixedpose_ = false;
+}
+inline bool mappingProcessRequest_grpc1Request::_internal_fixedpose() const {
+  return fixedpose_;
+}
+inline bool mappingProcessRequest_grpc1Request::fixedpose() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequest_grpc1Request.fixedPose)
+  return _internal_fixedpose();
+}
+inline void mappingProcessRequest_grpc1Request::_internal_set_fixedpose(bool value) {
+  
+  fixedpose_ = value;
+}
+inline void mappingProcessRequest_grpc1Request::set_fixedpose(bool value) {
+  _internal_set_fixedpose(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc1Request.fixedPose)
+}
+
+// bytes status = 5;
 inline void mappingProcessRequest_grpc1Request::clear_status() {
   status_.ClearToEmpty();
 }
@@ -4862,7 +4935,27 @@ inline void mappingProcessRequest_grpc2Request::set_allocated_poses(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.poses)
 }
 
-// bytes updatedTransform = 4;
+// bool fixedPose = 4;
+inline void mappingProcessRequest_grpc2Request::clear_fixedpose() {
+  fixedpose_ = false;
+}
+inline bool mappingProcessRequest_grpc2Request::_internal_fixedpose() const {
+  return fixedpose_;
+}
+inline bool mappingProcessRequest_grpc2Request::fixedpose() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.fixedPose)
+  return _internal_fixedpose();
+}
+inline void mappingProcessRequest_grpc2Request::_internal_set_fixedpose(bool value) {
+  
+  fixedpose_ = value;
+}
+inline void mappingProcessRequest_grpc2Request::set_fixedpose(bool value) {
+  _internal_set_fixedpose(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.fixedPose)
+}
+
+// bytes updatedTransform = 5;
 inline void mappingProcessRequest_grpc2Request::clear_updatedtransform() {
   updatedtransform_.ClearToEmpty();
 }
@@ -4923,7 +5016,7 @@ inline void mappingProcessRequest_grpc2Request::set_allocated_updatedtransform(s
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.updatedTransform)
 }
 
-// bytes status = 5;
+// bytes status = 6;
 inline void mappingProcessRequest_grpc2Request::clear_status() {
   status_.ClearToEmpty();
 }
