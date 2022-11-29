@@ -14,7 +14,7 @@ IServiceManagerPipeline_grpcServer::IServiceManagerPipeline_grpcServer():xpcf::C
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::pipeline::IServiceManagerPipeline>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(9);
+  m_grpcServerCompressionConfig.resize(10);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -39,6 +39,28 @@ XPCFErrorCode IServiceManagerPipeline_grpcServer::onConfigured()
 {
   return &m_grpcService;
 }
+
+::grpc::Status IServiceManagerPipeline_grpcServer::grpcIServiceManagerPipelineServiceImpl::isAlive(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "isAlive", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::isAlive request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->isAlive();
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IServiceManagerPipeline_grpcServer::isAlive response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
 
 ::grpc::Status IServiceManagerPipeline_grpcServer::grpcIServiceManagerPipelineServiceImpl::init(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response)
 {

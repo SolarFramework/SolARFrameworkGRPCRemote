@@ -22,6 +22,7 @@
 namespace grpcIMapUpdatePipeline {
 
 static const char* grpcIMapUpdatePipelineService_method_names[] = {
+  "/grpcIMapUpdatePipeline.grpcIMapUpdatePipelineService/isAlive",
   "/grpcIMapUpdatePipeline.grpcIMapUpdatePipelineService/init",
   "/grpcIMapUpdatePipeline.grpcIMapUpdatePipelineService/start",
   "/grpcIMapUpdatePipeline.grpcIMapUpdatePipelineService/stop",
@@ -40,16 +41,40 @@ std::unique_ptr< grpcIMapUpdatePipelineService::Stub> grpcIMapUpdatePipelineServ
 }
 
 grpcIMapUpdatePipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_init_(grpcIMapUpdatePipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_start_(grpcIMapUpdatePipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIMapUpdatePipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_(grpcIMapUpdatePipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mapUpdateRequest_(grpcIMapUpdatePipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapRequest_(grpcIMapUpdatePipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getSubmapRequest_(grpcIMapUpdatePipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_resetMap_(grpcIMapUpdatePipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPointCloudRequest_(grpcIMapUpdatePipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_isAlive_(grpcIMapUpdatePipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_(grpcIMapUpdatePipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_(grpcIMapUpdatePipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcIMapUpdatePipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_(grpcIMapUpdatePipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mapUpdateRequest_(grpcIMapUpdatePipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapRequest_(grpcIMapUpdatePipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getSubmapRequest_(grpcIMapUpdatePipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_resetMap_(grpcIMapUpdatePipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloudRequest_(grpcIMapUpdatePipelineService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
+
+::grpc::Status grpcIMapUpdatePipelineService::Stub::isAlive(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::isAliveRequest& request, ::grpcIMapUpdatePipeline::isAliveResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapUpdatePipeline::isAliveRequest, ::grpcIMapUpdatePipeline::isAliveResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isAlive_, context, request, response);
+}
+
+void grpcIMapUpdatePipelineService::Stub::experimental_async::isAlive(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::isAliveRequest* request, ::grpcIMapUpdatePipeline::isAliveResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapUpdatePipeline::isAliveRequest, ::grpcIMapUpdatePipeline::isAliveResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isAlive_, context, request, response, std::move(f));
+}
+
+void grpcIMapUpdatePipelineService::Stub::experimental_async::isAlive(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::isAliveRequest* request, ::grpcIMapUpdatePipeline::isAliveResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isAlive_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::isAliveResponse>* grpcIMapUpdatePipelineService::Stub::PrepareAsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapUpdatePipeline::isAliveResponse, ::grpcIMapUpdatePipeline::isAliveRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_isAlive_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::isAliveResponse>* grpcIMapUpdatePipelineService::Stub::AsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncisAliveRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
 
 ::grpc::Status grpcIMapUpdatePipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpcIMapUpdatePipeline::initResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
@@ -262,6 +287,16 @@ grpcIMapUpdatePipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapUpdatePipelineService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::isAliveRequest, ::grpcIMapUpdatePipeline::isAliveResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapUpdatePipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapUpdatePipeline::isAliveRequest* req,
+             ::grpcIMapUpdatePipeline::isAliveResponse* resp) {
+               return service->isAlive(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapUpdatePipelineService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdatePipelineService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -270,7 +305,7 @@ grpcIMapUpdatePipelineService::Service::Service() {
                return service->init(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapUpdatePipelineService_method_names[1],
+      grpcIMapUpdatePipelineService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdatePipelineService::Service* service,
@@ -280,7 +315,7 @@ grpcIMapUpdatePipelineService::Service::Service() {
                return service->start(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapUpdatePipelineService_method_names[2],
+      grpcIMapUpdatePipelineService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdatePipelineService::Service* service,
@@ -290,7 +325,7 @@ grpcIMapUpdatePipelineService::Service::Service() {
                return service->stop(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapUpdatePipelineService_method_names[3],
+      grpcIMapUpdatePipelineService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::setCameraParametersRequest, ::grpcIMapUpdatePipeline::setCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdatePipelineService::Service* service,
@@ -300,7 +335,7 @@ grpcIMapUpdatePipelineService::Service::Service() {
                return service->setCameraParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapUpdatePipelineService_method_names[4],
+      grpcIMapUpdatePipelineService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::mapUpdateRequestRequest, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdatePipelineService::Service* service,
@@ -310,7 +345,7 @@ grpcIMapUpdatePipelineService::Service::Service() {
                return service->mapUpdateRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapUpdatePipelineService_method_names[5],
+      grpcIMapUpdatePipelineService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::getMapRequestRequest, ::grpcIMapUpdatePipeline::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdatePipelineService::Service* service,
@@ -320,7 +355,7 @@ grpcIMapUpdatePipelineService::Service::Service() {
                return service->getMapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapUpdatePipelineService_method_names[6],
+      grpcIMapUpdatePipelineService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::getSubmapRequestRequest, ::grpcIMapUpdatePipeline::getSubmapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdatePipelineService::Service* service,
@@ -330,7 +365,7 @@ grpcIMapUpdatePipelineService::Service::Service() {
                return service->getSubmapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapUpdatePipelineService_method_names[7],
+      grpcIMapUpdatePipelineService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::resetMapRequest, ::grpcIMapUpdatePipeline::resetMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdatePipelineService::Service* service,
@@ -340,7 +375,7 @@ grpcIMapUpdatePipelineService::Service::Service() {
                return service->resetMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapUpdatePipelineService_method_names[8],
+      grpcIMapUpdatePipelineService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapUpdatePipelineService::Service, ::grpcIMapUpdatePipeline::getPointCloudRequestRequest, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapUpdatePipelineService::Service* service,
@@ -352,6 +387,13 @@ grpcIMapUpdatePipelineService::Service::Service() {
 }
 
 grpcIMapUpdatePipelineService::Service::~Service() {
+}
+
+::grpc::Status grpcIMapUpdatePipelineService::Service::isAlive(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::isAliveRequest* request, ::grpcIMapUpdatePipeline::isAliveResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcIMapUpdatePipelineService::Service::init(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response) {

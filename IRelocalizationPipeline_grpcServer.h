@@ -25,6 +25,7 @@ class IRelocalizationPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableB
     {
       public:
         grpcIRelocalizationPipelineServiceImpl() = default;
+        ::grpc::Status isAlive(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::isAliveRequest* request, ::grpcIRelocalizationPipeline::isAliveResponse* response) override;
         ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response) override;

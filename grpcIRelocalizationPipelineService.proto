@@ -4,6 +4,16 @@ import "google/protobuf/empty.proto";
 
 package grpcIRelocalizationPipeline;
 
+message isAliveRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message isAliveResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message initRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -85,6 +95,7 @@ sint32 xpcfGrpcReturnValue = 2;
 }
 
 service grpcIRelocalizationPipelineService {
+rpc isAlive(isAliveRequest) returns(isAliveResponse) {}
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}

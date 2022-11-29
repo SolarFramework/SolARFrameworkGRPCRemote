@@ -22,6 +22,7 @@
 namespace grpcIServiceManagerPipeline {
 
 static const char* grpcIServiceManagerPipelineService_method_names[] = {
+  "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/isAlive",
   "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/init",
   "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/start",
   "/grpcIServiceManagerPipeline.grpcIServiceManagerPipelineService/stop",
@@ -39,15 +40,39 @@ std::unique_ptr< grpcIServiceManagerPipelineService::Stub> grpcIServiceManagerPi
 }
 
 grpcIServiceManagerPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_init_(grpcIServiceManagerPipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_start_(grpcIServiceManagerPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIServiceManagerPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_registerService_(grpcIServiceManagerPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_unregisterService_(grpcIServiceManagerPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getService_(grpcIServiceManagerPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAndLockService_(grpcIServiceManagerPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_unlockService_(grpcIServiceManagerPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_isAlive_(grpcIServiceManagerPipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_(grpcIServiceManagerPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_(grpcIServiceManagerPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcIServiceManagerPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_registerService_(grpcIServiceManagerPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_unregisterService_(grpcIServiceManagerPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getService_(grpcIServiceManagerPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAndLockService_(grpcIServiceManagerPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_unlockService_(grpcIServiceManagerPipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
+
+::grpc::Status grpcIServiceManagerPipelineService::Stub::isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpcIServiceManagerPipeline::isAliveResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManagerPipeline::isAliveRequest, ::grpcIServiceManagerPipeline::isAliveResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isAlive_, context, request, response);
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIServiceManagerPipeline::isAliveRequest, ::grpcIServiceManagerPipeline::isAliveResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isAlive_, context, request, response, std::move(f));
+}
+
+void grpcIServiceManagerPipelineService::Stub::experimental_async::isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isAlive_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::isAliveResponse>* grpcIServiceManagerPipelineService::Stub::PrepareAsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIServiceManagerPipeline::isAliveResponse, ::grpcIServiceManagerPipeline::isAliveRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_isAlive_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::isAliveResponse>* grpcIServiceManagerPipelineService::Stub::AsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncisAliveRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
 
 ::grpc::Status grpcIServiceManagerPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpcIServiceManagerPipeline::initResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManagerPipeline::initRequest, ::grpcIServiceManagerPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
@@ -237,6 +262,16 @@ grpcIServiceManagerPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIServiceManagerPipelineService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::isAliveRequest, ::grpcIServiceManagerPipeline::isAliveResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIServiceManagerPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIServiceManagerPipeline::isAliveRequest* req,
+             ::grpcIServiceManagerPipeline::isAliveResponse* resp) {
+               return service->isAlive(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIServiceManagerPipelineService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::initRequest, ::grpcIServiceManagerPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -245,7 +280,7 @@ grpcIServiceManagerPipelineService::Service::Service() {
                return service->init(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerPipelineService_method_names[1],
+      grpcIServiceManagerPipelineService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::startRequest, ::grpcIServiceManagerPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerPipelineService::Service* service,
@@ -255,7 +290,7 @@ grpcIServiceManagerPipelineService::Service::Service() {
                return service->start(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerPipelineService_method_names[2],
+      grpcIServiceManagerPipelineService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::stopRequest, ::grpcIServiceManagerPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerPipelineService::Service* service,
@@ -265,7 +300,7 @@ grpcIServiceManagerPipelineService::Service::Service() {
                return service->stop(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerPipelineService_method_names[3],
+      grpcIServiceManagerPipelineService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerPipelineService::Service* service,
@@ -275,7 +310,7 @@ grpcIServiceManagerPipelineService::Service::Service() {
                return service->registerService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerPipelineService_method_names[4],
+      grpcIServiceManagerPipelineService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerPipelineService::Service* service,
@@ -285,7 +320,7 @@ grpcIServiceManagerPipelineService::Service::Service() {
                return service->unregisterService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerPipelineService_method_names[5],
+      grpcIServiceManagerPipelineService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerPipelineService::Service* service,
@@ -295,7 +330,7 @@ grpcIServiceManagerPipelineService::Service::Service() {
                return service->getService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerPipelineService_method_names[6],
+      grpcIServiceManagerPipelineService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerPipelineService::Service* service,
@@ -305,7 +340,7 @@ grpcIServiceManagerPipelineService::Service::Service() {
                return service->getAndLockService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerPipelineService_method_names[7],
+      grpcIServiceManagerPipelineService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerPipelineService::Service, ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerPipelineService::Service* service,
@@ -317,6 +352,13 @@ grpcIServiceManagerPipelineService::Service::Service() {
 }
 
 grpcIServiceManagerPipelineService::Service::~Service() {
+}
+
+::grpc::Status grpcIServiceManagerPipelineService::Service::isAlive(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcIServiceManagerPipelineService::Service::init(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response) {

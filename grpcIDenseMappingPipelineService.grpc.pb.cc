@@ -22,6 +22,7 @@
 namespace grpcIDenseMappingPipeline {
 
 static const char* grpcIDenseMappingPipelineService_method_names[] = {
+  "/grpcIDenseMappingPipeline.grpcIDenseMappingPipelineService/isAlive",
   "/grpcIDenseMappingPipeline.grpcIDenseMappingPipelineService/init",
   "/grpcIDenseMappingPipeline.grpcIDenseMappingPipelineService/start",
   "/grpcIDenseMappingPipeline.grpcIDenseMappingPipelineService/stop",
@@ -37,13 +38,37 @@ std::unique_ptr< grpcIDenseMappingPipelineService::Stub> grpcIDenseMappingPipeli
 }
 
 grpcIDenseMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_init_(grpcIDenseMappingPipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_start_(grpcIDenseMappingPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIDenseMappingPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_denseMappingProcessRequest_(grpcIDenseMappingPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPointCloud_(grpcIDenseMappingPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMesh_(grpcIDenseMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_isAlive_(grpcIDenseMappingPipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_(grpcIDenseMappingPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_(grpcIDenseMappingPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcIDenseMappingPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_denseMappingProcessRequest_(grpcIDenseMappingPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloud_(grpcIDenseMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMesh_(grpcIDenseMappingPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
+
+::grpc::Status grpcIDenseMappingPipelineService::Stub::isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpcIDenseMappingPipeline::isAliveResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIDenseMappingPipeline::isAliveRequest, ::grpcIDenseMappingPipeline::isAliveResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_isAlive_, context, request, response);
+}
+
+void grpcIDenseMappingPipelineService::Stub::experimental_async::isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIDenseMappingPipeline::isAliveRequest, ::grpcIDenseMappingPipeline::isAliveResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isAlive_, context, request, response, std::move(f));
+}
+
+void grpcIDenseMappingPipelineService::Stub::experimental_async::isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_isAlive_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::isAliveResponse>* grpcIDenseMappingPipelineService::Stub::PrepareAsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIDenseMappingPipeline::isAliveResponse, ::grpcIDenseMappingPipeline::isAliveRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_isAlive_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::isAliveResponse>* grpcIDenseMappingPipelineService::Stub::AsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncisAliveRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
 
 ::grpc::Status grpcIDenseMappingPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpcIDenseMappingPipeline::initResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDenseMappingPipeline::initRequest, ::grpcIDenseMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
@@ -187,6 +212,16 @@ grpcIDenseMappingPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIDenseMappingPipelineService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIDenseMappingPipelineService::Service, ::grpcIDenseMappingPipeline::isAliveRequest, ::grpcIDenseMappingPipeline::isAliveResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIDenseMappingPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIDenseMappingPipeline::isAliveRequest* req,
+             ::grpcIDenseMappingPipeline::isAliveResponse* resp) {
+               return service->isAlive(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIDenseMappingPipelineService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIDenseMappingPipelineService::Service, ::grpcIDenseMappingPipeline::initRequest, ::grpcIDenseMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDenseMappingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -195,7 +230,7 @@ grpcIDenseMappingPipelineService::Service::Service() {
                return service->init(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIDenseMappingPipelineService_method_names[1],
+      grpcIDenseMappingPipelineService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIDenseMappingPipelineService::Service, ::grpcIDenseMappingPipeline::startRequest, ::grpcIDenseMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDenseMappingPipelineService::Service* service,
@@ -205,7 +240,7 @@ grpcIDenseMappingPipelineService::Service::Service() {
                return service->start(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIDenseMappingPipelineService_method_names[2],
+      grpcIDenseMappingPipelineService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIDenseMappingPipelineService::Service, ::grpcIDenseMappingPipeline::stopRequest, ::grpcIDenseMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDenseMappingPipelineService::Service* service,
@@ -215,7 +250,7 @@ grpcIDenseMappingPipelineService::Service::Service() {
                return service->stop(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIDenseMappingPipelineService_method_names[3],
+      grpcIDenseMappingPipelineService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIDenseMappingPipelineService::Service, ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDenseMappingPipelineService::Service* service,
@@ -225,7 +260,7 @@ grpcIDenseMappingPipelineService::Service::Service() {
                return service->denseMappingProcessRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIDenseMappingPipelineService_method_names[4],
+      grpcIDenseMappingPipelineService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIDenseMappingPipelineService::Service, ::grpcIDenseMappingPipeline::getPointCloudRequest, ::grpcIDenseMappingPipeline::getPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDenseMappingPipelineService::Service* service,
@@ -235,7 +270,7 @@ grpcIDenseMappingPipelineService::Service::Service() {
                return service->getPointCloud(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIDenseMappingPipelineService_method_names[5],
+      grpcIDenseMappingPipelineService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIDenseMappingPipelineService::Service, ::grpcIDenseMappingPipeline::getMeshRequest, ::grpcIDenseMappingPipeline::getMeshResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIDenseMappingPipelineService::Service* service,
@@ -247,6 +282,13 @@ grpcIDenseMappingPipelineService::Service::Service() {
 }
 
 grpcIDenseMappingPipelineService::Service::~Service() {
+}
+
+::grpc::Status grpcIDenseMappingPipelineService::Service::isAlive(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcIDenseMappingPipelineService::Service::init(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response) {

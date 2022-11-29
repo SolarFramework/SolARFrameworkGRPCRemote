@@ -17,6 +17,30 @@
 
 PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcIServiceManagerPipeline {
+constexpr isAliveRequest::isAliveRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
+struct isAliveRequestDefaultTypeInternal {
+  constexpr isAliveRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~isAliveRequestDefaultTypeInternal() {}
+  union {
+    isAliveRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT isAliveRequestDefaultTypeInternal _isAliveRequest_default_instance_;
+constexpr isAliveResponse::isAliveResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : xpcfgrpcreturnvalue_(0){}
+struct isAliveResponseDefaultTypeInternal {
+  constexpr isAliveResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~isAliveResponseDefaultTypeInternal() {}
+  union {
+    isAliveResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT isAliveResponseDefaultTypeInternal _isAliveResponse_default_instance_;
 constexpr initRequest::initRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : grpcservercompressionformat_(0){}
@@ -223,11 +247,23 @@ struct unlockServiceResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT unlockServiceResponseDefaultTypeInternal _unlockServiceResponse_default_instance_;
 }  // namespace grpcIServiceManagerPipeline
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIServiceManagerPipelineService_2eproto[16];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIServiceManagerPipelineService_2eproto[18];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIServiceManagerPipelineService_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIServiceManagerPipelineService_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIServiceManagerPipelineService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManagerPipeline::isAliveRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManagerPipeline::isAliveRequest, grpcservercompressionformat_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManagerPipeline::isAliveResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManagerPipeline::isAliveResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManagerPipeline::initRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -339,25 +375,29 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIServiceManagerPipelineSer
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManagerPipeline::unlockServiceResponse, xpcfgrpcreturnvalue_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::grpcIServiceManagerPipeline::initRequest)},
-  { 6, -1, sizeof(::grpcIServiceManagerPipeline::initResponse)},
-  { 12, -1, sizeof(::grpcIServiceManagerPipeline::startRequest)},
-  { 18, -1, sizeof(::grpcIServiceManagerPipeline::startResponse)},
-  { 24, -1, sizeof(::grpcIServiceManagerPipeline::stopRequest)},
-  { 30, -1, sizeof(::grpcIServiceManagerPipeline::stopResponse)},
-  { 36, -1, sizeof(::grpcIServiceManagerPipeline::registerServiceRequest)},
-  { 44, -1, sizeof(::grpcIServiceManagerPipeline::registerServiceResponse)},
-  { 50, -1, sizeof(::grpcIServiceManagerPipeline::unregisterServiceRequest)},
-  { 58, -1, sizeof(::grpcIServiceManagerPipeline::unregisterServiceResponse)},
-  { 64, -1, sizeof(::grpcIServiceManagerPipeline::getServiceRequest)},
-  { 72, -1, sizeof(::grpcIServiceManagerPipeline::getServiceResponse)},
-  { 79, -1, sizeof(::grpcIServiceManagerPipeline::getAndLockServiceRequest)},
-  { 88, -1, sizeof(::grpcIServiceManagerPipeline::getAndLockServiceResponse)},
-  { 95, -1, sizeof(::grpcIServiceManagerPipeline::unlockServiceRequest)},
-  { 103, -1, sizeof(::grpcIServiceManagerPipeline::unlockServiceResponse)},
+  { 0, -1, sizeof(::grpcIServiceManagerPipeline::isAliveRequest)},
+  { 6, -1, sizeof(::grpcIServiceManagerPipeline::isAliveResponse)},
+  { 12, -1, sizeof(::grpcIServiceManagerPipeline::initRequest)},
+  { 18, -1, sizeof(::grpcIServiceManagerPipeline::initResponse)},
+  { 24, -1, sizeof(::grpcIServiceManagerPipeline::startRequest)},
+  { 30, -1, sizeof(::grpcIServiceManagerPipeline::startResponse)},
+  { 36, -1, sizeof(::grpcIServiceManagerPipeline::stopRequest)},
+  { 42, -1, sizeof(::grpcIServiceManagerPipeline::stopResponse)},
+  { 48, -1, sizeof(::grpcIServiceManagerPipeline::registerServiceRequest)},
+  { 56, -1, sizeof(::grpcIServiceManagerPipeline::registerServiceResponse)},
+  { 62, -1, sizeof(::grpcIServiceManagerPipeline::unregisterServiceRequest)},
+  { 70, -1, sizeof(::grpcIServiceManagerPipeline::unregisterServiceResponse)},
+  { 76, -1, sizeof(::grpcIServiceManagerPipeline::getServiceRequest)},
+  { 84, -1, sizeof(::grpcIServiceManagerPipeline::getServiceResponse)},
+  { 91, -1, sizeof(::grpcIServiceManagerPipeline::getAndLockServiceRequest)},
+  { 100, -1, sizeof(::grpcIServiceManagerPipeline::getAndLockServiceResponse)},
+  { 107, -1, sizeof(::grpcIServiceManagerPipeline::unlockServiceRequest)},
+  { 115, -1, sizeof(::grpcIServiceManagerPipeline::unlockServiceResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIServiceManagerPipeline::_isAliveRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIServiceManagerPipeline::_isAliveResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIServiceManagerPipeline::_initRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIServiceManagerPipeline::_initResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIServiceManagerPipeline::_startRequest_default_instance_),
@@ -379,68 +419,73 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIServiceManagerPipelineService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n(grpcIServiceManagerPipelineService.pro"
   "to\022\033grpcIServiceManagerPipeline\032\033google/"
-  "protobuf/empty.proto\"2\n\013initRequest\022#\n\033g"
-  "rpcServerCompressionFormat\030\001 \001(\005\"+\n\014init"
-  "Response\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"3\n"
-  "\014startRequest\022#\n\033grpcServerCompressionFo"
-  "rmat\030\001 \001(\005\",\n\rstartResponse\022\033\n\023xpcfGrpcR"
-  "eturnValue\030\001 \001(\021\"2\n\013stopRequest\022#\n\033grpcS"
-  "erverCompressionFormat\030\001 \001(\005\"+\n\014stopResp"
-  "onse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"f\n\026reg"
-  "isterServiceRequest\022#\n\033grpcServerCompres"
-  "sionFormat\030\001 \001(\005\022\023\n\013serviceType\030\002 \001(\014\022\022\n"
-  "\nserviceURL\030\003 \001(\t\"6\n\027registerServiceResp"
-  "onse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"h\n\030unr"
-  "egisterServiceRequest\022#\n\033grpcServerCompr"
-  "essionFormat\030\001 \001(\005\022\023\n\013serviceType\030\002 \001(\014\022"
-  "\022\n\nserviceURL\030\003 \001(\t\"8\n\031unregisterService"
-  "Response\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"a\n"
-  "\021getServiceRequest\022#\n\033grpcServerCompress"
+  "protobuf/empty.proto\"5\n\016isAliveRequest\022#"
+  "\n\033grpcServerCompressionFormat\030\001 \001(\005\".\n\017i"
+  "sAliveResponse\022\033\n\023xpcfGrpcReturnValue\030\001 "
+  "\001(\021\"2\n\013initRequest\022#\n\033grpcServerCompress"
+  "ionFormat\030\001 \001(\005\"+\n\014initResponse\022\033\n\023xpcfG"
+  "rpcReturnValue\030\001 \001(\021\"3\n\014startRequest\022#\n\033"
+  "grpcServerCompressionFormat\030\001 \001(\005\",\n\rsta"
+  "rtResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\""
+  "2\n\013stopRequest\022#\n\033grpcServerCompressionF"
+  "ormat\030\001 \001(\005\"+\n\014stopResponse\022\033\n\023xpcfGrpcR"
+  "eturnValue\030\001 \001(\021\"f\n\026registerServiceReque"
+  "st\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022"
+  "\023\n\013serviceType\030\002 \001(\014\022\022\n\nserviceURL\030\003 \001(\t"
+  "\"6\n\027registerServiceResponse\022\033\n\023xpcfGrpcR"
+  "eturnValue\030\001 \001(\021\"h\n\030unregisterServiceReq"
+  "uest\022#\n\033grpcServerCompressionFormat\030\001 \001("
+  "\005\022\023\n\013serviceType\030\002 \001(\014\022\022\n\nserviceURL\030\003 \001"
+  "(\t\"8\n\031unregisterServiceResponse\022\033\n\023xpcfG"
+  "rpcReturnValue\030\001 \001(\021\"a\n\021getServiceReques"
+  "t\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\023"
+  "\n\013serviceType\030\002 \001(\014\022\022\n\nserviceURL\030\003 \001(\t\""
+  "E\n\022getServiceResponse\022\022\n\nserviceURL\030\001 \001("
+  "\t\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"|\n\030getAnd"
+  "LockServiceRequest\022#\n\033grpcServerCompress"
   "ionFormat\030\001 \001(\005\022\023\n\013serviceType\030\002 \001(\014\022\022\n\n"
-  "serviceURL\030\003 \001(\t\"E\n\022getServiceResponse\022\022"
-  "\n\nserviceURL\030\001 \001(\t\022\033\n\023xpcfGrpcReturnValu"
-  "e\030\002 \001(\021\"|\n\030getAndLockServiceRequest\022#\n\033g"
-  "rpcServerCompressionFormat\030\001 \001(\005\022\023\n\013serv"
-  "iceType\030\002 \001(\014\022\022\n\nclientUUID\030\003 \001(\t\022\022\n\nser"
-  "viceURL\030\004 \001(\t\"L\n\031getAndLockServiceRespon"
-  "se\022\022\n\nserviceURL\030\001 \001(\t\022\033\n\023xpcfGrpcReturn"
-  "Value\030\002 \001(\021\"d\n\024unlockServiceRequest\022#\n\033g"
-  "rpcServerCompressionFormat\030\001 \001(\005\022\023\n\013serv"
-  "iceType\030\002 \001(\014\022\022\n\nclientUUID\030\003 \001(\t\"4\n\025unl"
-  "ockServiceResponse\022\033\n\023xpcfGrpcReturnValu"
-  "e\030\001 \001(\0212\275\007\n\"grpcIServiceManagerPipelineS"
-  "ervice\022]\n\004init\022(.grpcIServiceManagerPipe"
-  "line.initRequest\032).grpcIServiceManagerPi"
-  "peline.initResponse\"\000\022`\n\005start\022).grpcISe"
-  "rviceManagerPipeline.startRequest\032*.grpc"
-  "IServiceManagerPipeline.startResponse\"\000\022"
-  "]\n\004stop\022(.grpcIServiceManagerPipeline.st"
-  "opRequest\032).grpcIServiceManagerPipeline."
-  "stopResponse\"\000\022~\n\017registerService\0223.grpc"
-  "IServiceManagerPipeline.registerServiceR"
-  "equest\0324.grpcIServiceManagerPipeline.reg"
-  "isterServiceResponse\"\000\022\204\001\n\021unregisterSer"
-  "vice\0225.grpcIServiceManagerPipeline.unreg"
-  "isterServiceRequest\0326.grpcIServiceManage"
-  "rPipeline.unregisterServiceResponse\"\000\022o\n"
-  "\ngetService\022..grpcIServiceManagerPipelin"
-  "e.getServiceRequest\032/.grpcIServiceManage"
-  "rPipeline.getServiceResponse\"\000\022\204\001\n\021getAn"
-  "dLockService\0225.grpcIServiceManagerPipeli"
-  "ne.getAndLockServiceRequest\0326.grpcIServi"
-  "ceManagerPipeline.getAndLockServiceRespo"
-  "nse\"\000\022x\n\runlockService\0221.grpcIServiceMan"
-  "agerPipeline.unlockServiceRequest\0322.grpc"
-  "IServiceManagerPipeline.unlockServiceRes"
-  "ponse\"\000b\006proto3"
+  "clientUUID\030\003 \001(\t\022\022\n\nserviceURL\030\004 \001(\t\"L\n\031"
+  "getAndLockServiceResponse\022\022\n\nserviceURL\030"
+  "\001 \001(\t\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"d\n\024un"
+  "lockServiceRequest\022#\n\033grpcServerCompress"
+  "ionFormat\030\001 \001(\005\022\023\n\013serviceType\030\002 \001(\014\022\022\n\n"
+  "clientUUID\030\003 \001(\t\"4\n\025unlockServiceRespons"
+  "e\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\0212\245\010\n\"grpcI"
+  "ServiceManagerPipelineService\022f\n\007isAlive"
+  "\022+.grpcIServiceManagerPipeline.isAliveRe"
+  "quest\032,.grpcIServiceManagerPipeline.isAl"
+  "iveResponse\"\000\022]\n\004init\022(.grpcIServiceMana"
+  "gerPipeline.initRequest\032).grpcIServiceMa"
+  "nagerPipeline.initResponse\"\000\022`\n\005start\022)."
+  "grpcIServiceManagerPipeline.startRequest"
+  "\032*.grpcIServiceManagerPipeline.startResp"
+  "onse\"\000\022]\n\004stop\022(.grpcIServiceManagerPipe"
+  "line.stopRequest\032).grpcIServiceManagerPi"
+  "peline.stopResponse\"\000\022~\n\017registerService"
+  "\0223.grpcIServiceManagerPipeline.registerS"
+  "erviceRequest\0324.grpcIServiceManagerPipel"
+  "ine.registerServiceResponse\"\000\022\204\001\n\021unregi"
+  "sterService\0225.grpcIServiceManagerPipelin"
+  "e.unregisterServiceRequest\0326.grpcIServic"
+  "eManagerPipeline.unregisterServiceRespon"
+  "se\"\000\022o\n\ngetService\022..grpcIServiceManager"
+  "Pipeline.getServiceRequest\032/.grpcIServic"
+  "eManagerPipeline.getServiceResponse\"\000\022\204\001"
+  "\n\021getAndLockService\0225.grpcIServiceManage"
+  "rPipeline.getAndLockServiceRequest\0326.grp"
+  "cIServiceManagerPipeline.getAndLockServi"
+  "ceResponse\"\000\022x\n\runlockService\0221.grpcISer"
+  "viceManagerPipeline.unlockServiceRequest"
+  "\0322.grpcIServiceManagerPipeline.unlockSer"
+  "viceResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIServiceManagerPipelineService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIServiceManagerPipelineService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIServiceManagerPipelineService_2eproto = {
-  false, false, 2215, descriptor_table_protodef_grpcIServiceManagerPipelineService_2eproto, "grpcIServiceManagerPipelineService.proto", 
-  &descriptor_table_grpcIServiceManagerPipelineService_2eproto_once, descriptor_table_grpcIServiceManagerPipelineService_2eproto_deps, 1, 16,
+  false, false, 2422, descriptor_table_protodef_grpcIServiceManagerPipelineService_2eproto, "grpcIServiceManagerPipelineService.proto", 
+  &descriptor_table_grpcIServiceManagerPipelineService_2eproto_once, descriptor_table_grpcIServiceManagerPipelineService_2eproto_deps, 1, 18,
   schemas, file_default_instances, TableStruct_grpcIServiceManagerPipelineService_2eproto::offsets,
   file_level_metadata_grpcIServiceManagerPipelineService_2eproto, file_level_enum_descriptors_grpcIServiceManagerPipelineService_2eproto, file_level_service_descriptors_grpcIServiceManagerPipelineService_2eproto,
 };
@@ -453,6 +498,384 @@ descriptor_table_grpcIServiceManagerPipelineService_2eproto_metadata_getter(int 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_grpcIServiceManagerPipelineService_2eproto(&descriptor_table_grpcIServiceManagerPipelineService_2eproto);
 namespace grpcIServiceManagerPipeline {
+
+// ===================================================================
+
+class isAliveRequest::_Internal {
+ public:
+};
+
+isAliveRequest::isAliveRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIServiceManagerPipeline.isAliveRequest)
+}
+isAliveRequest::isAliveRequest(const isAliveRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  // @@protoc_insertion_point(copy_constructor:grpcIServiceManagerPipeline.isAliveRequest)
+}
+
+void isAliveRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
+}
+
+isAliveRequest::~isAliveRequest() {
+  // @@protoc_insertion_point(destructor:grpcIServiceManagerPipeline.isAliveRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void isAliveRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void isAliveRequest::ArenaDtor(void* object) {
+  isAliveRequest* _this = reinterpret_cast< isAliveRequest* >(object);
+  (void)_this;
+}
+void isAliveRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void isAliveRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void isAliveRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIServiceManagerPipeline.isAliveRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* isAliveRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 grpcServerCompressionFormat = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* isAliveRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIServiceManagerPipeline.isAliveRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIServiceManagerPipeline.isAliveRequest)
+  return target;
+}
+
+size_t isAliveRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIServiceManagerPipeline.isAliveRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void isAliveRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIServiceManagerPipeline.isAliveRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const isAliveRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<isAliveRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIServiceManagerPipeline.isAliveRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIServiceManagerPipeline.isAliveRequest)
+    MergeFrom(*source);
+  }
+}
+
+void isAliveRequest::MergeFrom(const isAliveRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManagerPipeline.isAliveRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+}
+
+void isAliveRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIServiceManagerPipeline.isAliveRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void isAliveRequest::CopyFrom(const isAliveRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIServiceManagerPipeline.isAliveRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool isAliveRequest::IsInitialized() const {
+  return true;
+}
+
+void isAliveRequest::InternalSwap(isAliveRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata isAliveRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class isAliveResponse::_Internal {
+ public:
+};
+
+isAliveResponse::isAliveResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIServiceManagerPipeline.isAliveResponse)
+}
+isAliveResponse::isAliveResponse(const isAliveResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  // @@protoc_insertion_point(copy_constructor:grpcIServiceManagerPipeline.isAliveResponse)
+}
+
+void isAliveResponse::SharedCtor() {
+xpcfgrpcreturnvalue_ = 0;
+}
+
+isAliveResponse::~isAliveResponse() {
+  // @@protoc_insertion_point(destructor:grpcIServiceManagerPipeline.isAliveResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void isAliveResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void isAliveResponse::ArenaDtor(void* object) {
+  isAliveResponse* _this = reinterpret_cast< isAliveResponse* >(object);
+  (void)_this;
+}
+void isAliveResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void isAliveResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void isAliveResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIServiceManagerPipeline.isAliveResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* isAliveResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // sint32 xpcfGrpcReturnValue = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* isAliveResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIServiceManagerPipeline.isAliveResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIServiceManagerPipeline.isAliveResponse)
+  return target;
+}
+
+size_t isAliveResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIServiceManagerPipeline.isAliveResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->xpcfgrpcreturnvalue() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void isAliveResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIServiceManagerPipeline.isAliveResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const isAliveResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<isAliveResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIServiceManagerPipeline.isAliveResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIServiceManagerPipeline.isAliveResponse)
+    MergeFrom(*source);
+  }
+}
+
+void isAliveResponse::MergeFrom(const isAliveResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManagerPipeline.isAliveResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.xpcfgrpcreturnvalue() != 0) {
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  }
+}
+
+void isAliveResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIServiceManagerPipeline.isAliveResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void isAliveResponse::CopyFrom(const isAliveResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIServiceManagerPipeline.isAliveResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool isAliveResponse::IsInitialized() const {
+  return true;
+}
+
+void isAliveResponse::InternalSwap(isAliveResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata isAliveResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
 
 // ===================================================================
 
@@ -3950,6 +4373,12 @@ void unlockServiceResponse::InternalSwap(unlockServiceResponse* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIServiceManagerPipeline
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::grpcIServiceManagerPipeline::isAliveRequest* Arena::CreateMaybeMessage< ::grpcIServiceManagerPipeline::isAliveRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIServiceManagerPipeline::isAliveRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::grpcIServiceManagerPipeline::isAliveResponse* Arena::CreateMaybeMessage< ::grpcIServiceManagerPipeline::isAliveResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIServiceManagerPipeline::isAliveResponse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::grpcIServiceManagerPipeline::initRequest* Arena::CreateMaybeMessage< ::grpcIServiceManagerPipeline::initRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIServiceManagerPipeline::initRequest >(arena);
 }

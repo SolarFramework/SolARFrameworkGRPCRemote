@@ -47,7 +47,7 @@ struct TableStruct_grpcIMappingPipelineService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -68,6 +68,12 @@ extern initRequestDefaultTypeInternal _initRequest_default_instance_;
 class initResponse;
 struct initResponseDefaultTypeInternal;
 extern initResponseDefaultTypeInternal _initResponse_default_instance_;
+class isAliveRequest;
+struct isAliveRequestDefaultTypeInternal;
+extern isAliveRequestDefaultTypeInternal _isAliveRequest_default_instance_;
+class isAliveResponse;
+struct isAliveResponseDefaultTypeInternal;
+extern isAliveResponseDefaultTypeInternal _isAliveResponse_default_instance_;
 class mappingProcessRequest_grpc0Request;
 struct mappingProcessRequest_grpc0RequestDefaultTypeInternal;
 extern mappingProcessRequest_grpc0RequestDefaultTypeInternal _mappingProcessRequest_grpc0Request_default_instance_;
@@ -122,6 +128,8 @@ template<> ::grpcIMappingPipeline::getDataForVisualizationRequest* Arena::Create
 template<> ::grpcIMappingPipeline::getDataForVisualizationResponse* Arena::CreateMaybeMessage<::grpcIMappingPipeline::getDataForVisualizationResponse>(Arena*);
 template<> ::grpcIMappingPipeline::initRequest* Arena::CreateMaybeMessage<::grpcIMappingPipeline::initRequest>(Arena*);
 template<> ::grpcIMappingPipeline::initResponse* Arena::CreateMaybeMessage<::grpcIMappingPipeline::initResponse>(Arena*);
+template<> ::grpcIMappingPipeline::isAliveRequest* Arena::CreateMaybeMessage<::grpcIMappingPipeline::isAliveRequest>(Arena*);
+template<> ::grpcIMappingPipeline::isAliveResponse* Arena::CreateMaybeMessage<::grpcIMappingPipeline::isAliveResponse>(Arena*);
 template<> ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* Arena::CreateMaybeMessage<::grpcIMappingPipeline::mappingProcessRequest_grpc0Request>(Arena*);
 template<> ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* Arena::CreateMaybeMessage<::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>(Arena*);
 template<> ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* Arena::CreateMaybeMessage<::grpcIMappingPipeline::mappingProcessRequest_grpc1Request>(Arena*);
@@ -142,6 +150,280 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIMappingPipeline {
 
 // ===================================================================
+
+class isAliveRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMappingPipeline.isAliveRequest) */ {
+ public:
+  inline isAliveRequest() : isAliveRequest(nullptr) {}
+  virtual ~isAliveRequest();
+  explicit constexpr isAliveRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  isAliveRequest(const isAliveRequest& from);
+  isAliveRequest(isAliveRequest&& from) noexcept
+    : isAliveRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline isAliveRequest& operator=(const isAliveRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline isAliveRequest& operator=(isAliveRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const isAliveRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const isAliveRequest* internal_default_instance() {
+    return reinterpret_cast<const isAliveRequest*>(
+               &_isAliveRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(isAliveRequest& a, isAliveRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(isAliveRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(isAliveRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline isAliveRequest* New() const final {
+    return CreateMaybeMessage<isAliveRequest>(nullptr);
+  }
+
+  isAliveRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<isAliveRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const isAliveRequest& from);
+  void MergeFrom(const isAliveRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(isAliveRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMappingPipeline.isAliveRequest";
+  }
+  protected:
+  explicit isAliveRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMappingPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.isAliveRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class isAliveResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMappingPipeline.isAliveResponse) */ {
+ public:
+  inline isAliveResponse() : isAliveResponse(nullptr) {}
+  virtual ~isAliveResponse();
+  explicit constexpr isAliveResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  isAliveResponse(const isAliveResponse& from);
+  isAliveResponse(isAliveResponse&& from) noexcept
+    : isAliveResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline isAliveResponse& operator=(const isAliveResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline isAliveResponse& operator=(isAliveResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const isAliveResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const isAliveResponse* internal_default_instance() {
+    return reinterpret_cast<const isAliveResponse*>(
+               &_isAliveResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(isAliveResponse& a, isAliveResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(isAliveResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(isAliveResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline isAliveResponse* New() const final {
+    return CreateMaybeMessage<isAliveResponse>(nullptr);
+  }
+
+  isAliveResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<isAliveResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const isAliveResponse& from);
+  void MergeFrom(const isAliveResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(isAliveResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMappingPipeline.isAliveResponse";
+  }
+  protected:
+  explicit isAliveResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMappingPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.isAliveResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
 
 class initRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMappingPipeline.initRequest) */ {
@@ -186,7 +468,7 @@ class initRequest PROTOBUF_FINAL :
                &_initRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(initRequest& a, initRequest& b) {
     a.Swap(&b);
@@ -323,7 +605,7 @@ class initResponse PROTOBUF_FINAL :
                &_initResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(initResponse& a, initResponse& b) {
     a.Swap(&b);
@@ -460,7 +742,7 @@ class startRequest PROTOBUF_FINAL :
                &_startRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(startRequest& a, startRequest& b) {
     a.Swap(&b);
@@ -597,7 +879,7 @@ class startResponse PROTOBUF_FINAL :
                &_startResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(startResponse& a, startResponse& b) {
     a.Swap(&b);
@@ -734,7 +1016,7 @@ class stopRequest PROTOBUF_FINAL :
                &_stopRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(stopRequest& a, stopRequest& b) {
     a.Swap(&b);
@@ -871,7 +1153,7 @@ class stopResponse PROTOBUF_FINAL :
                &_stopResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(stopResponse& a, stopResponse& b) {
     a.Swap(&b);
@@ -1008,7 +1290,7 @@ class setCameraParameters_grpc0Request PROTOBUF_FINAL :
                &_setCameraParameters_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(setCameraParameters_grpc0Request& a, setCameraParameters_grpc0Request& b) {
     a.Swap(&b);
@@ -1163,7 +1445,7 @@ class setCameraParameters_grpc0Response PROTOBUF_FINAL :
                &_setCameraParameters_grpc0Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(setCameraParameters_grpc0Response& a, setCameraParameters_grpc0Response& b) {
     a.Swap(&b);
@@ -1300,7 +1582,7 @@ class setCameraParameters_grpc1Request PROTOBUF_FINAL :
                &_setCameraParameters_grpc1Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(setCameraParameters_grpc1Request& a, setCameraParameters_grpc1Request& b) {
     a.Swap(&b);
@@ -1473,7 +1755,7 @@ class setCameraParameters_grpc1Response PROTOBUF_FINAL :
                &_setCameraParameters_grpc1Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(setCameraParameters_grpc1Response& a, setCameraParameters_grpc1Response& b) {
     a.Swap(&b);
@@ -1610,7 +1892,7 @@ class setRectificationParametersRequest PROTOBUF_FINAL :
                &_setRectificationParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(setRectificationParametersRequest& a, setRectificationParametersRequest& b) {
     a.Swap(&b);
@@ -1783,7 +2065,7 @@ class setRectificationParametersResponse PROTOBUF_FINAL :
                &_setRectificationParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(setRectificationParametersResponse& a, setRectificationParametersResponse& b) {
     a.Swap(&b);
@@ -1920,7 +2202,7 @@ class mappingProcessRequest_grpc0Request PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(mappingProcessRequest_grpc0Request& a, mappingProcessRequest_grpc0Request& b) {
     a.Swap(&b);
@@ -2147,7 +2429,7 @@ class mappingProcessRequest_grpc0Response PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc0Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(mappingProcessRequest_grpc0Response& a, mappingProcessRequest_grpc0Response& b) {
     a.Swap(&b);
@@ -2320,7 +2602,7 @@ class mappingProcessRequest_grpc1Request PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc1Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(mappingProcessRequest_grpc1Request& a, mappingProcessRequest_grpc1Request& b) {
     a.Swap(&b);
@@ -2511,7 +2793,7 @@ class mappingProcessRequest_grpc1Response PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc1Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(mappingProcessRequest_grpc1Response& a, mappingProcessRequest_grpc1Response& b) {
     a.Swap(&b);
@@ -2666,7 +2948,7 @@ class mappingProcessRequest_grpc2Request PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc2Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(mappingProcessRequest_grpc2Request& a, mappingProcessRequest_grpc2Request& b) {
     a.Swap(&b);
@@ -2875,7 +3157,7 @@ class mappingProcessRequest_grpc2Response PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc2Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(mappingProcessRequest_grpc2Response& a, mappingProcessRequest_grpc2Response& b) {
     a.Swap(&b);
@@ -3048,7 +3330,7 @@ class getDataForVisualizationRequest PROTOBUF_FINAL :
                &_getDataForVisualizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(getDataForVisualizationRequest& a, getDataForVisualizationRequest& b) {
     a.Swap(&b);
@@ -3221,7 +3503,7 @@ class getDataForVisualizationResponse PROTOBUF_FINAL :
                &_getDataForVisualizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(getDataForVisualizationResponse& a, getDataForVisualizationResponse& b) {
     a.Swap(&b);
@@ -3358,6 +3640,54 @@ class getDataForVisualizationResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// isAliveRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void isAliveRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isAliveRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isAliveRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.isAliveRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void isAliveRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void isAliveRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.isAliveRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
+// isAliveResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void isAliveResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isAliveResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 isAliveResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.isAliveResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void isAliveResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void isAliveResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.isAliveResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
 // initRequest
 
 // int32 grpcServerCompressionFormat = 1;
@@ -5425,6 +5755,10 @@ inline void getDataForVisualizationResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
