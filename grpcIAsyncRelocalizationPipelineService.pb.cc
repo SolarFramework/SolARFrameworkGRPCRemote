@@ -496,8 +496,7 @@ struct getLastPoseResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getLastPoseResponseDefaultTypeInternal _getLastPoseResponse_default_instance_;
 constexpr getMapRequestRequest::getMapRequestRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , map_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : map_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , grpcservercompressionformat_(0){}
 struct getMapRequestRequestDefaultTypeInternal {
   constexpr getMapRequestRequestDefaultTypeInternal()
@@ -523,8 +522,7 @@ struct getMapRequestResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT getMapRequestResponseDefaultTypeInternal _getMapRequestResponse_default_instance_;
 constexpr resetMapRequest::resetMapRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , grpcservercompressionformat_(0){}
+  : grpcservercompressionformat_(0){}
 struct resetMapRequestDefaultTypeInternal {
   constexpr resetMapRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -548,8 +546,7 @@ struct resetMapResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT resetMapResponseDefaultTypeInternal _resetMapResponse_default_instance_;
 constexpr getPointCloudRequestRequest::getPointCloudRequestRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , pointcloud_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : pointcloud_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , grpcservercompressionformat_(0){}
 struct getPointCloudRequestRequestDefaultTypeInternal {
   constexpr getPointCloudRequestRequestDefaultTypeInternal()
@@ -846,7 +843,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIAsyncRelocalizationPipeli
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::getMapRequestRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::getMapRequestRequest, uuid_),
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::getMapRequestRequest, map_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::getMapRequestResponse, _internal_metadata_),
@@ -861,7 +857,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIAsyncRelocalizationPipeli
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::resetMapRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::resetMapRequest, uuid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::resetMapResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -874,7 +869,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIAsyncRelocalizationPipeli
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest, uuid_),
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest, pointcloud_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse, _internal_metadata_),
@@ -922,11 +916,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 245, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getLastPoseRequest)},
   { 254, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getLastPoseResponse)},
   { 261, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getMapRequestRequest)},
-  { 269, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getMapRequestResponse)},
-  { 276, -1, sizeof(::grpcIAsyncRelocalizationPipeline::resetMapRequest)},
-  { 283, -1, sizeof(::grpcIAsyncRelocalizationPipeline::resetMapResponse)},
-  { 289, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest)},
-  { 297, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse)},
+  { 268, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getMapRequestResponse)},
+  { 275, -1, sizeof(::grpcIAsyncRelocalizationPipeline::resetMapRequest)},
+  { 281, -1, sizeof(::grpcIAsyncRelocalizationPipeline::resetMapResponse)},
+  { 287, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest)},
+  { 294, -1, sizeof(::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1052,100 +1046,99 @@ const char descriptor_table_protodef_grpcIAsyncRelocalizationPipelineService_2ep
   "\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\014\n"
   "\004uuid\030\002 \001(\t\022\020\n\010poseType\030\003 \001(\014\022\014\n\004pose\030\004 "
   "\001(\014\"@\n\023getLastPoseResponse\022\014\n\004pose\030\001 \001(\014"
-  "\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"V\n\024getMapR"
+  "\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"H\n\024getMapR"
   "equestRequest\022#\n\033grpcServerCompressionFo"
-  "rmat\030\001 \001(\005\022\014\n\004uuid\030\002 \001(\t\022\013\n\003map\030\003 \001(\014\"A\n"
-  "\025getMapRequestResponse\022\013\n\003map\030\001 \001(\014\022\033\n\023x"
-  "pcfGrpcReturnValue\030\002 \001(\021\"D\n\017resetMapRequ"
-  "est\022#\n\033grpcServerCompressionFormat\030\001 \001(\005"
-  "\022\014\n\004uuid\030\002 \001(\t\"/\n\020resetMapResponse\022\033\n\023xp"
-  "cfGrpcReturnValue\030\001 \001(\021\"d\n\033getPointCloud"
-  "RequestRequest\022#\n\033grpcServerCompressionF"
-  "ormat\030\001 \001(\005\022\014\n\004uuid\030\002 \001(\t\022\022\n\npointCloud\030"
-  "\003 \001(\014\"O\n\034getPointCloudRequestResponse\022\022\n"
-  "\npointCloud\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue"
-  "\030\002 \001(\0212\217\027\n\'grpcIAsyncRelocalizationPipel"
-  "ineService\022p\n\007isAlive\0220.grpcIAsyncReloca"
-  "lizationPipeline.isAliveRequest\0321.grpcIA"
-  "syncRelocalizationPipeline.isAliveRespon"
-  "se\"\000\022y\n\ninit_grpc0\0223.grpcIAsyncRelocaliz"
-  "ationPipeline.init_grpc0Request\0324.grpcIA"
-  "syncRelocalizationPipeline.init_grpc0Res"
-  "ponse\"\000\022|\n\013start_grpc0\0224.grpcIAsyncReloc"
-  "alizationPipeline.start_grpc0Request\0325.g"
-  "rpcIAsyncRelocalizationPipeline.start_gr"
-  "pc0Response\"\000\022y\n\nstop_grpc0\0223.grpcIAsync"
-  "RelocalizationPipeline.stop_grpc0Request"
-  "\0324.grpcIAsyncRelocalizationPipeline.stop"
-  "_grpc0Response\"\000\022\205\001\n\016registerClient\0227.gr"
-  "pcIAsyncRelocalizationPipeline.registerC"
-  "lientRequest\0328.grpcIAsyncRelocalizationP"
-  "ipeline.registerClientResponse\"\000\022\213\001\n\020unr"
-  "egisterClient\0229.grpcIAsyncRelocalization"
-  "Pipeline.unregisterClientRequest\032:.grpcI"
-  "AsyncRelocalizationPipeline.unregisterCl"
-  "ientResponse\"\000\022y\n\ninit_grpc1\0223.grpcIAsyn"
-  "cRelocalizationPipeline.init_grpc1Reques"
-  "t\0324.grpcIAsyncRelocalizationPipeline.ini"
-  "t_grpc1Response\"\000\022y\n\ninit_grpc2\0223.grpcIA"
-  "syncRelocalizationPipeline.init_grpc2Req"
-  "uest\0324.grpcIAsyncRelocalizationPipeline."
-  "init_grpc2Response\"\000\022|\n\013start_grpc1\0224.gr"
-  "pcIAsyncRelocalizationPipeline.start_grp"
-  "c1Request\0325.grpcIAsyncRelocalizationPipe"
-  "line.start_grpc1Response\"\000\022y\n\nstop_grpc1"
-  "\0223.grpcIAsyncRelocalizationPipeline.stop"
-  "_grpc1Request\0324.grpcIAsyncRelocalization"
-  "Pipeline.stop_grpc1Response\"\000\022\216\001\n\021getPro"
-  "cessingMode\022:.grpcIAsyncRelocalizationPi"
-  "peline.getProcessingModeRequest\032;.grpcIA"
-  "syncRelocalizationPipeline.getProcessing"
-  "ModeResponse\"\000\022\246\001\n\031setCameraParameters_g"
-  "rpc0\022B.grpcIAsyncRelocalizationPipeline."
-  "setCameraParameters_grpc0Request\032C.grpcI"
-  "AsyncRelocalizationPipeline.setCameraPar"
-  "ameters_grpc0Response\"\000\022\246\001\n\031setCameraPar"
-  "ameters_grpc1\022B.grpcIAsyncRelocalization"
-  "Pipeline.setCameraParameters_grpc1Reques"
-  "t\032C.grpcIAsyncRelocalizationPipeline.set"
-  "CameraParameters_grpc1Response\"\000\022\251\001\n\032set"
-  "RectificationParameters\022C.grpcIAsyncRelo"
-  "calizationPipeline.setRectificationParam"
-  "etersRequest\032D.grpcIAsyncRelocalizationP"
-  "ipeline.setRectificationParametersRespon"
-  "se\"\000\022\224\001\n\023getCameraParameters\022<.grpcIAsyn"
-  "cRelocalizationPipeline.getCameraParamet"
-  "ersRequest\032=.grpcIAsyncRelocalizationPip"
-  "eline.getCameraParametersResponse\"\000\022\243\001\n\030"
-  "relocalizeProcessRequest\022A.grpcIAsyncRel"
-  "ocalizationPipeline.relocalizeProcessReq"
-  "uestRequest\032B.grpcIAsyncRelocalizationPi"
-  "peline.relocalizeProcessRequestResponse\""
-  "\000\022\232\001\n\025get3DTransformRequest\022>.grpcIAsync"
-  "RelocalizationPipeline.get3DTransformReq"
-  "uestRequest\032\?.grpcIAsyncRelocalizationPi"
-  "peline.get3DTransformRequestResponse\"\000\022|"
-  "\n\013getLastPose\0224.grpcIAsyncRelocalization"
-  "Pipeline.getLastPoseRequest\0325.grpcIAsync"
-  "RelocalizationPipeline.getLastPoseRespon"
-  "se\"\000\022\202\001\n\rgetMapRequest\0226.grpcIAsyncReloc"
-  "alizationPipeline.getMapRequestRequest\0327"
-  ".grpcIAsyncRelocalizationPipeline.getMap"
-  "RequestResponse\"\000\022s\n\010resetMap\0221.grpcIAsy"
-  "ncRelocalizationPipeline.resetMapRequest"
-  "\0322.grpcIAsyncRelocalizationPipeline.rese"
-  "tMapResponse\"\000\022\227\001\n\024getPointCloudRequest\022"
-  "=.grpcIAsyncRelocalizationPipeline.getPo"
-  "intCloudRequestRequest\032>.grpcIAsyncReloc"
-  "alizationPipeline.getPointCloudRequestRe"
-  "sponse\"\000b\006proto3"
+  "rmat\030\001 \001(\005\022\013\n\003map\030\002 \001(\014\"A\n\025getMapRequest"
+  "Response\022\013\n\003map\030\001 \001(\014\022\033\n\023xpcfGrpcReturnV"
+  "alue\030\002 \001(\021\"6\n\017resetMapRequest\022#\n\033grpcSer"
+  "verCompressionFormat\030\001 \001(\005\"/\n\020resetMapRe"
+  "sponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"V\n\033g"
+  "etPointCloudRequestRequest\022#\n\033grpcServer"
+  "CompressionFormat\030\001 \001(\005\022\022\n\npointCloud\030\002 "
+  "\001(\014\"O\n\034getPointCloudRequestResponse\022\022\n\np"
+  "ointCloud\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002"
+  " \001(\0212\217\027\n\'grpcIAsyncRelocalizationPipelin"
+  "eService\022p\n\007isAlive\0220.grpcIAsyncRelocali"
+  "zationPipeline.isAliveRequest\0321.grpcIAsy"
+  "ncRelocalizationPipeline.isAliveResponse"
+  "\"\000\022y\n\ninit_grpc0\0223.grpcIAsyncRelocalizat"
+  "ionPipeline.init_grpc0Request\0324.grpcIAsy"
+  "ncRelocalizationPipeline.init_grpc0Respo"
+  "nse\"\000\022|\n\013start_grpc0\0224.grpcIAsyncRelocal"
+  "izationPipeline.start_grpc0Request\0325.grp"
+  "cIAsyncRelocalizationPipeline.start_grpc"
+  "0Response\"\000\022y\n\nstop_grpc0\0223.grpcIAsyncRe"
+  "localizationPipeline.stop_grpc0Request\0324"
+  ".grpcIAsyncRelocalizationPipeline.stop_g"
+  "rpc0Response\"\000\022\205\001\n\016registerClient\0227.grpc"
+  "IAsyncRelocalizationPipeline.registerCli"
+  "entRequest\0328.grpcIAsyncRelocalizationPip"
+  "eline.registerClientResponse\"\000\022\213\001\n\020unreg"
+  "isterClient\0229.grpcIAsyncRelocalizationPi"
+  "peline.unregisterClientRequest\032:.grpcIAs"
+  "yncRelocalizationPipeline.unregisterClie"
+  "ntResponse\"\000\022y\n\ninit_grpc1\0223.grpcIAsyncR"
+  "elocalizationPipeline.init_grpc1Request\032"
+  "4.grpcIAsyncRelocalizationPipeline.init_"
+  "grpc1Response\"\000\022y\n\ninit_grpc2\0223.grpcIAsy"
+  "ncRelocalizationPipeline.init_grpc2Reque"
+  "st\0324.grpcIAsyncRelocalizationPipeline.in"
+  "it_grpc2Response\"\000\022|\n\013start_grpc1\0224.grpc"
+  "IAsyncRelocalizationPipeline.start_grpc1"
+  "Request\0325.grpcIAsyncRelocalizationPipeli"
+  "ne.start_grpc1Response\"\000\022y\n\nstop_grpc1\0223"
+  ".grpcIAsyncRelocalizationPipeline.stop_g"
+  "rpc1Request\0324.grpcIAsyncRelocalizationPi"
+  "peline.stop_grpc1Response\"\000\022\216\001\n\021getProce"
+  "ssingMode\022:.grpcIAsyncRelocalizationPipe"
+  "line.getProcessingModeRequest\032;.grpcIAsy"
+  "ncRelocalizationPipeline.getProcessingMo"
+  "deResponse\"\000\022\246\001\n\031setCameraParameters_grp"
+  "c0\022B.grpcIAsyncRelocalizationPipeline.se"
+  "tCameraParameters_grpc0Request\032C.grpcIAs"
+  "yncRelocalizationPipeline.setCameraParam"
+  "eters_grpc0Response\"\000\022\246\001\n\031setCameraParam"
+  "eters_grpc1\022B.grpcIAsyncRelocalizationPi"
+  "peline.setCameraParameters_grpc1Request\032"
+  "C.grpcIAsyncRelocalizationPipeline.setCa"
+  "meraParameters_grpc1Response\"\000\022\251\001\n\032setRe"
+  "ctificationParameters\022C.grpcIAsyncReloca"
+  "lizationPipeline.setRectificationParamet"
+  "ersRequest\032D.grpcIAsyncRelocalizationPip"
+  "eline.setRectificationParametersResponse"
+  "\"\000\022\224\001\n\023getCameraParameters\022<.grpcIAsyncR"
+  "elocalizationPipeline.getCameraParameter"
+  "sRequest\032=.grpcIAsyncRelocalizationPipel"
+  "ine.getCameraParametersResponse\"\000\022\243\001\n\030re"
+  "localizeProcessRequest\022A.grpcIAsyncReloc"
+  "alizationPipeline.relocalizeProcessReque"
+  "stRequest\032B.grpcIAsyncRelocalizationPipe"
+  "line.relocalizeProcessRequestResponse\"\000\022"
+  "\232\001\n\025get3DTransformRequest\022>.grpcIAsyncRe"
+  "localizationPipeline.get3DTransformReque"
+  "stRequest\032\?.grpcIAsyncRelocalizationPipe"
+  "line.get3DTransformRequestResponse\"\000\022|\n\013"
+  "getLastPose\0224.grpcIAsyncRelocalizationPi"
+  "peline.getLastPoseRequest\0325.grpcIAsyncRe"
+  "localizationPipeline.getLastPoseResponse"
+  "\"\000\022\202\001\n\rgetMapRequest\0226.grpcIAsyncRelocal"
+  "izationPipeline.getMapRequestRequest\0327.g"
+  "rpcIAsyncRelocalizationPipeline.getMapRe"
+  "questResponse\"\000\022s\n\010resetMap\0221.grpcIAsync"
+  "RelocalizationPipeline.resetMapRequest\0322"
+  ".grpcIAsyncRelocalizationPipeline.resetM"
+  "apResponse\"\000\022\227\001\n\024getPointCloudRequest\022=."
+  "grpcIAsyncRelocalizationPipeline.getPoin"
+  "tCloudRequestRequest\032>.grpcIAsyncRelocal"
+  "izationPipeline.getPointCloudRequestResp"
+  "onse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto = {
-  false, false, 6536, descriptor_table_protodef_grpcIAsyncRelocalizationPipelineService_2eproto, "grpcIAsyncRelocalizationPipelineService.proto", 
+  false, false, 6494, descriptor_table_protodef_grpcIAsyncRelocalizationPipelineService_2eproto, "grpcIAsyncRelocalizationPipelineService.proto", 
   &descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_once, descriptor_table_grpcIAsyncRelocalizationPipelineService_2eproto_deps, 1, 42,
   schemas, file_default_instances, TableStruct_grpcIAsyncRelocalizationPipelineService_2eproto::offsets,
   file_level_metadata_grpcIAsyncRelocalizationPipelineService_2eproto, file_level_enum_descriptors_grpcIAsyncRelocalizationPipelineService_2eproto, file_level_service_descriptors_grpcIAsyncRelocalizationPipelineService_2eproto,
@@ -9539,11 +9532,6 @@ getMapRequestRequest::getMapRequestRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 getMapRequestRequest::getMapRequestRequest(const getMapRequestRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_uuid().empty()) {
-    uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uuid(), 
-      GetArena());
-  }
   map_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_map().empty()) {
     map_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_map(), 
@@ -9554,7 +9542,6 @@ getMapRequestRequest::getMapRequestRequest(const getMapRequestRequest& from)
 }
 
 void getMapRequestRequest::SharedCtor() {
-uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 map_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 grpcservercompressionformat_ = 0;
 }
@@ -9567,7 +9554,6 @@ getMapRequestRequest::~getMapRequestRequest() {
 
 void getMapRequestRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  uuid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   map_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -9587,7 +9573,6 @@ void getMapRequestRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  uuid_.ClearToEmpty();
   map_.ClearToEmpty();
   grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -9607,18 +9592,9 @@ const char* getMapRequestRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string uuid = 2;
+      // bytes map = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_uuid();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "grpcIAsyncRelocalizationPipeline.getMapRequestRequest.uuid"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bytes map = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_map();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -9658,20 +9634,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // string uuid = 2;
-  if (this->uuid().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_uuid().data(), static_cast<int>(this->_internal_uuid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "grpcIAsyncRelocalizationPipeline.getMapRequestRequest.uuid");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_uuid(), target);
-  }
-
-  // bytes map = 3;
+  // bytes map = 2;
   if (this->map().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_map(), target);
+        2, this->_internal_map(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9690,14 +9656,7 @@ size_t getMapRequestRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string uuid = 2;
-  if (this->uuid().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_uuid());
-  }
-
-  // bytes map = 3;
+  // bytes map = 2;
   if (this->map().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -9742,9 +9701,6 @@ void getMapRequestRequest::MergeFrom(const getMapRequestRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.uuid().size() > 0) {
-    _internal_set_uuid(from._internal_uuid());
-  }
   if (from.map().size() > 0) {
     _internal_set_map(from._internal_map());
   }
@@ -9774,7 +9730,6 @@ bool getMapRequestRequest::IsInitialized() const {
 void getMapRequestRequest::InternalSwap(getMapRequestRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  uuid_.Swap(&other->uuid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   map_.Swap(&other->map_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
@@ -10021,17 +9976,11 @@ resetMapRequest::resetMapRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 resetMapRequest::resetMapRequest(const resetMapRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_uuid().empty()) {
-    uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uuid(), 
-      GetArena());
-  }
   grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIAsyncRelocalizationPipeline.resetMapRequest)
 }
 
 void resetMapRequest::SharedCtor() {
-uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 grpcservercompressionformat_ = 0;
 }
 
@@ -10043,7 +9992,6 @@ resetMapRequest::~resetMapRequest() {
 
 void resetMapRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  uuid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void resetMapRequest::ArenaDtor(void* object) {
@@ -10062,7 +10010,6 @@ void resetMapRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  uuid_.ClearToEmpty();
   grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -10078,15 +10025,6 @@ const char* resetMapRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string uuid = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_uuid();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "grpcIAsyncRelocalizationPipeline.resetMapRequest.uuid"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -10124,16 +10062,6 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // string uuid = 2;
-  if (this->uuid().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_uuid().data(), static_cast<int>(this->_internal_uuid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "grpcIAsyncRelocalizationPipeline.resetMapRequest.uuid");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_uuid(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -10149,13 +10077,6 @@ size_t resetMapRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // string uuid = 2;
-  if (this->uuid().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_uuid());
-  }
 
   // int32 grpcServerCompressionFormat = 1;
   if (this->grpcservercompressionformat() != 0) {
@@ -10195,9 +10116,6 @@ void resetMapRequest::MergeFrom(const resetMapRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.uuid().size() > 0) {
-    _internal_set_uuid(from._internal_uuid());
-  }
   if (from.grpcservercompressionformat() != 0) {
     _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
@@ -10224,7 +10142,6 @@ bool resetMapRequest::IsInitialized() const {
 void resetMapRequest::InternalSwap(resetMapRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  uuid_.Swap(&other->uuid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
@@ -10437,11 +10354,6 @@ getPointCloudRequestRequest::getPointCloudRequestRequest(::PROTOBUF_NAMESPACE_ID
 getPointCloudRequestRequest::getPointCloudRequestRequest(const getPointCloudRequestRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_uuid().empty()) {
-    uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_uuid(), 
-      GetArena());
-  }
   pointcloud_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_pointcloud().empty()) {
     pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pointcloud(), 
@@ -10452,7 +10364,6 @@ getPointCloudRequestRequest::getPointCloudRequestRequest(const getPointCloudRequ
 }
 
 void getPointCloudRequestRequest::SharedCtor() {
-uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 pointcloud_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 grpcservercompressionformat_ = 0;
 }
@@ -10465,7 +10376,6 @@ getPointCloudRequestRequest::~getPointCloudRequestRequest() {
 
 void getPointCloudRequestRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  uuid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   pointcloud_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -10485,7 +10395,6 @@ void getPointCloudRequestRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  uuid_.ClearToEmpty();
   pointcloud_.ClearToEmpty();
   grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -10505,18 +10414,9 @@ const char* getPointCloudRequestRequest::_InternalParse(const char* ptr, ::PROTO
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string uuid = 2;
+      // bytes pointCloud = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_uuid();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "grpcIAsyncRelocalizationPipeline.getPointCloudRequestRequest.uuid"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bytes pointCloud = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_pointcloud();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -10556,20 +10456,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // string uuid = 2;
-  if (this->uuid().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_uuid().data(), static_cast<int>(this->_internal_uuid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "grpcIAsyncRelocalizationPipeline.getPointCloudRequestRequest.uuid");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_uuid(), target);
-  }
-
-  // bytes pointCloud = 3;
+  // bytes pointCloud = 2;
   if (this->pointcloud().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_pointcloud(), target);
+        2, this->_internal_pointcloud(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -10588,14 +10478,7 @@ size_t getPointCloudRequestRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string uuid = 2;
-  if (this->uuid().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_uuid());
-  }
-
-  // bytes pointCloud = 3;
+  // bytes pointCloud = 2;
   if (this->pointcloud().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -10640,9 +10523,6 @@ void getPointCloudRequestRequest::MergeFrom(const getPointCloudRequestRequest& f
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.uuid().size() > 0) {
-    _internal_set_uuid(from._internal_uuid());
-  }
   if (from.pointcloud().size() > 0) {
     _internal_set_pointcloud(from._internal_pointcloud());
   }
@@ -10672,7 +10552,6 @@ bool getPointCloudRequestRequest::IsInitialized() const {
 void getPointCloudRequestRequest::InternalSwap(getPointCloudRequestRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  uuid_.Swap(&other->uuid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   pointcloud_.Swap(&other->pointcloud_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }

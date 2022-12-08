@@ -492,9 +492,8 @@ XPCFErrorCode IAsyncRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::getMapRequest request received at " << to_simple_string(start) << std::endl;
   #endif
-  std::string uuid = request->uuid();
   SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(uuid, map);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(map);
   response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -517,8 +516,7 @@ XPCFErrorCode IAsyncRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::resetMap request received at " << to_simple_string(start) << std::endl;
   #endif
-  std::string uuid = request->uuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->resetMap(uuid);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->resetMap();
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -540,9 +538,8 @@ XPCFErrorCode IAsyncRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IAsyncRelocalizationPipeline_grpcServer::getPointCloudRequest request received at " << to_simple_string(start) << std::endl;
   #endif
-  std::string uuid = request->uuid();
   SRef<SolAR::datastructure::PointCloud> pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(request->pointcloud());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getPointCloudRequest(uuid, pointCloud);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getPointCloudRequest(pointCloud);
   response->set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS

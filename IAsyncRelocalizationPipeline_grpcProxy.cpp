@@ -609,7 +609,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getLastPose(
 }
 
 
-SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getMapRequest(std::string const uuid, SRef<SolAR::datastructure::Map>& map) const
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getMapRequest(SRef<SolAR::datastructure::Map>& map) const
 {
   ::grpc::ClientContext context;
   ::grpcIAsyncRelocalizationPipeline::getMapRequestRequest reqIn;
@@ -619,7 +619,6 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getMapReques
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_uuid(uuid);
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -641,7 +640,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getMapReques
 }
 
 
-SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::resetMap(std::string const uuid) const
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::resetMap() const
 {
   ::grpc::ClientContext context;
   ::grpcIAsyncRelocalizationPipeline::resetMapRequest reqIn;
@@ -651,7 +650,6 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::resetMap(std
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_uuid(uuid);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IAsyncRelocalizationPipeline_grpcProxy::resetMap request sent at " << to_simple_string(start) << std::endl;
@@ -671,7 +669,7 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::resetMap(std
 }
 
 
-SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getPointCloudRequest(std::string const uuid, SRef<SolAR::datastructure::PointCloud>& pointCloud) const
+SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getPointCloudRequest(SRef<SolAR::datastructure::PointCloud>& pointCloud) const
 {
   ::grpc::ClientContext context;
   ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest reqIn;
@@ -681,7 +679,6 @@ SolAR::FrameworkReturnCode  IAsyncRelocalizationPipeline_grpcProxy::getPointClou
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_uuid(uuid);
   reqIn.set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();

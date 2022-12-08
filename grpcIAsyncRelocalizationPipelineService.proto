@@ -232,8 +232,7 @@ sint32 xpcfGrpcReturnValue = 2;
 message getMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string uuid = 2;
-bytes map = 3;
+bytes map = 2;
 }
 
 message getMapRequestResponse
@@ -245,7 +244,6 @@ sint32 xpcfGrpcReturnValue = 2;
 message resetMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string uuid = 2;
 }
 
 message resetMapResponse
@@ -256,8 +254,7 @@ sint32 xpcfGrpcReturnValue = 1;
 message getPointCloudRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string uuid = 2;
-bytes pointCloud = 3;
+bytes pointCloud = 2;
 }
 
 message getPointCloudRequestResponse
