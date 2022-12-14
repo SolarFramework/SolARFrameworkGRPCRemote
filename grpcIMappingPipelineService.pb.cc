@@ -173,7 +173,8 @@ constexpr mappingProcessRequest_grpc0Request::mappingProcessRequest_grpc0Request
   , transform_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , updatedtransform_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , grpcservercompressionformat_(0){}
+  , grpcservercompressionformat_(0)
+  , fixedpose_(false){}
 struct mappingProcessRequest_grpc0RequestDefaultTypeInternal {
   constexpr mappingProcessRequest_grpc0RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -202,7 +203,8 @@ constexpr mappingProcessRequest_grpc1Request::mappingProcessRequest_grpc1Request
   : images_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , poses_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , grpcservercompressionformat_(0){}
+  , grpcservercompressionformat_(0)
+  , fixedpose_(false){}
 struct mappingProcessRequest_grpc1RequestDefaultTypeInternal {
   constexpr mappingProcessRequest_grpc1RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -231,7 +233,8 @@ constexpr mappingProcessRequest_grpc2Request::mappingProcessRequest_grpc2Request
   , poses_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , updatedtransform_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , grpcservercompressionformat_(0){}
+  , grpcservercompressionformat_(0)
+  , fixedpose_(false){}
 struct mappingProcessRequest_grpc2RequestDefaultTypeInternal {
   constexpr mappingProcessRequest_grpc2RequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -374,6 +377,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIMappingPipelineService_2e
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, images_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, poses_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, fixedpose_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, transform_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, updatedtransform_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, status_),
@@ -393,6 +397,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIMappingPipelineService_2e
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, images_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, poses_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, fixedpose_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc1Response, _internal_metadata_),
@@ -409,6 +414,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIMappingPipelineService_2e
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, images_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, poses_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, fixedpose_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, updatedtransform_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, status_),
   ~0u,  // no _has_bits_
@@ -450,13 +456,13 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 63, -1, sizeof(::grpcIMappingPipeline::setRectificationParametersRequest)},
   { 71, -1, sizeof(::grpcIMappingPipeline::setRectificationParametersResponse)},
   { 77, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request)},
-  { 88, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc0Response)},
-  { 96, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc1Request)},
-  { 105, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc1Response)},
-  { 112, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request)},
-  { 122, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc2Response)},
-  { 130, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationRequest)},
-  { 138, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationResponse)},
+  { 89, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc0Response)},
+  { 97, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc1Request)},
+  { 107, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc1Response)},
+  { 114, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request)},
+  { 125, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc2Response)},
+  { 133, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationRequest)},
+  { 141, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -505,71 +511,73 @@ const char descriptor_table_protodef_grpcIMappingPipelineService_2eproto[] PROTO
   "st\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022"
   "\020\n\010rectCam1\030\002 \001(\014\022\020\n\010rectCam2\030\003 \001(\014\"A\n\"s"
   "etRectificationParametersResponse\022\033\n\023xpc"
-  "fGrpcReturnValue\030\001 \001(\021\"\245\001\n\"mappingProces"
+  "fGrpcReturnValue\030\001 \001(\021\"\270\001\n\"mappingProces"
   "sRequest_grpc0Request\022#\n\033grpcServerCompr"
   "essionFormat\030\001 \001(\005\022\016\n\006images\030\002 \001(\014\022\r\n\005po"
-  "ses\030\003 \001(\014\022\021\n\ttransform\030\004 \001(\014\022\030\n\020updatedT"
-  "ransform\030\005 \001(\014\022\016\n\006status\030\006 \001(\014\"l\n#mappin"
-  "gProcessRequest_grpc0Response\022\030\n\020updated"
-  "Transform\030\001 \001(\014\022\016\n\006status\030\002 \001(\014\022\033\n\023xpcfG"
-  "rpcReturnValue\030\003 \001(\021\"x\n\"mappingProcessRe"
-  "quest_grpc1Request\022#\n\033grpcServerCompress"
-  "ionFormat\030\001 \001(\005\022\016\n\006images\030\002 \001(\014\022\r\n\005poses"
-  "\030\003 \001(\014\022\016\n\006status\030\004 \001(\014\"R\n#mappingProcess"
-  "Request_grpc1Response\022\016\n\006status\030\001 \001(\014\022\033\n"
-  "\023xpcfGrpcReturnValue\030\002 \001(\021\"\222\001\n\"mappingPr"
-  "ocessRequest_grpc2Request\022#\n\033grpcServerC"
-  "ompressionFormat\030\001 \001(\005\022\016\n\006images\030\002 \001(\014\022\r"
-  "\n\005poses\030\003 \001(\014\022\030\n\020updatedTransform\030\004 \001(\014\022"
-  "\016\n\006status\030\005 \001(\014\"l\n#mappingProcessRequest"
-  "_grpc2Response\022\030\n\020updatedTransform\030\001 \001(\014"
-  "\022\016\n\006status\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030"
-  "\003 \001(\021\"w\n\036getDataForVisualizationRequest\022"
-  "#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\031\n\021"
-  "outputPointClouds\030\002 \001(\014\022\025\n\rkeyframePoses"
-  "\030\003 \001(\014\"p\n\037getDataForVisualizationRespons"
-  "e\022\031\n\021outputPointClouds\030\001 \001(\014\022\025\n\rkeyframe"
-  "Poses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\021"
-  "2\231\n\n\033grpcIMappingPipelineService\022O\n\004init"
-  "\022!.grpcIMappingPipeline.initRequest\032\".gr"
-  "pcIMappingPipeline.initResponse\"\000\022R\n\005sta"
-  "rt\022\".grpcIMappingPipeline.startRequest\032#"
-  ".grpcIMappingPipeline.startResponse\"\000\022O\n"
-  "\004stop\022!.grpcIMappingPipeline.stopRequest"
-  "\032\".grpcIMappingPipeline.stopResponse\"\000\022\216"
-  "\001\n\031setCameraParameters_grpc0\0226.grpcIMapp"
-  "ingPipeline.setCameraParameters_grpc0Req"
-  "uest\0327.grpcIMappingPipeline.setCameraPar"
-  "ameters_grpc0Response\"\000\022\216\001\n\031setCameraPar"
-  "ameters_grpc1\0226.grpcIMappingPipeline.set"
-  "CameraParameters_grpc1Request\0327.grpcIMap"
-  "pingPipeline.setCameraParameters_grpc1Re"
-  "sponse\"\000\022\221\001\n\032setRectificationParameters\022"
-  "7.grpcIMappingPipeline.setRectificationP"
-  "arametersRequest\0328.grpcIMappingPipeline."
-  "setRectificationParametersResponse\"\000\022\224\001\n"
-  "\033mappingProcessRequest_grpc0\0228.grpcIMapp"
-  "ingPipeline.mappingProcessRequest_grpc0R"
-  "equest\0329.grpcIMappingPipeline.mappingPro"
-  "cessRequest_grpc0Response\"\000\022\224\001\n\033mappingP"
-  "rocessRequest_grpc1\0228.grpcIMappingPipeli"
-  "ne.mappingProcessRequest_grpc1Request\0329."
+  "ses\030\003 \001(\014\022\021\n\tfixedPose\030\004 \001(\010\022\021\n\ttransfor"
+  "m\030\005 \001(\014\022\030\n\020updatedTransform\030\006 \001(\014\022\016\n\006sta"
+  "tus\030\007 \001(\014\"l\n#mappingProcessRequest_grpc0"
+  "Response\022\030\n\020updatedTransform\030\001 \001(\014\022\016\n\006st"
+  "atus\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\021\""
+  "\213\001\n\"mappingProcessRequest_grpc1Request\022#"
+  "\n\033grpcServerCompressionFormat\030\001 \001(\005\022\016\n\006i"
+  "mages\030\002 \001(\014\022\r\n\005poses\030\003 \001(\014\022\021\n\tfixedPose\030"
+  "\004 \001(\010\022\016\n\006status\030\005 \001(\014\"R\n#mappingProcessR"
+  "equest_grpc1Response\022\016\n\006status\030\001 \001(\014\022\033\n\023"
+  "xpcfGrpcReturnValue\030\002 \001(\021\"\245\001\n\"mappingPro"
+  "cessRequest_grpc2Request\022#\n\033grpcServerCo"
+  "mpressionFormat\030\001 \001(\005\022\016\n\006images\030\002 \001(\014\022\r\n"
+  "\005poses\030\003 \001(\014\022\021\n\tfixedPose\030\004 \001(\010\022\030\n\020updat"
+  "edTransform\030\005 \001(\014\022\016\n\006status\030\006 \001(\014\"l\n#map"
+  "pingProcessRequest_grpc2Response\022\030\n\020upda"
+  "tedTransform\030\001 \001(\014\022\016\n\006status\030\002 \001(\014\022\033\n\023xp"
+  "cfGrpcReturnValue\030\003 \001(\021\"w\n\036getDataForVis"
+  "ualizationRequest\022#\n\033grpcServerCompressi"
+  "onFormat\030\001 \001(\005\022\031\n\021outputPointClouds\030\002 \001("
+  "\014\022\025\n\rkeyframePoses\030\003 \001(\014\"p\n\037getDataForVi"
+  "sualizationResponse\022\031\n\021outputPointClouds"
+  "\030\001 \001(\014\022\025\n\rkeyframePoses\030\002 \001(\014\022\033\n\023xpcfGrp"
+  "cReturnValue\030\003 \001(\0212\231\n\n\033grpcIMappingPipel"
+  "ineService\022O\n\004init\022!.grpcIMappingPipelin"
+  "e.initRequest\032\".grpcIMappingPipeline.ini"
+  "tResponse\"\000\022R\n\005start\022\".grpcIMappingPipel"
+  "ine.startRequest\032#.grpcIMappingPipeline."
+  "startResponse\"\000\022O\n\004stop\022!.grpcIMappingPi"
+  "peline.stopRequest\032\".grpcIMappingPipelin"
+  "e.stopResponse\"\000\022\216\001\n\031setCameraParameters"
+  "_grpc0\0226.grpcIMappingPipeline.setCameraP"
+  "arameters_grpc0Request\0327.grpcIMappingPip"
+  "eline.setCameraParameters_grpc0Response\""
+  "\000\022\216\001\n\031setCameraParameters_grpc1\0226.grpcIM"
+  "appingPipeline.setCameraParameters_grpc1"
+  "Request\0327.grpcIMappingPipeline.setCamera"
+  "Parameters_grpc1Response\"\000\022\221\001\n\032setRectif"
+  "icationParameters\0227.grpcIMappingPipeline"
+  ".setRectificationParametersRequest\0328.grp"
+  "cIMappingPipeline.setRectificationParame"
+  "tersResponse\"\000\022\224\001\n\033mappingProcessRequest"
+  "_grpc0\0228.grpcIMappingPipeline.mappingPro"
+  "cessRequest_grpc0Request\0329.grpcIMappingP"
+  "ipeline.mappingProcessRequest_grpc0Respo"
+  "nse\"\000\022\224\001\n\033mappingProcessRequest_grpc1\0228."
   "grpcIMappingPipeline.mappingProcessReque"
-  "st_grpc1Response\"\000\022\224\001\n\033mappingProcessReq"
-  "uest_grpc2\0228.grpcIMappingPipeline.mappin"
-  "gProcessRequest_grpc2Request\0329.grpcIMapp"
+  "st_grpc1Request\0329.grpcIMappingPipeline.m"
+  "appingProcessRequest_grpc1Response\"\000\022\224\001\n"
+  "\033mappingProcessRequest_grpc2\0228.grpcIMapp"
   "ingPipeline.mappingProcessRequest_grpc2R"
-  "esponse\"\000\022\210\001\n\027getDataForVisualization\0224."
-  "grpcIMappingPipeline.getDataForVisualiza"
-  "tionRequest\0325.grpcIMappingPipeline.getDa"
-  "taForVisualizationResponse\"\000b\006proto3"
+  "equest\0329.grpcIMappingPipeline.mappingPro"
+  "cessRequest_grpc2Response\"\000\022\210\001\n\027getDataF"
+  "orVisualization\0224.grpcIMappingPipeline.g"
+  "etDataForVisualizationRequest\0325.grpcIMap"
+  "pingPipeline.getDataForVisualizationResp"
+  "onse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIMappingPipelineService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIMappingPipelineService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIMappingPipelineService_2eproto = {
-  false, false, 3196, descriptor_table_protodef_grpcIMappingPipelineService_2eproto, "grpcIMappingPipelineService.proto", 
+  false, false, 3254, descriptor_table_protodef_grpcIMappingPipelineService_2eproto, "grpcIMappingPipelineService.proto", 
   &descriptor_table_grpcIMappingPipelineService_2eproto_once, descriptor_table_grpcIMappingPipelineService_2eproto_deps, 1, 20,
   schemas, file_default_instances, TableStruct_grpcIMappingPipelineService_2eproto::offsets,
   file_level_metadata_grpcIMappingPipelineService_2eproto, file_level_enum_descriptors_grpcIMappingPipelineService_2eproto, file_level_service_descriptors_grpcIMappingPipelineService_2eproto,
@@ -3057,7 +3065,9 @@ mappingProcessRequest_grpc0Request::mappingProcessRequest_grpc0Request(const map
     status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArena());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&fixedpose_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(fixedpose_));
   // @@protoc_insertion_point(copy_constructor:grpcIMappingPipeline.mappingProcessRequest_grpc0Request)
 }
 
@@ -3067,7 +3077,10 @@ poses_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlread
 transform_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updatedtransform_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-grpcservercompressionformat_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&fixedpose_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(fixedpose_));
 }
 
 mappingProcessRequest_grpc0Request::~mappingProcessRequest_grpc0Request() {
@@ -3106,7 +3119,9 @@ void mappingProcessRequest_grpc0Request::Clear() {
   transform_.ClearToEmpty();
   updatedtransform_.ClearToEmpty();
   status_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&fixedpose_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(fixedpose_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3140,25 +3155,32 @@ const char* mappingProcessRequest_grpc0Request::_InternalParse(const char* ptr, 
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes transform = 4;
+      // bool fixedPose = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          fixedpose_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes transform = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_transform();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes updatedTransform = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes updatedTransform = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_updatedtransform();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes status = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+      // bytes status = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -3210,22 +3232,28 @@ failure:
         3, this->_internal_poses(), target);
   }
 
-  // bytes transform = 4;
+  // bool fixedPose = 4;
+  if (this->fixedpose() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_fixedpose(), target);
+  }
+
+  // bytes transform = 5;
   if (this->transform().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_transform(), target);
+        5, this->_internal_transform(), target);
   }
 
-  // bytes updatedTransform = 5;
+  // bytes updatedTransform = 6;
   if (this->updatedtransform().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_updatedtransform(), target);
+        6, this->_internal_updatedtransform(), target);
   }
 
-  // bytes status = 6;
+  // bytes status = 7;
   if (this->status().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        6, this->_internal_status(), target);
+        7, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3258,21 +3286,21 @@ size_t mappingProcessRequest_grpc0Request::ByteSizeLong() const {
         this->_internal_poses());
   }
 
-  // bytes transform = 4;
+  // bytes transform = 5;
   if (this->transform().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_transform());
   }
 
-  // bytes updatedTransform = 5;
+  // bytes updatedTransform = 6;
   if (this->updatedtransform().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_updatedtransform());
   }
 
-  // bytes status = 6;
+  // bytes status = 7;
   if (this->status().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -3284,6 +3312,11 @@ size_t mappingProcessRequest_grpc0Request::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_grpcservercompressionformat());
+  }
+
+  // bool fixedPose = 4;
+  if (this->fixedpose() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3335,6 +3368,9 @@ void mappingProcessRequest_grpc0Request::MergeFrom(const mappingProcessRequest_g
   if (from.grpcservercompressionformat() != 0) {
     _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
+  if (from.fixedpose() != 0) {
+    _internal_set_fixedpose(from._internal_fixedpose());
+  }
 }
 
 void mappingProcessRequest_grpc0Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -3363,7 +3399,12 @@ void mappingProcessRequest_grpc0Request::InternalSwap(mappingProcessRequest_grpc
   transform_.Swap(&other->transform_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   updatedtransform_.Swap(&other->updatedtransform_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   status_.Swap(&other->status_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(mappingProcessRequest_grpc0Request, fixedpose_)
+      + sizeof(mappingProcessRequest_grpc0Request::fixedpose_)
+      - PROTOBUF_FIELD_OFFSET(mappingProcessRequest_grpc0Request, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata mappingProcessRequest_grpc0Request::GetMetadata() const {
@@ -3656,7 +3697,9 @@ mappingProcessRequest_grpc1Request::mappingProcessRequest_grpc1Request(const map
     status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArena());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&fixedpose_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(fixedpose_));
   // @@protoc_insertion_point(copy_constructor:grpcIMappingPipeline.mappingProcessRequest_grpc1Request)
 }
 
@@ -3664,7 +3707,10 @@ void mappingProcessRequest_grpc1Request::SharedCtor() {
 images_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 poses_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-grpcservercompressionformat_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&fixedpose_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(fixedpose_));
 }
 
 mappingProcessRequest_grpc1Request::~mappingProcessRequest_grpc1Request() {
@@ -3699,7 +3745,9 @@ void mappingProcessRequest_grpc1Request::Clear() {
   images_.ClearToEmpty();
   poses_.ClearToEmpty();
   status_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&fixedpose_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(fixedpose_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3733,9 +3781,16 @@ const char* mappingProcessRequest_grpc1Request::_InternalParse(const char* ptr, 
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes status = 4;
+      // bool fixedPose = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          fixedpose_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes status = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -3787,10 +3842,16 @@ failure:
         3, this->_internal_poses(), target);
   }
 
-  // bytes status = 4;
+  // bool fixedPose = 4;
+  if (this->fixedpose() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_fixedpose(), target);
+  }
+
+  // bytes status = 5;
   if (this->status().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_status(), target);
+        5, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3823,7 +3884,7 @@ size_t mappingProcessRequest_grpc1Request::ByteSizeLong() const {
         this->_internal_poses());
   }
 
-  // bytes status = 4;
+  // bytes status = 5;
   if (this->status().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -3835,6 +3896,11 @@ size_t mappingProcessRequest_grpc1Request::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_grpcservercompressionformat());
+  }
+
+  // bool fixedPose = 4;
+  if (this->fixedpose() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3880,6 +3946,9 @@ void mappingProcessRequest_grpc1Request::MergeFrom(const mappingProcessRequest_g
   if (from.grpcservercompressionformat() != 0) {
     _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
+  if (from.fixedpose() != 0) {
+    _internal_set_fixedpose(from._internal_fixedpose());
+  }
 }
 
 void mappingProcessRequest_grpc1Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -3906,7 +3975,12 @@ void mappingProcessRequest_grpc1Request::InternalSwap(mappingProcessRequest_grpc
   images_.Swap(&other->images_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   poses_.Swap(&other->poses_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   status_.Swap(&other->status_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(mappingProcessRequest_grpc1Request, fixedpose_)
+      + sizeof(mappingProcessRequest_grpc1Request::fixedpose_)
+      - PROTOBUF_FIELD_OFFSET(mappingProcessRequest_grpc1Request, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata mappingProcessRequest_grpc1Request::GetMetadata() const {
@@ -4171,7 +4245,9 @@ mappingProcessRequest_grpc2Request::mappingProcessRequest_grpc2Request(const map
     status_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_status(), 
       GetArena());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&fixedpose_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(fixedpose_));
   // @@protoc_insertion_point(copy_constructor:grpcIMappingPipeline.mappingProcessRequest_grpc2Request)
 }
 
@@ -4180,7 +4256,10 @@ images_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlrea
 poses_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 updatedtransform_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 status_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-grpcservercompressionformat_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&fixedpose_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(fixedpose_));
 }
 
 mappingProcessRequest_grpc2Request::~mappingProcessRequest_grpc2Request() {
@@ -4217,7 +4296,9 @@ void mappingProcessRequest_grpc2Request::Clear() {
   poses_.ClearToEmpty();
   updatedtransform_.ClearToEmpty();
   status_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&fixedpose_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(fixedpose_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4251,17 +4332,24 @@ const char* mappingProcessRequest_grpc2Request::_InternalParse(const char* ptr, 
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes updatedTransform = 4;
+      // bool fixedPose = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          fixedpose_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes updatedTransform = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_updatedtransform();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes status = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+      // bytes status = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -4313,16 +4401,22 @@ failure:
         3, this->_internal_poses(), target);
   }
 
-  // bytes updatedTransform = 4;
-  if (this->updatedtransform().size() > 0) {
-    target = stream->WriteBytesMaybeAliased(
-        4, this->_internal_updatedtransform(), target);
+  // bool fixedPose = 4;
+  if (this->fixedpose() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_fixedpose(), target);
   }
 
-  // bytes status = 5;
+  // bytes updatedTransform = 5;
+  if (this->updatedtransform().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        5, this->_internal_updatedtransform(), target);
+  }
+
+  // bytes status = 6;
   if (this->status().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        5, this->_internal_status(), target);
+        6, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4355,14 +4449,14 @@ size_t mappingProcessRequest_grpc2Request::ByteSizeLong() const {
         this->_internal_poses());
   }
 
-  // bytes updatedTransform = 4;
+  // bytes updatedTransform = 5;
   if (this->updatedtransform().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_updatedtransform());
   }
 
-  // bytes status = 5;
+  // bytes status = 6;
   if (this->status().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -4374,6 +4468,11 @@ size_t mappingProcessRequest_grpc2Request::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_grpcservercompressionformat());
+  }
+
+  // bool fixedPose = 4;
+  if (this->fixedpose() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4422,6 +4521,9 @@ void mappingProcessRequest_grpc2Request::MergeFrom(const mappingProcessRequest_g
   if (from.grpcservercompressionformat() != 0) {
     _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
+  if (from.fixedpose() != 0) {
+    _internal_set_fixedpose(from._internal_fixedpose());
+  }
 }
 
 void mappingProcessRequest_grpc2Request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -4449,7 +4551,12 @@ void mappingProcessRequest_grpc2Request::InternalSwap(mappingProcessRequest_grpc
   poses_.Swap(&other->poses_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   updatedtransform_.Swap(&other->updatedtransform_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   status_.Swap(&other->status_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(mappingProcessRequest_grpc2Request, fixedpose_)
+      + sizeof(mappingProcessRequest_grpc2Request::fixedpose_)
+      - PROTOBUF_FIELD_OFFSET(mappingProcessRequest_grpc2Request, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata mappingProcessRequest_grpc2Request::GetMetadata() const {
