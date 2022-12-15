@@ -25,7 +25,6 @@ class IServiceManagerPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableB
     {
       public:
         grpcIServiceManagerPipelineServiceImpl() = default;
-        ::grpc::Status isAlive(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response) override;
         ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::startRequest* request, ::grpcIServiceManagerPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::stopRequest* request, ::grpcIServiceManagerPipeline::stopResponse* response) override;

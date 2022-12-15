@@ -36,13 +36,6 @@ class grpcIDenseMappingPipelineService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpcIDenseMappingPipeline::isAliveResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::isAliveResponse>> AsyncisAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::isAliveResponse>>(AsyncisAliveRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::isAliveResponse>> PrepareAsyncisAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::isAliveResponse>>(PrepareAsyncisAliveRaw(context, request, cq));
-    }
     virtual ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpcIDenseMappingPipeline::initResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::initResponse>>(AsyncinitRaw(context, request, cq));
@@ -88,12 +81,6 @@ class grpcIDenseMappingPipelineService final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -139,8 +126,6 @@ class grpcIDenseMappingPipelineService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::isAliveResponse>* AsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::isAliveResponse>* PrepareAsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDenseMappingPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -157,13 +142,6 @@ class grpcIDenseMappingPipelineService final {
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpcIDenseMappingPipeline::isAliveResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::isAliveResponse>> AsyncisAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::isAliveResponse>>(AsyncisAliveRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::isAliveResponse>> PrepareAsyncisAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::isAliveResponse>>(PrepareAsyncisAliveRaw(context, request, cq));
-    }
     ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpcIDenseMappingPipeline::initResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::initResponse>>(AsyncinitRaw(context, request, cq));
@@ -209,12 +187,6 @@ class grpcIDenseMappingPipelineService final {
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void isAlive(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
@@ -262,8 +234,6 @@ class grpcIDenseMappingPipelineService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::isAliveResponse>* AsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::isAliveResponse>* PrepareAsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -276,7 +246,6 @@ class grpcIDenseMappingPipelineService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::getPointCloudResponse>* PrepareAsyncgetPointCloudRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::getMeshResponse>* AsyncgetMeshRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getMeshRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDenseMappingPipeline::getMeshResponse>* PrepareAsyncgetMeshRaw(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getMeshRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_isAlive_;
     const ::grpc::internal::RpcMethod rpcmethod_init_;
     const ::grpc::internal::RpcMethod rpcmethod_start_;
     const ::grpc::internal::RpcMethod rpcmethod_stop_;
@@ -290,7 +259,6 @@ class grpcIDenseMappingPipelineService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status isAlive(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response);
     virtual ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response);
     virtual ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::startRequest* request, ::grpcIDenseMappingPipeline::startResponse* response);
     virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::stopRequest* request, ::grpcIDenseMappingPipeline::stopResponse* response);
@@ -299,32 +267,12 @@ class grpcIDenseMappingPipelineService final {
     virtual ::grpc::Status getMesh(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::getMeshRequest* request, ::grpcIDenseMappingPipeline::getMeshResponse* response);
   };
   template <class BaseClass>
-  class WithAsyncMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_isAlive() {
-      ::grpc::Service::MarkMethodAsync(0);
-    }
-    ~WithAsyncMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIDenseMappingPipeline::isAliveRequest* /*request*/, ::grpcIDenseMappingPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestisAlive(::grpc::ServerContext* context, ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDenseMappingPipeline::isAliveResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_init() {
-      ::grpc::Service::MarkMethodAsync(1);
+      ::grpc::Service::MarkMethodAsync(0);
     }
     ~WithAsyncMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
@@ -335,7 +283,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestinit(::grpc::ServerContext* context, ::grpcIDenseMappingPipeline::initRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDenseMappingPipeline::initResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -344,7 +292,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_start() {
-      ::grpc::Service::MarkMethodAsync(2);
+      ::grpc::Service::MarkMethodAsync(1);
     }
     ~WithAsyncMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
@@ -355,7 +303,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststart(::grpc::ServerContext* context, ::grpcIDenseMappingPipeline::startRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDenseMappingPipeline::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -364,7 +312,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_stop() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
@@ -375,7 +323,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststop(::grpc::ServerContext* context, ::grpcIDenseMappingPipeline::stopRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDenseMappingPipeline::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -384,7 +332,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_denseMappingProcessRequest() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_denseMappingProcessRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -395,7 +343,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestdenseMappingProcessRequest(::grpc::ServerContext* context, ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -404,7 +352,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getPointCloud() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_getPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
@@ -415,7 +363,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetPointCloud(::grpc::ServerContext* context, ::grpcIDenseMappingPipeline::getPointCloudRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDenseMappingPipeline::getPointCloudResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -424,7 +372,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getMesh() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_getMesh() override {
       BaseClassMustBeDerivedFromService(this);
@@ -435,57 +383,10 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMesh(::grpc::ServerContext* context, ::grpcIDenseMappingPipeline::getMeshRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIDenseMappingPipeline::getMeshResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_isAlive<WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_denseMappingProcessRequest<WithAsyncMethod_getPointCloud<WithAsyncMethod_getMesh<Service > > > > > > > AsyncService;
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_isAlive() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::isAliveRequest, ::grpcIDenseMappingPipeline::isAliveResponse>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response) { return this->isAlive(context, request, response); }));}
-    void SetMessageAllocatorFor_isAlive(
-        ::grpc::experimental::MessageAllocator< ::grpcIDenseMappingPipeline::isAliveRequest, ::grpcIDenseMappingPipeline::isAliveResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::isAliveRequest, ::grpcIDenseMappingPipeline::isAliveResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIDenseMappingPipeline::isAliveRequest* /*request*/, ::grpcIDenseMappingPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* isAlive(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDenseMappingPipeline::isAliveRequest* /*request*/, ::grpcIDenseMappingPipeline::isAliveResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* isAlive(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDenseMappingPipeline::isAliveRequest* /*request*/, ::grpcIDenseMappingPipeline::isAliveResponse* /*response*/)
-    #endif
-      { return nullptr; }
-  };
+  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_denseMappingProcessRequest<WithAsyncMethod_getPointCloud<WithAsyncMethod_getMesh<Service > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_init : public BaseClass {
    private:
@@ -497,7 +398,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(1,
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::initRequest, ::grpcIDenseMappingPipeline::initResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -509,9 +410,9 @@ class grpcIDenseMappingPipelineService final {
     void SetMessageAllocatorFor_init(
         ::grpc::experimental::MessageAllocator< ::grpcIDenseMappingPipeline::initRequest, ::grpcIDenseMappingPipeline::initResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::initRequest, ::grpcIDenseMappingPipeline::initResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -544,7 +445,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(2,
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::startRequest, ::grpcIDenseMappingPipeline::startResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -556,9 +457,9 @@ class grpcIDenseMappingPipelineService final {
     void SetMessageAllocatorFor_start(
         ::grpc::experimental::MessageAllocator< ::grpcIDenseMappingPipeline::startRequest, ::grpcIDenseMappingPipeline::startResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::startRequest, ::grpcIDenseMappingPipeline::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -591,7 +492,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(3,
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::stopRequest, ::grpcIDenseMappingPipeline::stopResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -603,9 +504,9 @@ class grpcIDenseMappingPipelineService final {
     void SetMessageAllocatorFor_stop(
         ::grpc::experimental::MessageAllocator< ::grpcIDenseMappingPipeline::stopRequest, ::grpcIDenseMappingPipeline::stopResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::stopRequest, ::grpcIDenseMappingPipeline::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -638,7 +539,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(4,
+        MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -650,9 +551,9 @@ class grpcIDenseMappingPipelineService final {
     void SetMessageAllocatorFor_denseMappingProcessRequest(
         ::grpc::experimental::MessageAllocator< ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -685,7 +586,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(5,
+        MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::getPointCloudRequest, ::grpcIDenseMappingPipeline::getPointCloudResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -697,9 +598,9 @@ class grpcIDenseMappingPipelineService final {
     void SetMessageAllocatorFor_getPointCloud(
         ::grpc::experimental::MessageAllocator< ::grpcIDenseMappingPipeline::getPointCloudRequest, ::grpcIDenseMappingPipeline::getPointCloudResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::getPointCloudRequest, ::grpcIDenseMappingPipeline::getPointCloudResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -732,7 +633,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(6,
+        MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::getMeshRequest, ::grpcIDenseMappingPipeline::getMeshResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -744,9 +645,9 @@ class grpcIDenseMappingPipelineService final {
     void SetMessageAllocatorFor_getMesh(
         ::grpc::experimental::MessageAllocator< ::grpcIDenseMappingPipeline::getMeshRequest, ::grpcIDenseMappingPipeline::getMeshResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDenseMappingPipeline::getMeshRequest, ::grpcIDenseMappingPipeline::getMeshResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -769,34 +670,17 @@ class grpcIDenseMappingPipelineService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_isAlive<ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_denseMappingProcessRequest<ExperimentalWithCallbackMethod_getPointCloud<ExperimentalWithCallbackMethod_getMesh<Service > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_denseMappingProcessRequest<ExperimentalWithCallbackMethod_getPointCloud<ExperimentalWithCallbackMethod_getMesh<Service > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_isAlive<ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_denseMappingProcessRequest<ExperimentalWithCallbackMethod_getPointCloud<ExperimentalWithCallbackMethod_getMesh<Service > > > > > > > ExperimentalCallbackService;
-  template <class BaseClass>
-  class WithGenericMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_isAlive() {
-      ::grpc::Service::MarkMethodGeneric(0);
-    }
-    ~WithGenericMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIDenseMappingPipeline::isAliveRequest* /*request*/, ::grpcIDenseMappingPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_denseMappingProcessRequest<ExperimentalWithCallbackMethod_getPointCloud<ExperimentalWithCallbackMethod_getMesh<Service > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_init() {
-      ::grpc::Service::MarkMethodGeneric(1);
+      ::grpc::Service::MarkMethodGeneric(0);
     }
     ~WithGenericMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
@@ -813,7 +697,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_start() {
-      ::grpc::Service::MarkMethodGeneric(2);
+      ::grpc::Service::MarkMethodGeneric(1);
     }
     ~WithGenericMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
@@ -830,7 +714,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_stop() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
@@ -847,7 +731,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_denseMappingProcessRequest() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_denseMappingProcessRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -864,7 +748,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getPointCloud() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_getPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
@@ -881,7 +765,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getMesh() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_getMesh() override {
       BaseClassMustBeDerivedFromService(this);
@@ -893,32 +777,12 @@ class grpcIDenseMappingPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_isAlive() {
-      ::grpc::Service::MarkMethodRaw(0);
-    }
-    ~WithRawMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIDenseMappingPipeline::isAliveRequest* /*request*/, ::grpcIDenseMappingPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestisAlive(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_init() {
-      ::grpc::Service::MarkMethodRaw(1);
+      ::grpc::Service::MarkMethodRaw(0);
     }
     ~WithRawMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
@@ -929,7 +793,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestinit(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -938,7 +802,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_start() {
-      ::grpc::Service::MarkMethodRaw(2);
+      ::grpc::Service::MarkMethodRaw(1);
     }
     ~WithRawMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
@@ -949,7 +813,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststart(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -958,7 +822,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_stop() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
@@ -969,7 +833,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststop(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -978,7 +842,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_denseMappingProcessRequest() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_denseMappingProcessRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -989,7 +853,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestdenseMappingProcessRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -998,7 +862,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getPointCloud() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_getPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1009,7 +873,7 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetPointCloud(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1018,7 +882,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getMesh() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_getMesh() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1029,46 +893,8 @@ class grpcIDenseMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMesh(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_isAlive() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isAlive(context, request, response); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIDenseMappingPipeline::isAliveRequest* /*request*/, ::grpcIDenseMappingPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* isAlive(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* isAlive(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_init : public BaseClass {
@@ -1081,7 +907,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(1,
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1119,7 +945,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(2,
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1157,7 +983,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(3,
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1195,7 +1021,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(4,
+        MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1233,7 +1059,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(5,
+        MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1271,7 +1097,7 @@ class grpcIDenseMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(6,
+        MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1299,39 +1125,12 @@ class grpcIDenseMappingPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_isAlive() {
-      ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIDenseMappingPipeline::isAliveRequest, ::grpcIDenseMappingPipeline::isAliveResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::grpcIDenseMappingPipeline::isAliveRequest, ::grpcIDenseMappingPipeline::isAliveResponse>* streamer) {
-                       return this->StreamedisAlive(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIDenseMappingPipeline::isAliveRequest* /*request*/, ::grpcIDenseMappingPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedisAlive(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIDenseMappingPipeline::isAliveRequest,::grpcIDenseMappingPipeline::isAliveResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_init() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIDenseMappingPipeline::initRequest, ::grpcIDenseMappingPipeline::initResponse>(
             [this](::grpc::ServerContext* context,
@@ -1358,7 +1157,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_start() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIDenseMappingPipeline::startRequest, ::grpcIDenseMappingPipeline::startResponse>(
             [this](::grpc::ServerContext* context,
@@ -1385,7 +1184,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_stop() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIDenseMappingPipeline::stopRequest, ::grpcIDenseMappingPipeline::stopResponse>(
             [this](::grpc::ServerContext* context,
@@ -1412,7 +1211,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_denseMappingProcessRequest() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -1439,7 +1238,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getPointCloud() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIDenseMappingPipeline::getPointCloudRequest, ::grpcIDenseMappingPipeline::getPointCloudResponse>(
             [this](::grpc::ServerContext* context,
@@ -1466,7 +1265,7 @@ class grpcIDenseMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getMesh() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIDenseMappingPipeline::getMeshRequest, ::grpcIDenseMappingPipeline::getMeshResponse>(
             [this](::grpc::ServerContext* context,
@@ -1487,9 +1286,9 @@ class grpcIDenseMappingPipelineService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedgetMesh(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIDenseMappingPipeline::getMeshRequest,::grpcIDenseMappingPipeline::getMeshResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_isAlive<WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_denseMappingProcessRequest<WithStreamedUnaryMethod_getPointCloud<WithStreamedUnaryMethod_getMesh<Service > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_denseMappingProcessRequest<WithStreamedUnaryMethod_getPointCloud<WithStreamedUnaryMethod_getMesh<Service > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_isAlive<WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_denseMappingProcessRequest<WithStreamedUnaryMethod_getPointCloud<WithStreamedUnaryMethod_getMesh<Service > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_denseMappingProcessRequest<WithStreamedUnaryMethod_getPointCloud<WithStreamedUnaryMethod_getMesh<Service > > > > > > StreamedService;
 };
 
 }  // namespace grpcIDenseMappingPipeline

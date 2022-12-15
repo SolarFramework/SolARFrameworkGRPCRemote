@@ -47,7 +47,7 @@ struct TableStruct_grpcIDenseMappingPipelineService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -80,12 +80,6 @@ extern initRequestDefaultTypeInternal _initRequest_default_instance_;
 class initResponse;
 struct initResponseDefaultTypeInternal;
 extern initResponseDefaultTypeInternal _initResponse_default_instance_;
-class isAliveRequest;
-struct isAliveRequestDefaultTypeInternal;
-extern isAliveRequestDefaultTypeInternal _isAliveRequest_default_instance_;
-class isAliveResponse;
-struct isAliveResponseDefaultTypeInternal;
-extern isAliveResponseDefaultTypeInternal _isAliveResponse_default_instance_;
 class startRequest;
 struct startRequestDefaultTypeInternal;
 extern startRequestDefaultTypeInternal _startRequest_default_instance_;
@@ -108,8 +102,6 @@ template<> ::grpcIDenseMappingPipeline::getPointCloudRequest* Arena::CreateMaybe
 template<> ::grpcIDenseMappingPipeline::getPointCloudResponse* Arena::CreateMaybeMessage<::grpcIDenseMappingPipeline::getPointCloudResponse>(Arena*);
 template<> ::grpcIDenseMappingPipeline::initRequest* Arena::CreateMaybeMessage<::grpcIDenseMappingPipeline::initRequest>(Arena*);
 template<> ::grpcIDenseMappingPipeline::initResponse* Arena::CreateMaybeMessage<::grpcIDenseMappingPipeline::initResponse>(Arena*);
-template<> ::grpcIDenseMappingPipeline::isAliveRequest* Arena::CreateMaybeMessage<::grpcIDenseMappingPipeline::isAliveRequest>(Arena*);
-template<> ::grpcIDenseMappingPipeline::isAliveResponse* Arena::CreateMaybeMessage<::grpcIDenseMappingPipeline::isAliveResponse>(Arena*);
 template<> ::grpcIDenseMappingPipeline::startRequest* Arena::CreateMaybeMessage<::grpcIDenseMappingPipeline::startRequest>(Arena*);
 template<> ::grpcIDenseMappingPipeline::startResponse* Arena::CreateMaybeMessage<::grpcIDenseMappingPipeline::startResponse>(Arena*);
 template<> ::grpcIDenseMappingPipeline::stopRequest* Arena::CreateMaybeMessage<::grpcIDenseMappingPipeline::stopRequest>(Arena*);
@@ -118,280 +110,6 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIDenseMappingPipeline {
 
 // ===================================================================
-
-class isAliveRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIDenseMappingPipeline.isAliveRequest) */ {
- public:
-  inline isAliveRequest() : isAliveRequest(nullptr) {}
-  virtual ~isAliveRequest();
-  explicit constexpr isAliveRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  isAliveRequest(const isAliveRequest& from);
-  isAliveRequest(isAliveRequest&& from) noexcept
-    : isAliveRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline isAliveRequest& operator=(const isAliveRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline isAliveRequest& operator=(isAliveRequest&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const isAliveRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const isAliveRequest* internal_default_instance() {
-    return reinterpret_cast<const isAliveRequest*>(
-               &_isAliveRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(isAliveRequest& a, isAliveRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(isAliveRequest* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(isAliveRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline isAliveRequest* New() const final {
-    return CreateMaybeMessage<isAliveRequest>(nullptr);
-  }
-
-  isAliveRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<isAliveRequest>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const isAliveRequest& from);
-  void MergeFrom(const isAliveRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(isAliveRequest* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIDenseMappingPipeline.isAliveRequest";
-  }
-  protected:
-  explicit isAliveRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    return ::descriptor_table_grpcIDenseMappingPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kGrpcServerCompressionFormatFieldNumber = 1,
-  };
-  // int32 grpcServerCompressionFormat = 1;
-  void clear_grpcservercompressionformat();
-  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
-  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
-  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcIDenseMappingPipeline.isAliveRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_grpcIDenseMappingPipelineService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class isAliveResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIDenseMappingPipeline.isAliveResponse) */ {
- public:
-  inline isAliveResponse() : isAliveResponse(nullptr) {}
-  virtual ~isAliveResponse();
-  explicit constexpr isAliveResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  isAliveResponse(const isAliveResponse& from);
-  isAliveResponse(isAliveResponse&& from) noexcept
-    : isAliveResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline isAliveResponse& operator=(const isAliveResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline isAliveResponse& operator=(isAliveResponse&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const isAliveResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const isAliveResponse* internal_default_instance() {
-    return reinterpret_cast<const isAliveResponse*>(
-               &_isAliveResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  friend void swap(isAliveResponse& a, isAliveResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(isAliveResponse* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(isAliveResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline isAliveResponse* New() const final {
-    return CreateMaybeMessage<isAliveResponse>(nullptr);
-  }
-
-  isAliveResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<isAliveResponse>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const isAliveResponse& from);
-  void MergeFrom(const isAliveResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(isAliveResponse* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIDenseMappingPipeline.isAliveResponse";
-  }
-  protected:
-  explicit isAliveResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    return ::descriptor_table_grpcIDenseMappingPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kXpcfGrpcReturnValueFieldNumber = 1,
-  };
-  // sint32 xpcfGrpcReturnValue = 1;
-  void clear_xpcfgrpcreturnvalue();
-  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
-  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
-  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcIDenseMappingPipeline.isAliveResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_grpcIDenseMappingPipelineService_2eproto;
-};
-// -------------------------------------------------------------------
 
 class initRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIDenseMappingPipeline.initRequest) */ {
@@ -436,7 +154,7 @@ class initRequest PROTOBUF_FINAL :
                &_initRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    0;
 
   friend void swap(initRequest& a, initRequest& b) {
     a.Swap(&b);
@@ -573,7 +291,7 @@ class initResponse PROTOBUF_FINAL :
                &_initResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    1;
 
   friend void swap(initResponse& a, initResponse& b) {
     a.Swap(&b);
@@ -710,7 +428,7 @@ class startRequest PROTOBUF_FINAL :
                &_startRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    2;
 
   friend void swap(startRequest& a, startRequest& b) {
     a.Swap(&b);
@@ -847,7 +565,7 @@ class startResponse PROTOBUF_FINAL :
                &_startResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    3;
 
   friend void swap(startResponse& a, startResponse& b) {
     a.Swap(&b);
@@ -984,7 +702,7 @@ class stopRequest PROTOBUF_FINAL :
                &_stopRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    4;
 
   friend void swap(stopRequest& a, stopRequest& b) {
     a.Swap(&b);
@@ -1121,7 +839,7 @@ class stopResponse PROTOBUF_FINAL :
                &_stopResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    5;
 
   friend void swap(stopResponse& a, stopResponse& b) {
     a.Swap(&b);
@@ -1258,7 +976,7 @@ class denseMappingProcessRequestRequest PROTOBUF_FINAL :
                &_denseMappingProcessRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    6;
 
   friend void swap(denseMappingProcessRequestRequest& a, denseMappingProcessRequestRequest& b) {
     a.Swap(&b);
@@ -1424,7 +1142,7 @@ class denseMappingProcessRequestResponse PROTOBUF_FINAL :
                &_denseMappingProcessRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    7;
 
   friend void swap(denseMappingProcessRequestResponse& a, denseMappingProcessRequestResponse& b) {
     a.Swap(&b);
@@ -1561,7 +1279,7 @@ class getPointCloudRequest PROTOBUF_FINAL :
                &_getPointCloudRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    8;
 
   friend void swap(getPointCloudRequest& a, getPointCloudRequest& b) {
     a.Swap(&b);
@@ -1734,7 +1452,7 @@ class getPointCloudResponse PROTOBUF_FINAL :
                &_getPointCloudResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    9;
 
   friend void swap(getPointCloudResponse& a, getPointCloudResponse& b) {
     a.Swap(&b);
@@ -1907,7 +1625,7 @@ class getMeshRequest PROTOBUF_FINAL :
                &_getMeshRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    10;
 
   friend void swap(getMeshRequest& a, getMeshRequest& b) {
     a.Swap(&b);
@@ -2080,7 +1798,7 @@ class getMeshResponse PROTOBUF_FINAL :
                &_getMeshResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    11;
 
   friend void swap(getMeshResponse& a, getMeshResponse& b) {
     a.Swap(&b);
@@ -2217,54 +1935,6 @@ class getMeshResponse PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// isAliveRequest
-
-// int32 grpcServerCompressionFormat = 1;
-inline void isAliveRequest::clear_grpcservercompressionformat() {
-  grpcservercompressionformat_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 isAliveRequest::_internal_grpcservercompressionformat() const {
-  return grpcservercompressionformat_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 isAliveRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIDenseMappingPipeline.isAliveRequest.grpcServerCompressionFormat)
-  return _internal_grpcservercompressionformat();
-}
-inline void isAliveRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  grpcservercompressionformat_ = value;
-}
-inline void isAliveRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIDenseMappingPipeline.isAliveRequest.grpcServerCompressionFormat)
-}
-
-// -------------------------------------------------------------------
-
-// isAliveResponse
-
-// sint32 xpcfGrpcReturnValue = 1;
-inline void isAliveResponse::clear_xpcfgrpcreturnvalue() {
-  xpcfgrpcreturnvalue_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 isAliveResponse::_internal_xpcfgrpcreturnvalue() const {
-  return xpcfgrpcreturnvalue_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 isAliveResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIDenseMappingPipeline.isAliveResponse.xpcfGrpcReturnValue)
-  return _internal_xpcfgrpcreturnvalue();
-}
-inline void isAliveResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  xpcfgrpcreturnvalue_ = value;
-}
-inline void isAliveResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIDenseMappingPipeline.isAliveResponse.xpcfGrpcReturnValue)
-}
-
-// -------------------------------------------------------------------
-
 // initRequest
 
 // int32 grpcServerCompressionFormat = 1;
@@ -3123,10 +2793,6 @@ inline void getMeshResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::in
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -22,15 +22,14 @@ class IServiceManagerPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBa
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode isAlive()     override;
     SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
-    SolAR::FrameworkReturnCode registerService(SolAR::api::pipeline::ServiceType const serviceType, std::string const serviceURL)     override;
-    SolAR::FrameworkReturnCode unregisterService(SolAR::api::pipeline::ServiceType const serviceType, std::string const serviceURL)     override;
+    SolAR::FrameworkReturnCode registerService(SolAR::api::pipeline::ServiceType const serviceType, std::string const& serviceURL)     override;
+    SolAR::FrameworkReturnCode unregisterService(SolAR::api::pipeline::ServiceType const serviceType, std::string const& serviceURL)     override;
     SolAR::FrameworkReturnCode getService(SolAR::api::pipeline::ServiceType const serviceType, std::string& serviceURL)     const     override;
-    SolAR::FrameworkReturnCode getAndLockService(SolAR::api::pipeline::ServiceType const serviceType, std::string const clientUUID, std::string& serviceURL)     override;
-    SolAR::FrameworkReturnCode unlockService(SolAR::api::pipeline::ServiceType const serviceType, std::string const clientUUID)     override;
+    SolAR::FrameworkReturnCode getAndLockService(SolAR::api::pipeline::ServiceType const serviceType, std::string const& clientUUID, std::string& serviceURL)     override;
+    SolAR::FrameworkReturnCode unlockService(SolAR::api::pipeline::ServiceType const serviceType, std::string const& clientUUID)     override;
 
 
   private:

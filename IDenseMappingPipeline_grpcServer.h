@@ -25,7 +25,6 @@ class IDenseMappingPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableBas
     {
       public:
         grpcIDenseMappingPipelineServiceImpl() = default;
-        ::grpc::Status isAlive(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response) override;
         ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::startRequest* request, ::grpcIDenseMappingPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::stopRequest* request, ::grpcIDenseMappingPipeline::stopResponse* response) override;

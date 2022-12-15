@@ -25,7 +25,6 @@ class IMapUpdatePipeline_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
     {
       public:
         grpcIMapUpdatePipelineServiceImpl() = default;
-        ::grpc::Status isAlive(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::isAliveRequest* request, ::grpcIMapUpdatePipeline::isAliveResponse* response) override;
         ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response) override;

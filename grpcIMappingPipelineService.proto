@@ -4,16 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcIMappingPipeline;
 
-message isAliveRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-}
-
-message isAliveResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 message init_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -152,7 +142,6 @@ sint32 xpcfGrpcReturnValue = 3;
 }
 
 service grpcIMappingPipelineService {
-rpc isAlive(isAliveRequest) returns(isAliveResponse) {}
 rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}

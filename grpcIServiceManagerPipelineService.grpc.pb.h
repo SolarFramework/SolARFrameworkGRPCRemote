@@ -36,13 +36,6 @@ class grpcIServiceManagerPipelineService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpcIServiceManagerPipeline::isAliveResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::isAliveResponse>> AsyncisAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::isAliveResponse>>(AsyncisAliveRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::isAliveResponse>> PrepareAsyncisAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::isAliveResponse>>(PrepareAsyncisAliveRaw(context, request, cq));
-    }
     virtual ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpcIServiceManagerPipeline::initResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::initResponse>>(AsyncinitRaw(context, request, cq));
@@ -102,12 +95,6 @@ class grpcIServiceManagerPipelineService final {
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void init(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void init(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -165,8 +152,6 @@ class grpcIServiceManagerPipelineService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::isAliveResponse>* AsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::isAliveResponse>* PrepareAsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManagerPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -187,13 +172,6 @@ class grpcIServiceManagerPipelineService final {
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpcIServiceManagerPipeline::isAliveResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::isAliveResponse>> AsyncisAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::isAliveResponse>>(AsyncisAliveRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::isAliveResponse>> PrepareAsyncisAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::isAliveResponse>>(PrepareAsyncisAliveRaw(context, request, cq));
-    }
     ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpcIServiceManagerPipeline::initResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::initResponse>>(AsyncinitRaw(context, request, cq));
@@ -253,12 +231,6 @@ class grpcIServiceManagerPipelineService final {
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void isAlive(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void init(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void init(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
@@ -318,8 +290,6 @@ class grpcIServiceManagerPipelineService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::isAliveResponse>* AsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::isAliveResponse>* PrepareAsyncisAliveRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -336,7 +306,6 @@ class grpcIServiceManagerPipelineService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* PrepareAsyncgetAndLockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>* AsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManagerPipeline::unlockServiceResponse>* PrepareAsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_isAlive_;
     const ::grpc::internal::RpcMethod rpcmethod_init_;
     const ::grpc::internal::RpcMethod rpcmethod_start_;
     const ::grpc::internal::RpcMethod rpcmethod_stop_;
@@ -352,7 +321,6 @@ class grpcIServiceManagerPipelineService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status isAlive(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response);
     virtual ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::initRequest* request, ::grpcIServiceManagerPipeline::initResponse* response);
     virtual ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::startRequest* request, ::grpcIServiceManagerPipeline::startResponse* response);
     virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::stopRequest* request, ::grpcIServiceManagerPipeline::stopResponse* response);
@@ -363,32 +331,12 @@ class grpcIServiceManagerPipelineService final {
     virtual ::grpc::Status unlockService(::grpc::ServerContext* context, const ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpcIServiceManagerPipeline::unlockServiceResponse* response);
   };
   template <class BaseClass>
-  class WithAsyncMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_isAlive() {
-      ::grpc::Service::MarkMethodAsync(0);
-    }
-    ~WithAsyncMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::isAliveRequest* /*request*/, ::grpcIServiceManagerPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestisAlive(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::isAliveResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_init() {
-      ::grpc::Service::MarkMethodAsync(1);
+      ::grpc::Service::MarkMethodAsync(0);
     }
     ~WithAsyncMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
@@ -399,7 +347,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestinit(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::initRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::initResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -408,7 +356,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_start() {
-      ::grpc::Service::MarkMethodAsync(2);
+      ::grpc::Service::MarkMethodAsync(1);
     }
     ~WithAsyncMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
@@ -419,7 +367,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststart(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::startRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -428,7 +376,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_stop() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
@@ -439,7 +387,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststop(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::stopRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -448,7 +396,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_registerService() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -459,7 +407,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestregisterService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::registerServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::registerServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -468,7 +416,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_unregisterService() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_unregisterService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -479,7 +427,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestunregisterService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::unregisterServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::unregisterServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -488,7 +436,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getService() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_getService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -499,7 +447,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::getServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::getServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -508,7 +456,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_getAndLockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -519,7 +467,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetAndLockService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::getAndLockServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -528,7 +476,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_unlockService() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_unlockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -539,57 +487,10 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestunlockService(::grpc::ServerContext* context, ::grpcIServiceManagerPipeline::unlockServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManagerPipeline::unlockServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_isAlive<WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_registerService<WithAsyncMethod_unregisterService<WithAsyncMethod_getService<WithAsyncMethod_getAndLockService<WithAsyncMethod_unlockService<Service > > > > > > > > > AsyncService;
-  template <class BaseClass>
-  class ExperimentalWithCallbackMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithCallbackMethod_isAlive() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::isAliveRequest, ::grpcIServiceManagerPipeline::isAliveResponse>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIServiceManagerPipeline::isAliveRequest* request, ::grpcIServiceManagerPipeline::isAliveResponse* response) { return this->isAlive(context, request, response); }));}
-    void SetMessageAllocatorFor_isAlive(
-        ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::isAliveRequest, ::grpcIServiceManagerPipeline::isAliveResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::isAliveRequest, ::grpcIServiceManagerPipeline::isAliveResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~ExperimentalWithCallbackMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::isAliveRequest* /*request*/, ::grpcIServiceManagerPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* isAlive(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::isAliveRequest* /*request*/, ::grpcIServiceManagerPipeline::isAliveResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* isAlive(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIServiceManagerPipeline::isAliveRequest* /*request*/, ::grpcIServiceManagerPipeline::isAliveResponse* /*response*/)
-    #endif
-      { return nullptr; }
-  };
+  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_registerService<WithAsyncMethod_unregisterService<WithAsyncMethod_getService<WithAsyncMethod_getAndLockService<WithAsyncMethod_unlockService<Service > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_init : public BaseClass {
    private:
@@ -601,7 +502,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(1,
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::initRequest, ::grpcIServiceManagerPipeline::initResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -613,9 +514,9 @@ class grpcIServiceManagerPipelineService final {
     void SetMessageAllocatorFor_init(
         ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::initRequest, ::grpcIServiceManagerPipeline::initResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::initRequest, ::grpcIServiceManagerPipeline::initResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -648,7 +549,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(2,
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::startRequest, ::grpcIServiceManagerPipeline::startResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -660,9 +561,9 @@ class grpcIServiceManagerPipelineService final {
     void SetMessageAllocatorFor_start(
         ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::startRequest, ::grpcIServiceManagerPipeline::startResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::startRequest, ::grpcIServiceManagerPipeline::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -695,7 +596,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(3,
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::stopRequest, ::grpcIServiceManagerPipeline::stopResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -707,9 +608,9 @@ class grpcIServiceManagerPipelineService final {
     void SetMessageAllocatorFor_stop(
         ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::stopRequest, ::grpcIServiceManagerPipeline::stopResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::stopRequest, ::grpcIServiceManagerPipeline::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -742,7 +643,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(4,
+        MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -754,9 +655,9 @@ class grpcIServiceManagerPipelineService final {
     void SetMessageAllocatorFor_registerService(
         ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -789,7 +690,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(5,
+        MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -801,9 +702,9 @@ class grpcIServiceManagerPipelineService final {
     void SetMessageAllocatorFor_unregisterService(
         ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -836,7 +737,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(6,
+        MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -848,9 +749,9 @@ class grpcIServiceManagerPipelineService final {
     void SetMessageAllocatorFor_getService(
         ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -883,7 +784,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(7,
+        MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -895,9 +796,9 @@ class grpcIServiceManagerPipelineService final {
     void SetMessageAllocatorFor_getAndLockService(
         ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -930,7 +831,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(8,
+        MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -942,9 +843,9 @@ class grpcIServiceManagerPipelineService final {
     void SetMessageAllocatorFor_unlockService(
         ::grpc::experimental::MessageAllocator< ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -967,34 +868,17 @@ class grpcIServiceManagerPipelineService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_isAlive<ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_registerService<ExperimentalWithCallbackMethod_unregisterService<ExperimentalWithCallbackMethod_getService<ExperimentalWithCallbackMethod_getAndLockService<ExperimentalWithCallbackMethod_unlockService<Service > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_registerService<ExperimentalWithCallbackMethod_unregisterService<ExperimentalWithCallbackMethod_getService<ExperimentalWithCallbackMethod_getAndLockService<ExperimentalWithCallbackMethod_unlockService<Service > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_isAlive<ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_registerService<ExperimentalWithCallbackMethod_unregisterService<ExperimentalWithCallbackMethod_getService<ExperimentalWithCallbackMethod_getAndLockService<ExperimentalWithCallbackMethod_unlockService<Service > > > > > > > > > ExperimentalCallbackService;
-  template <class BaseClass>
-  class WithGenericMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_isAlive() {
-      ::grpc::Service::MarkMethodGeneric(0);
-    }
-    ~WithGenericMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::isAliveRequest* /*request*/, ::grpcIServiceManagerPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_registerService<ExperimentalWithCallbackMethod_unregisterService<ExperimentalWithCallbackMethod_getService<ExperimentalWithCallbackMethod_getAndLockService<ExperimentalWithCallbackMethod_unlockService<Service > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_init() {
-      ::grpc::Service::MarkMethodGeneric(1);
+      ::grpc::Service::MarkMethodGeneric(0);
     }
     ~WithGenericMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1011,7 +895,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_start() {
-      ::grpc::Service::MarkMethodGeneric(2);
+      ::grpc::Service::MarkMethodGeneric(1);
     }
     ~WithGenericMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1028,7 +912,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_stop() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1045,7 +929,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_registerService() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1062,7 +946,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_unregisterService() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_unregisterService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1079,7 +963,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getService() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_getService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1096,7 +980,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_getAndLockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1113,7 +997,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_unlockService() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_unlockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1125,32 +1009,12 @@ class grpcIServiceManagerPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_isAlive() {
-      ::grpc::Service::MarkMethodRaw(0);
-    }
-    ~WithRawMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::isAliveRequest* /*request*/, ::grpcIServiceManagerPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestisAlive(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_init() {
-      ::grpc::Service::MarkMethodRaw(1);
+      ::grpc::Service::MarkMethodRaw(0);
     }
     ~WithRawMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1161,7 +1025,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestinit(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1170,7 +1034,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_start() {
-      ::grpc::Service::MarkMethodRaw(2);
+      ::grpc::Service::MarkMethodRaw(1);
     }
     ~WithRawMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1181,7 +1045,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststart(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1190,7 +1054,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_stop() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1201,7 +1065,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststop(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1210,7 +1074,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_registerService() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1221,7 +1085,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestregisterService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1230,7 +1094,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_unregisterService() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_unregisterService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1241,7 +1105,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestunregisterService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1250,7 +1114,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getService() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_getService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1261,7 +1125,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1270,7 +1134,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_getAndLockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1281,7 +1145,7 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetAndLockService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1290,7 +1154,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_unlockService() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_unlockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1301,46 +1165,8 @@ class grpcIServiceManagerPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestunlockService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
-  };
-  template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    ExperimentalWithRawCallbackMethod_isAlive() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isAlive(context, request, response); }));
-    }
-    ~ExperimentalWithRawCallbackMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::isAliveRequest* /*request*/, ::grpcIServiceManagerPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* isAlive(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* isAlive(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_init : public BaseClass {
@@ -1353,7 +1179,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(1,
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1391,7 +1217,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(2,
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1429,7 +1255,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(3,
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1467,7 +1293,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(4,
+        MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1505,7 +1331,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(5,
+        MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1543,7 +1369,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(6,
+        MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1581,7 +1407,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(7,
+        MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1619,7 +1445,7 @@ class grpcIServiceManagerPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(8,
+        MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1647,39 +1473,12 @@ class grpcIServiceManagerPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_isAlive : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_isAlive() {
-      ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIServiceManagerPipeline::isAliveRequest, ::grpcIServiceManagerPipeline::isAliveResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::grpcIServiceManagerPipeline::isAliveRequest, ::grpcIServiceManagerPipeline::isAliveResponse>* streamer) {
-                       return this->StreamedisAlive(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_isAlive() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status isAlive(::grpc::ServerContext* /*context*/, const ::grpcIServiceManagerPipeline::isAliveRequest* /*request*/, ::grpcIServiceManagerPipeline::isAliveResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedisAlive(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManagerPipeline::isAliveRequest,::grpcIServiceManagerPipeline::isAliveResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_init() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManagerPipeline::initRequest, ::grpcIServiceManagerPipeline::initResponse>(
             [this](::grpc::ServerContext* context,
@@ -1706,7 +1505,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_start() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManagerPipeline::startRequest, ::grpcIServiceManagerPipeline::startResponse>(
             [this](::grpc::ServerContext* context,
@@ -1733,7 +1532,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_stop() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManagerPipeline::stopRequest, ::grpcIServiceManagerPipeline::stopResponse>(
             [this](::grpc::ServerContext* context,
@@ -1760,7 +1559,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_registerService() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManagerPipeline::registerServiceRequest, ::grpcIServiceManagerPipeline::registerServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -1787,7 +1586,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_unregisterService() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManagerPipeline::unregisterServiceRequest, ::grpcIServiceManagerPipeline::unregisterServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -1814,7 +1613,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getService() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManagerPipeline::getServiceRequest, ::grpcIServiceManagerPipeline::getServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -1841,7 +1640,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManagerPipeline::getAndLockServiceRequest, ::grpcIServiceManagerPipeline::getAndLockServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -1868,7 +1667,7 @@ class grpcIServiceManagerPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_unlockService() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManagerPipeline::unlockServiceRequest, ::grpcIServiceManagerPipeline::unlockServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -1889,9 +1688,9 @@ class grpcIServiceManagerPipelineService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedunlockService(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManagerPipeline::unlockServiceRequest,::grpcIServiceManagerPipeline::unlockServiceResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_isAlive<WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_isAlive<WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIServiceManagerPipeline

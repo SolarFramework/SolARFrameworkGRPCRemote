@@ -4,16 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcIAsyncRelocalizationPipeline;
 
-message isAliveRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-}
-
-message isAliveResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 message init_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -264,7 +254,6 @@ sint32 xpcfGrpcReturnValue = 2;
 }
 
 service grpcIAsyncRelocalizationPipelineService {
-rpc isAlive(isAliveRequest) returns(isAliveResponse) {}
 rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
 rpc start_grpc0(start_grpc0Request) returns(start_grpc0Response) {}
 rpc stop_grpc0(stop_grpc0Request) returns(stop_grpc0Response) {}

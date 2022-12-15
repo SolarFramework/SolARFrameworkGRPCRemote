@@ -22,7 +22,6 @@ class IMappingPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode isAlive()     override;
     SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;

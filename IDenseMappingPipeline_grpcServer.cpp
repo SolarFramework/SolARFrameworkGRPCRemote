@@ -14,7 +14,7 @@ IDenseMappingPipeline_grpcServer::IDenseMappingPipeline_grpcServer():xpcf::Confi
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::pipeline::IDenseMappingPipeline>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(8);
+  m_grpcServerCompressionConfig.resize(7);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -39,28 +39,6 @@ XPCFErrorCode IDenseMappingPipeline_grpcServer::onConfigured()
 {
   return &m_grpcService;
 }
-
-::grpc::Status IDenseMappingPipeline_grpcServer::grpcIDenseMappingPipelineServiceImpl::isAlive(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::isAliveRequest* request, ::grpcIDenseMappingPipeline::isAliveResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "isAlive", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IDenseMappingPipeline_grpcServer::isAlive request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->isAlive();
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IDenseMappingPipeline_grpcServer::isAlive response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
 
 ::grpc::Status IDenseMappingPipeline_grpcServer::grpcIDenseMappingPipelineServiceImpl::init(::grpc::ServerContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response)
 {

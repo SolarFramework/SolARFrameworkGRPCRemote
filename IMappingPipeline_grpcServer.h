@@ -25,7 +25,6 @@ class IMappingPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
     {
       public:
         grpcIMappingPipelineServiceImpl() = default;
-        ::grpc::Status isAlive(::grpc::ServerContext* context, const ::grpcIMappingPipeline::isAliveRequest* request, ::grpcIMappingPipeline::isAliveResponse* response) override;
         ::grpc::Status init_grpc0(::grpc::ServerContext* context, const ::grpcIMappingPipeline::init_grpc0Request* request, ::grpcIMappingPipeline::init_grpc0Response* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIMappingPipeline::startRequest* request, ::grpcIMappingPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIMappingPipeline::stopRequest* request, ::grpcIMappingPipeline::stopResponse* response) override;

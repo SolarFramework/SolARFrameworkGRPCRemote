@@ -25,7 +25,6 @@ class IAsyncRelocalizationPipeline_grpcServer:  public org::bcom::xpcf::Configur
     {
       public:
         grpcIAsyncRelocalizationPipelineServiceImpl() = default;
-        ::grpc::Status isAlive(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::isAliveRequest* request, ::grpcIAsyncRelocalizationPipeline::isAliveResponse* response) override;
         ::grpc::Status init_grpc0(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response) override;
         ::grpc::Status start_grpc0(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::start_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::start_grpc0Response* response) override;
         ::grpc::Status stop_grpc0(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::stop_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::stop_grpc0Response* response) override;
