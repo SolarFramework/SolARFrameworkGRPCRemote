@@ -69,6 +69,17 @@ message setRectificationParametersResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message set3DTransformSolARToWorldRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes transform = 2;
+}
+
+message set3DTransformSolARToWorldResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message mappingProcessRequest_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -140,6 +151,7 @@ rpc stop(stopRequest) returns(stopResponse) {}
 rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCameraParameters_grpc0Response) {}
 rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
 rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
+rpc set3DTransformSolARToWorld(set3DTransformSolARToWorldRequest) returns(set3DTransformSolARToWorldResponse) {}
 rpc mappingProcessRequest_grpc0(mappingProcessRequest_grpc0Request) returns(mappingProcessRequest_grpc0Response) {}
 rpc mappingProcessRequest_grpc1(mappingProcessRequest_grpc1Request) returns(mappingProcessRequest_grpc1Response) {}
 rpc mappingProcessRequest_grpc2(mappingProcessRequest_grpc2Request) returns(mappingProcessRequest_grpc2Response) {}

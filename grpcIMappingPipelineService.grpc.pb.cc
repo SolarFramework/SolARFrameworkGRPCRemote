@@ -28,6 +28,7 @@ static const char* grpcIMappingPipelineService_method_names[] = {
   "/grpcIMappingPipeline.grpcIMappingPipelineService/setCameraParameters_grpc0",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/setCameraParameters_grpc1",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/setRectificationParameters",
+  "/grpcIMappingPipeline.grpcIMappingPipelineService/set3DTransformSolARToWorld",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/mappingProcessRequest_grpc0",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/mappingProcessRequest_grpc1",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/mappingProcessRequest_grpc2",
@@ -47,10 +48,11 @@ grpcIMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelIn
   , rpcmethod_setCameraParameters_grpc0_(grpcIMappingPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_setCameraParameters_grpc1_(grpcIMappingPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_setRectificationParameters_(grpcIMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc0_(grpcIMappingPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc1_(grpcIMappingPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc2_(grpcIMappingPipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_set3DTransformSolARToWorld_(grpcIMappingPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc0_(grpcIMappingPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc1_(grpcIMappingPipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc2_(grpcIMappingPipelineService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMappingPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIMappingPipeline::initRequest& request, ::grpcIMappingPipeline::initResponse* response) {
@@ -187,6 +189,29 @@ void grpcIMappingPipelineService::Stub::experimental_async::setRectificationPara
 ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setRectificationParametersResponse>* grpcIMappingPipelineService::Stub::AsyncsetRectificationParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncsetRectificationParametersRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMappingPipelineService::Stub::set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_set3DTransformSolARToWorld_, context, request, response);
+}
+
+void grpcIMappingPipelineService::Stub::experimental_async::set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_set3DTransformSolARToWorld_, context, request, response, std::move(f));
+}
+
+void grpcIMappingPipelineService::Stub::experimental_async::set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_set3DTransformSolARToWorld_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* grpcIMappingPipelineService::Stub::PrepareAsyncset3DTransformSolARToWorldRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse, ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_set3DTransformSolARToWorld_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* grpcIMappingPipelineService::Stub::Asyncset3DTransformSolARToWorldRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncset3DTransformSolARToWorldRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -347,6 +372,16 @@ grpcIMappingPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMappingPipelineService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMappingPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* req,
+             ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* resp) {
+               return service->set3DTransformSolARToWorld(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMappingPipelineService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -355,7 +390,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[7],
+      grpcIMappingPipelineService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -365,7 +400,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[8],
+      grpcIMappingPipelineService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -375,7 +410,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest_grpc2(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[9],
+      grpcIMappingPipelineService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -425,6 +460,13 @@ grpcIMappingPipelineService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMappingPipelineService::Service::setRectificationParameters(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest* request, ::grpcIMappingPipeline::setRectificationParametersResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMappingPipelineService::Service::set3DTransformSolARToWorld(::grpc::ServerContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response) {
   (void) context;
   (void) request;
   (void) response;

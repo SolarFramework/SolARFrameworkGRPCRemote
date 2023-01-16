@@ -78,6 +78,13 @@ class grpcIMappingPipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setRectificationParametersResponse>> PrepareAsyncsetRectificationParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setRectificationParametersResponse>>(PrepareAsyncsetRectificationParametersRaw(context, request, cq));
     }
+    virtual ::grpc::Status set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>> Asyncset3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>>(Asyncset3DTransformSolARToWorldRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>> PrepareAsyncset3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>>(PrepareAsyncset3DTransformSolARToWorldRaw(context, request, cq));
+    }
     virtual ::grpc::Status mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request& request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>> AsyncmappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>>(AsyncmappingProcessRequest_grpc0Raw(context, request, cq));
@@ -145,6 +152,12 @@ class grpcIMappingPipelineService final {
       #else
       virtual void setRectificationParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest* request, ::grpcIMappingPipeline::setRectificationParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -190,6 +203,8 @@ class grpcIMappingPipelineService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setCameraParameters_grpc1Response>* PrepareAsyncsetCameraParameters_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setRectificationParametersResponse>* AsyncsetRectificationParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::setRectificationParametersResponse>* PrepareAsyncsetRectificationParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* Asyncset3DTransformSolARToWorldRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* PrepareAsyncset3DTransformSolARToWorldRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>* AsyncmappingProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>* PrepareAsyncmappingProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response>* AsyncmappingProcessRequest_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -243,6 +258,13 @@ class grpcIMappingPipelineService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setRectificationParametersResponse>> PrepareAsyncsetRectificationParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setRectificationParametersResponse>>(PrepareAsyncsetRectificationParametersRaw(context, request, cq));
+    }
+    ::grpc::Status set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>> Asyncset3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>>(Asyncset3DTransformSolARToWorldRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>> PrepareAsyncset3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>>(PrepareAsyncset3DTransformSolARToWorldRaw(context, request, cq));
     }
     ::grpc::Status mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request& request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>> AsyncmappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) {
@@ -311,6 +333,12 @@ class grpcIMappingPipelineService final {
       #else
       void setRectificationParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest* request, ::grpcIMappingPipeline::setRectificationParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
@@ -358,6 +386,8 @@ class grpcIMappingPipelineService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setCameraParameters_grpc1Response>* PrepareAsyncsetCameraParameters_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setRectificationParametersResponse>* AsyncsetRectificationParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::setRectificationParametersResponse>* PrepareAsyncsetRectificationParametersRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* Asyncset3DTransformSolARToWorldRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* PrepareAsyncset3DTransformSolARToWorldRaw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>* AsyncmappingProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>* PrepareAsyncmappingProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response>* AsyncmappingProcessRequest_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
@@ -372,6 +402,7 @@ class grpcIMappingPipelineService final {
     const ::grpc::internal::RpcMethod rpcmethod_setCameraParameters_grpc0_;
     const ::grpc::internal::RpcMethod rpcmethod_setCameraParameters_grpc1_;
     const ::grpc::internal::RpcMethod rpcmethod_setRectificationParameters_;
+    const ::grpc::internal::RpcMethod rpcmethod_set3DTransformSolARToWorld_;
     const ::grpc::internal::RpcMethod rpcmethod_mappingProcessRequest_grpc0_;
     const ::grpc::internal::RpcMethod rpcmethod_mappingProcessRequest_grpc1_;
     const ::grpc::internal::RpcMethod rpcmethod_mappingProcessRequest_grpc2_;
@@ -389,6 +420,7 @@ class grpcIMappingPipelineService final {
     virtual ::grpc::Status setCameraParameters_grpc0(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response);
     virtual ::grpc::Status setCameraParameters_grpc1(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response);
     virtual ::grpc::Status setRectificationParameters(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest* request, ::grpcIMappingPipeline::setRectificationParametersResponse* response);
+    virtual ::grpc::Status set3DTransformSolARToWorld(::grpc::ServerContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response);
     virtual ::grpc::Status mappingProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response);
     virtual ::grpc::Status mappingProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response* response);
     virtual ::grpc::Status mappingProcessRequest_grpc2(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response* response);
@@ -515,12 +547,32 @@ class grpcIMappingPipelineService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_set3DTransformSolARToWorld : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_set3DTransformSolARToWorld() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_set3DTransformSolARToWorld() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status set3DTransformSolARToWorld(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* /*request*/, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestset3DTransformSolARToWorld(::grpc::ServerContext* context, ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_mappingProcessRequest_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_mappingProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_mappingProcessRequest_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -531,7 +583,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestmappingProcessRequest_grpc0(::grpc::ServerContext* context, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -540,7 +592,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_mappingProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_mappingProcessRequest_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -551,7 +603,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestmappingProcessRequest_grpc1(::grpc::ServerContext* context, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -560,7 +612,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_mappingProcessRequest_grpc2() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_mappingProcessRequest_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
@@ -571,7 +623,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestmappingProcessRequest_grpc2(::grpc::ServerContext* context, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -580,7 +632,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getDataForVisualization() {
-      ::grpc::Service::MarkMethodAsync(9);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_getDataForVisualization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -591,10 +643,10 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetDataForVisualization(::grpc::ServerContext* context, ::grpcIMappingPipeline::getDataForVisualizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMappingPipeline::getDataForVisualizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_setCameraParameters_grpc0<WithAsyncMethod_setCameraParameters_grpc1<WithAsyncMethod_setRectificationParameters<WithAsyncMethod_mappingProcessRequest_grpc0<WithAsyncMethod_mappingProcessRequest_grpc1<WithAsyncMethod_mappingProcessRequest_grpc2<WithAsyncMethod_getDataForVisualization<Service > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_setCameraParameters_grpc0<WithAsyncMethod_setCameraParameters_grpc1<WithAsyncMethod_setRectificationParameters<WithAsyncMethod_set3DTransformSolARToWorld<WithAsyncMethod_mappingProcessRequest_grpc0<WithAsyncMethod_mappingProcessRequest_grpc1<WithAsyncMethod_mappingProcessRequest_grpc2<WithAsyncMethod_getDataForVisualization<Service > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_init : public BaseClass {
    private:
@@ -878,6 +930,53 @@ class grpcIMappingPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithCallbackMethod_set3DTransformSolARToWorld : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_set3DTransformSolARToWorld() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response) { return this->set3DTransformSolARToWorld(context, request, response); }));}
+    void SetMessageAllocatorFor_set3DTransformSolARToWorld(
+        ::grpc::experimental::MessageAllocator< ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_set3DTransformSolARToWorld() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status set3DTransformSolARToWorld(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* /*request*/, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* set3DTransformSolARToWorld(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* /*request*/, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* set3DTransformSolARToWorld(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* /*request*/, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithCallbackMethod_mappingProcessRequest_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -888,7 +987,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(6,
+        MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -900,9 +999,9 @@ class grpcIMappingPipelineService final {
     void SetMessageAllocatorFor_mappingProcessRequest_grpc0(
         ::grpc::experimental::MessageAllocator< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -935,7 +1034,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(7,
+        MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -947,9 +1046,9 @@ class grpcIMappingPipelineService final {
     void SetMessageAllocatorFor_mappingProcessRequest_grpc1(
         ::grpc::experimental::MessageAllocator< ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -982,7 +1081,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(8,
+        MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -994,9 +1093,9 @@ class grpcIMappingPipelineService final {
     void SetMessageAllocatorFor_mappingProcessRequest_grpc2(
         ::grpc::experimental::MessageAllocator< ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1029,7 +1128,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(9,
+        MarkMethodCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1041,9 +1140,9 @@ class grpcIMappingPipelineService final {
     void SetMessageAllocatorFor_getDataForVisualization(
         ::grpc::experimental::MessageAllocator< ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1066,10 +1165,10 @@ class grpcIMappingPipelineService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters_grpc0<ExperimentalWithCallbackMethod_setCameraParameters_grpc1<ExperimentalWithCallbackMethod_setRectificationParameters<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc0<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc1<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc2<ExperimentalWithCallbackMethod_getDataForVisualization<Service > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters_grpc0<ExperimentalWithCallbackMethod_setCameraParameters_grpc1<ExperimentalWithCallbackMethod_setRectificationParameters<ExperimentalWithCallbackMethod_set3DTransformSolARToWorld<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc0<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc1<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc2<ExperimentalWithCallbackMethod_getDataForVisualization<Service > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters_grpc0<ExperimentalWithCallbackMethod_setCameraParameters_grpc1<ExperimentalWithCallbackMethod_setRectificationParameters<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc0<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc1<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc2<ExperimentalWithCallbackMethod_getDataForVisualization<Service > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters_grpc0<ExperimentalWithCallbackMethod_setCameraParameters_grpc1<ExperimentalWithCallbackMethod_setRectificationParameters<ExperimentalWithCallbackMethod_set3DTransformSolARToWorld<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc0<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc1<ExperimentalWithCallbackMethod_mappingProcessRequest_grpc2<ExperimentalWithCallbackMethod_getDataForVisualization<Service > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_init : public BaseClass {
    private:
@@ -1173,12 +1272,29 @@ class grpcIMappingPipelineService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_set3DTransformSolARToWorld : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_set3DTransformSolARToWorld() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_set3DTransformSolARToWorld() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status set3DTransformSolARToWorld(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* /*request*/, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_mappingProcessRequest_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_mappingProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_mappingProcessRequest_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1195,7 +1311,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_mappingProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_mappingProcessRequest_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1212,7 +1328,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_mappingProcessRequest_grpc2() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_mappingProcessRequest_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1229,7 +1345,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getDataForVisualization() {
-      ::grpc::Service::MarkMethodGeneric(9);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_getDataForVisualization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1361,12 +1477,32 @@ class grpcIMappingPipelineService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_set3DTransformSolARToWorld : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_set3DTransformSolARToWorld() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_set3DTransformSolARToWorld() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status set3DTransformSolARToWorld(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* /*request*/, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestset3DTransformSolARToWorld(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_mappingProcessRequest_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_mappingProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_mappingProcessRequest_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1377,7 +1513,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestmappingProcessRequest_grpc0(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1386,7 +1522,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_mappingProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_mappingProcessRequest_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1397,7 +1533,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestmappingProcessRequest_grpc1(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1406,7 +1542,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_mappingProcessRequest_grpc2() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_mappingProcessRequest_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1417,7 +1553,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestmappingProcessRequest_grpc2(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1426,7 +1562,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getDataForVisualization() {
-      ::grpc::Service::MarkMethodRaw(9);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_getDataForVisualization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1437,7 +1573,7 @@ class grpcIMappingPipelineService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetDataForVisualization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1669,6 +1805,44 @@ class grpcIMappingPipelineService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_set3DTransformSolARToWorld : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_set3DTransformSolARToWorld() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->set3DTransformSolARToWorld(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_set3DTransformSolARToWorld() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status set3DTransformSolARToWorld(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* /*request*/, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* set3DTransformSolARToWorld(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* set3DTransformSolARToWorld(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_mappingProcessRequest_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1679,7 +1853,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(6,
+        MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1717,7 +1891,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(7,
+        MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1755,7 +1929,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(8,
+        MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1793,7 +1967,7 @@ class grpcIMappingPipelineService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(9,
+        MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1983,12 +2157,39 @@ class grpcIMappingPipelineService final {
     virtual ::grpc::Status StreamedsetRectificationParameters(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMappingPipeline::setRectificationParametersRequest,::grpcIMappingPipeline::setRectificationParametersResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_set3DTransformSolARToWorld : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_set3DTransformSolARToWorld() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* streamer) {
+                       return this->Streamedset3DTransformSolARToWorld(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_set3DTransformSolARToWorld() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status set3DTransformSolARToWorld(::grpc::ServerContext* /*context*/, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* /*request*/, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streamedset3DTransformSolARToWorld(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest,::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_mappingProcessRequest_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_mappingProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response>(
             [this](::grpc::ServerContext* context,
@@ -2015,7 +2216,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_mappingProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response>(
             [this](::grpc::ServerContext* context,
@@ -2042,7 +2243,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_mappingProcessRequest_grpc2() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response>(
             [this](::grpc::ServerContext* context,
@@ -2069,7 +2270,7 @@ class grpcIMappingPipelineService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getDataForVisualization() {
-      ::grpc::Service::MarkMethodStreamed(9,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse>(
             [this](::grpc::ServerContext* context,
@@ -2090,9 +2291,9 @@ class grpcIMappingPipelineService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedgetDataForVisualization(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMappingPipeline::getDataForVisualizationRequest,::grpcIMappingPipeline::getDataForVisualizationResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_mappingProcessRequest_grpc0<WithStreamedUnaryMethod_mappingProcessRequest_grpc1<WithStreamedUnaryMethod_mappingProcessRequest_grpc2<WithStreamedUnaryMethod_getDataForVisualization<Service > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_set3DTransformSolARToWorld<WithStreamedUnaryMethod_mappingProcessRequest_grpc0<WithStreamedUnaryMethod_mappingProcessRequest_grpc1<WithStreamedUnaryMethod_mappingProcessRequest_grpc2<WithStreamedUnaryMethod_getDataForVisualization<Service > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_mappingProcessRequest_grpc0<WithStreamedUnaryMethod_mappingProcessRequest_grpc1<WithStreamedUnaryMethod_mappingProcessRequest_grpc2<WithStreamedUnaryMethod_getDataForVisualization<Service > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_set3DTransformSolARToWorld<WithStreamedUnaryMethod_mappingProcessRequest_grpc0<WithStreamedUnaryMethod_mappingProcessRequest_grpc1<WithStreamedUnaryMethod_mappingProcessRequest_grpc2<WithStreamedUnaryMethod_getDataForVisualization<Service > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIMappingPipeline
