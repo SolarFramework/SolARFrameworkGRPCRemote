@@ -15,10 +15,14 @@
 # limitations under the License.
 #
 
+set -e
+
 if [[ $OSTYPE == *"linux"* ]]; then
     XPCF_MODULE_ROOT_OS="linux-gcc"
+    LIB_TYPE="shared"
 else
     XPCF_MODULE_ROOT_OS="win-cl-14.1"
+    LIB_TYPE="static"
 fi
 DEFAULT_XPCF_MODULE_ROOT="${HOME}/.remaken/packages/$XPCF_MODULE_ROOT_OS"
 
@@ -30,11 +34,11 @@ fi
 DEFAULT_VERSION_SOLAR="1.0.0"
 DEFAULT_VERSION_XPCF="2.6.2"
 DEFAULT_DATABASE_DIR="../build-SolARFramework-Desktop_Qt_5_15_2_GCC_64bit-Release"
-DEFAULT_SOLAR_FRAMEWORK_PATH="Dev/SolAR/core/SolARFramework"
+DEFAULT_SOLAR_FRAMEWORK_PATH="../SolARFramework"
 DEFAULT_MODULE_UUID="a0f522d1-b70e-4d0f-ad78-84e78a9af6bf"
+VERBOSE=false
 
 export PATH=$XPCF_MODULE_ROOT/grpc/1.37.1/bin/x86_64/shared/release:$PATH
-# echo "PATH=$PATH"
 
 function help()
 {
@@ -53,7 +57,8 @@ function usage()
     echo "   -d, --database-dir: directory of SolAR framework generated database file (default: $DEFAULT_DATABASE_DIR)"
     echo "   -sv, --solar-version: version number of the solar framework (default: $DEFAULT_VERSION_SOLAR)"
     echo "   -xv, --xpcf-version: version number of xpcf (default: $DEFAULT_VERSION_XPCF)"
-    echo "   -m, --module-uuid: the UUIDto use for the generated GRPC module  (default: $DEFAULT_MODULE_UUID)"  
+    echo "   -m, --module-uuid: the UUIDto use for the generated GRPC module (default: $DEFAULT_MODULE_UUID)"
+    echo "   -v, --verbose: select verbosity mode [true|false] (default: $VERBOSE)"  
 }
 
 # Parse args
@@ -71,12 +76,15 @@ while [ "$1" != "" ]; do
          -d | --database-dir)
             DATABASE_DIR=$VALUE
             ;;
-	-sv | --solar-version)
-	    VERSION_SOLAR=$VALUE
-	    ;;
-	-m | --module-uuid)
-	    MODULE_UUID=$VALUE
-	    ;;
+        -sv | --solar-version)
+            VERSION_SOLAR=$VALUE
+            ;;
+        -m | --module-uuid)
+            MODULE_UUID=$VALUE
+            ;;
+        -v | --verbose)
+            VERBOSE=$VALUE
+            ;;
         *)
             echo "ERROR: unknown parameter '$PARAM'"
             usage
@@ -127,9 +135,43 @@ then
     MODULE_UUID=$DEFAULT_MODULE_UUID
 fi
 
+if [ "$VERBOSE" == "true" ]
+then
+    set -x
+fi
+
 # TODO generate compilation database for the SolAR Framework
 
-echo "$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v $VERSION_SOLAR -m $MODULE_UUID -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -i ${SOLAR_FRAMEWORK_PATH}/interfaces/ -o ."
+remaken install packagedependencies-xpcf_grpc-gen.txt
 
-$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/static/release/xpcf_grpc_gen -n SolARFramework -v $VERSION_SOLAR -m $MODULE_UUID -r SolARBuild@github -u https://github.com/SolarFramework/SolARFramework/releases/download --database_dir $DATABASE_DIR --std c++1z --remove_comments_in_macro -g protobuf -i ${SOLAR_FRAMEWORK_PATH}/interfaces/ -o . 
+export LD_LIBRARY_PATH=/home/jmhenaff/.remaken/packages/linux-gcc/grpc/1.37.1/lib/x86_64/shared/release/:$LD_LIBRARY_PATH
+# Hack: attempt to get rid of message:
+# "/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.26' not found" -> need to have a recent libstdc++ installed
+# If this does not work, use path to existing gcc >= 8 on your machine or install one
+# look at /usr/lib/x86_64-linux-gnu/ or /home/linuxbrew/.linuxbrew/Cellar/gcc/
+export LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/Cellar/gcc/12.2.0/lib/gcc/current/:$LD_LIBRARY_PATH
 
+$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/$LIB_TYPE/release/xpcf_grpc_gen \
+        --module_uuid $MODULE_UUID \
+        --name SolARFramework \
+        --project_version $VERSION_SOLAR \
+        --module_uuid $MODULE_UUID \
+        --repository SolARBuild@github \
+        --url https://github.com/SolarFramework/SolARFramework/releases/download \
+        --database_dir `realpath $DATABASE_DIR` \
+        --std c++1z \
+        --remove_comments_in_macro \
+        --generator protobuf \
+        --interfaces_folder ${SOLAR_FRAMEWORK_PATH}/interfaces/ \
+        --output .
+
+# TODO: fix bug of absolute path in header files
+# https://github.com/b-com-software-basis/xpcf/issues/11
+SOLAR_FRAMEWORK_PATH=`realpath $SOLAR_FRAMEWORK_PATH`
+SUBST_PATTERN="${SOLAR_FRAMEWORK_PATH//\//\\\/}\/interfaces\/"
+find . -name "*.h" -type f | xargs sed -i.bak "s/$SUBST_PATTERN//g"
+find . -name "*.h.bak" -type f | xargs rm
+
+# TODO: fix bug that produces erroneous packagedependencies.txt
+# https://github.com/b-com-software-basis/xpcf/issues/12
+git checkout packagedependencies.txt
