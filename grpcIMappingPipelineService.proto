@@ -80,14 +80,26 @@ message setRectificationParametersResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message set3DTransformSolARToWorldRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes transform = 2;
+}
+
+message set3DTransformSolARToWorldResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message mappingProcessRequest_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes images = 2;
 bytes poses = 3;
-bytes transform = 4;
-bytes updatedTransform = 5;
-bytes status = 6;
+bool fixedPose = 4;
+bytes transform = 5;
+bytes updatedTransform = 6;
+bytes status = 7;
 }
 
 message mappingProcessRequest_grpc0Response
@@ -102,7 +114,8 @@ message mappingProcessRequest_grpc1Request
 int32 grpcServerCompressionFormat  = 1;
 bytes images = 2;
 bytes poses = 3;
-bytes status = 4;
+bool fixedPose = 4;
+bytes status = 5;
 }
 
 message mappingProcessRequest_grpc1Response
@@ -116,8 +129,9 @@ message mappingProcessRequest_grpc2Request
 int32 grpcServerCompressionFormat  = 1;
 bytes images = 2;
 bytes poses = 3;
-bytes updatedTransform = 4;
-bytes status = 5;
+bool fixedPose = 4;
+bytes updatedTransform = 5;
+bytes status = 6;
 }
 
 message mappingProcessRequest_grpc2Response
@@ -149,6 +163,7 @@ rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
 rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCameraParameters_grpc0Response) {}
 rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
 rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
+rpc set3DTransformSolARToWorld(set3DTransformSolARToWorldRequest) returns(set3DTransformSolARToWorldResponse) {}
 rpc mappingProcessRequest_grpc0(mappingProcessRequest_grpc0Request) returns(mappingProcessRequest_grpc0Response) {}
 rpc mappingProcessRequest_grpc1(mappingProcessRequest_grpc1Request) returns(mappingProcessRequest_grpc1Response) {}
 rpc mappingProcessRequest_grpc2(mappingProcessRequest_grpc2Request) returns(mappingProcessRequest_grpc2Response) {}

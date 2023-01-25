@@ -4571,12 +4571,14 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
     kUuidFieldNumber = 2,
     kImagesFieldNumber = 3,
     kPosesFieldNumber = 4,
-    kTimestampFieldNumber = 5,
-    kTransform3DStatusFieldNumber = 6,
-    kTransform3DFieldNumber = 7,
-    kConfidenceFieldNumber = 8,
-    kMappingStatusFieldNumber = 9,
+    kWorldTransformFieldNumber = 6,
+    kTimestampFieldNumber = 7,
+    kTransform3DStatusFieldNumber = 8,
+    kTransform3DFieldNumber = 9,
+    kConfidenceFieldNumber = 10,
+    kMappingStatusFieldNumber = 11,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kFixedPoseFieldNumber = 5,
   };
   // string uuid = 2;
   void clear_uuid();
@@ -4626,7 +4628,23 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_poses();
   public:
 
-  // bytes timestamp = 5;
+  // bytes worldTransform = 6;
+  void clear_worldtransform();
+  const std::string& worldtransform() const;
+  void set_worldtransform(const std::string& value);
+  void set_worldtransform(std::string&& value);
+  void set_worldtransform(const char* value);
+  void set_worldtransform(const void* value, size_t size);
+  std::string* mutable_worldtransform();
+  std::string* release_worldtransform();
+  void set_allocated_worldtransform(std::string* worldtransform);
+  private:
+  const std::string& _internal_worldtransform() const;
+  void _internal_set_worldtransform(const std::string& value);
+  std::string* _internal_mutable_worldtransform();
+  public:
+
+  // bytes timestamp = 7;
   void clear_timestamp();
   const std::string& timestamp() const;
   void set_timestamp(const std::string& value);
@@ -4642,7 +4660,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_timestamp();
   public:
 
-  // bytes transform3DStatus = 6;
+  // bytes transform3DStatus = 8;
   void clear_transform3dstatus();
   const std::string& transform3dstatus() const;
   void set_transform3dstatus(const std::string& value);
@@ -4658,7 +4676,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_transform3dstatus();
   public:
 
-  // bytes transform3D = 7;
+  // bytes transform3D = 9;
   void clear_transform3d();
   const std::string& transform3d() const;
   void set_transform3d(const std::string& value);
@@ -4674,7 +4692,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_transform3d();
   public:
 
-  // bytes confidence = 8;
+  // bytes confidence = 10;
   void clear_confidence();
   const std::string& confidence() const;
   void set_confidence(const std::string& value);
@@ -4690,7 +4708,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_confidence();
   public:
 
-  // bytes mappingStatus = 9;
+  // bytes mappingStatus = 11;
   void clear_mappingstatus();
   const std::string& mappingstatus() const;
   void set_mappingstatus(const std::string& value);
@@ -4715,6 +4733,15 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // bool fixedPose = 5;
+  void clear_fixedpose();
+  bool fixedpose() const;
+  void set_fixedpose(bool value);
+  private:
+  bool _internal_fixedpose() const;
+  void _internal_set_fixedpose(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest)
  private:
   class _Internal;
@@ -4725,12 +4752,14 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr images_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poses_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr worldtransform_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr timestamp_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mappingstatus_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  bool fixedpose_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_grpcIAsyncRelocalizationPipelineService_2eproto;
 };
@@ -8811,7 +8840,88 @@ inline void relocalizeProcessRequestRequest::set_allocated_poses(std::string* po
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.poses)
 }
 
-// bytes timestamp = 5;
+// bool fixedPose = 5;
+inline void relocalizeProcessRequestRequest::clear_fixedpose() {
+  fixedpose_ = false;
+}
+inline bool relocalizeProcessRequestRequest::_internal_fixedpose() const {
+  return fixedpose_;
+}
+inline bool relocalizeProcessRequestRequest::fixedpose() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.fixedPose)
+  return _internal_fixedpose();
+}
+inline void relocalizeProcessRequestRequest::_internal_set_fixedpose(bool value) {
+  
+  fixedpose_ = value;
+}
+inline void relocalizeProcessRequestRequest::set_fixedpose(bool value) {
+  _internal_set_fixedpose(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.fixedPose)
+}
+
+// bytes worldTransform = 6;
+inline void relocalizeProcessRequestRequest::clear_worldtransform() {
+  worldtransform_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestRequest::worldtransform() const {
+  // @@protoc_insertion_point(field_get:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.worldTransform)
+  return _internal_worldtransform();
+}
+inline void relocalizeProcessRequestRequest::set_worldtransform(const std::string& value) {
+  _internal_set_worldtransform(value);
+  // @@protoc_insertion_point(field_set:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.worldTransform)
+}
+inline std::string* relocalizeProcessRequestRequest::mutable_worldtransform() {
+  // @@protoc_insertion_point(field_mutable:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.worldTransform)
+  return _internal_mutable_worldtransform();
+}
+inline const std::string& relocalizeProcessRequestRequest::_internal_worldtransform() const {
+  return worldtransform_.Get();
+}
+inline void relocalizeProcessRequestRequest::_internal_set_worldtransform(const std::string& value) {
+  
+  worldtransform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_worldtransform(std::string&& value) {
+  
+  worldtransform_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.worldTransform)
+}
+inline void relocalizeProcessRequestRequest::set_worldtransform(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  worldtransform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.worldTransform)
+}
+inline void relocalizeProcessRequestRequest::set_worldtransform(const void* value,
+    size_t size) {
+  
+  worldtransform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.worldTransform)
+}
+inline std::string* relocalizeProcessRequestRequest::_internal_mutable_worldtransform() {
+  
+  return worldtransform_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestRequest::release_worldtransform() {
+  // @@protoc_insertion_point(field_release:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.worldTransform)
+  return worldtransform_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_allocated_worldtransform(std::string* worldtransform) {
+  if (worldtransform != nullptr) {
+    
+  } else {
+    
+  }
+  worldtransform_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), worldtransform,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.worldTransform)
+}
+
+// bytes timestamp = 7;
 inline void relocalizeProcessRequestRequest::clear_timestamp() {
   timestamp_.ClearToEmpty();
 }
@@ -8872,7 +8982,7 @@ inline void relocalizeProcessRequestRequest::set_allocated_timestamp(std::string
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.timestamp)
 }
 
-// bytes transform3DStatus = 6;
+// bytes transform3DStatus = 8;
 inline void relocalizeProcessRequestRequest::clear_transform3dstatus() {
   transform3dstatus_.ClearToEmpty();
 }
@@ -8933,7 +9043,7 @@ inline void relocalizeProcessRequestRequest::set_allocated_transform3dstatus(std
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3DStatus)
 }
 
-// bytes transform3D = 7;
+// bytes transform3D = 9;
 inline void relocalizeProcessRequestRequest::clear_transform3d() {
   transform3d_.ClearToEmpty();
 }
@@ -8994,7 +9104,7 @@ inline void relocalizeProcessRequestRequest::set_allocated_transform3d(std::stri
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.transform3D)
 }
 
-// bytes confidence = 8;
+// bytes confidence = 10;
 inline void relocalizeProcessRequestRequest::clear_confidence() {
   confidence_.ClearToEmpty();
 }
@@ -9055,7 +9165,7 @@ inline void relocalizeProcessRequestRequest::set_allocated_confidence(std::strin
   // @@protoc_insertion_point(field_set_allocated:grpcIAsyncRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
 }
 
-// bytes mappingStatus = 9;
+// bytes mappingStatus = 11;
 inline void relocalizeProcessRequestRequest::clear_mappingstatus() {
   mappingstatus_.ClearToEmpty();
 }

@@ -172,11 +172,13 @@ int32 grpcServerCompressionFormat  = 1;
 string uuid = 2;
 bytes images = 3;
 bytes poses = 4;
-bytes timestamp = 5;
-bytes transform3DStatus = 6;
-bytes transform3D = 7;
-bytes confidence = 8;
-bytes mappingStatus = 9;
+bool fixedPose = 5;
+bytes worldTransform = 6;
+bytes timestamp = 7;
+bytes transform3DStatus = 8;
+bytes transform3D = 9;
+bytes confidence = 10;
+bytes mappingStatus = 11;
 }
 
 message relocalizeProcessRequestResponse
