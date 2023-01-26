@@ -1,0 +1,2 @@
+platform=linux-gcc
+cppstd=17

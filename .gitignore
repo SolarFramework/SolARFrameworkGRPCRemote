@@ -10,3 +10,10 @@ xpcfGrpcRemotingSolARFramework*.xml
 
 build/*
 .build-rules/*
+
+*.o
+
+*.so
+*.so.*
+*.stash
+Makefile
