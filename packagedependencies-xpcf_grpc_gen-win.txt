@@ -1,0 +1,1 @@
+xpcf_grpc_gen|2.6.2|xpcf|@github|https://github.com/b-com-software-basis/xpcf/releases/download|static|

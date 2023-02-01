@@ -142,7 +142,12 @@ fi
 
 # TODO generate compilation database for the SolAR Framework
 
-remaken install packagedependencies-xpcf_grpc-gen.txt
+if [[ $OSTYPE == *"linux"* ]]; then
+    remaken install packagedependencies-xpcf_grpc_gen-linux.txt
+else
+    remaken install packagedependencies-xpcf_grpc_gen-win.txt
+fi
+
 
 export LD_LIBRARY_PATH=/home/jmhenaff/.remaken/packages/linux-gcc/grpc/1.37.1/lib/x86_64/shared/release/:$LD_LIBRARY_PATH
 # Hack: attempt to get rid of message:
