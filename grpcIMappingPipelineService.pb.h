@@ -47,7 +47,7 @@ struct TableStruct_grpcIMappingPipelineService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -86,6 +86,12 @@ extern mappingProcessRequest_grpc2RequestDefaultTypeInternal _mappingProcessRequ
 class mappingProcessRequest_grpc2Response;
 struct mappingProcessRequest_grpc2ResponseDefaultTypeInternal;
 extern mappingProcessRequest_grpc2ResponseDefaultTypeInternal _mappingProcessRequest_grpc2Response_default_instance_;
+class set3DTransformSolARToWorldRequest;
+struct set3DTransformSolARToWorldRequestDefaultTypeInternal;
+extern set3DTransformSolARToWorldRequestDefaultTypeInternal _set3DTransformSolARToWorldRequest_default_instance_;
+class set3DTransformSolARToWorldResponse;
+struct set3DTransformSolARToWorldResponseDefaultTypeInternal;
+extern set3DTransformSolARToWorldResponseDefaultTypeInternal _set3DTransformSolARToWorldResponse_default_instance_;
 class setCameraParameters_grpc0Request;
 struct setCameraParameters_grpc0RequestDefaultTypeInternal;
 extern setCameraParameters_grpc0RequestDefaultTypeInternal _setCameraParameters_grpc0Request_default_instance_;
@@ -128,6 +134,8 @@ template<> ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* Arena::Cr
 template<> ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response* Arena::CreateMaybeMessage<::grpcIMappingPipeline::mappingProcessRequest_grpc1Response>(Arena*);
 template<> ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request* Arena::CreateMaybeMessage<::grpcIMappingPipeline::mappingProcessRequest_grpc2Request>(Arena*);
 template<> ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response* Arena::CreateMaybeMessage<::grpcIMappingPipeline::mappingProcessRequest_grpc2Response>(Arena*);
+template<> ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* Arena::CreateMaybeMessage<::grpcIMappingPipeline::set3DTransformSolARToWorldRequest>(Arena*);
+template<> ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* Arena::CreateMaybeMessage<::grpcIMappingPipeline::set3DTransformSolARToWorldResponse>(Arena*);
 template<> ::grpcIMappingPipeline::setCameraParameters_grpc0Request* Arena::CreateMaybeMessage<::grpcIMappingPipeline::setCameraParameters_grpc0Request>(Arena*);
 template<> ::grpcIMappingPipeline::setCameraParameters_grpc0Response* Arena::CreateMaybeMessage<::grpcIMappingPipeline::setCameraParameters_grpc0Response>(Arena*);
 template<> ::grpcIMappingPipeline::setCameraParameters_grpc1Request* Arena::CreateMaybeMessage<::grpcIMappingPipeline::setCameraParameters_grpc1Request>(Arena*);
@@ -1877,6 +1885,298 @@ class setRectificationParametersResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class set3DTransformSolARToWorldRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMappingPipeline.set3DTransformSolARToWorldRequest) */ {
+ public:
+  inline set3DTransformSolARToWorldRequest() : set3DTransformSolARToWorldRequest(nullptr) {}
+  virtual ~set3DTransformSolARToWorldRequest();
+  explicit constexpr set3DTransformSolARToWorldRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  set3DTransformSolARToWorldRequest(const set3DTransformSolARToWorldRequest& from);
+  set3DTransformSolARToWorldRequest(set3DTransformSolARToWorldRequest&& from) noexcept
+    : set3DTransformSolARToWorldRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline set3DTransformSolARToWorldRequest& operator=(const set3DTransformSolARToWorldRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline set3DTransformSolARToWorldRequest& operator=(set3DTransformSolARToWorldRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const set3DTransformSolARToWorldRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const set3DTransformSolARToWorldRequest* internal_default_instance() {
+    return reinterpret_cast<const set3DTransformSolARToWorldRequest*>(
+               &_set3DTransformSolARToWorldRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(set3DTransformSolARToWorldRequest& a, set3DTransformSolARToWorldRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(set3DTransformSolARToWorldRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(set3DTransformSolARToWorldRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline set3DTransformSolARToWorldRequest* New() const final {
+    return CreateMaybeMessage<set3DTransformSolARToWorldRequest>(nullptr);
+  }
+
+  set3DTransformSolARToWorldRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<set3DTransformSolARToWorldRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const set3DTransformSolARToWorldRequest& from);
+  void MergeFrom(const set3DTransformSolARToWorldRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(set3DTransformSolARToWorldRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMappingPipeline.set3DTransformSolARToWorldRequest";
+  }
+  protected:
+  explicit set3DTransformSolARToWorldRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMappingPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTransformFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes transform = 2;
+  void clear_transform();
+  const std::string& transform() const;
+  void set_transform(const std::string& value);
+  void set_transform(std::string&& value);
+  void set_transform(const char* value);
+  void set_transform(const void* value, size_t size);
+  std::string* mutable_transform();
+  std::string* release_transform();
+  void set_allocated_transform(std::string* transform);
+  private:
+  const std::string& _internal_transform() const;
+  void _internal_set_transform(const std::string& value);
+  std::string* _internal_mutable_transform();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.set3DTransformSolARToWorldRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class set3DTransformSolARToWorldResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMappingPipeline.set3DTransformSolARToWorldResponse) */ {
+ public:
+  inline set3DTransformSolARToWorldResponse() : set3DTransformSolARToWorldResponse(nullptr) {}
+  virtual ~set3DTransformSolARToWorldResponse();
+  explicit constexpr set3DTransformSolARToWorldResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  set3DTransformSolARToWorldResponse(const set3DTransformSolARToWorldResponse& from);
+  set3DTransformSolARToWorldResponse(set3DTransformSolARToWorldResponse&& from) noexcept
+    : set3DTransformSolARToWorldResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline set3DTransformSolARToWorldResponse& operator=(const set3DTransformSolARToWorldResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline set3DTransformSolARToWorldResponse& operator=(set3DTransformSolARToWorldResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const set3DTransformSolARToWorldResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const set3DTransformSolARToWorldResponse* internal_default_instance() {
+    return reinterpret_cast<const set3DTransformSolARToWorldResponse*>(
+               &_set3DTransformSolARToWorldResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(set3DTransformSolARToWorldResponse& a, set3DTransformSolARToWorldResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(set3DTransformSolARToWorldResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(set3DTransformSolARToWorldResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline set3DTransformSolARToWorldResponse* New() const final {
+    return CreateMaybeMessage<set3DTransformSolARToWorldResponse>(nullptr);
+  }
+
+  set3DTransformSolARToWorldResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<set3DTransformSolARToWorldResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const set3DTransformSolARToWorldResponse& from);
+  void MergeFrom(const set3DTransformSolARToWorldResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(set3DTransformSolARToWorldResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMappingPipeline.set3DTransformSolARToWorldResponse";
+  }
+  protected:
+  explicit set3DTransformSolARToWorldResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMappingPipelineService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.set3DTransformSolARToWorldResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMappingPipelineService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class mappingProcessRequest_grpc0Request PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMappingPipeline.mappingProcessRequest_grpc0Request) */ {
  public:
@@ -1920,7 +2220,7 @@ class mappingProcessRequest_grpc0Request PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(mappingProcessRequest_grpc0Request& a, mappingProcessRequest_grpc0Request& b) {
     a.Swap(&b);
@@ -2158,7 +2458,7 @@ class mappingProcessRequest_grpc0Response PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc0Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(mappingProcessRequest_grpc0Response& a, mappingProcessRequest_grpc0Response& b) {
     a.Swap(&b);
@@ -2331,7 +2631,7 @@ class mappingProcessRequest_grpc1Request PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc1Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(mappingProcessRequest_grpc1Request& a, mappingProcessRequest_grpc1Request& b) {
     a.Swap(&b);
@@ -2533,7 +2833,7 @@ class mappingProcessRequest_grpc1Response PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc1Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(mappingProcessRequest_grpc1Response& a, mappingProcessRequest_grpc1Response& b) {
     a.Swap(&b);
@@ -2688,7 +2988,7 @@ class mappingProcessRequest_grpc2Request PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc2Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(mappingProcessRequest_grpc2Request& a, mappingProcessRequest_grpc2Request& b) {
     a.Swap(&b);
@@ -2908,7 +3208,7 @@ class mappingProcessRequest_grpc2Response PROTOBUF_FINAL :
                &_mappingProcessRequest_grpc2Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(mappingProcessRequest_grpc2Response& a, mappingProcessRequest_grpc2Response& b) {
     a.Swap(&b);
@@ -3081,7 +3381,7 @@ class getDataForVisualizationRequest PROTOBUF_FINAL :
                &_getDataForVisualizationRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(getDataForVisualizationRequest& a, getDataForVisualizationRequest& b) {
     a.Swap(&b);
@@ -3254,7 +3554,7 @@ class getDataForVisualizationResponse PROTOBUF_FINAL :
                &_getDataForVisualizationResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(getDataForVisualizationResponse& a, getDataForVisualizationResponse& b) {
     a.Swap(&b);
@@ -3980,6 +4280,115 @@ inline void setRectificationParametersResponse::_internal_set_xpcfgrpcreturnvalu
 inline void setRectificationParametersResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIMappingPipeline.setRectificationParametersResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// set3DTransformSolARToWorldRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void set3DTransformSolARToWorldRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 set3DTransformSolARToWorldRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 set3DTransformSolARToWorldRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void set3DTransformSolARToWorldRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void set3DTransformSolARToWorldRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.grpcServerCompressionFormat)
+}
+
+// bytes transform = 2;
+inline void set3DTransformSolARToWorldRequest::clear_transform() {
+  transform_.ClearToEmpty();
+}
+inline const std::string& set3DTransformSolARToWorldRequest::transform() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.transform)
+  return _internal_transform();
+}
+inline void set3DTransformSolARToWorldRequest::set_transform(const std::string& value) {
+  _internal_set_transform(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.transform)
+}
+inline std::string* set3DTransformSolARToWorldRequest::mutable_transform() {
+  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.transform)
+  return _internal_mutable_transform();
+}
+inline const std::string& set3DTransformSolARToWorldRequest::_internal_transform() const {
+  return transform_.Get();
+}
+inline void set3DTransformSolARToWorldRequest::_internal_set_transform(const std::string& value) {
+  
+  transform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void set3DTransformSolARToWorldRequest::set_transform(std::string&& value) {
+  
+  transform_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.transform)
+}
+inline void set3DTransformSolARToWorldRequest::set_transform(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  transform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.transform)
+}
+inline void set3DTransformSolARToWorldRequest::set_transform(const void* value,
+    size_t size) {
+  
+  transform_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.transform)
+}
+inline std::string* set3DTransformSolARToWorldRequest::_internal_mutable_transform() {
+  
+  return transform_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* set3DTransformSolARToWorldRequest::release_transform() {
+  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.transform)
+  return transform_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void set3DTransformSolARToWorldRequest::set_allocated_transform(std::string* transform) {
+  if (transform != nullptr) {
+    
+  } else {
+    
+  }
+  transform_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), transform,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.set3DTransformSolARToWorldRequest.transform)
+}
+
+// -------------------------------------------------------------------
+
+// set3DTransformSolARToWorldResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void set3DTransformSolARToWorldResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 set3DTransformSolARToWorldResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 set3DTransformSolARToWorldResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.set3DTransformSolARToWorldResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void set3DTransformSolARToWorldResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void set3DTransformSolARToWorldResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.set3DTransformSolARToWorldResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -5518,6 +5927,10 @@ inline void getDataForVisualizationResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
