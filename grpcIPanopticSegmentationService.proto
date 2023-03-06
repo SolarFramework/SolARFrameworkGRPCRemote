@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIPanopticSegmentation;
+
+message segmentRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+bytes labelMap = 3;
+bytes boxes = 4;
+bytes classObjectIds = 5;
+bytes scores = 6;
+}
+
+message segmentResponse
+{
+bytes labelMap = 1;
+bytes boxes = 2;
+bytes classObjectIds = 3;
+bytes scores = 4;
+sint32 xpcfGrpcReturnValue = 5;
+}
+
+service grpcIPanopticSegmentationService {
+rpc segment(segmentRequest) returns(segmentResponse) {}
+}
+

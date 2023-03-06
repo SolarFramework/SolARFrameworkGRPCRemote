@@ -668,6 +668,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIPanopticSegmentation::IPanopticSegmentation_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIPanopticSegmentation::IPanopticSegmentation_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyISemanticSegmentation::ISemanticSegmentation_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -1033,6 +1043,8 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizer::IRelocalizer_grpcPr
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRelocalizer::IRelocalizer_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIInstanceSegmentation::IInstanceSegmentation_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIInstanceSegmentation::IInstanceSegmentation_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPanopticSegmentation::IPanopticSegmentation_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPanopticSegmentation::IPanopticSegmentation_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyISemanticSegmentation::ISemanticSegmentation_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverISemanticSegmentation::ISemanticSegmentation_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIBootstrapper::IBootstrapper_grpcProxy)

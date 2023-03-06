@@ -264,6 +264,10 @@ IInstanceSegmentation_grpcProxy.h \
 IInstanceSegmentation_grpcServer.h \
 grpcIInstanceSegmentationService.pb.h \
 grpcIInstanceSegmentationService.grpc.pb.h \
+IPanopticSegmentation_grpcProxy.h \
+IPanopticSegmentation_grpcServer.h \
+grpcIPanopticSegmentationService.pb.h \
+grpcIPanopticSegmentationService.grpc.pb.h \
 ISemanticSegmentation_grpcProxy.h \
 ISemanticSegmentation_grpcServer.h \
 grpcISemanticSegmentationService.pb.h \
@@ -623,6 +627,10 @@ IInstanceSegmentation_grpcProxy.cpp \
 IInstanceSegmentation_grpcServer.cpp \
 grpcIInstanceSegmentationService.pb.cc \
 grpcIInstanceSegmentationService.grpc.pb.cc \
+IPanopticSegmentation_grpcProxy.cpp \
+IPanopticSegmentation_grpcServer.cpp \
+grpcIPanopticSegmentationService.pb.cc \
+grpcIPanopticSegmentationService.grpc.pb.cc \
 ISemanticSegmentation_grpcProxy.cpp \
 ISemanticSegmentation_grpcServer.cpp \
 grpcISemanticSegmentationService.pb.cc \
