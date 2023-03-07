@@ -195,7 +195,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::getCameraParamete
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence)
+SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest reqIn;
@@ -206,6 +206,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcess
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
+  reqIn.set_posecoarse(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseCoarse));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
   #ifdef ENABLE_PROXY_TIMERS

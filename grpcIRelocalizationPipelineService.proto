@@ -61,8 +61,9 @@ message relocalizeProcessRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes image = 2;
-bytes pose = 3;
-bytes confidence = 4;
+bytes poseCoarse = 3;
+bytes pose = 4;
+bytes confidence = 5;
 }
 
 message relocalizeProcessRequestResponse
