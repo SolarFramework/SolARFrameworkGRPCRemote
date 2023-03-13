@@ -57,6 +57,18 @@ message unregisterClientResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message getAllClientsUUIDRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes uuidList = 2;
+}
+
+message getAllClientsUUIDResponse
+{
+bytes uuidList = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 message init_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -261,6 +273,7 @@ rpc start_grpc0(start_grpc0Request) returns(start_grpc0Response) {}
 rpc stop_grpc0(stop_grpc0Request) returns(stop_grpc0Response) {}
 rpc registerClient(registerClientRequest) returns(registerClientResponse) {}
 rpc unregisterClient(unregisterClientRequest) returns(unregisterClientResponse) {}
+rpc getAllClientsUUID(getAllClientsUUIDRequest) returns(getAllClientsUUIDResponse) {}
 rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
 rpc init_grpc2(init_grpc2Request) returns(init_grpc2Response) {}
 rpc start_grpc1(start_grpc1Request) returns(start_grpc1Response) {}

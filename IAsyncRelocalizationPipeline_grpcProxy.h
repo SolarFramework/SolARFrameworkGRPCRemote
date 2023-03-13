@@ -27,6 +27,7 @@ class IAsyncRelocalizationPipeline_grpcProxy:  public org::bcom::xpcf::Configura
     SolAR::FrameworkReturnCode stop()     override;
     SolAR::FrameworkReturnCode registerClient(std::string& uuid)     override;
     SolAR::FrameworkReturnCode unregisterClient(std::string const& uuid)     override;
+    SolAR::FrameworkReturnCode getAllClientsUUID(std::vector<std::string>& uuidList)     const     override;
     SolAR::FrameworkReturnCode init(std::string const& uuid)     override;
     SolAR::FrameworkReturnCode init(std::string const& uuid, SolAR::api::pipeline::PipelineMode pipelineMode)     override;
     SolAR::FrameworkReturnCode start(std::string const& uuid)     override;
