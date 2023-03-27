@@ -19,7 +19,7 @@ set -e
 
 if [[ $OSTYPE == *"linux"* ]]; then
     XPCF_MODULE_ROOT_OS="linux-gcc"
-    LIB_TYPE="shared"
+    LIB_TYPE="static"
 else
     XPCF_MODULE_ROOT_OS="win-cl-14.1"
     LIB_TYPE="static"
@@ -32,13 +32,11 @@ then
 fi
 
 DEFAULT_VERSION_SOLAR="1.0.0"
-DEFAULT_VERSION_XPCF="2.6.2"
-DEFAULT_DATABASE_DIR="../build-SolARFramework-Desktop_Qt_5_15_2_GCC_64bit-Release"
+DEFAULT_VERSION_XPCF="2.7.0"
+DEFAULT_DATABASE_DIR="../build-SolARFramework-Desktop_Qt_6_4_2_GCC_64bit-Release"
 DEFAULT_SOLAR_FRAMEWORK_PATH="../SolARFramework"
 DEFAULT_MODULE_UUID="a0f522d1-b70e-4d0f-ad78-84e78a9af6bf"
 VERBOSE=false
-
-export PATH=$XPCF_MODULE_ROOT/grpc/1.37.1/bin/x86_64/shared/release:$PATH
 
 function help()
 {
@@ -142,19 +140,13 @@ fi
 
 # TODO generate compilation database for the SolAR Framework
 
-if [[ $OSTYPE == *"linux"* ]]; then
-    remaken install packagedependencies-xpcf_grpc_gen-linux.txt
-else
-    remaken install packagedependencies-xpcf_grpc_gen-win.txt
-fi
+#if [[ $OSTYPE == *"linux"* ]]; then
+#    remaken install packagedependencies-xpcf_grpc_gen-linux.txt
+#else
+#    remaken install packagedependencies-xpcf_grpc_gen-win.txt
+#fi
 
 
-export LD_LIBRARY_PATH=$XPCF_MODULE_ROOT/grpc/1.37.1/lib/x86_64/shared/release/:$LD_LIBRARY_PATH
-# Hack: attempt to get rid of message:
-# "/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.26' not found" -> need to have a recent libstdc++ installed
-# If this does not work, use path to existing gcc >= 8 on your machine or install one
-# look at /usr/lib/x86_64-linux-gnu/ or /home/linuxbrew/.linuxbrew/Cellar/gcc/
-export LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/Cellar/gcc/12.2.0/lib/gcc/current/:$LD_LIBRARY_PATH
 
 $XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/$LIB_TYPE/release/xpcf_grpc_gen \
         --module_uuid $MODULE_UUID \
