@@ -1657,8 +1657,9 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
 
   enum : int {
     kImageFieldNumber = 2,
-    kPoseFieldNumber = 3,
-    kConfidenceFieldNumber = 4,
+    kPoseCoarseFieldNumber = 3,
+    kPoseFieldNumber = 4,
+    kConfidenceFieldNumber = 5,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes image = 2;
@@ -1677,7 +1678,23 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_image();
   public:
 
-  // bytes pose = 3;
+  // bytes poseCoarse = 3;
+  void clear_posecoarse();
+  const std::string& posecoarse() const;
+  void set_posecoarse(const std::string& value);
+  void set_posecoarse(std::string&& value);
+  void set_posecoarse(const char* value);
+  void set_posecoarse(const void* value, size_t size);
+  std::string* mutable_posecoarse();
+  std::string* release_posecoarse();
+  void set_allocated_posecoarse(std::string* posecoarse);
+  private:
+  const std::string& _internal_posecoarse() const;
+  void _internal_set_posecoarse(const std::string& value);
+  std::string* _internal_mutable_posecoarse();
+  public:
+
+  // bytes pose = 4;
   void clear_pose();
   const std::string& pose() const;
   void set_pose(const std::string& value);
@@ -1693,7 +1710,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes confidence = 4;
+  // bytes confidence = 5;
   void clear_confidence();
   const std::string& confidence() const;
   void set_confidence(const std::string& value);
@@ -1726,6 +1743,7 @@ class relocalizeProcessRequestRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr image_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr posecoarse_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
@@ -2730,7 +2748,68 @@ inline void relocalizeProcessRequestRequest::set_allocated_image(std::string* im
   // @@protoc_insertion_point(field_set_allocated:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.image)
 }
 
-// bytes pose = 3;
+// bytes poseCoarse = 3;
+inline void relocalizeProcessRequestRequest::clear_posecoarse() {
+  posecoarse_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestRequest::posecoarse() const {
+  // @@protoc_insertion_point(field_get:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.poseCoarse)
+  return _internal_posecoarse();
+}
+inline void relocalizeProcessRequestRequest::set_posecoarse(const std::string& value) {
+  _internal_set_posecoarse(value);
+  // @@protoc_insertion_point(field_set:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.poseCoarse)
+}
+inline std::string* relocalizeProcessRequestRequest::mutable_posecoarse() {
+  // @@protoc_insertion_point(field_mutable:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.poseCoarse)
+  return _internal_mutable_posecoarse();
+}
+inline const std::string& relocalizeProcessRequestRequest::_internal_posecoarse() const {
+  return posecoarse_.Get();
+}
+inline void relocalizeProcessRequestRequest::_internal_set_posecoarse(const std::string& value) {
+  
+  posecoarse_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_posecoarse(std::string&& value) {
+  
+  posecoarse_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.poseCoarse)
+}
+inline void relocalizeProcessRequestRequest::set_posecoarse(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  posecoarse_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.poseCoarse)
+}
+inline void relocalizeProcessRequestRequest::set_posecoarse(const void* value,
+    size_t size) {
+  
+  posecoarse_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.poseCoarse)
+}
+inline std::string* relocalizeProcessRequestRequest::_internal_mutable_posecoarse() {
+  
+  return posecoarse_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* relocalizeProcessRequestRequest::release_posecoarse() {
+  // @@protoc_insertion_point(field_release:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.poseCoarse)
+  return posecoarse_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void relocalizeProcessRequestRequest::set_allocated_posecoarse(std::string* posecoarse) {
+  if (posecoarse != nullptr) {
+    
+  } else {
+    
+  }
+  posecoarse_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), posecoarse,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.poseCoarse)
+}
+
+// bytes pose = 4;
 inline void relocalizeProcessRequestRequest::clear_pose() {
   pose_.ClearToEmpty();
 }
@@ -2791,7 +2870,7 @@ inline void relocalizeProcessRequestRequest::set_allocated_pose(std::string* pos
   // @@protoc_insertion_point(field_set_allocated:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.pose)
 }
 
-// bytes confidence = 4;
+// bytes confidence = 5;
 inline void relocalizeProcessRequestRequest::clear_confidence() {
   confidence_.ClearToEmpty();
 }

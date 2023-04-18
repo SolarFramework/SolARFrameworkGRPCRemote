@@ -125,6 +125,8 @@
 #include "IMappingPipeline_grpcServer.h"
 #include "IRelocalizationPipeline_grpcProxy.h"
 #include "IRelocalizationPipeline_grpcServer.h"
+#include "IServiceManagerPipeline_grpcProxy.h"
+#include "IServiceManagerPipeline_grpcServer.h"
 #include "IPCFilter_grpcProxy.h"
 #include "IPCFilter_grpcServer.h"
 #include "IPCFilterCentroid_grpcProxy.h"
