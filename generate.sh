@@ -150,7 +150,7 @@ else
 fi
 
 
-export LD_LIBRARY_PATH=${XPCF_MODULE_ROOT}/grpc/1.37.1/lib/x86_64/shared/release/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$XPCF_MODULE_ROOT/grpc/1.37.1/lib/x86_64/shared/release/:$LD_LIBRARY_PATH
 # Hack: attempt to get rid of message:
 # "/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.26' not found" -> need to have a recent libstdc++ installed
 # If this does not work, use path to existing gcc >= 8 on your machine or install one
