@@ -33,7 +33,12 @@ void IAsyncRelocalizationPipeline_grpcProxy::unloadComponent ()
 
 XPCFErrorCode IAsyncRelocalizationPipeline_grpcProxy::onConfigured()
 {
-  m_channel = ::grpc::CreateChannel(m_channelUrl, xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)));
+  ::grpc::ChannelArguments ch_args;
+  ch_args.SetMaxReceiveMessageSize(-1);
+  ch_args.SetMaxSendMessageSize(-1);
+  m_channel = ::grpc::CreateCustomChannel(m_channelUrl,
+  xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)),
+  ch_args);
   m_grpcStub = ::grpcIAsyncRelocalizationPipeline::grpcIAsyncRelocalizationPipelineService::NewStub(m_channel);
   for (auto & compressionLine : m_grpcProxyCompressionConfig) {
       translateClientConfiguration(compressionLine, m_serviceCompressionInfos, m_methodCompressionInfosMap);
