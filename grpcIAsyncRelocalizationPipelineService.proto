@@ -219,6 +219,21 @@ bytes confidence = 3;
 sint32 xpcfGrpcReturnValue = 4;
 }
 
+message getMappingDataRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+bytes outputPointClouds = 3;
+bytes keyframePoses = 4;
+}
+
+message getMappingDataRequestResponse
+{
+bytes outputPointClouds = 1;
+bytes keyframePoses = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
 message getLastPoseRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -285,6 +300,7 @@ rpc setRectificationParameters(setRectificationParametersRequest) returns(setRec
 rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
 rpc relocalizeProcessRequest(relocalizeProcessRequestRequest) returns(relocalizeProcessRequestResponse) {}
 rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRequestResponse) {}
+rpc getMappingDataRequest(getMappingDataRequestRequest) returns(getMappingDataRequestResponse) {}
 rpc getLastPose(getLastPoseRequest) returns(getLastPoseResponse) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc resetMap(resetMapRequest) returns(resetMapResponse) {}
