@@ -42,6 +42,7 @@ static const char* grpcIAsyncRelocalizationPipelineService_method_names[] = {
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/getMappingDataRequest",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/getLastPose",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/getMapRequest",
+  "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/setMapRequest",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/resetMap",
   "/grpcIAsyncRelocalizationPipeline.grpcIAsyncRelocalizationPipelineService/getPointCloudRequest",
 };
@@ -73,8 +74,9 @@ grpcIAsyncRelocalizationPipelineService::Stub::Stub(const std::shared_ptr< ::grp
   , rpcmethod_getMappingDataRequest_(grpcIAsyncRelocalizationPipelineService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getLastPose_(grpcIAsyncRelocalizationPipelineService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getMapRequest_(grpcIAsyncRelocalizationPipelineService_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_resetMap_(grpcIAsyncRelocalizationPipelineService_method_names[20], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPointCloudRequest_(grpcIAsyncRelocalizationPipelineService_method_names[21], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setMapRequest_(grpcIAsyncRelocalizationPipelineService_method_names[20], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_resetMap_(grpcIAsyncRelocalizationPipelineService_method_names[21], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloudRequest_(grpcIAsyncRelocalizationPipelineService_method_names[22], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIAsyncRelocalizationPipelineService::Stub::init_grpc0(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request& request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response) {
@@ -537,6 +539,29 @@ void grpcIAsyncRelocalizationPipelineService::Stub::experimental_async::getMapRe
   return result;
 }
 
+::grpc::Status grpcIAsyncRelocalizationPipelineService::Stub::setMapRequest(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest& request, ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest, ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setMapRequest_, context, request, response);
+}
+
+void grpcIAsyncRelocalizationPipelineService::Stub::experimental_async::setMapRequest(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest, ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapRequest_, context, request, response, std::move(f));
+}
+
+void grpcIAsyncRelocalizationPipelineService::Stub::experimental_async::setMapRequest(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapRequest_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse>* grpcIAsyncRelocalizationPipelineService::Stub::PrepareAsyncsetMapRequestRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse, ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setMapRequest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse>* grpcIAsyncRelocalizationPipelineService::Stub::AsyncsetMapRequestRaw(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncsetMapRequestRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status grpcIAsyncRelocalizationPipelineService::Stub::resetMap(::grpc::ClientContext* context, const ::grpcIAsyncRelocalizationPipeline::resetMapRequest& request, ::grpcIAsyncRelocalizationPipeline::resetMapResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIAsyncRelocalizationPipeline::resetMapRequest, ::grpcIAsyncRelocalizationPipeline::resetMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_resetMap_, context, request, response);
 }
@@ -787,6 +812,16 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIAsyncRelocalizationPipelineService_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest, ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIAsyncRelocalizationPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest* req,
+             ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse* resp) {
+               return service->setMapRequest(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIAsyncRelocalizationPipelineService_method_names[21],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::resetMapRequest, ::grpcIAsyncRelocalizationPipeline::resetMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -795,7 +830,7 @@ grpcIAsyncRelocalizationPipelineService::Service::Service() {
                return service->resetMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIAsyncRelocalizationPipelineService_method_names[21],
+      grpcIAsyncRelocalizationPipelineService_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIAsyncRelocalizationPipelineService::Service, ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest, ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIAsyncRelocalizationPipelineService::Service* service,
@@ -943,6 +978,13 @@ grpcIAsyncRelocalizationPipelineService::Service::~Service() {
 }
 
 ::grpc::Status grpcIAsyncRelocalizationPipelineService::Service::getMapRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getMapRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::getMapRequestResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIAsyncRelocalizationPipelineService::Service::setMapRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse* response) {
   (void) context;
   (void) request;
   (void) response;

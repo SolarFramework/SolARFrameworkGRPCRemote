@@ -260,6 +260,17 @@ bytes map = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message setMapRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes map = 2;
+}
+
+message setMapRequestResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message resetMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -303,6 +314,7 @@ rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRe
 rpc getMappingDataRequest(getMappingDataRequestRequest) returns(getMappingDataRequestResponse) {}
 rpc getLastPose(getLastPoseRequest) returns(getLastPoseResponse) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
+rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc resetMap(resetMapRequest) returns(resetMapResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
 }

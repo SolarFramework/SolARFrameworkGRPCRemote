@@ -45,6 +45,7 @@ class IAsyncRelocalizationPipeline_grpcServer:  public org::bcom::xpcf::Configur
         ::grpc::Status getMappingDataRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getMappingDataRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::getMappingDataRequestResponse* response) override;
         ::grpc::Status getLastPose(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getLastPoseRequest* request, ::grpcIAsyncRelocalizationPipeline::getLastPoseResponse* response) override;
         ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getMapRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::getMapRequestResponse* response) override;
+        ::grpc::Status setMapRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::setMapRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::setMapRequestResponse* response) override;
         ::grpc::Status resetMap(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::resetMapRequest* request, ::grpcIAsyncRelocalizationPipeline::resetMapResponse* response) override;
         ::grpc::Status getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse* response) override;
 

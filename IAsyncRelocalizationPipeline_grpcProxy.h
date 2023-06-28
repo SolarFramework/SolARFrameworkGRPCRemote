@@ -42,6 +42,7 @@ class IAsyncRelocalizationPipeline_grpcProxy:  public org::bcom::xpcf::Configura
     SolAR::FrameworkReturnCode getMappingDataRequest(std::string const& uuid, std::vector<SRef<SolAR::datastructure::CloudPoint>>& outputPointClouds, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
     SolAR::FrameworkReturnCode getLastPose(std::string const& uuid, SolAR::datastructure::Transform3Df& pose, SolAR::api::pipeline::PoseType const poseType)     const     override;
     SolAR::FrameworkReturnCode getMapRequest(SRef<SolAR::datastructure::Map>& map)     const     override;
+    SolAR::FrameworkReturnCode setMapRequest(SRef<SolAR::datastructure::Map> const map)     override;
     SolAR::FrameworkReturnCode resetMap()     const     override;
     SolAR::FrameworkReturnCode getPointCloudRequest(SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
 
