@@ -141,6 +141,13 @@ class grpcIMapManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::keyframePruningResponse>> PrepareAsynckeyframePruning(::grpc::ClientContext* context, const ::grpcIMapManager::keyframePruningRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::keyframePruningResponse>>(PrepareAsynckeyframePruningRaw(context, request, cq));
     }
+    virtual ::grpc::Status visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpcIMapManager::visibilityPruningResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::visibilityPruningResponse>> AsyncvisibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::visibilityPruningResponse>>(AsyncvisibilityPruningRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::visibilityPruningResponse>> PrepareAsyncvisibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::visibilityPruningResponse>>(PrepareAsyncvisibilityPruningRaw(context, request, cq));
+    }
     virtual ::grpc::Status saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpcIMapManager::saveToFileResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::saveToFileResponse>> AsyncsaveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::saveToFileResponse>>(AsyncsaveToFileRaw(context, request, cq));
@@ -255,6 +262,12 @@ class grpcIMapManagerService final {
       #else
       virtual void keyframePruning(::grpc::ClientContext* context, const ::grpcIMapManager::keyframePruningRequest* request, ::grpcIMapManager::keyframePruningResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -312,6 +325,8 @@ class grpcIMapManagerService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::pointCloudPruningResponse>* PrepareAsyncpointCloudPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::pointCloudPruningRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::keyframePruningResponse>* AsynckeyframePruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::keyframePruningRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::keyframePruningResponse>* PrepareAsynckeyframePruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::keyframePruningRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::visibilityPruningResponse>* AsyncvisibilityPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::visibilityPruningResponse>* PrepareAsyncvisibilityPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::saveToFileResponse>* AsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::saveToFileResponse>* PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapManager::loadFromFileResponse>* AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -427,6 +442,13 @@ class grpcIMapManagerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::keyframePruningResponse>> PrepareAsynckeyframePruning(::grpc::ClientContext* context, const ::grpcIMapManager::keyframePruningRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::keyframePruningResponse>>(PrepareAsynckeyframePruningRaw(context, request, cq));
     }
+    ::grpc::Status visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpcIMapManager::visibilityPruningResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>> AsyncvisibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>>(AsyncvisibilityPruningRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>> PrepareAsyncvisibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>>(PrepareAsyncvisibilityPruningRaw(context, request, cq));
+    }
     ::grpc::Status saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpcIMapManager::saveToFileResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::saveToFileResponse>> AsyncsaveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::saveToFileResponse>>(AsyncsaveToFileRaw(context, request, cq));
@@ -541,6 +563,12 @@ class grpcIMapManagerService final {
       #else
       void keyframePruning(::grpc::ClientContext* context, const ::grpcIMapManager::keyframePruningRequest* request, ::grpcIMapManager::keyframePruningResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
@@ -600,6 +628,8 @@ class grpcIMapManagerService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::pointCloudPruningResponse>* PrepareAsyncpointCloudPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::pointCloudPruningRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::keyframePruningResponse>* AsynckeyframePruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::keyframePruningRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::keyframePruningResponse>* PrepareAsynckeyframePruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::keyframePruningRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>* AsyncvisibilityPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>* PrepareAsyncvisibilityPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::saveToFileResponse>* AsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::saveToFileResponse>* PrepareAsyncsaveToFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::loadFromFileResponse>* AsyncloadFromFileRaw(::grpc::ClientContext* context, const ::grpcIMapManager::loadFromFileRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -621,6 +651,7 @@ class grpcIMapManagerService final {
     const ::grpc::internal::RpcMethod rpcmethod_getCameraParameters_grpc1_;
     const ::grpc::internal::RpcMethod rpcmethod_pointCloudPruning_;
     const ::grpc::internal::RpcMethod rpcmethod_keyframePruning_;
+    const ::grpc::internal::RpcMethod rpcmethod_visibilityPruning_;
     const ::grpc::internal::RpcMethod rpcmethod_saveToFile_;
     const ::grpc::internal::RpcMethod rpcmethod_loadFromFile_;
     const ::grpc::internal::RpcMethod rpcmethod_deleteFile_;
@@ -646,6 +677,7 @@ class grpcIMapManagerService final {
     virtual ::grpc::Status getCameraParameters_grpc1(::grpc::ServerContext* context, const ::grpcIMapManager::getCameraParameters_grpc1Request* request, ::grpcIMapManager::getCameraParameters_grpc1Response* response);
     virtual ::grpc::Status pointCloudPruning(::grpc::ServerContext* context, const ::grpcIMapManager::pointCloudPruningRequest* request, ::grpcIMapManager::pointCloudPruningResponse* response);
     virtual ::grpc::Status keyframePruning(::grpc::ServerContext* context, const ::grpcIMapManager::keyframePruningRequest* request, ::grpcIMapManager::keyframePruningResponse* response);
+    virtual ::grpc::Status visibilityPruning(::grpc::ServerContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response);
     virtual ::grpc::Status saveToFile(::grpc::ServerContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response);
     virtual ::grpc::Status loadFromFile(::grpc::ServerContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response);
     virtual ::grpc::Status deleteFile(::grpc::ServerContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response);
@@ -951,12 +983,32 @@ class grpcIMapManagerService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_visibilityPruning : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_visibilityPruning() {
+      ::grpc::Service::MarkMethodAsync(15);
+    }
+    ~WithAsyncMethod_visibilityPruning() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status visibilityPruning(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::visibilityPruningRequest* /*request*/, ::grpcIMapManager::visibilityPruningResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestvisibilityPruning(::grpc::ServerContext* context, ::grpcIMapManager::visibilityPruningRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::visibilityPruningResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_saveToFile() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -967,7 +1019,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsaveToFile(::grpc::ServerContext* context, ::grpcIMapManager::saveToFileRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::saveToFileResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -976,7 +1028,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -987,7 +1039,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestloadFromFile(::grpc::ServerContext* context, ::grpcIMapManager::loadFromFileRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::loadFromFileResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -996,7 +1048,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_deleteFile() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_deleteFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1007,10 +1059,10 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestdeleteFile(::grpc::ServerContext* context, ::grpcIMapManager::deleteFileRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapManager::deleteFileResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_setMap<WithAsyncMethod_getMap<WithAsyncMethod_getSubmap<WithAsyncMethod_getLocalPointCloud_grpc0<WithAsyncMethod_getLocalPointCloud_grpc1<WithAsyncMethod_addCloudPoint<WithAsyncMethod_removeCloudPoint<WithAsyncMethod_addKeyframe<WithAsyncMethod_removeKeyframe<WithAsyncMethod_addCameraParameters<WithAsyncMethod_removeCameraParameters<WithAsyncMethod_getCameraParameters_grpc0<WithAsyncMethod_getCameraParameters_grpc1<WithAsyncMethod_pointCloudPruning<WithAsyncMethod_keyframePruning<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<WithAsyncMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_setMap<WithAsyncMethod_getMap<WithAsyncMethod_getSubmap<WithAsyncMethod_getLocalPointCloud_grpc0<WithAsyncMethod_getLocalPointCloud_grpc1<WithAsyncMethod_addCloudPoint<WithAsyncMethod_removeCloudPoint<WithAsyncMethod_addKeyframe<WithAsyncMethod_removeKeyframe<WithAsyncMethod_addCameraParameters<WithAsyncMethod_removeCameraParameters<WithAsyncMethod_getCameraParameters_grpc0<WithAsyncMethod_getCameraParameters_grpc1<WithAsyncMethod_pointCloudPruning<WithAsyncMethod_keyframePruning<WithAsyncMethod_visibilityPruning<WithAsyncMethod_saveToFile<WithAsyncMethod_loadFromFile<WithAsyncMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_setMap : public BaseClass {
    private:
@@ -1717,6 +1769,53 @@ class grpcIMapManagerService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithCallbackMethod_visibilityPruning : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_visibilityPruning() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(15,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response) { return this->visibilityPruning(context, request, response); }));}
+    void SetMessageAllocatorFor_visibilityPruning(
+        ::grpc::experimental::MessageAllocator< ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
+    #endif
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_visibilityPruning() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status visibilityPruning(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::visibilityPruningRequest* /*request*/, ::grpcIMapManager::visibilityPruningResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* visibilityPruning(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapManager::visibilityPruningRequest* /*request*/, ::grpcIMapManager::visibilityPruningResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* visibilityPruning(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapManager::visibilityPruningRequest* /*request*/, ::grpcIMapManager::visibilityPruningResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithCallbackMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1727,7 +1826,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(15,
+        MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1739,9 +1838,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_saveToFile(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1774,7 +1873,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(16,
+        MarkMethodCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1786,9 +1885,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_loadFromFile(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1821,7 +1920,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(17,
+        MarkMethodCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1833,9 +1932,9 @@ class grpcIMapManagerService final {
     void SetMessageAllocatorFor_deleteFile(
         ::grpc::experimental::MessageAllocator< ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
     #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1858,10 +1957,10 @@ class grpcIMapManagerService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_addCameraParameters<ExperimentalWithCallbackMethod_removeCameraParameters<ExperimentalWithCallbackMethod_getCameraParameters_grpc0<ExperimentalWithCallbackMethod_getCameraParameters_grpc1<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_addCameraParameters<ExperimentalWithCallbackMethod_removeCameraParameters<ExperimentalWithCallbackMethod_getCameraParameters_grpc0<ExperimentalWithCallbackMethod_getCameraParameters_grpc1<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_visibilityPruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_addCameraParameters<ExperimentalWithCallbackMethod_removeCameraParameters<ExperimentalWithCallbackMethod_getCameraParameters_grpc0<ExperimentalWithCallbackMethod_getCameraParameters_grpc1<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_setMap<ExperimentalWithCallbackMethod_getMap<ExperimentalWithCallbackMethod_getSubmap<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc0<ExperimentalWithCallbackMethod_getLocalPointCloud_grpc1<ExperimentalWithCallbackMethod_addCloudPoint<ExperimentalWithCallbackMethod_removeCloudPoint<ExperimentalWithCallbackMethod_addKeyframe<ExperimentalWithCallbackMethod_removeKeyframe<ExperimentalWithCallbackMethod_addCameraParameters<ExperimentalWithCallbackMethod_removeCameraParameters<ExperimentalWithCallbackMethod_getCameraParameters_grpc0<ExperimentalWithCallbackMethod_getCameraParameters_grpc1<ExperimentalWithCallbackMethod_pointCloudPruning<ExperimentalWithCallbackMethod_keyframePruning<ExperimentalWithCallbackMethod_visibilityPruning<ExperimentalWithCallbackMethod_saveToFile<ExperimentalWithCallbackMethod_loadFromFile<ExperimentalWithCallbackMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_setMap : public BaseClass {
    private:
@@ -2118,12 +2217,29 @@ class grpcIMapManagerService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_visibilityPruning : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_visibilityPruning() {
+      ::grpc::Service::MarkMethodGeneric(15);
+    }
+    ~WithGenericMethod_visibilityPruning() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status visibilityPruning(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::visibilityPruningRequest* /*request*/, ::grpcIMapManager::visibilityPruningResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_saveToFile() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2140,7 +2256,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2157,7 +2273,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_deleteFile() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_deleteFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2469,12 +2585,32 @@ class grpcIMapManagerService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_visibilityPruning : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_visibilityPruning() {
+      ::grpc::Service::MarkMethodRaw(15);
+    }
+    ~WithRawMethod_visibilityPruning() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status visibilityPruning(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::visibilityPruningRequest* /*request*/, ::grpcIMapManager::visibilityPruningResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestvisibilityPruning(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_saveToFile() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_saveToFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2485,7 +2621,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsaveToFile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2494,7 +2630,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_loadFromFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2505,7 +2641,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestloadFromFile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2514,7 +2650,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_deleteFile() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_deleteFile() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2525,7 +2661,7 @@ class grpcIMapManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestdeleteFile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3099,6 +3235,44 @@ class grpcIMapManagerService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_visibilityPruning : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_visibilityPruning() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(15,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->visibilityPruning(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_visibilityPruning() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status visibilityPruning(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::visibilityPruningRequest* /*request*/, ::grpcIMapManager::visibilityPruningResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* visibilityPruning(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* visibilityPruning(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -3109,7 +3283,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(15,
+        MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -3147,7 +3321,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(16,
+        MarkMethodRawCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -3185,7 +3359,7 @@ class grpcIMapManagerService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(17,
+        MarkMethodRawCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -3618,12 +3792,39 @@ class grpcIMapManagerService final {
     virtual ::grpc::Status StreamedkeyframePruning(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::keyframePruningRequest,::grpcIMapManager::keyframePruningResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_visibilityPruning : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_visibilityPruning() {
+      ::grpc::Service::MarkMethodStreamed(15,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse>* streamer) {
+                       return this->StreamedvisibilityPruning(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_visibilityPruning() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status visibilityPruning(::grpc::ServerContext* /*context*/, const ::grpcIMapManager::visibilityPruningRequest* /*request*/, ::grpcIMapManager::visibilityPruningResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedvisibilityPruning(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::visibilityPruningRequest,::grpcIMapManager::visibilityPruningResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_saveToFile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_saveToFile() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse>(
             [this](::grpc::ServerContext* context,
@@ -3650,7 +3851,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_loadFromFile() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse>(
             [this](::grpc::ServerContext* context,
@@ -3677,7 +3878,7 @@ class grpcIMapManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_deleteFile() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse>(
             [this](::grpc::ServerContext* context,
@@ -3698,9 +3899,9 @@ class grpcIMapManagerService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreameddeleteFile(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapManager::deleteFileRequest,::grpcIMapManager::deleteFileResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_addCameraParameters<WithStreamedUnaryMethod_removeCameraParameters<WithStreamedUnaryMethod_getCameraParameters_grpc0<WithStreamedUnaryMethod_getCameraParameters_grpc1<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_addCameraParameters<WithStreamedUnaryMethod_removeCameraParameters<WithStreamedUnaryMethod_getCameraParameters_grpc0<WithStreamedUnaryMethod_getCameraParameters_grpc1<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_visibilityPruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_addCameraParameters<WithStreamedUnaryMethod_removeCameraParameters<WithStreamedUnaryMethod_getCameraParameters_grpc0<WithStreamedUnaryMethod_getCameraParameters_grpc1<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_setMap<WithStreamedUnaryMethod_getMap<WithStreamedUnaryMethod_getSubmap<WithStreamedUnaryMethod_getLocalPointCloud_grpc0<WithStreamedUnaryMethod_getLocalPointCloud_grpc1<WithStreamedUnaryMethod_addCloudPoint<WithStreamedUnaryMethod_removeCloudPoint<WithStreamedUnaryMethod_addKeyframe<WithStreamedUnaryMethod_removeKeyframe<WithStreamedUnaryMethod_addCameraParameters<WithStreamedUnaryMethod_removeCameraParameters<WithStreamedUnaryMethod_getCameraParameters_grpc0<WithStreamedUnaryMethod_getCameraParameters_grpc1<WithStreamedUnaryMethod_pointCloudPruning<WithStreamedUnaryMethod_keyframePruning<WithStreamedUnaryMethod_visibilityPruning<WithStreamedUnaryMethod_saveToFile<WithStreamedUnaryMethod_loadFromFile<WithStreamedUnaryMethod_deleteFile<Service > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIMapManager

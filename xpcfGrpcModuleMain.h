@@ -137,6 +137,8 @@
 #include "IRelocalizer_grpcServer.h"
 #include "IInstanceSegmentation_grpcProxy.h"
 #include "IInstanceSegmentation_grpcServer.h"
+#include "IPanopticSegmentation_grpcProxy.h"
+#include "IPanopticSegmentation_grpcServer.h"
 #include "ISemanticSegmentation_grpcProxy.h"
 #include "ISemanticSegmentation_grpcServer.h"
 #include "IBootstrapper_grpcProxy.h"

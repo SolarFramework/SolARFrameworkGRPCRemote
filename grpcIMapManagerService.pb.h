@@ -47,7 +47,7 @@ struct TableStruct_grpcIMapManagerService_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[36]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[38]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -164,6 +164,12 @@ extern setMapRequestDefaultTypeInternal _setMapRequest_default_instance_;
 class setMapResponse;
 struct setMapResponseDefaultTypeInternal;
 extern setMapResponseDefaultTypeInternal _setMapResponse_default_instance_;
+class visibilityPruningRequest;
+struct visibilityPruningRequestDefaultTypeInternal;
+extern visibilityPruningRequestDefaultTypeInternal _visibilityPruningRequest_default_instance_;
+class visibilityPruningResponse;
+struct visibilityPruningResponseDefaultTypeInternal;
+extern visibilityPruningResponseDefaultTypeInternal _visibilityPruningResponse_default_instance_;
 }  // namespace grpcIMapManager
 PROTOBUF_NAMESPACE_OPEN
 template<> ::grpcIMapManager::addCameraParametersRequest* Arena::CreateMaybeMessage<::grpcIMapManager::addCameraParametersRequest>(Arena*);
@@ -202,6 +208,8 @@ template<> ::grpcIMapManager::saveToFileRequest* Arena::CreateMaybeMessage<::grp
 template<> ::grpcIMapManager::saveToFileResponse* Arena::CreateMaybeMessage<::grpcIMapManager::saveToFileResponse>(Arena*);
 template<> ::grpcIMapManager::setMapRequest* Arena::CreateMaybeMessage<::grpcIMapManager::setMapRequest>(Arena*);
 template<> ::grpcIMapManager::setMapResponse* Arena::CreateMaybeMessage<::grpcIMapManager::setMapResponse>(Arena*);
+template<> ::grpcIMapManager::visibilityPruningRequest* Arena::CreateMaybeMessage<::grpcIMapManager::visibilityPruningRequest>(Arena*);
+template<> ::grpcIMapManager::visibilityPruningResponse* Arena::CreateMaybeMessage<::grpcIMapManager::visibilityPruningResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIMapManager {
 
@@ -4786,6 +4794,280 @@ class keyframePruningResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class visibilityPruningRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.visibilityPruningRequest) */ {
+ public:
+  inline visibilityPruningRequest() : visibilityPruningRequest(nullptr) {}
+  virtual ~visibilityPruningRequest();
+  explicit constexpr visibilityPruningRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  visibilityPruningRequest(const visibilityPruningRequest& from);
+  visibilityPruningRequest(visibilityPruningRequest&& from) noexcept
+    : visibilityPruningRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline visibilityPruningRequest& operator=(const visibilityPruningRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline visibilityPruningRequest& operator=(visibilityPruningRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const visibilityPruningRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const visibilityPruningRequest* internal_default_instance() {
+    return reinterpret_cast<const visibilityPruningRequest*>(
+               &_visibilityPruningRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  friend void swap(visibilityPruningRequest& a, visibilityPruningRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(visibilityPruningRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(visibilityPruningRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline visibilityPruningRequest* New() const final {
+    return CreateMaybeMessage<visibilityPruningRequest>(nullptr);
+  }
+
+  visibilityPruningRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<visibilityPruningRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const visibilityPruningRequest& from);
+  void MergeFrom(const visibilityPruningRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(visibilityPruningRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.visibilityPruningRequest";
+  }
+  protected:
+  explicit visibilityPruningRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.visibilityPruningRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class visibilityPruningResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.visibilityPruningResponse) */ {
+ public:
+  inline visibilityPruningResponse() : visibilityPruningResponse(nullptr) {}
+  virtual ~visibilityPruningResponse();
+  explicit constexpr visibilityPruningResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  visibilityPruningResponse(const visibilityPruningResponse& from);
+  visibilityPruningResponse(visibilityPruningResponse&& from) noexcept
+    : visibilityPruningResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline visibilityPruningResponse& operator=(const visibilityPruningResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline visibilityPruningResponse& operator=(visibilityPruningResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const visibilityPruningResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const visibilityPruningResponse* internal_default_instance() {
+    return reinterpret_cast<const visibilityPruningResponse*>(
+               &_visibilityPruningResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    31;
+
+  friend void swap(visibilityPruningResponse& a, visibilityPruningResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(visibilityPruningResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(visibilityPruningResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline visibilityPruningResponse* New() const final {
+    return CreateMaybeMessage<visibilityPruningResponse>(nullptr);
+  }
+
+  visibilityPruningResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<visibilityPruningResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const visibilityPruningResponse& from);
+  void MergeFrom(const visibilityPruningResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(visibilityPruningResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIMapManager.visibilityPruningResponse";
+  }
+  protected:
+  explicit visibilityPruningResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_grpcIMapManagerService_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIMapManager.visibilityPruningResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::int32 xpcfgrpcreturnvalue_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_grpcIMapManagerService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class saveToFileRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapManager.saveToFileRequest) */ {
  public:
@@ -4829,7 +5111,7 @@ class saveToFileRequest PROTOBUF_FINAL :
                &_saveToFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(saveToFileRequest& a, saveToFileRequest& b) {
     a.Swap(&b);
@@ -4966,7 +5248,7 @@ class saveToFileResponse PROTOBUF_FINAL :
                &_saveToFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(saveToFileResponse& a, saveToFileResponse& b) {
     a.Swap(&b);
@@ -5103,7 +5385,7 @@ class loadFromFileRequest PROTOBUF_FINAL :
                &_loadFromFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(loadFromFileRequest& a, loadFromFileRequest& b) {
     a.Swap(&b);
@@ -5240,7 +5522,7 @@ class loadFromFileResponse PROTOBUF_FINAL :
                &_loadFromFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(loadFromFileResponse& a, loadFromFileResponse& b) {
     a.Swap(&b);
@@ -5377,7 +5659,7 @@ class deleteFileRequest PROTOBUF_FINAL :
                &_deleteFileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(deleteFileRequest& a, deleteFileRequest& b) {
     a.Swap(&b);
@@ -5514,7 +5796,7 @@ class deleteFileResponse PROTOBUF_FINAL :
                &_deleteFileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(deleteFileResponse& a, deleteFileResponse& b) {
     a.Swap(&b);
@@ -7838,6 +8120,54 @@ inline void keyframePruningResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPAC
 
 // -------------------------------------------------------------------
 
+// visibilityPruningRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void visibilityPruningRequest::clear_grpcservercompressionformat() {
+  grpcservercompressionformat_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 visibilityPruningRequest::_internal_grpcservercompressionformat() const {
+  return grpcservercompressionformat_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 visibilityPruningRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.visibilityPruningRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void visibilityPruningRequest::_internal_set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  grpcservercompressionformat_ = value;
+}
+inline void visibilityPruningRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.visibilityPruningRequest.grpcServerCompressionFormat)
+}
+
+// -------------------------------------------------------------------
+
+// visibilityPruningResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void visibilityPruningResponse::clear_xpcfgrpcreturnvalue() {
+  xpcfgrpcreturnvalue_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 visibilityPruningResponse::_internal_xpcfgrpcreturnvalue() const {
+  return xpcfgrpcreturnvalue_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 visibilityPruningResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapManager.visibilityPruningResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void visibilityPruningResponse::_internal_set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  xpcfgrpcreturnvalue_ = value;
+}
+inline void visibilityPruningResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIMapManager.visibilityPruningResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
 // saveToFileRequest
 
 // int32 grpcServerCompressionFormat = 1;
@@ -7983,6 +8313,10 @@ inline void deleteFileResponse::set_xpcfgrpcreturnvalue(::PROTOBUF_NAMESPACE_ID:
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

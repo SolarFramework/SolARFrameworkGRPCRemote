@@ -37,6 +37,7 @@ static const char* grpcIMapManagerService_method_names[] = {
   "/grpcIMapManager.grpcIMapManagerService/getCameraParameters_grpc1",
   "/grpcIMapManager.grpcIMapManagerService/pointCloudPruning",
   "/grpcIMapManager.grpcIMapManagerService/keyframePruning",
+  "/grpcIMapManager.grpcIMapManagerService/visibilityPruning",
   "/grpcIMapManager.grpcIMapManagerService/saveToFile",
   "/grpcIMapManager.grpcIMapManagerService/loadFromFile",
   "/grpcIMapManager.grpcIMapManagerService/deleteFile",
@@ -64,9 +65,10 @@ grpcIMapManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterfa
   , rpcmethod_getCameraParameters_grpc1_(grpcIMapManagerService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_pointCloudPruning_(grpcIMapManagerService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_keyframePruning_(grpcIMapManagerService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_saveToFile_(grpcIMapManagerService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_loadFromFile_(grpcIMapManagerService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteFile_(grpcIMapManagerService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_visibilityPruning_(grpcIMapManagerService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_saveToFile_(grpcIMapManagerService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_loadFromFile_(grpcIMapManagerService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteFile_(grpcIMapManagerService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapManagerService::Stub::setMap(::grpc::ClientContext* context, const ::grpcIMapManager::setMapRequest& request, ::grpcIMapManager::setMapResponse* response) {
@@ -414,6 +416,29 @@ void grpcIMapManagerService::Stub::experimental_async::keyframePruning(::grpc::C
   return result;
 }
 
+::grpc::Status grpcIMapManagerService::Stub::visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpcIMapManager::visibilityPruningResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_visibilityPruning_, context, request, response);
+}
+
+void grpcIMapManagerService::Stub::experimental_async::visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_visibilityPruning_, context, request, response, std::move(f));
+}
+
+void grpcIMapManagerService::Stub::experimental_async::visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_visibilityPruning_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>* grpcIMapManagerService::Stub::PrepareAsyncvisibilityPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::visibilityPruningResponse, ::grpcIMapManager::visibilityPruningRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_visibilityPruning_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>* grpcIMapManagerService::Stub::AsyncvisibilityPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncvisibilityPruningRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status grpcIMapManagerService::Stub::saveToFile(::grpc::ClientContext* context, const ::grpcIMapManager::saveToFileRequest& request, ::grpcIMapManager::saveToFileResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_saveToFile_, context, request, response);
 }
@@ -637,6 +662,16 @@ grpcIMapManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapManagerService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapManager::visibilityPruningRequest* req,
+             ::grpcIMapManager::visibilityPruningResponse* resp) {
+               return service->visibilityPruning(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapManagerService_method_names[16],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -645,7 +680,7 @@ grpcIMapManagerService::Service::Service() {
                return service->saveToFile(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[16],
+      grpcIMapManagerService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -655,7 +690,7 @@ grpcIMapManagerService::Service::Service() {
                return service->loadFromFile(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[17],
+      grpcIMapManagerService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -768,6 +803,13 @@ grpcIMapManagerService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMapManagerService::Service::keyframePruning(::grpc::ServerContext* context, const ::grpcIMapManager::keyframePruningRequest* request, ::grpcIMapManager::keyframePruningResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapManagerService::Service::visibilityPruning(::grpc::ServerContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response) {
   (void) context;
   (void) request;
   (void) response;

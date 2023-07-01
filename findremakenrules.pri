@@ -2,9 +2,9 @@
 
 android {
     # unix path
-    USERHOMEFOLDER = $$clean_path($$(HOME))
+USERHOMEFOLDER = $$clean_path($$(HOME))
     isEmpty(USERHOMEFOLDER) {
-        # windows path
+       # windows path
         USERHOMEFOLDER = $$clean_path($$(USERPROFILE))
         isEmpty(USERHOMEFOLDER) {
             USERHOMEFOLDER = $$clean_path($$(HOMEDRIVE)$$(HOMEPATH))
