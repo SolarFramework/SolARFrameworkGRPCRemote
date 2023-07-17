@@ -22,7 +22,6 @@ class IBootstrapper_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtua
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
     SolAR::FrameworkReturnCode process(SRef<SolAR::datastructure::Frame> const& frame, SRef<SolAR::datastructure::Image>& view)     override;
 
 

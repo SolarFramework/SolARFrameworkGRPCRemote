@@ -25,7 +25,6 @@ class IMultiTrackablesPose_grpcServer:  public org::bcom::xpcf::ConfigurableBase
     {
       public:
         grpcIMultiTrackablesPoseServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMultiTrackablesPose::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status setTrackables(::grpc::ServerContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response) override;
         ::grpc::Status estimate(::grpc::ServerContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response) override;
 

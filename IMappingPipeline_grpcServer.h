@@ -25,10 +25,14 @@ class IMappingPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vi
     {
       public:
         grpcIMappingPipelineServiceImpl() = default;
-        ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIMappingPipeline::initRequest* request, ::grpcIMappingPipeline::initResponse* response) override;
+        ::grpc::Status init_grpc0(::grpc::ServerContext* context, const ::grpcIMappingPipeline::init_grpc0Request* request, ::grpcIMappingPipeline::init_grpc0Response* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIMappingPipeline::startRequest* request, ::grpcIMappingPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIMappingPipeline::stopRequest* request, ::grpcIMappingPipeline::stopResponse* response) override;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParametersRequest* request, ::grpcIMappingPipeline::setCameraParametersResponse* response) override;
+        ::grpc::Status init_grpc1(::grpc::ServerContext* context, const ::grpcIMappingPipeline::init_grpc1Request* request, ::grpcIMappingPipeline::init_grpc1Response* response) override;
+        ::grpc::Status setCameraParameters_grpc0(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response) override;
+        ::grpc::Status setCameraParameters_grpc1(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response) override;
+        ::grpc::Status setRectificationParameters(::grpc::ServerContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest* request, ::grpcIMappingPipeline::setRectificationParametersResponse* response) override;
+        ::grpc::Status set3DTransformSolARToWorld(::grpc::ServerContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response) override;
         ::grpc::Status mappingProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response) override;
         ::grpc::Status mappingProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response* response) override;
         ::grpc::Status mappingProcessRequest_grpc2(::grpc::ServerContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response* response) override;

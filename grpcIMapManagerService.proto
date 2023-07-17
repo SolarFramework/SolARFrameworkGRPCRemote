@@ -112,6 +112,54 @@ message removeKeyframeResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message addCameraParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes cameraParameters = 2;
+}
+
+message addCameraParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message removeCameraParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes cameraParameters = 2;
+}
+
+message removeCameraParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getCameraParameters_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+uint32 id = 2;
+bytes cameraParameters = 3;
+}
+
+message getCameraParameters_grpc0Response
+{
+bytes cameraParameters = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getCameraParameters_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+uint32 id = 2;
+bytes cameraParameters = 3;
+}
+
+message getCameraParameters_grpc1Response
+{
+bytes cameraParameters = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 message pointCloudPruningRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -130,6 +178,16 @@ bytes keyframes = 2;
 }
 
 message keyframePruningResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message visibilityPruningRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message visibilityPruningResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -174,8 +232,13 @@ rpc addCloudPoint(addCloudPointRequest) returns(addCloudPointResponse) {}
 rpc removeCloudPoint(removeCloudPointRequest) returns(removeCloudPointResponse) {}
 rpc addKeyframe(addKeyframeRequest) returns(addKeyframeResponse) {}
 rpc removeKeyframe(removeKeyframeRequest) returns(removeKeyframeResponse) {}
+rpc addCameraParameters(addCameraParametersRequest) returns(addCameraParametersResponse) {}
+rpc removeCameraParameters(removeCameraParametersRequest) returns(removeCameraParametersResponse) {}
+rpc getCameraParameters_grpc0(getCameraParameters_grpc0Request) returns(getCameraParameters_grpc0Response) {}
+rpc getCameraParameters_grpc1(getCameraParameters_grpc1Request) returns(getCameraParameters_grpc1Response) {}
 rpc pointCloudPruning(pointCloudPruningRequest) returns(pointCloudPruningResponse) {}
 rpc keyframePruning(keyframePruningRequest) returns(keyframePruningResponse) {}
+rpc visibilityPruning(visibilityPruningRequest) returns(visibilityPruningResponse) {}
 rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
 rpc deleteFile(deleteFileRequest) returns(deleteFileResponse) {}

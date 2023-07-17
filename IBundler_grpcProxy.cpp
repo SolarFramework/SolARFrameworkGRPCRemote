@@ -72,7 +72,7 @@ SolAR::FrameworkReturnCode  IBundler_grpcProxy::setMap(SRef<SolAR::datastructure
 }
 
 
-double  IBundler_grpcProxy::bundleAdjustment(SolAR::datastructure::CamCalibration& K, SolAR::datastructure::CamDistortion& D, std::vector<uint32_t> const& selectKeyframes)
+double  IBundler_grpcProxy::bundleAdjustment(std::vector<uint32_t> const& selectKeyframes)
 {
   ::grpc::ClientContext context;
   ::grpcIBundler::bundleAdjustmentRequest reqIn;
@@ -83,8 +83,6 @@ double  IBundler_grpcProxy::bundleAdjustment(SolAR::datastructure::CamCalibratio
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_selectkeyframes(xpcf::serialize<std::vector<uint32_t>>(selectKeyframes));
-  reqIn.set_k(xpcf::serialize<SolAR::datastructure::CamCalibration>(K));
-  reqIn.set_d(xpcf::serialize<SolAR::datastructure::CamDistortion>(D));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IBundler_grpcProxy::bundleAdjustment request sent at " << to_simple_string(start) << std::endl;
@@ -100,13 +98,11 @@ double  IBundler_grpcProxy::bundleAdjustment(SolAR::datastructure::CamCalibratio
     throw xpcf::RemotingException("grpcIBundlerService","bundleAdjustment",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  K = xpcf::deserialize<SolAR::datastructure::CamCalibration>(respOut.k());
-  D = xpcf::deserialize<SolAR::datastructure::CamDistortion>(respOut.d());
   return respOut.xpcfgrpcreturnvalue();
 }
 
 
-double  IBundler_grpcProxy::optimizeSim3(SolAR::datastructure::CamCalibration& K1, SolAR::datastructure::CamCalibration& K2, SRef<SolAR::datastructure::Keyframe> const& keyframe1, SRef<SolAR::datastructure::Keyframe> const& keyframe2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::vector<SolAR::datastructure::Point3Df> const& pts3D1, std::vector<SolAR::datastructure::Point3Df> const& pts3D2, SolAR::datastructure::Transform3Df& pose)
+double  IBundler_grpcProxy::optimizeSim3(SRef<SolAR::datastructure::Keyframe> const& keyframe1, SRef<SolAR::datastructure::Keyframe> const& keyframe2, std::vector<SolAR::datastructure::DescriptorMatch> const& matches, std::vector<SolAR::datastructure::Point3Df> const& pts3D1, std::vector<SolAR::datastructure::Point3Df> const& pts3D2, SolAR::datastructure::Transform3Df& pose)
 {
   ::grpc::ClientContext context;
   ::grpcIBundler::optimizeSim3Request reqIn;
@@ -121,8 +117,6 @@ double  IBundler_grpcProxy::optimizeSim3(SolAR::datastructure::CamCalibration& K
   reqIn.set_matches(xpcf::serialize<std::vector<SolAR::datastructure::DescriptorMatch>>(matches));
   reqIn.set_pts3d1(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(pts3D1));
   reqIn.set_pts3d2(xpcf::serialize<std::vector<SolAR::datastructure::Point3Df>>(pts3D2));
-  reqIn.set_k1(xpcf::serialize<SolAR::datastructure::CamCalibration>(K1));
-  reqIn.set_k2(xpcf::serialize<SolAR::datastructure::CamCalibration>(K2));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -139,8 +133,6 @@ double  IBundler_grpcProxy::optimizeSim3(SolAR::datastructure::CamCalibration& K
     throw xpcf::RemotingException("grpcIBundlerService","optimizeSim3",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  K1 = xpcf::deserialize<SolAR::datastructure::CamCalibration>(respOut.k1());
-  K2 = xpcf::deserialize<SolAR::datastructure::CamCalibration>(respOut.k2());
   pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.pose());
   return respOut.xpcfgrpcreturnvalue();
 }

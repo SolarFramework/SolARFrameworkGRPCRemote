@@ -26,15 +26,26 @@ class IAsyncRelocalizationPipeline_grpcServer:  public org::bcom::xpcf::Configur
       public:
         grpcIAsyncRelocalizationPipelineServiceImpl() = default;
         ::grpc::Status init_grpc0(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc0Response* response) override;
-        ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::startRequest* request, ::grpcIAsyncRelocalizationPipeline::startResponse* response) override;
-        ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::stopRequest* request, ::grpcIAsyncRelocalizationPipeline::stopResponse* response) override;
+        ::grpc::Status start_grpc0(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::start_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::start_grpc0Response* response) override;
+        ::grpc::Status stop_grpc0(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::stop_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::stop_grpc0Response* response) override;
+        ::grpc::Status registerClient(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::registerClientRequest* request, ::grpcIAsyncRelocalizationPipeline::registerClientResponse* response) override;
+        ::grpc::Status unregisterClient(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::unregisterClientRequest* request, ::grpcIAsyncRelocalizationPipeline::unregisterClientResponse* response) override;
+        ::grpc::Status getAllClientsUUID(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getAllClientsUUIDRequest* request, ::grpcIAsyncRelocalizationPipeline::getAllClientsUUIDResponse* response) override;
         ::grpc::Status init_grpc1(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc1Response* response) override;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIAsyncRelocalizationPipeline::setCameraParametersResponse* response) override;
+        ::grpc::Status init_grpc2(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::init_grpc2Request* request, ::grpcIAsyncRelocalizationPipeline::init_grpc2Response* response) override;
+        ::grpc::Status start_grpc1(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::start_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::start_grpc1Response* response) override;
+        ::grpc::Status stop_grpc1(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::stop_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::stop_grpc1Response* response) override;
+        ::grpc::Status getProcessingMode(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getProcessingModeRequest* request, ::grpcIAsyncRelocalizationPipeline::getProcessingModeResponse* response) override;
+        ::grpc::Status setCameraParameters_grpc0(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Request* request, ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc0Response* response) override;
+        ::grpc::Status setCameraParameters_grpc1(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Request* request, ::grpcIAsyncRelocalizationPipeline::setCameraParameters_grpc1Response* response) override;
+        ::grpc::Status setRectificationParameters(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::setRectificationParametersRequest* request, ::grpcIAsyncRelocalizationPipeline::setRectificationParametersResponse* response) override;
         ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIAsyncRelocalizationPipeline::getCameraParametersResponse* response) override;
         ::grpc::Status relocalizeProcessRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::relocalizeProcessRequestResponse* response) override;
         ::grpc::Status get3DTransformRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::get3DTransformRequestResponse* response) override;
         ::grpc::Status getLastPose(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getLastPoseRequest* request, ::grpcIAsyncRelocalizationPipeline::getLastPoseResponse* response) override;
+        ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getMapRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::getMapRequestResponse* response) override;
         ::grpc::Status resetMap(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::resetMapRequest* request, ::grpcIAsyncRelocalizationPipeline::resetMapResponse* response) override;
+        ::grpc::Status getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestRequest* request, ::grpcIAsyncRelocalizationPipeline::getPointCloudRequestResponse* response) override;
 
         SRef<SolAR::api::pipeline::IAsyncRelocalizationPipeline> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

@@ -198,9 +198,11 @@ class match_grpc0Request PROTOBUF_FINAL :
     kUndistortedKeypoints2FieldNumber = 5,
     kPose1FieldNumber = 6,
     kPose2FieldNumber = 7,
-    kCamParamsFieldNumber = 8,
-    kMaskFieldNumber = 9,
-    kMatchesFieldNumber = 10,
+    kCamParams1FieldNumber = 8,
+    kCamParams2FieldNumber = 9,
+    kMask1FieldNumber = 10,
+    kMask2FieldNumber = 11,
+    kMatchesFieldNumber = 12,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes descriptors1 = 2;
@@ -299,39 +301,71 @@ class match_grpc0Request PROTOBUF_FINAL :
   std::string* _internal_mutable_pose2();
   public:
 
-  // bytes camParams = 8;
-  void clear_camparams();
-  const std::string& camparams() const;
-  void set_camparams(const std::string& value);
-  void set_camparams(std::string&& value);
-  void set_camparams(const char* value);
-  void set_camparams(const void* value, size_t size);
-  std::string* mutable_camparams();
-  std::string* release_camparams();
-  void set_allocated_camparams(std::string* camparams);
+  // bytes camParams1 = 8;
+  void clear_camparams1();
+  const std::string& camparams1() const;
+  void set_camparams1(const std::string& value);
+  void set_camparams1(std::string&& value);
+  void set_camparams1(const char* value);
+  void set_camparams1(const void* value, size_t size);
+  std::string* mutable_camparams1();
+  std::string* release_camparams1();
+  void set_allocated_camparams1(std::string* camparams1);
   private:
-  const std::string& _internal_camparams() const;
-  void _internal_set_camparams(const std::string& value);
-  std::string* _internal_mutable_camparams();
+  const std::string& _internal_camparams1() const;
+  void _internal_set_camparams1(const std::string& value);
+  std::string* _internal_mutable_camparams1();
   public:
 
-  // bytes mask = 9;
-  void clear_mask();
-  const std::string& mask() const;
-  void set_mask(const std::string& value);
-  void set_mask(std::string&& value);
-  void set_mask(const char* value);
-  void set_mask(const void* value, size_t size);
-  std::string* mutable_mask();
-  std::string* release_mask();
-  void set_allocated_mask(std::string* mask);
+  // bytes camParams2 = 9;
+  void clear_camparams2();
+  const std::string& camparams2() const;
+  void set_camparams2(const std::string& value);
+  void set_camparams2(std::string&& value);
+  void set_camparams2(const char* value);
+  void set_camparams2(const void* value, size_t size);
+  std::string* mutable_camparams2();
+  std::string* release_camparams2();
+  void set_allocated_camparams2(std::string* camparams2);
   private:
-  const std::string& _internal_mask() const;
-  void _internal_set_mask(const std::string& value);
-  std::string* _internal_mutable_mask();
+  const std::string& _internal_camparams2() const;
+  void _internal_set_camparams2(const std::string& value);
+  std::string* _internal_mutable_camparams2();
   public:
 
-  // bytes matches = 10;
+  // bytes mask1 = 10;
+  void clear_mask1();
+  const std::string& mask1() const;
+  void set_mask1(const std::string& value);
+  void set_mask1(std::string&& value);
+  void set_mask1(const char* value);
+  void set_mask1(const void* value, size_t size);
+  std::string* mutable_mask1();
+  std::string* release_mask1();
+  void set_allocated_mask1(std::string* mask1);
+  private:
+  const std::string& _internal_mask1() const;
+  void _internal_set_mask1(const std::string& value);
+  std::string* _internal_mutable_mask1();
+  public:
+
+  // bytes mask2 = 11;
+  void clear_mask2();
+  const std::string& mask2() const;
+  void set_mask2(const std::string& value);
+  void set_mask2(std::string&& value);
+  void set_mask2(const char* value);
+  void set_mask2(const void* value, size_t size);
+  std::string* mutable_mask2();
+  std::string* release_mask2();
+  void set_allocated_mask2(std::string* mask2);
+  private:
+  const std::string& _internal_mask2() const;
+  void _internal_set_mask2(const std::string& value);
+  std::string* _internal_mutable_mask2();
+  public:
+
+  // bytes matches = 12;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -369,8 +403,10 @@ class match_grpc0Request PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr undistortedkeypoints2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose2_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mask_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams1_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams2_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mask1_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mask2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -648,9 +684,11 @@ class match_grpc1Request PROTOBUF_FINAL :
   enum : int {
     kFrame1FieldNumber = 2,
     kFrame2FieldNumber = 3,
-    kCamParamsFieldNumber = 4,
-    kMaskFieldNumber = 5,
-    kMatchesFieldNumber = 6,
+    kCamParams1FieldNumber = 4,
+    kCamParams2FieldNumber = 5,
+    kMask1FieldNumber = 6,
+    kMask2FieldNumber = 7,
+    kMatchesFieldNumber = 8,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes frame1 = 2;
@@ -685,39 +723,71 @@ class match_grpc1Request PROTOBUF_FINAL :
   std::string* _internal_mutable_frame2();
   public:
 
-  // bytes camParams = 4;
-  void clear_camparams();
-  const std::string& camparams() const;
-  void set_camparams(const std::string& value);
-  void set_camparams(std::string&& value);
-  void set_camparams(const char* value);
-  void set_camparams(const void* value, size_t size);
-  std::string* mutable_camparams();
-  std::string* release_camparams();
-  void set_allocated_camparams(std::string* camparams);
+  // bytes camParams1 = 4;
+  void clear_camparams1();
+  const std::string& camparams1() const;
+  void set_camparams1(const std::string& value);
+  void set_camparams1(std::string&& value);
+  void set_camparams1(const char* value);
+  void set_camparams1(const void* value, size_t size);
+  std::string* mutable_camparams1();
+  std::string* release_camparams1();
+  void set_allocated_camparams1(std::string* camparams1);
   private:
-  const std::string& _internal_camparams() const;
-  void _internal_set_camparams(const std::string& value);
-  std::string* _internal_mutable_camparams();
+  const std::string& _internal_camparams1() const;
+  void _internal_set_camparams1(const std::string& value);
+  std::string* _internal_mutable_camparams1();
   public:
 
-  // bytes mask = 5;
-  void clear_mask();
-  const std::string& mask() const;
-  void set_mask(const std::string& value);
-  void set_mask(std::string&& value);
-  void set_mask(const char* value);
-  void set_mask(const void* value, size_t size);
-  std::string* mutable_mask();
-  std::string* release_mask();
-  void set_allocated_mask(std::string* mask);
+  // bytes camParams2 = 5;
+  void clear_camparams2();
+  const std::string& camparams2() const;
+  void set_camparams2(const std::string& value);
+  void set_camparams2(std::string&& value);
+  void set_camparams2(const char* value);
+  void set_camparams2(const void* value, size_t size);
+  std::string* mutable_camparams2();
+  std::string* release_camparams2();
+  void set_allocated_camparams2(std::string* camparams2);
   private:
-  const std::string& _internal_mask() const;
-  void _internal_set_mask(const std::string& value);
-  std::string* _internal_mutable_mask();
+  const std::string& _internal_camparams2() const;
+  void _internal_set_camparams2(const std::string& value);
+  std::string* _internal_mutable_camparams2();
   public:
 
-  // bytes matches = 6;
+  // bytes mask1 = 6;
+  void clear_mask1();
+  const std::string& mask1() const;
+  void set_mask1(const std::string& value);
+  void set_mask1(std::string&& value);
+  void set_mask1(const char* value);
+  void set_mask1(const void* value, size_t size);
+  std::string* mutable_mask1();
+  std::string* release_mask1();
+  void set_allocated_mask1(std::string* mask1);
+  private:
+  const std::string& _internal_mask1() const;
+  void _internal_set_mask1(const std::string& value);
+  std::string* _internal_mutable_mask1();
+  public:
+
+  // bytes mask2 = 7;
+  void clear_mask2();
+  const std::string& mask2() const;
+  void set_mask2(const std::string& value);
+  void set_mask2(std::string&& value);
+  void set_mask2(const char* value);
+  void set_mask2(const void* value, size_t size);
+  std::string* mutable_mask2();
+  std::string* release_mask2();
+  void set_allocated_mask2(std::string* mask2);
+  private:
+  const std::string& _internal_mask2() const;
+  void _internal_set_mask2(const std::string& value);
+  std::string* _internal_mutable_mask2();
+  public:
+
+  // bytes matches = 8;
   void clear_matches();
   const std::string& matches() const;
   void set_matches(const std::string& value);
@@ -751,8 +821,10 @@ class match_grpc1Request PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame1_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr frame2_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mask_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams1_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams2_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mask1_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mask2_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr matches_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1310,129 +1382,251 @@ inline void match_grpc0Request::set_allocated_pose2(std::string* pose2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc0Request.pose2)
 }
 
-// bytes camParams = 8;
-inline void match_grpc0Request::clear_camparams() {
-  camparams_.ClearToEmpty();
+// bytes camParams1 = 8;
+inline void match_grpc0Request::clear_camparams1() {
+  camparams1_.ClearToEmpty();
 }
-inline const std::string& match_grpc0Request::camparams() const {
-  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams)
-  return _internal_camparams();
+inline const std::string& match_grpc0Request::camparams1() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams1)
+  return _internal_camparams1();
 }
-inline void match_grpc0Request::set_camparams(const std::string& value) {
-  _internal_set_camparams(value);
-  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams)
+inline void match_grpc0Request::set_camparams1(const std::string& value) {
+  _internal_set_camparams1(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams1)
 }
-inline std::string* match_grpc0Request::mutable_camparams() {
-  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams)
-  return _internal_mutable_camparams();
+inline std::string* match_grpc0Request::mutable_camparams1() {
+  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams1)
+  return _internal_mutable_camparams1();
 }
-inline const std::string& match_grpc0Request::_internal_camparams() const {
-  return camparams_.Get();
+inline const std::string& match_grpc0Request::_internal_camparams1() const {
+  return camparams1_.Get();
 }
-inline void match_grpc0Request::_internal_set_camparams(const std::string& value) {
+inline void match_grpc0Request::_internal_set_camparams1(const std::string& value) {
   
-  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  camparams1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void match_grpc0Request::set_camparams(std::string&& value) {
+inline void match_grpc0Request::set_camparams1(std::string&& value) {
   
-  camparams_.Set(
+  camparams1_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams1)
 }
-inline void match_grpc0Request::set_camparams(const char* value) {
+inline void match_grpc0Request::set_camparams1(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams)
+  camparams1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams1)
 }
-inline void match_grpc0Request::set_camparams(const void* value,
+inline void match_grpc0Request::set_camparams1(const void* value,
     size_t size) {
   
-  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  camparams1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams)
+  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams1)
 }
-inline std::string* match_grpc0Request::_internal_mutable_camparams() {
+inline std::string* match_grpc0Request::_internal_mutable_camparams1() {
   
-  return camparams_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return camparams1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* match_grpc0Request::release_camparams() {
-  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams)
-  return camparams_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* match_grpc0Request::release_camparams1() {
+  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams1)
+  return camparams1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void match_grpc0Request::set_allocated_camparams(std::string* camparams) {
-  if (camparams != nullptr) {
+inline void match_grpc0Request::set_allocated_camparams1(std::string* camparams1) {
+  if (camparams1 != nullptr) {
     
   } else {
     
   }
-  camparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams,
+  camparams1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams1,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams)
+  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams1)
 }
 
-// bytes mask = 9;
-inline void match_grpc0Request::clear_mask() {
-  mask_.ClearToEmpty();
+// bytes camParams2 = 9;
+inline void match_grpc0Request::clear_camparams2() {
+  camparams2_.ClearToEmpty();
 }
-inline const std::string& match_grpc0Request::mask() const {
-  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask)
-  return _internal_mask();
+inline const std::string& match_grpc0Request::camparams2() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams2)
+  return _internal_camparams2();
 }
-inline void match_grpc0Request::set_mask(const std::string& value) {
-  _internal_set_mask(value);
-  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask)
+inline void match_grpc0Request::set_camparams2(const std::string& value) {
+  _internal_set_camparams2(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams2)
 }
-inline std::string* match_grpc0Request::mutable_mask() {
-  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask)
-  return _internal_mutable_mask();
+inline std::string* match_grpc0Request::mutable_camparams2() {
+  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams2)
+  return _internal_mutable_camparams2();
 }
-inline const std::string& match_grpc0Request::_internal_mask() const {
-  return mask_.Get();
+inline const std::string& match_grpc0Request::_internal_camparams2() const {
+  return camparams2_.Get();
 }
-inline void match_grpc0Request::_internal_set_mask(const std::string& value) {
+inline void match_grpc0Request::_internal_set_camparams2(const std::string& value) {
   
-  mask_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  camparams2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void match_grpc0Request::set_mask(std::string&& value) {
+inline void match_grpc0Request::set_camparams2(std::string&& value) {
   
-  mask_.Set(
+  camparams2_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams2)
 }
-inline void match_grpc0Request::set_mask(const char* value) {
+inline void match_grpc0Request::set_camparams2(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  mask_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask)
+  camparams2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams2)
 }
-inline void match_grpc0Request::set_mask(const void* value,
+inline void match_grpc0Request::set_camparams2(const void* value,
     size_t size) {
   
-  mask_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  camparams2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask)
+  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams2)
 }
-inline std::string* match_grpc0Request::_internal_mutable_mask() {
+inline std::string* match_grpc0Request::_internal_mutable_camparams2() {
   
-  return mask_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return camparams2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* match_grpc0Request::release_mask() {
-  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask)
-  return mask_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* match_grpc0Request::release_camparams2() {
+  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams2)
+  return camparams2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void match_grpc0Request::set_allocated_mask(std::string* mask) {
-  if (mask != nullptr) {
+inline void match_grpc0Request::set_allocated_camparams2(std::string* camparams2) {
+  if (camparams2 != nullptr) {
     
   } else {
     
   }
-  mask_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mask,
+  camparams2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams2,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask)
+  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc0Request.camParams2)
 }
 
-// bytes matches = 10;
+// bytes mask1 = 10;
+inline void match_grpc0Request::clear_mask1() {
+  mask1_.ClearToEmpty();
+}
+inline const std::string& match_grpc0Request::mask1() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask1)
+  return _internal_mask1();
+}
+inline void match_grpc0Request::set_mask1(const std::string& value) {
+  _internal_set_mask1(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask1)
+}
+inline std::string* match_grpc0Request::mutable_mask1() {
+  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask1)
+  return _internal_mutable_mask1();
+}
+inline const std::string& match_grpc0Request::_internal_mask1() const {
+  return mask1_.Get();
+}
+inline void match_grpc0Request::_internal_set_mask1(const std::string& value) {
+  
+  mask1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void match_grpc0Request::set_mask1(std::string&& value) {
+  
+  mask1_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask1)
+}
+inline void match_grpc0Request::set_mask1(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  mask1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask1)
+}
+inline void match_grpc0Request::set_mask1(const void* value,
+    size_t size) {
+  
+  mask1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask1)
+}
+inline std::string* match_grpc0Request::_internal_mutable_mask1() {
+  
+  return mask1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* match_grpc0Request::release_mask1() {
+  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask1)
+  return mask1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void match_grpc0Request::set_allocated_mask1(std::string* mask1) {
+  if (mask1 != nullptr) {
+    
+  } else {
+    
+  }
+  mask1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mask1,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask1)
+}
+
+// bytes mask2 = 11;
+inline void match_grpc0Request::clear_mask2() {
+  mask2_.ClearToEmpty();
+}
+inline const std::string& match_grpc0Request::mask2() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask2)
+  return _internal_mask2();
+}
+inline void match_grpc0Request::set_mask2(const std::string& value) {
+  _internal_set_mask2(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask2)
+}
+inline std::string* match_grpc0Request::mutable_mask2() {
+  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask2)
+  return _internal_mutable_mask2();
+}
+inline const std::string& match_grpc0Request::_internal_mask2() const {
+  return mask2_.Get();
+}
+inline void match_grpc0Request::_internal_set_mask2(const std::string& value) {
+  
+  mask2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void match_grpc0Request::set_mask2(std::string&& value) {
+  
+  mask2_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask2)
+}
+inline void match_grpc0Request::set_mask2(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  mask2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask2)
+}
+inline void match_grpc0Request::set_mask2(const void* value,
+    size_t size) {
+  
+  mask2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask2)
+}
+inline std::string* match_grpc0Request::_internal_mutable_mask2() {
+  
+  return mask2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* match_grpc0Request::release_mask2() {
+  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask2)
+  return mask2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void match_grpc0Request::set_allocated_mask2(std::string* mask2) {
+  if (mask2 != nullptr) {
+    
+  } else {
+    
+  }
+  mask2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mask2,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc0Request.mask2)
+}
+
+// bytes matches = 12;
 inline void match_grpc0Request::clear_matches() {
   matches_.ClearToEmpty();
 }
@@ -1724,129 +1918,251 @@ inline void match_grpc1Request::set_allocated_frame2(std::string* frame2) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc1Request.frame2)
 }
 
-// bytes camParams = 4;
-inline void match_grpc1Request::clear_camparams() {
-  camparams_.ClearToEmpty();
+// bytes camParams1 = 4;
+inline void match_grpc1Request::clear_camparams1() {
+  camparams1_.ClearToEmpty();
 }
-inline const std::string& match_grpc1Request::camparams() const {
-  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams)
-  return _internal_camparams();
+inline const std::string& match_grpc1Request::camparams1() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams1)
+  return _internal_camparams1();
 }
-inline void match_grpc1Request::set_camparams(const std::string& value) {
-  _internal_set_camparams(value);
-  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams)
+inline void match_grpc1Request::set_camparams1(const std::string& value) {
+  _internal_set_camparams1(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams1)
 }
-inline std::string* match_grpc1Request::mutable_camparams() {
-  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams)
-  return _internal_mutable_camparams();
+inline std::string* match_grpc1Request::mutable_camparams1() {
+  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams1)
+  return _internal_mutable_camparams1();
 }
-inline const std::string& match_grpc1Request::_internal_camparams() const {
-  return camparams_.Get();
+inline const std::string& match_grpc1Request::_internal_camparams1() const {
+  return camparams1_.Get();
 }
-inline void match_grpc1Request::_internal_set_camparams(const std::string& value) {
+inline void match_grpc1Request::_internal_set_camparams1(const std::string& value) {
   
-  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  camparams1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void match_grpc1Request::set_camparams(std::string&& value) {
+inline void match_grpc1Request::set_camparams1(std::string&& value) {
   
-  camparams_.Set(
+  camparams1_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams1)
 }
-inline void match_grpc1Request::set_camparams(const char* value) {
+inline void match_grpc1Request::set_camparams1(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams)
+  camparams1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams1)
 }
-inline void match_grpc1Request::set_camparams(const void* value,
+inline void match_grpc1Request::set_camparams1(const void* value,
     size_t size) {
   
-  camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  camparams1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams)
+  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams1)
 }
-inline std::string* match_grpc1Request::_internal_mutable_camparams() {
+inline std::string* match_grpc1Request::_internal_mutable_camparams1() {
   
-  return camparams_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return camparams1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* match_grpc1Request::release_camparams() {
-  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams)
-  return camparams_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* match_grpc1Request::release_camparams1() {
+  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams1)
+  return camparams1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void match_grpc1Request::set_allocated_camparams(std::string* camparams) {
-  if (camparams != nullptr) {
+inline void match_grpc1Request::set_allocated_camparams1(std::string* camparams1) {
+  if (camparams1 != nullptr) {
     
   } else {
     
   }
-  camparams_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams,
+  camparams1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams1,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams)
+  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams1)
 }
 
-// bytes mask = 5;
-inline void match_grpc1Request::clear_mask() {
-  mask_.ClearToEmpty();
+// bytes camParams2 = 5;
+inline void match_grpc1Request::clear_camparams2() {
+  camparams2_.ClearToEmpty();
 }
-inline const std::string& match_grpc1Request::mask() const {
-  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask)
-  return _internal_mask();
+inline const std::string& match_grpc1Request::camparams2() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams2)
+  return _internal_camparams2();
 }
-inline void match_grpc1Request::set_mask(const std::string& value) {
-  _internal_set_mask(value);
-  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask)
+inline void match_grpc1Request::set_camparams2(const std::string& value) {
+  _internal_set_camparams2(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams2)
 }
-inline std::string* match_grpc1Request::mutable_mask() {
-  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask)
-  return _internal_mutable_mask();
+inline std::string* match_grpc1Request::mutable_camparams2() {
+  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams2)
+  return _internal_mutable_camparams2();
 }
-inline const std::string& match_grpc1Request::_internal_mask() const {
-  return mask_.Get();
+inline const std::string& match_grpc1Request::_internal_camparams2() const {
+  return camparams2_.Get();
 }
-inline void match_grpc1Request::_internal_set_mask(const std::string& value) {
+inline void match_grpc1Request::_internal_set_camparams2(const std::string& value) {
   
-  mask_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  camparams2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void match_grpc1Request::set_mask(std::string&& value) {
+inline void match_grpc1Request::set_camparams2(std::string&& value) {
   
-  mask_.Set(
+  camparams2_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask)
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams2)
 }
-inline void match_grpc1Request::set_mask(const char* value) {
+inline void match_grpc1Request::set_camparams2(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  mask_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask)
+  camparams2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams2)
 }
-inline void match_grpc1Request::set_mask(const void* value,
+inline void match_grpc1Request::set_camparams2(const void* value,
     size_t size) {
   
-  mask_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  camparams2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask)
+  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams2)
 }
-inline std::string* match_grpc1Request::_internal_mutable_mask() {
+inline std::string* match_grpc1Request::_internal_mutable_camparams2() {
   
-  return mask_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return camparams2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* match_grpc1Request::release_mask() {
-  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask)
-  return mask_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* match_grpc1Request::release_camparams2() {
+  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams2)
+  return camparams2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void match_grpc1Request::set_allocated_mask(std::string* mask) {
-  if (mask != nullptr) {
+inline void match_grpc1Request::set_allocated_camparams2(std::string* camparams2) {
+  if (camparams2 != nullptr) {
     
   } else {
     
   }
-  mask_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mask,
+  camparams2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), camparams2,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask)
+  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc1Request.camParams2)
 }
 
-// bytes matches = 6;
+// bytes mask1 = 6;
+inline void match_grpc1Request::clear_mask1() {
+  mask1_.ClearToEmpty();
+}
+inline const std::string& match_grpc1Request::mask1() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask1)
+  return _internal_mask1();
+}
+inline void match_grpc1Request::set_mask1(const std::string& value) {
+  _internal_set_mask1(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask1)
+}
+inline std::string* match_grpc1Request::mutable_mask1() {
+  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask1)
+  return _internal_mutable_mask1();
+}
+inline const std::string& match_grpc1Request::_internal_mask1() const {
+  return mask1_.Get();
+}
+inline void match_grpc1Request::_internal_set_mask1(const std::string& value) {
+  
+  mask1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void match_grpc1Request::set_mask1(std::string&& value) {
+  
+  mask1_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask1)
+}
+inline void match_grpc1Request::set_mask1(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  mask1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask1)
+}
+inline void match_grpc1Request::set_mask1(const void* value,
+    size_t size) {
+  
+  mask1_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask1)
+}
+inline std::string* match_grpc1Request::_internal_mutable_mask1() {
+  
+  return mask1_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* match_grpc1Request::release_mask1() {
+  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask1)
+  return mask1_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void match_grpc1Request::set_allocated_mask1(std::string* mask1) {
+  if (mask1 != nullptr) {
+    
+  } else {
+    
+  }
+  mask1_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mask1,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask1)
+}
+
+// bytes mask2 = 7;
+inline void match_grpc1Request::clear_mask2() {
+  mask2_.ClearToEmpty();
+}
+inline const std::string& match_grpc1Request::mask2() const {
+  // @@protoc_insertion_point(field_get:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask2)
+  return _internal_mask2();
+}
+inline void match_grpc1Request::set_mask2(const std::string& value) {
+  _internal_set_mask2(value);
+  // @@protoc_insertion_point(field_set:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask2)
+}
+inline std::string* match_grpc1Request::mutable_mask2() {
+  // @@protoc_insertion_point(field_mutable:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask2)
+  return _internal_mutable_mask2();
+}
+inline const std::string& match_grpc1Request::_internal_mask2() const {
+  return mask2_.Get();
+}
+inline void match_grpc1Request::_internal_set_mask2(const std::string& value) {
+  
+  mask2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void match_grpc1Request::set_mask2(std::string&& value) {
+  
+  mask2_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask2)
+}
+inline void match_grpc1Request::set_mask2(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  mask2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask2)
+}
+inline void match_grpc1Request::set_mask2(const void* value,
+    size_t size) {
+  
+  mask2_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask2)
+}
+inline std::string* match_grpc1Request::_internal_mutable_mask2() {
+  
+  return mask2_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* match_grpc1Request::release_mask2() {
+  // @@protoc_insertion_point(field_release:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask2)
+  return mask2_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void match_grpc1Request::set_allocated_mask2(std::string* mask2) {
+  if (mask2 != nullptr) {
+    
+  } else {
+    
+  }
+  mask2_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mask2,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:grpcIDescriptorMatcherGeometric.match_grpc1Request.mask2)
+}
+
+// bytes matches = 8;
 inline void match_grpc1Request::clear_matches() {
   matches_.ClearToEmpty();
 }

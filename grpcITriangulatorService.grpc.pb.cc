@@ -22,7 +22,6 @@
 namespace grpcITriangulator {
 
 static const char* grpcITriangulatorService_method_names[] = {
-  "/grpcITriangulator.grpcITriangulatorService/setCameraParameters",
   "/grpcITriangulator.grpcITriangulatorService/triangulate_grpc0",
   "/grpcITriangulator.grpcITriangulatorService/triangulate_grpc1",
   "/grpcITriangulator.grpcITriangulatorService/triangulate_grpc2",
@@ -36,35 +35,11 @@ std::unique_ptr< grpcITriangulatorService::Stub> grpcITriangulatorService::NewSt
 }
 
 grpcITriangulatorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcITriangulatorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_triangulate_grpc0_(grpcITriangulatorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_triangulate_grpc1_(grpcITriangulatorService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_triangulate_grpc2_(grpcITriangulatorService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_triangulate_grpc3_(grpcITriangulatorService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_triangulate_grpc0_(grpcITriangulatorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_triangulate_grpc1_(grpcITriangulatorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_triangulate_grpc2_(grpcITriangulatorService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_triangulate_grpc3_(grpcITriangulatorService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcITriangulatorService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcITriangulatorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcITriangulatorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcITriangulatorService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcITriangulator::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcITriangulatorService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcITriangulator::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcITriangulatorService::Stub::triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpcITriangulator::triangulate_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_triangulate_grpc0_, context, request, response);
@@ -162,16 +137,6 @@ grpcITriangulatorService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcITriangulatorService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcITriangulatorService::Service, ::grpcITriangulator::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcITriangulatorService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcITriangulator::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcITriangulatorService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcITriangulatorService::Service, ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcITriangulatorService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -180,7 +145,7 @@ grpcITriangulatorService::Service::Service() {
                return service->triangulate_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcITriangulatorService_method_names[2],
+      grpcITriangulatorService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcITriangulatorService::Service, ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcITriangulatorService::Service* service,
@@ -190,7 +155,7 @@ grpcITriangulatorService::Service::Service() {
                return service->triangulate_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcITriangulatorService_method_names[3],
+      grpcITriangulatorService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcITriangulatorService::Service, ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcITriangulatorService::Service* service,
@@ -200,7 +165,7 @@ grpcITriangulatorService::Service::Service() {
                return service->triangulate_grpc2(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcITriangulatorService_method_names[4],
+      grpcITriangulatorService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcITriangulatorService::Service, ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcITriangulatorService::Service* service,
@@ -212,13 +177,6 @@ grpcITriangulatorService::Service::Service() {
 }
 
 grpcITriangulatorService::Service::~Service() {
-}
-
-::grpc::Status grpcITriangulatorService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcITriangulator::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcITriangulatorService::Service::triangulate_grpc0(::grpc::ServerContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response) {

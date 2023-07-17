@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIPointCloudExporter;
+
+message exportPointCloudRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes pointCloud = 2;
+}
+
+message exportPointCloudResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIPointCloudExporterService {
+rpc exportPointCloud(exportPointCloudRequest) returns(exportPointCloudResponse) {}
+}
+

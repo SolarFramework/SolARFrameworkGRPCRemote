@@ -25,7 +25,6 @@ class IBootstrapper_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtu
     {
       public:
         grpcIBootstrapperServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIBootstrapper::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status process(::grpc::ServerContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response) override;
 
         SRef<SolAR::api::slam::IBootstrapper> m_xpcfComponent;

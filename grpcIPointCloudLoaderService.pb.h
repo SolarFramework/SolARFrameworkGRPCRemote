@@ -184,27 +184,10 @@ class loadRequest PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFilepathFieldNumber = 2,
-    kPointCloudFieldNumber = 3,
+    kPointCloudFieldNumber = 2,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string filepath = 2;
-  void clear_filepath();
-  const std::string& filepath() const;
-  void set_filepath(const std::string& value);
-  void set_filepath(std::string&& value);
-  void set_filepath(const char* value);
-  void set_filepath(const char* value, size_t size);
-  std::string* mutable_filepath();
-  std::string* release_filepath();
-  void set_allocated_filepath(std::string* filepath);
-  private:
-  const std::string& _internal_filepath() const;
-  void _internal_set_filepath(const std::string& value);
-  std::string* _internal_mutable_filepath();
-  public:
-
-  // bytes pointCloud = 3;
+  // bytes pointCloud = 2;
   void clear_pointcloud();
   const std::string& pointcloud() const;
   void set_pointcloud(const std::string& value);
@@ -236,7 +219,6 @@ class loadRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr filepath_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
   ::PROTOBUF_NAMESPACE_ID::int32 grpcservercompressionformat_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -428,68 +410,7 @@ inline void loadRequest::set_grpcservercompressionformat(::PROTOBUF_NAMESPACE_ID
   // @@protoc_insertion_point(field_set:grpcIPointCloudLoader.loadRequest.grpcServerCompressionFormat)
 }
 
-// string filepath = 2;
-inline void loadRequest::clear_filepath() {
-  filepath_.ClearToEmpty();
-}
-inline const std::string& loadRequest::filepath() const {
-  // @@protoc_insertion_point(field_get:grpcIPointCloudLoader.loadRequest.filepath)
-  return _internal_filepath();
-}
-inline void loadRequest::set_filepath(const std::string& value) {
-  _internal_set_filepath(value);
-  // @@protoc_insertion_point(field_set:grpcIPointCloudLoader.loadRequest.filepath)
-}
-inline std::string* loadRequest::mutable_filepath() {
-  // @@protoc_insertion_point(field_mutable:grpcIPointCloudLoader.loadRequest.filepath)
-  return _internal_mutable_filepath();
-}
-inline const std::string& loadRequest::_internal_filepath() const {
-  return filepath_.Get();
-}
-inline void loadRequest::_internal_set_filepath(const std::string& value) {
-  
-  filepath_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void loadRequest::set_filepath(std::string&& value) {
-  
-  filepath_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:grpcIPointCloudLoader.loadRequest.filepath)
-}
-inline void loadRequest::set_filepath(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  filepath_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:grpcIPointCloudLoader.loadRequest.filepath)
-}
-inline void loadRequest::set_filepath(const char* value,
-    size_t size) {
-  
-  filepath_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:grpcIPointCloudLoader.loadRequest.filepath)
-}
-inline std::string* loadRequest::_internal_mutable_filepath() {
-  
-  return filepath_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* loadRequest::release_filepath() {
-  // @@protoc_insertion_point(field_release:grpcIPointCloudLoader.loadRequest.filepath)
-  return filepath_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void loadRequest::set_allocated_filepath(std::string* filepath) {
-  if (filepath != nullptr) {
-    
-  } else {
-    
-  }
-  filepath_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), filepath,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:grpcIPointCloudLoader.loadRequest.filepath)
-}
-
-// bytes pointCloud = 3;
+// bytes pointCloud = 2;
 inline void loadRequest::clear_pointcloud() {
   pointcloud_.ClearToEmpty();
 }

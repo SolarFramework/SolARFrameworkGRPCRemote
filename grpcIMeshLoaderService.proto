@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMeshLoader;
+
+message loadRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes Mesh = 2;
+}
+
+message loadResponse
+{
+bytes Mesh = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIMeshLoaderService {
+rpc load(loadRequest) returns(loadResponse) {}
+}
+

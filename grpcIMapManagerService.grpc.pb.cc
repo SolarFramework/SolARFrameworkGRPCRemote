@@ -31,8 +31,13 @@ static const char* grpcIMapManagerService_method_names[] = {
   "/grpcIMapManager.grpcIMapManagerService/removeCloudPoint",
   "/grpcIMapManager.grpcIMapManagerService/addKeyframe",
   "/grpcIMapManager.grpcIMapManagerService/removeKeyframe",
+  "/grpcIMapManager.grpcIMapManagerService/addCameraParameters",
+  "/grpcIMapManager.grpcIMapManagerService/removeCameraParameters",
+  "/grpcIMapManager.grpcIMapManagerService/getCameraParameters_grpc0",
+  "/grpcIMapManager.grpcIMapManagerService/getCameraParameters_grpc1",
   "/grpcIMapManager.grpcIMapManagerService/pointCloudPruning",
   "/grpcIMapManager.grpcIMapManagerService/keyframePruning",
+  "/grpcIMapManager.grpcIMapManagerService/visibilityPruning",
   "/grpcIMapManager.grpcIMapManagerService/saveToFile",
   "/grpcIMapManager.grpcIMapManagerService/loadFromFile",
   "/grpcIMapManager.grpcIMapManagerService/deleteFile",
@@ -54,11 +59,16 @@ grpcIMapManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterfa
   , rpcmethod_removeCloudPoint_(grpcIMapManagerService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_addKeyframe_(grpcIMapManagerService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_removeKeyframe_(grpcIMapManagerService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_pointCloudPruning_(grpcIMapManagerService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_keyframePruning_(grpcIMapManagerService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_saveToFile_(grpcIMapManagerService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_loadFromFile_(grpcIMapManagerService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteFile_(grpcIMapManagerService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_addCameraParameters_(grpcIMapManagerService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_removeCameraParameters_(grpcIMapManagerService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getCameraParameters_grpc0_(grpcIMapManagerService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getCameraParameters_grpc1_(grpcIMapManagerService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_pointCloudPruning_(grpcIMapManagerService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_keyframePruning_(grpcIMapManagerService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_visibilityPruning_(grpcIMapManagerService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_saveToFile_(grpcIMapManagerService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_loadFromFile_(grpcIMapManagerService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteFile_(grpcIMapManagerService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapManagerService::Stub::setMap(::grpc::ClientContext* context, const ::grpcIMapManager::setMapRequest& request, ::grpcIMapManager::setMapResponse* response) {
@@ -268,6 +278,98 @@ void grpcIMapManagerService::Stub::experimental_async::removeKeyframe(::grpc::Cl
   return result;
 }
 
+::grpc::Status grpcIMapManagerService::Stub::addCameraParameters(::grpc::ClientContext* context, const ::grpcIMapManager::addCameraParametersRequest& request, ::grpcIMapManager::addCameraParametersResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::addCameraParametersRequest, ::grpcIMapManager::addCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addCameraParameters_, context, request, response);
+}
+
+void grpcIMapManagerService::Stub::experimental_async::addCameraParameters(::grpc::ClientContext* context, const ::grpcIMapManager::addCameraParametersRequest* request, ::grpcIMapManager::addCameraParametersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::addCameraParametersRequest, ::grpcIMapManager::addCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addCameraParameters_, context, request, response, std::move(f));
+}
+
+void grpcIMapManagerService::Stub::experimental_async::addCameraParameters(::grpc::ClientContext* context, const ::grpcIMapManager::addCameraParametersRequest* request, ::grpcIMapManager::addCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addCameraParameters_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::addCameraParametersResponse>* grpcIMapManagerService::Stub::PrepareAsyncaddCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapManager::addCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::addCameraParametersResponse, ::grpcIMapManager::addCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_addCameraParameters_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::addCameraParametersResponse>* grpcIMapManagerService::Stub::AsyncaddCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapManager::addCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncaddCameraParametersRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapManagerService::Stub::removeCameraParameters(::grpc::ClientContext* context, const ::grpcIMapManager::removeCameraParametersRequest& request, ::grpcIMapManager::removeCameraParametersResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::removeCameraParametersRequest, ::grpcIMapManager::removeCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_removeCameraParameters_, context, request, response);
+}
+
+void grpcIMapManagerService::Stub::experimental_async::removeCameraParameters(::grpc::ClientContext* context, const ::grpcIMapManager::removeCameraParametersRequest* request, ::grpcIMapManager::removeCameraParametersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::removeCameraParametersRequest, ::grpcIMapManager::removeCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_removeCameraParameters_, context, request, response, std::move(f));
+}
+
+void grpcIMapManagerService::Stub::experimental_async::removeCameraParameters(::grpc::ClientContext* context, const ::grpcIMapManager::removeCameraParametersRequest* request, ::grpcIMapManager::removeCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_removeCameraParameters_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::removeCameraParametersResponse>* grpcIMapManagerService::Stub::PrepareAsyncremoveCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapManager::removeCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::removeCameraParametersResponse, ::grpcIMapManager::removeCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_removeCameraParameters_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::removeCameraParametersResponse>* grpcIMapManagerService::Stub::AsyncremoveCameraParametersRaw(::grpc::ClientContext* context, const ::grpcIMapManager::removeCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncremoveCameraParametersRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapManagerService::Stub::getCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc0Request& request, ::grpcIMapManager::getCameraParameters_grpc0Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::getCameraParameters_grpc0Request, ::grpcIMapManager::getCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getCameraParameters_grpc0_, context, request, response);
+}
+
+void grpcIMapManagerService::Stub::experimental_async::getCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc0Request* request, ::grpcIMapManager::getCameraParameters_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::getCameraParameters_grpc0Request, ::grpcIMapManager::getCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCameraParameters_grpc0_, context, request, response, std::move(f));
+}
+
+void grpcIMapManagerService::Stub::experimental_async::getCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc0Request* request, ::grpcIMapManager::getCameraParameters_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCameraParameters_grpc0_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getCameraParameters_grpc0Response>* grpcIMapManagerService::Stub::PrepareAsyncgetCameraParameters_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::getCameraParameters_grpc0Response, ::grpcIMapManager::getCameraParameters_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getCameraParameters_grpc0_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getCameraParameters_grpc0Response>* grpcIMapManagerService::Stub::AsyncgetCameraParameters_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetCameraParameters_grpc0Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapManagerService::Stub::getCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc1Request& request, ::grpcIMapManager::getCameraParameters_grpc1Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::getCameraParameters_grpc1Request, ::grpcIMapManager::getCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getCameraParameters_grpc1_, context, request, response);
+}
+
+void grpcIMapManagerService::Stub::experimental_async::getCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc1Request* request, ::grpcIMapManager::getCameraParameters_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::getCameraParameters_grpc1Request, ::grpcIMapManager::getCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCameraParameters_grpc1_, context, request, response, std::move(f));
+}
+
+void grpcIMapManagerService::Stub::experimental_async::getCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc1Request* request, ::grpcIMapManager::getCameraParameters_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCameraParameters_grpc1_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getCameraParameters_grpc1Response>* grpcIMapManagerService::Stub::PrepareAsyncgetCameraParameters_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::getCameraParameters_grpc1Response, ::grpcIMapManager::getCameraParameters_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getCameraParameters_grpc1_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::getCameraParameters_grpc1Response>* grpcIMapManagerService::Stub::AsyncgetCameraParameters_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapManager::getCameraParameters_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetCameraParameters_grpc1Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status grpcIMapManagerService::Stub::pointCloudPruning(::grpc::ClientContext* context, const ::grpcIMapManager::pointCloudPruningRequest& request, ::grpcIMapManager::pointCloudPruningResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::pointCloudPruningRequest, ::grpcIMapManager::pointCloudPruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_pointCloudPruning_, context, request, response);
 }
@@ -310,6 +412,29 @@ void grpcIMapManagerService::Stub::experimental_async::keyframePruning(::grpc::C
 ::grpc::ClientAsyncResponseReader< ::grpcIMapManager::keyframePruningResponse>* grpcIMapManagerService::Stub::AsynckeyframePruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::keyframePruningRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsynckeyframePruningRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapManagerService::Stub::visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpcIMapManager::visibilityPruningResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_visibilityPruning_, context, request, response);
+}
+
+void grpcIMapManagerService::Stub::experimental_async::visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_visibilityPruning_, context, request, response, std::move(f));
+}
+
+void grpcIMapManagerService::Stub::experimental_async::visibilityPruning(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_visibilityPruning_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>* grpcIMapManagerService::Stub::PrepareAsyncvisibilityPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapManager::visibilityPruningResponse, ::grpcIMapManager::visibilityPruningRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_visibilityPruning_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapManager::visibilityPruningResponse>* grpcIMapManagerService::Stub::AsyncvisibilityPruningRaw(::grpc::ClientContext* context, const ::grpcIMapManager::visibilityPruningRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncvisibilityPruningRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -477,6 +602,46 @@ grpcIMapManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapManagerService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::addCameraParametersRequest, ::grpcIMapManager::addCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapManager::addCameraParametersRequest* req,
+             ::grpcIMapManager::addCameraParametersResponse* resp) {
+               return service->addCameraParameters(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapManagerService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::removeCameraParametersRequest, ::grpcIMapManager::removeCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapManager::removeCameraParametersRequest* req,
+             ::grpcIMapManager::removeCameraParametersResponse* resp) {
+               return service->removeCameraParameters(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapManagerService_method_names[11],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::getCameraParameters_grpc0Request, ::grpcIMapManager::getCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapManager::getCameraParameters_grpc0Request* req,
+             ::grpcIMapManager::getCameraParameters_grpc0Response* resp) {
+               return service->getCameraParameters_grpc0(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapManagerService_method_names[12],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::getCameraParameters_grpc1Request, ::grpcIMapManager::getCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapManager::getCameraParameters_grpc1Request* req,
+             ::grpcIMapManager::getCameraParameters_grpc1Response* resp) {
+               return service->getCameraParameters_grpc1(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapManagerService_method_names[13],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::pointCloudPruningRequest, ::grpcIMapManager::pointCloudPruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -485,7 +650,7 @@ grpcIMapManagerService::Service::Service() {
                return service->pointCloudPruning(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[10],
+      grpcIMapManagerService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::keyframePruningRequest, ::grpcIMapManager::keyframePruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -495,7 +660,17 @@ grpcIMapManagerService::Service::Service() {
                return service->keyframePruning(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[11],
+      grpcIMapManagerService_method_names[15],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::visibilityPruningRequest, ::grpcIMapManager::visibilityPruningResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapManager::visibilityPruningRequest* req,
+             ::grpcIMapManager::visibilityPruningResponse* resp) {
+               return service->visibilityPruning(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapManagerService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::saveToFileRequest, ::grpcIMapManager::saveToFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -505,7 +680,7 @@ grpcIMapManagerService::Service::Service() {
                return service->saveToFile(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[12],
+      grpcIMapManagerService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::loadFromFileRequest, ::grpcIMapManager::loadFromFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -515,7 +690,7 @@ grpcIMapManagerService::Service::Service() {
                return service->loadFromFile(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapManagerService_method_names[13],
+      grpcIMapManagerService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapManagerService::Service, ::grpcIMapManager::deleteFileRequest, ::grpcIMapManager::deleteFileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapManagerService::Service* service,
@@ -592,6 +767,34 @@ grpcIMapManagerService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status grpcIMapManagerService::Service::addCameraParameters(::grpc::ServerContext* context, const ::grpcIMapManager::addCameraParametersRequest* request, ::grpcIMapManager::addCameraParametersResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapManagerService::Service::removeCameraParameters(::grpc::ServerContext* context, const ::grpcIMapManager::removeCameraParametersRequest* request, ::grpcIMapManager::removeCameraParametersResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapManagerService::Service::getCameraParameters_grpc0(::grpc::ServerContext* context, const ::grpcIMapManager::getCameraParameters_grpc0Request* request, ::grpcIMapManager::getCameraParameters_grpc0Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapManagerService::Service::getCameraParameters_grpc1(::grpc::ServerContext* context, const ::grpcIMapManager::getCameraParameters_grpc1Request* request, ::grpcIMapManager::getCameraParameters_grpc1Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status grpcIMapManagerService::Service::pointCloudPruning(::grpc::ServerContext* context, const ::grpcIMapManager::pointCloudPruningRequest* request, ::grpcIMapManager::pointCloudPruningResponse* response) {
   (void) context;
   (void) request;
@@ -600,6 +803,13 @@ grpcIMapManagerService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMapManagerService::Service::keyframePruning(::grpc::ServerContext* context, const ::grpcIMapManager::keyframePruningRequest* request, ::grpcIMapManager::keyframePruningResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapManagerService::Service::visibilityPruning(::grpc::ServerContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response) {
   (void) context;
   (void) request;
   (void) response;

@@ -22,8 +22,7 @@ class I2Dto3DTransformDecomposer_grpcProxy:  public org::bcom::xpcf::Configurabl
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
-    bool decompose(SolAR::datastructure::Transform2Df const& F, std::vector<SolAR::datastructure::Transform3Df>& decomposedPoses)     override;
+    bool decompose(SolAR::datastructure::Transform2Df const& F, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Transform3Df>& decomposedPoses)     override;
 
 
   private:

@@ -42,7 +42,7 @@ XPCFErrorCode IPointCloudLoader_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IPointCloudLoader_grpcProxy::load(std::string const& filepath, SRef<SolAR::datastructure::PointCloud>& pointCloud)
+SolAR::FrameworkReturnCode  IPointCloudLoader_grpcProxy::load(SRef<SolAR::datastructure::PointCloud>& pointCloud)
 {
   ::grpc::ClientContext context;
   ::grpcIPointCloudLoader::loadRequest reqIn;
@@ -52,7 +52,6 @@ SolAR::FrameworkReturnCode  IPointCloudLoader_grpcProxy::load(std::string const&
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_filepath(filepath);
   reqIn.set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();

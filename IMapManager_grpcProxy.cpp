@@ -19,7 +19,7 @@ IMapManager_grpcProxy::IMapManager_grpcProxy():xpcf::ConfigurableBase(xpcf::toMa
   declareInterface<SolAR::api::storage::IMapManager>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(15);
+  m_grpcProxyCompressionConfig.resize(20);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -321,6 +321,130 @@ SolAR::FrameworkReturnCode  IMapManager_grpcProxy::removeKeyframe(SRef<SolAR::da
 }
 
 
+SolAR::FrameworkReturnCode  IMapManager_grpcProxy::addCameraParameters(SRef<SolAR::datastructure::CameraParameters> const cameraParameters)
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapManager::addCameraParametersRequest reqIn;
+  ::grpcIMapManager::addCameraParametersResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "addCameraParameters", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_cameraparameters(xpcf::serialize<SRef<SolAR::datastructure::CameraParameters>>(cameraParameters));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::addCameraParameters request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->addCameraParameters(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::addCameraParameters response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "addCameraParameters rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapManagerService","addCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IMapManager_grpcProxy::removeCameraParameters(SRef<SolAR::datastructure::CameraParameters> const cameraParameters)
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapManager::removeCameraParametersRequest reqIn;
+  ::grpcIMapManager::removeCameraParametersResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "removeCameraParameters", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_cameraparameters(xpcf::serialize<SRef<SolAR::datastructure::CameraParameters>>(cameraParameters));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::removeCameraParameters request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->removeCameraParameters(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::removeCameraParameters response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "removeCameraParameters rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapManagerService","removeCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getCameraParameters(uint32_t const id, SRef<SolAR::datastructure::CameraParameters>& cameraParameters)
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapManager::getCameraParameters_grpc0Request reqIn;
+  ::grpcIMapManager::getCameraParameters_grpc0Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getCameraParameters", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_id(id);
+  reqIn.set_cameraparameters(xpcf::serialize<SRef<SolAR::datastructure::CameraParameters>>(cameraParameters));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::getCameraParameters request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getCameraParameters_grpc0(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::getCameraParameters response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getCameraParameters_grpc0 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapManagerService","getCameraParameters_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  cameraParameters = xpcf::deserialize<SRef<SolAR::datastructure::CameraParameters>>(respOut.cameraparameters());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IMapManager_grpcProxy::getCameraParameters(uint32_t const id, SolAR::datastructure::CameraParameters& cameraParameters)
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapManager::getCameraParameters_grpc1Request reqIn;
+  ::grpcIMapManager::getCameraParameters_grpc1Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getCameraParameters", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_id(id);
+  reqIn.set_cameraparameters(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParameters));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::getCameraParameters request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getCameraParameters_grpc1(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::getCameraParameters response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getCameraParameters_grpc1 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapManagerService","getCameraParameters_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  cameraParameters = xpcf::deserialize<SolAR::datastructure::CameraParameters>(respOut.cameraparameters());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
 int  IMapManager_grpcProxy::pointCloudPruning(std::vector<SRef<SolAR::datastructure::CloudPoint>> const& cloudPoints)
 {
   ::grpc::ClientContext context;
@@ -378,6 +502,35 @@ int  IMapManager_grpcProxy::keyframePruning(std::vector<SRef<SolAR::datastructur
   }
 
   return respOut.xpcfgrpcreturnvalue();
+}
+
+
+SolAR::FrameworkReturnCode  IMapManager_grpcProxy::visibilityPruning()
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapManager::visibilityPruningRequest reqIn;
+  ::grpcIMapManager::visibilityPruningResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "visibilityPruning", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::visibilityPruning request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->visibilityPruning(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcProxy::visibilityPruning response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "visibilityPruning rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapManagerService","visibilityPruning",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 

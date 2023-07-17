@@ -19,8 +19,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace grpcIPointCloudLoader {
 constexpr loadRequest::loadRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : filepath_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , pointcloud_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : pointcloud_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , grpcservercompressionformat_(0){}
 struct loadRequestDefaultTypeInternal {
   constexpr loadRequestDefaultTypeInternal()
@@ -56,7 +55,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIPointCloudLoaderService_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::grpcIPointCloudLoader::loadRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIPointCloudLoader::loadRequest, filepath_),
   PROTOBUF_FIELD_OFFSET(::grpcIPointCloudLoader::loadRequest, pointcloud_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIPointCloudLoader::loadResponse, _internal_metadata_),
@@ -68,7 +66,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIPointCloudLoaderService_2
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::grpcIPointCloudLoader::loadRequest)},
-  { 8, -1, sizeof(::grpcIPointCloudLoader::loadResponse)},
+  { 7, -1, sizeof(::grpcIPointCloudLoader::loadResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -79,21 +77,20 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_grpcIPointCloudLoaderService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"grpcIPointCloudLoaderService.proto\022\025gr"
   "pcIPointCloudLoader\032\033google/protobuf/emp"
-  "ty.proto\"X\n\013loadRequest\022#\n\033grpcServerCom"
-  "pressionFormat\030\001 \001(\005\022\020\n\010filepath\030\002 \001(\t\022\022"
-  "\n\npointCloud\030\003 \001(\014\"\?\n\014loadResponse\022\022\n\npo"
-  "intCloud\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 "
-  "\001(\0212q\n\034grpcIPointCloudLoaderService\022Q\n\004l"
-  "oad\022\".grpcIPointCloudLoader.loadRequest\032"
-  "#.grpcIPointCloudLoader.loadResponse\"\000b\006"
-  "proto3"
+  "ty.proto\"F\n\013loadRequest\022#\n\033grpcServerCom"
+  "pressionFormat\030\001 \001(\005\022\022\n\npointCloud\030\002 \001(\014"
+  "\"\?\n\014loadResponse\022\022\n\npointCloud\030\001 \001(\014\022\033\n\023"
+  "xpcfGrpcReturnValue\030\002 \001(\0212q\n\034grpcIPointC"
+  "loudLoaderService\022Q\n\004load\022\".grpcIPointCl"
+  "oudLoader.loadRequest\032#.grpcIPointCloudL"
+  "oader.loadResponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIPointCloudLoaderService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIPointCloudLoaderService_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIPointCloudLoaderService_2eproto = {
-  false, false, 366, descriptor_table_protodef_grpcIPointCloudLoaderService_2eproto, "grpcIPointCloudLoaderService.proto", 
+  false, false, 348, descriptor_table_protodef_grpcIPointCloudLoaderService_2eproto, "grpcIPointCloudLoaderService.proto", 
   &descriptor_table_grpcIPointCloudLoaderService_2eproto_once, descriptor_table_grpcIPointCloudLoaderService_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_grpcIPointCloudLoaderService_2eproto::offsets,
   file_level_metadata_grpcIPointCloudLoaderService_2eproto, file_level_enum_descriptors_grpcIPointCloudLoaderService_2eproto, file_level_service_descriptors_grpcIPointCloudLoaderService_2eproto,
@@ -123,11 +120,6 @@ loadRequest::loadRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 loadRequest::loadRequest(const loadRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  filepath_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_filepath().empty()) {
-    filepath_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_filepath(), 
-      GetArena());
-  }
   pointcloud_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_pointcloud().empty()) {
     pointcloud_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pointcloud(), 
@@ -138,7 +130,6 @@ loadRequest::loadRequest(const loadRequest& from)
 }
 
 void loadRequest::SharedCtor() {
-filepath_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 pointcloud_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 grpcservercompressionformat_ = 0;
 }
@@ -151,7 +142,6 @@ loadRequest::~loadRequest() {
 
 void loadRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  filepath_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   pointcloud_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -171,7 +161,6 @@ void loadRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  filepath_.ClearToEmpty();
   pointcloud_.ClearToEmpty();
   grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -191,18 +180,9 @@ const char* loadRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string filepath = 2;
+      // bytes pointCloud = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_filepath();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "grpcIPointCloudLoader.loadRequest.filepath"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bytes pointCloud = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_pointcloud();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -242,20 +222,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // string filepath = 2;
-  if (this->filepath().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_filepath().data(), static_cast<int>(this->_internal_filepath().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "grpcIPointCloudLoader.loadRequest.filepath");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_filepath(), target);
-  }
-
-  // bytes pointCloud = 3;
+  // bytes pointCloud = 2;
   if (this->pointcloud().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_pointcloud(), target);
+        2, this->_internal_pointcloud(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -274,14 +244,7 @@ size_t loadRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string filepath = 2;
-  if (this->filepath().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_filepath());
-  }
-
-  // bytes pointCloud = 3;
+  // bytes pointCloud = 2;
   if (this->pointcloud().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -326,9 +289,6 @@ void loadRequest::MergeFrom(const loadRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.filepath().size() > 0) {
-    _internal_set_filepath(from._internal_filepath());
-  }
   if (from.pointcloud().size() > 0) {
     _internal_set_pointcloud(from._internal_pointcloud());
   }
@@ -358,7 +318,6 @@ bool loadRequest::IsInitialized() const {
 void loadRequest::InternalSwap(loadRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  filepath_.Swap(&other->filepath_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   pointcloud_.Swap(&other->pointcloud_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }

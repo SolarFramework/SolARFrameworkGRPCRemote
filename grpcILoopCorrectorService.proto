@@ -4,12 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcILoopCorrector;
 
-message setCameraParametersRequest
-{
-bytes intrinsicParams = 1;
-bytes distortionParams = 2;
-}
-
 message correctRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -25,7 +19,6 @@ sint32 xpcfGrpcReturnValue = 1;
 }
 
 service grpcILoopCorrectorService {
-rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
 rpc correct(correctRequest) returns(correctResponse) {}
 }
 

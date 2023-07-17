@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMeshExporter;
+
+message exportMeshRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes mesh = 2;
+}
+
+message exportMeshResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIMeshExporterService {
+rpc exportMesh(exportMeshRequest) returns(exportMeshResponse) {}
+}
+

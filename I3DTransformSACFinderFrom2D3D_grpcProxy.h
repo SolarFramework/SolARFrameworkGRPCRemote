@@ -22,8 +22,7 @@ class I3DTransformSACFinderFrom2D3D_grpcProxy:  public org::bcom::xpcf::Configur
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
-    SolAR::FrameworkReturnCode estimate(std::vector<SolAR::datastructure::Point2Df> const& imagePoints, std::vector<SolAR::datastructure::Point3Df> const& worldPoints, std::vector<uint32_t>& inliers, SolAR::datastructure::Transform3Df& pose, SolAR::datastructure::Transform3Df const initialPose)     override;
+    SolAR::FrameworkReturnCode estimate(std::vector<SolAR::datastructure::Point2Df> const& imagePoints, std::vector<SolAR::datastructure::Point3Df> const& worldPoints, SolAR::datastructure::CameraParameters const& camParams, std::vector<uint32_t>& inliers, SolAR::datastructure::Transform3Df& pose, SolAR::datastructure::Transform3Df const initialPose)     override;
 
 
   private:

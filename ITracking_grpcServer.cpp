@@ -14,7 +14,7 @@ ITracking_grpcServer::ITracking_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::slam::ITracking>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(5);
+  m_grpcServerCompressionConfig.resize(4);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -39,24 +39,6 @@ XPCFErrorCode ITracking_grpcServer::onConfigured()
 {
   return &m_grpcService;
 }
-
-::grpc::Status ITracking_grpcServer::grpcITrackingServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcITracking::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ITracking_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::datastructure::CamCalibration intrinsicParams = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsicparams());
-  SolAR::datastructure::CamDistortion distorsionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distorsionparams());
-  m_xpcfComponent->setCameraParameters(intrinsicParams, distorsionParams);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> ITracking_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
 
 ::grpc::Status ITracking_grpcServer::grpcITrackingServiceImpl::setNewKeyframe(::grpc::ServerContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response)
 {

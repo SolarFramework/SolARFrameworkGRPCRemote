@@ -4,20 +4,14 @@ import "google/protobuf/empty.proto";
 
 package grpcI3DOverlay;
 
-message setCameraParametersRequest
-{
-bytes intrinsic_parameters = 1;
-bytes distorsion_parameters = 2;
-}
-
 message drawRequest
 {
 bytes pose = 1;
-bytes displayImage = 2;
+bytes camParams = 2;
+bytes displayImage = 3;
 }
 
 service grpcI3DOverlayService {
-rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
 rpc draw(drawRequest) returns(google.protobuf.Empty) {}
 }
 

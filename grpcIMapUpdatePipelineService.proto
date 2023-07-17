@@ -91,6 +91,18 @@ message resetMapResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message getPointCloudRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes pointCloud = 2;
+}
+
+message getPointCloudRequestResponse
+{
+bytes pointCloud = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 service grpcIMapUpdatePipelineService {
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
@@ -100,5 +112,6 @@ rpc mapUpdateRequest(mapUpdateRequestRequest) returns(mapUpdateRequestResponse) 
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc getSubmapRequest(getSubmapRequestRequest) returns(getSubmapRequestResponse) {}
 rpc resetMap(resetMapRequest) returns(resetMapResponse) {}
+rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
 }
 

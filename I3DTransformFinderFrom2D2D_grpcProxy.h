@@ -22,9 +22,8 @@ class I3DTransformFinderFrom2D2D_grpcProxy:  public org::bcom::xpcf::Configurabl
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
-    SolAR::FrameworkReturnCode estimate(std::vector<SolAR::datastructure::Point2Df> const& pointsView1, std::vector<SolAR::datastructure::Point2Df> const& pointsView2, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df& poseView2, std::vector<SolAR::datastructure::DescriptorMatch>& inlierMatches)     override;
-    SolAR::FrameworkReturnCode estimate(std::vector<SolAR::datastructure::Keypoint> const& pointsView1, std::vector<SolAR::datastructure::Keypoint> const& pointsView2, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df& poseView2, std::vector<SolAR::datastructure::DescriptorMatch>& inlierMatches)     override;
+    SolAR::FrameworkReturnCode estimate(std::vector<SolAR::datastructure::Point2Df> const& pointsView1, std::vector<SolAR::datastructure::Point2Df> const& pointsView2, SolAR::datastructure::CameraParameters const& camParams, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df& poseView2, std::vector<SolAR::datastructure::DescriptorMatch>& inlierMatches)     override;
+    SolAR::FrameworkReturnCode estimate(std::vector<SolAR::datastructure::Keypoint> const& pointsView1, std::vector<SolAR::datastructure::Keypoint> const& pointsView2, SolAR::datastructure::CameraParameters const& camParams, SolAR::datastructure::Transform3Df const& poseView1, SolAR::datastructure::Transform3Df& poseView2, std::vector<SolAR::datastructure::DescriptorMatch>& inlierMatches)     override;
 
 
   private:

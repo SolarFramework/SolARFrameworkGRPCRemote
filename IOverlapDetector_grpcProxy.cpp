@@ -19,7 +19,7 @@ IOverlapDetector_grpcProxy::IOverlapDetector_grpcProxy():xpcf::ConfigurableBase(
   declareInterface<SolAR::api::loop::IOverlapDetector>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(4);
+  m_grpcProxyCompressionConfig.resize(3);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -39,31 +39,6 @@ XPCFErrorCode IOverlapDetector_grpcProxy::onConfigured()
       translateClientConfiguration(compressionLine, m_serviceCompressionInfos, m_methodCompressionInfosMap);
   }
   return xpcf::XPCFErrorCode::_SUCCESS;
-}
-
-
-void  IOverlapDetector_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distortionParams)
-{
-  ::grpc::ClientContext context;
-  ::grpcIOverlapDetector::setCameraParametersRequest reqIn;
-  ::google::protobuf::Empty respOut;
-  reqIn.set_intrinsicparams(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsicParams));
-  reqIn.set_distortionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distortionParams));
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IOverlapDetector_grpcProxy::setCameraParameters request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IOverlapDetector_grpcProxy::setCameraParameters response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParameters rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIOverlapDetectorService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
 }
 
 

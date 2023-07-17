@@ -14,7 +14,7 @@ I2Dto3DTransformDecomposer_grpcServer::I2Dto3DTransformDecomposer_grpcServer():x
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::solver::pose::I2Dto3DTransformDecomposer>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(3);
+  m_grpcServerCompressionConfig.resize(2);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -40,24 +40,6 @@ XPCFErrorCode I2Dto3DTransformDecomposer_grpcServer::onConfigured()
   return &m_grpcService;
 }
 
-::grpc::Status I2Dto3DTransformDecomposer_grpcServer::grpcI2Dto3DTransformDecomposerServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcI2Dto3DTransformDecomposer::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I2Dto3DTransformDecomposer_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::datastructure::CamCalibration intrinsicParams = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsicparams());
-  SolAR::datastructure::CamDistortion distorsionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distorsionparams());
-  m_xpcfComponent->setCameraParameters(intrinsicParams, distorsionParams);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> I2Dto3DTransformDecomposer_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
 ::grpc::Status I2Dto3DTransformDecomposer_grpcServer::grpcI2Dto3DTransformDecomposerServiceImpl::decompose(::grpc::ServerContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -70,8 +52,9 @@ XPCFErrorCode I2Dto3DTransformDecomposer_grpcServer::onConfigured()
   std::cout << "====> I2Dto3DTransformDecomposer_grpcServer::decompose request received at " << to_simple_string(start) << std::endl;
   #endif
   SolAR::datastructure::Transform2Df F = xpcf::deserialize<SolAR::datastructure::Transform2Df>(request->f());
+  SolAR::datastructure::CameraParameters camParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->camparams());
   std::vector<SolAR::datastructure::Transform3Df> decomposedPoses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->decomposedposes());
-  bool returnValue = m_xpcfComponent->decompose(F, decomposedPoses);
+  bool returnValue = m_xpcfComponent->decompose(F, camParams, decomposedPoses);
   response->set_decomposedposes(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(decomposedPoses));
   response->set_xpcfgrpcreturnvalue(returnValue);
   #ifdef ENABLE_SERVER_TIMERS

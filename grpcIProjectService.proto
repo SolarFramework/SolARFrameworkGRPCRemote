@@ -4,18 +4,13 @@ import "google/protobuf/empty.proto";
 
 package grpcIProject;
 
-message setCameraParametersRequest
-{
-bytes intrinsicParams = 1;
-bytes distorsionParams = 2;
-}
-
 message project_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes inputPoints = 2;
 bytes pose = 3;
-bytes imagePoints = 4;
+bytes camParams = 4;
+bytes imagePoints = 5;
 }
 
 message project_grpc0Response
@@ -29,7 +24,8 @@ message project_grpc1Request
 int32 grpcServerCompressionFormat  = 1;
 bytes inputPoints = 2;
 bytes pose = 3;
-bytes imagePoints = 4;
+bytes camParams = 4;
+bytes imagePoints = 5;
 }
 
 message project_grpc1Response
@@ -39,7 +35,6 @@ sint32 xpcfGrpcReturnValue = 2;
 }
 
 service grpcIProjectService {
-rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
 rpc project_grpc0(project_grpc0Request) returns(project_grpc0Response) {}
 rpc project_grpc1(project_grpc1Request) returns(project_grpc1Response) {}
 }

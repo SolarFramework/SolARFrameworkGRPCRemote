@@ -13,9 +13,11 @@ bytes undistortedKeypoints1 = 4;
 bytes undistortedKeypoints2 = 5;
 bytes pose1 = 6;
 bytes pose2 = 7;
-bytes camParams = 8;
-bytes mask = 9;
-bytes matches = 10;
+bytes camParams1 = 8;
+bytes camParams2 = 9;
+bytes mask1 = 10;
+bytes mask2 = 11;
+bytes matches = 12;
 }
 
 message match_grpc0Response
@@ -29,9 +31,11 @@ message match_grpc1Request
 int32 grpcServerCompressionFormat  = 1;
 bytes frame1 = 2;
 bytes frame2 = 3;
-bytes camParams = 4;
-bytes mask = 5;
-bytes matches = 6;
+bytes camParams1 = 4;
+bytes camParams2 = 5;
+bytes mask1 = 6;
+bytes mask2 = 7;
+bytes matches = 8;
 }
 
 message match_grpc1Response

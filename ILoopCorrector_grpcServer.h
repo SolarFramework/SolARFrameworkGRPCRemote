@@ -25,7 +25,6 @@ class ILoopCorrector_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virt
     {
       public:
         grpcILoopCorrectorServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcILoopCorrector::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status correct(::grpc::ServerContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response) override;
 
         SRef<SolAR::api::loop::ILoopCorrector> m_xpcfComponent;

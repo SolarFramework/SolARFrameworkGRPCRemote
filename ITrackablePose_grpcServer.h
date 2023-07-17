@@ -25,7 +25,6 @@ class ITrackablePose_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virt
     {
       public:
         grpcITrackablePoseServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcITrackablePose::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status setTrackable(::grpc::ServerContext* context, const ::grpcITrackablePose::setTrackableRequest* request, ::grpcITrackablePose::setTrackableResponse* response) override;
         ::grpc::Status estimate(::grpc::ServerContext* context, const ::grpcITrackablePose::estimateRequest* request, ::grpcITrackablePose::estimateResponse* response) override;
 

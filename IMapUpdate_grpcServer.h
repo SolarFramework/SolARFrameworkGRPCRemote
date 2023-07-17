@@ -25,7 +25,6 @@ class IMapUpdate_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual 
     {
       public:
         grpcIMapUpdateServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapUpdate::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status update(::grpc::ServerContext* context, const ::grpcIMapUpdate::updateRequest* request, ::grpcIMapUpdate::updateResponse* response) override;
 
         SRef<SolAR::api::solver::map::IMapUpdate> m_xpcfComponent;

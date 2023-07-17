@@ -22,7 +22,6 @@
 namespace grpcILoopCorrector {
 
 static const char* grpcILoopCorrectorService_method_names[] = {
-  "/grpcILoopCorrector.grpcILoopCorrectorService/setCameraParameters",
   "/grpcILoopCorrector.grpcILoopCorrectorService/correct",
 };
 
@@ -33,32 +32,8 @@ std::unique_ptr< grpcILoopCorrectorService::Stub> grpcILoopCorrectorService::New
 }
 
 grpcILoopCorrectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setCameraParameters_(grpcILoopCorrectorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_correct_(grpcILoopCorrectorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_correct_(grpcILoopCorrectorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcILoopCorrectorService::Stub::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest& request, ::google::protobuf::Empty* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcILoopCorrector::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
-}
-
-void grpcILoopCorrectorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcILoopCorrector::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
-}
-
-void grpcILoopCorrectorService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcILoopCorrectorService::Stub::PrepareAsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::google::protobuf::Empty, ::grpcILoopCorrector::setCameraParametersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setCameraParameters_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* grpcILoopCorrectorService::Stub::AsyncsetCameraParametersRaw(::grpc::ClientContext* context, const ::grpcILoopCorrector::setCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetCameraParametersRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcILoopCorrectorService::Stub::correct(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest& request, ::grpcILoopCorrector::correctResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcILoopCorrector::correctRequest, ::grpcILoopCorrector::correctResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_correct_, context, request, response);
@@ -87,16 +62,6 @@ grpcILoopCorrectorService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcILoopCorrectorService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcILoopCorrectorService::Service, ::grpcILoopCorrector::setCameraParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcILoopCorrectorService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcILoopCorrector::setCameraParametersRequest* req,
-             ::google::protobuf::Empty* resp) {
-               return service->setCameraParameters(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcILoopCorrectorService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcILoopCorrectorService::Service, ::grpcILoopCorrector::correctRequest, ::grpcILoopCorrector::correctResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcILoopCorrectorService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -107,13 +72,6 @@ grpcILoopCorrectorService::Service::Service() {
 }
 
 grpcILoopCorrectorService::Service::~Service() {
-}
-
-::grpc::Status grpcILoopCorrectorService::Service::setCameraParameters(::grpc::ServerContext* context, const ::grpcILoopCorrector::setCameraParametersRequest* request, ::google::protobuf::Empty* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcILoopCorrectorService::Service::correct(::grpc::ServerContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response) {

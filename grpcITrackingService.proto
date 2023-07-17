@@ -4,12 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcITracking;
 
-message setCameraParametersRequest
-{
-bytes intrinsicParams = 1;
-bytes distorsionParams = 2;
-}
-
 message setNewKeyframeRequest
 {
 bytes newKeyframe = 1;
@@ -39,7 +33,6 @@ sint32 xpcfGrpcReturnValue = 2;
 }
 
 service grpcITrackingService {
-rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
 rpc setNewKeyframe(setNewKeyframeRequest) returns(google.protobuf.Empty) {}
 rpc checkNeedNewKeyframe(checkNeedNewKeyframeRequest) returns(checkNeedNewKeyframeResponse) {}
 rpc process(processRequest) returns(processResponse) {}

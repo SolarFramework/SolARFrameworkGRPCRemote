@@ -14,7 +14,7 @@ IBootstrapper_grpcServer::IBootstrapper_grpcServer():xpcf::ConfigurableBase(xpcf
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::slam::IBootstrapper>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(3);
+  m_grpcServerCompressionConfig.resize(2);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -39,24 +39,6 @@ XPCFErrorCode IBootstrapper_grpcServer::onConfigured()
 {
   return &m_grpcService;
 }
-
-::grpc::Status IBootstrapper_grpcServer::grpcIBootstrapperServiceImpl::setCameraParameters(::grpc::ServerContext* context, const ::grpcIBootstrapper::setCameraParametersRequest* request, ::google::protobuf::Empty* response)
-{
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IBootstrapper_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::datastructure::CamCalibration intrinsicParams = xpcf::deserialize<SolAR::datastructure::CamCalibration>(request->intrinsicparams());
-  SolAR::datastructure::CamDistortion distorsionParams = xpcf::deserialize<SolAR::datastructure::CamDistortion>(request->distorsionparams());
-  m_xpcfComponent->setCameraParameters(intrinsicParams, distorsionParams);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IBootstrapper_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
 
 ::grpc::Status IBootstrapper_grpcServer::grpcIBootstrapperServiceImpl::process(::grpc::ServerContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response)
 {

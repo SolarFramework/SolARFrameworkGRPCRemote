@@ -25,7 +25,6 @@ class IMapping_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     {
       public:
         grpcIMappingServiceImpl() = default;
-        ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapping::setCameraParametersRequest* request, ::google::protobuf::Empty* response) override;
         ::grpc::Status idle(::grpc::ServerContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response) override;
         ::grpc::Status process(::grpc::ServerContext* context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response) override;
 

@@ -22,9 +22,8 @@ class IUndistortPoints_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode undistort(std::vector<SolAR::datastructure::Point2Df> const& inputPoints, std::vector<SolAR::datastructure::Point2Df>& outputPoints)     override;
-    SolAR::FrameworkReturnCode undistort(std::vector<SolAR::datastructure::Keypoint> const& inputKeypoints, std::vector<SolAR::datastructure::Keypoint>& outputKeypoints)     override;
-    void setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)     override;
+    SolAR::FrameworkReturnCode undistort(std::vector<SolAR::datastructure::Point2Df> const& inputPoints, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Point2Df>& outputPoints)     override;
+    SolAR::FrameworkReturnCode undistort(std::vector<SolAR::datastructure::Keypoint> const& inputKeypoints, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Keypoint>& outputKeypoints)     override;
 
 
   private:

@@ -19,7 +19,7 @@ IUndistortPoints_grpcProxy::IUndistortPoints_grpcProxy():xpcf::ConfigurableBase(
   declareInterface<SolAR::api::geom::IUndistortPoints>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(4);
+  m_grpcProxyCompressionConfig.resize(3);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -42,7 +42,7 @@ XPCFErrorCode IUndistortPoints_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<SolAR::datastructure::Point2Df> const& inputPoints, std::vector<SolAR::datastructure::Point2Df>& outputPoints)
+SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<SolAR::datastructure::Point2Df> const& inputPoints, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Point2Df>& outputPoints)
 {
   ::grpc::ClientContext context;
   ::grpcIUndistortPoints::undistort_grpc0Request reqIn;
@@ -53,6 +53,7 @@ SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<So
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_inputpoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(inputPoints));
+  reqIn.set_camparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams));
   reqIn.set_outputpoints(xpcf::serialize<std::vector<SolAR::datastructure::Point2Df>>(outputPoints));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -74,7 +75,7 @@ SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<So
 }
 
 
-SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<SolAR::datastructure::Keypoint> const& inputKeypoints, std::vector<SolAR::datastructure::Keypoint>& outputKeypoints)
+SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<SolAR::datastructure::Keypoint> const& inputKeypoints, SolAR::datastructure::CameraParameters const& camParams, std::vector<SolAR::datastructure::Keypoint>& outputKeypoints)
 {
   ::grpc::ClientContext context;
   ::grpcIUndistortPoints::undistort_grpc1Request reqIn;
@@ -85,6 +86,7 @@ SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<So
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_inputkeypoints(xpcf::serialize<std::vector<SolAR::datastructure::Keypoint>>(inputKeypoints));
+  reqIn.set_camparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams));
   reqIn.set_outputkeypoints(xpcf::serialize<std::vector<SolAR::datastructure::Keypoint>>(outputKeypoints));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -103,31 +105,6 @@ SolAR::FrameworkReturnCode  IUndistortPoints_grpcProxy::undistort(std::vector<So
 
   outputKeypoints = xpcf::deserialize<std::vector<SolAR::datastructure::Keypoint>>(respOut.outputkeypoints());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
-}
-
-
-void  IUndistortPoints_grpcProxy::setCameraParameters(SolAR::datastructure::CamCalibration const& intrinsicParams, SolAR::datastructure::CamDistortion const& distorsionParams)
-{
-  ::grpc::ClientContext context;
-  ::grpcIUndistortPoints::setCameraParametersRequest reqIn;
-  ::google::protobuf::Empty respOut;
-  reqIn.set_intrinsicparams(xpcf::serialize<SolAR::datastructure::CamCalibration>(intrinsicParams));
-  reqIn.set_distorsionparams(xpcf::serialize<SolAR::datastructure::CamDistortion>(distorsionParams));
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IUndistortPoints_grpcProxy::setCameraParameters request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IUndistortPoints_grpcProxy::setCameraParameters response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "setCameraParameters rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIUndistortPointsService","setCameraParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
 }
 
 

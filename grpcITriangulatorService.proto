@@ -4,12 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcITriangulator;
 
-message setCameraParametersRequest
-{
-bytes intrinsicParams = 1;
-bytes distorsionParams = 2;
-}
-
 message triangulate_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -19,7 +13,9 @@ bytes matches = 4;
 bytes working_views = 5;
 bytes poseView1 = 6;
 bytes poseView2 = 7;
-bytes pcloud = 8;
+bytes camParams1 = 8;
+bytes camParams2 = 9;
+bytes pcloud = 10;
 }
 
 message triangulate_grpc0Response
@@ -37,7 +33,9 @@ bytes matches = 4;
 bytes working_views = 5;
 bytes poseView1 = 6;
 bytes poseView2 = 7;
-bytes pcloud = 8;
+bytes camParams1 = 8;
+bytes camParams2 = 9;
+bytes pcloud = 10;
 }
 
 message triangulate_grpc1Response
@@ -57,7 +55,9 @@ bytes matches = 6;
 bytes working_views = 7;
 bytes poseView1 = 8;
 bytes poseView2 = 9;
-bytes pcloud = 10;
+bytes camParams1 = 10;
+bytes camParams2 = 11;
+bytes pcloud = 12;
 }
 
 message triangulate_grpc2Response
@@ -73,8 +73,10 @@ bytes frame1 = 2;
 bytes frame2 = 3;
 bytes matches = 4;
 bytes working_views = 5;
-bool onlyDepth = 6;
-bytes pcloud = 7;
+bytes camParams1 = 6;
+bytes camParams2 = 7;
+bool onlyDepth = 8;
+bytes pcloud = 9;
 }
 
 message triangulate_grpc3Response
@@ -84,7 +86,6 @@ double xpcfGrpcReturnValue = 2;
 }
 
 service grpcITriangulatorService {
-rpc setCameraParameters(setCameraParametersRequest) returns(google.protobuf.Empty) {}
 rpc triangulate_grpc0(triangulate_grpc0Request) returns(triangulate_grpc0Response) {}
 rpc triangulate_grpc1(triangulate_grpc1Request) returns(triangulate_grpc1Response) {}
 rpc triangulate_grpc2(triangulate_grpc2Request) returns(triangulate_grpc2Response) {}
