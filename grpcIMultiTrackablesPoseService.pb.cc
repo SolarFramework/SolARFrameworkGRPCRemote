@@ -16,108 +16,120 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace grpcIMultiTrackablesPose {
-constexpr setTrackablesRequest::setTrackablesRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : trackables_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , grpcservercompressionformat_(0){}
+PROTOBUF_CONSTEXPR setTrackablesRequest::setTrackablesRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.trackables_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct setTrackablesRequestDefaultTypeInternal {
-  constexpr setTrackablesRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR setTrackablesRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~setTrackablesRequestDefaultTypeInternal() {}
   union {
     setTrackablesRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setTrackablesRequestDefaultTypeInternal _setTrackablesRequest_default_instance_;
-constexpr setTrackablesResponse::setTrackablesResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : xpcfgrpcreturnvalue_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 setTrackablesRequestDefaultTypeInternal _setTrackablesRequest_default_instance_;
+PROTOBUF_CONSTEXPR setTrackablesResponse::setTrackablesResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct setTrackablesResponseDefaultTypeInternal {
-  constexpr setTrackablesResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR setTrackablesResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~setTrackablesResponseDefaultTypeInternal() {}
   union {
     setTrackablesResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT setTrackablesResponseDefaultTypeInternal _setTrackablesResponse_default_instance_;
-constexpr estimateRequest::estimateRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : image_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , camparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , grpcservercompressionformat_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 setTrackablesResponseDefaultTypeInternal _setTrackablesResponse_default_instance_;
+PROTOBUF_CONSTEXPR estimateRequest::estimateRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.image_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.pose_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct estimateRequestDefaultTypeInternal {
-  constexpr estimateRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR estimateRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~estimateRequestDefaultTypeInternal() {}
   union {
     estimateRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT estimateRequestDefaultTypeInternal _estimateRequest_default_instance_;
-constexpr estimateResponse::estimateResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : pose_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , xpcfgrpcreturnvalue_(0){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 estimateRequestDefaultTypeInternal _estimateRequest_default_instance_;
+PROTOBUF_CONSTEXPR estimateResponse::estimateResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pose_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct estimateResponseDefaultTypeInternal {
-  constexpr estimateResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR estimateResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~estimateResponseDefaultTypeInternal() {}
   union {
     estimateResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT estimateResponseDefaultTypeInternal _estimateResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 estimateResponseDefaultTypeInternal _estimateResponse_default_instance_;
 }  // namespace grpcIMultiTrackablesPose
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIMultiTrackablesPoseService_2eproto[4];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIMultiTrackablesPoseService_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIMultiTrackablesPoseService_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_grpcIMultiTrackablesPoseService_2eproto[4];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_grpcIMultiTrackablesPoseService_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_grpcIMultiTrackablesPoseService_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIMultiTrackablesPoseService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_grpcIMultiTrackablesPoseService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::setTrackablesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::setTrackablesRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::setTrackablesRequest, trackables_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::setTrackablesRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::setTrackablesRequest, _impl_.trackables_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::setTrackablesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::setTrackablesResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::setTrackablesResponse, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateRequest, image_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateRequest, camparams_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateRequest, pose_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateRequest, _impl_.image_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateRequest, _impl_.camparams_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateRequest, _impl_.pose_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateResponse, pose_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateResponse, _impl_.pose_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMultiTrackablesPose::estimateResponse, _impl_.xpcfgrpcreturnvalue_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::grpcIMultiTrackablesPose::setTrackablesRequest)},
-  { 7, -1, sizeof(::grpcIMultiTrackablesPose::setTrackablesResponse)},
-  { 13, -1, sizeof(::grpcIMultiTrackablesPose::estimateRequest)},
-  { 22, -1, sizeof(::grpcIMultiTrackablesPose::estimateResponse)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::grpcIMultiTrackablesPose::setTrackablesRequest)},
+  { 8, -1, -1, sizeof(::grpcIMultiTrackablesPose::setTrackablesResponse)},
+  { 15, -1, -1, sizeof(::grpcIMultiTrackablesPose::estimateRequest)},
+  { 25, -1, -1, sizeof(::grpcIMultiTrackablesPose::estimateResponse)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMultiTrackablesPose::_setTrackablesRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMultiTrackablesPose::_setTrackablesResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMultiTrackablesPose::_estimateRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIMultiTrackablesPose::_estimateResponse_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::grpcIMultiTrackablesPose::_setTrackablesRequest_default_instance_._instance,
+  &::grpcIMultiTrackablesPose::_setTrackablesResponse_default_instance_._instance,
+  &::grpcIMultiTrackablesPose::_estimateRequest_default_instance_._instance,
+  &::grpcIMultiTrackablesPose::_estimateResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_grpcIMultiTrackablesPoseService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -139,24 +151,24 @@ const char descriptor_table_protodef_grpcIMultiTrackablesPoseService_2eproto[] P
   "est\032*.grpcIMultiTrackablesPose.estimateR"
   "esponse\"\000b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIMultiTrackablesPoseService_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_grpcIMultiTrackablesPoseService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIMultiTrackablesPoseService_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIMultiTrackablesPoseService_2eproto = {
-  false, false, 657, descriptor_table_protodef_grpcIMultiTrackablesPoseService_2eproto, "grpcIMultiTrackablesPoseService.proto", 
-  &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_once, descriptor_table_grpcIMultiTrackablesPoseService_2eproto_deps, 1, 4,
-  schemas, file_default_instances, TableStruct_grpcIMultiTrackablesPoseService_2eproto::offsets,
-  file_level_metadata_grpcIMultiTrackablesPoseService_2eproto, file_level_enum_descriptors_grpcIMultiTrackablesPoseService_2eproto, file_level_service_descriptors_grpcIMultiTrackablesPoseService_2eproto,
+static ::_pbi::once_flag descriptor_table_grpcIMultiTrackablesPoseService_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_grpcIMultiTrackablesPoseService_2eproto = {
+    false, false, 657, descriptor_table_protodef_grpcIMultiTrackablesPoseService_2eproto,
+    "grpcIMultiTrackablesPoseService.proto",
+    &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_once, descriptor_table_grpcIMultiTrackablesPoseService_2eproto_deps, 1, 4,
+    schemas, file_default_instances, TableStruct_grpcIMultiTrackablesPoseService_2eproto::offsets,
+    file_level_metadata_grpcIMultiTrackablesPoseService_2eproto, file_level_enum_descriptors_grpcIMultiTrackablesPoseService_2eproto,
+    file_level_service_descriptors_grpcIMultiTrackablesPoseService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
-descriptor_table_grpcIMultiTrackablesPoseService_2eproto_metadata_getter(int index) {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcIMultiTrackablesPoseService_2eproto);
-  return descriptor_table_grpcIMultiTrackablesPoseService_2eproto.file_level_metadata[index];
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_grpcIMultiTrackablesPoseService_2eproto_getter() {
+  return &descriptor_table_grpcIMultiTrackablesPoseService_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_grpcIMultiTrackablesPoseService_2eproto(&descriptor_table_grpcIMultiTrackablesPoseService_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_grpcIMultiTrackablesPoseService_2eproto(&descriptor_table_grpcIMultiTrackablesPoseService_2eproto);
 namespace grpcIMultiTrackablesPose {
 
 // ===================================================================
@@ -165,125 +177,143 @@ class setTrackablesRequest::_Internal {
  public:
 };
 
-setTrackablesRequest::setTrackablesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+setTrackablesRequest::setTrackablesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIMultiTrackablesPose.setTrackablesRequest)
 }
 setTrackablesRequest::setTrackablesRequest(const setTrackablesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  setTrackablesRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.trackables_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  trackables_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.trackables_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.trackables_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_trackables().empty()) {
-    trackables_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_trackables(), 
-      GetArena());
+    _this->_impl_.trackables_.Set(from._internal_trackables(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIMultiTrackablesPose.setTrackablesRequest)
 }
 
-void setTrackablesRequest::SharedCtor() {
-trackables_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-grpcservercompressionformat_ = 0;
+inline void setTrackablesRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.trackables_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.trackables_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.trackables_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 setTrackablesRequest::~setTrackablesRequest() {
   // @@protoc_insertion_point(destructor:grpcIMultiTrackablesPose.setTrackablesRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void setTrackablesRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  trackables_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void setTrackablesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.trackables_.Destroy();
 }
 
-void setTrackablesRequest::ArenaDtor(void* object) {
-  setTrackablesRequest* _this = reinterpret_cast< setTrackablesRequest* >(object);
-  (void)_this;
-}
-void setTrackablesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void setTrackablesRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void setTrackablesRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcIMultiTrackablesPose.setTrackablesRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  trackables_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.trackables_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* setTrackablesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* setTrackablesRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes trackables = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_trackables();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* setTrackablesRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* setTrackablesRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcIMultiTrackablesPose.setTrackablesRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 grpcServerCompressionFormat = 1;
-  if (this->grpcservercompressionformat() != 0) {
+  if (this->_internal_grpcservercompressionformat() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
   // bytes trackables = 2;
-  if (this->trackables().size() > 0) {
+  if (!this->_internal_trackables().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_trackables(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcIMultiTrackablesPose.setTrackablesRequest)
@@ -294,68 +324,47 @@ size_t setTrackablesRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcIMultiTrackablesPose.setTrackablesRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes trackables = 2;
-  if (this->trackables().size() > 0) {
+  if (!this->_internal_trackables().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_trackables());
   }
 
   // int32 grpcServerCompressionFormat = 1;
-  if (this->grpcservercompressionformat() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_grpcservercompressionformat());
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void setTrackablesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIMultiTrackablesPose.setTrackablesRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const setTrackablesRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setTrackablesRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMultiTrackablesPose.setTrackablesRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMultiTrackablesPose.setTrackablesRequest)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData setTrackablesRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    setTrackablesRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*setTrackablesRequest::GetClassData() const { return &_class_data_; }
 
-void setTrackablesRequest::MergeFrom(const setTrackablesRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMultiTrackablesPose.setTrackablesRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void setTrackablesRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<setTrackablesRequest*>(&to_msg);
+  auto& from = static_cast<const setTrackablesRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMultiTrackablesPose.setTrackablesRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.trackables().size() > 0) {
-    _internal_set_trackables(from._internal_trackables());
+  if (!from._internal_trackables().empty()) {
+    _this->_internal_set_trackables(from._internal_trackables());
   }
-  if (from.grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  if (from._internal_grpcservercompressionformat() != 0) {
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-}
-
-void setTrackablesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIMultiTrackablesPose.setTrackablesRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void setTrackablesRequest::CopyFrom(const setTrackablesRequest& from) {
@@ -371,15 +380,21 @@ bool setTrackablesRequest::IsInitialized() const {
 
 void setTrackablesRequest::InternalSwap(setTrackablesRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  trackables_.Swap(&other->trackables_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.trackables_, lhs_arena,
+      &other->_impl_.trackables_, rhs_arena
+  );
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata setTrackablesRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_getter, &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_once,
+      file_level_metadata_grpcIMultiTrackablesPoseService_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -387,103 +402,112 @@ class setTrackablesResponse::_Internal {
  public:
 };
 
-setTrackablesResponse::setTrackablesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+setTrackablesResponse::setTrackablesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIMultiTrackablesPose.setTrackablesResponse)
 }
 setTrackablesResponse::setTrackablesResponse(const setTrackablesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  setTrackablesResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIMultiTrackablesPose.setTrackablesResponse)
 }
 
-void setTrackablesResponse::SharedCtor() {
-xpcfgrpcreturnvalue_ = 0;
+inline void setTrackablesResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 setTrackablesResponse::~setTrackablesResponse() {
   // @@protoc_insertion_point(destructor:grpcIMultiTrackablesPose.setTrackablesResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void setTrackablesResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void setTrackablesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void setTrackablesResponse::ArenaDtor(void* object) {
-  setTrackablesResponse* _this = reinterpret_cast< setTrackablesResponse* >(object);
-  (void)_this;
-}
-void setTrackablesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void setTrackablesResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void setTrackablesResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcIMultiTrackablesPose.setTrackablesResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* setTrackablesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* setTrackablesResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* setTrackablesResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* setTrackablesResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcIMultiTrackablesPose.setTrackablesResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcIMultiTrackablesPose.setTrackablesResponse)
@@ -494,58 +518,37 @@ size_t setTrackablesResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcIMultiTrackablesPose.setTrackablesResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // sint32 xpcfGrpcReturnValue = 1;
-  if (this->xpcfgrpcreturnvalue() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
-        this->_internal_xpcfgrpcreturnvalue());
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void setTrackablesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIMultiTrackablesPose.setTrackablesResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const setTrackablesResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<setTrackablesResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMultiTrackablesPose.setTrackablesResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMultiTrackablesPose.setTrackablesResponse)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData setTrackablesResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    setTrackablesResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*setTrackablesResponse::GetClassData() const { return &_class_data_; }
 
-void setTrackablesResponse::MergeFrom(const setTrackablesResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMultiTrackablesPose.setTrackablesResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void setTrackablesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<setTrackablesResponse*>(&to_msg);
+  auto& from = static_cast<const setTrackablesResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMultiTrackablesPose.setTrackablesResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-}
-
-void setTrackablesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIMultiTrackablesPose.setTrackablesResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void setTrackablesResponse::CopyFrom(const setTrackablesResponse& from) {
@@ -561,14 +564,15 @@ bool setTrackablesResponse::IsInitialized() const {
 
 void setTrackablesResponse::InternalSwap(setTrackablesResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata setTrackablesResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_getter, &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_once,
+      file_level_metadata_grpcIMultiTrackablesPoseService_2eproto[1]);
 }
-
 
 // ===================================================================
 
@@ -576,169 +580,205 @@ class estimateRequest::_Internal {
  public:
 };
 
-estimateRequest::estimateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+estimateRequest::estimateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIMultiTrackablesPose.estimateRequest)
 }
 estimateRequest::estimateRequest(const estimateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  estimateRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.image_){}
+    , decltype(_impl_.camparams_){}
+    , decltype(_impl_.pose_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.image_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.image_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_image().empty()) {
-    image_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_image(), 
-      GetArena());
+    _this->_impl_.image_.Set(from._internal_image(), 
+      _this->GetArenaForAllocation());
   }
-  camparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.camparams_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams().empty()) {
-    camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_camparams(), 
-      GetArena());
+    _this->_impl_.camparams_.Set(from._internal_camparams(), 
+      _this->GetArenaForAllocation());
   }
-  pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.pose_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pose_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pose().empty()) {
-    pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pose(), 
-      GetArena());
+    _this->_impl_.pose_.Set(from._internal_pose(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIMultiTrackablesPose.estimateRequest)
 }
 
-void estimateRequest::SharedCtor() {
-image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-camparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-grpcservercompressionformat_ = 0;
+inline void estimateRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.image_){}
+    , decltype(_impl_.camparams_){}
+    , decltype(_impl_.pose_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.image_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.image_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.pose_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pose_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 estimateRequest::~estimateRequest() {
   // @@protoc_insertion_point(destructor:grpcIMultiTrackablesPose.estimateRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void estimateRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  camparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  pose_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void estimateRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.image_.Destroy();
+  _impl_.camparams_.Destroy();
+  _impl_.pose_.Destroy();
 }
 
-void estimateRequest::ArenaDtor(void* object) {
-  estimateRequest* _this = reinterpret_cast< estimateRequest* >(object);
-  (void)_this;
-}
-void estimateRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void estimateRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void estimateRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcIMultiTrackablesPose.estimateRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  image_.ClearToEmpty();
-  camparams_.ClearToEmpty();
-  pose_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.image_.ClearToEmpty();
+  _impl_.camparams_.ClearToEmpty();
+  _impl_.pose_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* estimateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* estimateRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes image = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_image();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes camParams = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_camparams();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes pose = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_pose();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* estimateRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* estimateRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcIMultiTrackablesPose.estimateRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 grpcServerCompressionFormat = 1;
-  if (this->grpcservercompressionformat() != 0) {
+  if (this->_internal_grpcservercompressionformat() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
   // bytes image = 2;
-  if (this->image().size() > 0) {
+  if (!this->_internal_image().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_image(), target);
   }
 
   // bytes camParams = 3;
-  if (this->camparams().size() > 0) {
+  if (!this->_internal_camparams().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_camparams(), target);
   }
 
   // bytes pose = 4;
-  if (this->pose().size() > 0) {
+  if (!this->_internal_pose().empty()) {
     target = stream->WriteBytesMaybeAliased(
         4, this->_internal_pose(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcIMultiTrackablesPose.estimateRequest)
@@ -749,88 +789,67 @@ size_t estimateRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcIMultiTrackablesPose.estimateRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes image = 2;
-  if (this->image().size() > 0) {
+  if (!this->_internal_image().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_image());
   }
 
   // bytes camParams = 3;
-  if (this->camparams().size() > 0) {
+  if (!this->_internal_camparams().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_camparams());
   }
 
   // bytes pose = 4;
-  if (this->pose().size() > 0) {
+  if (!this->_internal_pose().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_pose());
   }
 
   // int32 grpcServerCompressionFormat = 1;
-  if (this->grpcservercompressionformat() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_grpcservercompressionformat());
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void estimateRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIMultiTrackablesPose.estimateRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const estimateRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<estimateRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMultiTrackablesPose.estimateRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMultiTrackablesPose.estimateRequest)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData estimateRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    estimateRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*estimateRequest::GetClassData() const { return &_class_data_; }
 
-void estimateRequest::MergeFrom(const estimateRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMultiTrackablesPose.estimateRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void estimateRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<estimateRequest*>(&to_msg);
+  auto& from = static_cast<const estimateRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMultiTrackablesPose.estimateRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.image().size() > 0) {
-    _internal_set_image(from._internal_image());
+  if (!from._internal_image().empty()) {
+    _this->_internal_set_image(from._internal_image());
   }
-  if (from.camparams().size() > 0) {
-    _internal_set_camparams(from._internal_camparams());
+  if (!from._internal_camparams().empty()) {
+    _this->_internal_set_camparams(from._internal_camparams());
   }
-  if (from.pose().size() > 0) {
-    _internal_set_pose(from._internal_pose());
+  if (!from._internal_pose().empty()) {
+    _this->_internal_set_pose(from._internal_pose());
   }
-  if (from.grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  if (from._internal_grpcservercompressionformat() != 0) {
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-}
-
-void estimateRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIMultiTrackablesPose.estimateRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void estimateRequest::CopyFrom(const estimateRequest& from) {
@@ -846,17 +865,29 @@ bool estimateRequest::IsInitialized() const {
 
 void estimateRequest::InternalSwap(estimateRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  image_.Swap(&other->image_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  camparams_.Swap(&other->camparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  pose_.Swap(&other->pose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.image_, lhs_arena,
+      &other->_impl_.image_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.camparams_, lhs_arena,
+      &other->_impl_.camparams_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.pose_, lhs_arena,
+      &other->_impl_.pose_, rhs_arena
+  );
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimateRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_getter, &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_once,
+      file_level_metadata_grpcIMultiTrackablesPoseService_2eproto[2]);
 }
-
 
 // ===================================================================
 
@@ -864,125 +895,143 @@ class estimateResponse::_Internal {
  public:
 };
 
-estimateResponse::estimateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+estimateResponse::estimateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIMultiTrackablesPose.estimateResponse)
 }
 estimateResponse::estimateResponse(const estimateResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  estimateResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pose_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.pose_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pose_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pose().empty()) {
-    pose_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_pose(), 
-      GetArena());
+    _this->_impl_.pose_.Set(from._internal_pose(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIMultiTrackablesPose.estimateResponse)
 }
 
-void estimateResponse::SharedCtor() {
-pose_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-xpcfgrpcreturnvalue_ = 0;
+inline void estimateResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pose_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.pose_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pose_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 estimateResponse::~estimateResponse() {
   // @@protoc_insertion_point(destructor:grpcIMultiTrackablesPose.estimateResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void estimateResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  pose_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void estimateResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.pose_.Destroy();
 }
 
-void estimateResponse::ArenaDtor(void* object) {
-  estimateResponse* _this = reinterpret_cast< estimateResponse* >(object);
-  (void)_this;
-}
-void estimateResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void estimateResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void estimateResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcIMultiTrackablesPose.estimateResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pose_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.pose_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* estimateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* estimateResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bytes pose = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_pose();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* estimateResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* estimateResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcIMultiTrackablesPose.estimateResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes pose = 1;
-  if (this->pose().size() > 0) {
+  if (!this->_internal_pose().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_pose(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcIMultiTrackablesPose.estimateResponse)
@@ -993,68 +1042,47 @@ size_t estimateResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcIMultiTrackablesPose.estimateResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes pose = 1;
-  if (this->pose().size() > 0) {
+  if (!this->_internal_pose().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_pose());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->xpcfgrpcreturnvalue() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
-        this->_internal_xpcfgrpcreturnvalue());
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void estimateResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcIMultiTrackablesPose.estimateResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const estimateResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<estimateResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIMultiTrackablesPose.estimateResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIMultiTrackablesPose.estimateResponse)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData estimateResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    estimateResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*estimateResponse::GetClassData() const { return &_class_data_; }
 
-void estimateResponse::MergeFrom(const estimateResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIMultiTrackablesPose.estimateResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void estimateResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<estimateResponse*>(&to_msg);
+  auto& from = static_cast<const estimateResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMultiTrackablesPose.estimateResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.pose().size() > 0) {
-    _internal_set_pose(from._internal_pose());
+  if (!from._internal_pose().empty()) {
+    _this->_internal_set_pose(from._internal_pose());
   }
-  if (from.xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-}
-
-void estimateResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcIMultiTrackablesPose.estimateResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void estimateResponse::CopyFrom(const estimateResponse& from) {
@@ -1070,29 +1098,39 @@ bool estimateResponse::IsInitialized() const {
 
 void estimateResponse::InternalSwap(estimateResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  pose_.Swap(&other->pose_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.pose_, lhs_arena,
+      &other->_impl_.pose_, rhs_arena
+  );
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimateResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_getter, &descriptor_table_grpcIMultiTrackablesPoseService_2eproto_once,
+      file_level_metadata_grpcIMultiTrackablesPoseService_2eproto[3]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIMultiTrackablesPose
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::grpcIMultiTrackablesPose::setTrackablesRequest* Arena::CreateMaybeMessage< ::grpcIMultiTrackablesPose::setTrackablesRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcIMultiTrackablesPose::setTrackablesRequest*
+Arena::CreateMaybeMessage< ::grpcIMultiTrackablesPose::setTrackablesRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMultiTrackablesPose::setTrackablesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIMultiTrackablesPose::setTrackablesResponse* Arena::CreateMaybeMessage< ::grpcIMultiTrackablesPose::setTrackablesResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcIMultiTrackablesPose::setTrackablesResponse*
+Arena::CreateMaybeMessage< ::grpcIMultiTrackablesPose::setTrackablesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMultiTrackablesPose::setTrackablesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIMultiTrackablesPose::estimateRequest* Arena::CreateMaybeMessage< ::grpcIMultiTrackablesPose::estimateRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcIMultiTrackablesPose::estimateRequest*
+Arena::CreateMaybeMessage< ::grpcIMultiTrackablesPose::estimateRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMultiTrackablesPose::estimateRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIMultiTrackablesPose::estimateResponse* Arena::CreateMaybeMessage< ::grpcIMultiTrackablesPose::estimateResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcIMultiTrackablesPose::estimateResponse*
+Arena::CreateMaybeMessage< ::grpcIMultiTrackablesPose::estimateResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMultiTrackablesPose::estimateResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

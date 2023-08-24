@@ -7,10 +7,9 @@
 #include "grpcI2D3DCorrespondencesFinderService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -43,30 +42,22 @@ class grpcI2D3DCorrespondencesFinderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2D3DCorrespondencesFinder::findResponse>> PrepareAsyncfind(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2D3DCorrespondencesFinder::findResponse>>(PrepareAsyncfindRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2D3DCorrespondencesFinder::findResponse>* AsyncfindRaw(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2D3DCorrespondencesFinder::findResponse>* PrepareAsyncfindRaw(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest& request, ::grpcI2D3DCorrespondencesFinder::findResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2D3DCorrespondencesFinder::findResponse>> Asyncfind(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2D3DCorrespondencesFinder::findResponse>>(AsyncfindRaw(context, request, cq));
@@ -74,26 +65,22 @@ class grpcI2D3DCorrespondencesFinderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2D3DCorrespondencesFinder::findResponse>> PrepareAsyncfind(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2D3DCorrespondencesFinder::findResponse>>(PrepareAsyncfindRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void find(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcI2D3DCorrespondencesFinder::findResponse>* AsyncfindRaw(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcI2D3DCorrespondencesFinder::findResponse>* PrepareAsyncfindRaw(::grpc::ClientContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_find_;
@@ -128,36 +115,22 @@ class grpcI2D3DCorrespondencesFinderService final {
   };
   typedef WithAsyncMethod_find<Service > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_find : public BaseClass {
+  class WithCallbackMethod_find : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_find() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_find() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2D3DCorrespondencesFinder::findRequest, ::grpcI2D3DCorrespondencesFinder::findResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response) { return this->find(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2D3DCorrespondencesFinder::findRequest* request, ::grpcI2D3DCorrespondencesFinder::findResponse* response) { return this->find(context, request, response); }));}
     void SetMessageAllocatorFor_find(
-        ::grpc::experimental::MessageAllocator< ::grpcI2D3DCorrespondencesFinder::findRequest, ::grpcI2D3DCorrespondencesFinder::findResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2D3DCorrespondencesFinder::findRequest, ::grpcI2D3DCorrespondencesFinder::findResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2D3DCorrespondencesFinder::findRequest, ::grpcI2D3DCorrespondencesFinder::findResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_find() override {
+    ~WithCallbackMethod_find() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -165,20 +138,11 @@ class grpcI2D3DCorrespondencesFinderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* find(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2D3DCorrespondencesFinder::findRequest* /*request*/, ::grpcI2D3DCorrespondencesFinder::findResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* find(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2D3DCorrespondencesFinder::findRequest* /*request*/, ::grpcI2D3DCorrespondencesFinder::findResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2D3DCorrespondencesFinder::findRequest* /*request*/, ::grpcI2D3DCorrespondencesFinder::findResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_find<Service > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_find<Service > ExperimentalCallbackService;
+  typedef WithCallbackMethod_find<Service > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_find : public BaseClass {
    private:
@@ -217,27 +181,17 @@ class grpcI2D3DCorrespondencesFinderService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_find : public BaseClass {
+  class WithRawCallbackMethod_find : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_find() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_find() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->find(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->find(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_find() override {
+    ~WithRawCallbackMethod_find() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -245,14 +199,8 @@ class grpcI2D3DCorrespondencesFinderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* find(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* find(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_find : public BaseClass {

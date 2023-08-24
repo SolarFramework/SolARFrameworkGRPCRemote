@@ -14,7 +14,7 @@ IMapManager_grpcServer::IMapManager_grpcServer():xpcf::ConfigurableBase(xpcf::to
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::storage::IMapManager>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(19);
+  m_grpcServerCompressionConfig.resize(20);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -392,6 +392,28 @@ XPCFErrorCode IMapManager_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapManager_grpcServer::keyframePruning response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::visibilityPruning(::grpc::ServerContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "visibilityPruning", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::visibilityPruning request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->visibilityPruning();
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapManager_grpcServer::visibilityPruning response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

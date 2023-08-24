@@ -6,8 +6,8 @@
 #include "grpcIDepthEstimationService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcIDepthEstimationService_method_names[] = {
 
 std::unique_ptr< grpcIDepthEstimationService::Stub> grpcIDepthEstimationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIDepthEstimationService::Stub> stub(new grpcIDepthEstimationService::Stub(channel));
+  std::unique_ptr< grpcIDepthEstimationService::Stub> stub(new grpcIDepthEstimationService::Stub(channel, options));
   return stub;
 }
 
-grpcIDepthEstimationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_estimate_(grpcIDepthEstimationService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIDepthEstimationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_estimate_(grpcIDepthEstimationService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIDepthEstimationService::Stub::estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest& request, ::grpcIDepthEstimation::estimateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDepthEstimation::estimateRequest, ::grpcIDepthEstimation::estimateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_estimate_, context, request, response);
 }
 
-void grpcIDepthEstimationService::Stub::experimental_async::estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDepthEstimationService::Stub::async::estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDepthEstimation::estimateRequest, ::grpcIDepthEstimation::estimateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_, context, request, response, std::move(f));
 }
 
-void grpcIDepthEstimationService::Stub::experimental_async::estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDepthEstimationService::Stub::async::estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_, context, request, response, reactor);
 }
 

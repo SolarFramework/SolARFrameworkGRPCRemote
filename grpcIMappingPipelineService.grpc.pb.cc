@@ -6,8 +6,8 @@
 #include "grpcIMappingPipelineService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -38,34 +38,34 @@ static const char* grpcIMappingPipelineService_method_names[] = {
 
 std::unique_ptr< grpcIMappingPipelineService::Stub> grpcIMappingPipelineService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIMappingPipelineService::Stub> stub(new grpcIMappingPipelineService::Stub(channel));
+  std::unique_ptr< grpcIMappingPipelineService::Stub> stub(new grpcIMappingPipelineService::Stub(channel, options));
   return stub;
 }
 
-grpcIMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_init_grpc0_(grpcIMappingPipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_start_(grpcIMappingPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIMappingPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_init_grpc1_(grpcIMappingPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_grpc0_(grpcIMappingPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_grpc1_(grpcIMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setRectificationParameters_(grpcIMappingPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_set3DTransformSolARToWorld_(grpcIMappingPipelineService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc0_(grpcIMappingPipelineService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc1_(grpcIMappingPipelineService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc2_(grpcIMappingPipelineService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_init_grpc0_(grpcIMappingPipelineService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_(grpcIMappingPipelineService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcIMappingPipelineService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_grpc1_(grpcIMappingPipelineService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc0_(grpcIMappingPipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc1_(grpcIMappingPipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setRectificationParameters_(grpcIMappingPipelineService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_set3DTransformSolARToWorld_(grpcIMappingPipelineService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc0_(grpcIMappingPipelineService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc1_(grpcIMappingPipelineService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc2_(grpcIMappingPipelineService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMappingPipelineService::Stub::init_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc0Request& request, ::grpcIMappingPipeline::init_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::init_grpc0Request, ::grpcIMappingPipeline::init_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_grpc0_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::init_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc0Request* request, ::grpcIMappingPipeline::init_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::init_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc0Request* request, ::grpcIMappingPipeline::init_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::init_grpc0Request, ::grpcIMappingPipeline::init_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::init_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc0Request* request, ::grpcIMappingPipeline::init_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::init_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc0Request* request, ::grpcIMappingPipeline::init_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc0_, context, request, response, reactor);
 }
 
@@ -84,11 +84,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::init_grpc0(::grpc::C
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::startRequest, ::grpcIMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIMappingPipeline::startRequest* request, ::grpcIMappingPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::start(::grpc::ClientContext* context, const ::grpcIMappingPipeline::startRequest* request, ::grpcIMappingPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::startRequest, ::grpcIMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIMappingPipeline::startRequest* request, ::grpcIMappingPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::start(::grpc::ClientContext* context, const ::grpcIMappingPipeline::startRequest* request, ::grpcIMappingPipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
@@ -107,11 +107,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::start(::grpc::Client
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::stopRequest, ::grpcIMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIMappingPipeline::stopRequest* request, ::grpcIMappingPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::stop(::grpc::ClientContext* context, const ::grpcIMappingPipeline::stopRequest* request, ::grpcIMappingPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::stopRequest, ::grpcIMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIMappingPipeline::stopRequest* request, ::grpcIMappingPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::stop(::grpc::ClientContext* context, const ::grpcIMappingPipeline::stopRequest* request, ::grpcIMappingPipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 
@@ -130,11 +130,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientC
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::init_grpc1Request, ::grpcIMappingPipeline::init_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_grpc1_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::init_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc1Request* request, ::grpcIMappingPipeline::init_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::init_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc1Request* request, ::grpcIMappingPipeline::init_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::init_grpc1Request, ::grpcIMappingPipeline::init_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::init_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc1Request* request, ::grpcIMappingPipeline::init_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::init_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc1Request* request, ::grpcIMappingPipeline::init_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc1_, context, request, response, reactor);
 }
 
@@ -153,11 +153,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::init_grpc1(::grpc::C
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::setCameraParameters_grpc0Request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_grpc0_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::setCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::setCameraParameters_grpc0Request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::setCameraParameters_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc0Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_grpc0_, context, request, response, reactor);
 }
 
@@ -176,11 +176,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::setCameraParameters_grpc1Request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_grpc1_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::setCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::setCameraParameters_grpc1Request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::setCameraParameters_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setCameraParameters_grpc1Request* request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_grpc1_, context, request, response, reactor);
 }
 
@@ -199,11 +199,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::setCameraParameters_
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::setRectificationParametersRequest, ::grpcIMappingPipeline::setRectificationParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setRectificationParameters_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::setRectificationParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest* request, ::grpcIMappingPipeline::setRectificationParametersResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::setRectificationParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest* request, ::grpcIMappingPipeline::setRectificationParametersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::setRectificationParametersRequest, ::grpcIMappingPipeline::setRectificationParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setRectificationParameters_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::setRectificationParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest* request, ::grpcIMappingPipeline::setRectificationParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::setRectificationParameters(::grpc::ClientContext* context, const ::grpcIMappingPipeline::setRectificationParametersRequest* request, ::grpcIMappingPipeline::setRectificationParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setRectificationParameters_, context, request, response, reactor);
 }
 
@@ -222,11 +222,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::setRectificationPara
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_set3DTransformSolARToWorld_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_set3DTransformSolARToWorld_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::set3DTransformSolARToWorld(::grpc::ClientContext* context, const ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest* request, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_set3DTransformSolARToWorld_, context, request, response, reactor);
 }
 
@@ -245,11 +245,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::set3DTransformSolART
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_mappingProcessRequest_grpc0_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_mappingProcessRequest_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::mappingProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_mappingProcessRequest_grpc0_, context, request, response, reactor);
 }
 
@@ -268,11 +268,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::mappingProcessReques
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_mappingProcessRequest_grpc1_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::mappingProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::mappingProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_mappingProcessRequest_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::mappingProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::mappingProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_mappingProcessRequest_grpc1_, context, request, response, reactor);
 }
 
@@ -291,11 +291,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::mappingProcessReques
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_mappingProcessRequest_grpc2_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::mappingProcessRequest_grpc2(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::mappingProcessRequest_grpc2(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_mappingProcessRequest_grpc2_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::mappingProcessRequest_grpc2(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::mappingProcessRequest_grpc2(::grpc::ClientContext* context, const ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request* request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_mappingProcessRequest_grpc2_, context, request, response, reactor);
 }
 
@@ -314,11 +314,11 @@ void grpcIMappingPipelineService::Stub::experimental_async::mappingProcessReques
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDataForVisualization_, context, request, response);
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMappingPipeline::getDataForVisualizationRequest* request, ::grpcIMappingPipeline::getDataForVisualizationResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIMappingPipelineService::Stub::async::getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMappingPipeline::getDataForVisualizationRequest* request, ::grpcIMappingPipeline::getDataForVisualizationResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDataForVisualization_, context, request, response, std::move(f));
 }
 
-void grpcIMappingPipelineService::Stub::experimental_async::getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMappingPipeline::getDataForVisualizationRequest* request, ::grpcIMappingPipeline::getDataForVisualizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMappingPipelineService::Stub::async::getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMappingPipeline::getDataForVisualizationRequest* request, ::grpcIMappingPipeline::getDataForVisualizationResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDataForVisualization_, context, request, response, reactor);
 }
 

@@ -7,10 +7,9 @@
 #include "grpcIARDeviceService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -64,42 +63,22 @@ class grpcIARDeviceService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getCameraParametersResponse>> PrepareAsyncgetCameraParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::getCameraParametersResponse>>(PrepareAsyncgetCameraParametersRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void start(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest* request, ::grpcIARDevice::startResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void start(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest* request, ::grpcIARDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void start(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest* request, ::grpcIARDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void stop(::grpc::ClientContext* context, const ::grpcIARDevice::stopRequest* request, ::grpcIARDevice::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void stop(::grpc::ClientContext* context, const ::grpcIARDevice::stopRequest* request, ::grpcIARDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void stop(::grpc::ClientContext* context, const ::grpcIARDevice::stopRequest* request, ::grpcIARDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getCameraParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getCameraParametersRequest* request, ::grpcIARDevice::getCameraParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getCameraParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getCameraParametersRequest* request, ::grpcIARDevice::getCameraParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getCameraParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getCameraParametersRequest* request, ::grpcIARDevice::getCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIARDevice::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIARDevice::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -111,7 +90,7 @@ class grpcIARDeviceService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest& request, ::grpcIARDevice::startResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::startResponse>>(AsyncstartRaw(context, request, cq));
@@ -140,44 +119,28 @@ class grpcIARDeviceService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>> PrepareAsyncgetCameraParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getCameraParametersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::getCameraParametersResponse>>(PrepareAsyncgetCameraParametersRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void start(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest* request, ::grpcIARDevice::startResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void start(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest* request, ::grpcIARDevice::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void start(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest* request, ::grpcIARDevice::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void stop(::grpc::ClientContext* context, const ::grpcIARDevice::stopRequest* request, ::grpcIARDevice::stopResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void stop(::grpc::ClientContext* context, const ::grpcIARDevice::stopRequest* request, ::grpcIARDevice::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void stop(::grpc::ClientContext* context, const ::grpcIARDevice::stopRequest* request, ::grpcIARDevice::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getData(::grpc::ClientContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getCameraParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getCameraParametersRequest* request, ::grpcIARDevice::getCameraParametersResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getCameraParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getCameraParametersRequest* request, ::grpcIARDevice::getCameraParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getCameraParameters(::grpc::ClientContext* context, const ::grpcIARDevice::getCameraParametersRequest* request, ::grpcIARDevice::getCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIARDevice::startRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIARDevice::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIARDevice::stopRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -284,36 +247,22 @@ class grpcIARDeviceService final {
   };
   typedef WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_getData<WithAsyncMethod_getCameraParameters<Service > > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_start : public BaseClass {
+  class WithCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_start() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_start() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::startRequest, ::grpcIARDevice::startResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIARDevice::startRequest* request, ::grpcIARDevice::startResponse* response) { return this->start(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIARDevice::startRequest* request, ::grpcIARDevice::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
-        ::grpc::experimental::MessageAllocator< ::grpcIARDevice::startRequest, ::grpcIARDevice::startResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIARDevice::startRequest, ::grpcIARDevice::startResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::startRequest, ::grpcIARDevice::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_start() override {
+    ~WithCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -321,46 +270,26 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::startRequest* /*request*/, ::grpcIARDevice::startResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* start(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIARDevice::startRequest* /*request*/, ::grpcIARDevice::startResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::startRequest* /*request*/, ::grpcIARDevice::startResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_stop : public BaseClass {
+  class WithCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_stop() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_stop() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::stopRequest, ::grpcIARDevice::stopResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIARDevice::stopRequest* request, ::grpcIARDevice::stopResponse* response) { return this->stop(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIARDevice::stopRequest* request, ::grpcIARDevice::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
-        ::grpc::experimental::MessageAllocator< ::grpcIARDevice::stopRequest, ::grpcIARDevice::stopResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIARDevice::stopRequest, ::grpcIARDevice::stopResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::stopRequest, ::grpcIARDevice::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_stop() override {
+    ~WithCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -368,46 +297,26 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::stopRequest* /*request*/, ::grpcIARDevice::stopResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* stop(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIARDevice::stopRequest* /*request*/, ::grpcIARDevice::stopResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::stopRequest* /*request*/, ::grpcIARDevice::stopResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getData : public BaseClass {
+  class WithCallbackMethod_getData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getData() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
+    WithCallbackMethod_getData() {
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response) { return this->getData(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIARDevice::getDataRequest* request, ::grpcIARDevice::getDataResponse* response) { return this->getData(context, request, response); }));}
     void SetMessageAllocatorFor_getData(
-        ::grpc::experimental::MessageAllocator< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::getDataRequest, ::grpcIARDevice::getDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getData() override {
+    ~WithCallbackMethod_getData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -415,46 +324,26 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::getDataRequest* /*request*/, ::grpcIARDevice::getDataResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getData(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIARDevice::getDataRequest* /*request*/, ::grpcIARDevice::getDataResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::getDataRequest* /*request*/, ::grpcIARDevice::getDataResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getCameraParameters : public BaseClass {
+  class WithCallbackMethod_getCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getCameraParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(3,
+    WithCallbackMethod_getCameraParameters() {
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::getCameraParametersRequest, ::grpcIARDevice::getCameraParametersResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIARDevice::getCameraParametersRequest* request, ::grpcIARDevice::getCameraParametersResponse* response) { return this->getCameraParameters(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIARDevice::getCameraParametersRequest* request, ::grpcIARDevice::getCameraParametersResponse* response) { return this->getCameraParameters(context, request, response); }));}
     void SetMessageAllocatorFor_getCameraParameters(
-        ::grpc::experimental::MessageAllocator< ::grpcIARDevice::getCameraParametersRequest, ::grpcIARDevice::getCameraParametersResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIARDevice::getCameraParametersRequest, ::grpcIARDevice::getCameraParametersResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIARDevice::getCameraParametersRequest, ::grpcIARDevice::getCameraParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getCameraParameters() override {
+    ~WithCallbackMethod_getCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -462,20 +351,11 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::getCameraParametersRequest* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getCameraParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIARDevice::getCameraParametersRequest* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIARDevice::getCameraParametersRequest* /*request*/, ::grpcIARDevice::getCameraParametersResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_getData<ExperimentalWithCallbackMethod_getCameraParameters<Service > > > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_getData<ExperimentalWithCallbackMethod_getCameraParameters<Service > > > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_getData<WithCallbackMethod_getCameraParameters<Service > > > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_start : public BaseClass {
    private:
@@ -625,27 +505,17 @@ class grpcIARDeviceService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_start : public BaseClass {
+  class WithRawCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_start() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_start() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_start() override {
+    ~WithRawCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -653,37 +523,21 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* start(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_stop : public BaseClass {
+  class WithRawCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_stop() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_stop() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_stop() override {
+    ~WithRawCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -691,37 +545,21 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* stop(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getData : public BaseClass {
+  class WithRawCallbackMethod_getData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getData() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
+    WithRawCallbackMethod_getData() {
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getData(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getData(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getData() override {
+    ~WithRawCallbackMethod_getData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -729,37 +567,21 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getData(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getCameraParameters : public BaseClass {
+  class WithRawCallbackMethod_getCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getCameraParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(3,
+    WithRawCallbackMethod_getCameraParameters() {
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getCameraParameters(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getCameraParameters(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getCameraParameters() override {
+    ~WithRawCallbackMethod_getCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -767,14 +589,8 @@ class grpcIARDeviceService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getCameraParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_start : public BaseClass {

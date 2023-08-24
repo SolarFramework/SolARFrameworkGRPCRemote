@@ -7,10 +7,9 @@
 #include "grpcIDepthEstimationService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -43,30 +42,22 @@ class grpcIDepthEstimationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDepthEstimation::estimateResponse>> PrepareAsyncestimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDepthEstimation::estimateResponse>>(PrepareAsyncestimateRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDepthEstimation::estimateResponse>* AsyncestimateRaw(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDepthEstimation::estimateResponse>* PrepareAsyncestimateRaw(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest& request, ::grpcIDepthEstimation::estimateResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDepthEstimation::estimateResponse>> Asyncestimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDepthEstimation::estimateResponse>>(AsyncestimateRaw(context, request, cq));
@@ -74,26 +65,22 @@ class grpcIDepthEstimationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDepthEstimation::estimateResponse>> PrepareAsyncestimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDepthEstimation::estimateResponse>>(PrepareAsyncestimateRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void estimate(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIDepthEstimation::estimateResponse>* AsyncestimateRaw(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDepthEstimation::estimateResponse>* PrepareAsyncestimateRaw(::grpc::ClientContext* context, const ::grpcIDepthEstimation::estimateRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_estimate_;
@@ -128,36 +115,22 @@ class grpcIDepthEstimationService final {
   };
   typedef WithAsyncMethod_estimate<Service > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_estimate : public BaseClass {
+  class WithCallbackMethod_estimate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_estimate() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_estimate() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDepthEstimation::estimateRequest, ::grpcIDepthEstimation::estimateResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response) { return this->estimate(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIDepthEstimation::estimateRequest* request, ::grpcIDepthEstimation::estimateResponse* response) { return this->estimate(context, request, response); }));}
     void SetMessageAllocatorFor_estimate(
-        ::grpc::experimental::MessageAllocator< ::grpcIDepthEstimation::estimateRequest, ::grpcIDepthEstimation::estimateResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIDepthEstimation::estimateRequest, ::grpcIDepthEstimation::estimateResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDepthEstimation::estimateRequest, ::grpcIDepthEstimation::estimateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_estimate() override {
+    ~WithCallbackMethod_estimate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -165,20 +138,11 @@ class grpcIDepthEstimationService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* estimate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDepthEstimation::estimateRequest* /*request*/, ::grpcIDepthEstimation::estimateResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* estimate(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDepthEstimation::estimateRequest* /*request*/, ::grpcIDepthEstimation::estimateResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDepthEstimation::estimateRequest* /*request*/, ::grpcIDepthEstimation::estimateResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_estimate<Service > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_estimate<Service > ExperimentalCallbackService;
+  typedef WithCallbackMethod_estimate<Service > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_estimate : public BaseClass {
    private:
@@ -217,27 +181,17 @@ class grpcIDepthEstimationService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_estimate : public BaseClass {
+  class WithRawCallbackMethod_estimate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_estimate() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_estimate() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->estimate(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->estimate(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_estimate() override {
+    ~WithRawCallbackMethod_estimate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -245,14 +199,8 @@ class grpcIDepthEstimationService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* estimate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* estimate(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_estimate : public BaseClass {

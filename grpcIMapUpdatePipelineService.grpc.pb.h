@@ -7,10 +7,9 @@
 #include "grpcIMapUpdatePipelineService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -99,72 +98,32 @@ class grpcIMapUpdatePipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::getPointCloudRequestResponse>> PrepareAsyncgetPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::getPointCloudRequestResponse>>(PrepareAsyncgetPointCloudRequestRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void mapUpdateRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void mapUpdateRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void mapUpdateRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getMapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getMapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getMapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getSubmapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getSubmapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getSubmapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void resetMap(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void resetMap(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void resetMap(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* request, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* request, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* request, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapUpdatePipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -186,7 +145,7 @@ class grpcIMapUpdatePipelineService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpcIMapUpdatePipeline::initResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>>(AsyncinitRaw(context, request, cq));
@@ -250,74 +209,38 @@ class grpcIMapUpdatePipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::getPointCloudRequestResponse>> PrepareAsyncgetPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::getPointCloudRequestResponse>>(PrepareAsyncgetPointCloudRequestRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void init(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void start(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void stop(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void setCameraParameters(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void mapUpdateRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void mapUpdateRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void mapUpdateRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getMapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getMapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getMapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getSubmapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getSubmapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getSubmapRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void resetMap(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void resetMap(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void resetMap(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* request, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* request, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* request, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::initRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapUpdatePipeline::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIMapUpdatePipeline::startRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -544,36 +467,22 @@ class grpcIMapUpdatePipelineService final {
   };
   typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_setCameraParameters<WithAsyncMethod_mapUpdateRequest<WithAsyncMethod_getMapRequest<WithAsyncMethod_getSubmapRequest<WithAsyncMethod_resetMap<WithAsyncMethod_getPointCloudRequest<Service > > > > > > > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_init : public BaseClass {
+  class WithCallbackMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_init() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_init() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response) { return this->init(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response) { return this->init(context, request, response); }));}
     void SetMessageAllocatorFor_init(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::initRequest, ::grpcIMapUpdatePipeline::initResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_init() override {
+    ~WithCallbackMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -581,46 +490,26 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* init(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* init(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::initRequest* /*request*/, ::grpcIMapUpdatePipeline::initResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_start : public BaseClass {
+  class WithCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_start() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_start() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response) { return this->start(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::startRequest, ::grpcIMapUpdatePipeline::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_start() override {
+    ~WithCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -628,46 +517,26 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* start(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::startRequest* /*request*/, ::grpcIMapUpdatePipeline::startResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_stop : public BaseClass {
+  class WithCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_stop() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
+    WithCallbackMethod_stop() {
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response) { return this->stop(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::stopRequest, ::grpcIMapUpdatePipeline::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_stop() override {
+    ~WithCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -675,46 +544,26 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* stop(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::stopRequest* /*request*/, ::grpcIMapUpdatePipeline::stopResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_setCameraParameters : public BaseClass {
+  class WithCallbackMethod_setCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_setCameraParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(3,
+    WithCallbackMethod_setCameraParameters() {
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::setCameraParametersRequest, ::grpcIMapUpdatePipeline::setCameraParametersResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response) { return this->setCameraParameters(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response) { return this->setCameraParameters(context, request, response); }));}
     void SetMessageAllocatorFor_setCameraParameters(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::setCameraParametersRequest, ::grpcIMapUpdatePipeline::setCameraParametersResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapUpdatePipeline::setCameraParametersRequest, ::grpcIMapUpdatePipeline::setCameraParametersResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::setCameraParametersRequest, ::grpcIMapUpdatePipeline::setCameraParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_setCameraParameters() override {
+    ~WithCallbackMethod_setCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -722,46 +571,26 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* /*request*/, ::grpcIMapUpdatePipeline::setCameraParametersResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setCameraParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* /*request*/, ::grpcIMapUpdatePipeline::setCameraParametersResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* /*request*/, ::grpcIMapUpdatePipeline::setCameraParametersResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_mapUpdateRequest : public BaseClass {
+  class WithCallbackMethod_mapUpdateRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_mapUpdateRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(4,
+    WithCallbackMethod_mapUpdateRequest() {
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::mapUpdateRequestRequest, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response) { return this->mapUpdateRequest(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response) { return this->mapUpdateRequest(context, request, response); }));}
     void SetMessageAllocatorFor_mapUpdateRequest(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::mapUpdateRequestRequest, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapUpdatePipeline::mapUpdateRequestRequest, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::mapUpdateRequestRequest, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_mapUpdateRequest() override {
+    ~WithCallbackMethod_mapUpdateRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -769,46 +598,26 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* mapUpdateRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* mapUpdateRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getMapRequest : public BaseClass {
+  class WithCallbackMethod_getMapRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getMapRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(5,
+    WithCallbackMethod_getMapRequest() {
+      ::grpc::Service::MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::getMapRequestRequest, ::grpcIMapUpdatePipeline::getMapRequestResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response) { return this->getMapRequest(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response) { return this->getMapRequest(context, request, response); }));}
     void SetMessageAllocatorFor_getMapRequest(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::getMapRequestRequest, ::grpcIMapUpdatePipeline::getMapRequestResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapUpdatePipeline::getMapRequestRequest, ::grpcIMapUpdatePipeline::getMapRequestResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::getMapRequestRequest, ::grpcIMapUpdatePipeline::getMapRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getMapRequest() override {
+    ~WithCallbackMethod_getMapRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -816,46 +625,26 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getMapRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::getMapRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::getMapRequestResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getMapRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::getMapRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::getMapRequestResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::getMapRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::getMapRequestResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getSubmapRequest : public BaseClass {
+  class WithCallbackMethod_getSubmapRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getSubmapRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(6,
+    WithCallbackMethod_getSubmapRequest() {
+      ::grpc::Service::MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::getSubmapRequestRequest, ::grpcIMapUpdatePipeline::getSubmapRequestResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response) { return this->getSubmapRequest(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response) { return this->getSubmapRequest(context, request, response); }));}
     void SetMessageAllocatorFor_getSubmapRequest(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::getSubmapRequestRequest, ::grpcIMapUpdatePipeline::getSubmapRequestResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapUpdatePipeline::getSubmapRequestRequest, ::grpcIMapUpdatePipeline::getSubmapRequestResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::getSubmapRequestRequest, ::grpcIMapUpdatePipeline::getSubmapRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getSubmapRequest() override {
+    ~WithCallbackMethod_getSubmapRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -863,46 +652,26 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getSubmapRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getSubmapRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_resetMap : public BaseClass {
+  class WithCallbackMethod_resetMap : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_resetMap() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(7,
+    WithCallbackMethod_resetMap() {
+      ::grpc::Service::MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::resetMapRequest, ::grpcIMapUpdatePipeline::resetMapResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response) { return this->resetMap(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response) { return this->resetMap(context, request, response); }));}
     void SetMessageAllocatorFor_resetMap(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::resetMapRequest, ::grpcIMapUpdatePipeline::resetMapResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapUpdatePipeline::resetMapRequest, ::grpcIMapUpdatePipeline::resetMapResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::resetMapRequest, ::grpcIMapUpdatePipeline::resetMapResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_resetMap() override {
+    ~WithCallbackMethod_resetMap() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -910,46 +679,26 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* resetMap(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::resetMapRequest* /*request*/, ::grpcIMapUpdatePipeline::resetMapResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* resetMap(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::resetMapRequest* /*request*/, ::grpcIMapUpdatePipeline::resetMapResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::resetMapRequest* /*request*/, ::grpcIMapUpdatePipeline::resetMapResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getPointCloudRequest : public BaseClass {
+  class WithCallbackMethod_getPointCloudRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getPointCloudRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(8,
+    WithCallbackMethod_getPointCloudRequest() {
+      ::grpc::Service::MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::getPointCloudRequestRequest, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* request, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* response) { return this->getPointCloudRequest(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* request, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* response) { return this->getPointCloudRequest(context, request, response); }));}
     void SetMessageAllocatorFor_getPointCloudRequest(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapUpdatePipeline::getPointCloudRequestRequest, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapUpdatePipeline::getPointCloudRequestRequest, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapUpdatePipeline::getPointCloudRequestRequest, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getPointCloudRequest() override {
+    ~WithCallbackMethod_getPointCloudRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -957,20 +706,11 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPointCloudRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getPointCloudRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* /*request*/, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_mapUpdateRequest<ExperimentalWithCallbackMethod_getMapRequest<ExperimentalWithCallbackMethod_getSubmapRequest<ExperimentalWithCallbackMethod_resetMap<ExperimentalWithCallbackMethod_getPointCloudRequest<Service > > > > > > > > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_init<ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_setCameraParameters<ExperimentalWithCallbackMethod_mapUpdateRequest<ExperimentalWithCallbackMethod_getMapRequest<ExperimentalWithCallbackMethod_getSubmapRequest<ExperimentalWithCallbackMethod_resetMap<ExperimentalWithCallbackMethod_getPointCloudRequest<Service > > > > > > > > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_init<WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_setCameraParameters<WithCallbackMethod_mapUpdateRequest<WithCallbackMethod_getMapRequest<WithCallbackMethod_getSubmapRequest<WithCallbackMethod_resetMap<WithCallbackMethod_getPointCloudRequest<Service > > > > > > > > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_init : public BaseClass {
    private:
@@ -1305,27 +1045,17 @@ class grpcIMapUpdatePipelineService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_init : public BaseClass {
+  class WithRawCallbackMethod_init : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_init() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_init() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->init(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->init(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_init() override {
+    ~WithRawCallbackMethod_init() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1333,37 +1063,21 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* init(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* init(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_start : public BaseClass {
+  class WithRawCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_start() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_start() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_start() override {
+    ~WithRawCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1371,37 +1085,21 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* start(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_stop : public BaseClass {
+  class WithRawCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_stop() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
+    WithRawCallbackMethod_stop() {
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_stop() override {
+    ~WithRawCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1409,37 +1107,21 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* stop(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_setCameraParameters : public BaseClass {
+  class WithRawCallbackMethod_setCameraParameters : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_setCameraParameters() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(3,
+    WithRawCallbackMethod_setCameraParameters() {
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCameraParameters(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCameraParameters(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_setCameraParameters() override {
+    ~WithRawCallbackMethod_setCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1447,37 +1129,21 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setCameraParameters(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setCameraParameters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_mapUpdateRequest : public BaseClass {
+  class WithRawCallbackMethod_mapUpdateRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_mapUpdateRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(4,
+    WithRawCallbackMethod_mapUpdateRequest() {
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->mapUpdateRequest(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->mapUpdateRequest(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_mapUpdateRequest() override {
+    ~WithRawCallbackMethod_mapUpdateRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1485,37 +1151,21 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* mapUpdateRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* mapUpdateRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getMapRequest : public BaseClass {
+  class WithRawCallbackMethod_getMapRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getMapRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(5,
+    WithRawCallbackMethod_getMapRequest() {
+      ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getMapRequest(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getMapRequest(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getMapRequest() override {
+    ~WithRawCallbackMethod_getMapRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1523,37 +1173,21 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getMapRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getMapRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getSubmapRequest : public BaseClass {
+  class WithRawCallbackMethod_getSubmapRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getSubmapRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(6,
+    WithRawCallbackMethod_getSubmapRequest() {
+      ::grpc::Service::MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getSubmapRequest(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getSubmapRequest(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getSubmapRequest() override {
+    ~WithRawCallbackMethod_getSubmapRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1561,37 +1195,21 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getSubmapRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getSubmapRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_resetMap : public BaseClass {
+  class WithRawCallbackMethod_resetMap : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_resetMap() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(7,
+    WithRawCallbackMethod_resetMap() {
+      ::grpc::Service::MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->resetMap(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->resetMap(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_resetMap() override {
+    ~WithRawCallbackMethod_resetMap() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1599,37 +1217,21 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* resetMap(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* resetMap(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getPointCloudRequest : public BaseClass {
+  class WithRawCallbackMethod_getPointCloudRequest : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getPointCloudRequest() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(8,
+    WithRawCallbackMethod_getPointCloudRequest() {
+      ::grpc::Service::MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPointCloudRequest(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPointCloudRequest(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getPointCloudRequest() override {
+    ~WithRawCallbackMethod_getPointCloudRequest() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1637,14 +1239,8 @@ class grpcIMapUpdatePipelineService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getPointCloudRequest(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getPointCloudRequest(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_init : public BaseClass {

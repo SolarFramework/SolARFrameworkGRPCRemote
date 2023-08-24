@@ -182,6 +182,16 @@ message keyframePruningResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message visibilityPruningRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message visibilityPruningResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message saveToFileRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -228,6 +238,7 @@ rpc getCameraParameters_grpc0(getCameraParameters_grpc0Request) returns(getCamer
 rpc getCameraParameters_grpc1(getCameraParameters_grpc1Request) returns(getCameraParameters_grpc1Response) {}
 rpc pointCloudPruning(pointCloudPruningRequest) returns(pointCloudPruningResponse) {}
 rpc keyframePruning(keyframePruningRequest) returns(keyframePruningResponse) {}
+rpc visibilityPruning(visibilityPruningRequest) returns(visibilityPruningResponse) {}
 rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
 rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
 rpc deleteFile(deleteFileRequest) returns(deleteFileResponse) {}

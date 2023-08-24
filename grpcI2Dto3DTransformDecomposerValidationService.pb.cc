@@ -16,14 +16,17 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace grpcI2Dto3DTransformDecomposerValidation {
 }  // namespace grpcI2Dto3DTransformDecomposerValidation
-static constexpr ::PROTOBUF_NAMESPACE_ID::Metadata* file_level_metadata_grpcI2Dto3DTransformDecomposerValidationService_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcI2Dto3DTransformDecomposerValidationService_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcI2Dto3DTransformDecomposerValidationService_2eproto = nullptr;
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI2Dto3DTransformDecomposerValidationService_2eproto::offsets[1] = {};
-static constexpr ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema* schemas = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances = nullptr;
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_grpcI2Dto3DTransformDecomposerValidationService_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_grpcI2Dto3DTransformDecomposerValidationService_2eproto = nullptr;
+const uint32_t TableStruct_grpcI2Dto3DTransformDecomposerValidationService_2eproto::offsets[1] = {};
+static constexpr ::_pbi::MigrationSchema* schemas = nullptr;
+static constexpr ::_pb::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_grpcI2Dto3DTransformDecomposerValidationService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n5grpcI2Dto3DTransformDecomposerValidati"
@@ -34,24 +37,24 @@ const char descriptor_table_protodef_grpcI2Dto3DTransformDecomposerValidationSer
   ".protobuf.Empty\032\026.google.protobuf.Empty\""
   "\000b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto = {
-  false, false, 249, descriptor_table_protodef_grpcI2Dto3DTransformDecomposerValidationService_2eproto, "grpcI2Dto3DTransformDecomposerValidationService.proto", 
-  &descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_once, descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_deps, 1, 0,
-  schemas, file_default_instances, TableStruct_grpcI2Dto3DTransformDecomposerValidationService_2eproto::offsets,
-  file_level_metadata_grpcI2Dto3DTransformDecomposerValidationService_2eproto, file_level_enum_descriptors_grpcI2Dto3DTransformDecomposerValidationService_2eproto, file_level_service_descriptors_grpcI2Dto3DTransformDecomposerValidationService_2eproto,
+static ::_pbi::once_flag descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto = {
+    false, false, 249, descriptor_table_protodef_grpcI2Dto3DTransformDecomposerValidationService_2eproto,
+    "grpcI2Dto3DTransformDecomposerValidationService.proto",
+    &descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_once, descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_deps, 1, 0,
+    schemas, file_default_instances, TableStruct_grpcI2Dto3DTransformDecomposerValidationService_2eproto::offsets,
+    nullptr, file_level_enum_descriptors_grpcI2Dto3DTransformDecomposerValidationService_2eproto,
+    file_level_service_descriptors_grpcI2Dto3DTransformDecomposerValidationService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
-descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_metadata_getter(int index) {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto);
-  return descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto.file_level_metadata[index];
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto_getter() {
+  return &descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_grpcI2Dto3DTransformDecomposerValidationService_2eproto(&descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_grpcI2Dto3DTransformDecomposerValidationService_2eproto(&descriptor_table_grpcI2Dto3DTransformDecomposerValidationService_2eproto);
 namespace grpcI2Dto3DTransformDecomposerValidation {
 
 // @@protoc_insertion_point(namespace_scope)

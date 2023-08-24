@@ -6,8 +6,8 @@
 #include "grpcIMapFilterService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -28,24 +28,24 @@ static const char* grpcIMapFilterService_method_names[] = {
 
 std::unique_ptr< grpcIMapFilterService::Stub> grpcIMapFilterService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIMapFilterService::Stub> stub(new grpcIMapFilterService::Stub(channel));
+  std::unique_ptr< grpcIMapFilterService::Stub> stub(new grpcIMapFilterService::Stub(channel, options));
   return stub;
 }
 
-grpcIMapFilterService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_filter_grpc0_(grpcIMapFilterService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_filter_grpc1_(grpcIMapFilterService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIMapFilterService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_filter_grpc0_(grpcIMapFilterService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_filter_grpc1_(grpcIMapFilterService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapFilterService::Stub::filter_grpc0(::grpc::ClientContext* context, const ::grpcIMapFilter::filter_grpc0Request& request, ::grpcIMapFilter::filter_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMapFilter::filter_grpc0Request, ::grpcIMapFilter::filter_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_filter_grpc0_, context, request, response);
 }
 
-void grpcIMapFilterService::Stub::experimental_async::filter_grpc0(::grpc::ClientContext* context, const ::grpcIMapFilter::filter_grpc0Request* request, ::grpcIMapFilter::filter_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIMapFilterService::Stub::async::filter_grpc0(::grpc::ClientContext* context, const ::grpcIMapFilter::filter_grpc0Request* request, ::grpcIMapFilter::filter_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMapFilter::filter_grpc0Request, ::grpcIMapFilter::filter_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_filter_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIMapFilterService::Stub::experimental_async::filter_grpc0(::grpc::ClientContext* context, const ::grpcIMapFilter::filter_grpc0Request* request, ::grpcIMapFilter::filter_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMapFilterService::Stub::async::filter_grpc0(::grpc::ClientContext* context, const ::grpcIMapFilter::filter_grpc0Request* request, ::grpcIMapFilter::filter_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_filter_grpc0_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIMapFilterService::Stub::experimental_async::filter_grpc0(::grpc::Clien
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMapFilter::filter_grpc1Request, ::grpcIMapFilter::filter_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_filter_grpc1_, context, request, response);
 }
 
-void grpcIMapFilterService::Stub::experimental_async::filter_grpc1(::grpc::ClientContext* context, const ::grpcIMapFilter::filter_grpc1Request* request, ::grpcIMapFilter::filter_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIMapFilterService::Stub::async::filter_grpc1(::grpc::ClientContext* context, const ::grpcIMapFilter::filter_grpc1Request* request, ::grpcIMapFilter::filter_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMapFilter::filter_grpc1Request, ::grpcIMapFilter::filter_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_filter_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIMapFilterService::Stub::experimental_async::filter_grpc1(::grpc::ClientContext* context, const ::grpcIMapFilter::filter_grpc1Request* request, ::grpcIMapFilter::filter_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIMapFilterService::Stub::async::filter_grpc1(::grpc::ClientContext* context, const ::grpcIMapFilter::filter_grpc1Request* request, ::grpcIMapFilter::filter_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_filter_grpc1_, context, request, response, reactor);
 }
 

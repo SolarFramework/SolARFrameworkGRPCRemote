@@ -7,10 +7,9 @@
 #include "grpcIKeypointDetectorRegionService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -57,36 +56,20 @@ class grpcIKeypointDetectorRegionService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetectorRegion::detectResponse>> PrepareAsyncdetect(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::detectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetectorRegion::detectResponse>>(PrepareAsyncdetectRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void setType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void setType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void detect(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::detectRequest* request, ::grpcIKeypointDetectorRegion::detectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void detect(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::detectRequest* request, ::grpcIKeypointDetectorRegion::detectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void detect(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::detectRequest* request, ::grpcIKeypointDetectorRegion::detectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncsetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncsetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIKeypointDetectorRegion::getTypeResponse>* AsyncgetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -96,7 +79,7 @@ class grpcIKeypointDetectorRegionService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status setType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest& request, ::google::protobuf::Empty* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncsetType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncsetTypeRaw(context, request, cq));
@@ -118,38 +101,26 @@ class grpcIKeypointDetectorRegionService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetectorRegion::detectResponse>> PrepareAsyncdetect(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::detectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetectorRegion::detectResponse>>(PrepareAsyncdetectRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void setType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void setType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getType(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void detect(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::detectRequest* request, ::grpcIKeypointDetectorRegion::detectResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void detect(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::detectRequest* request, ::grpcIKeypointDetectorRegion::detectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void detect(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::detectRequest* request, ::grpcIKeypointDetectorRegion::detectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncsetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncsetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIKeypointDetectorRegion::getTypeResponse>* AsyncgetTypeRaw(::grpc::ClientContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -232,36 +203,22 @@ class grpcIKeypointDetectorRegionService final {
   };
   typedef WithAsyncMethod_setType<WithAsyncMethod_getType<WithAsyncMethod_detect<Service > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_setType : public BaseClass {
+  class WithCallbackMethod_setType : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_setType() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_setType() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIKeypointDetectorRegion::setTypeRequest, ::google::protobuf::Empty>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIKeypointDetectorRegion::setTypeRequest* request, ::google::protobuf::Empty* response) { return this->setType(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIKeypointDetectorRegion::setTypeRequest* request, ::google::protobuf::Empty* response) { return this->setType(context, request, response); }));}
     void SetMessageAllocatorFor_setType(
-        ::grpc::experimental::MessageAllocator< ::grpcIKeypointDetectorRegion::setTypeRequest, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIKeypointDetectorRegion::setTypeRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIKeypointDetectorRegion::setTypeRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_setType() override {
+    ~WithCallbackMethod_setType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -269,46 +226,26 @@ class grpcIKeypointDetectorRegionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setType(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIKeypointDetectorRegion::setTypeRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setType(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIKeypointDetectorRegion::setTypeRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIKeypointDetectorRegion::setTypeRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getType : public BaseClass {
+  class WithCallbackMethod_getType : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getType() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_getType() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIKeypointDetectorRegion::getTypeRequest, ::grpcIKeypointDetectorRegion::getTypeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response) { return this->getType(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIKeypointDetectorRegion::getTypeRequest* request, ::grpcIKeypointDetectorRegion::getTypeResponse* response) { return this->getType(context, request, response); }));}
     void SetMessageAllocatorFor_getType(
-        ::grpc::experimental::MessageAllocator< ::grpcIKeypointDetectorRegion::getTypeRequest, ::grpcIKeypointDetectorRegion::getTypeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIKeypointDetectorRegion::getTypeRequest, ::grpcIKeypointDetectorRegion::getTypeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIKeypointDetectorRegion::getTypeRequest, ::grpcIKeypointDetectorRegion::getTypeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getType() override {
+    ~WithCallbackMethod_getType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -316,46 +253,26 @@ class grpcIKeypointDetectorRegionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getType(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIKeypointDetectorRegion::getTypeRequest* /*request*/, ::grpcIKeypointDetectorRegion::getTypeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getType(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIKeypointDetectorRegion::getTypeRequest* /*request*/, ::grpcIKeypointDetectorRegion::getTypeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIKeypointDetectorRegion::getTypeRequest* /*request*/, ::grpcIKeypointDetectorRegion::getTypeResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_detect : public BaseClass {
+  class WithCallbackMethod_detect : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_detect() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
+    WithCallbackMethod_detect() {
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIKeypointDetectorRegion::detectRequest, ::grpcIKeypointDetectorRegion::detectResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIKeypointDetectorRegion::detectRequest* request, ::grpcIKeypointDetectorRegion::detectResponse* response) { return this->detect(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIKeypointDetectorRegion::detectRequest* request, ::grpcIKeypointDetectorRegion::detectResponse* response) { return this->detect(context, request, response); }));}
     void SetMessageAllocatorFor_detect(
-        ::grpc::experimental::MessageAllocator< ::grpcIKeypointDetectorRegion::detectRequest, ::grpcIKeypointDetectorRegion::detectResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIKeypointDetectorRegion::detectRequest, ::grpcIKeypointDetectorRegion::detectResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIKeypointDetectorRegion::detectRequest, ::grpcIKeypointDetectorRegion::detectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_detect() override {
+    ~WithCallbackMethod_detect() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -363,20 +280,11 @@ class grpcIKeypointDetectorRegionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* detect(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIKeypointDetectorRegion::detectRequest* /*request*/, ::grpcIKeypointDetectorRegion::detectResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* detect(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIKeypointDetectorRegion::detectRequest* /*request*/, ::grpcIKeypointDetectorRegion::detectResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIKeypointDetectorRegion::detectRequest* /*request*/, ::grpcIKeypointDetectorRegion::detectResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_setType<ExperimentalWithCallbackMethod_getType<ExperimentalWithCallbackMethod_detect<Service > > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_setType<ExperimentalWithCallbackMethod_getType<ExperimentalWithCallbackMethod_detect<Service > > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_setType<WithCallbackMethod_getType<WithCallbackMethod_detect<Service > > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_setType : public BaseClass {
    private:
@@ -489,27 +397,17 @@ class grpcIKeypointDetectorRegionService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_setType : public BaseClass {
+  class WithRawCallbackMethod_setType : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_setType() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_setType() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setType(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setType(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_setType() override {
+    ~WithRawCallbackMethod_setType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -517,37 +415,21 @@ class grpcIKeypointDetectorRegionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setType(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setType(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getType : public BaseClass {
+  class WithRawCallbackMethod_getType : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getType() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_getType() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getType(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getType(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getType() override {
+    ~WithRawCallbackMethod_getType() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -555,37 +437,21 @@ class grpcIKeypointDetectorRegionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getType(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getType(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_detect : public BaseClass {
+  class WithRawCallbackMethod_detect : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_detect() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
+    WithRawCallbackMethod_detect() {
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->detect(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->detect(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_detect() override {
+    ~WithRawCallbackMethod_detect() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -593,14 +459,8 @@ class grpcIKeypointDetectorRegionService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* detect(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* detect(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_setType : public BaseClass {
