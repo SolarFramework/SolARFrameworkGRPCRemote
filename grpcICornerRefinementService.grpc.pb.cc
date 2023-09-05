@@ -6,8 +6,8 @@
 #include "grpcICornerRefinementService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcICornerRefinementService_method_names[] = {
 
 std::unique_ptr< grpcICornerRefinementService::Stub> grpcICornerRefinementService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcICornerRefinementService::Stub> stub(new grpcICornerRefinementService::Stub(channel, options));
+  std::unique_ptr< grpcICornerRefinementService::Stub> stub(new grpcICornerRefinementService::Stub(channel));
   return stub;
 }
 
-grpcICornerRefinementService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_refine_(grpcICornerRefinementService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcICornerRefinementService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_refine_(grpcICornerRefinementService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcICornerRefinementService::Stub::refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest& request, ::grpcICornerRefinement::refineResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcICornerRefinement::refineRequest, ::grpcICornerRefinement::refineResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_refine_, context, request, response);
 }
 
-void grpcICornerRefinementService::Stub::async::refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcICornerRefinementService::Stub::experimental_async::refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcICornerRefinement::refineRequest, ::grpcICornerRefinement::refineResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_refine_, context, request, response, std::move(f));
 }
 
-void grpcICornerRefinementService::Stub::async::refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcICornerRefinementService::Stub::experimental_async::refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_refine_, context, request, response, reactor);
 }
 

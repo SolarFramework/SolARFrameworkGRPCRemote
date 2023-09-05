@@ -7,9 +7,10 @@
 #include "grpcIMeshLoaderService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -42,22 +43,30 @@ class grpcIMeshLoaderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMeshLoader::loadResponse>> PrepareAsyncload(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMeshLoader::loadResponse>>(PrepareAsyncloadRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void load(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest* request, ::grpcIMeshLoader::loadResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void load(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest* request, ::grpcIMeshLoader::loadResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void load(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest* request, ::grpcIMeshLoader::loadResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMeshLoader::loadResponse>* AsyncloadRaw(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMeshLoader::loadResponse>* PrepareAsyncloadRaw(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status load(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest& request, ::grpcIMeshLoader::loadResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMeshLoader::loadResponse>> Asyncload(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMeshLoader::loadResponse>>(AsyncloadRaw(context, request, cq));
@@ -65,22 +74,26 @@ class grpcIMeshLoaderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMeshLoader::loadResponse>> PrepareAsyncload(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMeshLoader::loadResponse>>(PrepareAsyncloadRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void load(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest* request, ::grpcIMeshLoader::loadResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void load(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest* request, ::grpcIMeshLoader::loadResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void load(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest* request, ::grpcIMeshLoader::loadResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIMeshLoader::loadResponse>* AsyncloadRaw(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMeshLoader::loadResponse>* PrepareAsyncloadRaw(::grpc::ClientContext* context, const ::grpcIMeshLoader::loadRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_load_;
@@ -115,22 +128,36 @@ class grpcIMeshLoaderService final {
   };
   typedef WithAsyncMethod_load<Service > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_load : public BaseClass {
+  class ExperimentalWithCallbackMethod_load : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_load() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_load() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMeshLoader::loadRequest, ::grpcIMeshLoader::loadResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIMeshLoader::loadRequest* request, ::grpcIMeshLoader::loadResponse* response) { return this->load(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIMeshLoader::loadRequest* request, ::grpcIMeshLoader::loadResponse* response) { return this->load(context, request, response); }));}
     void SetMessageAllocatorFor_load(
-        ::grpc::MessageAllocator< ::grpcIMeshLoader::loadRequest, ::grpcIMeshLoader::loadResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIMeshLoader::loadRequest, ::grpcIMeshLoader::loadResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMeshLoader::loadRequest, ::grpcIMeshLoader::loadResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_load() override {
+    ~ExperimentalWithCallbackMethod_load() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -138,11 +165,20 @@ class grpcIMeshLoaderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* load(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMeshLoader::loadRequest* /*request*/, ::grpcIMeshLoader::loadResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMeshLoader::loadRequest* /*request*/, ::grpcIMeshLoader::loadResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* load(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMeshLoader::loadRequest* /*request*/, ::grpcIMeshLoader::loadResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_load<Service > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_load<Service > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_load<Service > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_load : public BaseClass {
    private:
@@ -181,17 +217,27 @@ class grpcIMeshLoaderService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_load : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_load : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_load() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_load() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->load(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->load(context, request, response); }));
     }
-    ~WithRawCallbackMethod_load() override {
+    ~ExperimentalWithRawCallbackMethod_load() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -199,8 +245,14 @@ class grpcIMeshLoaderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* load(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* load(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_load : public BaseClass {

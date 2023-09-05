@@ -6,8 +6,8 @@
 #include "grpcISBPatternReIndexerService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcISBPatternReIndexerService_method_names[] = {
 
 std::unique_ptr< grpcISBPatternReIndexerService::Stub> grpcISBPatternReIndexerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcISBPatternReIndexerService::Stub> stub(new grpcISBPatternReIndexerService::Stub(channel, options));
+  std::unique_ptr< grpcISBPatternReIndexerService::Stub> stub(new grpcISBPatternReIndexerService::Stub(channel));
   return stub;
 }
 
-grpcISBPatternReIndexerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_reindex_(grpcISBPatternReIndexerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcISBPatternReIndexerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_reindex_(grpcISBPatternReIndexerService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcISBPatternReIndexerService::Stub::reindex(::grpc::ClientContext* context, const ::grpcISBPatternReIndexer::reindexRequest& request, ::grpcISBPatternReIndexer::reindexResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcISBPatternReIndexer::reindexRequest, ::grpcISBPatternReIndexer::reindexResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_reindex_, context, request, response);
 }
 
-void grpcISBPatternReIndexerService::Stub::async::reindex(::grpc::ClientContext* context, const ::grpcISBPatternReIndexer::reindexRequest* request, ::grpcISBPatternReIndexer::reindexResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcISBPatternReIndexerService::Stub::experimental_async::reindex(::grpc::ClientContext* context, const ::grpcISBPatternReIndexer::reindexRequest* request, ::grpcISBPatternReIndexer::reindexResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcISBPatternReIndexer::reindexRequest, ::grpcISBPatternReIndexer::reindexResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reindex_, context, request, response, std::move(f));
 }
 
-void grpcISBPatternReIndexerService::Stub::async::reindex(::grpc::ClientContext* context, const ::grpcISBPatternReIndexer::reindexRequest* request, ::grpcISBPatternReIndexer::reindexResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcISBPatternReIndexerService::Stub::experimental_async::reindex(::grpc::ClientContext* context, const ::grpcISBPatternReIndexer::reindexRequest* request, ::grpcISBPatternReIndexer::reindexResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reindex_, context, request, response, reactor);
 }
 

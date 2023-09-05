@@ -7,9 +7,10 @@
 #include "grpcIBootstrapperService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -42,22 +43,30 @@ class grpcIBootstrapperService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBootstrapper::processResponse>> PrepareAsyncprocess(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBootstrapper::processResponse>>(PrepareAsyncprocessRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void process(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void process(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void process(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBootstrapper::processResponse>* AsyncprocessRaw(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIBootstrapper::processResponse>* PrepareAsyncprocessRaw(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status process(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest& request, ::grpcIBootstrapper::processResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBootstrapper::processResponse>> Asyncprocess(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBootstrapper::processResponse>>(AsyncprocessRaw(context, request, cq));
@@ -65,22 +74,26 @@ class grpcIBootstrapperService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBootstrapper::processResponse>> PrepareAsyncprocess(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIBootstrapper::processResponse>>(PrepareAsyncprocessRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void process(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void process(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void process(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIBootstrapper::processResponse>* AsyncprocessRaw(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIBootstrapper::processResponse>* PrepareAsyncprocessRaw(::grpc::ClientContext* context, const ::grpcIBootstrapper::processRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_process_;
@@ -115,22 +128,36 @@ class grpcIBootstrapperService final {
   };
   typedef WithAsyncMethod_process<Service > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_process : public BaseClass {
+  class ExperimentalWithCallbackMethod_process : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_process() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_process() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIBootstrapper::processRequest, ::grpcIBootstrapper::processResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response) { return this->process(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIBootstrapper::processRequest* request, ::grpcIBootstrapper::processResponse* response) { return this->process(context, request, response); }));}
     void SetMessageAllocatorFor_process(
-        ::grpc::MessageAllocator< ::grpcIBootstrapper::processRequest, ::grpcIBootstrapper::processResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIBootstrapper::processRequest, ::grpcIBootstrapper::processResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIBootstrapper::processRequest, ::grpcIBootstrapper::processResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_process() override {
+    ~ExperimentalWithCallbackMethod_process() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -138,11 +165,20 @@ class grpcIBootstrapperService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* process(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBootstrapper::processRequest* /*request*/, ::grpcIBootstrapper::processResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIBootstrapper::processRequest* /*request*/, ::grpcIBootstrapper::processResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* process(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIBootstrapper::processRequest* /*request*/, ::grpcIBootstrapper::processResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_process<Service > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_process<Service > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_process<Service > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_process : public BaseClass {
    private:
@@ -181,17 +217,27 @@ class grpcIBootstrapperService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_process : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_process : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_process() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_process() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->process(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->process(context, request, response); }));
     }
-    ~WithRawCallbackMethod_process() override {
+    ~ExperimentalWithRawCallbackMethod_process() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -199,8 +245,14 @@ class grpcIBootstrapperService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* process(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* process(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_process : public BaseClass {

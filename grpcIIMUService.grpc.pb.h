@@ -7,9 +7,10 @@
 #include "grpcIIMUService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -98,32 +99,72 @@ class grpcIIMUService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>> PrepareAsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::isMagnetometerAvailableResponse>>(PrepareAsyncisMagnetometerAvailableRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getAccelerometerData(::grpc::ClientContext* context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getAccelerometerData(::grpc::ClientContext* context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getAccelerometerData(::grpc::ClientContext* context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getMagnetometerData(::grpc::ClientContext* context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getMagnetometerData(::grpc::ClientContext* context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getMagnetometerData(::grpc::ClientContext* context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void getAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIIMU::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -145,7 +186,7 @@ class grpcIIMUService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpcIIMU::startResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>> Asyncstart(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>>(AsyncstartRaw(context, request, cq));
@@ -209,38 +250,74 @@ class grpcIIMUService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>> PrepareAsyncisMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIIMU::isMagnetometerAvailableResponse>>(PrepareAsyncisMagnetometerAvailableRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void start(::grpc::ClientContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void stop(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getGyroscopeData(::grpc::ClientContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getAccelerometerData(::grpc::ClientContext* context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getAccelerometerData(::grpc::ClientContext* context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getAccelerometerData(::grpc::ClientContext* context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getMagnetometerData(::grpc::ClientContext* context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getMagnetometerData(::grpc::ClientContext* context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getMagnetometerData(::grpc::ClientContext* context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void getAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getAllSensorsData(::grpc::ClientContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void isGyroscopeAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void isAccelerometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void isMagnetometerAvailable(::grpc::ClientContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIIMU::startResponse>* PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIIMU::startRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIIMU::stopResponse>* AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIIMU::stopRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -467,22 +544,36 @@ class grpcIIMUService final {
   };
   typedef WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_getGyroscopeData<WithAsyncMethod_getAccelerometerData<WithAsyncMethod_getMagnetometerData<WithAsyncMethod_getAllSensorsData<WithAsyncMethod_isGyroscopeAvailable<WithAsyncMethod_isAccelerometerAvailable<WithAsyncMethod_isMagnetometerAvailable<Service > > > > > > > > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_start : public BaseClass {
+  class ExperimentalWithCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_start() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_start() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::startRequest, ::grpcIIMU::startResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response) { return this->start(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIIMU::startRequest* request, ::grpcIIMU::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
-        ::grpc::MessageAllocator< ::grpcIIMU::startRequest, ::grpcIIMU::startResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::startRequest, ::grpcIIMU::startResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::startRequest, ::grpcIIMU::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_start() override {
+    ~ExperimentalWithCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -490,26 +581,46 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* start(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::startRequest* /*request*/, ::grpcIIMU::startResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_stop : public BaseClass {
+  class ExperimentalWithCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_stop() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_stop() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response) { return this->stop(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIIMU::stopRequest* request, ::grpcIIMU::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
-        ::grpc::MessageAllocator< ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::stopRequest, ::grpcIIMU::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_stop() override {
+    ~ExperimentalWithCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -517,26 +628,46 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* stop(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::stopRequest* /*request*/, ::grpcIIMU::stopResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getGyroscopeData : public BaseClass {
+  class ExperimentalWithCallbackMethod_getGyroscopeData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getGyroscopeData() {
-      ::grpc::Service::MarkMethodCallback(2,
+    ExperimentalWithCallbackMethod_getGyroscopeData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::getGyroscopeDataRequest, ::grpcIIMU::getGyroscopeDataResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response) { return this->getGyroscopeData(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIIMU::getGyroscopeDataRequest* request, ::grpcIIMU::getGyroscopeDataResponse* response) { return this->getGyroscopeData(context, request, response); }));}
     void SetMessageAllocatorFor_getGyroscopeData(
-        ::grpc::MessageAllocator< ::grpcIIMU::getGyroscopeDataRequest, ::grpcIIMU::getGyroscopeDataResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::getGyroscopeDataRequest, ::grpcIIMU::getGyroscopeDataResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::getGyroscopeDataRequest, ::grpcIIMU::getGyroscopeDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getGyroscopeData() override {
+    ~ExperimentalWithCallbackMethod_getGyroscopeData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -544,26 +675,46 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getGyroscopeData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::getGyroscopeDataRequest* /*request*/, ::grpcIIMU::getGyroscopeDataResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::getGyroscopeDataRequest* /*request*/, ::grpcIIMU::getGyroscopeDataResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getGyroscopeData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::getGyroscopeDataRequest* /*request*/, ::grpcIIMU::getGyroscopeDataResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getAccelerometerData : public BaseClass {
+  class ExperimentalWithCallbackMethod_getAccelerometerData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getAccelerometerData() {
-      ::grpc::Service::MarkMethodCallback(3,
+    ExperimentalWithCallbackMethod_getAccelerometerData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::getAccelerometerDataRequest, ::grpcIIMU::getAccelerometerDataResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response) { return this->getAccelerometerData(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIIMU::getAccelerometerDataRequest* request, ::grpcIIMU::getAccelerometerDataResponse* response) { return this->getAccelerometerData(context, request, response); }));}
     void SetMessageAllocatorFor_getAccelerometerData(
-        ::grpc::MessageAllocator< ::grpcIIMU::getAccelerometerDataRequest, ::grpcIIMU::getAccelerometerDataResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::getAccelerometerDataRequest, ::grpcIIMU::getAccelerometerDataResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::getAccelerometerDataRequest, ::grpcIIMU::getAccelerometerDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getAccelerometerData() override {
+    ~ExperimentalWithCallbackMethod_getAccelerometerData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -571,26 +722,46 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getAccelerometerData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::getAccelerometerDataRequest* /*request*/, ::grpcIIMU::getAccelerometerDataResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::getAccelerometerDataRequest* /*request*/, ::grpcIIMU::getAccelerometerDataResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getAccelerometerData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::getAccelerometerDataRequest* /*request*/, ::grpcIIMU::getAccelerometerDataResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getMagnetometerData : public BaseClass {
+  class ExperimentalWithCallbackMethod_getMagnetometerData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getMagnetometerData() {
-      ::grpc::Service::MarkMethodCallback(4,
+    ExperimentalWithCallbackMethod_getMagnetometerData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::getMagnetometerDataRequest, ::grpcIIMU::getMagnetometerDataResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response) { return this->getMagnetometerData(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIIMU::getMagnetometerDataRequest* request, ::grpcIIMU::getMagnetometerDataResponse* response) { return this->getMagnetometerData(context, request, response); }));}
     void SetMessageAllocatorFor_getMagnetometerData(
-        ::grpc::MessageAllocator< ::grpcIIMU::getMagnetometerDataRequest, ::grpcIIMU::getMagnetometerDataResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::getMagnetometerDataRequest, ::grpcIIMU::getMagnetometerDataResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::getMagnetometerDataRequest, ::grpcIIMU::getMagnetometerDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getMagnetometerData() override {
+    ~ExperimentalWithCallbackMethod_getMagnetometerData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -598,26 +769,46 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getMagnetometerData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::getMagnetometerDataRequest* /*request*/, ::grpcIIMU::getMagnetometerDataResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::getMagnetometerDataRequest* /*request*/, ::grpcIIMU::getMagnetometerDataResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getMagnetometerData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::getMagnetometerDataRequest* /*request*/, ::grpcIIMU::getMagnetometerDataResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getAllSensorsData : public BaseClass {
+  class ExperimentalWithCallbackMethod_getAllSensorsData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getAllSensorsData() {
-      ::grpc::Service::MarkMethodCallback(5,
+    ExperimentalWithCallbackMethod_getAllSensorsData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::getAllSensorsDataRequest, ::grpcIIMU::getAllSensorsDataResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response) { return this->getAllSensorsData(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIIMU::getAllSensorsDataRequest* request, ::grpcIIMU::getAllSensorsDataResponse* response) { return this->getAllSensorsData(context, request, response); }));}
     void SetMessageAllocatorFor_getAllSensorsData(
-        ::grpc::MessageAllocator< ::grpcIIMU::getAllSensorsDataRequest, ::grpcIIMU::getAllSensorsDataResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::getAllSensorsDataRequest, ::grpcIIMU::getAllSensorsDataResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::getAllSensorsDataRequest, ::grpcIIMU::getAllSensorsDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getAllSensorsData() override {
+    ~ExperimentalWithCallbackMethod_getAllSensorsData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -625,26 +816,46 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getAllSensorsData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::getAllSensorsDataRequest* /*request*/, ::grpcIIMU::getAllSensorsDataResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::getAllSensorsDataRequest* /*request*/, ::grpcIIMU::getAllSensorsDataResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getAllSensorsData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::getAllSensorsDataRequest* /*request*/, ::grpcIIMU::getAllSensorsDataResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_isGyroscopeAvailable : public BaseClass {
+  class ExperimentalWithCallbackMethod_isGyroscopeAvailable : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_isGyroscopeAvailable() {
-      ::grpc::Service::MarkMethodCallback(6,
+    ExperimentalWithCallbackMethod_isGyroscopeAvailable() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response) { return this->isGyroscopeAvailable(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIIMU::isGyroscopeAvailableRequest* request, ::grpcIIMU::isGyroscopeAvailableResponse* response) { return this->isGyroscopeAvailable(context, request, response); }));}
     void SetMessageAllocatorFor_isGyroscopeAvailable(
-        ::grpc::MessageAllocator< ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isGyroscopeAvailableRequest, ::grpcIIMU::isGyroscopeAvailableResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_isGyroscopeAvailable() override {
+    ~ExperimentalWithCallbackMethod_isGyroscopeAvailable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -652,26 +863,46 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isGyroscopeAvailable(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* isGyroscopeAvailable(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::isGyroscopeAvailableRequest* /*request*/, ::grpcIIMU::isGyroscopeAvailableResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_isAccelerometerAvailable : public BaseClass {
+  class ExperimentalWithCallbackMethod_isAccelerometerAvailable : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_isAccelerometerAvailable() {
-      ::grpc::Service::MarkMethodCallback(7,
+    ExperimentalWithCallbackMethod_isAccelerometerAvailable() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response) { return this->isAccelerometerAvailable(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIIMU::isAccelerometerAvailableRequest* request, ::grpcIIMU::isAccelerometerAvailableResponse* response) { return this->isAccelerometerAvailable(context, request, response); }));}
     void SetMessageAllocatorFor_isAccelerometerAvailable(
-        ::grpc::MessageAllocator< ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isAccelerometerAvailableRequest, ::grpcIIMU::isAccelerometerAvailableResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_isAccelerometerAvailable() override {
+    ~ExperimentalWithCallbackMethod_isAccelerometerAvailable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -679,26 +910,46 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isAccelerometerAvailable(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* isAccelerometerAvailable(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::isAccelerometerAvailableRequest* /*request*/, ::grpcIIMU::isAccelerometerAvailableResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_isMagnetometerAvailable : public BaseClass {
+  class ExperimentalWithCallbackMethod_isMagnetometerAvailable : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_isMagnetometerAvailable() {
-      ::grpc::Service::MarkMethodCallback(8,
+    ExperimentalWithCallbackMethod_isMagnetometerAvailable() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response) { return this->isMagnetometerAvailable(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIIMU::isMagnetometerAvailableRequest* request, ::grpcIIMU::isMagnetometerAvailableResponse* response) { return this->isMagnetometerAvailable(context, request, response); }));}
     void SetMessageAllocatorFor_isMagnetometerAvailable(
-        ::grpc::MessageAllocator< ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIIMU::isMagnetometerAvailableRequest, ::grpcIIMU::isMagnetometerAvailableResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_isMagnetometerAvailable() override {
+    ~ExperimentalWithCallbackMethod_isMagnetometerAvailable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -706,11 +957,20 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isMagnetometerAvailable(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* isMagnetometerAvailable(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIIMU::isMagnetometerAvailableRequest* /*request*/, ::grpcIIMU::isMagnetometerAvailableResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_getGyroscopeData<WithCallbackMethod_getAccelerometerData<WithCallbackMethod_getMagnetometerData<WithCallbackMethod_getAllSensorsData<WithCallbackMethod_isGyroscopeAvailable<WithCallbackMethod_isAccelerometerAvailable<WithCallbackMethod_isMagnetometerAvailable<Service > > > > > > > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_getGyroscopeData<ExperimentalWithCallbackMethod_getAccelerometerData<ExperimentalWithCallbackMethod_getMagnetometerData<ExperimentalWithCallbackMethod_getAllSensorsData<ExperimentalWithCallbackMethod_isGyroscopeAvailable<ExperimentalWithCallbackMethod_isAccelerometerAvailable<ExperimentalWithCallbackMethod_isMagnetometerAvailable<Service > > > > > > > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_start<ExperimentalWithCallbackMethod_stop<ExperimentalWithCallbackMethod_getGyroscopeData<ExperimentalWithCallbackMethod_getAccelerometerData<ExperimentalWithCallbackMethod_getMagnetometerData<ExperimentalWithCallbackMethod_getAllSensorsData<ExperimentalWithCallbackMethod_isGyroscopeAvailable<ExperimentalWithCallbackMethod_isAccelerometerAvailable<ExperimentalWithCallbackMethod_isMagnetometerAvailable<Service > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_start : public BaseClass {
    private:
@@ -1045,17 +1305,27 @@ class grpcIIMUService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_start : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_start : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_start() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_start() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
     }
-    ~WithRawCallbackMethod_start() override {
+    ~ExperimentalWithRawCallbackMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1063,21 +1333,37 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* start(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* start(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_stop : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_stop : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_stop() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_stop() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
     }
-    ~WithRawCallbackMethod_stop() override {
+    ~ExperimentalWithRawCallbackMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1085,21 +1371,37 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* stop(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* stop(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getGyroscopeData : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getGyroscopeData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getGyroscopeData() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+    ExperimentalWithRawCallbackMethod_getGyroscopeData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getGyroscopeData(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getGyroscopeData(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getGyroscopeData() override {
+    ~ExperimentalWithRawCallbackMethod_getGyroscopeData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1107,21 +1409,37 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getGyroscopeData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getGyroscopeData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getAccelerometerData : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getAccelerometerData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getAccelerometerData() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+    ExperimentalWithRawCallbackMethod_getAccelerometerData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAccelerometerData(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAccelerometerData(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getAccelerometerData() override {
+    ~ExperimentalWithRawCallbackMethod_getAccelerometerData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1129,21 +1447,37 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getAccelerometerData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getAccelerometerData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getMagnetometerData : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getMagnetometerData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getMagnetometerData() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+    ExperimentalWithRawCallbackMethod_getMagnetometerData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getMagnetometerData(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getMagnetometerData(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getMagnetometerData() override {
+    ~ExperimentalWithRawCallbackMethod_getMagnetometerData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1151,21 +1485,37 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getMagnetometerData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getMagnetometerData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getAllSensorsData : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getAllSensorsData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getAllSensorsData() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+    ExperimentalWithRawCallbackMethod_getAllSensorsData() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAllSensorsData(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAllSensorsData(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getAllSensorsData() override {
+    ~ExperimentalWithRawCallbackMethod_getAllSensorsData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1173,21 +1523,37 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getAllSensorsData(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getAllSensorsData(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_isGyroscopeAvailable : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_isGyroscopeAvailable : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_isGyroscopeAvailable() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+    ExperimentalWithRawCallbackMethod_isGyroscopeAvailable() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isGyroscopeAvailable(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isGyroscopeAvailable(context, request, response); }));
     }
-    ~WithRawCallbackMethod_isGyroscopeAvailable() override {
+    ~ExperimentalWithRawCallbackMethod_isGyroscopeAvailable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1195,21 +1561,37 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isGyroscopeAvailable(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* isGyroscopeAvailable(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_isAccelerometerAvailable : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_isAccelerometerAvailable : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_isAccelerometerAvailable() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+    ExperimentalWithRawCallbackMethod_isAccelerometerAvailable() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isAccelerometerAvailable(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isAccelerometerAvailable(context, request, response); }));
     }
-    ~WithRawCallbackMethod_isAccelerometerAvailable() override {
+    ~ExperimentalWithRawCallbackMethod_isAccelerometerAvailable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1217,21 +1599,37 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isAccelerometerAvailable(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* isAccelerometerAvailable(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_isMagnetometerAvailable : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_isMagnetometerAvailable : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_isMagnetometerAvailable() {
-      ::grpc::Service::MarkMethodRawCallback(8,
+    ExperimentalWithRawCallbackMethod_isMagnetometerAvailable() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isMagnetometerAvailable(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isMagnetometerAvailable(context, request, response); }));
     }
-    ~WithRawCallbackMethod_isMagnetometerAvailable() override {
+    ~ExperimentalWithRawCallbackMethod_isMagnetometerAvailable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1239,8 +1637,14 @@ class grpcIIMUService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isMagnetometerAvailable(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* isMagnetometerAvailable(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_start : public BaseClass {

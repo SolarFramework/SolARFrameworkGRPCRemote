@@ -6,8 +6,8 @@
 #include "grpcIOverlapDetectorService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -28,24 +28,24 @@ static const char* grpcIOverlapDetectorService_method_names[] = {
 
 std::unique_ptr< grpcIOverlapDetectorService::Stub> grpcIOverlapDetectorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIOverlapDetectorService::Stub> stub(new grpcIOverlapDetectorService::Stub(channel, options));
+  std::unique_ptr< grpcIOverlapDetectorService::Stub> stub(new grpcIOverlapDetectorService::Stub(channel));
   return stub;
 }
 
-grpcIOverlapDetectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_detect_grpc0_(grpcIOverlapDetectorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_detect_grpc1_(grpcIOverlapDetectorService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIOverlapDetectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_detect_grpc0_(grpcIOverlapDetectorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_detect_grpc1_(grpcIOverlapDetectorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIOverlapDetectorService::Stub::detect_grpc0(::grpc::ClientContext* context, const ::grpcIOverlapDetector::detect_grpc0Request& request, ::grpcIOverlapDetector::detect_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIOverlapDetector::detect_grpc0Request, ::grpcIOverlapDetector::detect_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_detect_grpc0_, context, request, response);
 }
 
-void grpcIOverlapDetectorService::Stub::async::detect_grpc0(::grpc::ClientContext* context, const ::grpcIOverlapDetector::detect_grpc0Request* request, ::grpcIOverlapDetector::detect_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIOverlapDetectorService::Stub::experimental_async::detect_grpc0(::grpc::ClientContext* context, const ::grpcIOverlapDetector::detect_grpc0Request* request, ::grpcIOverlapDetector::detect_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIOverlapDetector::detect_grpc0Request, ::grpcIOverlapDetector::detect_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIOverlapDetectorService::Stub::async::detect_grpc0(::grpc::ClientContext* context, const ::grpcIOverlapDetector::detect_grpc0Request* request, ::grpcIOverlapDetector::detect_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIOverlapDetectorService::Stub::experimental_async::detect_grpc0(::grpc::ClientContext* context, const ::grpcIOverlapDetector::detect_grpc0Request* request, ::grpcIOverlapDetector::detect_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_grpc0_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIOverlapDetectorService::Stub::async::detect_grpc0(::grpc::ClientContex
   return ::grpc::internal::BlockingUnaryCall< ::grpcIOverlapDetector::detect_grpc1Request, ::grpcIOverlapDetector::detect_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_detect_grpc1_, context, request, response);
 }
 
-void grpcIOverlapDetectorService::Stub::async::detect_grpc1(::grpc::ClientContext* context, const ::grpcIOverlapDetector::detect_grpc1Request* request, ::grpcIOverlapDetector::detect_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIOverlapDetectorService::Stub::experimental_async::detect_grpc1(::grpc::ClientContext* context, const ::grpcIOverlapDetector::detect_grpc1Request* request, ::grpcIOverlapDetector::detect_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIOverlapDetector::detect_grpc1Request, ::grpcIOverlapDetector::detect_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIOverlapDetectorService::Stub::async::detect_grpc1(::grpc::ClientContext* context, const ::grpcIOverlapDetector::detect_grpc1Request* request, ::grpcIOverlapDetector::detect_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIOverlapDetectorService::Stub::experimental_async::detect_grpc1(::grpc::ClientContext* context, const ::grpcIOverlapDetector::detect_grpc1Request* request, ::grpcIOverlapDetector::detect_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_grpc1_, context, request, response, reactor);
 }
 

@@ -7,9 +7,10 @@
 #include "grpcI2DTransformFinderService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -42,22 +43,30 @@ class grpcI2DTransformFinderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2DTransformFinder::findTransform2DResponse>> PrepareAsyncfind(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2DTransformFinder::findTransform2DResponse>>(PrepareAsyncfindRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void find(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest* request, ::grpcI2DTransformFinder::findTransform2DResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void find(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest* request, ::grpcI2DTransformFinder::findTransform2DResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void find(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest* request, ::grpcI2DTransformFinder::findTransform2DResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2DTransformFinder::findTransform2DResponse>* AsyncfindRaw(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2DTransformFinder::findTransform2DResponse>* PrepareAsyncfindRaw(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status find(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest& request, ::grpcI2DTransformFinder::findTransform2DResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2DTransformFinder::findTransform2DResponse>> Asyncfind(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2DTransformFinder::findTransform2DResponse>>(AsyncfindRaw(context, request, cq));
@@ -65,22 +74,26 @@ class grpcI2DTransformFinderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2DTransformFinder::findTransform2DResponse>> PrepareAsyncfind(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2DTransformFinder::findTransform2DResponse>>(PrepareAsyncfindRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void find(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest* request, ::grpcI2DTransformFinder::findTransform2DResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void find(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest* request, ::grpcI2DTransformFinder::findTransform2DResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void find(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest* request, ::grpcI2DTransformFinder::findTransform2DResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcI2DTransformFinder::findTransform2DResponse>* AsyncfindRaw(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcI2DTransformFinder::findTransform2DResponse>* PrepareAsyncfindRaw(::grpc::ClientContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_find_;
@@ -115,22 +128,36 @@ class grpcI2DTransformFinderService final {
   };
   typedef WithAsyncMethod_find<Service > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_find : public BaseClass {
+  class ExperimentalWithCallbackMethod_find : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_find() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_find() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2DTransformFinder::findTransform2DRequest, ::grpcI2DTransformFinder::findTransform2DResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcI2DTransformFinder::findTransform2DRequest* request, ::grpcI2DTransformFinder::findTransform2DResponse* response) { return this->find(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcI2DTransformFinder::findTransform2DRequest* request, ::grpcI2DTransformFinder::findTransform2DResponse* response) { return this->find(context, request, response); }));}
     void SetMessageAllocatorFor_find(
-        ::grpc::MessageAllocator< ::grpcI2DTransformFinder::findTransform2DRequest, ::grpcI2DTransformFinder::findTransform2DResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcI2DTransformFinder::findTransform2DRequest, ::grpcI2DTransformFinder::findTransform2DResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2DTransformFinder::findTransform2DRequest, ::grpcI2DTransformFinder::findTransform2DResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_find() override {
+    ~ExperimentalWithCallbackMethod_find() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -138,11 +165,20 @@ class grpcI2DTransformFinderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* find(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DTransformFinder::findTransform2DRequest* /*request*/, ::grpcI2DTransformFinder::findTransform2DResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DTransformFinder::findTransform2DRequest* /*request*/, ::grpcI2DTransformFinder::findTransform2DResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* find(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2DTransformFinder::findTransform2DRequest* /*request*/, ::grpcI2DTransformFinder::findTransform2DResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_find<Service > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_find<Service > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_find<Service > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_find : public BaseClass {
    private:
@@ -181,17 +217,27 @@ class grpcI2DTransformFinderService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_find : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_find : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_find() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_find() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->find(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->find(context, request, response); }));
     }
-    ~WithRawCallbackMethod_find() override {
+    ~ExperimentalWithRawCallbackMethod_find() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -199,8 +245,14 @@ class grpcI2DTransformFinderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* find(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* find(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_find : public BaseClass {

@@ -6,8 +6,8 @@
 #include "grpcIFeatureWithDepthFromStereoService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -28,24 +28,24 @@ static const char* grpcIFeatureWithDepthFromStereoService_method_names[] = {
 
 std::unique_ptr< grpcIFeatureWithDepthFromStereoService::Stub> grpcIFeatureWithDepthFromStereoService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIFeatureWithDepthFromStereoService::Stub> stub(new grpcIFeatureWithDepthFromStereoService::Stub(channel, options));
+  std::unique_ptr< grpcIFeatureWithDepthFromStereoService::Stub> stub(new grpcIFeatureWithDepthFromStereoService::Stub(channel));
   return stub;
 }
 
-grpcIFeatureWithDepthFromStereoService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_setRectificationParameters_(grpcIFeatureWithDepthFromStereoService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_compute_(grpcIFeatureWithDepthFromStereoService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIFeatureWithDepthFromStereoService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_setRectificationParameters_(grpcIFeatureWithDepthFromStereoService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_compute_(grpcIFeatureWithDepthFromStereoService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIFeatureWithDepthFromStereoService::Stub::setRectificationParameters(::grpc::ClientContext* context, const ::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setRectificationParameters_, context, request, response);
 }
 
-void grpcIFeatureWithDepthFromStereoService::Stub::async::setRectificationParameters(::grpc::ClientContext* context, const ::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIFeatureWithDepthFromStereoService::Stub::experimental_async::setRectificationParameters(::grpc::ClientContext* context, const ::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setRectificationParameters_, context, request, response, std::move(f));
 }
 
-void grpcIFeatureWithDepthFromStereoService::Stub::async::setRectificationParameters(::grpc::ClientContext* context, const ::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIFeatureWithDepthFromStereoService::Stub::experimental_async::setRectificationParameters(::grpc::ClientContext* context, const ::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setRectificationParameters_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIFeatureWithDepthFromStereoService::Stub::async::setRectificationParame
   return ::grpc::internal::BlockingUnaryCall< ::grpcIFeatureWithDepthFromStereo::computeRequest, ::grpcIFeatureWithDepthFromStereo::computeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_compute_, context, request, response);
 }
 
-void grpcIFeatureWithDepthFromStereoService::Stub::async::compute(::grpc::ClientContext* context, const ::grpcIFeatureWithDepthFromStereo::computeRequest* request, ::grpcIFeatureWithDepthFromStereo::computeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIFeatureWithDepthFromStereoService::Stub::experimental_async::compute(::grpc::ClientContext* context, const ::grpcIFeatureWithDepthFromStereo::computeRequest* request, ::grpcIFeatureWithDepthFromStereo::computeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIFeatureWithDepthFromStereo::computeRequest, ::grpcIFeatureWithDepthFromStereo::computeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_compute_, context, request, response, std::move(f));
 }
 
-void grpcIFeatureWithDepthFromStereoService::Stub::async::compute(::grpc::ClientContext* context, const ::grpcIFeatureWithDepthFromStereo::computeRequest* request, ::grpcIFeatureWithDepthFromStereo::computeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIFeatureWithDepthFromStereoService::Stub::experimental_async::compute(::grpc::ClientContext* context, const ::grpcIFeatureWithDepthFromStereo::computeRequest* request, ::grpcIFeatureWithDepthFromStereo::computeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_compute_, context, request, response, reactor);
 }
 

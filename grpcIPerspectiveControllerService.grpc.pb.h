@@ -7,9 +7,10 @@
 #include "grpcIPerspectiveControllerService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -49,18 +50,30 @@ class grpcIPerspectiveControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPerspectiveController::correct_grpc1Response>> PrepareAsynccorrect_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPerspectiveController::correct_grpc1Response>>(PrepareAsynccorrect_grpc1Raw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPerspectiveController::correct_grpc0Response>* Asynccorrect_grpc0Raw(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPerspectiveController::correct_grpc0Response>* PrepareAsynccorrect_grpc0Raw(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPerspectiveController::correct_grpc1Response>* Asynccorrect_grpc1Raw(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -68,7 +81,7 @@ class grpcIPerspectiveControllerService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request& request, ::grpcIPerspectiveController::correct_grpc0Response* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPerspectiveController::correct_grpc0Response>> Asynccorrect_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPerspectiveController::correct_grpc0Response>>(Asynccorrect_grpc0Raw(context, request, cq));
@@ -83,24 +96,32 @@ class grpcIPerspectiveControllerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPerspectiveController::correct_grpc1Response>> PrepareAsynccorrect_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPerspectiveController::correct_grpc1Response>>(PrepareAsynccorrect_grpc1Raw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void correct_grpc0(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void correct_grpc1(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIPerspectiveController::correct_grpc0Response>* Asynccorrect_grpc0Raw(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPerspectiveController::correct_grpc0Response>* PrepareAsynccorrect_grpc0Raw(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPerspectiveController::correct_grpc1Response>* Asynccorrect_grpc1Raw(::grpc::ClientContext* context, const ::grpcIPerspectiveController::correct_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
@@ -159,22 +180,36 @@ class grpcIPerspectiveControllerService final {
   };
   typedef WithAsyncMethod_correct_grpc0<WithAsyncMethod_correct_grpc1<Service > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_correct_grpc0 : public BaseClass {
+  class ExperimentalWithCallbackMethod_correct_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_correct_grpc0() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_correct_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPerspectiveController::correct_grpc0Request, ::grpcIPerspectiveController::correct_grpc0Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response) { return this->correct_grpc0(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPerspectiveController::correct_grpc0Request* request, ::grpcIPerspectiveController::correct_grpc0Response* response) { return this->correct_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_correct_grpc0(
-        ::grpc::MessageAllocator< ::grpcIPerspectiveController::correct_grpc0Request, ::grpcIPerspectiveController::correct_grpc0Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPerspectiveController::correct_grpc0Request, ::grpcIPerspectiveController::correct_grpc0Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPerspectiveController::correct_grpc0Request, ::grpcIPerspectiveController::correct_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_correct_grpc0() override {
+    ~ExperimentalWithCallbackMethod_correct_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -182,26 +217,46 @@ class grpcIPerspectiveControllerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* correct_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPerspectiveController::correct_grpc0Request* /*request*/, ::grpcIPerspectiveController::correct_grpc0Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPerspectiveController::correct_grpc0Request* /*request*/, ::grpcIPerspectiveController::correct_grpc0Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* correct_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPerspectiveController::correct_grpc0Request* /*request*/, ::grpcIPerspectiveController::correct_grpc0Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_correct_grpc1 : public BaseClass {
+  class ExperimentalWithCallbackMethod_correct_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_correct_grpc1() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_correct_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPerspectiveController::correct_grpc1Request, ::grpcIPerspectiveController::correct_grpc1Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response) { return this->correct_grpc1(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPerspectiveController::correct_grpc1Request* request, ::grpcIPerspectiveController::correct_grpc1Response* response) { return this->correct_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_correct_grpc1(
-        ::grpc::MessageAllocator< ::grpcIPerspectiveController::correct_grpc1Request, ::grpcIPerspectiveController::correct_grpc1Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPerspectiveController::correct_grpc1Request, ::grpcIPerspectiveController::correct_grpc1Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPerspectiveController::correct_grpc1Request, ::grpcIPerspectiveController::correct_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_correct_grpc1() override {
+    ~ExperimentalWithCallbackMethod_correct_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -209,11 +264,20 @@ class grpcIPerspectiveControllerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* correct_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPerspectiveController::correct_grpc1Request* /*request*/, ::grpcIPerspectiveController::correct_grpc1Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPerspectiveController::correct_grpc1Request* /*request*/, ::grpcIPerspectiveController::correct_grpc1Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* correct_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPerspectiveController::correct_grpc1Request* /*request*/, ::grpcIPerspectiveController::correct_grpc1Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_correct_grpc0<WithCallbackMethod_correct_grpc1<Service > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_correct_grpc0<ExperimentalWithCallbackMethod_correct_grpc1<Service > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_correct_grpc0<ExperimentalWithCallbackMethod_correct_grpc1<Service > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_correct_grpc0 : public BaseClass {
    private:
@@ -289,17 +353,27 @@ class grpcIPerspectiveControllerService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_correct_grpc0 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_correct_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_correct_grpc0() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_correct_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->correct_grpc0(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->correct_grpc0(context, request, response); }));
     }
-    ~WithRawCallbackMethod_correct_grpc0() override {
+    ~ExperimentalWithRawCallbackMethod_correct_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -307,21 +381,37 @@ class grpcIPerspectiveControllerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* correct_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* correct_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_correct_grpc1 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_correct_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_correct_grpc1() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_correct_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->correct_grpc1(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->correct_grpc1(context, request, response); }));
     }
-    ~WithRawCallbackMethod_correct_grpc1() override {
+    ~ExperimentalWithRawCallbackMethod_correct_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -329,8 +419,14 @@ class grpcIPerspectiveControllerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* correct_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* correct_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_correct_grpc0 : public BaseClass {

@@ -6,8 +6,8 @@
 #include "grpcIMultiTrackablesPoseService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -28,24 +28,24 @@ static const char* grpcIMultiTrackablesPoseService_method_names[] = {
 
 std::unique_ptr< grpcIMultiTrackablesPoseService::Stub> grpcIMultiTrackablesPoseService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIMultiTrackablesPoseService::Stub> stub(new grpcIMultiTrackablesPoseService::Stub(channel, options));
+  std::unique_ptr< grpcIMultiTrackablesPoseService::Stub> stub(new grpcIMultiTrackablesPoseService::Stub(channel));
   return stub;
 }
 
-grpcIMultiTrackablesPoseService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_setTrackables_(grpcIMultiTrackablesPoseService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_estimate_(grpcIMultiTrackablesPoseService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIMultiTrackablesPoseService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_setTrackables_(grpcIMultiTrackablesPoseService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_estimate_(grpcIMultiTrackablesPoseService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMultiTrackablesPoseService::Stub::setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest& request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMultiTrackablesPose::setTrackablesRequest, ::grpcIMultiTrackablesPose::setTrackablesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setTrackables_, context, request, response);
 }
 
-void grpcIMultiTrackablesPoseService::Stub::async::setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIMultiTrackablesPoseService::Stub::experimental_async::setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMultiTrackablesPose::setTrackablesRequest, ::grpcIMultiTrackablesPose::setTrackablesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setTrackables_, context, request, response, std::move(f));
 }
 
-void grpcIMultiTrackablesPoseService::Stub::async::setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIMultiTrackablesPoseService::Stub::experimental_async::setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setTrackables_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIMultiTrackablesPoseService::Stub::async::setTrackables(::grpc::ClientC
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMultiTrackablesPose::estimateRequest, ::grpcIMultiTrackablesPose::estimateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_estimate_, context, request, response);
 }
 
-void grpcIMultiTrackablesPoseService::Stub::async::estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIMultiTrackablesPoseService::Stub::experimental_async::estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIMultiTrackablesPose::estimateRequest, ::grpcIMultiTrackablesPose::estimateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_, context, request, response, std::move(f));
 }
 
-void grpcIMultiTrackablesPoseService::Stub::async::estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIMultiTrackablesPoseService::Stub::experimental_async::estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_estimate_, context, request, response, reactor);
 }
 

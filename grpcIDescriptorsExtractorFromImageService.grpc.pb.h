@@ -7,9 +7,10 @@
 #include "grpcIDescriptorsExtractorFromImageService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -49,18 +50,30 @@ class grpcIDescriptorsExtractorFromImageService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractorFromImage::extractResponse>> PrepareAsyncextract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractorFromImage::extractResponse>>(PrepareAsyncextractRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest* request, ::grpcIDescriptorsExtractorFromImage::extractResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest* request, ::grpcIDescriptorsExtractorFromImage::extractResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest* request, ::grpcIDescriptorsExtractorFromImage::extractResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>* AsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>* PrepareAsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractorFromImage::extractResponse>* AsyncextractRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -68,7 +81,7 @@ class grpcIDescriptorsExtractorFromImageService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest& request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>> AsyncgetTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>>(AsyncgetTypeStringRaw(context, request, cq));
@@ -83,24 +96,32 @@ class grpcIDescriptorsExtractorFromImageService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractorFromImage::extractResponse>> PrepareAsyncextract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractorFromImage::extractResponse>>(PrepareAsyncextractRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest* request, ::grpcIDescriptorsExtractorFromImage::extractResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest* request, ::grpcIDescriptorsExtractorFromImage::extractResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest* request, ::grpcIDescriptorsExtractorFromImage::extractResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>* AsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>* PrepareAsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractorFromImage::extractResponse>* AsyncextractRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -159,22 +180,36 @@ class grpcIDescriptorsExtractorFromImageService final {
   };
   typedef WithAsyncMethod_getTypeString<WithAsyncMethod_extract<Service > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_getTypeString : public BaseClass {
+  class ExperimentalWithCallbackMethod_getTypeString : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getTypeString() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_getTypeString() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response) { return this->getTypeString(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* request, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* response) { return this->getTypeString(context, request, response); }));}
     void SetMessageAllocatorFor_getTypeString(
-        ::grpc::MessageAllocator< ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getTypeString() override {
+    ~ExperimentalWithCallbackMethod_getTypeString() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -182,26 +217,46 @@ class grpcIDescriptorsExtractorFromImageService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getTypeString(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* /*request*/, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* /*request*/, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getTypeString(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractorFromImage::getTypeStringRequest* /*request*/, ::grpcIDescriptorsExtractorFromImage::getTypeStringResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_extract : public BaseClass {
+  class ExperimentalWithCallbackMethod_extract : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_extract() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_extract() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorsExtractorFromImage::extractRequest, ::grpcIDescriptorsExtractorFromImage::extractResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIDescriptorsExtractorFromImage::extractRequest* request, ::grpcIDescriptorsExtractorFromImage::extractResponse* response) { return this->extract(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIDescriptorsExtractorFromImage::extractRequest* request, ::grpcIDescriptorsExtractorFromImage::extractResponse* response) { return this->extract(context, request, response); }));}
     void SetMessageAllocatorFor_extract(
-        ::grpc::MessageAllocator< ::grpcIDescriptorsExtractorFromImage::extractRequest, ::grpcIDescriptorsExtractorFromImage::extractResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIDescriptorsExtractorFromImage::extractRequest, ::grpcIDescriptorsExtractorFromImage::extractResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorsExtractorFromImage::extractRequest, ::grpcIDescriptorsExtractorFromImage::extractResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_extract() override {
+    ~ExperimentalWithCallbackMethod_extract() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -209,11 +264,20 @@ class grpcIDescriptorsExtractorFromImageService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* extract(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractorFromImage::extractRequest* /*request*/, ::grpcIDescriptorsExtractorFromImage::extractResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractorFromImage::extractRequest* /*request*/, ::grpcIDescriptorsExtractorFromImage::extractResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* extract(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractorFromImage::extractRequest* /*request*/, ::grpcIDescriptorsExtractorFromImage::extractResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_getTypeString<WithCallbackMethod_extract<Service > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_getTypeString<ExperimentalWithCallbackMethod_extract<Service > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_getTypeString<ExperimentalWithCallbackMethod_extract<Service > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_getTypeString : public BaseClass {
    private:
@@ -289,17 +353,27 @@ class grpcIDescriptorsExtractorFromImageService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getTypeString : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getTypeString : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getTypeString() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_getTypeString() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getTypeString(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getTypeString(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getTypeString() override {
+    ~ExperimentalWithRawCallbackMethod_getTypeString() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -307,21 +381,37 @@ class grpcIDescriptorsExtractorFromImageService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getTypeString(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getTypeString(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_extract : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_extract : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_extract() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_extract() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->extract(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->extract(context, request, response); }));
     }
-    ~WithRawCallbackMethod_extract() override {
+    ~ExperimentalWithRawCallbackMethod_extract() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -329,8 +419,14 @@ class grpcIDescriptorsExtractorFromImageService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* extract(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* extract(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getTypeString : public BaseClass {

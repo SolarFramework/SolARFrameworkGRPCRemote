@@ -6,8 +6,8 @@
 #include "grpcIVisualInertialFusionService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -30,26 +30,26 @@ static const char* grpcIVisualInertialFusionService_method_names[] = {
 
 std::unique_ptr< grpcIVisualInertialFusionService::Stub> grpcIVisualInertialFusionService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIVisualInertialFusionService::Stub> stub(new grpcIVisualInertialFusionService::Stub(channel, options));
+  std::unique_ptr< grpcIVisualInertialFusionService::Stub> stub(new grpcIVisualInertialFusionService::Stub(channel));
   return stub;
 }
 
-grpcIVisualInertialFusionService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_init_(grpcIVisualInertialFusionService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_addInertialData_(grpcIVisualInertialFusionService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_addVisionData_(grpcIVisualInertialFusionService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_process_(grpcIVisualInertialFusionService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIVisualInertialFusionService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_init_(grpcIVisualInertialFusionService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_addInertialData_(grpcIVisualInertialFusionService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_addVisionData_(grpcIVisualInertialFusionService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_process_(grpcIVisualInertialFusionService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIVisualInertialFusionService::Stub::init(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::initRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIVisualInertialFusion::initRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
 }
 
-void grpcIVisualInertialFusionService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::initRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIVisualInertialFusionService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::initRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIVisualInertialFusion::initRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, std::move(f));
 }
 
-void grpcIVisualInertialFusionService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::initRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIVisualInertialFusionService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::initRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, reactor);
 }
 
@@ -68,11 +68,11 @@ void grpcIVisualInertialFusionService::Stub::async::init(::grpc::ClientContext* 
   return ::grpc::internal::BlockingUnaryCall< ::grpcIVisualInertialFusion::addInertialDataRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addInertialData_, context, request, response);
 }
 
-void grpcIVisualInertialFusionService::Stub::async::addInertialData(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::addInertialDataRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIVisualInertialFusionService::Stub::experimental_async::addInertialData(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::addInertialDataRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIVisualInertialFusion::addInertialDataRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addInertialData_, context, request, response, std::move(f));
 }
 
-void grpcIVisualInertialFusionService::Stub::async::addInertialData(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::addInertialDataRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIVisualInertialFusionService::Stub::experimental_async::addInertialData(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::addInertialDataRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addInertialData_, context, request, response, reactor);
 }
 
@@ -91,11 +91,11 @@ void grpcIVisualInertialFusionService::Stub::async::addInertialData(::grpc::Clie
   return ::grpc::internal::BlockingUnaryCall< ::grpcIVisualInertialFusion::addVisionDataRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_addVisionData_, context, request, response);
 }
 
-void grpcIVisualInertialFusionService::Stub::async::addVisionData(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::addVisionDataRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcIVisualInertialFusionService::Stub::experimental_async::addVisionData(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::addVisionDataRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIVisualInertialFusion::addVisionDataRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addVisionData_, context, request, response, std::move(f));
 }
 
-void grpcIVisualInertialFusionService::Stub::async::addVisionData(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::addVisionDataRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIVisualInertialFusionService::Stub::experimental_async::addVisionData(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::addVisionDataRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_addVisionData_, context, request, response, reactor);
 }
 
@@ -114,11 +114,11 @@ void grpcIVisualInertialFusionService::Stub::async::addVisionData(::grpc::Client
   return ::grpc::internal::BlockingUnaryCall< ::grpcIVisualInertialFusion::processRequest, ::grpcIVisualInertialFusion::processResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_process_, context, request, response);
 }
 
-void grpcIVisualInertialFusionService::Stub::async::process(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::processRequest* request, ::grpcIVisualInertialFusion::processResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIVisualInertialFusionService::Stub::experimental_async::process(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::processRequest* request, ::grpcIVisualInertialFusion::processResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIVisualInertialFusion::processRequest, ::grpcIVisualInertialFusion::processResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_process_, context, request, response, std::move(f));
 }
 
-void grpcIVisualInertialFusionService::Stub::async::process(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::processRequest* request, ::grpcIVisualInertialFusion::processResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIVisualInertialFusionService::Stub::experimental_async::process(::grpc::ClientContext* context, const ::grpcIVisualInertialFusion::processRequest* request, ::grpcIVisualInertialFusion::processResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_process_, context, request, response, reactor);
 }
 

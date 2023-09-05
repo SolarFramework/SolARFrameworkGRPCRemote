@@ -16,136 +16,122 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
 namespace grpcIVisualInertialFusion {
-PROTOBUF_CONSTEXPR initRequest::initRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.initialvisiondata_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+constexpr initRequest::initRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : initialvisiondata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct initRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR initRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr initRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~initRequestDefaultTypeInternal() {}
   union {
     initRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 initRequestDefaultTypeInternal _initRequest_default_instance_;
-PROTOBUF_CONSTEXPR addInertialDataRequest::addInertialDataRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.inertialdata_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT initRequestDefaultTypeInternal _initRequest_default_instance_;
+constexpr addInertialDataRequest::addInertialDataRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : inertialdata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct addInertialDataRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR addInertialDataRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr addInertialDataRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~addInertialDataRequestDefaultTypeInternal() {}
   union {
     addInertialDataRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 addInertialDataRequestDefaultTypeInternal _addInertialDataRequest_default_instance_;
-PROTOBUF_CONSTEXPR addVisionDataRequest::addVisionDataRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.visiondata_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT addInertialDataRequestDefaultTypeInternal _addInertialDataRequest_default_instance_;
+constexpr addVisionDataRequest::addVisionDataRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : visiondata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct addVisionDataRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR addVisionDataRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr addVisionDataRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~addVisionDataRequestDefaultTypeInternal() {}
   union {
     addVisionDataRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 addVisionDataRequestDefaultTypeInternal _addVisionDataRequest_default_instance_;
-PROTOBUF_CONSTEXPR processRequest::processRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.outputdata_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT addVisionDataRequestDefaultTypeInternal _addVisionDataRequest_default_instance_;
+constexpr processRequest::processRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : outputdata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , grpcservercompressionformat_(0){}
 struct processRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR processRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr processRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~processRequestDefaultTypeInternal() {}
   union {
     processRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 processRequestDefaultTypeInternal _processRequest_default_instance_;
-PROTOBUF_CONSTEXPR processResponse::processResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.outputdata_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT processRequestDefaultTypeInternal _processRequest_default_instance_;
+constexpr processResponse::processResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : outputdata_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , xpcfgrpcreturnvalue_(0){}
 struct processResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR processResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  constexpr processResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
   ~processResponseDefaultTypeInternal() {}
   union {
     processResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 processResponseDefaultTypeInternal _processResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT processResponseDefaultTypeInternal _processResponse_default_instance_;
 }  // namespace grpcIVisualInertialFusion
-static ::_pb::Metadata file_level_metadata_grpcIVisualInertialFusionService_2eproto[5];
-static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_grpcIVisualInertialFusionService_2eproto = nullptr;
-static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_grpcIVisualInertialFusionService_2eproto = nullptr;
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcIVisualInertialFusionService_2eproto[5];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcIVisualInertialFusionService_2eproto = nullptr;
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcIVisualInertialFusionService_2eproto = nullptr;
 
-const uint32_t TableStruct_grpcIVisualInertialFusionService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcIVisualInertialFusionService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::initRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::initRequest, _impl_.initialvisiondata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::initRequest, initialvisiondata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::addInertialDataRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::addInertialDataRequest, _impl_.inertialdata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::addInertialDataRequest, inertialdata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::addVisionDataRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::addVisionDataRequest, _impl_.visiondata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::addVisionDataRequest, visiondata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processRequest, _impl_.outputdata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processRequest, outputdata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processResponse, _impl_.outputdata_),
-  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processResponse, outputdata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIVisualInertialFusion::processResponse, xpcfgrpcreturnvalue_),
 };
-static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::grpcIVisualInertialFusion::initRequest)},
-  { 7, -1, -1, sizeof(::grpcIVisualInertialFusion::addInertialDataRequest)},
-  { 14, -1, -1, sizeof(::grpcIVisualInertialFusion::addVisionDataRequest)},
-  { 21, -1, -1, sizeof(::grpcIVisualInertialFusion::processRequest)},
-  { 29, -1, -1, sizeof(::grpcIVisualInertialFusion::processResponse)},
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, sizeof(::grpcIVisualInertialFusion::initRequest)},
+  { 6, -1, sizeof(::grpcIVisualInertialFusion::addInertialDataRequest)},
+  { 12, -1, sizeof(::grpcIVisualInertialFusion::addVisionDataRequest)},
+  { 18, -1, sizeof(::grpcIVisualInertialFusion::processRequest)},
+  { 25, -1, sizeof(::grpcIVisualInertialFusion::processResponse)},
 };
 
-static const ::_pb::Message* const file_default_instances[] = {
-  &::grpcIVisualInertialFusion::_initRequest_default_instance_._instance,
-  &::grpcIVisualInertialFusion::_addInertialDataRequest_default_instance_._instance,
-  &::grpcIVisualInertialFusion::_addVisionDataRequest_default_instance_._instance,
-  &::grpcIVisualInertialFusion::_processRequest_default_instance_._instance,
-  &::grpcIVisualInertialFusion::_processResponse_default_instance_._instance,
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIVisualInertialFusion::_initRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIVisualInertialFusion::_addInertialDataRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIVisualInertialFusion::_addVisionDataRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIVisualInertialFusion::_processRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcIVisualInertialFusion::_processResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_grpcIVisualInertialFusionService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -170,24 +156,24 @@ const char descriptor_table_protodef_grpcIVisualInertialFusionService_2eproto[] 
   "equest\032*.grpcIVisualInertialFusion.proce"
   "ssResponse\"\000b\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_grpcIVisualInertialFusionService_2eproto_deps[1] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcIVisualInertialFusionService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
-static ::_pbi::once_flag descriptor_table_grpcIVisualInertialFusionService_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_grpcIVisualInertialFusionService_2eproto = {
-    false, false, 780, descriptor_table_protodef_grpcIVisualInertialFusionService_2eproto,
-    "grpcIVisualInertialFusionService.proto",
-    &descriptor_table_grpcIVisualInertialFusionService_2eproto_once, descriptor_table_grpcIVisualInertialFusionService_2eproto_deps, 1, 5,
-    schemas, file_default_instances, TableStruct_grpcIVisualInertialFusionService_2eproto::offsets,
-    file_level_metadata_grpcIVisualInertialFusionService_2eproto, file_level_enum_descriptors_grpcIVisualInertialFusionService_2eproto,
-    file_level_service_descriptors_grpcIVisualInertialFusionService_2eproto,
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcIVisualInertialFusionService_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIVisualInertialFusionService_2eproto = {
+  false, false, 780, descriptor_table_protodef_grpcIVisualInertialFusionService_2eproto, "grpcIVisualInertialFusionService.proto", 
+  &descriptor_table_grpcIVisualInertialFusionService_2eproto_once, descriptor_table_grpcIVisualInertialFusionService_2eproto_deps, 1, 5,
+  schemas, file_default_instances, TableStruct_grpcIVisualInertialFusionService_2eproto::offsets,
+  file_level_metadata_grpcIVisualInertialFusionService_2eproto, file_level_enum_descriptors_grpcIVisualInertialFusionService_2eproto, file_level_service_descriptors_grpcIVisualInertialFusionService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_grpcIVisualInertialFusionService_2eproto_getter() {
-  return &descriptor_table_grpcIVisualInertialFusionService_2eproto;
+PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
+descriptor_table_grpcIVisualInertialFusionService_2eproto_metadata_getter(int index) {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcIVisualInertialFusionService_2eproto);
+  return descriptor_table_grpcIVisualInertialFusionService_2eproto.file_level_metadata[index];
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_grpcIVisualInertialFusionService_2eproto(&descriptor_table_grpcIVisualInertialFusionService_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_grpcIVisualInertialFusionService_2eproto(&descriptor_table_grpcIVisualInertialFusionService_2eproto);
 namespace grpcIVisualInertialFusion {
 
 // ===================================================================
@@ -196,125 +182,109 @@ class initRequest::_Internal {
  public:
 };
 
-initRequest::initRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+initRequest::initRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIVisualInertialFusion.initRequest)
 }
 initRequest::initRequest(const initRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  initRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.initialvisiondata_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.initialvisiondata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.initialvisiondata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  initialvisiondata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_initialvisiondata().empty()) {
-    _this->_impl_.initialvisiondata_.Set(from._internal_initialvisiondata(), 
-      _this->GetArenaForAllocation());
+    initialvisiondata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_initialvisiondata(), 
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIVisualInertialFusion.initRequest)
 }
 
-inline void initRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.initialvisiondata_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.initialvisiondata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.initialvisiondata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void initRequest::SharedCtor() {
+initialvisiondata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 initRequest::~initRequest() {
   // @@protoc_insertion_point(destructor:grpcIVisualInertialFusion.initRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void initRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.initialvisiondata_.Destroy();
+void initRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  initialvisiondata_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void initRequest::ArenaDtor(void* object) {
+  initRequest* _this = reinterpret_cast< initRequest* >(object);
+  (void)_this;
+}
+void initRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void initRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void initRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcIVisualInertialFusion.initRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.initialvisiondata_.ClearToEmpty();
+  initialvisiondata_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* initRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* initRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes initialVisionData = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_initialvisiondata();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* initRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* initRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcIVisualInertialFusion.initRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes initialVisionData = 1;
-  if (!this->_internal_initialvisiondata().empty()) {
+  if (this->initialvisiondata().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_initialvisiondata(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcIVisualInertialFusion.initRequest)
@@ -325,39 +295,58 @@ size_t initRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcIVisualInertialFusion.initRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes initialVisionData = 1;
-  if (!this->_internal_initialvisiondata().empty()) {
+  if (this->initialvisiondata().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_initialvisiondata());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData initRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    initRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*initRequest::GetClassData() const { return &_class_data_; }
+void initRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIVisualInertialFusion.initRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const initRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<initRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIVisualInertialFusion.initRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIVisualInertialFusion.initRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void initRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<initRequest*>(&to_msg);
-  auto& from = static_cast<const initRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.initRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void initRequest::MergeFrom(const initRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.initRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_initialvisiondata().empty()) {
-    _this->_internal_set_initialvisiondata(from._internal_initialvisiondata());
+  if (from.initialvisiondata().size() > 0) {
+    _internal_set_initialvisiondata(from._internal_initialvisiondata());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void initRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIVisualInertialFusion.initRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void initRequest::CopyFrom(const initRequest& from) {
@@ -373,20 +362,14 @@ bool initRequest::IsInitialized() const {
 
 void initRequest::InternalSwap(initRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.initialvisiondata_, lhs_arena,
-      &other->_impl_.initialvisiondata_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  initialvisiondata_.Swap(&other->initialvisiondata_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata initRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_grpcIVisualInertialFusionService_2eproto_getter, &descriptor_table_grpcIVisualInertialFusionService_2eproto_once,
-      file_level_metadata_grpcIVisualInertialFusionService_2eproto[0]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -394,125 +377,109 @@ class addInertialDataRequest::_Internal {
  public:
 };
 
-addInertialDataRequest::addInertialDataRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+addInertialDataRequest::addInertialDataRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIVisualInertialFusion.addInertialDataRequest)
 }
 addInertialDataRequest::addInertialDataRequest(const addInertialDataRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  addInertialDataRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.inertialdata_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.inertialdata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.inertialdata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  inertialdata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_inertialdata().empty()) {
-    _this->_impl_.inertialdata_.Set(from._internal_inertialdata(), 
-      _this->GetArenaForAllocation());
+    inertialdata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_inertialdata(), 
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIVisualInertialFusion.addInertialDataRequest)
 }
 
-inline void addInertialDataRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.inertialdata_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.inertialdata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.inertialdata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void addInertialDataRequest::SharedCtor() {
+inertialdata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 addInertialDataRequest::~addInertialDataRequest() {
   // @@protoc_insertion_point(destructor:grpcIVisualInertialFusion.addInertialDataRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void addInertialDataRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.inertialdata_.Destroy();
+void addInertialDataRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  inertialdata_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void addInertialDataRequest::ArenaDtor(void* object) {
+  addInertialDataRequest* _this = reinterpret_cast< addInertialDataRequest* >(object);
+  (void)_this;
+}
+void addInertialDataRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void addInertialDataRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void addInertialDataRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcIVisualInertialFusion.addInertialDataRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.inertialdata_.ClearToEmpty();
+  inertialdata_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* addInertialDataRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* addInertialDataRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes inertialData = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_inertialdata();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* addInertialDataRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* addInertialDataRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcIVisualInertialFusion.addInertialDataRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes inertialData = 1;
-  if (!this->_internal_inertialdata().empty()) {
+  if (this->inertialdata().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_inertialdata(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcIVisualInertialFusion.addInertialDataRequest)
@@ -523,39 +490,58 @@ size_t addInertialDataRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcIVisualInertialFusion.addInertialDataRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes inertialData = 1;
-  if (!this->_internal_inertialdata().empty()) {
+  if (this->inertialdata().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_inertialdata());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData addInertialDataRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    addInertialDataRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*addInertialDataRequest::GetClassData() const { return &_class_data_; }
+void addInertialDataRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIVisualInertialFusion.addInertialDataRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const addInertialDataRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<addInertialDataRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIVisualInertialFusion.addInertialDataRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIVisualInertialFusion.addInertialDataRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void addInertialDataRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<addInertialDataRequest*>(&to_msg);
-  auto& from = static_cast<const addInertialDataRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.addInertialDataRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void addInertialDataRequest::MergeFrom(const addInertialDataRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.addInertialDataRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_inertialdata().empty()) {
-    _this->_internal_set_inertialdata(from._internal_inertialdata());
+  if (from.inertialdata().size() > 0) {
+    _internal_set_inertialdata(from._internal_inertialdata());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void addInertialDataRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIVisualInertialFusion.addInertialDataRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void addInertialDataRequest::CopyFrom(const addInertialDataRequest& from) {
@@ -571,20 +557,14 @@ bool addInertialDataRequest::IsInitialized() const {
 
 void addInertialDataRequest::InternalSwap(addInertialDataRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.inertialdata_, lhs_arena,
-      &other->_impl_.inertialdata_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  inertialdata_.Swap(&other->inertialdata_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata addInertialDataRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_grpcIVisualInertialFusionService_2eproto_getter, &descriptor_table_grpcIVisualInertialFusionService_2eproto_once,
-      file_level_metadata_grpcIVisualInertialFusionService_2eproto[1]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -592,125 +572,109 @@ class addVisionDataRequest::_Internal {
  public:
 };
 
-addVisionDataRequest::addVisionDataRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+addVisionDataRequest::addVisionDataRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIVisualInertialFusion.addVisionDataRequest)
 }
 addVisionDataRequest::addVisionDataRequest(const addVisionDataRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  addVisionDataRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.visiondata_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.visiondata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.visiondata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  visiondata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_visiondata().empty()) {
-    _this->_impl_.visiondata_.Set(from._internal_visiondata(), 
-      _this->GetArenaForAllocation());
+    visiondata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_visiondata(), 
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIVisualInertialFusion.addVisionDataRequest)
 }
 
-inline void addVisionDataRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.visiondata_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.visiondata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.visiondata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void addVisionDataRequest::SharedCtor() {
+visiondata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 addVisionDataRequest::~addVisionDataRequest() {
   // @@protoc_insertion_point(destructor:grpcIVisualInertialFusion.addVisionDataRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void addVisionDataRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.visiondata_.Destroy();
+void addVisionDataRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  visiondata_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void addVisionDataRequest::ArenaDtor(void* object) {
+  addVisionDataRequest* _this = reinterpret_cast< addVisionDataRequest* >(object);
+  (void)_this;
+}
+void addVisionDataRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void addVisionDataRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void addVisionDataRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcIVisualInertialFusion.addVisionDataRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.visiondata_.ClearToEmpty();
+  visiondata_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* addVisionDataRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* addVisionDataRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes visionData = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_visiondata();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* addVisionDataRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* addVisionDataRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcIVisualInertialFusion.addVisionDataRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes visionData = 1;
-  if (!this->_internal_visiondata().empty()) {
+  if (this->visiondata().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_visiondata(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcIVisualInertialFusion.addVisionDataRequest)
@@ -721,39 +685,58 @@ size_t addVisionDataRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcIVisualInertialFusion.addVisionDataRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes visionData = 1;
-  if (!this->_internal_visiondata().empty()) {
+  if (this->visiondata().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_visiondata());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData addVisionDataRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    addVisionDataRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*addVisionDataRequest::GetClassData() const { return &_class_data_; }
+void addVisionDataRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIVisualInertialFusion.addVisionDataRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const addVisionDataRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<addVisionDataRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIVisualInertialFusion.addVisionDataRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIVisualInertialFusion.addVisionDataRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void addVisionDataRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<addVisionDataRequest*>(&to_msg);
-  auto& from = static_cast<const addVisionDataRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.addVisionDataRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void addVisionDataRequest::MergeFrom(const addVisionDataRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.addVisionDataRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_visiondata().empty()) {
-    _this->_internal_set_visiondata(from._internal_visiondata());
+  if (from.visiondata().size() > 0) {
+    _internal_set_visiondata(from._internal_visiondata());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void addVisionDataRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIVisualInertialFusion.addVisionDataRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void addVisionDataRequest::CopyFrom(const addVisionDataRequest& from) {
@@ -769,20 +752,14 @@ bool addVisionDataRequest::IsInitialized() const {
 
 void addVisionDataRequest::InternalSwap(addVisionDataRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.visiondata_, lhs_arena,
-      &other->_impl_.visiondata_, rhs_arena
-  );
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  visiondata_.Swap(&other->visiondata_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata addVisionDataRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_grpcIVisualInertialFusionService_2eproto_getter, &descriptor_table_grpcIVisualInertialFusionService_2eproto_once,
-      file_level_metadata_grpcIVisualInertialFusionService_2eproto[2]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -790,143 +767,125 @@ class processRequest::_Internal {
  public:
 };
 
-processRequest::processRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+processRequest::processRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIVisualInertialFusion.processRequest)
 }
 processRequest::processRequest(const processRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  processRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.outputdata_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.outputdata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.outputdata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  outputdata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_outputdata().empty()) {
-    _this->_impl_.outputdata_.Set(from._internal_outputdata(), 
-      _this->GetArenaForAllocation());
+    outputdata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_outputdata(), 
+      GetArena());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIVisualInertialFusion.processRequest)
 }
 
-inline void processRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.outputdata_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.outputdata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.outputdata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void processRequest::SharedCtor() {
+outputdata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+grpcservercompressionformat_ = 0;
 }
 
 processRequest::~processRequest() {
   // @@protoc_insertion_point(destructor:grpcIVisualInertialFusion.processRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void processRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.outputdata_.Destroy();
+void processRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  outputdata_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void processRequest::ArenaDtor(void* object) {
+  processRequest* _this = reinterpret_cast< processRequest* >(object);
+  (void)_this;
+}
+void processRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void processRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void processRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcIVisualInertialFusion.processRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.outputdata_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  outputdata_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* processRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* processRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // bytes outputData = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_outputdata();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* processRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* processRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcIVisualInertialFusion.processRequest)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 grpcServerCompressionFormat = 1;
-  if (this->_internal_grpcservercompressionformat() != 0) {
+  if (this->grpcservercompressionformat() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
   // bytes outputData = 2;
-  if (!this->_internal_outputdata().empty()) {
+  if (this->outputdata().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_outputdata(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcIVisualInertialFusion.processRequest)
@@ -937,47 +896,68 @@ size_t processRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcIVisualInertialFusion.processRequest)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes outputData = 2;
-  if (!this->_internal_outputdata().empty()) {
+  if (this->outputdata().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_outputdata());
   }
 
   // int32 grpcServerCompressionFormat = 1;
-  if (this->_internal_grpcservercompressionformat() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
+  if (this->grpcservercompressionformat() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData processRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    processRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*processRequest::GetClassData() const { return &_class_data_; }
+void processRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIVisualInertialFusion.processRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const processRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<processRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIVisualInertialFusion.processRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIVisualInertialFusion.processRequest)
+    MergeFrom(*source);
+  }
+}
 
-
-void processRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<processRequest*>(&to_msg);
-  auto& from = static_cast<const processRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.processRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void processRequest::MergeFrom(const processRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.processRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_outputdata().empty()) {
-    _this->_internal_set_outputdata(from._internal_outputdata());
+  if (from.outputdata().size() > 0) {
+    _internal_set_outputdata(from._internal_outputdata());
   }
-  if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  if (from.grpcservercompressionformat() != 0) {
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void processRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIVisualInertialFusion.processRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void processRequest::CopyFrom(const processRequest& from) {
@@ -993,21 +973,15 @@ bool processRequest::IsInitialized() const {
 
 void processRequest::InternalSwap(processRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.outputdata_, lhs_arena,
-      &other->_impl_.outputdata_, rhs_arena
-  );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  outputdata_.Swap(&other->outputdata_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata processRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_grpcIVisualInertialFusionService_2eproto_getter, &descriptor_table_grpcIVisualInertialFusionService_2eproto_once,
-      file_level_metadata_grpcIVisualInertialFusionService_2eproto[3]);
+  return GetMetadataStatic();
 }
+
 
 // ===================================================================
 
@@ -1015,143 +989,125 @@ class processResponse::_Internal {
  public:
 };
 
-processResponse::processResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+processResponse::processResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:grpcIVisualInertialFusion.processResponse)
 }
 processResponse::processResponse(const processResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  processResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.outputdata_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.outputdata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.outputdata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  outputdata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_outputdata().empty()) {
-    _this->_impl_.outputdata_.Set(from._internal_outputdata(), 
-      _this->GetArenaForAllocation());
+    outputdata_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_outputdata(), 
+      GetArena());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIVisualInertialFusion.processResponse)
 }
 
-inline void processResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.outputdata_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.outputdata_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.outputdata_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+void processResponse::SharedCtor() {
+outputdata_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+xpcfgrpcreturnvalue_ = 0;
 }
 
 processResponse::~processResponse() {
   // @@protoc_insertion_point(destructor:grpcIVisualInertialFusion.processResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void processResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.outputdata_.Destroy();
+void processResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  outputdata_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void processResponse::ArenaDtor(void* object) {
+  processResponse* _this = reinterpret_cast< processResponse* >(object);
+  (void)_this;
+}
+void processResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void processResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void processResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcIVisualInertialFusion.processResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.outputdata_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  outputdata_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* processResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* processResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
     switch (tag >> 3) {
       // bytes outputData = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_outputdata();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
+        } else goto handle_unusual;
         continue;
-      default:
-        goto handle_unusual;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
     }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
   }  // while
-message_done:
+success:
   return ptr;
 failure:
   ptr = nullptr;
-  goto message_done;
+  goto success;
 #undef CHK_
 }
 
-uint8_t* processResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+::PROTOBUF_NAMESPACE_ID::uint8* processResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcIVisualInertialFusion.processResponse)
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes outputData = 1;
-  if (!this->_internal_outputdata().empty()) {
+  if (this->outputdata().size() > 0) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_outputdata(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+  if (this->xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcIVisualInertialFusion.processResponse)
@@ -1162,47 +1118,68 @@ size_t processResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcIVisualInertialFusion.processResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes outputData = 1;
-  if (!this->_internal_outputdata().empty()) {
+  if (this->outputdata().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_outputdata());
   }
 
   // sint32 xpcfGrpcReturnValue = 2;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
-    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
+  if (this->xpcfgrpcreturnvalue() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
+        this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData processResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    processResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*processResponse::GetClassData() const { return &_class_data_; }
+void processResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:grpcIVisualInertialFusion.processResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const processResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<processResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcIVisualInertialFusion.processResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcIVisualInertialFusion.processResponse)
+    MergeFrom(*source);
+  }
+}
 
-
-void processResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<processResponse*>(&to_msg);
-  auto& from = static_cast<const processResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.processResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
+void processResponse::MergeFrom(const processResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIVisualInertialFusion.processResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_outputdata().empty()) {
-    _this->_internal_set_outputdata(from._internal_outputdata());
+  if (from.outputdata().size() > 0) {
+    _internal_set_outputdata(from._internal_outputdata());
   }
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  if (from.xpcfgrpcreturnvalue() != 0) {
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void processResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:grpcIVisualInertialFusion.processResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void processResponse::CopyFrom(const processResponse& from) {
@@ -1218,43 +1195,32 @@ bool processResponse::IsInitialized() const {
 
 void processResponse::InternalSwap(processResponse* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.outputdata_, lhs_arena,
-      &other->_impl_.outputdata_, rhs_arena
-  );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  outputdata_.Swap(&other->outputdata_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata processResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_grpcIVisualInertialFusionService_2eproto_getter, &descriptor_table_grpcIVisualInertialFusionService_2eproto_once,
-      file_level_metadata_grpcIVisualInertialFusionService_2eproto[4]);
+  return GetMetadataStatic();
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIVisualInertialFusion
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::initRequest*
-Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::initRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::initRequest* Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::initRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIVisualInertialFusion::initRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::addInertialDataRequest*
-Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::addInertialDataRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::addInertialDataRequest* Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::addInertialDataRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIVisualInertialFusion::addInertialDataRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::addVisionDataRequest*
-Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::addVisionDataRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::addVisionDataRequest* Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::addVisionDataRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIVisualInertialFusion::addVisionDataRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::processRequest*
-Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::processRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::processRequest* Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::processRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIVisualInertialFusion::processRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::processResponse*
-Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::processResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcIVisualInertialFusion::processResponse* Arena::CreateMaybeMessage< ::grpcIVisualInertialFusion::processResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIVisualInertialFusion::processResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

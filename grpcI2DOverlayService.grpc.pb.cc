@@ -6,8 +6,8 @@
 #include "grpcI2DOverlayService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -32,28 +32,28 @@ static const char* grpcI2DOverlayService_method_names[] = {
 
 std::unique_ptr< grpcI2DOverlayService::Stub> grpcI2DOverlayService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcI2DOverlayService::Stub> stub(new grpcI2DOverlayService::Stub(channel, options));
+  std::unique_ptr< grpcI2DOverlayService::Stub> stub(new grpcI2DOverlayService::Stub(channel));
   return stub;
 }
 
-grpcI2DOverlayService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_drawCircle_(grpcI2DOverlayService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_drawCircles_grpc0_(grpcI2DOverlayService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_drawCircles_grpc1_(grpcI2DOverlayService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_drawContour_(grpcI2DOverlayService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_drawContours_(grpcI2DOverlayService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_drawSBPattern_(grpcI2DOverlayService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcI2DOverlayService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_drawCircle_(grpcI2DOverlayService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_drawCircles_grpc0_(grpcI2DOverlayService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_drawCircles_grpc1_(grpcI2DOverlayService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_drawContour_(grpcI2DOverlayService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_drawContours_(grpcI2DOverlayService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_drawSBPattern_(grpcI2DOverlayService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcI2DOverlayService::Stub::drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2DOverlay::drawCircleRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_drawCircle_, context, request, response);
 }
 
-void grpcI2DOverlayService::Stub::async::drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI2DOverlayService::Stub::experimental_async::drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2DOverlay::drawCircleRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawCircle_, context, request, response, std::move(f));
 }
 
-void grpcI2DOverlayService::Stub::async::drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI2DOverlayService::Stub::experimental_async::drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawCircle_, context, request, response, reactor);
 }
 
@@ -72,11 +72,11 @@ void grpcI2DOverlayService::Stub::async::drawCircle(::grpc::ClientContext* conte
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2DOverlay::drawCircles_grpc0Request, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_drawCircles_grpc0_, context, request, response);
 }
 
-void grpcI2DOverlayService::Stub::async::drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI2DOverlayService::Stub::experimental_async::drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2DOverlay::drawCircles_grpc0Request, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawCircles_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcI2DOverlayService::Stub::async::drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI2DOverlayService::Stub::experimental_async::drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawCircles_grpc0_, context, request, response, reactor);
 }
 
@@ -95,11 +95,11 @@ void grpcI2DOverlayService::Stub::async::drawCircles_grpc0(::grpc::ClientContext
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2DOverlay::drawCircles_grpc1Request, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_drawCircles_grpc1_, context, request, response);
 }
 
-void grpcI2DOverlayService::Stub::async::drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI2DOverlayService::Stub::experimental_async::drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2DOverlay::drawCircles_grpc1Request, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawCircles_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcI2DOverlayService::Stub::async::drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI2DOverlayService::Stub::experimental_async::drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawCircles_grpc1_, context, request, response, reactor);
 }
 
@@ -118,11 +118,11 @@ void grpcI2DOverlayService::Stub::async::drawCircles_grpc1(::grpc::ClientContext
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2DOverlay::drawContourRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_drawContour_, context, request, response);
 }
 
-void grpcI2DOverlayService::Stub::async::drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI2DOverlayService::Stub::experimental_async::drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2DOverlay::drawContourRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawContour_, context, request, response, std::move(f));
 }
 
-void grpcI2DOverlayService::Stub::async::drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI2DOverlayService::Stub::experimental_async::drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawContour_, context, request, response, reactor);
 }
 
@@ -141,11 +141,11 @@ void grpcI2DOverlayService::Stub::async::drawContour(::grpc::ClientContext* cont
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2DOverlay::drawContoursRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_drawContours_, context, request, response);
 }
 
-void grpcI2DOverlayService::Stub::async::drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI2DOverlayService::Stub::experimental_async::drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2DOverlay::drawContoursRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawContours_, context, request, response, std::move(f));
 }
 
-void grpcI2DOverlayService::Stub::async::drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI2DOverlayService::Stub::experimental_async::drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawContours_, context, request, response, reactor);
 }
 
@@ -164,11 +164,11 @@ void grpcI2DOverlayService::Stub::async::drawContours(::grpc::ClientContext* con
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2DOverlay::drawSBPatternRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_drawSBPattern_, context, request, response);
 }
 
-void grpcI2DOverlayService::Stub::async::drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI2DOverlayService::Stub::experimental_async::drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2DOverlay::drawSBPatternRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawSBPattern_, context, request, response, std::move(f));
 }
 
-void grpcI2DOverlayService::Stub::async::drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcI2DOverlayService::Stub::experimental_async::drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_drawSBPattern_, context, request, response, reactor);
 }
 

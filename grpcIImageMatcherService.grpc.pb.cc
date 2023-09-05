@@ -6,8 +6,8 @@
 #include "grpcIImageMatcherService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcIImageMatcherService_method_names[] = {
 
 std::unique_ptr< grpcIImageMatcherService::Stub> grpcIImageMatcherService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIImageMatcherService::Stub> stub(new grpcIImageMatcherService::Stub(channel, options));
+  std::unique_ptr< grpcIImageMatcherService::Stub> stub(new grpcIImageMatcherService::Stub(channel));
   return stub;
 }
 
-grpcIImageMatcherService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_match_(grpcIImageMatcherService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIImageMatcherService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_match_(grpcIImageMatcherService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIImageMatcherService::Stub::match(::grpc::ClientContext* context, const ::grpcIImageMatcher::matchRequest& request, ::grpcIImageMatcher::matchResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIImageMatcher::matchRequest, ::grpcIImageMatcher::matchResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_match_, context, request, response);
 }
 
-void grpcIImageMatcherService::Stub::async::match(::grpc::ClientContext* context, const ::grpcIImageMatcher::matchRequest* request, ::grpcIImageMatcher::matchResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIImageMatcherService::Stub::experimental_async::match(::grpc::ClientContext* context, const ::grpcIImageMatcher::matchRequest* request, ::grpcIImageMatcher::matchResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIImageMatcher::matchRequest, ::grpcIImageMatcher::matchResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_, context, request, response, std::move(f));
 }
 
-void grpcIImageMatcherService::Stub::async::match(::grpc::ClientContext* context, const ::grpcIImageMatcher::matchRequest* request, ::grpcIImageMatcher::matchResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIImageMatcherService::Stub::experimental_async::match(::grpc::ClientContext* context, const ::grpcIImageMatcher::matchRequest* request, ::grpcIImageMatcher::matchResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_, context, request, response, reactor);
 }
 

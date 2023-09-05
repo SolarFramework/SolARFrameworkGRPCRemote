@@ -7,9 +7,10 @@
 #include "grpcIInstanceSegmentationService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -42,22 +43,30 @@ class grpcIInstanceSegmentationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIInstanceSegmentation::segmentResponse>> PrepareAsyncsegment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIInstanceSegmentation::segmentResponse>>(PrepareAsyncsegmentRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void segment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest* request, ::grpcIInstanceSegmentation::segmentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void segment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest* request, ::grpcIInstanceSegmentation::segmentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void segment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest* request, ::grpcIInstanceSegmentation::segmentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIInstanceSegmentation::segmentResponse>* AsyncsegmentRaw(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIInstanceSegmentation::segmentResponse>* PrepareAsyncsegmentRaw(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status segment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest& request, ::grpcIInstanceSegmentation::segmentResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIInstanceSegmentation::segmentResponse>> Asyncsegment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIInstanceSegmentation::segmentResponse>>(AsyncsegmentRaw(context, request, cq));
@@ -65,22 +74,26 @@ class grpcIInstanceSegmentationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIInstanceSegmentation::segmentResponse>> PrepareAsyncsegment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIInstanceSegmentation::segmentResponse>>(PrepareAsyncsegmentRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void segment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest* request, ::grpcIInstanceSegmentation::segmentResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void segment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest* request, ::grpcIInstanceSegmentation::segmentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void segment(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest* request, ::grpcIInstanceSegmentation::segmentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIInstanceSegmentation::segmentResponse>* AsyncsegmentRaw(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIInstanceSegmentation::segmentResponse>* PrepareAsyncsegmentRaw(::grpc::ClientContext* context, const ::grpcIInstanceSegmentation::segmentRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_segment_;
@@ -115,22 +128,36 @@ class grpcIInstanceSegmentationService final {
   };
   typedef WithAsyncMethod_segment<Service > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_segment : public BaseClass {
+  class ExperimentalWithCallbackMethod_segment : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_segment() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_segment() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIInstanceSegmentation::segmentRequest, ::grpcIInstanceSegmentation::segmentResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIInstanceSegmentation::segmentRequest* request, ::grpcIInstanceSegmentation::segmentResponse* response) { return this->segment(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIInstanceSegmentation::segmentRequest* request, ::grpcIInstanceSegmentation::segmentResponse* response) { return this->segment(context, request, response); }));}
     void SetMessageAllocatorFor_segment(
-        ::grpc::MessageAllocator< ::grpcIInstanceSegmentation::segmentRequest, ::grpcIInstanceSegmentation::segmentResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIInstanceSegmentation::segmentRequest, ::grpcIInstanceSegmentation::segmentResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIInstanceSegmentation::segmentRequest, ::grpcIInstanceSegmentation::segmentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_segment() override {
+    ~ExperimentalWithCallbackMethod_segment() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -138,11 +165,20 @@ class grpcIInstanceSegmentationService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* segment(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIInstanceSegmentation::segmentRequest* /*request*/, ::grpcIInstanceSegmentation::segmentResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIInstanceSegmentation::segmentRequest* /*request*/, ::grpcIInstanceSegmentation::segmentResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* segment(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIInstanceSegmentation::segmentRequest* /*request*/, ::grpcIInstanceSegmentation::segmentResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_segment<Service > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_segment<Service > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_segment<Service > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_segment : public BaseClass {
    private:
@@ -181,17 +217,27 @@ class grpcIInstanceSegmentationService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_segment : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_segment : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_segment() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_segment() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->segment(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->segment(context, request, response); }));
     }
-    ~WithRawCallbackMethod_segment() override {
+    ~ExperimentalWithRawCallbackMethod_segment() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -199,8 +245,14 @@ class grpcIInstanceSegmentationService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* segment(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* segment(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_segment : public BaseClass {

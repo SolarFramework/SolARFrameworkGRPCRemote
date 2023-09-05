@@ -6,8 +6,8 @@
 #include "grpcILoopClosureDetectorService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcILoopClosureDetectorService_method_names[] = {
 
 std::unique_ptr< grpcILoopClosureDetectorService::Stub> grpcILoopClosureDetectorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcILoopClosureDetectorService::Stub> stub(new grpcILoopClosureDetectorService::Stub(channel, options));
+  std::unique_ptr< grpcILoopClosureDetectorService::Stub> stub(new grpcILoopClosureDetectorService::Stub(channel));
   return stub;
 }
 
-grpcILoopClosureDetectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_detect_(grpcILoopClosureDetectorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcILoopClosureDetectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_detect_(grpcILoopClosureDetectorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcILoopClosureDetectorService::Stub::detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest& request, ::grpcILoopClosureDetector::detectResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcILoopClosureDetector::detectRequest, ::grpcILoopClosureDetector::detectResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_detect_, context, request, response);
 }
 
-void grpcILoopClosureDetectorService::Stub::async::detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcILoopClosureDetectorService::Stub::experimental_async::detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcILoopClosureDetector::detectRequest, ::grpcILoopClosureDetector::detectResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_, context, request, response, std::move(f));
 }
 
-void grpcILoopClosureDetectorService::Stub::async::detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcILoopClosureDetectorService::Stub::experimental_async::detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_detect_, context, request, response, reactor);
 }
 

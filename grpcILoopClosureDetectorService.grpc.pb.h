@@ -7,9 +7,10 @@
 #include "grpcILoopClosureDetectorService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -42,22 +43,30 @@ class grpcILoopClosureDetectorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcILoopClosureDetector::detectResponse>> PrepareAsyncdetect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcILoopClosureDetector::detectResponse>>(PrepareAsyncdetectRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcILoopClosureDetector::detectResponse>* AsyncdetectRaw(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcILoopClosureDetector::detectResponse>* PrepareAsyncdetectRaw(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest& request, ::grpcILoopClosureDetector::detectResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcILoopClosureDetector::detectResponse>> Asyncdetect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcILoopClosureDetector::detectResponse>>(AsyncdetectRaw(context, request, cq));
@@ -65,22 +74,26 @@ class grpcILoopClosureDetectorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcILoopClosureDetector::detectResponse>> PrepareAsyncdetect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcILoopClosureDetector::detectResponse>>(PrepareAsyncdetectRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void detect(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcILoopClosureDetector::detectResponse>* AsyncdetectRaw(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcILoopClosureDetector::detectResponse>* PrepareAsyncdetectRaw(::grpc::ClientContext* context, const ::grpcILoopClosureDetector::detectRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_detect_;
@@ -115,22 +128,36 @@ class grpcILoopClosureDetectorService final {
   };
   typedef WithAsyncMethod_detect<Service > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_detect : public BaseClass {
+  class ExperimentalWithCallbackMethod_detect : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_detect() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_detect() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcILoopClosureDetector::detectRequest, ::grpcILoopClosureDetector::detectResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response) { return this->detect(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcILoopClosureDetector::detectRequest* request, ::grpcILoopClosureDetector::detectResponse* response) { return this->detect(context, request, response); }));}
     void SetMessageAllocatorFor_detect(
-        ::grpc::MessageAllocator< ::grpcILoopClosureDetector::detectRequest, ::grpcILoopClosureDetector::detectResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcILoopClosureDetector::detectRequest, ::grpcILoopClosureDetector::detectResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcILoopClosureDetector::detectRequest, ::grpcILoopClosureDetector::detectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_detect() override {
+    ~ExperimentalWithCallbackMethod_detect() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -138,11 +165,20 @@ class grpcILoopClosureDetectorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* detect(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcILoopClosureDetector::detectRequest* /*request*/, ::grpcILoopClosureDetector::detectResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcILoopClosureDetector::detectRequest* /*request*/, ::grpcILoopClosureDetector::detectResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* detect(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcILoopClosureDetector::detectRequest* /*request*/, ::grpcILoopClosureDetector::detectResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_detect<Service > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_detect<Service > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_detect<Service > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_detect : public BaseClass {
    private:
@@ -181,17 +217,27 @@ class grpcILoopClosureDetectorService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_detect : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_detect : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_detect() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_detect() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->detect(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->detect(context, request, response); }));
     }
-    ~WithRawCallbackMethod_detect() override {
+    ~ExperimentalWithRawCallbackMethod_detect() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -199,8 +245,14 @@ class grpcILoopClosureDetectorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* detect(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* detect(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_detect : public BaseClass {

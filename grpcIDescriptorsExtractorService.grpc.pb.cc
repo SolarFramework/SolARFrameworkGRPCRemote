@@ -6,8 +6,8 @@
 #include "grpcIDescriptorsExtractorService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -28,24 +28,24 @@ static const char* grpcIDescriptorsExtractorService_method_names[] = {
 
 std::unique_ptr< grpcIDescriptorsExtractorService::Stub> grpcIDescriptorsExtractorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIDescriptorsExtractorService::Stub> stub(new grpcIDescriptorsExtractorService::Stub(channel, options));
+  std::unique_ptr< grpcIDescriptorsExtractorService::Stub> stub(new grpcIDescriptorsExtractorService::Stub(channel));
   return stub;
 }
 
-grpcIDescriptorsExtractorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_getTypeString_(grpcIDescriptorsExtractorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_extract_(grpcIDescriptorsExtractorService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIDescriptorsExtractorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_getTypeString_(grpcIDescriptorsExtractorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_extract_(grpcIDescriptorsExtractorService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIDescriptorsExtractorService::Stub::getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpcIDescriptorsExtractor::getTypeStringResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getTypeString_, context, request, response);
 }
 
-void grpcIDescriptorsExtractorService::Stub::async::getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDescriptorsExtractorService::Stub::experimental_async::getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpcIDescriptorsExtractor::getTypeStringResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getTypeString_, context, request, response, std::move(f));
 }
 
-void grpcIDescriptorsExtractorService::Stub::async::getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIDescriptorsExtractorService::Stub::experimental_async::getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getTypeString_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIDescriptorsExtractorService::Stub::async::getTypeString(::grpc::Client
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDescriptorsExtractor::extractRequest, ::grpcIDescriptorsExtractor::extractResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_extract_, context, request, response);
 }
 
-void grpcIDescriptorsExtractorService::Stub::async::extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDescriptorsExtractorService::Stub::experimental_async::extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDescriptorsExtractor::extractRequest, ::grpcIDescriptorsExtractor::extractResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_extract_, context, request, response, std::move(f));
 }
 
-void grpcIDescriptorsExtractorService::Stub::async::extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIDescriptorsExtractorService::Stub::experimental_async::extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_extract_, context, request, response, reactor);
 }
 

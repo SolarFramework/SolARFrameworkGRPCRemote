@@ -6,8 +6,8 @@
 #include "grpcIPanopticSegmentationService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcIPanopticSegmentationService_method_names[] = {
 
 std::unique_ptr< grpcIPanopticSegmentationService::Stub> grpcIPanopticSegmentationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIPanopticSegmentationService::Stub> stub(new grpcIPanopticSegmentationService::Stub(channel, options));
+  std::unique_ptr< grpcIPanopticSegmentationService::Stub> stub(new grpcIPanopticSegmentationService::Stub(channel));
   return stub;
 }
 
-grpcIPanopticSegmentationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_segment_(grpcIPanopticSegmentationService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIPanopticSegmentationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_segment_(grpcIPanopticSegmentationService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIPanopticSegmentationService::Stub::segment(::grpc::ClientContext* context, const ::grpcIPanopticSegmentation::segmentRequest& request, ::grpcIPanopticSegmentation::segmentResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPanopticSegmentation::segmentRequest, ::grpcIPanopticSegmentation::segmentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_segment_, context, request, response);
 }
 
-void grpcIPanopticSegmentationService::Stub::async::segment(::grpc::ClientContext* context, const ::grpcIPanopticSegmentation::segmentRequest* request, ::grpcIPanopticSegmentation::segmentResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPanopticSegmentationService::Stub::experimental_async::segment(::grpc::ClientContext* context, const ::grpcIPanopticSegmentation::segmentRequest* request, ::grpcIPanopticSegmentation::segmentResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPanopticSegmentation::segmentRequest, ::grpcIPanopticSegmentation::segmentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_segment_, context, request, response, std::move(f));
 }
 
-void grpcIPanopticSegmentationService::Stub::async::segment(::grpc::ClientContext* context, const ::grpcIPanopticSegmentation::segmentRequest* request, ::grpcIPanopticSegmentation::segmentResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIPanopticSegmentationService::Stub::experimental_async::segment(::grpc::ClientContext* context, const ::grpcIPanopticSegmentation::segmentRequest* request, ::grpcIPanopticSegmentation::segmentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_segment_, context, request, response, reactor);
 }
 

@@ -6,8 +6,8 @@
 #include "grpcIContoursExtractorService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcIContoursExtractorService_method_names[] = {
 
 std::unique_ptr< grpcIContoursExtractorService::Stub> grpcIContoursExtractorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIContoursExtractorService::Stub> stub(new grpcIContoursExtractorService::Stub(channel, options));
+  std::unique_ptr< grpcIContoursExtractorService::Stub> stub(new grpcIContoursExtractorService::Stub(channel));
   return stub;
 }
 
-grpcIContoursExtractorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_extract_(grpcIContoursExtractorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIContoursExtractorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_extract_(grpcIContoursExtractorService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIContoursExtractorService::Stub::extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest& request, ::grpcIContoursExtractor::extractResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIContoursExtractor::extractRequest, ::grpcIContoursExtractor::extractResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_extract_, context, request, response);
 }
 
-void grpcIContoursExtractorService::Stub::async::extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIContoursExtractorService::Stub::experimental_async::extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIContoursExtractor::extractRequest, ::grpcIContoursExtractor::extractResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_extract_, context, request, response, std::move(f));
 }
 
-void grpcIContoursExtractorService::Stub::async::extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIContoursExtractorService::Stub::experimental_async::extract(::grpc::ClientContext* context, const ::grpcIContoursExtractor::extractRequest* request, ::grpcIContoursExtractor::extractResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_extract_, context, request, response, reactor);
 }
 

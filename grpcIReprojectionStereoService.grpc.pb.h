@@ -7,9 +7,10 @@
 #include "grpcIReprojectionStereoService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -56,20 +57,36 @@ class grpcIReprojectionStereoService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response>> PrepareAsyncreprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response>>(PrepareAsyncreprojectToCloudPoints_grpc1Raw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>* AsyncreprojectToUnrectificationRaw(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>* PrepareAsyncreprojectToUnrectificationRaw(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response>* AsyncreprojectToCloudPoints_grpc0Raw(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -79,7 +96,7 @@ class grpcIReprojectionStereoService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest& request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>> AsyncreprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>>(AsyncreprojectToUnrectificationRaw(context, request, cq));
@@ -101,26 +118,38 @@ class grpcIReprojectionStereoService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response>> PrepareAsyncreprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response>>(PrepareAsyncreprojectToCloudPoints_grpc1Raw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>* AsyncreprojectToUnrectificationRaw(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>* PrepareAsyncreprojectToUnrectificationRaw(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response>* AsyncreprojectToCloudPoints_grpc0Raw(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
@@ -203,22 +232,36 @@ class grpcIReprojectionStereoService final {
   };
   typedef WithAsyncMethod_reprojectToUnrectification<WithAsyncMethod_reprojectToCloudPoints_grpc0<WithAsyncMethod_reprojectToCloudPoints_grpc1<Service > > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_reprojectToUnrectification : public BaseClass {
+  class ExperimentalWithCallbackMethod_reprojectToUnrectification : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_reprojectToUnrectification() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_reprojectToUnrectification() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIReprojectionStereo::reprojectToUnrectificationRequest, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response) { return this->reprojectToUnrectification(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response) { return this->reprojectToUnrectification(context, request, response); }));}
     void SetMessageAllocatorFor_reprojectToUnrectification(
-        ::grpc::MessageAllocator< ::grpcIReprojectionStereo::reprojectToUnrectificationRequest, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIReprojectionStereo::reprojectToUnrectificationRequest, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIReprojectionStereo::reprojectToUnrectificationRequest, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_reprojectToUnrectification() override {
+    ~ExperimentalWithCallbackMethod_reprojectToUnrectification() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -226,26 +269,46 @@ class grpcIReprojectionStereoService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* reprojectToUnrectification(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* /*request*/, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* /*request*/, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* reprojectToUnrectification(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* /*request*/, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_reprojectToCloudPoints_grpc0 : public BaseClass {
+  class ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_reprojectToCloudPoints_grpc0() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response) { return this->reprojectToCloudPoints_grpc0(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response) { return this->reprojectToCloudPoints_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_reprojectToCloudPoints_grpc0(
-        ::grpc::MessageAllocator< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_reprojectToCloudPoints_grpc0() override {
+    ~ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -253,26 +316,46 @@ class grpcIReprojectionStereoService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* reprojectToCloudPoints_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* /*request*/, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* /*request*/, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* reprojectToCloudPoints_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* /*request*/, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_reprojectToCloudPoints_grpc1 : public BaseClass {
+  class ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_reprojectToCloudPoints_grpc1() {
-      ::grpc::Service::MarkMethodCallback(2,
+    ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response) { return this->reprojectToCloudPoints_grpc1(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response) { return this->reprojectToCloudPoints_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_reprojectToCloudPoints_grpc1(
-        ::grpc::MessageAllocator< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_reprojectToCloudPoints_grpc1() override {
+    ~ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -280,11 +363,20 @@ class grpcIReprojectionStereoService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* reprojectToCloudPoints_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* /*request*/, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* /*request*/, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* reprojectToCloudPoints_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* /*request*/, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_reprojectToUnrectification<WithCallbackMethod_reprojectToCloudPoints_grpc0<WithCallbackMethod_reprojectToCloudPoints_grpc1<Service > > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_reprojectToUnrectification<ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc0<ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc1<Service > > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_reprojectToUnrectification<ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc0<ExperimentalWithCallbackMethod_reprojectToCloudPoints_grpc1<Service > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_reprojectToUnrectification : public BaseClass {
    private:
@@ -397,17 +489,27 @@ class grpcIReprojectionStereoService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_reprojectToUnrectification : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_reprojectToUnrectification : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_reprojectToUnrectification() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_reprojectToUnrectification() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->reprojectToUnrectification(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->reprojectToUnrectification(context, request, response); }));
     }
-    ~WithRawCallbackMethod_reprojectToUnrectification() override {
+    ~ExperimentalWithRawCallbackMethod_reprojectToUnrectification() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -415,21 +517,37 @@ class grpcIReprojectionStereoService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* reprojectToUnrectification(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* reprojectToUnrectification(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_reprojectToCloudPoints_grpc0 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_reprojectToCloudPoints_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_reprojectToCloudPoints_grpc0() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_reprojectToCloudPoints_grpc0() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->reprojectToCloudPoints_grpc0(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->reprojectToCloudPoints_grpc0(context, request, response); }));
     }
-    ~WithRawCallbackMethod_reprojectToCloudPoints_grpc0() override {
+    ~ExperimentalWithRawCallbackMethod_reprojectToCloudPoints_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -437,21 +555,37 @@ class grpcIReprojectionStereoService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* reprojectToCloudPoints_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* reprojectToCloudPoints_grpc0(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_reprojectToCloudPoints_grpc1 : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_reprojectToCloudPoints_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_reprojectToCloudPoints_grpc1() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+    ExperimentalWithRawCallbackMethod_reprojectToCloudPoints_grpc1() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->reprojectToCloudPoints_grpc1(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->reprojectToCloudPoints_grpc1(context, request, response); }));
     }
-    ~WithRawCallbackMethod_reprojectToCloudPoints_grpc1() override {
+    ~ExperimentalWithRawCallbackMethod_reprojectToCloudPoints_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -459,8 +593,14 @@ class grpcIReprojectionStereoService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* reprojectToCloudPoints_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* reprojectToCloudPoints_grpc1(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_reprojectToUnrectification : public BaseClass {

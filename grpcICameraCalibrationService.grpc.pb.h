@@ -7,9 +7,10 @@
 #include "grpcICameraCalibrationService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -42,22 +43,30 @@ class grpcICameraCalibrationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICameraCalibration::calibrateResponse>> PrepareAsynccalibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICameraCalibration::calibrateResponse>>(PrepareAsynccalibrateRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void calibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void calibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void calibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICameraCalibration::calibrateResponse>* AsynccalibrateRaw(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICameraCalibration::calibrateResponse>* PrepareAsynccalibrateRaw(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status calibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest& request, ::grpcICameraCalibration::calibrateResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICameraCalibration::calibrateResponse>> Asynccalibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICameraCalibration::calibrateResponse>>(AsynccalibrateRaw(context, request, cq));
@@ -65,22 +74,26 @@ class grpcICameraCalibrationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICameraCalibration::calibrateResponse>> PrepareAsynccalibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICameraCalibration::calibrateResponse>>(PrepareAsynccalibrateRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void calibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void calibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void calibrate(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcICameraCalibration::calibrateResponse>* AsynccalibrateRaw(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICameraCalibration::calibrateResponse>* PrepareAsynccalibrateRaw(::grpc::ClientContext* context, const ::grpcICameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_calibrate_;
@@ -115,22 +128,36 @@ class grpcICameraCalibrationService final {
   };
   typedef WithAsyncMethod_calibrate<Service > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_calibrate : public BaseClass {
+  class ExperimentalWithCallbackMethod_calibrate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_calibrate() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_calibrate() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICameraCalibration::calibrateRequest, ::grpcICameraCalibration::calibrateResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response) { return this->calibrate(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcICameraCalibration::calibrateRequest* request, ::grpcICameraCalibration::calibrateResponse* response) { return this->calibrate(context, request, response); }));}
     void SetMessageAllocatorFor_calibrate(
-        ::grpc::MessageAllocator< ::grpcICameraCalibration::calibrateRequest, ::grpcICameraCalibration::calibrateResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcICameraCalibration::calibrateRequest, ::grpcICameraCalibration::calibrateResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICameraCalibration::calibrateRequest, ::grpcICameraCalibration::calibrateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_calibrate() override {
+    ~ExperimentalWithCallbackMethod_calibrate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -138,11 +165,20 @@ class grpcICameraCalibrationService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* calibrate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICameraCalibration::calibrateRequest* /*request*/, ::grpcICameraCalibration::calibrateResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICameraCalibration::calibrateRequest* /*request*/, ::grpcICameraCalibration::calibrateResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* calibrate(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICameraCalibration::calibrateRequest* /*request*/, ::grpcICameraCalibration::calibrateResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_calibrate<Service > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_calibrate<Service > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_calibrate<Service > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_calibrate : public BaseClass {
    private:
@@ -181,17 +217,27 @@ class grpcICameraCalibrationService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_calibrate : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_calibrate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_calibrate() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_calibrate() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->calibrate(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->calibrate(context, request, response); }));
     }
-    ~WithRawCallbackMethod_calibrate() override {
+    ~ExperimentalWithRawCallbackMethod_calibrate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -199,8 +245,14 @@ class grpcICameraCalibrationService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* calibrate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* calibrate(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_calibrate : public BaseClass {

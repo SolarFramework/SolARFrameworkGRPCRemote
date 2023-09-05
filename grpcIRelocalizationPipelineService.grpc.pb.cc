@@ -6,8 +6,8 @@
 #include "grpcIRelocalizationPipelineService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -33,29 +33,29 @@ static const char* grpcIRelocalizationPipelineService_method_names[] = {
 
 std::unique_ptr< grpcIRelocalizationPipelineService::Stub> grpcIRelocalizationPipelineService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIRelocalizationPipelineService::Stub> stub(new grpcIRelocalizationPipelineService::Stub(channel, options));
+  std::unique_ptr< grpcIRelocalizationPipelineService::Stub> stub(new grpcIRelocalizationPipelineService::Stub(channel));
   return stub;
 }
 
-grpcIRelocalizationPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_init_(grpcIRelocalizationPipelineService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_start_(grpcIRelocalizationPipelineService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIRelocalizationPipelineService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_(grpcIRelocalizationPipelineService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getCameraParameters_(grpcIRelocalizationPipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalizeProcessRequest_(grpcIRelocalizationPipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapRequest_(grpcIRelocalizationPipelineService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIRelocalizationPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_init_(grpcIRelocalizationPipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_(grpcIRelocalizationPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcIRelocalizationPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_(grpcIRelocalizationPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getCameraParameters_(grpcIRelocalizationPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_relocalizeProcessRequest_(grpcIRelocalizationPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapRequest_(grpcIRelocalizationPipelineService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIRelocalizationPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest& request, ::grpcIRelocalizationPipeline::initResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::initRequest, ::grpcIRelocalizationPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, reactor);
 }
 
@@ -74,11 +74,11 @@ void grpcIRelocalizationPipelineService::Stub::async::init(::grpc::ClientContext
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::startRequest, ::grpcIRelocalizationPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
@@ -97,11 +97,11 @@ void grpcIRelocalizationPipelineService::Stub::async::start(::grpc::ClientContex
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::stopRequest, ::grpcIRelocalizationPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 
@@ -120,11 +120,11 @@ void grpcIRelocalizationPipelineService::Stub::async::stop(::grpc::ClientContext
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::setCameraParametersRequest, ::grpcIRelocalizationPipeline::setCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setCameraParameters_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::setCameraParametersRequest, ::grpcIRelocalizationPipeline::setCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::setCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setCameraParameters_, context, request, response, reactor);
 }
 
@@ -143,11 +143,11 @@ void grpcIRelocalizationPipelineService::Stub::async::setCameraParameters(::grpc
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::getCameraParametersRequest, ::grpcIRelocalizationPipeline::getCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getCameraParameters_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::getCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIRelocalizationPipeline::getCameraParametersResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::getCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIRelocalizationPipeline::getCameraParametersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::getCameraParametersRequest, ::grpcIRelocalizationPipeline::getCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCameraParameters_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::getCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIRelocalizationPipeline::getCameraParametersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::getCameraParameters(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIRelocalizationPipeline::getCameraParametersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getCameraParameters_, context, request, response, reactor);
 }
 
@@ -166,11 +166,11 @@ void grpcIRelocalizationPipelineService::Stub::async::getCameraParameters(::grpc
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest, ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_relocalizeProcessRequest_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::relocalizeProcessRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::relocalizeProcessRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest, ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_relocalizeProcessRequest_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::relocalizeProcessRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::relocalizeProcessRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequestRequest* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_relocalizeProcessRequest_, context, request, response, reactor);
 }
 
@@ -189,11 +189,11 @@ void grpcIRelocalizationPipelineService::Stub::async::relocalizeProcessRequest(:
   return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationPipeline::getMapRequestRequest, ::grpcIRelocalizationPipeline::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getMapRequest_, context, request, response);
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::getMapRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::getMapRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationPipeline::getMapRequestRequest, ::grpcIRelocalizationPipeline::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getMapRequest_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationPipelineService::Stub::async::getMapRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+void grpcIRelocalizationPipelineService::Stub::experimental_async::getMapRequest(::grpc::ClientContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getMapRequest_, context, request, response, reactor);
 }
 

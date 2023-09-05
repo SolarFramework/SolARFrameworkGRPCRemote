@@ -7,9 +7,10 @@
 #include "grpcIPointCloudExporterService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -42,22 +43,30 @@ class grpcIPointCloudExporterService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudExporter::exportPointCloudResponse>> PrepareAsyncexportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudExporter::exportPointCloudResponse>>(PrepareAsyncexportPointCloudRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void exportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest* request, ::grpcIPointCloudExporter::exportPointCloudResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void exportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest* request, ::grpcIPointCloudExporter::exportPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void exportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest* request, ::grpcIPointCloudExporter::exportPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudExporter::exportPointCloudResponse>* AsyncexportPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIPointCloudExporter::exportPointCloudResponse>* PrepareAsyncexportPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status exportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest& request, ::grpcIPointCloudExporter::exportPointCloudResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudExporter::exportPointCloudResponse>> AsyncexportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudExporter::exportPointCloudResponse>>(AsyncexportPointCloudRaw(context, request, cq));
@@ -65,22 +74,26 @@ class grpcIPointCloudExporterService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudExporter::exportPointCloudResponse>> PrepareAsyncexportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudExporter::exportPointCloudResponse>>(PrepareAsyncexportPointCloudRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void exportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest* request, ::grpcIPointCloudExporter::exportPointCloudResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void exportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest* request, ::grpcIPointCloudExporter::exportPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void exportPointCloud(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest* request, ::grpcIPointCloudExporter::exportPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudExporter::exportPointCloudResponse>* AsyncexportPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIPointCloudExporter::exportPointCloudResponse>* PrepareAsyncexportPointCloudRaw(::grpc::ClientContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_exportPointCloud_;
@@ -115,22 +128,36 @@ class grpcIPointCloudExporterService final {
   };
   typedef WithAsyncMethod_exportPointCloud<Service > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_exportPointCloud : public BaseClass {
+  class ExperimentalWithCallbackMethod_exportPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_exportPointCloud() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_exportPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudExporter::exportPointCloudRequest, ::grpcIPointCloudExporter::exportPointCloudResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIPointCloudExporter::exportPointCloudRequest* request, ::grpcIPointCloudExporter::exportPointCloudResponse* response) { return this->exportPointCloud(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIPointCloudExporter::exportPointCloudRequest* request, ::grpcIPointCloudExporter::exportPointCloudResponse* response) { return this->exportPointCloud(context, request, response); }));}
     void SetMessageAllocatorFor_exportPointCloud(
-        ::grpc::MessageAllocator< ::grpcIPointCloudExporter::exportPointCloudRequest, ::grpcIPointCloudExporter::exportPointCloudResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIPointCloudExporter::exportPointCloudRequest, ::grpcIPointCloudExporter::exportPointCloudResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIPointCloudExporter::exportPointCloudRequest, ::grpcIPointCloudExporter::exportPointCloudResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_exportPointCloud() override {
+    ~ExperimentalWithCallbackMethod_exportPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -138,11 +165,20 @@ class grpcIPointCloudExporterService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* exportPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudExporter::exportPointCloudRequest* /*request*/, ::grpcIPointCloudExporter::exportPointCloudResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIPointCloudExporter::exportPointCloudRequest* /*request*/, ::grpcIPointCloudExporter::exportPointCloudResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* exportPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIPointCloudExporter::exportPointCloudRequest* /*request*/, ::grpcIPointCloudExporter::exportPointCloudResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_exportPointCloud<Service > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_exportPointCloud<Service > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_exportPointCloud<Service > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_exportPointCloud : public BaseClass {
    private:
@@ -181,17 +217,27 @@ class grpcIPointCloudExporterService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_exportPointCloud : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_exportPointCloud : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_exportPointCloud() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_exportPointCloud() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->exportPointCloud(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->exportPointCloud(context, request, response); }));
     }
-    ~WithRawCallbackMethod_exportPointCloud() override {
+    ~ExperimentalWithRawCallbackMethod_exportPointCloud() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -199,8 +245,14 @@ class grpcIPointCloudExporterService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* exportPointCloud(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* exportPointCloud(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_exportPointCloud : public BaseClass {

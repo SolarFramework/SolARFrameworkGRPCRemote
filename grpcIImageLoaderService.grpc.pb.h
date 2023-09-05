@@ -7,9 +7,10 @@
 #include "grpcIImageLoaderService.pb.h"
 
 #include <functional>
-#include <grpcpp/generic/async_generic_service.h>
-#include <grpcpp/support/async_stream.h>
-#include <grpcpp/support/async_unary_call.h>
+#include <grpc/impl/codegen/port_platform.h>
+#include <grpcpp/impl/codegen/async_generic_service.h>
+#include <grpcpp/impl/codegen/async_stream.h>
+#include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -49,18 +50,30 @@ class grpcIImageLoaderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>> PrepareAsyncreloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>>(PrepareAsyncreloadImageRaw(context, request, cq));
     }
-    class async_interface {
+    class experimental_async_interface {
      public:
-      virtual ~async_interface() {}
+      virtual ~experimental_async_interface() {}
       virtual void getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
-    typedef class async_interface experimental_async_interface;
-    virtual class async_interface* async() { return nullptr; }
-    class async_interface* experimental_async() { return async(); }
-   private:
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
+    virtual class experimental_async_interface* experimental_async() { return nullptr; }
+  private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::getImageResponse>* AsyncgetImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::getImageResponse>* PrepareAsyncgetImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageLoader::reloadImageResponse>* AsyncreloadImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -68,7 +81,7 @@ class grpcIImageLoaderService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
     ::grpc::Status getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpcIImageLoader::getImageResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::getImageResponse>> AsyncgetImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::getImageResponse>>(AsyncgetImageRaw(context, request, cq));
@@ -83,24 +96,32 @@ class grpcIImageLoaderService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>> PrepareAsyncreloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>>(PrepareAsyncreloadImageRaw(context, request, cq));
     }
-    class async final :
-      public StubInterface::async_interface {
+    class experimental_async final :
+      public StubInterface::experimental_async_interface {
      public:
       void getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
-      explicit async(Stub* stub): stub_(stub) { }
+      explicit experimental_async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class async* async() override { return &async_stub_; }
+    class experimental_async_interface* experimental_async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class async async_stub_{this};
+    class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::getImageResponse>* AsyncgetImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::getImageResponse>* PrepareAsyncgetImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIImageLoader::reloadImageResponse>* AsyncreloadImageRaw(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -159,22 +180,36 @@ class grpcIImageLoaderService final {
   };
   typedef WithAsyncMethod_getImage<WithAsyncMethod_reloadImage<Service > > AsyncService;
   template <class BaseClass>
-  class WithCallbackMethod_getImage : public BaseClass {
+  class ExperimentalWithCallbackMethod_getImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getImage() {
-      ::grpc::Service::MarkMethodCallback(0,
+    ExperimentalWithCallbackMethod_getImage() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIImageLoader::getImageRequest, ::grpcIImageLoader::getImageResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response) { return this->getImage(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response) { return this->getImage(context, request, response); }));}
     void SetMessageAllocatorFor_getImage(
-        ::grpc::MessageAllocator< ::grpcIImageLoader::getImageRequest, ::grpcIImageLoader::getImageResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIImageLoader::getImageRequest, ::grpcIImageLoader::getImageResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIImageLoader::getImageRequest, ::grpcIImageLoader::getImageResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getImage() override {
+    ~ExperimentalWithCallbackMethod_getImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -182,26 +217,46 @@ class grpcIImageLoaderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageLoader::getImageRequest* /*request*/, ::grpcIImageLoader::getImageResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageLoader::getImageRequest* /*request*/, ::grpcIImageLoader::getImageResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getImage(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIImageLoader::getImageRequest* /*request*/, ::grpcIImageLoader::getImageResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_reloadImage : public BaseClass {
+  class ExperimentalWithCallbackMethod_reloadImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_reloadImage() {
-      ::grpc::Service::MarkMethodCallback(1,
+    ExperimentalWithCallbackMethod_reloadImage() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response) { return this->reloadImage(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response) { return this->reloadImage(context, request, response); }));}
     void SetMessageAllocatorFor_reloadImage(
-        ::grpc::MessageAllocator< ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_reloadImage() override {
+    ~ExperimentalWithCallbackMethod_reloadImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -209,11 +264,20 @@ class grpcIImageLoaderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* reloadImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* reloadImage(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIImageLoader::reloadImageRequest* /*request*/, ::grpcIImageLoader::reloadImageResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
-  typedef WithCallbackMethod_getImage<WithCallbackMethod_reloadImage<Service > > CallbackService;
-  typedef CallbackService ExperimentalCallbackService;
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_getImage<ExperimentalWithCallbackMethod_reloadImage<Service > > CallbackService;
+  #endif
+
+  typedef ExperimentalWithCallbackMethod_getImage<ExperimentalWithCallbackMethod_reloadImage<Service > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_getImage : public BaseClass {
    private:
@@ -289,17 +353,27 @@ class grpcIImageLoaderService final {
     }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getImage : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_getImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getImage() {
-      ::grpc::Service::MarkMethodRawCallback(0,
+    ExperimentalWithRawCallbackMethod_getImage() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getImage(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getImage(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getImage() override {
+    ~ExperimentalWithRawCallbackMethod_getImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -307,21 +381,37 @@ class grpcIImageLoaderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* getImage(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_reloadImage : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_reloadImage : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_reloadImage() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+    ExperimentalWithRawCallbackMethod_reloadImage() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->reloadImage(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->reloadImage(context, request, response); }));
     }
-    ~WithRawCallbackMethod_reloadImage() override {
+    ~ExperimentalWithRawCallbackMethod_reloadImage() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -329,8 +419,14 @@ class grpcIImageLoaderService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* reloadImage(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* reloadImage(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getImage : public BaseClass {
