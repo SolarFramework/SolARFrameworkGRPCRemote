@@ -7,10 +7,9 @@
 #include "grpcIDescriptorsExtractorService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -50,30 +49,18 @@ class grpcIDescriptorsExtractorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractor::extractResponse>> PrepareAsyncextract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractor::extractResponse>>(PrepareAsyncextractRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractor::getTypeStringResponse>* AsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractor::getTypeStringResponse>* PrepareAsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorsExtractor::extractResponse>* AsyncextractRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -81,7 +68,7 @@ class grpcIDescriptorsExtractorService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::getTypeStringResponse>> AsyncgetTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::getTypeStringResponse>>(AsyncgetTypeStringRaw(context, request, cq));
@@ -96,32 +83,24 @@ class grpcIDescriptorsExtractorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::extractResponse>> PrepareAsyncextract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::extractResponse>>(PrepareAsyncextractRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void getTypeString(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void extract(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::getTypeStringResponse>* AsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::getTypeStringResponse>* PrepareAsyncgetTypeStringRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorsExtractor::extractResponse>* AsyncextractRaw(::grpc::ClientContext* context, const ::grpcIDescriptorsExtractor::extractRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -180,36 +159,22 @@ class grpcIDescriptorsExtractorService final {
   };
   typedef WithAsyncMethod_getTypeString<WithAsyncMethod_extract<Service > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_getTypeString : public BaseClass {
+  class WithCallbackMethod_getTypeString : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_getTypeString() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_getTypeString() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpcIDescriptorsExtractor::getTypeStringResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response) { return this->getTypeString(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIDescriptorsExtractor::getTypeStringRequest* request, ::grpcIDescriptorsExtractor::getTypeStringResponse* response) { return this->getTypeString(context, request, response); }));}
     void SetMessageAllocatorFor_getTypeString(
-        ::grpc::experimental::MessageAllocator< ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpcIDescriptorsExtractor::getTypeStringResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpcIDescriptorsExtractor::getTypeStringResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorsExtractor::getTypeStringRequest, ::grpcIDescriptorsExtractor::getTypeStringResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_getTypeString() override {
+    ~WithCallbackMethod_getTypeString() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -217,46 +182,26 @@ class grpcIDescriptorsExtractorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getTypeString(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractor::getTypeStringRequest* /*request*/, ::grpcIDescriptorsExtractor::getTypeStringResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getTypeString(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractor::getTypeStringRequest* /*request*/, ::grpcIDescriptorsExtractor::getTypeStringResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractor::getTypeStringRequest* /*request*/, ::grpcIDescriptorsExtractor::getTypeStringResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_extract : public BaseClass {
+  class WithCallbackMethod_extract : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_extract() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_extract() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorsExtractor::extractRequest, ::grpcIDescriptorsExtractor::extractResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response) { return this->extract(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIDescriptorsExtractor::extractRequest* request, ::grpcIDescriptorsExtractor::extractResponse* response) { return this->extract(context, request, response); }));}
     void SetMessageAllocatorFor_extract(
-        ::grpc::experimental::MessageAllocator< ::grpcIDescriptorsExtractor::extractRequest, ::grpcIDescriptorsExtractor::extractResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIDescriptorsExtractor::extractRequest, ::grpcIDescriptorsExtractor::extractResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorsExtractor::extractRequest, ::grpcIDescriptorsExtractor::extractResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_extract() override {
+    ~WithCallbackMethod_extract() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -264,20 +209,11 @@ class grpcIDescriptorsExtractorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* extract(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractor::extractRequest* /*request*/, ::grpcIDescriptorsExtractor::extractResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* extract(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractor::extractRequest* /*request*/, ::grpcIDescriptorsExtractor::extractResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorsExtractor::extractRequest* /*request*/, ::grpcIDescriptorsExtractor::extractResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_getTypeString<ExperimentalWithCallbackMethod_extract<Service > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_getTypeString<ExperimentalWithCallbackMethod_extract<Service > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_getTypeString<WithCallbackMethod_extract<Service > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_getTypeString : public BaseClass {
    private:
@@ -353,27 +289,17 @@ class grpcIDescriptorsExtractorService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_getTypeString : public BaseClass {
+  class WithRawCallbackMethod_getTypeString : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_getTypeString() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_getTypeString() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getTypeString(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getTypeString(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_getTypeString() override {
+    ~WithRawCallbackMethod_getTypeString() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -381,37 +307,21 @@ class grpcIDescriptorsExtractorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* getTypeString(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* getTypeString(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_extract : public BaseClass {
+  class WithRawCallbackMethod_extract : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_extract() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_extract() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->extract(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->extract(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_extract() override {
+    ~WithRawCallbackMethod_extract() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -419,14 +329,8 @@ class grpcIDescriptorsExtractorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* extract(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* extract(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getTypeString : public BaseClass {

@@ -7,10 +7,9 @@
 #include "grpcIHomographyValidationService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -43,30 +42,22 @@ class grpcIHomographyValidationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIHomographyValidation::isValidResponse>> PrepareAsyncisValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIHomographyValidation::isValidResponse>>(PrepareAsyncisValidRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void isValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest* request, ::grpcIHomographyValidation::isValidResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void isValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest* request, ::grpcIHomographyValidation::isValidResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void isValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest* request, ::grpcIHomographyValidation::isValidResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIHomographyValidation::isValidResponse>* AsyncisValidRaw(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIHomographyValidation::isValidResponse>* PrepareAsyncisValidRaw(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status isValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest& request, ::grpcIHomographyValidation::isValidResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIHomographyValidation::isValidResponse>> AsyncisValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIHomographyValidation::isValidResponse>>(AsyncisValidRaw(context, request, cq));
@@ -74,26 +65,22 @@ class grpcIHomographyValidationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIHomographyValidation::isValidResponse>> PrepareAsyncisValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIHomographyValidation::isValidResponse>>(PrepareAsyncisValidRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void isValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest* request, ::grpcIHomographyValidation::isValidResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void isValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest* request, ::grpcIHomographyValidation::isValidResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void isValid(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest* request, ::grpcIHomographyValidation::isValidResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIHomographyValidation::isValidResponse>* AsyncisValidRaw(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIHomographyValidation::isValidResponse>* PrepareAsyncisValidRaw(::grpc::ClientContext* context, const ::grpcIHomographyValidation::isValidRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_isValid_;
@@ -128,36 +115,22 @@ class grpcIHomographyValidationService final {
   };
   typedef WithAsyncMethod_isValid<Service > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_isValid : public BaseClass {
+  class WithCallbackMethod_isValid : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_isValid() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_isValid() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIHomographyValidation::isValidRequest, ::grpcIHomographyValidation::isValidResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIHomographyValidation::isValidRequest* request, ::grpcIHomographyValidation::isValidResponse* response) { return this->isValid(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIHomographyValidation::isValidRequest* request, ::grpcIHomographyValidation::isValidResponse* response) { return this->isValid(context, request, response); }));}
     void SetMessageAllocatorFor_isValid(
-        ::grpc::experimental::MessageAllocator< ::grpcIHomographyValidation::isValidRequest, ::grpcIHomographyValidation::isValidResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIHomographyValidation::isValidRequest, ::grpcIHomographyValidation::isValidResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIHomographyValidation::isValidRequest, ::grpcIHomographyValidation::isValidResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_isValid() override {
+    ~WithCallbackMethod_isValid() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -165,20 +138,11 @@ class grpcIHomographyValidationService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isValid(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIHomographyValidation::isValidRequest* /*request*/, ::grpcIHomographyValidation::isValidResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* isValid(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIHomographyValidation::isValidRequest* /*request*/, ::grpcIHomographyValidation::isValidResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIHomographyValidation::isValidRequest* /*request*/, ::grpcIHomographyValidation::isValidResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_isValid<Service > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_isValid<Service > ExperimentalCallbackService;
+  typedef WithCallbackMethod_isValid<Service > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_isValid : public BaseClass {
    private:
@@ -217,27 +181,17 @@ class grpcIHomographyValidationService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_isValid : public BaseClass {
+  class WithRawCallbackMethod_isValid : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_isValid() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_isValid() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isValid(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->isValid(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_isValid() override {
+    ~WithRawCallbackMethod_isValid() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -245,14 +199,8 @@ class grpcIHomographyValidationService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* isValid(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* isValid(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_isValid : public BaseClass {

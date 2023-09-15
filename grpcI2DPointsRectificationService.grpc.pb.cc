@@ -6,8 +6,8 @@
 #include "grpcI2DPointsRectificationService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -28,24 +28,24 @@ static const char* grpcI2DPointsRectificationService_method_names[] = {
 
 std::unique_ptr< grpcI2DPointsRectificationService::Stub> grpcI2DPointsRectificationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcI2DPointsRectificationService::Stub> stub(new grpcI2DPointsRectificationService::Stub(channel));
+  std::unique_ptr< grpcI2DPointsRectificationService::Stub> stub(new grpcI2DPointsRectificationService::Stub(channel, options));
   return stub;
 }
 
-grpcI2DPointsRectificationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_rectify_grpc0_(grpcI2DPointsRectificationService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_rectify_grpc1_(grpcI2DPointsRectificationService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcI2DPointsRectificationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_rectify_grpc0_(grpcI2DPointsRectificationService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_rectify_grpc1_(grpcI2DPointsRectificationService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcI2DPointsRectificationService::Stub::rectify_grpc0(::grpc::ClientContext* context, const ::grpcI2DPointsRectification::rectify_grpc0Request& request, ::grpcI2DPointsRectification::rectify_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2DPointsRectification::rectify_grpc0Request, ::grpcI2DPointsRectification::rectify_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_rectify_grpc0_, context, request, response);
 }
 
-void grpcI2DPointsRectificationService::Stub::experimental_async::rectify_grpc0(::grpc::ClientContext* context, const ::grpcI2DPointsRectification::rectify_grpc0Request* request, ::grpcI2DPointsRectification::rectify_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcI2DPointsRectificationService::Stub::async::rectify_grpc0(::grpc::ClientContext* context, const ::grpcI2DPointsRectification::rectify_grpc0Request* request, ::grpcI2DPointsRectification::rectify_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2DPointsRectification::rectify_grpc0Request, ::grpcI2DPointsRectification::rectify_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_rectify_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcI2DPointsRectificationService::Stub::experimental_async::rectify_grpc0(::grpc::ClientContext* context, const ::grpcI2DPointsRectification::rectify_grpc0Request* request, ::grpcI2DPointsRectification::rectify_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcI2DPointsRectificationService::Stub::async::rectify_grpc0(::grpc::ClientContext* context, const ::grpcI2DPointsRectification::rectify_grpc0Request* request, ::grpcI2DPointsRectification::rectify_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_rectify_grpc0_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcI2DPointsRectificationService::Stub::experimental_async::rectify_grpc0(
   return ::grpc::internal::BlockingUnaryCall< ::grpcI2DPointsRectification::rectify_grpc1Request, ::grpcI2DPointsRectification::rectify_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_rectify_grpc1_, context, request, response);
 }
 
-void grpcI2DPointsRectificationService::Stub::experimental_async::rectify_grpc1(::grpc::ClientContext* context, const ::grpcI2DPointsRectification::rectify_grpc1Request* request, ::grpcI2DPointsRectification::rectify_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcI2DPointsRectificationService::Stub::async::rectify_grpc1(::grpc::ClientContext* context, const ::grpcI2DPointsRectification::rectify_grpc1Request* request, ::grpcI2DPointsRectification::rectify_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcI2DPointsRectification::rectify_grpc1Request, ::grpcI2DPointsRectification::rectify_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_rectify_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcI2DPointsRectificationService::Stub::experimental_async::rectify_grpc1(::grpc::ClientContext* context, const ::grpcI2DPointsRectification::rectify_grpc1Request* request, ::grpcI2DPointsRectification::rectify_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcI2DPointsRectificationService::Stub::async::rectify_grpc1(::grpc::ClientContext* context, const ::grpcI2DPointsRectification::rectify_grpc1Request* request, ::grpcI2DPointsRectification::rectify_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_rectify_grpc1_, context, request, response, reactor);
 }
 

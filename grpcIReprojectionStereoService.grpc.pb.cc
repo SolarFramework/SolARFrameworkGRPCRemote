@@ -6,8 +6,8 @@
 #include "grpcIReprojectionStereoService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -29,25 +29,25 @@ static const char* grpcIReprojectionStereoService_method_names[] = {
 
 std::unique_ptr< grpcIReprojectionStereoService::Stub> grpcIReprojectionStereoService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIReprojectionStereoService::Stub> stub(new grpcIReprojectionStereoService::Stub(channel));
+  std::unique_ptr< grpcIReprojectionStereoService::Stub> stub(new grpcIReprojectionStereoService::Stub(channel, options));
   return stub;
 }
 
-grpcIReprojectionStereoService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_reprojectToUnrectification_(grpcIReprojectionStereoService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_reprojectToCloudPoints_grpc0_(grpcIReprojectionStereoService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_reprojectToCloudPoints_grpc1_(grpcIReprojectionStereoService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIReprojectionStereoService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_reprojectToUnrectification_(grpcIReprojectionStereoService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_reprojectToCloudPoints_grpc0_(grpcIReprojectionStereoService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_reprojectToCloudPoints_grpc1_(grpcIReprojectionStereoService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIReprojectionStereoService::Stub::reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest& request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIReprojectionStereo::reprojectToUnrectificationRequest, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_reprojectToUnrectification_, context, request, response);
 }
 
-void grpcIReprojectionStereoService::Stub::experimental_async::reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIReprojectionStereoService::Stub::async::reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIReprojectionStereo::reprojectToUnrectificationRequest, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reprojectToUnrectification_, context, request, response, std::move(f));
 }
 
-void grpcIReprojectionStereoService::Stub::experimental_async::reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIReprojectionStereoService::Stub::async::reprojectToUnrectification(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToUnrectificationRequest* request, ::grpcIReprojectionStereo::reprojectToUnrectificationResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reprojectToUnrectification_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcIReprojectionStereoService::Stub::experimental_async::reprojectToUnrect
   return ::grpc::internal::BlockingUnaryCall< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_reprojectToCloudPoints_grpc0_, context, request, response);
 }
 
-void grpcIReprojectionStereoService::Stub::experimental_async::reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIReprojectionStereoService::Stub::async::reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reprojectToCloudPoints_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIReprojectionStereoService::Stub::experimental_async::reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIReprojectionStereoService::Stub::async::reprojectToCloudPoints_grpc0(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reprojectToCloudPoints_grpc0_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcIReprojectionStereoService::Stub::experimental_async::reprojectToCloudP
   return ::grpc::internal::BlockingUnaryCall< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_reprojectToCloudPoints_grpc1_, context, request, response);
 }
 
-void grpcIReprojectionStereoService::Stub::experimental_async::reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIReprojectionStereoService::Stub::async::reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reprojectToCloudPoints_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIReprojectionStereoService::Stub::experimental_async::reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIReprojectionStereoService::Stub::async::reprojectToCloudPoints_grpc1(::grpc::ClientContext* context, const ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Request* request, ::grpcIReprojectionStereo::reprojectToCloudPoints_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reprojectToCloudPoints_grpc1_, context, request, response, reactor);
 }
 

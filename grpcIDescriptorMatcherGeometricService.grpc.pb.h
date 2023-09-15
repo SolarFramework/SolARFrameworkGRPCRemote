@@ -7,10 +7,9 @@
 #include "grpcIDescriptorMatcherGeometricService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -50,30 +49,18 @@ class grpcIDescriptorMatcherGeometricService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorMatcherGeometric::match_grpc1Response>> PrepareAsyncmatch_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorMatcherGeometric::match_grpc1Response>>(PrepareAsyncmatch_grpc1Raw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorMatcherGeometric::match_grpc0Response>* Asyncmatch_grpc0Raw(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorMatcherGeometric::match_grpc0Response>* PrepareAsyncmatch_grpc0Raw(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIDescriptorMatcherGeometric::match_grpc1Response>* Asyncmatch_grpc1Raw(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -81,7 +68,7 @@ class grpcIDescriptorMatcherGeometricService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request& request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorMatcherGeometric::match_grpc0Response>> Asyncmatch_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorMatcherGeometric::match_grpc0Response>>(Asyncmatch_grpc0Raw(context, request, cq));
@@ -96,32 +83,24 @@ class grpcIDescriptorMatcherGeometricService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorMatcherGeometric::match_grpc1Response>> PrepareAsyncmatch_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorMatcherGeometric::match_grpc1Response>>(PrepareAsyncmatch_grpc1Raw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorMatcherGeometric::match_grpc0Response>* Asyncmatch_grpc0Raw(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorMatcherGeometric::match_grpc0Response>* PrepareAsyncmatch_grpc0Raw(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIDescriptorMatcherGeometric::match_grpc1Response>* Asyncmatch_grpc1Raw(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
@@ -180,36 +159,22 @@ class grpcIDescriptorMatcherGeometricService final {
   };
   typedef WithAsyncMethod_match_grpc0<WithAsyncMethod_match_grpc1<Service > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_match_grpc0 : public BaseClass {
+  class WithCallbackMethod_match_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_match_grpc0() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_match_grpc0() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorMatcherGeometric::match_grpc0Request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response) { return this->match_grpc0(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response) { return this->match_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_match_grpc0(
-        ::grpc::experimental::MessageAllocator< ::grpcIDescriptorMatcherGeometric::match_grpc0Request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIDescriptorMatcherGeometric::match_grpc0Request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorMatcherGeometric::match_grpc0Request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_match_grpc0() override {
+    ~WithCallbackMethod_match_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -217,46 +182,26 @@ class grpcIDescriptorMatcherGeometricService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* match_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* /*request*/, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* match_grpc0(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* /*request*/, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* /*request*/, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_match_grpc1 : public BaseClass {
+  class WithCallbackMethod_match_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_match_grpc1() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_match_grpc1() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorMatcherGeometric::match_grpc1Request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response) { return this->match_grpc1(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response) { return this->match_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_match_grpc1(
-        ::grpc::experimental::MessageAllocator< ::grpcIDescriptorMatcherGeometric::match_grpc1Request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIDescriptorMatcherGeometric::match_grpc1Request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIDescriptorMatcherGeometric::match_grpc1Request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_match_grpc1() override {
+    ~WithCallbackMethod_match_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -264,20 +209,11 @@ class grpcIDescriptorMatcherGeometricService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* match_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* /*request*/, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* match_grpc1(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* /*request*/, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* /*request*/, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_match_grpc0<ExperimentalWithCallbackMethod_match_grpc1<Service > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_match_grpc0<ExperimentalWithCallbackMethod_match_grpc1<Service > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_match_grpc0<WithCallbackMethod_match_grpc1<Service > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_match_grpc0 : public BaseClass {
    private:
@@ -353,27 +289,17 @@ class grpcIDescriptorMatcherGeometricService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_match_grpc0 : public BaseClass {
+  class WithRawCallbackMethod_match_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_match_grpc0() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_match_grpc0() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->match_grpc0(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->match_grpc0(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_match_grpc0() override {
+    ~WithRawCallbackMethod_match_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -381,37 +307,21 @@ class grpcIDescriptorMatcherGeometricService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* match_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* match_grpc0(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_match_grpc1 : public BaseClass {
+  class WithRawCallbackMethod_match_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_match_grpc1() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_match_grpc1() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->match_grpc1(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->match_grpc1(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_match_grpc1() override {
+    ~WithRawCallbackMethod_match_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -419,14 +329,8 @@ class grpcIDescriptorMatcherGeometricService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* match_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* match_grpc1(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_match_grpc0 : public BaseClass {

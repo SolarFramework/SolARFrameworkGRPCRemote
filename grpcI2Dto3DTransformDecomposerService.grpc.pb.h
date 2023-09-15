@@ -7,10 +7,9 @@
 #include "grpcI2Dto3DTransformDecomposerService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -43,30 +42,22 @@ class grpcI2Dto3DTransformDecomposerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>> PrepareAsyncdecompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>>(PrepareAsyncdecomposeRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>* AsyncdecomposeRaw(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>* PrepareAsyncdecomposeRaw(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest& request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>> Asyncdecompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>>(AsyncdecomposeRaw(context, request, cq));
@@ -74,26 +65,22 @@ class grpcI2Dto3DTransformDecomposerService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>> PrepareAsyncdecompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>>(PrepareAsyncdecomposeRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void decompose(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>* AsyncdecomposeRaw(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcI2Dto3DTransformDecomposer::decomposeResponse>* PrepareAsyncdecomposeRaw(::grpc::ClientContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_decompose_;
@@ -128,36 +115,22 @@ class grpcI2Dto3DTransformDecomposerService final {
   };
   typedef WithAsyncMethod_decompose<Service > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_decompose : public BaseClass {
+  class WithCallbackMethod_decompose : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_decompose() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_decompose() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2Dto3DTransformDecomposer::decomposeRequest, ::grpcI2Dto3DTransformDecomposer::decomposeResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response) { return this->decompose(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* request, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* response) { return this->decompose(context, request, response); }));}
     void SetMessageAllocatorFor_decompose(
-        ::grpc::experimental::MessageAllocator< ::grpcI2Dto3DTransformDecomposer::decomposeRequest, ::grpcI2Dto3DTransformDecomposer::decomposeResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2Dto3DTransformDecomposer::decomposeRequest, ::grpcI2Dto3DTransformDecomposer::decomposeResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2Dto3DTransformDecomposer::decomposeRequest, ::grpcI2Dto3DTransformDecomposer::decomposeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_decompose() override {
+    ~WithCallbackMethod_decompose() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -165,20 +138,11 @@ class grpcI2Dto3DTransformDecomposerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* decompose(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* /*request*/, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* decompose(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* /*request*/, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2Dto3DTransformDecomposer::decomposeRequest* /*request*/, ::grpcI2Dto3DTransformDecomposer::decomposeResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_decompose<Service > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_decompose<Service > ExperimentalCallbackService;
+  typedef WithCallbackMethod_decompose<Service > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_decompose : public BaseClass {
    private:
@@ -217,27 +181,17 @@ class grpcI2Dto3DTransformDecomposerService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_decompose : public BaseClass {
+  class WithRawCallbackMethod_decompose : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_decompose() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_decompose() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->decompose(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->decompose(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_decompose() override {
+    ~WithRawCallbackMethod_decompose() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -245,14 +199,8 @@ class grpcI2Dto3DTransformDecomposerService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* decompose(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* decompose(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_decompose : public BaseClass {

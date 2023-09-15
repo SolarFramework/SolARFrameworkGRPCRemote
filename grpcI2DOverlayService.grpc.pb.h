@@ -7,10 +7,9 @@
 #include "grpcI2DOverlayService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -78,54 +77,26 @@ class grpcI2DOverlayService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>> PrepareAsyncdrawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>>(PrepareAsyncdrawSBPatternRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncdrawCircleRaw(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* PrepareAsyncdrawCircleRaw(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::google::protobuf::Empty>* AsyncdrawCircles_grpc0Raw(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -141,7 +112,7 @@ class grpcI2DOverlayService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest& request, ::google::protobuf::Empty* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> AsyncdrawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(AsyncdrawCircleRaw(context, request, cq));
@@ -184,56 +155,32 @@ class grpcI2DOverlayService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>> PrepareAsyncdrawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>>(PrepareAsyncdrawSBPatternRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void drawCircle(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void drawCircles_grpc0(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void drawCircles_grpc1(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void drawContour(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void drawContours(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void drawSBPattern(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncdrawCircleRaw(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* PrepareAsyncdrawCircleRaw(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircleRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::google::protobuf::Empty>* AsyncdrawCircles_grpc0Raw(::grpc::ClientContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
@@ -388,36 +335,22 @@ class grpcI2DOverlayService final {
   };
   typedef WithAsyncMethod_drawCircle<WithAsyncMethod_drawCircles_grpc0<WithAsyncMethod_drawCircles_grpc1<WithAsyncMethod_drawContour<WithAsyncMethod_drawContours<WithAsyncMethod_drawSBPattern<Service > > > > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_drawCircle : public BaseClass {
+  class WithCallbackMethod_drawCircle : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_drawCircle() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_drawCircle() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawCircleRequest, ::google::protobuf::Empty>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response) { return this->drawCircle(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2DOverlay::drawCircleRequest* request, ::google::protobuf::Empty* response) { return this->drawCircle(context, request, response); }));}
     void SetMessageAllocatorFor_drawCircle(
-        ::grpc::experimental::MessageAllocator< ::grpcI2DOverlay::drawCircleRequest, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2DOverlay::drawCircleRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawCircleRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_drawCircle() override {
+    ~WithCallbackMethod_drawCircle() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -425,46 +358,26 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawCircle(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawCircleRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawCircle(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawCircleRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawCircleRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_drawCircles_grpc0 : public BaseClass {
+  class WithCallbackMethod_drawCircles_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_drawCircles_grpc0() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_drawCircles_grpc0() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawCircles_grpc0Request, ::google::protobuf::Empty>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response) { return this->drawCircles_grpc0(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2DOverlay::drawCircles_grpc0Request* request, ::google::protobuf::Empty* response) { return this->drawCircles_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_drawCircles_grpc0(
-        ::grpc::experimental::MessageAllocator< ::grpcI2DOverlay::drawCircles_grpc0Request, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2DOverlay::drawCircles_grpc0Request, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawCircles_grpc0Request, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_drawCircles_grpc0() override {
+    ~WithCallbackMethod_drawCircles_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -472,46 +385,26 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawCircles_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawCircles_grpc0Request* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawCircles_grpc0(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawCircles_grpc0Request* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawCircles_grpc0Request* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_drawCircles_grpc1 : public BaseClass {
+  class WithCallbackMethod_drawCircles_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_drawCircles_grpc1() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
+    WithCallbackMethod_drawCircles_grpc1() {
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawCircles_grpc1Request, ::google::protobuf::Empty>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response) { return this->drawCircles_grpc1(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2DOverlay::drawCircles_grpc1Request* request, ::google::protobuf::Empty* response) { return this->drawCircles_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_drawCircles_grpc1(
-        ::grpc::experimental::MessageAllocator< ::grpcI2DOverlay::drawCircles_grpc1Request, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2DOverlay::drawCircles_grpc1Request, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawCircles_grpc1Request, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_drawCircles_grpc1() override {
+    ~WithCallbackMethod_drawCircles_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -519,46 +412,26 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawCircles_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawCircles_grpc1Request* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawCircles_grpc1(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawCircles_grpc1Request* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawCircles_grpc1Request* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_drawContour : public BaseClass {
+  class WithCallbackMethod_drawContour : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_drawContour() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(3,
+    WithCallbackMethod_drawContour() {
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawContourRequest, ::google::protobuf::Empty>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response) { return this->drawContour(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2DOverlay::drawContourRequest* request, ::google::protobuf::Empty* response) { return this->drawContour(context, request, response); }));}
     void SetMessageAllocatorFor_drawContour(
-        ::grpc::experimental::MessageAllocator< ::grpcI2DOverlay::drawContourRequest, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2DOverlay::drawContourRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawContourRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_drawContour() override {
+    ~WithCallbackMethod_drawContour() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -566,46 +439,26 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawContour(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawContourRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawContour(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawContourRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawContourRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_drawContours : public BaseClass {
+  class WithCallbackMethod_drawContours : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_drawContours() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(4,
+    WithCallbackMethod_drawContours() {
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawContoursRequest, ::google::protobuf::Empty>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response) { return this->drawContours(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2DOverlay::drawContoursRequest* request, ::google::protobuf::Empty* response) { return this->drawContours(context, request, response); }));}
     void SetMessageAllocatorFor_drawContours(
-        ::grpc::experimental::MessageAllocator< ::grpcI2DOverlay::drawContoursRequest, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2DOverlay::drawContoursRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawContoursRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_drawContours() override {
+    ~WithCallbackMethod_drawContours() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -613,46 +466,26 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawContours(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawContoursRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawContours(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawContoursRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawContoursRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_drawSBPattern : public BaseClass {
+  class WithCallbackMethod_drawSBPattern : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_drawSBPattern() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(5,
+    WithCallbackMethod_drawSBPattern() {
+      ::grpc::Service::MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawSBPatternRequest, ::google::protobuf::Empty>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response) { return this->drawSBPattern(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2DOverlay::drawSBPatternRequest* request, ::google::protobuf::Empty* response) { return this->drawSBPattern(context, request, response); }));}
     void SetMessageAllocatorFor_drawSBPattern(
-        ::grpc::experimental::MessageAllocator< ::grpcI2DOverlay::drawSBPatternRequest, ::google::protobuf::Empty>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2DOverlay::drawSBPatternRequest, ::google::protobuf::Empty>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2DOverlay::drawSBPatternRequest, ::google::protobuf::Empty>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_drawSBPattern() override {
+    ~WithCallbackMethod_drawSBPattern() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -660,20 +493,11 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawSBPattern(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawSBPatternRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawSBPattern(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawSBPatternRequest* /*request*/, ::google::protobuf::Empty* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DOverlay::drawSBPatternRequest* /*request*/, ::google::protobuf::Empty* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_drawCircle<ExperimentalWithCallbackMethod_drawCircles_grpc0<ExperimentalWithCallbackMethod_drawCircles_grpc1<ExperimentalWithCallbackMethod_drawContour<ExperimentalWithCallbackMethod_drawContours<ExperimentalWithCallbackMethod_drawSBPattern<Service > > > > > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_drawCircle<ExperimentalWithCallbackMethod_drawCircles_grpc0<ExperimentalWithCallbackMethod_drawCircles_grpc1<ExperimentalWithCallbackMethod_drawContour<ExperimentalWithCallbackMethod_drawContours<ExperimentalWithCallbackMethod_drawSBPattern<Service > > > > > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_drawCircle<WithCallbackMethod_drawCircles_grpc0<WithCallbackMethod_drawCircles_grpc1<WithCallbackMethod_drawContour<WithCallbackMethod_drawContours<WithCallbackMethod_drawSBPattern<Service > > > > > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_drawCircle : public BaseClass {
    private:
@@ -897,27 +721,17 @@ class grpcI2DOverlayService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_drawCircle : public BaseClass {
+  class WithRawCallbackMethod_drawCircle : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_drawCircle() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_drawCircle() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawCircle(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawCircle(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_drawCircle() override {
+    ~WithRawCallbackMethod_drawCircle() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -925,37 +739,21 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawCircle(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawCircle(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_drawCircles_grpc0 : public BaseClass {
+  class WithRawCallbackMethod_drawCircles_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_drawCircles_grpc0() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_drawCircles_grpc0() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawCircles_grpc0(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawCircles_grpc0(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_drawCircles_grpc0() override {
+    ~WithRawCallbackMethod_drawCircles_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -963,37 +761,21 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawCircles_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawCircles_grpc0(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_drawCircles_grpc1 : public BaseClass {
+  class WithRawCallbackMethod_drawCircles_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_drawCircles_grpc1() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
+    WithRawCallbackMethod_drawCircles_grpc1() {
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawCircles_grpc1(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawCircles_grpc1(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_drawCircles_grpc1() override {
+    ~WithRawCallbackMethod_drawCircles_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1001,37 +783,21 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawCircles_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawCircles_grpc1(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_drawContour : public BaseClass {
+  class WithRawCallbackMethod_drawContour : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_drawContour() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(3,
+    WithRawCallbackMethod_drawContour() {
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawContour(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawContour(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_drawContour() override {
+    ~WithRawCallbackMethod_drawContour() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1039,37 +805,21 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawContour(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawContour(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_drawContours : public BaseClass {
+  class WithRawCallbackMethod_drawContours : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_drawContours() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(4,
+    WithRawCallbackMethod_drawContours() {
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawContours(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawContours(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_drawContours() override {
+    ~WithRawCallbackMethod_drawContours() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1077,37 +827,21 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawContours(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawContours(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_drawSBPattern : public BaseClass {
+  class WithRawCallbackMethod_drawSBPattern : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_drawSBPattern() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(5,
+    WithRawCallbackMethod_drawSBPattern() {
+      ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawSBPattern(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->drawSBPattern(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_drawSBPattern() override {
+    ~WithRawCallbackMethod_drawSBPattern() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -1115,14 +849,8 @@ class grpcI2DOverlayService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* drawSBPattern(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* drawSBPattern(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_drawCircle : public BaseClass {

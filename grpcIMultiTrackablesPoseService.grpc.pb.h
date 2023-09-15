@@ -7,10 +7,9 @@
 #include "grpcIMultiTrackablesPoseService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -50,30 +49,18 @@ class grpcIMultiTrackablesPoseService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMultiTrackablesPose::estimateResponse>> PrepareAsyncestimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMultiTrackablesPose::estimateResponse>>(PrepareAsyncestimateRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMultiTrackablesPose::setTrackablesResponse>* AsyncsetTrackablesRaw(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMultiTrackablesPose::setTrackablesResponse>* PrepareAsyncsetTrackablesRaw(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMultiTrackablesPose::estimateResponse>* AsyncestimateRaw(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -81,7 +68,7 @@ class grpcIMultiTrackablesPoseService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest& request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMultiTrackablesPose::setTrackablesResponse>> AsyncsetTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMultiTrackablesPose::setTrackablesResponse>>(AsyncsetTrackablesRaw(context, request, cq));
@@ -96,32 +83,24 @@ class grpcIMultiTrackablesPoseService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMultiTrackablesPose::estimateResponse>> PrepareAsyncestimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMultiTrackablesPose::estimateResponse>>(PrepareAsyncestimateRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void setTrackables(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void estimate(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIMultiTrackablesPose::setTrackablesResponse>* AsyncsetTrackablesRaw(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMultiTrackablesPose::setTrackablesResponse>* PrepareAsyncsetTrackablesRaw(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMultiTrackablesPose::estimateResponse>* AsyncestimateRaw(::grpc::ClientContext* context, const ::grpcIMultiTrackablesPose::estimateRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -180,36 +159,22 @@ class grpcIMultiTrackablesPoseService final {
   };
   typedef WithAsyncMethod_setTrackables<WithAsyncMethod_estimate<Service > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_setTrackables : public BaseClass {
+  class WithCallbackMethod_setTrackables : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_setTrackables() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_setTrackables() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMultiTrackablesPose::setTrackablesRequest, ::grpcIMultiTrackablesPose::setTrackablesResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response) { return this->setTrackables(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMultiTrackablesPose::setTrackablesRequest* request, ::grpcIMultiTrackablesPose::setTrackablesResponse* response) { return this->setTrackables(context, request, response); }));}
     void SetMessageAllocatorFor_setTrackables(
-        ::grpc::experimental::MessageAllocator< ::grpcIMultiTrackablesPose::setTrackablesRequest, ::grpcIMultiTrackablesPose::setTrackablesResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMultiTrackablesPose::setTrackablesRequest, ::grpcIMultiTrackablesPose::setTrackablesResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMultiTrackablesPose::setTrackablesRequest, ::grpcIMultiTrackablesPose::setTrackablesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_setTrackables() override {
+    ~WithCallbackMethod_setTrackables() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -217,46 +182,26 @@ class grpcIMultiTrackablesPoseService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setTrackables(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMultiTrackablesPose::setTrackablesRequest* /*request*/, ::grpcIMultiTrackablesPose::setTrackablesResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setTrackables(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMultiTrackablesPose::setTrackablesRequest* /*request*/, ::grpcIMultiTrackablesPose::setTrackablesResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMultiTrackablesPose::setTrackablesRequest* /*request*/, ::grpcIMultiTrackablesPose::setTrackablesResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_estimate : public BaseClass {
+  class WithCallbackMethod_estimate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_estimate() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_estimate() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMultiTrackablesPose::estimateRequest, ::grpcIMultiTrackablesPose::estimateResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response) { return this->estimate(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMultiTrackablesPose::estimateRequest* request, ::grpcIMultiTrackablesPose::estimateResponse* response) { return this->estimate(context, request, response); }));}
     void SetMessageAllocatorFor_estimate(
-        ::grpc::experimental::MessageAllocator< ::grpcIMultiTrackablesPose::estimateRequest, ::grpcIMultiTrackablesPose::estimateResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMultiTrackablesPose::estimateRequest, ::grpcIMultiTrackablesPose::estimateResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMultiTrackablesPose::estimateRequest, ::grpcIMultiTrackablesPose::estimateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_estimate() override {
+    ~WithCallbackMethod_estimate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -264,20 +209,11 @@ class grpcIMultiTrackablesPoseService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* estimate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMultiTrackablesPose::estimateRequest* /*request*/, ::grpcIMultiTrackablesPose::estimateResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* estimate(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMultiTrackablesPose::estimateRequest* /*request*/, ::grpcIMultiTrackablesPose::estimateResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMultiTrackablesPose::estimateRequest* /*request*/, ::grpcIMultiTrackablesPose::estimateResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_setTrackables<ExperimentalWithCallbackMethod_estimate<Service > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_setTrackables<ExperimentalWithCallbackMethod_estimate<Service > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_setTrackables<WithCallbackMethod_estimate<Service > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_setTrackables : public BaseClass {
    private:
@@ -353,27 +289,17 @@ class grpcIMultiTrackablesPoseService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_setTrackables : public BaseClass {
+  class WithRawCallbackMethod_setTrackables : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_setTrackables() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_setTrackables() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setTrackables(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setTrackables(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_setTrackables() override {
+    ~WithRawCallbackMethod_setTrackables() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -381,37 +307,21 @@ class grpcIMultiTrackablesPoseService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setTrackables(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setTrackables(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_estimate : public BaseClass {
+  class WithRawCallbackMethod_estimate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_estimate() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_estimate() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->estimate(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->estimate(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_estimate() override {
+    ~WithRawCallbackMethod_estimate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -419,14 +329,8 @@ class grpcIMultiTrackablesPoseService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* estimate(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* estimate(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_setTrackables : public BaseClass {

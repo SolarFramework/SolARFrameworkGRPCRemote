@@ -16,66 +16,74 @@
 #include <google/protobuf/port_def.inc>
 
 PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace grpcI2Dto3DTransformDecomposer {
-constexpr decomposeRequest::decomposeRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : f_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , camparams_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , decomposedposes_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , grpcservercompressionformat_(0){}
+PROTOBUF_CONSTEXPR decomposeRequest::decomposeRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.f_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.decomposedposes_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct decomposeRequestDefaultTypeInternal {
-  constexpr decomposeRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR decomposeRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~decomposeRequestDefaultTypeInternal() {}
   union {
     decomposeRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT decomposeRequestDefaultTypeInternal _decomposeRequest_default_instance_;
-constexpr decomposeResponse::decomposeResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : decomposedposes_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , xpcfgrpcreturnvalue_(false){}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 decomposeRequestDefaultTypeInternal _decomposeRequest_default_instance_;
+PROTOBUF_CONSTEXPR decomposeResponse::decomposeResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.decomposedposes_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct decomposeResponseDefaultTypeInternal {
-  constexpr decomposeResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR decomposeResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~decomposeResponseDefaultTypeInternal() {}
   union {
     decomposeResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT decomposeResponseDefaultTypeInternal _decomposeResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 decomposeResponseDefaultTypeInternal _decomposeResponse_default_instance_;
 }  // namespace grpcI2Dto3DTransformDecomposer
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grpcI2Dto3DTransformDecomposerService_2eproto[2];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grpcI2Dto3DTransformDecomposerService_2eproto = nullptr;
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grpcI2Dto3DTransformDecomposerService_2eproto = nullptr;
+static ::_pb::Metadata file_level_metadata_grpcI2Dto3DTransformDecomposerService_2eproto[2];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_grpcI2Dto3DTransformDecomposerService_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_grpcI2Dto3DTransformDecomposerService_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grpcI2Dto3DTransformDecomposerService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_grpcI2Dto3DTransformDecomposerService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeRequest, f_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeRequest, camparams_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeRequest, decomposedposes_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeRequest, _impl_.f_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeRequest, _impl_.camparams_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeRequest, _impl_.decomposedposes_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeResponse, decomposedposes_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeResponse, xpcfgrpcreturnvalue_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeResponse, _impl_.decomposedposes_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2Dto3DTransformDecomposer::decomposeResponse, _impl_.xpcfgrpcreturnvalue_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::grpcI2Dto3DTransformDecomposer::decomposeRequest)},
-  { 9, -1, sizeof(::grpcI2Dto3DTransformDecomposer::decomposeResponse)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::grpcI2Dto3DTransformDecomposer::decomposeRequest)},
+  { 10, -1, -1, sizeof(::grpcI2Dto3DTransformDecomposer::decomposeResponse)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcI2Dto3DTransformDecomposer::_decomposeRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::grpcI2Dto3DTransformDecomposer::_decomposeResponse_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::grpcI2Dto3DTransformDecomposer::_decomposeRequest_default_instance_._instance,
+  &::grpcI2Dto3DTransformDecomposer::_decomposeResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_grpcI2Dto3DTransformDecomposerService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -92,24 +100,24 @@ const char descriptor_table_protodef_grpcI2Dto3DTransformDecomposerService_2epro
   ".grpcI2Dto3DTransformDecomposer.decompos"
   "eResponse\"\000b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_deps[1] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_once;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto = {
-  false, false, 459, descriptor_table_protodef_grpcI2Dto3DTransformDecomposerService_2eproto, "grpcI2Dto3DTransformDecomposerService.proto", 
-  &descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_once, descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_deps, 1, 2,
-  schemas, file_default_instances, TableStruct_grpcI2Dto3DTransformDecomposerService_2eproto::offsets,
-  file_level_metadata_grpcI2Dto3DTransformDecomposerService_2eproto, file_level_enum_descriptors_grpcI2Dto3DTransformDecomposerService_2eproto, file_level_service_descriptors_grpcI2Dto3DTransformDecomposerService_2eproto,
+static ::_pbi::once_flag descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto = {
+    false, false, 459, descriptor_table_protodef_grpcI2Dto3DTransformDecomposerService_2eproto,
+    "grpcI2Dto3DTransformDecomposerService.proto",
+    &descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_once, descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_deps, 1, 2,
+    schemas, file_default_instances, TableStruct_grpcI2Dto3DTransformDecomposerService_2eproto::offsets,
+    file_level_metadata_grpcI2Dto3DTransformDecomposerService_2eproto, file_level_enum_descriptors_grpcI2Dto3DTransformDecomposerService_2eproto,
+    file_level_service_descriptors_grpcI2Dto3DTransformDecomposerService_2eproto,
 };
-PROTOBUF_ATTRIBUTE_WEAK ::PROTOBUF_NAMESPACE_ID::Metadata
-descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_metadata_getter(int index) {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto);
-  return descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto.file_level_metadata[index];
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_getter() {
+  return &descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto;
 }
 
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_grpcI2Dto3DTransformDecomposerService_2eproto(&descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_grpcI2Dto3DTransformDecomposerService_2eproto(&descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto);
 namespace grpcI2Dto3DTransformDecomposer {
 
 // ===================================================================
@@ -118,169 +126,205 @@ class decomposeRequest::_Internal {
  public:
 };
 
-decomposeRequest::decomposeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+decomposeRequest::decomposeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI2Dto3DTransformDecomposer.decomposeRequest)
 }
 decomposeRequest::decomposeRequest(const decomposeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  decomposeRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.f_){}
+    , decltype(_impl_.camparams_){}
+    , decltype(_impl_.decomposedposes_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  f_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.f_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.f_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_f().empty()) {
-    f_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_f(), 
-      GetArena());
+    _this->_impl_.f_.Set(from._internal_f(), 
+      _this->GetArenaForAllocation());
   }
-  camparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.camparams_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams().empty()) {
-    camparams_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_camparams(), 
-      GetArena());
+    _this->_impl_.camparams_.Set(from._internal_camparams(), 
+      _this->GetArenaForAllocation());
   }
-  decomposedposes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.decomposedposes_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.decomposedposes_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_decomposedposes().empty()) {
-    decomposedposes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_decomposedposes(), 
-      GetArena());
+    _this->_impl_.decomposedposes_.Set(from._internal_decomposedposes(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcI2Dto3DTransformDecomposer.decomposeRequest)
 }
 
-void decomposeRequest::SharedCtor() {
-f_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-camparams_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-decomposedposes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-grpcservercompressionformat_ = 0;
+inline void decomposeRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.f_){}
+    , decltype(_impl_.camparams_){}
+    , decltype(_impl_.decomposedposes_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.f_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.f_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.decomposedposes_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.decomposedposes_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 decomposeRequest::~decomposeRequest() {
   // @@protoc_insertion_point(destructor:grpcI2Dto3DTransformDecomposer.decomposeRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void decomposeRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  f_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  camparams_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  decomposedposes_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void decomposeRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.f_.Destroy();
+  _impl_.camparams_.Destroy();
+  _impl_.decomposedposes_.Destroy();
 }
 
-void decomposeRequest::ArenaDtor(void* object) {
-  decomposeRequest* _this = reinterpret_cast< decomposeRequest* >(object);
-  (void)_this;
-}
-void decomposeRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void decomposeRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void decomposeRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcI2Dto3DTransformDecomposer.decomposeRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  f_.ClearToEmpty();
-  camparams_.ClearToEmpty();
-  decomposedposes_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.f_.ClearToEmpty();
+  _impl_.camparams_.ClearToEmpty();
+  _impl_.decomposedposes_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* decomposeRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* decomposeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // int32 grpcServerCompressionFormat = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes F = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_f();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes camParams = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_camparams();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes decomposedPoses = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_decomposedposes();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* decomposeRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* decomposeRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcI2Dto3DTransformDecomposer.decomposeRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 grpcServerCompressionFormat = 1;
-  if (this->grpcservercompressionformat() != 0) {
+  if (this->_internal_grpcservercompressionformat() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
   // bytes F = 2;
-  if (this->f().size() > 0) {
+  if (!this->_internal_f().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_f(), target);
   }
 
   // bytes camParams = 3;
-  if (this->camparams().size() > 0) {
+  if (!this->_internal_camparams().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_camparams(), target);
   }
 
   // bytes decomposedPoses = 4;
-  if (this->decomposedposes().size() > 0) {
+  if (!this->_internal_decomposedposes().empty()) {
     target = stream->WriteBytesMaybeAliased(
         4, this->_internal_decomposedposes(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcI2Dto3DTransformDecomposer.decomposeRequest)
@@ -291,88 +335,67 @@ size_t decomposeRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcI2Dto3DTransformDecomposer.decomposeRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes F = 2;
-  if (this->f().size() > 0) {
+  if (!this->_internal_f().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_f());
   }
 
   // bytes camParams = 3;
-  if (this->camparams().size() > 0) {
+  if (!this->_internal_camparams().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_camparams());
   }
 
   // bytes decomposedPoses = 4;
-  if (this->decomposedposes().size() > 0) {
+  if (!this->_internal_decomposedposes().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_decomposedposes());
   }
 
   // int32 grpcServerCompressionFormat = 1;
-  if (this->grpcservercompressionformat() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_grpcservercompressionformat());
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void decomposeRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcI2Dto3DTransformDecomposer.decomposeRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const decomposeRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<decomposeRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2Dto3DTransformDecomposer.decomposeRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2Dto3DTransformDecomposer.decomposeRequest)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData decomposeRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    decomposeRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*decomposeRequest::GetClassData() const { return &_class_data_; }
 
-void decomposeRequest::MergeFrom(const decomposeRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI2Dto3DTransformDecomposer.decomposeRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void decomposeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<decomposeRequest*>(&to_msg);
+  auto& from = static_cast<const decomposeRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2Dto3DTransformDecomposer.decomposeRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.f().size() > 0) {
-    _internal_set_f(from._internal_f());
+  if (!from._internal_f().empty()) {
+    _this->_internal_set_f(from._internal_f());
   }
-  if (from.camparams().size() > 0) {
-    _internal_set_camparams(from._internal_camparams());
+  if (!from._internal_camparams().empty()) {
+    _this->_internal_set_camparams(from._internal_camparams());
   }
-  if (from.decomposedposes().size() > 0) {
-    _internal_set_decomposedposes(from._internal_decomposedposes());
+  if (!from._internal_decomposedposes().empty()) {
+    _this->_internal_set_decomposedposes(from._internal_decomposedposes());
   }
-  if (from.grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  if (from._internal_grpcservercompressionformat() != 0) {
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-}
-
-void decomposeRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcI2Dto3DTransformDecomposer.decomposeRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void decomposeRequest::CopyFrom(const decomposeRequest& from) {
@@ -388,17 +411,29 @@ bool decomposeRequest::IsInitialized() const {
 
 void decomposeRequest::InternalSwap(decomposeRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  f_.Swap(&other->f_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  camparams_.Swap(&other->camparams_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  decomposedposes_.Swap(&other->decomposedposes_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.f_, lhs_arena,
+      &other->_impl_.f_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.camparams_, lhs_arena,
+      &other->_impl_.camparams_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.decomposedposes_, lhs_arena,
+      &other->_impl_.decomposedposes_, rhs_arena
+  );
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata decomposeRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_getter, &descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_once,
+      file_level_metadata_grpcI2Dto3DTransformDecomposerService_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -406,125 +441,143 @@ class decomposeResponse::_Internal {
  public:
 };
 
-decomposeResponse::decomposeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
+decomposeResponse::decomposeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI2Dto3DTransformDecomposer.decomposeResponse)
 }
 decomposeResponse::decomposeResponse(const decomposeResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  decomposeResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.decomposedposes_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  decomposedposes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _impl_.decomposedposes_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.decomposedposes_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_decomposedposes().empty()) {
-    decomposedposes_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_decomposedposes(), 
-      GetArena());
+    _this->_impl_.decomposedposes_.Set(from._internal_decomposedposes(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcI2Dto3DTransformDecomposer.decomposeResponse)
 }
 
-void decomposeResponse::SharedCtor() {
-decomposedposes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-xpcfgrpcreturnvalue_ = false;
+inline void decomposeResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.decomposedposes_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.decomposedposes_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.decomposedposes_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 decomposeResponse::~decomposeResponse() {
   // @@protoc_insertion_point(destructor:grpcI2Dto3DTransformDecomposer.decomposeResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void decomposeResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-  decomposedposes_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void decomposeResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.decomposedposes_.Destroy();
 }
 
-void decomposeResponse::ArenaDtor(void* object) {
-  decomposeResponse* _this = reinterpret_cast< decomposeResponse* >(object);
-  (void)_this;
-}
-void decomposeResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void decomposeResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void decomposeResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:grpcI2Dto3DTransformDecomposer.decomposeResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  decomposedposes_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = false;
+  _impl_.decomposedposes_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* decomposeResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* decomposeResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
       // bytes decomposedPoses = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_decomposedposes();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bool xpcfGrpcReturnValue = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* decomposeResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* decomposeResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:grpcI2Dto3DTransformDecomposer.decomposeResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes decomposedPoses = 1;
-  if (this->decomposedposes().size() > 0) {
+  if (!this->_internal_decomposedposes().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_decomposedposes(), target);
   }
 
   // bool xpcfGrpcReturnValue = 2;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:grpcI2Dto3DTransformDecomposer.decomposeResponse)
@@ -535,66 +588,47 @@ size_t decomposeResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:grpcI2Dto3DTransformDecomposer.decomposeResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes decomposedPoses = 1;
-  if (this->decomposedposes().size() > 0) {
+  if (!this->_internal_decomposedposes().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_decomposedposes());
   }
 
   // bool xpcfGrpcReturnValue = 2;
-  if (this->xpcfgrpcreturnvalue() != 0) {
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     total_size += 1 + 1;
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void decomposeResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:grpcI2Dto3DTransformDecomposer.decomposeResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const decomposeResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<decomposeResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:grpcI2Dto3DTransformDecomposer.decomposeResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:grpcI2Dto3DTransformDecomposer.decomposeResponse)
-    MergeFrom(*source);
-  }
-}
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData decomposeResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    decomposeResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*decomposeResponse::GetClassData() const { return &_class_data_; }
 
-void decomposeResponse::MergeFrom(const decomposeResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI2Dto3DTransformDecomposer.decomposeResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+
+void decomposeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<decomposeResponse*>(&to_msg);
+  auto& from = static_cast<const decomposeResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2Dto3DTransformDecomposer.decomposeResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.decomposedposes().size() > 0) {
-    _internal_set_decomposedposes(from._internal_decomposedposes());
+  if (!from._internal_decomposedposes().empty()) {
+    _this->_internal_set_decomposedposes(from._internal_decomposedposes());
   }
-  if (from.xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-}
-
-void decomposeResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:grpcI2Dto3DTransformDecomposer.decomposeResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void decomposeResponse::CopyFrom(const decomposeResponse& from) {
@@ -610,23 +644,31 @@ bool decomposeResponse::IsInitialized() const {
 
 void decomposeResponse::InternalSwap(decomposeResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  decomposedposes_.Swap(&other->decomposedposes_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.decomposedposes_, lhs_arena,
+      &other->_impl_.decomposedposes_, rhs_arena
+  );
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata decomposeResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_getter, &descriptor_table_grpcI2Dto3DTransformDecomposerService_2eproto_once,
+      file_level_metadata_grpcI2Dto3DTransformDecomposerService_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcI2Dto3DTransformDecomposer
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::grpcI2Dto3DTransformDecomposer::decomposeRequest* Arena::CreateMaybeMessage< ::grpcI2Dto3DTransformDecomposer::decomposeRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcI2Dto3DTransformDecomposer::decomposeRequest*
+Arena::CreateMaybeMessage< ::grpcI2Dto3DTransformDecomposer::decomposeRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcI2Dto3DTransformDecomposer::decomposeRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcI2Dto3DTransformDecomposer::decomposeResponse* Arena::CreateMaybeMessage< ::grpcI2Dto3DTransformDecomposer::decomposeResponse >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::grpcI2Dto3DTransformDecomposer::decomposeResponse*
+Arena::CreateMaybeMessage< ::grpcI2Dto3DTransformDecomposer::decomposeResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcI2Dto3DTransformDecomposer::decomposeResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE

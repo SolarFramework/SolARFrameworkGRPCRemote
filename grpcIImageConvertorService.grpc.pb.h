@@ -7,10 +7,9 @@
 #include "grpcIImageConvertorService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -57,36 +56,20 @@ class grpcIImageConvertorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageConvertor::convertLookUpTableResponse>> PrepareAsyncconvertLookUpTable(::grpc::ClientContext* context, const ::grpcIImageConvertor::convertLookUpTableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageConvertor::convertLookUpTableResponse>>(PrepareAsyncconvertLookUpTableRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void convert_grpc0(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request* request, ::grpcIImageConvertor::convert_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void convert_grpc0(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request* request, ::grpcIImageConvertor::convert_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void convert_grpc0(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request* request, ::grpcIImageConvertor::convert_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void convert_grpc1(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc1Request* request, ::grpcIImageConvertor::convert_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void convert_grpc1(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc1Request* request, ::grpcIImageConvertor::convert_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void convert_grpc1(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc1Request* request, ::grpcIImageConvertor::convert_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void convertLookUpTable(::grpc::ClientContext* context, const ::grpcIImageConvertor::convertLookUpTableRequest* request, ::grpcIImageConvertor::convertLookUpTableResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void convertLookUpTable(::grpc::ClientContext* context, const ::grpcIImageConvertor::convertLookUpTableRequest* request, ::grpcIImageConvertor::convertLookUpTableResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void convertLookUpTable(::grpc::ClientContext* context, const ::grpcIImageConvertor::convertLookUpTableRequest* request, ::grpcIImageConvertor::convertLookUpTableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageConvertor::convert_grpc0Response>* Asyncconvert_grpc0Raw(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageConvertor::convert_grpc0Response>* PrepareAsyncconvert_grpc0Raw(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIImageConvertor::convert_grpc1Response>* Asyncconvert_grpc1Raw(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -96,7 +79,7 @@ class grpcIImageConvertorService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status convert_grpc0(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request& request, ::grpcIImageConvertor::convert_grpc0Response* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageConvertor::convert_grpc0Response>> Asyncconvert_grpc0(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageConvertor::convert_grpc0Response>>(Asyncconvert_grpc0Raw(context, request, cq));
@@ -118,38 +101,26 @@ class grpcIImageConvertorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageConvertor::convertLookUpTableResponse>> PrepareAsyncconvertLookUpTable(::grpc::ClientContext* context, const ::grpcIImageConvertor::convertLookUpTableRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIImageConvertor::convertLookUpTableResponse>>(PrepareAsyncconvertLookUpTableRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void convert_grpc0(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request* request, ::grpcIImageConvertor::convert_grpc0Response* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void convert_grpc0(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request* request, ::grpcIImageConvertor::convert_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void convert_grpc0(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request* request, ::grpcIImageConvertor::convert_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void convert_grpc1(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc1Request* request, ::grpcIImageConvertor::convert_grpc1Response* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void convert_grpc1(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc1Request* request, ::grpcIImageConvertor::convert_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void convert_grpc1(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc1Request* request, ::grpcIImageConvertor::convert_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void convertLookUpTable(::grpc::ClientContext* context, const ::grpcIImageConvertor::convertLookUpTableRequest* request, ::grpcIImageConvertor::convertLookUpTableResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void convertLookUpTable(::grpc::ClientContext* context, const ::grpcIImageConvertor::convertLookUpTableRequest* request, ::grpcIImageConvertor::convertLookUpTableResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void convertLookUpTable(::grpc::ClientContext* context, const ::grpcIImageConvertor::convertLookUpTableRequest* request, ::grpcIImageConvertor::convertLookUpTableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIImageConvertor::convert_grpc0Response>* Asyncconvert_grpc0Raw(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIImageConvertor::convert_grpc0Response>* PrepareAsyncconvert_grpc0Raw(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIImageConvertor::convert_grpc1Response>* Asyncconvert_grpc1Raw(::grpc::ClientContext* context, const ::grpcIImageConvertor::convert_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
@@ -232,36 +203,22 @@ class grpcIImageConvertorService final {
   };
   typedef WithAsyncMethod_convert_grpc0<WithAsyncMethod_convert_grpc1<WithAsyncMethod_convertLookUpTable<Service > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_convert_grpc0 : public BaseClass {
+  class WithCallbackMethod_convert_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_convert_grpc0() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_convert_grpc0() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIImageConvertor::convert_grpc0Request, ::grpcIImageConvertor::convert_grpc0Response>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIImageConvertor::convert_grpc0Request* request, ::grpcIImageConvertor::convert_grpc0Response* response) { return this->convert_grpc0(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIImageConvertor::convert_grpc0Request* request, ::grpcIImageConvertor::convert_grpc0Response* response) { return this->convert_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_convert_grpc0(
-        ::grpc::experimental::MessageAllocator< ::grpcIImageConvertor::convert_grpc0Request, ::grpcIImageConvertor::convert_grpc0Response>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIImageConvertor::convert_grpc0Request, ::grpcIImageConvertor::convert_grpc0Response>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIImageConvertor::convert_grpc0Request, ::grpcIImageConvertor::convert_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_convert_grpc0() override {
+    ~WithCallbackMethod_convert_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -269,46 +226,26 @@ class grpcIImageConvertorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* convert_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageConvertor::convert_grpc0Request* /*request*/, ::grpcIImageConvertor::convert_grpc0Response* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* convert_grpc0(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIImageConvertor::convert_grpc0Request* /*request*/, ::grpcIImageConvertor::convert_grpc0Response* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageConvertor::convert_grpc0Request* /*request*/, ::grpcIImageConvertor::convert_grpc0Response* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_convert_grpc1 : public BaseClass {
+  class WithCallbackMethod_convert_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_convert_grpc1() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_convert_grpc1() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIImageConvertor::convert_grpc1Request, ::grpcIImageConvertor::convert_grpc1Response>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIImageConvertor::convert_grpc1Request* request, ::grpcIImageConvertor::convert_grpc1Response* response) { return this->convert_grpc1(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIImageConvertor::convert_grpc1Request* request, ::grpcIImageConvertor::convert_grpc1Response* response) { return this->convert_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_convert_grpc1(
-        ::grpc::experimental::MessageAllocator< ::grpcIImageConvertor::convert_grpc1Request, ::grpcIImageConvertor::convert_grpc1Response>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIImageConvertor::convert_grpc1Request, ::grpcIImageConvertor::convert_grpc1Response>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIImageConvertor::convert_grpc1Request, ::grpcIImageConvertor::convert_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_convert_grpc1() override {
+    ~WithCallbackMethod_convert_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -316,46 +253,26 @@ class grpcIImageConvertorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* convert_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageConvertor::convert_grpc1Request* /*request*/, ::grpcIImageConvertor::convert_grpc1Response* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* convert_grpc1(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIImageConvertor::convert_grpc1Request* /*request*/, ::grpcIImageConvertor::convert_grpc1Response* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageConvertor::convert_grpc1Request* /*request*/, ::grpcIImageConvertor::convert_grpc1Response* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_convertLookUpTable : public BaseClass {
+  class WithCallbackMethod_convertLookUpTable : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_convertLookUpTable() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
+    WithCallbackMethod_convertLookUpTable() {
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIImageConvertor::convertLookUpTableRequest, ::grpcIImageConvertor::convertLookUpTableResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIImageConvertor::convertLookUpTableRequest* request, ::grpcIImageConvertor::convertLookUpTableResponse* response) { return this->convertLookUpTable(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIImageConvertor::convertLookUpTableRequest* request, ::grpcIImageConvertor::convertLookUpTableResponse* response) { return this->convertLookUpTable(context, request, response); }));}
     void SetMessageAllocatorFor_convertLookUpTable(
-        ::grpc::experimental::MessageAllocator< ::grpcIImageConvertor::convertLookUpTableRequest, ::grpcIImageConvertor::convertLookUpTableResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIImageConvertor::convertLookUpTableRequest, ::grpcIImageConvertor::convertLookUpTableResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIImageConvertor::convertLookUpTableRequest, ::grpcIImageConvertor::convertLookUpTableResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_convertLookUpTable() override {
+    ~WithCallbackMethod_convertLookUpTable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -363,20 +280,11 @@ class grpcIImageConvertorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* convertLookUpTable(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageConvertor::convertLookUpTableRequest* /*request*/, ::grpcIImageConvertor::convertLookUpTableResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* convertLookUpTable(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIImageConvertor::convertLookUpTableRequest* /*request*/, ::grpcIImageConvertor::convertLookUpTableResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIImageConvertor::convertLookUpTableRequest* /*request*/, ::grpcIImageConvertor::convertLookUpTableResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_convert_grpc0<ExperimentalWithCallbackMethod_convert_grpc1<ExperimentalWithCallbackMethod_convertLookUpTable<Service > > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_convert_grpc0<ExperimentalWithCallbackMethod_convert_grpc1<ExperimentalWithCallbackMethod_convertLookUpTable<Service > > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_convert_grpc0<WithCallbackMethod_convert_grpc1<WithCallbackMethod_convertLookUpTable<Service > > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_convert_grpc0 : public BaseClass {
    private:
@@ -489,27 +397,17 @@ class grpcIImageConvertorService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_convert_grpc0 : public BaseClass {
+  class WithRawCallbackMethod_convert_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_convert_grpc0() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_convert_grpc0() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->convert_grpc0(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->convert_grpc0(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_convert_grpc0() override {
+    ~WithRawCallbackMethod_convert_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -517,37 +415,21 @@ class grpcIImageConvertorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* convert_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* convert_grpc0(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_convert_grpc1 : public BaseClass {
+  class WithRawCallbackMethod_convert_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_convert_grpc1() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_convert_grpc1() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->convert_grpc1(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->convert_grpc1(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_convert_grpc1() override {
+    ~WithRawCallbackMethod_convert_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -555,37 +437,21 @@ class grpcIImageConvertorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* convert_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* convert_grpc1(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_convertLookUpTable : public BaseClass {
+  class WithRawCallbackMethod_convertLookUpTable : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_convertLookUpTable() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
+    WithRawCallbackMethod_convertLookUpTable() {
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->convertLookUpTable(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->convertLookUpTable(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_convertLookUpTable() override {
+    ~WithRawCallbackMethod_convertLookUpTable() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -593,14 +459,8 @@ class grpcIImageConvertorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* convertLookUpTable(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* convertLookUpTable(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_convert_grpc0 : public BaseClass {
