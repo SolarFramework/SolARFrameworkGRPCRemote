@@ -568,16 +568,6 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcServer>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIDenseMappingPipeline::IDenseMappingPipeline_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -614,16 +604,6 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIRelocalizationPipeline::IRelocalizationPipeline_grpcServer>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIServiceManagerPipeline::IServiceManagerPipeline_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIServiceManagerPipeline::IServiceManagerPipeline_grpcServer>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
@@ -694,6 +674,26 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverISemanticSegmentation::ISemanticSegmentation_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIFrontEnd::IFrontEnd_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIFrontEnd::IFrontEnd_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIServiceManager::IServiceManager_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIServiceManager::IServiceManager_grpcServer>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
@@ -1033,8 +1033,6 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMeshExporter::IMeshExporter_grpc
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMeshExporter::IMeshExporter_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPointCloudExporter::IPointCloudExporter_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPointCloudExporter::IPointCloudExporter_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIAsyncRelocalizationPipeline::IAsyncRelocalizationPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIDenseMappingPipeline::IDenseMappingPipeline_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIDenseMappingPipeline::IDenseMappingPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapUpdatePipeline::IMapUpdatePipeline_grpcProxy)
@@ -1043,8 +1041,6 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMappingPipeline::IMappingPipelin
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMappingPipeline::IMappingPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizationPipeline::IRelocalizationPipeline_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRelocalizationPipeline::IRelocalizationPipeline_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIServiceManagerPipeline::IServiceManagerPipeline_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIServiceManagerPipeline::IServiceManagerPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPCFilter::IPCFilter_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPCFilter::IPCFilter_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPCFilterCentroid::IPCFilterCentroid_grpcProxy)
@@ -1059,6 +1055,10 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIPanopticSegmentation::IPanopticS
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIPanopticSegmentation::IPanopticSegmentation_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyISemanticSegmentation::ISemanticSegmentation_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverISemanticSegmentation::ISemanticSegmentation_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIFrontEnd::IFrontEnd_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIFrontEnd::IFrontEnd_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIServiceManager::IServiceManager_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIServiceManager::IServiceManager_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIBootstrapper::IBootstrapper_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIBootstrapper::IBootstrapper_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapping::IMapping_grpcProxy)

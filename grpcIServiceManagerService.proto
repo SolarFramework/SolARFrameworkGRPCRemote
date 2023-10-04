@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIServiceManager;
+
+message initRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message initResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message registerServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+sint32 serviceType = 2;
+string serviceURL = 3;
+}
+
+message registerServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message unregisterServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+sint32 serviceType = 2;
+string serviceURL = 3;
+}
+
+message unregisterServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+sint32 serviceType = 2;
+string serviceURL = 3;
+}
+
+message getServiceResponse
+{
+string serviceURL = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getAndLockServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+sint32 serviceType = 2;
+string clientUUID = 3;
+string serviceURL = 4;
+}
+
+message getAndLockServiceResponse
+{
+string serviceURL = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message unlockServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+sint32 serviceType = 2;
+string clientUUID = 3;
+}
+
+message unlockServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIServiceManagerService {
+rpc init(initRequest) returns(initResponse) {}
+rpc registerService(registerServiceRequest) returns(registerServiceResponse) {}
+rpc unregisterService(unregisterServiceRequest) returns(unregisterServiceResponse) {}
+rpc getService(getServiceRequest) returns(getServiceResponse) {}
+rpc getAndLockService(getAndLockServiceRequest) returns(getAndLockServiceResponse) {}
+rpc unlockService(unlockServiceRequest) returns(unlockServiceResponse) {}
+}
+
