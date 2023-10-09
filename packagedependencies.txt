@@ -1,2 +1,2 @@
 xpcf|2.7.0|xpcf|@github|https://github.com/SolarFramework/binaries/releases/download
-SolARFramework|1.1.0|SolARFramework|build@github|https://github.com/SolarFramework/SolARFramework
+SolARFramework|1.1.0|SolARFramework|SolARBuild@github|https://github.com/SolarFramework/SolARFramework/releases/download|shared

@@ -3,7 +3,7 @@
 
 #ifndef IMAPPINGPIPELINE_GRPCPROXY_H
 #define IMAPPINGPIPELINE_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/pipeline/IMappingPipeline.h"
+#include "api/pipeline/IMappingPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

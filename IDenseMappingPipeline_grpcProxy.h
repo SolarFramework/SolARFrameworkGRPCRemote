@@ -3,7 +3,7 @@
 
 #ifndef IDENSEMAPPINGPIPELINE_GRPCPROXY_H
 #define IDENSEMAPPINGPIPELINE_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/pipeline/IDenseMappingPipeline.h"
+#include "api/pipeline/IDenseMappingPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
