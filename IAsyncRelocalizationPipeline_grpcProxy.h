@@ -3,7 +3,7 @@
 
 #ifndef IASYNCRELOCALIZATIONPIPELINE_GRPCPROXY_H
 #define IASYNCRELOCALIZATIONPIPELINE_GRPCPROXY_H
-#include "api/pipeline/IAsyncRelocalizationPipeline.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/pipeline/IAsyncRelocalizationPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -39,8 +39,10 @@ class IAsyncRelocalizationPipeline_grpcProxy:  public org::bcom::xpcf::Configura
     SolAR::FrameworkReturnCode getCameraParameters(std::string const& uuid, SolAR::datastructure::CameraParameters& cameraParams)     const     override;
     SolAR::FrameworkReturnCode relocalizeProcessRequest(std::string const& uuid, std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df const& worldTransform, std::chrono::system_clock::time_point const& timestamp, SolAR::api::pipeline::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::api::pipeline::MappingStatus& mappingStatus)     override;
     SolAR::FrameworkReturnCode get3DTransformRequest(std::string const& uuid, SolAR::api::pipeline::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence)     override;
+    SolAR::FrameworkReturnCode getMappingDataRequest(std::string const& uuid, std::vector<SRef<SolAR::datastructure::CloudPoint>>& outputPointClouds, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
     SolAR::FrameworkReturnCode getLastPose(std::string const& uuid, SolAR::datastructure::Transform3Df& pose, SolAR::api::pipeline::PoseType const poseType)     const     override;
     SolAR::FrameworkReturnCode getMapRequest(SRef<SolAR::datastructure::Map>& map)     const     override;
+    SolAR::FrameworkReturnCode setMapRequest(SRef<SolAR::datastructure::Map> const map)     override;
     SolAR::FrameworkReturnCode resetMap()     const     override;
     SolAR::FrameworkReturnCode getPointCloudRequest(SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
 

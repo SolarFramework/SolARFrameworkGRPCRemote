@@ -2,7 +2,7 @@
 
 #ifndef I2DOVERLAY_GRPCSERVER_H
 #define I2DOVERLAY_GRPCSERVER_H
-#include "api/display/I2DOverlay.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/display/I2DOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

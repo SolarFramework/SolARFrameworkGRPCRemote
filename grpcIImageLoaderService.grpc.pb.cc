@@ -6,8 +6,8 @@
 #include "grpcIImageLoaderService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -28,24 +28,24 @@ static const char* grpcIImageLoaderService_method_names[] = {
 
 std::unique_ptr< grpcIImageLoaderService::Stub> grpcIImageLoaderService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIImageLoaderService::Stub> stub(new grpcIImageLoaderService::Stub(channel));
+  std::unique_ptr< grpcIImageLoaderService::Stub> stub(new grpcIImageLoaderService::Stub(channel, options));
   return stub;
 }
 
-grpcIImageLoaderService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_getImage_(grpcIImageLoaderService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_reloadImage_(grpcIImageLoaderService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIImageLoaderService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_getImage_(grpcIImageLoaderService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_reloadImage_(grpcIImageLoaderService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIImageLoaderService::Stub::getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest& request, ::grpcIImageLoader::getImageResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIImageLoader::getImageRequest, ::grpcIImageLoader::getImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getImage_, context, request, response);
 }
 
-void grpcIImageLoaderService::Stub::experimental_async::getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIImageLoaderService::Stub::async::getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIImageLoader::getImageRequest, ::grpcIImageLoader::getImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImage_, context, request, response, std::move(f));
 }
 
-void grpcIImageLoaderService::Stub::experimental_async::getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIImageLoaderService::Stub::async::getImage(::grpc::ClientContext* context, const ::grpcIImageLoader::getImageRequest* request, ::grpcIImageLoader::getImageResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImage_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIImageLoaderService::Stub::experimental_async::getImage(::grpc::ClientC
   return ::grpc::internal::BlockingUnaryCall< ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_reloadImage_, context, request, response);
 }
 
-void grpcIImageLoaderService::Stub::experimental_async::reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIImageLoaderService::Stub::async::reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIImageLoader::reloadImageRequest, ::grpcIImageLoader::reloadImageResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reloadImage_, context, request, response, std::move(f));
 }
 
-void grpcIImageLoaderService::Stub::experimental_async::reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIImageLoaderService::Stub::async::reloadImage(::grpc::ClientContext* context, const ::grpcIImageLoader::reloadImageRequest* request, ::grpcIImageLoader::reloadImageResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_reloadImage_, context, request, response, reactor);
 }
 

@@ -3,7 +3,7 @@
 
 #ifndef IWORLDGRAPHLOADER_GRPCPROXY_H
 #define IWORLDGRAPHLOADER_GRPCPROXY_H
-#include "api/input/files/IWorldGraphLoader.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/input/files/IWorldGraphLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

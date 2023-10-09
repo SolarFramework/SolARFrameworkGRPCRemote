@@ -2,7 +2,7 @@
 
 #ifndef IREPROJECTIONSTEREO_GRPCSERVER_H
 #define IREPROJECTIONSTEREO_GRPCSERVER_H
-#include "api/geom/IReprojectionStereo.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/geom/IReprojectionStereo.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

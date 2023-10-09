@@ -3,7 +3,7 @@
 
 #ifndef I3DTRANSFORMSACFINDERFROM3D3D_GRPCPROXY_H
 #define I3DTRANSFORMSACFINDERFROM3D3D_GRPCPROXY_H
-#include "api/solver/pose/I3DTransformSACFinderFrom3D3D.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/solver/pose/I3DTransformSACFinderFrom3D3D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -2,7 +2,7 @@
 
 #ifndef I2D3DCORRESPONDENCESFINDER_GRPCSERVER_H
 #define I2D3DCORRESPONDENCESFINDER_GRPCSERVER_H
-#include "api/solver/pose/I2D3DCorrespondencesFinder.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/solver/pose/I2D3DCorrespondencesFinder.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

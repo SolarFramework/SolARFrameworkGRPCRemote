@@ -2,7 +2,7 @@
 
 #ifndef IHOMOGRAPHYVALIDATION_GRPCSERVER_H
 #define IHOMOGRAPHYVALIDATION_GRPCSERVER_H
-#include "api/solver/pose/IHomographyValidation.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/solver/pose/IHomographyValidation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

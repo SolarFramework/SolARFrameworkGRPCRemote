@@ -2,7 +2,7 @@
 
 #ifndef ISBPATTERNREINDEXER_GRPCSERVER_H
 #define ISBPATTERNREINDEXER_GRPCSERVER_H
-#include "api/features/ISBPatternReIndexer.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/features/ISBPatternReIndexer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

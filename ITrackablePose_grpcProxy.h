@@ -3,7 +3,7 @@
 
 #ifndef ITRACKABLEPOSE_GRPCPROXY_H
 #define ITRACKABLEPOSE_GRPCPROXY_H
-#include "api/solver/pose/ITrackablePose.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/solver/pose/ITrackablePose.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

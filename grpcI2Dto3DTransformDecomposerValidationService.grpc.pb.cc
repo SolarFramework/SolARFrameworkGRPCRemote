@@ -6,8 +6,8 @@
 #include "grpcI2Dto3DTransformDecomposerValidationService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcI2Dto3DTransformDecomposerValidationService_method_names[
 
 std::unique_ptr< grpcI2Dto3DTransformDecomposerValidationService::Stub> grpcI2Dto3DTransformDecomposerValidationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcI2Dto3DTransformDecomposerValidationService::Stub> stub(new grpcI2Dto3DTransformDecomposerValidationService::Stub(channel));
+  std::unique_ptr< grpcI2Dto3DTransformDecomposerValidationService::Stub> stub(new grpcI2Dto3DTransformDecomposerValidationService::Stub(channel, options));
   return stub;
 }
 
-grpcI2Dto3DTransformDecomposerValidationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_testMethod_(grpcI2Dto3DTransformDecomposerValidationService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcI2Dto3DTransformDecomposerValidationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_testMethod_(grpcI2Dto3DTransformDecomposerValidationService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcI2Dto3DTransformDecomposerValidationService::Stub::testMethod(::grpc::ClientContext* context, const ::google::protobuf::Empty& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::google::protobuf::Empty, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_testMethod_, context, request, response);
 }
 
-void grpcI2Dto3DTransformDecomposerValidationService::Stub::experimental_async::testMethod(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcI2Dto3DTransformDecomposerValidationService::Stub::async::testMethod(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::google::protobuf::Empty, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_testMethod_, context, request, response, std::move(f));
 }
 
-void grpcI2Dto3DTransformDecomposerValidationService::Stub::experimental_async::testMethod(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcI2Dto3DTransformDecomposerValidationService::Stub::async::testMethod(::grpc::ClientContext* context, const ::google::protobuf::Empty* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_testMethod_, context, request, response, reactor);
 }
 

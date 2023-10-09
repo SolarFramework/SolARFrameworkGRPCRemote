@@ -2,7 +2,7 @@
 
 #ifndef IIMAGEFILTER_GRPCSERVER_H
 #define IIMAGEFILTER_GRPCSERVER_H
-#include "api/image/IImageFilter.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/image/IImageFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

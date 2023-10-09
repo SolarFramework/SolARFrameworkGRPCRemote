@@ -6,8 +6,8 @@
 #include "grpcIImageRectificationService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcIImageRectificationService_method_names[] = {
 
 std::unique_ptr< grpcIImageRectificationService::Stub> grpcIImageRectificationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIImageRectificationService::Stub> stub(new grpcIImageRectificationService::Stub(channel));
+  std::unique_ptr< grpcIImageRectificationService::Stub> stub(new grpcIImageRectificationService::Stub(channel, options));
   return stub;
 }
 
-grpcIImageRectificationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_rectify_(grpcIImageRectificationService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIImageRectificationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_rectify_(grpcIImageRectificationService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIImageRectificationService::Stub::rectify(::grpc::ClientContext* context, const ::grpcIImageRectification::rectifyRequest& request, ::grpcIImageRectification::rectifyResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIImageRectification::rectifyRequest, ::grpcIImageRectification::rectifyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_rectify_, context, request, response);
 }
 
-void grpcIImageRectificationService::Stub::experimental_async::rectify(::grpc::ClientContext* context, const ::grpcIImageRectification::rectifyRequest* request, ::grpcIImageRectification::rectifyResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIImageRectificationService::Stub::async::rectify(::grpc::ClientContext* context, const ::grpcIImageRectification::rectifyRequest* request, ::grpcIImageRectification::rectifyResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIImageRectification::rectifyRequest, ::grpcIImageRectification::rectifyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_rectify_, context, request, response, std::move(f));
 }
 
-void grpcIImageRectificationService::Stub::experimental_async::rectify(::grpc::ClientContext* context, const ::grpcIImageRectification::rectifyRequest* request, ::grpcIImageRectification::rectifyResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIImageRectificationService::Stub::async::rectify(::grpc::ClientContext* context, const ::grpcIImageRectification::rectifyRequest* request, ::grpcIImageRectification::rectifyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_rectify_, context, request, response, reactor);
 }
 

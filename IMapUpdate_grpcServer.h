@@ -2,7 +2,7 @@
 
 #ifndef IMAPUPDATE_GRPCSERVER_H
 #define IMAPUPDATE_GRPCSERVER_H
-#include "api/solver/map/IMapUpdate.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/solver/map/IMapUpdate.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

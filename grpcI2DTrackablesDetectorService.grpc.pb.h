@@ -7,10 +7,9 @@
 #include "grpcI2DTrackablesDetectorService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -50,30 +49,18 @@ class grpcI2DTrackablesDetectorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2DTrackablesDetector::detectResponse>> PrepareAsyncdetect(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2DTrackablesDetector::detectResponse>>(PrepareAsyncdetectRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void setTrackables(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest* request, ::grpcI2DTrackablesDetector::setTrackablesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void setTrackables(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest* request, ::grpcI2DTrackablesDetector::setTrackablesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void setTrackables(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest* request, ::grpcI2DTrackablesDetector::setTrackablesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void detect(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest* request, ::grpcI2DTrackablesDetector::detectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void detect(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest* request, ::grpcI2DTrackablesDetector::detectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void detect(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest* request, ::grpcI2DTrackablesDetector::detectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2DTrackablesDetector::setTrackablesResponse>* AsyncsetTrackablesRaw(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2DTrackablesDetector::setTrackablesResponse>* PrepareAsyncsetTrackablesRaw(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcI2DTrackablesDetector::detectResponse>* AsyncdetectRaw(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -81,7 +68,7 @@ class grpcI2DTrackablesDetectorService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status setTrackables(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest& request, ::grpcI2DTrackablesDetector::setTrackablesResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2DTrackablesDetector::setTrackablesResponse>> AsyncsetTrackables(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2DTrackablesDetector::setTrackablesResponse>>(AsyncsetTrackablesRaw(context, request, cq));
@@ -96,32 +83,24 @@ class grpcI2DTrackablesDetectorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2DTrackablesDetector::detectResponse>> PrepareAsyncdetect(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcI2DTrackablesDetector::detectResponse>>(PrepareAsyncdetectRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void setTrackables(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest* request, ::grpcI2DTrackablesDetector::setTrackablesResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void setTrackables(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest* request, ::grpcI2DTrackablesDetector::setTrackablesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void setTrackables(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest* request, ::grpcI2DTrackablesDetector::setTrackablesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void detect(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest* request, ::grpcI2DTrackablesDetector::detectResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void detect(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest* request, ::grpcI2DTrackablesDetector::detectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void detect(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest* request, ::grpcI2DTrackablesDetector::detectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcI2DTrackablesDetector::setTrackablesResponse>* AsyncsetTrackablesRaw(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcI2DTrackablesDetector::setTrackablesResponse>* PrepareAsyncsetTrackablesRaw(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcI2DTrackablesDetector::detectResponse>* AsyncdetectRaw(::grpc::ClientContext* context, const ::grpcI2DTrackablesDetector::detectRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -180,36 +159,22 @@ class grpcI2DTrackablesDetectorService final {
   };
   typedef WithAsyncMethod_setTrackables<WithAsyncMethod_detect<Service > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_setTrackables : public BaseClass {
+  class WithCallbackMethod_setTrackables : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_setTrackables() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_setTrackables() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2DTrackablesDetector::setTrackablesRequest, ::grpcI2DTrackablesDetector::setTrackablesResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2DTrackablesDetector::setTrackablesRequest* request, ::grpcI2DTrackablesDetector::setTrackablesResponse* response) { return this->setTrackables(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2DTrackablesDetector::setTrackablesRequest* request, ::grpcI2DTrackablesDetector::setTrackablesResponse* response) { return this->setTrackables(context, request, response); }));}
     void SetMessageAllocatorFor_setTrackables(
-        ::grpc::experimental::MessageAllocator< ::grpcI2DTrackablesDetector::setTrackablesRequest, ::grpcI2DTrackablesDetector::setTrackablesResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2DTrackablesDetector::setTrackablesRequest, ::grpcI2DTrackablesDetector::setTrackablesResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2DTrackablesDetector::setTrackablesRequest, ::grpcI2DTrackablesDetector::setTrackablesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_setTrackables() override {
+    ~WithCallbackMethod_setTrackables() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -217,46 +182,26 @@ class grpcI2DTrackablesDetectorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setTrackables(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DTrackablesDetector::setTrackablesRequest* /*request*/, ::grpcI2DTrackablesDetector::setTrackablesResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setTrackables(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2DTrackablesDetector::setTrackablesRequest* /*request*/, ::grpcI2DTrackablesDetector::setTrackablesResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DTrackablesDetector::setTrackablesRequest* /*request*/, ::grpcI2DTrackablesDetector::setTrackablesResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_detect : public BaseClass {
+  class WithCallbackMethod_detect : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_detect() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_detect() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcI2DTrackablesDetector::detectRequest, ::grpcI2DTrackablesDetector::detectResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcI2DTrackablesDetector::detectRequest* request, ::grpcI2DTrackablesDetector::detectResponse* response) { return this->detect(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcI2DTrackablesDetector::detectRequest* request, ::grpcI2DTrackablesDetector::detectResponse* response) { return this->detect(context, request, response); }));}
     void SetMessageAllocatorFor_detect(
-        ::grpc::experimental::MessageAllocator< ::grpcI2DTrackablesDetector::detectRequest, ::grpcI2DTrackablesDetector::detectResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcI2DTrackablesDetector::detectRequest, ::grpcI2DTrackablesDetector::detectResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcI2DTrackablesDetector::detectRequest, ::grpcI2DTrackablesDetector::detectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_detect() override {
+    ~WithCallbackMethod_detect() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -264,20 +209,11 @@ class grpcI2DTrackablesDetectorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* detect(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DTrackablesDetector::detectRequest* /*request*/, ::grpcI2DTrackablesDetector::detectResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* detect(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcI2DTrackablesDetector::detectRequest* /*request*/, ::grpcI2DTrackablesDetector::detectResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcI2DTrackablesDetector::detectRequest* /*request*/, ::grpcI2DTrackablesDetector::detectResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_setTrackables<ExperimentalWithCallbackMethod_detect<Service > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_setTrackables<ExperimentalWithCallbackMethod_detect<Service > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_setTrackables<WithCallbackMethod_detect<Service > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_setTrackables : public BaseClass {
    private:
@@ -353,27 +289,17 @@ class grpcI2DTrackablesDetectorService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_setTrackables : public BaseClass {
+  class WithRawCallbackMethod_setTrackables : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_setTrackables() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_setTrackables() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setTrackables(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setTrackables(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_setTrackables() override {
+    ~WithRawCallbackMethod_setTrackables() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -381,37 +307,21 @@ class grpcI2DTrackablesDetectorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* setTrackables(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* setTrackables(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_detect : public BaseClass {
+  class WithRawCallbackMethod_detect : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_detect() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_detect() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->detect(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->detect(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_detect() override {
+    ~WithRawCallbackMethod_detect() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -419,14 +329,8 @@ class grpcI2DTrackablesDetectorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* detect(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* detect(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_setTrackables : public BaseClass {

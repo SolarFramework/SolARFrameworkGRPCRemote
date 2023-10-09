@@ -25,7 +25,7 @@ CONFIG(release,debug|release) {
     DEFINES += NDEBUG=1
 }
 
-DEPENDENCIESCONFIG = shared recursive install_recurse
+DEPENDENCIESCONFIG = static install_recurse
 
 ## Configuration for Visual Studio to install binaries and dependencies. Work also for QT Creator by replacing QMAKE_INSTALL
 PROJECTCONFIG = QTVS
@@ -56,7 +56,7 @@ win32 {
 
 OTHER_FILES += \n    packagedependencies.txt
 
-OTHER_FILES += \n   
+OTHER_FILES += \n
 
 #NOTE : Must be placed at the end of the .pro
 include ($${QMAKE_REMAKEN_RULES_ROOT}/remaken_install_target.pri)

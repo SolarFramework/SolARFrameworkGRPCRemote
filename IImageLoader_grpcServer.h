@@ -2,7 +2,7 @@
 
 #ifndef IIMAGELOADER_GRPCSERVER_H
 #define IIMAGELOADER_GRPCSERVER_H
-#include "api/image/IImageLoader.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/image/IImageLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

@@ -6,8 +6,8 @@
 #include "grpcIDescriptorMatcherGeometricService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -28,24 +28,24 @@ static const char* grpcIDescriptorMatcherGeometricService_method_names[] = {
 
 std::unique_ptr< grpcIDescriptorMatcherGeometricService::Stub> grpcIDescriptorMatcherGeometricService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIDescriptorMatcherGeometricService::Stub> stub(new grpcIDescriptorMatcherGeometricService::Stub(channel));
+  std::unique_ptr< grpcIDescriptorMatcherGeometricService::Stub> stub(new grpcIDescriptorMatcherGeometricService::Stub(channel, options));
   return stub;
 }
 
-grpcIDescriptorMatcherGeometricService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_match_grpc0_(grpcIDescriptorMatcherGeometricService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_match_grpc1_(grpcIDescriptorMatcherGeometricService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIDescriptorMatcherGeometricService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_match_grpc0_(grpcIDescriptorMatcherGeometricService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_match_grpc1_(grpcIDescriptorMatcherGeometricService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIDescriptorMatcherGeometricService::Stub::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request& request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDescriptorMatcherGeometric::match_grpc0Request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_match_grpc0_, context, request, response);
 }
 
-void grpcIDescriptorMatcherGeometricService::Stub::experimental_async::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIDescriptorMatcherGeometricService::Stub::async::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDescriptorMatcherGeometric::match_grpc0Request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIDescriptorMatcherGeometricService::Stub::experimental_async::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDescriptorMatcherGeometricService::Stub::async::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc0Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc0_, context, request, response, reactor);
 }
 
@@ -64,11 +64,11 @@ void grpcIDescriptorMatcherGeometricService::Stub::experimental_async::match_grp
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDescriptorMatcherGeometric::match_grpc1Request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_match_grpc1_, context, request, response);
 }
 
-void grpcIDescriptorMatcherGeometricService::Stub::experimental_async::match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIDescriptorMatcherGeometricService::Stub::async::match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDescriptorMatcherGeometric::match_grpc1Request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIDescriptorMatcherGeometricService::Stub::experimental_async::match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDescriptorMatcherGeometricService::Stub::async::match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherGeometric::match_grpc1Request* request, ::grpcIDescriptorMatcherGeometric::match_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc1_, context, request, response, reactor);
 }
 

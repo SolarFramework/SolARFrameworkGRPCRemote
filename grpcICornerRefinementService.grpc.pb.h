@@ -7,10 +7,9 @@
 #include "grpcICornerRefinementService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -43,30 +42,22 @@ class grpcICornerRefinementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICornerRefinement::refineResponse>> PrepareAsyncrefine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcICornerRefinement::refineResponse>>(PrepareAsyncrefineRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICornerRefinement::refineResponse>* AsyncrefineRaw(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcICornerRefinement::refineResponse>* PrepareAsyncrefineRaw(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest& request, ::grpcICornerRefinement::refineResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICornerRefinement::refineResponse>> Asyncrefine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICornerRefinement::refineResponse>>(AsyncrefineRaw(context, request, cq));
@@ -74,26 +65,22 @@ class grpcICornerRefinementService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICornerRefinement::refineResponse>> PrepareAsyncrefine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcICornerRefinement::refineResponse>>(PrepareAsyncrefineRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void refine(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcICornerRefinement::refineResponse>* AsyncrefineRaw(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcICornerRefinement::refineResponse>* PrepareAsyncrefineRaw(::grpc::ClientContext* context, const ::grpcICornerRefinement::refineRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_refine_;
@@ -128,36 +115,22 @@ class grpcICornerRefinementService final {
   };
   typedef WithAsyncMethod_refine<Service > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_refine : public BaseClass {
+  class WithCallbackMethod_refine : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_refine() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_refine() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcICornerRefinement::refineRequest, ::grpcICornerRefinement::refineResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response) { return this->refine(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcICornerRefinement::refineRequest* request, ::grpcICornerRefinement::refineResponse* response) { return this->refine(context, request, response); }));}
     void SetMessageAllocatorFor_refine(
-        ::grpc::experimental::MessageAllocator< ::grpcICornerRefinement::refineRequest, ::grpcICornerRefinement::refineResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcICornerRefinement::refineRequest, ::grpcICornerRefinement::refineResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcICornerRefinement::refineRequest, ::grpcICornerRefinement::refineResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_refine() override {
+    ~WithCallbackMethod_refine() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -165,20 +138,11 @@ class grpcICornerRefinementService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* refine(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcICornerRefinement::refineRequest* /*request*/, ::grpcICornerRefinement::refineResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* refine(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcICornerRefinement::refineRequest* /*request*/, ::grpcICornerRefinement::refineResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcICornerRefinement::refineRequest* /*request*/, ::grpcICornerRefinement::refineResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_refine<Service > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_refine<Service > ExperimentalCallbackService;
+  typedef WithCallbackMethod_refine<Service > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_refine : public BaseClass {
    private:
@@ -217,27 +181,17 @@ class grpcICornerRefinementService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_refine : public BaseClass {
+  class WithRawCallbackMethod_refine : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_refine() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_refine() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->refine(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->refine(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_refine() override {
+    ~WithRawCallbackMethod_refine() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -245,14 +199,8 @@ class grpcICornerRefinementService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* refine(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* refine(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_refine : public BaseClass {

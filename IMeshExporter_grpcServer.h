@@ -2,7 +2,7 @@
 
 #ifndef IMESHEXPORTER_GRPCSERVER_H
 #define IMESHEXPORTER_GRPCSERVER_H
-#include "api/output/files/IMeshExporter.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/output/files/IMeshExporter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

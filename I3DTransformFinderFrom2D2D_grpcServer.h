@@ -2,7 +2,7 @@
 
 #ifndef I3DTRANSFORMFINDERFROM2D2D_GRPCSERVER_H
 #define I3DTRANSFORMFINDERFROM2D2D_GRPCSERVER_H
-#include "api/solver/pose/I3DTransformFinderFrom2D2D.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/solver/pose/I3DTransformFinderFrom2D2D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

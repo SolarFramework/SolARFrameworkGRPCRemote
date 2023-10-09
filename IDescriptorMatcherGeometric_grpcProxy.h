@@ -3,7 +3,7 @@
 
 #ifndef IDESCRIPTORMATCHERGEOMETRIC_GRPCPROXY_H
 #define IDESCRIPTORMATCHERGEOMETRIC_GRPCPROXY_H
-#include "api/features/IDescriptorMatcherGeometric.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/features/IDescriptorMatcherGeometric.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

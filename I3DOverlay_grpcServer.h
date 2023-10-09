@@ -2,7 +2,7 @@
 
 #ifndef I3DOVERLAY_GRPCSERVER_H
 #define I3DOVERLAY_GRPCSERVER_H
-#include "api/display/I3DOverlay.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/display/I3DOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

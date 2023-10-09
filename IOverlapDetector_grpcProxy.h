@@ -3,7 +3,7 @@
 
 #ifndef IOVERLAPDETECTOR_GRPCPROXY_H
 #define IOVERLAPDETECTOR_GRPCPROXY_H
-#include "api/loop/IOverlapDetector.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/loop/IOverlapDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

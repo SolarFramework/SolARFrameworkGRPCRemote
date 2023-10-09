@@ -2,7 +2,7 @@
 
 #ifndef I2DTRACKABLESDETECTOR_GRPCSERVER_H
 #define I2DTRACKABLESDETECTOR_GRPCSERVER_H
-#include "api/features/I2DTrackablesDetector.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/features/I2DTrackablesDetector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

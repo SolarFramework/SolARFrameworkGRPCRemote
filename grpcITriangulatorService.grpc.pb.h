@@ -7,10 +7,9 @@
 #include "grpcITriangulatorService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -64,42 +63,22 @@ class grpcITriangulatorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc3Response>> PrepareAsynctriangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc3Response>>(PrepareAsynctriangulate_grpc3Raw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc0Response>* Asynctriangulate_grpc0Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc0Response>* PrepareAsynctriangulate_grpc0Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcITriangulator::triangulate_grpc1Response>* Asynctriangulate_grpc1Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -111,7 +90,7 @@ class grpcITriangulatorService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpcITriangulator::triangulate_grpc0Response* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc0Response>> Asynctriangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc0Response>>(Asynctriangulate_grpc0Raw(context, request, cq));
@@ -140,44 +119,28 @@ class grpcITriangulatorService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc3Response>> PrepareAsynctriangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc3Response>>(PrepareAsynctriangulate_grpc3Raw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void triangulate_grpc0(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void triangulate_grpc1(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void triangulate_grpc2(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void triangulate_grpc3(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc0Response>* Asynctriangulate_grpc0Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc0Response>* PrepareAsynctriangulate_grpc0Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcITriangulator::triangulate_grpc1Response>* Asynctriangulate_grpc1Raw(::grpc::ClientContext* context, const ::grpcITriangulator::triangulate_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
@@ -284,36 +247,22 @@ class grpcITriangulatorService final {
   };
   typedef WithAsyncMethod_triangulate_grpc0<WithAsyncMethod_triangulate_grpc1<WithAsyncMethod_triangulate_grpc2<WithAsyncMethod_triangulate_grpc3<Service > > > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_triangulate_grpc0 : public BaseClass {
+  class WithCallbackMethod_triangulate_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_triangulate_grpc0() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_triangulate_grpc0() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response) { return this->triangulate_grpc0(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcITriangulator::triangulate_grpc0Request* request, ::grpcITriangulator::triangulate_grpc0Response* response) { return this->triangulate_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_triangulate_grpc0(
-        ::grpc::experimental::MessageAllocator< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc0Request, ::grpcITriangulator::triangulate_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_triangulate_grpc0() override {
+    ~WithCallbackMethod_triangulate_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -321,46 +270,26 @@ class grpcITriangulatorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* triangulate_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc0Request* /*request*/, ::grpcITriangulator::triangulate_grpc0Response* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* triangulate_grpc0(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc0Request* /*request*/, ::grpcITriangulator::triangulate_grpc0Response* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc0Request* /*request*/, ::grpcITriangulator::triangulate_grpc0Response* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_triangulate_grpc1 : public BaseClass {
+  class WithCallbackMethod_triangulate_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_triangulate_grpc1() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_triangulate_grpc1() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response) { return this->triangulate_grpc1(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcITriangulator::triangulate_grpc1Request* request, ::grpcITriangulator::triangulate_grpc1Response* response) { return this->triangulate_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_triangulate_grpc1(
-        ::grpc::experimental::MessageAllocator< ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc1Request, ::grpcITriangulator::triangulate_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_triangulate_grpc1() override {
+    ~WithCallbackMethod_triangulate_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -368,46 +297,26 @@ class grpcITriangulatorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* triangulate_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc1Request* /*request*/, ::grpcITriangulator::triangulate_grpc1Response* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* triangulate_grpc1(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc1Request* /*request*/, ::grpcITriangulator::triangulate_grpc1Response* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc1Request* /*request*/, ::grpcITriangulator::triangulate_grpc1Response* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_triangulate_grpc2 : public BaseClass {
+  class WithCallbackMethod_triangulate_grpc2 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_triangulate_grpc2() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(2,
+    WithCallbackMethod_triangulate_grpc2() {
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response) { return this->triangulate_grpc2(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcITriangulator::triangulate_grpc2Request* request, ::grpcITriangulator::triangulate_grpc2Response* response) { return this->triangulate_grpc2(context, request, response); }));}
     void SetMessageAllocatorFor_triangulate_grpc2(
-        ::grpc::experimental::MessageAllocator< ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc2Request, ::grpcITriangulator::triangulate_grpc2Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_triangulate_grpc2() override {
+    ~WithCallbackMethod_triangulate_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -415,46 +324,26 @@ class grpcITriangulatorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* triangulate_grpc2(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc2Request* /*request*/, ::grpcITriangulator::triangulate_grpc2Response* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* triangulate_grpc2(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc2Request* /*request*/, ::grpcITriangulator::triangulate_grpc2Response* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc2Request* /*request*/, ::grpcITriangulator::triangulate_grpc2Response* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_triangulate_grpc3 : public BaseClass {
+  class WithCallbackMethod_triangulate_grpc3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_triangulate_grpc3() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(3,
+    WithCallbackMethod_triangulate_grpc3() {
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response) { return this->triangulate_grpc3(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcITriangulator::triangulate_grpc3Request* request, ::grpcITriangulator::triangulate_grpc3Response* response) { return this->triangulate_grpc3(context, request, response); }));}
     void SetMessageAllocatorFor_triangulate_grpc3(
-        ::grpc::experimental::MessageAllocator< ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcITriangulator::triangulate_grpc3Request, ::grpcITriangulator::triangulate_grpc3Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_triangulate_grpc3() override {
+    ~WithCallbackMethod_triangulate_grpc3() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -462,20 +351,11 @@ class grpcITriangulatorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* triangulate_grpc3(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc3Request* /*request*/, ::grpcITriangulator::triangulate_grpc3Response* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* triangulate_grpc3(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc3Request* /*request*/, ::grpcITriangulator::triangulate_grpc3Response* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcITriangulator::triangulate_grpc3Request* /*request*/, ::grpcITriangulator::triangulate_grpc3Response* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_triangulate_grpc0<ExperimentalWithCallbackMethod_triangulate_grpc1<ExperimentalWithCallbackMethod_triangulate_grpc2<ExperimentalWithCallbackMethod_triangulate_grpc3<Service > > > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_triangulate_grpc0<ExperimentalWithCallbackMethod_triangulate_grpc1<ExperimentalWithCallbackMethod_triangulate_grpc2<ExperimentalWithCallbackMethod_triangulate_grpc3<Service > > > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_triangulate_grpc0<WithCallbackMethod_triangulate_grpc1<WithCallbackMethod_triangulate_grpc2<WithCallbackMethod_triangulate_grpc3<Service > > > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_triangulate_grpc0 : public BaseClass {
    private:
@@ -625,27 +505,17 @@ class grpcITriangulatorService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_triangulate_grpc0 : public BaseClass {
+  class WithRawCallbackMethod_triangulate_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_triangulate_grpc0() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_triangulate_grpc0() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->triangulate_grpc0(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->triangulate_grpc0(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_triangulate_grpc0() override {
+    ~WithRawCallbackMethod_triangulate_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -653,37 +523,21 @@ class grpcITriangulatorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* triangulate_grpc0(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* triangulate_grpc0(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_triangulate_grpc1 : public BaseClass {
+  class WithRawCallbackMethod_triangulate_grpc1 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_triangulate_grpc1() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_triangulate_grpc1() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->triangulate_grpc1(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->triangulate_grpc1(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_triangulate_grpc1() override {
+    ~WithRawCallbackMethod_triangulate_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -691,37 +545,21 @@ class grpcITriangulatorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* triangulate_grpc1(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* triangulate_grpc1(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_triangulate_grpc2 : public BaseClass {
+  class WithRawCallbackMethod_triangulate_grpc2 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_triangulate_grpc2() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(2,
+    WithRawCallbackMethod_triangulate_grpc2() {
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->triangulate_grpc2(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->triangulate_grpc2(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_triangulate_grpc2() override {
+    ~WithRawCallbackMethod_triangulate_grpc2() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -729,37 +567,21 @@ class grpcITriangulatorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* triangulate_grpc2(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* triangulate_grpc2(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_triangulate_grpc3 : public BaseClass {
+  class WithRawCallbackMethod_triangulate_grpc3 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_triangulate_grpc3() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(3,
+    WithRawCallbackMethod_triangulate_grpc3() {
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->triangulate_grpc3(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->triangulate_grpc3(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_triangulate_grpc3() override {
+    ~WithRawCallbackMethod_triangulate_grpc3() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -767,14 +589,8 @@ class grpcITriangulatorService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* triangulate_grpc3(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* triangulate_grpc3(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_triangulate_grpc0 : public BaseClass {

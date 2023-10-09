@@ -3,7 +3,7 @@
 
 #ifndef I2DTRANSFORM_GRPCPROXY_H
 #define I2DTRANSFORM_GRPCPROXY_H
-#include "api/geom/I2DTransform.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/geom/I2DTransform.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

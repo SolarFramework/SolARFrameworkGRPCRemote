@@ -6,8 +6,8 @@
 #include "grpcIDescriptorMatcherRegionService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -29,25 +29,25 @@ static const char* grpcIDescriptorMatcherRegionService_method_names[] = {
 
 std::unique_ptr< grpcIDescriptorMatcherRegionService::Stub> grpcIDescriptorMatcherRegionService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIDescriptorMatcherRegionService::Stub> stub(new grpcIDescriptorMatcherRegionService::Stub(channel));
+  std::unique_ptr< grpcIDescriptorMatcherRegionService::Stub> stub(new grpcIDescriptorMatcherRegionService::Stub(channel, options));
   return stub;
 }
 
-grpcIDescriptorMatcherRegionService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_match_grpc0_(grpcIDescriptorMatcherRegionService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_match_grpc1_(grpcIDescriptorMatcherRegionService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_match_grpc2_(grpcIDescriptorMatcherRegionService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIDescriptorMatcherRegionService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_match_grpc0_(grpcIDescriptorMatcherRegionService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_match_grpc1_(grpcIDescriptorMatcherRegionService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_match_grpc2_(grpcIDescriptorMatcherRegionService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIDescriptorMatcherRegionService::Stub::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc0Request& request, ::grpcIDescriptorMatcherRegion::match_grpc0Response* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDescriptorMatcherRegion::match_grpc0Request, ::grpcIDescriptorMatcherRegion::match_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_match_grpc0_, context, request, response);
 }
 
-void grpcIDescriptorMatcherRegionService::Stub::experimental_async::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc0Request* request, ::grpcIDescriptorMatcherRegion::match_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIDescriptorMatcherRegionService::Stub::async::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc0Request* request, ::grpcIDescriptorMatcherRegion::match_grpc0Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDescriptorMatcherRegion::match_grpc0Request, ::grpcIDescriptorMatcherRegion::match_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIDescriptorMatcherRegionService::Stub::experimental_async::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc0Request* request, ::grpcIDescriptorMatcherRegion::match_grpc0Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDescriptorMatcherRegionService::Stub::async::match_grpc0(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc0Request* request, ::grpcIDescriptorMatcherRegion::match_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc0_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcIDescriptorMatcherRegionService::Stub::experimental_async::match_grpc0(
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDescriptorMatcherRegion::match_grpc1Request, ::grpcIDescriptorMatcherRegion::match_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_match_grpc1_, context, request, response);
 }
 
-void grpcIDescriptorMatcherRegionService::Stub::experimental_async::match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc1Request* request, ::grpcIDescriptorMatcherRegion::match_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIDescriptorMatcherRegionService::Stub::async::match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc1Request* request, ::grpcIDescriptorMatcherRegion::match_grpc1Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDescriptorMatcherRegion::match_grpc1Request, ::grpcIDescriptorMatcherRegion::match_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc1_, context, request, response, std::move(f));
 }
 
-void grpcIDescriptorMatcherRegionService::Stub::experimental_async::match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc1Request* request, ::grpcIDescriptorMatcherRegion::match_grpc1Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDescriptorMatcherRegionService::Stub::async::match_grpc1(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc1Request* request, ::grpcIDescriptorMatcherRegion::match_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc1_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcIDescriptorMatcherRegionService::Stub::experimental_async::match_grpc1(
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDescriptorMatcherRegion::match_grpc2Request, ::grpcIDescriptorMatcherRegion::match_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_match_grpc2_, context, request, response);
 }
 
-void grpcIDescriptorMatcherRegionService::Stub::experimental_async::match_grpc2(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc2Request* request, ::grpcIDescriptorMatcherRegion::match_grpc2Response* response, std::function<void(::grpc::Status)> f) {
+void grpcIDescriptorMatcherRegionService::Stub::async::match_grpc2(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc2Request* request, ::grpcIDescriptorMatcherRegion::match_grpc2Response* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDescriptorMatcherRegion::match_grpc2Request, ::grpcIDescriptorMatcherRegion::match_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc2_, context, request, response, std::move(f));
 }
 
-void grpcIDescriptorMatcherRegionService::Stub::experimental_async::match_grpc2(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc2Request* request, ::grpcIDescriptorMatcherRegion::match_grpc2Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDescriptorMatcherRegionService::Stub::async::match_grpc2(::grpc::ClientContext* context, const ::grpcIDescriptorMatcherRegion::match_grpc2Request* request, ::grpcIDescriptorMatcherRegion::match_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_match_grpc2_, context, request, response, reactor);
 }
 

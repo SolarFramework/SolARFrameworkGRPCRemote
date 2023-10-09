@@ -7,10 +7,9 @@
 #include "grpcIMappingService.pb.h"
 
 #include <functional>
-#include <grpc/impl/codegen/port_platform.h>
-#include <grpcpp/impl/codegen/async_generic_service.h>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/generic/async_generic_service.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
@@ -50,30 +49,18 @@ class grpcIMappingService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapping::processResponse>> PrepareAsyncprocess(::grpc::ClientContext* context, const ::grpcIMapping::processRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapping::processResponse>>(PrepareAsyncprocessRaw(context, request, cq));
     }
-    class experimental_async_interface {
+    class async_interface {
      public:
-      virtual ~experimental_async_interface() {}
+      virtual ~async_interface() {}
       virtual void idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       virtual void process(::grpc::ClientContext* context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response, std::function<void(::grpc::Status)>) = 0;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void process(::grpc::ClientContext* context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void process(::grpc::ClientContext* context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
     };
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    typedef class experimental_async_interface async_interface;
-    #endif
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    async_interface* async() { return experimental_async(); }
-    #endif
-    virtual class experimental_async_interface* experimental_async() { return nullptr; }
-  private:
+    typedef class async_interface experimental_async_interface;
+    virtual class async_interface* async() { return nullptr; }
+    class async_interface* experimental_async() { return async(); }
+   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapping::idleResponse>* AsyncidleRaw(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapping::idleResponse>* PrepareAsyncidleRaw(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapping::processResponse>* AsyncprocessRaw(::grpc::ClientContext* context, const ::grpcIMapping::processRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -81,7 +68,7 @@ class grpcIMappingService final {
   };
   class Stub final : public StubInterface {
    public:
-    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
+    Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
     ::grpc::Status idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest& request, ::grpcIMapping::idleResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapping::idleResponse>> Asyncidle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapping::idleResponse>>(AsyncidleRaw(context, request, cq));
@@ -96,32 +83,24 @@ class grpcIMappingService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapping::processResponse>> PrepareAsyncprocess(::grpc::ClientContext* context, const ::grpcIMapping::processRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapping::processResponse>>(PrepareAsyncprocessRaw(context, request, cq));
     }
-    class experimental_async final :
-      public StubInterface::experimental_async_interface {
+    class async final :
+      public StubInterface::async_interface {
      public:
       void idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void idle(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void process(::grpc::ClientContext* context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void process(::grpc::ClientContext* context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void process(::grpc::ClientContext* context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
      private:
       friend class Stub;
-      explicit experimental_async(Stub* stub): stub_(stub) { }
+      explicit async(Stub* stub): stub_(stub) { }
       Stub* stub() { return stub_; }
       Stub* stub_;
     };
-    class experimental_async_interface* experimental_async() override { return &async_stub_; }
+    class async* async() override { return &async_stub_; }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
-    class experimental_async async_stub_{this};
+    class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIMapping::idleResponse>* AsyncidleRaw(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapping::idleResponse>* PrepareAsyncidleRaw(::grpc::ClientContext* context, const ::grpcIMapping::idleRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapping::processResponse>* AsyncprocessRaw(::grpc::ClientContext* context, const ::grpcIMapping::processRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -180,36 +159,22 @@ class grpcIMappingService final {
   };
   typedef WithAsyncMethod_idle<WithAsyncMethod_process<Service > > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_idle : public BaseClass {
+  class WithCallbackMethod_idle : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_idle() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(0,
+    WithCallbackMethod_idle() {
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapping::idleRequest, ::grpcIMapping::idleResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response) { return this->idle(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapping::idleRequest* request, ::grpcIMapping::idleResponse* response) { return this->idle(context, request, response); }));}
     void SetMessageAllocatorFor_idle(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapping::idleRequest, ::grpcIMapping::idleResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapping::idleRequest, ::grpcIMapping::idleResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapping::idleRequest, ::grpcIMapping::idleResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_idle() override {
+    ~WithCallbackMethod_idle() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -217,46 +182,26 @@ class grpcIMappingService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* idle(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapping::idleRequest* /*request*/, ::grpcIMapping::idleResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* idle(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapping::idleRequest* /*request*/, ::grpcIMapping::idleResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapping::idleRequest* /*request*/, ::grpcIMapping::idleResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_process : public BaseClass {
+  class WithCallbackMethod_process : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_process() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodCallback(1,
+    WithCallbackMethod_process() {
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapping::processRequest, ::grpcIMapping::processResponse>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response) { return this->process(context, request, response); }));}
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapping::processRequest* request, ::grpcIMapping::processResponse* response) { return this->process(context, request, response); }));}
     void SetMessageAllocatorFor_process(
-        ::grpc::experimental::MessageAllocator< ::grpcIMapping::processRequest, ::grpcIMapping::processResponse>* allocator) {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+        ::grpc::MessageAllocator< ::grpcIMapping::processRequest, ::grpcIMapping::processResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
-    #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
-    #endif
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapping::processRequest, ::grpcIMapping::processResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_process() override {
+    ~WithCallbackMethod_process() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -264,20 +209,11 @@ class grpcIMappingService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* process(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapping::processRequest* /*request*/, ::grpcIMapping::processResponse* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* process(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpcIMapping::processRequest* /*request*/, ::grpcIMapping::processResponse* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapping::processRequest* /*request*/, ::grpcIMapping::processResponse* /*response*/)  { return nullptr; }
   };
-  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_idle<ExperimentalWithCallbackMethod_process<Service > > CallbackService;
-  #endif
-
-  typedef ExperimentalWithCallbackMethod_idle<ExperimentalWithCallbackMethod_process<Service > > ExperimentalCallbackService;
+  typedef WithCallbackMethod_idle<WithCallbackMethod_process<Service > > CallbackService;
+  typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_idle : public BaseClass {
    private:
@@ -353,27 +289,17 @@ class grpcIMappingService final {
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_idle : public BaseClass {
+  class WithRawCallbackMethod_idle : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_idle() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(0,
+    WithRawCallbackMethod_idle() {
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->idle(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->idle(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_idle() override {
+    ~WithRawCallbackMethod_idle() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -381,37 +307,21 @@ class grpcIMappingService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* idle(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* idle(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_process : public BaseClass {
+  class WithRawCallbackMethod_process : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_process() {
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::Service::
-    #else
-      ::grpc::Service::experimental().
-    #endif
-        MarkMethodRawCallback(1,
+    WithRawCallbackMethod_process() {
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-                   ::grpc::CallbackServerContext*
-    #else
-                   ::grpc::experimental::CallbackServerContext*
-    #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->process(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->process(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_process() override {
+    ~WithRawCallbackMethod_process() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
@@ -419,14 +329,8 @@ class grpcIMappingService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* process(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #else
-    virtual ::grpc::experimental::ServerUnaryReactor* process(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
-    #endif
-      { return nullptr; }
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_idle : public BaseClass {

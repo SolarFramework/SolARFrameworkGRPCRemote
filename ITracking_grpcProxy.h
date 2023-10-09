@@ -3,7 +3,7 @@
 
 #ifndef ITRACKING_GRPCPROXY_H
 #define ITRACKING_GRPCPROXY_H
-#include "api/slam/ITracking.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/slam/ITracking.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

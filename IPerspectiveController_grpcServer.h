@@ -2,7 +2,7 @@
 
 #ifndef IPERSPECTIVECONTROLLER_GRPCSERVER_H
 #define IPERSPECTIVECONTROLLER_GRPCSERVER_H
-#include "api/image/IPerspectiveController.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/image/IPerspectiveController.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

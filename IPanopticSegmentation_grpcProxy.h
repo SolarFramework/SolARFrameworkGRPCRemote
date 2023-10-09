@@ -3,7 +3,7 @@
 
 #ifndef IPANOPTICSEGMENTATION_GRPCPROXY_H
 #define IPANOPTICSEGMENTATION_GRPCPROXY_H
-#include "api/segm/IPanopticSegmentation.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/segm/IPanopticSegmentation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

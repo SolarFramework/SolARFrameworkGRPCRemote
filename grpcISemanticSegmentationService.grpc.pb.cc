@@ -6,8 +6,8 @@
 #include "grpcISemanticSegmentationService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcISemanticSegmentationService_method_names[] = {
 
 std::unique_ptr< grpcISemanticSegmentationService::Stub> grpcISemanticSegmentationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcISemanticSegmentationService::Stub> stub(new grpcISemanticSegmentationService::Stub(channel));
+  std::unique_ptr< grpcISemanticSegmentationService::Stub> stub(new grpcISemanticSegmentationService::Stub(channel, options));
   return stub;
 }
 
-grpcISemanticSegmentationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_segment_(grpcISemanticSegmentationService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcISemanticSegmentationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_segment_(grpcISemanticSegmentationService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcISemanticSegmentationService::Stub::segment(::grpc::ClientContext* context, const ::grpcISemanticSegmentation::segmentRequest& request, ::grpcISemanticSegmentation::segmentResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcISemanticSegmentation::segmentRequest, ::grpcISemanticSegmentation::segmentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_segment_, context, request, response);
 }
 
-void grpcISemanticSegmentationService::Stub::experimental_async::segment(::grpc::ClientContext* context, const ::grpcISemanticSegmentation::segmentRequest* request, ::grpcISemanticSegmentation::segmentResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcISemanticSegmentationService::Stub::async::segment(::grpc::ClientContext* context, const ::grpcISemanticSegmentation::segmentRequest* request, ::grpcISemanticSegmentation::segmentResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcISemanticSegmentation::segmentRequest, ::grpcISemanticSegmentation::segmentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_segment_, context, request, response, std::move(f));
 }
 
-void grpcISemanticSegmentationService::Stub::experimental_async::segment(::grpc::ClientContext* context, const ::grpcISemanticSegmentation::segmentRequest* request, ::grpcISemanticSegmentation::segmentResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcISemanticSegmentationService::Stub::async::segment(::grpc::ClientContext* context, const ::grpcISemanticSegmentation::segmentRequest* request, ::grpcISemanticSegmentation::segmentResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_segment_, context, request, response, reactor);
 }
 

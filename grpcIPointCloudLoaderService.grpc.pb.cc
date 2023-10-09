@@ -6,8 +6,8 @@
 #include "grpcIPointCloudLoaderService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -27,23 +27,23 @@ static const char* grpcIPointCloudLoaderService_method_names[] = {
 
 std::unique_ptr< grpcIPointCloudLoaderService::Stub> grpcIPointCloudLoaderService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIPointCloudLoaderService::Stub> stub(new grpcIPointCloudLoaderService::Stub(channel));
+  std::unique_ptr< grpcIPointCloudLoaderService::Stub> stub(new grpcIPointCloudLoaderService::Stub(channel, options));
   return stub;
 }
 
-grpcIPointCloudLoaderService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_load_(grpcIPointCloudLoaderService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIPointCloudLoaderService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_load_(grpcIPointCloudLoaderService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIPointCloudLoaderService::Stub::load(::grpc::ClientContext* context, const ::grpcIPointCloudLoader::loadRequest& request, ::grpcIPointCloudLoader::loadResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIPointCloudLoader::loadRequest, ::grpcIPointCloudLoader::loadResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_load_, context, request, response);
 }
 
-void grpcIPointCloudLoaderService::Stub::experimental_async::load(::grpc::ClientContext* context, const ::grpcIPointCloudLoader::loadRequest* request, ::grpcIPointCloudLoader::loadResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIPointCloudLoaderService::Stub::async::load(::grpc::ClientContext* context, const ::grpcIPointCloudLoader::loadRequest* request, ::grpcIPointCloudLoader::loadResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIPointCloudLoader::loadRequest, ::grpcIPointCloudLoader::loadResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_load_, context, request, response, std::move(f));
 }
 
-void grpcIPointCloudLoaderService::Stub::experimental_async::load(::grpc::ClientContext* context, const ::grpcIPointCloudLoader::loadRequest* request, ::grpcIPointCloudLoader::loadResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIPointCloudLoaderService::Stub::async::load(::grpc::ClientContext* context, const ::grpcIPointCloudLoader::loadRequest* request, ::grpcIPointCloudLoader::loadResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_load_, context, request, response, reactor);
 }
 

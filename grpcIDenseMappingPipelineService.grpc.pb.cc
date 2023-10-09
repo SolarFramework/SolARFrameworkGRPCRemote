@@ -6,8 +6,8 @@
 #include "grpcIDenseMappingPipelineService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -32,28 +32,28 @@ static const char* grpcIDenseMappingPipelineService_method_names[] = {
 
 std::unique_ptr< grpcIDenseMappingPipelineService::Stub> grpcIDenseMappingPipelineService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcIDenseMappingPipelineService::Stub> stub(new grpcIDenseMappingPipelineService::Stub(channel));
+  std::unique_ptr< grpcIDenseMappingPipelineService::Stub> stub(new grpcIDenseMappingPipelineService::Stub(channel, options));
   return stub;
 }
 
-grpcIDenseMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_init_(grpcIDenseMappingPipelineService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_start_(grpcIDenseMappingPipelineService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIDenseMappingPipelineService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_denseMappingProcessRequest_(grpcIDenseMappingPipelineService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPointCloud_(grpcIDenseMappingPipelineService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMesh_(grpcIDenseMappingPipelineService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcIDenseMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_init_(grpcIDenseMappingPipelineService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_(grpcIDenseMappingPipelineService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcIDenseMappingPipelineService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_denseMappingProcessRequest_(grpcIDenseMappingPipelineService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloud_(grpcIDenseMappingPipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMesh_(grpcIDenseMappingPipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIDenseMappingPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest& request, ::grpcIDenseMappingPipeline::initResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDenseMappingPipeline::initRequest, ::grpcIDenseMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDenseMappingPipelineService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDenseMappingPipeline::initRequest, ::grpcIDenseMappingPipeline::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, std::move(f));
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDenseMappingPipelineService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::initRequest* request, ::grpcIDenseMappingPipeline::initResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, reactor);
 }
 
@@ -72,11 +72,11 @@ void grpcIDenseMappingPipelineService::Stub::experimental_async::init(::grpc::Cl
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDenseMappingPipeline::startRequest, ::grpcIDenseMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::startRequest* request, ::grpcIDenseMappingPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDenseMappingPipelineService::Stub::async::start(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::startRequest* request, ::grpcIDenseMappingPipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDenseMappingPipeline::startRequest, ::grpcIDenseMappingPipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::start(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::startRequest* request, ::grpcIDenseMappingPipeline::startResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDenseMappingPipelineService::Stub::async::start(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::startRequest* request, ::grpcIDenseMappingPipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
 }
 
@@ -95,11 +95,11 @@ void grpcIDenseMappingPipelineService::Stub::experimental_async::start(::grpc::C
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDenseMappingPipeline::stopRequest, ::grpcIDenseMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::stopRequest* request, ::grpcIDenseMappingPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDenseMappingPipelineService::Stub::async::stop(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::stopRequest* request, ::grpcIDenseMappingPipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDenseMappingPipeline::stopRequest, ::grpcIDenseMappingPipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::stop(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::stopRequest* request, ::grpcIDenseMappingPipeline::stopResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDenseMappingPipelineService::Stub::async::stop(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::stopRequest* request, ::grpcIDenseMappingPipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
 }
 
@@ -118,11 +118,11 @@ void grpcIDenseMappingPipelineService::Stub::experimental_async::stop(::grpc::Cl
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_denseMappingProcessRequest_, context, request, response);
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::denseMappingProcessRequest(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest* request, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDenseMappingPipelineService::Stub::async::denseMappingProcessRequest(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest* request, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_denseMappingProcessRequest_, context, request, response, std::move(f));
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::denseMappingProcessRequest(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest* request, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDenseMappingPipelineService::Stub::async::denseMappingProcessRequest(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::denseMappingProcessRequestRequest* request, ::grpcIDenseMappingPipeline::denseMappingProcessRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_denseMappingProcessRequest_, context, request, response, reactor);
 }
 
@@ -141,11 +141,11 @@ void grpcIDenseMappingPipelineService::Stub::experimental_async::denseMappingPro
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDenseMappingPipeline::getPointCloudRequest, ::grpcIDenseMappingPipeline::getPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getPointCloud_, context, request, response);
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::getPointCloud(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getPointCloudRequest* request, ::grpcIDenseMappingPipeline::getPointCloudResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDenseMappingPipelineService::Stub::async::getPointCloud(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getPointCloudRequest* request, ::grpcIDenseMappingPipeline::getPointCloudResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDenseMappingPipeline::getPointCloudRequest, ::grpcIDenseMappingPipeline::getPointCloudResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPointCloud_, context, request, response, std::move(f));
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::getPointCloud(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getPointCloudRequest* request, ::grpcIDenseMappingPipeline::getPointCloudResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDenseMappingPipelineService::Stub::async::getPointCloud(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getPointCloudRequest* request, ::grpcIDenseMappingPipeline::getPointCloudResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPointCloud_, context, request, response, reactor);
 }
 
@@ -164,11 +164,11 @@ void grpcIDenseMappingPipelineService::Stub::experimental_async::getPointCloud(:
   return ::grpc::internal::BlockingUnaryCall< ::grpcIDenseMappingPipeline::getMeshRequest, ::grpcIDenseMappingPipeline::getMeshResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getMesh_, context, request, response);
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::getMesh(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getMeshRequest* request, ::grpcIDenseMappingPipeline::getMeshResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcIDenseMappingPipelineService::Stub::async::getMesh(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getMeshRequest* request, ::grpcIDenseMappingPipeline::getMeshResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcIDenseMappingPipeline::getMeshRequest, ::grpcIDenseMappingPipeline::getMeshResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getMesh_, context, request, response, std::move(f));
 }
 
-void grpcIDenseMappingPipelineService::Stub::experimental_async::getMesh(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getMeshRequest* request, ::grpcIDenseMappingPipeline::getMeshResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcIDenseMappingPipelineService::Stub::async::getMesh(::grpc::ClientContext* context, const ::grpcIDenseMappingPipeline::getMeshRequest* request, ::grpcIDenseMappingPipeline::getMeshResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getMesh_, context, request, response, reactor);
 }
 

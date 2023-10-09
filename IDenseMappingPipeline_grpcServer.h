@@ -2,7 +2,7 @@
 
 #ifndef IDENSEMAPPINGPIPELINE_GRPCSERVER_H
 #define IDENSEMAPPINGPIPELINE_GRPCSERVER_H
-#include "api/pipeline/IDenseMappingPipeline.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/pipeline/IDenseMappingPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

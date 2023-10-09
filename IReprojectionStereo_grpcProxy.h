@@ -3,7 +3,7 @@
 
 #ifndef IREPROJECTIONSTEREO_GRPCPROXY_H
 #define IREPROJECTIONSTEREO_GRPCPROXY_H
-#include "api/geom/IReprojectionStereo.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/geom/IReprojectionStereo.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

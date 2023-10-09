@@ -3,7 +3,7 @@
 
 #ifndef IMESHEXPORTER_GRPCPROXY_H
 #define IMESHEXPORTER_GRPCPROXY_H
-#include "api/output/files/IMeshExporter.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/output/files/IMeshExporter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

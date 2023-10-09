@@ -2,7 +2,7 @@
 
 #ifndef IPANOPTICSEGMENTATION_GRPCSERVER_H
 #define IPANOPTICSEGMENTATION_GRPCSERVER_H
-#include "api/segm/IPanopticSegmentation.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/segm/IPanopticSegmentation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

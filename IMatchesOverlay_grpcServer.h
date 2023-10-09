@@ -2,7 +2,7 @@
 
 #ifndef IMATCHESOVERLAY_GRPCSERVER_H
 #define IMATCHESOVERLAY_GRPCSERVER_H
-#include "api/display/IMatchesOverlay.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/display/IMatchesOverlay.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

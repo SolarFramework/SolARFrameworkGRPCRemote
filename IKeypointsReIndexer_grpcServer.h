@@ -2,7 +2,7 @@
 
 #ifndef IKEYPOINTSREINDEXER_GRPCSERVER_H
 #define IKEYPOINTSREINDEXER_GRPCSERVER_H
-#include "api/features/IKeypointsReIndexer.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/features/IKeypointsReIndexer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

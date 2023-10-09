@@ -6,8 +6,8 @@
 #include "grpcITrackingService.grpc.pb.h"
 
 #include <functional>
-#include <grpcpp/impl/codegen/async_stream.h>
-#include <grpcpp/impl/codegen/async_unary_call.h>
+#include <grpcpp/support/async_stream.h>
+#include <grpcpp/support/async_unary_call.h>
 #include <grpcpp/impl/codegen/channel_interface.h>
 #include <grpcpp/impl/codegen/client_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
@@ -29,25 +29,25 @@ static const char* grpcITrackingService_method_names[] = {
 
 std::unique_ptr< grpcITrackingService::Stub> grpcITrackingService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< grpcITrackingService::Stub> stub(new grpcITrackingService::Stub(channel));
+  std::unique_ptr< grpcITrackingService::Stub> stub(new grpcITrackingService::Stub(channel, options));
   return stub;
 }
 
-grpcITrackingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_setNewKeyframe_(grpcITrackingService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_checkNeedNewKeyframe_(grpcITrackingService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_process_(grpcITrackingService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+grpcITrackingService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_setNewKeyframe_(grpcITrackingService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_checkNeedNewKeyframe_(grpcITrackingService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_process_(grpcITrackingService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcITrackingService::Stub::setNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest& request, ::google::protobuf::Empty* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcITracking::setNewKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setNewKeyframe_, context, request, response);
 }
 
-void grpcITrackingService::Stub::experimental_async::setNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
+void grpcITrackingService::Stub::async::setNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITracking::setNewKeyframeRequest, ::google::protobuf::Empty, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setNewKeyframe_, context, request, response, std::move(f));
 }
 
-void grpcITrackingService::Stub::experimental_async::setNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcITrackingService::Stub::async::setNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::setNewKeyframeRequest* request, ::google::protobuf::Empty* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setNewKeyframe_, context, request, response, reactor);
 }
 
@@ -66,11 +66,11 @@ void grpcITrackingService::Stub::experimental_async::setNewKeyframe(::grpc::Clie
   return ::grpc::internal::BlockingUnaryCall< ::grpcITracking::checkNeedNewKeyframeRequest, ::grpcITracking::checkNeedNewKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_checkNeedNewKeyframe_, context, request, response);
 }
 
-void grpcITrackingService::Stub::experimental_async::checkNeedNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest* request, ::grpcITracking::checkNeedNewKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcITrackingService::Stub::async::checkNeedNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest* request, ::grpcITracking::checkNeedNewKeyframeResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITracking::checkNeedNewKeyframeRequest, ::grpcITracking::checkNeedNewKeyframeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_checkNeedNewKeyframe_, context, request, response, std::move(f));
 }
 
-void grpcITrackingService::Stub::experimental_async::checkNeedNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest* request, ::grpcITracking::checkNeedNewKeyframeResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcITrackingService::Stub::async::checkNeedNewKeyframe(::grpc::ClientContext* context, const ::grpcITracking::checkNeedNewKeyframeRequest* request, ::grpcITracking::checkNeedNewKeyframeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_checkNeedNewKeyframe_, context, request, response, reactor);
 }
 
@@ -89,11 +89,11 @@ void grpcITrackingService::Stub::experimental_async::checkNeedNewKeyframe(::grpc
   return ::grpc::internal::BlockingUnaryCall< ::grpcITracking::processRequest, ::grpcITracking::processResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_process_, context, request, response);
 }
 
-void grpcITrackingService::Stub::experimental_async::process(::grpc::ClientContext* context, const ::grpcITracking::processRequest* request, ::grpcITracking::processResponse* response, std::function<void(::grpc::Status)> f) {
+void grpcITrackingService::Stub::async::process(::grpc::ClientContext* context, const ::grpcITracking::processRequest* request, ::grpcITracking::processResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall< ::grpcITracking::processRequest, ::grpcITracking::processResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_process_, context, request, response, std::move(f));
 }
 
-void grpcITrackingService::Stub::experimental_async::process(::grpc::ClientContext* context, const ::grpcITracking::processRequest* request, ::grpcITracking::processResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void grpcITrackingService::Stub::async::process(::grpc::ClientContext* context, const ::grpcITracking::processRequest* request, ::grpcITracking::processResponse* response, ::grpc::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_process_, context, request, response, reactor);
 }
 

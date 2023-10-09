@@ -3,7 +3,7 @@
 
 #ifndef ILOOPCORRECTOR_GRPCPROXY_H
 #define ILOOPCORRECTOR_GRPCPROXY_H
-#include "api/loop/ILoopCorrector.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/loop/ILoopCorrector.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,7 +22,7 @@ class ILoopCorrector_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtu
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode correct(SRef<SolAR::datastructure::Keyframe> const queryKeyframe, SRef<SolAR::datastructure::Keyframe> const detectedLoopKeyframe, SolAR::datastructure::Transform3Df const& S_wl_wc, std::vector<std::pair<uint32_t,uint32_t>> const& duplicatedPointsIndices)     override;
+    SolAR::FrameworkReturnCode correct(SRef<SolAR::datastructure::Keyframe> const queryKeyframe, SRef<SolAR::datastructure::Keyframe> const detectedLoopKeyframe, SolAR::datastructure::Transform3Df const& S_wl_wc, std::vector<std::pair<uint32_t,uint32_t>> const& duplicatedPointsIndices, std::vector<uint32_t>& correctedKeyframeIds)     override;
 
 
   private:

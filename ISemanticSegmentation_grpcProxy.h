@@ -3,7 +3,7 @@
 
 #ifndef ISEMANTICSEGMENTATION_GRPCPROXY_H
 #define ISEMANTICSEGMENTATION_GRPCPROXY_H
-#include "api/segm/ISemanticSegmentation.h"
+#include "Dev/SolAR/SolARFramework/interfaces/api/segm/ISemanticSegmentation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
