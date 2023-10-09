@@ -27,6 +27,7 @@ PROTOBUF_CONSTEXPR correctRequest::correctRequest(
   , /*decltype(_impl_.detectedloopkeyframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.s_wl_wc_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.duplicatedpointsindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.correctedkeyframeids_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.grpcservercompressionformat_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct correctRequestDefaultTypeInternal {
@@ -40,7 +41,8 @@ struct correctRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 correctRequestDefaultTypeInternal _correctRequest_default_instance_;
 PROTOBUF_CONSTEXPR correctResponse::correctResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+    /*decltype(_impl_.correctedkeyframeids_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct correctResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR correctResponseDefaultTypeInternal()
@@ -68,17 +70,19 @@ const uint32_t TableStruct_grpcILoopCorrectorService_2eproto::offsets[] PROTOBUF
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correctRequest, _impl_.detectedloopkeyframe_),
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correctRequest, _impl_.s_wl_wc_),
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correctRequest, _impl_.duplicatedpointsindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correctRequest, _impl_.correctedkeyframeids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correctResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correctResponse, _impl_.correctedkeyframeids_),
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correctResponse, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcILoopCorrector::correctRequest)},
-  { 11, -1, -1, sizeof(::grpcILoopCorrector::correctResponse)},
+  { 12, -1, -1, sizeof(::grpcILoopCorrector::correctResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -89,22 +93,23 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_grpcILoopCorrectorService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\037grpcILoopCorrectorService.proto\022\022grpcI"
   "LoopCorrector\032\033google/protobuf/empty.pro"
-  "to\"\234\001\n\016correctRequest\022#\n\033grpcServerCompr"
+  "to\"\272\001\n\016correctRequest\022#\n\033grpcServerCompr"
   "essionFormat\030\001 \001(\005\022\025\n\rqueryKeyframe\030\002 \001("
   "\014\022\034\n\024detectedLoopKeyframe\030\003 \001(\014\022\017\n\007S_wl_"
   "wc\030\004 \001(\014\022\037\n\027duplicatedPointsIndices\030\005 \001("
-  "\014\".\n\017correctResponse\022\033\n\023xpcfGrpcReturnVa"
-  "lue\030\001 \001(\0212q\n\031grpcILoopCorrectorService\022T"
-  "\n\007correct\022\".grpcILoopCorrector.correctRe"
-  "quest\032#.grpcILoopCorrector.correctRespon"
-  "se\"\000b\006proto3"
+  "\014\022\034\n\024correctedKeyframeIds\030\006 \001(\014\"L\n\017corre"
+  "ctResponse\022\034\n\024correctedKeyframeIds\030\001 \001(\014"
+  "\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\0212q\n\031grpcILo"
+  "opCorrectorService\022T\n\007correct\022\".grpcILoo"
+  "pCorrector.correctRequest\032#.grpcILoopCor"
+  "rector.correctResponse\"\000b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcILoopCorrectorService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_grpcILoopCorrectorService_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_grpcILoopCorrectorService_2eproto = {
-    false, false, 412, descriptor_table_protodef_grpcILoopCorrectorService_2eproto,
+    false, false, 472, descriptor_table_protodef_grpcILoopCorrectorService_2eproto,
     "grpcILoopCorrectorService.proto",
     &descriptor_table_grpcILoopCorrectorService_2eproto_once, descriptor_table_grpcILoopCorrectorService_2eproto_deps, 1, 2,
     schemas, file_default_instances, TableStruct_grpcILoopCorrectorService_2eproto::offsets,
@@ -139,6 +144,7 @@ correctRequest::correctRequest(const correctRequest& from)
     , decltype(_impl_.detectedloopkeyframe_){}
     , decltype(_impl_.s_wl_wc_){}
     , decltype(_impl_.duplicatedpointsindices_){}
+    , decltype(_impl_.correctedkeyframeids_){}
     , decltype(_impl_.grpcservercompressionformat_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -175,6 +181,14 @@ correctRequest::correctRequest(const correctRequest& from)
     _this->_impl_.duplicatedpointsindices_.Set(from._internal_duplicatedpointsindices(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.correctedkeyframeids_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_correctedkeyframeids().empty()) {
+    _this->_impl_.correctedkeyframeids_.Set(from._internal_correctedkeyframeids(), 
+      _this->GetArenaForAllocation());
+  }
   _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcILoopCorrector.correctRequest)
 }
@@ -188,6 +202,7 @@ inline void correctRequest::SharedCtor(
     , decltype(_impl_.detectedloopkeyframe_){}
     , decltype(_impl_.s_wl_wc_){}
     , decltype(_impl_.duplicatedpointsindices_){}
+    , decltype(_impl_.correctedkeyframeids_){}
     , decltype(_impl_.grpcservercompressionformat_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -207,6 +222,10 @@ inline void correctRequest::SharedCtor(
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.duplicatedpointsindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.correctedkeyframeids_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 correctRequest::~correctRequest() {
@@ -224,6 +243,7 @@ inline void correctRequest::SharedDtor() {
   _impl_.detectedloopkeyframe_.Destroy();
   _impl_.s_wl_wc_.Destroy();
   _impl_.duplicatedpointsindices_.Destroy();
+  _impl_.correctedkeyframeids_.Destroy();
 }
 
 void correctRequest::SetCachedSize(int size) const {
@@ -240,6 +260,7 @@ void correctRequest::Clear() {
   _impl_.detectedloopkeyframe_.ClearToEmpty();
   _impl_.s_wl_wc_.ClearToEmpty();
   _impl_.duplicatedpointsindices_.ClearToEmpty();
+  _impl_.correctedkeyframeids_.ClearToEmpty();
   _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -289,6 +310,15 @@ const char* correctRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_duplicatedpointsindices();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bytes correctedKeyframeIds = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          auto str = _internal_mutable_correctedkeyframeids();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
@@ -353,6 +383,12 @@ uint8_t* correctRequest::_InternalSerialize(
         5, this->_internal_duplicatedpointsindices(), target);
   }
 
+  // bytes correctedKeyframeIds = 6;
+  if (!this->_internal_correctedkeyframeids().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        6, this->_internal_correctedkeyframeids(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -397,6 +433,13 @@ size_t correctRequest::ByteSizeLong() const {
         this->_internal_duplicatedpointsindices());
   }
 
+  // bytes correctedKeyframeIds = 6;
+  if (!this->_internal_correctedkeyframeids().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_correctedkeyframeids());
+  }
+
   // int32 grpcServerCompressionFormat = 1;
   if (this->_internal_grpcservercompressionformat() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
@@ -431,6 +474,9 @@ void correctRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   }
   if (!from._internal_duplicatedpointsindices().empty()) {
     _this->_internal_set_duplicatedpointsindices(from._internal_duplicatedpointsindices());
+  }
+  if (!from._internal_correctedkeyframeids().empty()) {
+    _this->_internal_set_correctedkeyframeids(from._internal_correctedkeyframeids());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
@@ -470,6 +516,10 @@ void correctRequest::InternalSwap(correctRequest* other) {
       &_impl_.duplicatedpointsindices_, lhs_arena,
       &other->_impl_.duplicatedpointsindices_, rhs_arena
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.correctedkeyframeids_, lhs_arena,
+      &other->_impl_.correctedkeyframeids_, rhs_arena
+  );
   swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
@@ -495,10 +545,19 @@ correctResponse::correctResponse(const correctResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   correctResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){}
+      decltype(_impl_.correctedkeyframeids_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.correctedkeyframeids_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_correctedkeyframeids().empty()) {
+    _this->_impl_.correctedkeyframeids_.Set(from._internal_correctedkeyframeids(), 
+      _this->GetArenaForAllocation());
+  }
   _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcILoopCorrector.correctResponse)
 }
@@ -508,9 +567,14 @@ inline void correctResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){0}
+      decltype(_impl_.correctedkeyframeids_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
+  _impl_.correctedkeyframeids_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 correctResponse::~correctResponse() {
@@ -524,6 +588,7 @@ correctResponse::~correctResponse() {
 
 inline void correctResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.correctedkeyframeids_.Destroy();
 }
 
 void correctResponse::SetCachedSize(int size) const {
@@ -536,6 +601,7 @@ void correctResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.correctedkeyframeids_.ClearToEmpty();
   _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -546,9 +612,18 @@ const char* correctResponse::_InternalParse(const char* ptr, ::_pbi::ParseContex
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // sint32 xpcfGrpcReturnValue = 1;
+      // bytes correctedKeyframeIds = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_correctedkeyframeids();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // sint32 xpcfGrpcReturnValue = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
@@ -583,10 +658,16 @@ uint8_t* correctResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // sint32 xpcfGrpcReturnValue = 1;
+  // bytes correctedKeyframeIds = 1;
+  if (!this->_internal_correctedkeyframeids().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_correctedkeyframeids(), target);
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
   if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -605,7 +686,14 @@ size_t correctResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // sint32 xpcfGrpcReturnValue = 1;
+  // bytes correctedKeyframeIds = 1;
+  if (!this->_internal_correctedkeyframeids().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_correctedkeyframeids());
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
   if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
@@ -628,6 +716,9 @@ void correctResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_correctedkeyframeids().empty()) {
+    _this->_internal_set_correctedkeyframeids(from._internal_correctedkeyframeids());
+  }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
     _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
@@ -647,7 +738,13 @@ bool correctResponse::IsInitialized() const {
 
 void correctResponse::InternalSwap(correctResponse* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.correctedkeyframeids_, lhs_arena,
+      &other->_impl_.correctedkeyframeids_, rhs_arena
+  );
   swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 

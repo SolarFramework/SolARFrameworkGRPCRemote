@@ -42,7 +42,7 @@ XPCFErrorCode ILoopCorrector_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  ILoopCorrector_grpcProxy::correct(SRef<SolAR::datastructure::Keyframe> const queryKeyframe, SRef<SolAR::datastructure::Keyframe> const detectedLoopKeyframe, SolAR::datastructure::Transform3Df const& S_wl_wc, std::vector<std::pair<uint32_t,uint32_t>> const& duplicatedPointsIndices)
+SolAR::FrameworkReturnCode  ILoopCorrector_grpcProxy::correct(SRef<SolAR::datastructure::Keyframe> const queryKeyframe, SRef<SolAR::datastructure::Keyframe> const detectedLoopKeyframe, SolAR::datastructure::Transform3Df const& S_wl_wc, std::vector<std::pair<uint32_t,uint32_t>> const& duplicatedPointsIndices, std::vector<uint32_t>& correctedKeyframeIds)
 {
   ::grpc::ClientContext context;
   ::grpcILoopCorrector::correctRequest reqIn;
@@ -56,6 +56,7 @@ SolAR::FrameworkReturnCode  ILoopCorrector_grpcProxy::correct(SRef<SolAR::datast
   reqIn.set_detectedloopkeyframe(xpcf::serialize<SRef<SolAR::datastructure::Keyframe>>(detectedLoopKeyframe));
   reqIn.set_s_wl_wc(xpcf::serialize<SolAR::datastructure::Transform3Df>(S_wl_wc));
   reqIn.set_duplicatedpointsindices(xpcf::serialize<std::vector<std::pair<uint32_t,uint32_t>>>(duplicatedPointsIndices));
+  reqIn.set_correctedkeyframeids(xpcf::serialize<std::vector<uint32_t>>(correctedKeyframeIds));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> ILoopCorrector_grpcProxy::correct request sent at " << to_simple_string(start) << std::endl;
@@ -71,6 +72,7 @@ SolAR::FrameworkReturnCode  ILoopCorrector_grpcProxy::correct(SRef<SolAR::datast
     throw xpcf::RemotingException("grpcILoopCorrectorService","correct",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  correctedKeyframeIds = xpcf::deserialize<std::vector<uint32_t>>(respOut.correctedkeyframeids());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

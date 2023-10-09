@@ -186,6 +186,7 @@ class correctRequest final :
     kDetectedLoopKeyframeFieldNumber = 3,
     kSWlWcFieldNumber = 4,
     kDuplicatedPointsIndicesFieldNumber = 5,
+    kCorrectedKeyframeIdsFieldNumber = 6,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes queryKeyframe = 2;
@@ -244,6 +245,20 @@ class correctRequest final :
   std::string* _internal_mutable_duplicatedpointsindices();
   public:
 
+  // bytes correctedKeyframeIds = 6;
+  void clear_correctedkeyframeids();
+  const std::string& correctedkeyframeids() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_correctedkeyframeids(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_correctedkeyframeids();
+  PROTOBUF_NODISCARD std::string* release_correctedkeyframeids();
+  void set_allocated_correctedkeyframeids(std::string* correctedkeyframeids);
+  private:
+  const std::string& _internal_correctedkeyframeids() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_correctedkeyframeids(const std::string& value);
+  std::string* _internal_mutable_correctedkeyframeids();
+  public:
+
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   int32_t grpcservercompressionformat() const;
@@ -265,6 +280,7 @@ class correctRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detectedloopkeyframe_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr s_wl_wc_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr duplicatedpointsindices_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr correctedkeyframeids_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -394,9 +410,24 @@ class correctResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kXpcfGrpcReturnValueFieldNumber = 1,
+    kCorrectedKeyframeIdsFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
   };
-  // sint32 xpcfGrpcReturnValue = 1;
+  // bytes correctedKeyframeIds = 1;
+  void clear_correctedkeyframeids();
+  const std::string& correctedkeyframeids() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_correctedkeyframeids(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_correctedkeyframeids();
+  PROTOBUF_NODISCARD std::string* release_correctedkeyframeids();
+  void set_allocated_correctedkeyframeids(std::string* correctedkeyframeids);
+  private:
+  const std::string& _internal_correctedkeyframeids() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_correctedkeyframeids(const std::string& value);
+  std::string* _internal_mutable_correctedkeyframeids();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
   int32_t xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(int32_t value);
@@ -413,6 +444,7 @@ class correctResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr correctedkeyframeids_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -650,11 +682,111 @@ inline void correctRequest::set_allocated_duplicatedpointsindices(std::string* d
   // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.duplicatedPointsIndices)
 }
 
+// bytes correctedKeyframeIds = 6;
+inline void correctRequest::clear_correctedkeyframeids() {
+  _impl_.correctedkeyframeids_.ClearToEmpty();
+}
+inline const std::string& correctRequest::correctedkeyframeids() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
+  return _internal_correctedkeyframeids();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void correctRequest::set_correctedkeyframeids(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.correctedkeyframeids_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
+}
+inline std::string* correctRequest::mutable_correctedkeyframeids() {
+  std::string* _s = _internal_mutable_correctedkeyframeids();
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
+  return _s;
+}
+inline const std::string& correctRequest::_internal_correctedkeyframeids() const {
+  return _impl_.correctedkeyframeids_.Get();
+}
+inline void correctRequest::_internal_set_correctedkeyframeids(const std::string& value) {
+  
+  _impl_.correctedkeyframeids_.Set(value, GetArenaForAllocation());
+}
+inline std::string* correctRequest::_internal_mutable_correctedkeyframeids() {
+  
+  return _impl_.correctedkeyframeids_.Mutable(GetArenaForAllocation());
+}
+inline std::string* correctRequest::release_correctedkeyframeids() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
+  return _impl_.correctedkeyframeids_.Release();
+}
+inline void correctRequest::set_allocated_correctedkeyframeids(std::string* correctedkeyframeids) {
+  if (correctedkeyframeids != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.correctedkeyframeids_.SetAllocated(correctedkeyframeids, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.correctedkeyframeids_.IsDefault()) {
+    _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
+}
+
 // -------------------------------------------------------------------
 
 // correctResponse
 
-// sint32 xpcfGrpcReturnValue = 1;
+// bytes correctedKeyframeIds = 1;
+inline void correctResponse::clear_correctedkeyframeids() {
+  _impl_.correctedkeyframeids_.ClearToEmpty();
+}
+inline const std::string& correctResponse::correctedkeyframeids() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+  return _internal_correctedkeyframeids();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void correctResponse::set_correctedkeyframeids(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.correctedkeyframeids_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+}
+inline std::string* correctResponse::mutable_correctedkeyframeids() {
+  std::string* _s = _internal_mutable_correctedkeyframeids();
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+  return _s;
+}
+inline const std::string& correctResponse::_internal_correctedkeyframeids() const {
+  return _impl_.correctedkeyframeids_.Get();
+}
+inline void correctResponse::_internal_set_correctedkeyframeids(const std::string& value) {
+  
+  _impl_.correctedkeyframeids_.Set(value, GetArenaForAllocation());
+}
+inline std::string* correctResponse::_internal_mutable_correctedkeyframeids() {
+  
+  return _impl_.correctedkeyframeids_.Mutable(GetArenaForAllocation());
+}
+inline std::string* correctResponse::release_correctedkeyframeids() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+  return _impl_.correctedkeyframeids_.Release();
+}
+inline void correctResponse::set_allocated_correctedkeyframeids(std::string* correctedkeyframeids) {
+  if (correctedkeyframeids != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.correctedkeyframeids_.SetAllocated(correctedkeyframeids, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.correctedkeyframeids_.IsDefault()) {
+    _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
 inline void correctResponse::clear_xpcfgrpcreturnvalue() {
   _impl_.xpcfgrpcreturnvalue_ = 0;
 }
