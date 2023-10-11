@@ -2,7 +2,7 @@
 
 #ifndef IIMAGECONVERTOR_GRPCSERVER_H
 #define IIMAGECONVERTOR_GRPCSERVER_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/image/IImageConvertor.h"
+#include "api/image/IImageConvertor.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

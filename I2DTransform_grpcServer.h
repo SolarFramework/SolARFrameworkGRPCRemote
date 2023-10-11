@@ -2,7 +2,7 @@
 
 #ifndef I2DTRANSFORM_GRPCSERVER_H
 #define I2DTRANSFORM_GRPCSERVER_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/geom/I2DTransform.h"
+#include "api/geom/I2DTransform.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

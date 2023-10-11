@@ -3,7 +3,7 @@
 
 #ifndef IIMAGE2WORLDMAPPER_GRPCPROXY_H
 #define IIMAGE2WORLDMAPPER_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/geom/IImage2WorldMapper.h"
+#include "api/geom/IImage2WorldMapper.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -2,7 +2,7 @@
 
 #ifndef I2DTO3DTRANSFORMDECOMPOSERVALIDATION_GRPCSERVER_H
 #define I2DTO3DTRANSFORMDECOMPOSERVALIDATION_GRPCSERVER_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/solver/pose/I2Dto3DTransformDecomposerValidation.h"
+#include "api/solver/pose/I2Dto3DTransformDecomposerValidation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

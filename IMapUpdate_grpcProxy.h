@@ -3,7 +3,7 @@
 
 #ifndef IMAPUPDATE_GRPCPROXY_H
 #define IMAPUPDATE_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/solver/map/IMapUpdate.h"
+#include "api/solver/map/IMapUpdate.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -3,7 +3,7 @@
 
 #ifndef IIMAGEFILTER_GRPCPROXY_H
 #define IIMAGEFILTER_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/image/IImageFilter.h"
+#include "api/image/IImageFilter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

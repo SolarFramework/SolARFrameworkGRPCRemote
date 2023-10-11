@@ -2,7 +2,7 @@
 
 #ifndef IBUNDLER_GRPCSERVER_H
 #define IBUNDLER_GRPCSERVER_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/solver/map/IBundler.h"
+#include "api/solver/map/IBundler.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

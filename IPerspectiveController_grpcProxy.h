@@ -3,7 +3,7 @@
 
 #ifndef IPERSPECTIVECONTROLLER_GRPCPROXY_H
 #define IPERSPECTIVECONTROLLER_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/image/IPerspectiveController.h"
+#include "api/image/IPerspectiveController.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

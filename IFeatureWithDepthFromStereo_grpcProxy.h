@@ -3,7 +3,7 @@
 
 #ifndef IFEATUREWITHDEPTHFROMSTEREO_GRPCPROXY_H
 #define IFEATUREWITHDEPTHFROMSTEREO_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/features/IFeatureWithDepthFromStereo.h"
+#include "api/features/IFeatureWithDepthFromStereo.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

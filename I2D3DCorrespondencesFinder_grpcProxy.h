@@ -3,7 +3,7 @@
 
 #ifndef I2D3DCORRESPONDENCESFINDER_GRPCPROXY_H
 #define I2D3DCORRESPONDENCESFINDER_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/solver/pose/I2D3DCorrespondencesFinder.h"
+#include "api/solver/pose/I2D3DCorrespondencesFinder.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

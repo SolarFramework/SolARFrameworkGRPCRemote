@@ -2,7 +2,7 @@
 
 #ifndef I3DTRANSFORMSACFINDERFROM3D3D_GRPCSERVER_H
 #define I3DTRANSFORMSACFINDERFROM3D3D_GRPCSERVER_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/solver/pose/I3DTransformSACFinderFrom3D3D.h"
+#include "api/solver/pose/I3DTransformSACFinderFrom3D3D.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

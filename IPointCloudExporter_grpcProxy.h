@@ -3,7 +3,7 @@
 
 #ifndef IPOINTCLOUDEXPORTER_GRPCPROXY_H
 #define IPOINTCLOUDEXPORTER_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/output/files/IPointCloudExporter.h"
+#include "api/output/files/IPointCloudExporter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

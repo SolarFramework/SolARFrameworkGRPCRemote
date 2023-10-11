@@ -3,7 +3,7 @@
 
 #ifndef IDESCRIPTORSEXTRACTORSBPATTERN_GRPCPROXY_H
 #define IDESCRIPTORSEXTRACTORSBPATTERN_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/features/IDescriptorsExtractorSBPattern.h"
+#include "api/features/IDescriptorsExtractorSBPattern.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

@@ -3,7 +3,7 @@
 
 #ifndef IINSTANCESEGMENTATION_GRPCPROXY_H
 #define IINSTANCESEGMENTATION_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/segm/IInstanceSegmentation.h"
+#include "api/segm/IInstanceSegmentation.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

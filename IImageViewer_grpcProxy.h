@@ -3,7 +3,7 @@
 
 #ifndef IIMAGEVIEWER_GRPCPROXY_H
 #define IIMAGEVIEWER_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/display/IImageViewer.h"
+#include "api/display/IImageViewer.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

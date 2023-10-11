@@ -2,7 +2,7 @@
 
 #ifndef IWORLDGRAPHLOADER_GRPCSERVER_H
 #define IWORLDGRAPHLOADER_GRPCSERVER_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/input/files/IWorldGraphLoader.h"
+#include "api/input/files/IWorldGraphLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

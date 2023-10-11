@@ -2,7 +2,7 @@
 
 #ifndef IKEYPOINTDETECTORREGION_GRPCSERVER_H
 #define IKEYPOINTDETECTORREGION_GRPCSERVER_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/features/IKeypointDetectorRegion.h"
+#include "api/features/IKeypointDetectorRegion.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

@@ -3,7 +3,7 @@
 
 #ifndef IMESHLOADER_GRPCPROXY_H
 #define IMESHLOADER_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/input/files/IMeshLoader.h"
+#include "api/input/files/IMeshLoader.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

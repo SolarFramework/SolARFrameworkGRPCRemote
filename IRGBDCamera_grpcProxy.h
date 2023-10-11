@@ -3,7 +3,7 @@
 
 #ifndef IRGBDCAMERA_GRPCPROXY_H
 #define IRGBDCAMERA_GRPCPROXY_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/input/devices/IRGBDCamera.h"
+#include "api/input/devices/IRGBDCamera.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

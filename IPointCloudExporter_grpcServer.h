@@ -2,7 +2,7 @@
 
 #ifndef IPOINTCLOUDEXPORTER_GRPCSERVER_H
 #define IPOINTCLOUDEXPORTER_GRPCSERVER_H
-#include "Dev/SolAR/SolARFramework/interfaces/api/output/files/IPointCloudExporter.h"
+#include "api/output/files/IPointCloudExporter.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
