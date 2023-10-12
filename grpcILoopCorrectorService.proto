@@ -11,11 +11,13 @@ bytes queryKeyframe = 2;
 bytes detectedLoopKeyframe = 3;
 bytes S_wl_wc = 4;
 bytes duplicatedPointsIndices = 5;
+bytes correctedKeyframeIds = 6;
 }
 
 message correctResponse
 {
-sint32 xpcfGrpcReturnValue = 1;
+bytes correctedKeyframeIds = 1;
+sint32 xpcfGrpcReturnValue = 2;
 }
 
 service grpcILoopCorrectorService {
