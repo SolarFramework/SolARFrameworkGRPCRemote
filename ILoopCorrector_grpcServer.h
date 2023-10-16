@@ -25,7 +25,8 @@ class ILoopCorrector_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virt
     {
       public:
         grpcILoopCorrectorServiceImpl() = default;
-        ::grpc::Status correct(::grpc::ServerContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response) override;
+        ::grpc::Status correct_grpc0(::grpc::ServerContext* context, const ::grpcILoopCorrector::correct_grpc0Request* request, ::grpcILoopCorrector::correct_grpc0Response* response) override;
+        ::grpc::Status correct_grpc1(::grpc::ServerContext* context, const ::grpcILoopCorrector::correct_grpc1Request* request, ::grpcILoopCorrector::correct_grpc1Response* response) override;
 
         SRef<SolAR::api::loop::ILoopCorrector> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

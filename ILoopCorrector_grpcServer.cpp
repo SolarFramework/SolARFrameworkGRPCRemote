@@ -14,7 +14,7 @@ ILoopCorrector_grpcServer::ILoopCorrector_grpcServer():xpcf::ConfigurableBase(xp
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::loop::ILoopCorrector>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(2);
+  m_grpcServerCompressionConfig.resize(3);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -40,7 +40,33 @@ XPCFErrorCode ILoopCorrector_grpcServer::onConfigured()
   return &m_grpcService;
 }
 
-::grpc::Status ILoopCorrector_grpcServer::grpcILoopCorrectorServiceImpl::correct(::grpc::ServerContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response)
+::grpc::Status ILoopCorrector_grpcServer::grpcILoopCorrectorServiceImpl::correct_grpc0(::grpc::ServerContext* context, const ::grpcILoopCorrector::correct_grpc0Request* request, ::grpcILoopCorrector::correct_grpc0Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "correct", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> ILoopCorrector_grpcServer::correct request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SRef<SolAR::datastructure::Keyframe> queryKeyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->querykeyframe());
+  SRef<SolAR::datastructure::Keyframe> detectedLoopKeyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->detectedloopkeyframe());
+  SolAR::datastructure::Transform3Df S_wl_wc = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->s_wl_wc());
+  std::vector<std::pair<uint32_t,uint32_t>> duplicatedPointsIndices = xpcf::deserialize<std::vector<std::pair<uint32_t,uint32_t>>>(request->duplicatedpointsindices());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->correct(queryKeyframe, detectedLoopKeyframe, S_wl_wc, duplicatedPointsIndices);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> ILoopCorrector_grpcServer::correct response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status ILoopCorrector_grpcServer::grpcILoopCorrectorServiceImpl::correct_grpc1(::grpc::ServerContext* context, const ::grpcILoopCorrector::correct_grpc1Request* request, ::grpcILoopCorrector::correct_grpc1Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
