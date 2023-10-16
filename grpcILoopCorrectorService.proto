@@ -4,7 +4,21 @@ import "google/protobuf/empty.proto";
 
 package grpcILoopCorrector;
 
-message correctRequest
+message correct_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes queryKeyframe = 2;
+bytes detectedLoopKeyframe = 3;
+bytes S_wl_wc = 4;
+bytes duplicatedPointsIndices = 5;
+}
+
+message correct_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message correct_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes queryKeyframe = 2;
@@ -14,13 +28,14 @@ bytes duplicatedPointsIndices = 5;
 bytes correctedKeyframeIds = 6;
 }
 
-message correctResponse
+message correct_grpc1Response
 {
 bytes correctedKeyframeIds = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
 service grpcILoopCorrectorService {
-rpc correct(correctRequest) returns(correctResponse) {}
+rpc correct_grpc0(correct_grpc0Request) returns(correct_grpc0Response) {}
+rpc correct_grpc1(correct_grpc1Request) returns(correct_grpc1Response) {}
 }
 

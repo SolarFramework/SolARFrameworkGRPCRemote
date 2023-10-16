@@ -46,39 +46,47 @@ struct TableStruct_grpcILoopCorrectorService_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcILoopCorrectorService_2eproto;
 namespace grpcILoopCorrector {
-class correctRequest;
-struct correctRequestDefaultTypeInternal;
-extern correctRequestDefaultTypeInternal _correctRequest_default_instance_;
-class correctResponse;
-struct correctResponseDefaultTypeInternal;
-extern correctResponseDefaultTypeInternal _correctResponse_default_instance_;
+class correct_grpc0Request;
+struct correct_grpc0RequestDefaultTypeInternal;
+extern correct_grpc0RequestDefaultTypeInternal _correct_grpc0Request_default_instance_;
+class correct_grpc0Response;
+struct correct_grpc0ResponseDefaultTypeInternal;
+extern correct_grpc0ResponseDefaultTypeInternal _correct_grpc0Response_default_instance_;
+class correct_grpc1Request;
+struct correct_grpc1RequestDefaultTypeInternal;
+extern correct_grpc1RequestDefaultTypeInternal _correct_grpc1Request_default_instance_;
+class correct_grpc1Response;
+struct correct_grpc1ResponseDefaultTypeInternal;
+extern correct_grpc1ResponseDefaultTypeInternal _correct_grpc1Response_default_instance_;
 }  // namespace grpcILoopCorrector
 PROTOBUF_NAMESPACE_OPEN
-template<> ::grpcILoopCorrector::correctRequest* Arena::CreateMaybeMessage<::grpcILoopCorrector::correctRequest>(Arena*);
-template<> ::grpcILoopCorrector::correctResponse* Arena::CreateMaybeMessage<::grpcILoopCorrector::correctResponse>(Arena*);
+template<> ::grpcILoopCorrector::correct_grpc0Request* Arena::CreateMaybeMessage<::grpcILoopCorrector::correct_grpc0Request>(Arena*);
+template<> ::grpcILoopCorrector::correct_grpc0Response* Arena::CreateMaybeMessage<::grpcILoopCorrector::correct_grpc0Response>(Arena*);
+template<> ::grpcILoopCorrector::correct_grpc1Request* Arena::CreateMaybeMessage<::grpcILoopCorrector::correct_grpc1Request>(Arena*);
+template<> ::grpcILoopCorrector::correct_grpc1Response* Arena::CreateMaybeMessage<::grpcILoopCorrector::correct_grpc1Response>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcILoopCorrector {
 
 // ===================================================================
 
-class correctRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcILoopCorrector.correctRequest) */ {
+class correct_grpc0Request final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcILoopCorrector.correct_grpc0Request) */ {
  public:
-  inline correctRequest() : correctRequest(nullptr) {}
-  ~correctRequest() override;
-  explicit PROTOBUF_CONSTEXPR correctRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline correct_grpc0Request() : correct_grpc0Request(nullptr) {}
+  ~correct_grpc0Request() override;
+  explicit PROTOBUF_CONSTEXPR correct_grpc0Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  correctRequest(const correctRequest& from);
-  correctRequest(correctRequest&& from) noexcept
-    : correctRequest() {
+  correct_grpc0Request(const correct_grpc0Request& from);
+  correct_grpc0Request(correct_grpc0Request&& from) noexcept
+    : correct_grpc0Request() {
     *this = ::std::move(from);
   }
 
-  inline correctRequest& operator=(const correctRequest& from) {
+  inline correct_grpc0Request& operator=(const correct_grpc0Request& from) {
     CopyFrom(from);
     return *this;
   }
-  inline correctRequest& operator=(correctRequest&& from) noexcept {
+  inline correct_grpc0Request& operator=(correct_grpc0Request&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -101,20 +109,20 @@ class correctRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const correctRequest& default_instance() {
+  static const correct_grpc0Request& default_instance() {
     return *internal_default_instance();
   }
-  static inline const correctRequest* internal_default_instance() {
-    return reinterpret_cast<const correctRequest*>(
-               &_correctRequest_default_instance_);
+  static inline const correct_grpc0Request* internal_default_instance() {
+    return reinterpret_cast<const correct_grpc0Request*>(
+               &_correct_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(correctRequest& a, correctRequest& b) {
+  friend void swap(correct_grpc0Request& a, correct_grpc0Request& b) {
     a.Swap(&b);
   }
-  inline void Swap(correctRequest* other) {
+  inline void Swap(correct_grpc0Request* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -127,7 +135,7 @@ class correctRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(correctRequest* other) {
+  void UnsafeArenaSwap(correct_grpc0Request* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -135,14 +143,14 @@ class correctRequest final :
 
   // implements Message ----------------------------------------------
 
-  correctRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<correctRequest>(arena);
+  correct_grpc0Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<correct_grpc0Request>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const correctRequest& from);
+  void CopyFrom(const correct_grpc0Request& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const correctRequest& from) {
-    correctRequest::MergeImpl(*this, from);
+  void MergeFrom( const correct_grpc0Request& from) {
+    correct_grpc0Request::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -160,15 +168,375 @@ class correctRequest final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(correctRequest* other);
+  void InternalSwap(correct_grpc0Request* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcILoopCorrector.correctRequest";
+    return "grpcILoopCorrector.correct_grpc0Request";
   }
   protected:
-  explicit correctRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit correct_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kQueryKeyframeFieldNumber = 2,
+    kDetectedLoopKeyframeFieldNumber = 3,
+    kSWlWcFieldNumber = 4,
+    kDuplicatedPointsIndicesFieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes queryKeyframe = 2;
+  void clear_querykeyframe();
+  const std::string& querykeyframe() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_querykeyframe(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_querykeyframe();
+  PROTOBUF_NODISCARD std::string* release_querykeyframe();
+  void set_allocated_querykeyframe(std::string* querykeyframe);
+  private:
+  const std::string& _internal_querykeyframe() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_querykeyframe(const std::string& value);
+  std::string* _internal_mutable_querykeyframe();
+  public:
+
+  // bytes detectedLoopKeyframe = 3;
+  void clear_detectedloopkeyframe();
+  const std::string& detectedloopkeyframe() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_detectedloopkeyframe(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_detectedloopkeyframe();
+  PROTOBUF_NODISCARD std::string* release_detectedloopkeyframe();
+  void set_allocated_detectedloopkeyframe(std::string* detectedloopkeyframe);
+  private:
+  const std::string& _internal_detectedloopkeyframe() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_detectedloopkeyframe(const std::string& value);
+  std::string* _internal_mutable_detectedloopkeyframe();
+  public:
+
+  // bytes S_wl_wc = 4;
+  void clear_s_wl_wc();
+  const std::string& s_wl_wc() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_s_wl_wc(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_s_wl_wc();
+  PROTOBUF_NODISCARD std::string* release_s_wl_wc();
+  void set_allocated_s_wl_wc(std::string* s_wl_wc);
+  private:
+  const std::string& _internal_s_wl_wc() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_s_wl_wc(const std::string& value);
+  std::string* _internal_mutable_s_wl_wc();
+  public:
+
+  // bytes duplicatedPointsIndices = 5;
+  void clear_duplicatedpointsindices();
+  const std::string& duplicatedpointsindices() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_duplicatedpointsindices(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_duplicatedpointsindices();
+  PROTOBUF_NODISCARD std::string* release_duplicatedpointsindices();
+  void set_allocated_duplicatedpointsindices(std::string* duplicatedpointsindices);
+  private:
+  const std::string& _internal_duplicatedpointsindices() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_duplicatedpointsindices(const std::string& value);
+  std::string* _internal_mutable_duplicatedpointsindices();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(int32_t value);
+  private:
+  int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcILoopCorrector.correct_grpc0Request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr querykeyframe_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detectedloopkeyframe_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr s_wl_wc_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr duplicatedpointsindices_;
+    int32_t grpcservercompressionformat_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcILoopCorrectorService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class correct_grpc0Response final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcILoopCorrector.correct_grpc0Response) */ {
+ public:
+  inline correct_grpc0Response() : correct_grpc0Response(nullptr) {}
+  ~correct_grpc0Response() override;
+  explicit PROTOBUF_CONSTEXPR correct_grpc0Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  correct_grpc0Response(const correct_grpc0Response& from);
+  correct_grpc0Response(correct_grpc0Response&& from) noexcept
+    : correct_grpc0Response() {
+    *this = ::std::move(from);
+  }
+
+  inline correct_grpc0Response& operator=(const correct_grpc0Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline correct_grpc0Response& operator=(correct_grpc0Response&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const correct_grpc0Response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const correct_grpc0Response* internal_default_instance() {
+    return reinterpret_cast<const correct_grpc0Response*>(
+               &_correct_grpc0Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(correct_grpc0Response& a, correct_grpc0Response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(correct_grpc0Response* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(correct_grpc0Response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  correct_grpc0Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<correct_grpc0Response>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const correct_grpc0Response& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const correct_grpc0Response& from) {
+    correct_grpc0Response::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(correct_grpc0Response* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcILoopCorrector.correct_grpc0Response";
+  }
+  protected:
+  explicit correct_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
+  private:
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcILoopCorrector.correct_grpc0Response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t xpcfgrpcreturnvalue_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcILoopCorrectorService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class correct_grpc1Request final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcILoopCorrector.correct_grpc1Request) */ {
+ public:
+  inline correct_grpc1Request() : correct_grpc1Request(nullptr) {}
+  ~correct_grpc1Request() override;
+  explicit PROTOBUF_CONSTEXPR correct_grpc1Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  correct_grpc1Request(const correct_grpc1Request& from);
+  correct_grpc1Request(correct_grpc1Request&& from) noexcept
+    : correct_grpc1Request() {
+    *this = ::std::move(from);
+  }
+
+  inline correct_grpc1Request& operator=(const correct_grpc1Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline correct_grpc1Request& operator=(correct_grpc1Request&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const correct_grpc1Request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const correct_grpc1Request* internal_default_instance() {
+    return reinterpret_cast<const correct_grpc1Request*>(
+               &_correct_grpc1Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(correct_grpc1Request& a, correct_grpc1Request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(correct_grpc1Request* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(correct_grpc1Request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  correct_grpc1Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<correct_grpc1Request>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const correct_grpc1Request& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const correct_grpc1Request& from) {
+    correct_grpc1Request::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(correct_grpc1Request* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcILoopCorrector.correct_grpc1Request";
+  }
+  protected:
+  explicit correct_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -268,7 +636,7 @@ class correctRequest final :
   void _internal_set_grpcservercompressionformat(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcILoopCorrector.correctRequest)
+  // @@protoc_insertion_point(class_scope:grpcILoopCorrector.correct_grpc1Request)
  private:
   class _Internal;
 
@@ -289,24 +657,24 @@ class correctRequest final :
 };
 // -------------------------------------------------------------------
 
-class correctResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcILoopCorrector.correctResponse) */ {
+class correct_grpc1Response final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcILoopCorrector.correct_grpc1Response) */ {
  public:
-  inline correctResponse() : correctResponse(nullptr) {}
-  ~correctResponse() override;
-  explicit PROTOBUF_CONSTEXPR correctResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline correct_grpc1Response() : correct_grpc1Response(nullptr) {}
+  ~correct_grpc1Response() override;
+  explicit PROTOBUF_CONSTEXPR correct_grpc1Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  correctResponse(const correctResponse& from);
-  correctResponse(correctResponse&& from) noexcept
-    : correctResponse() {
+  correct_grpc1Response(const correct_grpc1Response& from);
+  correct_grpc1Response(correct_grpc1Response&& from) noexcept
+    : correct_grpc1Response() {
     *this = ::std::move(from);
   }
 
-  inline correctResponse& operator=(const correctResponse& from) {
+  inline correct_grpc1Response& operator=(const correct_grpc1Response& from) {
     CopyFrom(from);
     return *this;
   }
-  inline correctResponse& operator=(correctResponse&& from) noexcept {
+  inline correct_grpc1Response& operator=(correct_grpc1Response&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -329,20 +697,20 @@ class correctResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const correctResponse& default_instance() {
+  static const correct_grpc1Response& default_instance() {
     return *internal_default_instance();
   }
-  static inline const correctResponse* internal_default_instance() {
-    return reinterpret_cast<const correctResponse*>(
-               &_correctResponse_default_instance_);
+  static inline const correct_grpc1Response* internal_default_instance() {
+    return reinterpret_cast<const correct_grpc1Response*>(
+               &_correct_grpc1Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
-  friend void swap(correctResponse& a, correctResponse& b) {
+  friend void swap(correct_grpc1Response& a, correct_grpc1Response& b) {
     a.Swap(&b);
   }
-  inline void Swap(correctResponse* other) {
+  inline void Swap(correct_grpc1Response* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -355,7 +723,7 @@ class correctResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(correctResponse* other) {
+  void UnsafeArenaSwap(correct_grpc1Response* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -363,14 +731,14 @@ class correctResponse final :
 
   // implements Message ----------------------------------------------
 
-  correctResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<correctResponse>(arena);
+  correct_grpc1Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<correct_grpc1Response>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const correctResponse& from);
+  void CopyFrom(const correct_grpc1Response& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const correctResponse& from) {
-    correctResponse::MergeImpl(*this, from);
+  void MergeFrom( const correct_grpc1Response& from) {
+    correct_grpc1Response::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -388,15 +756,15 @@ class correctResponse final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(correctResponse* other);
+  void InternalSwap(correct_grpc1Response* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcILoopCorrector.correctResponse";
+    return "grpcILoopCorrector.correct_grpc1Response";
   }
   protected:
-  explicit correctResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit correct_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -436,7 +804,7 @@ class correctResponse final :
   void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcILoopCorrector.correctResponse)
+  // @@protoc_insertion_point(class_scope:grpcILoopCorrector.correct_grpc1Response)
  private:
   class _Internal;
 
@@ -460,64 +828,64 @@ class correctResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// correctRequest
+// correct_grpc0Request
 
 // int32 grpcServerCompressionFormat = 1;
-inline void correctRequest::clear_grpcservercompressionformat() {
+inline void correct_grpc0Request::clear_grpcservercompressionformat() {
   _impl_.grpcservercompressionformat_ = 0;
 }
-inline int32_t correctRequest::_internal_grpcservercompressionformat() const {
+inline int32_t correct_grpc0Request::_internal_grpcservercompressionformat() const {
   return _impl_.grpcservercompressionformat_;
 }
-inline int32_t correctRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctRequest.grpcServerCompressionFormat)
+inline int32_t correct_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc0Request.grpcServerCompressionFormat)
   return _internal_grpcservercompressionformat();
 }
-inline void correctRequest::_internal_set_grpcservercompressionformat(int32_t value) {
+inline void correct_grpc0Request::_internal_set_grpcservercompressionformat(int32_t value) {
   
   _impl_.grpcservercompressionformat_ = value;
 }
-inline void correctRequest::set_grpcservercompressionformat(int32_t value) {
+inline void correct_grpc0Request::set_grpcservercompressionformat(int32_t value) {
   _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctRequest.grpcServerCompressionFormat)
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc0Request.grpcServerCompressionFormat)
 }
 
 // bytes queryKeyframe = 2;
-inline void correctRequest::clear_querykeyframe() {
+inline void correct_grpc0Request::clear_querykeyframe() {
   _impl_.querykeyframe_.ClearToEmpty();
 }
-inline const std::string& correctRequest::querykeyframe() const {
-  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctRequest.queryKeyframe)
+inline const std::string& correct_grpc0Request::querykeyframe() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc0Request.queryKeyframe)
   return _internal_querykeyframe();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void correctRequest::set_querykeyframe(ArgT0&& arg0, ArgT... args) {
+void correct_grpc0Request::set_querykeyframe(ArgT0&& arg0, ArgT... args) {
  
  _impl_.querykeyframe_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctRequest.queryKeyframe)
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc0Request.queryKeyframe)
 }
-inline std::string* correctRequest::mutable_querykeyframe() {
+inline std::string* correct_grpc0Request::mutable_querykeyframe() {
   std::string* _s = _internal_mutable_querykeyframe();
-  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correctRequest.queryKeyframe)
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc0Request.queryKeyframe)
   return _s;
 }
-inline const std::string& correctRequest::_internal_querykeyframe() const {
+inline const std::string& correct_grpc0Request::_internal_querykeyframe() const {
   return _impl_.querykeyframe_.Get();
 }
-inline void correctRequest::_internal_set_querykeyframe(const std::string& value) {
+inline void correct_grpc0Request::_internal_set_querykeyframe(const std::string& value) {
   
   _impl_.querykeyframe_.Set(value, GetArenaForAllocation());
 }
-inline std::string* correctRequest::_internal_mutable_querykeyframe() {
+inline std::string* correct_grpc0Request::_internal_mutable_querykeyframe() {
   
   return _impl_.querykeyframe_.Mutable(GetArenaForAllocation());
 }
-inline std::string* correctRequest::release_querykeyframe() {
-  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correctRequest.queryKeyframe)
+inline std::string* correct_grpc0Request::release_querykeyframe() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc0Request.queryKeyframe)
   return _impl_.querykeyframe_.Release();
 }
-inline void correctRequest::set_allocated_querykeyframe(std::string* querykeyframe) {
+inline void correct_grpc0Request::set_allocated_querykeyframe(std::string* querykeyframe) {
   if (querykeyframe != nullptr) {
     
   } else {
@@ -529,45 +897,45 @@ inline void correctRequest::set_allocated_querykeyframe(std::string* querykeyfra
     _impl_.querykeyframe_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.queryKeyframe)
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc0Request.queryKeyframe)
 }
 
 // bytes detectedLoopKeyframe = 3;
-inline void correctRequest::clear_detectedloopkeyframe() {
+inline void correct_grpc0Request::clear_detectedloopkeyframe() {
   _impl_.detectedloopkeyframe_.ClearToEmpty();
 }
-inline const std::string& correctRequest::detectedloopkeyframe() const {
-  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctRequest.detectedLoopKeyframe)
+inline const std::string& correct_grpc0Request::detectedloopkeyframe() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc0Request.detectedLoopKeyframe)
   return _internal_detectedloopkeyframe();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void correctRequest::set_detectedloopkeyframe(ArgT0&& arg0, ArgT... args) {
+void correct_grpc0Request::set_detectedloopkeyframe(ArgT0&& arg0, ArgT... args) {
  
  _impl_.detectedloopkeyframe_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctRequest.detectedLoopKeyframe)
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc0Request.detectedLoopKeyframe)
 }
-inline std::string* correctRequest::mutable_detectedloopkeyframe() {
+inline std::string* correct_grpc0Request::mutable_detectedloopkeyframe() {
   std::string* _s = _internal_mutable_detectedloopkeyframe();
-  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correctRequest.detectedLoopKeyframe)
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc0Request.detectedLoopKeyframe)
   return _s;
 }
-inline const std::string& correctRequest::_internal_detectedloopkeyframe() const {
+inline const std::string& correct_grpc0Request::_internal_detectedloopkeyframe() const {
   return _impl_.detectedloopkeyframe_.Get();
 }
-inline void correctRequest::_internal_set_detectedloopkeyframe(const std::string& value) {
+inline void correct_grpc0Request::_internal_set_detectedloopkeyframe(const std::string& value) {
   
   _impl_.detectedloopkeyframe_.Set(value, GetArenaForAllocation());
 }
-inline std::string* correctRequest::_internal_mutable_detectedloopkeyframe() {
+inline std::string* correct_grpc0Request::_internal_mutable_detectedloopkeyframe() {
   
   return _impl_.detectedloopkeyframe_.Mutable(GetArenaForAllocation());
 }
-inline std::string* correctRequest::release_detectedloopkeyframe() {
-  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correctRequest.detectedLoopKeyframe)
+inline std::string* correct_grpc0Request::release_detectedloopkeyframe() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc0Request.detectedLoopKeyframe)
   return _impl_.detectedloopkeyframe_.Release();
 }
-inline void correctRequest::set_allocated_detectedloopkeyframe(std::string* detectedloopkeyframe) {
+inline void correct_grpc0Request::set_allocated_detectedloopkeyframe(std::string* detectedloopkeyframe) {
   if (detectedloopkeyframe != nullptr) {
     
   } else {
@@ -579,45 +947,45 @@ inline void correctRequest::set_allocated_detectedloopkeyframe(std::string* dete
     _impl_.detectedloopkeyframe_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.detectedLoopKeyframe)
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc0Request.detectedLoopKeyframe)
 }
 
 // bytes S_wl_wc = 4;
-inline void correctRequest::clear_s_wl_wc() {
+inline void correct_grpc0Request::clear_s_wl_wc() {
   _impl_.s_wl_wc_.ClearToEmpty();
 }
-inline const std::string& correctRequest::s_wl_wc() const {
-  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctRequest.S_wl_wc)
+inline const std::string& correct_grpc0Request::s_wl_wc() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc0Request.S_wl_wc)
   return _internal_s_wl_wc();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void correctRequest::set_s_wl_wc(ArgT0&& arg0, ArgT... args) {
+void correct_grpc0Request::set_s_wl_wc(ArgT0&& arg0, ArgT... args) {
  
  _impl_.s_wl_wc_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctRequest.S_wl_wc)
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc0Request.S_wl_wc)
 }
-inline std::string* correctRequest::mutable_s_wl_wc() {
+inline std::string* correct_grpc0Request::mutable_s_wl_wc() {
   std::string* _s = _internal_mutable_s_wl_wc();
-  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correctRequest.S_wl_wc)
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc0Request.S_wl_wc)
   return _s;
 }
-inline const std::string& correctRequest::_internal_s_wl_wc() const {
+inline const std::string& correct_grpc0Request::_internal_s_wl_wc() const {
   return _impl_.s_wl_wc_.Get();
 }
-inline void correctRequest::_internal_set_s_wl_wc(const std::string& value) {
+inline void correct_grpc0Request::_internal_set_s_wl_wc(const std::string& value) {
   
   _impl_.s_wl_wc_.Set(value, GetArenaForAllocation());
 }
-inline std::string* correctRequest::_internal_mutable_s_wl_wc() {
+inline std::string* correct_grpc0Request::_internal_mutable_s_wl_wc() {
   
   return _impl_.s_wl_wc_.Mutable(GetArenaForAllocation());
 }
-inline std::string* correctRequest::release_s_wl_wc() {
-  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correctRequest.S_wl_wc)
+inline std::string* correct_grpc0Request::release_s_wl_wc() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc0Request.S_wl_wc)
   return _impl_.s_wl_wc_.Release();
 }
-inline void correctRequest::set_allocated_s_wl_wc(std::string* s_wl_wc) {
+inline void correct_grpc0Request::set_allocated_s_wl_wc(std::string* s_wl_wc) {
   if (s_wl_wc != nullptr) {
     
   } else {
@@ -629,45 +997,45 @@ inline void correctRequest::set_allocated_s_wl_wc(std::string* s_wl_wc) {
     _impl_.s_wl_wc_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.S_wl_wc)
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc0Request.S_wl_wc)
 }
 
 // bytes duplicatedPointsIndices = 5;
-inline void correctRequest::clear_duplicatedpointsindices() {
+inline void correct_grpc0Request::clear_duplicatedpointsindices() {
   _impl_.duplicatedpointsindices_.ClearToEmpty();
 }
-inline const std::string& correctRequest::duplicatedpointsindices() const {
-  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctRequest.duplicatedPointsIndices)
+inline const std::string& correct_grpc0Request::duplicatedpointsindices() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc0Request.duplicatedPointsIndices)
   return _internal_duplicatedpointsindices();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void correctRequest::set_duplicatedpointsindices(ArgT0&& arg0, ArgT... args) {
+void correct_grpc0Request::set_duplicatedpointsindices(ArgT0&& arg0, ArgT... args) {
  
  _impl_.duplicatedpointsindices_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctRequest.duplicatedPointsIndices)
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc0Request.duplicatedPointsIndices)
 }
-inline std::string* correctRequest::mutable_duplicatedpointsindices() {
+inline std::string* correct_grpc0Request::mutable_duplicatedpointsindices() {
   std::string* _s = _internal_mutable_duplicatedpointsindices();
-  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correctRequest.duplicatedPointsIndices)
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc0Request.duplicatedPointsIndices)
   return _s;
 }
-inline const std::string& correctRequest::_internal_duplicatedpointsindices() const {
+inline const std::string& correct_grpc0Request::_internal_duplicatedpointsindices() const {
   return _impl_.duplicatedpointsindices_.Get();
 }
-inline void correctRequest::_internal_set_duplicatedpointsindices(const std::string& value) {
+inline void correct_grpc0Request::_internal_set_duplicatedpointsindices(const std::string& value) {
   
   _impl_.duplicatedpointsindices_.Set(value, GetArenaForAllocation());
 }
-inline std::string* correctRequest::_internal_mutable_duplicatedpointsindices() {
+inline std::string* correct_grpc0Request::_internal_mutable_duplicatedpointsindices() {
   
   return _impl_.duplicatedpointsindices_.Mutable(GetArenaForAllocation());
 }
-inline std::string* correctRequest::release_duplicatedpointsindices() {
-  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correctRequest.duplicatedPointsIndices)
+inline std::string* correct_grpc0Request::release_duplicatedpointsindices() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc0Request.duplicatedPointsIndices)
   return _impl_.duplicatedpointsindices_.Release();
 }
-inline void correctRequest::set_allocated_duplicatedpointsindices(std::string* duplicatedpointsindices) {
+inline void correct_grpc0Request::set_allocated_duplicatedpointsindices(std::string* duplicatedpointsindices) {
   if (duplicatedpointsindices != nullptr) {
     
   } else {
@@ -679,99 +1047,293 @@ inline void correctRequest::set_allocated_duplicatedpointsindices(std::string* d
     _impl_.duplicatedpointsindices_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.duplicatedPointsIndices)
-}
-
-// bytes correctedKeyframeIds = 6;
-inline void correctRequest::clear_correctedkeyframeids() {
-  _impl_.correctedkeyframeids_.ClearToEmpty();
-}
-inline const std::string& correctRequest::correctedkeyframeids() const {
-  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
-  return _internal_correctedkeyframeids();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void correctRequest::set_correctedkeyframeids(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.correctedkeyframeids_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
-}
-inline std::string* correctRequest::mutable_correctedkeyframeids() {
-  std::string* _s = _internal_mutable_correctedkeyframeids();
-  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
-  return _s;
-}
-inline const std::string& correctRequest::_internal_correctedkeyframeids() const {
-  return _impl_.correctedkeyframeids_.Get();
-}
-inline void correctRequest::_internal_set_correctedkeyframeids(const std::string& value) {
-  
-  _impl_.correctedkeyframeids_.Set(value, GetArenaForAllocation());
-}
-inline std::string* correctRequest::_internal_mutable_correctedkeyframeids() {
-  
-  return _impl_.correctedkeyframeids_.Mutable(GetArenaForAllocation());
-}
-inline std::string* correctRequest::release_correctedkeyframeids() {
-  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
-  return _impl_.correctedkeyframeids_.Release();
-}
-inline void correctRequest::set_allocated_correctedkeyframeids(std::string* correctedkeyframeids) {
-  if (correctedkeyframeids != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.correctedkeyframeids_.SetAllocated(correctedkeyframeids, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.correctedkeyframeids_.IsDefault()) {
-    _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctRequest.correctedKeyframeIds)
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc0Request.duplicatedPointsIndices)
 }
 
 // -------------------------------------------------------------------
 
-// correctResponse
+// correct_grpc0Response
 
-// bytes correctedKeyframeIds = 1;
-inline void correctResponse::clear_correctedkeyframeids() {
+// sint32 xpcfGrpcReturnValue = 1;
+inline void correct_grpc0Response::clear_xpcfgrpcreturnvalue() {
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline int32_t correct_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t correct_grpc0Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc0Response.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void correct_grpc0Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void correct_grpc0Response::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc0Response.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// correct_grpc1Request
+
+// int32 grpcServerCompressionFormat = 1;
+inline void correct_grpc1Request::clear_grpcservercompressionformat() {
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline int32_t correct_grpc1Request::_internal_grpcservercompressionformat() const {
+  return _impl_.grpcservercompressionformat_;
+}
+inline int32_t correct_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void correct_grpc1Request::_internal_set_grpcservercompressionformat(int32_t value) {
+  
+  _impl_.grpcservercompressionformat_ = value;
+}
+inline void correct_grpc1Request::set_grpcservercompressionformat(int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Request.grpcServerCompressionFormat)
+}
+
+// bytes queryKeyframe = 2;
+inline void correct_grpc1Request::clear_querykeyframe() {
+  _impl_.querykeyframe_.ClearToEmpty();
+}
+inline const std::string& correct_grpc1Request::querykeyframe() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Request.queryKeyframe)
+  return _internal_querykeyframe();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void correct_grpc1Request::set_querykeyframe(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.querykeyframe_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Request.queryKeyframe)
+}
+inline std::string* correct_grpc1Request::mutable_querykeyframe() {
+  std::string* _s = _internal_mutable_querykeyframe();
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc1Request.queryKeyframe)
+  return _s;
+}
+inline const std::string& correct_grpc1Request::_internal_querykeyframe() const {
+  return _impl_.querykeyframe_.Get();
+}
+inline void correct_grpc1Request::_internal_set_querykeyframe(const std::string& value) {
+  
+  _impl_.querykeyframe_.Set(value, GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::_internal_mutable_querykeyframe() {
+  
+  return _impl_.querykeyframe_.Mutable(GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::release_querykeyframe() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc1Request.queryKeyframe)
+  return _impl_.querykeyframe_.Release();
+}
+inline void correct_grpc1Request::set_allocated_querykeyframe(std::string* querykeyframe) {
+  if (querykeyframe != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.querykeyframe_.SetAllocated(querykeyframe, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.querykeyframe_.IsDefault()) {
+    _impl_.querykeyframe_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Request.queryKeyframe)
+}
+
+// bytes detectedLoopKeyframe = 3;
+inline void correct_grpc1Request::clear_detectedloopkeyframe() {
+  _impl_.detectedloopkeyframe_.ClearToEmpty();
+}
+inline const std::string& correct_grpc1Request::detectedloopkeyframe() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Request.detectedLoopKeyframe)
+  return _internal_detectedloopkeyframe();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void correct_grpc1Request::set_detectedloopkeyframe(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.detectedloopkeyframe_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Request.detectedLoopKeyframe)
+}
+inline std::string* correct_grpc1Request::mutable_detectedloopkeyframe() {
+  std::string* _s = _internal_mutable_detectedloopkeyframe();
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc1Request.detectedLoopKeyframe)
+  return _s;
+}
+inline const std::string& correct_grpc1Request::_internal_detectedloopkeyframe() const {
+  return _impl_.detectedloopkeyframe_.Get();
+}
+inline void correct_grpc1Request::_internal_set_detectedloopkeyframe(const std::string& value) {
+  
+  _impl_.detectedloopkeyframe_.Set(value, GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::_internal_mutable_detectedloopkeyframe() {
+  
+  return _impl_.detectedloopkeyframe_.Mutable(GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::release_detectedloopkeyframe() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc1Request.detectedLoopKeyframe)
+  return _impl_.detectedloopkeyframe_.Release();
+}
+inline void correct_grpc1Request::set_allocated_detectedloopkeyframe(std::string* detectedloopkeyframe) {
+  if (detectedloopkeyframe != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.detectedloopkeyframe_.SetAllocated(detectedloopkeyframe, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.detectedloopkeyframe_.IsDefault()) {
+    _impl_.detectedloopkeyframe_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Request.detectedLoopKeyframe)
+}
+
+// bytes S_wl_wc = 4;
+inline void correct_grpc1Request::clear_s_wl_wc() {
+  _impl_.s_wl_wc_.ClearToEmpty();
+}
+inline const std::string& correct_grpc1Request::s_wl_wc() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Request.S_wl_wc)
+  return _internal_s_wl_wc();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void correct_grpc1Request::set_s_wl_wc(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.s_wl_wc_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Request.S_wl_wc)
+}
+inline std::string* correct_grpc1Request::mutable_s_wl_wc() {
+  std::string* _s = _internal_mutable_s_wl_wc();
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc1Request.S_wl_wc)
+  return _s;
+}
+inline const std::string& correct_grpc1Request::_internal_s_wl_wc() const {
+  return _impl_.s_wl_wc_.Get();
+}
+inline void correct_grpc1Request::_internal_set_s_wl_wc(const std::string& value) {
+  
+  _impl_.s_wl_wc_.Set(value, GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::_internal_mutable_s_wl_wc() {
+  
+  return _impl_.s_wl_wc_.Mutable(GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::release_s_wl_wc() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc1Request.S_wl_wc)
+  return _impl_.s_wl_wc_.Release();
+}
+inline void correct_grpc1Request::set_allocated_s_wl_wc(std::string* s_wl_wc) {
+  if (s_wl_wc != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.s_wl_wc_.SetAllocated(s_wl_wc, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.s_wl_wc_.IsDefault()) {
+    _impl_.s_wl_wc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Request.S_wl_wc)
+}
+
+// bytes duplicatedPointsIndices = 5;
+inline void correct_grpc1Request::clear_duplicatedpointsindices() {
+  _impl_.duplicatedpointsindices_.ClearToEmpty();
+}
+inline const std::string& correct_grpc1Request::duplicatedpointsindices() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Request.duplicatedPointsIndices)
+  return _internal_duplicatedpointsindices();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void correct_grpc1Request::set_duplicatedpointsindices(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.duplicatedpointsindices_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Request.duplicatedPointsIndices)
+}
+inline std::string* correct_grpc1Request::mutable_duplicatedpointsindices() {
+  std::string* _s = _internal_mutable_duplicatedpointsindices();
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc1Request.duplicatedPointsIndices)
+  return _s;
+}
+inline const std::string& correct_grpc1Request::_internal_duplicatedpointsindices() const {
+  return _impl_.duplicatedpointsindices_.Get();
+}
+inline void correct_grpc1Request::_internal_set_duplicatedpointsindices(const std::string& value) {
+  
+  _impl_.duplicatedpointsindices_.Set(value, GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::_internal_mutable_duplicatedpointsindices() {
+  
+  return _impl_.duplicatedpointsindices_.Mutable(GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::release_duplicatedpointsindices() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc1Request.duplicatedPointsIndices)
+  return _impl_.duplicatedpointsindices_.Release();
+}
+inline void correct_grpc1Request::set_allocated_duplicatedpointsindices(std::string* duplicatedpointsindices) {
+  if (duplicatedpointsindices != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.duplicatedpointsindices_.SetAllocated(duplicatedpointsindices, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.duplicatedpointsindices_.IsDefault()) {
+    _impl_.duplicatedpointsindices_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Request.duplicatedPointsIndices)
+}
+
+// bytes correctedKeyframeIds = 6;
+inline void correct_grpc1Request::clear_correctedkeyframeids() {
   _impl_.correctedkeyframeids_.ClearToEmpty();
 }
-inline const std::string& correctResponse::correctedkeyframeids() const {
-  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+inline const std::string& correct_grpc1Request::correctedkeyframeids() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Request.correctedKeyframeIds)
   return _internal_correctedkeyframeids();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void correctResponse::set_correctedkeyframeids(ArgT0&& arg0, ArgT... args) {
+void correct_grpc1Request::set_correctedkeyframeids(ArgT0&& arg0, ArgT... args) {
  
  _impl_.correctedkeyframeids_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Request.correctedKeyframeIds)
 }
-inline std::string* correctResponse::mutable_correctedkeyframeids() {
+inline std::string* correct_grpc1Request::mutable_correctedkeyframeids() {
   std::string* _s = _internal_mutable_correctedkeyframeids();
-  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc1Request.correctedKeyframeIds)
   return _s;
 }
-inline const std::string& correctResponse::_internal_correctedkeyframeids() const {
+inline const std::string& correct_grpc1Request::_internal_correctedkeyframeids() const {
   return _impl_.correctedkeyframeids_.Get();
 }
-inline void correctResponse::_internal_set_correctedkeyframeids(const std::string& value) {
+inline void correct_grpc1Request::_internal_set_correctedkeyframeids(const std::string& value) {
   
   _impl_.correctedkeyframeids_.Set(value, GetArenaForAllocation());
 }
-inline std::string* correctResponse::_internal_mutable_correctedkeyframeids() {
+inline std::string* correct_grpc1Request::_internal_mutable_correctedkeyframeids() {
   
   return _impl_.correctedkeyframeids_.Mutable(GetArenaForAllocation());
 }
-inline std::string* correctResponse::release_correctedkeyframeids() {
-  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+inline std::string* correct_grpc1Request::release_correctedkeyframeids() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc1Request.correctedKeyframeIds)
   return _impl_.correctedkeyframeids_.Release();
 }
-inline void correctResponse::set_allocated_correctedkeyframeids(std::string* correctedkeyframeids) {
+inline void correct_grpc1Request::set_allocated_correctedkeyframeids(std::string* correctedkeyframeids) {
   if (correctedkeyframeids != nullptr) {
     
   } else {
@@ -783,32 +1345,90 @@ inline void correctResponse::set_allocated_correctedkeyframeids(std::string* cor
     _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correctResponse.correctedKeyframeIds)
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Request.correctedKeyframeIds)
+}
+
+// -------------------------------------------------------------------
+
+// correct_grpc1Response
+
+// bytes correctedKeyframeIds = 1;
+inline void correct_grpc1Response::clear_correctedkeyframeids() {
+  _impl_.correctedkeyframeids_.ClearToEmpty();
+}
+inline const std::string& correct_grpc1Response::correctedkeyframeids() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Response.correctedKeyframeIds)
+  return _internal_correctedkeyframeids();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void correct_grpc1Response::set_correctedkeyframeids(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.correctedkeyframeids_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Response.correctedKeyframeIds)
+}
+inline std::string* correct_grpc1Response::mutable_correctedkeyframeids() {
+  std::string* _s = _internal_mutable_correctedkeyframeids();
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc1Response.correctedKeyframeIds)
+  return _s;
+}
+inline const std::string& correct_grpc1Response::_internal_correctedkeyframeids() const {
+  return _impl_.correctedkeyframeids_.Get();
+}
+inline void correct_grpc1Response::_internal_set_correctedkeyframeids(const std::string& value) {
+  
+  _impl_.correctedkeyframeids_.Set(value, GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Response::_internal_mutable_correctedkeyframeids() {
+  
+  return _impl_.correctedkeyframeids_.Mutable(GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Response::release_correctedkeyframeids() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc1Response.correctedKeyframeIds)
+  return _impl_.correctedkeyframeids_.Release();
+}
+inline void correct_grpc1Response::set_allocated_correctedkeyframeids(std::string* correctedkeyframeids) {
+  if (correctedkeyframeids != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.correctedkeyframeids_.SetAllocated(correctedkeyframeids, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.correctedkeyframeids_.IsDefault()) {
+    _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Response.correctedKeyframeIds)
 }
 
 // sint32 xpcfGrpcReturnValue = 2;
-inline void correctResponse::clear_xpcfgrpcreturnvalue() {
+inline void correct_grpc1Response::clear_xpcfgrpcreturnvalue() {
   _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline int32_t correctResponse::_internal_xpcfgrpcreturnvalue() const {
+inline int32_t correct_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
   return _impl_.xpcfgrpcreturnvalue_;
 }
-inline int32_t correctResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correctResponse.xpcfGrpcReturnValue)
+inline int32_t correct_grpc1Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-inline void correctResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+inline void correct_grpc1Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
   
   _impl_.xpcfgrpcreturnvalue_ = value;
 }
-inline void correctResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+inline void correct_grpc1Response::set_xpcfgrpcreturnvalue(int32_t value) {
   _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correctResponse.xpcfGrpcReturnValue)
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Response.xpcfGrpcReturnValue)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

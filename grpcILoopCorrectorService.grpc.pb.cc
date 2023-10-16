@@ -22,7 +22,8 @@
 namespace grpcILoopCorrector {
 
 static const char* grpcILoopCorrectorService_method_names[] = {
-  "/grpcILoopCorrector.grpcILoopCorrectorService/correct",
+  "/grpcILoopCorrector.grpcILoopCorrectorService/correct_grpc0",
+  "/grpcILoopCorrector.grpcILoopCorrectorService/correct_grpc1",
 };
 
 std::unique_ptr< grpcILoopCorrectorService::Stub> grpcILoopCorrectorService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -32,28 +33,52 @@ std::unique_ptr< grpcILoopCorrectorService::Stub> grpcILoopCorrectorService::New
 }
 
 grpcILoopCorrectorService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_correct_(grpcILoopCorrectorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_correct_grpc0_(grpcILoopCorrectorService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_correct_grpc1_(grpcILoopCorrectorService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status grpcILoopCorrectorService::Stub::correct(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest& request, ::grpcILoopCorrector::correctResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcILoopCorrector::correctRequest, ::grpcILoopCorrector::correctResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_correct_, context, request, response);
+::grpc::Status grpcILoopCorrectorService::Stub::correct_grpc0(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc0Request& request, ::grpcILoopCorrector::correct_grpc0Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcILoopCorrector::correct_grpc0Request, ::grpcILoopCorrector::correct_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_correct_grpc0_, context, request, response);
 }
 
-void grpcILoopCorrectorService::Stub::async::correct(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcILoopCorrector::correctRequest, ::grpcILoopCorrector::correctResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_, context, request, response, std::move(f));
+void grpcILoopCorrectorService::Stub::async::correct_grpc0(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc0Request* request, ::grpcILoopCorrector::correct_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcILoopCorrector::correct_grpc0Request, ::grpcILoopCorrector::correct_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcILoopCorrectorService::Stub::async::correct(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_, context, request, response, reactor);
+void grpcILoopCorrectorService::Stub::async::correct_grpc0(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc0Request* request, ::grpcILoopCorrector::correct_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_grpc0_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcILoopCorrector::correctResponse>* grpcILoopCorrectorService::Stub::PrepareAsynccorrectRaw(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcILoopCorrector::correctResponse, ::grpcILoopCorrector::correctRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_correct_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcILoopCorrector::correct_grpc0Response>* grpcILoopCorrectorService::Stub::PrepareAsynccorrect_grpc0Raw(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcILoopCorrector::correct_grpc0Response, ::grpcILoopCorrector::correct_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_correct_grpc0_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcILoopCorrector::correctResponse>* grpcILoopCorrectorService::Stub::AsynccorrectRaw(::grpc::ClientContext* context, const ::grpcILoopCorrector::correctRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcILoopCorrector::correct_grpc0Response>* grpcILoopCorrectorService::Stub::Asynccorrect_grpc0Raw(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc0Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsynccorrectRaw(context, request, cq);
+    this->PrepareAsynccorrect_grpc0Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcILoopCorrectorService::Stub::correct_grpc1(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc1Request& request, ::grpcILoopCorrector::correct_grpc1Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcILoopCorrector::correct_grpc1Request, ::grpcILoopCorrector::correct_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_correct_grpc1_, context, request, response);
+}
+
+void grpcILoopCorrectorService::Stub::async::correct_grpc1(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc1Request* request, ::grpcILoopCorrector::correct_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcILoopCorrector::correct_grpc1Request, ::grpcILoopCorrector::correct_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_grpc1_, context, request, response, std::move(f));
+}
+
+void grpcILoopCorrectorService::Stub::async::correct_grpc1(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc1Request* request, ::grpcILoopCorrector::correct_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_correct_grpc1_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcILoopCorrector::correct_grpc1Response>* grpcILoopCorrectorService::Stub::PrepareAsynccorrect_grpc1Raw(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcILoopCorrector::correct_grpc1Response, ::grpcILoopCorrector::correct_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_correct_grpc1_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcILoopCorrector::correct_grpc1Response>* grpcILoopCorrectorService::Stub::Asynccorrect_grpc1Raw(::grpc::ClientContext* context, const ::grpcILoopCorrector::correct_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsynccorrect_grpc1Raw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -62,19 +87,36 @@ grpcILoopCorrectorService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcILoopCorrectorService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcILoopCorrectorService::Service, ::grpcILoopCorrector::correctRequest, ::grpcILoopCorrector::correctResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcILoopCorrectorService::Service, ::grpcILoopCorrector::correct_grpc0Request, ::grpcILoopCorrector::correct_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcILoopCorrectorService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcILoopCorrector::correctRequest* req,
-             ::grpcILoopCorrector::correctResponse* resp) {
-               return service->correct(ctx, req, resp);
+             const ::grpcILoopCorrector::correct_grpc0Request* req,
+             ::grpcILoopCorrector::correct_grpc0Response* resp) {
+               return service->correct_grpc0(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcILoopCorrectorService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcILoopCorrectorService::Service, ::grpcILoopCorrector::correct_grpc1Request, ::grpcILoopCorrector::correct_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcILoopCorrectorService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcILoopCorrector::correct_grpc1Request* req,
+             ::grpcILoopCorrector::correct_grpc1Response* resp) {
+               return service->correct_grpc1(ctx, req, resp);
              }, this)));
 }
 
 grpcILoopCorrectorService::Service::~Service() {
 }
 
-::grpc::Status grpcILoopCorrectorService::Service::correct(::grpc::ServerContext* context, const ::grpcILoopCorrector::correctRequest* request, ::grpcILoopCorrector::correctResponse* response) {
+::grpc::Status grpcILoopCorrectorService::Service::correct_grpc0(::grpc::ServerContext* context, const ::grpcILoopCorrector::correct_grpc0Request* request, ::grpcILoopCorrector::correct_grpc0Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcILoopCorrectorService::Service::correct_grpc1(::grpc::ServerContext* context, const ::grpcILoopCorrector::correct_grpc1Request* request, ::grpcILoopCorrector::correct_grpc1Response* response) {
   (void) context;
   (void) request;
   (void) response;

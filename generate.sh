@@ -34,7 +34,7 @@ fi
 
 DEFAULT_VERSION_SOLAR="1.1.0"
 DEFAULT_VERSION_XPCF="2.7.0"
-DEFAULT_DATABASE_DIR="../build-SolARFramework-Desktop_Qt_6_4_2_GCC_64bit-Release"
+DEFAULT_DATABASE_DIR="../build-SolARFramework-Desktop_Qt_6_5_3_GCC_64bit-Release"
 DEFAULT_SOLAR_FRAMEWORK_PATH="../SolARFramework"
 DEFAULT_MODULE_UUID="a0f522d1-b70e-4d0f-ad78-84e78a9af6bf"
 VERBOSE=false
@@ -141,11 +141,11 @@ fi
 
 # TODO generate compilation database for the SolAR Framework
 
-#if [[ $OSTYPE == *"linux"* ]]; then
-#    remaken install packagedependencies-xpcf_grpc_gen-linux.txt
-#else
-#    remaken install packagedependencies-xpcf_grpc_gen-win.txt
-#fi
+if [[ $OSTYPE == *"linux"* ]]; then
+   remaken install packagedependencies-xpcf_grpc_gen-linux.txt
+else
+   remaken install packagedependencies-xpcf_grpc_gen-win.txt
+fi
 
 # Hack: attempt to get rid of message:
 # "/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.26' not found" -> need to have a recent libstdc++ installed
