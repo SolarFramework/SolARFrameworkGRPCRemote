@@ -152,6 +152,12 @@ fi
 # If this does not work, use path to existing gcc >= 8 on your machine or install one
 # look at /usr/lib/x86_64-linux-gnu/ or /home/linuxbrew/.linuxbrew/Cellar/gcc/
 
+# Workaround bug with -isystem and compilation database
+# https://github.com/b-com-software-basis/builddefs-qmake/issues/13
+# https://github.com/b-com-software-basis/xpcf/issues/20
+sed -i "s/-I-isystem/-I/g" `realpath $DATABASE_DIR`/compile_commands.json
+sed -i "s/-isystem/-I/g" `realpath $DATABASE_DIR`/compile_commands.json
+
 $XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/$LIB_TYPE/release/xpcf_grpc_gen \
         --module_uuid $MODULE_UUID \
         --name SolARFramework \
