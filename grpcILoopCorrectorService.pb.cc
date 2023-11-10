@@ -58,6 +58,7 @@ PROTOBUF_CONSTEXPR correct_grpc1Request::correct_grpc1Request(
   , /*decltype(_impl_.s_wl_wc_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.duplicatedpointsindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.correctedkeyframeids_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.correctedcloudpointids_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.grpcservercompressionformat_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct correct_grpc1RequestDefaultTypeInternal {
@@ -72,6 +73,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR correct_grpc1Response::correct_grpc1Response(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.correctedkeyframeids_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.correctedcloudpointids_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct correct_grpc1ResponseDefaultTypeInternal {
@@ -119,6 +121,7 @@ const uint32_t TableStruct_grpcILoopCorrectorService_2eproto::offsets[] PROTOBUF
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correct_grpc1Request, _impl_.s_wl_wc_),
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correct_grpc1Request, _impl_.duplicatedpointsindices_),
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correct_grpc1Request, _impl_.correctedkeyframeids_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correct_grpc1Request, _impl_.correctedcloudpointids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correct_grpc1Response, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -126,13 +129,14 @@ const uint32_t TableStruct_grpcILoopCorrectorService_2eproto::offsets[] PROTOBUF
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correct_grpc1Response, _impl_.correctedkeyframeids_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correct_grpc1Response, _impl_.correctedcloudpointids_),
   PROTOBUF_FIELD_OFFSET(::grpcILoopCorrector::correct_grpc1Response, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcILoopCorrector::correct_grpc0Request)},
   { 11, -1, -1, sizeof(::grpcILoopCorrector::correct_grpc0Response)},
   { 18, -1, -1, sizeof(::grpcILoopCorrector::correct_grpc1Request)},
-  { 30, -1, -1, sizeof(::grpcILoopCorrector::correct_grpc1Response)},
+  { 31, -1, -1, sizeof(::grpcILoopCorrector::correct_grpc1Response)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -150,27 +154,29 @@ const char descriptor_table_protodef_grpcILoopCorrectorService_2eproto[] PROTOBU
   "e\030\002 \001(\014\022\034\n\024detectedLoopKeyframe\030\003 \001(\014\022\017\n"
   "\007S_wl_wc\030\004 \001(\014\022\037\n\027duplicatedPointsIndice"
   "s\030\005 \001(\014\"4\n\025correct_grpc0Response\022\033\n\023xpcf"
-  "GrpcReturnValue\030\001 \001(\021\"\300\001\n\024correct_grpc1R"
+  "GrpcReturnValue\030\001 \001(\021\"\340\001\n\024correct_grpc1R"
   "equest\022#\n\033grpcServerCompressionFormat\030\001 "
   "\001(\005\022\025\n\rqueryKeyframe\030\002 \001(\014\022\034\n\024detectedLo"
   "opKeyframe\030\003 \001(\014\022\017\n\007S_wl_wc\030\004 \001(\014\022\037\n\027dup"
   "licatedPointsIndices\030\005 \001(\014\022\034\n\024correctedK"
-  "eyframeIds\030\006 \001(\014\"R\n\025correct_grpc1Respons"
-  "e\022\034\n\024correctedKeyframeIds\030\001 \001(\014\022\033\n\023xpcfG"
-  "rpcReturnValue\030\002 \001(\0212\353\001\n\031grpcILoopCorrec"
-  "torService\022f\n\rcorrect_grpc0\022(.grpcILoopC"
-  "orrector.correct_grpc0Request\032).grpcILoo"
-  "pCorrector.correct_grpc0Response\"\000\022f\n\rco"
-  "rrect_grpc1\022(.grpcILoopCorrector.correct"
-  "_grpc1Request\032).grpcILoopCorrector.corre"
-  "ct_grpc1Response\"\000b\006proto3"
+  "eyframeIds\030\006 \001(\014\022\036\n\026correctedCloudpointI"
+  "ds\030\007 \001(\014\"r\n\025correct_grpc1Response\022\034\n\024cor"
+  "rectedKeyframeIds\030\001 \001(\014\022\036\n\026correctedClou"
+  "dpointIds\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003"
+  " \001(\0212\353\001\n\031grpcILoopCorrectorService\022f\n\rco"
+  "rrect_grpc0\022(.grpcILoopCorrector.correct"
+  "_grpc0Request\032).grpcILoopCorrector.corre"
+  "ct_grpc0Response\"\000\022f\n\rcorrect_grpc1\022(.gr"
+  "pcILoopCorrector.correct_grpc1Request\032)."
+  "grpcILoopCorrector.correct_grpc1Response"
+  "\"\000b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcILoopCorrectorService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_grpcILoopCorrectorService_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_grpcILoopCorrectorService_2eproto = {
-    false, false, 826, descriptor_table_protodef_grpcILoopCorrectorService_2eproto,
+    false, false, 890, descriptor_table_protodef_grpcILoopCorrectorService_2eproto,
     "grpcILoopCorrectorService.proto",
     &descriptor_table_grpcILoopCorrectorService_2eproto_once, descriptor_table_grpcILoopCorrectorService_2eproto_deps, 1, 4,
     schemas, file_default_instances, TableStruct_grpcILoopCorrectorService_2eproto::offsets,
@@ -744,6 +750,7 @@ correct_grpc1Request::correct_grpc1Request(const correct_grpc1Request& from)
     , decltype(_impl_.s_wl_wc_){}
     , decltype(_impl_.duplicatedpointsindices_){}
     , decltype(_impl_.correctedkeyframeids_){}
+    , decltype(_impl_.correctedcloudpointids_){}
     , decltype(_impl_.grpcservercompressionformat_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -788,6 +795,14 @@ correct_grpc1Request::correct_grpc1Request(const correct_grpc1Request& from)
     _this->_impl_.correctedkeyframeids_.Set(from._internal_correctedkeyframeids(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.correctedcloudpointids_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.correctedcloudpointids_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_correctedcloudpointids().empty()) {
+    _this->_impl_.correctedcloudpointids_.Set(from._internal_correctedcloudpointids(), 
+      _this->GetArenaForAllocation());
+  }
   _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcILoopCorrector.correct_grpc1Request)
 }
@@ -802,6 +817,7 @@ inline void correct_grpc1Request::SharedCtor(
     , decltype(_impl_.s_wl_wc_){}
     , decltype(_impl_.duplicatedpointsindices_){}
     , decltype(_impl_.correctedkeyframeids_){}
+    , decltype(_impl_.correctedcloudpointids_){}
     , decltype(_impl_.grpcservercompressionformat_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -825,6 +841,10 @@ inline void correct_grpc1Request::SharedCtor(
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.correctedcloudpointids_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.correctedcloudpointids_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 correct_grpc1Request::~correct_grpc1Request() {
@@ -843,6 +863,7 @@ inline void correct_grpc1Request::SharedDtor() {
   _impl_.s_wl_wc_.Destroy();
   _impl_.duplicatedpointsindices_.Destroy();
   _impl_.correctedkeyframeids_.Destroy();
+  _impl_.correctedcloudpointids_.Destroy();
 }
 
 void correct_grpc1Request::SetCachedSize(int size) const {
@@ -860,6 +881,7 @@ void correct_grpc1Request::Clear() {
   _impl_.s_wl_wc_.ClearToEmpty();
   _impl_.duplicatedpointsindices_.ClearToEmpty();
   _impl_.correctedkeyframeids_.ClearToEmpty();
+  _impl_.correctedcloudpointids_.ClearToEmpty();
   _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -918,6 +940,15 @@ const char* correct_grpc1Request::_InternalParse(const char* ptr, ::_pbi::ParseC
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_correctedkeyframeids();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bytes correctedCloudpointIds = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_correctedcloudpointids();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
@@ -988,6 +1019,12 @@ uint8_t* correct_grpc1Request::_InternalSerialize(
         6, this->_internal_correctedkeyframeids(), target);
   }
 
+  // bytes correctedCloudpointIds = 7;
+  if (!this->_internal_correctedcloudpointids().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        7, this->_internal_correctedcloudpointids(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1039,6 +1076,13 @@ size_t correct_grpc1Request::ByteSizeLong() const {
         this->_internal_correctedkeyframeids());
   }
 
+  // bytes correctedCloudpointIds = 7;
+  if (!this->_internal_correctedcloudpointids().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_correctedcloudpointids());
+  }
+
   // int32 grpcServerCompressionFormat = 1;
   if (this->_internal_grpcservercompressionformat() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
@@ -1076,6 +1120,9 @@ void correct_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, c
   }
   if (!from._internal_correctedkeyframeids().empty()) {
     _this->_internal_set_correctedkeyframeids(from._internal_correctedkeyframeids());
+  }
+  if (!from._internal_correctedcloudpointids().empty()) {
+    _this->_internal_set_correctedcloudpointids(from._internal_correctedcloudpointids());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
@@ -1119,6 +1166,10 @@ void correct_grpc1Request::InternalSwap(correct_grpc1Request* other) {
       &_impl_.correctedkeyframeids_, lhs_arena,
       &other->_impl_.correctedkeyframeids_, rhs_arena
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.correctedcloudpointids_, lhs_arena,
+      &other->_impl_.correctedcloudpointids_, rhs_arena
+  );
   swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
@@ -1145,6 +1196,7 @@ correct_grpc1Response::correct_grpc1Response(const correct_grpc1Response& from)
   correct_grpc1Response* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.correctedkeyframeids_){}
+    , decltype(_impl_.correctedcloudpointids_){}
     , decltype(_impl_.xpcfgrpcreturnvalue_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -1157,6 +1209,14 @@ correct_grpc1Response::correct_grpc1Response(const correct_grpc1Response& from)
     _this->_impl_.correctedkeyframeids_.Set(from._internal_correctedkeyframeids(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.correctedcloudpointids_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.correctedcloudpointids_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_correctedcloudpointids().empty()) {
+    _this->_impl_.correctedcloudpointids_.Set(from._internal_correctedcloudpointids(), 
+      _this->GetArenaForAllocation());
+  }
   _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcILoopCorrector.correct_grpc1Response)
 }
@@ -1167,12 +1227,17 @@ inline void correct_grpc1Response::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.correctedkeyframeids_){}
+    , decltype(_impl_.correctedcloudpointids_){}
     , decltype(_impl_.xpcfgrpcreturnvalue_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.correctedkeyframeids_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.correctedkeyframeids_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.correctedcloudpointids_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.correctedcloudpointids_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -1188,6 +1253,7 @@ correct_grpc1Response::~correct_grpc1Response() {
 inline void correct_grpc1Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.correctedkeyframeids_.Destroy();
+  _impl_.correctedcloudpointids_.Destroy();
 }
 
 void correct_grpc1Response::SetCachedSize(int size) const {
@@ -1201,6 +1267,7 @@ void correct_grpc1Response::Clear() {
   (void) cached_has_bits;
 
   _impl_.correctedkeyframeids_.ClearToEmpty();
+  _impl_.correctedcloudpointids_.ClearToEmpty();
   _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1220,9 +1287,18 @@ const char* correct_grpc1Response::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
-      // sint32 xpcfGrpcReturnValue = 2;
+      // bytes correctedCloudpointIds = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_correctedcloudpointids();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // sint32 xpcfGrpcReturnValue = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
@@ -1263,10 +1339,16 @@ uint8_t* correct_grpc1Response::_InternalSerialize(
         1, this->_internal_correctedkeyframeids(), target);
   }
 
-  // sint32 xpcfGrpcReturnValue = 2;
+  // bytes correctedCloudpointIds = 2;
+  if (!this->_internal_correctedcloudpointids().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_correctedcloudpointids(), target);
+  }
+
+  // sint32 xpcfGrpcReturnValue = 3;
   if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(2, this->_internal_xpcfgrpcreturnvalue(), target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(3, this->_internal_xpcfgrpcreturnvalue(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1292,7 +1374,14 @@ size_t correct_grpc1Response::ByteSizeLong() const {
         this->_internal_correctedkeyframeids());
   }
 
-  // sint32 xpcfGrpcReturnValue = 2;
+  // bytes correctedCloudpointIds = 2;
+  if (!this->_internal_correctedcloudpointids().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_correctedcloudpointids());
+  }
+
+  // sint32 xpcfGrpcReturnValue = 3;
   if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
@@ -1317,6 +1406,9 @@ void correct_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, 
 
   if (!from._internal_correctedkeyframeids().empty()) {
     _this->_internal_set_correctedkeyframeids(from._internal_correctedkeyframeids());
+  }
+  if (!from._internal_correctedcloudpointids().empty()) {
+    _this->_internal_set_correctedcloudpointids(from._internal_correctedcloudpointids());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
     _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
@@ -1343,6 +1435,10 @@ void correct_grpc1Response::InternalSwap(correct_grpc1Response* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.correctedkeyframeids_, lhs_arena,
       &other->_impl_.correctedkeyframeids_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.correctedcloudpointids_, lhs_arena,
+      &other->_impl_.correctedcloudpointids_, rhs_arena
   );
   swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }

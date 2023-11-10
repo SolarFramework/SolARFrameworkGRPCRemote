@@ -82,8 +82,10 @@ XPCFErrorCode ILoopCorrector_grpcServer::onConfigured()
   SolAR::datastructure::Transform3Df S_wl_wc = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->s_wl_wc());
   std::vector<std::pair<uint32_t,uint32_t>> duplicatedPointsIndices = xpcf::deserialize<std::vector<std::pair<uint32_t,uint32_t>>>(request->duplicatedpointsindices());
   std::vector<uint32_t> correctedKeyframeIds = xpcf::deserialize<std::vector<uint32_t>>(request->correctedkeyframeids());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->correct(queryKeyframe, detectedLoopKeyframe, S_wl_wc, duplicatedPointsIndices, correctedKeyframeIds);
+  std::vector<uint32_t> correctedCloudpointIds = xpcf::deserialize<std::vector<uint32_t>>(request->correctedcloudpointids());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->correct(queryKeyframe, detectedLoopKeyframe, S_wl_wc, duplicatedPointsIndices, correctedKeyframeIds, correctedCloudpointIds);
   response->set_correctedkeyframeids(xpcf::serialize<std::vector<uint32_t>>(correctedKeyframeIds));
+  response->set_correctedcloudpointids(xpcf::serialize<std::vector<uint32_t>>(correctedCloudpointIds));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

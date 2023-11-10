@@ -26,12 +26,14 @@ bytes detectedLoopKeyframe = 3;
 bytes S_wl_wc = 4;
 bytes duplicatedPointsIndices = 5;
 bytes correctedKeyframeIds = 6;
+bytes correctedCloudpointIds = 7;
 }
 
 message correct_grpc1Response
 {
 bytes correctedKeyframeIds = 1;
-sint32 xpcfGrpcReturnValue = 2;
+bytes correctedCloudpointIds = 2;
+sint32 xpcfGrpcReturnValue = 3;
 }
 
 service grpcILoopCorrectorService {

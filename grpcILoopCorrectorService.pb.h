@@ -555,6 +555,7 @@ class correct_grpc1Request final :
     kSWlWcFieldNumber = 4,
     kDuplicatedPointsIndicesFieldNumber = 5,
     kCorrectedKeyframeIdsFieldNumber = 6,
+    kCorrectedCloudpointIdsFieldNumber = 7,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes queryKeyframe = 2;
@@ -627,6 +628,20 @@ class correct_grpc1Request final :
   std::string* _internal_mutable_correctedkeyframeids();
   public:
 
+  // bytes correctedCloudpointIds = 7;
+  void clear_correctedcloudpointids();
+  const std::string& correctedcloudpointids() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_correctedcloudpointids(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_correctedcloudpointids();
+  PROTOBUF_NODISCARD std::string* release_correctedcloudpointids();
+  void set_allocated_correctedcloudpointids(std::string* correctedcloudpointids);
+  private:
+  const std::string& _internal_correctedcloudpointids() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_correctedcloudpointids(const std::string& value);
+  std::string* _internal_mutable_correctedcloudpointids();
+  public:
+
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   int32_t grpcservercompressionformat() const;
@@ -649,6 +664,7 @@ class correct_grpc1Request final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr s_wl_wc_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr duplicatedpointsindices_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr correctedkeyframeids_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr correctedcloudpointids_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -779,7 +795,8 @@ class correct_grpc1Response final :
 
   enum : int {
     kCorrectedKeyframeIdsFieldNumber = 1,
-    kXpcfGrpcReturnValueFieldNumber = 2,
+    kCorrectedCloudpointIdsFieldNumber = 2,
+    kXpcfGrpcReturnValueFieldNumber = 3,
   };
   // bytes correctedKeyframeIds = 1;
   void clear_correctedkeyframeids();
@@ -795,7 +812,21 @@ class correct_grpc1Response final :
   std::string* _internal_mutable_correctedkeyframeids();
   public:
 
-  // sint32 xpcfGrpcReturnValue = 2;
+  // bytes correctedCloudpointIds = 2;
+  void clear_correctedcloudpointids();
+  const std::string& correctedcloudpointids() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_correctedcloudpointids(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_correctedcloudpointids();
+  PROTOBUF_NODISCARD std::string* release_correctedcloudpointids();
+  void set_allocated_correctedcloudpointids(std::string* correctedcloudpointids);
+  private:
+  const std::string& _internal_correctedcloudpointids() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_correctedcloudpointids(const std::string& value);
+  std::string* _internal_mutable_correctedcloudpointids();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 3;
   void clear_xpcfgrpcreturnvalue();
   int32_t xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(int32_t value);
@@ -813,6 +844,7 @@ class correct_grpc1Response final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr correctedkeyframeids_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr correctedcloudpointids_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1348,6 +1380,56 @@ inline void correct_grpc1Request::set_allocated_correctedkeyframeids(std::string
   // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Request.correctedKeyframeIds)
 }
 
+// bytes correctedCloudpointIds = 7;
+inline void correct_grpc1Request::clear_correctedcloudpointids() {
+  _impl_.correctedcloudpointids_.ClearToEmpty();
+}
+inline const std::string& correct_grpc1Request::correctedcloudpointids() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Request.correctedCloudpointIds)
+  return _internal_correctedcloudpointids();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void correct_grpc1Request::set_correctedcloudpointids(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.correctedcloudpointids_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Request.correctedCloudpointIds)
+}
+inline std::string* correct_grpc1Request::mutable_correctedcloudpointids() {
+  std::string* _s = _internal_mutable_correctedcloudpointids();
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc1Request.correctedCloudpointIds)
+  return _s;
+}
+inline const std::string& correct_grpc1Request::_internal_correctedcloudpointids() const {
+  return _impl_.correctedcloudpointids_.Get();
+}
+inline void correct_grpc1Request::_internal_set_correctedcloudpointids(const std::string& value) {
+  
+  _impl_.correctedcloudpointids_.Set(value, GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::_internal_mutable_correctedcloudpointids() {
+  
+  return _impl_.correctedcloudpointids_.Mutable(GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Request::release_correctedcloudpointids() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc1Request.correctedCloudpointIds)
+  return _impl_.correctedcloudpointids_.Release();
+}
+inline void correct_grpc1Request::set_allocated_correctedcloudpointids(std::string* correctedcloudpointids) {
+  if (correctedcloudpointids != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.correctedcloudpointids_.SetAllocated(correctedcloudpointids, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.correctedcloudpointids_.IsDefault()) {
+    _impl_.correctedcloudpointids_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Request.correctedCloudpointIds)
+}
+
 // -------------------------------------------------------------------
 
 // correct_grpc1Response
@@ -1402,7 +1484,57 @@ inline void correct_grpc1Response::set_allocated_correctedkeyframeids(std::strin
   // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Response.correctedKeyframeIds)
 }
 
-// sint32 xpcfGrpcReturnValue = 2;
+// bytes correctedCloudpointIds = 2;
+inline void correct_grpc1Response::clear_correctedcloudpointids() {
+  _impl_.correctedcloudpointids_.ClearToEmpty();
+}
+inline const std::string& correct_grpc1Response::correctedcloudpointids() const {
+  // @@protoc_insertion_point(field_get:grpcILoopCorrector.correct_grpc1Response.correctedCloudpointIds)
+  return _internal_correctedcloudpointids();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void correct_grpc1Response::set_correctedcloudpointids(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.correctedcloudpointids_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcILoopCorrector.correct_grpc1Response.correctedCloudpointIds)
+}
+inline std::string* correct_grpc1Response::mutable_correctedcloudpointids() {
+  std::string* _s = _internal_mutable_correctedcloudpointids();
+  // @@protoc_insertion_point(field_mutable:grpcILoopCorrector.correct_grpc1Response.correctedCloudpointIds)
+  return _s;
+}
+inline const std::string& correct_grpc1Response::_internal_correctedcloudpointids() const {
+  return _impl_.correctedcloudpointids_.Get();
+}
+inline void correct_grpc1Response::_internal_set_correctedcloudpointids(const std::string& value) {
+  
+  _impl_.correctedcloudpointids_.Set(value, GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Response::_internal_mutable_correctedcloudpointids() {
+  
+  return _impl_.correctedcloudpointids_.Mutable(GetArenaForAllocation());
+}
+inline std::string* correct_grpc1Response::release_correctedcloudpointids() {
+  // @@protoc_insertion_point(field_release:grpcILoopCorrector.correct_grpc1Response.correctedCloudpointIds)
+  return _impl_.correctedcloudpointids_.Release();
+}
+inline void correct_grpc1Response::set_allocated_correctedcloudpointids(std::string* correctedcloudpointids) {
+  if (correctedcloudpointids != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.correctedcloudpointids_.SetAllocated(correctedcloudpointids, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.correctedcloudpointids_.IsDefault()) {
+    _impl_.correctedcloudpointids_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcILoopCorrector.correct_grpc1Response.correctedCloudpointIds)
+}
+
+// sint32 xpcfGrpcReturnValue = 3;
 inline void correct_grpc1Response::clear_xpcfgrpcreturnvalue() {
   _impl_.xpcfgrpcreturnvalue_ = 0;
 }
