@@ -161,6 +161,7 @@ bytes transform3DStatus = 8;
 bytes transform3D = 9;
 bytes confidence = 10;
 bytes mappingStatus = 11;
+bytes detectedObjects = 12;
 }
 
 message relocalizeProcessRequestResponse
@@ -169,7 +170,8 @@ bytes transform3DStatus = 1;
 bytes transform3D = 2;
 bytes confidence = 3;
 bytes mappingStatus = 4;
-sint32 xpcfGrpcReturnValue = 5;
+bytes detectedObjects = 5;
+sint32 xpcfGrpcReturnValue = 6;
 }
 
 message get3DTransformRequestRequest

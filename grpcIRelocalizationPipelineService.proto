@@ -64,13 +64,15 @@ bytes image = 2;
 bytes poseCoarse = 3;
 bytes pose = 4;
 bytes confidence = 5;
+bytes detectedObjects = 6;
 }
 
 message relocalizeProcessRequestResponse
 {
 bytes pose = 1;
 bytes confidence = 2;
-sint32 xpcfGrpcReturnValue = 3;
+bytes detectedObjects = 3;
+sint32 xpcfGrpcReturnValue = 4;
 }
 
 message getMapRequestRequest

@@ -419,7 +419,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getCameraParameters(std::string
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::string const& uuid, std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df const& worldTransform, std::chrono::system_clock::time_point const& timestamp, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::api::pipeline::MappingStatus& mappingStatus)
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::string const& uuid, std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df const& worldTransform, std::chrono::system_clock::time_point const& timestamp, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::api::pipeline::MappingStatus& mappingStatus, std::vector<SolAR::api::pipeline::DetectedObject>& detectedObjects)
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::relocalizeProcessRequestRequest reqIn;
@@ -439,6 +439,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::s
   reqIn.set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
   reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
   reqIn.set_mappingstatus(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(mappingStatus));
+  reqIn.set_detectedobjects(xpcf::serialize<std::vector<SolAR::api::pipeline::DetectedObject>>(detectedObjects));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcProxy::relocalizeProcessRequest request sent at " << to_simple_string(start) << std::endl;
@@ -458,6 +459,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::s
   transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
   mappingStatus = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(respOut.mappingstatus());
+  detectedObjects = xpcf::deserialize<std::vector<SolAR::api::pipeline::DetectedObject>>(respOut.detectedobjects());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

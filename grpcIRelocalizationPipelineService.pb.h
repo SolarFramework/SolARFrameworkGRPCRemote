@@ -1762,6 +1762,7 @@ class relocalizeProcessRequestRequest final :
     kPoseCoarseFieldNumber = 3,
     kPoseFieldNumber = 4,
     kConfidenceFieldNumber = 5,
+    kDetectedObjectsFieldNumber = 6,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes image = 2;
@@ -1820,6 +1821,20 @@ class relocalizeProcessRequestRequest final :
   std::string* _internal_mutable_confidence();
   public:
 
+  // bytes detectedObjects = 6;
+  void clear_detectedobjects();
+  const std::string& detectedobjects() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_detectedobjects(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_detectedobjects();
+  PROTOBUF_NODISCARD std::string* release_detectedobjects();
+  void set_allocated_detectedobjects(std::string* detectedobjects);
+  private:
+  const std::string& _internal_detectedobjects() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_detectedobjects(const std::string& value);
+  std::string* _internal_mutable_detectedobjects();
+  public:
+
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   int32_t grpcservercompressionformat() const;
@@ -1841,6 +1856,7 @@ class relocalizeProcessRequestRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr posecoarse_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detectedobjects_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1972,7 +1988,8 @@ class relocalizeProcessRequestResponse final :
   enum : int {
     kPoseFieldNumber = 1,
     kConfidenceFieldNumber = 2,
-    kXpcfGrpcReturnValueFieldNumber = 3,
+    kDetectedObjectsFieldNumber = 3,
+    kXpcfGrpcReturnValueFieldNumber = 4,
   };
   // bytes pose = 1;
   void clear_pose();
@@ -2002,7 +2019,21 @@ class relocalizeProcessRequestResponse final :
   std::string* _internal_mutable_confidence();
   public:
 
-  // sint32 xpcfGrpcReturnValue = 3;
+  // bytes detectedObjects = 3;
+  void clear_detectedobjects();
+  const std::string& detectedobjects() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_detectedobjects(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_detectedobjects();
+  PROTOBUF_NODISCARD std::string* release_detectedobjects();
+  void set_allocated_detectedobjects(std::string* detectedobjects);
+  private:
+  const std::string& _internal_detectedobjects() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_detectedobjects(const std::string& value);
+  std::string* _internal_mutable_detectedobjects();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 4;
   void clear_xpcfgrpcreturnvalue();
   int32_t xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(int32_t value);
@@ -2021,6 +2052,7 @@ class relocalizeProcessRequestResponse final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detectedobjects_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -2976,6 +3008,56 @@ inline void relocalizeProcessRequestRequest::set_allocated_confidence(std::strin
   // @@protoc_insertion_point(field_set_allocated:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.confidence)
 }
 
+// bytes detectedObjects = 6;
+inline void relocalizeProcessRequestRequest::clear_detectedobjects() {
+  _impl_.detectedobjects_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestRequest::detectedobjects() const {
+  // @@protoc_insertion_point(field_get:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.detectedObjects)
+  return _internal_detectedobjects();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequestRequest::set_detectedobjects(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.detectedobjects_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.detectedObjects)
+}
+inline std::string* relocalizeProcessRequestRequest::mutable_detectedobjects() {
+  std::string* _s = _internal_mutable_detectedobjects();
+  // @@protoc_insertion_point(field_mutable:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.detectedObjects)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequestRequest::_internal_detectedobjects() const {
+  return _impl_.detectedobjects_.Get();
+}
+inline void relocalizeProcessRequestRequest::_internal_set_detectedobjects(const std::string& value) {
+  
+  _impl_.detectedobjects_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequestRequest::_internal_mutable_detectedobjects() {
+  
+  return _impl_.detectedobjects_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequestRequest::release_detectedobjects() {
+  // @@protoc_insertion_point(field_release:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.detectedObjects)
+  return _impl_.detectedobjects_.Release();
+}
+inline void relocalizeProcessRequestRequest::set_allocated_detectedobjects(std::string* detectedobjects) {
+  if (detectedobjects != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.detectedobjects_.SetAllocated(detectedobjects, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.detectedobjects_.IsDefault()) {
+    _impl_.detectedobjects_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIRelocalizationPipeline.relocalizeProcessRequestRequest.detectedObjects)
+}
+
 // -------------------------------------------------------------------
 
 // relocalizeProcessRequestResponse
@@ -3080,7 +3162,57 @@ inline void relocalizeProcessRequestResponse::set_allocated_confidence(std::stri
   // @@protoc_insertion_point(field_set_allocated:grpcIRelocalizationPipeline.relocalizeProcessRequestResponse.confidence)
 }
 
-// sint32 xpcfGrpcReturnValue = 3;
+// bytes detectedObjects = 3;
+inline void relocalizeProcessRequestResponse::clear_detectedobjects() {
+  _impl_.detectedobjects_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequestResponse::detectedobjects() const {
+  // @@protoc_insertion_point(field_get:grpcIRelocalizationPipeline.relocalizeProcessRequestResponse.detectedObjects)
+  return _internal_detectedobjects();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequestResponse::set_detectedobjects(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.detectedobjects_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIRelocalizationPipeline.relocalizeProcessRequestResponse.detectedObjects)
+}
+inline std::string* relocalizeProcessRequestResponse::mutable_detectedobjects() {
+  std::string* _s = _internal_mutable_detectedobjects();
+  // @@protoc_insertion_point(field_mutable:grpcIRelocalizationPipeline.relocalizeProcessRequestResponse.detectedObjects)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequestResponse::_internal_detectedobjects() const {
+  return _impl_.detectedobjects_.Get();
+}
+inline void relocalizeProcessRequestResponse::_internal_set_detectedobjects(const std::string& value) {
+  
+  _impl_.detectedobjects_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequestResponse::_internal_mutable_detectedobjects() {
+  
+  return _impl_.detectedobjects_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequestResponse::release_detectedobjects() {
+  // @@protoc_insertion_point(field_release:grpcIRelocalizationPipeline.relocalizeProcessRequestResponse.detectedObjects)
+  return _impl_.detectedobjects_.Release();
+}
+inline void relocalizeProcessRequestResponse::set_allocated_detectedobjects(std::string* detectedobjects) {
+  if (detectedobjects != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.detectedobjects_.SetAllocated(detectedobjects, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.detectedobjects_.IsDefault()) {
+    _impl_.detectedobjects_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIRelocalizationPipeline.relocalizeProcessRequestResponse.detectedObjects)
+}
+
+// sint32 xpcfGrpcReturnValue = 4;
 inline void relocalizeProcessRequestResponse::clear_xpcfgrpcreturnvalue() {
   _impl_.xpcfgrpcreturnvalue_ = 0;
 }
