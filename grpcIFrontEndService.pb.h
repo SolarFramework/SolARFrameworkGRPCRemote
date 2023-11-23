@@ -112,12 +112,18 @@ extern registerClientRequestDefaultTypeInternal _registerClientRequest_default_i
 class registerClientResponse;
 struct registerClientResponseDefaultTypeInternal;
 extern registerClientResponseDefaultTypeInternal _registerClientResponse_default_instance_;
-class relocalizeProcessRequestRequest;
-struct relocalizeProcessRequestRequestDefaultTypeInternal;
-extern relocalizeProcessRequestRequestDefaultTypeInternal _relocalizeProcessRequestRequest_default_instance_;
-class relocalizeProcessRequestResponse;
-struct relocalizeProcessRequestResponseDefaultTypeInternal;
-extern relocalizeProcessRequestResponseDefaultTypeInternal _relocalizeProcessRequestResponse_default_instance_;
+class relocalizeProcessRequest_grpc0Request;
+struct relocalizeProcessRequest_grpc0RequestDefaultTypeInternal;
+extern relocalizeProcessRequest_grpc0RequestDefaultTypeInternal _relocalizeProcessRequest_grpc0Request_default_instance_;
+class relocalizeProcessRequest_grpc0Response;
+struct relocalizeProcessRequest_grpc0ResponseDefaultTypeInternal;
+extern relocalizeProcessRequest_grpc0ResponseDefaultTypeInternal _relocalizeProcessRequest_grpc0Response_default_instance_;
+class relocalizeProcessRequest_grpc1Request;
+struct relocalizeProcessRequest_grpc1RequestDefaultTypeInternal;
+extern relocalizeProcessRequest_grpc1RequestDefaultTypeInternal _relocalizeProcessRequest_grpc1Request_default_instance_;
+class relocalizeProcessRequest_grpc1Response;
+struct relocalizeProcessRequest_grpc1ResponseDefaultTypeInternal;
+extern relocalizeProcessRequest_grpc1ResponseDefaultTypeInternal _relocalizeProcessRequest_grpc1Response_default_instance_;
 class resetMapRequest;
 struct resetMapRequestDefaultTypeInternal;
 extern resetMapRequestDefaultTypeInternal _resetMapRequest_default_instance_;
@@ -190,8 +196,10 @@ template<> ::grpcIFrontEnd::init_grpc1Request* Arena::CreateMaybeMessage<::grpcI
 template<> ::grpcIFrontEnd::init_grpc1Response* Arena::CreateMaybeMessage<::grpcIFrontEnd::init_grpc1Response>(Arena*);
 template<> ::grpcIFrontEnd::registerClientRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::registerClientRequest>(Arena*);
 template<> ::grpcIFrontEnd::registerClientResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::registerClientResponse>(Arena*);
-template<> ::grpcIFrontEnd::relocalizeProcessRequestRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::relocalizeProcessRequestRequest>(Arena*);
-template<> ::grpcIFrontEnd::relocalizeProcessRequestResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::relocalizeProcessRequestResponse>(Arena*);
+template<> ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request* Arena::CreateMaybeMessage<::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request>(Arena*);
+template<> ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response* Arena::CreateMaybeMessage<::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response>(Arena*);
+template<> ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request* Arena::CreateMaybeMessage<::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request>(Arena*);
+template<> ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response* Arena::CreateMaybeMessage<::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response>(Arena*);
 template<> ::grpcIFrontEnd::resetMapRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::resetMapRequest>(Arena*);
 template<> ::grpcIFrontEnd::resetMapResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::resetMapResponse>(Arena*);
 template<> ::grpcIFrontEnd::setCameraParameters_grpc0Request* Arena::CreateMaybeMessage<::grpcIFrontEnd::setCameraParameters_grpc0Request>(Arena*);
@@ -4149,24 +4157,24 @@ class getCameraParametersResponse final :
 };
 // -------------------------------------------------------------------
 
-class relocalizeProcessRequestRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequestRequest) */ {
+class relocalizeProcessRequest_grpc0Request final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request) */ {
  public:
-  inline relocalizeProcessRequestRequest() : relocalizeProcessRequestRequest(nullptr) {}
-  ~relocalizeProcessRequestRequest() override;
-  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequestRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline relocalizeProcessRequest_grpc0Request() : relocalizeProcessRequest_grpc0Request(nullptr) {}
+  ~relocalizeProcessRequest_grpc0Request() override;
+  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequest_grpc0Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  relocalizeProcessRequestRequest(const relocalizeProcessRequestRequest& from);
-  relocalizeProcessRequestRequest(relocalizeProcessRequestRequest&& from) noexcept
-    : relocalizeProcessRequestRequest() {
+  relocalizeProcessRequest_grpc0Request(const relocalizeProcessRequest_grpc0Request& from);
+  relocalizeProcessRequest_grpc0Request(relocalizeProcessRequest_grpc0Request&& from) noexcept
+    : relocalizeProcessRequest_grpc0Request() {
     *this = ::std::move(from);
   }
 
-  inline relocalizeProcessRequestRequest& operator=(const relocalizeProcessRequestRequest& from) {
+  inline relocalizeProcessRequest_grpc0Request& operator=(const relocalizeProcessRequest_grpc0Request& from) {
     CopyFrom(from);
     return *this;
   }
-  inline relocalizeProcessRequestRequest& operator=(relocalizeProcessRequestRequest&& from) noexcept {
+  inline relocalizeProcessRequest_grpc0Request& operator=(relocalizeProcessRequest_grpc0Request&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -4189,20 +4197,20 @@ class relocalizeProcessRequestRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const relocalizeProcessRequestRequest& default_instance() {
+  static const relocalizeProcessRequest_grpc0Request& default_instance() {
     return *internal_default_instance();
   }
-  static inline const relocalizeProcessRequestRequest* internal_default_instance() {
-    return reinterpret_cast<const relocalizeProcessRequestRequest*>(
-               &_relocalizeProcessRequestRequest_default_instance_);
+  static inline const relocalizeProcessRequest_grpc0Request* internal_default_instance() {
+    return reinterpret_cast<const relocalizeProcessRequest_grpc0Request*>(
+               &_relocalizeProcessRequest_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     24;
 
-  friend void swap(relocalizeProcessRequestRequest& a, relocalizeProcessRequestRequest& b) {
+  friend void swap(relocalizeProcessRequest_grpc0Request& a, relocalizeProcessRequest_grpc0Request& b) {
     a.Swap(&b);
   }
-  inline void Swap(relocalizeProcessRequestRequest* other) {
+  inline void Swap(relocalizeProcessRequest_grpc0Request* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -4215,7 +4223,7 @@ class relocalizeProcessRequestRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(relocalizeProcessRequestRequest* other) {
+  void UnsafeArenaSwap(relocalizeProcessRequest_grpc0Request* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -4223,14 +4231,14 @@ class relocalizeProcessRequestRequest final :
 
   // implements Message ----------------------------------------------
 
-  relocalizeProcessRequestRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<relocalizeProcessRequestRequest>(arena);
+  relocalizeProcessRequest_grpc0Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<relocalizeProcessRequest_grpc0Request>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const relocalizeProcessRequestRequest& from);
+  void CopyFrom(const relocalizeProcessRequest_grpc0Request& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const relocalizeProcessRequestRequest& from) {
-    relocalizeProcessRequestRequest::MergeImpl(*this, from);
+  void MergeFrom( const relocalizeProcessRequest_grpc0Request& from) {
+    relocalizeProcessRequest_grpc0Request::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -4248,15 +4256,530 @@ class relocalizeProcessRequestRequest final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(relocalizeProcessRequestRequest* other);
+  void InternalSwap(relocalizeProcessRequest_grpc0Request* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIFrontEnd.relocalizeProcessRequestRequest";
+    return "grpcIFrontEnd.relocalizeProcessRequest_grpc0Request";
   }
   protected:
-  explicit relocalizeProcessRequestRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit relocalizeProcessRequest_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUuidFieldNumber = 2,
+    kImagesFieldNumber = 3,
+    kPosesFieldNumber = 4,
+    kWorldTransformFieldNumber = 6,
+    kTimestampFieldNumber = 7,
+    kTransform3DStatusFieldNumber = 8,
+    kTransform3DFieldNumber = 9,
+    kConfidenceFieldNumber = 10,
+    kMappingStatusFieldNumber = 11,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kFixedPoseFieldNumber = 5,
+  };
+  // string uuid = 2;
+  void clear_uuid();
+  const std::string& uuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_NODISCARD std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
+  private:
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
+  public:
+
+  // bytes images = 3;
+  void clear_images();
+  const std::string& images() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_images(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_images();
+  PROTOBUF_NODISCARD std::string* release_images();
+  void set_allocated_images(std::string* images);
+  private:
+  const std::string& _internal_images() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_images(const std::string& value);
+  std::string* _internal_mutable_images();
+  public:
+
+  // bytes poses = 4;
+  void clear_poses();
+  const std::string& poses() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_poses(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_poses();
+  PROTOBUF_NODISCARD std::string* release_poses();
+  void set_allocated_poses(std::string* poses);
+  private:
+  const std::string& _internal_poses() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_poses(const std::string& value);
+  std::string* _internal_mutable_poses();
+  public:
+
+  // bytes worldTransform = 6;
+  void clear_worldtransform();
+  const std::string& worldtransform() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_worldtransform(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_worldtransform();
+  PROTOBUF_NODISCARD std::string* release_worldtransform();
+  void set_allocated_worldtransform(std::string* worldtransform);
+  private:
+  const std::string& _internal_worldtransform() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_worldtransform(const std::string& value);
+  std::string* _internal_mutable_worldtransform();
+  public:
+
+  // bytes timestamp = 7;
+  void clear_timestamp();
+  const std::string& timestamp() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_timestamp(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_timestamp();
+  PROTOBUF_NODISCARD std::string* release_timestamp();
+  void set_allocated_timestamp(std::string* timestamp);
+  private:
+  const std::string& _internal_timestamp() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_timestamp(const std::string& value);
+  std::string* _internal_mutable_timestamp();
+  public:
+
+  // bytes transform3DStatus = 8;
+  void clear_transform3dstatus();
+  const std::string& transform3dstatus() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_transform3dstatus(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_transform3dstatus();
+  PROTOBUF_NODISCARD std::string* release_transform3dstatus();
+  void set_allocated_transform3dstatus(std::string* transform3dstatus);
+  private:
+  const std::string& _internal_transform3dstatus() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3dstatus(const std::string& value);
+  std::string* _internal_mutable_transform3dstatus();
+  public:
+
+  // bytes transform3D = 9;
+  void clear_transform3d();
+  const std::string& transform3d() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_transform3d(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_transform3d();
+  PROTOBUF_NODISCARD std::string* release_transform3d();
+  void set_allocated_transform3d(std::string* transform3d);
+  private:
+  const std::string& _internal_transform3d() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(const std::string& value);
+  std::string* _internal_mutable_transform3d();
+  public:
+
+  // bytes confidence = 10;
+  void clear_confidence();
+  const std::string& confidence() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_confidence(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_confidence();
+  PROTOBUF_NODISCARD std::string* release_confidence();
+  void set_allocated_confidence(std::string* confidence);
+  private:
+  const std::string& _internal_confidence() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(const std::string& value);
+  std::string* _internal_mutable_confidence();
+  public:
+
+  // bytes mappingStatus = 11;
+  void clear_mappingstatus();
+  const std::string& mappingstatus() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mappingstatus(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mappingstatus();
+  PROTOBUF_NODISCARD std::string* release_mappingstatus();
+  void set_allocated_mappingstatus(std::string* mappingstatus);
+  private:
+  const std::string& _internal_mappingstatus() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mappingstatus(const std::string& value);
+  std::string* _internal_mutable_mappingstatus();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(int32_t value);
+  private:
+  int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // bool fixedPose = 5;
+  void clear_fixedpose();
+  bool fixedpose() const;
+  void set_fixedpose(bool value);
+  private:
+  bool _internal_fixedpose() const;
+  void _internal_set_fixedpose(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr images_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poses_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr worldtransform_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr timestamp_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mappingstatus_;
+    int32_t grpcservercompressionformat_;
+    bool fixedpose_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class relocalizeProcessRequest_grpc0Response final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response) */ {
+ public:
+  inline relocalizeProcessRequest_grpc0Response() : relocalizeProcessRequest_grpc0Response(nullptr) {}
+  ~relocalizeProcessRequest_grpc0Response() override;
+  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequest_grpc0Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  relocalizeProcessRequest_grpc0Response(const relocalizeProcessRequest_grpc0Response& from);
+  relocalizeProcessRequest_grpc0Response(relocalizeProcessRequest_grpc0Response&& from) noexcept
+    : relocalizeProcessRequest_grpc0Response() {
+    *this = ::std::move(from);
+  }
+
+  inline relocalizeProcessRequest_grpc0Response& operator=(const relocalizeProcessRequest_grpc0Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline relocalizeProcessRequest_grpc0Response& operator=(relocalizeProcessRequest_grpc0Response&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const relocalizeProcessRequest_grpc0Response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const relocalizeProcessRequest_grpc0Response* internal_default_instance() {
+    return reinterpret_cast<const relocalizeProcessRequest_grpc0Response*>(
+               &_relocalizeProcessRequest_grpc0Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(relocalizeProcessRequest_grpc0Response& a, relocalizeProcessRequest_grpc0Response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(relocalizeProcessRequest_grpc0Response* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(relocalizeProcessRequest_grpc0Response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  relocalizeProcessRequest_grpc0Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<relocalizeProcessRequest_grpc0Response>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const relocalizeProcessRequest_grpc0Response& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const relocalizeProcessRequest_grpc0Response& from) {
+    relocalizeProcessRequest_grpc0Response::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(relocalizeProcessRequest_grpc0Response* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.relocalizeProcessRequest_grpc0Response";
+  }
+  protected:
+  explicit relocalizeProcessRequest_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTransform3DStatusFieldNumber = 1,
+    kTransform3DFieldNumber = 2,
+    kConfidenceFieldNumber = 3,
+    kMappingStatusFieldNumber = 4,
+    kXpcfGrpcReturnValueFieldNumber = 5,
+  };
+  // bytes transform3DStatus = 1;
+  void clear_transform3dstatus();
+  const std::string& transform3dstatus() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_transform3dstatus(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_transform3dstatus();
+  PROTOBUF_NODISCARD std::string* release_transform3dstatus();
+  void set_allocated_transform3dstatus(std::string* transform3dstatus);
+  private:
+  const std::string& _internal_transform3dstatus() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3dstatus(const std::string& value);
+  std::string* _internal_mutable_transform3dstatus();
+  public:
+
+  // bytes transform3D = 2;
+  void clear_transform3d();
+  const std::string& transform3d() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_transform3d(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_transform3d();
+  PROTOBUF_NODISCARD std::string* release_transform3d();
+  void set_allocated_transform3d(std::string* transform3d);
+  private:
+  const std::string& _internal_transform3d() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(const std::string& value);
+  std::string* _internal_mutable_transform3d();
+  public:
+
+  // bytes confidence = 3;
+  void clear_confidence();
+  const std::string& confidence() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_confidence(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_confidence();
+  PROTOBUF_NODISCARD std::string* release_confidence();
+  void set_allocated_confidence(std::string* confidence);
+  private:
+  const std::string& _internal_confidence() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(const std::string& value);
+  std::string* _internal_mutable_confidence();
+  public:
+
+  // bytes mappingStatus = 4;
+  void clear_mappingstatus();
+  const std::string& mappingstatus() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mappingstatus(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mappingstatus();
+  PROTOBUF_NODISCARD std::string* release_mappingstatus();
+  void set_allocated_mappingstatus(std::string* mappingstatus);
+  private:
+  const std::string& _internal_mappingstatus() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mappingstatus(const std::string& value);
+  std::string* _internal_mutable_mappingstatus();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 5;
+  void clear_xpcfgrpcreturnvalue();
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
+  private:
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mappingstatus_;
+    int32_t xpcfgrpcreturnvalue_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class relocalizeProcessRequest_grpc1Request final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request) */ {
+ public:
+  inline relocalizeProcessRequest_grpc1Request() : relocalizeProcessRequest_grpc1Request(nullptr) {}
+  ~relocalizeProcessRequest_grpc1Request() override;
+  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequest_grpc1Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  relocalizeProcessRequest_grpc1Request(const relocalizeProcessRequest_grpc1Request& from);
+  relocalizeProcessRequest_grpc1Request(relocalizeProcessRequest_grpc1Request&& from) noexcept
+    : relocalizeProcessRequest_grpc1Request() {
+    *this = ::std::move(from);
+  }
+
+  inline relocalizeProcessRequest_grpc1Request& operator=(const relocalizeProcessRequest_grpc1Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline relocalizeProcessRequest_grpc1Request& operator=(relocalizeProcessRequest_grpc1Request&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const relocalizeProcessRequest_grpc1Request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const relocalizeProcessRequest_grpc1Request* internal_default_instance() {
+    return reinterpret_cast<const relocalizeProcessRequest_grpc1Request*>(
+               &_relocalizeProcessRequest_grpc1Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  friend void swap(relocalizeProcessRequest_grpc1Request& a, relocalizeProcessRequest_grpc1Request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(relocalizeProcessRequest_grpc1Request* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(relocalizeProcessRequest_grpc1Request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  relocalizeProcessRequest_grpc1Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<relocalizeProcessRequest_grpc1Request>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const relocalizeProcessRequest_grpc1Request& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const relocalizeProcessRequest_grpc1Request& from) {
+    relocalizeProcessRequest_grpc1Request::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(relocalizeProcessRequest_grpc1Request* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.relocalizeProcessRequest_grpc1Request";
+  }
+  protected:
+  explicit relocalizeProcessRequest_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -4441,7 +4964,7 @@ class relocalizeProcessRequestRequest final :
   void _internal_set_fixedpose(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequestRequest)
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request)
  private:
   class _Internal;
 
@@ -4468,24 +4991,24 @@ class relocalizeProcessRequestRequest final :
 };
 // -------------------------------------------------------------------
 
-class relocalizeProcessRequestResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequestResponse) */ {
+class relocalizeProcessRequest_grpc1Response final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response) */ {
  public:
-  inline relocalizeProcessRequestResponse() : relocalizeProcessRequestResponse(nullptr) {}
-  ~relocalizeProcessRequestResponse() override;
-  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequestResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline relocalizeProcessRequest_grpc1Response() : relocalizeProcessRequest_grpc1Response(nullptr) {}
+  ~relocalizeProcessRequest_grpc1Response() override;
+  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequest_grpc1Response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  relocalizeProcessRequestResponse(const relocalizeProcessRequestResponse& from);
-  relocalizeProcessRequestResponse(relocalizeProcessRequestResponse&& from) noexcept
-    : relocalizeProcessRequestResponse() {
+  relocalizeProcessRequest_grpc1Response(const relocalizeProcessRequest_grpc1Response& from);
+  relocalizeProcessRequest_grpc1Response(relocalizeProcessRequest_grpc1Response&& from) noexcept
+    : relocalizeProcessRequest_grpc1Response() {
     *this = ::std::move(from);
   }
 
-  inline relocalizeProcessRequestResponse& operator=(const relocalizeProcessRequestResponse& from) {
+  inline relocalizeProcessRequest_grpc1Response& operator=(const relocalizeProcessRequest_grpc1Response& from) {
     CopyFrom(from);
     return *this;
   }
-  inline relocalizeProcessRequestResponse& operator=(relocalizeProcessRequestResponse&& from) noexcept {
+  inline relocalizeProcessRequest_grpc1Response& operator=(relocalizeProcessRequest_grpc1Response&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -4508,20 +5031,20 @@ class relocalizeProcessRequestResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const relocalizeProcessRequestResponse& default_instance() {
+  static const relocalizeProcessRequest_grpc1Response& default_instance() {
     return *internal_default_instance();
   }
-  static inline const relocalizeProcessRequestResponse* internal_default_instance() {
-    return reinterpret_cast<const relocalizeProcessRequestResponse*>(
-               &_relocalizeProcessRequestResponse_default_instance_);
+  static inline const relocalizeProcessRequest_grpc1Response* internal_default_instance() {
+    return reinterpret_cast<const relocalizeProcessRequest_grpc1Response*>(
+               &_relocalizeProcessRequest_grpc1Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
-  friend void swap(relocalizeProcessRequestResponse& a, relocalizeProcessRequestResponse& b) {
+  friend void swap(relocalizeProcessRequest_grpc1Response& a, relocalizeProcessRequest_grpc1Response& b) {
     a.Swap(&b);
   }
-  inline void Swap(relocalizeProcessRequestResponse* other) {
+  inline void Swap(relocalizeProcessRequest_grpc1Response* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -4534,7 +5057,7 @@ class relocalizeProcessRequestResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(relocalizeProcessRequestResponse* other) {
+  void UnsafeArenaSwap(relocalizeProcessRequest_grpc1Response* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -4542,14 +5065,14 @@ class relocalizeProcessRequestResponse final :
 
   // implements Message ----------------------------------------------
 
-  relocalizeProcessRequestResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<relocalizeProcessRequestResponse>(arena);
+  relocalizeProcessRequest_grpc1Response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<relocalizeProcessRequest_grpc1Response>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const relocalizeProcessRequestResponse& from);
+  void CopyFrom(const relocalizeProcessRequest_grpc1Response& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const relocalizeProcessRequestResponse& from) {
-    relocalizeProcessRequestResponse::MergeImpl(*this, from);
+  void MergeFrom( const relocalizeProcessRequest_grpc1Response& from) {
+    relocalizeProcessRequest_grpc1Response::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -4567,15 +5090,15 @@ class relocalizeProcessRequestResponse final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(relocalizeProcessRequestResponse* other);
+  void InternalSwap(relocalizeProcessRequest_grpc1Response* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIFrontEnd.relocalizeProcessRequestResponse";
+    return "grpcIFrontEnd.relocalizeProcessRequest_grpc1Response";
   }
   protected:
-  explicit relocalizeProcessRequestResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit relocalizeProcessRequest_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -4675,7 +5198,7 @@ class relocalizeProcessRequestResponse final :
   void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequestResponse)
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response)
  private:
   class _Internal;
 
@@ -4744,7 +5267,7 @@ class get3DTransformRequestRequest final :
                &_get3DTransformRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(get3DTransformRequestRequest& a, get3DTransformRequestRequest& b) {
     a.Swap(&b);
@@ -4956,7 +5479,7 @@ class get3DTransformRequestResponse final :
                &_get3DTransformRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(get3DTransformRequestResponse& a, get3DTransformRequestResponse& b) {
     a.Swap(&b);
@@ -5152,7 +5675,7 @@ class getMappingDataRequestRequest final :
                &_getMappingDataRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(getMappingDataRequestRequest& a, getMappingDataRequestRequest& b) {
     a.Swap(&b);
@@ -5348,7 +5871,7 @@ class getMappingDataRequestResponse final :
                &_getMappingDataRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(getMappingDataRequestResponse& a, getMappingDataRequestResponse& b) {
     a.Swap(&b);
@@ -5528,7 +6051,7 @@ class getLastPoseRequest final :
                &_getLastPoseRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(getLastPoseRequest& a, getLastPoseRequest& b) {
     a.Swap(&b);
@@ -5724,7 +6247,7 @@ class getLastPoseResponse final :
                &_getLastPoseResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(getLastPoseResponse& a, getLastPoseResponse& b) {
     a.Swap(&b);
@@ -5888,7 +6411,7 @@ class getMapRequestRequest final :
                &_getMapRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(getMapRequestRequest& a, getMapRequestRequest& b) {
     a.Swap(&b);
@@ -6052,7 +6575,7 @@ class getMapRequestResponse final :
                &_getMapRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(getMapRequestResponse& a, getMapRequestResponse& b) {
     a.Swap(&b);
@@ -6216,7 +6739,7 @@ class setMapRequestRequest final :
                &_setMapRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(setMapRequestRequest& a, setMapRequestRequest& b) {
     a.Swap(&b);
@@ -6380,7 +6903,7 @@ class setMapRequestResponse final :
                &_setMapRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(setMapRequestResponse& a, setMapRequestResponse& b) {
     a.Swap(&b);
@@ -6528,7 +7051,7 @@ class resetMapRequest final :
                &_resetMapRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(resetMapRequest& a, resetMapRequest& b) {
     a.Swap(&b);
@@ -6676,7 +7199,7 @@ class resetMapResponse final :
                &_resetMapResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(resetMapResponse& a, resetMapResponse& b) {
     a.Swap(&b);
@@ -6824,7 +7347,7 @@ class getPointCloudRequestRequest final :
                &_getPointCloudRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(getPointCloudRequestRequest& a, getPointCloudRequestRequest& b) {
     a.Swap(&b);
@@ -6988,7 +7511,7 @@ class getPointCloudRequestResponse final :
                &_getPointCloudRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(getPointCloudRequestResponse& a, getPointCloudRequestResponse& b) {
     a.Swap(&b);
@@ -8887,64 +9410,64 @@ inline void getCameraParametersResponse::set_xpcfgrpcreturnvalue(int32_t value) 
 
 // -------------------------------------------------------------------
 
-// relocalizeProcessRequestRequest
+// relocalizeProcessRequest_grpc0Request
 
 // int32 grpcServerCompressionFormat = 1;
-inline void relocalizeProcessRequestRequest::clear_grpcservercompressionformat() {
+inline void relocalizeProcessRequest_grpc0Request::clear_grpcservercompressionformat() {
   _impl_.grpcservercompressionformat_ = 0;
 }
-inline int32_t relocalizeProcessRequestRequest::_internal_grpcservercompressionformat() const {
+inline int32_t relocalizeProcessRequest_grpc0Request::_internal_grpcservercompressionformat() const {
   return _impl_.grpcservercompressionformat_;
 }
-inline int32_t relocalizeProcessRequestRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.grpcServerCompressionFormat)
+inline int32_t relocalizeProcessRequest_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.grpcServerCompressionFormat)
   return _internal_grpcservercompressionformat();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_grpcservercompressionformat(int32_t value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_grpcservercompressionformat(int32_t value) {
   
   _impl_.grpcservercompressionformat_ = value;
 }
-inline void relocalizeProcessRequestRequest::set_grpcservercompressionformat(int32_t value) {
+inline void relocalizeProcessRequest_grpc0Request::set_grpcservercompressionformat(int32_t value) {
   _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.grpcServerCompressionFormat)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.grpcServerCompressionFormat)
 }
 
 // string uuid = 2;
-inline void relocalizeProcessRequestRequest::clear_uuid() {
+inline void relocalizeProcessRequest_grpc0Request::clear_uuid() {
   _impl_.uuid_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.uuid)
+inline const std::string& relocalizeProcessRequest_grpc0Request::uuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
   return _internal_uuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_uuid(ArgT0&& arg0, ArgT... args) {
  
  _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.uuid)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
 }
-inline std::string* relocalizeProcessRequestRequest::mutable_uuid() {
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_uuid() {
   std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.uuid)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestRequest::_internal_uuid() const {
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_uuid() const {
   return _impl_.uuid_.Get();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_uuid(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_uuid(const std::string& value) {
   
   _impl_.uuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_uuid() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_uuid() {
   
   return _impl_.uuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.uuid)
+inline std::string* relocalizeProcessRequest_grpc0Request::release_uuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
   return _impl_.uuid_.Release();
 }
-inline void relocalizeProcessRequestRequest::set_allocated_uuid(std::string* uuid) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_uuid(std::string* uuid) {
   if (uuid != nullptr) {
     
   } else {
@@ -8956,45 +9479,45 @@ inline void relocalizeProcessRequestRequest::set_allocated_uuid(std::string* uui
     _impl_.uuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
 }
 
 // bytes images = 3;
-inline void relocalizeProcessRequestRequest::clear_images() {
+inline void relocalizeProcessRequest_grpc0Request::clear_images() {
   _impl_.images_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestRequest::images() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.images)
+inline const std::string& relocalizeProcessRequest_grpc0Request::images() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
   return _internal_images();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_images(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_images(ArgT0&& arg0, ArgT... args) {
  
  _impl_.images_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.images)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
 }
-inline std::string* relocalizeProcessRequestRequest::mutable_images() {
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_images() {
   std::string* _s = _internal_mutable_images();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.images)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestRequest::_internal_images() const {
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_images() const {
   return _impl_.images_.Get();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_images(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_images(const std::string& value) {
   
   _impl_.images_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_images() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_images() {
   
   return _impl_.images_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::release_images() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.images)
+inline std::string* relocalizeProcessRequest_grpc0Request::release_images() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
   return _impl_.images_.Release();
 }
-inline void relocalizeProcessRequestRequest::set_allocated_images(std::string* images) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_images(std::string* images) {
   if (images != nullptr) {
     
   } else {
@@ -9006,45 +9529,45 @@ inline void relocalizeProcessRequestRequest::set_allocated_images(std::string* i
     _impl_.images_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.images)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
 }
 
 // bytes poses = 4;
-inline void relocalizeProcessRequestRequest::clear_poses() {
+inline void relocalizeProcessRequest_grpc0Request::clear_poses() {
   _impl_.poses_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestRequest::poses() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.poses)
+inline const std::string& relocalizeProcessRequest_grpc0Request::poses() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
   return _internal_poses();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_poses(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_poses(ArgT0&& arg0, ArgT... args) {
  
  _impl_.poses_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.poses)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
 }
-inline std::string* relocalizeProcessRequestRequest::mutable_poses() {
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_poses() {
   std::string* _s = _internal_mutable_poses();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.poses)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestRequest::_internal_poses() const {
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_poses() const {
   return _impl_.poses_.Get();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_poses(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_poses(const std::string& value) {
   
   _impl_.poses_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_poses() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_poses() {
   
   return _impl_.poses_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::release_poses() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.poses)
+inline std::string* relocalizeProcessRequest_grpc0Request::release_poses() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
   return _impl_.poses_.Release();
 }
-inline void relocalizeProcessRequestRequest::set_allocated_poses(std::string* poses) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_poses(std::string* poses) {
   if (poses != nullptr) {
     
   } else {
@@ -9056,65 +9579,65 @@ inline void relocalizeProcessRequestRequest::set_allocated_poses(std::string* po
     _impl_.poses_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.poses)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
 }
 
 // bool fixedPose = 5;
-inline void relocalizeProcessRequestRequest::clear_fixedpose() {
+inline void relocalizeProcessRequest_grpc0Request::clear_fixedpose() {
   _impl_.fixedpose_ = false;
 }
-inline bool relocalizeProcessRequestRequest::_internal_fixedpose() const {
+inline bool relocalizeProcessRequest_grpc0Request::_internal_fixedpose() const {
   return _impl_.fixedpose_;
 }
-inline bool relocalizeProcessRequestRequest::fixedpose() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.fixedPose)
+inline bool relocalizeProcessRequest_grpc0Request::fixedpose() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.fixedPose)
   return _internal_fixedpose();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_fixedpose(bool value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_fixedpose(bool value) {
   
   _impl_.fixedpose_ = value;
 }
-inline void relocalizeProcessRequestRequest::set_fixedpose(bool value) {
+inline void relocalizeProcessRequest_grpc0Request::set_fixedpose(bool value) {
   _internal_set_fixedpose(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.fixedPose)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.fixedPose)
 }
 
 // bytes worldTransform = 6;
-inline void relocalizeProcessRequestRequest::clear_worldtransform() {
+inline void relocalizeProcessRequest_grpc0Request::clear_worldtransform() {
   _impl_.worldtransform_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestRequest::worldtransform() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.worldTransform)
+inline const std::string& relocalizeProcessRequest_grpc0Request::worldtransform() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
   return _internal_worldtransform();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_worldtransform(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_worldtransform(ArgT0&& arg0, ArgT... args) {
  
  _impl_.worldtransform_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.worldTransform)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
 }
-inline std::string* relocalizeProcessRequestRequest::mutable_worldtransform() {
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_worldtransform() {
   std::string* _s = _internal_mutable_worldtransform();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.worldTransform)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestRequest::_internal_worldtransform() const {
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_worldtransform() const {
   return _impl_.worldtransform_.Get();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_worldtransform(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_worldtransform(const std::string& value) {
   
   _impl_.worldtransform_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_worldtransform() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_worldtransform() {
   
   return _impl_.worldtransform_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::release_worldtransform() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.worldTransform)
+inline std::string* relocalizeProcessRequest_grpc0Request::release_worldtransform() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
   return _impl_.worldtransform_.Release();
 }
-inline void relocalizeProcessRequestRequest::set_allocated_worldtransform(std::string* worldtransform) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_worldtransform(std::string* worldtransform) {
   if (worldtransform != nullptr) {
     
   } else {
@@ -9126,45 +9649,45 @@ inline void relocalizeProcessRequestRequest::set_allocated_worldtransform(std::s
     _impl_.worldtransform_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.worldTransform)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
 }
 
 // bytes timestamp = 7;
-inline void relocalizeProcessRequestRequest::clear_timestamp() {
+inline void relocalizeProcessRequest_grpc0Request::clear_timestamp() {
   _impl_.timestamp_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestRequest::timestamp() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.timestamp)
+inline const std::string& relocalizeProcessRequest_grpc0Request::timestamp() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
   return _internal_timestamp();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_timestamp(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_timestamp(ArgT0&& arg0, ArgT... args) {
  
  _impl_.timestamp_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.timestamp)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
 }
-inline std::string* relocalizeProcessRequestRequest::mutable_timestamp() {
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_timestamp() {
   std::string* _s = _internal_mutable_timestamp();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.timestamp)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestRequest::_internal_timestamp() const {
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_timestamp() const {
   return _impl_.timestamp_.Get();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_timestamp(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_timestamp(const std::string& value) {
   
   _impl_.timestamp_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_timestamp() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_timestamp() {
   
   return _impl_.timestamp_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::release_timestamp() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.timestamp)
+inline std::string* relocalizeProcessRequest_grpc0Request::release_timestamp() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
   return _impl_.timestamp_.Release();
 }
-inline void relocalizeProcessRequestRequest::set_allocated_timestamp(std::string* timestamp) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_timestamp(std::string* timestamp) {
   if (timestamp != nullptr) {
     
   } else {
@@ -9176,45 +9699,45 @@ inline void relocalizeProcessRequestRequest::set_allocated_timestamp(std::string
     _impl_.timestamp_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.timestamp)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
 }
 
 // bytes transform3DStatus = 8;
-inline void relocalizeProcessRequestRequest::clear_transform3dstatus() {
+inline void relocalizeProcessRequest_grpc0Request::clear_transform3dstatus() {
   _impl_.transform3dstatus_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestRequest::transform3dstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3DStatus)
+inline const std::string& relocalizeProcessRequest_grpc0Request::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3DStatus)
   return _internal_transform3dstatus();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_transform3dstatus(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_transform3dstatus(ArgT0&& arg0, ArgT... args) {
  
  _impl_.transform3dstatus_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3DStatus)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3DStatus)
 }
-inline std::string* relocalizeProcessRequestRequest::mutable_transform3dstatus() {
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_transform3dstatus() {
   std::string* _s = _internal_mutable_transform3dstatus();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3DStatus)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3DStatus)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestRequest::_internal_transform3dstatus() const {
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_transform3dstatus() const {
   return _impl_.transform3dstatus_.Get();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_transform3dstatus(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_transform3dstatus(const std::string& value) {
   
   _impl_.transform3dstatus_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_transform3dstatus() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_transform3dstatus() {
   
   return _impl_.transform3dstatus_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::release_transform3dstatus() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3DStatus)
+inline std::string* relocalizeProcessRequest_grpc0Request::release_transform3dstatus() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3DStatus)
   return _impl_.transform3dstatus_.Release();
 }
-inline void relocalizeProcessRequestRequest::set_allocated_transform3dstatus(std::string* transform3dstatus) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_transform3dstatus(std::string* transform3dstatus) {
   if (transform3dstatus != nullptr) {
     
   } else {
@@ -9226,45 +9749,45 @@ inline void relocalizeProcessRequestRequest::set_allocated_transform3dstatus(std
     _impl_.transform3dstatus_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3DStatus)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3DStatus)
 }
 
 // bytes transform3D = 9;
-inline void relocalizeProcessRequestRequest::clear_transform3d() {
+inline void relocalizeProcessRequest_grpc0Request::clear_transform3d() {
   _impl_.transform3d_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestRequest::transform3d() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3D)
+inline const std::string& relocalizeProcessRequest_grpc0Request::transform3d() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
   return _internal_transform3d();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_transform3d(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_transform3d(ArgT0&& arg0, ArgT... args) {
  
  _impl_.transform3d_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3D)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
 }
-inline std::string* relocalizeProcessRequestRequest::mutable_transform3d() {
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_transform3d() {
   std::string* _s = _internal_mutable_transform3d();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3D)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestRequest::_internal_transform3d() const {
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_transform3d() const {
   return _impl_.transform3d_.Get();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_transform3d(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_transform3d(const std::string& value) {
   
   _impl_.transform3d_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_transform3d() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_transform3d() {
   
   return _impl_.transform3d_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::release_transform3d() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3D)
+inline std::string* relocalizeProcessRequest_grpc0Request::release_transform3d() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
   return _impl_.transform3d_.Release();
 }
-inline void relocalizeProcessRequestRequest::set_allocated_transform3d(std::string* transform3d) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_transform3d(std::string* transform3d) {
   if (transform3d != nullptr) {
     
   } else {
@@ -9276,45 +9799,45 @@ inline void relocalizeProcessRequestRequest::set_allocated_transform3d(std::stri
     _impl_.transform3d_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.transform3D)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
 }
 
 // bytes confidence = 10;
-inline void relocalizeProcessRequestRequest::clear_confidence() {
+inline void relocalizeProcessRequest_grpc0Request::clear_confidence() {
   _impl_.confidence_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestRequest::confidence() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.confidence)
+inline const std::string& relocalizeProcessRequest_grpc0Request::confidence() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
   return _internal_confidence();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_confidence(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_confidence(ArgT0&& arg0, ArgT... args) {
  
  _impl_.confidence_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.confidence)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
 }
-inline std::string* relocalizeProcessRequestRequest::mutable_confidence() {
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_confidence() {
   std::string* _s = _internal_mutable_confidence();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.confidence)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestRequest::_internal_confidence() const {
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_confidence() const {
   return _impl_.confidence_.Get();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_confidence(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_confidence(const std::string& value) {
   
   _impl_.confidence_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_confidence() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_confidence() {
   
   return _impl_.confidence_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::release_confidence() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.confidence)
+inline std::string* relocalizeProcessRequest_grpc0Request::release_confidence() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
   return _impl_.confidence_.Release();
 }
-inline void relocalizeProcessRequestRequest::set_allocated_confidence(std::string* confidence) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_confidence(std::string* confidence) {
   if (confidence != nullptr) {
     
   } else {
@@ -9326,45 +9849,45 @@ inline void relocalizeProcessRequestRequest::set_allocated_confidence(std::strin
     _impl_.confidence_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.confidence)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
 }
 
 // bytes mappingStatus = 11;
-inline void relocalizeProcessRequestRequest::clear_mappingstatus() {
+inline void relocalizeProcessRequest_grpc0Request::clear_mappingstatus() {
   _impl_.mappingstatus_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestRequest::mappingstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.mappingStatus)
+inline const std::string& relocalizeProcessRequest_grpc0Request::mappingstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.mappingStatus)
   return _internal_mappingstatus();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_mappingstatus(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_mappingstatus(ArgT0&& arg0, ArgT... args) {
  
  _impl_.mappingstatus_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.mappingStatus)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.mappingStatus)
 }
-inline std::string* relocalizeProcessRequestRequest::mutable_mappingstatus() {
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_mappingstatus() {
   std::string* _s = _internal_mutable_mappingstatus();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.mappingStatus)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.mappingStatus)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestRequest::_internal_mappingstatus() const {
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_mappingstatus() const {
   return _impl_.mappingstatus_.Get();
 }
-inline void relocalizeProcessRequestRequest::_internal_set_mappingstatus(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_mappingstatus(const std::string& value) {
   
   _impl_.mappingstatus_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_mappingstatus() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_mappingstatus() {
   
   return _impl_.mappingstatus_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestRequest::release_mappingstatus() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.mappingStatus)
+inline std::string* relocalizeProcessRequest_grpc0Request::release_mappingstatus() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.mappingStatus)
   return _impl_.mappingstatus_.Release();
 }
-inline void relocalizeProcessRequestRequest::set_allocated_mappingstatus(std::string* mappingstatus) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_mappingstatus(std::string* mappingstatus) {
   if (mappingstatus != nullptr) {
     
   } else {
@@ -9376,99 +9899,49 @@ inline void relocalizeProcessRequestRequest::set_allocated_mappingstatus(std::st
     _impl_.mappingstatus_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.mappingStatus)
-}
-
-// bytes detectedObjects = 12;
-inline void relocalizeProcessRequestRequest::clear_detectedobjects() {
-  _impl_.detectedobjects_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequestRequest::detectedobjects() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestRequest.detectedObjects)
-  return _internal_detectedobjects();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestRequest::set_detectedobjects(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.detectedobjects_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestRequest.detectedObjects)
-}
-inline std::string* relocalizeProcessRequestRequest::mutable_detectedobjects() {
-  std::string* _s = _internal_mutable_detectedobjects();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestRequest.detectedObjects)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequestRequest::_internal_detectedobjects() const {
-  return _impl_.detectedobjects_.Get();
-}
-inline void relocalizeProcessRequestRequest::_internal_set_detectedobjects(const std::string& value) {
-  
-  _impl_.detectedobjects_.Set(value, GetArenaForAllocation());
-}
-inline std::string* relocalizeProcessRequestRequest::_internal_mutable_detectedobjects() {
-  
-  return _impl_.detectedobjects_.Mutable(GetArenaForAllocation());
-}
-inline std::string* relocalizeProcessRequestRequest::release_detectedobjects() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestRequest.detectedObjects)
-  return _impl_.detectedobjects_.Release();
-}
-inline void relocalizeProcessRequestRequest::set_allocated_detectedobjects(std::string* detectedobjects) {
-  if (detectedobjects != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.detectedobjects_.SetAllocated(detectedobjects, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.detectedobjects_.IsDefault()) {
-    _impl_.detectedobjects_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestRequest.detectedObjects)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.mappingStatus)
 }
 
 // -------------------------------------------------------------------
 
-// relocalizeProcessRequestResponse
+// relocalizeProcessRequest_grpc0Response
 
 // bytes transform3DStatus = 1;
-inline void relocalizeProcessRequestResponse::clear_transform3dstatus() {
+inline void relocalizeProcessRequest_grpc0Response::clear_transform3dstatus() {
   _impl_.transform3dstatus_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestResponse::transform3dstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3DStatus)
+inline const std::string& relocalizeProcessRequest_grpc0Response::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3DStatus)
   return _internal_transform3dstatus();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestResponse::set_transform3dstatus(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Response::set_transform3dstatus(ArgT0&& arg0, ArgT... args) {
  
  _impl_.transform3dstatus_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3DStatus)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3DStatus)
 }
-inline std::string* relocalizeProcessRequestResponse::mutable_transform3dstatus() {
+inline std::string* relocalizeProcessRequest_grpc0Response::mutable_transform3dstatus() {
   std::string* _s = _internal_mutable_transform3dstatus();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3DStatus)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3DStatus)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestResponse::_internal_transform3dstatus() const {
+inline const std::string& relocalizeProcessRequest_grpc0Response::_internal_transform3dstatus() const {
   return _impl_.transform3dstatus_.Get();
 }
-inline void relocalizeProcessRequestResponse::_internal_set_transform3dstatus(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Response::_internal_set_transform3dstatus(const std::string& value) {
   
   _impl_.transform3dstatus_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::_internal_mutable_transform3dstatus() {
+inline std::string* relocalizeProcessRequest_grpc0Response::_internal_mutable_transform3dstatus() {
   
   return _impl_.transform3dstatus_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::release_transform3dstatus() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3DStatus)
+inline std::string* relocalizeProcessRequest_grpc0Response::release_transform3dstatus() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3DStatus)
   return _impl_.transform3dstatus_.Release();
 }
-inline void relocalizeProcessRequestResponse::set_allocated_transform3dstatus(std::string* transform3dstatus) {
+inline void relocalizeProcessRequest_grpc0Response::set_allocated_transform3dstatus(std::string* transform3dstatus) {
   if (transform3dstatus != nullptr) {
     
   } else {
@@ -9480,45 +9953,45 @@ inline void relocalizeProcessRequestResponse::set_allocated_transform3dstatus(st
     _impl_.transform3dstatus_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3DStatus)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3DStatus)
 }
 
 // bytes transform3D = 2;
-inline void relocalizeProcessRequestResponse::clear_transform3d() {
+inline void relocalizeProcessRequest_grpc0Response::clear_transform3d() {
   _impl_.transform3d_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestResponse::transform3d() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3D)
+inline const std::string& relocalizeProcessRequest_grpc0Response::transform3d() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
   return _internal_transform3d();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestResponse::set_transform3d(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Response::set_transform3d(ArgT0&& arg0, ArgT... args) {
  
  _impl_.transform3d_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3D)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
 }
-inline std::string* relocalizeProcessRequestResponse::mutable_transform3d() {
+inline std::string* relocalizeProcessRequest_grpc0Response::mutable_transform3d() {
   std::string* _s = _internal_mutable_transform3d();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3D)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestResponse::_internal_transform3d() const {
+inline const std::string& relocalizeProcessRequest_grpc0Response::_internal_transform3d() const {
   return _impl_.transform3d_.Get();
 }
-inline void relocalizeProcessRequestResponse::_internal_set_transform3d(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Response::_internal_set_transform3d(const std::string& value) {
   
   _impl_.transform3d_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::_internal_mutable_transform3d() {
+inline std::string* relocalizeProcessRequest_grpc0Response::_internal_mutable_transform3d() {
   
   return _impl_.transform3d_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::release_transform3d() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3D)
+inline std::string* relocalizeProcessRequest_grpc0Response::release_transform3d() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
   return _impl_.transform3d_.Release();
 }
-inline void relocalizeProcessRequestResponse::set_allocated_transform3d(std::string* transform3d) {
+inline void relocalizeProcessRequest_grpc0Response::set_allocated_transform3d(std::string* transform3d) {
   if (transform3d != nullptr) {
     
   } else {
@@ -9530,45 +10003,45 @@ inline void relocalizeProcessRequestResponse::set_allocated_transform3d(std::str
     _impl_.transform3d_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestResponse.transform3D)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
 }
 
 // bytes confidence = 3;
-inline void relocalizeProcessRequestResponse::clear_confidence() {
+inline void relocalizeProcessRequest_grpc0Response::clear_confidence() {
   _impl_.confidence_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestResponse::confidence() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestResponse.confidence)
+inline const std::string& relocalizeProcessRequest_grpc0Response::confidence() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
   return _internal_confidence();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestResponse::set_confidence(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Response::set_confidence(ArgT0&& arg0, ArgT... args) {
  
  _impl_.confidence_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestResponse.confidence)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
 }
-inline std::string* relocalizeProcessRequestResponse::mutable_confidence() {
+inline std::string* relocalizeProcessRequest_grpc0Response::mutable_confidence() {
   std::string* _s = _internal_mutable_confidence();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestResponse.confidence)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestResponse::_internal_confidence() const {
+inline const std::string& relocalizeProcessRequest_grpc0Response::_internal_confidence() const {
   return _impl_.confidence_.Get();
 }
-inline void relocalizeProcessRequestResponse::_internal_set_confidence(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Response::_internal_set_confidence(const std::string& value) {
   
   _impl_.confidence_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::_internal_mutable_confidence() {
+inline std::string* relocalizeProcessRequest_grpc0Response::_internal_mutable_confidence() {
   
   return _impl_.confidence_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::release_confidence() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestResponse.confidence)
+inline std::string* relocalizeProcessRequest_grpc0Response::release_confidence() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
   return _impl_.confidence_.Release();
 }
-inline void relocalizeProcessRequestResponse::set_allocated_confidence(std::string* confidence) {
+inline void relocalizeProcessRequest_grpc0Response::set_allocated_confidence(std::string* confidence) {
   if (confidence != nullptr) {
     
   } else {
@@ -9580,45 +10053,45 @@ inline void relocalizeProcessRequestResponse::set_allocated_confidence(std::stri
     _impl_.confidence_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestResponse.confidence)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
 }
 
 // bytes mappingStatus = 4;
-inline void relocalizeProcessRequestResponse::clear_mappingstatus() {
+inline void relocalizeProcessRequest_grpc0Response::clear_mappingstatus() {
   _impl_.mappingstatus_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestResponse::mappingstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestResponse.mappingStatus)
+inline const std::string& relocalizeProcessRequest_grpc0Response::mappingstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.mappingStatus)
   return _internal_mappingstatus();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestResponse::set_mappingstatus(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Response::set_mappingstatus(ArgT0&& arg0, ArgT... args) {
  
  _impl_.mappingstatus_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestResponse.mappingStatus)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.mappingStatus)
 }
-inline std::string* relocalizeProcessRequestResponse::mutable_mappingstatus() {
+inline std::string* relocalizeProcessRequest_grpc0Response::mutable_mappingstatus() {
   std::string* _s = _internal_mutable_mappingstatus();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestResponse.mappingStatus)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.mappingStatus)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestResponse::_internal_mappingstatus() const {
+inline const std::string& relocalizeProcessRequest_grpc0Response::_internal_mappingstatus() const {
   return _impl_.mappingstatus_.Get();
 }
-inline void relocalizeProcessRequestResponse::_internal_set_mappingstatus(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Response::_internal_set_mappingstatus(const std::string& value) {
   
   _impl_.mappingstatus_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::_internal_mutable_mappingstatus() {
+inline std::string* relocalizeProcessRequest_grpc0Response::_internal_mutable_mappingstatus() {
   
   return _impl_.mappingstatus_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::release_mappingstatus() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestResponse.mappingStatus)
+inline std::string* relocalizeProcessRequest_grpc0Response::release_mappingstatus() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.mappingStatus)
   return _impl_.mappingstatus_.Release();
 }
-inline void relocalizeProcessRequestResponse::set_allocated_mappingstatus(std::string* mappingstatus) {
+inline void relocalizeProcessRequest_grpc0Response::set_allocated_mappingstatus(std::string* mappingstatus) {
   if (mappingstatus != nullptr) {
     
   } else {
@@ -9630,45 +10103,559 @@ inline void relocalizeProcessRequestResponse::set_allocated_mappingstatus(std::s
     _impl_.mappingstatus_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestResponse.mappingStatus)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.mappingStatus)
 }
 
-// bytes detectedObjects = 5;
-inline void relocalizeProcessRequestResponse::clear_detectedobjects() {
+// sint32 xpcfGrpcReturnValue = 5;
+inline void relocalizeProcessRequest_grpc0Response::clear_xpcfgrpcreturnvalue() {
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline int32_t relocalizeProcessRequest_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t relocalizeProcessRequest_grpc0Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void relocalizeProcessRequest_grpc0Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void relocalizeProcessRequest_grpc0Response::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// relocalizeProcessRequest_grpc1Request
+
+// int32 grpcServerCompressionFormat = 1;
+inline void relocalizeProcessRequest_grpc1Request::clear_grpcservercompressionformat() {
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline int32_t relocalizeProcessRequest_grpc1Request::_internal_grpcservercompressionformat() const {
+  return _impl_.grpcservercompressionformat_;
+}
+inline int32_t relocalizeProcessRequest_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_grpcservercompressionformat(int32_t value) {
+  
+  _impl_.grpcservercompressionformat_ = value;
+}
+inline void relocalizeProcessRequest_grpc1Request::set_grpcservercompressionformat(int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.grpcServerCompressionFormat)
+}
+
+// string uuid = 2;
+inline void relocalizeProcessRequest_grpc1Request::clear_uuid() {
+  _impl_.uuid_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::uuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
+  return _internal_uuid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Request::set_uuid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_uuid() const {
+  return _impl_.uuid_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_uuid(const std::string& value) {
+  
+  _impl_.uuid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_uuid() {
+  
+  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::release_uuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
+  return _impl_.uuid_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.uuid_.IsDefault()) {
+    _impl_.uuid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
+}
+
+// bytes images = 3;
+inline void relocalizeProcessRequest_grpc1Request::clear_images() {
+  _impl_.images_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::images() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
+  return _internal_images();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Request::set_images(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.images_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_images() {
+  std::string* _s = _internal_mutable_images();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_images() const {
+  return _impl_.images_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_images(const std::string& value) {
+  
+  _impl_.images_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_images() {
+  
+  return _impl_.images_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::release_images() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
+  return _impl_.images_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_images(std::string* images) {
+  if (images != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.images_.SetAllocated(images, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.images_.IsDefault()) {
+    _impl_.images_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
+}
+
+// bytes poses = 4;
+inline void relocalizeProcessRequest_grpc1Request::clear_poses() {
+  _impl_.poses_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::poses() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
+  return _internal_poses();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Request::set_poses(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.poses_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_poses() {
+  std::string* _s = _internal_mutable_poses();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_poses() const {
+  return _impl_.poses_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_poses(const std::string& value) {
+  
+  _impl_.poses_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_poses() {
+  
+  return _impl_.poses_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::release_poses() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
+  return _impl_.poses_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_poses(std::string* poses) {
+  if (poses != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.poses_.SetAllocated(poses, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.poses_.IsDefault()) {
+    _impl_.poses_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
+}
+
+// bool fixedPose = 5;
+inline void relocalizeProcessRequest_grpc1Request::clear_fixedpose() {
+  _impl_.fixedpose_ = false;
+}
+inline bool relocalizeProcessRequest_grpc1Request::_internal_fixedpose() const {
+  return _impl_.fixedpose_;
+}
+inline bool relocalizeProcessRequest_grpc1Request::fixedpose() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.fixedPose)
+  return _internal_fixedpose();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_fixedpose(bool value) {
+  
+  _impl_.fixedpose_ = value;
+}
+inline void relocalizeProcessRequest_grpc1Request::set_fixedpose(bool value) {
+  _internal_set_fixedpose(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.fixedPose)
+}
+
+// bytes worldTransform = 6;
+inline void relocalizeProcessRequest_grpc1Request::clear_worldtransform() {
+  _impl_.worldtransform_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::worldtransform() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
+  return _internal_worldtransform();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Request::set_worldtransform(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.worldtransform_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_worldtransform() {
+  std::string* _s = _internal_mutable_worldtransform();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_worldtransform() const {
+  return _impl_.worldtransform_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_worldtransform(const std::string& value) {
+  
+  _impl_.worldtransform_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_worldtransform() {
+  
+  return _impl_.worldtransform_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::release_worldtransform() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
+  return _impl_.worldtransform_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_worldtransform(std::string* worldtransform) {
+  if (worldtransform != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.worldtransform_.SetAllocated(worldtransform, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.worldtransform_.IsDefault()) {
+    _impl_.worldtransform_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
+}
+
+// bytes timestamp = 7;
+inline void relocalizeProcessRequest_grpc1Request::clear_timestamp() {
+  _impl_.timestamp_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::timestamp() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
+  return _internal_timestamp();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Request::set_timestamp(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.timestamp_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_timestamp() {
+  std::string* _s = _internal_mutable_timestamp();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_timestamp() const {
+  return _impl_.timestamp_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_timestamp(const std::string& value) {
+  
+  _impl_.timestamp_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_timestamp() {
+  
+  return _impl_.timestamp_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::release_timestamp() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
+  return _impl_.timestamp_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_timestamp(std::string* timestamp) {
+  if (timestamp != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.timestamp_.SetAllocated(timestamp, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.timestamp_.IsDefault()) {
+    _impl_.timestamp_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
+}
+
+// bytes transform3DStatus = 8;
+inline void relocalizeProcessRequest_grpc1Request::clear_transform3dstatus() {
+  _impl_.transform3dstatus_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3DStatus)
+  return _internal_transform3dstatus();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Request::set_transform3dstatus(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.transform3dstatus_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3DStatus)
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_transform3dstatus() {
+  std::string* _s = _internal_mutable_transform3dstatus();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3DStatus)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_transform3dstatus() const {
+  return _impl_.transform3dstatus_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_transform3dstatus(const std::string& value) {
+  
+  _impl_.transform3dstatus_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_transform3dstatus() {
+  
+  return _impl_.transform3dstatus_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::release_transform3dstatus() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3DStatus)
+  return _impl_.transform3dstatus_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_transform3dstatus(std::string* transform3dstatus) {
+  if (transform3dstatus != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.transform3dstatus_.SetAllocated(transform3dstatus, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.transform3dstatus_.IsDefault()) {
+    _impl_.transform3dstatus_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3DStatus)
+}
+
+// bytes transform3D = 9;
+inline void relocalizeProcessRequest_grpc1Request::clear_transform3d() {
+  _impl_.transform3d_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::transform3d() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
+  return _internal_transform3d();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Request::set_transform3d(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.transform3d_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_transform3d() {
+  std::string* _s = _internal_mutable_transform3d();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_transform3d() const {
+  return _impl_.transform3d_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_transform3d(const std::string& value) {
+  
+  _impl_.transform3d_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_transform3d() {
+  
+  return _impl_.transform3d_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::release_transform3d() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
+  return _impl_.transform3d_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_transform3d(std::string* transform3d) {
+  if (transform3d != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.transform3d_.SetAllocated(transform3d, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.transform3d_.IsDefault()) {
+    _impl_.transform3d_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
+}
+
+// bytes confidence = 10;
+inline void relocalizeProcessRequest_grpc1Request::clear_confidence() {
+  _impl_.confidence_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::confidence() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
+  return _internal_confidence();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Request::set_confidence(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.confidence_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_confidence() {
+  std::string* _s = _internal_mutable_confidence();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_confidence() const {
+  return _impl_.confidence_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_confidence(const std::string& value) {
+  
+  _impl_.confidence_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_confidence() {
+  
+  return _impl_.confidence_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::release_confidence() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
+  return _impl_.confidence_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_confidence(std::string* confidence) {
+  if (confidence != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.confidence_.SetAllocated(confidence, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.confidence_.IsDefault()) {
+    _impl_.confidence_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
+}
+
+// bytes mappingStatus = 11;
+inline void relocalizeProcessRequest_grpc1Request::clear_mappingstatus() {
+  _impl_.mappingstatus_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::mappingstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.mappingStatus)
+  return _internal_mappingstatus();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Request::set_mappingstatus(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mappingstatus_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.mappingStatus)
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_mappingstatus() {
+  std::string* _s = _internal_mutable_mappingstatus();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.mappingStatus)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_mappingstatus() const {
+  return _impl_.mappingstatus_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_mappingstatus(const std::string& value) {
+  
+  _impl_.mappingstatus_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_mappingstatus() {
+  
+  return _impl_.mappingstatus_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Request::release_mappingstatus() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.mappingStatus)
+  return _impl_.mappingstatus_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_mappingstatus(std::string* mappingstatus) {
+  if (mappingstatus != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mappingstatus_.SetAllocated(mappingstatus, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mappingstatus_.IsDefault()) {
+    _impl_.mappingstatus_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.mappingStatus)
+}
+
+// bytes detectedObjects = 12;
+inline void relocalizeProcessRequest_grpc1Request::clear_detectedobjects() {
   _impl_.detectedobjects_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequestResponse::detectedobjects() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestResponse.detectedObjects)
+inline const std::string& relocalizeProcessRequest_grpc1Request::detectedobjects() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
   return _internal_detectedobjects();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequestResponse::set_detectedobjects(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc1Request::set_detectedobjects(ArgT0&& arg0, ArgT... args) {
  
  _impl_.detectedobjects_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestResponse.detectedObjects)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
 }
-inline std::string* relocalizeProcessRequestResponse::mutable_detectedobjects() {
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_detectedobjects() {
   std::string* _s = _internal_mutable_detectedobjects();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequestResponse.detectedObjects)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
   return _s;
 }
-inline const std::string& relocalizeProcessRequestResponse::_internal_detectedobjects() const {
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_detectedobjects() const {
   return _impl_.detectedobjects_.Get();
 }
-inline void relocalizeProcessRequestResponse::_internal_set_detectedobjects(const std::string& value) {
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_detectedobjects(const std::string& value) {
   
   _impl_.detectedobjects_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::_internal_mutable_detectedobjects() {
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_detectedobjects() {
   
   return _impl_.detectedobjects_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequestResponse::release_detectedobjects() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequestResponse.detectedObjects)
+inline std::string* relocalizeProcessRequest_grpc1Request::release_detectedobjects() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
   return _impl_.detectedobjects_.Release();
 }
-inline void relocalizeProcessRequestResponse::set_allocated_detectedobjects(std::string* detectedobjects) {
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_detectedobjects(std::string* detectedobjects) {
   if (detectedobjects != nullptr) {
     
   } else {
@@ -9680,27 +10667,281 @@ inline void relocalizeProcessRequestResponse::set_allocated_detectedobjects(std:
     _impl_.detectedobjects_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequestResponse.detectedObjects)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
+}
+
+// -------------------------------------------------------------------
+
+// relocalizeProcessRequest_grpc1Response
+
+// bytes transform3DStatus = 1;
+inline void relocalizeProcessRequest_grpc1Response::clear_transform3dstatus() {
+  _impl_.transform3dstatus_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3DStatus)
+  return _internal_transform3dstatus();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Response::set_transform3dstatus(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.transform3dstatus_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3DStatus)
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::mutable_transform3dstatus() {
+  std::string* _s = _internal_mutable_transform3dstatus();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3DStatus)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::_internal_transform3dstatus() const {
+  return _impl_.transform3dstatus_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Response::_internal_set_transform3dstatus(const std::string& value) {
+  
+  _impl_.transform3dstatus_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::_internal_mutable_transform3dstatus() {
+  
+  return _impl_.transform3dstatus_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::release_transform3dstatus() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3DStatus)
+  return _impl_.transform3dstatus_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Response::set_allocated_transform3dstatus(std::string* transform3dstatus) {
+  if (transform3dstatus != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.transform3dstatus_.SetAllocated(transform3dstatus, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.transform3dstatus_.IsDefault()) {
+    _impl_.transform3dstatus_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3DStatus)
+}
+
+// bytes transform3D = 2;
+inline void relocalizeProcessRequest_grpc1Response::clear_transform3d() {
+  _impl_.transform3d_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::transform3d() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+  return _internal_transform3d();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Response::set_transform3d(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.transform3d_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::mutable_transform3d() {
+  std::string* _s = _internal_mutable_transform3d();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::_internal_transform3d() const {
+  return _impl_.transform3d_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Response::_internal_set_transform3d(const std::string& value) {
+  
+  _impl_.transform3d_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::_internal_mutable_transform3d() {
+  
+  return _impl_.transform3d_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::release_transform3d() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+  return _impl_.transform3d_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Response::set_allocated_transform3d(std::string* transform3d) {
+  if (transform3d != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.transform3d_.SetAllocated(transform3d, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.transform3d_.IsDefault()) {
+    _impl_.transform3d_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+}
+
+// bytes confidence = 3;
+inline void relocalizeProcessRequest_grpc1Response::clear_confidence() {
+  _impl_.confidence_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::confidence() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+  return _internal_confidence();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Response::set_confidence(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.confidence_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::mutable_confidence() {
+  std::string* _s = _internal_mutable_confidence();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::_internal_confidence() const {
+  return _impl_.confidence_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Response::_internal_set_confidence(const std::string& value) {
+  
+  _impl_.confidence_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::_internal_mutable_confidence() {
+  
+  return _impl_.confidence_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::release_confidence() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+  return _impl_.confidence_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Response::set_allocated_confidence(std::string* confidence) {
+  if (confidence != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.confidence_.SetAllocated(confidence, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.confidence_.IsDefault()) {
+    _impl_.confidence_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+}
+
+// bytes mappingStatus = 4;
+inline void relocalizeProcessRequest_grpc1Response::clear_mappingstatus() {
+  _impl_.mappingstatus_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::mappingstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.mappingStatus)
+  return _internal_mappingstatus();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Response::set_mappingstatus(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mappingstatus_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.mappingStatus)
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::mutable_mappingstatus() {
+  std::string* _s = _internal_mutable_mappingstatus();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.mappingStatus)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::_internal_mappingstatus() const {
+  return _impl_.mappingstatus_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Response::_internal_set_mappingstatus(const std::string& value) {
+  
+  _impl_.mappingstatus_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::_internal_mutable_mappingstatus() {
+  
+  return _impl_.mappingstatus_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::release_mappingstatus() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.mappingStatus)
+  return _impl_.mappingstatus_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Response::set_allocated_mappingstatus(std::string* mappingstatus) {
+  if (mappingstatus != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mappingstatus_.SetAllocated(mappingstatus, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mappingstatus_.IsDefault()) {
+    _impl_.mappingstatus_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.mappingStatus)
+}
+
+// bytes detectedObjects = 5;
+inline void relocalizeProcessRequest_grpc1Response::clear_detectedobjects() {
+  _impl_.detectedobjects_.ClearToEmpty();
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::detectedobjects() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
+  return _internal_detectedobjects();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void relocalizeProcessRequest_grpc1Response::set_detectedobjects(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.detectedobjects_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::mutable_detectedobjects() {
+  std::string* _s = _internal_mutable_detectedobjects();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
+  return _s;
+}
+inline const std::string& relocalizeProcessRequest_grpc1Response::_internal_detectedobjects() const {
+  return _impl_.detectedobjects_.Get();
+}
+inline void relocalizeProcessRequest_grpc1Response::_internal_set_detectedobjects(const std::string& value) {
+  
+  _impl_.detectedobjects_.Set(value, GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::_internal_mutable_detectedobjects() {
+  
+  return _impl_.detectedobjects_.Mutable(GetArenaForAllocation());
+}
+inline std::string* relocalizeProcessRequest_grpc1Response::release_detectedobjects() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
+  return _impl_.detectedobjects_.Release();
+}
+inline void relocalizeProcessRequest_grpc1Response::set_allocated_detectedobjects(std::string* detectedobjects) {
+  if (detectedobjects != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.detectedobjects_.SetAllocated(detectedobjects, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.detectedobjects_.IsDefault()) {
+    _impl_.detectedobjects_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
 }
 
 // sint32 xpcfGrpcReturnValue = 6;
-inline void relocalizeProcessRequestResponse::clear_xpcfgrpcreturnvalue() {
+inline void relocalizeProcessRequest_grpc1Response::clear_xpcfgrpcreturnvalue() {
   _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline int32_t relocalizeProcessRequestResponse::_internal_xpcfgrpcreturnvalue() const {
+inline int32_t relocalizeProcessRequest_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
   return _impl_.xpcfgrpcreturnvalue_;
 }
-inline int32_t relocalizeProcessRequestResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequestResponse.xpcfGrpcReturnValue)
+inline int32_t relocalizeProcessRequest_grpc1Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-inline void relocalizeProcessRequestResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+inline void relocalizeProcessRequest_grpc1Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
   
   _impl_.xpcfgrpcreturnvalue_ = value;
 }
-inline void relocalizeProcessRequestResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+inline void relocalizeProcessRequest_grpc1Response::set_xpcfgrpcreturnvalue(int32_t value) {
   _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequestResponse.xpcfGrpcReturnValue)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -11092,6 +12333,10 @@ inline void getPointCloudRequestResponse::set_xpcfgrpcreturnvalue(int32_t value)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

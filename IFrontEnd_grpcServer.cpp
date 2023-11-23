@@ -14,7 +14,7 @@ IFrontEnd_grpcServer::IFrontEnd_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IFrontEnd>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(21);
+  m_grpcServerCompressionConfig.resize(22);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -328,7 +328,43 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::relocalizeProcessRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::relocalizeProcessRequestRequest* request, ::grpcIFrontEnd::relocalizeProcessRequestResponse* response)
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::relocalizeProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "relocalizeProcessRequest", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::relocalizeProcessRequest request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string uuid = request->uuid();
+  std::vector<SRef<SolAR::datastructure::Image>> images = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Image>>>(request->images());
+  std::vector<SolAR::datastructure::Transform3Df> poses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->poses());
+  bool fixedPose = request->fixedpose();
+  SolAR::datastructure::Transform3Df worldTransform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->worldtransform());
+  std::chrono::system_clock::time_point timestamp = xpcf::deserialize<std::chrono::system_clock::time_point>(request->timestamp());
+  SolAR::api::service::TransformStatus transform3DStatus = xpcf::deserialize<SolAR::api::service::TransformStatus>(request->transform3dstatus());
+  SolAR::datastructure::Transform3Df transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->transform3d());
+  float_t confidence = xpcf::deserialize<float_t>(request->confidence());
+  SolAR::api::pipeline::MappingStatus mappingStatus = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(request->mappingstatus());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(uuid, images, poses, fixedPose, worldTransform, timestamp, transform3DStatus, transform3D, confidence, mappingStatus);
+  response->set_transform3dstatus(xpcf::serialize<SolAR::api::service::TransformStatus>(transform3DStatus));
+  response->set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
+  response->set_confidence(xpcf::serialize<float_t>(confidence));
+  response->set_mappingstatus(xpcf::serialize<SolAR::api::pipeline::MappingStatus>(mappingStatus));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::relocalizeProcessRequest response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::relocalizeProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
