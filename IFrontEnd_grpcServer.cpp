@@ -14,7 +14,7 @@ IFrontEnd_grpcServer::IFrontEnd_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IFrontEnd>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(22);
+  m_grpcServerCompressionConfig.resize(23);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -51,8 +51,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::registerClient request received at " << to_simple_string(start) << std::endl;
   #endif
+  SolAR::api::service::DeviceInfo deviceInfo = xpcf::deserialize<SolAR::api::service::DeviceInfo>(request->deviceinfo());
   std::string uuid = request->uuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerClient(uuid);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerClient(deviceInfo, uuid);
   response->set_uuid(uuid);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -105,6 +106,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getAllClientsUUID response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getDeviceInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getDeviceInfo", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getDeviceInfo request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string uuid = request->uuid();
+  SolAR::api::service::DeviceInfo deviceInfo = xpcf::deserialize<SolAR::api::service::DeviceInfo>(request->deviceinfo());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getDeviceInfo(uuid, deviceInfo);
+  response->set_deviceinfo(xpcf::serialize<SolAR::api::service::DeviceInfo>(deviceInfo));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getDeviceInfo response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

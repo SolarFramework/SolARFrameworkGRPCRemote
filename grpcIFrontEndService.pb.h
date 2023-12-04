@@ -64,6 +64,12 @@ extern getCameraParametersRequestDefaultTypeInternal _getCameraParametersRequest
 class getCameraParametersResponse;
 struct getCameraParametersResponseDefaultTypeInternal;
 extern getCameraParametersResponseDefaultTypeInternal _getCameraParametersResponse_default_instance_;
+class getDeviceInfoRequest;
+struct getDeviceInfoRequestDefaultTypeInternal;
+extern getDeviceInfoRequestDefaultTypeInternal _getDeviceInfoRequest_default_instance_;
+class getDeviceInfoResponse;
+struct getDeviceInfoResponseDefaultTypeInternal;
+extern getDeviceInfoResponseDefaultTypeInternal _getDeviceInfoResponse_default_instance_;
 class getLastPoseRequest;
 struct getLastPoseRequestDefaultTypeInternal;
 extern getLastPoseRequestDefaultTypeInternal _getLastPoseRequest_default_instance_;
@@ -180,6 +186,8 @@ template<> ::grpcIFrontEnd::getAllClientsUUIDRequest* Arena::CreateMaybeMessage<
 template<> ::grpcIFrontEnd::getAllClientsUUIDResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::getAllClientsUUIDResponse>(Arena*);
 template<> ::grpcIFrontEnd::getCameraParametersRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::getCameraParametersRequest>(Arena*);
 template<> ::grpcIFrontEnd::getCameraParametersResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::getCameraParametersResponse>(Arena*);
+template<> ::grpcIFrontEnd::getDeviceInfoRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::getDeviceInfoRequest>(Arena*);
+template<> ::grpcIFrontEnd::getDeviceInfoResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::getDeviceInfoResponse>(Arena*);
 template<> ::grpcIFrontEnd::getLastPoseRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::getLastPoseRequest>(Arena*);
 template<> ::grpcIFrontEnd::getLastPoseResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::getLastPoseResponse>(Arena*);
 template<> ::grpcIFrontEnd::getMapRequestRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::getMapRequestRequest>(Arena*);
@@ -342,10 +350,25 @@ class registerClientRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kDeviceInfoFieldNumber = 2,
+    kUuidFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
+  // bytes deviceInfo = 2;
+  void clear_deviceinfo();
+  const std::string& deviceinfo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_deviceinfo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_deviceinfo();
+  PROTOBUF_NODISCARD std::string* release_deviceinfo();
+  void set_allocated_deviceinfo(std::string* deviceinfo);
+  private:
+  const std::string& _internal_deviceinfo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_deviceinfo(const std::string& value);
+  std::string* _internal_mutable_deviceinfo();
+  public:
+
+  // string uuid = 3;
   void clear_uuid();
   const std::string& uuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -376,6 +399,7 @@ class registerClientRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr deviceinfo_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1189,6 +1213,350 @@ class getAllClientsUUIDResponse final :
 };
 // -------------------------------------------------------------------
 
+class getDeviceInfoRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getDeviceInfoRequest) */ {
+ public:
+  inline getDeviceInfoRequest() : getDeviceInfoRequest(nullptr) {}
+  ~getDeviceInfoRequest() override;
+  explicit PROTOBUF_CONSTEXPR getDeviceInfoRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getDeviceInfoRequest(const getDeviceInfoRequest& from);
+  getDeviceInfoRequest(getDeviceInfoRequest&& from) noexcept
+    : getDeviceInfoRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getDeviceInfoRequest& operator=(const getDeviceInfoRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getDeviceInfoRequest& operator=(getDeviceInfoRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getDeviceInfoRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getDeviceInfoRequest* internal_default_instance() {
+    return reinterpret_cast<const getDeviceInfoRequest*>(
+               &_getDeviceInfoRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(getDeviceInfoRequest& a, getDeviceInfoRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getDeviceInfoRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getDeviceInfoRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getDeviceInfoRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<getDeviceInfoRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const getDeviceInfoRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const getDeviceInfoRequest& from) {
+    getDeviceInfoRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getDeviceInfoRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.getDeviceInfoRequest";
+  }
+  protected:
+  explicit getDeviceInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUuidFieldNumber = 2,
+    kDeviceInfoFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // string uuid = 2;
+  void clear_uuid();
+  const std::string& uuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_NODISCARD std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
+  private:
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
+  public:
+
+  // bytes deviceInfo = 3;
+  void clear_deviceinfo();
+  const std::string& deviceinfo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_deviceinfo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_deviceinfo();
+  PROTOBUF_NODISCARD std::string* release_deviceinfo();
+  void set_allocated_deviceinfo(std::string* deviceinfo);
+  private:
+  const std::string& _internal_deviceinfo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_deviceinfo(const std::string& value);
+  std::string* _internal_mutable_deviceinfo();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(int32_t value);
+  private:
+  int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getDeviceInfoRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr deviceinfo_;
+    int32_t grpcservercompressionformat_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getDeviceInfoResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getDeviceInfoResponse) */ {
+ public:
+  inline getDeviceInfoResponse() : getDeviceInfoResponse(nullptr) {}
+  ~getDeviceInfoResponse() override;
+  explicit PROTOBUF_CONSTEXPR getDeviceInfoResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getDeviceInfoResponse(const getDeviceInfoResponse& from);
+  getDeviceInfoResponse(getDeviceInfoResponse&& from) noexcept
+    : getDeviceInfoResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline getDeviceInfoResponse& operator=(const getDeviceInfoResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getDeviceInfoResponse& operator=(getDeviceInfoResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getDeviceInfoResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getDeviceInfoResponse* internal_default_instance() {
+    return reinterpret_cast<const getDeviceInfoResponse*>(
+               &_getDeviceInfoResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(getDeviceInfoResponse& a, getDeviceInfoResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getDeviceInfoResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getDeviceInfoResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getDeviceInfoResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<getDeviceInfoResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const getDeviceInfoResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const getDeviceInfoResponse& from) {
+    getDeviceInfoResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getDeviceInfoResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.getDeviceInfoResponse";
+  }
+  protected:
+  explicit getDeviceInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDeviceInfoFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes deviceInfo = 1;
+  void clear_deviceinfo();
+  const std::string& deviceinfo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_deviceinfo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_deviceinfo();
+  PROTOBUF_NODISCARD std::string* release_deviceinfo();
+  void set_allocated_deviceinfo(std::string* deviceinfo);
+  private:
+  const std::string& _internal_deviceinfo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_deviceinfo(const std::string& value);
+  std::string* _internal_mutable_deviceinfo();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue();
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
+  private:
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getDeviceInfoResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr deviceinfo_;
+    int32_t xpcfgrpcreturnvalue_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class init_grpc0Request final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.init_grpc0Request) */ {
  public:
@@ -1237,7 +1605,7 @@ class init_grpc0Request final :
                &_init_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(init_grpc0Request& a, init_grpc0Request& b) {
     a.Swap(&b);
@@ -1401,7 +1769,7 @@ class init_grpc0Response final :
                &_init_grpc0Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(init_grpc0Response& a, init_grpc0Response& b) {
     a.Swap(&b);
@@ -1549,7 +1917,7 @@ class init_grpc1Request final :
                &_init_grpc1Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(init_grpc1Request& a, init_grpc1Request& b) {
     a.Swap(&b);
@@ -1729,7 +2097,7 @@ class init_grpc1Response final :
                &_init_grpc1Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(init_grpc1Response& a, init_grpc1Response& b) {
     a.Swap(&b);
@@ -1877,7 +2245,7 @@ class startRequest final :
                &_startRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(startRequest& a, startRequest& b) {
     a.Swap(&b);
@@ -2041,7 +2409,7 @@ class startResponse final :
                &_startResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(startResponse& a, startResponse& b) {
     a.Swap(&b);
@@ -2189,7 +2557,7 @@ class stopRequest final :
                &_stopRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(stopRequest& a, stopRequest& b) {
     a.Swap(&b);
@@ -2353,7 +2721,7 @@ class stopResponse final :
                &_stopResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(stopResponse& a, stopResponse& b) {
     a.Swap(&b);
@@ -2501,7 +2869,7 @@ class getProcessingModeRequest final :
                &_getProcessingModeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(getProcessingModeRequest& a, getProcessingModeRequest& b) {
     a.Swap(&b);
@@ -2681,7 +3049,7 @@ class getProcessingModeResponse final :
                &_getProcessingModeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(getProcessingModeResponse& a, getProcessingModeResponse& b) {
     a.Swap(&b);
@@ -2845,7 +3213,7 @@ class setCameraParameters_grpc0Request final :
                &_setCameraParameters_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(setCameraParameters_grpc0Request& a, setCameraParameters_grpc0Request& b) {
     a.Swap(&b);
@@ -3025,7 +3393,7 @@ class setCameraParameters_grpc0Response final :
                &_setCameraParameters_grpc0Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(setCameraParameters_grpc0Response& a, setCameraParameters_grpc0Response& b) {
     a.Swap(&b);
@@ -3173,7 +3541,7 @@ class setCameraParameters_grpc1Request final :
                &_setCameraParameters_grpc1Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(setCameraParameters_grpc1Request& a, setCameraParameters_grpc1Request& b) {
     a.Swap(&b);
@@ -3369,7 +3737,7 @@ class setCameraParameters_grpc1Response final :
                &_setCameraParameters_grpc1Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(setCameraParameters_grpc1Response& a, setCameraParameters_grpc1Response& b) {
     a.Swap(&b);
@@ -3517,7 +3885,7 @@ class setRectificationParametersRequest final :
                &_setRectificationParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(setRectificationParametersRequest& a, setRectificationParametersRequest& b) {
     a.Swap(&b);
@@ -3713,7 +4081,7 @@ class setRectificationParametersResponse final :
                &_setRectificationParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(setRectificationParametersResponse& a, setRectificationParametersResponse& b) {
     a.Swap(&b);
@@ -3861,7 +4229,7 @@ class getCameraParametersRequest final :
                &_getCameraParametersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(getCameraParametersRequest& a, getCameraParametersRequest& b) {
     a.Swap(&b);
@@ -4041,7 +4409,7 @@ class getCameraParametersResponse final :
                &_getCameraParametersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(getCameraParametersResponse& a, getCameraParametersResponse& b) {
     a.Swap(&b);
@@ -4205,7 +4573,7 @@ class relocalizeProcessRequest_grpc0Request final :
                &_relocalizeProcessRequest_grpc0Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(relocalizeProcessRequest_grpc0Request& a, relocalizeProcessRequest_grpc0Request& b) {
     a.Swap(&b);
@@ -4508,7 +4876,7 @@ class relocalizeProcessRequest_grpc0Response final :
                &_relocalizeProcessRequest_grpc0Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(relocalizeProcessRequest_grpc0Response& a, relocalizeProcessRequest_grpc0Response& b) {
     a.Swap(&b);
@@ -4720,7 +5088,7 @@ class relocalizeProcessRequest_grpc1Request final :
                &_relocalizeProcessRequest_grpc1Request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(relocalizeProcessRequest_grpc1Request& a, relocalizeProcessRequest_grpc1Request& b) {
     a.Swap(&b);
@@ -5039,7 +5407,7 @@ class relocalizeProcessRequest_grpc1Response final :
                &_relocalizeProcessRequest_grpc1Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(relocalizeProcessRequest_grpc1Response& a, relocalizeProcessRequest_grpc1Response& b) {
     a.Swap(&b);
@@ -5267,7 +5635,7 @@ class get3DTransformRequestRequest final :
                &_get3DTransformRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(get3DTransformRequestRequest& a, get3DTransformRequestRequest& b) {
     a.Swap(&b);
@@ -5479,7 +5847,7 @@ class get3DTransformRequestResponse final :
                &_get3DTransformRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(get3DTransformRequestResponse& a, get3DTransformRequestResponse& b) {
     a.Swap(&b);
@@ -5675,7 +6043,7 @@ class getMappingDataRequestRequest final :
                &_getMappingDataRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(getMappingDataRequestRequest& a, getMappingDataRequestRequest& b) {
     a.Swap(&b);
@@ -5871,7 +6239,7 @@ class getMappingDataRequestResponse final :
                &_getMappingDataRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(getMappingDataRequestResponse& a, getMappingDataRequestResponse& b) {
     a.Swap(&b);
@@ -6051,7 +6419,7 @@ class getLastPoseRequest final :
                &_getLastPoseRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(getLastPoseRequest& a, getLastPoseRequest& b) {
     a.Swap(&b);
@@ -6247,7 +6615,7 @@ class getLastPoseResponse final :
                &_getLastPoseResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(getLastPoseResponse& a, getLastPoseResponse& b) {
     a.Swap(&b);
@@ -6411,7 +6779,7 @@ class getMapRequestRequest final :
                &_getMapRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(getMapRequestRequest& a, getMapRequestRequest& b) {
     a.Swap(&b);
@@ -6575,7 +6943,7 @@ class getMapRequestResponse final :
                &_getMapRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(getMapRequestResponse& a, getMapRequestResponse& b) {
     a.Swap(&b);
@@ -6739,7 +7107,7 @@ class setMapRequestRequest final :
                &_setMapRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(setMapRequestRequest& a, setMapRequestRequest& b) {
     a.Swap(&b);
@@ -6903,7 +7271,7 @@ class setMapRequestResponse final :
                &_setMapRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(setMapRequestResponse& a, setMapRequestResponse& b) {
     a.Swap(&b);
@@ -7051,7 +7419,7 @@ class resetMapRequest final :
                &_resetMapRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(resetMapRequest& a, resetMapRequest& b) {
     a.Swap(&b);
@@ -7199,7 +7567,7 @@ class resetMapResponse final :
                &_resetMapResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(resetMapResponse& a, resetMapResponse& b) {
     a.Swap(&b);
@@ -7347,7 +7715,7 @@ class getPointCloudRequestRequest final :
                &_getPointCloudRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(getPointCloudRequestRequest& a, getPointCloudRequestRequest& b) {
     a.Swap(&b);
@@ -7511,7 +7879,7 @@ class getPointCloudRequestResponse final :
                &_getPointCloudRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(getPointCloudRequestResponse& a, getPointCloudRequestResponse& b) {
     a.Swap(&b);
@@ -7656,7 +8024,57 @@ inline void registerClientRequest::set_grpcservercompressionformat(int32_t value
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
+// bytes deviceInfo = 2;
+inline void registerClientRequest::clear_deviceinfo() {
+  _impl_.deviceinfo_.ClearToEmpty();
+}
+inline const std::string& registerClientRequest::deviceinfo() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientRequest.deviceInfo)
+  return _internal_deviceinfo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void registerClientRequest::set_deviceinfo(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.deviceinfo_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientRequest.deviceInfo)
+}
+inline std::string* registerClientRequest::mutable_deviceinfo() {
+  std::string* _s = _internal_mutable_deviceinfo();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientRequest.deviceInfo)
+  return _s;
+}
+inline const std::string& registerClientRequest::_internal_deviceinfo() const {
+  return _impl_.deviceinfo_.Get();
+}
+inline void registerClientRequest::_internal_set_deviceinfo(const std::string& value) {
+  
+  _impl_.deviceinfo_.Set(value, GetArenaForAllocation());
+}
+inline std::string* registerClientRequest::_internal_mutable_deviceinfo() {
+  
+  return _impl_.deviceinfo_.Mutable(GetArenaForAllocation());
+}
+inline std::string* registerClientRequest::release_deviceinfo() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientRequest.deviceInfo)
+  return _impl_.deviceinfo_.Release();
+}
+inline void registerClientRequest::set_allocated_deviceinfo(std::string* deviceinfo) {
+  if (deviceinfo != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.deviceinfo_.SetAllocated(deviceinfo, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.deviceinfo_.IsDefault()) {
+    _impl_.deviceinfo_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.deviceInfo)
+}
+
+// string uuid = 3;
 inline void registerClientRequest::clear_uuid() {
   _impl_.uuid_.ClearToEmpty();
 }
@@ -8024,6 +8442,204 @@ inline void getAllClientsUUIDResponse::_internal_set_xpcfgrpcreturnvalue(int32_t
 inline void getAllClientsUUIDResponse::set_xpcfgrpcreturnvalue(int32_t value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllClientsUUIDResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getDeviceInfoRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getDeviceInfoRequest::clear_grpcservercompressionformat() {
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline int32_t getDeviceInfoRequest::_internal_grpcservercompressionformat() const {
+  return _impl_.grpcservercompressionformat_;
+}
+inline int32_t getDeviceInfoRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getDeviceInfoRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getDeviceInfoRequest::_internal_set_grpcservercompressionformat(int32_t value) {
+  
+  _impl_.grpcservercompressionformat_ = value;
+}
+inline void getDeviceInfoRequest::set_grpcservercompressionformat(int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getDeviceInfoRequest.grpcServerCompressionFormat)
+}
+
+// string uuid = 2;
+inline void getDeviceInfoRequest::clear_uuid() {
+  _impl_.uuid_.ClearToEmpty();
+}
+inline const std::string& getDeviceInfoRequest::uuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getDeviceInfoRequest.uuid)
+  return _internal_uuid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getDeviceInfoRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getDeviceInfoRequest.uuid)
+}
+inline std::string* getDeviceInfoRequest::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getDeviceInfoRequest.uuid)
+  return _s;
+}
+inline const std::string& getDeviceInfoRequest::_internal_uuid() const {
+  return _impl_.uuid_.Get();
+}
+inline void getDeviceInfoRequest::_internal_set_uuid(const std::string& value) {
+  
+  _impl_.uuid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getDeviceInfoRequest::_internal_mutable_uuid() {
+  
+  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getDeviceInfoRequest::release_uuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getDeviceInfoRequest.uuid)
+  return _impl_.uuid_.Release();
+}
+inline void getDeviceInfoRequest::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.uuid_.IsDefault()) {
+    _impl_.uuid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getDeviceInfoRequest.uuid)
+}
+
+// bytes deviceInfo = 3;
+inline void getDeviceInfoRequest::clear_deviceinfo() {
+  _impl_.deviceinfo_.ClearToEmpty();
+}
+inline const std::string& getDeviceInfoRequest::deviceinfo() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getDeviceInfoRequest.deviceInfo)
+  return _internal_deviceinfo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getDeviceInfoRequest::set_deviceinfo(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.deviceinfo_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getDeviceInfoRequest.deviceInfo)
+}
+inline std::string* getDeviceInfoRequest::mutable_deviceinfo() {
+  std::string* _s = _internal_mutable_deviceinfo();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getDeviceInfoRequest.deviceInfo)
+  return _s;
+}
+inline const std::string& getDeviceInfoRequest::_internal_deviceinfo() const {
+  return _impl_.deviceinfo_.Get();
+}
+inline void getDeviceInfoRequest::_internal_set_deviceinfo(const std::string& value) {
+  
+  _impl_.deviceinfo_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getDeviceInfoRequest::_internal_mutable_deviceinfo() {
+  
+  return _impl_.deviceinfo_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getDeviceInfoRequest::release_deviceinfo() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getDeviceInfoRequest.deviceInfo)
+  return _impl_.deviceinfo_.Release();
+}
+inline void getDeviceInfoRequest::set_allocated_deviceinfo(std::string* deviceinfo) {
+  if (deviceinfo != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.deviceinfo_.SetAllocated(deviceinfo, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.deviceinfo_.IsDefault()) {
+    _impl_.deviceinfo_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getDeviceInfoRequest.deviceInfo)
+}
+
+// -------------------------------------------------------------------
+
+// getDeviceInfoResponse
+
+// bytes deviceInfo = 1;
+inline void getDeviceInfoResponse::clear_deviceinfo() {
+  _impl_.deviceinfo_.ClearToEmpty();
+}
+inline const std::string& getDeviceInfoResponse::deviceinfo() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getDeviceInfoResponse.deviceInfo)
+  return _internal_deviceinfo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getDeviceInfoResponse::set_deviceinfo(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.deviceinfo_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getDeviceInfoResponse.deviceInfo)
+}
+inline std::string* getDeviceInfoResponse::mutable_deviceinfo() {
+  std::string* _s = _internal_mutable_deviceinfo();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getDeviceInfoResponse.deviceInfo)
+  return _s;
+}
+inline const std::string& getDeviceInfoResponse::_internal_deviceinfo() const {
+  return _impl_.deviceinfo_.Get();
+}
+inline void getDeviceInfoResponse::_internal_set_deviceinfo(const std::string& value) {
+  
+  _impl_.deviceinfo_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getDeviceInfoResponse::_internal_mutable_deviceinfo() {
+  
+  return _impl_.deviceinfo_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getDeviceInfoResponse::release_deviceinfo() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getDeviceInfoResponse.deviceInfo)
+  return _impl_.deviceinfo_.Release();
+}
+inline void getDeviceInfoResponse::set_allocated_deviceinfo(std::string* deviceinfo) {
+  if (deviceinfo != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.deviceinfo_.SetAllocated(deviceinfo, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.deviceinfo_.IsDefault()) {
+    _impl_.deviceinfo_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getDeviceInfoResponse.deviceInfo)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void getDeviceInfoResponse::clear_xpcfgrpcreturnvalue() {
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline int32_t getDeviceInfoResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getDeviceInfoResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getDeviceInfoResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getDeviceInfoResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getDeviceInfoResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getDeviceInfoResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -12333,6 +12949,10 @@ inline void getPointCloudRequestResponse::set_xpcfgrpcreturnvalue(int32_t value)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

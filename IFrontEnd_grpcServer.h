@@ -28,6 +28,7 @@ class IFrontEnd_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
         ::grpc::Status registerClient(::grpc::ServerContext* context, const ::grpcIFrontEnd::registerClientRequest* request, ::grpcIFrontEnd::registerClientResponse* response) override;
         ::grpc::Status unregisterClient(::grpc::ServerContext* context, const ::grpcIFrontEnd::unregisterClientRequest* request, ::grpcIFrontEnd::unregisterClientResponse* response) override;
         ::grpc::Status getAllClientsUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest* request, ::grpcIFrontEnd::getAllClientsUUIDResponse* response) override;
+        ::grpc::Status getDeviceInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response) override;
         ::grpc::Status init_grpc0(::grpc::ServerContext* context, const ::grpcIFrontEnd::init_grpc0Request* request, ::grpcIFrontEnd::init_grpc0Response* response) override;
         ::grpc::Status init_grpc1(::grpc::ServerContext* context, const ::grpcIFrontEnd::init_grpc1Request* request, ::grpcIFrontEnd::init_grpc1Response* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIFrontEnd::startRequest* request, ::grpcIFrontEnd::startResponse* response) override;

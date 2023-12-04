@@ -56,6 +56,13 @@ class grpcIFrontEndService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getAllClientsUUIDResponse>> PrepareAsyncgetAllClientsUUID(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getAllClientsUUIDResponse>>(PrepareAsyncgetAllClientsUUIDRaw(context, request, cq));
     }
+    virtual ::grpc::Status getDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpcIFrontEnd::getDeviceInfoResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getDeviceInfoResponse>> AsyncgetDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getDeviceInfoResponse>>(AsyncgetDeviceInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getDeviceInfoResponse>> PrepareAsyncgetDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getDeviceInfoResponse>>(PrepareAsyncgetDeviceInfoRaw(context, request, cq));
+    }
     virtual ::grpc::Status init_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request& request, ::grpcIFrontEnd::init_grpc0Response* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::init_grpc0Response>> Asyncinit_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::init_grpc0Response>>(Asyncinit_grpc0Raw(context, request, cq));
@@ -191,6 +198,8 @@ class grpcIFrontEndService final {
       virtual void unregisterClient(::grpc::ClientContext* context, const ::grpcIFrontEnd::unregisterClientRequest* request, ::grpcIFrontEnd::unregisterClientResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void getAllClientsUUID(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest* request, ::grpcIFrontEnd::getAllClientsUUIDResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void getAllClientsUUID(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest* request, ::grpcIFrontEnd::getAllClientsUUIDResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void init_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request* request, ::grpcIFrontEnd::init_grpc0Response* response, std::function<void(::grpc::Status)>) = 0;
       virtual void init_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request* request, ::grpcIFrontEnd::init_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void init_grpc1(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc1Request* request, ::grpcIFrontEnd::init_grpc1Response* response, std::function<void(::grpc::Status)>) = 0;
@@ -238,6 +247,8 @@ class grpcIFrontEndService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::unregisterClientResponse>* PrepareAsyncunregisterClientRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::unregisterClientRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getAllClientsUUIDResponse>* AsyncgetAllClientsUUIDRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getAllClientsUUIDResponse>* PrepareAsyncgetAllClientsUUIDRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getDeviceInfoResponse>* AsyncgetDeviceInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getDeviceInfoResponse>* PrepareAsyncgetDeviceInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::init_grpc0Response>* Asyncinit_grpc0Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::init_grpc0Response>* PrepareAsyncinit_grpc0Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::init_grpc1Response>* Asyncinit_grpc1Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc1Request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -298,6 +309,13 @@ class grpcIFrontEndService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getAllClientsUUIDResponse>> PrepareAsyncgetAllClientsUUID(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getAllClientsUUIDResponse>>(PrepareAsyncgetAllClientsUUIDRaw(context, request, cq));
+    }
+    ::grpc::Status getDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpcIFrontEnd::getDeviceInfoResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getDeviceInfoResponse>> AsyncgetDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getDeviceInfoResponse>>(AsyncgetDeviceInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getDeviceInfoResponse>> PrepareAsyncgetDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getDeviceInfoResponse>>(PrepareAsyncgetDeviceInfoRaw(context, request, cq));
     }
     ::grpc::Status init_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request& request, ::grpcIFrontEnd::init_grpc0Response* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::init_grpc0Response>> Asyncinit_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request& request, ::grpc::CompletionQueue* cq) {
@@ -434,6 +452,8 @@ class grpcIFrontEndService final {
       void unregisterClient(::grpc::ClientContext* context, const ::grpcIFrontEnd::unregisterClientRequest* request, ::grpcIFrontEnd::unregisterClientResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void getAllClientsUUID(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest* request, ::grpcIFrontEnd::getAllClientsUUIDResponse* response, std::function<void(::grpc::Status)>) override;
       void getAllClientsUUID(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest* request, ::grpcIFrontEnd::getAllClientsUUIDResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response, std::function<void(::grpc::Status)>) override;
+      void getDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void init_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request* request, ::grpcIFrontEnd::init_grpc0Response* response, std::function<void(::grpc::Status)>) override;
       void init_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request* request, ::grpcIFrontEnd::init_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) override;
       void init_grpc1(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc1Request* request, ::grpcIFrontEnd::init_grpc1Response* response, std::function<void(::grpc::Status)>) override;
@@ -487,6 +507,8 @@ class grpcIFrontEndService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::unregisterClientResponse>* PrepareAsyncunregisterClientRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::unregisterClientRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getAllClientsUUIDResponse>* AsyncgetAllClientsUUIDRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getAllClientsUUIDResponse>* PrepareAsyncgetAllClientsUUIDRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getDeviceInfoResponse>* AsyncgetDeviceInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getDeviceInfoResponse>* PrepareAsyncgetDeviceInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::init_grpc0Response>* Asyncinit_grpc0Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::init_grpc0Response>* PrepareAsyncinit_grpc0Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc0Request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::init_grpc1Response>* Asyncinit_grpc1Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::init_grpc1Request& request, ::grpc::CompletionQueue* cq) override;
@@ -526,6 +548,7 @@ class grpcIFrontEndService final {
     const ::grpc::internal::RpcMethod rpcmethod_registerClient_;
     const ::grpc::internal::RpcMethod rpcmethod_unregisterClient_;
     const ::grpc::internal::RpcMethod rpcmethod_getAllClientsUUID_;
+    const ::grpc::internal::RpcMethod rpcmethod_getDeviceInfo_;
     const ::grpc::internal::RpcMethod rpcmethod_init_grpc0_;
     const ::grpc::internal::RpcMethod rpcmethod_init_grpc1_;
     const ::grpc::internal::RpcMethod rpcmethod_start_;
@@ -554,6 +577,7 @@ class grpcIFrontEndService final {
     virtual ::grpc::Status registerClient(::grpc::ServerContext* context, const ::grpcIFrontEnd::registerClientRequest* request, ::grpcIFrontEnd::registerClientResponse* response);
     virtual ::grpc::Status unregisterClient(::grpc::ServerContext* context, const ::grpcIFrontEnd::unregisterClientRequest* request, ::grpcIFrontEnd::unregisterClientResponse* response);
     virtual ::grpc::Status getAllClientsUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest* request, ::grpcIFrontEnd::getAllClientsUUIDResponse* response);
+    virtual ::grpc::Status getDeviceInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response);
     virtual ::grpc::Status init_grpc0(::grpc::ServerContext* context, const ::grpcIFrontEnd::init_grpc0Request* request, ::grpcIFrontEnd::init_grpc0Response* response);
     virtual ::grpc::Status init_grpc1(::grpc::ServerContext* context, const ::grpcIFrontEnd::init_grpc1Request* request, ::grpcIFrontEnd::init_grpc1Response* response);
     virtual ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIFrontEnd::startRequest* request, ::grpcIFrontEnd::startResponse* response);
@@ -634,12 +658,32 @@ class grpcIFrontEndService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_getDeviceInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_getDeviceInfo() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_getDeviceInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getDeviceInfo(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::getDeviceInfoRequest* /*request*/, ::grpcIFrontEnd::getDeviceInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetDeviceInfo(::grpc::ServerContext* context, ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::getDeviceInfoResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_init_grpc0() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_init_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -650,7 +694,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestinit_grpc0(::grpc::ServerContext* context, ::grpcIFrontEnd::init_grpc0Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::init_grpc0Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -659,7 +703,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_init_grpc1() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_init_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -670,7 +714,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestinit_grpc1(::grpc::ServerContext* context, ::grpcIFrontEnd::init_grpc1Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::init_grpc1Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -679,7 +723,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_start() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
@@ -690,7 +734,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststart(::grpc::ServerContext* context, ::grpcIFrontEnd::startRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::startResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -699,7 +743,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_stop() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
@@ -710,7 +754,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststop(::grpc::ServerContext* context, ::grpcIFrontEnd::stopRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::stopResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -719,7 +763,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getProcessingMode() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_getProcessingMode() override {
       BaseClassMustBeDerivedFromService(this);
@@ -730,7 +774,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetProcessingMode(::grpc::ServerContext* context, ::grpcIFrontEnd::getProcessingModeRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::getProcessingModeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -739,7 +783,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_setCameraParameters_grpc0() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_setCameraParameters_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -750,7 +794,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsetCameraParameters_grpc0(::grpc::ServerContext* context, ::grpcIFrontEnd::setCameraParameters_grpc0Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::setCameraParameters_grpc0Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -759,7 +803,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_setCameraParameters_grpc1() {
-      ::grpc::Service::MarkMethodAsync(9);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_setCameraParameters_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -770,7 +814,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsetCameraParameters_grpc1(::grpc::ServerContext* context, ::grpcIFrontEnd::setCameraParameters_grpc1Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::setCameraParameters_grpc1Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -779,7 +823,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_setRectificationParameters() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_setRectificationParameters() override {
       BaseClassMustBeDerivedFromService(this);
@@ -790,7 +834,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsetRectificationParameters(::grpc::ServerContext* context, ::grpcIFrontEnd::setRectificationParametersRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::setRectificationParametersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -799,7 +843,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getCameraParameters() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_getCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
@@ -810,7 +854,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetCameraParameters(::grpc::ServerContext* context, ::grpcIFrontEnd::getCameraParametersRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::getCameraParametersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -819,7 +863,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_relocalizeProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(13);
     }
     ~WithAsyncMethod_relocalizeProcessRequest_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -830,7 +874,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestrelocalizeProcessRequest_grpc0(::grpc::ServerContext* context, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -839,7 +883,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_relocalizeProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_relocalizeProcessRequest_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -850,7 +894,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestrelocalizeProcessRequest_grpc1(::grpc::ServerContext* context, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -859,7 +903,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_get3DTransformRequest() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_get3DTransformRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -870,7 +914,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget3DTransformRequest(::grpc::ServerContext* context, ::grpcIFrontEnd::get3DTransformRequestRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::get3DTransformRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -879,7 +923,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getMappingDataRequest() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_getMappingDataRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -890,7 +934,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMappingDataRequest(::grpc::ServerContext* context, ::grpcIFrontEnd::getMappingDataRequestRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::getMappingDataRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -899,7 +943,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getLastPose() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_getLastPose() override {
       BaseClassMustBeDerivedFromService(this);
@@ -910,7 +954,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetLastPose(::grpc::ServerContext* context, ::grpcIFrontEnd::getLastPoseRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::getLastPoseResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -919,7 +963,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getMapRequest() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_getMapRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -930,7 +974,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMapRequest(::grpc::ServerContext* context, ::grpcIFrontEnd::getMapRequestRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::getMapRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -939,7 +983,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_setMapRequest() {
-      ::grpc::Service::MarkMethodAsync(18);
+      ::grpc::Service::MarkMethodAsync(19);
     }
     ~WithAsyncMethod_setMapRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -950,7 +994,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsetMapRequest(::grpc::ServerContext* context, ::grpcIFrontEnd::setMapRequestRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::setMapRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -959,7 +1003,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_resetMap() {
-      ::grpc::Service::MarkMethodAsync(19);
+      ::grpc::Service::MarkMethodAsync(20);
     }
     ~WithAsyncMethod_resetMap() override {
       BaseClassMustBeDerivedFromService(this);
@@ -970,7 +1014,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestresetMap(::grpc::ServerContext* context, ::grpcIFrontEnd::resetMapRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::resetMapResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -979,7 +1023,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getPointCloudRequest() {
-      ::grpc::Service::MarkMethodAsync(20);
+      ::grpc::Service::MarkMethodAsync(21);
     }
     ~WithAsyncMethod_getPointCloudRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -990,10 +1034,10 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetPointCloudRequest(::grpc::ServerContext* context, ::grpcIFrontEnd::getPointCloudRequestRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::getPointCloudRequestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_registerClient<WithAsyncMethod_unregisterClient<WithAsyncMethod_getAllClientsUUID<WithAsyncMethod_init_grpc0<WithAsyncMethod_init_grpc1<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_getProcessingMode<WithAsyncMethod_setCameraParameters_grpc0<WithAsyncMethod_setCameraParameters_grpc1<WithAsyncMethod_setRectificationParameters<WithAsyncMethod_getCameraParameters<WithAsyncMethod_relocalizeProcessRequest_grpc0<WithAsyncMethod_relocalizeProcessRequest_grpc1<WithAsyncMethod_get3DTransformRequest<WithAsyncMethod_getMappingDataRequest<WithAsyncMethod_getLastPose<WithAsyncMethod_getMapRequest<WithAsyncMethod_setMapRequest<WithAsyncMethod_resetMap<WithAsyncMethod_getPointCloudRequest<Service > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_registerClient<WithAsyncMethod_unregisterClient<WithAsyncMethod_getAllClientsUUID<WithAsyncMethod_getDeviceInfo<WithAsyncMethod_init_grpc0<WithAsyncMethod_init_grpc1<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_getProcessingMode<WithAsyncMethod_setCameraParameters_grpc0<WithAsyncMethod_setCameraParameters_grpc1<WithAsyncMethod_setRectificationParameters<WithAsyncMethod_getCameraParameters<WithAsyncMethod_relocalizeProcessRequest_grpc0<WithAsyncMethod_relocalizeProcessRequest_grpc1<WithAsyncMethod_get3DTransformRequest<WithAsyncMethod_getMappingDataRequest<WithAsyncMethod_getLastPose<WithAsyncMethod_getMapRequest<WithAsyncMethod_setMapRequest<WithAsyncMethod_resetMap<WithAsyncMethod_getPointCloudRequest<Service > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_registerClient : public BaseClass {
    private:
@@ -1076,18 +1120,45 @@ class grpcIFrontEndService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpcIFrontEnd::getAllClientsUUIDRequest* /*request*/, ::grpcIFrontEnd::getAllClientsUUIDResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_getDeviceInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_getDeviceInfo() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getDeviceInfoRequest, ::grpcIFrontEnd::getDeviceInfoResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response) { return this->getDeviceInfo(context, request, response); }));}
+    void SetMessageAllocatorFor_getDeviceInfo(
+        ::grpc::MessageAllocator< ::grpcIFrontEnd::getDeviceInfoRequest, ::grpcIFrontEnd::getDeviceInfoResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getDeviceInfoRequest, ::grpcIFrontEnd::getDeviceInfoResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_getDeviceInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getDeviceInfo(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::getDeviceInfoRequest* /*request*/, ::grpcIFrontEnd::getDeviceInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* getDeviceInfo(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIFrontEnd::getDeviceInfoRequest* /*request*/, ::grpcIFrontEnd::getDeviceInfoResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_init_grpc0() {
-      ::grpc::Service::MarkMethodCallback(3,
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::init_grpc0Request, ::grpcIFrontEnd::init_grpc0Response>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::init_grpc0Request* request, ::grpcIFrontEnd::init_grpc0Response* response) { return this->init_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_init_grpc0(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::init_grpc0Request, ::grpcIFrontEnd::init_grpc0Response>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::init_grpc0Request, ::grpcIFrontEnd::init_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1108,13 +1179,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_init_grpc1() {
-      ::grpc::Service::MarkMethodCallback(4,
+      ::grpc::Service::MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::init_grpc1Request, ::grpcIFrontEnd::init_grpc1Response>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::init_grpc1Request* request, ::grpcIFrontEnd::init_grpc1Response* response) { return this->init_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_init_grpc1(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::init_grpc1Request, ::grpcIFrontEnd::init_grpc1Response>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::init_grpc1Request, ::grpcIFrontEnd::init_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1135,13 +1206,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_start() {
-      ::grpc::Service::MarkMethodCallback(5,
+      ::grpc::Service::MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::startRequest, ::grpcIFrontEnd::startResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::startRequest* request, ::grpcIFrontEnd::startResponse* response) { return this->start(context, request, response); }));}
     void SetMessageAllocatorFor_start(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::startRequest, ::grpcIFrontEnd::startResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::startRequest, ::grpcIFrontEnd::startResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1162,13 +1233,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_stop() {
-      ::grpc::Service::MarkMethodCallback(6,
+      ::grpc::Service::MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::stopRequest, ::grpcIFrontEnd::stopResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::stopRequest* request, ::grpcIFrontEnd::stopResponse* response) { return this->stop(context, request, response); }));}
     void SetMessageAllocatorFor_stop(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::stopRequest, ::grpcIFrontEnd::stopResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::stopRequest, ::grpcIFrontEnd::stopResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1189,13 +1260,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getProcessingMode() {
-      ::grpc::Service::MarkMethodCallback(7,
+      ::grpc::Service::MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getProcessingModeRequest, ::grpcIFrontEnd::getProcessingModeResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::getProcessingModeRequest* request, ::grpcIFrontEnd::getProcessingModeResponse* response) { return this->getProcessingMode(context, request, response); }));}
     void SetMessageAllocatorFor_getProcessingMode(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::getProcessingModeRequest, ::grpcIFrontEnd::getProcessingModeResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getProcessingModeRequest, ::grpcIFrontEnd::getProcessingModeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1216,13 +1287,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_setCameraParameters_grpc0() {
-      ::grpc::Service::MarkMethodCallback(8,
+      ::grpc::Service::MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::setCameraParameters_grpc0Request, ::grpcIFrontEnd::setCameraParameters_grpc0Response>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::setCameraParameters_grpc0Request* request, ::grpcIFrontEnd::setCameraParameters_grpc0Response* response) { return this->setCameraParameters_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_setCameraParameters_grpc0(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::setCameraParameters_grpc0Request, ::grpcIFrontEnd::setCameraParameters_grpc0Response>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::setCameraParameters_grpc0Request, ::grpcIFrontEnd::setCameraParameters_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1243,13 +1314,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_setCameraParameters_grpc1() {
-      ::grpc::Service::MarkMethodCallback(9,
+      ::grpc::Service::MarkMethodCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::setCameraParameters_grpc1Request, ::grpcIFrontEnd::setCameraParameters_grpc1Response>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::setCameraParameters_grpc1Request* request, ::grpcIFrontEnd::setCameraParameters_grpc1Response* response) { return this->setCameraParameters_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_setCameraParameters_grpc1(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::setCameraParameters_grpc1Request, ::grpcIFrontEnd::setCameraParameters_grpc1Response>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::setCameraParameters_grpc1Request, ::grpcIFrontEnd::setCameraParameters_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1270,13 +1341,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_setRectificationParameters() {
-      ::grpc::Service::MarkMethodCallback(10,
+      ::grpc::Service::MarkMethodCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::setRectificationParametersRequest, ::grpcIFrontEnd::setRectificationParametersResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::setRectificationParametersRequest* request, ::grpcIFrontEnd::setRectificationParametersResponse* response) { return this->setRectificationParameters(context, request, response); }));}
     void SetMessageAllocatorFor_setRectificationParameters(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::setRectificationParametersRequest, ::grpcIFrontEnd::setRectificationParametersResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::setRectificationParametersRequest, ::grpcIFrontEnd::setRectificationParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1297,13 +1368,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getCameraParameters() {
-      ::grpc::Service::MarkMethodCallback(11,
+      ::grpc::Service::MarkMethodCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getCameraParametersRequest, ::grpcIFrontEnd::getCameraParametersResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::getCameraParametersRequest* request, ::grpcIFrontEnd::getCameraParametersResponse* response) { return this->getCameraParameters(context, request, response); }));}
     void SetMessageAllocatorFor_getCameraParameters(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::getCameraParametersRequest, ::grpcIFrontEnd::getCameraParametersResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getCameraParametersRequest, ::grpcIFrontEnd::getCameraParametersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1324,13 +1395,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_relocalizeProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodCallback(12,
+      ::grpc::Service::MarkMethodCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response* response) { return this->relocalizeProcessRequest_grpc0(context, request, response); }));}
     void SetMessageAllocatorFor_relocalizeProcessRequest_grpc0(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1351,13 +1422,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_relocalizeProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodCallback(13,
+      ::grpc::Service::MarkMethodCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response* response) { return this->relocalizeProcessRequest_grpc1(context, request, response); }));}
     void SetMessageAllocatorFor_relocalizeProcessRequest_grpc1(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1378,13 +1449,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_get3DTransformRequest() {
-      ::grpc::Service::MarkMethodCallback(14,
+      ::grpc::Service::MarkMethodCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::get3DTransformRequestRequest, ::grpcIFrontEnd::get3DTransformRequestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::get3DTransformRequestRequest* request, ::grpcIFrontEnd::get3DTransformRequestResponse* response) { return this->get3DTransformRequest(context, request, response); }));}
     void SetMessageAllocatorFor_get3DTransformRequest(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::get3DTransformRequestRequest, ::grpcIFrontEnd::get3DTransformRequestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::get3DTransformRequestRequest, ::grpcIFrontEnd::get3DTransformRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1405,13 +1476,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getMappingDataRequest() {
-      ::grpc::Service::MarkMethodCallback(15,
+      ::grpc::Service::MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getMappingDataRequestRequest, ::grpcIFrontEnd::getMappingDataRequestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::getMappingDataRequestRequest* request, ::grpcIFrontEnd::getMappingDataRequestResponse* response) { return this->getMappingDataRequest(context, request, response); }));}
     void SetMessageAllocatorFor_getMappingDataRequest(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::getMappingDataRequestRequest, ::grpcIFrontEnd::getMappingDataRequestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getMappingDataRequestRequest, ::grpcIFrontEnd::getMappingDataRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1432,13 +1503,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getLastPose() {
-      ::grpc::Service::MarkMethodCallback(16,
+      ::grpc::Service::MarkMethodCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getLastPoseRequest, ::grpcIFrontEnd::getLastPoseResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::getLastPoseRequest* request, ::grpcIFrontEnd::getLastPoseResponse* response) { return this->getLastPose(context, request, response); }));}
     void SetMessageAllocatorFor_getLastPose(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::getLastPoseRequest, ::grpcIFrontEnd::getLastPoseResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getLastPoseRequest, ::grpcIFrontEnd::getLastPoseResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1459,13 +1530,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getMapRequest() {
-      ::grpc::Service::MarkMethodCallback(17,
+      ::grpc::Service::MarkMethodCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getMapRequestRequest, ::grpcIFrontEnd::getMapRequestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::getMapRequestRequest* request, ::grpcIFrontEnd::getMapRequestResponse* response) { return this->getMapRequest(context, request, response); }));}
     void SetMessageAllocatorFor_getMapRequest(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::getMapRequestRequest, ::grpcIFrontEnd::getMapRequestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getMapRequestRequest, ::grpcIFrontEnd::getMapRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1486,13 +1557,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_setMapRequest() {
-      ::grpc::Service::MarkMethodCallback(18,
+      ::grpc::Service::MarkMethodCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::setMapRequestRequest, ::grpcIFrontEnd::setMapRequestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::setMapRequestRequest* request, ::grpcIFrontEnd::setMapRequestResponse* response) { return this->setMapRequest(context, request, response); }));}
     void SetMessageAllocatorFor_setMapRequest(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::setMapRequestRequest, ::grpcIFrontEnd::setMapRequestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::setMapRequestRequest, ::grpcIFrontEnd::setMapRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1513,13 +1584,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_resetMap() {
-      ::grpc::Service::MarkMethodCallback(19,
+      ::grpc::Service::MarkMethodCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::resetMapRequest, ::grpcIFrontEnd::resetMapResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::resetMapRequest* request, ::grpcIFrontEnd::resetMapResponse* response) { return this->resetMap(context, request, response); }));}
     void SetMessageAllocatorFor_resetMap(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::resetMapRequest, ::grpcIFrontEnd::resetMapResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::resetMapRequest, ::grpcIFrontEnd::resetMapResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1540,13 +1611,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getPointCloudRequest() {
-      ::grpc::Service::MarkMethodCallback(20,
+      ::grpc::Service::MarkMethodCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getPointCloudRequestRequest, ::grpcIFrontEnd::getPointCloudRequestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest* request, ::grpcIFrontEnd::getPointCloudRequestResponse* response) { return this->getPointCloudRequest(context, request, response); }));}
     void SetMessageAllocatorFor_getPointCloudRequest(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::getPointCloudRequestRequest, ::grpcIFrontEnd::getPointCloudRequestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getPointCloudRequestRequest, ::grpcIFrontEnd::getPointCloudRequestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1561,7 +1632,7 @@ class grpcIFrontEndService final {
     virtual ::grpc::ServerUnaryReactor* getPointCloudRequest(
       ::grpc::CallbackServerContext* /*context*/, const ::grpcIFrontEnd::getPointCloudRequestRequest* /*request*/, ::grpcIFrontEnd::getPointCloudRequestResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_registerClient<WithCallbackMethod_unregisterClient<WithCallbackMethod_getAllClientsUUID<WithCallbackMethod_init_grpc0<WithCallbackMethod_init_grpc1<WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_getProcessingMode<WithCallbackMethod_setCameraParameters_grpc0<WithCallbackMethod_setCameraParameters_grpc1<WithCallbackMethod_setRectificationParameters<WithCallbackMethod_getCameraParameters<WithCallbackMethod_relocalizeProcessRequest_grpc0<WithCallbackMethod_relocalizeProcessRequest_grpc1<WithCallbackMethod_get3DTransformRequest<WithCallbackMethod_getMappingDataRequest<WithCallbackMethod_getLastPose<WithCallbackMethod_getMapRequest<WithCallbackMethod_setMapRequest<WithCallbackMethod_resetMap<WithCallbackMethod_getPointCloudRequest<Service > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_registerClient<WithCallbackMethod_unregisterClient<WithCallbackMethod_getAllClientsUUID<WithCallbackMethod_getDeviceInfo<WithCallbackMethod_init_grpc0<WithCallbackMethod_init_grpc1<WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_getProcessingMode<WithCallbackMethod_setCameraParameters_grpc0<WithCallbackMethod_setCameraParameters_grpc1<WithCallbackMethod_setRectificationParameters<WithCallbackMethod_getCameraParameters<WithCallbackMethod_relocalizeProcessRequest_grpc0<WithCallbackMethod_relocalizeProcessRequest_grpc1<WithCallbackMethod_get3DTransformRequest<WithCallbackMethod_getMappingDataRequest<WithCallbackMethod_getLastPose<WithCallbackMethod_getMapRequest<WithCallbackMethod_setMapRequest<WithCallbackMethod_resetMap<WithCallbackMethod_getPointCloudRequest<Service > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_registerClient : public BaseClass {
@@ -1615,12 +1686,29 @@ class grpcIFrontEndService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_getDeviceInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_getDeviceInfo() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_getDeviceInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getDeviceInfo(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::getDeviceInfoRequest* /*request*/, ::grpcIFrontEnd::getDeviceInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_init_grpc0() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_init_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1637,7 +1725,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_init_grpc1() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_init_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1654,7 +1742,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_start() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1671,7 +1759,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_stop() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1688,7 +1776,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getProcessingMode() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_getProcessingMode() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1705,7 +1793,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_setCameraParameters_grpc0() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_setCameraParameters_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1722,7 +1810,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_setCameraParameters_grpc1() {
-      ::grpc::Service::MarkMethodGeneric(9);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_setCameraParameters_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1739,7 +1827,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_setRectificationParameters() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_setRectificationParameters() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1756,7 +1844,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getCameraParameters() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_getCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1773,7 +1861,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_relocalizeProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(13);
     }
     ~WithGenericMethod_relocalizeProcessRequest_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1790,7 +1878,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_relocalizeProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_relocalizeProcessRequest_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1807,7 +1895,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_get3DTransformRequest() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_get3DTransformRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1824,7 +1912,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getMappingDataRequest() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_getMappingDataRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1841,7 +1929,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getLastPose() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_getLastPose() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1858,7 +1946,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getMapRequest() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_getMapRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1875,7 +1963,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_setMapRequest() {
-      ::grpc::Service::MarkMethodGeneric(18);
+      ::grpc::Service::MarkMethodGeneric(19);
     }
     ~WithGenericMethod_setMapRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1892,7 +1980,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_resetMap() {
-      ::grpc::Service::MarkMethodGeneric(19);
+      ::grpc::Service::MarkMethodGeneric(20);
     }
     ~WithGenericMethod_resetMap() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1909,7 +1997,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getPointCloudRequest() {
-      ::grpc::Service::MarkMethodGeneric(20);
+      ::grpc::Service::MarkMethodGeneric(21);
     }
     ~WithGenericMethod_getPointCloudRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1981,12 +2069,32 @@ class grpcIFrontEndService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_getDeviceInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_getDeviceInfo() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_getDeviceInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getDeviceInfo(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::getDeviceInfoRequest* /*request*/, ::grpcIFrontEnd::getDeviceInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestgetDeviceInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_init_grpc0() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_init_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1997,7 +2105,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestinit_grpc0(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2006,7 +2114,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_init_grpc1() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_init_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2017,7 +2125,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestinit_grpc1(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2026,7 +2134,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_start() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_start() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2037,7 +2145,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststart(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2046,7 +2154,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_stop() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_stop() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2057,7 +2165,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requeststop(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2066,7 +2174,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getProcessingMode() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_getProcessingMode() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2077,7 +2185,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetProcessingMode(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2086,7 +2194,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_setCameraParameters_grpc0() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_setCameraParameters_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2097,7 +2205,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsetCameraParameters_grpc0(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2106,7 +2214,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_setCameraParameters_grpc1() {
-      ::grpc::Service::MarkMethodRaw(9);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_setCameraParameters_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2117,7 +2225,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsetCameraParameters_grpc1(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2126,7 +2234,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_setRectificationParameters() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_setRectificationParameters() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2137,7 +2245,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsetRectificationParameters(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2146,7 +2254,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getCameraParameters() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_getCameraParameters() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2157,7 +2265,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetCameraParameters(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2166,7 +2274,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_relocalizeProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(13);
     }
     ~WithRawMethod_relocalizeProcessRequest_grpc0() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2177,7 +2285,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestrelocalizeProcessRequest_grpc0(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2186,7 +2294,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_relocalizeProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_relocalizeProcessRequest_grpc1() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2197,7 +2305,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestrelocalizeProcessRequest_grpc1(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2206,7 +2314,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_get3DTransformRequest() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_get3DTransformRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2217,7 +2325,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget3DTransformRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2226,7 +2334,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getMappingDataRequest() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_getMappingDataRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2237,7 +2345,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMappingDataRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2246,7 +2354,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getLastPose() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_getLastPose() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2257,7 +2365,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetLastPose(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2266,7 +2374,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getMapRequest() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_getMapRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2277,7 +2385,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMapRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2286,7 +2394,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_setMapRequest() {
-      ::grpc::Service::MarkMethodRaw(18);
+      ::grpc::Service::MarkMethodRaw(19);
     }
     ~WithRawMethod_setMapRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2297,7 +2405,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestsetMapRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2306,7 +2414,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_resetMap() {
-      ::grpc::Service::MarkMethodRaw(19);
+      ::grpc::Service::MarkMethodRaw(20);
     }
     ~WithRawMethod_resetMap() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2317,7 +2425,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestresetMap(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2326,7 +2434,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getPointCloudRequest() {
-      ::grpc::Service::MarkMethodRaw(20);
+      ::grpc::Service::MarkMethodRaw(21);
     }
     ~WithRawMethod_getPointCloudRequest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2337,7 +2445,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetPointCloudRequest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2407,12 +2515,34 @@ class grpcIFrontEndService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_getDeviceInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_getDeviceInfo() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDeviceInfo(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_getDeviceInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status getDeviceInfo(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::getDeviceInfoRequest* /*request*/, ::grpcIFrontEnd::getDeviceInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* getDeviceInfo(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_init_grpc0() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->init_grpc0(context, request, response); }));
@@ -2434,7 +2564,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_init_grpc1() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+      ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->init_grpc1(context, request, response); }));
@@ -2456,7 +2586,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_start() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+      ::grpc::Service::MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->start(context, request, response); }));
@@ -2478,7 +2608,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_stop() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+      ::grpc::Service::MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->stop(context, request, response); }));
@@ -2500,7 +2630,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getProcessingMode() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+      ::grpc::Service::MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getProcessingMode(context, request, response); }));
@@ -2522,7 +2652,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_setCameraParameters_grpc0() {
-      ::grpc::Service::MarkMethodRawCallback(8,
+      ::grpc::Service::MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCameraParameters_grpc0(context, request, response); }));
@@ -2544,7 +2674,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_setCameraParameters_grpc1() {
-      ::grpc::Service::MarkMethodRawCallback(9,
+      ::grpc::Service::MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setCameraParameters_grpc1(context, request, response); }));
@@ -2566,7 +2696,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_setRectificationParameters() {
-      ::grpc::Service::MarkMethodRawCallback(10,
+      ::grpc::Service::MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setRectificationParameters(context, request, response); }));
@@ -2588,7 +2718,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getCameraParameters() {
-      ::grpc::Service::MarkMethodRawCallback(11,
+      ::grpc::Service::MarkMethodRawCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getCameraParameters(context, request, response); }));
@@ -2610,7 +2740,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_relocalizeProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodRawCallback(12,
+      ::grpc::Service::MarkMethodRawCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->relocalizeProcessRequest_grpc0(context, request, response); }));
@@ -2632,7 +2762,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_relocalizeProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodRawCallback(13,
+      ::grpc::Service::MarkMethodRawCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->relocalizeProcessRequest_grpc1(context, request, response); }));
@@ -2654,7 +2784,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_get3DTransformRequest() {
-      ::grpc::Service::MarkMethodRawCallback(14,
+      ::grpc::Service::MarkMethodRawCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->get3DTransformRequest(context, request, response); }));
@@ -2676,7 +2806,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getMappingDataRequest() {
-      ::grpc::Service::MarkMethodRawCallback(15,
+      ::grpc::Service::MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getMappingDataRequest(context, request, response); }));
@@ -2698,7 +2828,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getLastPose() {
-      ::grpc::Service::MarkMethodRawCallback(16,
+      ::grpc::Service::MarkMethodRawCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getLastPose(context, request, response); }));
@@ -2720,7 +2850,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getMapRequest() {
-      ::grpc::Service::MarkMethodRawCallback(17,
+      ::grpc::Service::MarkMethodRawCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getMapRequest(context, request, response); }));
@@ -2742,7 +2872,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_setMapRequest() {
-      ::grpc::Service::MarkMethodRawCallback(18,
+      ::grpc::Service::MarkMethodRawCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->setMapRequest(context, request, response); }));
@@ -2764,7 +2894,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_resetMap() {
-      ::grpc::Service::MarkMethodRawCallback(19,
+      ::grpc::Service::MarkMethodRawCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->resetMap(context, request, response); }));
@@ -2786,7 +2916,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getPointCloudRequest() {
-      ::grpc::Service::MarkMethodRawCallback(20,
+      ::grpc::Service::MarkMethodRawCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getPointCloudRequest(context, request, response); }));
@@ -2884,12 +3014,39 @@ class grpcIFrontEndService final {
     virtual ::grpc::Status StreamedgetAllClientsUUID(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIFrontEnd::getAllClientsUUIDRequest,::grpcIFrontEnd::getAllClientsUUIDResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_getDeviceInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_getDeviceInfo() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIFrontEnd::getDeviceInfoRequest, ::grpcIFrontEnd::getDeviceInfoResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIFrontEnd::getDeviceInfoRequest, ::grpcIFrontEnd::getDeviceInfoResponse>* streamer) {
+                       return this->StreamedgetDeviceInfo(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_getDeviceInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status getDeviceInfo(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::getDeviceInfoRequest* /*request*/, ::grpcIFrontEnd::getDeviceInfoResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedgetDeviceInfo(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIFrontEnd::getDeviceInfoRequest,::grpcIFrontEnd::getDeviceInfoResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_init_grpc0 : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_init_grpc0() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::init_grpc0Request, ::grpcIFrontEnd::init_grpc0Response>(
             [this](::grpc::ServerContext* context,
@@ -2916,7 +3073,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_init_grpc1() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::init_grpc1Request, ::grpcIFrontEnd::init_grpc1Response>(
             [this](::grpc::ServerContext* context,
@@ -2943,7 +3100,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_start() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::startRequest, ::grpcIFrontEnd::startResponse>(
             [this](::grpc::ServerContext* context,
@@ -2970,7 +3127,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_stop() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::stopRequest, ::grpcIFrontEnd::stopResponse>(
             [this](::grpc::ServerContext* context,
@@ -2997,7 +3154,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getProcessingMode() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::getProcessingModeRequest, ::grpcIFrontEnd::getProcessingModeResponse>(
             [this](::grpc::ServerContext* context,
@@ -3024,7 +3181,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_setCameraParameters_grpc0() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::setCameraParameters_grpc0Request, ::grpcIFrontEnd::setCameraParameters_grpc0Response>(
             [this](::grpc::ServerContext* context,
@@ -3051,7 +3208,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_setCameraParameters_grpc1() {
-      ::grpc::Service::MarkMethodStreamed(9,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::setCameraParameters_grpc1Request, ::grpcIFrontEnd::setCameraParameters_grpc1Response>(
             [this](::grpc::ServerContext* context,
@@ -3078,7 +3235,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_setRectificationParameters() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::setRectificationParametersRequest, ::grpcIFrontEnd::setRectificationParametersResponse>(
             [this](::grpc::ServerContext* context,
@@ -3105,7 +3262,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getCameraParameters() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::getCameraParametersRequest, ::grpcIFrontEnd::getCameraParametersResponse>(
             [this](::grpc::ServerContext* context,
@@ -3132,7 +3289,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_relocalizeProcessRequest_grpc0() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response>(
             [this](::grpc::ServerContext* context,
@@ -3159,7 +3316,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_relocalizeProcessRequest_grpc1() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response>(
             [this](::grpc::ServerContext* context,
@@ -3186,7 +3343,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_get3DTransformRequest() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::get3DTransformRequestRequest, ::grpcIFrontEnd::get3DTransformRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -3213,7 +3370,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getMappingDataRequest() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::getMappingDataRequestRequest, ::grpcIFrontEnd::getMappingDataRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -3240,7 +3397,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getLastPose() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::getLastPoseRequest, ::grpcIFrontEnd::getLastPoseResponse>(
             [this](::grpc::ServerContext* context,
@@ -3267,7 +3424,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getMapRequest() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::getMapRequestRequest, ::grpcIFrontEnd::getMapRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -3294,7 +3451,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_setMapRequest() {
-      ::grpc::Service::MarkMethodStreamed(18,
+      ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::setMapRequestRequest, ::grpcIFrontEnd::setMapRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -3321,7 +3478,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_resetMap() {
-      ::grpc::Service::MarkMethodStreamed(19,
+      ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::resetMapRequest, ::grpcIFrontEnd::resetMapResponse>(
             [this](::grpc::ServerContext* context,
@@ -3348,7 +3505,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getPointCloudRequest() {
-      ::grpc::Service::MarkMethodStreamed(20,
+      ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::getPointCloudRequestRequest, ::grpcIFrontEnd::getPointCloudRequestResponse>(
             [this](::grpc::ServerContext* context,
@@ -3369,9 +3526,9 @@ class grpcIFrontEndService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedgetPointCloudRequest(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIFrontEnd::getPointCloudRequestRequest,::grpcIFrontEnd::getPointCloudRequestResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_registerClient<WithStreamedUnaryMethod_unregisterClient<WithStreamedUnaryMethod_getAllClientsUUID<WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getProcessingMode<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_relocalizeProcessRequest_grpc0<WithStreamedUnaryMethod_relocalizeProcessRequest_grpc1<WithStreamedUnaryMethod_get3DTransformRequest<WithStreamedUnaryMethod_getMappingDataRequest<WithStreamedUnaryMethod_getLastPose<WithStreamedUnaryMethod_getMapRequest<WithStreamedUnaryMethod_setMapRequest<WithStreamedUnaryMethod_resetMap<WithStreamedUnaryMethod_getPointCloudRequest<Service > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_registerClient<WithStreamedUnaryMethod_unregisterClient<WithStreamedUnaryMethod_getAllClientsUUID<WithStreamedUnaryMethod_getDeviceInfo<WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getProcessingMode<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_relocalizeProcessRequest_grpc0<WithStreamedUnaryMethod_relocalizeProcessRequest_grpc1<WithStreamedUnaryMethod_get3DTransformRequest<WithStreamedUnaryMethod_getMappingDataRequest<WithStreamedUnaryMethod_getLastPose<WithStreamedUnaryMethod_getMapRequest<WithStreamedUnaryMethod_setMapRequest<WithStreamedUnaryMethod_resetMap<WithStreamedUnaryMethod_getPointCloudRequest<Service > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_registerClient<WithStreamedUnaryMethod_unregisterClient<WithStreamedUnaryMethod_getAllClientsUUID<WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getProcessingMode<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_relocalizeProcessRequest_grpc0<WithStreamedUnaryMethod_relocalizeProcessRequest_grpc1<WithStreamedUnaryMethod_get3DTransformRequest<WithStreamedUnaryMethod_getMappingDataRequest<WithStreamedUnaryMethod_getLastPose<WithStreamedUnaryMethod_getMapRequest<WithStreamedUnaryMethod_setMapRequest<WithStreamedUnaryMethod_resetMap<WithStreamedUnaryMethod_getPointCloudRequest<Service > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_registerClient<WithStreamedUnaryMethod_unregisterClient<WithStreamedUnaryMethod_getAllClientsUUID<WithStreamedUnaryMethod_getDeviceInfo<WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getProcessingMode<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_relocalizeProcessRequest_grpc0<WithStreamedUnaryMethod_relocalizeProcessRequest_grpc1<WithStreamedUnaryMethod_get3DTransformRequest<WithStreamedUnaryMethod_getMappingDataRequest<WithStreamedUnaryMethod_getLastPose<WithStreamedUnaryMethod_getMapRequest<WithStreamedUnaryMethod_setMapRequest<WithStreamedUnaryMethod_resetMap<WithStreamedUnaryMethod_getPointCloudRequest<Service > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIFrontEnd

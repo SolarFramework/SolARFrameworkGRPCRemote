@@ -19,7 +19,7 @@ IFrontEnd_grpcProxy::IFrontEnd_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IF
   declareInterface<SolAR::api::service::IFrontEnd>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(22);
+  m_grpcProxyCompressionConfig.resize(23);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -47,7 +47,7 @@ XPCFErrorCode IFrontEnd_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string& uuid)
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(SolAR::api::service::DeviceInfo const& deviceInfo, std::string& uuid)
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::registerClientRequest reqIn;
@@ -57,6 +57,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string& uui
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
+  reqIn.set_deviceinfo(xpcf::serialize<SolAR::api::service::DeviceInfo>(deviceInfo));
   reqIn.set_uuid(uuid);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -135,6 +136,38 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getAllClientsUUID(std::vector<s
   }
 
   uuidList = xpcf::deserialize<std::vector<std::string>>(respOut.uuidlist());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getDeviceInfo(std::string const& uuid, SolAR::api::service::DeviceInfo& deviceInfo) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIFrontEnd::getDeviceInfoRequest reqIn;
+  ::grpcIFrontEnd::getDeviceInfoResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getDeviceInfo", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_uuid(uuid);
+  reqIn.set_deviceinfo(xpcf::serialize<SolAR::api::service::DeviceInfo>(deviceInfo));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::getDeviceInfo request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getDeviceInfo(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::getDeviceInfo response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getDeviceInfo rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","getDeviceInfo",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  deviceInfo = xpcf::deserialize<SolAR::api::service::DeviceInfo>(respOut.deviceinfo());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

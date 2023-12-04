@@ -7,7 +7,8 @@ package grpcIFrontEnd;
 message registerClientRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string uuid = 2;
+bytes deviceInfo = 2;
+string uuid = 3;
 }
 
 message registerClientResponse
@@ -36,6 +37,19 @@ bytes uuidList = 2;
 message getAllClientsUUIDResponse
 {
 bytes uuidList = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getDeviceInfoRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+bytes deviceInfo = 3;
+}
+
+message getDeviceInfoResponse
+{
+bytes deviceInfo = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
@@ -293,6 +307,7 @@ service grpcIFrontEndService {
 rpc registerClient(registerClientRequest) returns(registerClientResponse) {}
 rpc unregisterClient(unregisterClientRequest) returns(unregisterClientResponse) {}
 rpc getAllClientsUUID(getAllClientsUUIDRequest) returns(getAllClientsUUIDResponse) {}
+rpc getDeviceInfo(getDeviceInfoRequest) returns(getDeviceInfoResponse) {}
 rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
 rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
 rpc start(startRequest) returns(startResponse) {}

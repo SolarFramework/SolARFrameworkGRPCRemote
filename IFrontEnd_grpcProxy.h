@@ -22,9 +22,10 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode registerClient(std::string& uuid)     override;
+    SolAR::FrameworkReturnCode registerClient(SolAR::api::service::DeviceInfo const& deviceInfo, std::string& uuid)     override;
     SolAR::FrameworkReturnCode unregisterClient(std::string const& uuid)     override;
     SolAR::FrameworkReturnCode getAllClientsUUID(std::vector<std::string>& uuidList)     const     override;
+    SolAR::FrameworkReturnCode getDeviceInfo(std::string const& uuid, SolAR::api::service::DeviceInfo& deviceInfo)     const     override;
     SolAR::FrameworkReturnCode init(std::string const& uuid)     override;
     SolAR::FrameworkReturnCode init(std::string const& uuid, SolAR::api::service::PipelineMode pipelineMode)     override;
     SolAR::FrameworkReturnCode start(std::string const& uuid)     override;

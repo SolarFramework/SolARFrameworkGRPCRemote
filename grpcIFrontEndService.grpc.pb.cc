@@ -25,6 +25,7 @@ static const char* grpcIFrontEndService_method_names[] = {
   "/grpcIFrontEnd.grpcIFrontEndService/registerClient",
   "/grpcIFrontEnd.grpcIFrontEndService/unregisterClient",
   "/grpcIFrontEnd.grpcIFrontEndService/getAllClientsUUID",
+  "/grpcIFrontEnd.grpcIFrontEndService/getDeviceInfo",
   "/grpcIFrontEnd.grpcIFrontEndService/init_grpc0",
   "/grpcIFrontEnd.grpcIFrontEndService/init_grpc1",
   "/grpcIFrontEnd.grpcIFrontEndService/start",
@@ -55,24 +56,25 @@ grpcIFrontEndService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   : channel_(channel), rpcmethod_registerClient_(grpcIFrontEndService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_unregisterClient_(grpcIFrontEndService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getAllClientsUUID_(grpcIFrontEndService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_init_grpc0_(grpcIFrontEndService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_init_grpc1_(grpcIFrontEndService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_start_(grpcIFrontEndService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIFrontEndService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getProcessingMode_(grpcIFrontEndService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_grpc0_(grpcIFrontEndService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_grpc1_(grpcIFrontEndService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setRectificationParameters_(grpcIFrontEndService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getCameraParameters_(grpcIFrontEndService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalizeProcessRequest_grpc0_(grpcIFrontEndService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalizeProcessRequest_grpc1_(grpcIFrontEndService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_get3DTransformRequest_(grpcIFrontEndService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMappingDataRequest_(grpcIFrontEndService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getLastPose_(grpcIFrontEndService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapRequest_(grpcIFrontEndService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setMapRequest_(grpcIFrontEndService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_resetMap_(grpcIFrontEndService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPointCloudRequest_(grpcIFrontEndService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getDeviceInfo_(grpcIFrontEndService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_grpc0_(grpcIFrontEndService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_grpc1_(grpcIFrontEndService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_(grpcIFrontEndService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_(grpcIFrontEndService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getProcessingMode_(grpcIFrontEndService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc0_(grpcIFrontEndService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc1_(grpcIFrontEndService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setRectificationParameters_(grpcIFrontEndService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getCameraParameters_(grpcIFrontEndService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_relocalizeProcessRequest_grpc0_(grpcIFrontEndService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_relocalizeProcessRequest_grpc1_(grpcIFrontEndService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_get3DTransformRequest_(grpcIFrontEndService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMappingDataRequest_(grpcIFrontEndService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getLastPose_(grpcIFrontEndService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapRequest_(grpcIFrontEndService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setMapRequest_(grpcIFrontEndService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_resetMap_(grpcIFrontEndService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloudRequest_(grpcIFrontEndService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIFrontEndService::Stub::registerClient(::grpc::ClientContext* context, const ::grpcIFrontEnd::registerClientRequest& request, ::grpcIFrontEnd::registerClientResponse* response) {
@@ -140,6 +142,29 @@ void grpcIFrontEndService::Stub::async::getAllClientsUUID(::grpc::ClientContext*
 ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getAllClientsUUIDResponse>* grpcIFrontEndService::Stub::AsyncgetAllClientsUUIDRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetAllClientsUUIDRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::getDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpcIFrontEnd::getDeviceInfoResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::getDeviceInfoRequest, ::grpcIFrontEnd::getDeviceInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDeviceInfo_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::getDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::getDeviceInfoRequest, ::grpcIFrontEnd::getDeviceInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDeviceInfo_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::getDeviceInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDeviceInfo_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getDeviceInfoResponse>* grpcIFrontEndService::Stub::PrepareAsyncgetDeviceInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::getDeviceInfoResponse, ::grpcIFrontEnd::getDeviceInfoRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getDeviceInfo_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getDeviceInfoResponse>* grpcIFrontEndService::Stub::AsyncgetDeviceInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetDeviceInfoRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -592,6 +617,16 @@ grpcIFrontEndService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIFrontEndService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getDeviceInfoRequest, ::grpcIFrontEnd::getDeviceInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::getDeviceInfoRequest* req,
+             ::grpcIFrontEnd::getDeviceInfoResponse* resp) {
+               return service->getDeviceInfo(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::init_grpc0Request, ::grpcIFrontEnd::init_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -600,7 +635,7 @@ grpcIFrontEndService::Service::Service() {
                return service->init_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[4],
+      grpcIFrontEndService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::init_grpc1Request, ::grpcIFrontEnd::init_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -610,7 +645,7 @@ grpcIFrontEndService::Service::Service() {
                return service->init_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[5],
+      grpcIFrontEndService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::startRequest, ::grpcIFrontEnd::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -620,7 +655,7 @@ grpcIFrontEndService::Service::Service() {
                return service->start(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[6],
+      grpcIFrontEndService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::stopRequest, ::grpcIFrontEnd::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -630,7 +665,7 @@ grpcIFrontEndService::Service::Service() {
                return service->stop(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[7],
+      grpcIFrontEndService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getProcessingModeRequest, ::grpcIFrontEnd::getProcessingModeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -640,7 +675,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getProcessingMode(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[8],
+      grpcIFrontEndService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::setCameraParameters_grpc0Request, ::grpcIFrontEnd::setCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -650,7 +685,7 @@ grpcIFrontEndService::Service::Service() {
                return service->setCameraParameters_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[9],
+      grpcIFrontEndService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::setCameraParameters_grpc1Request, ::grpcIFrontEnd::setCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -660,7 +695,7 @@ grpcIFrontEndService::Service::Service() {
                return service->setCameraParameters_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[10],
+      grpcIFrontEndService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::setRectificationParametersRequest, ::grpcIFrontEnd::setRectificationParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -670,7 +705,7 @@ grpcIFrontEndService::Service::Service() {
                return service->setRectificationParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[11],
+      grpcIFrontEndService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getCameraParametersRequest, ::grpcIFrontEnd::getCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -680,7 +715,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getCameraParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[12],
+      grpcIFrontEndService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -690,7 +725,7 @@ grpcIFrontEndService::Service::Service() {
                return service->relocalizeProcessRequest_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[13],
+      grpcIFrontEndService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -700,7 +735,7 @@ grpcIFrontEndService::Service::Service() {
                return service->relocalizeProcessRequest_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[14],
+      grpcIFrontEndService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::get3DTransformRequestRequest, ::grpcIFrontEnd::get3DTransformRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -710,7 +745,7 @@ grpcIFrontEndService::Service::Service() {
                return service->get3DTransformRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[15],
+      grpcIFrontEndService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMappingDataRequestRequest, ::grpcIFrontEnd::getMappingDataRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -720,7 +755,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMappingDataRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[16],
+      grpcIFrontEndService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getLastPoseRequest, ::grpcIFrontEnd::getLastPoseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -730,7 +765,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getLastPose(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[17],
+      grpcIFrontEndService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapRequestRequest, ::grpcIFrontEnd::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -740,7 +775,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[18],
+      grpcIFrontEndService_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::setMapRequestRequest, ::grpcIFrontEnd::setMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -750,7 +785,7 @@ grpcIFrontEndService::Service::Service() {
                return service->setMapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[19],
+      grpcIFrontEndService_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::resetMapRequest, ::grpcIFrontEnd::resetMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -760,7 +795,7 @@ grpcIFrontEndService::Service::Service() {
                return service->resetMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[20],
+      grpcIFrontEndService_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getPointCloudRequestRequest, ::grpcIFrontEnd::getPointCloudRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -789,6 +824,13 @@ grpcIFrontEndService::Service::~Service() {
 }
 
 ::grpc::Status grpcIFrontEndService::Service::getAllClientsUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest* request, ::grpcIFrontEnd::getAllClientsUUIDResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::getDeviceInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response) {
   (void) context;
   (void) request;
   (void) response;
