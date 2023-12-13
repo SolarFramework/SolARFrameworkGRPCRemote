@@ -37,7 +37,7 @@ include (xpcfGrpcRemotingSolARFramework.pri)
 
 unix {
     # Avoids adding install steps manually. To be commented to have a better control over them.
-    QMAKE_POST_LINK += "make install"
+    QMAKE_POST_LINK += "$(MAKE) install"
     QMAKE_CXXFLAGS += -Wignored-qualifiers
 }
 
