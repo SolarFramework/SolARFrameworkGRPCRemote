@@ -195,12 +195,12 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
   SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
   float_t confidence = xpcf::deserialize<float_t>(request->confidence());
-  std::vector<SolAR::api::pipeline::DetectedObject> detectedObjects = xpcf::deserialize<std::vector<SolAR::api::pipeline::DetectedObject>>(request->detectedobjects());
+  std::vector<SolAR::datastructure::DetectedObject> detectedObjects = xpcf::deserialize<std::vector<SolAR::datastructure::DetectedObject>>(request->detectedobjects());
   SolAR::datastructure::Transform3Df poseCoarse = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->posecoarse());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(image, pose, confidence, detectedObjects, poseCoarse);
   response->set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   response->set_confidence(xpcf::serialize<float_t>(confidence));
-  response->set_detectedobjects(xpcf::serialize<std::vector<SolAR::api::pipeline::DetectedObject>>(detectedObjects));
+  response->set_detectedobjects(xpcf::serialize<std::vector<SolAR::datastructure::DetectedObject>>(detectedObjects));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

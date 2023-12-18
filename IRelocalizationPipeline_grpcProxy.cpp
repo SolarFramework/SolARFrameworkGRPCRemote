@@ -230,7 +230,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcess
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, std::vector<SolAR::api::pipeline::DetectedObject>& detectedObjects, SolAR::datastructure::Transform3Df const& poseCoarse)
+SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, std::vector<SolAR::datastructure::DetectedObject>& detectedObjects, SolAR::datastructure::Transform3Df const& poseCoarse)
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc1Request reqIn;
@@ -244,7 +244,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcess
   reqIn.set_posecoarse(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseCoarse));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
-  reqIn.set_detectedobjects(xpcf::serialize<std::vector<SolAR::api::pipeline::DetectedObject>>(detectedObjects));
+  reqIn.set_detectedobjects(xpcf::serialize<std::vector<SolAR::datastructure::DetectedObject>>(detectedObjects));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcProxy::relocalizeProcessRequest request sent at " << to_simple_string(start) << std::endl;
@@ -262,7 +262,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcess
 
   pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.pose());
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
-  detectedObjects = xpcf::deserialize<std::vector<SolAR::api::pipeline::DetectedObject>>(respOut.detectedobjects());
+  detectedObjects = xpcf::deserialize<std::vector<SolAR::datastructure::DetectedObject>>(respOut.detectedobjects());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

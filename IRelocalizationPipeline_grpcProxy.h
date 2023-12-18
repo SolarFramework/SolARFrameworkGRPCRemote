@@ -28,7 +28,7 @@ class IRelocalizationPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBa
     SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)     override;
     SolAR::FrameworkReturnCode getCameraParameters(SolAR::datastructure::CameraParameters& cameraParams)     const     override;
     SolAR::FrameworkReturnCode relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)     override;
-    SolAR::FrameworkReturnCode relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, std::vector<SolAR::api::pipeline::DetectedObject>& detectedObjects, SolAR::datastructure::Transform3Df const& poseCoarse)     override;
+    SolAR::FrameworkReturnCode relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, std::vector<SolAR::datastructure::DetectedObject>& detectedObjects, SolAR::datastructure::Transform3Df const& poseCoarse)     override;
     SolAR::FrameworkReturnCode getMapRequest(SRef<SolAR::datastructure::Map>& map)     const     override;
 
 
