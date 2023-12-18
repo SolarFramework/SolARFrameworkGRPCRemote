@@ -57,7 +57,7 @@ bytes cameraParams = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message relocalizeProcessRequestRequest
+message relocalizeProcessRequest_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes image = 2;
@@ -66,11 +66,29 @@ bytes pose = 4;
 bytes confidence = 5;
 }
 
-message relocalizeProcessRequestResponse
+message relocalizeProcessRequest_grpc0Response
 {
 bytes pose = 1;
 bytes confidence = 2;
 sint32 xpcfGrpcReturnValue = 3;
+}
+
+message relocalizeProcessRequest_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+bytes poseCoarse = 3;
+bytes pose = 4;
+bytes confidence = 5;
+bytes detectedObjects = 6;
+}
+
+message relocalizeProcessRequest_grpc1Response
+{
+bytes pose = 1;
+bytes confidence = 2;
+bytes detectedObjects = 3;
+sint32 xpcfGrpcReturnValue = 4;
 }
 
 message getMapRequestRequest
@@ -91,7 +109,8 @@ rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
 rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
-rpc relocalizeProcessRequest(relocalizeProcessRequestRequest) returns(relocalizeProcessRequestResponse) {}
+rpc relocalizeProcessRequest_grpc0(relocalizeProcessRequest_grpc0Request) returns(relocalizeProcessRequest_grpc0Response) {}
+rpc relocalizeProcessRequest_grpc1(relocalizeProcessRequest_grpc1Request) returns(relocalizeProcessRequest_grpc1Response) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 }
 

@@ -7,7 +7,8 @@ package grpcIFrontEnd;
 message registerClientRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string uuid = 2;
+bytes deviceInfo = 2;
+string uuid = 3;
 }
 
 message registerClientResponse
@@ -36,6 +37,19 @@ bytes uuidList = 2;
 message getAllClientsUUIDResponse
 {
 bytes uuidList = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getDeviceInfoRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+bytes deviceInfo = 3;
+}
+
+message getDeviceInfoResponse
+{
+bytes deviceInfo = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
@@ -148,7 +162,7 @@ bytes cameraParams = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message relocalizeProcessRequestRequest
+message relocalizeProcessRequest_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 string uuid = 2;
@@ -163,13 +177,39 @@ bytes confidence = 10;
 bytes mappingStatus = 11;
 }
 
-message relocalizeProcessRequestResponse
+message relocalizeProcessRequest_grpc0Response
 {
 bytes transform3DStatus = 1;
 bytes transform3D = 2;
 bytes confidence = 3;
 bytes mappingStatus = 4;
 sint32 xpcfGrpcReturnValue = 5;
+}
+
+message relocalizeProcessRequest_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+bytes images = 3;
+bytes poses = 4;
+bool fixedPose = 5;
+bytes worldTransform = 6;
+bytes timestamp = 7;
+bytes transform3DStatus = 8;
+bytes transform3D = 9;
+bytes confidence = 10;
+bytes mappingStatus = 11;
+bytes detectedObjects = 12;
+}
+
+message relocalizeProcessRequest_grpc1Response
+{
+bytes transform3DStatus = 1;
+bytes transform3D = 2;
+bytes confidence = 3;
+bytes mappingStatus = 4;
+bytes detectedObjects = 5;
+sint32 xpcfGrpcReturnValue = 6;
 }
 
 message get3DTransformRequestRequest
@@ -267,6 +307,7 @@ service grpcIFrontEndService {
 rpc registerClient(registerClientRequest) returns(registerClientResponse) {}
 rpc unregisterClient(unregisterClientRequest) returns(unregisterClientResponse) {}
 rpc getAllClientsUUID(getAllClientsUUIDRequest) returns(getAllClientsUUIDResponse) {}
+rpc getDeviceInfo(getDeviceInfoRequest) returns(getDeviceInfoResponse) {}
 rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
 rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
 rpc start(startRequest) returns(startResponse) {}
@@ -276,7 +317,8 @@ rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCamer
 rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
 rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
 rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
-rpc relocalizeProcessRequest(relocalizeProcessRequestRequest) returns(relocalizeProcessRequestResponse) {}
+rpc relocalizeProcessRequest_grpc0(relocalizeProcessRequest_grpc0Request) returns(relocalizeProcessRequest_grpc0Response) {}
+rpc relocalizeProcessRequest_grpc1(relocalizeProcessRequest_grpc1Request) returns(relocalizeProcessRequest_grpc1Response) {}
 rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRequestResponse) {}
 rpc getMappingDataRequest(getMappingDataRequestRequest) returns(getMappingDataRequestResponse) {}
 rpc getLastPose(getLastPoseRequest) returns(getLastPoseResponse) {}

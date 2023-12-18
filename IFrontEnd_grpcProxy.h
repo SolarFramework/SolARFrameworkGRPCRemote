@@ -22,9 +22,10 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode registerClient(std::string& uuid)     override;
+    SolAR::FrameworkReturnCode registerClient(SolAR::api::service::DeviceInfo const& deviceInfo, std::string& uuid)     override;
     SolAR::FrameworkReturnCode unregisterClient(std::string const& uuid)     override;
     SolAR::FrameworkReturnCode getAllClientsUUID(std::vector<std::string>& uuidList)     const     override;
+    SolAR::FrameworkReturnCode getDeviceInfo(std::string const& uuid, SolAR::api::service::DeviceInfo& deviceInfo)     const     override;
     SolAR::FrameworkReturnCode init(std::string const& uuid)     override;
     SolAR::FrameworkReturnCode init(std::string const& uuid, SolAR::api::service::PipelineMode pipelineMode)     override;
     SolAR::FrameworkReturnCode start(std::string const& uuid)     override;
@@ -35,6 +36,7 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     SolAR::FrameworkReturnCode setRectificationParameters(std::string const& uuid, SolAR::datastructure::RectificationParameters const& rectCam1, SolAR::datastructure::RectificationParameters const& rectCam2)     override;
     SolAR::FrameworkReturnCode getCameraParameters(std::string const& uuid, SolAR::datastructure::CameraParameters& cameraParams)     const     override;
     SolAR::FrameworkReturnCode relocalizeProcessRequest(std::string const& uuid, std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df const& worldTransform, std::chrono::system_clock::time_point const& timestamp, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::api::pipeline::MappingStatus& mappingStatus)     override;
+    SolAR::FrameworkReturnCode relocalizeProcessRequest(std::string const& uuid, std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df const& worldTransform, std::chrono::system_clock::time_point const& timestamp, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::api::pipeline::MappingStatus& mappingStatus, std::vector<SolAR::datastructure::DetectedObject>& detectedObjects)     override;
     SolAR::FrameworkReturnCode get3DTransformRequest(std::string const& uuid, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence)     override;
     SolAR::FrameworkReturnCode getMappingDataRequest(std::string const& uuid, std::vector<SRef<SolAR::datastructure::CloudPoint>>& outputPointClouds, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
     SolAR::FrameworkReturnCode getLastPose(std::string const& uuid, SolAR::datastructure::Transform3Df& pose, SolAR::api::service::PoseType const poseType)     const     override;
