@@ -22,11 +22,10 @@ namespace _pbi = _pb::internal;
 
 namespace grpcIImage2WorldMapper {
 PROTOBUF_CONSTEXPR mapRequest::mapRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.digitalpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.worldpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : digitalpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , worldpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0){}
 struct mapRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR mapRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -37,10 +36,9 @@ struct mapRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 mapRequestDefaultTypeInternal _mapRequest_default_instance_;
 PROTOBUF_CONSTEXPR mapResponse::mapResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.worldpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : worldpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct mapResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR mapResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -62,17 +60,17 @@ const uint32_t TableStruct_grpcIImage2WorldMapperService_2eproto::offsets[] PROT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapRequest, _impl_.digitalpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapRequest, _impl_.worldpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapRequest, digitalpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapRequest, worldpoints_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapResponse, _impl_.worldpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapResponse, worldpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImage2WorldMapper::mapResponse, xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcIImage2WorldMapper::mapRequest)},
@@ -125,57 +123,42 @@ class mapRequest::_Internal {
 mapRequest::mapRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIImage2WorldMapper.mapRequest)
 }
 mapRequest::mapRequest(const mapRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  mapRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.digitalpoints_){}
-    , decltype(_impl_.worldpoints_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.digitalpoints_.InitDefault();
+  digitalpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.digitalpoints_.Set("", GetArenaForAllocation());
+    digitalpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_digitalpoints().empty()) {
-    _this->_impl_.digitalpoints_.Set(from._internal_digitalpoints(), 
-      _this->GetArenaForAllocation());
+    digitalpoints_.Set(from._internal_digitalpoints(), 
+      GetArenaForAllocation());
   }
-  _impl_.worldpoints_.InitDefault();
+  worldpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.worldpoints_.Set("", GetArenaForAllocation());
+    worldpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_worldpoints().empty()) {
-    _this->_impl_.worldpoints_.Set(from._internal_worldpoints(), 
-      _this->GetArenaForAllocation());
+    worldpoints_.Set(from._internal_worldpoints(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIImage2WorldMapper.mapRequest)
 }
 
-inline void mapRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.digitalpoints_){}
-    , decltype(_impl_.worldpoints_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.digitalpoints_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.digitalpoints_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.worldpoints_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.worldpoints_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void mapRequest::SharedCtor() {
+digitalpoints_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  digitalpoints_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+worldpoints_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  worldpoints_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+grpcservercompressionformat_ = 0;
 }
 
 mapRequest::~mapRequest() {
@@ -189,12 +172,12 @@ mapRequest::~mapRequest() {
 
 inline void mapRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.digitalpoints_.Destroy();
-  _impl_.worldpoints_.Destroy();
+  digitalpoints_.Destroy();
+  worldpoints_.Destroy();
 }
 
 void mapRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void mapRequest::Clear() {
@@ -203,9 +186,9 @@ void mapRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.digitalpoints_.ClearToEmpty();
-  _impl_.worldpoints_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  digitalpoints_.ClearToEmpty();
+  worldpoints_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -218,7 +201,7 @@ const char* mapRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -323,34 +306,38 @@ size_t mapRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData mapRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     mapRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*mapRequest::GetClassData() const { return &_class_data_; }
 
+void mapRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<mapRequest *>(to)->MergeFrom(
+      static_cast<const mapRequest &>(from));
+}
 
-void mapRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<mapRequest*>(&to_msg);
-  auto& from = static_cast<const mapRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImage2WorldMapper.mapRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void mapRequest::MergeFrom(const mapRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIImage2WorldMapper.mapRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_digitalpoints().empty()) {
-    _this->_internal_set_digitalpoints(from._internal_digitalpoints());
+    _internal_set_digitalpoints(from._internal_digitalpoints());
   }
   if (!from._internal_worldpoints().empty()) {
-    _this->_internal_set_worldpoints(from._internal_worldpoints());
+    _internal_set_worldpoints(from._internal_worldpoints());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void mapRequest::CopyFrom(const mapRequest& from) {
@@ -370,14 +357,14 @@ void mapRequest::InternalSwap(mapRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.digitalpoints_, lhs_arena,
-      &other->_impl_.digitalpoints_, rhs_arena
+      &digitalpoints_, lhs_arena,
+      &other->digitalpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.worldpoints_, lhs_arena,
-      &other->_impl_.worldpoints_, rhs_arena
+      &worldpoints_, lhs_arena,
+      &other->worldpoints_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata mapRequest::GetMetadata() const {
@@ -395,43 +382,30 @@ class mapResponse::_Internal {
 mapResponse::mapResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIImage2WorldMapper.mapResponse)
 }
 mapResponse::mapResponse(const mapResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  mapResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.worldpoints_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.worldpoints_.InitDefault();
+  worldpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.worldpoints_.Set("", GetArenaForAllocation());
+    worldpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_worldpoints().empty()) {
-    _this->_impl_.worldpoints_.Set(from._internal_worldpoints(), 
-      _this->GetArenaForAllocation());
+    worldpoints_.Set(from._internal_worldpoints(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIImage2WorldMapper.mapResponse)
 }
 
-inline void mapResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.worldpoints_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.worldpoints_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.worldpoints_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void mapResponse::SharedCtor() {
+worldpoints_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  worldpoints_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 mapResponse::~mapResponse() {
@@ -445,11 +419,11 @@ mapResponse::~mapResponse() {
 
 inline void mapResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.worldpoints_.Destroy();
+  worldpoints_.Destroy();
 }
 
 void mapResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void mapResponse::Clear() {
@@ -458,8 +432,8 @@ void mapResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.worldpoints_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  worldpoints_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -481,7 +455,7 @@ const char* mapResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -555,31 +529,35 @@ size_t mapResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData mapResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     mapResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*mapResponse::GetClassData() const { return &_class_data_; }
 
+void mapResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<mapResponse *>(to)->MergeFrom(
+      static_cast<const mapResponse &>(from));
+}
 
-void mapResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<mapResponse*>(&to_msg);
-  auto& from = static_cast<const mapResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImage2WorldMapper.mapResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void mapResponse::MergeFrom(const mapResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIImage2WorldMapper.mapResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_worldpoints().empty()) {
-    _this->_internal_set_worldpoints(from._internal_worldpoints());
+    _internal_set_worldpoints(from._internal_worldpoints());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void mapResponse::CopyFrom(const mapResponse& from) {
@@ -599,10 +577,10 @@ void mapResponse::InternalSwap(mapResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.worldpoints_, lhs_arena,
-      &other->_impl_.worldpoints_, rhs_arena
+      &worldpoints_, lhs_arena,
+      &other->worldpoints_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata mapResponse::GetMetadata() const {

@@ -22,11 +22,10 @@ namespace _pbi = _pb::internal;
 
 namespace grpcICornerRefinement {
 PROTOBUF_CONSTEXPR refineRequest::refineRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.image_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.corners_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : image_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , corners_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0){}
 struct refineRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR refineRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -37,9 +36,8 @@ struct refineRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 refineRequestDefaultTypeInternal _refineRequest_default_instance_;
 PROTOBUF_CONSTEXPR refineResponse::refineResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.corners_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : corners_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
 struct refineResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR refineResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -61,16 +59,16 @@ const uint32_t TableStruct_grpcICornerRefinementService_2eproto::offsets[] PROTO
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineRequest, _impl_.image_),
-  PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineRequest, _impl_.corners_),
+  PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineRequest, image_),
+  PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineRequest, corners_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineResponse, _impl_.corners_),
+  PROTOBUF_FIELD_OFFSET(::grpcICornerRefinement::refineResponse, corners_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcICornerRefinement::refineRequest)},
@@ -122,57 +120,42 @@ class refineRequest::_Internal {
 refineRequest::refineRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcICornerRefinement.refineRequest)
 }
 refineRequest::refineRequest(const refineRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  refineRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.image_){}
-    , decltype(_impl_.corners_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.image_.InitDefault();
+  image_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.image_.Set("", GetArenaForAllocation());
+    image_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_image().empty()) {
-    _this->_impl_.image_.Set(from._internal_image(), 
-      _this->GetArenaForAllocation());
+    image_.Set(from._internal_image(), 
+      GetArenaForAllocation());
   }
-  _impl_.corners_.InitDefault();
+  corners_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.corners_.Set("", GetArenaForAllocation());
+    corners_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_corners().empty()) {
-    _this->_impl_.corners_.Set(from._internal_corners(), 
-      _this->GetArenaForAllocation());
+    corners_.Set(from._internal_corners(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcICornerRefinement.refineRequest)
 }
 
-inline void refineRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.image_){}
-    , decltype(_impl_.corners_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.image_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.image_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.corners_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.corners_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void refineRequest::SharedCtor() {
+image_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  image_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+corners_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  corners_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+grpcservercompressionformat_ = 0;
 }
 
 refineRequest::~refineRequest() {
@@ -186,12 +169,12 @@ refineRequest::~refineRequest() {
 
 inline void refineRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.image_.Destroy();
-  _impl_.corners_.Destroy();
+  image_.Destroy();
+  corners_.Destroy();
 }
 
 void refineRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void refineRequest::Clear() {
@@ -200,9 +183,9 @@ void refineRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.image_.ClearToEmpty();
-  _impl_.corners_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  image_.ClearToEmpty();
+  corners_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -215,7 +198,7 @@ const char* refineRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext*
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -320,34 +303,38 @@ size_t refineRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData refineRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     refineRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*refineRequest::GetClassData() const { return &_class_data_; }
 
+void refineRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<refineRequest *>(to)->MergeFrom(
+      static_cast<const refineRequest &>(from));
+}
 
-void refineRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<refineRequest*>(&to_msg);
-  auto& from = static_cast<const refineRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcICornerRefinement.refineRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void refineRequest::MergeFrom(const refineRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcICornerRefinement.refineRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_image().empty()) {
-    _this->_internal_set_image(from._internal_image());
+    _internal_set_image(from._internal_image());
   }
   if (!from._internal_corners().empty()) {
-    _this->_internal_set_corners(from._internal_corners());
+    _internal_set_corners(from._internal_corners());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void refineRequest::CopyFrom(const refineRequest& from) {
@@ -367,14 +354,14 @@ void refineRequest::InternalSwap(refineRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.image_, lhs_arena,
-      &other->_impl_.image_, rhs_arena
+      &image_, lhs_arena,
+      &other->image_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.corners_, lhs_arena,
-      &other->_impl_.corners_, rhs_arena
+      &corners_, lhs_arena,
+      &other->corners_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata refineRequest::GetMetadata() const {
@@ -392,40 +379,28 @@ class refineResponse::_Internal {
 refineResponse::refineResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcICornerRefinement.refineResponse)
 }
 refineResponse::refineResponse(const refineResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  refineResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.corners_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.corners_.InitDefault();
+  corners_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.corners_.Set("", GetArenaForAllocation());
+    corners_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_corners().empty()) {
-    _this->_impl_.corners_.Set(from._internal_corners(), 
-      _this->GetArenaForAllocation());
+    corners_.Set(from._internal_corners(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:grpcICornerRefinement.refineResponse)
 }
 
-inline void refineResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.corners_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.corners_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.corners_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void refineResponse::SharedCtor() {
+corners_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  corners_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 refineResponse::~refineResponse() {
@@ -439,11 +414,11 @@ refineResponse::~refineResponse() {
 
 inline void refineResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.corners_.Destroy();
+  corners_.Destroy();
 }
 
 void refineResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void refineResponse::Clear() {
@@ -452,7 +427,7 @@ void refineResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.corners_.ClearToEmpty();
+  corners_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -529,28 +504,32 @@ size_t refineResponse::ByteSizeLong() const {
         this->_internal_corners());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData refineResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     refineResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*refineResponse::GetClassData() const { return &_class_data_; }
 
+void refineResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<refineResponse *>(to)->MergeFrom(
+      static_cast<const refineResponse &>(from));
+}
 
-void refineResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<refineResponse*>(&to_msg);
-  auto& from = static_cast<const refineResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcICornerRefinement.refineResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void refineResponse::MergeFrom(const refineResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcICornerRefinement.refineResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_corners().empty()) {
-    _this->_internal_set_corners(from._internal_corners());
+    _internal_set_corners(from._internal_corners());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void refineResponse::CopyFrom(const refineResponse& from) {
@@ -570,8 +549,8 @@ void refineResponse::InternalSwap(refineResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.corners_, lhs_arena,
-      &other->_impl_.corners_, rhs_arena
+      &corners_, lhs_arena,
+      &other->corners_, rhs_arena
   );
 }
 

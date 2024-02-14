@@ -22,11 +22,10 @@ namespace _pbi = _pb::internal;
 
 namespace grpcIBootstrapper {
 PROTOBUF_CONSTEXPR processRequest::processRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.frame_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.view_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : frame_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , view_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0){}
 struct processRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR processRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -37,10 +36,9 @@ struct processRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 processRequestDefaultTypeInternal _processRequest_default_instance_;
 PROTOBUF_CONSTEXPR processResponse::processResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.view_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : view_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct processResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR processResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -62,17 +60,17 @@ const uint32_t TableStruct_grpcIBootstrapperService_2eproto::offsets[] PROTOBUF_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processRequest, _impl_.frame_),
-  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processRequest, _impl_.view_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processRequest, frame_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processRequest, view_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processResponse, _impl_.view_),
-  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processResponse, view_),
+  PROTOBUF_FIELD_OFFSET(::grpcIBootstrapper::processResponse, xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcIBootstrapper::processRequest)},
@@ -124,57 +122,42 @@ class processRequest::_Internal {
 processRequest::processRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIBootstrapper.processRequest)
 }
 processRequest::processRequest(const processRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  processRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.frame_){}
-    , decltype(_impl_.view_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.frame_.InitDefault();
+  frame_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame_.Set("", GetArenaForAllocation());
+    frame_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_frame().empty()) {
-    _this->_impl_.frame_.Set(from._internal_frame(), 
-      _this->GetArenaForAllocation());
+    frame_.Set(from._internal_frame(), 
+      GetArenaForAllocation());
   }
-  _impl_.view_.InitDefault();
+  view_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.view_.Set("", GetArenaForAllocation());
+    view_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_view().empty()) {
-    _this->_impl_.view_.Set(from._internal_view(), 
-      _this->GetArenaForAllocation());
+    view_.Set(from._internal_view(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIBootstrapper.processRequest)
 }
 
-inline void processRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.frame_){}
-    , decltype(_impl_.view_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.frame_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.view_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.view_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void processRequest::SharedCtor() {
+frame_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  frame_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+view_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  view_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+grpcservercompressionformat_ = 0;
 }
 
 processRequest::~processRequest() {
@@ -188,12 +171,12 @@ processRequest::~processRequest() {
 
 inline void processRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.frame_.Destroy();
-  _impl_.view_.Destroy();
+  frame_.Destroy();
+  view_.Destroy();
 }
 
 void processRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void processRequest::Clear() {
@@ -202,9 +185,9 @@ void processRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.frame_.ClearToEmpty();
-  _impl_.view_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  frame_.ClearToEmpty();
+  view_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -217,7 +200,7 @@ const char* processRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -322,34 +305,38 @@ size_t processRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData processRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     processRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*processRequest::GetClassData() const { return &_class_data_; }
 
+void processRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<processRequest *>(to)->MergeFrom(
+      static_cast<const processRequest &>(from));
+}
 
-void processRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<processRequest*>(&to_msg);
-  auto& from = static_cast<const processRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIBootstrapper.processRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void processRequest::MergeFrom(const processRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIBootstrapper.processRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_frame().empty()) {
-    _this->_internal_set_frame(from._internal_frame());
+    _internal_set_frame(from._internal_frame());
   }
   if (!from._internal_view().empty()) {
-    _this->_internal_set_view(from._internal_view());
+    _internal_set_view(from._internal_view());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void processRequest::CopyFrom(const processRequest& from) {
@@ -369,14 +356,14 @@ void processRequest::InternalSwap(processRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.frame_, lhs_arena,
-      &other->_impl_.frame_, rhs_arena
+      &frame_, lhs_arena,
+      &other->frame_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.view_, lhs_arena,
-      &other->_impl_.view_, rhs_arena
+      &view_, lhs_arena,
+      &other->view_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata processRequest::GetMetadata() const {
@@ -394,43 +381,30 @@ class processResponse::_Internal {
 processResponse::processResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIBootstrapper.processResponse)
 }
 processResponse::processResponse(const processResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  processResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.view_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.view_.InitDefault();
+  view_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.view_.Set("", GetArenaForAllocation());
+    view_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_view().empty()) {
-    _this->_impl_.view_.Set(from._internal_view(), 
-      _this->GetArenaForAllocation());
+    view_.Set(from._internal_view(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIBootstrapper.processResponse)
 }
 
-inline void processResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.view_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.view_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.view_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void processResponse::SharedCtor() {
+view_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  view_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 processResponse::~processResponse() {
@@ -444,11 +418,11 @@ processResponse::~processResponse() {
 
 inline void processResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.view_.Destroy();
+  view_.Destroy();
 }
 
 void processResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void processResponse::Clear() {
@@ -457,8 +431,8 @@ void processResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.view_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  view_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -480,7 +454,7 @@ const char* processResponse::_InternalParse(const char* ptr, ::_pbi::ParseContex
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -554,31 +528,35 @@ size_t processResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData processResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     processResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*processResponse::GetClassData() const { return &_class_data_; }
 
+void processResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<processResponse *>(to)->MergeFrom(
+      static_cast<const processResponse &>(from));
+}
 
-void processResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<processResponse*>(&to_msg);
-  auto& from = static_cast<const processResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIBootstrapper.processResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void processResponse::MergeFrom(const processResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIBootstrapper.processResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_view().empty()) {
-    _this->_internal_set_view(from._internal_view());
+    _internal_set_view(from._internal_view());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void processResponse::CopyFrom(const processResponse& from) {
@@ -598,10 +576,10 @@ void processResponse::InternalSwap(processResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.view_, lhs_arena,
-      &other->_impl_.view_, rhs_arena
+      &view_, lhs_arena,
+      &other->view_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata processResponse::GetMetadata() const {

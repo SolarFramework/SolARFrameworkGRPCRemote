@@ -34,6 +34,39 @@ message stopResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message setMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+}
+
+message setMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string uuid = 2;
+}
+
+message getMapResponse
+{
+string uuid = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message resetMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message resetMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message setCameraParametersRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -81,16 +114,6 @@ bytes map = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message resetMapRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-}
-
-message resetMapResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 message getPointCloudRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -107,11 +130,13 @@ service grpcIMapUpdatePipelineService {
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
+rpc setMap(setMapRequest) returns(setMapResponse) {}
+rpc getMap(getMapRequest) returns(getMapResponse) {}
+rpc resetMap(resetMapRequest) returns(resetMapResponse) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
 rpc mapUpdateRequest(mapUpdateRequestRequest) returns(mapUpdateRequestResponse) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc getSubmapRequest(getSubmapRequestRequest) returns(getSubmapRequestResponse) {}
-rpc resetMap(resetMapRequest) returns(resetMapResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
 }
 

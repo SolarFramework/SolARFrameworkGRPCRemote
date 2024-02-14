@@ -22,12 +22,11 @@ namespace _pbi = _pb::internal;
 
 namespace grpcIFeatureWithDepthFromStereo {
 PROTOBUF_CONSTEXPR setRectificationParametersRequest::setRectificationParametersRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.camparams1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.camparams2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.rectparams1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.rectparams2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : camparams1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , camparams2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , rectparams1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , rectparams2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}){}
 struct setRectificationParametersRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR setRectificationParametersRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -38,13 +37,12 @@ struct setRectificationParametersRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 setRectificationParametersRequestDefaultTypeInternal _setRectificationParametersRequest_default_instance_;
 PROTOBUF_CONSTEXPR computeRequest::computeRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.image1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.image2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.frame1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.frame2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : image1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , image2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , frame1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , frame2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0){}
 struct computeRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR computeRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -55,11 +53,10 @@ struct computeRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 computeRequestDefaultTypeInternal _computeRequest_default_instance_;
 PROTOBUF_CONSTEXPR computeResponse::computeResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.frame1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.frame2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : frame1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , frame2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct computeResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR computeResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -81,30 +78,30 @@ const uint32_t TableStruct_grpcIFeatureWithDepthFromStereoService_2eproto::offse
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, _impl_.camparams1_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, _impl_.camparams2_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, _impl_.rectparams1_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, _impl_.rectparams2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, camparams1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, camparams2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, rectparams1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest, rectparams2_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, _impl_.image1_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, _impl_.image2_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, _impl_.frame1_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, _impl_.frame2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, image1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, image2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, frame1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeRequest, frame2_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeResponse, _impl_.frame1_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeResponse, _impl_.frame2_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeResponse, frame1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeResponse, frame2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFeatureWithDepthFromStereo::computeResponse, xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcIFeatureWithDepthFromStereo::setRectificationParametersRequest)},
@@ -167,82 +164,64 @@ class setRectificationParametersRequest::_Internal {
 setRectificationParametersRequest::setRectificationParametersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIFeatureWithDepthFromStereo.setRectificationParametersRequest)
 }
 setRectificationParametersRequest::setRectificationParametersRequest(const setRectificationParametersRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  setRectificationParametersRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.camparams1_){}
-    , decltype(_impl_.camparams2_){}
-    , decltype(_impl_.rectparams1_){}
-    , decltype(_impl_.rectparams2_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.camparams1_.InitDefault();
+  camparams1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.camparams1_.Set("", GetArenaForAllocation());
+    camparams1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams1().empty()) {
-    _this->_impl_.camparams1_.Set(from._internal_camparams1(), 
-      _this->GetArenaForAllocation());
+    camparams1_.Set(from._internal_camparams1(), 
+      GetArenaForAllocation());
   }
-  _impl_.camparams2_.InitDefault();
+  camparams2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.camparams2_.Set("", GetArenaForAllocation());
+    camparams2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams2().empty()) {
-    _this->_impl_.camparams2_.Set(from._internal_camparams2(), 
-      _this->GetArenaForAllocation());
+    camparams2_.Set(from._internal_camparams2(), 
+      GetArenaForAllocation());
   }
-  _impl_.rectparams1_.InitDefault();
+  rectparams1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.rectparams1_.Set("", GetArenaForAllocation());
+    rectparams1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_rectparams1().empty()) {
-    _this->_impl_.rectparams1_.Set(from._internal_rectparams1(), 
-      _this->GetArenaForAllocation());
+    rectparams1_.Set(from._internal_rectparams1(), 
+      GetArenaForAllocation());
   }
-  _impl_.rectparams2_.InitDefault();
+  rectparams2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.rectparams2_.Set("", GetArenaForAllocation());
+    rectparams2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_rectparams2().empty()) {
-    _this->_impl_.rectparams2_.Set(from._internal_rectparams2(), 
-      _this->GetArenaForAllocation());
+    rectparams2_.Set(from._internal_rectparams2(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:grpcIFeatureWithDepthFromStereo.setRectificationParametersRequest)
 }
 
-inline void setRectificationParametersRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.camparams1_){}
-    , decltype(_impl_.camparams2_){}
-    , decltype(_impl_.rectparams1_){}
-    , decltype(_impl_.rectparams2_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.camparams1_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.camparams1_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.camparams2_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.camparams2_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.rectparams1_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.rectparams1_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.rectparams2_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.rectparams2_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void setRectificationParametersRequest::SharedCtor() {
+camparams1_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  camparams1_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+camparams2_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  camparams2_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+rectparams1_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  rectparams1_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+rectparams2_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  rectparams2_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 setRectificationParametersRequest::~setRectificationParametersRequest() {
@@ -256,14 +235,14 @@ setRectificationParametersRequest::~setRectificationParametersRequest() {
 
 inline void setRectificationParametersRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.camparams1_.Destroy();
-  _impl_.camparams2_.Destroy();
-  _impl_.rectparams1_.Destroy();
-  _impl_.rectparams2_.Destroy();
+  camparams1_.Destroy();
+  camparams2_.Destroy();
+  rectparams1_.Destroy();
+  rectparams2_.Destroy();
 }
 
 void setRectificationParametersRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void setRectificationParametersRequest::Clear() {
@@ -272,10 +251,10 @@ void setRectificationParametersRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.camparams1_.ClearToEmpty();
-  _impl_.camparams2_.ClearToEmpty();
-  _impl_.rectparams1_.ClearToEmpty();
-  _impl_.rectparams2_.ClearToEmpty();
+  camparams1_.ClearToEmpty();
+  camparams2_.ClearToEmpty();
+  rectparams1_.ClearToEmpty();
+  rectparams2_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -418,37 +397,41 @@ size_t setRectificationParametersRequest::ByteSizeLong() const {
         this->_internal_rectparams2());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData setRectificationParametersRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     setRectificationParametersRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*setRectificationParametersRequest::GetClassData() const { return &_class_data_; }
 
+void setRectificationParametersRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<setRectificationParametersRequest *>(to)->MergeFrom(
+      static_cast<const setRectificationParametersRequest &>(from));
+}
 
-void setRectificationParametersRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<setRectificationParametersRequest*>(&to_msg);
-  auto& from = static_cast<const setRectificationParametersRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFeatureWithDepthFromStereo.setRectificationParametersRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void setRectificationParametersRequest::MergeFrom(const setRectificationParametersRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIFeatureWithDepthFromStereo.setRectificationParametersRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_camparams1().empty()) {
-    _this->_internal_set_camparams1(from._internal_camparams1());
+    _internal_set_camparams1(from._internal_camparams1());
   }
   if (!from._internal_camparams2().empty()) {
-    _this->_internal_set_camparams2(from._internal_camparams2());
+    _internal_set_camparams2(from._internal_camparams2());
   }
   if (!from._internal_rectparams1().empty()) {
-    _this->_internal_set_rectparams1(from._internal_rectparams1());
+    _internal_set_rectparams1(from._internal_rectparams1());
   }
   if (!from._internal_rectparams2().empty()) {
-    _this->_internal_set_rectparams2(from._internal_rectparams2());
+    _internal_set_rectparams2(from._internal_rectparams2());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void setRectificationParametersRequest::CopyFrom(const setRectificationParametersRequest& from) {
@@ -468,20 +451,20 @@ void setRectificationParametersRequest::InternalSwap(setRectificationParametersR
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.camparams1_, lhs_arena,
-      &other->_impl_.camparams1_, rhs_arena
+      &camparams1_, lhs_arena,
+      &other->camparams1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.camparams2_, lhs_arena,
-      &other->_impl_.camparams2_, rhs_arena
+      &camparams2_, lhs_arena,
+      &other->camparams2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.rectparams1_, lhs_arena,
-      &other->_impl_.rectparams1_, rhs_arena
+      &rectparams1_, lhs_arena,
+      &other->rectparams1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.rectparams2_, lhs_arena,
-      &other->_impl_.rectparams2_, rhs_arena
+      &rectparams2_, lhs_arena,
+      &other->rectparams2_, rhs_arena
   );
 }
 
@@ -500,85 +483,66 @@ class computeRequest::_Internal {
 computeRequest::computeRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIFeatureWithDepthFromStereo.computeRequest)
 }
 computeRequest::computeRequest(const computeRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  computeRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.image1_){}
-    , decltype(_impl_.image2_){}
-    , decltype(_impl_.frame1_){}
-    , decltype(_impl_.frame2_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.image1_.InitDefault();
+  image1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.image1_.Set("", GetArenaForAllocation());
+    image1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_image1().empty()) {
-    _this->_impl_.image1_.Set(from._internal_image1(), 
-      _this->GetArenaForAllocation());
+    image1_.Set(from._internal_image1(), 
+      GetArenaForAllocation());
   }
-  _impl_.image2_.InitDefault();
+  image2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.image2_.Set("", GetArenaForAllocation());
+    image2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_image2().empty()) {
-    _this->_impl_.image2_.Set(from._internal_image2(), 
-      _this->GetArenaForAllocation());
+    image2_.Set(from._internal_image2(), 
+      GetArenaForAllocation());
   }
-  _impl_.frame1_.InitDefault();
+  frame1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame1_.Set("", GetArenaForAllocation());
+    frame1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_frame1().empty()) {
-    _this->_impl_.frame1_.Set(from._internal_frame1(), 
-      _this->GetArenaForAllocation());
+    frame1_.Set(from._internal_frame1(), 
+      GetArenaForAllocation());
   }
-  _impl_.frame2_.InitDefault();
+  frame2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame2_.Set("", GetArenaForAllocation());
+    frame2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_frame2().empty()) {
-    _this->_impl_.frame2_.Set(from._internal_frame2(), 
-      _this->GetArenaForAllocation());
+    frame2_.Set(from._internal_frame2(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIFeatureWithDepthFromStereo.computeRequest)
 }
 
-inline void computeRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.image1_){}
-    , decltype(_impl_.image2_){}
-    , decltype(_impl_.frame1_){}
-    , decltype(_impl_.frame2_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.image1_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.image1_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.image2_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.image2_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.frame1_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame1_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.frame2_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame2_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void computeRequest::SharedCtor() {
+image1_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  image1_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+image2_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  image2_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+frame1_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  frame1_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+frame2_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  frame2_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+grpcservercompressionformat_ = 0;
 }
 
 computeRequest::~computeRequest() {
@@ -592,14 +556,14 @@ computeRequest::~computeRequest() {
 
 inline void computeRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.image1_.Destroy();
-  _impl_.image2_.Destroy();
-  _impl_.frame1_.Destroy();
-  _impl_.frame2_.Destroy();
+  image1_.Destroy();
+  image2_.Destroy();
+  frame1_.Destroy();
+  frame2_.Destroy();
 }
 
 void computeRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void computeRequest::Clear() {
@@ -608,11 +572,11 @@ void computeRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.image1_.ClearToEmpty();
-  _impl_.image2_.ClearToEmpty();
-  _impl_.frame1_.ClearToEmpty();
-  _impl_.frame2_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  image1_.ClearToEmpty();
+  image2_.ClearToEmpty();
+  frame1_.ClearToEmpty();
+  frame2_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -625,7 +589,7 @@ const char* computeRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -774,40 +738,44 @@ size_t computeRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData computeRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     computeRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*computeRequest::GetClassData() const { return &_class_data_; }
 
+void computeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<computeRequest *>(to)->MergeFrom(
+      static_cast<const computeRequest &>(from));
+}
 
-void computeRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<computeRequest*>(&to_msg);
-  auto& from = static_cast<const computeRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFeatureWithDepthFromStereo.computeRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void computeRequest::MergeFrom(const computeRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIFeatureWithDepthFromStereo.computeRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_image1().empty()) {
-    _this->_internal_set_image1(from._internal_image1());
+    _internal_set_image1(from._internal_image1());
   }
   if (!from._internal_image2().empty()) {
-    _this->_internal_set_image2(from._internal_image2());
+    _internal_set_image2(from._internal_image2());
   }
   if (!from._internal_frame1().empty()) {
-    _this->_internal_set_frame1(from._internal_frame1());
+    _internal_set_frame1(from._internal_frame1());
   }
   if (!from._internal_frame2().empty()) {
-    _this->_internal_set_frame2(from._internal_frame2());
+    _internal_set_frame2(from._internal_frame2());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void computeRequest::CopyFrom(const computeRequest& from) {
@@ -827,22 +795,22 @@ void computeRequest::InternalSwap(computeRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.image1_, lhs_arena,
-      &other->_impl_.image1_, rhs_arena
+      &image1_, lhs_arena,
+      &other->image1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.image2_, lhs_arena,
-      &other->_impl_.image2_, rhs_arena
+      &image2_, lhs_arena,
+      &other->image2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.frame1_, lhs_arena,
-      &other->_impl_.frame1_, rhs_arena
+      &frame1_, lhs_arena,
+      &other->frame1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.frame2_, lhs_arena,
-      &other->_impl_.frame2_, rhs_arena
+      &frame2_, lhs_arena,
+      &other->frame2_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata computeRequest::GetMetadata() const {
@@ -860,57 +828,42 @@ class computeResponse::_Internal {
 computeResponse::computeResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIFeatureWithDepthFromStereo.computeResponse)
 }
 computeResponse::computeResponse(const computeResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  computeResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.frame1_){}
-    , decltype(_impl_.frame2_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.frame1_.InitDefault();
+  frame1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame1_.Set("", GetArenaForAllocation());
+    frame1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_frame1().empty()) {
-    _this->_impl_.frame1_.Set(from._internal_frame1(), 
-      _this->GetArenaForAllocation());
+    frame1_.Set(from._internal_frame1(), 
+      GetArenaForAllocation());
   }
-  _impl_.frame2_.InitDefault();
+  frame2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame2_.Set("", GetArenaForAllocation());
+    frame2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_frame2().empty()) {
-    _this->_impl_.frame2_.Set(from._internal_frame2(), 
-      _this->GetArenaForAllocation());
+    frame2_.Set(from._internal_frame2(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIFeatureWithDepthFromStereo.computeResponse)
 }
 
-inline void computeResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.frame1_){}
-    , decltype(_impl_.frame2_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.frame1_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame1_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.frame2_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame2_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void computeResponse::SharedCtor() {
+frame1_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  frame1_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+frame2_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  frame2_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 computeResponse::~computeResponse() {
@@ -924,12 +877,12 @@ computeResponse::~computeResponse() {
 
 inline void computeResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.frame1_.Destroy();
-  _impl_.frame2_.Destroy();
+  frame1_.Destroy();
+  frame2_.Destroy();
 }
 
 void computeResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void computeResponse::Clear() {
@@ -938,9 +891,9 @@ void computeResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.frame1_.ClearToEmpty();
-  _impl_.frame2_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  frame1_.ClearToEmpty();
+  frame2_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -971,7 +924,7 @@ const char* computeResponse::_InternalParse(const char* ptr, ::_pbi::ParseContex
       // sint32 xpcfGrpcReturnValue = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1058,34 +1011,38 @@ size_t computeResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData computeResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     computeResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*computeResponse::GetClassData() const { return &_class_data_; }
 
+void computeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<computeResponse *>(to)->MergeFrom(
+      static_cast<const computeResponse &>(from));
+}
 
-void computeResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<computeResponse*>(&to_msg);
-  auto& from = static_cast<const computeResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFeatureWithDepthFromStereo.computeResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void computeResponse::MergeFrom(const computeResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIFeatureWithDepthFromStereo.computeResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_frame1().empty()) {
-    _this->_internal_set_frame1(from._internal_frame1());
+    _internal_set_frame1(from._internal_frame1());
   }
   if (!from._internal_frame2().empty()) {
-    _this->_internal_set_frame2(from._internal_frame2());
+    _internal_set_frame2(from._internal_frame2());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void computeResponse::CopyFrom(const computeResponse& from) {
@@ -1105,14 +1062,14 @@ void computeResponse::InternalSwap(computeResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.frame1_, lhs_arena,
-      &other->_impl_.frame1_, rhs_arena
+      &frame1_, lhs_arena,
+      &other->frame1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.frame2_, lhs_arena,
-      &other->_impl_.frame2_, rhs_arena
+      &frame2_, lhs_arena,
+      &other->frame2_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata computeResponse::GetMetadata() const {

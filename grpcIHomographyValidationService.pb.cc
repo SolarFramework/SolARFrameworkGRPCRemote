@@ -22,11 +22,10 @@ namespace _pbi = _pb::internal;
 
 namespace grpcIHomographyValidation {
 PROTOBUF_CONSTEXPR isValidRequest::isValidRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.ref2dsquaredmarkercorners_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.projected2dsquaredmarkercorners_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : ref2dsquaredmarkercorners_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , projected2dsquaredmarkercorners_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0){}
 struct isValidRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR isValidRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -37,9 +36,8 @@ struct isValidRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 isValidRequestDefaultTypeInternal _isValidRequest_default_instance_;
 PROTOBUF_CONSTEXPR isValidResponse::isValidResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.xpcfgrpcreturnvalue_)*/false
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : xpcfgrpcreturnvalue_(false){}
 struct isValidResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR isValidResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -61,16 +59,16 @@ const uint32_t TableStruct_grpcIHomographyValidationService_2eproto::offsets[] P
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidRequest, _impl_.ref2dsquaredmarkercorners_),
-  PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidRequest, _impl_.projected2dsquaredmarkercorners_),
+  PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidRequest, ref2dsquaredmarkercorners_),
+  PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidRequest, projected2dsquaredmarkercorners_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIHomographyValidation::isValidResponse, xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcIHomographyValidation::isValidRequest)},
@@ -124,57 +122,42 @@ class isValidRequest::_Internal {
 isValidRequest::isValidRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIHomographyValidation.isValidRequest)
 }
 isValidRequest::isValidRequest(const isValidRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  isValidRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.ref2dsquaredmarkercorners_){}
-    , decltype(_impl_.projected2dsquaredmarkercorners_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.ref2dsquaredmarkercorners_.InitDefault();
+  ref2dsquaredmarkercorners_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.ref2dsquaredmarkercorners_.Set("", GetArenaForAllocation());
+    ref2dsquaredmarkercorners_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ref2dsquaredmarkercorners().empty()) {
-    _this->_impl_.ref2dsquaredmarkercorners_.Set(from._internal_ref2dsquaredmarkercorners(), 
-      _this->GetArenaForAllocation());
+    ref2dsquaredmarkercorners_.Set(from._internal_ref2dsquaredmarkercorners(), 
+      GetArenaForAllocation());
   }
-  _impl_.projected2dsquaredmarkercorners_.InitDefault();
+  projected2dsquaredmarkercorners_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.projected2dsquaredmarkercorners_.Set("", GetArenaForAllocation());
+    projected2dsquaredmarkercorners_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_projected2dsquaredmarkercorners().empty()) {
-    _this->_impl_.projected2dsquaredmarkercorners_.Set(from._internal_projected2dsquaredmarkercorners(), 
-      _this->GetArenaForAllocation());
+    projected2dsquaredmarkercorners_.Set(from._internal_projected2dsquaredmarkercorners(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIHomographyValidation.isValidRequest)
 }
 
-inline void isValidRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.ref2dsquaredmarkercorners_){}
-    , decltype(_impl_.projected2dsquaredmarkercorners_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.ref2dsquaredmarkercorners_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.ref2dsquaredmarkercorners_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.projected2dsquaredmarkercorners_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.projected2dsquaredmarkercorners_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void isValidRequest::SharedCtor() {
+ref2dsquaredmarkercorners_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  ref2dsquaredmarkercorners_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+projected2dsquaredmarkercorners_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  projected2dsquaredmarkercorners_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+grpcservercompressionformat_ = 0;
 }
 
 isValidRequest::~isValidRequest() {
@@ -188,12 +171,12 @@ isValidRequest::~isValidRequest() {
 
 inline void isValidRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.ref2dsquaredmarkercorners_.Destroy();
-  _impl_.projected2dsquaredmarkercorners_.Destroy();
+  ref2dsquaredmarkercorners_.Destroy();
+  projected2dsquaredmarkercorners_.Destroy();
 }
 
 void isValidRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void isValidRequest::Clear() {
@@ -202,9 +185,9 @@ void isValidRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.ref2dsquaredmarkercorners_.ClearToEmpty();
-  _impl_.projected2dsquaredmarkercorners_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  ref2dsquaredmarkercorners_.ClearToEmpty();
+  projected2dsquaredmarkercorners_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -217,7 +200,7 @@ const char* isValidRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -322,34 +305,38 @@ size_t isValidRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData isValidRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     isValidRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*isValidRequest::GetClassData() const { return &_class_data_; }
 
+void isValidRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<isValidRequest *>(to)->MergeFrom(
+      static_cast<const isValidRequest &>(from));
+}
 
-void isValidRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<isValidRequest*>(&to_msg);
-  auto& from = static_cast<const isValidRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIHomographyValidation.isValidRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void isValidRequest::MergeFrom(const isValidRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIHomographyValidation.isValidRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_ref2dsquaredmarkercorners().empty()) {
-    _this->_internal_set_ref2dsquaredmarkercorners(from._internal_ref2dsquaredmarkercorners());
+    _internal_set_ref2dsquaredmarkercorners(from._internal_ref2dsquaredmarkercorners());
   }
   if (!from._internal_projected2dsquaredmarkercorners().empty()) {
-    _this->_internal_set_projected2dsquaredmarkercorners(from._internal_projected2dsquaredmarkercorners());
+    _internal_set_projected2dsquaredmarkercorners(from._internal_projected2dsquaredmarkercorners());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void isValidRequest::CopyFrom(const isValidRequest& from) {
@@ -369,14 +356,14 @@ void isValidRequest::InternalSwap(isValidRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.ref2dsquaredmarkercorners_, lhs_arena,
-      &other->_impl_.ref2dsquaredmarkercorners_, rhs_arena
+      &ref2dsquaredmarkercorners_, lhs_arena,
+      &other->ref2dsquaredmarkercorners_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.projected2dsquaredmarkercorners_, lhs_arena,
-      &other->_impl_.projected2dsquaredmarkercorners_, rhs_arena
+      &projected2dsquaredmarkercorners_, lhs_arena,
+      &other->projected2dsquaredmarkercorners_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isValidRequest::GetMetadata() const {
@@ -394,29 +381,18 @@ class isValidResponse::_Internal {
 isValidResponse::isValidResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIHomographyValidation.isValidResponse)
 }
 isValidResponse::isValidResponse(const isValidResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  isValidResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIHomographyValidation.isValidResponse)
 }
 
-inline void isValidResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){false}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+inline void isValidResponse::SharedCtor() {
+xpcfgrpcreturnvalue_ = false;
 }
 
 isValidResponse::~isValidResponse() {
@@ -433,7 +409,7 @@ inline void isValidResponse::SharedDtor() {
 }
 
 void isValidResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void isValidResponse::Clear() {
@@ -442,7 +418,7 @@ void isValidResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.xpcfgrpcreturnvalue_ = false;
+  xpcfgrpcreturnvalue_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -455,7 +431,7 @@ const char* isValidResponse::_InternalParse(const char* ptr, ::_pbi::ParseContex
       // bool xpcfGrpcReturnValue = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -516,28 +492,32 @@ size_t isValidResponse::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData isValidResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     isValidResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*isValidResponse::GetClassData() const { return &_class_data_; }
 
+void isValidResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<isValidResponse *>(to)->MergeFrom(
+      static_cast<const isValidResponse &>(from));
+}
 
-void isValidResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<isValidResponse*>(&to_msg);
-  auto& from = static_cast<const isValidResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIHomographyValidation.isValidResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void isValidResponse::MergeFrom(const isValidResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIHomographyValidation.isValidResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void isValidResponse::CopyFrom(const isValidResponse& from) {
@@ -554,7 +534,7 @@ bool isValidResponse::IsInitialized() const {
 void isValidResponse::InternalSwap(isValidResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata isValidResponse::GetMetadata() const {

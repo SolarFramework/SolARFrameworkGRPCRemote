@@ -22,11 +22,10 @@ namespace _pbi = _pb::internal;
 
 namespace grpcICameraCalibration {
 PROTOBUF_CONSTEXPR calibrateRequest::calibrateRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.images_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.camparams_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : images_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , camparams_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0){}
 struct calibrateRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR calibrateRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -37,10 +36,9 @@ struct calibrateRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 calibrateRequestDefaultTypeInternal _calibrateRequest_default_instance_;
 PROTOBUF_CONSTEXPR calibrateResponse::calibrateResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.camparams_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : camparams_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct calibrateResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR calibrateResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -62,17 +60,17 @@ const uint32_t TableStruct_grpcICameraCalibrationService_2eproto::offsets[] PROT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateRequest, _impl_.images_),
-  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateRequest, _impl_.camparams_),
+  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateRequest, images_),
+  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateRequest, camparams_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateResponse, _impl_.camparams_),
-  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateResponse, camparams_),
+  PROTOBUF_FIELD_OFFSET(::grpcICameraCalibration::calibrateResponse, xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcICameraCalibration::calibrateRequest)},
@@ -125,57 +123,42 @@ class calibrateRequest::_Internal {
 calibrateRequest::calibrateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcICameraCalibration.calibrateRequest)
 }
 calibrateRequest::calibrateRequest(const calibrateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  calibrateRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.images_){}
-    , decltype(_impl_.camparams_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.images_.InitDefault();
+  images_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.images_.Set("", GetArenaForAllocation());
+    images_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_images().empty()) {
-    _this->_impl_.images_.Set(from._internal_images(), 
-      _this->GetArenaForAllocation());
+    images_.Set(from._internal_images(), 
+      GetArenaForAllocation());
   }
-  _impl_.camparams_.InitDefault();
+  camparams_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.camparams_.Set("", GetArenaForAllocation());
+    camparams_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams().empty()) {
-    _this->_impl_.camparams_.Set(from._internal_camparams(), 
-      _this->GetArenaForAllocation());
+    camparams_.Set(from._internal_camparams(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcICameraCalibration.calibrateRequest)
 }
 
-inline void calibrateRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.images_){}
-    , decltype(_impl_.camparams_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.images_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.images_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.camparams_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.camparams_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void calibrateRequest::SharedCtor() {
+images_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  images_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+camparams_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  camparams_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+grpcservercompressionformat_ = 0;
 }
 
 calibrateRequest::~calibrateRequest() {
@@ -189,12 +172,12 @@ calibrateRequest::~calibrateRequest() {
 
 inline void calibrateRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.images_.Destroy();
-  _impl_.camparams_.Destroy();
+  images_.Destroy();
+  camparams_.Destroy();
 }
 
 void calibrateRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void calibrateRequest::Clear() {
@@ -203,9 +186,9 @@ void calibrateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.images_.ClearToEmpty();
-  _impl_.camparams_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  images_.ClearToEmpty();
+  camparams_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -218,7 +201,7 @@ const char* calibrateRequest::_InternalParse(const char* ptr, ::_pbi::ParseConte
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -323,34 +306,38 @@ size_t calibrateRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData calibrateRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     calibrateRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*calibrateRequest::GetClassData() const { return &_class_data_; }
 
+void calibrateRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<calibrateRequest *>(to)->MergeFrom(
+      static_cast<const calibrateRequest &>(from));
+}
 
-void calibrateRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<calibrateRequest*>(&to_msg);
-  auto& from = static_cast<const calibrateRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcICameraCalibration.calibrateRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void calibrateRequest::MergeFrom(const calibrateRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcICameraCalibration.calibrateRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_images().empty()) {
-    _this->_internal_set_images(from._internal_images());
+    _internal_set_images(from._internal_images());
   }
   if (!from._internal_camparams().empty()) {
-    _this->_internal_set_camparams(from._internal_camparams());
+    _internal_set_camparams(from._internal_camparams());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void calibrateRequest::CopyFrom(const calibrateRequest& from) {
@@ -370,14 +357,14 @@ void calibrateRequest::InternalSwap(calibrateRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.images_, lhs_arena,
-      &other->_impl_.images_, rhs_arena
+      &images_, lhs_arena,
+      &other->images_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.camparams_, lhs_arena,
-      &other->_impl_.camparams_, rhs_arena
+      &camparams_, lhs_arena,
+      &other->camparams_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata calibrateRequest::GetMetadata() const {
@@ -395,43 +382,30 @@ class calibrateResponse::_Internal {
 calibrateResponse::calibrateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcICameraCalibration.calibrateResponse)
 }
 calibrateResponse::calibrateResponse(const calibrateResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  calibrateResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.camparams_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.camparams_.InitDefault();
+  camparams_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.camparams_.Set("", GetArenaForAllocation());
+    camparams_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams().empty()) {
-    _this->_impl_.camparams_.Set(from._internal_camparams(), 
-      _this->GetArenaForAllocation());
+    camparams_.Set(from._internal_camparams(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcICameraCalibration.calibrateResponse)
 }
 
-inline void calibrateResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.camparams_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.camparams_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.camparams_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void calibrateResponse::SharedCtor() {
+camparams_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  camparams_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 calibrateResponse::~calibrateResponse() {
@@ -445,11 +419,11 @@ calibrateResponse::~calibrateResponse() {
 
 inline void calibrateResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.camparams_.Destroy();
+  camparams_.Destroy();
 }
 
 void calibrateResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void calibrateResponse::Clear() {
@@ -458,8 +432,8 @@ void calibrateResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.camparams_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  camparams_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -481,7 +455,7 @@ const char* calibrateResponse::_InternalParse(const char* ptr, ::_pbi::ParseCont
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -555,31 +529,35 @@ size_t calibrateResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData calibrateResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     calibrateResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*calibrateResponse::GetClassData() const { return &_class_data_; }
 
+void calibrateResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<calibrateResponse *>(to)->MergeFrom(
+      static_cast<const calibrateResponse &>(from));
+}
 
-void calibrateResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<calibrateResponse*>(&to_msg);
-  auto& from = static_cast<const calibrateResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcICameraCalibration.calibrateResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void calibrateResponse::MergeFrom(const calibrateResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcICameraCalibration.calibrateResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_camparams().empty()) {
-    _this->_internal_set_camparams(from._internal_camparams());
+    _internal_set_camparams(from._internal_camparams());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void calibrateResponse::CopyFrom(const calibrateResponse& from) {
@@ -599,10 +577,10 @@ void calibrateResponse::InternalSwap(calibrateResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.camparams_, lhs_arena,
-      &other->_impl_.camparams_, rhs_arena
+      &camparams_, lhs_arena,
+      &other->camparams_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata calibrateResponse::GetMetadata() const {

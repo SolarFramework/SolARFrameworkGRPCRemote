@@ -22,9 +22,8 @@ namespace _pbi = _pb::internal;
 
 namespace grpcIServiceManager {
 PROTOBUF_CONSTEXPR initRequest::initRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : grpcservercompressionformat_(0){}
 struct initRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR initRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -35,9 +34,8 @@ struct initRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 initRequestDefaultTypeInternal _initRequest_default_instance_;
 PROTOBUF_CONSTEXPR initResponse::initResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : xpcfgrpcreturnvalue_(0){}
 struct initResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR initResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -48,11 +46,10 @@ struct initResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 initResponseDefaultTypeInternal _initResponse_default_instance_;
 PROTOBUF_CONSTEXPR registerServiceRequest::registerServiceRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.serviceurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_.servicetype_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : serviceurl_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0)
+  , servicetype_(0){}
 struct registerServiceRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR registerServiceRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -63,9 +60,8 @@ struct registerServiceRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 registerServiceRequestDefaultTypeInternal _registerServiceRequest_default_instance_;
 PROTOBUF_CONSTEXPR registerServiceResponse::registerServiceResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : xpcfgrpcreturnvalue_(0){}
 struct registerServiceResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR registerServiceResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -76,11 +72,10 @@ struct registerServiceResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 registerServiceResponseDefaultTypeInternal _registerServiceResponse_default_instance_;
 PROTOBUF_CONSTEXPR unregisterServiceRequest::unregisterServiceRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.serviceurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_.servicetype_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : serviceurl_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0)
+  , servicetype_(0){}
 struct unregisterServiceRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR unregisterServiceRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -91,9 +86,8 @@ struct unregisterServiceRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 unregisterServiceRequestDefaultTypeInternal _unregisterServiceRequest_default_instance_;
 PROTOBUF_CONSTEXPR unregisterServiceResponse::unregisterServiceResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : xpcfgrpcreturnvalue_(0){}
 struct unregisterServiceResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR unregisterServiceResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -104,11 +98,10 @@ struct unregisterServiceResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 unregisterServiceResponseDefaultTypeInternal _unregisterServiceResponse_default_instance_;
 PROTOBUF_CONSTEXPR getServiceRequest::getServiceRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.serviceurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_.servicetype_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : serviceurl_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0)
+  , servicetype_(0){}
 struct getServiceRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR getServiceRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -119,10 +112,9 @@ struct getServiceRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getServiceRequestDefaultTypeInternal _getServiceRequest_default_instance_;
 PROTOBUF_CONSTEXPR getServiceResponse::getServiceResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.serviceurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : serviceurl_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct getServiceResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR getServiceResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -133,12 +125,11 @@ struct getServiceResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getServiceResponseDefaultTypeInternal _getServiceResponse_default_instance_;
 PROTOBUF_CONSTEXPR getAndLockServiceRequest::getAndLockServiceRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.clientuuid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.serviceurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_.servicetype_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : clientuuid_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , serviceurl_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0)
+  , servicetype_(0){}
 struct getAndLockServiceRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR getAndLockServiceRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -149,10 +140,9 @@ struct getAndLockServiceRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getAndLockServiceRequestDefaultTypeInternal _getAndLockServiceRequest_default_instance_;
 PROTOBUF_CONSTEXPR getAndLockServiceResponse::getAndLockServiceResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.serviceurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : serviceurl_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct getAndLockServiceResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR getAndLockServiceResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -163,11 +153,10 @@ struct getAndLockServiceResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getAndLockServiceResponseDefaultTypeInternal _getAndLockServiceResponse_default_instance_;
 PROTOBUF_CONSTEXPR unlockServiceRequest::unlockServiceRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.clientuuid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_.servicetype_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : clientuuid_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0)
+  , servicetype_(0){}
 struct unlockServiceRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR unlockServiceRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -178,9 +167,8 @@ struct unlockServiceRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 unlockServiceRequestDefaultTypeInternal _unlockServiceRequest_default_instance_;
 PROTOBUF_CONSTEXPR unlockServiceResponse::unlockServiceResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : xpcfgrpcreturnvalue_(0){}
 struct unlockServiceResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR unlockServiceResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -202,97 +190,97 @@ const uint32_t TableStruct_grpcIServiceManagerService_2eproto::offsets[] PROTOBU
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::initRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::initRequest, grpcservercompressionformat_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::initResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::initResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::initResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceRequest, _impl_.servicetype_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceRequest, _impl_.serviceurl_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceRequest, servicetype_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceRequest, serviceurl_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceRequest, _impl_.servicetype_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceRequest, _impl_.serviceurl_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceRequest, servicetype_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceRequest, serviceurl_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unregisterServiceResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceRequest, _impl_.servicetype_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceRequest, _impl_.serviceurl_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceRequest, servicetype_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceRequest, serviceurl_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceResponse, _impl_.serviceurl_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceResponse, serviceurl_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getServiceResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceRequest, _impl_.servicetype_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceRequest, _impl_.clientuuid_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceRequest, _impl_.serviceurl_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceRequest, servicetype_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceRequest, clientuuid_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceRequest, serviceurl_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceResponse, _impl_.serviceurl_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceResponse, serviceurl_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::getAndLockServiceResponse, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceRequest, _impl_.servicetype_),
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceRequest, _impl_.clientuuid_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceRequest, servicetype_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceRequest, clientuuid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceResponse, xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcIServiceManager::initRequest)},
@@ -398,29 +386,18 @@ class initRequest::_Internal {
 initRequest::initRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.initRequest)
 }
 initRequest::initRequest(const initRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  initRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.initRequest)
 }
 
-inline void initRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+inline void initRequest::SharedCtor() {
+grpcservercompressionformat_ = 0;
 }
 
 initRequest::~initRequest() {
@@ -437,7 +414,7 @@ inline void initRequest::SharedDtor() {
 }
 
 void initRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void initRequest::Clear() {
@@ -446,7 +423,7 @@ void initRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.grpcservercompressionformat_ = 0;
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -459,7 +436,7 @@ const char* initRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -520,28 +497,32 @@ size_t initRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData initRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     initRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*initRequest::GetClassData() const { return &_class_data_; }
 
+void initRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<initRequest *>(to)->MergeFrom(
+      static_cast<const initRequest &>(from));
+}
 
-void initRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<initRequest*>(&to_msg);
-  auto& from = static_cast<const initRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.initRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void initRequest::MergeFrom(const initRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.initRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void initRequest::CopyFrom(const initRequest& from) {
@@ -558,7 +539,7 @@ bool initRequest::IsInitialized() const {
 void initRequest::InternalSwap(initRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata initRequest::GetMetadata() const {
@@ -576,29 +557,18 @@ class initResponse::_Internal {
 initResponse::initResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.initResponse)
 }
 initResponse::initResponse(const initResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  initResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.initResponse)
 }
 
-inline void initResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+inline void initResponse::SharedCtor() {
+xpcfgrpcreturnvalue_ = 0;
 }
 
 initResponse::~initResponse() {
@@ -615,7 +585,7 @@ inline void initResponse::SharedDtor() {
 }
 
 void initResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void initResponse::Clear() {
@@ -624,7 +594,7 @@ void initResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -637,7 +607,7 @@ const char* initResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -698,28 +668,32 @@ size_t initResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData initResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     initResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*initResponse::GetClassData() const { return &_class_data_; }
 
+void initResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<initResponse *>(to)->MergeFrom(
+      static_cast<const initResponse &>(from));
+}
 
-void initResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<initResponse*>(&to_msg);
-  auto& from = static_cast<const initResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.initResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void initResponse::MergeFrom(const initResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.initResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void initResponse::CopyFrom(const initResponse& from) {
@@ -736,7 +710,7 @@ bool initResponse::IsInitialized() const {
 void initResponse::InternalSwap(initResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata initResponse::GetMetadata() const {
@@ -754,47 +728,35 @@ class registerServiceRequest::_Internal {
 registerServiceRequest::registerServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.registerServiceRequest)
 }
 registerServiceRequest::registerServiceRequest(const registerServiceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  registerServiceRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , decltype(_impl_.servicetype_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.serviceurl_.InitDefault();
+  serviceurl_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
+    serviceurl_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_serviceurl().empty()) {
-    _this->_impl_.serviceurl_.Set(from._internal_serviceurl(), 
-      _this->GetArenaForAllocation());
+    serviceurl_.Set(from._internal_serviceurl(), 
+      GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.servicetype_) -
-    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.registerServiceRequest)
 }
 
-inline void registerServiceRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , decltype(_impl_.servicetype_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.serviceurl_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void registerServiceRequest::SharedCtor() {
+serviceurl_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  serviceurl_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
 }
 
 registerServiceRequest::~registerServiceRequest() {
@@ -808,11 +770,11 @@ registerServiceRequest::~registerServiceRequest() {
 
 inline void registerServiceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.serviceurl_.Destroy();
+  serviceurl_.Destroy();
 }
 
 void registerServiceRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void registerServiceRequest::Clear() {
@@ -821,10 +783,10 @@ void registerServiceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.serviceurl_.ClearToEmpty();
-  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.servicetype_) -
-      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  serviceurl_.ClearToEmpty();
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&servicetype_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -837,7 +799,7 @@ const char* registerServiceRequest::_InternalParse(const char* ptr, ::_pbi::Pars
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -845,7 +807,7 @@ const char* registerServiceRequest::_InternalParse(const char* ptr, ::_pbi::Pars
       // sint32 serviceType = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -944,34 +906,38 @@ size_t registerServiceRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_servicetype());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData registerServiceRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     registerServiceRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*registerServiceRequest::GetClassData() const { return &_class_data_; }
 
+void registerServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<registerServiceRequest *>(to)->MergeFrom(
+      static_cast<const registerServiceRequest &>(from));
+}
 
-void registerServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<registerServiceRequest*>(&to_msg);
-  auto& from = static_cast<const registerServiceRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.registerServiceRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void registerServiceRequest::MergeFrom(const registerServiceRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.registerServiceRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_serviceurl().empty()) {
-    _this->_internal_set_serviceurl(from._internal_serviceurl());
+    _internal_set_serviceurl(from._internal_serviceurl());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
   if (from._internal_servicetype() != 0) {
-    _this->_internal_set_servicetype(from._internal_servicetype());
+    _internal_set_servicetype(from._internal_servicetype());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void registerServiceRequest::CopyFrom(const registerServiceRequest& from) {
@@ -991,15 +957,15 @@ void registerServiceRequest::InternalSwap(registerServiceRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.serviceurl_, lhs_arena,
-      &other->_impl_.serviceurl_, rhs_arena
+      &serviceurl_, lhs_arena,
+      &other->serviceurl_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(registerServiceRequest, _impl_.servicetype_)
-      + sizeof(registerServiceRequest::_impl_.servicetype_)
-      - PROTOBUF_FIELD_OFFSET(registerServiceRequest, _impl_.grpcservercompressionformat_)>(
-          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
-          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+      PROTOBUF_FIELD_OFFSET(registerServiceRequest, servicetype_)
+      + sizeof(registerServiceRequest::servicetype_)
+      - PROTOBUF_FIELD_OFFSET(registerServiceRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata registerServiceRequest::GetMetadata() const {
@@ -1017,29 +983,18 @@ class registerServiceResponse::_Internal {
 registerServiceResponse::registerServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.registerServiceResponse)
 }
 registerServiceResponse::registerServiceResponse(const registerServiceResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  registerServiceResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.registerServiceResponse)
 }
 
-inline void registerServiceResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+inline void registerServiceResponse::SharedCtor() {
+xpcfgrpcreturnvalue_ = 0;
 }
 
 registerServiceResponse::~registerServiceResponse() {
@@ -1056,7 +1011,7 @@ inline void registerServiceResponse::SharedDtor() {
 }
 
 void registerServiceResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void registerServiceResponse::Clear() {
@@ -1065,7 +1020,7 @@ void registerServiceResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1078,7 +1033,7 @@ const char* registerServiceResponse::_InternalParse(const char* ptr, ::_pbi::Par
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1139,28 +1094,32 @@ size_t registerServiceResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData registerServiceResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     registerServiceResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*registerServiceResponse::GetClassData() const { return &_class_data_; }
 
+void registerServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<registerServiceResponse *>(to)->MergeFrom(
+      static_cast<const registerServiceResponse &>(from));
+}
 
-void registerServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<registerServiceResponse*>(&to_msg);
-  auto& from = static_cast<const registerServiceResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.registerServiceResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void registerServiceResponse::MergeFrom(const registerServiceResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.registerServiceResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void registerServiceResponse::CopyFrom(const registerServiceResponse& from) {
@@ -1177,7 +1136,7 @@ bool registerServiceResponse::IsInitialized() const {
 void registerServiceResponse::InternalSwap(registerServiceResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata registerServiceResponse::GetMetadata() const {
@@ -1195,47 +1154,35 @@ class unregisterServiceRequest::_Internal {
 unregisterServiceRequest::unregisterServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.unregisterServiceRequest)
 }
 unregisterServiceRequest::unregisterServiceRequest(const unregisterServiceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  unregisterServiceRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , decltype(_impl_.servicetype_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.serviceurl_.InitDefault();
+  serviceurl_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
+    serviceurl_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_serviceurl().empty()) {
-    _this->_impl_.serviceurl_.Set(from._internal_serviceurl(), 
-      _this->GetArenaForAllocation());
+    serviceurl_.Set(from._internal_serviceurl(), 
+      GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.servicetype_) -
-    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.unregisterServiceRequest)
 }
 
-inline void unregisterServiceRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , decltype(_impl_.servicetype_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.serviceurl_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void unregisterServiceRequest::SharedCtor() {
+serviceurl_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  serviceurl_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
 }
 
 unregisterServiceRequest::~unregisterServiceRequest() {
@@ -1249,11 +1196,11 @@ unregisterServiceRequest::~unregisterServiceRequest() {
 
 inline void unregisterServiceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.serviceurl_.Destroy();
+  serviceurl_.Destroy();
 }
 
 void unregisterServiceRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void unregisterServiceRequest::Clear() {
@@ -1262,10 +1209,10 @@ void unregisterServiceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.serviceurl_.ClearToEmpty();
-  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.servicetype_) -
-      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  serviceurl_.ClearToEmpty();
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&servicetype_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1278,7 +1225,7 @@ const char* unregisterServiceRequest::_InternalParse(const char* ptr, ::_pbi::Pa
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1286,7 +1233,7 @@ const char* unregisterServiceRequest::_InternalParse(const char* ptr, ::_pbi::Pa
       // sint32 serviceType = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1385,34 +1332,38 @@ size_t unregisterServiceRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_servicetype());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData unregisterServiceRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     unregisterServiceRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*unregisterServiceRequest::GetClassData() const { return &_class_data_; }
 
+void unregisterServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<unregisterServiceRequest *>(to)->MergeFrom(
+      static_cast<const unregisterServiceRequest &>(from));
+}
 
-void unregisterServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<unregisterServiceRequest*>(&to_msg);
-  auto& from = static_cast<const unregisterServiceRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.unregisterServiceRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void unregisterServiceRequest::MergeFrom(const unregisterServiceRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.unregisterServiceRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_serviceurl().empty()) {
-    _this->_internal_set_serviceurl(from._internal_serviceurl());
+    _internal_set_serviceurl(from._internal_serviceurl());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
   if (from._internal_servicetype() != 0) {
-    _this->_internal_set_servicetype(from._internal_servicetype());
+    _internal_set_servicetype(from._internal_servicetype());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void unregisterServiceRequest::CopyFrom(const unregisterServiceRequest& from) {
@@ -1432,15 +1383,15 @@ void unregisterServiceRequest::InternalSwap(unregisterServiceRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.serviceurl_, lhs_arena,
-      &other->_impl_.serviceurl_, rhs_arena
+      &serviceurl_, lhs_arena,
+      &other->serviceurl_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(unregisterServiceRequest, _impl_.servicetype_)
-      + sizeof(unregisterServiceRequest::_impl_.servicetype_)
-      - PROTOBUF_FIELD_OFFSET(unregisterServiceRequest, _impl_.grpcservercompressionformat_)>(
-          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
-          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+      PROTOBUF_FIELD_OFFSET(unregisterServiceRequest, servicetype_)
+      + sizeof(unregisterServiceRequest::servicetype_)
+      - PROTOBUF_FIELD_OFFSET(unregisterServiceRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata unregisterServiceRequest::GetMetadata() const {
@@ -1458,29 +1409,18 @@ class unregisterServiceResponse::_Internal {
 unregisterServiceResponse::unregisterServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.unregisterServiceResponse)
 }
 unregisterServiceResponse::unregisterServiceResponse(const unregisterServiceResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  unregisterServiceResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.unregisterServiceResponse)
 }
 
-inline void unregisterServiceResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+inline void unregisterServiceResponse::SharedCtor() {
+xpcfgrpcreturnvalue_ = 0;
 }
 
 unregisterServiceResponse::~unregisterServiceResponse() {
@@ -1497,7 +1437,7 @@ inline void unregisterServiceResponse::SharedDtor() {
 }
 
 void unregisterServiceResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void unregisterServiceResponse::Clear() {
@@ -1506,7 +1446,7 @@ void unregisterServiceResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1519,7 +1459,7 @@ const char* unregisterServiceResponse::_InternalParse(const char* ptr, ::_pbi::P
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1580,28 +1520,32 @@ size_t unregisterServiceResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData unregisterServiceResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     unregisterServiceResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*unregisterServiceResponse::GetClassData() const { return &_class_data_; }
 
+void unregisterServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<unregisterServiceResponse *>(to)->MergeFrom(
+      static_cast<const unregisterServiceResponse &>(from));
+}
 
-void unregisterServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<unregisterServiceResponse*>(&to_msg);
-  auto& from = static_cast<const unregisterServiceResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.unregisterServiceResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void unregisterServiceResponse::MergeFrom(const unregisterServiceResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.unregisterServiceResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void unregisterServiceResponse::CopyFrom(const unregisterServiceResponse& from) {
@@ -1618,7 +1562,7 @@ bool unregisterServiceResponse::IsInitialized() const {
 void unregisterServiceResponse::InternalSwap(unregisterServiceResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata unregisterServiceResponse::GetMetadata() const {
@@ -1636,47 +1580,35 @@ class getServiceRequest::_Internal {
 getServiceRequest::getServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.getServiceRequest)
 }
 getServiceRequest::getServiceRequest(const getServiceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  getServiceRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , decltype(_impl_.servicetype_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.serviceurl_.InitDefault();
+  serviceurl_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
+    serviceurl_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_serviceurl().empty()) {
-    _this->_impl_.serviceurl_.Set(from._internal_serviceurl(), 
-      _this->GetArenaForAllocation());
+    serviceurl_.Set(from._internal_serviceurl(), 
+      GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.servicetype_) -
-    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.getServiceRequest)
 }
 
-inline void getServiceRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , decltype(_impl_.servicetype_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.serviceurl_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void getServiceRequest::SharedCtor() {
+serviceurl_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  serviceurl_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
 }
 
 getServiceRequest::~getServiceRequest() {
@@ -1690,11 +1622,11 @@ getServiceRequest::~getServiceRequest() {
 
 inline void getServiceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.serviceurl_.Destroy();
+  serviceurl_.Destroy();
 }
 
 void getServiceRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void getServiceRequest::Clear() {
@@ -1703,10 +1635,10 @@ void getServiceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.serviceurl_.ClearToEmpty();
-  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.servicetype_) -
-      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  serviceurl_.ClearToEmpty();
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&servicetype_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1719,7 +1651,7 @@ const char* getServiceRequest::_InternalParse(const char* ptr, ::_pbi::ParseCont
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1727,7 +1659,7 @@ const char* getServiceRequest::_InternalParse(const char* ptr, ::_pbi::ParseCont
       // sint32 serviceType = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1826,34 +1758,38 @@ size_t getServiceRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_servicetype());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getServiceRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     getServiceRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getServiceRequest::GetClassData() const { return &_class_data_; }
 
+void getServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<getServiceRequest *>(to)->MergeFrom(
+      static_cast<const getServiceRequest &>(from));
+}
 
-void getServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<getServiceRequest*>(&to_msg);
-  auto& from = static_cast<const getServiceRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.getServiceRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void getServiceRequest::MergeFrom(const getServiceRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.getServiceRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_serviceurl().empty()) {
-    _this->_internal_set_serviceurl(from._internal_serviceurl());
+    _internal_set_serviceurl(from._internal_serviceurl());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
   if (from._internal_servicetype() != 0) {
-    _this->_internal_set_servicetype(from._internal_servicetype());
+    _internal_set_servicetype(from._internal_servicetype());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void getServiceRequest::CopyFrom(const getServiceRequest& from) {
@@ -1873,15 +1809,15 @@ void getServiceRequest::InternalSwap(getServiceRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.serviceurl_, lhs_arena,
-      &other->_impl_.serviceurl_, rhs_arena
+      &serviceurl_, lhs_arena,
+      &other->serviceurl_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(getServiceRequest, _impl_.servicetype_)
-      + sizeof(getServiceRequest::_impl_.servicetype_)
-      - PROTOBUF_FIELD_OFFSET(getServiceRequest, _impl_.grpcservercompressionformat_)>(
-          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
-          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+      PROTOBUF_FIELD_OFFSET(getServiceRequest, servicetype_)
+      + sizeof(getServiceRequest::servicetype_)
+      - PROTOBUF_FIELD_OFFSET(getServiceRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getServiceRequest::GetMetadata() const {
@@ -1899,43 +1835,30 @@ class getServiceResponse::_Internal {
 getServiceResponse::getServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.getServiceResponse)
 }
 getServiceResponse::getServiceResponse(const getServiceResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  getServiceResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.serviceurl_.InitDefault();
+  serviceurl_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
+    serviceurl_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_serviceurl().empty()) {
-    _this->_impl_.serviceurl_.Set(from._internal_serviceurl(), 
-      _this->GetArenaForAllocation());
+    serviceurl_.Set(from._internal_serviceurl(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.getServiceResponse)
 }
 
-inline void getServiceResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.serviceurl_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void getServiceResponse::SharedCtor() {
+serviceurl_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  serviceurl_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 getServiceResponse::~getServiceResponse() {
@@ -1949,11 +1872,11 @@ getServiceResponse::~getServiceResponse() {
 
 inline void getServiceResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.serviceurl_.Destroy();
+  serviceurl_.Destroy();
 }
 
 void getServiceResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void getServiceResponse::Clear() {
@@ -1962,8 +1885,8 @@ void getServiceResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.serviceurl_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  serviceurl_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1986,7 +1909,7 @@ const char* getServiceResponse::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2064,31 +1987,35 @@ size_t getServiceResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getServiceResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     getServiceResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getServiceResponse::GetClassData() const { return &_class_data_; }
 
+void getServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<getServiceResponse *>(to)->MergeFrom(
+      static_cast<const getServiceResponse &>(from));
+}
 
-void getServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<getServiceResponse*>(&to_msg);
-  auto& from = static_cast<const getServiceResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.getServiceResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void getServiceResponse::MergeFrom(const getServiceResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.getServiceResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_serviceurl().empty()) {
-    _this->_internal_set_serviceurl(from._internal_serviceurl());
+    _internal_set_serviceurl(from._internal_serviceurl());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void getServiceResponse::CopyFrom(const getServiceResponse& from) {
@@ -2108,10 +2035,10 @@ void getServiceResponse::InternalSwap(getServiceResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.serviceurl_, lhs_arena,
-      &other->_impl_.serviceurl_, rhs_arena
+      &serviceurl_, lhs_arena,
+      &other->serviceurl_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getServiceResponse::GetMetadata() const {
@@ -2129,61 +2056,47 @@ class getAndLockServiceRequest::_Internal {
 getAndLockServiceRequest::getAndLockServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.getAndLockServiceRequest)
 }
 getAndLockServiceRequest::getAndLockServiceRequest(const getAndLockServiceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  getAndLockServiceRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.clientuuid_){}
-    , decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , decltype(_impl_.servicetype_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.clientuuid_.InitDefault();
+  clientuuid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.clientuuid_.Set("", GetArenaForAllocation());
+    clientuuid_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_clientuuid().empty()) {
-    _this->_impl_.clientuuid_.Set(from._internal_clientuuid(), 
-      _this->GetArenaForAllocation());
+    clientuuid_.Set(from._internal_clientuuid(), 
+      GetArenaForAllocation());
   }
-  _impl_.serviceurl_.InitDefault();
+  serviceurl_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
+    serviceurl_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_serviceurl().empty()) {
-    _this->_impl_.serviceurl_.Set(from._internal_serviceurl(), 
-      _this->GetArenaForAllocation());
+    serviceurl_.Set(from._internal_serviceurl(), 
+      GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.servicetype_) -
-    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.getAndLockServiceRequest)
 }
 
-inline void getAndLockServiceRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.clientuuid_){}
-    , decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , decltype(_impl_.servicetype_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.clientuuid_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.clientuuid_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.serviceurl_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void getAndLockServiceRequest::SharedCtor() {
+clientuuid_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  clientuuid_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+serviceurl_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  serviceurl_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
 }
 
 getAndLockServiceRequest::~getAndLockServiceRequest() {
@@ -2197,12 +2110,12 @@ getAndLockServiceRequest::~getAndLockServiceRequest() {
 
 inline void getAndLockServiceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.clientuuid_.Destroy();
-  _impl_.serviceurl_.Destroy();
+  clientuuid_.Destroy();
+  serviceurl_.Destroy();
 }
 
 void getAndLockServiceRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void getAndLockServiceRequest::Clear() {
@@ -2211,11 +2124,11 @@ void getAndLockServiceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.clientuuid_.ClearToEmpty();
-  _impl_.serviceurl_.ClearToEmpty();
-  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.servicetype_) -
-      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  clientuuid_.ClearToEmpty();
+  serviceurl_.ClearToEmpty();
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&servicetype_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2228,7 +2141,7 @@ const char* getAndLockServiceRequest::_InternalParse(const char* ptr, ::_pbi::Pa
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2236,7 +2149,7 @@ const char* getAndLockServiceRequest::_InternalParse(const char* ptr, ::_pbi::Pa
       // sint32 serviceType = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2362,37 +2275,41 @@ size_t getAndLockServiceRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_servicetype());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getAndLockServiceRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     getAndLockServiceRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getAndLockServiceRequest::GetClassData() const { return &_class_data_; }
 
+void getAndLockServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<getAndLockServiceRequest *>(to)->MergeFrom(
+      static_cast<const getAndLockServiceRequest &>(from));
+}
 
-void getAndLockServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<getAndLockServiceRequest*>(&to_msg);
-  auto& from = static_cast<const getAndLockServiceRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.getAndLockServiceRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void getAndLockServiceRequest::MergeFrom(const getAndLockServiceRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.getAndLockServiceRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_clientuuid().empty()) {
-    _this->_internal_set_clientuuid(from._internal_clientuuid());
+    _internal_set_clientuuid(from._internal_clientuuid());
   }
   if (!from._internal_serviceurl().empty()) {
-    _this->_internal_set_serviceurl(from._internal_serviceurl());
+    _internal_set_serviceurl(from._internal_serviceurl());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
   if (from._internal_servicetype() != 0) {
-    _this->_internal_set_servicetype(from._internal_servicetype());
+    _internal_set_servicetype(from._internal_servicetype());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void getAndLockServiceRequest::CopyFrom(const getAndLockServiceRequest& from) {
@@ -2412,19 +2329,19 @@ void getAndLockServiceRequest::InternalSwap(getAndLockServiceRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.clientuuid_, lhs_arena,
-      &other->_impl_.clientuuid_, rhs_arena
+      &clientuuid_, lhs_arena,
+      &other->clientuuid_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.serviceurl_, lhs_arena,
-      &other->_impl_.serviceurl_, rhs_arena
+      &serviceurl_, lhs_arena,
+      &other->serviceurl_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(getAndLockServiceRequest, _impl_.servicetype_)
-      + sizeof(getAndLockServiceRequest::_impl_.servicetype_)
-      - PROTOBUF_FIELD_OFFSET(getAndLockServiceRequest, _impl_.grpcservercompressionformat_)>(
-          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
-          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+      PROTOBUF_FIELD_OFFSET(getAndLockServiceRequest, servicetype_)
+      + sizeof(getAndLockServiceRequest::servicetype_)
+      - PROTOBUF_FIELD_OFFSET(getAndLockServiceRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getAndLockServiceRequest::GetMetadata() const {
@@ -2442,43 +2359,30 @@ class getAndLockServiceResponse::_Internal {
 getAndLockServiceResponse::getAndLockServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.getAndLockServiceResponse)
 }
 getAndLockServiceResponse::getAndLockServiceResponse(const getAndLockServiceResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  getAndLockServiceResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.serviceurl_.InitDefault();
+  serviceurl_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
+    serviceurl_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_serviceurl().empty()) {
-    _this->_impl_.serviceurl_.Set(from._internal_serviceurl(), 
-      _this->GetArenaForAllocation());
+    serviceurl_.Set(from._internal_serviceurl(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.getAndLockServiceResponse)
 }
 
-inline void getAndLockServiceResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.serviceurl_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.serviceurl_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.serviceurl_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void getAndLockServiceResponse::SharedCtor() {
+serviceurl_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  serviceurl_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 getAndLockServiceResponse::~getAndLockServiceResponse() {
@@ -2492,11 +2396,11 @@ getAndLockServiceResponse::~getAndLockServiceResponse() {
 
 inline void getAndLockServiceResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.serviceurl_.Destroy();
+  serviceurl_.Destroy();
 }
 
 void getAndLockServiceResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void getAndLockServiceResponse::Clear() {
@@ -2505,8 +2409,8 @@ void getAndLockServiceResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.serviceurl_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  serviceurl_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2529,7 +2433,7 @@ const char* getAndLockServiceResponse::_InternalParse(const char* ptr, ::_pbi::P
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2607,31 +2511,35 @@ size_t getAndLockServiceResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getAndLockServiceResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     getAndLockServiceResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getAndLockServiceResponse::GetClassData() const { return &_class_data_; }
 
+void getAndLockServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<getAndLockServiceResponse *>(to)->MergeFrom(
+      static_cast<const getAndLockServiceResponse &>(from));
+}
 
-void getAndLockServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<getAndLockServiceResponse*>(&to_msg);
-  auto& from = static_cast<const getAndLockServiceResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.getAndLockServiceResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void getAndLockServiceResponse::MergeFrom(const getAndLockServiceResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.getAndLockServiceResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_serviceurl().empty()) {
-    _this->_internal_set_serviceurl(from._internal_serviceurl());
+    _internal_set_serviceurl(from._internal_serviceurl());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void getAndLockServiceResponse::CopyFrom(const getAndLockServiceResponse& from) {
@@ -2651,10 +2559,10 @@ void getAndLockServiceResponse::InternalSwap(getAndLockServiceResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.serviceurl_, lhs_arena,
-      &other->_impl_.serviceurl_, rhs_arena
+      &serviceurl_, lhs_arena,
+      &other->serviceurl_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getAndLockServiceResponse::GetMetadata() const {
@@ -2672,47 +2580,35 @@ class unlockServiceRequest::_Internal {
 unlockServiceRequest::unlockServiceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.unlockServiceRequest)
 }
 unlockServiceRequest::unlockServiceRequest(const unlockServiceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  unlockServiceRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.clientuuid_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , decltype(_impl_.servicetype_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.clientuuid_.InitDefault();
+  clientuuid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.clientuuid_.Set("", GetArenaForAllocation());
+    clientuuid_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_clientuuid().empty()) {
-    _this->_impl_.clientuuid_.Set(from._internal_clientuuid(), 
-      _this->GetArenaForAllocation());
+    clientuuid_.Set(from._internal_clientuuid(), 
+      GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.servicetype_) -
-    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.unlockServiceRequest)
 }
 
-inline void unlockServiceRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.clientuuid_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , decltype(_impl_.servicetype_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.clientuuid_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.clientuuid_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void unlockServiceRequest::SharedCtor() {
+clientuuid_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  clientuuid_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&servicetype_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
 }
 
 unlockServiceRequest::~unlockServiceRequest() {
@@ -2726,11 +2622,11 @@ unlockServiceRequest::~unlockServiceRequest() {
 
 inline void unlockServiceRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.clientuuid_.Destroy();
+  clientuuid_.Destroy();
 }
 
 void unlockServiceRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void unlockServiceRequest::Clear() {
@@ -2739,10 +2635,10 @@ void unlockServiceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.clientuuid_.ClearToEmpty();
-  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.servicetype_) -
-      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.servicetype_));
+  clientuuid_.ClearToEmpty();
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&servicetype_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(servicetype_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2755,7 +2651,7 @@ const char* unlockServiceRequest::_InternalParse(const char* ptr, ::_pbi::ParseC
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2763,7 +2659,7 @@ const char* unlockServiceRequest::_InternalParse(const char* ptr, ::_pbi::ParseC
       // sint32 serviceType = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          servicetype_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2862,34 +2758,38 @@ size_t unlockServiceRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_servicetype());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData unlockServiceRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     unlockServiceRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*unlockServiceRequest::GetClassData() const { return &_class_data_; }
 
+void unlockServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<unlockServiceRequest *>(to)->MergeFrom(
+      static_cast<const unlockServiceRequest &>(from));
+}
 
-void unlockServiceRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<unlockServiceRequest*>(&to_msg);
-  auto& from = static_cast<const unlockServiceRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.unlockServiceRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void unlockServiceRequest::MergeFrom(const unlockServiceRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.unlockServiceRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_clientuuid().empty()) {
-    _this->_internal_set_clientuuid(from._internal_clientuuid());
+    _internal_set_clientuuid(from._internal_clientuuid());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
   if (from._internal_servicetype() != 0) {
-    _this->_internal_set_servicetype(from._internal_servicetype());
+    _internal_set_servicetype(from._internal_servicetype());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void unlockServiceRequest::CopyFrom(const unlockServiceRequest& from) {
@@ -2909,15 +2809,15 @@ void unlockServiceRequest::InternalSwap(unlockServiceRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.clientuuid_, lhs_arena,
-      &other->_impl_.clientuuid_, rhs_arena
+      &clientuuid_, lhs_arena,
+      &other->clientuuid_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(unlockServiceRequest, _impl_.servicetype_)
-      + sizeof(unlockServiceRequest::_impl_.servicetype_)
-      - PROTOBUF_FIELD_OFFSET(unlockServiceRequest, _impl_.grpcservercompressionformat_)>(
-          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
-          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+      PROTOBUF_FIELD_OFFSET(unlockServiceRequest, servicetype_)
+      + sizeof(unlockServiceRequest::servicetype_)
+      - PROTOBUF_FIELD_OFFSET(unlockServiceRequest, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata unlockServiceRequest::GetMetadata() const {
@@ -2935,29 +2835,18 @@ class unlockServiceResponse::_Internal {
 unlockServiceResponse::unlockServiceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.unlockServiceResponse)
 }
 unlockServiceResponse::unlockServiceResponse(const unlockServiceResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  unlockServiceResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.unlockServiceResponse)
 }
 
-inline void unlockServiceResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
+inline void unlockServiceResponse::SharedCtor() {
+xpcfgrpcreturnvalue_ = 0;
 }
 
 unlockServiceResponse::~unlockServiceResponse() {
@@ -2974,7 +2863,7 @@ inline void unlockServiceResponse::SharedDtor() {
 }
 
 void unlockServiceResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void unlockServiceResponse::Clear() {
@@ -2983,7 +2872,7 @@ void unlockServiceResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2996,7 +2885,7 @@ const char* unlockServiceResponse::_InternalParse(const char* ptr, ::_pbi::Parse
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3057,28 +2946,32 @@ size_t unlockServiceResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData unlockServiceResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     unlockServiceResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*unlockServiceResponse::GetClassData() const { return &_class_data_; }
 
+void unlockServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<unlockServiceResponse *>(to)->MergeFrom(
+      static_cast<const unlockServiceResponse &>(from));
+}
 
-void unlockServiceResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<unlockServiceResponse*>(&to_msg);
-  auto& from = static_cast<const unlockServiceResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.unlockServiceResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void unlockServiceResponse::MergeFrom(const unlockServiceResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.unlockServiceResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void unlockServiceResponse::CopyFrom(const unlockServiceResponse& from) {
@@ -3095,7 +2988,7 @@ bool unlockServiceResponse::IsInitialized() const {
 void unlockServiceResponse::InternalSwap(unlockServiceResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata unlockServiceResponse::GetMetadata() const {

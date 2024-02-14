@@ -22,16 +22,15 @@ namespace _pbi = _pb::internal;
 
 namespace grpcIDescriptorMatcherRegion {
 PROTOBUF_CONSTEXPR match_grpc0Request::match_grpc0Request(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.descriptors1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.descriptors2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.points2d1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.points2d2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_.radius_)*/0
-  , /*decltype(_impl_.matchingdistancemax_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : descriptors1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , descriptors2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , points2d1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , points2d2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0)
+  , radius_(0)
+  , matchingdistancemax_(0){}
 struct match_grpc0RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR match_grpc0RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -42,10 +41,9 @@ struct match_grpc0RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 match_grpc0RequestDefaultTypeInternal _match_grpc0Request_default_instance_;
 PROTOBUF_CONSTEXPR match_grpc0Response::match_grpc0Response(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct match_grpc0ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR match_grpc0ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -56,15 +54,14 @@ struct match_grpc0ResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 match_grpc0ResponseDefaultTypeInternal _match_grpc0Response_default_instance_;
 PROTOBUF_CONSTEXPR match_grpc1Request::match_grpc1Request(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.points2d_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.descriptors_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.frame_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_.radius_)*/0
-  , /*decltype(_impl_.matchingdistancemax_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : points2d_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , descriptors_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , frame_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0)
+  , radius_(0)
+  , matchingdistancemax_(0){}
 struct match_grpc1RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR match_grpc1RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -75,10 +72,9 @@ struct match_grpc1RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 match_grpc1RequestDefaultTypeInternal _match_grpc1Request_default_instance_;
 PROTOBUF_CONSTEXPR match_grpc1Response::match_grpc1Response(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct match_grpc1ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR match_grpc1ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -89,14 +85,13 @@ struct match_grpc1ResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 match_grpc1ResponseDefaultTypeInternal _match_grpc1Response_default_instance_;
 PROTOBUF_CONSTEXPR match_grpc2Request::match_grpc2Request(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.currentframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.lastframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_.radius_)*/0
-  , /*decltype(_impl_.matchingdistancemax_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : currentframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , lastframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0)
+  , radius_(0)
+  , matchingdistancemax_(0){}
 struct match_grpc2RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR match_grpc2RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -107,10 +102,9 @@ struct match_grpc2RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 match_grpc2RequestDefaultTypeInternal _match_grpc2Request_default_instance_;
 PROTOBUF_CONSTEXPR match_grpc2Response::match_grpc2Response(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct match_grpc2ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR match_grpc2ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -132,63 +126,63 @@ const uint32_t TableStruct_grpcIDescriptorMatcherRegionService_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, _impl_.descriptors1_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, _impl_.descriptors2_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, _impl_.points2d1_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, _impl_.points2d2_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, _impl_.radius_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, _impl_.matchingdistancemax_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, _impl_.matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, descriptors1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, descriptors2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, points2d1_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, points2d2_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, radius_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, matchingdistancemax_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Request, matches_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Response, _impl_.matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Response, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Response, matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc0Response, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, _impl_.points2d_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, _impl_.descriptors_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, _impl_.frame_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, _impl_.radius_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, _impl_.matchingdistancemax_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, _impl_.matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, points2d_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, descriptors_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, frame_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, radius_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, matchingdistancemax_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Request, matches_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Response, _impl_.matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Response, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Response, matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc1Response, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, _impl_.currentframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, _impl_.lastframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, _impl_.radius_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, _impl_.matchingdistancemax_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, _impl_.matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, currentframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, lastframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, radius_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, matchingdistancemax_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Request, matches_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Response, _impl_.matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Response, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Response, matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcIDescriptorMatcherRegion::match_grpc2Response, xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcIDescriptorMatcherRegion::match_grpc0Request)},
@@ -271,105 +265,83 @@ class match_grpc0Request::_Internal {
 match_grpc0Request::match_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIDescriptorMatcherRegion.match_grpc0Request)
 }
 match_grpc0Request::match_grpc0Request(const match_grpc0Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  match_grpc0Request* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.descriptors1_){}
-    , decltype(_impl_.descriptors2_){}
-    , decltype(_impl_.points2d1_){}
-    , decltype(_impl_.points2d2_){}
-    , decltype(_impl_.matches_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , decltype(_impl_.radius_){}
-    , decltype(_impl_.matchingdistancemax_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.descriptors1_.InitDefault();
+  descriptors1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.descriptors1_.Set("", GetArenaForAllocation());
+    descriptors1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_descriptors1().empty()) {
-    _this->_impl_.descriptors1_.Set(from._internal_descriptors1(), 
-      _this->GetArenaForAllocation());
+    descriptors1_.Set(from._internal_descriptors1(), 
+      GetArenaForAllocation());
   }
-  _impl_.descriptors2_.InitDefault();
+  descriptors2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.descriptors2_.Set("", GetArenaForAllocation());
+    descriptors2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_descriptors2().empty()) {
-    _this->_impl_.descriptors2_.Set(from._internal_descriptors2(), 
-      _this->GetArenaForAllocation());
+    descriptors2_.Set(from._internal_descriptors2(), 
+      GetArenaForAllocation());
   }
-  _impl_.points2d1_.InitDefault();
+  points2d1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.points2d1_.Set("", GetArenaForAllocation());
+    points2d1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_points2d1().empty()) {
-    _this->_impl_.points2d1_.Set(from._internal_points2d1(), 
-      _this->GetArenaForAllocation());
+    points2d1_.Set(from._internal_points2d1(), 
+      GetArenaForAllocation());
   }
-  _impl_.points2d2_.InitDefault();
+  points2d2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.points2d2_.Set("", GetArenaForAllocation());
+    points2d2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_points2d2().empty()) {
-    _this->_impl_.points2d2_.Set(from._internal_points2d2(), 
-      _this->GetArenaForAllocation());
+    points2d2_.Set(from._internal_points2d2(), 
+      GetArenaForAllocation());
   }
-  _impl_.matches_.InitDefault();
+  matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
+    matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    _this->_impl_.matches_.Set(from._internal_matches(), 
-      _this->GetArenaForAllocation());
+    matches_.Set(from._internal_matches(), 
+      GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.matchingdistancemax_) -
-    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.matchingdistancemax_));
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   // @@protoc_insertion_point(copy_constructor:grpcIDescriptorMatcherRegion.match_grpc0Request)
 }
 
-inline void match_grpc0Request::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.descriptors1_){}
-    , decltype(_impl_.descriptors2_){}
-    , decltype(_impl_.points2d1_){}
-    , decltype(_impl_.points2d2_){}
-    , decltype(_impl_.matches_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , decltype(_impl_.radius_){0}
-    , decltype(_impl_.matchingdistancemax_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.descriptors1_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.descriptors1_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.descriptors2_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.descriptors2_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.points2d1_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.points2d1_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.points2d2_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.points2d2_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.matches_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void match_grpc0Request::SharedCtor() {
+descriptors1_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  descriptors1_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+descriptors2_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  descriptors2_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+points2d1_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  points2d1_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+points2d2_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  points2d2_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+matches_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  matches_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
 }
 
 match_grpc0Request::~match_grpc0Request() {
@@ -383,15 +355,15 @@ match_grpc0Request::~match_grpc0Request() {
 
 inline void match_grpc0Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.descriptors1_.Destroy();
-  _impl_.descriptors2_.Destroy();
-  _impl_.points2d1_.Destroy();
-  _impl_.points2d2_.Destroy();
-  _impl_.matches_.Destroy();
+  descriptors1_.Destroy();
+  descriptors2_.Destroy();
+  points2d1_.Destroy();
+  points2d2_.Destroy();
+  matches_.Destroy();
 }
 
 void match_grpc0Request::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void match_grpc0Request::Clear() {
@@ -400,14 +372,14 @@ void match_grpc0Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.descriptors1_.ClearToEmpty();
-  _impl_.descriptors2_.ClearToEmpty();
-  _impl_.points2d1_.ClearToEmpty();
-  _impl_.points2d2_.ClearToEmpty();
-  _impl_.matches_.ClearToEmpty();
-  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.matchingdistancemax_) -
-      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.matchingdistancemax_));
+  descriptors1_.ClearToEmpty();
+  descriptors2_.ClearToEmpty();
+  points2d1_.ClearToEmpty();
+  points2d2_.ClearToEmpty();
+  matches_.ClearToEmpty();
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&matchingdistancemax_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -420,7 +392,7 @@ const char* match_grpc0Request::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -464,7 +436,7 @@ const char* match_grpc0Request::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // float radius = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _impl_.radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -472,7 +444,7 @@ const char* match_grpc0Request::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // float matchingDistanceMax = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _impl_.matchingdistancemax_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          matchingdistancemax_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -645,57 +617,61 @@ size_t match_grpc0Request::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData match_grpc0Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     match_grpc0Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*match_grpc0Request::GetClassData() const { return &_class_data_; }
 
+void match_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<match_grpc0Request *>(to)->MergeFrom(
+      static_cast<const match_grpc0Request &>(from));
+}
 
-void match_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<match_grpc0Request*>(&to_msg);
-  auto& from = static_cast<const match_grpc0Request&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc0Request)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void match_grpc0Request::MergeFrom(const match_grpc0Request& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc0Request)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_descriptors1().empty()) {
-    _this->_internal_set_descriptors1(from._internal_descriptors1());
+    _internal_set_descriptors1(from._internal_descriptors1());
   }
   if (!from._internal_descriptors2().empty()) {
-    _this->_internal_set_descriptors2(from._internal_descriptors2());
+    _internal_set_descriptors2(from._internal_descriptors2());
   }
   if (!from._internal_points2d1().empty()) {
-    _this->_internal_set_points2d1(from._internal_points2d1());
+    _internal_set_points2d1(from._internal_points2d1());
   }
   if (!from._internal_points2d2().empty()) {
-    _this->_internal_set_points2d2(from._internal_points2d2());
+    _internal_set_points2d2(from._internal_points2d2());
   }
   if (!from._internal_matches().empty()) {
-    _this->_internal_set_matches(from._internal_matches());
+    _internal_set_matches(from._internal_matches());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_radius = from._internal_radius();
   uint32_t raw_radius;
   memcpy(&raw_radius, &tmp_radius, sizeof(tmp_radius));
   if (raw_radius != 0) {
-    _this->_internal_set_radius(from._internal_radius());
+    _internal_set_radius(from._internal_radius());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_matchingdistancemax = from._internal_matchingdistancemax();
   uint32_t raw_matchingdistancemax;
   memcpy(&raw_matchingdistancemax, &tmp_matchingdistancemax, sizeof(tmp_matchingdistancemax));
   if (raw_matchingdistancemax != 0) {
-    _this->_internal_set_matchingdistancemax(from._internal_matchingdistancemax());
+    _internal_set_matchingdistancemax(from._internal_matchingdistancemax());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void match_grpc0Request::CopyFrom(const match_grpc0Request& from) {
@@ -715,31 +691,31 @@ void match_grpc0Request::InternalSwap(match_grpc0Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.descriptors1_, lhs_arena,
-      &other->_impl_.descriptors1_, rhs_arena
+      &descriptors1_, lhs_arena,
+      &other->descriptors1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.descriptors2_, lhs_arena,
-      &other->_impl_.descriptors2_, rhs_arena
+      &descriptors2_, lhs_arena,
+      &other->descriptors2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.points2d1_, lhs_arena,
-      &other->_impl_.points2d1_, rhs_arena
+      &points2d1_, lhs_arena,
+      &other->points2d1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.points2d2_, lhs_arena,
-      &other->_impl_.points2d2_, rhs_arena
+      &points2d2_, lhs_arena,
+      &other->points2d2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.matches_, lhs_arena,
-      &other->_impl_.matches_, rhs_arena
+      &matches_, lhs_arena,
+      &other->matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(match_grpc0Request, _impl_.matchingdistancemax_)
-      + sizeof(match_grpc0Request::_impl_.matchingdistancemax_)
-      - PROTOBUF_FIELD_OFFSET(match_grpc0Request, _impl_.grpcservercompressionformat_)>(
-          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
-          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+      PROTOBUF_FIELD_OFFSET(match_grpc0Request, matchingdistancemax_)
+      + sizeof(match_grpc0Request::matchingdistancemax_)
+      - PROTOBUF_FIELD_OFFSET(match_grpc0Request, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata match_grpc0Request::GetMetadata() const {
@@ -757,43 +733,30 @@ class match_grpc0Response::_Internal {
 match_grpc0Response::match_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIDescriptorMatcherRegion.match_grpc0Response)
 }
 match_grpc0Response::match_grpc0Response(const match_grpc0Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  match_grpc0Response* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.matches_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.matches_.InitDefault();
+  matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
+    matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    _this->_impl_.matches_.Set(from._internal_matches(), 
-      _this->GetArenaForAllocation());
+    matches_.Set(from._internal_matches(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIDescriptorMatcherRegion.match_grpc0Response)
 }
 
-inline void match_grpc0Response::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.matches_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.matches_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void match_grpc0Response::SharedCtor() {
+matches_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  matches_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 match_grpc0Response::~match_grpc0Response() {
@@ -807,11 +770,11 @@ match_grpc0Response::~match_grpc0Response() {
 
 inline void match_grpc0Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.matches_.Destroy();
+  matches_.Destroy();
 }
 
 void match_grpc0Response::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void match_grpc0Response::Clear() {
@@ -820,8 +783,8 @@ void match_grpc0Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.matches_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  matches_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -843,7 +806,7 @@ const char* match_grpc0Response::_InternalParse(const char* ptr, ::_pbi::ParseCo
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -917,31 +880,35 @@ size_t match_grpc0Response::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData match_grpc0Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     match_grpc0Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*match_grpc0Response::GetClassData() const { return &_class_data_; }
 
+void match_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<match_grpc0Response *>(to)->MergeFrom(
+      static_cast<const match_grpc0Response &>(from));
+}
 
-void match_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<match_grpc0Response*>(&to_msg);
-  auto& from = static_cast<const match_grpc0Response&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc0Response)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void match_grpc0Response::MergeFrom(const match_grpc0Response& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc0Response)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_matches().empty()) {
-    _this->_internal_set_matches(from._internal_matches());
+    _internal_set_matches(from._internal_matches());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void match_grpc0Response::CopyFrom(const match_grpc0Response& from) {
@@ -961,10 +928,10 @@ void match_grpc0Response::InternalSwap(match_grpc0Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.matches_, lhs_arena,
-      &other->_impl_.matches_, rhs_arena
+      &matches_, lhs_arena,
+      &other->matches_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata match_grpc0Response::GetMetadata() const {
@@ -982,91 +949,71 @@ class match_grpc1Request::_Internal {
 match_grpc1Request::match_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIDescriptorMatcherRegion.match_grpc1Request)
 }
 match_grpc1Request::match_grpc1Request(const match_grpc1Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  match_grpc1Request* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.points2d_){}
-    , decltype(_impl_.descriptors_){}
-    , decltype(_impl_.frame_){}
-    , decltype(_impl_.matches_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , decltype(_impl_.radius_){}
-    , decltype(_impl_.matchingdistancemax_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.points2d_.InitDefault();
+  points2d_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.points2d_.Set("", GetArenaForAllocation());
+    points2d_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_points2d().empty()) {
-    _this->_impl_.points2d_.Set(from._internal_points2d(), 
-      _this->GetArenaForAllocation());
+    points2d_.Set(from._internal_points2d(), 
+      GetArenaForAllocation());
   }
-  _impl_.descriptors_.InitDefault();
+  descriptors_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.descriptors_.Set("", GetArenaForAllocation());
+    descriptors_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_descriptors().empty()) {
-    _this->_impl_.descriptors_.Set(from._internal_descriptors(), 
-      _this->GetArenaForAllocation());
+    descriptors_.Set(from._internal_descriptors(), 
+      GetArenaForAllocation());
   }
-  _impl_.frame_.InitDefault();
+  frame_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame_.Set("", GetArenaForAllocation());
+    frame_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_frame().empty()) {
-    _this->_impl_.frame_.Set(from._internal_frame(), 
-      _this->GetArenaForAllocation());
+    frame_.Set(from._internal_frame(), 
+      GetArenaForAllocation());
   }
-  _impl_.matches_.InitDefault();
+  matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
+    matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    _this->_impl_.matches_.Set(from._internal_matches(), 
-      _this->GetArenaForAllocation());
+    matches_.Set(from._internal_matches(), 
+      GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.matchingdistancemax_) -
-    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.matchingdistancemax_));
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   // @@protoc_insertion_point(copy_constructor:grpcIDescriptorMatcherRegion.match_grpc1Request)
 }
 
-inline void match_grpc1Request::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.points2d_){}
-    , decltype(_impl_.descriptors_){}
-    , decltype(_impl_.frame_){}
-    , decltype(_impl_.matches_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , decltype(_impl_.radius_){0}
-    , decltype(_impl_.matchingdistancemax_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.points2d_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.points2d_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.descriptors_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.descriptors_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.frame_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.frame_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.matches_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void match_grpc1Request::SharedCtor() {
+points2d_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  points2d_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+descriptors_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  descriptors_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+frame_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  frame_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+matches_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  matches_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
 }
 
 match_grpc1Request::~match_grpc1Request() {
@@ -1080,14 +1027,14 @@ match_grpc1Request::~match_grpc1Request() {
 
 inline void match_grpc1Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.points2d_.Destroy();
-  _impl_.descriptors_.Destroy();
-  _impl_.frame_.Destroy();
-  _impl_.matches_.Destroy();
+  points2d_.Destroy();
+  descriptors_.Destroy();
+  frame_.Destroy();
+  matches_.Destroy();
 }
 
 void match_grpc1Request::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void match_grpc1Request::Clear() {
@@ -1096,13 +1043,13 @@ void match_grpc1Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.points2d_.ClearToEmpty();
-  _impl_.descriptors_.ClearToEmpty();
-  _impl_.frame_.ClearToEmpty();
-  _impl_.matches_.ClearToEmpty();
-  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.matchingdistancemax_) -
-      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.matchingdistancemax_));
+  points2d_.ClearToEmpty();
+  descriptors_.ClearToEmpty();
+  frame_.ClearToEmpty();
+  matches_.ClearToEmpty();
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&matchingdistancemax_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1115,7 +1062,7 @@ const char* match_grpc1Request::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1150,7 +1097,7 @@ const char* match_grpc1Request::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // float radius = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _impl_.radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -1158,7 +1105,7 @@ const char* match_grpc1Request::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // float matchingDistanceMax = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _impl_.matchingdistancemax_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          matchingdistancemax_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -1318,54 +1265,58 @@ size_t match_grpc1Request::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData match_grpc1Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     match_grpc1Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*match_grpc1Request::GetClassData() const { return &_class_data_; }
 
+void match_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<match_grpc1Request *>(to)->MergeFrom(
+      static_cast<const match_grpc1Request &>(from));
+}
 
-void match_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<match_grpc1Request*>(&to_msg);
-  auto& from = static_cast<const match_grpc1Request&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc1Request)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void match_grpc1Request::MergeFrom(const match_grpc1Request& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc1Request)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_points2d().empty()) {
-    _this->_internal_set_points2d(from._internal_points2d());
+    _internal_set_points2d(from._internal_points2d());
   }
   if (!from._internal_descriptors().empty()) {
-    _this->_internal_set_descriptors(from._internal_descriptors());
+    _internal_set_descriptors(from._internal_descriptors());
   }
   if (!from._internal_frame().empty()) {
-    _this->_internal_set_frame(from._internal_frame());
+    _internal_set_frame(from._internal_frame());
   }
   if (!from._internal_matches().empty()) {
-    _this->_internal_set_matches(from._internal_matches());
+    _internal_set_matches(from._internal_matches());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_radius = from._internal_radius();
   uint32_t raw_radius;
   memcpy(&raw_radius, &tmp_radius, sizeof(tmp_radius));
   if (raw_radius != 0) {
-    _this->_internal_set_radius(from._internal_radius());
+    _internal_set_radius(from._internal_radius());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_matchingdistancemax = from._internal_matchingdistancemax();
   uint32_t raw_matchingdistancemax;
   memcpy(&raw_matchingdistancemax, &tmp_matchingdistancemax, sizeof(tmp_matchingdistancemax));
   if (raw_matchingdistancemax != 0) {
-    _this->_internal_set_matchingdistancemax(from._internal_matchingdistancemax());
+    _internal_set_matchingdistancemax(from._internal_matchingdistancemax());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void match_grpc1Request::CopyFrom(const match_grpc1Request& from) {
@@ -1385,27 +1336,27 @@ void match_grpc1Request::InternalSwap(match_grpc1Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.points2d_, lhs_arena,
-      &other->_impl_.points2d_, rhs_arena
+      &points2d_, lhs_arena,
+      &other->points2d_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.descriptors_, lhs_arena,
-      &other->_impl_.descriptors_, rhs_arena
+      &descriptors_, lhs_arena,
+      &other->descriptors_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.frame_, lhs_arena,
-      &other->_impl_.frame_, rhs_arena
+      &frame_, lhs_arena,
+      &other->frame_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.matches_, lhs_arena,
-      &other->_impl_.matches_, rhs_arena
+      &matches_, lhs_arena,
+      &other->matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(match_grpc1Request, _impl_.matchingdistancemax_)
-      + sizeof(match_grpc1Request::_impl_.matchingdistancemax_)
-      - PROTOBUF_FIELD_OFFSET(match_grpc1Request, _impl_.grpcservercompressionformat_)>(
-          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
-          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+      PROTOBUF_FIELD_OFFSET(match_grpc1Request, matchingdistancemax_)
+      + sizeof(match_grpc1Request::matchingdistancemax_)
+      - PROTOBUF_FIELD_OFFSET(match_grpc1Request, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata match_grpc1Request::GetMetadata() const {
@@ -1423,43 +1374,30 @@ class match_grpc1Response::_Internal {
 match_grpc1Response::match_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIDescriptorMatcherRegion.match_grpc1Response)
 }
 match_grpc1Response::match_grpc1Response(const match_grpc1Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  match_grpc1Response* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.matches_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.matches_.InitDefault();
+  matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
+    matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    _this->_impl_.matches_.Set(from._internal_matches(), 
-      _this->GetArenaForAllocation());
+    matches_.Set(from._internal_matches(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIDescriptorMatcherRegion.match_grpc1Response)
 }
 
-inline void match_grpc1Response::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.matches_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.matches_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void match_grpc1Response::SharedCtor() {
+matches_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  matches_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 match_grpc1Response::~match_grpc1Response() {
@@ -1473,11 +1411,11 @@ match_grpc1Response::~match_grpc1Response() {
 
 inline void match_grpc1Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.matches_.Destroy();
+  matches_.Destroy();
 }
 
 void match_grpc1Response::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void match_grpc1Response::Clear() {
@@ -1486,8 +1424,8 @@ void match_grpc1Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.matches_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  matches_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1509,7 +1447,7 @@ const char* match_grpc1Response::_InternalParse(const char* ptr, ::_pbi::ParseCo
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1583,31 +1521,35 @@ size_t match_grpc1Response::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData match_grpc1Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     match_grpc1Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*match_grpc1Response::GetClassData() const { return &_class_data_; }
 
+void match_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<match_grpc1Response *>(to)->MergeFrom(
+      static_cast<const match_grpc1Response &>(from));
+}
 
-void match_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<match_grpc1Response*>(&to_msg);
-  auto& from = static_cast<const match_grpc1Response&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc1Response)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void match_grpc1Response::MergeFrom(const match_grpc1Response& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc1Response)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_matches().empty()) {
-    _this->_internal_set_matches(from._internal_matches());
+    _internal_set_matches(from._internal_matches());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void match_grpc1Response::CopyFrom(const match_grpc1Response& from) {
@@ -1627,10 +1569,10 @@ void match_grpc1Response::InternalSwap(match_grpc1Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.matches_, lhs_arena,
-      &other->_impl_.matches_, rhs_arena
+      &matches_, lhs_arena,
+      &other->matches_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata match_grpc1Response::GetMetadata() const {
@@ -1648,77 +1590,59 @@ class match_grpc2Request::_Internal {
 match_grpc2Request::match_grpc2Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIDescriptorMatcherRegion.match_grpc2Request)
 }
 match_grpc2Request::match_grpc2Request(const match_grpc2Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  match_grpc2Request* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.currentframe_){}
-    , decltype(_impl_.lastframe_){}
-    , decltype(_impl_.matches_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , decltype(_impl_.radius_){}
-    , decltype(_impl_.matchingdistancemax_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.currentframe_.InitDefault();
+  currentframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.currentframe_.Set("", GetArenaForAllocation());
+    currentframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_currentframe().empty()) {
-    _this->_impl_.currentframe_.Set(from._internal_currentframe(), 
-      _this->GetArenaForAllocation());
+    currentframe_.Set(from._internal_currentframe(), 
+      GetArenaForAllocation());
   }
-  _impl_.lastframe_.InitDefault();
+  lastframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.lastframe_.Set("", GetArenaForAllocation());
+    lastframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_lastframe().empty()) {
-    _this->_impl_.lastframe_.Set(from._internal_lastframe(), 
-      _this->GetArenaForAllocation());
+    lastframe_.Set(from._internal_lastframe(), 
+      GetArenaForAllocation());
   }
-  _impl_.matches_.InitDefault();
+  matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
+    matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    _this->_impl_.matches_.Set(from._internal_matches(), 
-      _this->GetArenaForAllocation());
+    matches_.Set(from._internal_matches(), 
+      GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.matchingdistancemax_) -
-    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.matchingdistancemax_));
+  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   // @@protoc_insertion_point(copy_constructor:grpcIDescriptorMatcherRegion.match_grpc2Request)
 }
 
-inline void match_grpc2Request::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.currentframe_){}
-    , decltype(_impl_.lastframe_){}
-    , decltype(_impl_.matches_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , decltype(_impl_.radius_){0}
-    , decltype(_impl_.matchingdistancemax_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.currentframe_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.currentframe_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.lastframe_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.lastframe_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.matches_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void match_grpc2Request::SharedCtor() {
+currentframe_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  currentframe_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+lastframe_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  lastframe_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+matches_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  matches_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&matchingdistancemax_) -
+    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
 }
 
 match_grpc2Request::~match_grpc2Request() {
@@ -1732,13 +1656,13 @@ match_grpc2Request::~match_grpc2Request() {
 
 inline void match_grpc2Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.currentframe_.Destroy();
-  _impl_.lastframe_.Destroy();
-  _impl_.matches_.Destroy();
+  currentframe_.Destroy();
+  lastframe_.Destroy();
+  matches_.Destroy();
 }
 
 void match_grpc2Request::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void match_grpc2Request::Clear() {
@@ -1747,12 +1671,12 @@ void match_grpc2Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.currentframe_.ClearToEmpty();
-  _impl_.lastframe_.ClearToEmpty();
-  _impl_.matches_.ClearToEmpty();
-  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.matchingdistancemax_) -
-      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.matchingdistancemax_));
+  currentframe_.ClearToEmpty();
+  lastframe_.ClearToEmpty();
+  matches_.ClearToEmpty();
+  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&matchingdistancemax_) -
+      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(matchingdistancemax_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1765,7 +1689,7 @@ const char* match_grpc2Request::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1791,7 +1715,7 @@ const char* match_grpc2Request::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // float radius = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _impl_.radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -1799,7 +1723,7 @@ const char* match_grpc2Request::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // float matchingDistanceMax = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _impl_.matchingdistancemax_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          matchingdistancemax_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -1946,51 +1870,55 @@ size_t match_grpc2Request::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData match_grpc2Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     match_grpc2Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*match_grpc2Request::GetClassData() const { return &_class_data_; }
 
+void match_grpc2Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<match_grpc2Request *>(to)->MergeFrom(
+      static_cast<const match_grpc2Request &>(from));
+}
 
-void match_grpc2Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<match_grpc2Request*>(&to_msg);
-  auto& from = static_cast<const match_grpc2Request&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc2Request)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void match_grpc2Request::MergeFrom(const match_grpc2Request& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc2Request)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_currentframe().empty()) {
-    _this->_internal_set_currentframe(from._internal_currentframe());
+    _internal_set_currentframe(from._internal_currentframe());
   }
   if (!from._internal_lastframe().empty()) {
-    _this->_internal_set_lastframe(from._internal_lastframe());
+    _internal_set_lastframe(from._internal_lastframe());
   }
   if (!from._internal_matches().empty()) {
-    _this->_internal_set_matches(from._internal_matches());
+    _internal_set_matches(from._internal_matches());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_radius = from._internal_radius();
   uint32_t raw_radius;
   memcpy(&raw_radius, &tmp_radius, sizeof(tmp_radius));
   if (raw_radius != 0) {
-    _this->_internal_set_radius(from._internal_radius());
+    _internal_set_radius(from._internal_radius());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_matchingdistancemax = from._internal_matchingdistancemax();
   uint32_t raw_matchingdistancemax;
   memcpy(&raw_matchingdistancemax, &tmp_matchingdistancemax, sizeof(tmp_matchingdistancemax));
   if (raw_matchingdistancemax != 0) {
-    _this->_internal_set_matchingdistancemax(from._internal_matchingdistancemax());
+    _internal_set_matchingdistancemax(from._internal_matchingdistancemax());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void match_grpc2Request::CopyFrom(const match_grpc2Request& from) {
@@ -2010,23 +1938,23 @@ void match_grpc2Request::InternalSwap(match_grpc2Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.currentframe_, lhs_arena,
-      &other->_impl_.currentframe_, rhs_arena
+      &currentframe_, lhs_arena,
+      &other->currentframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.lastframe_, lhs_arena,
-      &other->_impl_.lastframe_, rhs_arena
+      &lastframe_, lhs_arena,
+      &other->lastframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.matches_, lhs_arena,
-      &other->_impl_.matches_, rhs_arena
+      &matches_, lhs_arena,
+      &other->matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(match_grpc2Request, _impl_.matchingdistancemax_)
-      + sizeof(match_grpc2Request::_impl_.matchingdistancemax_)
-      - PROTOBUF_FIELD_OFFSET(match_grpc2Request, _impl_.grpcservercompressionformat_)>(
-          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
-          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+      PROTOBUF_FIELD_OFFSET(match_grpc2Request, matchingdistancemax_)
+      + sizeof(match_grpc2Request::matchingdistancemax_)
+      - PROTOBUF_FIELD_OFFSET(match_grpc2Request, grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata match_grpc2Request::GetMetadata() const {
@@ -2044,43 +1972,30 @@ class match_grpc2Response::_Internal {
 match_grpc2Response::match_grpc2Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIDescriptorMatcherRegion.match_grpc2Response)
 }
 match_grpc2Response::match_grpc2Response(const match_grpc2Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  match_grpc2Response* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.matches_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.matches_.InitDefault();
+  matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
+    matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    _this->_impl_.matches_.Set(from._internal_matches(), 
-      _this->GetArenaForAllocation());
+    matches_.Set(from._internal_matches(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIDescriptorMatcherRegion.match_grpc2Response)
 }
 
-inline void match_grpc2Response::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.matches_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.matches_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.matches_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void match_grpc2Response::SharedCtor() {
+matches_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  matches_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 match_grpc2Response::~match_grpc2Response() {
@@ -2094,11 +2009,11 @@ match_grpc2Response::~match_grpc2Response() {
 
 inline void match_grpc2Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.matches_.Destroy();
+  matches_.Destroy();
 }
 
 void match_grpc2Response::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void match_grpc2Response::Clear() {
@@ -2107,8 +2022,8 @@ void match_grpc2Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.matches_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  matches_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2130,7 +2045,7 @@ const char* match_grpc2Response::_InternalParse(const char* ptr, ::_pbi::ParseCo
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2204,31 +2119,35 @@ size_t match_grpc2Response::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData match_grpc2Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     match_grpc2Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*match_grpc2Response::GetClassData() const { return &_class_data_; }
 
+void match_grpc2Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<match_grpc2Response *>(to)->MergeFrom(
+      static_cast<const match_grpc2Response &>(from));
+}
 
-void match_grpc2Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<match_grpc2Response*>(&to_msg);
-  auto& from = static_cast<const match_grpc2Response&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc2Response)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void match_grpc2Response::MergeFrom(const match_grpc2Response& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIDescriptorMatcherRegion.match_grpc2Response)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_matches().empty()) {
-    _this->_internal_set_matches(from._internal_matches());
+    _internal_set_matches(from._internal_matches());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void match_grpc2Response::CopyFrom(const match_grpc2Response& from) {
@@ -2248,10 +2167,10 @@ void match_grpc2Response::InternalSwap(match_grpc2Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.matches_, lhs_arena,
-      &other->_impl_.matches_, rhs_arena
+      &matches_, lhs_arena,
+      &other->matches_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata match_grpc2Response::GetMetadata() const {

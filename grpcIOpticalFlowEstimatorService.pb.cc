@@ -22,15 +22,14 @@ namespace _pbi = _pb::internal;
 
 namespace grpcIOpticalFlowEstimator {
 PROTOBUF_CONSTEXPR estimate_grpc0Request::estimate_grpc0Request(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.previousimage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.currentimage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.pointstotrack_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.trackedpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.error_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : previousimage_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , currentimage_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , pointstotrack_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , trackedpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , status_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , error_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0){}
 struct estimate_grpc0RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR estimate_grpc0RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -41,12 +40,11 @@ struct estimate_grpc0RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 estimate_grpc0RequestDefaultTypeInternal _estimate_grpc0Request_default_instance_;
 PROTOBUF_CONSTEXPR estimate_grpc0Response::estimate_grpc0Response(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.trackedpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.error_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : trackedpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , status_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , error_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct estimate_grpc0ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR estimate_grpc0ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -57,15 +55,14 @@ struct estimate_grpc0ResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 estimate_grpc0ResponseDefaultTypeInternal _estimate_grpc0Response_default_instance_;
 PROTOBUF_CONSTEXPR estimate_grpc1Request::estimate_grpc1Request(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.previousimage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.currentimage_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.pointstotrack_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.trackedpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.error_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : previousimage_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , currentimage_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , pointstotrack_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , trackedpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , status_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , error_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0){}
 struct estimate_grpc1RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR estimate_grpc1RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -76,12 +73,11 @@ struct estimate_grpc1RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 estimate_grpc1RequestDefaultTypeInternal _estimate_grpc1Request_default_instance_;
 PROTOBUF_CONSTEXPR estimate_grpc1Response::estimate_grpc1Response(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.trackedpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.error_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : trackedpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , status_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , error_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct estimate_grpc1ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR estimate_grpc1ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -103,46 +99,46 @@ const uint32_t TableStruct_grpcIOpticalFlowEstimatorService_2eproto::offsets[] P
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, _impl_.previousimage_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, _impl_.currentimage_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, _impl_.pointstotrack_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, _impl_.trackedpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, _impl_.status_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, _impl_.error_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, previousimage_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, currentimage_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, pointstotrack_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, trackedpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, status_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Request, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Response, _impl_.trackedpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Response, _impl_.status_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Response, _impl_.error_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Response, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Response, trackedpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Response, status_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Response, error_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc0Response, xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, _impl_.previousimage_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, _impl_.currentimage_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, _impl_.pointstotrack_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, _impl_.trackedpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, _impl_.status_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, _impl_.error_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, previousimage_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, currentimage_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, pointstotrack_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, trackedpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, status_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Request, error_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Response, _impl_.trackedpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Response, _impl_.status_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Response, _impl_.error_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Response, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Response, trackedpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Response, status_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Response, error_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOpticalFlowEstimator::estimate_grpc1Response, xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcIOpticalFlowEstimator::estimate_grpc0Request)},
@@ -214,113 +210,90 @@ class estimate_grpc0Request::_Internal {
 estimate_grpc0Request::estimate_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIOpticalFlowEstimator.estimate_grpc0Request)
 }
 estimate_grpc0Request::estimate_grpc0Request(const estimate_grpc0Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  estimate_grpc0Request* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.previousimage_){}
-    , decltype(_impl_.currentimage_){}
-    , decltype(_impl_.pointstotrack_){}
-    , decltype(_impl_.trackedpoints_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.error_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.previousimage_.InitDefault();
+  previousimage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.previousimage_.Set("", GetArenaForAllocation());
+    previousimage_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_previousimage().empty()) {
-    _this->_impl_.previousimage_.Set(from._internal_previousimage(), 
-      _this->GetArenaForAllocation());
+    previousimage_.Set(from._internal_previousimage(), 
+      GetArenaForAllocation());
   }
-  _impl_.currentimage_.InitDefault();
+  currentimage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.currentimage_.Set("", GetArenaForAllocation());
+    currentimage_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_currentimage().empty()) {
-    _this->_impl_.currentimage_.Set(from._internal_currentimage(), 
-      _this->GetArenaForAllocation());
+    currentimage_.Set(from._internal_currentimage(), 
+      GetArenaForAllocation());
   }
-  _impl_.pointstotrack_.InitDefault();
+  pointstotrack_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.pointstotrack_.Set("", GetArenaForAllocation());
+    pointstotrack_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pointstotrack().empty()) {
-    _this->_impl_.pointstotrack_.Set(from._internal_pointstotrack(), 
-      _this->GetArenaForAllocation());
+    pointstotrack_.Set(from._internal_pointstotrack(), 
+      GetArenaForAllocation());
   }
-  _impl_.trackedpoints_.InitDefault();
+  trackedpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackedpoints_.Set("", GetArenaForAllocation());
+    trackedpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_trackedpoints().empty()) {
-    _this->_impl_.trackedpoints_.Set(from._internal_trackedpoints(), 
-      _this->GetArenaForAllocation());
+    trackedpoints_.Set(from._internal_trackedpoints(), 
+      GetArenaForAllocation());
   }
-  _impl_.status_.InitDefault();
+  status_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
+    status_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
+    status_.Set(from._internal_status(), 
+      GetArenaForAllocation());
   }
-  _impl_.error_.InitDefault();
+  error_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.error_.Set("", GetArenaForAllocation());
+    error_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_error().empty()) {
-    _this->_impl_.error_.Set(from._internal_error(), 
-      _this->GetArenaForAllocation());
+    error_.Set(from._internal_error(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIOpticalFlowEstimator.estimate_grpc0Request)
 }
 
-inline void estimate_grpc0Request::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.previousimage_){}
-    , decltype(_impl_.currentimage_){}
-    , decltype(_impl_.pointstotrack_){}
-    , decltype(_impl_.trackedpoints_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.error_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.previousimage_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.previousimage_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.currentimage_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.currentimage_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.pointstotrack_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.pointstotrack_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.trackedpoints_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackedpoints_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.error_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.error_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void estimate_grpc0Request::SharedCtor() {
+previousimage_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  previousimage_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+currentimage_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  currentimage_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+pointstotrack_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  pointstotrack_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+trackedpoints_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  trackedpoints_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+status_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  status_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+error_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  error_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+grpcservercompressionformat_ = 0;
 }
 
 estimate_grpc0Request::~estimate_grpc0Request() {
@@ -334,16 +307,16 @@ estimate_grpc0Request::~estimate_grpc0Request() {
 
 inline void estimate_grpc0Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.previousimage_.Destroy();
-  _impl_.currentimage_.Destroy();
-  _impl_.pointstotrack_.Destroy();
-  _impl_.trackedpoints_.Destroy();
-  _impl_.status_.Destroy();
-  _impl_.error_.Destroy();
+  previousimage_.Destroy();
+  currentimage_.Destroy();
+  pointstotrack_.Destroy();
+  trackedpoints_.Destroy();
+  status_.Destroy();
+  error_.Destroy();
 }
 
 void estimate_grpc0Request::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void estimate_grpc0Request::Clear() {
@@ -352,13 +325,13 @@ void estimate_grpc0Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.previousimage_.ClearToEmpty();
-  _impl_.currentimage_.ClearToEmpty();
-  _impl_.pointstotrack_.ClearToEmpty();
-  _impl_.trackedpoints_.ClearToEmpty();
-  _impl_.status_.ClearToEmpty();
-  _impl_.error_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  previousimage_.ClearToEmpty();
+  currentimage_.ClearToEmpty();
+  pointstotrack_.ClearToEmpty();
+  trackedpoints_.ClearToEmpty();
+  status_.ClearToEmpty();
+  error_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -371,7 +344,7 @@ const char* estimate_grpc0Request::_InternalParse(const char* ptr, ::_pbi::Parse
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -564,46 +537,50 @@ size_t estimate_grpc0Request::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData estimate_grpc0Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     estimate_grpc0Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*estimate_grpc0Request::GetClassData() const { return &_class_data_; }
 
+void estimate_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<estimate_grpc0Request *>(to)->MergeFrom(
+      static_cast<const estimate_grpc0Request &>(from));
+}
 
-void estimate_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<estimate_grpc0Request*>(&to_msg);
-  auto& from = static_cast<const estimate_grpc0Request&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIOpticalFlowEstimator.estimate_grpc0Request)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void estimate_grpc0Request::MergeFrom(const estimate_grpc0Request& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIOpticalFlowEstimator.estimate_grpc0Request)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_previousimage().empty()) {
-    _this->_internal_set_previousimage(from._internal_previousimage());
+    _internal_set_previousimage(from._internal_previousimage());
   }
   if (!from._internal_currentimage().empty()) {
-    _this->_internal_set_currentimage(from._internal_currentimage());
+    _internal_set_currentimage(from._internal_currentimage());
   }
   if (!from._internal_pointstotrack().empty()) {
-    _this->_internal_set_pointstotrack(from._internal_pointstotrack());
+    _internal_set_pointstotrack(from._internal_pointstotrack());
   }
   if (!from._internal_trackedpoints().empty()) {
-    _this->_internal_set_trackedpoints(from._internal_trackedpoints());
+    _internal_set_trackedpoints(from._internal_trackedpoints());
   }
   if (!from._internal_status().empty()) {
-    _this->_internal_set_status(from._internal_status());
+    _internal_set_status(from._internal_status());
   }
   if (!from._internal_error().empty()) {
-    _this->_internal_set_error(from._internal_error());
+    _internal_set_error(from._internal_error());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void estimate_grpc0Request::CopyFrom(const estimate_grpc0Request& from) {
@@ -623,30 +600,30 @@ void estimate_grpc0Request::InternalSwap(estimate_grpc0Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.previousimage_, lhs_arena,
-      &other->_impl_.previousimage_, rhs_arena
+      &previousimage_, lhs_arena,
+      &other->previousimage_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.currentimage_, lhs_arena,
-      &other->_impl_.currentimage_, rhs_arena
+      &currentimage_, lhs_arena,
+      &other->currentimage_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.pointstotrack_, lhs_arena,
-      &other->_impl_.pointstotrack_, rhs_arena
+      &pointstotrack_, lhs_arena,
+      &other->pointstotrack_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.trackedpoints_, lhs_arena,
-      &other->_impl_.trackedpoints_, rhs_arena
+      &trackedpoints_, lhs_arena,
+      &other->trackedpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
+      &status_, lhs_arena,
+      &other->status_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.error_, lhs_arena,
-      &other->_impl_.error_, rhs_arena
+      &error_, lhs_arena,
+      &other->error_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimate_grpc0Request::GetMetadata() const {
@@ -664,71 +641,54 @@ class estimate_grpc0Response::_Internal {
 estimate_grpc0Response::estimate_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIOpticalFlowEstimator.estimate_grpc0Response)
 }
 estimate_grpc0Response::estimate_grpc0Response(const estimate_grpc0Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  estimate_grpc0Response* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.trackedpoints_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.error_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.trackedpoints_.InitDefault();
+  trackedpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackedpoints_.Set("", GetArenaForAllocation());
+    trackedpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_trackedpoints().empty()) {
-    _this->_impl_.trackedpoints_.Set(from._internal_trackedpoints(), 
-      _this->GetArenaForAllocation());
+    trackedpoints_.Set(from._internal_trackedpoints(), 
+      GetArenaForAllocation());
   }
-  _impl_.status_.InitDefault();
+  status_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
+    status_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
+    status_.Set(from._internal_status(), 
+      GetArenaForAllocation());
   }
-  _impl_.error_.InitDefault();
+  error_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.error_.Set("", GetArenaForAllocation());
+    error_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_error().empty()) {
-    _this->_impl_.error_.Set(from._internal_error(), 
-      _this->GetArenaForAllocation());
+    error_.Set(from._internal_error(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIOpticalFlowEstimator.estimate_grpc0Response)
 }
 
-inline void estimate_grpc0Response::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.trackedpoints_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.error_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.trackedpoints_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackedpoints_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.error_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.error_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void estimate_grpc0Response::SharedCtor() {
+trackedpoints_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  trackedpoints_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+status_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  status_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+error_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  error_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 estimate_grpc0Response::~estimate_grpc0Response() {
@@ -742,13 +702,13 @@ estimate_grpc0Response::~estimate_grpc0Response() {
 
 inline void estimate_grpc0Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.trackedpoints_.Destroy();
-  _impl_.status_.Destroy();
-  _impl_.error_.Destroy();
+  trackedpoints_.Destroy();
+  status_.Destroy();
+  error_.Destroy();
 }
 
 void estimate_grpc0Response::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void estimate_grpc0Response::Clear() {
@@ -757,10 +717,10 @@ void estimate_grpc0Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.trackedpoints_.ClearToEmpty();
-  _impl_.status_.ClearToEmpty();
-  _impl_.error_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  trackedpoints_.ClearToEmpty();
+  status_.ClearToEmpty();
+  error_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -800,7 +760,7 @@ const char* estimate_grpc0Response::_InternalParse(const char* ptr, ::_pbi::Pars
       // sint32 xpcfGrpcReturnValue = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -900,37 +860,41 @@ size_t estimate_grpc0Response::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData estimate_grpc0Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     estimate_grpc0Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*estimate_grpc0Response::GetClassData() const { return &_class_data_; }
 
+void estimate_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<estimate_grpc0Response *>(to)->MergeFrom(
+      static_cast<const estimate_grpc0Response &>(from));
+}
 
-void estimate_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<estimate_grpc0Response*>(&to_msg);
-  auto& from = static_cast<const estimate_grpc0Response&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIOpticalFlowEstimator.estimate_grpc0Response)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void estimate_grpc0Response::MergeFrom(const estimate_grpc0Response& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIOpticalFlowEstimator.estimate_grpc0Response)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_trackedpoints().empty()) {
-    _this->_internal_set_trackedpoints(from._internal_trackedpoints());
+    _internal_set_trackedpoints(from._internal_trackedpoints());
   }
   if (!from._internal_status().empty()) {
-    _this->_internal_set_status(from._internal_status());
+    _internal_set_status(from._internal_status());
   }
   if (!from._internal_error().empty()) {
-    _this->_internal_set_error(from._internal_error());
+    _internal_set_error(from._internal_error());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void estimate_grpc0Response::CopyFrom(const estimate_grpc0Response& from) {
@@ -950,18 +914,18 @@ void estimate_grpc0Response::InternalSwap(estimate_grpc0Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.trackedpoints_, lhs_arena,
-      &other->_impl_.trackedpoints_, rhs_arena
+      &trackedpoints_, lhs_arena,
+      &other->trackedpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
+      &status_, lhs_arena,
+      &other->status_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.error_, lhs_arena,
-      &other->_impl_.error_, rhs_arena
+      &error_, lhs_arena,
+      &other->error_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimate_grpc0Response::GetMetadata() const {
@@ -979,113 +943,90 @@ class estimate_grpc1Request::_Internal {
 estimate_grpc1Request::estimate_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIOpticalFlowEstimator.estimate_grpc1Request)
 }
 estimate_grpc1Request::estimate_grpc1Request(const estimate_grpc1Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  estimate_grpc1Request* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.previousimage_){}
-    , decltype(_impl_.currentimage_){}
-    , decltype(_impl_.pointstotrack_){}
-    , decltype(_impl_.trackedpoints_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.error_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.previousimage_.InitDefault();
+  previousimage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.previousimage_.Set("", GetArenaForAllocation());
+    previousimage_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_previousimage().empty()) {
-    _this->_impl_.previousimage_.Set(from._internal_previousimage(), 
-      _this->GetArenaForAllocation());
+    previousimage_.Set(from._internal_previousimage(), 
+      GetArenaForAllocation());
   }
-  _impl_.currentimage_.InitDefault();
+  currentimage_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.currentimage_.Set("", GetArenaForAllocation());
+    currentimage_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_currentimage().empty()) {
-    _this->_impl_.currentimage_.Set(from._internal_currentimage(), 
-      _this->GetArenaForAllocation());
+    currentimage_.Set(from._internal_currentimage(), 
+      GetArenaForAllocation());
   }
-  _impl_.pointstotrack_.InitDefault();
+  pointstotrack_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.pointstotrack_.Set("", GetArenaForAllocation());
+    pointstotrack_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pointstotrack().empty()) {
-    _this->_impl_.pointstotrack_.Set(from._internal_pointstotrack(), 
-      _this->GetArenaForAllocation());
+    pointstotrack_.Set(from._internal_pointstotrack(), 
+      GetArenaForAllocation());
   }
-  _impl_.trackedpoints_.InitDefault();
+  trackedpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackedpoints_.Set("", GetArenaForAllocation());
+    trackedpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_trackedpoints().empty()) {
-    _this->_impl_.trackedpoints_.Set(from._internal_trackedpoints(), 
-      _this->GetArenaForAllocation());
+    trackedpoints_.Set(from._internal_trackedpoints(), 
+      GetArenaForAllocation());
   }
-  _impl_.status_.InitDefault();
+  status_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
+    status_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
+    status_.Set(from._internal_status(), 
+      GetArenaForAllocation());
   }
-  _impl_.error_.InitDefault();
+  error_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.error_.Set("", GetArenaForAllocation());
+    error_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_error().empty()) {
-    _this->_impl_.error_.Set(from._internal_error(), 
-      _this->GetArenaForAllocation());
+    error_.Set(from._internal_error(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIOpticalFlowEstimator.estimate_grpc1Request)
 }
 
-inline void estimate_grpc1Request::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.previousimage_){}
-    , decltype(_impl_.currentimage_){}
-    , decltype(_impl_.pointstotrack_){}
-    , decltype(_impl_.trackedpoints_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.error_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.previousimage_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.previousimage_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.currentimage_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.currentimage_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.pointstotrack_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.pointstotrack_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.trackedpoints_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackedpoints_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.error_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.error_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void estimate_grpc1Request::SharedCtor() {
+previousimage_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  previousimage_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+currentimage_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  currentimage_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+pointstotrack_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  pointstotrack_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+trackedpoints_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  trackedpoints_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+status_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  status_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+error_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  error_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+grpcservercompressionformat_ = 0;
 }
 
 estimate_grpc1Request::~estimate_grpc1Request() {
@@ -1099,16 +1040,16 @@ estimate_grpc1Request::~estimate_grpc1Request() {
 
 inline void estimate_grpc1Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.previousimage_.Destroy();
-  _impl_.currentimage_.Destroy();
-  _impl_.pointstotrack_.Destroy();
-  _impl_.trackedpoints_.Destroy();
-  _impl_.status_.Destroy();
-  _impl_.error_.Destroy();
+  previousimage_.Destroy();
+  currentimage_.Destroy();
+  pointstotrack_.Destroy();
+  trackedpoints_.Destroy();
+  status_.Destroy();
+  error_.Destroy();
 }
 
 void estimate_grpc1Request::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void estimate_grpc1Request::Clear() {
@@ -1117,13 +1058,13 @@ void estimate_grpc1Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.previousimage_.ClearToEmpty();
-  _impl_.currentimage_.ClearToEmpty();
-  _impl_.pointstotrack_.ClearToEmpty();
-  _impl_.trackedpoints_.ClearToEmpty();
-  _impl_.status_.ClearToEmpty();
-  _impl_.error_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  previousimage_.ClearToEmpty();
+  currentimage_.ClearToEmpty();
+  pointstotrack_.ClearToEmpty();
+  trackedpoints_.ClearToEmpty();
+  status_.ClearToEmpty();
+  error_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1136,7 +1077,7 @@ const char* estimate_grpc1Request::_InternalParse(const char* ptr, ::_pbi::Parse
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1329,46 +1270,50 @@ size_t estimate_grpc1Request::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData estimate_grpc1Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     estimate_grpc1Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*estimate_grpc1Request::GetClassData() const { return &_class_data_; }
 
+void estimate_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<estimate_grpc1Request *>(to)->MergeFrom(
+      static_cast<const estimate_grpc1Request &>(from));
+}
 
-void estimate_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<estimate_grpc1Request*>(&to_msg);
-  auto& from = static_cast<const estimate_grpc1Request&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIOpticalFlowEstimator.estimate_grpc1Request)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void estimate_grpc1Request::MergeFrom(const estimate_grpc1Request& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIOpticalFlowEstimator.estimate_grpc1Request)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_previousimage().empty()) {
-    _this->_internal_set_previousimage(from._internal_previousimage());
+    _internal_set_previousimage(from._internal_previousimage());
   }
   if (!from._internal_currentimage().empty()) {
-    _this->_internal_set_currentimage(from._internal_currentimage());
+    _internal_set_currentimage(from._internal_currentimage());
   }
   if (!from._internal_pointstotrack().empty()) {
-    _this->_internal_set_pointstotrack(from._internal_pointstotrack());
+    _internal_set_pointstotrack(from._internal_pointstotrack());
   }
   if (!from._internal_trackedpoints().empty()) {
-    _this->_internal_set_trackedpoints(from._internal_trackedpoints());
+    _internal_set_trackedpoints(from._internal_trackedpoints());
   }
   if (!from._internal_status().empty()) {
-    _this->_internal_set_status(from._internal_status());
+    _internal_set_status(from._internal_status());
   }
   if (!from._internal_error().empty()) {
-    _this->_internal_set_error(from._internal_error());
+    _internal_set_error(from._internal_error());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void estimate_grpc1Request::CopyFrom(const estimate_grpc1Request& from) {
@@ -1388,30 +1333,30 @@ void estimate_grpc1Request::InternalSwap(estimate_grpc1Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.previousimage_, lhs_arena,
-      &other->_impl_.previousimage_, rhs_arena
+      &previousimage_, lhs_arena,
+      &other->previousimage_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.currentimage_, lhs_arena,
-      &other->_impl_.currentimage_, rhs_arena
+      &currentimage_, lhs_arena,
+      &other->currentimage_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.pointstotrack_, lhs_arena,
-      &other->_impl_.pointstotrack_, rhs_arena
+      &pointstotrack_, lhs_arena,
+      &other->pointstotrack_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.trackedpoints_, lhs_arena,
-      &other->_impl_.trackedpoints_, rhs_arena
+      &trackedpoints_, lhs_arena,
+      &other->trackedpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
+      &status_, lhs_arena,
+      &other->status_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.error_, lhs_arena,
-      &other->_impl_.error_, rhs_arena
+      &error_, lhs_arena,
+      &other->error_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimate_grpc1Request::GetMetadata() const {
@@ -1429,71 +1374,54 @@ class estimate_grpc1Response::_Internal {
 estimate_grpc1Response::estimate_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcIOpticalFlowEstimator.estimate_grpc1Response)
 }
 estimate_grpc1Response::estimate_grpc1Response(const estimate_grpc1Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  estimate_grpc1Response* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.trackedpoints_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.error_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.trackedpoints_.InitDefault();
+  trackedpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackedpoints_.Set("", GetArenaForAllocation());
+    trackedpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_trackedpoints().empty()) {
-    _this->_impl_.trackedpoints_.Set(from._internal_trackedpoints(), 
-      _this->GetArenaForAllocation());
+    trackedpoints_.Set(from._internal_trackedpoints(), 
+      GetArenaForAllocation());
   }
-  _impl_.status_.InitDefault();
+  status_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
+    status_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
+    status_.Set(from._internal_status(), 
+      GetArenaForAllocation());
   }
-  _impl_.error_.InitDefault();
+  error_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.error_.Set("", GetArenaForAllocation());
+    error_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_error().empty()) {
-    _this->_impl_.error_.Set(from._internal_error(), 
-      _this->GetArenaForAllocation());
+    error_.Set(from._internal_error(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIOpticalFlowEstimator.estimate_grpc1Response)
 }
 
-inline void estimate_grpc1Response::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.trackedpoints_){}
-    , decltype(_impl_.status_){}
-    , decltype(_impl_.error_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.trackedpoints_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackedpoints_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.error_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.error_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void estimate_grpc1Response::SharedCtor() {
+trackedpoints_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  trackedpoints_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+status_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  status_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+error_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  error_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 estimate_grpc1Response::~estimate_grpc1Response() {
@@ -1507,13 +1435,13 @@ estimate_grpc1Response::~estimate_grpc1Response() {
 
 inline void estimate_grpc1Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.trackedpoints_.Destroy();
-  _impl_.status_.Destroy();
-  _impl_.error_.Destroy();
+  trackedpoints_.Destroy();
+  status_.Destroy();
+  error_.Destroy();
 }
 
 void estimate_grpc1Response::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void estimate_grpc1Response::Clear() {
@@ -1522,10 +1450,10 @@ void estimate_grpc1Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.trackedpoints_.ClearToEmpty();
-  _impl_.status_.ClearToEmpty();
-  _impl_.error_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  trackedpoints_.ClearToEmpty();
+  status_.ClearToEmpty();
+  error_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1565,7 +1493,7 @@ const char* estimate_grpc1Response::_InternalParse(const char* ptr, ::_pbi::Pars
       // sint32 xpcfGrpcReturnValue = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1665,37 +1593,41 @@ size_t estimate_grpc1Response::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData estimate_grpc1Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     estimate_grpc1Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*estimate_grpc1Response::GetClassData() const { return &_class_data_; }
 
+void estimate_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<estimate_grpc1Response *>(to)->MergeFrom(
+      static_cast<const estimate_grpc1Response &>(from));
+}
 
-void estimate_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<estimate_grpc1Response*>(&to_msg);
-  auto& from = static_cast<const estimate_grpc1Response&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIOpticalFlowEstimator.estimate_grpc1Response)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void estimate_grpc1Response::MergeFrom(const estimate_grpc1Response& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcIOpticalFlowEstimator.estimate_grpc1Response)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_trackedpoints().empty()) {
-    _this->_internal_set_trackedpoints(from._internal_trackedpoints());
+    _internal_set_trackedpoints(from._internal_trackedpoints());
   }
   if (!from._internal_status().empty()) {
-    _this->_internal_set_status(from._internal_status());
+    _internal_set_status(from._internal_status());
   }
   if (!from._internal_error().empty()) {
-    _this->_internal_set_error(from._internal_error());
+    _internal_set_error(from._internal_error());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void estimate_grpc1Response::CopyFrom(const estimate_grpc1Response& from) {
@@ -1715,18 +1647,18 @@ void estimate_grpc1Response::InternalSwap(estimate_grpc1Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.trackedpoints_, lhs_arena,
-      &other->_impl_.trackedpoints_, rhs_arena
+      &trackedpoints_, lhs_arena,
+      &other->trackedpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
+      &status_, lhs_arena,
+      &other->status_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.error_, lhs_arena,
-      &other->_impl_.error_, rhs_arena
+      &error_, lhs_arena,
+      &other->error_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata estimate_grpc1Response::GetMetadata() const {

@@ -22,10 +22,9 @@ namespace _pbi = _pb::internal;
 
 namespace grpcITrackableLoader {
 PROTOBUF_CONSTEXPR loadTrackableRequest::loadTrackableRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.trackable_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : trackable_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , grpcservercompressionformat_(0){}
 struct loadTrackableRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR loadTrackableRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -36,10 +35,9 @@ struct loadTrackableRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 loadTrackableRequestDefaultTypeInternal _loadTrackableRequest_default_instance_;
 PROTOBUF_CONSTEXPR loadTrackableResponse::loadTrackableResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.trackable_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    ::_pbi::ConstantInitialized)
+  : trackable_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
+  , xpcfgrpcreturnvalue_(0){}
 struct loadTrackableResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR loadTrackableResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -61,16 +59,16 @@ const uint32_t TableStruct_grpcITrackableLoaderService_2eproto::offsets[] PROTOB
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITrackableLoader::loadTrackableRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcITrackableLoader::loadTrackableRequest, _impl_.trackable_),
+  PROTOBUF_FIELD_OFFSET(::grpcITrackableLoader::loadTrackableRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcITrackableLoader::loadTrackableRequest, trackable_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcITrackableLoader::loadTrackableResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITrackableLoader::loadTrackableResponse, _impl_.trackable_),
-  PROTOBUF_FIELD_OFFSET(::grpcITrackableLoader::loadTrackableResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcITrackableLoader::loadTrackableResponse, trackable_),
+  PROTOBUF_FIELD_OFFSET(::grpcITrackableLoader::loadTrackableResponse, xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcITrackableLoader::loadTrackableRequest)},
@@ -123,43 +121,30 @@ class loadTrackableRequest::_Internal {
 loadTrackableRequest::loadTrackableRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcITrackableLoader.loadTrackableRequest)
 }
 loadTrackableRequest::loadTrackableRequest(const loadTrackableRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  loadTrackableRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.trackable_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.trackable_.InitDefault();
+  trackable_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackable_.Set("", GetArenaForAllocation());
+    trackable_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_trackable().empty()) {
-    _this->_impl_.trackable_.Set(from._internal_trackable(), 
-      _this->GetArenaForAllocation());
+    trackable_.Set(from._internal_trackable(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  grpcservercompressionformat_ = from.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcITrackableLoader.loadTrackableRequest)
 }
 
-inline void loadTrackableRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.trackable_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.trackable_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackable_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void loadTrackableRequest::SharedCtor() {
+trackable_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  trackable_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+grpcservercompressionformat_ = 0;
 }
 
 loadTrackableRequest::~loadTrackableRequest() {
@@ -173,11 +158,11 @@ loadTrackableRequest::~loadTrackableRequest() {
 
 inline void loadTrackableRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.trackable_.Destroy();
+  trackable_.Destroy();
 }
 
 void loadTrackableRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void loadTrackableRequest::Clear() {
@@ -186,8 +171,8 @@ void loadTrackableRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.trackable_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  trackable_.ClearToEmpty();
+  grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -200,7 +185,7 @@ const char* loadTrackableRequest::_InternalParse(const char* ptr, ::_pbi::ParseC
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -283,31 +268,35 @@ size_t loadTrackableRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData loadTrackableRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     loadTrackableRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*loadTrackableRequest::GetClassData() const { return &_class_data_; }
 
+void loadTrackableRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<loadTrackableRequest *>(to)->MergeFrom(
+      static_cast<const loadTrackableRequest &>(from));
+}
 
-void loadTrackableRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<loadTrackableRequest*>(&to_msg);
-  auto& from = static_cast<const loadTrackableRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITrackableLoader.loadTrackableRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void loadTrackableRequest::MergeFrom(const loadTrackableRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcITrackableLoader.loadTrackableRequest)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_trackable().empty()) {
-    _this->_internal_set_trackable(from._internal_trackable());
+    _internal_set_trackable(from._internal_trackable());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void loadTrackableRequest::CopyFrom(const loadTrackableRequest& from) {
@@ -327,10 +316,10 @@ void loadTrackableRequest::InternalSwap(loadTrackableRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.trackable_, lhs_arena,
-      &other->_impl_.trackable_, rhs_arena
+      &trackable_, lhs_arena,
+      &other->trackable_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadTrackableRequest::GetMetadata() const {
@@ -348,43 +337,30 @@ class loadTrackableResponse::_Internal {
 loadTrackableResponse::loadTrackableResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
+  SharedCtor();
   // @@protoc_insertion_point(arena_constructor:grpcITrackableLoader.loadTrackableResponse)
 }
 loadTrackableResponse::loadTrackableResponse(const loadTrackableResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  loadTrackableResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.trackable_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.trackable_.InitDefault();
+  trackable_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackable_.Set("", GetArenaForAllocation());
+    trackable_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_trackable().empty()) {
-    _this->_impl_.trackable_.Set(from._internal_trackable(), 
-      _this->GetArenaForAllocation());
+    trackable_.Set(from._internal_trackable(), 
+      GetArenaForAllocation());
   }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcITrackableLoader.loadTrackableResponse)
 }
 
-inline void loadTrackableResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.trackable_){}
-    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.trackable_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.trackable_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+inline void loadTrackableResponse::SharedCtor() {
+trackable_.InitDefault();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  trackable_.Set("", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+xpcfgrpcreturnvalue_ = 0;
 }
 
 loadTrackableResponse::~loadTrackableResponse() {
@@ -398,11 +374,11 @@ loadTrackableResponse::~loadTrackableResponse() {
 
 inline void loadTrackableResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.trackable_.Destroy();
+  trackable_.Destroy();
 }
 
 void loadTrackableResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _cached_size_.Set(size);
 }
 
 void loadTrackableResponse::Clear() {
@@ -411,8 +387,8 @@ void loadTrackableResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.trackable_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  trackable_.ClearToEmpty();
+  xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -434,7 +410,7 @@ const char* loadTrackableResponse::_InternalParse(const char* ptr, ::_pbi::Parse
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -508,31 +484,35 @@ size_t loadTrackableResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData loadTrackableResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
     loadTrackableResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*loadTrackableResponse::GetClassData() const { return &_class_data_; }
 
+void loadTrackableResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<loadTrackableResponse *>(to)->MergeFrom(
+      static_cast<const loadTrackableResponse &>(from));
+}
 
-void loadTrackableResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<loadTrackableResponse*>(&to_msg);
-  auto& from = static_cast<const loadTrackableResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITrackableLoader.loadTrackableResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
+
+void loadTrackableResponse::MergeFrom(const loadTrackableResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:grpcITrackableLoader.loadTrackableResponse)
+  GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_trackable().empty()) {
-    _this->_internal_set_trackable(from._internal_trackable());
+    _internal_set_trackable(from._internal_trackable());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void loadTrackableResponse::CopyFrom(const loadTrackableResponse& from) {
@@ -552,10 +532,10 @@ void loadTrackableResponse::InternalSwap(loadTrackableResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.trackable_, lhs_arena,
-      &other->_impl_.trackable_, rhs_arena
+      &trackable_, lhs_arena,
+      &other->trackable_, rhs_arena
   );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata loadTrackableResponse::GetMetadata() const {
