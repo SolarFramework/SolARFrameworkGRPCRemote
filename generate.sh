@@ -72,11 +72,17 @@ while [ "$1" != "" ]; do
         -x | --xpcf-module-root)
             USER_XPCF_MODULE_ROOT=$VALUE
             ;;
+        -f | --framework-path)
+            SOLAR_FRAMEWORK_PATH=$VALUE
+            ;;
          -d | --database-dir)
             DATABASE_DIR=$VALUE
             ;;
         -sv | --solar-version)
             VERSION_SOLAR=$VALUE
+            ;;
+        -xc | --xpcf-version)
+            VERSION_XPCF=$VALUE
             ;;
         -m | --module-uuid)
             MODULE_UUID=$VALUE
