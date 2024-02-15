@@ -134,60 +134,60 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::stop()
 }
 
 
-SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::setMap(std::string const& uuid)
+SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::setMapUUID(std::string const& uuid)
 {
   ::grpc::ClientContext context;
-  ::grpcIMapUpdatePipeline::setMapRequest reqIn;
-  ::grpcIMapUpdatePipeline::setMapResponse respOut;
+  ::grpcIMapUpdatePipeline::setMapUUIDRequest reqIn;
+  ::grpcIMapUpdatePipeline::setMapUUIDResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "setMap", m_methodCompressionInfosMap);
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "setMapUUID", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_uuid(uuid);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapUpdatePipeline_grpcProxy::setMap request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapUpdatePipeline_grpcProxy::setMapUUID request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->setMap(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->setMapUUID(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapUpdatePipeline_grpcProxy::setMap response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapUpdatePipeline_grpcProxy::setMapUUID response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "setMap rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMapUpdatePipelineService","setMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "setMapUUID rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapUpdatePipelineService","setMapUUID",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
-SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::getMap(std::string& uuid) const
+SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::getMapUUID(std::string& uuid) const
 {
   ::grpc::ClientContext context;
-  ::grpcIMapUpdatePipeline::getMapRequest reqIn;
-  ::grpcIMapUpdatePipeline::getMapResponse respOut;
+  ::grpcIMapUpdatePipeline::getMapUUIDRequest reqIn;
+  ::grpcIMapUpdatePipeline::getMapUUIDResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getMap", m_methodCompressionInfosMap);
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getMapUUID", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_uuid(uuid);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapUpdatePipeline_grpcProxy::getMap request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapUpdatePipeline_grpcProxy::getMapUUID request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->getMap(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getMapUUID(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapUpdatePipeline_grpcProxy::getMap response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapUpdatePipeline_grpcProxy::getMapUUID response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getMap rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMapUpdatePipelineService","getMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "getMapUUID rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapUpdatePipelineService","getMapUUID",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   uuid = respOut.uuid();

@@ -106,47 +106,47 @@ XPCFErrorCode IMapUpdatePipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IMapUpdatePipeline_grpcServer::grpcIMapUpdatePipelineServiceImpl::setMap(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::setMapRequest* request, ::grpcIMapUpdatePipeline::setMapResponse* response)
+::grpc::Status IMapUpdatePipeline_grpcServer::grpcIMapUpdatePipelineServiceImpl::setMapUUID(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::setMapUUIDRequest* request, ::grpcIMapUpdatePipeline::setMapUUIDResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "setMap", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "setMapUUID", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapUpdatePipeline_grpcServer::setMap request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapUpdatePipeline_grpcServer::setMapUUID request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string uuid = request->uuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setMap(uuid);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setMapUUID(uuid);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapUpdatePipeline_grpcServer::setMap response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapUpdatePipeline_grpcServer::setMapUUID response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapUpdatePipeline_grpcServer::grpcIMapUpdatePipelineServiceImpl::getMap(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getMapRequest* request, ::grpcIMapUpdatePipeline::getMapResponse* response)
+::grpc::Status IMapUpdatePipeline_grpcServer::grpcIMapUpdatePipelineServiceImpl::getMapUUID(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getMapUUIDRequest* request, ::grpcIMapUpdatePipeline::getMapUUIDResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMap", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMapUUID", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapUpdatePipeline_grpcServer::getMap request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapUpdatePipeline_grpcServer::getMapUUID request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string uuid = request->uuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMap(uuid);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapUUID(uuid);
   response->set_uuid(uuid);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapUpdatePipeline_grpcServer::getMap response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapUpdatePipeline_grpcServer::getMapUUID response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
