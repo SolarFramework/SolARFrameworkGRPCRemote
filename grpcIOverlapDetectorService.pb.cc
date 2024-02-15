@@ -22,12 +22,13 @@ namespace _pbi = _pb::internal;
 
 namespace grpcIOverlapDetector {
 PROTOBUF_CONSTEXPR detect_grpc0Request::detect_grpc0Request(
-    ::_pbi::ConstantInitialized)
-  : globalmap_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , floatingmap_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , sim3transform_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , cpoverlapindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.globalmap_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.floatingmap_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.sim3transform_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.cpoverlapindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct detect_grpc0RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR detect_grpc0RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -38,10 +39,11 @@ struct detect_grpc0RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 detect_grpc0RequestDefaultTypeInternal _detect_grpc0Request_default_instance_;
 PROTOBUF_CONSTEXPR detect_grpc0Response::detect_grpc0Response(
-    ::_pbi::ConstantInitialized)
-  : sim3transform_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , cpoverlapindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.sim3transform_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.cpoverlapindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct detect_grpc0ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR detect_grpc0ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -52,13 +54,14 @@ struct detect_grpc0ResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 detect_grpc0ResponseDefaultTypeInternal _detect_grpc0Response_default_instance_;
 PROTOBUF_CONSTEXPR detect_grpc1Request::detect_grpc1Request(
-    ::_pbi::ConstantInitialized)
-  : globalmap_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , floatingmap_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , sim3transform_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , overlapindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , scores_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.globalmap_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.floatingmap_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.sim3transform_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.overlapindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.scores_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct detect_grpc1RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR detect_grpc1RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -69,11 +72,12 @@ struct detect_grpc1RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 detect_grpc1RequestDefaultTypeInternal _detect_grpc1Request_default_instance_;
 PROTOBUF_CONSTEXPR detect_grpc1Response::detect_grpc1Response(
-    ::_pbi::ConstantInitialized)
-  : sim3transform_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , overlapindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , scores_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.sim3transform_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.overlapindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.scores_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct detect_grpc1ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR detect_grpc1ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -95,42 +99,42 @@ const uint32_t TableStruct_grpcIOverlapDetectorService_2eproto::offsets[] PROTOB
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, globalmap_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, floatingmap_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, sim3transform_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, cpoverlapindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, _impl_.globalmap_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, _impl_.floatingmap_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, _impl_.sim3transform_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Request, _impl_.cpoverlapindices_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Response, sim3transform_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Response, cpoverlapindices_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Response, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Response, _impl_.sim3transform_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Response, _impl_.cpoverlapindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc0Response, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, globalmap_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, floatingmap_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, sim3transform_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, overlapindices_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, scores_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, _impl_.globalmap_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, _impl_.floatingmap_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, _impl_.sim3transform_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, _impl_.overlapindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Request, _impl_.scores_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Response, sim3transform_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Response, overlapindices_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Response, scores_),
-  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Response, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Response, _impl_.sim3transform_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Response, _impl_.overlapindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Response, _impl_.scores_),
+  PROTOBUF_FIELD_OFFSET(::grpcIOverlapDetector::detect_grpc1Response, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcIOverlapDetector::detect_grpc0Request)},
@@ -199,66 +203,85 @@ class detect_grpc0Request::_Internal {
 detect_grpc0Request::detect_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIOverlapDetector.detect_grpc0Request)
 }
 detect_grpc0Request::detect_grpc0Request(const detect_grpc0Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  detect_grpc0Request* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.globalmap_){}
+    , decltype(_impl_.floatingmap_){}
+    , decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.cpoverlapindices_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  globalmap_.InitDefault();
+  _impl_.globalmap_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    globalmap_.Set("", GetArenaForAllocation());
+    _impl_.globalmap_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_globalmap().empty()) {
-    globalmap_.Set(from._internal_globalmap(), 
-      GetArenaForAllocation());
+    _this->_impl_.globalmap_.Set(from._internal_globalmap(), 
+      _this->GetArenaForAllocation());
   }
-  floatingmap_.InitDefault();
+  _impl_.floatingmap_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    floatingmap_.Set("", GetArenaForAllocation());
+    _impl_.floatingmap_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_floatingmap().empty()) {
-    floatingmap_.Set(from._internal_floatingmap(), 
-      GetArenaForAllocation());
+    _this->_impl_.floatingmap_.Set(from._internal_floatingmap(), 
+      _this->GetArenaForAllocation());
   }
-  sim3transform_.InitDefault();
+  _impl_.sim3transform_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    sim3transform_.Set("", GetArenaForAllocation());
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sim3transform().empty()) {
-    sim3transform_.Set(from._internal_sim3transform(), 
-      GetArenaForAllocation());
+    _this->_impl_.sim3transform_.Set(from._internal_sim3transform(), 
+      _this->GetArenaForAllocation());
   }
-  cpoverlapindices_.InitDefault();
+  _impl_.cpoverlapindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    cpoverlapindices_.Set("", GetArenaForAllocation());
+    _impl_.cpoverlapindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_cpoverlapindices().empty()) {
-    cpoverlapindices_.Set(from._internal_cpoverlapindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.cpoverlapindices_.Set(from._internal_cpoverlapindices(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIOverlapDetector.detect_grpc0Request)
 }
 
-inline void detect_grpc0Request::SharedCtor() {
-globalmap_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  globalmap_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-floatingmap_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  floatingmap_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-sim3transform_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  sim3transform_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-cpoverlapindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  cpoverlapindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void detect_grpc0Request::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.globalmap_){}
+    , decltype(_impl_.floatingmap_){}
+    , decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.cpoverlapindices_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.globalmap_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.globalmap_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.floatingmap_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.floatingmap_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.sim3transform_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.cpoverlapindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.cpoverlapindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 detect_grpc0Request::~detect_grpc0Request() {
@@ -272,14 +295,14 @@ detect_grpc0Request::~detect_grpc0Request() {
 
 inline void detect_grpc0Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  globalmap_.Destroy();
-  floatingmap_.Destroy();
-  sim3transform_.Destroy();
-  cpoverlapindices_.Destroy();
+  _impl_.globalmap_.Destroy();
+  _impl_.floatingmap_.Destroy();
+  _impl_.sim3transform_.Destroy();
+  _impl_.cpoverlapindices_.Destroy();
 }
 
 void detect_grpc0Request::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void detect_grpc0Request::Clear() {
@@ -288,11 +311,11 @@ void detect_grpc0Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  globalmap_.ClearToEmpty();
-  floatingmap_.ClearToEmpty();
-  sim3transform_.ClearToEmpty();
-  cpoverlapindices_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.globalmap_.ClearToEmpty();
+  _impl_.floatingmap_.ClearToEmpty();
+  _impl_.sim3transform_.ClearToEmpty();
+  _impl_.cpoverlapindices_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -305,7 +328,7 @@ const char* detect_grpc0Request::_InternalParse(const char* ptr, ::_pbi::ParseCo
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -454,44 +477,40 @@ size_t detect_grpc0Request::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData detect_grpc0Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     detect_grpc0Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*detect_grpc0Request::GetClassData() const { return &_class_data_; }
 
-void detect_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<detect_grpc0Request *>(to)->MergeFrom(
-      static_cast<const detect_grpc0Request &>(from));
-}
 
-
-void detect_grpc0Request::MergeFrom(const detect_grpc0Request& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIOverlapDetector.detect_grpc0Request)
-  GOOGLE_DCHECK_NE(&from, this);
+void detect_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<detect_grpc0Request*>(&to_msg);
+  auto& from = static_cast<const detect_grpc0Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIOverlapDetector.detect_grpc0Request)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_globalmap().empty()) {
-    _internal_set_globalmap(from._internal_globalmap());
+    _this->_internal_set_globalmap(from._internal_globalmap());
   }
   if (!from._internal_floatingmap().empty()) {
-    _internal_set_floatingmap(from._internal_floatingmap());
+    _this->_internal_set_floatingmap(from._internal_floatingmap());
   }
   if (!from._internal_sim3transform().empty()) {
-    _internal_set_sim3transform(from._internal_sim3transform());
+    _this->_internal_set_sim3transform(from._internal_sim3transform());
   }
   if (!from._internal_cpoverlapindices().empty()) {
-    _internal_set_cpoverlapindices(from._internal_cpoverlapindices());
+    _this->_internal_set_cpoverlapindices(from._internal_cpoverlapindices());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void detect_grpc0Request::CopyFrom(const detect_grpc0Request& from) {
@@ -511,22 +530,22 @@ void detect_grpc0Request::InternalSwap(detect_grpc0Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &globalmap_, lhs_arena,
-      &other->globalmap_, rhs_arena
+      &_impl_.globalmap_, lhs_arena,
+      &other->_impl_.globalmap_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &floatingmap_, lhs_arena,
-      &other->floatingmap_, rhs_arena
+      &_impl_.floatingmap_, lhs_arena,
+      &other->_impl_.floatingmap_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &sim3transform_, lhs_arena,
-      &other->sim3transform_, rhs_arena
+      &_impl_.sim3transform_, lhs_arena,
+      &other->_impl_.sim3transform_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &cpoverlapindices_, lhs_arena,
-      &other->cpoverlapindices_, rhs_arena
+      &_impl_.cpoverlapindices_, lhs_arena,
+      &other->_impl_.cpoverlapindices_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detect_grpc0Request::GetMetadata() const {
@@ -544,42 +563,57 @@ class detect_grpc0Response::_Internal {
 detect_grpc0Response::detect_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIOverlapDetector.detect_grpc0Response)
 }
 detect_grpc0Response::detect_grpc0Response(const detect_grpc0Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  detect_grpc0Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.cpoverlapindices_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  sim3transform_.InitDefault();
+  _impl_.sim3transform_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    sim3transform_.Set("", GetArenaForAllocation());
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sim3transform().empty()) {
-    sim3transform_.Set(from._internal_sim3transform(), 
-      GetArenaForAllocation());
+    _this->_impl_.sim3transform_.Set(from._internal_sim3transform(), 
+      _this->GetArenaForAllocation());
   }
-  cpoverlapindices_.InitDefault();
+  _impl_.cpoverlapindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    cpoverlapindices_.Set("", GetArenaForAllocation());
+    _impl_.cpoverlapindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_cpoverlapindices().empty()) {
-    cpoverlapindices_.Set(from._internal_cpoverlapindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.cpoverlapindices_.Set(from._internal_cpoverlapindices(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIOverlapDetector.detect_grpc0Response)
 }
 
-inline void detect_grpc0Response::SharedCtor() {
-sim3transform_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  sim3transform_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-cpoverlapindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  cpoverlapindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void detect_grpc0Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.cpoverlapindices_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.sim3transform_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.cpoverlapindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.cpoverlapindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 detect_grpc0Response::~detect_grpc0Response() {
@@ -593,12 +627,12 @@ detect_grpc0Response::~detect_grpc0Response() {
 
 inline void detect_grpc0Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  sim3transform_.Destroy();
-  cpoverlapindices_.Destroy();
+  _impl_.sim3transform_.Destroy();
+  _impl_.cpoverlapindices_.Destroy();
 }
 
 void detect_grpc0Response::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void detect_grpc0Response::Clear() {
@@ -607,9 +641,9 @@ void detect_grpc0Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  sim3transform_.ClearToEmpty();
-  cpoverlapindices_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.sim3transform_.ClearToEmpty();
+  _impl_.cpoverlapindices_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -640,7 +674,7 @@ const char* detect_grpc0Response::_InternalParse(const char* ptr, ::_pbi::ParseC
       // sint32 xpcfGrpcReturnValue = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -727,38 +761,34 @@ size_t detect_grpc0Response::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData detect_grpc0Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     detect_grpc0Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*detect_grpc0Response::GetClassData() const { return &_class_data_; }
 
-void detect_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<detect_grpc0Response *>(to)->MergeFrom(
-      static_cast<const detect_grpc0Response &>(from));
-}
 
-
-void detect_grpc0Response::MergeFrom(const detect_grpc0Response& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIOverlapDetector.detect_grpc0Response)
-  GOOGLE_DCHECK_NE(&from, this);
+void detect_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<detect_grpc0Response*>(&to_msg);
+  auto& from = static_cast<const detect_grpc0Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIOverlapDetector.detect_grpc0Response)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_sim3transform().empty()) {
-    _internal_set_sim3transform(from._internal_sim3transform());
+    _this->_internal_set_sim3transform(from._internal_sim3transform());
   }
   if (!from._internal_cpoverlapindices().empty()) {
-    _internal_set_cpoverlapindices(from._internal_cpoverlapindices());
+    _this->_internal_set_cpoverlapindices(from._internal_cpoverlapindices());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void detect_grpc0Response::CopyFrom(const detect_grpc0Response& from) {
@@ -778,14 +808,14 @@ void detect_grpc0Response::InternalSwap(detect_grpc0Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &sim3transform_, lhs_arena,
-      &other->sim3transform_, rhs_arena
+      &_impl_.sim3transform_, lhs_arena,
+      &other->_impl_.sim3transform_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &cpoverlapindices_, lhs_arena,
-      &other->cpoverlapindices_, rhs_arena
+      &_impl_.cpoverlapindices_, lhs_arena,
+      &other->_impl_.cpoverlapindices_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detect_grpc0Response::GetMetadata() const {
@@ -803,78 +833,99 @@ class detect_grpc1Request::_Internal {
 detect_grpc1Request::detect_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIOverlapDetector.detect_grpc1Request)
 }
 detect_grpc1Request::detect_grpc1Request(const detect_grpc1Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  detect_grpc1Request* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.globalmap_){}
+    , decltype(_impl_.floatingmap_){}
+    , decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.overlapindices_){}
+    , decltype(_impl_.scores_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  globalmap_.InitDefault();
+  _impl_.globalmap_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    globalmap_.Set("", GetArenaForAllocation());
+    _impl_.globalmap_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_globalmap().empty()) {
-    globalmap_.Set(from._internal_globalmap(), 
-      GetArenaForAllocation());
+    _this->_impl_.globalmap_.Set(from._internal_globalmap(), 
+      _this->GetArenaForAllocation());
   }
-  floatingmap_.InitDefault();
+  _impl_.floatingmap_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    floatingmap_.Set("", GetArenaForAllocation());
+    _impl_.floatingmap_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_floatingmap().empty()) {
-    floatingmap_.Set(from._internal_floatingmap(), 
-      GetArenaForAllocation());
+    _this->_impl_.floatingmap_.Set(from._internal_floatingmap(), 
+      _this->GetArenaForAllocation());
   }
-  sim3transform_.InitDefault();
+  _impl_.sim3transform_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    sim3transform_.Set("", GetArenaForAllocation());
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sim3transform().empty()) {
-    sim3transform_.Set(from._internal_sim3transform(), 
-      GetArenaForAllocation());
+    _this->_impl_.sim3transform_.Set(from._internal_sim3transform(), 
+      _this->GetArenaForAllocation());
   }
-  overlapindices_.InitDefault();
+  _impl_.overlapindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    overlapindices_.Set("", GetArenaForAllocation());
+    _impl_.overlapindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_overlapindices().empty()) {
-    overlapindices_.Set(from._internal_overlapindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.overlapindices_.Set(from._internal_overlapindices(), 
+      _this->GetArenaForAllocation());
   }
-  scores_.InitDefault();
+  _impl_.scores_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    scores_.Set("", GetArenaForAllocation());
+    _impl_.scores_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_scores().empty()) {
-    scores_.Set(from._internal_scores(), 
-      GetArenaForAllocation());
+    _this->_impl_.scores_.Set(from._internal_scores(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIOverlapDetector.detect_grpc1Request)
 }
 
-inline void detect_grpc1Request::SharedCtor() {
-globalmap_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  globalmap_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-floatingmap_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  floatingmap_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-sim3transform_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  sim3transform_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-overlapindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  overlapindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-scores_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  scores_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void detect_grpc1Request::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.globalmap_){}
+    , decltype(_impl_.floatingmap_){}
+    , decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.overlapindices_){}
+    , decltype(_impl_.scores_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.globalmap_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.globalmap_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.floatingmap_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.floatingmap_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.sim3transform_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.overlapindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.overlapindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.scores_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.scores_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 detect_grpc1Request::~detect_grpc1Request() {
@@ -888,15 +939,15 @@ detect_grpc1Request::~detect_grpc1Request() {
 
 inline void detect_grpc1Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  globalmap_.Destroy();
-  floatingmap_.Destroy();
-  sim3transform_.Destroy();
-  overlapindices_.Destroy();
-  scores_.Destroy();
+  _impl_.globalmap_.Destroy();
+  _impl_.floatingmap_.Destroy();
+  _impl_.sim3transform_.Destroy();
+  _impl_.overlapindices_.Destroy();
+  _impl_.scores_.Destroy();
 }
 
 void detect_grpc1Request::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void detect_grpc1Request::Clear() {
@@ -905,12 +956,12 @@ void detect_grpc1Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  globalmap_.ClearToEmpty();
-  floatingmap_.ClearToEmpty();
-  sim3transform_.ClearToEmpty();
-  overlapindices_.ClearToEmpty();
-  scores_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.globalmap_.ClearToEmpty();
+  _impl_.floatingmap_.ClearToEmpty();
+  _impl_.sim3transform_.ClearToEmpty();
+  _impl_.overlapindices_.ClearToEmpty();
+  _impl_.scores_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -923,7 +974,7 @@ const char* detect_grpc1Request::_InternalParse(const char* ptr, ::_pbi::ParseCo
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1094,47 +1145,43 @@ size_t detect_grpc1Request::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData detect_grpc1Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     detect_grpc1Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*detect_grpc1Request::GetClassData() const { return &_class_data_; }
 
-void detect_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<detect_grpc1Request *>(to)->MergeFrom(
-      static_cast<const detect_grpc1Request &>(from));
-}
 
-
-void detect_grpc1Request::MergeFrom(const detect_grpc1Request& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIOverlapDetector.detect_grpc1Request)
-  GOOGLE_DCHECK_NE(&from, this);
+void detect_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<detect_grpc1Request*>(&to_msg);
+  auto& from = static_cast<const detect_grpc1Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIOverlapDetector.detect_grpc1Request)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_globalmap().empty()) {
-    _internal_set_globalmap(from._internal_globalmap());
+    _this->_internal_set_globalmap(from._internal_globalmap());
   }
   if (!from._internal_floatingmap().empty()) {
-    _internal_set_floatingmap(from._internal_floatingmap());
+    _this->_internal_set_floatingmap(from._internal_floatingmap());
   }
   if (!from._internal_sim3transform().empty()) {
-    _internal_set_sim3transform(from._internal_sim3transform());
+    _this->_internal_set_sim3transform(from._internal_sim3transform());
   }
   if (!from._internal_overlapindices().empty()) {
-    _internal_set_overlapindices(from._internal_overlapindices());
+    _this->_internal_set_overlapindices(from._internal_overlapindices());
   }
   if (!from._internal_scores().empty()) {
-    _internal_set_scores(from._internal_scores());
+    _this->_internal_set_scores(from._internal_scores());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void detect_grpc1Request::CopyFrom(const detect_grpc1Request& from) {
@@ -1154,26 +1201,26 @@ void detect_grpc1Request::InternalSwap(detect_grpc1Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &globalmap_, lhs_arena,
-      &other->globalmap_, rhs_arena
+      &_impl_.globalmap_, lhs_arena,
+      &other->_impl_.globalmap_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &floatingmap_, lhs_arena,
-      &other->floatingmap_, rhs_arena
+      &_impl_.floatingmap_, lhs_arena,
+      &other->_impl_.floatingmap_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &sim3transform_, lhs_arena,
-      &other->sim3transform_, rhs_arena
+      &_impl_.sim3transform_, lhs_arena,
+      &other->_impl_.sim3transform_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &overlapindices_, lhs_arena,
-      &other->overlapindices_, rhs_arena
+      &_impl_.overlapindices_, lhs_arena,
+      &other->_impl_.overlapindices_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &scores_, lhs_arena,
-      &other->scores_, rhs_arena
+      &_impl_.scores_, lhs_arena,
+      &other->_impl_.scores_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detect_grpc1Request::GetMetadata() const {
@@ -1191,54 +1238,71 @@ class detect_grpc1Response::_Internal {
 detect_grpc1Response::detect_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIOverlapDetector.detect_grpc1Response)
 }
 detect_grpc1Response::detect_grpc1Response(const detect_grpc1Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  detect_grpc1Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.overlapindices_){}
+    , decltype(_impl_.scores_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  sim3transform_.InitDefault();
+  _impl_.sim3transform_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    sim3transform_.Set("", GetArenaForAllocation());
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sim3transform().empty()) {
-    sim3transform_.Set(from._internal_sim3transform(), 
-      GetArenaForAllocation());
+    _this->_impl_.sim3transform_.Set(from._internal_sim3transform(), 
+      _this->GetArenaForAllocation());
   }
-  overlapindices_.InitDefault();
+  _impl_.overlapindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    overlapindices_.Set("", GetArenaForAllocation());
+    _impl_.overlapindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_overlapindices().empty()) {
-    overlapindices_.Set(from._internal_overlapindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.overlapindices_.Set(from._internal_overlapindices(), 
+      _this->GetArenaForAllocation());
   }
-  scores_.InitDefault();
+  _impl_.scores_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    scores_.Set("", GetArenaForAllocation());
+    _impl_.scores_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_scores().empty()) {
-    scores_.Set(from._internal_scores(), 
-      GetArenaForAllocation());
+    _this->_impl_.scores_.Set(from._internal_scores(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIOverlapDetector.detect_grpc1Response)
 }
 
-inline void detect_grpc1Response::SharedCtor() {
-sim3transform_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  sim3transform_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-overlapindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  overlapindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-scores_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  scores_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void detect_grpc1Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.overlapindices_){}
+    , decltype(_impl_.scores_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.sim3transform_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.overlapindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.overlapindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.scores_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.scores_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 detect_grpc1Response::~detect_grpc1Response() {
@@ -1252,13 +1316,13 @@ detect_grpc1Response::~detect_grpc1Response() {
 
 inline void detect_grpc1Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  sim3transform_.Destroy();
-  overlapindices_.Destroy();
-  scores_.Destroy();
+  _impl_.sim3transform_.Destroy();
+  _impl_.overlapindices_.Destroy();
+  _impl_.scores_.Destroy();
 }
 
 void detect_grpc1Response::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void detect_grpc1Response::Clear() {
@@ -1267,10 +1331,10 @@ void detect_grpc1Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  sim3transform_.ClearToEmpty();
-  overlapindices_.ClearToEmpty();
-  scores_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.sim3transform_.ClearToEmpty();
+  _impl_.overlapindices_.ClearToEmpty();
+  _impl_.scores_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1310,7 +1374,7 @@ const char* detect_grpc1Response::_InternalParse(const char* ptr, ::_pbi::ParseC
       // sint32 xpcfGrpcReturnValue = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1410,41 +1474,37 @@ size_t detect_grpc1Response::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData detect_grpc1Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     detect_grpc1Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*detect_grpc1Response::GetClassData() const { return &_class_data_; }
 
-void detect_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<detect_grpc1Response *>(to)->MergeFrom(
-      static_cast<const detect_grpc1Response &>(from));
-}
 
-
-void detect_grpc1Response::MergeFrom(const detect_grpc1Response& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIOverlapDetector.detect_grpc1Response)
-  GOOGLE_DCHECK_NE(&from, this);
+void detect_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<detect_grpc1Response*>(&to_msg);
+  auto& from = static_cast<const detect_grpc1Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIOverlapDetector.detect_grpc1Response)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_sim3transform().empty()) {
-    _internal_set_sim3transform(from._internal_sim3transform());
+    _this->_internal_set_sim3transform(from._internal_sim3transform());
   }
   if (!from._internal_overlapindices().empty()) {
-    _internal_set_overlapindices(from._internal_overlapindices());
+    _this->_internal_set_overlapindices(from._internal_overlapindices());
   }
   if (!from._internal_scores().empty()) {
-    _internal_set_scores(from._internal_scores());
+    _this->_internal_set_scores(from._internal_scores());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void detect_grpc1Response::CopyFrom(const detect_grpc1Response& from) {
@@ -1464,18 +1524,18 @@ void detect_grpc1Response::InternalSwap(detect_grpc1Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &sim3transform_, lhs_arena,
-      &other->sim3transform_, rhs_arena
+      &_impl_.sim3transform_, lhs_arena,
+      &other->_impl_.sim3transform_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &overlapindices_, lhs_arena,
-      &other->overlapindices_, rhs_arena
+      &_impl_.overlapindices_, lhs_arena,
+      &other->_impl_.overlapindices_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &scores_, lhs_arena,
-      &other->scores_, rhs_arena
+      &_impl_.scores_, lhs_arena,
+      &other->_impl_.scores_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detect_grpc1Response::GetMetadata() const {

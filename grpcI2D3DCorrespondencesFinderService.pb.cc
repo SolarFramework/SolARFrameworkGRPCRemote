@@ -22,16 +22,17 @@ namespace _pbi = _pb::internal;
 
 namespace grpcI2D3DCorrespondencesFinder {
 PROTOBUF_CONSTEXPR findRequest::findRequest(
-    ::_pbi::ConstantInitialized)
-  : lastframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , currentframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , current_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , shared_3dpoint_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , shared_2dpoint_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , corres2d3d_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , found_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , remaining_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.lastframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.currentframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.current_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.shared_3dpoint_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.shared_2dpoint_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.corres2d3d_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.found_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.remaining_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct findRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR findRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -42,13 +43,14 @@ struct findRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 findRequestDefaultTypeInternal _findRequest_default_instance_;
 PROTOBUF_CONSTEXPR findResponse::findResponse(
-    ::_pbi::ConstantInitialized)
-  : shared_3dpoint_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , shared_2dpoint_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , corres2d3d_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , found_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , remaining_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.shared_3dpoint_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.shared_2dpoint_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.corres2d3d_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.found_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.remaining_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct findResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR findResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -70,27 +72,27 @@ const uint32_t TableStruct_grpcI2D3DCorrespondencesFinderService_2eproto::offset
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, lastframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, currentframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, current_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, shared_3dpoint_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, shared_2dpoint_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, corres2d3d_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, found_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, remaining_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, _impl_.lastframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, _impl_.currentframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, _impl_.current_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, _impl_.shared_3dpoint_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, _impl_.shared_2dpoint_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, _impl_.corres2d3d_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, _impl_.found_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findRequest, _impl_.remaining_matches_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, shared_3dpoint_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, shared_2dpoint_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, corres2d3d_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, found_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, remaining_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, _impl_.shared_3dpoint_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, _impl_.shared_2dpoint_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, _impl_.corres2d3d_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, _impl_.found_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, _impl_.remaining_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2D3DCorrespondencesFinder::findResponse, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcI2D3DCorrespondencesFinder::findRequest)},
@@ -150,114 +152,141 @@ class findRequest::_Internal {
 findRequest::findRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI2D3DCorrespondencesFinder.findRequest)
 }
 findRequest::findRequest(const findRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  findRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.lastframe_){}
+    , decltype(_impl_.currentframe_){}
+    , decltype(_impl_.current_matches_){}
+    , decltype(_impl_.shared_3dpoint_){}
+    , decltype(_impl_.shared_2dpoint_){}
+    , decltype(_impl_.corres2d3d_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.remaining_matches_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  lastframe_.InitDefault();
+  _impl_.lastframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    lastframe_.Set("", GetArenaForAllocation());
+    _impl_.lastframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_lastframe().empty()) {
-    lastframe_.Set(from._internal_lastframe(), 
-      GetArenaForAllocation());
+    _this->_impl_.lastframe_.Set(from._internal_lastframe(), 
+      _this->GetArenaForAllocation());
   }
-  currentframe_.InitDefault();
+  _impl_.currentframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    currentframe_.Set("", GetArenaForAllocation());
+    _impl_.currentframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_currentframe().empty()) {
-    currentframe_.Set(from._internal_currentframe(), 
-      GetArenaForAllocation());
+    _this->_impl_.currentframe_.Set(from._internal_currentframe(), 
+      _this->GetArenaForAllocation());
   }
-  current_matches_.InitDefault();
+  _impl_.current_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    current_matches_.Set("", GetArenaForAllocation());
+    _impl_.current_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_current_matches().empty()) {
-    current_matches_.Set(from._internal_current_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.current_matches_.Set(from._internal_current_matches(), 
+      _this->GetArenaForAllocation());
   }
-  shared_3dpoint_.InitDefault();
+  _impl_.shared_3dpoint_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    shared_3dpoint_.Set("", GetArenaForAllocation());
+    _impl_.shared_3dpoint_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_shared_3dpoint().empty()) {
-    shared_3dpoint_.Set(from._internal_shared_3dpoint(), 
-      GetArenaForAllocation());
+    _this->_impl_.shared_3dpoint_.Set(from._internal_shared_3dpoint(), 
+      _this->GetArenaForAllocation());
   }
-  shared_2dpoint_.InitDefault();
+  _impl_.shared_2dpoint_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    shared_2dpoint_.Set("", GetArenaForAllocation());
+    _impl_.shared_2dpoint_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_shared_2dpoint().empty()) {
-    shared_2dpoint_.Set(from._internal_shared_2dpoint(), 
-      GetArenaForAllocation());
+    _this->_impl_.shared_2dpoint_.Set(from._internal_shared_2dpoint(), 
+      _this->GetArenaForAllocation());
   }
-  corres2d3d_.InitDefault();
+  _impl_.corres2d3d_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    corres2d3d_.Set("", GetArenaForAllocation());
+    _impl_.corres2d3d_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_corres2d3d().empty()) {
-    corres2d3d_.Set(from._internal_corres2d3d(), 
-      GetArenaForAllocation());
+    _this->_impl_.corres2d3d_.Set(from._internal_corres2d3d(), 
+      _this->GetArenaForAllocation());
   }
-  found_matches_.InitDefault();
+  _impl_.found_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    found_matches_.Set("", GetArenaForAllocation());
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_found_matches().empty()) {
-    found_matches_.Set(from._internal_found_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.found_matches_.Set(from._internal_found_matches(), 
+      _this->GetArenaForAllocation());
   }
-  remaining_matches_.InitDefault();
+  _impl_.remaining_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    remaining_matches_.Set("", GetArenaForAllocation());
+    _impl_.remaining_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_remaining_matches().empty()) {
-    remaining_matches_.Set(from._internal_remaining_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.remaining_matches_.Set(from._internal_remaining_matches(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcI2D3DCorrespondencesFinder.findRequest)
 }
 
-inline void findRequest::SharedCtor() {
-lastframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  lastframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-currentframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  currentframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-current_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  current_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-shared_3dpoint_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  shared_3dpoint_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-shared_2dpoint_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  shared_2dpoint_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-corres2d3d_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  corres2d3d_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-found_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  found_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-remaining_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  remaining_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void findRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.lastframe_){}
+    , decltype(_impl_.currentframe_){}
+    , decltype(_impl_.current_matches_){}
+    , decltype(_impl_.shared_3dpoint_){}
+    , decltype(_impl_.shared_2dpoint_){}
+    , decltype(_impl_.corres2d3d_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.remaining_matches_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.lastframe_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.lastframe_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.currentframe_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.currentframe_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.current_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.current_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.shared_3dpoint_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.shared_3dpoint_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.shared_2dpoint_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.shared_2dpoint_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.corres2d3d_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.corres2d3d_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.found_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.remaining_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.remaining_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 findRequest::~findRequest() {
@@ -271,18 +300,18 @@ findRequest::~findRequest() {
 
 inline void findRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  lastframe_.Destroy();
-  currentframe_.Destroy();
-  current_matches_.Destroy();
-  shared_3dpoint_.Destroy();
-  shared_2dpoint_.Destroy();
-  corres2d3d_.Destroy();
-  found_matches_.Destroy();
-  remaining_matches_.Destroy();
+  _impl_.lastframe_.Destroy();
+  _impl_.currentframe_.Destroy();
+  _impl_.current_matches_.Destroy();
+  _impl_.shared_3dpoint_.Destroy();
+  _impl_.shared_2dpoint_.Destroy();
+  _impl_.corres2d3d_.Destroy();
+  _impl_.found_matches_.Destroy();
+  _impl_.remaining_matches_.Destroy();
 }
 
 void findRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void findRequest::Clear() {
@@ -291,15 +320,15 @@ void findRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  lastframe_.ClearToEmpty();
-  currentframe_.ClearToEmpty();
-  current_matches_.ClearToEmpty();
-  shared_3dpoint_.ClearToEmpty();
-  shared_2dpoint_.ClearToEmpty();
-  corres2d3d_.ClearToEmpty();
-  found_matches_.ClearToEmpty();
-  remaining_matches_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.lastframe_.ClearToEmpty();
+  _impl_.currentframe_.ClearToEmpty();
+  _impl_.current_matches_.ClearToEmpty();
+  _impl_.shared_3dpoint_.ClearToEmpty();
+  _impl_.shared_2dpoint_.ClearToEmpty();
+  _impl_.corres2d3d_.ClearToEmpty();
+  _impl_.found_matches_.ClearToEmpty();
+  _impl_.remaining_matches_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -312,7 +341,7 @@ const char* findRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -549,56 +578,52 @@ size_t findRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData findRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     findRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*findRequest::GetClassData() const { return &_class_data_; }
 
-void findRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<findRequest *>(to)->MergeFrom(
-      static_cast<const findRequest &>(from));
-}
 
-
-void findRequest::MergeFrom(const findRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI2D3DCorrespondencesFinder.findRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void findRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<findRequest*>(&to_msg);
+  auto& from = static_cast<const findRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2D3DCorrespondencesFinder.findRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_lastframe().empty()) {
-    _internal_set_lastframe(from._internal_lastframe());
+    _this->_internal_set_lastframe(from._internal_lastframe());
   }
   if (!from._internal_currentframe().empty()) {
-    _internal_set_currentframe(from._internal_currentframe());
+    _this->_internal_set_currentframe(from._internal_currentframe());
   }
   if (!from._internal_current_matches().empty()) {
-    _internal_set_current_matches(from._internal_current_matches());
+    _this->_internal_set_current_matches(from._internal_current_matches());
   }
   if (!from._internal_shared_3dpoint().empty()) {
-    _internal_set_shared_3dpoint(from._internal_shared_3dpoint());
+    _this->_internal_set_shared_3dpoint(from._internal_shared_3dpoint());
   }
   if (!from._internal_shared_2dpoint().empty()) {
-    _internal_set_shared_2dpoint(from._internal_shared_2dpoint());
+    _this->_internal_set_shared_2dpoint(from._internal_shared_2dpoint());
   }
   if (!from._internal_corres2d3d().empty()) {
-    _internal_set_corres2d3d(from._internal_corres2d3d());
+    _this->_internal_set_corres2d3d(from._internal_corres2d3d());
   }
   if (!from._internal_found_matches().empty()) {
-    _internal_set_found_matches(from._internal_found_matches());
+    _this->_internal_set_found_matches(from._internal_found_matches());
   }
   if (!from._internal_remaining_matches().empty()) {
-    _internal_set_remaining_matches(from._internal_remaining_matches());
+    _this->_internal_set_remaining_matches(from._internal_remaining_matches());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void findRequest::CopyFrom(const findRequest& from) {
@@ -618,38 +643,38 @@ void findRequest::InternalSwap(findRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &lastframe_, lhs_arena,
-      &other->lastframe_, rhs_arena
+      &_impl_.lastframe_, lhs_arena,
+      &other->_impl_.lastframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &currentframe_, lhs_arena,
-      &other->currentframe_, rhs_arena
+      &_impl_.currentframe_, lhs_arena,
+      &other->_impl_.currentframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &current_matches_, lhs_arena,
-      &other->current_matches_, rhs_arena
+      &_impl_.current_matches_, lhs_arena,
+      &other->_impl_.current_matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &shared_3dpoint_, lhs_arena,
-      &other->shared_3dpoint_, rhs_arena
+      &_impl_.shared_3dpoint_, lhs_arena,
+      &other->_impl_.shared_3dpoint_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &shared_2dpoint_, lhs_arena,
-      &other->shared_2dpoint_, rhs_arena
+      &_impl_.shared_2dpoint_, lhs_arena,
+      &other->_impl_.shared_2dpoint_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &corres2d3d_, lhs_arena,
-      &other->corres2d3d_, rhs_arena
+      &_impl_.corres2d3d_, lhs_arena,
+      &other->_impl_.corres2d3d_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &found_matches_, lhs_arena,
-      &other->found_matches_, rhs_arena
+      &_impl_.found_matches_, lhs_arena,
+      &other->_impl_.found_matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &remaining_matches_, lhs_arena,
-      &other->remaining_matches_, rhs_arena
+      &_impl_.remaining_matches_, lhs_arena,
+      &other->_impl_.remaining_matches_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata findRequest::GetMetadata() const {
@@ -667,78 +692,99 @@ class findResponse::_Internal {
 findResponse::findResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI2D3DCorrespondencesFinder.findResponse)
 }
 findResponse::findResponse(const findResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  findResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.shared_3dpoint_){}
+    , decltype(_impl_.shared_2dpoint_){}
+    , decltype(_impl_.corres2d3d_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.remaining_matches_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  shared_3dpoint_.InitDefault();
+  _impl_.shared_3dpoint_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    shared_3dpoint_.Set("", GetArenaForAllocation());
+    _impl_.shared_3dpoint_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_shared_3dpoint().empty()) {
-    shared_3dpoint_.Set(from._internal_shared_3dpoint(), 
-      GetArenaForAllocation());
+    _this->_impl_.shared_3dpoint_.Set(from._internal_shared_3dpoint(), 
+      _this->GetArenaForAllocation());
   }
-  shared_2dpoint_.InitDefault();
+  _impl_.shared_2dpoint_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    shared_2dpoint_.Set("", GetArenaForAllocation());
+    _impl_.shared_2dpoint_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_shared_2dpoint().empty()) {
-    shared_2dpoint_.Set(from._internal_shared_2dpoint(), 
-      GetArenaForAllocation());
+    _this->_impl_.shared_2dpoint_.Set(from._internal_shared_2dpoint(), 
+      _this->GetArenaForAllocation());
   }
-  corres2d3d_.InitDefault();
+  _impl_.corres2d3d_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    corres2d3d_.Set("", GetArenaForAllocation());
+    _impl_.corres2d3d_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_corres2d3d().empty()) {
-    corres2d3d_.Set(from._internal_corres2d3d(), 
-      GetArenaForAllocation());
+    _this->_impl_.corres2d3d_.Set(from._internal_corres2d3d(), 
+      _this->GetArenaForAllocation());
   }
-  found_matches_.InitDefault();
+  _impl_.found_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    found_matches_.Set("", GetArenaForAllocation());
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_found_matches().empty()) {
-    found_matches_.Set(from._internal_found_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.found_matches_.Set(from._internal_found_matches(), 
+      _this->GetArenaForAllocation());
   }
-  remaining_matches_.InitDefault();
+  _impl_.remaining_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    remaining_matches_.Set("", GetArenaForAllocation());
+    _impl_.remaining_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_remaining_matches().empty()) {
-    remaining_matches_.Set(from._internal_remaining_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.remaining_matches_.Set(from._internal_remaining_matches(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcI2D3DCorrespondencesFinder.findResponse)
 }
 
-inline void findResponse::SharedCtor() {
-shared_3dpoint_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  shared_3dpoint_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-shared_2dpoint_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  shared_2dpoint_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-corres2d3d_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  corres2d3d_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-found_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  found_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-remaining_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  remaining_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void findResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.shared_3dpoint_){}
+    , decltype(_impl_.shared_2dpoint_){}
+    , decltype(_impl_.corres2d3d_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.remaining_matches_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.shared_3dpoint_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.shared_3dpoint_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.shared_2dpoint_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.shared_2dpoint_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.corres2d3d_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.corres2d3d_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.found_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.remaining_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.remaining_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 findResponse::~findResponse() {
@@ -752,15 +798,15 @@ findResponse::~findResponse() {
 
 inline void findResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  shared_3dpoint_.Destroy();
-  shared_2dpoint_.Destroy();
-  corres2d3d_.Destroy();
-  found_matches_.Destroy();
-  remaining_matches_.Destroy();
+  _impl_.shared_3dpoint_.Destroy();
+  _impl_.shared_2dpoint_.Destroy();
+  _impl_.corres2d3d_.Destroy();
+  _impl_.found_matches_.Destroy();
+  _impl_.remaining_matches_.Destroy();
 }
 
 void findResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void findResponse::Clear() {
@@ -769,12 +815,12 @@ void findResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  shared_3dpoint_.ClearToEmpty();
-  shared_2dpoint_.ClearToEmpty();
-  corres2d3d_.ClearToEmpty();
-  found_matches_.ClearToEmpty();
-  remaining_matches_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.shared_3dpoint_.ClearToEmpty();
+  _impl_.shared_2dpoint_.ClearToEmpty();
+  _impl_.corres2d3d_.ClearToEmpty();
+  _impl_.found_matches_.ClearToEmpty();
+  _impl_.remaining_matches_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -832,7 +878,7 @@ const char* findResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
       // sint32 xpcfGrpcReturnValue = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -958,47 +1004,43 @@ size_t findResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData findResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     findResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*findResponse::GetClassData() const { return &_class_data_; }
 
-void findResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<findResponse *>(to)->MergeFrom(
-      static_cast<const findResponse &>(from));
-}
 
-
-void findResponse::MergeFrom(const findResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI2D3DCorrespondencesFinder.findResponse)
-  GOOGLE_DCHECK_NE(&from, this);
+void findResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<findResponse*>(&to_msg);
+  auto& from = static_cast<const findResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2D3DCorrespondencesFinder.findResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_shared_3dpoint().empty()) {
-    _internal_set_shared_3dpoint(from._internal_shared_3dpoint());
+    _this->_internal_set_shared_3dpoint(from._internal_shared_3dpoint());
   }
   if (!from._internal_shared_2dpoint().empty()) {
-    _internal_set_shared_2dpoint(from._internal_shared_2dpoint());
+    _this->_internal_set_shared_2dpoint(from._internal_shared_2dpoint());
   }
   if (!from._internal_corres2d3d().empty()) {
-    _internal_set_corres2d3d(from._internal_corres2d3d());
+    _this->_internal_set_corres2d3d(from._internal_corres2d3d());
   }
   if (!from._internal_found_matches().empty()) {
-    _internal_set_found_matches(from._internal_found_matches());
+    _this->_internal_set_found_matches(from._internal_found_matches());
   }
   if (!from._internal_remaining_matches().empty()) {
-    _internal_set_remaining_matches(from._internal_remaining_matches());
+    _this->_internal_set_remaining_matches(from._internal_remaining_matches());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void findResponse::CopyFrom(const findResponse& from) {
@@ -1018,26 +1060,26 @@ void findResponse::InternalSwap(findResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &shared_3dpoint_, lhs_arena,
-      &other->shared_3dpoint_, rhs_arena
+      &_impl_.shared_3dpoint_, lhs_arena,
+      &other->_impl_.shared_3dpoint_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &shared_2dpoint_, lhs_arena,
-      &other->shared_2dpoint_, rhs_arena
+      &_impl_.shared_2dpoint_, lhs_arena,
+      &other->_impl_.shared_2dpoint_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &corres2d3d_, lhs_arena,
-      &other->corres2d3d_, rhs_arena
+      &_impl_.corres2d3d_, lhs_arena,
+      &other->_impl_.corres2d3d_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &found_matches_, lhs_arena,
-      &other->found_matches_, rhs_arena
+      &_impl_.found_matches_, lhs_arena,
+      &other->_impl_.found_matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &remaining_matches_, lhs_arena,
-      &other->remaining_matches_, rhs_arena
+      &_impl_.remaining_matches_, lhs_arena,
+      &other->_impl_.remaining_matches_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata findResponse::GetMetadata() const {

@@ -22,9 +22,10 @@ namespace _pbi = _pb::internal;
 
 namespace grpcIImageLoader {
 PROTOBUF_CONSTEXPR getImageRequest::getImageRequest(
-    ::_pbi::ConstantInitialized)
-  : img_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.img_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct getImageRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR getImageRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -35,9 +36,10 @@ struct getImageRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getImageRequestDefaultTypeInternal _getImageRequest_default_instance_;
 PROTOBUF_CONSTEXPR getImageResponse::getImageResponse(
-    ::_pbi::ConstantInitialized)
-  : img_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.img_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct getImageResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR getImageResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -48,8 +50,9 @@ struct getImageResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getImageResponseDefaultTypeInternal _getImageResponse_default_instance_;
 PROTOBUF_CONSTEXPR reloadImageRequest::reloadImageRequest(
-    ::_pbi::ConstantInitialized)
-  : grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct reloadImageRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR reloadImageRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -60,8 +63,9 @@ struct reloadImageRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 reloadImageRequestDefaultTypeInternal _reloadImageRequest_default_instance_;
 PROTOBUF_CONSTEXPR reloadImageResponse::reloadImageResponse(
-    ::_pbi::ConstantInitialized)
-  : xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct reloadImageResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR reloadImageResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -83,30 +87,30 @@ const uint32_t TableStruct_grpcIImageLoaderService_2eproto::offsets[] PROTOBUF_S
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageRequest, img_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageRequest, _impl_.img_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageResponse, img_),
-  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageResponse, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageResponse, _impl_.img_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::getImageResponse, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::reloadImageRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::reloadImageRequest, grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::reloadImageRequest, _impl_.grpcservercompressionformat_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::reloadImageResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::reloadImageResponse, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIImageLoader::reloadImageResponse, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcIImageLoader::getImageRequest)},
@@ -167,30 +171,43 @@ class getImageRequest::_Internal {
 getImageRequest::getImageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIImageLoader.getImageRequest)
 }
 getImageRequest::getImageRequest(const getImageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  getImageRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.img_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  img_.InitDefault();
+  _impl_.img_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    img_.Set("", GetArenaForAllocation());
+    _impl_.img_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_img().empty()) {
-    img_.Set(from._internal_img(), 
-      GetArenaForAllocation());
+    _this->_impl_.img_.Set(from._internal_img(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageLoader.getImageRequest)
 }
 
-inline void getImageRequest::SharedCtor() {
-img_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  img_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void getImageRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.img_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.img_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.img_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 getImageRequest::~getImageRequest() {
@@ -204,11 +221,11 @@ getImageRequest::~getImageRequest() {
 
 inline void getImageRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  img_.Destroy();
+  _impl_.img_.Destroy();
 }
 
 void getImageRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void getImageRequest::Clear() {
@@ -217,8 +234,8 @@ void getImageRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  img_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.img_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -231,7 +248,7 @@ const char* getImageRequest::_InternalParse(const char* ptr, ::_pbi::ParseContex
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -314,35 +331,31 @@ size_t getImageRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getImageRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     getImageRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getImageRequest::GetClassData() const { return &_class_data_; }
 
-void getImageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<getImageRequest *>(to)->MergeFrom(
-      static_cast<const getImageRequest &>(from));
-}
 
-
-void getImageRequest::MergeFrom(const getImageRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.getImageRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void getImageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<getImageRequest*>(&to_msg);
+  auto& from = static_cast<const getImageRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.getImageRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_img().empty()) {
-    _internal_set_img(from._internal_img());
+    _this->_internal_set_img(from._internal_img());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void getImageRequest::CopyFrom(const getImageRequest& from) {
@@ -362,10 +375,10 @@ void getImageRequest::InternalSwap(getImageRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &img_, lhs_arena,
-      &other->img_, rhs_arena
+      &_impl_.img_, lhs_arena,
+      &other->_impl_.img_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getImageRequest::GetMetadata() const {
@@ -383,30 +396,43 @@ class getImageResponse::_Internal {
 getImageResponse::getImageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIImageLoader.getImageResponse)
 }
 getImageResponse::getImageResponse(const getImageResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  getImageResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.img_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  img_.InitDefault();
+  _impl_.img_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    img_.Set("", GetArenaForAllocation());
+    _impl_.img_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_img().empty()) {
-    img_.Set(from._internal_img(), 
-      GetArenaForAllocation());
+    _this->_impl_.img_.Set(from._internal_img(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageLoader.getImageResponse)
 }
 
-inline void getImageResponse::SharedCtor() {
-img_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  img_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void getImageResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.img_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.img_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.img_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 getImageResponse::~getImageResponse() {
@@ -420,11 +446,11 @@ getImageResponse::~getImageResponse() {
 
 inline void getImageResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  img_.Destroy();
+  _impl_.img_.Destroy();
 }
 
 void getImageResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void getImageResponse::Clear() {
@@ -433,8 +459,8 @@ void getImageResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  img_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.img_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -456,7 +482,7 @@ const char* getImageResponse::_InternalParse(const char* ptr, ::_pbi::ParseConte
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -530,35 +556,31 @@ size_t getImageResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getImageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     getImageResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getImageResponse::GetClassData() const { return &_class_data_; }
 
-void getImageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<getImageResponse *>(to)->MergeFrom(
-      static_cast<const getImageResponse &>(from));
-}
 
-
-void getImageResponse::MergeFrom(const getImageResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.getImageResponse)
-  GOOGLE_DCHECK_NE(&from, this);
+void getImageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<getImageResponse*>(&to_msg);
+  auto& from = static_cast<const getImageResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.getImageResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_img().empty()) {
-    _internal_set_img(from._internal_img());
+    _this->_internal_set_img(from._internal_img());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void getImageResponse::CopyFrom(const getImageResponse& from) {
@@ -578,10 +600,10 @@ void getImageResponse::InternalSwap(getImageResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &img_, lhs_arena,
-      &other->img_, rhs_arena
+      &_impl_.img_, lhs_arena,
+      &other->_impl_.img_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getImageResponse::GetMetadata() const {
@@ -599,18 +621,29 @@ class reloadImageRequest::_Internal {
 reloadImageRequest::reloadImageRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIImageLoader.reloadImageRequest)
 }
 reloadImageRequest::reloadImageRequest(const reloadImageRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  reloadImageRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageLoader.reloadImageRequest)
 }
 
-inline void reloadImageRequest::SharedCtor() {
-grpcservercompressionformat_ = 0;
+inline void reloadImageRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 reloadImageRequest::~reloadImageRequest() {
@@ -627,7 +660,7 @@ inline void reloadImageRequest::SharedDtor() {
 }
 
 void reloadImageRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void reloadImageRequest::Clear() {
@@ -636,7 +669,7 @@ void reloadImageRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  grpcservercompressionformat_ = 0;
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -649,7 +682,7 @@ const char* reloadImageRequest::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -710,32 +743,28 @@ size_t reloadImageRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData reloadImageRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     reloadImageRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*reloadImageRequest::GetClassData() const { return &_class_data_; }
 
-void reloadImageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<reloadImageRequest *>(to)->MergeFrom(
-      static_cast<const reloadImageRequest &>(from));
-}
 
-
-void reloadImageRequest::MergeFrom(const reloadImageRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.reloadImageRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void reloadImageRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<reloadImageRequest*>(&to_msg);
+  auto& from = static_cast<const reloadImageRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.reloadImageRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void reloadImageRequest::CopyFrom(const reloadImageRequest& from) {
@@ -752,7 +781,7 @@ bool reloadImageRequest::IsInitialized() const {
 void reloadImageRequest::InternalSwap(reloadImageRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata reloadImageRequest::GetMetadata() const {
@@ -770,18 +799,29 @@ class reloadImageResponse::_Internal {
 reloadImageResponse::reloadImageResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcIImageLoader.reloadImageResponse)
 }
 reloadImageResponse::reloadImageResponse(const reloadImageResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  reloadImageResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcIImageLoader.reloadImageResponse)
 }
 
-inline void reloadImageResponse::SharedCtor() {
-xpcfgrpcreturnvalue_ = 0;
+inline void reloadImageResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
 }
 
 reloadImageResponse::~reloadImageResponse() {
@@ -798,7 +838,7 @@ inline void reloadImageResponse::SharedDtor() {
 }
 
 void reloadImageResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void reloadImageResponse::Clear() {
@@ -807,7 +847,7 @@ void reloadImageResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -820,7 +860,7 @@ const char* reloadImageResponse::_InternalParse(const char* ptr, ::_pbi::ParseCo
       // sint32 xpcfGrpcReturnValue = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -881,32 +921,28 @@ size_t reloadImageResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData reloadImageResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     reloadImageResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*reloadImageResponse::GetClassData() const { return &_class_data_; }
 
-void reloadImageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<reloadImageResponse *>(to)->MergeFrom(
-      static_cast<const reloadImageResponse &>(from));
-}
 
-
-void reloadImageResponse::MergeFrom(const reloadImageResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.reloadImageResponse)
-  GOOGLE_DCHECK_NE(&from, this);
+void reloadImageResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<reloadImageResponse*>(&to_msg);
+  auto& from = static_cast<const reloadImageResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIImageLoader.reloadImageResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void reloadImageResponse::CopyFrom(const reloadImageResponse& from) {
@@ -923,7 +959,7 @@ bool reloadImageResponse::IsInitialized() const {
 void reloadImageResponse::InternalSwap(reloadImageResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata reloadImageResponse::GetMetadata() const {

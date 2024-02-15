@@ -22,11 +22,12 @@ namespace _pbi = _pb::internal;
 
 namespace grpcI2DTransformFinder {
 PROTOBUF_CONSTEXPR findTransform2DRequest::findTransform2DRequest(
-    ::_pbi::ConstantInitialized)
-  : srcpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , dstpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , fundamental_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.srcpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.dstpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.fundamental_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct findTransform2DRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR findTransform2DRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -37,9 +38,10 @@ struct findTransform2DRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 findTransform2DRequestDefaultTypeInternal _findTransform2DRequest_default_instance_;
 PROTOBUF_CONSTEXPR findTransform2DResponse::findTransform2DResponse(
-    ::_pbi::ConstantInitialized)
-  : fundamental_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.fundamental_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct findTransform2DResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR findTransform2DResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -61,18 +63,18 @@ const uint32_t TableStruct_grpcI2DTransformFinderService_2eproto::offsets[] PROT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DRequest, srcpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DRequest, dstpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DRequest, fundamental_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DRequest, _impl_.srcpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DRequest, _impl_.dstpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DRequest, _impl_.fundamental_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DResponse, fundamental_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DResponse, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DResponse, _impl_.fundamental_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransformFinder::findTransform2DResponse, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcI2DTransformFinder::findTransform2DRequest)},
@@ -126,54 +128,71 @@ class findTransform2DRequest::_Internal {
 findTransform2DRequest::findTransform2DRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI2DTransformFinder.findTransform2DRequest)
 }
 findTransform2DRequest::findTransform2DRequest(const findTransform2DRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  findTransform2DRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.srcpoints_){}
+    , decltype(_impl_.dstpoints_){}
+    , decltype(_impl_.fundamental_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  srcpoints_.InitDefault();
+  _impl_.srcpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    srcpoints_.Set("", GetArenaForAllocation());
+    _impl_.srcpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_srcpoints().empty()) {
-    srcpoints_.Set(from._internal_srcpoints(), 
-      GetArenaForAllocation());
+    _this->_impl_.srcpoints_.Set(from._internal_srcpoints(), 
+      _this->GetArenaForAllocation());
   }
-  dstpoints_.InitDefault();
+  _impl_.dstpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    dstpoints_.Set("", GetArenaForAllocation());
+    _impl_.dstpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_dstpoints().empty()) {
-    dstpoints_.Set(from._internal_dstpoints(), 
-      GetArenaForAllocation());
+    _this->_impl_.dstpoints_.Set(from._internal_dstpoints(), 
+      _this->GetArenaForAllocation());
   }
-  fundamental_.InitDefault();
+  _impl_.fundamental_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    fundamental_.Set("", GetArenaForAllocation());
+    _impl_.fundamental_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_fundamental().empty()) {
-    fundamental_.Set(from._internal_fundamental(), 
-      GetArenaForAllocation());
+    _this->_impl_.fundamental_.Set(from._internal_fundamental(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcI2DTransformFinder.findTransform2DRequest)
 }
 
-inline void findTransform2DRequest::SharedCtor() {
-srcpoints_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  srcpoints_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-dstpoints_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  dstpoints_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-fundamental_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  fundamental_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void findTransform2DRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.srcpoints_){}
+    , decltype(_impl_.dstpoints_){}
+    , decltype(_impl_.fundamental_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.srcpoints_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.srcpoints_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.dstpoints_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.dstpoints_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.fundamental_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.fundamental_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 findTransform2DRequest::~findTransform2DRequest() {
@@ -187,13 +206,13 @@ findTransform2DRequest::~findTransform2DRequest() {
 
 inline void findTransform2DRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  srcpoints_.Destroy();
-  dstpoints_.Destroy();
-  fundamental_.Destroy();
+  _impl_.srcpoints_.Destroy();
+  _impl_.dstpoints_.Destroy();
+  _impl_.fundamental_.Destroy();
 }
 
 void findTransform2DRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void findTransform2DRequest::Clear() {
@@ -202,10 +221,10 @@ void findTransform2DRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  srcpoints_.ClearToEmpty();
-  dstpoints_.ClearToEmpty();
-  fundamental_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.srcpoints_.ClearToEmpty();
+  _impl_.dstpoints_.ClearToEmpty();
+  _impl_.fundamental_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -218,7 +237,7 @@ const char* findTransform2DRequest::_InternalParse(const char* ptr, ::_pbi::Pars
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -345,41 +364,37 @@ size_t findTransform2DRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData findTransform2DRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     findTransform2DRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*findTransform2DRequest::GetClassData() const { return &_class_data_; }
 
-void findTransform2DRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<findTransform2DRequest *>(to)->MergeFrom(
-      static_cast<const findTransform2DRequest &>(from));
-}
 
-
-void findTransform2DRequest::MergeFrom(const findTransform2DRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransformFinder.findTransform2DRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void findTransform2DRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<findTransform2DRequest*>(&to_msg);
+  auto& from = static_cast<const findTransform2DRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransformFinder.findTransform2DRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_srcpoints().empty()) {
-    _internal_set_srcpoints(from._internal_srcpoints());
+    _this->_internal_set_srcpoints(from._internal_srcpoints());
   }
   if (!from._internal_dstpoints().empty()) {
-    _internal_set_dstpoints(from._internal_dstpoints());
+    _this->_internal_set_dstpoints(from._internal_dstpoints());
   }
   if (!from._internal_fundamental().empty()) {
-    _internal_set_fundamental(from._internal_fundamental());
+    _this->_internal_set_fundamental(from._internal_fundamental());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void findTransform2DRequest::CopyFrom(const findTransform2DRequest& from) {
@@ -399,18 +414,18 @@ void findTransform2DRequest::InternalSwap(findTransform2DRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &srcpoints_, lhs_arena,
-      &other->srcpoints_, rhs_arena
+      &_impl_.srcpoints_, lhs_arena,
+      &other->_impl_.srcpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &dstpoints_, lhs_arena,
-      &other->dstpoints_, rhs_arena
+      &_impl_.dstpoints_, lhs_arena,
+      &other->_impl_.dstpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &fundamental_, lhs_arena,
-      &other->fundamental_, rhs_arena
+      &_impl_.fundamental_, lhs_arena,
+      &other->_impl_.fundamental_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata findTransform2DRequest::GetMetadata() const {
@@ -428,30 +443,43 @@ class findTransform2DResponse::_Internal {
 findTransform2DResponse::findTransform2DResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI2DTransformFinder.findTransform2DResponse)
 }
 findTransform2DResponse::findTransform2DResponse(const findTransform2DResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  findTransform2DResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.fundamental_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  fundamental_.InitDefault();
+  _impl_.fundamental_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    fundamental_.Set("", GetArenaForAllocation());
+    _impl_.fundamental_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_fundamental().empty()) {
-    fundamental_.Set(from._internal_fundamental(), 
-      GetArenaForAllocation());
+    _this->_impl_.fundamental_.Set(from._internal_fundamental(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcI2DTransformFinder.findTransform2DResponse)
 }
 
-inline void findTransform2DResponse::SharedCtor() {
-fundamental_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  fundamental_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void findTransform2DResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.fundamental_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.fundamental_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.fundamental_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 findTransform2DResponse::~findTransform2DResponse() {
@@ -465,11 +493,11 @@ findTransform2DResponse::~findTransform2DResponse() {
 
 inline void findTransform2DResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  fundamental_.Destroy();
+  _impl_.fundamental_.Destroy();
 }
 
 void findTransform2DResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void findTransform2DResponse::Clear() {
@@ -478,8 +506,8 @@ void findTransform2DResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  fundamental_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.fundamental_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -501,7 +529,7 @@ const char* findTransform2DResponse::_InternalParse(const char* ptr, ::_pbi::Par
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -575,35 +603,31 @@ size_t findTransform2DResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData findTransform2DResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     findTransform2DResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*findTransform2DResponse::GetClassData() const { return &_class_data_; }
 
-void findTransform2DResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<findTransform2DResponse *>(to)->MergeFrom(
-      static_cast<const findTransform2DResponse &>(from));
-}
 
-
-void findTransform2DResponse::MergeFrom(const findTransform2DResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransformFinder.findTransform2DResponse)
-  GOOGLE_DCHECK_NE(&from, this);
+void findTransform2DResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<findTransform2DResponse*>(&to_msg);
+  auto& from = static_cast<const findTransform2DResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransformFinder.findTransform2DResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_fundamental().empty()) {
-    _internal_set_fundamental(from._internal_fundamental());
+    _this->_internal_set_fundamental(from._internal_fundamental());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void findTransform2DResponse::CopyFrom(const findTransform2DResponse& from) {
@@ -623,10 +647,10 @@ void findTransform2DResponse::InternalSwap(findTransform2DResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &fundamental_, lhs_arena,
-      &other->fundamental_, rhs_arena
+      &_impl_.fundamental_, lhs_arena,
+      &other->_impl_.fundamental_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata findTransform2DResponse::GetMetadata() const {

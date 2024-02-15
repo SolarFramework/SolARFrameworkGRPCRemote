@@ -22,11 +22,12 @@ namespace _pbi = _pb::internal;
 
 namespace grpcI2DTransform {
 PROTOBUF_CONSTEXPR transformRequest::transformRequest(
-    ::_pbi::ConstantInitialized)
-  : inputpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , transformation_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , outputpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.inputpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.transformation_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.outputpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct transformRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR transformRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -37,9 +38,10 @@ struct transformRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 transformRequestDefaultTypeInternal _transformRequest_default_instance_;
 PROTOBUF_CONSTEXPR transformResponse::transformResponse(
-    ::_pbi::ConstantInitialized)
-  : outputpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.outputpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct transformResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR transformResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -61,18 +63,18 @@ const uint32_t TableStruct_grpcI2DTransformService_2eproto::offsets[] PROTOBUF_S
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, inputpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, transformation_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, outputpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, _impl_.inputpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, _impl_.transformation_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformRequest, _impl_.outputpoints_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformResponse, outputpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformResponse, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformResponse, _impl_.outputpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI2DTransform::transformResponse, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcI2DTransform::transformRequest)},
@@ -125,54 +127,71 @@ class transformRequest::_Internal {
 transformRequest::transformRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI2DTransform.transformRequest)
 }
 transformRequest::transformRequest(const transformRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  transformRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.inputpoints_){}
+    , decltype(_impl_.transformation_){}
+    , decltype(_impl_.outputpoints_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  inputpoints_.InitDefault();
+  _impl_.inputpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    inputpoints_.Set("", GetArenaForAllocation());
+    _impl_.inputpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_inputpoints().empty()) {
-    inputpoints_.Set(from._internal_inputpoints(), 
-      GetArenaForAllocation());
+    _this->_impl_.inputpoints_.Set(from._internal_inputpoints(), 
+      _this->GetArenaForAllocation());
   }
-  transformation_.InitDefault();
+  _impl_.transformation_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    transformation_.Set("", GetArenaForAllocation());
+    _impl_.transformation_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_transformation().empty()) {
-    transformation_.Set(from._internal_transformation(), 
-      GetArenaForAllocation());
+    _this->_impl_.transformation_.Set(from._internal_transformation(), 
+      _this->GetArenaForAllocation());
   }
-  outputpoints_.InitDefault();
+  _impl_.outputpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    outputpoints_.Set("", GetArenaForAllocation());
+    _impl_.outputpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_outputpoints().empty()) {
-    outputpoints_.Set(from._internal_outputpoints(), 
-      GetArenaForAllocation());
+    _this->_impl_.outputpoints_.Set(from._internal_outputpoints(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcI2DTransform.transformRequest)
 }
 
-inline void transformRequest::SharedCtor() {
-inputpoints_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  inputpoints_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-transformation_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  transformation_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-outputpoints_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  outputpoints_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void transformRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.inputpoints_){}
+    , decltype(_impl_.transformation_){}
+    , decltype(_impl_.outputpoints_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.inputpoints_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.inputpoints_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.transformation_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.transformation_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.outputpoints_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.outputpoints_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 transformRequest::~transformRequest() {
@@ -186,13 +205,13 @@ transformRequest::~transformRequest() {
 
 inline void transformRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  inputpoints_.Destroy();
-  transformation_.Destroy();
-  outputpoints_.Destroy();
+  _impl_.inputpoints_.Destroy();
+  _impl_.transformation_.Destroy();
+  _impl_.outputpoints_.Destroy();
 }
 
 void transformRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void transformRequest::Clear() {
@@ -201,10 +220,10 @@ void transformRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  inputpoints_.ClearToEmpty();
-  transformation_.ClearToEmpty();
-  outputpoints_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.inputpoints_.ClearToEmpty();
+  _impl_.transformation_.ClearToEmpty();
+  _impl_.outputpoints_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -217,7 +236,7 @@ const char* transformRequest::_InternalParse(const char* ptr, ::_pbi::ParseConte
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -344,41 +363,37 @@ size_t transformRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData transformRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     transformRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*transformRequest::GetClassData() const { return &_class_data_; }
 
-void transformRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<transformRequest *>(to)->MergeFrom(
-      static_cast<const transformRequest &>(from));
-}
 
-
-void transformRequest::MergeFrom(const transformRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransform.transformRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void transformRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<transformRequest*>(&to_msg);
+  auto& from = static_cast<const transformRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransform.transformRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_inputpoints().empty()) {
-    _internal_set_inputpoints(from._internal_inputpoints());
+    _this->_internal_set_inputpoints(from._internal_inputpoints());
   }
   if (!from._internal_transformation().empty()) {
-    _internal_set_transformation(from._internal_transformation());
+    _this->_internal_set_transformation(from._internal_transformation());
   }
   if (!from._internal_outputpoints().empty()) {
-    _internal_set_outputpoints(from._internal_outputpoints());
+    _this->_internal_set_outputpoints(from._internal_outputpoints());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void transformRequest::CopyFrom(const transformRequest& from) {
@@ -398,18 +413,18 @@ void transformRequest::InternalSwap(transformRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &inputpoints_, lhs_arena,
-      &other->inputpoints_, rhs_arena
+      &_impl_.inputpoints_, lhs_arena,
+      &other->_impl_.inputpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &transformation_, lhs_arena,
-      &other->transformation_, rhs_arena
+      &_impl_.transformation_, lhs_arena,
+      &other->_impl_.transformation_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &outputpoints_, lhs_arena,
-      &other->outputpoints_, rhs_arena
+      &_impl_.outputpoints_, lhs_arena,
+      &other->_impl_.outputpoints_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata transformRequest::GetMetadata() const {
@@ -427,30 +442,43 @@ class transformResponse::_Internal {
 transformResponse::transformResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI2DTransform.transformResponse)
 }
 transformResponse::transformResponse(const transformResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  transformResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.outputpoints_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  outputpoints_.InitDefault();
+  _impl_.outputpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    outputpoints_.Set("", GetArenaForAllocation());
+    _impl_.outputpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_outputpoints().empty()) {
-    outputpoints_.Set(from._internal_outputpoints(), 
-      GetArenaForAllocation());
+    _this->_impl_.outputpoints_.Set(from._internal_outputpoints(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcI2DTransform.transformResponse)
 }
 
-inline void transformResponse::SharedCtor() {
-outputpoints_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  outputpoints_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void transformResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.outputpoints_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.outputpoints_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.outputpoints_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 transformResponse::~transformResponse() {
@@ -464,11 +492,11 @@ transformResponse::~transformResponse() {
 
 inline void transformResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  outputpoints_.Destroy();
+  _impl_.outputpoints_.Destroy();
 }
 
 void transformResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void transformResponse::Clear() {
@@ -477,8 +505,8 @@ void transformResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  outputpoints_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.outputpoints_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -500,7 +528,7 @@ const char* transformResponse::_InternalParse(const char* ptr, ::_pbi::ParseCont
       // sint32 xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -574,35 +602,31 @@ size_t transformResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData transformResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     transformResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*transformResponse::GetClassData() const { return &_class_data_; }
 
-void transformResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<transformResponse *>(to)->MergeFrom(
-      static_cast<const transformResponse &>(from));
-}
 
-
-void transformResponse::MergeFrom(const transformResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransform.transformResponse)
-  GOOGLE_DCHECK_NE(&from, this);
+void transformResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<transformResponse*>(&to_msg);
+  auto& from = static_cast<const transformResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI2DTransform.transformResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_outputpoints().empty()) {
-    _internal_set_outputpoints(from._internal_outputpoints());
+    _this->_internal_set_outputpoints(from._internal_outputpoints());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void transformResponse::CopyFrom(const transformResponse& from) {
@@ -622,10 +646,10 @@ void transformResponse::InternalSwap(transformResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &outputpoints_, lhs_arena,
-      &other->outputpoints_, rhs_arena
+      &_impl_.outputpoints_, lhs_arena,
+      &other->_impl_.outputpoints_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata transformResponse::GetMetadata() const {

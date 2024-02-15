@@ -22,17 +22,18 @@ namespace _pbi = _pb::internal;
 
 namespace grpcITriangulator {
 PROTOBUF_CONSTEXPR triangulate_grpc0Request::triangulate_grpc0Request(
-    ::_pbi::ConstantInitialized)
-  : pointsview1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , pointview2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , working_views_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , poseview1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , poseview2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , camparams1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , camparams2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , pcloud_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pointsview1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.pointview2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.working_views_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.poseview1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.poseview2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.pcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct triangulate_grpc0RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR triangulate_grpc0RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -43,9 +44,10 @@ struct triangulate_grpc0RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 triangulate_grpc0RequestDefaultTypeInternal _triangulate_grpc0Request_default_instance_;
 PROTOBUF_CONSTEXPR triangulate_grpc0Response::triangulate_grpc0Response(
-    ::_pbi::ConstantInitialized)
-  : pcloud_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct triangulate_grpc0ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR triangulate_grpc0ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -56,17 +58,18 @@ struct triangulate_grpc0ResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 triangulate_grpc0ResponseDefaultTypeInternal _triangulate_grpc0Response_default_instance_;
 PROTOBUF_CONSTEXPR triangulate_grpc1Request::triangulate_grpc1Request(
-    ::_pbi::ConstantInitialized)
-  : keypointsview1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , keypointsview2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , working_views_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , poseview1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , poseview2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , camparams1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , camparams2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , pcloud_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.keypointsview1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.keypointsview2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.working_views_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.poseview1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.poseview2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.pcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct triangulate_grpc1RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR triangulate_grpc1RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -77,9 +80,10 @@ struct triangulate_grpc1RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 triangulate_grpc1RequestDefaultTypeInternal _triangulate_grpc1Request_default_instance_;
 PROTOBUF_CONSTEXPR triangulate_grpc1Response::triangulate_grpc1Response(
-    ::_pbi::ConstantInitialized)
-  : pcloud_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct triangulate_grpc1ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR triangulate_grpc1ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -90,19 +94,20 @@ struct triangulate_grpc1ResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 triangulate_grpc1ResponseDefaultTypeInternal _triangulate_grpc1Response_default_instance_;
 PROTOBUF_CONSTEXPR triangulate_grpc2Request::triangulate_grpc2Request(
-    ::_pbi::ConstantInitialized)
-  : keypointsview1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , keypointsview2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , descriptor1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , descriptor2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , working_views_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , poseview1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , poseview2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , camparams1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , camparams2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , pcloud_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.keypointsview1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.keypointsview2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.descriptor1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.descriptor2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.working_views_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.poseview1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.poseview2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.pcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct triangulate_grpc2RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR triangulate_grpc2RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -113,9 +118,10 @@ struct triangulate_grpc2RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 triangulate_grpc2RequestDefaultTypeInternal _triangulate_grpc2Request_default_instance_;
 PROTOBUF_CONSTEXPR triangulate_grpc2Response::triangulate_grpc2Response(
-    ::_pbi::ConstantInitialized)
-  : pcloud_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct triangulate_grpc2ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR triangulate_grpc2ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -126,16 +132,17 @@ struct triangulate_grpc2ResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 triangulate_grpc2ResponseDefaultTypeInternal _triangulate_grpc2Response_default_instance_;
 PROTOBUF_CONSTEXPR triangulate_grpc3Request::triangulate_grpc3Request(
-    ::_pbi::ConstantInitialized)
-  : frame1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , frame2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , working_views_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , camparams1_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , camparams2_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , pcloud_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0)
-  , onlydepth_(false){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.frame1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.frame2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.working_views_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams1_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.camparams2_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.pcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_.onlydepth_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct triangulate_grpc3RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR triangulate_grpc3RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -146,9 +153,10 @@ struct triangulate_grpc3RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 triangulate_grpc3RequestDefaultTypeInternal _triangulate_grpc3Request_default_instance_;
 PROTOBUF_CONSTEXPR triangulate_grpc3Response::triangulate_grpc3Response(
-    ::_pbi::ConstantInitialized)
-  : pcloud_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct triangulate_grpc3ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR triangulate_grpc3ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -170,97 +178,97 @@ const uint32_t TableStruct_grpcITriangulatorService_2eproto::offsets[] PROTOBUF_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, pointsview1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, pointview2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, working_views_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, poseview1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, poseview2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, camparams1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, camparams2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, pcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.pointsview1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.pointview2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.working_views_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.poseview1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.poseview2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.camparams1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.camparams2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Request, _impl_.pcloud_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Response, pcloud_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Response, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Response, _impl_.pcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc0Response, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, keypointsview1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, keypointsview2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, working_views_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, poseview1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, poseview2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, camparams1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, camparams2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, pcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.keypointsview1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.keypointsview2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.working_views_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.poseview1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.poseview2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.camparams1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.camparams2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Request, _impl_.pcloud_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Response, pcloud_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Response, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Response, _impl_.pcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc1Response, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, keypointsview1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, keypointsview2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, descriptor1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, descriptor2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, working_views_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, poseview1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, poseview2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, camparams1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, camparams2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, pcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.keypointsview1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.keypointsview2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.descriptor1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.descriptor2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.working_views_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.poseview1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.poseview2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.camparams1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.camparams2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Request, _impl_.pcloud_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Response, pcloud_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Response, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Response, _impl_.pcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc2Response, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, frame1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, frame2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, working_views_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, camparams1_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, camparams2_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, onlydepth_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, pcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _impl_.frame1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _impl_.frame2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _impl_.matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _impl_.working_views_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _impl_.camparams1_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _impl_.camparams2_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _impl_.onlydepth_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Request, _impl_.pcloud_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Response, pcloud_),
-  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Response, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Response, _impl_.pcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcITriangulator::triangulate_grpc3Response, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcITriangulator::triangulate_grpc0Request)},
@@ -362,126 +370,155 @@ class triangulate_grpc0Request::_Internal {
 triangulate_grpc0Request::triangulate_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcITriangulator.triangulate_grpc0Request)
 }
 triangulate_grpc0Request::triangulate_grpc0Request(const triangulate_grpc0Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  triangulate_grpc0Request* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pointsview1_){}
+    , decltype(_impl_.pointview2_){}
+    , decltype(_impl_.matches_){}
+    , decltype(_impl_.working_views_){}
+    , decltype(_impl_.poseview1_){}
+    , decltype(_impl_.poseview2_){}
+    , decltype(_impl_.camparams1_){}
+    , decltype(_impl_.camparams2_){}
+    , decltype(_impl_.pcloud_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  pointsview1_.InitDefault();
+  _impl_.pointsview1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pointsview1_.Set("", GetArenaForAllocation());
+    _impl_.pointsview1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pointsview1().empty()) {
-    pointsview1_.Set(from._internal_pointsview1(), 
-      GetArenaForAllocation());
+    _this->_impl_.pointsview1_.Set(from._internal_pointsview1(), 
+      _this->GetArenaForAllocation());
   }
-  pointview2_.InitDefault();
+  _impl_.pointview2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pointview2_.Set("", GetArenaForAllocation());
+    _impl_.pointview2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pointview2().empty()) {
-    pointview2_.Set(from._internal_pointview2(), 
-      GetArenaForAllocation());
+    _this->_impl_.pointview2_.Set(from._internal_pointview2(), 
+      _this->GetArenaForAllocation());
   }
-  matches_.InitDefault();
+  _impl_.matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    matches_.Set("", GetArenaForAllocation());
+    _impl_.matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    matches_.Set(from._internal_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.matches_.Set(from._internal_matches(), 
+      _this->GetArenaForAllocation());
   }
-  working_views_.InitDefault();
+  _impl_.working_views_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    working_views_.Set("", GetArenaForAllocation());
+    _impl_.working_views_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_working_views().empty()) {
-    working_views_.Set(from._internal_working_views(), 
-      GetArenaForAllocation());
+    _this->_impl_.working_views_.Set(from._internal_working_views(), 
+      _this->GetArenaForAllocation());
   }
-  poseview1_.InitDefault();
+  _impl_.poseview1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    poseview1_.Set("", GetArenaForAllocation());
+    _impl_.poseview1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_poseview1().empty()) {
-    poseview1_.Set(from._internal_poseview1(), 
-      GetArenaForAllocation());
+    _this->_impl_.poseview1_.Set(from._internal_poseview1(), 
+      _this->GetArenaForAllocation());
   }
-  poseview2_.InitDefault();
+  _impl_.poseview2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    poseview2_.Set("", GetArenaForAllocation());
+    _impl_.poseview2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_poseview2().empty()) {
-    poseview2_.Set(from._internal_poseview2(), 
-      GetArenaForAllocation());
+    _this->_impl_.poseview2_.Set(from._internal_poseview2(), 
+      _this->GetArenaForAllocation());
   }
-  camparams1_.InitDefault();
+  _impl_.camparams1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    camparams1_.Set("", GetArenaForAllocation());
+    _impl_.camparams1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams1().empty()) {
-    camparams1_.Set(from._internal_camparams1(), 
-      GetArenaForAllocation());
+    _this->_impl_.camparams1_.Set(from._internal_camparams1(), 
+      _this->GetArenaForAllocation());
   }
-  camparams2_.InitDefault();
+  _impl_.camparams2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    camparams2_.Set("", GetArenaForAllocation());
+    _impl_.camparams2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams2().empty()) {
-    camparams2_.Set(from._internal_camparams2(), 
-      GetArenaForAllocation());
+    _this->_impl_.camparams2_.Set(from._internal_camparams2(), 
+      _this->GetArenaForAllocation());
   }
-  pcloud_.InitDefault();
+  _impl_.pcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pcloud_.Set("", GetArenaForAllocation());
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pcloud().empty()) {
-    pcloud_.Set(from._internal_pcloud(), 
-      GetArenaForAllocation());
+    _this->_impl_.pcloud_.Set(from._internal_pcloud(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcITriangulator.triangulate_grpc0Request)
 }
 
-inline void triangulate_grpc0Request::SharedCtor() {
-pointsview1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pointsview1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-pointview2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pointview2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-working_views_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  working_views_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-poseview1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  poseview1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-poseview2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  poseview2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-camparams1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  camparams1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-camparams2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  camparams2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-pcloud_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pcloud_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void triangulate_grpc0Request::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pointsview1_){}
+    , decltype(_impl_.pointview2_){}
+    , decltype(_impl_.matches_){}
+    , decltype(_impl_.working_views_){}
+    , decltype(_impl_.poseview1_){}
+    , decltype(_impl_.poseview2_){}
+    , decltype(_impl_.camparams1_){}
+    , decltype(_impl_.camparams2_){}
+    , decltype(_impl_.pcloud_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.pointsview1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pointsview1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.pointview2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pointview2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.working_views_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.working_views_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.poseview1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.poseview1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.poseview2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.poseview2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.pcloud_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 triangulate_grpc0Request::~triangulate_grpc0Request() {
@@ -495,19 +532,19 @@ triangulate_grpc0Request::~triangulate_grpc0Request() {
 
 inline void triangulate_grpc0Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  pointsview1_.Destroy();
-  pointview2_.Destroy();
-  matches_.Destroy();
-  working_views_.Destroy();
-  poseview1_.Destroy();
-  poseview2_.Destroy();
-  camparams1_.Destroy();
-  camparams2_.Destroy();
-  pcloud_.Destroy();
+  _impl_.pointsview1_.Destroy();
+  _impl_.pointview2_.Destroy();
+  _impl_.matches_.Destroy();
+  _impl_.working_views_.Destroy();
+  _impl_.poseview1_.Destroy();
+  _impl_.poseview2_.Destroy();
+  _impl_.camparams1_.Destroy();
+  _impl_.camparams2_.Destroy();
+  _impl_.pcloud_.Destroy();
 }
 
 void triangulate_grpc0Request::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void triangulate_grpc0Request::Clear() {
@@ -516,16 +553,16 @@ void triangulate_grpc0Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pointsview1_.ClearToEmpty();
-  pointview2_.ClearToEmpty();
-  matches_.ClearToEmpty();
-  working_views_.ClearToEmpty();
-  poseview1_.ClearToEmpty();
-  poseview2_.ClearToEmpty();
-  camparams1_.ClearToEmpty();
-  camparams2_.ClearToEmpty();
-  pcloud_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.pointsview1_.ClearToEmpty();
+  _impl_.pointview2_.ClearToEmpty();
+  _impl_.matches_.ClearToEmpty();
+  _impl_.working_views_.ClearToEmpty();
+  _impl_.poseview1_.ClearToEmpty();
+  _impl_.poseview2_.ClearToEmpty();
+  _impl_.camparams1_.ClearToEmpty();
+  _impl_.camparams2_.ClearToEmpty();
+  _impl_.pcloud_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -538,7 +575,7 @@ const char* triangulate_grpc0Request::_InternalParse(const char* ptr, ::_pbi::Pa
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -797,59 +834,55 @@ size_t triangulate_grpc0Request::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData triangulate_grpc0Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     triangulate_grpc0Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*triangulate_grpc0Request::GetClassData() const { return &_class_data_; }
 
-void triangulate_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<triangulate_grpc0Request *>(to)->MergeFrom(
-      static_cast<const triangulate_grpc0Request &>(from));
-}
 
-
-void triangulate_grpc0Request::MergeFrom(const triangulate_grpc0Request& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc0Request)
-  GOOGLE_DCHECK_NE(&from, this);
+void triangulate_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<triangulate_grpc0Request*>(&to_msg);
+  auto& from = static_cast<const triangulate_grpc0Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc0Request)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_pointsview1().empty()) {
-    _internal_set_pointsview1(from._internal_pointsview1());
+    _this->_internal_set_pointsview1(from._internal_pointsview1());
   }
   if (!from._internal_pointview2().empty()) {
-    _internal_set_pointview2(from._internal_pointview2());
+    _this->_internal_set_pointview2(from._internal_pointview2());
   }
   if (!from._internal_matches().empty()) {
-    _internal_set_matches(from._internal_matches());
+    _this->_internal_set_matches(from._internal_matches());
   }
   if (!from._internal_working_views().empty()) {
-    _internal_set_working_views(from._internal_working_views());
+    _this->_internal_set_working_views(from._internal_working_views());
   }
   if (!from._internal_poseview1().empty()) {
-    _internal_set_poseview1(from._internal_poseview1());
+    _this->_internal_set_poseview1(from._internal_poseview1());
   }
   if (!from._internal_poseview2().empty()) {
-    _internal_set_poseview2(from._internal_poseview2());
+    _this->_internal_set_poseview2(from._internal_poseview2());
   }
   if (!from._internal_camparams1().empty()) {
-    _internal_set_camparams1(from._internal_camparams1());
+    _this->_internal_set_camparams1(from._internal_camparams1());
   }
   if (!from._internal_camparams2().empty()) {
-    _internal_set_camparams2(from._internal_camparams2());
+    _this->_internal_set_camparams2(from._internal_camparams2());
   }
   if (!from._internal_pcloud().empty()) {
-    _internal_set_pcloud(from._internal_pcloud());
+    _this->_internal_set_pcloud(from._internal_pcloud());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void triangulate_grpc0Request::CopyFrom(const triangulate_grpc0Request& from) {
@@ -869,42 +902,42 @@ void triangulate_grpc0Request::InternalSwap(triangulate_grpc0Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pointsview1_, lhs_arena,
-      &other->pointsview1_, rhs_arena
+      &_impl_.pointsview1_, lhs_arena,
+      &other->_impl_.pointsview1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pointview2_, lhs_arena,
-      &other->pointview2_, rhs_arena
+      &_impl_.pointview2_, lhs_arena,
+      &other->_impl_.pointview2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &matches_, lhs_arena,
-      &other->matches_, rhs_arena
+      &_impl_.matches_, lhs_arena,
+      &other->_impl_.matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &working_views_, lhs_arena,
-      &other->working_views_, rhs_arena
+      &_impl_.working_views_, lhs_arena,
+      &other->_impl_.working_views_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &poseview1_, lhs_arena,
-      &other->poseview1_, rhs_arena
+      &_impl_.poseview1_, lhs_arena,
+      &other->_impl_.poseview1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &poseview2_, lhs_arena,
-      &other->poseview2_, rhs_arena
+      &_impl_.poseview2_, lhs_arena,
+      &other->_impl_.poseview2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &camparams1_, lhs_arena,
-      &other->camparams1_, rhs_arena
+      &_impl_.camparams1_, lhs_arena,
+      &other->_impl_.camparams1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &camparams2_, lhs_arena,
-      &other->camparams2_, rhs_arena
+      &_impl_.camparams2_, lhs_arena,
+      &other->_impl_.camparams2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pcloud_, lhs_arena,
-      &other->pcloud_, rhs_arena
+      &_impl_.pcloud_, lhs_arena,
+      &other->_impl_.pcloud_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata triangulate_grpc0Request::GetMetadata() const {
@@ -922,30 +955,43 @@ class triangulate_grpc0Response::_Internal {
 triangulate_grpc0Response::triangulate_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcITriangulator.triangulate_grpc0Response)
 }
 triangulate_grpc0Response::triangulate_grpc0Response(const triangulate_grpc0Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  triangulate_grpc0Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pcloud_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  pcloud_.InitDefault();
+  _impl_.pcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pcloud_.Set("", GetArenaForAllocation());
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pcloud().empty()) {
-    pcloud_.Set(from._internal_pcloud(), 
-      GetArenaForAllocation());
+    _this->_impl_.pcloud_.Set(from._internal_pcloud(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcITriangulator.triangulate_grpc0Response)
 }
 
-inline void triangulate_grpc0Response::SharedCtor() {
-pcloud_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pcloud_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void triangulate_grpc0Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pcloud_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.pcloud_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 triangulate_grpc0Response::~triangulate_grpc0Response() {
@@ -959,11 +1005,11 @@ triangulate_grpc0Response::~triangulate_grpc0Response() {
 
 inline void triangulate_grpc0Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  pcloud_.Destroy();
+  _impl_.pcloud_.Destroy();
 }
 
 void triangulate_grpc0Response::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void triangulate_grpc0Response::Clear() {
@@ -972,8 +1018,8 @@ void triangulate_grpc0Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pcloud_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.pcloud_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -995,7 +1041,7 @@ const char* triangulate_grpc0Response::_InternalParse(const char* ptr, ::_pbi::P
       // double xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else
           goto handle_unusual;
@@ -1077,39 +1123,35 @@ size_t triangulate_grpc0Response::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData triangulate_grpc0Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     triangulate_grpc0Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*triangulate_grpc0Response::GetClassData() const { return &_class_data_; }
 
-void triangulate_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<triangulate_grpc0Response *>(to)->MergeFrom(
-      static_cast<const triangulate_grpc0Response &>(from));
-}
 
-
-void triangulate_grpc0Response::MergeFrom(const triangulate_grpc0Response& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc0Response)
-  GOOGLE_DCHECK_NE(&from, this);
+void triangulate_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<triangulate_grpc0Response*>(&to_msg);
+  auto& from = static_cast<const triangulate_grpc0Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc0Response)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_pcloud().empty()) {
-    _internal_set_pcloud(from._internal_pcloud());
+    _this->_internal_set_pcloud(from._internal_pcloud());
   }
   static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_xpcfgrpcreturnvalue = from._internal_xpcfgrpcreturnvalue();
   uint64_t raw_xpcfgrpcreturnvalue;
   memcpy(&raw_xpcfgrpcreturnvalue, &tmp_xpcfgrpcreturnvalue, sizeof(tmp_xpcfgrpcreturnvalue));
   if (raw_xpcfgrpcreturnvalue != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void triangulate_grpc0Response::CopyFrom(const triangulate_grpc0Response& from) {
@@ -1129,10 +1171,10 @@ void triangulate_grpc0Response::InternalSwap(triangulate_grpc0Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pcloud_, lhs_arena,
-      &other->pcloud_, rhs_arena
+      &_impl_.pcloud_, lhs_arena,
+      &other->_impl_.pcloud_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata triangulate_grpc0Response::GetMetadata() const {
@@ -1150,126 +1192,155 @@ class triangulate_grpc1Request::_Internal {
 triangulate_grpc1Request::triangulate_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcITriangulator.triangulate_grpc1Request)
 }
 triangulate_grpc1Request::triangulate_grpc1Request(const triangulate_grpc1Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  triangulate_grpc1Request* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.keypointsview1_){}
+    , decltype(_impl_.keypointsview2_){}
+    , decltype(_impl_.matches_){}
+    , decltype(_impl_.working_views_){}
+    , decltype(_impl_.poseview1_){}
+    , decltype(_impl_.poseview2_){}
+    , decltype(_impl_.camparams1_){}
+    , decltype(_impl_.camparams2_){}
+    , decltype(_impl_.pcloud_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  keypointsview1_.InitDefault();
+  _impl_.keypointsview1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    keypointsview1_.Set("", GetArenaForAllocation());
+    _impl_.keypointsview1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_keypointsview1().empty()) {
-    keypointsview1_.Set(from._internal_keypointsview1(), 
-      GetArenaForAllocation());
+    _this->_impl_.keypointsview1_.Set(from._internal_keypointsview1(), 
+      _this->GetArenaForAllocation());
   }
-  keypointsview2_.InitDefault();
+  _impl_.keypointsview2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    keypointsview2_.Set("", GetArenaForAllocation());
+    _impl_.keypointsview2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_keypointsview2().empty()) {
-    keypointsview2_.Set(from._internal_keypointsview2(), 
-      GetArenaForAllocation());
+    _this->_impl_.keypointsview2_.Set(from._internal_keypointsview2(), 
+      _this->GetArenaForAllocation());
   }
-  matches_.InitDefault();
+  _impl_.matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    matches_.Set("", GetArenaForAllocation());
+    _impl_.matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    matches_.Set(from._internal_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.matches_.Set(from._internal_matches(), 
+      _this->GetArenaForAllocation());
   }
-  working_views_.InitDefault();
+  _impl_.working_views_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    working_views_.Set("", GetArenaForAllocation());
+    _impl_.working_views_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_working_views().empty()) {
-    working_views_.Set(from._internal_working_views(), 
-      GetArenaForAllocation());
+    _this->_impl_.working_views_.Set(from._internal_working_views(), 
+      _this->GetArenaForAllocation());
   }
-  poseview1_.InitDefault();
+  _impl_.poseview1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    poseview1_.Set("", GetArenaForAllocation());
+    _impl_.poseview1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_poseview1().empty()) {
-    poseview1_.Set(from._internal_poseview1(), 
-      GetArenaForAllocation());
+    _this->_impl_.poseview1_.Set(from._internal_poseview1(), 
+      _this->GetArenaForAllocation());
   }
-  poseview2_.InitDefault();
+  _impl_.poseview2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    poseview2_.Set("", GetArenaForAllocation());
+    _impl_.poseview2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_poseview2().empty()) {
-    poseview2_.Set(from._internal_poseview2(), 
-      GetArenaForAllocation());
+    _this->_impl_.poseview2_.Set(from._internal_poseview2(), 
+      _this->GetArenaForAllocation());
   }
-  camparams1_.InitDefault();
+  _impl_.camparams1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    camparams1_.Set("", GetArenaForAllocation());
+    _impl_.camparams1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams1().empty()) {
-    camparams1_.Set(from._internal_camparams1(), 
-      GetArenaForAllocation());
+    _this->_impl_.camparams1_.Set(from._internal_camparams1(), 
+      _this->GetArenaForAllocation());
   }
-  camparams2_.InitDefault();
+  _impl_.camparams2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    camparams2_.Set("", GetArenaForAllocation());
+    _impl_.camparams2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams2().empty()) {
-    camparams2_.Set(from._internal_camparams2(), 
-      GetArenaForAllocation());
+    _this->_impl_.camparams2_.Set(from._internal_camparams2(), 
+      _this->GetArenaForAllocation());
   }
-  pcloud_.InitDefault();
+  _impl_.pcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pcloud_.Set("", GetArenaForAllocation());
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pcloud().empty()) {
-    pcloud_.Set(from._internal_pcloud(), 
-      GetArenaForAllocation());
+    _this->_impl_.pcloud_.Set(from._internal_pcloud(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcITriangulator.triangulate_grpc1Request)
 }
 
-inline void triangulate_grpc1Request::SharedCtor() {
-keypointsview1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  keypointsview1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-keypointsview2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  keypointsview2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-working_views_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  working_views_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-poseview1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  poseview1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-poseview2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  poseview2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-camparams1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  camparams1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-camparams2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  camparams2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-pcloud_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pcloud_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void triangulate_grpc1Request::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.keypointsview1_){}
+    , decltype(_impl_.keypointsview2_){}
+    , decltype(_impl_.matches_){}
+    , decltype(_impl_.working_views_){}
+    , decltype(_impl_.poseview1_){}
+    , decltype(_impl_.poseview2_){}
+    , decltype(_impl_.camparams1_){}
+    , decltype(_impl_.camparams2_){}
+    , decltype(_impl_.pcloud_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.keypointsview1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.keypointsview1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.keypointsview2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.keypointsview2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.working_views_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.working_views_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.poseview1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.poseview1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.poseview2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.poseview2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.pcloud_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 triangulate_grpc1Request::~triangulate_grpc1Request() {
@@ -1283,19 +1354,19 @@ triangulate_grpc1Request::~triangulate_grpc1Request() {
 
 inline void triangulate_grpc1Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  keypointsview1_.Destroy();
-  keypointsview2_.Destroy();
-  matches_.Destroy();
-  working_views_.Destroy();
-  poseview1_.Destroy();
-  poseview2_.Destroy();
-  camparams1_.Destroy();
-  camparams2_.Destroy();
-  pcloud_.Destroy();
+  _impl_.keypointsview1_.Destroy();
+  _impl_.keypointsview2_.Destroy();
+  _impl_.matches_.Destroy();
+  _impl_.working_views_.Destroy();
+  _impl_.poseview1_.Destroy();
+  _impl_.poseview2_.Destroy();
+  _impl_.camparams1_.Destroy();
+  _impl_.camparams2_.Destroy();
+  _impl_.pcloud_.Destroy();
 }
 
 void triangulate_grpc1Request::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void triangulate_grpc1Request::Clear() {
@@ -1304,16 +1375,16 @@ void triangulate_grpc1Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  keypointsview1_.ClearToEmpty();
-  keypointsview2_.ClearToEmpty();
-  matches_.ClearToEmpty();
-  working_views_.ClearToEmpty();
-  poseview1_.ClearToEmpty();
-  poseview2_.ClearToEmpty();
-  camparams1_.ClearToEmpty();
-  camparams2_.ClearToEmpty();
-  pcloud_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.keypointsview1_.ClearToEmpty();
+  _impl_.keypointsview2_.ClearToEmpty();
+  _impl_.matches_.ClearToEmpty();
+  _impl_.working_views_.ClearToEmpty();
+  _impl_.poseview1_.ClearToEmpty();
+  _impl_.poseview2_.ClearToEmpty();
+  _impl_.camparams1_.ClearToEmpty();
+  _impl_.camparams2_.ClearToEmpty();
+  _impl_.pcloud_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1326,7 +1397,7 @@ const char* triangulate_grpc1Request::_InternalParse(const char* ptr, ::_pbi::Pa
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1585,59 +1656,55 @@ size_t triangulate_grpc1Request::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData triangulate_grpc1Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     triangulate_grpc1Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*triangulate_grpc1Request::GetClassData() const { return &_class_data_; }
 
-void triangulate_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<triangulate_grpc1Request *>(to)->MergeFrom(
-      static_cast<const triangulate_grpc1Request &>(from));
-}
 
-
-void triangulate_grpc1Request::MergeFrom(const triangulate_grpc1Request& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc1Request)
-  GOOGLE_DCHECK_NE(&from, this);
+void triangulate_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<triangulate_grpc1Request*>(&to_msg);
+  auto& from = static_cast<const triangulate_grpc1Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc1Request)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_keypointsview1().empty()) {
-    _internal_set_keypointsview1(from._internal_keypointsview1());
+    _this->_internal_set_keypointsview1(from._internal_keypointsview1());
   }
   if (!from._internal_keypointsview2().empty()) {
-    _internal_set_keypointsview2(from._internal_keypointsview2());
+    _this->_internal_set_keypointsview2(from._internal_keypointsview2());
   }
   if (!from._internal_matches().empty()) {
-    _internal_set_matches(from._internal_matches());
+    _this->_internal_set_matches(from._internal_matches());
   }
   if (!from._internal_working_views().empty()) {
-    _internal_set_working_views(from._internal_working_views());
+    _this->_internal_set_working_views(from._internal_working_views());
   }
   if (!from._internal_poseview1().empty()) {
-    _internal_set_poseview1(from._internal_poseview1());
+    _this->_internal_set_poseview1(from._internal_poseview1());
   }
   if (!from._internal_poseview2().empty()) {
-    _internal_set_poseview2(from._internal_poseview2());
+    _this->_internal_set_poseview2(from._internal_poseview2());
   }
   if (!from._internal_camparams1().empty()) {
-    _internal_set_camparams1(from._internal_camparams1());
+    _this->_internal_set_camparams1(from._internal_camparams1());
   }
   if (!from._internal_camparams2().empty()) {
-    _internal_set_camparams2(from._internal_camparams2());
+    _this->_internal_set_camparams2(from._internal_camparams2());
   }
   if (!from._internal_pcloud().empty()) {
-    _internal_set_pcloud(from._internal_pcloud());
+    _this->_internal_set_pcloud(from._internal_pcloud());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void triangulate_grpc1Request::CopyFrom(const triangulate_grpc1Request& from) {
@@ -1657,42 +1724,42 @@ void triangulate_grpc1Request::InternalSwap(triangulate_grpc1Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &keypointsview1_, lhs_arena,
-      &other->keypointsview1_, rhs_arena
+      &_impl_.keypointsview1_, lhs_arena,
+      &other->_impl_.keypointsview1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &keypointsview2_, lhs_arena,
-      &other->keypointsview2_, rhs_arena
+      &_impl_.keypointsview2_, lhs_arena,
+      &other->_impl_.keypointsview2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &matches_, lhs_arena,
-      &other->matches_, rhs_arena
+      &_impl_.matches_, lhs_arena,
+      &other->_impl_.matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &working_views_, lhs_arena,
-      &other->working_views_, rhs_arena
+      &_impl_.working_views_, lhs_arena,
+      &other->_impl_.working_views_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &poseview1_, lhs_arena,
-      &other->poseview1_, rhs_arena
+      &_impl_.poseview1_, lhs_arena,
+      &other->_impl_.poseview1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &poseview2_, lhs_arena,
-      &other->poseview2_, rhs_arena
+      &_impl_.poseview2_, lhs_arena,
+      &other->_impl_.poseview2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &camparams1_, lhs_arena,
-      &other->camparams1_, rhs_arena
+      &_impl_.camparams1_, lhs_arena,
+      &other->_impl_.camparams1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &camparams2_, lhs_arena,
-      &other->camparams2_, rhs_arena
+      &_impl_.camparams2_, lhs_arena,
+      &other->_impl_.camparams2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pcloud_, lhs_arena,
-      &other->pcloud_, rhs_arena
+      &_impl_.pcloud_, lhs_arena,
+      &other->_impl_.pcloud_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata triangulate_grpc1Request::GetMetadata() const {
@@ -1710,30 +1777,43 @@ class triangulate_grpc1Response::_Internal {
 triangulate_grpc1Response::triangulate_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcITriangulator.triangulate_grpc1Response)
 }
 triangulate_grpc1Response::triangulate_grpc1Response(const triangulate_grpc1Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  triangulate_grpc1Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pcloud_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  pcloud_.InitDefault();
+  _impl_.pcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pcloud_.Set("", GetArenaForAllocation());
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pcloud().empty()) {
-    pcloud_.Set(from._internal_pcloud(), 
-      GetArenaForAllocation());
+    _this->_impl_.pcloud_.Set(from._internal_pcloud(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcITriangulator.triangulate_grpc1Response)
 }
 
-inline void triangulate_grpc1Response::SharedCtor() {
-pcloud_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pcloud_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void triangulate_grpc1Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pcloud_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.pcloud_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 triangulate_grpc1Response::~triangulate_grpc1Response() {
@@ -1747,11 +1827,11 @@ triangulate_grpc1Response::~triangulate_grpc1Response() {
 
 inline void triangulate_grpc1Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  pcloud_.Destroy();
+  _impl_.pcloud_.Destroy();
 }
 
 void triangulate_grpc1Response::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void triangulate_grpc1Response::Clear() {
@@ -1760,8 +1840,8 @@ void triangulate_grpc1Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pcloud_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.pcloud_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1783,7 +1863,7 @@ const char* triangulate_grpc1Response::_InternalParse(const char* ptr, ::_pbi::P
       // double xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else
           goto handle_unusual;
@@ -1865,39 +1945,35 @@ size_t triangulate_grpc1Response::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData triangulate_grpc1Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     triangulate_grpc1Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*triangulate_grpc1Response::GetClassData() const { return &_class_data_; }
 
-void triangulate_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<triangulate_grpc1Response *>(to)->MergeFrom(
-      static_cast<const triangulate_grpc1Response &>(from));
-}
 
-
-void triangulate_grpc1Response::MergeFrom(const triangulate_grpc1Response& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc1Response)
-  GOOGLE_DCHECK_NE(&from, this);
+void triangulate_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<triangulate_grpc1Response*>(&to_msg);
+  auto& from = static_cast<const triangulate_grpc1Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc1Response)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_pcloud().empty()) {
-    _internal_set_pcloud(from._internal_pcloud());
+    _this->_internal_set_pcloud(from._internal_pcloud());
   }
   static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_xpcfgrpcreturnvalue = from._internal_xpcfgrpcreturnvalue();
   uint64_t raw_xpcfgrpcreturnvalue;
   memcpy(&raw_xpcfgrpcreturnvalue, &tmp_xpcfgrpcreturnvalue, sizeof(tmp_xpcfgrpcreturnvalue));
   if (raw_xpcfgrpcreturnvalue != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void triangulate_grpc1Response::CopyFrom(const triangulate_grpc1Response& from) {
@@ -1917,10 +1993,10 @@ void triangulate_grpc1Response::InternalSwap(triangulate_grpc1Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pcloud_, lhs_arena,
-      &other->pcloud_, rhs_arena
+      &_impl_.pcloud_, lhs_arena,
+      &other->_impl_.pcloud_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata triangulate_grpc1Response::GetMetadata() const {
@@ -1938,150 +2014,183 @@ class triangulate_grpc2Request::_Internal {
 triangulate_grpc2Request::triangulate_grpc2Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcITriangulator.triangulate_grpc2Request)
 }
 triangulate_grpc2Request::triangulate_grpc2Request(const triangulate_grpc2Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  triangulate_grpc2Request* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.keypointsview1_){}
+    , decltype(_impl_.keypointsview2_){}
+    , decltype(_impl_.descriptor1_){}
+    , decltype(_impl_.descriptor2_){}
+    , decltype(_impl_.matches_){}
+    , decltype(_impl_.working_views_){}
+    , decltype(_impl_.poseview1_){}
+    , decltype(_impl_.poseview2_){}
+    , decltype(_impl_.camparams1_){}
+    , decltype(_impl_.camparams2_){}
+    , decltype(_impl_.pcloud_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  keypointsview1_.InitDefault();
+  _impl_.keypointsview1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    keypointsview1_.Set("", GetArenaForAllocation());
+    _impl_.keypointsview1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_keypointsview1().empty()) {
-    keypointsview1_.Set(from._internal_keypointsview1(), 
-      GetArenaForAllocation());
+    _this->_impl_.keypointsview1_.Set(from._internal_keypointsview1(), 
+      _this->GetArenaForAllocation());
   }
-  keypointsview2_.InitDefault();
+  _impl_.keypointsview2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    keypointsview2_.Set("", GetArenaForAllocation());
+    _impl_.keypointsview2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_keypointsview2().empty()) {
-    keypointsview2_.Set(from._internal_keypointsview2(), 
-      GetArenaForAllocation());
+    _this->_impl_.keypointsview2_.Set(from._internal_keypointsview2(), 
+      _this->GetArenaForAllocation());
   }
-  descriptor1_.InitDefault();
+  _impl_.descriptor1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    descriptor1_.Set("", GetArenaForAllocation());
+    _impl_.descriptor1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_descriptor1().empty()) {
-    descriptor1_.Set(from._internal_descriptor1(), 
-      GetArenaForAllocation());
+    _this->_impl_.descriptor1_.Set(from._internal_descriptor1(), 
+      _this->GetArenaForAllocation());
   }
-  descriptor2_.InitDefault();
+  _impl_.descriptor2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    descriptor2_.Set("", GetArenaForAllocation());
+    _impl_.descriptor2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_descriptor2().empty()) {
-    descriptor2_.Set(from._internal_descriptor2(), 
-      GetArenaForAllocation());
+    _this->_impl_.descriptor2_.Set(from._internal_descriptor2(), 
+      _this->GetArenaForAllocation());
   }
-  matches_.InitDefault();
+  _impl_.matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    matches_.Set("", GetArenaForAllocation());
+    _impl_.matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    matches_.Set(from._internal_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.matches_.Set(from._internal_matches(), 
+      _this->GetArenaForAllocation());
   }
-  working_views_.InitDefault();
+  _impl_.working_views_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    working_views_.Set("", GetArenaForAllocation());
+    _impl_.working_views_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_working_views().empty()) {
-    working_views_.Set(from._internal_working_views(), 
-      GetArenaForAllocation());
+    _this->_impl_.working_views_.Set(from._internal_working_views(), 
+      _this->GetArenaForAllocation());
   }
-  poseview1_.InitDefault();
+  _impl_.poseview1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    poseview1_.Set("", GetArenaForAllocation());
+    _impl_.poseview1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_poseview1().empty()) {
-    poseview1_.Set(from._internal_poseview1(), 
-      GetArenaForAllocation());
+    _this->_impl_.poseview1_.Set(from._internal_poseview1(), 
+      _this->GetArenaForAllocation());
   }
-  poseview2_.InitDefault();
+  _impl_.poseview2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    poseview2_.Set("", GetArenaForAllocation());
+    _impl_.poseview2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_poseview2().empty()) {
-    poseview2_.Set(from._internal_poseview2(), 
-      GetArenaForAllocation());
+    _this->_impl_.poseview2_.Set(from._internal_poseview2(), 
+      _this->GetArenaForAllocation());
   }
-  camparams1_.InitDefault();
+  _impl_.camparams1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    camparams1_.Set("", GetArenaForAllocation());
+    _impl_.camparams1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams1().empty()) {
-    camparams1_.Set(from._internal_camparams1(), 
-      GetArenaForAllocation());
+    _this->_impl_.camparams1_.Set(from._internal_camparams1(), 
+      _this->GetArenaForAllocation());
   }
-  camparams2_.InitDefault();
+  _impl_.camparams2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    camparams2_.Set("", GetArenaForAllocation());
+    _impl_.camparams2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams2().empty()) {
-    camparams2_.Set(from._internal_camparams2(), 
-      GetArenaForAllocation());
+    _this->_impl_.camparams2_.Set(from._internal_camparams2(), 
+      _this->GetArenaForAllocation());
   }
-  pcloud_.InitDefault();
+  _impl_.pcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pcloud_.Set("", GetArenaForAllocation());
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pcloud().empty()) {
-    pcloud_.Set(from._internal_pcloud(), 
-      GetArenaForAllocation());
+    _this->_impl_.pcloud_.Set(from._internal_pcloud(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcITriangulator.triangulate_grpc2Request)
 }
 
-inline void triangulate_grpc2Request::SharedCtor() {
-keypointsview1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  keypointsview1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-keypointsview2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  keypointsview2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-descriptor1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  descriptor1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-descriptor2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  descriptor2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-working_views_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  working_views_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-poseview1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  poseview1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-poseview2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  poseview2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-camparams1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  camparams1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-camparams2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  camparams2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-pcloud_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pcloud_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void triangulate_grpc2Request::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.keypointsview1_){}
+    , decltype(_impl_.keypointsview2_){}
+    , decltype(_impl_.descriptor1_){}
+    , decltype(_impl_.descriptor2_){}
+    , decltype(_impl_.matches_){}
+    , decltype(_impl_.working_views_){}
+    , decltype(_impl_.poseview1_){}
+    , decltype(_impl_.poseview2_){}
+    , decltype(_impl_.camparams1_){}
+    , decltype(_impl_.camparams2_){}
+    , decltype(_impl_.pcloud_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.keypointsview1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.keypointsview1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.keypointsview2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.keypointsview2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.descriptor1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.descriptor1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.descriptor2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.descriptor2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.working_views_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.working_views_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.poseview1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.poseview1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.poseview2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.poseview2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.pcloud_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 triangulate_grpc2Request::~triangulate_grpc2Request() {
@@ -2095,21 +2204,21 @@ triangulate_grpc2Request::~triangulate_grpc2Request() {
 
 inline void triangulate_grpc2Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  keypointsview1_.Destroy();
-  keypointsview2_.Destroy();
-  descriptor1_.Destroy();
-  descriptor2_.Destroy();
-  matches_.Destroy();
-  working_views_.Destroy();
-  poseview1_.Destroy();
-  poseview2_.Destroy();
-  camparams1_.Destroy();
-  camparams2_.Destroy();
-  pcloud_.Destroy();
+  _impl_.keypointsview1_.Destroy();
+  _impl_.keypointsview2_.Destroy();
+  _impl_.descriptor1_.Destroy();
+  _impl_.descriptor2_.Destroy();
+  _impl_.matches_.Destroy();
+  _impl_.working_views_.Destroy();
+  _impl_.poseview1_.Destroy();
+  _impl_.poseview2_.Destroy();
+  _impl_.camparams1_.Destroy();
+  _impl_.camparams2_.Destroy();
+  _impl_.pcloud_.Destroy();
 }
 
 void triangulate_grpc2Request::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void triangulate_grpc2Request::Clear() {
@@ -2118,18 +2227,18 @@ void triangulate_grpc2Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  keypointsview1_.ClearToEmpty();
-  keypointsview2_.ClearToEmpty();
-  descriptor1_.ClearToEmpty();
-  descriptor2_.ClearToEmpty();
-  matches_.ClearToEmpty();
-  working_views_.ClearToEmpty();
-  poseview1_.ClearToEmpty();
-  poseview2_.ClearToEmpty();
-  camparams1_.ClearToEmpty();
-  camparams2_.ClearToEmpty();
-  pcloud_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.keypointsview1_.ClearToEmpty();
+  _impl_.keypointsview2_.ClearToEmpty();
+  _impl_.descriptor1_.ClearToEmpty();
+  _impl_.descriptor2_.ClearToEmpty();
+  _impl_.matches_.ClearToEmpty();
+  _impl_.working_views_.ClearToEmpty();
+  _impl_.poseview1_.ClearToEmpty();
+  _impl_.poseview2_.ClearToEmpty();
+  _impl_.camparams1_.ClearToEmpty();
+  _impl_.camparams2_.ClearToEmpty();
+  _impl_.pcloud_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2142,7 +2251,7 @@ const char* triangulate_grpc2Request::_InternalParse(const char* ptr, ::_pbi::Pa
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2445,65 +2554,61 @@ size_t triangulate_grpc2Request::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData triangulate_grpc2Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     triangulate_grpc2Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*triangulate_grpc2Request::GetClassData() const { return &_class_data_; }
 
-void triangulate_grpc2Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<triangulate_grpc2Request *>(to)->MergeFrom(
-      static_cast<const triangulate_grpc2Request &>(from));
-}
 
-
-void triangulate_grpc2Request::MergeFrom(const triangulate_grpc2Request& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc2Request)
-  GOOGLE_DCHECK_NE(&from, this);
+void triangulate_grpc2Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<triangulate_grpc2Request*>(&to_msg);
+  auto& from = static_cast<const triangulate_grpc2Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc2Request)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_keypointsview1().empty()) {
-    _internal_set_keypointsview1(from._internal_keypointsview1());
+    _this->_internal_set_keypointsview1(from._internal_keypointsview1());
   }
   if (!from._internal_keypointsview2().empty()) {
-    _internal_set_keypointsview2(from._internal_keypointsview2());
+    _this->_internal_set_keypointsview2(from._internal_keypointsview2());
   }
   if (!from._internal_descriptor1().empty()) {
-    _internal_set_descriptor1(from._internal_descriptor1());
+    _this->_internal_set_descriptor1(from._internal_descriptor1());
   }
   if (!from._internal_descriptor2().empty()) {
-    _internal_set_descriptor2(from._internal_descriptor2());
+    _this->_internal_set_descriptor2(from._internal_descriptor2());
   }
   if (!from._internal_matches().empty()) {
-    _internal_set_matches(from._internal_matches());
+    _this->_internal_set_matches(from._internal_matches());
   }
   if (!from._internal_working_views().empty()) {
-    _internal_set_working_views(from._internal_working_views());
+    _this->_internal_set_working_views(from._internal_working_views());
   }
   if (!from._internal_poseview1().empty()) {
-    _internal_set_poseview1(from._internal_poseview1());
+    _this->_internal_set_poseview1(from._internal_poseview1());
   }
   if (!from._internal_poseview2().empty()) {
-    _internal_set_poseview2(from._internal_poseview2());
+    _this->_internal_set_poseview2(from._internal_poseview2());
   }
   if (!from._internal_camparams1().empty()) {
-    _internal_set_camparams1(from._internal_camparams1());
+    _this->_internal_set_camparams1(from._internal_camparams1());
   }
   if (!from._internal_camparams2().empty()) {
-    _internal_set_camparams2(from._internal_camparams2());
+    _this->_internal_set_camparams2(from._internal_camparams2());
   }
   if (!from._internal_pcloud().empty()) {
-    _internal_set_pcloud(from._internal_pcloud());
+    _this->_internal_set_pcloud(from._internal_pcloud());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void triangulate_grpc2Request::CopyFrom(const triangulate_grpc2Request& from) {
@@ -2523,50 +2628,50 @@ void triangulate_grpc2Request::InternalSwap(triangulate_grpc2Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &keypointsview1_, lhs_arena,
-      &other->keypointsview1_, rhs_arena
+      &_impl_.keypointsview1_, lhs_arena,
+      &other->_impl_.keypointsview1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &keypointsview2_, lhs_arena,
-      &other->keypointsview2_, rhs_arena
+      &_impl_.keypointsview2_, lhs_arena,
+      &other->_impl_.keypointsview2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &descriptor1_, lhs_arena,
-      &other->descriptor1_, rhs_arena
+      &_impl_.descriptor1_, lhs_arena,
+      &other->_impl_.descriptor1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &descriptor2_, lhs_arena,
-      &other->descriptor2_, rhs_arena
+      &_impl_.descriptor2_, lhs_arena,
+      &other->_impl_.descriptor2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &matches_, lhs_arena,
-      &other->matches_, rhs_arena
+      &_impl_.matches_, lhs_arena,
+      &other->_impl_.matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &working_views_, lhs_arena,
-      &other->working_views_, rhs_arena
+      &_impl_.working_views_, lhs_arena,
+      &other->_impl_.working_views_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &poseview1_, lhs_arena,
-      &other->poseview1_, rhs_arena
+      &_impl_.poseview1_, lhs_arena,
+      &other->_impl_.poseview1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &poseview2_, lhs_arena,
-      &other->poseview2_, rhs_arena
+      &_impl_.poseview2_, lhs_arena,
+      &other->_impl_.poseview2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &camparams1_, lhs_arena,
-      &other->camparams1_, rhs_arena
+      &_impl_.camparams1_, lhs_arena,
+      &other->_impl_.camparams1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &camparams2_, lhs_arena,
-      &other->camparams2_, rhs_arena
+      &_impl_.camparams2_, lhs_arena,
+      &other->_impl_.camparams2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pcloud_, lhs_arena,
-      &other->pcloud_, rhs_arena
+      &_impl_.pcloud_, lhs_arena,
+      &other->_impl_.pcloud_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata triangulate_grpc2Request::GetMetadata() const {
@@ -2584,30 +2689,43 @@ class triangulate_grpc2Response::_Internal {
 triangulate_grpc2Response::triangulate_grpc2Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcITriangulator.triangulate_grpc2Response)
 }
 triangulate_grpc2Response::triangulate_grpc2Response(const triangulate_grpc2Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  triangulate_grpc2Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pcloud_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  pcloud_.InitDefault();
+  _impl_.pcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pcloud_.Set("", GetArenaForAllocation());
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pcloud().empty()) {
-    pcloud_.Set(from._internal_pcloud(), 
-      GetArenaForAllocation());
+    _this->_impl_.pcloud_.Set(from._internal_pcloud(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcITriangulator.triangulate_grpc2Response)
 }
 
-inline void triangulate_grpc2Response::SharedCtor() {
-pcloud_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pcloud_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void triangulate_grpc2Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pcloud_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.pcloud_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 triangulate_grpc2Response::~triangulate_grpc2Response() {
@@ -2621,11 +2739,11 @@ triangulate_grpc2Response::~triangulate_grpc2Response() {
 
 inline void triangulate_grpc2Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  pcloud_.Destroy();
+  _impl_.pcloud_.Destroy();
 }
 
 void triangulate_grpc2Response::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void triangulate_grpc2Response::Clear() {
@@ -2634,8 +2752,8 @@ void triangulate_grpc2Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pcloud_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.pcloud_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2657,7 +2775,7 @@ const char* triangulate_grpc2Response::_InternalParse(const char* ptr, ::_pbi::P
       // double xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else
           goto handle_unusual;
@@ -2739,39 +2857,35 @@ size_t triangulate_grpc2Response::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData triangulate_grpc2Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     triangulate_grpc2Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*triangulate_grpc2Response::GetClassData() const { return &_class_data_; }
 
-void triangulate_grpc2Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<triangulate_grpc2Response *>(to)->MergeFrom(
-      static_cast<const triangulate_grpc2Response &>(from));
-}
 
-
-void triangulate_grpc2Response::MergeFrom(const triangulate_grpc2Response& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc2Response)
-  GOOGLE_DCHECK_NE(&from, this);
+void triangulate_grpc2Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<triangulate_grpc2Response*>(&to_msg);
+  auto& from = static_cast<const triangulate_grpc2Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc2Response)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_pcloud().empty()) {
-    _internal_set_pcloud(from._internal_pcloud());
+    _this->_internal_set_pcloud(from._internal_pcloud());
   }
   static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_xpcfgrpcreturnvalue = from._internal_xpcfgrpcreturnvalue();
   uint64_t raw_xpcfgrpcreturnvalue;
   memcpy(&raw_xpcfgrpcreturnvalue, &tmp_xpcfgrpcreturnvalue, sizeof(tmp_xpcfgrpcreturnvalue));
   if (raw_xpcfgrpcreturnvalue != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void triangulate_grpc2Response::CopyFrom(const triangulate_grpc2Response& from) {
@@ -2791,10 +2905,10 @@ void triangulate_grpc2Response::InternalSwap(triangulate_grpc2Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pcloud_, lhs_arena,
-      &other->pcloud_, rhs_arena
+      &_impl_.pcloud_, lhs_arena,
+      &other->_impl_.pcloud_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata triangulate_grpc2Response::GetMetadata() const {
@@ -2812,107 +2926,131 @@ class triangulate_grpc3Request::_Internal {
 triangulate_grpc3Request::triangulate_grpc3Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcITriangulator.triangulate_grpc3Request)
 }
 triangulate_grpc3Request::triangulate_grpc3Request(const triangulate_grpc3Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  triangulate_grpc3Request* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.frame1_){}
+    , decltype(_impl_.frame2_){}
+    , decltype(_impl_.matches_){}
+    , decltype(_impl_.working_views_){}
+    , decltype(_impl_.camparams1_){}
+    , decltype(_impl_.camparams2_){}
+    , decltype(_impl_.pcloud_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , decltype(_impl_.onlydepth_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  frame1_.InitDefault();
+  _impl_.frame1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    frame1_.Set("", GetArenaForAllocation());
+    _impl_.frame1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_frame1().empty()) {
-    frame1_.Set(from._internal_frame1(), 
-      GetArenaForAllocation());
+    _this->_impl_.frame1_.Set(from._internal_frame1(), 
+      _this->GetArenaForAllocation());
   }
-  frame2_.InitDefault();
+  _impl_.frame2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    frame2_.Set("", GetArenaForAllocation());
+    _impl_.frame2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_frame2().empty()) {
-    frame2_.Set(from._internal_frame2(), 
-      GetArenaForAllocation());
+    _this->_impl_.frame2_.Set(from._internal_frame2(), 
+      _this->GetArenaForAllocation());
   }
-  matches_.InitDefault();
+  _impl_.matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    matches_.Set("", GetArenaForAllocation());
+    _impl_.matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_matches().empty()) {
-    matches_.Set(from._internal_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.matches_.Set(from._internal_matches(), 
+      _this->GetArenaForAllocation());
   }
-  working_views_.InitDefault();
+  _impl_.working_views_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    working_views_.Set("", GetArenaForAllocation());
+    _impl_.working_views_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_working_views().empty()) {
-    working_views_.Set(from._internal_working_views(), 
-      GetArenaForAllocation());
+    _this->_impl_.working_views_.Set(from._internal_working_views(), 
+      _this->GetArenaForAllocation());
   }
-  camparams1_.InitDefault();
+  _impl_.camparams1_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    camparams1_.Set("", GetArenaForAllocation());
+    _impl_.camparams1_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams1().empty()) {
-    camparams1_.Set(from._internal_camparams1(), 
-      GetArenaForAllocation());
+    _this->_impl_.camparams1_.Set(from._internal_camparams1(), 
+      _this->GetArenaForAllocation());
   }
-  camparams2_.InitDefault();
+  _impl_.camparams2_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    camparams2_.Set("", GetArenaForAllocation());
+    _impl_.camparams2_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_camparams2().empty()) {
-    camparams2_.Set(from._internal_camparams2(), 
-      GetArenaForAllocation());
+    _this->_impl_.camparams2_.Set(from._internal_camparams2(), 
+      _this->GetArenaForAllocation());
   }
-  pcloud_.InitDefault();
+  _impl_.pcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pcloud_.Set("", GetArenaForAllocation());
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pcloud().empty()) {
-    pcloud_.Set(from._internal_pcloud(), 
-      GetArenaForAllocation());
+    _this->_impl_.pcloud_.Set(from._internal_pcloud(), 
+      _this->GetArenaForAllocation());
   }
-  ::memcpy(&grpcservercompressionformat_, &from.grpcservercompressionformat_,
-    static_cast<size_t>(reinterpret_cast<char*>(&onlydepth_) -
-    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(onlydepth_));
+  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.onlydepth_) -
+    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.onlydepth_));
   // @@protoc_insertion_point(copy_constructor:grpcITriangulator.triangulate_grpc3Request)
 }
 
-inline void triangulate_grpc3Request::SharedCtor() {
-frame1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  frame1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-frame2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  frame2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-working_views_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  working_views_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-camparams1_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  camparams1_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-camparams2_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  camparams2_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-pcloud_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pcloud_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&grpcservercompressionformat_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&onlydepth_) -
-    reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(onlydepth_));
+inline void triangulate_grpc3Request::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.frame1_){}
+    , decltype(_impl_.frame2_){}
+    , decltype(_impl_.matches_){}
+    , decltype(_impl_.working_views_){}
+    , decltype(_impl_.camparams1_){}
+    , decltype(_impl_.camparams2_){}
+    , decltype(_impl_.pcloud_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , decltype(_impl_.onlydepth_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.frame1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.frame1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.frame2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.frame2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.working_views_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.working_views_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams1_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams1_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.camparams2_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.camparams2_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.pcloud_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 triangulate_grpc3Request::~triangulate_grpc3Request() {
@@ -2926,17 +3064,17 @@ triangulate_grpc3Request::~triangulate_grpc3Request() {
 
 inline void triangulate_grpc3Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  frame1_.Destroy();
-  frame2_.Destroy();
-  matches_.Destroy();
-  working_views_.Destroy();
-  camparams1_.Destroy();
-  camparams2_.Destroy();
-  pcloud_.Destroy();
+  _impl_.frame1_.Destroy();
+  _impl_.frame2_.Destroy();
+  _impl_.matches_.Destroy();
+  _impl_.working_views_.Destroy();
+  _impl_.camparams1_.Destroy();
+  _impl_.camparams2_.Destroy();
+  _impl_.pcloud_.Destroy();
 }
 
 void triangulate_grpc3Request::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void triangulate_grpc3Request::Clear() {
@@ -2945,16 +3083,16 @@ void triangulate_grpc3Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  frame1_.ClearToEmpty();
-  frame2_.ClearToEmpty();
-  matches_.ClearToEmpty();
-  working_views_.ClearToEmpty();
-  camparams1_.ClearToEmpty();
-  camparams2_.ClearToEmpty();
-  pcloud_.ClearToEmpty();
-  ::memset(&grpcservercompressionformat_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&onlydepth_) -
-      reinterpret_cast<char*>(&grpcservercompressionformat_)) + sizeof(onlydepth_));
+  _impl_.frame1_.ClearToEmpty();
+  _impl_.frame2_.ClearToEmpty();
+  _impl_.matches_.ClearToEmpty();
+  _impl_.working_views_.ClearToEmpty();
+  _impl_.camparams1_.ClearToEmpty();
+  _impl_.camparams2_.ClearToEmpty();
+  _impl_.pcloud_.ClearToEmpty();
+  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.onlydepth_) -
+      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.onlydepth_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2967,7 +3105,7 @@ const char* triangulate_grpc3Request::_InternalParse(const char* ptr, ::_pbi::Pa
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3029,7 +3167,7 @@ const char* triangulate_grpc3Request::_InternalParse(const char* ptr, ::_pbi::Pa
       // bool onlyDepth = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          onlydepth_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _impl_.onlydepth_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3201,56 +3339,52 @@ size_t triangulate_grpc3Request::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData triangulate_grpc3Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     triangulate_grpc3Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*triangulate_grpc3Request::GetClassData() const { return &_class_data_; }
 
-void triangulate_grpc3Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<triangulate_grpc3Request *>(to)->MergeFrom(
-      static_cast<const triangulate_grpc3Request &>(from));
-}
 
-
-void triangulate_grpc3Request::MergeFrom(const triangulate_grpc3Request& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc3Request)
-  GOOGLE_DCHECK_NE(&from, this);
+void triangulate_grpc3Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<triangulate_grpc3Request*>(&to_msg);
+  auto& from = static_cast<const triangulate_grpc3Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc3Request)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_frame1().empty()) {
-    _internal_set_frame1(from._internal_frame1());
+    _this->_internal_set_frame1(from._internal_frame1());
   }
   if (!from._internal_frame2().empty()) {
-    _internal_set_frame2(from._internal_frame2());
+    _this->_internal_set_frame2(from._internal_frame2());
   }
   if (!from._internal_matches().empty()) {
-    _internal_set_matches(from._internal_matches());
+    _this->_internal_set_matches(from._internal_matches());
   }
   if (!from._internal_working_views().empty()) {
-    _internal_set_working_views(from._internal_working_views());
+    _this->_internal_set_working_views(from._internal_working_views());
   }
   if (!from._internal_camparams1().empty()) {
-    _internal_set_camparams1(from._internal_camparams1());
+    _this->_internal_set_camparams1(from._internal_camparams1());
   }
   if (!from._internal_camparams2().empty()) {
-    _internal_set_camparams2(from._internal_camparams2());
+    _this->_internal_set_camparams2(from._internal_camparams2());
   }
   if (!from._internal_pcloud().empty()) {
-    _internal_set_pcloud(from._internal_pcloud());
+    _this->_internal_set_pcloud(from._internal_pcloud());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
   if (from._internal_onlydepth() != 0) {
-    _internal_set_onlydepth(from._internal_onlydepth());
+    _this->_internal_set_onlydepth(from._internal_onlydepth());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void triangulate_grpc3Request::CopyFrom(const triangulate_grpc3Request& from) {
@@ -3270,39 +3404,39 @@ void triangulate_grpc3Request::InternalSwap(triangulate_grpc3Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &frame1_, lhs_arena,
-      &other->frame1_, rhs_arena
+      &_impl_.frame1_, lhs_arena,
+      &other->_impl_.frame1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &frame2_, lhs_arena,
-      &other->frame2_, rhs_arena
+      &_impl_.frame2_, lhs_arena,
+      &other->_impl_.frame2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &matches_, lhs_arena,
-      &other->matches_, rhs_arena
+      &_impl_.matches_, lhs_arena,
+      &other->_impl_.matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &working_views_, lhs_arena,
-      &other->working_views_, rhs_arena
+      &_impl_.working_views_, lhs_arena,
+      &other->_impl_.working_views_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &camparams1_, lhs_arena,
-      &other->camparams1_, rhs_arena
+      &_impl_.camparams1_, lhs_arena,
+      &other->_impl_.camparams1_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &camparams2_, lhs_arena,
-      &other->camparams2_, rhs_arena
+      &_impl_.camparams2_, lhs_arena,
+      &other->_impl_.camparams2_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pcloud_, lhs_arena,
-      &other->pcloud_, rhs_arena
+      &_impl_.pcloud_, lhs_arena,
+      &other->_impl_.pcloud_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(triangulate_grpc3Request, onlydepth_)
-      + sizeof(triangulate_grpc3Request::onlydepth_)
-      - PROTOBUF_FIELD_OFFSET(triangulate_grpc3Request, grpcservercompressionformat_)>(
-          reinterpret_cast<char*>(&grpcservercompressionformat_),
-          reinterpret_cast<char*>(&other->grpcservercompressionformat_));
+      PROTOBUF_FIELD_OFFSET(triangulate_grpc3Request, _impl_.onlydepth_)
+      + sizeof(triangulate_grpc3Request::_impl_.onlydepth_)
+      - PROTOBUF_FIELD_OFFSET(triangulate_grpc3Request, _impl_.grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata triangulate_grpc3Request::GetMetadata() const {
@@ -3320,30 +3454,43 @@ class triangulate_grpc3Response::_Internal {
 triangulate_grpc3Response::triangulate_grpc3Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcITriangulator.triangulate_grpc3Response)
 }
 triangulate_grpc3Response::triangulate_grpc3Response(const triangulate_grpc3Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  triangulate_grpc3Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pcloud_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  pcloud_.InitDefault();
+  _impl_.pcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    pcloud_.Set("", GetArenaForAllocation());
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_pcloud().empty()) {
-    pcloud_.Set(from._internal_pcloud(), 
-      GetArenaForAllocation());
+    _this->_impl_.pcloud_.Set(from._internal_pcloud(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcITriangulator.triangulate_grpc3Response)
 }
 
-inline void triangulate_grpc3Response::SharedCtor() {
-pcloud_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  pcloud_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void triangulate_grpc3Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pcloud_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.pcloud_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.pcloud_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 triangulate_grpc3Response::~triangulate_grpc3Response() {
@@ -3357,11 +3504,11 @@ triangulate_grpc3Response::~triangulate_grpc3Response() {
 
 inline void triangulate_grpc3Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  pcloud_.Destroy();
+  _impl_.pcloud_.Destroy();
 }
 
 void triangulate_grpc3Response::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void triangulate_grpc3Response::Clear() {
@@ -3370,8 +3517,8 @@ void triangulate_grpc3Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  pcloud_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.pcloud_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3393,7 +3540,7 @@ const char* triangulate_grpc3Response::_InternalParse(const char* ptr, ::_pbi::P
       // double xpcfGrpcReturnValue = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else
           goto handle_unusual;
@@ -3475,39 +3622,35 @@ size_t triangulate_grpc3Response::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData triangulate_grpc3Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     triangulate_grpc3Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*triangulate_grpc3Response::GetClassData() const { return &_class_data_; }
 
-void triangulate_grpc3Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<triangulate_grpc3Response *>(to)->MergeFrom(
-      static_cast<const triangulate_grpc3Response &>(from));
-}
 
-
-void triangulate_grpc3Response::MergeFrom(const triangulate_grpc3Response& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc3Response)
-  GOOGLE_DCHECK_NE(&from, this);
+void triangulate_grpc3Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<triangulate_grpc3Response*>(&to_msg);
+  auto& from = static_cast<const triangulate_grpc3Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcITriangulator.triangulate_grpc3Response)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_pcloud().empty()) {
-    _internal_set_pcloud(from._internal_pcloud());
+    _this->_internal_set_pcloud(from._internal_pcloud());
   }
   static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_xpcfgrpcreturnvalue = from._internal_xpcfgrpcreturnvalue();
   uint64_t raw_xpcfgrpcreturnvalue;
   memcpy(&raw_xpcfgrpcreturnvalue, &tmp_xpcfgrpcreturnvalue, sizeof(tmp_xpcfgrpcreturnvalue));
   if (raw_xpcfgrpcreturnvalue != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void triangulate_grpc3Response::CopyFrom(const triangulate_grpc3Response& from) {
@@ -3527,10 +3670,10 @@ void triangulate_grpc3Response::InternalSwap(triangulate_grpc3Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &pcloud_, lhs_arena,
-      &other->pcloud_, rhs_arena
+      &_impl_.pcloud_, lhs_arena,
+      &other->_impl_.pcloud_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata triangulate_grpc3Response::GetMetadata() const {

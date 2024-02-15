@@ -34,24 +34,24 @@ message stopResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message setMapRequest
+message setMapUUIDRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string uuid = 2;
 }
 
-message setMapResponse
+message setMapUUIDResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message getMapRequest
+message getMapUUIDRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string uuid = 2;
 }
 
-message getMapResponse
+message getMapUUIDResponse
 {
 string uuid = 1;
 sint32 xpcfGrpcReturnValue = 2;
@@ -130,8 +130,8 @@ service grpcIMapUpdatePipelineService {
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
-rpc setMap(setMapRequest) returns(setMapResponse) {}
-rpc getMap(getMapRequest) returns(getMapResponse) {}
+rpc setMapUUID(setMapUUIDRequest) returns(setMapUUIDResponse) {}
+rpc getMapUUID(getMapUUIDRequest) returns(getMapUUIDResponse) {}
 rpc resetMap(resetMapRequest) returns(resetMapResponse) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
 rpc mapUpdateRequest(mapUpdateRequestRequest) returns(mapUpdateRequestResponse) {}

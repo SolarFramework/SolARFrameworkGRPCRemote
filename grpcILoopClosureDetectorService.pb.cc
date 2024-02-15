@@ -22,12 +22,13 @@ namespace _pbi = _pb::internal;
 
 namespace grpcILoopClosureDetector {
 PROTOBUF_CONSTEXPR detectRequest::detectRequest(
-    ::_pbi::ConstantInitialized)
-  : querykeyframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , detectedloopkeyframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , sim3transform_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , duplicatedpointsindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.querykeyframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.detectedloopkeyframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.sim3transform_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.duplicatedpointsindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct detectRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR detectRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -38,11 +39,12 @@ struct detectRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 detectRequestDefaultTypeInternal _detectRequest_default_instance_;
 PROTOBUF_CONSTEXPR detectResponse::detectResponse(
-    ::_pbi::ConstantInitialized)
-  : detectedloopkeyframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , sim3transform_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , duplicatedpointsindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.detectedloopkeyframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.sim3transform_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.duplicatedpointsindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct detectResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR detectResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -64,21 +66,21 @@ const uint32_t TableStruct_grpcILoopClosureDetectorService_2eproto::offsets[] PR
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, querykeyframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, detectedloopkeyframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, sim3transform_),
-  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, duplicatedpointsindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, _impl_.querykeyframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, _impl_.detectedloopkeyframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, _impl_.sim3transform_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectRequest, _impl_.duplicatedpointsindices_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectResponse, detectedloopkeyframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectResponse, sim3transform_),
-  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectResponse, duplicatedpointsindices_),
-  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectResponse, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectResponse, _impl_.detectedloopkeyframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectResponse, _impl_.sim3transform_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectResponse, _impl_.duplicatedpointsindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcILoopClosureDetector::detectResponse, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcILoopClosureDetector::detectRequest)},
@@ -135,66 +137,85 @@ class detectRequest::_Internal {
 detectRequest::detectRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcILoopClosureDetector.detectRequest)
 }
 detectRequest::detectRequest(const detectRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  detectRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.querykeyframe_){}
+    , decltype(_impl_.detectedloopkeyframe_){}
+    , decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.duplicatedpointsindices_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  querykeyframe_.InitDefault();
+  _impl_.querykeyframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    querykeyframe_.Set("", GetArenaForAllocation());
+    _impl_.querykeyframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_querykeyframe().empty()) {
-    querykeyframe_.Set(from._internal_querykeyframe(), 
-      GetArenaForAllocation());
+    _this->_impl_.querykeyframe_.Set(from._internal_querykeyframe(), 
+      _this->GetArenaForAllocation());
   }
-  detectedloopkeyframe_.InitDefault();
+  _impl_.detectedloopkeyframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    detectedloopkeyframe_.Set("", GetArenaForAllocation());
+    _impl_.detectedloopkeyframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_detectedloopkeyframe().empty()) {
-    detectedloopkeyframe_.Set(from._internal_detectedloopkeyframe(), 
-      GetArenaForAllocation());
+    _this->_impl_.detectedloopkeyframe_.Set(from._internal_detectedloopkeyframe(), 
+      _this->GetArenaForAllocation());
   }
-  sim3transform_.InitDefault();
+  _impl_.sim3transform_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    sim3transform_.Set("", GetArenaForAllocation());
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sim3transform().empty()) {
-    sim3transform_.Set(from._internal_sim3transform(), 
-      GetArenaForAllocation());
+    _this->_impl_.sim3transform_.Set(from._internal_sim3transform(), 
+      _this->GetArenaForAllocation());
   }
-  duplicatedpointsindices_.InitDefault();
+  _impl_.duplicatedpointsindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    duplicatedpointsindices_.Set("", GetArenaForAllocation());
+    _impl_.duplicatedpointsindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_duplicatedpointsindices().empty()) {
-    duplicatedpointsindices_.Set(from._internal_duplicatedpointsindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.duplicatedpointsindices_.Set(from._internal_duplicatedpointsindices(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcILoopClosureDetector.detectRequest)
 }
 
-inline void detectRequest::SharedCtor() {
-querykeyframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  querykeyframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-detectedloopkeyframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  detectedloopkeyframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-sim3transform_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  sim3transform_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-duplicatedpointsindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  duplicatedpointsindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void detectRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.querykeyframe_){}
+    , decltype(_impl_.detectedloopkeyframe_){}
+    , decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.duplicatedpointsindices_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.querykeyframe_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.querykeyframe_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.detectedloopkeyframe_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.detectedloopkeyframe_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.sim3transform_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.duplicatedpointsindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.duplicatedpointsindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 detectRequest::~detectRequest() {
@@ -208,14 +229,14 @@ detectRequest::~detectRequest() {
 
 inline void detectRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  querykeyframe_.Destroy();
-  detectedloopkeyframe_.Destroy();
-  sim3transform_.Destroy();
-  duplicatedpointsindices_.Destroy();
+  _impl_.querykeyframe_.Destroy();
+  _impl_.detectedloopkeyframe_.Destroy();
+  _impl_.sim3transform_.Destroy();
+  _impl_.duplicatedpointsindices_.Destroy();
 }
 
 void detectRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void detectRequest::Clear() {
@@ -224,11 +245,11 @@ void detectRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  querykeyframe_.ClearToEmpty();
-  detectedloopkeyframe_.ClearToEmpty();
-  sim3transform_.ClearToEmpty();
-  duplicatedpointsindices_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.querykeyframe_.ClearToEmpty();
+  _impl_.detectedloopkeyframe_.ClearToEmpty();
+  _impl_.sim3transform_.ClearToEmpty();
+  _impl_.duplicatedpointsindices_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -241,7 +262,7 @@ const char* detectRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext*
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -390,44 +411,40 @@ size_t detectRequest::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData detectRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     detectRequest::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*detectRequest::GetClassData() const { return &_class_data_; }
 
-void detectRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<detectRequest *>(to)->MergeFrom(
-      static_cast<const detectRequest &>(from));
-}
 
-
-void detectRequest::MergeFrom(const detectRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcILoopClosureDetector.detectRequest)
-  GOOGLE_DCHECK_NE(&from, this);
+void detectRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<detectRequest*>(&to_msg);
+  auto& from = static_cast<const detectRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcILoopClosureDetector.detectRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_querykeyframe().empty()) {
-    _internal_set_querykeyframe(from._internal_querykeyframe());
+    _this->_internal_set_querykeyframe(from._internal_querykeyframe());
   }
   if (!from._internal_detectedloopkeyframe().empty()) {
-    _internal_set_detectedloopkeyframe(from._internal_detectedloopkeyframe());
+    _this->_internal_set_detectedloopkeyframe(from._internal_detectedloopkeyframe());
   }
   if (!from._internal_sim3transform().empty()) {
-    _internal_set_sim3transform(from._internal_sim3transform());
+    _this->_internal_set_sim3transform(from._internal_sim3transform());
   }
   if (!from._internal_duplicatedpointsindices().empty()) {
-    _internal_set_duplicatedpointsindices(from._internal_duplicatedpointsindices());
+    _this->_internal_set_duplicatedpointsindices(from._internal_duplicatedpointsindices());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void detectRequest::CopyFrom(const detectRequest& from) {
@@ -447,22 +464,22 @@ void detectRequest::InternalSwap(detectRequest* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &querykeyframe_, lhs_arena,
-      &other->querykeyframe_, rhs_arena
+      &_impl_.querykeyframe_, lhs_arena,
+      &other->_impl_.querykeyframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &detectedloopkeyframe_, lhs_arena,
-      &other->detectedloopkeyframe_, rhs_arena
+      &_impl_.detectedloopkeyframe_, lhs_arena,
+      &other->_impl_.detectedloopkeyframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &sim3transform_, lhs_arena,
-      &other->sim3transform_, rhs_arena
+      &_impl_.sim3transform_, lhs_arena,
+      &other->_impl_.sim3transform_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &duplicatedpointsindices_, lhs_arena,
-      &other->duplicatedpointsindices_, rhs_arena
+      &_impl_.duplicatedpointsindices_, lhs_arena,
+      &other->_impl_.duplicatedpointsindices_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detectRequest::GetMetadata() const {
@@ -480,54 +497,71 @@ class detectResponse::_Internal {
 detectResponse::detectResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcILoopClosureDetector.detectResponse)
 }
 detectResponse::detectResponse(const detectResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  detectResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.detectedloopkeyframe_){}
+    , decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.duplicatedpointsindices_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  detectedloopkeyframe_.InitDefault();
+  _impl_.detectedloopkeyframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    detectedloopkeyframe_.Set("", GetArenaForAllocation());
+    _impl_.detectedloopkeyframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_detectedloopkeyframe().empty()) {
-    detectedloopkeyframe_.Set(from._internal_detectedloopkeyframe(), 
-      GetArenaForAllocation());
+    _this->_impl_.detectedloopkeyframe_.Set(from._internal_detectedloopkeyframe(), 
+      _this->GetArenaForAllocation());
   }
-  sim3transform_.InitDefault();
+  _impl_.sim3transform_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    sim3transform_.Set("", GetArenaForAllocation());
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sim3transform().empty()) {
-    sim3transform_.Set(from._internal_sim3transform(), 
-      GetArenaForAllocation());
+    _this->_impl_.sim3transform_.Set(from._internal_sim3transform(), 
+      _this->GetArenaForAllocation());
   }
-  duplicatedpointsindices_.InitDefault();
+  _impl_.duplicatedpointsindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    duplicatedpointsindices_.Set("", GetArenaForAllocation());
+    _impl_.duplicatedpointsindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_duplicatedpointsindices().empty()) {
-    duplicatedpointsindices_.Set(from._internal_duplicatedpointsindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.duplicatedpointsindices_.Set(from._internal_duplicatedpointsindices(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcILoopClosureDetector.detectResponse)
 }
 
-inline void detectResponse::SharedCtor() {
-detectedloopkeyframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  detectedloopkeyframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-sim3transform_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  sim3transform_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-duplicatedpointsindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  duplicatedpointsindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void detectResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.detectedloopkeyframe_){}
+    , decltype(_impl_.sim3transform_){}
+    , decltype(_impl_.duplicatedpointsindices_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.detectedloopkeyframe_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.detectedloopkeyframe_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.sim3transform_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.sim3transform_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.duplicatedpointsindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.duplicatedpointsindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 detectResponse::~detectResponse() {
@@ -541,13 +575,13 @@ detectResponse::~detectResponse() {
 
 inline void detectResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  detectedloopkeyframe_.Destroy();
-  sim3transform_.Destroy();
-  duplicatedpointsindices_.Destroy();
+  _impl_.detectedloopkeyframe_.Destroy();
+  _impl_.sim3transform_.Destroy();
+  _impl_.duplicatedpointsindices_.Destroy();
 }
 
 void detectResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void detectResponse::Clear() {
@@ -556,10 +590,10 @@ void detectResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  detectedloopkeyframe_.ClearToEmpty();
-  sim3transform_.ClearToEmpty();
-  duplicatedpointsindices_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.detectedloopkeyframe_.ClearToEmpty();
+  _impl_.sim3transform_.ClearToEmpty();
+  _impl_.duplicatedpointsindices_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -599,7 +633,7 @@ const char* detectResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext
       // sint32 xpcfGrpcReturnValue = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -699,41 +733,37 @@ size_t detectResponse::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData detectResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     detectResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*detectResponse::GetClassData() const { return &_class_data_; }
 
-void detectResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<detectResponse *>(to)->MergeFrom(
-      static_cast<const detectResponse &>(from));
-}
 
-
-void detectResponse::MergeFrom(const detectResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcILoopClosureDetector.detectResponse)
-  GOOGLE_DCHECK_NE(&from, this);
+void detectResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<detectResponse*>(&to_msg);
+  auto& from = static_cast<const detectResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcILoopClosureDetector.detectResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_detectedloopkeyframe().empty()) {
-    _internal_set_detectedloopkeyframe(from._internal_detectedloopkeyframe());
+    _this->_internal_set_detectedloopkeyframe(from._internal_detectedloopkeyframe());
   }
   if (!from._internal_sim3transform().empty()) {
-    _internal_set_sim3transform(from._internal_sim3transform());
+    _this->_internal_set_sim3transform(from._internal_sim3transform());
   }
   if (!from._internal_duplicatedpointsindices().empty()) {
-    _internal_set_duplicatedpointsindices(from._internal_duplicatedpointsindices());
+    _this->_internal_set_duplicatedpointsindices(from._internal_duplicatedpointsindices());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void detectResponse::CopyFrom(const detectResponse& from) {
@@ -753,18 +783,18 @@ void detectResponse::InternalSwap(detectResponse* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &detectedloopkeyframe_, lhs_arena,
-      &other->detectedloopkeyframe_, rhs_arena
+      &_impl_.detectedloopkeyframe_, lhs_arena,
+      &other->_impl_.detectedloopkeyframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &sim3transform_, lhs_arena,
-      &other->sim3transform_, rhs_arena
+      &_impl_.sim3transform_, lhs_arena,
+      &other->_impl_.sim3transform_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &duplicatedpointsindices_, lhs_arena,
-      &other->duplicatedpointsindices_, rhs_arena
+      &_impl_.duplicatedpointsindices_, lhs_arena,
+      &other->_impl_.duplicatedpointsindices_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata detectResponse::GetMetadata() const {

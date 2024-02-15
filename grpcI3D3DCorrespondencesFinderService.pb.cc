@@ -22,15 +22,16 @@ namespace _pbi = _pb::internal;
 
 namespace grpcI3D3DCorrespondencesFinder {
 PROTOBUF_CONSTEXPR find_grpc0Request::find_grpc0Request(
-    ::_pbi::ConstantInitialized)
-  : firstkeyframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , secondkeyframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , current_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , firstcloudpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , secondcloudpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , found_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , remaining_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.firstkeyframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.secondkeyframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.current_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.firstcloudpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.secondcloudpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.found_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.remaining_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct find_grpc0RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR find_grpc0RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -41,12 +42,13 @@ struct find_grpc0RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 find_grpc0RequestDefaultTypeInternal _find_grpc0Request_default_instance_;
 PROTOBUF_CONSTEXPR find_grpc0Response::find_grpc0Response(
-    ::_pbi::ConstantInitialized)
-  : firstcloudpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , secondcloudpoints_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , found_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , remaining_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.firstcloudpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.secondcloudpoints_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.found_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.remaining_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct find_grpc0ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR find_grpc0ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -57,14 +59,15 @@ struct find_grpc0ResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 find_grpc0ResponseDefaultTypeInternal _find_grpc0Response_default_instance_;
 PROTOBUF_CONSTEXPR find_grpc1Request::find_grpc1Request(
-    ::_pbi::ConstantInitialized)
-  : firstkeyframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , secondkeyframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , current_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , firstcloudpointsindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , secondcloudpointsindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , found_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , grpcservercompressionformat_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.firstkeyframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.secondkeyframe_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.current_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.firstcloudpointsindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.secondcloudpointsindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.found_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct find_grpc1RequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR find_grpc1RequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -75,11 +78,12 @@ struct find_grpc1RequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 find_grpc1RequestDefaultTypeInternal _find_grpc1Request_default_instance_;
 PROTOBUF_CONSTEXPR find_grpc1Response::find_grpc1Response(
-    ::_pbi::ConstantInitialized)
-  : firstcloudpointsindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , secondcloudpointsindices_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , found_matches_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , xpcfgrpcreturnvalue_(0){}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.firstcloudpointsindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.secondcloudpointsindices_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.found_matches_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct find_grpc1ResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR find_grpc1ResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -101,48 +105,48 @@ const uint32_t TableStruct_grpcI3D3DCorrespondencesFinderService_2eproto::offset
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, firstkeyframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, secondkeyframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, current_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, firstcloudpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, secondcloudpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, found_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, remaining_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, _impl_.firstkeyframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, _impl_.secondkeyframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, _impl_.current_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, _impl_.firstcloudpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, _impl_.secondcloudpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, _impl_.found_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Request, _impl_.remaining_matches_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, firstcloudpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, secondcloudpoints_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, found_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, remaining_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, _impl_.firstcloudpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, _impl_.secondcloudpoints_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, _impl_.found_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, _impl_.remaining_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc0Response, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, firstkeyframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, secondkeyframe_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, current_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, firstcloudpointsindices_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, secondcloudpointsindices_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, found_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, _impl_.firstkeyframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, _impl_.secondkeyframe_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, _impl_.current_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, _impl_.firstcloudpointsindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, _impl_.secondcloudpointsindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Request, _impl_.found_matches_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Response, firstcloudpointsindices_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Response, secondcloudpointsindices_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Response, found_matches_),
-  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Response, xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Response, _impl_.firstcloudpointsindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Response, _impl_.secondcloudpointsindices_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Response, _impl_.found_matches_),
+  PROTOBUF_FIELD_OFFSET(::grpcI3D3DCorrespondencesFinder::find_grpc1Response, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::grpcI3D3DCorrespondencesFinder::find_grpc0Request)},
@@ -218,102 +222,127 @@ class find_grpc0Request::_Internal {
 find_grpc0Request::find_grpc0Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI3D3DCorrespondencesFinder.find_grpc0Request)
 }
 find_grpc0Request::find_grpc0Request(const find_grpc0Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  find_grpc0Request* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firstkeyframe_){}
+    , decltype(_impl_.secondkeyframe_){}
+    , decltype(_impl_.current_matches_){}
+    , decltype(_impl_.firstcloudpoints_){}
+    , decltype(_impl_.secondcloudpoints_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.remaining_matches_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  firstkeyframe_.InitDefault();
+  _impl_.firstkeyframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    firstkeyframe_.Set("", GetArenaForAllocation());
+    _impl_.firstkeyframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_firstkeyframe().empty()) {
-    firstkeyframe_.Set(from._internal_firstkeyframe(), 
-      GetArenaForAllocation());
+    _this->_impl_.firstkeyframe_.Set(from._internal_firstkeyframe(), 
+      _this->GetArenaForAllocation());
   }
-  secondkeyframe_.InitDefault();
+  _impl_.secondkeyframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    secondkeyframe_.Set("", GetArenaForAllocation());
+    _impl_.secondkeyframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_secondkeyframe().empty()) {
-    secondkeyframe_.Set(from._internal_secondkeyframe(), 
-      GetArenaForAllocation());
+    _this->_impl_.secondkeyframe_.Set(from._internal_secondkeyframe(), 
+      _this->GetArenaForAllocation());
   }
-  current_matches_.InitDefault();
+  _impl_.current_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    current_matches_.Set("", GetArenaForAllocation());
+    _impl_.current_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_current_matches().empty()) {
-    current_matches_.Set(from._internal_current_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.current_matches_.Set(from._internal_current_matches(), 
+      _this->GetArenaForAllocation());
   }
-  firstcloudpoints_.InitDefault();
+  _impl_.firstcloudpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    firstcloudpoints_.Set("", GetArenaForAllocation());
+    _impl_.firstcloudpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_firstcloudpoints().empty()) {
-    firstcloudpoints_.Set(from._internal_firstcloudpoints(), 
-      GetArenaForAllocation());
+    _this->_impl_.firstcloudpoints_.Set(from._internal_firstcloudpoints(), 
+      _this->GetArenaForAllocation());
   }
-  secondcloudpoints_.InitDefault();
+  _impl_.secondcloudpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    secondcloudpoints_.Set("", GetArenaForAllocation());
+    _impl_.secondcloudpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_secondcloudpoints().empty()) {
-    secondcloudpoints_.Set(from._internal_secondcloudpoints(), 
-      GetArenaForAllocation());
+    _this->_impl_.secondcloudpoints_.Set(from._internal_secondcloudpoints(), 
+      _this->GetArenaForAllocation());
   }
-  found_matches_.InitDefault();
+  _impl_.found_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    found_matches_.Set("", GetArenaForAllocation());
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_found_matches().empty()) {
-    found_matches_.Set(from._internal_found_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.found_matches_.Set(from._internal_found_matches(), 
+      _this->GetArenaForAllocation());
   }
-  remaining_matches_.InitDefault();
+  _impl_.remaining_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    remaining_matches_.Set("", GetArenaForAllocation());
+    _impl_.remaining_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_remaining_matches().empty()) {
-    remaining_matches_.Set(from._internal_remaining_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.remaining_matches_.Set(from._internal_remaining_matches(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcI3D3DCorrespondencesFinder.find_grpc0Request)
 }
 
-inline void find_grpc0Request::SharedCtor() {
-firstkeyframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  firstkeyframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-secondkeyframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  secondkeyframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-current_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  current_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-firstcloudpoints_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  firstcloudpoints_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-secondcloudpoints_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  secondcloudpoints_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-found_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  found_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-remaining_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  remaining_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void find_grpc0Request::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firstkeyframe_){}
+    , decltype(_impl_.secondkeyframe_){}
+    , decltype(_impl_.current_matches_){}
+    , decltype(_impl_.firstcloudpoints_){}
+    , decltype(_impl_.secondcloudpoints_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.remaining_matches_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.firstkeyframe_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.firstkeyframe_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.secondkeyframe_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.secondkeyframe_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.current_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.current_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.firstcloudpoints_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.firstcloudpoints_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.secondcloudpoints_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.secondcloudpoints_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.found_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.remaining_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.remaining_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 find_grpc0Request::~find_grpc0Request() {
@@ -327,17 +356,17 @@ find_grpc0Request::~find_grpc0Request() {
 
 inline void find_grpc0Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  firstkeyframe_.Destroy();
-  secondkeyframe_.Destroy();
-  current_matches_.Destroy();
-  firstcloudpoints_.Destroy();
-  secondcloudpoints_.Destroy();
-  found_matches_.Destroy();
-  remaining_matches_.Destroy();
+  _impl_.firstkeyframe_.Destroy();
+  _impl_.secondkeyframe_.Destroy();
+  _impl_.current_matches_.Destroy();
+  _impl_.firstcloudpoints_.Destroy();
+  _impl_.secondcloudpoints_.Destroy();
+  _impl_.found_matches_.Destroy();
+  _impl_.remaining_matches_.Destroy();
 }
 
 void find_grpc0Request::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void find_grpc0Request::Clear() {
@@ -346,14 +375,14 @@ void find_grpc0Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  firstkeyframe_.ClearToEmpty();
-  secondkeyframe_.ClearToEmpty();
-  current_matches_.ClearToEmpty();
-  firstcloudpoints_.ClearToEmpty();
-  secondcloudpoints_.ClearToEmpty();
-  found_matches_.ClearToEmpty();
-  remaining_matches_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.firstkeyframe_.ClearToEmpty();
+  _impl_.secondkeyframe_.ClearToEmpty();
+  _impl_.current_matches_.ClearToEmpty();
+  _impl_.firstcloudpoints_.ClearToEmpty();
+  _impl_.secondcloudpoints_.ClearToEmpty();
+  _impl_.found_matches_.ClearToEmpty();
+  _impl_.remaining_matches_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -366,7 +395,7 @@ const char* find_grpc0Request::_InternalParse(const char* ptr, ::_pbi::ParseCont
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -581,53 +610,49 @@ size_t find_grpc0Request::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData find_grpc0Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     find_grpc0Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*find_grpc0Request::GetClassData() const { return &_class_data_; }
 
-void find_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<find_grpc0Request *>(to)->MergeFrom(
-      static_cast<const find_grpc0Request &>(from));
-}
 
-
-void find_grpc0Request::MergeFrom(const find_grpc0Request& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI3D3DCorrespondencesFinder.find_grpc0Request)
-  GOOGLE_DCHECK_NE(&from, this);
+void find_grpc0Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<find_grpc0Request*>(&to_msg);
+  auto& from = static_cast<const find_grpc0Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI3D3DCorrespondencesFinder.find_grpc0Request)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_firstkeyframe().empty()) {
-    _internal_set_firstkeyframe(from._internal_firstkeyframe());
+    _this->_internal_set_firstkeyframe(from._internal_firstkeyframe());
   }
   if (!from._internal_secondkeyframe().empty()) {
-    _internal_set_secondkeyframe(from._internal_secondkeyframe());
+    _this->_internal_set_secondkeyframe(from._internal_secondkeyframe());
   }
   if (!from._internal_current_matches().empty()) {
-    _internal_set_current_matches(from._internal_current_matches());
+    _this->_internal_set_current_matches(from._internal_current_matches());
   }
   if (!from._internal_firstcloudpoints().empty()) {
-    _internal_set_firstcloudpoints(from._internal_firstcloudpoints());
+    _this->_internal_set_firstcloudpoints(from._internal_firstcloudpoints());
   }
   if (!from._internal_secondcloudpoints().empty()) {
-    _internal_set_secondcloudpoints(from._internal_secondcloudpoints());
+    _this->_internal_set_secondcloudpoints(from._internal_secondcloudpoints());
   }
   if (!from._internal_found_matches().empty()) {
-    _internal_set_found_matches(from._internal_found_matches());
+    _this->_internal_set_found_matches(from._internal_found_matches());
   }
   if (!from._internal_remaining_matches().empty()) {
-    _internal_set_remaining_matches(from._internal_remaining_matches());
+    _this->_internal_set_remaining_matches(from._internal_remaining_matches());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void find_grpc0Request::CopyFrom(const find_grpc0Request& from) {
@@ -647,34 +672,34 @@ void find_grpc0Request::InternalSwap(find_grpc0Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &firstkeyframe_, lhs_arena,
-      &other->firstkeyframe_, rhs_arena
+      &_impl_.firstkeyframe_, lhs_arena,
+      &other->_impl_.firstkeyframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &secondkeyframe_, lhs_arena,
-      &other->secondkeyframe_, rhs_arena
+      &_impl_.secondkeyframe_, lhs_arena,
+      &other->_impl_.secondkeyframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &current_matches_, lhs_arena,
-      &other->current_matches_, rhs_arena
+      &_impl_.current_matches_, lhs_arena,
+      &other->_impl_.current_matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &firstcloudpoints_, lhs_arena,
-      &other->firstcloudpoints_, rhs_arena
+      &_impl_.firstcloudpoints_, lhs_arena,
+      &other->_impl_.firstcloudpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &secondcloudpoints_, lhs_arena,
-      &other->secondcloudpoints_, rhs_arena
+      &_impl_.secondcloudpoints_, lhs_arena,
+      &other->_impl_.secondcloudpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &found_matches_, lhs_arena,
-      &other->found_matches_, rhs_arena
+      &_impl_.found_matches_, lhs_arena,
+      &other->_impl_.found_matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &remaining_matches_, lhs_arena,
-      &other->remaining_matches_, rhs_arena
+      &_impl_.remaining_matches_, lhs_arena,
+      &other->_impl_.remaining_matches_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata find_grpc0Request::GetMetadata() const {
@@ -692,66 +717,85 @@ class find_grpc0Response::_Internal {
 find_grpc0Response::find_grpc0Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI3D3DCorrespondencesFinder.find_grpc0Response)
 }
 find_grpc0Response::find_grpc0Response(const find_grpc0Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  find_grpc0Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firstcloudpoints_){}
+    , decltype(_impl_.secondcloudpoints_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.remaining_matches_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  firstcloudpoints_.InitDefault();
+  _impl_.firstcloudpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    firstcloudpoints_.Set("", GetArenaForAllocation());
+    _impl_.firstcloudpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_firstcloudpoints().empty()) {
-    firstcloudpoints_.Set(from._internal_firstcloudpoints(), 
-      GetArenaForAllocation());
+    _this->_impl_.firstcloudpoints_.Set(from._internal_firstcloudpoints(), 
+      _this->GetArenaForAllocation());
   }
-  secondcloudpoints_.InitDefault();
+  _impl_.secondcloudpoints_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    secondcloudpoints_.Set("", GetArenaForAllocation());
+    _impl_.secondcloudpoints_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_secondcloudpoints().empty()) {
-    secondcloudpoints_.Set(from._internal_secondcloudpoints(), 
-      GetArenaForAllocation());
+    _this->_impl_.secondcloudpoints_.Set(from._internal_secondcloudpoints(), 
+      _this->GetArenaForAllocation());
   }
-  found_matches_.InitDefault();
+  _impl_.found_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    found_matches_.Set("", GetArenaForAllocation());
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_found_matches().empty()) {
-    found_matches_.Set(from._internal_found_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.found_matches_.Set(from._internal_found_matches(), 
+      _this->GetArenaForAllocation());
   }
-  remaining_matches_.InitDefault();
+  _impl_.remaining_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    remaining_matches_.Set("", GetArenaForAllocation());
+    _impl_.remaining_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_remaining_matches().empty()) {
-    remaining_matches_.Set(from._internal_remaining_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.remaining_matches_.Set(from._internal_remaining_matches(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcI3D3DCorrespondencesFinder.find_grpc0Response)
 }
 
-inline void find_grpc0Response::SharedCtor() {
-firstcloudpoints_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  firstcloudpoints_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-secondcloudpoints_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  secondcloudpoints_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-found_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  found_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-remaining_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  remaining_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void find_grpc0Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firstcloudpoints_){}
+    , decltype(_impl_.secondcloudpoints_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.remaining_matches_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.firstcloudpoints_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.firstcloudpoints_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.secondcloudpoints_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.secondcloudpoints_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.found_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.remaining_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.remaining_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 find_grpc0Response::~find_grpc0Response() {
@@ -765,14 +809,14 @@ find_grpc0Response::~find_grpc0Response() {
 
 inline void find_grpc0Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  firstcloudpoints_.Destroy();
-  secondcloudpoints_.Destroy();
-  found_matches_.Destroy();
-  remaining_matches_.Destroy();
+  _impl_.firstcloudpoints_.Destroy();
+  _impl_.secondcloudpoints_.Destroy();
+  _impl_.found_matches_.Destroy();
+  _impl_.remaining_matches_.Destroy();
 }
 
 void find_grpc0Response::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void find_grpc0Response::Clear() {
@@ -781,11 +825,11 @@ void find_grpc0Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  firstcloudpoints_.ClearToEmpty();
-  secondcloudpoints_.ClearToEmpty();
-  found_matches_.ClearToEmpty();
-  remaining_matches_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.firstcloudpoints_.ClearToEmpty();
+  _impl_.secondcloudpoints_.ClearToEmpty();
+  _impl_.found_matches_.ClearToEmpty();
+  _impl_.remaining_matches_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -834,7 +878,7 @@ const char* find_grpc0Response::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // sint32 xpcfGrpcReturnValue = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -947,44 +991,40 @@ size_t find_grpc0Response::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData find_grpc0Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     find_grpc0Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*find_grpc0Response::GetClassData() const { return &_class_data_; }
 
-void find_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<find_grpc0Response *>(to)->MergeFrom(
-      static_cast<const find_grpc0Response &>(from));
-}
 
-
-void find_grpc0Response::MergeFrom(const find_grpc0Response& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI3D3DCorrespondencesFinder.find_grpc0Response)
-  GOOGLE_DCHECK_NE(&from, this);
+void find_grpc0Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<find_grpc0Response*>(&to_msg);
+  auto& from = static_cast<const find_grpc0Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI3D3DCorrespondencesFinder.find_grpc0Response)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_firstcloudpoints().empty()) {
-    _internal_set_firstcloudpoints(from._internal_firstcloudpoints());
+    _this->_internal_set_firstcloudpoints(from._internal_firstcloudpoints());
   }
   if (!from._internal_secondcloudpoints().empty()) {
-    _internal_set_secondcloudpoints(from._internal_secondcloudpoints());
+    _this->_internal_set_secondcloudpoints(from._internal_secondcloudpoints());
   }
   if (!from._internal_found_matches().empty()) {
-    _internal_set_found_matches(from._internal_found_matches());
+    _this->_internal_set_found_matches(from._internal_found_matches());
   }
   if (!from._internal_remaining_matches().empty()) {
-    _internal_set_remaining_matches(from._internal_remaining_matches());
+    _this->_internal_set_remaining_matches(from._internal_remaining_matches());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void find_grpc0Response::CopyFrom(const find_grpc0Response& from) {
@@ -1004,22 +1044,22 @@ void find_grpc0Response::InternalSwap(find_grpc0Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &firstcloudpoints_, lhs_arena,
-      &other->firstcloudpoints_, rhs_arena
+      &_impl_.firstcloudpoints_, lhs_arena,
+      &other->_impl_.firstcloudpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &secondcloudpoints_, lhs_arena,
-      &other->secondcloudpoints_, rhs_arena
+      &_impl_.secondcloudpoints_, lhs_arena,
+      &other->_impl_.secondcloudpoints_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &found_matches_, lhs_arena,
-      &other->found_matches_, rhs_arena
+      &_impl_.found_matches_, lhs_arena,
+      &other->_impl_.found_matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &remaining_matches_, lhs_arena,
-      &other->remaining_matches_, rhs_arena
+      &_impl_.remaining_matches_, lhs_arena,
+      &other->_impl_.remaining_matches_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata find_grpc0Response::GetMetadata() const {
@@ -1037,90 +1077,113 @@ class find_grpc1Request::_Internal {
 find_grpc1Request::find_grpc1Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI3D3DCorrespondencesFinder.find_grpc1Request)
 }
 find_grpc1Request::find_grpc1Request(const find_grpc1Request& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  find_grpc1Request* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firstkeyframe_){}
+    , decltype(_impl_.secondkeyframe_){}
+    , decltype(_impl_.current_matches_){}
+    , decltype(_impl_.firstcloudpointsindices_){}
+    , decltype(_impl_.secondcloudpointsindices_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.grpcservercompressionformat_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  firstkeyframe_.InitDefault();
+  _impl_.firstkeyframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    firstkeyframe_.Set("", GetArenaForAllocation());
+    _impl_.firstkeyframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_firstkeyframe().empty()) {
-    firstkeyframe_.Set(from._internal_firstkeyframe(), 
-      GetArenaForAllocation());
+    _this->_impl_.firstkeyframe_.Set(from._internal_firstkeyframe(), 
+      _this->GetArenaForAllocation());
   }
-  secondkeyframe_.InitDefault();
+  _impl_.secondkeyframe_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    secondkeyframe_.Set("", GetArenaForAllocation());
+    _impl_.secondkeyframe_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_secondkeyframe().empty()) {
-    secondkeyframe_.Set(from._internal_secondkeyframe(), 
-      GetArenaForAllocation());
+    _this->_impl_.secondkeyframe_.Set(from._internal_secondkeyframe(), 
+      _this->GetArenaForAllocation());
   }
-  current_matches_.InitDefault();
+  _impl_.current_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    current_matches_.Set("", GetArenaForAllocation());
+    _impl_.current_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_current_matches().empty()) {
-    current_matches_.Set(from._internal_current_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.current_matches_.Set(from._internal_current_matches(), 
+      _this->GetArenaForAllocation());
   }
-  firstcloudpointsindices_.InitDefault();
+  _impl_.firstcloudpointsindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    firstcloudpointsindices_.Set("", GetArenaForAllocation());
+    _impl_.firstcloudpointsindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_firstcloudpointsindices().empty()) {
-    firstcloudpointsindices_.Set(from._internal_firstcloudpointsindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.firstcloudpointsindices_.Set(from._internal_firstcloudpointsindices(), 
+      _this->GetArenaForAllocation());
   }
-  secondcloudpointsindices_.InitDefault();
+  _impl_.secondcloudpointsindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    secondcloudpointsindices_.Set("", GetArenaForAllocation());
+    _impl_.secondcloudpointsindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_secondcloudpointsindices().empty()) {
-    secondcloudpointsindices_.Set(from._internal_secondcloudpointsindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.secondcloudpointsindices_.Set(from._internal_secondcloudpointsindices(), 
+      _this->GetArenaForAllocation());
   }
-  found_matches_.InitDefault();
+  _impl_.found_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    found_matches_.Set("", GetArenaForAllocation());
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_found_matches().empty()) {
-    found_matches_.Set(from._internal_found_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.found_matches_.Set(from._internal_found_matches(), 
+      _this->GetArenaForAllocation());
   }
-  grpcservercompressionformat_ = from.grpcservercompressionformat_;
+  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcI3D3DCorrespondencesFinder.find_grpc1Request)
 }
 
-inline void find_grpc1Request::SharedCtor() {
-firstkeyframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  firstkeyframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-secondkeyframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  secondkeyframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-current_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  current_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-firstcloudpointsindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  firstcloudpointsindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-secondcloudpointsindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  secondcloudpointsindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-found_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  found_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-grpcservercompressionformat_ = 0;
+inline void find_grpc1Request::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firstkeyframe_){}
+    , decltype(_impl_.secondkeyframe_){}
+    , decltype(_impl_.current_matches_){}
+    , decltype(_impl_.firstcloudpointsindices_){}
+    , decltype(_impl_.secondcloudpointsindices_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.grpcservercompressionformat_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.firstkeyframe_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.firstkeyframe_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.secondkeyframe_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.secondkeyframe_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.current_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.current_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.firstcloudpointsindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.firstcloudpointsindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.secondcloudpointsindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.secondcloudpointsindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.found_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 find_grpc1Request::~find_grpc1Request() {
@@ -1134,16 +1197,16 @@ find_grpc1Request::~find_grpc1Request() {
 
 inline void find_grpc1Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  firstkeyframe_.Destroy();
-  secondkeyframe_.Destroy();
-  current_matches_.Destroy();
-  firstcloudpointsindices_.Destroy();
-  secondcloudpointsindices_.Destroy();
-  found_matches_.Destroy();
+  _impl_.firstkeyframe_.Destroy();
+  _impl_.secondkeyframe_.Destroy();
+  _impl_.current_matches_.Destroy();
+  _impl_.firstcloudpointsindices_.Destroy();
+  _impl_.secondcloudpointsindices_.Destroy();
+  _impl_.found_matches_.Destroy();
 }
 
 void find_grpc1Request::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void find_grpc1Request::Clear() {
@@ -1152,13 +1215,13 @@ void find_grpc1Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  firstkeyframe_.ClearToEmpty();
-  secondkeyframe_.ClearToEmpty();
-  current_matches_.ClearToEmpty();
-  firstcloudpointsindices_.ClearToEmpty();
-  secondcloudpointsindices_.ClearToEmpty();
-  found_matches_.ClearToEmpty();
-  grpcservercompressionformat_ = 0;
+  _impl_.firstkeyframe_.ClearToEmpty();
+  _impl_.secondkeyframe_.ClearToEmpty();
+  _impl_.current_matches_.ClearToEmpty();
+  _impl_.firstcloudpointsindices_.ClearToEmpty();
+  _impl_.secondcloudpointsindices_.ClearToEmpty();
+  _impl_.found_matches_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1171,7 +1234,7 @@ const char* find_grpc1Request::_InternalParse(const char* ptr, ::_pbi::ParseCont
       // int32 grpcServerCompressionFormat = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1364,50 +1427,46 @@ size_t find_grpc1Request::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData find_grpc1Request::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     find_grpc1Request::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*find_grpc1Request::GetClassData() const { return &_class_data_; }
 
-void find_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<find_grpc1Request *>(to)->MergeFrom(
-      static_cast<const find_grpc1Request &>(from));
-}
 
-
-void find_grpc1Request::MergeFrom(const find_grpc1Request& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI3D3DCorrespondencesFinder.find_grpc1Request)
-  GOOGLE_DCHECK_NE(&from, this);
+void find_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<find_grpc1Request*>(&to_msg);
+  auto& from = static_cast<const find_grpc1Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI3D3DCorrespondencesFinder.find_grpc1Request)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_firstkeyframe().empty()) {
-    _internal_set_firstkeyframe(from._internal_firstkeyframe());
+    _this->_internal_set_firstkeyframe(from._internal_firstkeyframe());
   }
   if (!from._internal_secondkeyframe().empty()) {
-    _internal_set_secondkeyframe(from._internal_secondkeyframe());
+    _this->_internal_set_secondkeyframe(from._internal_secondkeyframe());
   }
   if (!from._internal_current_matches().empty()) {
-    _internal_set_current_matches(from._internal_current_matches());
+    _this->_internal_set_current_matches(from._internal_current_matches());
   }
   if (!from._internal_firstcloudpointsindices().empty()) {
-    _internal_set_firstcloudpointsindices(from._internal_firstcloudpointsindices());
+    _this->_internal_set_firstcloudpointsindices(from._internal_firstcloudpointsindices());
   }
   if (!from._internal_secondcloudpointsindices().empty()) {
-    _internal_set_secondcloudpointsindices(from._internal_secondcloudpointsindices());
+    _this->_internal_set_secondcloudpointsindices(from._internal_secondcloudpointsindices());
   }
   if (!from._internal_found_matches().empty()) {
-    _internal_set_found_matches(from._internal_found_matches());
+    _this->_internal_set_found_matches(from._internal_found_matches());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
-    _internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void find_grpc1Request::CopyFrom(const find_grpc1Request& from) {
@@ -1427,30 +1486,30 @@ void find_grpc1Request::InternalSwap(find_grpc1Request* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &firstkeyframe_, lhs_arena,
-      &other->firstkeyframe_, rhs_arena
+      &_impl_.firstkeyframe_, lhs_arena,
+      &other->_impl_.firstkeyframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &secondkeyframe_, lhs_arena,
-      &other->secondkeyframe_, rhs_arena
+      &_impl_.secondkeyframe_, lhs_arena,
+      &other->_impl_.secondkeyframe_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &current_matches_, lhs_arena,
-      &other->current_matches_, rhs_arena
+      &_impl_.current_matches_, lhs_arena,
+      &other->_impl_.current_matches_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &firstcloudpointsindices_, lhs_arena,
-      &other->firstcloudpointsindices_, rhs_arena
+      &_impl_.firstcloudpointsindices_, lhs_arena,
+      &other->_impl_.firstcloudpointsindices_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &secondcloudpointsindices_, lhs_arena,
-      &other->secondcloudpointsindices_, rhs_arena
+      &_impl_.secondcloudpointsindices_, lhs_arena,
+      &other->_impl_.secondcloudpointsindices_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &found_matches_, lhs_arena,
-      &other->found_matches_, rhs_arena
+      &_impl_.found_matches_, lhs_arena,
+      &other->_impl_.found_matches_, rhs_arena
   );
-  swap(grpcservercompressionformat_, other->grpcservercompressionformat_);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata find_grpc1Request::GetMetadata() const {
@@ -1468,54 +1527,71 @@ class find_grpc1Response::_Internal {
 find_grpc1Response::find_grpc1Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:grpcI3D3DCorrespondencesFinder.find_grpc1Response)
 }
 find_grpc1Response::find_grpc1Response(const find_grpc1Response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
+  find_grpc1Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firstcloudpointsindices_){}
+    , decltype(_impl_.secondcloudpointsindices_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  firstcloudpointsindices_.InitDefault();
+  _impl_.firstcloudpointsindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    firstcloudpointsindices_.Set("", GetArenaForAllocation());
+    _impl_.firstcloudpointsindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_firstcloudpointsindices().empty()) {
-    firstcloudpointsindices_.Set(from._internal_firstcloudpointsindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.firstcloudpointsindices_.Set(from._internal_firstcloudpointsindices(), 
+      _this->GetArenaForAllocation());
   }
-  secondcloudpointsindices_.InitDefault();
+  _impl_.secondcloudpointsindices_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    secondcloudpointsindices_.Set("", GetArenaForAllocation());
+    _impl_.secondcloudpointsindices_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_secondcloudpointsindices().empty()) {
-    secondcloudpointsindices_.Set(from._internal_secondcloudpointsindices(), 
-      GetArenaForAllocation());
+    _this->_impl_.secondcloudpointsindices_.Set(from._internal_secondcloudpointsindices(), 
+      _this->GetArenaForAllocation());
   }
-  found_matches_.InitDefault();
+  _impl_.found_matches_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    found_matches_.Set("", GetArenaForAllocation());
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_found_matches().empty()) {
-    found_matches_.Set(from._internal_found_matches(), 
-      GetArenaForAllocation());
+    _this->_impl_.found_matches_.Set(from._internal_found_matches(), 
+      _this->GetArenaForAllocation());
   }
-  xpcfgrpcreturnvalue_ = from.xpcfgrpcreturnvalue_;
+  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
   // @@protoc_insertion_point(copy_constructor:grpcI3D3DCorrespondencesFinder.find_grpc1Response)
 }
 
-inline void find_grpc1Response::SharedCtor() {
-firstcloudpointsindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  firstcloudpointsindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-secondcloudpointsindices_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  secondcloudpointsindices_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-found_matches_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  found_matches_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-xpcfgrpcreturnvalue_ = 0;
+inline void find_grpc1Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firstcloudpointsindices_){}
+    , decltype(_impl_.secondcloudpointsindices_){}
+    , decltype(_impl_.found_matches_){}
+    , decltype(_impl_.xpcfgrpcreturnvalue_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.firstcloudpointsindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.firstcloudpointsindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.secondcloudpointsindices_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.secondcloudpointsindices_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.found_matches_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.found_matches_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 find_grpc1Response::~find_grpc1Response() {
@@ -1529,13 +1605,13 @@ find_grpc1Response::~find_grpc1Response() {
 
 inline void find_grpc1Response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  firstcloudpointsindices_.Destroy();
-  secondcloudpointsindices_.Destroy();
-  found_matches_.Destroy();
+  _impl_.firstcloudpointsindices_.Destroy();
+  _impl_.secondcloudpointsindices_.Destroy();
+  _impl_.found_matches_.Destroy();
 }
 
 void find_grpc1Response::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
+  _impl_._cached_size_.Set(size);
 }
 
 void find_grpc1Response::Clear() {
@@ -1544,10 +1620,10 @@ void find_grpc1Response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  firstcloudpointsindices_.ClearToEmpty();
-  secondcloudpointsindices_.ClearToEmpty();
-  found_matches_.ClearToEmpty();
-  xpcfgrpcreturnvalue_ = 0;
+  _impl_.firstcloudpointsindices_.ClearToEmpty();
+  _impl_.secondcloudpointsindices_.ClearToEmpty();
+  _impl_.found_matches_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1587,7 +1663,7 @@ const char* find_grpc1Response::_InternalParse(const char* ptr, ::_pbi::ParseCon
       // sint32 xpcfGrpcReturnValue = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1687,41 +1763,37 @@ size_t find_grpc1Response::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
   }
 
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData find_grpc1Response::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     find_grpc1Response::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*find_grpc1Response::GetClassData() const { return &_class_data_; }
 
-void find_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<find_grpc1Response *>(to)->MergeFrom(
-      static_cast<const find_grpc1Response &>(from));
-}
 
-
-void find_grpc1Response::MergeFrom(const find_grpc1Response& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:grpcI3D3DCorrespondencesFinder.find_grpc1Response)
-  GOOGLE_DCHECK_NE(&from, this);
+void find_grpc1Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<find_grpc1Response*>(&to_msg);
+  auto& from = static_cast<const find_grpc1Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcI3D3DCorrespondencesFinder.find_grpc1Response)
+  GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_firstcloudpointsindices().empty()) {
-    _internal_set_firstcloudpointsindices(from._internal_firstcloudpointsindices());
+    _this->_internal_set_firstcloudpointsindices(from._internal_firstcloudpointsindices());
   }
   if (!from._internal_secondcloudpointsindices().empty()) {
-    _internal_set_secondcloudpointsindices(from._internal_secondcloudpointsindices());
+    _this->_internal_set_secondcloudpointsindices(from._internal_secondcloudpointsindices());
   }
   if (!from._internal_found_matches().empty()) {
-    _internal_set_found_matches(from._internal_found_matches());
+    _this->_internal_set_found_matches(from._internal_found_matches());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
+    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void find_grpc1Response::CopyFrom(const find_grpc1Response& from) {
@@ -1741,18 +1813,18 @@ void find_grpc1Response::InternalSwap(find_grpc1Response* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &firstcloudpointsindices_, lhs_arena,
-      &other->firstcloudpointsindices_, rhs_arena
+      &_impl_.firstcloudpointsindices_, lhs_arena,
+      &other->_impl_.firstcloudpointsindices_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &secondcloudpointsindices_, lhs_arena,
-      &other->secondcloudpointsindices_, rhs_arena
+      &_impl_.secondcloudpointsindices_, lhs_arena,
+      &other->_impl_.secondcloudpointsindices_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &found_matches_, lhs_arena,
-      &other->found_matches_, rhs_arena
+      &_impl_.found_matches_, lhs_arena,
+      &other->_impl_.found_matches_, rhs_arena
   );
-  swap(xpcfgrpcreturnvalue_, other->xpcfgrpcreturnvalue_);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata find_grpc1Response::GetMetadata() const {
