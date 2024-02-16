@@ -4,243 +4,104 @@ import "google/protobuf/empty.proto";
 
 package grpcIMapManager;
 
-message setMapRequest
+message initRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes map = 2;
 }
 
-message setMapResponse
+message initResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message getMapRequest
+message createMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes map = 2;
+string mapUUID = 2;
 }
 
-message getMapResponse
+message createMapResponse
 {
-bytes map = 1;
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message deleteMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+}
+
+message deleteMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getAllMapsRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes mapUUIDList = 2;
+}
+
+message getAllMapsResponse
+{
+bytes mapUUIDList = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message getSubmapRequest
+message registerMapUpdateServiceRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-uint32 idCenteredKeyframe = 2;
-uint32 nbKeyframes = 3;
-bytes submap = 4;
+string serviceURL = 2;
 }
 
-message getSubmapResponse
+message registerMapUpdateServiceResponse
 {
-bytes submap = 1;
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message unregisterMapUpdateServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string serviceURL = 2;
+}
+
+message unregisterMapUpdateServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message increaseMapClientsRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+string serviceURL = 3;
+}
+
+message increaseMapClientsResponse
+{
+string serviceURL = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message getLocalPointCloud_grpc0Request
+message decreaseMapClientsRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes keyframes = 2;
-bytes localPointCloud = 3;
+string mapUUID = 2;
 }
 
-message getLocalPointCloud_grpc0Response
-{
-bytes localPointCloud = 1;
-sint32 xpcfGrpcReturnValue = 2;
-}
-
-message getLocalPointCloud_grpc1Request
-{
-int32 grpcServerCompressionFormat  = 1;
-bytes keyframe = 2;
-float minWeightNeighbor = 3;
-bytes localPointCloud = 4;
-}
-
-message getLocalPointCloud_grpc1Response
-{
-bytes localPointCloud = 1;
-sint32 xpcfGrpcReturnValue = 2;
-}
-
-message addCloudPointRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-bytes cloudPoint = 2;
-}
-
-message addCloudPointResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message removeCloudPointRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-bytes cloudPoint = 2;
-}
-
-message removeCloudPointResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message addKeyframeRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-bytes keyframe = 2;
-}
-
-message addKeyframeResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message removeKeyframeRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-bytes keyframe = 2;
-}
-
-message removeKeyframeResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message addCameraParametersRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-bytes cameraParameters = 2;
-}
-
-message addCameraParametersResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message removeCameraParametersRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-bytes cameraParameters = 2;
-}
-
-message removeCameraParametersResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message getCameraParameters_grpc0Request
-{
-int32 grpcServerCompressionFormat  = 1;
-uint32 id = 2;
-bytes cameraParameters = 3;
-}
-
-message getCameraParameters_grpc0Response
-{
-bytes cameraParameters = 1;
-sint32 xpcfGrpcReturnValue = 2;
-}
-
-message getCameraParameters_grpc1Request
-{
-int32 grpcServerCompressionFormat  = 1;
-uint32 id = 2;
-bytes cameraParameters = 3;
-}
-
-message getCameraParameters_grpc1Response
-{
-bytes cameraParameters = 1;
-sint32 xpcfGrpcReturnValue = 2;
-}
-
-message pointCloudPruningRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-bytes cloudPoints = 2;
-}
-
-message pointCloudPruningResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message keyframePruningRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-bytes keyframes = 2;
-}
-
-message keyframePruningResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message visibilityPruningRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-}
-
-message visibilityPruningResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message saveToFileRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-}
-
-message saveToFileResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message loadFromFileRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-}
-
-message loadFromFileResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message deleteFileRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-}
-
-message deleteFileResponse
+message decreaseMapClientsResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
 
 service grpcIMapManagerService {
-rpc setMap(setMapRequest) returns(setMapResponse) {}
-rpc getMap(getMapRequest) returns(getMapResponse) {}
-rpc getSubmap(getSubmapRequest) returns(getSubmapResponse) {}
-rpc getLocalPointCloud_grpc0(getLocalPointCloud_grpc0Request) returns(getLocalPointCloud_grpc0Response) {}
-rpc getLocalPointCloud_grpc1(getLocalPointCloud_grpc1Request) returns(getLocalPointCloud_grpc1Response) {}
-rpc addCloudPoint(addCloudPointRequest) returns(addCloudPointResponse) {}
-rpc removeCloudPoint(removeCloudPointRequest) returns(removeCloudPointResponse) {}
-rpc addKeyframe(addKeyframeRequest) returns(addKeyframeResponse) {}
-rpc removeKeyframe(removeKeyframeRequest) returns(removeKeyframeResponse) {}
-rpc addCameraParameters(addCameraParametersRequest) returns(addCameraParametersResponse) {}
-rpc removeCameraParameters(removeCameraParametersRequest) returns(removeCameraParametersResponse) {}
-rpc getCameraParameters_grpc0(getCameraParameters_grpc0Request) returns(getCameraParameters_grpc0Response) {}
-rpc getCameraParameters_grpc1(getCameraParameters_grpc1Request) returns(getCameraParameters_grpc1Response) {}
-rpc pointCloudPruning(pointCloudPruningRequest) returns(pointCloudPruningResponse) {}
-rpc keyframePruning(keyframePruningRequest) returns(keyframePruningResponse) {}
-rpc visibilityPruning(visibilityPruningRequest) returns(visibilityPruningResponse) {}
-rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
-rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
-rpc deleteFile(deleteFileRequest) returns(deleteFileResponse) {}
+rpc init(initRequest) returns(initResponse) {}
+rpc createMap(createMapRequest) returns(createMapResponse) {}
+rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
+rpc getAllMaps(getAllMapsRequest) returns(getAllMapsResponse) {}
+rpc registerMapUpdateService(registerMapUpdateServiceRequest) returns(registerMapUpdateServiceResponse) {}
+rpc unregisterMapUpdateService(unregisterMapUpdateServiceRequest) returns(unregisterMapUpdateServiceResponse) {}
+rpc increaseMapClients(increaseMapClientsRequest) returns(increaseMapClientsResponse) {}
+rpc decreaseMapClients(decreaseMapClientsRequest) returns(decreaseMapClientsResponse) {}
 }
 

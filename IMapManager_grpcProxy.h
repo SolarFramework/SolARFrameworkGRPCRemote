@@ -3,7 +3,7 @@
 
 #ifndef IMAPMANAGER_GRPCPROXY_H
 #define IMAPMANAGER_GRPCPROXY_H
-#include "api/storage/IMapManager.h"
+#include "api/service/IMapManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -15,32 +15,21 @@
 
 namespace org::bcom::xpcf::grpc::proxyIMapManager {
 
-class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public SolAR::api::storage::IMapManager {
+class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public SolAR::api::service::IMapManager {
   public:
     IMapManager_grpcProxy();
     ~IMapManager_grpcProxy() override = default;
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode setMap(SRef<SolAR::datastructure::Map> const map)     override;
-    SolAR::FrameworkReturnCode getMap(SRef<SolAR::datastructure::Map>& map)     override;
-    SolAR::FrameworkReturnCode getSubmap(uint32_t idCenteredKeyframe, uint32_t nbKeyframes, SRef<SolAR::datastructure::Map>& submap)     override;
-    SolAR::FrameworkReturnCode getLocalPointCloud(std::vector<SRef<SolAR::datastructure::Keyframe>> const& keyframes, std::vector<SRef<SolAR::datastructure::CloudPoint>>& localPointCloud)     const     override;
-    SolAR::FrameworkReturnCode getLocalPointCloud(SRef<SolAR::datastructure::Keyframe> const keyframe, float const minWeightNeighbor, std::vector<SRef<SolAR::datastructure::CloudPoint>>& localPointCloud)     const     override;
-    SolAR::FrameworkReturnCode addCloudPoint(SRef<SolAR::datastructure::CloudPoint> const cloudPoint)     override;
-    SolAR::FrameworkReturnCode removeCloudPoint(SRef<SolAR::datastructure::CloudPoint> const cloudPoint)     override;
-    SolAR::FrameworkReturnCode addKeyframe(SRef<SolAR::datastructure::Keyframe> const keyframe)     override;
-    SolAR::FrameworkReturnCode removeKeyframe(SRef<SolAR::datastructure::Keyframe> const keyframe)     override;
-    SolAR::FrameworkReturnCode addCameraParameters(SRef<SolAR::datastructure::CameraParameters> const cameraParameters)     override;
-    SolAR::FrameworkReturnCode removeCameraParameters(SRef<SolAR::datastructure::CameraParameters> const cameraParameters)     override;
-    SolAR::FrameworkReturnCode getCameraParameters(uint32_t const id, SRef<SolAR::datastructure::CameraParameters>& cameraParameters)     override;
-    SolAR::FrameworkReturnCode getCameraParameters(uint32_t const id, SolAR::datastructure::CameraParameters& cameraParameters)     override;
-    int pointCloudPruning(std::vector<SRef<SolAR::datastructure::CloudPoint>> const& cloudPoints)     override;
-    int keyframePruning(std::vector<SRef<SolAR::datastructure::Keyframe>> const& keyframes)     override;
-    SolAR::FrameworkReturnCode visibilityPruning()     override;
-    SolAR::FrameworkReturnCode saveToFile()     const     override;
-    SolAR::FrameworkReturnCode loadFromFile()     override;
-    SolAR::FrameworkReturnCode deleteFile()     override;
+    SolAR::FrameworkReturnCode init()     override;
+    SolAR::FrameworkReturnCode createMap(std::string const& mapUUID)     override;
+    SolAR::FrameworkReturnCode deleteMap(std::string const& mapUUID)     override;
+    SolAR::FrameworkReturnCode getAllMaps(std::vector<std::string>& mapUUIDList)     const     override;
+    SolAR::FrameworkReturnCode registerMapUpdateService(std::string const& serviceURL)     override;
+    SolAR::FrameworkReturnCode unregisterMapUpdateService(std::string const& serviceURL)     override;
+    SolAR::FrameworkReturnCode increaseMapClients(std::string const& mapUUID, std::string& serviceURL)     override;
+    SolAR::FrameworkReturnCode decreaseMapClients(std::string const& mapUUID)     override;
 
 
   private:
@@ -59,7 +48,7 @@ class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
 
 template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapManager::IMapManager_grpcProxy>
 {
-  static constexpr const char * UUID = "9c68f766-3b6f-427f-91d3-1e5126d27326";
+  static constexpr const char * UUID = "4863f2d1-023c-4095-8842-e6083e6ec54a";
   static constexpr const char * NAME = "IMapManager_grpcProxy";
   static constexpr const char * DESCRIPTION = "IMapManager_grpcProxy grpc client proxy component";
 };

@@ -13,8 +13,8 @@ namespace org::bcom::xpcf::grpc::serverIMapManager {
 IMapManager_grpcServer::IMapManager_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<IMapManager_grpcServer>())
 {
   declareInterface<xpcf::IGrpcService>(this);
-  declareInjectable<SolAR::api::storage::IMapManager>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(20);
+  declareInjectable<SolAR::api::service::IMapManager>(m_grpcService.m_xpcfComponent);
+  m_grpcServerCompressionConfig.resize(9);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -40,446 +40,186 @@ XPCFErrorCode IMapManager_grpcServer::onConfigured()
   return &m_grpcService;
 }
 
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::setMap(::grpc::ServerContext* context, const ::grpcIMapManager::setMapRequest* request, ::grpcIMapManager::setMapResponse* response)
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::init(::grpc::ServerContext* context, const ::grpcIMapManager::initRequest* request, ::grpcIMapManager::initResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "setMap", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::setMap request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::init request received at " << to_simple_string(start) << std::endl;
   #endif
-  SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setMap(map);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init();
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::setMap response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getMap(::grpc::ServerContext* context, const ::grpcIMapManager::getMapRequest* request, ::grpcIMapManager::getMapResponse* response)
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::createMap(::grpc::ServerContext* context, const ::grpcIMapManager::createMapRequest* request, ::grpcIMapManager::createMapResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMap", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "createMap", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getMap request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::createMap request received at " << to_simple_string(start) << std::endl;
   #endif
-  SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMap(map);
-  response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
+  std::string mapUUID = request->mapuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->createMap(mapUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getMap response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::createMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getSubmap(::grpc::ServerContext* context, const ::grpcIMapManager::getSubmapRequest* request, ::grpcIMapManager::getSubmapResponse* response)
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::deleteMap(::grpc::ServerContext* context, const ::grpcIMapManager::deleteMapRequest* request, ::grpcIMapManager::deleteMapResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getSubmap", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "deleteMap", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getSubmap request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::deleteMap request received at " << to_simple_string(start) << std::endl;
   #endif
-  uint32_t idCenteredKeyframe = request->idcenteredkeyframe();
-  uint32_t nbKeyframes = request->nbkeyframes();
-  SRef<SolAR::datastructure::Map> submap = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->submap());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getSubmap(idCenteredKeyframe, nbKeyframes, submap);
-  response->set_submap(xpcf::serialize<SRef<SolAR::datastructure::Map>>(submap));
+  std::string mapUUID = request->mapuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->deleteMap(mapUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getSubmap response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::deleteMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getLocalPointCloud_grpc0(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc0Request* request, ::grpcIMapManager::getLocalPointCloud_grpc0Response* response)
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getAllMaps(::grpc::ServerContext* context, const ::grpcIMapManager::getAllMapsRequest* request, ::grpcIMapManager::getAllMapsResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getLocalPointCloud", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getAllMaps", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getLocalPointCloud request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::getAllMaps request received at " << to_simple_string(start) << std::endl;
   #endif
-  std::vector<SRef<SolAR::datastructure::Keyframe>> keyframes = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Keyframe>>>(request->keyframes());
-  std::vector<SRef<SolAR::datastructure::CloudPoint>> localPointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->localpointcloud());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getLocalPointCloud(keyframes, localPointCloud);
-  response->set_localpointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(localPointCloud));
+  std::vector<std::string> mapUUIDList = xpcf::deserialize<std::vector<std::string>>(request->mapuuidlist());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAllMaps(mapUUIDList);
+  response->set_mapuuidlist(xpcf::serialize<std::vector<std::string>>(mapUUIDList));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getLocalPointCloud response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::getAllMaps response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getLocalPointCloud_grpc1(::grpc::ServerContext* context, const ::grpcIMapManager::getLocalPointCloud_grpc1Request* request, ::grpcIMapManager::getLocalPointCloud_grpc1Response* response)
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::registerMapUpdateService(::grpc::ServerContext* context, const ::grpcIMapManager::registerMapUpdateServiceRequest* request, ::grpcIMapManager::registerMapUpdateServiceResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getLocalPointCloud", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "registerMapUpdateService", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getLocalPointCloud request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::registerMapUpdateService request received at " << to_simple_string(start) << std::endl;
   #endif
-  SRef<SolAR::datastructure::Keyframe> keyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->keyframe());
-  float minWeightNeighbor = request->minweightneighbor();
-  std::vector<SRef<SolAR::datastructure::CloudPoint>> localPointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->localpointcloud());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getLocalPointCloud(keyframe, minWeightNeighbor, localPointCloud);
-  response->set_localpointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(localPointCloud));
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerMapUpdateService(serviceURL);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getLocalPointCloud response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::registerMapUpdateService response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::addCloudPoint(::grpc::ServerContext* context, const ::grpcIMapManager::addCloudPointRequest* request, ::grpcIMapManager::addCloudPointResponse* response)
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::unregisterMapUpdateService(::grpc::ServerContext* context, const ::grpcIMapManager::unregisterMapUpdateServiceRequest* request, ::grpcIMapManager::unregisterMapUpdateServiceResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "addCloudPoint", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "unregisterMapUpdateService", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::addCloudPoint request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::unregisterMapUpdateService request received at " << to_simple_string(start) << std::endl;
   #endif
-  SRef<SolAR::datastructure::CloudPoint> cloudPoint = xpcf::deserialize<SRef<SolAR::datastructure::CloudPoint>>(request->cloudpoint());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->addCloudPoint(cloudPoint);
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unregisterMapUpdateService(serviceURL);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::addCloudPoint response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::unregisterMapUpdateService response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::removeCloudPoint(::grpc::ServerContext* context, const ::grpcIMapManager::removeCloudPointRequest* request, ::grpcIMapManager::removeCloudPointResponse* response)
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::increaseMapClients(::grpc::ServerContext* context, const ::grpcIMapManager::increaseMapClientsRequest* request, ::grpcIMapManager::increaseMapClientsResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "removeCloudPoint", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "increaseMapClients", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::removeCloudPoint request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::increaseMapClients request received at " << to_simple_string(start) << std::endl;
   #endif
-  SRef<SolAR::datastructure::CloudPoint> cloudPoint = xpcf::deserialize<SRef<SolAR::datastructure::CloudPoint>>(request->cloudpoint());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->removeCloudPoint(cloudPoint);
+  std::string mapUUID = request->mapuuid();
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->increaseMapClients(mapUUID, serviceURL);
+  response->set_serviceurl(serviceURL);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::removeCloudPoint response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::increaseMapClients response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::addKeyframe(::grpc::ServerContext* context, const ::grpcIMapManager::addKeyframeRequest* request, ::grpcIMapManager::addKeyframeResponse* response)
+::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::decreaseMapClients(::grpc::ServerContext* context, const ::grpcIMapManager::decreaseMapClientsRequest* request, ::grpcIMapManager::decreaseMapClientsResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "addKeyframe", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "decreaseMapClients", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::addKeyframe request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::decreaseMapClients request received at " << to_simple_string(start) << std::endl;
   #endif
-  SRef<SolAR::datastructure::Keyframe> keyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->keyframe());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->addKeyframe(keyframe);
+  std::string mapUUID = request->mapuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->decreaseMapClients(mapUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::addKeyframe response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::removeKeyframe(::grpc::ServerContext* context, const ::grpcIMapManager::removeKeyframeRequest* request, ::grpcIMapManager::removeKeyframeResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "removeKeyframe", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::removeKeyframe request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SRef<SolAR::datastructure::Keyframe> keyframe = xpcf::deserialize<SRef<SolAR::datastructure::Keyframe>>(request->keyframe());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->removeKeyframe(keyframe);
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::removeKeyframe response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::addCameraParameters(::grpc::ServerContext* context, const ::grpcIMapManager::addCameraParametersRequest* request, ::grpcIMapManager::addCameraParametersResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "addCameraParameters", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::addCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SRef<SolAR::datastructure::CameraParameters> cameraParameters = xpcf::deserialize<SRef<SolAR::datastructure::CameraParameters>>(request->cameraparameters());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->addCameraParameters(cameraParameters);
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::addCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::removeCameraParameters(::grpc::ServerContext* context, const ::grpcIMapManager::removeCameraParametersRequest* request, ::grpcIMapManager::removeCameraParametersResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "removeCameraParameters", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::removeCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SRef<SolAR::datastructure::CameraParameters> cameraParameters = xpcf::deserialize<SRef<SolAR::datastructure::CameraParameters>>(request->cameraparameters());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->removeCameraParameters(cameraParameters);
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::removeCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getCameraParameters_grpc0(::grpc::ServerContext* context, const ::grpcIMapManager::getCameraParameters_grpc0Request* request, ::grpcIMapManager::getCameraParameters_grpc0Response* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getCameraParameters", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  uint32_t id = request->id();
-  SRef<SolAR::datastructure::CameraParameters> cameraParameters = xpcf::deserialize<SRef<SolAR::datastructure::CameraParameters>>(request->cameraparameters());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getCameraParameters(id, cameraParameters);
-  response->set_cameraparameters(xpcf::serialize<SRef<SolAR::datastructure::CameraParameters>>(cameraParameters));
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::getCameraParameters_grpc1(::grpc::ServerContext* context, const ::grpcIMapManager::getCameraParameters_grpc1Request* request, ::grpcIMapManager::getCameraParameters_grpc1Response* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getCameraParameters", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getCameraParameters request received at " << to_simple_string(start) << std::endl;
-  #endif
-  uint32_t id = request->id();
-  SolAR::datastructure::CameraParameters cameraParameters = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->cameraparameters());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getCameraParameters(id, cameraParameters);
-  response->set_cameraparameters(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParameters));
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::getCameraParameters response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::pointCloudPruning(::grpc::ServerContext* context, const ::grpcIMapManager::pointCloudPruningRequest* request, ::grpcIMapManager::pointCloudPruningResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "pointCloudPruning", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::pointCloudPruning request received at " << to_simple_string(start) << std::endl;
-  #endif
-  std::vector<SRef<SolAR::datastructure::CloudPoint>> cloudPoints = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->cloudpoints());
-  int returnValue = m_xpcfComponent->pointCloudPruning(cloudPoints);
-  response->set_xpcfgrpcreturnvalue(returnValue);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::pointCloudPruning response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::keyframePruning(::grpc::ServerContext* context, const ::grpcIMapManager::keyframePruningRequest* request, ::grpcIMapManager::keyframePruningResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "keyframePruning", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::keyframePruning request received at " << to_simple_string(start) << std::endl;
-  #endif
-  std::vector<SRef<SolAR::datastructure::Keyframe>> keyframes = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Keyframe>>>(request->keyframes());
-  int returnValue = m_xpcfComponent->keyframePruning(keyframes);
-  response->set_xpcfgrpcreturnvalue(returnValue);
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::keyframePruning response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::visibilityPruning(::grpc::ServerContext* context, const ::grpcIMapManager::visibilityPruningRequest* request, ::grpcIMapManager::visibilityPruningResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "visibilityPruning", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::visibilityPruning request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->visibilityPruning();
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::visibilityPruning response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::saveToFile(::grpc::ServerContext* context, const ::grpcIMapManager::saveToFileRequest* request, ::grpcIMapManager::saveToFileResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "saveToFile", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::saveToFile request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->saveToFile();
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::saveToFile response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::loadFromFile(::grpc::ServerContext* context, const ::grpcIMapManager::loadFromFileRequest* request, ::grpcIMapManager::loadFromFileResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "loadFromFile", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::loadFromFile request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->loadFromFile();
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::loadFromFile response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IMapManager_grpcServer::grpcIMapManagerServiceImpl::deleteFile(::grpc::ServerContext* context, const ::grpcIMapManager::deleteFileRequest* request, ::grpcIMapManager::deleteFileResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "deleteFile", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::deleteFile request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->deleteFile();
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapManager_grpcServer::deleteFile response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapManager_grpcServer::decreaseMapClients response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
