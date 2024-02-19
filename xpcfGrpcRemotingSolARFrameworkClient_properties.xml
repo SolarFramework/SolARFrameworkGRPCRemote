@@ -85,7 +85,7 @@
         <value>method|getPointCloudRequest|none|none</value>
       </property>
     </configure>
-    <configure component="IMapManager_grpcProxy">
+    <configure component="IMapsManager_grpcProxy">
       <property name="grpc_compress_proxy" type="string">
         <value>service|none|none</value>
         <value>method|init|none|none</value>

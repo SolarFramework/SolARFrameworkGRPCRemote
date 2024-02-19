@@ -58,12 +58,12 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIMapManager::IMapManager_grpcProxy>(componentUUID,interfaceRef);
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIMapsManager::IMapsManager_grpcProxy>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIMapManager::IMapManager_grpcServer>(componentUUID,interfaceRef);
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIMapsManager::IMapsManager_grpcServer>(componentUUID,interfaceRef);
   }
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
@@ -91,8 +91,8 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizationPipeline::IRelocal
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRelocalizationPipeline::IRelocalizationPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIFrontEnd::IFrontEnd_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIFrontEnd::IFrontEnd_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapManager::IMapManager_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapManager::IMapManager_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapsManager::IMapsManager_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapsManager::IMapsManager_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIServiceManager::IServiceManager_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIServiceManager::IServiceManager_grpcServer)
 XPCF_END_COMPONENTS_DECLARATION

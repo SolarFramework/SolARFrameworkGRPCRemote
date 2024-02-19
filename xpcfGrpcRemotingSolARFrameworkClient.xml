@@ -21,9 +21,9 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="58389ff0-5695-11ec-bf63-0242ac130002" name="IFrontEnd" description="The interface to define a Front End for services"/>
     </component>
-    <component uuid="4863f2d1-023c-4095-8842-e6083e6ec54a" name="IMapManager_grpcProxy" description="IMapManager_grpcProxy">
+    <component uuid="4863f2d1-023c-4095-8842-e6083e6ec54a" name="IMapsManager_grpcProxy" description="IMapsManager_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
-      <interface uuid="3ae30e7d-9685-4860-8510-89fe98035a0f" name="IMapManager" description="The interface to define the map manager"/>
+      <interface uuid="3ae30e7d-9685-4860-8510-89fe98035a0f" name="IMapsManager" description="The interface to define the maps manager"/>
     </component>
     <component uuid="600ca5f4-6432-11ed-81ce-0242ac120002" name="IServiceManager_grpcProxy" description="IServiceManager_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>

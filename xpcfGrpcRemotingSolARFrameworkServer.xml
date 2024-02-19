@@ -21,7 +21,7 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
-    <component uuid="2bc10e03-8a2d-44a1-b53e-d72d09f99b9b" name="IMapManager_grpcServer" description="IMapManager_grpcServer">
+    <component uuid="2bc10e03-8a2d-44a1-b53e-d72d09f99b9b" name="IMapsManager_grpcServer" description="IMapsManager_grpcServer">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
@@ -38,7 +38,7 @@
         <component to="IMappingPipeline_grpcServer"/>
         <component to="IRelocalizationPipeline_grpcServer"/>
         <component to="IFrontEnd_grpcServer"/>
-        <component to="IMapManager_grpcServer"/>
+        <component to="IMapsManager_grpcServer"/>
         <component to="IServiceManager_grpcServer"/>
       </bind>
     </bindings>

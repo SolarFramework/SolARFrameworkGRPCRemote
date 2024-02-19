@@ -1,24 +1,24 @@
 // GRPC Proxy Class Header generated with xpcf_grpc_gen
 
 
-#ifndef IMAPMANAGER_GRPCPROXY_H
-#define IMAPMANAGER_GRPCPROXY_H
-#include "api/service/IMapManager.h"
+#ifndef IMAPSMANAGER_GRPCPROXY_H
+#define IMAPSMANAGER_GRPCPROXY_H
+#include "api/service/IMapsManager.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
 #include <map>
-#include "grpcIMapManagerService.grpc.pb.h"
+#include "grpcIMapsManagerService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
 #include <xpcf/remoting/GrpcHelper.h>
 
-namespace org::bcom::xpcf::grpc::proxyIMapManager {
+namespace org::bcom::xpcf::grpc::proxyIMapsManager {
 
-class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public SolAR::api::service::IMapManager {
+class IMapsManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public SolAR::api::service::IMapsManager {
   public:
-    IMapManager_grpcProxy();
-    ~IMapManager_grpcProxy() override = default;
+    IMapsManager_grpcProxy();
+    ~IMapsManager_grpcProxy() override = default;
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
@@ -39,18 +39,18 @@ class IMapManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual 
     xpcf::grpcCompressionInfos m_serviceCompressionInfos;
     std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
     std::vector<std::string> m_grpcProxyCompressionConfig;
-    std::unique_ptr<::grpcIMapManager::grpcIMapManagerService::Stub> m_grpcStub;
+    std::unique_ptr<::grpcIMapsManager::grpcIMapsManagerService::Stub> m_grpcStub;
 
 };
 
 }
 
 
-template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapManager::IMapManager_grpcProxy>
+template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapsManager::IMapsManager_grpcProxy>
 {
   static constexpr const char * UUID = "4863f2d1-023c-4095-8842-e6083e6ec54a";
-  static constexpr const char * NAME = "IMapManager_grpcProxy";
-  static constexpr const char * DESCRIPTION = "IMapManager_grpcProxy grpc client proxy component";
+  static constexpr const char * NAME = "IMapsManager_grpcProxy";
+  static constexpr const char * DESCRIPTION = "IMapsManager_grpcProxy grpc client proxy component";
 };
 
 

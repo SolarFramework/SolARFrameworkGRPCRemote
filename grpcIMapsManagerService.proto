@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 
-package grpcIMapManager;
+package grpcIMapsManager;
 
 message initRequest
 {
@@ -94,7 +94,7 @@ message decreaseMapClientsResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-service grpcIMapManagerService {
+service grpcIMapsManagerService {
 rpc init(initRequest) returns(initResponse) {}
 rpc createMap(createMapRequest) returns(createMapResponse) {}
 rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
