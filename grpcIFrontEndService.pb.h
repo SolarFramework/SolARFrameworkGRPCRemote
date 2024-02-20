@@ -46,6 +46,18 @@ struct TableStruct_grpcIFrontEndService_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIFrontEndService_2eproto;
 namespace grpcIFrontEnd {
+class createMapRequest;
+struct createMapRequestDefaultTypeInternal;
+extern createMapRequestDefaultTypeInternal _createMapRequest_default_instance_;
+class createMapResponse;
+struct createMapResponseDefaultTypeInternal;
+extern createMapResponseDefaultTypeInternal _createMapResponse_default_instance_;
+class deleteMapRequest;
+struct deleteMapRequestDefaultTypeInternal;
+extern deleteMapRequestDefaultTypeInternal _deleteMapRequest_default_instance_;
+class deleteMapResponse;
+struct deleteMapResponseDefaultTypeInternal;
+extern deleteMapResponseDefaultTypeInternal _deleteMapResponse_default_instance_;
 class get3DTransformRequestRequest;
 struct get3DTransformRequestRequestDefaultTypeInternal;
 extern get3DTransformRequestRequestDefaultTypeInternal _get3DTransformRequestRequest_default_instance_;
@@ -58,6 +70,12 @@ extern getAllClientsUUIDRequestDefaultTypeInternal _getAllClientsUUIDRequest_def
 class getAllClientsUUIDResponse;
 struct getAllClientsUUIDResponseDefaultTypeInternal;
 extern getAllClientsUUIDResponseDefaultTypeInternal _getAllClientsUUIDResponse_default_instance_;
+class getAllMapsUUIDRequest;
+struct getAllMapsUUIDRequestDefaultTypeInternal;
+extern getAllMapsUUIDRequestDefaultTypeInternal _getAllMapsUUIDRequest_default_instance_;
+class getAllMapsUUIDResponse;
+struct getAllMapsUUIDResponseDefaultTypeInternal;
+extern getAllMapsUUIDResponseDefaultTypeInternal _getAllMapsUUIDResponse_default_instance_;
 class getCameraParametersRequest;
 struct getCameraParametersRequestDefaultTypeInternal;
 extern getCameraParametersRequestDefaultTypeInternal _getCameraParametersRequest_default_instance_;
@@ -130,12 +148,6 @@ extern relocalizeProcessRequest_grpc1RequestDefaultTypeInternal _relocalizeProce
 class relocalizeProcessRequest_grpc1Response;
 struct relocalizeProcessRequest_grpc1ResponseDefaultTypeInternal;
 extern relocalizeProcessRequest_grpc1ResponseDefaultTypeInternal _relocalizeProcessRequest_grpc1Response_default_instance_;
-class resetMapRequest;
-struct resetMapRequestDefaultTypeInternal;
-extern resetMapRequestDefaultTypeInternal _resetMapRequest_default_instance_;
-class resetMapResponse;
-struct resetMapResponseDefaultTypeInternal;
-extern resetMapResponseDefaultTypeInternal _resetMapResponse_default_instance_;
 class setCameraParameters_grpc0Request;
 struct setCameraParameters_grpc0RequestDefaultTypeInternal;
 extern setCameraParameters_grpc0RequestDefaultTypeInternal _setCameraParameters_grpc0Request_default_instance_;
@@ -180,10 +192,16 @@ struct unregisterClientResponseDefaultTypeInternal;
 extern unregisterClientResponseDefaultTypeInternal _unregisterClientResponse_default_instance_;
 }  // namespace grpcIFrontEnd
 PROTOBUF_NAMESPACE_OPEN
+template<> ::grpcIFrontEnd::createMapRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::createMapRequest>(Arena*);
+template<> ::grpcIFrontEnd::createMapResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::createMapResponse>(Arena*);
+template<> ::grpcIFrontEnd::deleteMapRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::deleteMapRequest>(Arena*);
+template<> ::grpcIFrontEnd::deleteMapResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::deleteMapResponse>(Arena*);
 template<> ::grpcIFrontEnd::get3DTransformRequestRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::get3DTransformRequestRequest>(Arena*);
 template<> ::grpcIFrontEnd::get3DTransformRequestResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::get3DTransformRequestResponse>(Arena*);
 template<> ::grpcIFrontEnd::getAllClientsUUIDRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::getAllClientsUUIDRequest>(Arena*);
 template<> ::grpcIFrontEnd::getAllClientsUUIDResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::getAllClientsUUIDResponse>(Arena*);
+template<> ::grpcIFrontEnd::getAllMapsUUIDRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::getAllMapsUUIDRequest>(Arena*);
+template<> ::grpcIFrontEnd::getAllMapsUUIDResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::getAllMapsUUIDResponse>(Arena*);
 template<> ::grpcIFrontEnd::getCameraParametersRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::getCameraParametersRequest>(Arena*);
 template<> ::grpcIFrontEnd::getCameraParametersResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::getCameraParametersResponse>(Arena*);
 template<> ::grpcIFrontEnd::getDeviceInfoRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::getDeviceInfoRequest>(Arena*);
@@ -208,8 +226,6 @@ template<> ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request* Arena::Create
 template<> ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response* Arena::CreateMaybeMessage<::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response>(Arena*);
 template<> ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request* Arena::CreateMaybeMessage<::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request>(Arena*);
 template<> ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response* Arena::CreateMaybeMessage<::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response>(Arena*);
-template<> ::grpcIFrontEnd::resetMapRequest* Arena::CreateMaybeMessage<::grpcIFrontEnd::resetMapRequest>(Arena*);
-template<> ::grpcIFrontEnd::resetMapResponse* Arena::CreateMaybeMessage<::grpcIFrontEnd::resetMapResponse>(Arena*);
 template<> ::grpcIFrontEnd::setCameraParameters_grpc0Request* Arena::CreateMaybeMessage<::grpcIFrontEnd::setCameraParameters_grpc0Request>(Arena*);
 template<> ::grpcIFrontEnd::setCameraParameters_grpc0Response* Arena::CreateMaybeMessage<::grpcIFrontEnd::setCameraParameters_grpc0Response>(Arena*);
 template<> ::grpcIFrontEnd::setCameraParameters_grpc1Request* Arena::CreateMaybeMessage<::grpcIFrontEnd::setCameraParameters_grpc1Request>(Arena*);
@@ -351,7 +367,8 @@ class registerClientRequest final :
 
   enum : int {
     kDeviceInfoFieldNumber = 2,
-    kUuidFieldNumber = 3,
+    kMapUUIDFieldNumber = 3,
+    kClientUUIDFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // bytes deviceInfo = 2;
@@ -368,18 +385,32 @@ class registerClientRequest final :
   std::string* _internal_mutable_deviceinfo();
   public:
 
-  // string uuid = 3;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string mapUUID = 3;
+  void clear_mapuuid();
+  const std::string& mapuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_mapuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapuuid();
+  PROTOBUF_NODISCARD std::string* release_mapuuid();
+  void set_allocated_mapuuid(std::string* mapuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_mapuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const std::string& value);
+  std::string* _internal_mutable_mapuuid();
+  public:
+
+  // string clientUUID = 4;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
+  private:
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -400,7 +431,8 @@ class registerClientRequest final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr deviceinfo_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -530,21 +562,21 @@ class registerClientResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 1,
+    kClientUUIDFieldNumber = 1,
     kXpcfGrpcReturnValueFieldNumber = 2,
   };
-  // string uuid = 1;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 1;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // sint32 xpcfGrpcReturnValue = 2;
@@ -564,7 +596,7 @@ class registerClientResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -694,21 +726,21 @@ class unregisterClientRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -728,7 +760,7 @@ class unregisterClientRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1006,21 +1038,21 @@ class getAllClientsUUIDRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidListFieldNumber = 2,
+    kClientUUIDListFieldNumber = 2,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes uuidList = 2;
-  void clear_uuidlist();
-  const std::string& uuidlist() const;
+  // bytes clientUUIDList = 2;
+  void clear_clientuuidlist();
+  const std::string& clientuuidlist() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuidlist(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuidlist();
-  PROTOBUF_NODISCARD std::string* release_uuidlist();
-  void set_allocated_uuidlist(std::string* uuidlist);
+  void set_clientuuidlist(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuidlist();
+  PROTOBUF_NODISCARD std::string* release_clientuuidlist();
+  void set_allocated_clientuuidlist(std::string* clientuuidlist);
   private:
-  const std::string& _internal_uuidlist() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuidlist(const std::string& value);
-  std::string* _internal_mutable_uuidlist();
+  const std::string& _internal_clientuuidlist() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuidlist(const std::string& value);
+  std::string* _internal_mutable_clientuuidlist();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -1040,7 +1072,7 @@ class getAllClientsUUIDRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuidlist_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuidlist_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1170,21 +1202,21 @@ class getAllClientsUUIDResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidListFieldNumber = 1,
+    kClientUUIDListFieldNumber = 1,
     kXpcfGrpcReturnValueFieldNumber = 2,
   };
-  // bytes uuidList = 1;
-  void clear_uuidlist();
-  const std::string& uuidlist() const;
+  // bytes clientUUIDList = 1;
+  void clear_clientuuidlist();
+  const std::string& clientuuidlist() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuidlist(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuidlist();
-  PROTOBUF_NODISCARD std::string* release_uuidlist();
-  void set_allocated_uuidlist(std::string* uuidlist);
+  void set_clientuuidlist(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuidlist();
+  PROTOBUF_NODISCARD std::string* release_clientuuidlist();
+  void set_allocated_clientuuidlist(std::string* clientuuidlist);
   private:
-  const std::string& _internal_uuidlist() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuidlist(const std::string& value);
-  std::string* _internal_mutable_uuidlist();
+  const std::string& _internal_clientuuidlist() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuidlist(const std::string& value);
+  std::string* _internal_mutable_clientuuidlist();
   public:
 
   // sint32 xpcfGrpcReturnValue = 2;
@@ -1204,7 +1236,7 @@ class getAllClientsUUIDResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuidlist_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuidlist_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1334,22 +1366,22 @@ class getDeviceInfoRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kDeviceInfoFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes deviceInfo = 3;
@@ -1383,7 +1415,7 @@ class getDeviceInfoRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr deviceinfo_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1678,21 +1710,21 @@ class init_grpc0Request final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -1712,7 +1744,7 @@ class init_grpc0Request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1990,22 +2022,22 @@ class init_grpc1Request final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kPipelineModeFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes pipelineMode = 3;
@@ -2039,7 +2071,7 @@ class init_grpc1Request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pipelinemode_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2318,21 +2350,21 @@ class startRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -2352,7 +2384,7 @@ class startRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -2630,21 +2662,21 @@ class stopRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -2664,7 +2696,7 @@ class stopRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -2942,22 +2974,22 @@ class getProcessingModeRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kPipelineModeFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes pipelineMode = 3;
@@ -2991,7 +3023,7 @@ class getProcessingModeRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pipelinemode_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3286,22 +3318,22 @@ class setCameraParameters_grpc0Request final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kCameraParamsFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes cameraParams = 3;
@@ -3335,7 +3367,7 @@ class setCameraParameters_grpc0Request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cameraparams_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3614,23 +3646,23 @@ class setCameraParameters_grpc1Request final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kCameraParams1FieldNumber = 3,
     kCameraParams2FieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes cameraParams1 = 3;
@@ -3678,7 +3710,7 @@ class setCameraParameters_grpc1Request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cameraparams1_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cameraparams2_;
     int32_t grpcservercompressionformat_;
@@ -3958,23 +3990,23 @@ class setRectificationParametersRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kRectCam1FieldNumber = 3,
     kRectCam2FieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes rectCam1 = 3;
@@ -4022,7 +4054,7 @@ class setRectificationParametersRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectcam1_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectcam2_;
     int32_t grpcservercompressionformat_;
@@ -4302,22 +4334,22 @@ class getCameraParametersRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kCameraParamsFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes cameraParams = 3;
@@ -4351,7 +4383,7 @@ class getCameraParametersRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cameraparams_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -4646,7 +4678,7 @@ class relocalizeProcessRequest_grpc0Request final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kImagesFieldNumber = 3,
     kPosesFieldNumber = 4,
     kWorldTransformFieldNumber = 6,
@@ -4658,18 +4690,18 @@ class relocalizeProcessRequest_grpc0Request final :
     kGrpcServerCompressionFormatFieldNumber = 1,
     kFixedPoseFieldNumber = 5,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes images = 3;
@@ -4810,7 +4842,7 @@ class relocalizeProcessRequest_grpc0Request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr images_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poses_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr worldtransform_;
@@ -5161,7 +5193,7 @@ class relocalizeProcessRequest_grpc1Request final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kImagesFieldNumber = 3,
     kPosesFieldNumber = 4,
     kWorldTransformFieldNumber = 6,
@@ -5174,18 +5206,18 @@ class relocalizeProcessRequest_grpc1Request final :
     kGrpcServerCompressionFormatFieldNumber = 1,
     kFixedPoseFieldNumber = 5,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes images = 3;
@@ -5340,7 +5372,7 @@ class relocalizeProcessRequest_grpc1Request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr images_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poses_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr worldtransform_;
@@ -5708,24 +5740,24 @@ class get3DTransformRequestRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kTransform3DStatusFieldNumber = 3,
     kTransform3DFieldNumber = 4,
     kConfidenceFieldNumber = 5,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes transform3DStatus = 3;
@@ -5787,7 +5819,7 @@ class get3DTransformRequestRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
@@ -6116,23 +6148,23 @@ class getMappingDataRequestRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kOutputPointCloudsFieldNumber = 3,
     kKeyframePosesFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes outputPointClouds = 3;
@@ -6180,7 +6212,7 @@ class getMappingDataRequestRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpointclouds_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframeposes_;
     int32_t grpcservercompressionformat_;
@@ -6492,23 +6524,23 @@ class getLastPoseRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUuidFieldNumber = 2,
+    kClientUUIDFieldNumber = 2,
     kPoseTypeFieldNumber = 3,
     kPoseFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string uuid = 2;
-  void clear_uuid();
-  const std::string& uuid() const;
+  // string clientUUID = 2;
+  void clear_clientuuid();
+  const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_uuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_uuid();
-  PROTOBUF_NODISCARD std::string* release_uuid();
-  void set_allocated_uuid(std::string* uuid);
+  void set_clientuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* clientuuid);
   private:
-  const std::string& _internal_uuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
-  std::string* _internal_mutable_uuid();
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
+  std::string* _internal_mutable_clientuuid();
   public:
 
   // bytes poseType = 3;
@@ -6556,7 +6588,7 @@ class getLastPoseRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr posetype_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
     int32_t grpcservercompressionformat_;
@@ -6731,6 +6763,958 @@ class getLastPoseResponse final :
 };
 // -------------------------------------------------------------------
 
+class createMapRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.createMapRequest) */ {
+ public:
+  inline createMapRequest() : createMapRequest(nullptr) {}
+  ~createMapRequest() override;
+  explicit PROTOBUF_CONSTEXPR createMapRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  createMapRequest(const createMapRequest& from);
+  createMapRequest(createMapRequest&& from) noexcept
+    : createMapRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline createMapRequest& operator=(const createMapRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline createMapRequest& operator=(createMapRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const createMapRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const createMapRequest* internal_default_instance() {
+    return reinterpret_cast<const createMapRequest*>(
+               &_createMapRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    36;
+
+  friend void swap(createMapRequest& a, createMapRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(createMapRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(createMapRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  createMapRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<createMapRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const createMapRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const createMapRequest& from) {
+    createMapRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(createMapRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.createMapRequest";
+  }
+  protected:
+  explicit createMapRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMapUUIDFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // string mapUUID = 2;
+  void clear_mapuuid();
+  const std::string& mapuuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mapuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapuuid();
+  PROTOBUF_NODISCARD std::string* release_mapuuid();
+  void set_allocated_mapuuid(std::string* mapuuid);
+  private:
+  const std::string& _internal_mapuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const std::string& value);
+  std::string* _internal_mutable_mapuuid();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(int32_t value);
+  private:
+  int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.createMapRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
+    int32_t grpcservercompressionformat_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class createMapResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.createMapResponse) */ {
+ public:
+  inline createMapResponse() : createMapResponse(nullptr) {}
+  ~createMapResponse() override;
+  explicit PROTOBUF_CONSTEXPR createMapResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  createMapResponse(const createMapResponse& from);
+  createMapResponse(createMapResponse&& from) noexcept
+    : createMapResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline createMapResponse& operator=(const createMapResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline createMapResponse& operator=(createMapResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const createMapResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const createMapResponse* internal_default_instance() {
+    return reinterpret_cast<const createMapResponse*>(
+               &_createMapResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    37;
+
+  friend void swap(createMapResponse& a, createMapResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(createMapResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(createMapResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  createMapResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<createMapResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const createMapResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const createMapResponse& from) {
+    createMapResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(createMapResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.createMapResponse";
+  }
+  protected:
+  explicit createMapResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
+  private:
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.createMapResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t xpcfgrpcreturnvalue_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class deleteMapRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.deleteMapRequest) */ {
+ public:
+  inline deleteMapRequest() : deleteMapRequest(nullptr) {}
+  ~deleteMapRequest() override;
+  explicit PROTOBUF_CONSTEXPR deleteMapRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  deleteMapRequest(const deleteMapRequest& from);
+  deleteMapRequest(deleteMapRequest&& from) noexcept
+    : deleteMapRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline deleteMapRequest& operator=(const deleteMapRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline deleteMapRequest& operator=(deleteMapRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const deleteMapRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const deleteMapRequest* internal_default_instance() {
+    return reinterpret_cast<const deleteMapRequest*>(
+               &_deleteMapRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    38;
+
+  friend void swap(deleteMapRequest& a, deleteMapRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(deleteMapRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(deleteMapRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  deleteMapRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<deleteMapRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const deleteMapRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const deleteMapRequest& from) {
+    deleteMapRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(deleteMapRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.deleteMapRequest";
+  }
+  protected:
+  explicit deleteMapRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMapUUIDFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // string mapUUID = 2;
+  void clear_mapuuid();
+  const std::string& mapuuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mapuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapuuid();
+  PROTOBUF_NODISCARD std::string* release_mapuuid();
+  void set_allocated_mapuuid(std::string* mapuuid);
+  private:
+  const std::string& _internal_mapuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const std::string& value);
+  std::string* _internal_mutable_mapuuid();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(int32_t value);
+  private:
+  int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.deleteMapRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
+    int32_t grpcservercompressionformat_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class deleteMapResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.deleteMapResponse) */ {
+ public:
+  inline deleteMapResponse() : deleteMapResponse(nullptr) {}
+  ~deleteMapResponse() override;
+  explicit PROTOBUF_CONSTEXPR deleteMapResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  deleteMapResponse(const deleteMapResponse& from);
+  deleteMapResponse(deleteMapResponse&& from) noexcept
+    : deleteMapResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline deleteMapResponse& operator=(const deleteMapResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline deleteMapResponse& operator=(deleteMapResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const deleteMapResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const deleteMapResponse* internal_default_instance() {
+    return reinterpret_cast<const deleteMapResponse*>(
+               &_deleteMapResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    39;
+
+  friend void swap(deleteMapResponse& a, deleteMapResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(deleteMapResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(deleteMapResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  deleteMapResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<deleteMapResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const deleteMapResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const deleteMapResponse& from) {
+    deleteMapResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(deleteMapResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.deleteMapResponse";
+  }
+  protected:
+  explicit deleteMapResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue();
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
+  private:
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.deleteMapResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t xpcfgrpcreturnvalue_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getAllMapsUUIDRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getAllMapsUUIDRequest) */ {
+ public:
+  inline getAllMapsUUIDRequest() : getAllMapsUUIDRequest(nullptr) {}
+  ~getAllMapsUUIDRequest() override;
+  explicit PROTOBUF_CONSTEXPR getAllMapsUUIDRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getAllMapsUUIDRequest(const getAllMapsUUIDRequest& from);
+  getAllMapsUUIDRequest(getAllMapsUUIDRequest&& from) noexcept
+    : getAllMapsUUIDRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline getAllMapsUUIDRequest& operator=(const getAllMapsUUIDRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getAllMapsUUIDRequest& operator=(getAllMapsUUIDRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getAllMapsUUIDRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getAllMapsUUIDRequest* internal_default_instance() {
+    return reinterpret_cast<const getAllMapsUUIDRequest*>(
+               &_getAllMapsUUIDRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    40;
+
+  friend void swap(getAllMapsUUIDRequest& a, getAllMapsUUIDRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getAllMapsUUIDRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getAllMapsUUIDRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getAllMapsUUIDRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<getAllMapsUUIDRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const getAllMapsUUIDRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const getAllMapsUUIDRequest& from) {
+    getAllMapsUUIDRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getAllMapsUUIDRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.getAllMapsUUIDRequest";
+  }
+  protected:
+  explicit getAllMapsUUIDRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMapUUIDListFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes mapUUIDList = 2;
+  void clear_mapuuidlist();
+  const std::string& mapuuidlist() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mapuuidlist(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapuuidlist();
+  PROTOBUF_NODISCARD std::string* release_mapuuidlist();
+  void set_allocated_mapuuidlist(std::string* mapuuidlist);
+  private:
+  const std::string& _internal_mapuuidlist() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuidlist(const std::string& value);
+  std::string* _internal_mutable_mapuuidlist();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(int32_t value);
+  private:
+  int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getAllMapsUUIDRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuidlist_;
+    int32_t grpcservercompressionformat_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getAllMapsUUIDResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getAllMapsUUIDResponse) */ {
+ public:
+  inline getAllMapsUUIDResponse() : getAllMapsUUIDResponse(nullptr) {}
+  ~getAllMapsUUIDResponse() override;
+  explicit PROTOBUF_CONSTEXPR getAllMapsUUIDResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  getAllMapsUUIDResponse(const getAllMapsUUIDResponse& from);
+  getAllMapsUUIDResponse(getAllMapsUUIDResponse&& from) noexcept
+    : getAllMapsUUIDResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline getAllMapsUUIDResponse& operator=(const getAllMapsUUIDResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getAllMapsUUIDResponse& operator=(getAllMapsUUIDResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getAllMapsUUIDResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getAllMapsUUIDResponse* internal_default_instance() {
+    return reinterpret_cast<const getAllMapsUUIDResponse*>(
+               &_getAllMapsUUIDResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    41;
+
+  friend void swap(getAllMapsUUIDResponse& a, getAllMapsUUIDResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(getAllMapsUUIDResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getAllMapsUUIDResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getAllMapsUUIDResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<getAllMapsUUIDResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const getAllMapsUUIDResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const getAllMapsUUIDResponse& from) {
+    getAllMapsUUIDResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(getAllMapsUUIDResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIFrontEnd.getAllMapsUUIDResponse";
+  }
+  protected:
+  explicit getAllMapsUUIDResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMapUUIDListFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes mapUUIDList = 1;
+  void clear_mapuuidlist();
+  const std::string& mapuuidlist() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mapuuidlist(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapuuidlist();
+  PROTOBUF_NODISCARD std::string* release_mapuuidlist();
+  void set_allocated_mapuuidlist(std::string* mapuuidlist);
+  private:
+  const std::string& _internal_mapuuidlist() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuidlist(const std::string& value);
+  std::string* _internal_mutable_mapuuidlist();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue();
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
+  private:
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getAllMapsUUIDResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuidlist_;
+    int32_t xpcfgrpcreturnvalue_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getMapRequestRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getMapRequestRequest) */ {
  public:
@@ -6779,7 +7763,7 @@ class getMapRequestRequest final :
                &_getMapRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    42;
 
   friend void swap(getMapRequestRequest& a, getMapRequestRequest& b) {
     a.Swap(&b);
@@ -6852,21 +7836,36 @@ class getMapRequestRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapFieldNumber = 2,
+    kMapUUIDFieldNumber = 2,
+    kMapDatastructureFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes map = 2;
-  void clear_map();
-  const std::string& map() const;
+  // string mapUUID = 2;
+  void clear_mapuuid();
+  const std::string& mapuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_map(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_map();
-  PROTOBUF_NODISCARD std::string* release_map();
-  void set_allocated_map(std::string* map);
+  void set_mapuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapuuid();
+  PROTOBUF_NODISCARD std::string* release_mapuuid();
+  void set_allocated_mapuuid(std::string* mapuuid);
   private:
-  const std::string& _internal_map() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_map(const std::string& value);
-  std::string* _internal_mutable_map();
+  const std::string& _internal_mapuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const std::string& value);
+  std::string* _internal_mutable_mapuuid();
+  public:
+
+  // bytes mapDatastructure = 3;
+  void clear_mapdatastructure();
+  const std::string& mapdatastructure() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mapdatastructure(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapdatastructure();
+  PROTOBUF_NODISCARD std::string* release_mapdatastructure();
+  void set_allocated_mapdatastructure(std::string* mapdatastructure);
+  private:
+  const std::string& _internal_mapdatastructure() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapdatastructure(const std::string& value);
+  std::string* _internal_mutable_mapdatastructure();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -6886,7 +7885,8 @@ class getMapRequestRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr map_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapdatastructure_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -6943,7 +7943,7 @@ class getMapRequestResponse final :
                &_getMapRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    43;
 
   friend void swap(getMapRequestResponse& a, getMapRequestResponse& b) {
     a.Swap(&b);
@@ -7016,21 +8016,21 @@ class getMapRequestResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapFieldNumber = 1,
+    kMapDatastructureFieldNumber = 1,
     kXpcfGrpcReturnValueFieldNumber = 2,
   };
-  // bytes map = 1;
-  void clear_map();
-  const std::string& map() const;
+  // bytes mapDatastructure = 1;
+  void clear_mapdatastructure();
+  const std::string& mapdatastructure() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_map(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_map();
-  PROTOBUF_NODISCARD std::string* release_map();
-  void set_allocated_map(std::string* map);
+  void set_mapdatastructure(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapdatastructure();
+  PROTOBUF_NODISCARD std::string* release_mapdatastructure();
+  void set_allocated_mapdatastructure(std::string* mapdatastructure);
   private:
-  const std::string& _internal_map() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_map(const std::string& value);
-  std::string* _internal_mutable_map();
+  const std::string& _internal_mapdatastructure() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapdatastructure(const std::string& value);
+  std::string* _internal_mutable_mapdatastructure();
   public:
 
   // sint32 xpcfGrpcReturnValue = 2;
@@ -7050,7 +8050,7 @@ class getMapRequestResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr map_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapdatastructure_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -7107,7 +8107,7 @@ class setMapRequestRequest final :
                &_setMapRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    44;
 
   friend void swap(setMapRequestRequest& a, setMapRequestRequest& b) {
     a.Swap(&b);
@@ -7180,21 +8180,36 @@ class setMapRequestRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapFieldNumber = 2,
+    kMapUUIDFieldNumber = 2,
+    kMapDatastructureFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes map = 2;
-  void clear_map();
-  const std::string& map() const;
+  // string mapUUID = 2;
+  void clear_mapuuid();
+  const std::string& mapuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_map(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_map();
-  PROTOBUF_NODISCARD std::string* release_map();
-  void set_allocated_map(std::string* map);
+  void set_mapuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapuuid();
+  PROTOBUF_NODISCARD std::string* release_mapuuid();
+  void set_allocated_mapuuid(std::string* mapuuid);
   private:
-  const std::string& _internal_map() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_map(const std::string& value);
-  std::string* _internal_mutable_map();
+  const std::string& _internal_mapuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const std::string& value);
+  std::string* _internal_mutable_mapuuid();
+  public:
+
+  // bytes mapDatastructure = 3;
+  void clear_mapdatastructure();
+  const std::string& mapdatastructure() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mapdatastructure(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapdatastructure();
+  PROTOBUF_NODISCARD std::string* release_mapdatastructure();
+  void set_allocated_mapdatastructure(std::string* mapdatastructure);
+  private:
+  const std::string& _internal_mapdatastructure() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapdatastructure(const std::string& value);
+  std::string* _internal_mutable_mapdatastructure();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -7214,7 +8229,8 @@ class setMapRequestRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr map_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapdatastructure_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -7271,7 +8287,7 @@ class setMapRequestResponse final :
                &_setMapRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    45;
 
   friend void swap(setMapRequestResponse& a, setMapRequestResponse& b) {
     a.Swap(&b);
@@ -7371,302 +8387,6 @@ class setMapRequestResponse final :
 };
 // -------------------------------------------------------------------
 
-class resetMapRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.resetMapRequest) */ {
- public:
-  inline resetMapRequest() : resetMapRequest(nullptr) {}
-  ~resetMapRequest() override;
-  explicit PROTOBUF_CONSTEXPR resetMapRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  resetMapRequest(const resetMapRequest& from);
-  resetMapRequest(resetMapRequest&& from) noexcept
-    : resetMapRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline resetMapRequest& operator=(const resetMapRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline resetMapRequest& operator=(resetMapRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const resetMapRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const resetMapRequest* internal_default_instance() {
-    return reinterpret_cast<const resetMapRequest*>(
-               &_resetMapRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    40;
-
-  friend void swap(resetMapRequest& a, resetMapRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(resetMapRequest* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(resetMapRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  resetMapRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<resetMapRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const resetMapRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const resetMapRequest& from) {
-    resetMapRequest::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(resetMapRequest* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIFrontEnd.resetMapRequest";
-  }
-  protected:
-  explicit resetMapRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kGrpcServerCompressionFormatFieldNumber = 1,
-  };
-  // int32 grpcServerCompressionFormat = 1;
-  void clear_grpcservercompressionformat();
-  int32_t grpcservercompressionformat() const;
-  void set_grpcservercompressionformat(int32_t value);
-  private:
-  int32_t _internal_grpcservercompressionformat() const;
-  void _internal_set_grpcservercompressionformat(int32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.resetMapRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    int32_t grpcservercompressionformat_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class resetMapResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.resetMapResponse) */ {
- public:
-  inline resetMapResponse() : resetMapResponse(nullptr) {}
-  ~resetMapResponse() override;
-  explicit PROTOBUF_CONSTEXPR resetMapResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  resetMapResponse(const resetMapResponse& from);
-  resetMapResponse(resetMapResponse&& from) noexcept
-    : resetMapResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline resetMapResponse& operator=(const resetMapResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline resetMapResponse& operator=(resetMapResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const resetMapResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const resetMapResponse* internal_default_instance() {
-    return reinterpret_cast<const resetMapResponse*>(
-               &_resetMapResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    41;
-
-  friend void swap(resetMapResponse& a, resetMapResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(resetMapResponse* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(resetMapResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  resetMapResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<resetMapResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const resetMapResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const resetMapResponse& from) {
-    resetMapResponse::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(resetMapResponse* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIFrontEnd.resetMapResponse";
-  }
-  protected:
-  explicit resetMapResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kXpcfGrpcReturnValueFieldNumber = 1,
-  };
-  // sint32 xpcfGrpcReturnValue = 1;
-  void clear_xpcfgrpcreturnvalue();
-  int32_t xpcfgrpcreturnvalue() const;
-  void set_xpcfgrpcreturnvalue(int32_t value);
-  private:
-  int32_t _internal_xpcfgrpcreturnvalue() const;
-  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.resetMapResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    int32_t xpcfgrpcreturnvalue_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
 class getPointCloudRequestRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getPointCloudRequestRequest) */ {
  public:
@@ -7715,7 +8435,7 @@ class getPointCloudRequestRequest final :
                &_getPointCloudRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    46;
 
   friend void swap(getPointCloudRequestRequest& a, getPointCloudRequestRequest& b) {
     a.Swap(&b);
@@ -7788,10 +8508,25 @@ class getPointCloudRequestRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPointCloudFieldNumber = 2,
+    kMapUUIDFieldNumber = 2,
+    kPointCloudFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes pointCloud = 2;
+  // string mapUUID = 2;
+  void clear_mapuuid();
+  const std::string& mapuuid() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mapuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapuuid();
+  PROTOBUF_NODISCARD std::string* release_mapuuid();
+  void set_allocated_mapuuid(std::string* mapuuid);
+  private:
+  const std::string& _internal_mapuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const std::string& value);
+  std::string* _internal_mutable_mapuuid();
+  public:
+
+  // bytes pointCloud = 3;
   void clear_pointcloud();
   const std::string& pointcloud() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7822,6 +8557,7 @@ class getPointCloudRequestRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7879,7 +8615,7 @@ class getPointCloudRequestResponse final :
                &_getPointCloudRequestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    47;
 
   friend void swap(getPointCloudRequestResponse& a, getPointCloudRequestResponse& b) {
     a.Swap(&b);
@@ -8074,108 +8810,158 @@ inline void registerClientRequest::set_allocated_deviceinfo(std::string* devicei
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.deviceInfo)
 }
 
-// string uuid = 3;
-inline void registerClientRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string mapUUID = 3;
+inline void registerClientRequest::clear_mapuuid() {
+  _impl_.mapuuid_.ClearToEmpty();
 }
-inline const std::string& registerClientRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientRequest.uuid)
-  return _internal_uuid();
+inline const std::string& registerClientRequest::mapuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientRequest.mapUUID)
+  return _internal_mapuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void registerClientRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void registerClientRequest::set_mapuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientRequest.uuid)
+ _impl_.mapuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientRequest.mapUUID)
 }
-inline std::string* registerClientRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientRequest.uuid)
+inline std::string* registerClientRequest::mutable_mapuuid() {
+  std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientRequest.mapUUID)
   return _s;
 }
-inline const std::string& registerClientRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& registerClientRequest::_internal_mapuuid() const {
+  return _impl_.mapuuid_.Get();
 }
-inline void registerClientRequest::_internal_set_uuid(const std::string& value) {
+inline void registerClientRequest::_internal_set_mapuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.mapuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* registerClientRequest::_internal_mutable_uuid() {
+inline std::string* registerClientRequest::_internal_mutable_mapuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.mapuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* registerClientRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* registerClientRequest::release_mapuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientRequest.mapUUID)
+  return _impl_.mapuuid_.Release();
 }
-inline void registerClientRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void registerClientRequest::set_allocated_mapuuid(std::string* mapuuid) {
+  if (mapuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.mapuuid_.SetAllocated(mapuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.mapuuid_.IsDefault()) {
+    _impl_.mapuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.mapUUID)
+}
+
+// string clientUUID = 4;
+inline void registerClientRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
+}
+inline const std::string& registerClientRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientRequest.clientUUID)
+  return _internal_clientuuid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void registerClientRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientRequest.clientUUID)
+}
+inline std::string* registerClientRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientRequest.clientUUID)
+  return _s;
+}
+inline const std::string& registerClientRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
+}
+inline void registerClientRequest::_internal_set_clientuuid(const std::string& value) {
+  
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* registerClientRequest::_internal_mutable_clientuuid() {
+  
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* registerClientRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
+}
+inline void registerClientRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.clientUUID)
 }
 
 // -------------------------------------------------------------------
 
 // registerClientResponse
 
-// string uuid = 1;
-inline void registerClientResponse::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 1;
+inline void registerClientResponse::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& registerClientResponse::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientResponse.uuid)
-  return _internal_uuid();
+inline const std::string& registerClientResponse::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientResponse.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void registerClientResponse::set_uuid(ArgT0&& arg0, ArgT... args) {
+void registerClientResponse::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientResponse.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientResponse.clientUUID)
 }
-inline std::string* registerClientResponse::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientResponse.uuid)
+inline std::string* registerClientResponse::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientResponse.clientUUID)
   return _s;
 }
-inline const std::string& registerClientResponse::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& registerClientResponse::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void registerClientResponse::_internal_set_uuid(const std::string& value) {
+inline void registerClientResponse::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* registerClientResponse::_internal_mutable_uuid() {
+inline std::string* registerClientResponse::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* registerClientResponse::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientResponse.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* registerClientResponse::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientResponse.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void registerClientResponse::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void registerClientResponse::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientResponse.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientResponse.clientUUID)
 }
 
 // sint32 xpcfGrpcReturnValue = 2;
@@ -8222,54 +9008,54 @@ inline void unregisterClientRequest::set_grpcservercompressionformat(int32_t val
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.unregisterClientRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void unregisterClientRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void unregisterClientRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& unregisterClientRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.unregisterClientRequest.uuid)
-  return _internal_uuid();
+inline const std::string& unregisterClientRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.unregisterClientRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void unregisterClientRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void unregisterClientRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.unregisterClientRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.unregisterClientRequest.clientUUID)
 }
-inline std::string* unregisterClientRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.unregisterClientRequest.uuid)
+inline std::string* unregisterClientRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.unregisterClientRequest.clientUUID)
   return _s;
 }
-inline const std::string& unregisterClientRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& unregisterClientRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void unregisterClientRequest::_internal_set_uuid(const std::string& value) {
+inline void unregisterClientRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* unregisterClientRequest::_internal_mutable_uuid() {
+inline std::string* unregisterClientRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* unregisterClientRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.unregisterClientRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* unregisterClientRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.unregisterClientRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void unregisterClientRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void unregisterClientRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.unregisterClientRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.unregisterClientRequest.clientUUID)
 }
 
 // -------------------------------------------------------------------
@@ -8320,108 +9106,108 @@ inline void getAllClientsUUIDRequest::set_grpcservercompressionformat(int32_t va
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllClientsUUIDRequest.grpcServerCompressionFormat)
 }
 
-// bytes uuidList = 2;
-inline void getAllClientsUUIDRequest::clear_uuidlist() {
-  _impl_.uuidlist_.ClearToEmpty();
+// bytes clientUUIDList = 2;
+inline void getAllClientsUUIDRequest::clear_clientuuidlist() {
+  _impl_.clientuuidlist_.ClearToEmpty();
 }
-inline const std::string& getAllClientsUUIDRequest::uuidlist() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllClientsUUIDRequest.uuidList)
-  return _internal_uuidlist();
+inline const std::string& getAllClientsUUIDRequest::clientuuidlist() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllClientsUUIDRequest.clientUUIDList)
+  return _internal_clientuuidlist();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getAllClientsUUIDRequest::set_uuidlist(ArgT0&& arg0, ArgT... args) {
+void getAllClientsUUIDRequest::set_clientuuidlist(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuidlist_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllClientsUUIDRequest.uuidList)
+ _impl_.clientuuidlist_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllClientsUUIDRequest.clientUUIDList)
 }
-inline std::string* getAllClientsUUIDRequest::mutable_uuidlist() {
-  std::string* _s = _internal_mutable_uuidlist();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllClientsUUIDRequest.uuidList)
+inline std::string* getAllClientsUUIDRequest::mutable_clientuuidlist() {
+  std::string* _s = _internal_mutable_clientuuidlist();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllClientsUUIDRequest.clientUUIDList)
   return _s;
 }
-inline const std::string& getAllClientsUUIDRequest::_internal_uuidlist() const {
-  return _impl_.uuidlist_.Get();
+inline const std::string& getAllClientsUUIDRequest::_internal_clientuuidlist() const {
+  return _impl_.clientuuidlist_.Get();
 }
-inline void getAllClientsUUIDRequest::_internal_set_uuidlist(const std::string& value) {
+inline void getAllClientsUUIDRequest::_internal_set_clientuuidlist(const std::string& value) {
   
-  _impl_.uuidlist_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuidlist_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getAllClientsUUIDRequest::_internal_mutable_uuidlist() {
+inline std::string* getAllClientsUUIDRequest::_internal_mutable_clientuuidlist() {
   
-  return _impl_.uuidlist_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuidlist_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getAllClientsUUIDRequest::release_uuidlist() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllClientsUUIDRequest.uuidList)
-  return _impl_.uuidlist_.Release();
+inline std::string* getAllClientsUUIDRequest::release_clientuuidlist() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllClientsUUIDRequest.clientUUIDList)
+  return _impl_.clientuuidlist_.Release();
 }
-inline void getAllClientsUUIDRequest::set_allocated_uuidlist(std::string* uuidlist) {
-  if (uuidlist != nullptr) {
+inline void getAllClientsUUIDRequest::set_allocated_clientuuidlist(std::string* clientuuidlist) {
+  if (clientuuidlist != nullptr) {
     
   } else {
     
   }
-  _impl_.uuidlist_.SetAllocated(uuidlist, GetArenaForAllocation());
+  _impl_.clientuuidlist_.SetAllocated(clientuuidlist, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuidlist_.IsDefault()) {
-    _impl_.uuidlist_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuidlist_.IsDefault()) {
+    _impl_.clientuuidlist_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllClientsUUIDRequest.uuidList)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllClientsUUIDRequest.clientUUIDList)
 }
 
 // -------------------------------------------------------------------
 
 // getAllClientsUUIDResponse
 
-// bytes uuidList = 1;
-inline void getAllClientsUUIDResponse::clear_uuidlist() {
-  _impl_.uuidlist_.ClearToEmpty();
+// bytes clientUUIDList = 1;
+inline void getAllClientsUUIDResponse::clear_clientuuidlist() {
+  _impl_.clientuuidlist_.ClearToEmpty();
 }
-inline const std::string& getAllClientsUUIDResponse::uuidlist() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllClientsUUIDResponse.uuidList)
-  return _internal_uuidlist();
+inline const std::string& getAllClientsUUIDResponse::clientuuidlist() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllClientsUUIDResponse.clientUUIDList)
+  return _internal_clientuuidlist();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getAllClientsUUIDResponse::set_uuidlist(ArgT0&& arg0, ArgT... args) {
+void getAllClientsUUIDResponse::set_clientuuidlist(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuidlist_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllClientsUUIDResponse.uuidList)
+ _impl_.clientuuidlist_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllClientsUUIDResponse.clientUUIDList)
 }
-inline std::string* getAllClientsUUIDResponse::mutable_uuidlist() {
-  std::string* _s = _internal_mutable_uuidlist();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllClientsUUIDResponse.uuidList)
+inline std::string* getAllClientsUUIDResponse::mutable_clientuuidlist() {
+  std::string* _s = _internal_mutable_clientuuidlist();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllClientsUUIDResponse.clientUUIDList)
   return _s;
 }
-inline const std::string& getAllClientsUUIDResponse::_internal_uuidlist() const {
-  return _impl_.uuidlist_.Get();
+inline const std::string& getAllClientsUUIDResponse::_internal_clientuuidlist() const {
+  return _impl_.clientuuidlist_.Get();
 }
-inline void getAllClientsUUIDResponse::_internal_set_uuidlist(const std::string& value) {
+inline void getAllClientsUUIDResponse::_internal_set_clientuuidlist(const std::string& value) {
   
-  _impl_.uuidlist_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuidlist_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getAllClientsUUIDResponse::_internal_mutable_uuidlist() {
+inline std::string* getAllClientsUUIDResponse::_internal_mutable_clientuuidlist() {
   
-  return _impl_.uuidlist_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuidlist_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getAllClientsUUIDResponse::release_uuidlist() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllClientsUUIDResponse.uuidList)
-  return _impl_.uuidlist_.Release();
+inline std::string* getAllClientsUUIDResponse::release_clientuuidlist() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllClientsUUIDResponse.clientUUIDList)
+  return _impl_.clientuuidlist_.Release();
 }
-inline void getAllClientsUUIDResponse::set_allocated_uuidlist(std::string* uuidlist) {
-  if (uuidlist != nullptr) {
+inline void getAllClientsUUIDResponse::set_allocated_clientuuidlist(std::string* clientuuidlist) {
+  if (clientuuidlist != nullptr) {
     
   } else {
     
   }
-  _impl_.uuidlist_.SetAllocated(uuidlist, GetArenaForAllocation());
+  _impl_.clientuuidlist_.SetAllocated(clientuuidlist, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuidlist_.IsDefault()) {
-    _impl_.uuidlist_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuidlist_.IsDefault()) {
+    _impl_.clientuuidlist_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllClientsUUIDResponse.uuidList)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllClientsUUIDResponse.clientUUIDList)
 }
 
 // sint32 xpcfGrpcReturnValue = 2;
@@ -8468,54 +9254,54 @@ inline void getDeviceInfoRequest::set_grpcservercompressionformat(int32_t value)
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getDeviceInfoRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void getDeviceInfoRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void getDeviceInfoRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& getDeviceInfoRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getDeviceInfoRequest.uuid)
-  return _internal_uuid();
+inline const std::string& getDeviceInfoRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getDeviceInfoRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getDeviceInfoRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void getDeviceInfoRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getDeviceInfoRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getDeviceInfoRequest.clientUUID)
 }
-inline std::string* getDeviceInfoRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getDeviceInfoRequest.uuid)
+inline std::string* getDeviceInfoRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getDeviceInfoRequest.clientUUID)
   return _s;
 }
-inline const std::string& getDeviceInfoRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& getDeviceInfoRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void getDeviceInfoRequest::_internal_set_uuid(const std::string& value) {
+inline void getDeviceInfoRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getDeviceInfoRequest::_internal_mutable_uuid() {
+inline std::string* getDeviceInfoRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getDeviceInfoRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getDeviceInfoRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* getDeviceInfoRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getDeviceInfoRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void getDeviceInfoRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void getDeviceInfoRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getDeviceInfoRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getDeviceInfoRequest.clientUUID)
 }
 
 // bytes deviceInfo = 3;
@@ -8666,54 +9452,54 @@ inline void init_grpc0Request::set_grpcservercompressionformat(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.init_grpc0Request.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void init_grpc0Request::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void init_grpc0Request::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& init_grpc0Request::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.init_grpc0Request.uuid)
-  return _internal_uuid();
+inline const std::string& init_grpc0Request::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.init_grpc0Request.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void init_grpc0Request::set_uuid(ArgT0&& arg0, ArgT... args) {
+void init_grpc0Request::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.init_grpc0Request.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.init_grpc0Request.clientUUID)
 }
-inline std::string* init_grpc0Request::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.init_grpc0Request.uuid)
+inline std::string* init_grpc0Request::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.init_grpc0Request.clientUUID)
   return _s;
 }
-inline const std::string& init_grpc0Request::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& init_grpc0Request::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void init_grpc0Request::_internal_set_uuid(const std::string& value) {
+inline void init_grpc0Request::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* init_grpc0Request::_internal_mutable_uuid() {
+inline std::string* init_grpc0Request::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* init_grpc0Request::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.init_grpc0Request.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* init_grpc0Request::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.init_grpc0Request.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void init_grpc0Request::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void init_grpc0Request::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.init_grpc0Request.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.init_grpc0Request.clientUUID)
 }
 
 // -------------------------------------------------------------------
@@ -8764,54 +9550,54 @@ inline void init_grpc1Request::set_grpcservercompressionformat(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.init_grpc1Request.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void init_grpc1Request::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void init_grpc1Request::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& init_grpc1Request::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.init_grpc1Request.uuid)
-  return _internal_uuid();
+inline const std::string& init_grpc1Request::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.init_grpc1Request.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void init_grpc1Request::set_uuid(ArgT0&& arg0, ArgT... args) {
+void init_grpc1Request::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.init_grpc1Request.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.init_grpc1Request.clientUUID)
 }
-inline std::string* init_grpc1Request::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.init_grpc1Request.uuid)
+inline std::string* init_grpc1Request::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.init_grpc1Request.clientUUID)
   return _s;
 }
-inline const std::string& init_grpc1Request::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& init_grpc1Request::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void init_grpc1Request::_internal_set_uuid(const std::string& value) {
+inline void init_grpc1Request::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* init_grpc1Request::_internal_mutable_uuid() {
+inline std::string* init_grpc1Request::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* init_grpc1Request::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.init_grpc1Request.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* init_grpc1Request::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.init_grpc1Request.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void init_grpc1Request::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void init_grpc1Request::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.init_grpc1Request.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.init_grpc1Request.clientUUID)
 }
 
 // bytes pipelineMode = 3;
@@ -8912,54 +9698,54 @@ inline void startRequest::set_grpcservercompressionformat(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.startRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void startRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void startRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& startRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.startRequest.uuid)
-  return _internal_uuid();
+inline const std::string& startRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.startRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void startRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void startRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.startRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.startRequest.clientUUID)
 }
-inline std::string* startRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.startRequest.uuid)
+inline std::string* startRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.startRequest.clientUUID)
   return _s;
 }
-inline const std::string& startRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& startRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void startRequest::_internal_set_uuid(const std::string& value) {
+inline void startRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* startRequest::_internal_mutable_uuid() {
+inline std::string* startRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* startRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.startRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* startRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.startRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void startRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void startRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.startRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.startRequest.clientUUID)
 }
 
 // -------------------------------------------------------------------
@@ -9010,54 +9796,54 @@ inline void stopRequest::set_grpcservercompressionformat(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.stopRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void stopRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void stopRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& stopRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.stopRequest.uuid)
-  return _internal_uuid();
+inline const std::string& stopRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.stopRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void stopRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void stopRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.stopRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.stopRequest.clientUUID)
 }
-inline std::string* stopRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.stopRequest.uuid)
+inline std::string* stopRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.stopRequest.clientUUID)
   return _s;
 }
-inline const std::string& stopRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& stopRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void stopRequest::_internal_set_uuid(const std::string& value) {
+inline void stopRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* stopRequest::_internal_mutable_uuid() {
+inline std::string* stopRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* stopRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.stopRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* stopRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.stopRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void stopRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void stopRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.stopRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.stopRequest.clientUUID)
 }
 
 // -------------------------------------------------------------------
@@ -9108,54 +9894,54 @@ inline void getProcessingModeRequest::set_grpcservercompressionformat(int32_t va
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getProcessingModeRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void getProcessingModeRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void getProcessingModeRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& getProcessingModeRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getProcessingModeRequest.uuid)
-  return _internal_uuid();
+inline const std::string& getProcessingModeRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getProcessingModeRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getProcessingModeRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void getProcessingModeRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getProcessingModeRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getProcessingModeRequest.clientUUID)
 }
-inline std::string* getProcessingModeRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getProcessingModeRequest.uuid)
+inline std::string* getProcessingModeRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getProcessingModeRequest.clientUUID)
   return _s;
 }
-inline const std::string& getProcessingModeRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& getProcessingModeRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void getProcessingModeRequest::_internal_set_uuid(const std::string& value) {
+inline void getProcessingModeRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getProcessingModeRequest::_internal_mutable_uuid() {
+inline std::string* getProcessingModeRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getProcessingModeRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getProcessingModeRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* getProcessingModeRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getProcessingModeRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void getProcessingModeRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void getProcessingModeRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getProcessingModeRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getProcessingModeRequest.clientUUID)
 }
 
 // bytes pipelineMode = 3;
@@ -9306,54 +10092,54 @@ inline void setCameraParameters_grpc0Request::set_grpcservercompressionformat(in
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.setCameraParameters_grpc0Request.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void setCameraParameters_grpc0Request::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void setCameraParameters_grpc0Request::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& setCameraParameters_grpc0Request::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setCameraParameters_grpc0Request.uuid)
-  return _internal_uuid();
+inline const std::string& setCameraParameters_grpc0Request::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setCameraParameters_grpc0Request.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void setCameraParameters_grpc0Request::set_uuid(ArgT0&& arg0, ArgT... args) {
+void setCameraParameters_grpc0Request::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setCameraParameters_grpc0Request.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setCameraParameters_grpc0Request.clientUUID)
 }
-inline std::string* setCameraParameters_grpc0Request::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setCameraParameters_grpc0Request.uuid)
+inline std::string* setCameraParameters_grpc0Request::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setCameraParameters_grpc0Request.clientUUID)
   return _s;
 }
-inline const std::string& setCameraParameters_grpc0Request::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& setCameraParameters_grpc0Request::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void setCameraParameters_grpc0Request::_internal_set_uuid(const std::string& value) {
+inline void setCameraParameters_grpc0Request::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* setCameraParameters_grpc0Request::_internal_mutable_uuid() {
+inline std::string* setCameraParameters_grpc0Request::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* setCameraParameters_grpc0Request::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setCameraParameters_grpc0Request.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* setCameraParameters_grpc0Request::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setCameraParameters_grpc0Request.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void setCameraParameters_grpc0Request::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void setCameraParameters_grpc0Request::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setCameraParameters_grpc0Request.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setCameraParameters_grpc0Request.clientUUID)
 }
 
 // bytes cameraParams = 3;
@@ -9454,54 +10240,54 @@ inline void setCameraParameters_grpc1Request::set_grpcservercompressionformat(in
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.setCameraParameters_grpc1Request.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void setCameraParameters_grpc1Request::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void setCameraParameters_grpc1Request::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& setCameraParameters_grpc1Request::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setCameraParameters_grpc1Request.uuid)
-  return _internal_uuid();
+inline const std::string& setCameraParameters_grpc1Request::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setCameraParameters_grpc1Request.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void setCameraParameters_grpc1Request::set_uuid(ArgT0&& arg0, ArgT... args) {
+void setCameraParameters_grpc1Request::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setCameraParameters_grpc1Request.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setCameraParameters_grpc1Request.clientUUID)
 }
-inline std::string* setCameraParameters_grpc1Request::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setCameraParameters_grpc1Request.uuid)
+inline std::string* setCameraParameters_grpc1Request::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setCameraParameters_grpc1Request.clientUUID)
   return _s;
 }
-inline const std::string& setCameraParameters_grpc1Request::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& setCameraParameters_grpc1Request::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void setCameraParameters_grpc1Request::_internal_set_uuid(const std::string& value) {
+inline void setCameraParameters_grpc1Request::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* setCameraParameters_grpc1Request::_internal_mutable_uuid() {
+inline std::string* setCameraParameters_grpc1Request::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* setCameraParameters_grpc1Request::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setCameraParameters_grpc1Request.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* setCameraParameters_grpc1Request::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setCameraParameters_grpc1Request.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void setCameraParameters_grpc1Request::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void setCameraParameters_grpc1Request::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setCameraParameters_grpc1Request.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setCameraParameters_grpc1Request.clientUUID)
 }
 
 // bytes cameraParams1 = 3;
@@ -9652,54 +10438,54 @@ inline void setRectificationParametersRequest::set_grpcservercompressionformat(i
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.setRectificationParametersRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void setRectificationParametersRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void setRectificationParametersRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& setRectificationParametersRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setRectificationParametersRequest.uuid)
-  return _internal_uuid();
+inline const std::string& setRectificationParametersRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setRectificationParametersRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void setRectificationParametersRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void setRectificationParametersRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setRectificationParametersRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setRectificationParametersRequest.clientUUID)
 }
-inline std::string* setRectificationParametersRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setRectificationParametersRequest.uuid)
+inline std::string* setRectificationParametersRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setRectificationParametersRequest.clientUUID)
   return _s;
 }
-inline const std::string& setRectificationParametersRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& setRectificationParametersRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void setRectificationParametersRequest::_internal_set_uuid(const std::string& value) {
+inline void setRectificationParametersRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* setRectificationParametersRequest::_internal_mutable_uuid() {
+inline std::string* setRectificationParametersRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* setRectificationParametersRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setRectificationParametersRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* setRectificationParametersRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setRectificationParametersRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void setRectificationParametersRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void setRectificationParametersRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setRectificationParametersRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setRectificationParametersRequest.clientUUID)
 }
 
 // bytes rectCam1 = 3;
@@ -9850,54 +10636,54 @@ inline void getCameraParametersRequest::set_grpcservercompressionformat(int32_t 
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getCameraParametersRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void getCameraParametersRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void getCameraParametersRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& getCameraParametersRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getCameraParametersRequest.uuid)
-  return _internal_uuid();
+inline const std::string& getCameraParametersRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getCameraParametersRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getCameraParametersRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void getCameraParametersRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getCameraParametersRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getCameraParametersRequest.clientUUID)
 }
-inline std::string* getCameraParametersRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getCameraParametersRequest.uuid)
+inline std::string* getCameraParametersRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getCameraParametersRequest.clientUUID)
   return _s;
 }
-inline const std::string& getCameraParametersRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& getCameraParametersRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void getCameraParametersRequest::_internal_set_uuid(const std::string& value) {
+inline void getCameraParametersRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getCameraParametersRequest::_internal_mutable_uuid() {
+inline std::string* getCameraParametersRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getCameraParametersRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getCameraParametersRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* getCameraParametersRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getCameraParametersRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void getCameraParametersRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void getCameraParametersRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getCameraParametersRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getCameraParametersRequest.clientUUID)
 }
 
 // bytes cameraParams = 3;
@@ -10048,54 +10834,54 @@ inline void relocalizeProcessRequest_grpc0Request::set_grpcservercompressionform
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void relocalizeProcessRequest_grpc0Request::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void relocalizeProcessRequest_grpc0Request::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
-  return _internal_uuid();
+inline const std::string& relocalizeProcessRequest_grpc0Request::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequest_grpc0Request::set_uuid(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc0Request::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
+inline std::string* relocalizeProcessRequest_grpc0Request::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_uuid(const std::string& value) {
+inline void relocalizeProcessRequest_grpc0Request::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_uuid() {
+inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* relocalizeProcessRequest_grpc0Request::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void relocalizeProcessRequest_grpc0Request::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
 }
 
 // bytes images = 3;
@@ -10766,54 +11552,54 @@ inline void relocalizeProcessRequest_grpc1Request::set_grpcservercompressionform
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void relocalizeProcessRequest_grpc1Request::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void relocalizeProcessRequest_grpc1Request::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc1Request::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
-  return _internal_uuid();
+inline const std::string& relocalizeProcessRequest_grpc1Request::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequest_grpc1Request::set_uuid(ArgT0&& arg0, ArgT... args) {
+void relocalizeProcessRequest_grpc1Request::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
 }
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
+inline std::string* relocalizeProcessRequest_grpc1Request::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_uuid(const std::string& value) {
+inline void relocalizeProcessRequest_grpc1Request::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_uuid() {
+inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* relocalizeProcessRequest_grpc1Request::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* relocalizeProcessRequest_grpc1Request::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void relocalizeProcessRequest_grpc1Request::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
 }
 
 // bytes images = 3;
@@ -11584,54 +12370,54 @@ inline void get3DTransformRequestRequest::set_grpcservercompressionformat(int32_
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void get3DTransformRequestRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void get3DTransformRequestRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& get3DTransformRequestRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestRequest.uuid)
-  return _internal_uuid();
+inline const std::string& get3DTransformRequestRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void get3DTransformRequestRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void get3DTransformRequestRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
 }
-inline std::string* get3DTransformRequestRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.get3DTransformRequestRequest.uuid)
+inline std::string* get3DTransformRequestRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
   return _s;
 }
-inline const std::string& get3DTransformRequestRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& get3DTransformRequestRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void get3DTransformRequestRequest::_internal_set_uuid(const std::string& value) {
+inline void get3DTransformRequestRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* get3DTransformRequestRequest::_internal_mutable_uuid() {
+inline std::string* get3DTransformRequestRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* get3DTransformRequestRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.get3DTransformRequestRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* get3DTransformRequestRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void get3DTransformRequestRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void get3DTransformRequestRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
 }
 
 // bytes transform3DStatus = 3;
@@ -11982,54 +12768,54 @@ inline void getMappingDataRequestRequest::set_grpcservercompressionformat(int32_
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMappingDataRequestRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void getMappingDataRequestRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void getMappingDataRequestRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& getMappingDataRequestRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMappingDataRequestRequest.uuid)
-  return _internal_uuid();
+inline const std::string& getMappingDataRequestRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMappingDataRequestRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getMappingDataRequestRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void getMappingDataRequestRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMappingDataRequestRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMappingDataRequestRequest.clientUUID)
 }
-inline std::string* getMappingDataRequestRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMappingDataRequestRequest.uuid)
+inline std::string* getMappingDataRequestRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMappingDataRequestRequest.clientUUID)
   return _s;
 }
-inline const std::string& getMappingDataRequestRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& getMappingDataRequestRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void getMappingDataRequestRequest::_internal_set_uuid(const std::string& value) {
+inline void getMappingDataRequestRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getMappingDataRequestRequest::_internal_mutable_uuid() {
+inline std::string* getMappingDataRequestRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getMappingDataRequestRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMappingDataRequestRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* getMappingDataRequestRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMappingDataRequestRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void getMappingDataRequestRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void getMappingDataRequestRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMappingDataRequestRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMappingDataRequestRequest.clientUUID)
 }
 
 // bytes outputPointClouds = 3;
@@ -12280,54 +13066,54 @@ inline void getLastPoseRequest::set_grpcservercompressionformat(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseRequest.grpcServerCompressionFormat)
 }
 
-// string uuid = 2;
-inline void getLastPoseRequest::clear_uuid() {
-  _impl_.uuid_.ClearToEmpty();
+// string clientUUID = 2;
+inline void getLastPoseRequest::clear_clientuuid() {
+  _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& getLastPoseRequest::uuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseRequest.uuid)
-  return _internal_uuid();
+inline const std::string& getLastPoseRequest::clientuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseRequest.clientUUID)
+  return _internal_clientuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getLastPoseRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
+void getLastPoseRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseRequest.uuid)
+ _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseRequest.clientUUID)
 }
-inline std::string* getLastPoseRequest::mutable_uuid() {
-  std::string* _s = _internal_mutable_uuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getLastPoseRequest.uuid)
+inline std::string* getLastPoseRequest::mutable_clientuuid() {
+  std::string* _s = _internal_mutable_clientuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getLastPoseRequest.clientUUID)
   return _s;
 }
-inline const std::string& getLastPoseRequest::_internal_uuid() const {
-  return _impl_.uuid_.Get();
+inline const std::string& getLastPoseRequest::_internal_clientuuid() const {
+  return _impl_.clientuuid_.Get();
 }
-inline void getLastPoseRequest::_internal_set_uuid(const std::string& value) {
+inline void getLastPoseRequest::_internal_set_clientuuid(const std::string& value) {
   
-  _impl_.uuid_.Set(value, GetArenaForAllocation());
+  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getLastPoseRequest::_internal_mutable_uuid() {
+inline std::string* getLastPoseRequest::_internal_mutable_clientuuid() {
   
-  return _impl_.uuid_.Mutable(GetArenaForAllocation());
+  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getLastPoseRequest::release_uuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getLastPoseRequest.uuid)
-  return _impl_.uuid_.Release();
+inline std::string* getLastPoseRequest::release_clientuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getLastPoseRequest.clientUUID)
+  return _impl_.clientuuid_.Release();
 }
-inline void getLastPoseRequest::set_allocated_uuid(std::string* uuid) {
-  if (uuid != nullptr) {
+inline void getLastPoseRequest::set_allocated_clientuuid(std::string* clientuuid) {
+  if (clientuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
+  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.uuid_.IsDefault()) {
-    _impl_.uuid_.Set("", GetArenaForAllocation());
+  if (_impl_.clientuuid_.IsDefault()) {
+    _impl_.clientuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getLastPoseRequest.uuid)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getLastPoseRequest.clientUUID)
 }
 
 // bytes poseType = 3;
@@ -12506,6 +13292,350 @@ inline void getLastPoseResponse::set_xpcfgrpcreturnvalue(int32_t value) {
 
 // -------------------------------------------------------------------
 
+// createMapRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void createMapRequest::clear_grpcservercompressionformat() {
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline int32_t createMapRequest::_internal_grpcservercompressionformat() const {
+  return _impl_.grpcservercompressionformat_;
+}
+inline int32_t createMapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.createMapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void createMapRequest::_internal_set_grpcservercompressionformat(int32_t value) {
+  
+  _impl_.grpcservercompressionformat_ = value;
+}
+inline void createMapRequest::set_grpcservercompressionformat(int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.createMapRequest.grpcServerCompressionFormat)
+}
+
+// string mapUUID = 2;
+inline void createMapRequest::clear_mapuuid() {
+  _impl_.mapuuid_.ClearToEmpty();
+}
+inline const std::string& createMapRequest::mapuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.createMapRequest.mapUUID)
+  return _internal_mapuuid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void createMapRequest::set_mapuuid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mapuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.createMapRequest.mapUUID)
+}
+inline std::string* createMapRequest::mutable_mapuuid() {
+  std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.createMapRequest.mapUUID)
+  return _s;
+}
+inline const std::string& createMapRequest::_internal_mapuuid() const {
+  return _impl_.mapuuid_.Get();
+}
+inline void createMapRequest::_internal_set_mapuuid(const std::string& value) {
+  
+  _impl_.mapuuid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* createMapRequest::_internal_mutable_mapuuid() {
+  
+  return _impl_.mapuuid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* createMapRequest::release_mapuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.createMapRequest.mapUUID)
+  return _impl_.mapuuid_.Release();
+}
+inline void createMapRequest::set_allocated_mapuuid(std::string* mapuuid) {
+  if (mapuuid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mapuuid_.SetAllocated(mapuuid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mapuuid_.IsDefault()) {
+    _impl_.mapuuid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.createMapRequest.mapUUID)
+}
+
+// -------------------------------------------------------------------
+
+// createMapResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void createMapResponse::clear_xpcfgrpcreturnvalue() {
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline int32_t createMapResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t createMapResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.createMapResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void createMapResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void createMapResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.createMapResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// deleteMapRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void deleteMapRequest::clear_grpcservercompressionformat() {
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline int32_t deleteMapRequest::_internal_grpcservercompressionformat() const {
+  return _impl_.grpcservercompressionformat_;
+}
+inline int32_t deleteMapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.deleteMapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void deleteMapRequest::_internal_set_grpcservercompressionformat(int32_t value) {
+  
+  _impl_.grpcservercompressionformat_ = value;
+}
+inline void deleteMapRequest::set_grpcservercompressionformat(int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.deleteMapRequest.grpcServerCompressionFormat)
+}
+
+// string mapUUID = 2;
+inline void deleteMapRequest::clear_mapuuid() {
+  _impl_.mapuuid_.ClearToEmpty();
+}
+inline const std::string& deleteMapRequest::mapuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.deleteMapRequest.mapUUID)
+  return _internal_mapuuid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void deleteMapRequest::set_mapuuid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mapuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.deleteMapRequest.mapUUID)
+}
+inline std::string* deleteMapRequest::mutable_mapuuid() {
+  std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.deleteMapRequest.mapUUID)
+  return _s;
+}
+inline const std::string& deleteMapRequest::_internal_mapuuid() const {
+  return _impl_.mapuuid_.Get();
+}
+inline void deleteMapRequest::_internal_set_mapuuid(const std::string& value) {
+  
+  _impl_.mapuuid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* deleteMapRequest::_internal_mutable_mapuuid() {
+  
+  return _impl_.mapuuid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* deleteMapRequest::release_mapuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.deleteMapRequest.mapUUID)
+  return _impl_.mapuuid_.Release();
+}
+inline void deleteMapRequest::set_allocated_mapuuid(std::string* mapuuid) {
+  if (mapuuid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mapuuid_.SetAllocated(mapuuid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mapuuid_.IsDefault()) {
+    _impl_.mapuuid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.deleteMapRequest.mapUUID)
+}
+
+// -------------------------------------------------------------------
+
+// deleteMapResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void deleteMapResponse::clear_xpcfgrpcreturnvalue() {
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline int32_t deleteMapResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t deleteMapResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.deleteMapResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void deleteMapResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void deleteMapResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.deleteMapResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
+// getAllMapsUUIDRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getAllMapsUUIDRequest::clear_grpcservercompressionformat() {
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline int32_t getAllMapsUUIDRequest::_internal_grpcservercompressionformat() const {
+  return _impl_.grpcservercompressionformat_;
+}
+inline int32_t getAllMapsUUIDRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllMapsUUIDRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getAllMapsUUIDRequest::_internal_set_grpcservercompressionformat(int32_t value) {
+  
+  _impl_.grpcservercompressionformat_ = value;
+}
+inline void getAllMapsUUIDRequest::set_grpcservercompressionformat(int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllMapsUUIDRequest.grpcServerCompressionFormat)
+}
+
+// bytes mapUUIDList = 2;
+inline void getAllMapsUUIDRequest::clear_mapuuidlist() {
+  _impl_.mapuuidlist_.ClearToEmpty();
+}
+inline const std::string& getAllMapsUUIDRequest::mapuuidlist() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllMapsUUIDRequest.mapUUIDList)
+  return _internal_mapuuidlist();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getAllMapsUUIDRequest::set_mapuuidlist(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mapuuidlist_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllMapsUUIDRequest.mapUUIDList)
+}
+inline std::string* getAllMapsUUIDRequest::mutable_mapuuidlist() {
+  std::string* _s = _internal_mutable_mapuuidlist();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllMapsUUIDRequest.mapUUIDList)
+  return _s;
+}
+inline const std::string& getAllMapsUUIDRequest::_internal_mapuuidlist() const {
+  return _impl_.mapuuidlist_.Get();
+}
+inline void getAllMapsUUIDRequest::_internal_set_mapuuidlist(const std::string& value) {
+  
+  _impl_.mapuuidlist_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getAllMapsUUIDRequest::_internal_mutable_mapuuidlist() {
+  
+  return _impl_.mapuuidlist_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getAllMapsUUIDRequest::release_mapuuidlist() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllMapsUUIDRequest.mapUUIDList)
+  return _impl_.mapuuidlist_.Release();
+}
+inline void getAllMapsUUIDRequest::set_allocated_mapuuidlist(std::string* mapuuidlist) {
+  if (mapuuidlist != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mapuuidlist_.SetAllocated(mapuuidlist, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mapuuidlist_.IsDefault()) {
+    _impl_.mapuuidlist_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllMapsUUIDRequest.mapUUIDList)
+}
+
+// -------------------------------------------------------------------
+
+// getAllMapsUUIDResponse
+
+// bytes mapUUIDList = 1;
+inline void getAllMapsUUIDResponse::clear_mapuuidlist() {
+  _impl_.mapuuidlist_.ClearToEmpty();
+}
+inline const std::string& getAllMapsUUIDResponse::mapuuidlist() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllMapsUUIDResponse.mapUUIDList)
+  return _internal_mapuuidlist();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getAllMapsUUIDResponse::set_mapuuidlist(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mapuuidlist_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllMapsUUIDResponse.mapUUIDList)
+}
+inline std::string* getAllMapsUUIDResponse::mutable_mapuuidlist() {
+  std::string* _s = _internal_mutable_mapuuidlist();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllMapsUUIDResponse.mapUUIDList)
+  return _s;
+}
+inline const std::string& getAllMapsUUIDResponse::_internal_mapuuidlist() const {
+  return _impl_.mapuuidlist_.Get();
+}
+inline void getAllMapsUUIDResponse::_internal_set_mapuuidlist(const std::string& value) {
+  
+  _impl_.mapuuidlist_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getAllMapsUUIDResponse::_internal_mutable_mapuuidlist() {
+  
+  return _impl_.mapuuidlist_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getAllMapsUUIDResponse::release_mapuuidlist() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllMapsUUIDResponse.mapUUIDList)
+  return _impl_.mapuuidlist_.Release();
+}
+inline void getAllMapsUUIDResponse::set_allocated_mapuuidlist(std::string* mapuuidlist) {
+  if (mapuuidlist != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mapuuidlist_.SetAllocated(mapuuidlist, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mapuuidlist_.IsDefault()) {
+    _impl_.mapuuidlist_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllMapsUUIDResponse.mapUUIDList)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void getAllMapsUUIDResponse::clear_xpcfgrpcreturnvalue() {
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline int32_t getAllMapsUUIDResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getAllMapsUUIDResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllMapsUUIDResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getAllMapsUUIDResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getAllMapsUUIDResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllMapsUUIDResponse.xpcfGrpcReturnValue)
+}
+
+// -------------------------------------------------------------------
+
 // getMapRequestRequest
 
 // int32 grpcServerCompressionFormat = 1;
@@ -12528,108 +13658,158 @@ inline void getMapRequestRequest::set_grpcservercompressionformat(int32_t value)
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestRequest.grpcServerCompressionFormat)
 }
 
-// bytes map = 2;
-inline void getMapRequestRequest::clear_map() {
-  _impl_.map_.ClearToEmpty();
+// string mapUUID = 2;
+inline void getMapRequestRequest::clear_mapuuid() {
+  _impl_.mapuuid_.ClearToEmpty();
 }
-inline const std::string& getMapRequestRequest::map() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestRequest.map)
-  return _internal_map();
+inline const std::string& getMapRequestRequest::mapuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestRequest.mapUUID)
+  return _internal_mapuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getMapRequestRequest::set_map(ArgT0&& arg0, ArgT... args) {
+void getMapRequestRequest::set_mapuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.map_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestRequest.map)
+ _impl_.mapuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestRequest.mapUUID)
 }
-inline std::string* getMapRequestRequest::mutable_map() {
-  std::string* _s = _internal_mutable_map();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMapRequestRequest.map)
+inline std::string* getMapRequestRequest::mutable_mapuuid() {
+  std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMapRequestRequest.mapUUID)
   return _s;
 }
-inline const std::string& getMapRequestRequest::_internal_map() const {
-  return _impl_.map_.Get();
+inline const std::string& getMapRequestRequest::_internal_mapuuid() const {
+  return _impl_.mapuuid_.Get();
 }
-inline void getMapRequestRequest::_internal_set_map(const std::string& value) {
+inline void getMapRequestRequest::_internal_set_mapuuid(const std::string& value) {
   
-  _impl_.map_.Set(value, GetArenaForAllocation());
+  _impl_.mapuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getMapRequestRequest::_internal_mutable_map() {
+inline std::string* getMapRequestRequest::_internal_mutable_mapuuid() {
   
-  return _impl_.map_.Mutable(GetArenaForAllocation());
+  return _impl_.mapuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getMapRequestRequest::release_map() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMapRequestRequest.map)
-  return _impl_.map_.Release();
+inline std::string* getMapRequestRequest::release_mapuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMapRequestRequest.mapUUID)
+  return _impl_.mapuuid_.Release();
 }
-inline void getMapRequestRequest::set_allocated_map(std::string* map) {
-  if (map != nullptr) {
+inline void getMapRequestRequest::set_allocated_mapuuid(std::string* mapuuid) {
+  if (mapuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.map_.SetAllocated(map, GetArenaForAllocation());
+  _impl_.mapuuid_.SetAllocated(mapuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.map_.IsDefault()) {
-    _impl_.map_.Set("", GetArenaForAllocation());
+  if (_impl_.mapuuid_.IsDefault()) {
+    _impl_.mapuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestRequest.map)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestRequest.mapUUID)
+}
+
+// bytes mapDatastructure = 3;
+inline void getMapRequestRequest::clear_mapdatastructure() {
+  _impl_.mapdatastructure_.ClearToEmpty();
+}
+inline const std::string& getMapRequestRequest::mapdatastructure() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestRequest.mapDatastructure)
+  return _internal_mapdatastructure();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getMapRequestRequest::set_mapdatastructure(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mapdatastructure_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestRequest.mapDatastructure)
+}
+inline std::string* getMapRequestRequest::mutable_mapdatastructure() {
+  std::string* _s = _internal_mutable_mapdatastructure();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMapRequestRequest.mapDatastructure)
+  return _s;
+}
+inline const std::string& getMapRequestRequest::_internal_mapdatastructure() const {
+  return _impl_.mapdatastructure_.Get();
+}
+inline void getMapRequestRequest::_internal_set_mapdatastructure(const std::string& value) {
+  
+  _impl_.mapdatastructure_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getMapRequestRequest::_internal_mutable_mapdatastructure() {
+  
+  return _impl_.mapdatastructure_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getMapRequestRequest::release_mapdatastructure() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMapRequestRequest.mapDatastructure)
+  return _impl_.mapdatastructure_.Release();
+}
+inline void getMapRequestRequest::set_allocated_mapdatastructure(std::string* mapdatastructure) {
+  if (mapdatastructure != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mapdatastructure_.SetAllocated(mapdatastructure, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mapdatastructure_.IsDefault()) {
+    _impl_.mapdatastructure_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestRequest.mapDatastructure)
 }
 
 // -------------------------------------------------------------------
 
 // getMapRequestResponse
 
-// bytes map = 1;
-inline void getMapRequestResponse::clear_map() {
-  _impl_.map_.ClearToEmpty();
+// bytes mapDatastructure = 1;
+inline void getMapRequestResponse::clear_mapdatastructure() {
+  _impl_.mapdatastructure_.ClearToEmpty();
 }
-inline const std::string& getMapRequestResponse::map() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestResponse.map)
-  return _internal_map();
+inline const std::string& getMapRequestResponse::mapdatastructure() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestResponse.mapDatastructure)
+  return _internal_mapdatastructure();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getMapRequestResponse::set_map(ArgT0&& arg0, ArgT... args) {
+void getMapRequestResponse::set_mapdatastructure(ArgT0&& arg0, ArgT... args) {
  
- _impl_.map_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestResponse.map)
+ _impl_.mapdatastructure_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestResponse.mapDatastructure)
 }
-inline std::string* getMapRequestResponse::mutable_map() {
-  std::string* _s = _internal_mutable_map();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMapRequestResponse.map)
+inline std::string* getMapRequestResponse::mutable_mapdatastructure() {
+  std::string* _s = _internal_mutable_mapdatastructure();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMapRequestResponse.mapDatastructure)
   return _s;
 }
-inline const std::string& getMapRequestResponse::_internal_map() const {
-  return _impl_.map_.Get();
+inline const std::string& getMapRequestResponse::_internal_mapdatastructure() const {
+  return _impl_.mapdatastructure_.Get();
 }
-inline void getMapRequestResponse::_internal_set_map(const std::string& value) {
+inline void getMapRequestResponse::_internal_set_mapdatastructure(const std::string& value) {
   
-  _impl_.map_.Set(value, GetArenaForAllocation());
+  _impl_.mapdatastructure_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getMapRequestResponse::_internal_mutable_map() {
+inline std::string* getMapRequestResponse::_internal_mutable_mapdatastructure() {
   
-  return _impl_.map_.Mutable(GetArenaForAllocation());
+  return _impl_.mapdatastructure_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getMapRequestResponse::release_map() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMapRequestResponse.map)
-  return _impl_.map_.Release();
+inline std::string* getMapRequestResponse::release_mapdatastructure() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMapRequestResponse.mapDatastructure)
+  return _impl_.mapdatastructure_.Release();
 }
-inline void getMapRequestResponse::set_allocated_map(std::string* map) {
-  if (map != nullptr) {
+inline void getMapRequestResponse::set_allocated_mapdatastructure(std::string* mapdatastructure) {
+  if (mapdatastructure != nullptr) {
     
   } else {
     
   }
-  _impl_.map_.SetAllocated(map, GetArenaForAllocation());
+  _impl_.mapdatastructure_.SetAllocated(mapdatastructure, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.map_.IsDefault()) {
-    _impl_.map_.Set("", GetArenaForAllocation());
+  if (_impl_.mapdatastructure_.IsDefault()) {
+    _impl_.mapdatastructure_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestResponse.map)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestResponse.mapDatastructure)
 }
 
 // sint32 xpcfGrpcReturnValue = 2;
@@ -12676,54 +13856,104 @@ inline void setMapRequestRequest::set_grpcservercompressionformat(int32_t value)
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.setMapRequestRequest.grpcServerCompressionFormat)
 }
 
-// bytes map = 2;
-inline void setMapRequestRequest::clear_map() {
-  _impl_.map_.ClearToEmpty();
+// string mapUUID = 2;
+inline void setMapRequestRequest::clear_mapuuid() {
+  _impl_.mapuuid_.ClearToEmpty();
 }
-inline const std::string& setMapRequestRequest::map() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setMapRequestRequest.map)
-  return _internal_map();
+inline const std::string& setMapRequestRequest::mapuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setMapRequestRequest.mapUUID)
+  return _internal_mapuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void setMapRequestRequest::set_map(ArgT0&& arg0, ArgT... args) {
+void setMapRequestRequest::set_mapuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.map_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setMapRequestRequest.map)
+ _impl_.mapuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setMapRequestRequest.mapUUID)
 }
-inline std::string* setMapRequestRequest::mutable_map() {
-  std::string* _s = _internal_mutable_map();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setMapRequestRequest.map)
+inline std::string* setMapRequestRequest::mutable_mapuuid() {
+  std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setMapRequestRequest.mapUUID)
   return _s;
 }
-inline const std::string& setMapRequestRequest::_internal_map() const {
-  return _impl_.map_.Get();
+inline const std::string& setMapRequestRequest::_internal_mapuuid() const {
+  return _impl_.mapuuid_.Get();
 }
-inline void setMapRequestRequest::_internal_set_map(const std::string& value) {
+inline void setMapRequestRequest::_internal_set_mapuuid(const std::string& value) {
   
-  _impl_.map_.Set(value, GetArenaForAllocation());
+  _impl_.mapuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* setMapRequestRequest::_internal_mutable_map() {
+inline std::string* setMapRequestRequest::_internal_mutable_mapuuid() {
   
-  return _impl_.map_.Mutable(GetArenaForAllocation());
+  return _impl_.mapuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* setMapRequestRequest::release_map() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setMapRequestRequest.map)
-  return _impl_.map_.Release();
+inline std::string* setMapRequestRequest::release_mapuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setMapRequestRequest.mapUUID)
+  return _impl_.mapuuid_.Release();
 }
-inline void setMapRequestRequest::set_allocated_map(std::string* map) {
-  if (map != nullptr) {
+inline void setMapRequestRequest::set_allocated_mapuuid(std::string* mapuuid) {
+  if (mapuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.map_.SetAllocated(map, GetArenaForAllocation());
+  _impl_.mapuuid_.SetAllocated(mapuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.map_.IsDefault()) {
-    _impl_.map_.Set("", GetArenaForAllocation());
+  if (_impl_.mapuuid_.IsDefault()) {
+    _impl_.mapuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setMapRequestRequest.map)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setMapRequestRequest.mapUUID)
+}
+
+// bytes mapDatastructure = 3;
+inline void setMapRequestRequest::clear_mapdatastructure() {
+  _impl_.mapdatastructure_.ClearToEmpty();
+}
+inline const std::string& setMapRequestRequest::mapdatastructure() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setMapRequestRequest.mapDatastructure)
+  return _internal_mapdatastructure();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void setMapRequestRequest::set_mapdatastructure(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mapdatastructure_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setMapRequestRequest.mapDatastructure)
+}
+inline std::string* setMapRequestRequest::mutable_mapdatastructure() {
+  std::string* _s = _internal_mutable_mapdatastructure();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setMapRequestRequest.mapDatastructure)
+  return _s;
+}
+inline const std::string& setMapRequestRequest::_internal_mapdatastructure() const {
+  return _impl_.mapdatastructure_.Get();
+}
+inline void setMapRequestRequest::_internal_set_mapdatastructure(const std::string& value) {
+  
+  _impl_.mapdatastructure_.Set(value, GetArenaForAllocation());
+}
+inline std::string* setMapRequestRequest::_internal_mutable_mapdatastructure() {
+  
+  return _impl_.mapdatastructure_.Mutable(GetArenaForAllocation());
+}
+inline std::string* setMapRequestRequest::release_mapdatastructure() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setMapRequestRequest.mapDatastructure)
+  return _impl_.mapdatastructure_.Release();
+}
+inline void setMapRequestRequest::set_allocated_mapdatastructure(std::string* mapdatastructure) {
+  if (mapdatastructure != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mapdatastructure_.SetAllocated(mapdatastructure, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mapdatastructure_.IsDefault()) {
+    _impl_.mapdatastructure_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setMapRequestRequest.mapDatastructure)
 }
 
 // -------------------------------------------------------------------
@@ -12752,54 +13982,6 @@ inline void setMapRequestResponse::set_xpcfgrpcreturnvalue(int32_t value) {
 
 // -------------------------------------------------------------------
 
-// resetMapRequest
-
-// int32 grpcServerCompressionFormat = 1;
-inline void resetMapRequest::clear_grpcservercompressionformat() {
-  _impl_.grpcservercompressionformat_ = 0;
-}
-inline int32_t resetMapRequest::_internal_grpcservercompressionformat() const {
-  return _impl_.grpcservercompressionformat_;
-}
-inline int32_t resetMapRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.resetMapRequest.grpcServerCompressionFormat)
-  return _internal_grpcservercompressionformat();
-}
-inline void resetMapRequest::_internal_set_grpcservercompressionformat(int32_t value) {
-  
-  _impl_.grpcservercompressionformat_ = value;
-}
-inline void resetMapRequest::set_grpcservercompressionformat(int32_t value) {
-  _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.resetMapRequest.grpcServerCompressionFormat)
-}
-
-// -------------------------------------------------------------------
-
-// resetMapResponse
-
-// sint32 xpcfGrpcReturnValue = 1;
-inline void resetMapResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_ = 0;
-}
-inline int32_t resetMapResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_;
-}
-inline int32_t resetMapResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.resetMapResponse.xpcfGrpcReturnValue)
-  return _internal_xpcfgrpcreturnvalue();
-}
-inline void resetMapResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
-  
-  _impl_.xpcfgrpcreturnvalue_ = value;
-}
-inline void resetMapResponse::set_xpcfgrpcreturnvalue(int32_t value) {
-  _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.resetMapResponse.xpcfGrpcReturnValue)
-}
-
-// -------------------------------------------------------------------
-
 // getPointCloudRequestRequest
 
 // int32 grpcServerCompressionFormat = 1;
@@ -12822,7 +14004,57 @@ inline void getPointCloudRequestRequest::set_grpcservercompressionformat(int32_t
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getPointCloudRequestRequest.grpcServerCompressionFormat)
 }
 
-// bytes pointCloud = 2;
+// string mapUUID = 2;
+inline void getPointCloudRequestRequest::clear_mapuuid() {
+  _impl_.mapuuid_.ClearToEmpty();
+}
+inline const std::string& getPointCloudRequestRequest::mapuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getPointCloudRequestRequest.mapUUID)
+  return _internal_mapuuid();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getPointCloudRequestRequest::set_mapuuid(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mapuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getPointCloudRequestRequest.mapUUID)
+}
+inline std::string* getPointCloudRequestRequest::mutable_mapuuid() {
+  std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getPointCloudRequestRequest.mapUUID)
+  return _s;
+}
+inline const std::string& getPointCloudRequestRequest::_internal_mapuuid() const {
+  return _impl_.mapuuid_.Get();
+}
+inline void getPointCloudRequestRequest::_internal_set_mapuuid(const std::string& value) {
+  
+  _impl_.mapuuid_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getPointCloudRequestRequest::_internal_mutable_mapuuid() {
+  
+  return _impl_.mapuuid_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getPointCloudRequestRequest::release_mapuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getPointCloudRequestRequest.mapUUID)
+  return _impl_.mapuuid_.Release();
+}
+inline void getPointCloudRequestRequest::set_allocated_mapuuid(std::string* mapuuid) {
+  if (mapuuid != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mapuuid_.SetAllocated(mapuuid, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mapuuid_.IsDefault()) {
+    _impl_.mapuuid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getPointCloudRequestRequest.mapUUID)
+}
+
+// bytes pointCloud = 3;
 inline void getPointCloudRequestRequest::clear_pointcloud() {
   _impl_.pointcloud_.ClearToEmpty();
 }
@@ -12949,6 +14181,14 @@ inline void getPointCloudRequestResponse::set_xpcfgrpcreturnvalue(int32_t value)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

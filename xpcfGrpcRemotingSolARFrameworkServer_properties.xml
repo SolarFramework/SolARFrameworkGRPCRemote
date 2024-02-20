@@ -79,16 +79,17 @@
         <value>method|get3DTransformRequest|none|0</value>
         <value>method|getMappingDataRequest|none|0</value>
         <value>method|getLastPose|none|0</value>
+        <value>method|createMap|none|0</value>
+        <value>method|deleteMap|none|0</value>
+        <value>method|getAllMapsUUID|none|0</value>
         <value>method|getMapRequest|none|0</value>
         <value>method|setMapRequest|none|0</value>
-        <value>method|resetMap|none|0</value>
         <value>method|getPointCloudRequest|none|0</value>
       </property>
     </configure>
     <configure component="IMapsManager_grpcServer">
       <property name="grpc_compress_server" type="string">
         <value>service|none|0</value>
-        <value>method|init|none|0</value>
         <value>method|createMap|none|0</value>
         <value>method|deleteMap|none|0</value>
         <value>method|getAllMaps|none|0</value>
@@ -101,7 +102,6 @@
     <configure component="IServiceManager_grpcServer">
       <property name="grpc_compress_server" type="string">
         <value>service|none|0</value>
-        <value>method|init|none|0</value>
         <value>method|registerService|none|0</value>
         <value>method|unregisterService|none|0</value>
         <value>method|getService|none|0</value>

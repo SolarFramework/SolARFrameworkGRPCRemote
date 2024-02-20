@@ -19,7 +19,7 @@ IMapsManager_grpcProxy::IMapsManager_grpcProxy():xpcf::ConfigurableBase(xpcf::to
   declareInterface<SolAR::api::service::IMapsManager>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(9);
+  m_grpcProxyCompressionConfig.resize(8);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -39,35 +39,6 @@ XPCFErrorCode IMapsManager_grpcProxy::onConfigured()
       translateClientConfiguration(compressionLine, m_serviceCompressionInfos, m_methodCompressionInfosMap);
   }
   return xpcf::XPCFErrorCode::_SUCCESS;
-}
-
-
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::init()
-{
-  ::grpc::ClientContext context;
-  ::grpcIMapsManager::initRequest reqIn;
-  ::grpcIMapsManager::initResponse respOut;
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
-  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
-  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
-  #endif
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->init(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::init response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "init rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMapsManagerService","init",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 

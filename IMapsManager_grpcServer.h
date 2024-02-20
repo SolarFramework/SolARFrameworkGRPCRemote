@@ -25,7 +25,6 @@ class IMapsManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
     {
       public:
         grpcIMapsManagerServiceImpl() = default;
-        ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIMapsManager::initRequest* request, ::grpcIMapsManager::initResponse* response) override;
         ::grpc::Status createMap(::grpc::ServerContext* context, const ::grpcIMapsManager::createMapRequest* request, ::grpcIMapsManager::createMapResponse* response) override;
         ::grpc::Status deleteMap(::grpc::ServerContext* context, const ::grpcIMapsManager::deleteMapRequest* request, ::grpcIMapsManager::deleteMapResponse* response) override;
         ::grpc::Status getAllMaps(::grpc::ServerContext* context, const ::grpcIMapsManager::getAllMapsRequest* request, ::grpcIMapsManager::getAllMapsResponse* response) override;

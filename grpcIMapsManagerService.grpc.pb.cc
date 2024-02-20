@@ -22,7 +22,6 @@
 namespace grpcIMapsManager {
 
 static const char* grpcIMapsManagerService_method_names[] = {
-  "/grpcIMapsManager.grpcIMapsManagerService/init",
   "/grpcIMapsManager.grpcIMapsManagerService/createMap",
   "/grpcIMapsManager.grpcIMapsManagerService/deleteMap",
   "/grpcIMapsManager.grpcIMapsManagerService/getAllMaps",
@@ -39,38 +38,14 @@ std::unique_ptr< grpcIMapsManagerService::Stub> grpcIMapsManagerService::NewStub
 }
 
 grpcIMapsManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_init_(grpcIMapsManagerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_createMap_(grpcIMapsManagerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteMap_(grpcIMapsManagerService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAllMaps_(grpcIMapsManagerService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_registerMapUpdateService_(grpcIMapsManagerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_unregisterMapUpdateService_(grpcIMapsManagerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_increaseMapClients_(grpcIMapsManagerService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_decreaseMapClients_(grpcIMapsManagerService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_createMap_(grpcIMapsManagerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteMap_(grpcIMapsManagerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAllMaps_(grpcIMapsManagerService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_registerMapUpdateService_(grpcIMapsManagerService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_unregisterMapUpdateService_(grpcIMapsManagerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_increaseMapClients_(grpcIMapsManagerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_decreaseMapClients_(grpcIMapsManagerService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcIMapsManagerService::Stub::init(::grpc::ClientContext* context, const ::grpcIMapsManager::initRequest& request, ::grpcIMapsManager::initResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::initRequest, ::grpcIMapsManager::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
-}
-
-void grpcIMapsManagerService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIMapsManager::initRequest* request, ::grpcIMapsManager::initResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMapsManager::initRequest, ::grpcIMapsManager::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, std::move(f));
-}
-
-void grpcIMapsManagerService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIMapsManager::initRequest* request, ::grpcIMapsManager::initResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::initResponse>* grpcIMapsManagerService::Stub::PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::initRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapsManager::initResponse, ::grpcIMapsManager::initRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::initResponse>* grpcIMapsManagerService::Stub::AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::initRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncinitRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcIMapsManagerService::Stub::createMap(::grpc::ClientContext* context, const ::grpcIMapsManager::createMapRequest& request, ::grpcIMapsManager::createMapResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::createMapRequest, ::grpcIMapsManager::createMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_createMap_, context, request, response);
@@ -237,16 +212,6 @@ grpcIMapsManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapsManagerService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::initRequest, ::grpcIMapsManager::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIMapsManagerService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIMapsManager::initRequest* req,
-             ::grpcIMapsManager::initResponse* resp) {
-               return service->init(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::createMapRequest, ::grpcIMapsManager::createMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -255,7 +220,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->createMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[2],
+      grpcIMapsManagerService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::deleteMapRequest, ::grpcIMapsManager::deleteMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -265,7 +230,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->deleteMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[3],
+      grpcIMapsManagerService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getAllMapsRequest, ::grpcIMapsManager::getAllMapsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -275,7 +240,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->getAllMaps(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[4],
+      grpcIMapsManagerService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::registerMapUpdateServiceRequest, ::grpcIMapsManager::registerMapUpdateServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -285,7 +250,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->registerMapUpdateService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[5],
+      grpcIMapsManagerService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::unregisterMapUpdateServiceRequest, ::grpcIMapsManager::unregisterMapUpdateServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -295,7 +260,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->unregisterMapUpdateService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[6],
+      grpcIMapsManagerService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::increaseMapClientsRequest, ::grpcIMapsManager::increaseMapClientsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -305,7 +270,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->increaseMapClients(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[7],
+      grpcIMapsManagerService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::decreaseMapClientsRequest, ::grpcIMapsManager::decreaseMapClientsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -317,13 +282,6 @@ grpcIMapsManagerService::Service::Service() {
 }
 
 grpcIMapsManagerService::Service::~Service() {
-}
-
-::grpc::Status grpcIMapsManagerService::Service::init(::grpc::ServerContext* context, const ::grpcIMapsManager::initRequest* request, ::grpcIMapsManager::initResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcIMapsManagerService::Service::createMap(::grpc::ServerContext* context, const ::grpcIMapsManager::createMapRequest* request, ::grpcIMapsManager::createMapResponse* response) {

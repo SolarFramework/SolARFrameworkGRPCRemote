@@ -79,16 +79,17 @@
         <value>method|get3DTransformRequest|none|none</value>
         <value>method|getMappingDataRequest|none|none</value>
         <value>method|getLastPose|none|none</value>
+        <value>method|createMap|none|none</value>
+        <value>method|deleteMap|none|none</value>
+        <value>method|getAllMapsUUID|none|none</value>
         <value>method|getMapRequest|none|none</value>
         <value>method|setMapRequest|none|none</value>
-        <value>method|resetMap|none|none</value>
         <value>method|getPointCloudRequest|none|none</value>
       </property>
     </configure>
     <configure component="IMapsManager_grpcProxy">
       <property name="grpc_compress_proxy" type="string">
         <value>service|none|none</value>
-        <value>method|init|none|none</value>
         <value>method|createMap|none|none</value>
         <value>method|deleteMap|none|none</value>
         <value>method|getAllMaps|none|none</value>
@@ -101,7 +102,6 @@
     <configure component="IServiceManager_grpcProxy">
       <property name="grpc_compress_proxy" type="string">
         <value>service|none|none</value>
-        <value>method|init|none|none</value>
         <value>method|registerService|none|none</value>
         <value>method|unregisterService|none|none</value>
         <value>method|getService|none|none</value>

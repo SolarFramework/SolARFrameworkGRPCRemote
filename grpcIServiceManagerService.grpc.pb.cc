@@ -22,7 +22,6 @@
 namespace grpcIServiceManager {
 
 static const char* grpcIServiceManagerService_method_names[] = {
-  "/grpcIServiceManager.grpcIServiceManagerService/init",
   "/grpcIServiceManager.grpcIServiceManagerService/registerService",
   "/grpcIServiceManager.grpcIServiceManagerService/unregisterService",
   "/grpcIServiceManager.grpcIServiceManagerService/getService",
@@ -37,36 +36,12 @@ std::unique_ptr< grpcIServiceManagerService::Stub> grpcIServiceManagerService::N
 }
 
 grpcIServiceManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
-  : channel_(channel), rpcmethod_init_(grpcIServiceManagerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_registerService_(grpcIServiceManagerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_unregisterService_(grpcIServiceManagerService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getService_(grpcIServiceManagerService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAndLockService_(grpcIServiceManagerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_unlockService_(grpcIServiceManagerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_registerService_(grpcIServiceManagerService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_unregisterService_(grpcIServiceManagerService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getService_(grpcIServiceManagerService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAndLockService_(grpcIServiceManagerService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_unlockService_(grpcIServiceManagerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
-
-::grpc::Status grpcIServiceManagerService::Stub::init(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpcIServiceManager::initResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManager::initRequest, ::grpcIServiceManager::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_, context, request, response);
-}
-
-void grpcIServiceManagerService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIServiceManager::initRequest, ::grpcIServiceManager::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, std::move(f));
-}
-
-void grpcIServiceManagerService::Stub::async::init(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::initResponse>* grpcIServiceManagerService::Stub::PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIServiceManager::initResponse, ::grpcIServiceManager::initRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::initResponse>* grpcIServiceManagerService::Stub::AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncinitRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
 
 ::grpc::Status grpcIServiceManagerService::Stub::registerService(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest& request, ::grpcIServiceManager::registerServiceResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIServiceManager::registerServiceRequest, ::grpcIServiceManager::registerServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_registerService_, context, request, response);
@@ -187,16 +162,6 @@ grpcIServiceManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIServiceManagerService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerService::Service, ::grpcIServiceManager::initRequest, ::grpcIServiceManager::initResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIServiceManagerService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIServiceManager::initRequest* req,
-             ::grpcIServiceManager::initResponse* resp) {
-               return service->init(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerService_method_names[1],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerService::Service, ::grpcIServiceManager::registerServiceRequest, ::grpcIServiceManager::registerServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -205,7 +170,7 @@ grpcIServiceManagerService::Service::Service() {
                return service->registerService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerService_method_names[2],
+      grpcIServiceManagerService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerService::Service, ::grpcIServiceManager::unregisterServiceRequest, ::grpcIServiceManager::unregisterServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerService::Service* service,
@@ -215,7 +180,7 @@ grpcIServiceManagerService::Service::Service() {
                return service->unregisterService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerService_method_names[3],
+      grpcIServiceManagerService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerService::Service, ::grpcIServiceManager::getServiceRequest, ::grpcIServiceManager::getServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerService::Service* service,
@@ -225,7 +190,7 @@ grpcIServiceManagerService::Service::Service() {
                return service->getService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerService_method_names[4],
+      grpcIServiceManagerService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerService::Service, ::grpcIServiceManager::getAndLockServiceRequest, ::grpcIServiceManager::getAndLockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerService::Service* service,
@@ -235,7 +200,7 @@ grpcIServiceManagerService::Service::Service() {
                return service->getAndLockService(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIServiceManagerService_method_names[5],
+      grpcIServiceManagerService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIServiceManagerService::Service, ::grpcIServiceManager::unlockServiceRequest, ::grpcIServiceManager::unlockServiceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIServiceManagerService::Service* service,
@@ -247,13 +212,6 @@ grpcIServiceManagerService::Service::Service() {
 }
 
 grpcIServiceManagerService::Service::~Service() {
-}
-
-::grpc::Status grpcIServiceManagerService::Service::init(::grpc::ServerContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 ::grpc::Status grpcIServiceManagerService::Service::registerService(::grpc::ServerContext* context, const ::grpcIServiceManager::registerServiceRequest* request, ::grpcIServiceManager::registerServiceResponse* response) {

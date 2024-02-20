@@ -4,16 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcIMapsManager;
 
-message initRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-}
-
-message initResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 message createMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -95,7 +85,6 @@ sint32 xpcfGrpcReturnValue = 1;
 }
 
 service grpcIMapsManagerService {
-rpc init(initRequest) returns(initResponse) {}
 rpc createMap(createMapRequest) returns(createMapResponse) {}
 rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
 rpc getAllMaps(getAllMapsRequest) returns(getAllMapsResponse) {}

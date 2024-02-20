@@ -22,7 +22,6 @@ class IMapsManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode createMap(std::string const& mapUUID)     override;
     SolAR::FrameworkReturnCode deleteMap(std::string const& mapUUID)     override;
     SolAR::FrameworkReturnCode getAllMaps(std::vector<std::string>& mapUUIDList)     const     override;
