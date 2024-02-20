@@ -32,7 +32,7 @@ then
     echo "XPCF_MODULE_ROOT env var is defined to $XPCF_MODULE_ROOT"
 fi
 
-DEFAULT_VERSION_SOLAR="1.1.0"
+DEFAULT_VERSION_SOLAR="1.2.0"
 DEFAULT_VERSION_XPCF="2.7.0"
 DEFAULT_DATABASE_DIR="../build-SolARFramework-Desktop_Qt_6_5_3_GCC_64bit-Release"
 DEFAULT_SOLAR_FRAMEWORK_PATH="../SolARFramework"
