@@ -42,11 +42,20 @@ class grpcIStereoCameraCalibrationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::calibrateResponse>> PrepareAsynccalibrate(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::calibrateResponse>>(PrepareAsynccalibrateRaw(context, request, cq));
     }
+    virtual ::grpc::Status rectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpcIStereoCameraCalibration::rectifyResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::rectifyResponse>> Asyncrectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::rectifyResponse>>(AsyncrectifyRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::rectifyResponse>> PrepareAsyncrectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::rectifyResponse>>(PrepareAsyncrectifyRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
       virtual void calibrate(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest* request, ::grpcIStereoCameraCalibration::calibrateResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void calibrate(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest* request, ::grpcIStereoCameraCalibration::calibrateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void rectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void rectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -54,6 +63,8 @@ class grpcIStereoCameraCalibrationService final {
    private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::calibrateResponse>* AsynccalibrateRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::calibrateResponse>* PrepareAsynccalibrateRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::rectifyResponse>* AsyncrectifyRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIStereoCameraCalibration::rectifyResponse>* PrepareAsyncrectifyRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -65,11 +76,20 @@ class grpcIStereoCameraCalibrationService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::calibrateResponse>> PrepareAsynccalibrate(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::calibrateResponse>>(PrepareAsynccalibrateRaw(context, request, cq));
     }
+    ::grpc::Status rectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpcIStereoCameraCalibration::rectifyResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::rectifyResponse>> Asyncrectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::rectifyResponse>>(AsyncrectifyRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::rectifyResponse>> PrepareAsyncrectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::rectifyResponse>>(PrepareAsyncrectifyRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
       void calibrate(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest* request, ::grpcIStereoCameraCalibration::calibrateResponse* response, std::function<void(::grpc::Status)>) override;
       void calibrate(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest* request, ::grpcIStereoCameraCalibration::calibrateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void rectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response, std::function<void(::grpc::Status)>) override;
+      void rectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -83,7 +103,10 @@ class grpcIStereoCameraCalibrationService final {
     class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::calibrateResponse>* AsynccalibrateRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::calibrateResponse>* PrepareAsynccalibrateRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::rectifyResponse>* AsyncrectifyRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::rectifyResponse>* PrepareAsyncrectifyRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_calibrate_;
+    const ::grpc::internal::RpcMethod rpcmethod_rectify_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -92,6 +115,7 @@ class grpcIStereoCameraCalibrationService final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status calibrate(::grpc::ServerContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest* request, ::grpcIStereoCameraCalibration::calibrateResponse* response);
+    virtual ::grpc::Status rectify(::grpc::ServerContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_calibrate : public BaseClass {
@@ -113,7 +137,27 @@ class grpcIStereoCameraCalibrationService final {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_calibrate<Service > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_rectify : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_rectify() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_rectify() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status rectify(::grpc::ServerContext* /*context*/, const ::grpcIStereoCameraCalibration::rectifyRequest* /*request*/, ::grpcIStereoCameraCalibration::rectifyResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestrectify(::grpc::ServerContext* context, ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIStereoCameraCalibration::rectifyResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_calibrate<WithAsyncMethod_rectify<Service > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_calibrate : public BaseClass {
    private:
@@ -141,7 +185,34 @@ class grpcIStereoCameraCalibrationService final {
     virtual ::grpc::ServerUnaryReactor* calibrate(
       ::grpc::CallbackServerContext* /*context*/, const ::grpcIStereoCameraCalibration::calibrateRequest* /*request*/, ::grpcIStereoCameraCalibration::calibrateResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_calibrate<Service > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_rectify : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_rectify() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIStereoCameraCalibration::rectifyRequest, ::grpcIStereoCameraCalibration::rectifyResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response) { return this->rectify(context, request, response); }));}
+    void SetMessageAllocatorFor_rectify(
+        ::grpc::MessageAllocator< ::grpcIStereoCameraCalibration::rectifyRequest, ::grpcIStereoCameraCalibration::rectifyResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIStereoCameraCalibration::rectifyRequest, ::grpcIStereoCameraCalibration::rectifyResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_rectify() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status rectify(::grpc::ServerContext* /*context*/, const ::grpcIStereoCameraCalibration::rectifyRequest* /*request*/, ::grpcIStereoCameraCalibration::rectifyResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* rectify(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIStereoCameraCalibration::rectifyRequest* /*request*/, ::grpcIStereoCameraCalibration::rectifyResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_calibrate<WithCallbackMethod_rectify<Service > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_calibrate : public BaseClass {
@@ -156,6 +227,23 @@ class grpcIStereoCameraCalibrationService final {
     }
     // disable synchronous version of this method
     ::grpc::Status calibrate(::grpc::ServerContext* /*context*/, const ::grpcIStereoCameraCalibration::calibrateRequest* /*request*/, ::grpcIStereoCameraCalibration::calibrateResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_rectify : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_rectify() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_rectify() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status rectify(::grpc::ServerContext* /*context*/, const ::grpcIStereoCameraCalibration::rectifyRequest* /*request*/, ::grpcIStereoCameraCalibration::rectifyResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -181,6 +269,26 @@ class grpcIStereoCameraCalibrationService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_rectify : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_rectify() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_rectify() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status rectify(::grpc::ServerContext* /*context*/, const ::grpcIStereoCameraCalibration::rectifyRequest* /*request*/, ::grpcIStereoCameraCalibration::rectifyResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestrectify(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_calibrate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -200,6 +308,28 @@ class grpcIStereoCameraCalibrationService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* calibrate(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_rectify : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_rectify() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->rectify(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_rectify() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status rectify(::grpc::ServerContext* /*context*/, const ::grpcIStereoCameraCalibration::rectifyRequest* /*request*/, ::grpcIStereoCameraCalibration::rectifyResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* rectify(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -229,9 +359,36 @@ class grpcIStereoCameraCalibrationService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status Streamedcalibrate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIStereoCameraCalibration::calibrateRequest,::grpcIStereoCameraCalibration::calibrateResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_calibrate<Service > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_rectify : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_rectify() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIStereoCameraCalibration::rectifyRequest, ::grpcIStereoCameraCalibration::rectifyResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIStereoCameraCalibration::rectifyRequest, ::grpcIStereoCameraCalibration::rectifyResponse>* streamer) {
+                       return this->Streamedrectify(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_rectify() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status rectify(::grpc::ServerContext* /*context*/, const ::grpcIStereoCameraCalibration::rectifyRequest* /*request*/, ::grpcIStereoCameraCalibration::rectifyResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streamedrectify(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIStereoCameraCalibration::rectifyRequest,::grpcIStereoCameraCalibration::rectifyResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_calibrate<WithStreamedUnaryMethod_rectify<Service > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_calibrate<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_calibrate<WithStreamedUnaryMethod_rectify<Service > > StreamedService;
 };
 
 }  // namespace grpcIStereoCameraCalibration

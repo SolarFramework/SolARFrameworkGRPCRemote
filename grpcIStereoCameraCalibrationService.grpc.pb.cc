@@ -23,6 +23,7 @@ namespace grpcIStereoCameraCalibration {
 
 static const char* grpcIStereoCameraCalibrationService_method_names[] = {
   "/grpcIStereoCameraCalibration.grpcIStereoCameraCalibrationService/calibrate",
+  "/grpcIStereoCameraCalibration.grpcIStereoCameraCalibrationService/rectify",
 };
 
 std::unique_ptr< grpcIStereoCameraCalibrationService::Stub> grpcIStereoCameraCalibrationService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -33,6 +34,7 @@ std::unique_ptr< grpcIStereoCameraCalibrationService::Stub> grpcIStereoCameraCal
 
 grpcIStereoCameraCalibrationService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_calibrate_(grpcIStereoCameraCalibrationService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_rectify_(grpcIStereoCameraCalibrationService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIStereoCameraCalibrationService::Stub::calibrate(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest& request, ::grpcIStereoCameraCalibration::calibrateResponse* response) {
@@ -58,6 +60,29 @@ void grpcIStereoCameraCalibrationService::Stub::async::calibrate(::grpc::ClientC
   return result;
 }
 
+::grpc::Status grpcIStereoCameraCalibrationService::Stub::rectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpcIStereoCameraCalibration::rectifyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIStereoCameraCalibration::rectifyRequest, ::grpcIStereoCameraCalibration::rectifyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_rectify_, context, request, response);
+}
+
+void grpcIStereoCameraCalibrationService::Stub::async::rectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIStereoCameraCalibration::rectifyRequest, ::grpcIStereoCameraCalibration::rectifyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_rectify_, context, request, response, std::move(f));
+}
+
+void grpcIStereoCameraCalibrationService::Stub::async::rectify(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_rectify_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::rectifyResponse>* grpcIStereoCameraCalibrationService::Stub::PrepareAsyncrectifyRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIStereoCameraCalibration::rectifyResponse, ::grpcIStereoCameraCalibration::rectifyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_rectify_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIStereoCameraCalibration::rectifyResponse>* grpcIStereoCameraCalibrationService::Stub::AsyncrectifyRaw(::grpc::ClientContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncrectifyRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 grpcIStereoCameraCalibrationService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIStereoCameraCalibrationService_method_names[0],
@@ -69,12 +94,29 @@ grpcIStereoCameraCalibrationService::Service::Service() {
              ::grpcIStereoCameraCalibration::calibrateResponse* resp) {
                return service->calibrate(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIStereoCameraCalibrationService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIStereoCameraCalibrationService::Service, ::grpcIStereoCameraCalibration::rectifyRequest, ::grpcIStereoCameraCalibration::rectifyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIStereoCameraCalibrationService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIStereoCameraCalibration::rectifyRequest* req,
+             ::grpcIStereoCameraCalibration::rectifyResponse* resp) {
+               return service->rectify(ctx, req, resp);
+             }, this)));
 }
 
 grpcIStereoCameraCalibrationService::Service::~Service() {
 }
 
 ::grpc::Status grpcIStereoCameraCalibrationService::Service::calibrate(::grpc::ServerContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest* request, ::grpcIStereoCameraCalibration::calibrateResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIStereoCameraCalibrationService::Service::rectify(::grpc::ServerContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response) {
   (void) context;
   (void) request;
   (void) response;

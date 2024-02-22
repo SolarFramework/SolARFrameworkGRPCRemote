@@ -22,7 +22,8 @@ class IStereoCameraCalibration_grpcProxy:  public org::bcom::xpcf::ConfigurableB
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode calibrate(std::vector<SRef<SolAR::datastructure::Image>> const& images1, std::vector<SRef<SolAR::datastructure::Image>> const& images2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, SolAR::datastructure::Transform3Df& transformation, SolAR::datastructure::RectificationParameters& rectParams1, SolAR::datastructure::RectificationParameters& rectParams2)     override;
+    SolAR::FrameworkReturnCode calibrate(std::vector<SRef<datastructure::Image>> const& images1, std::vector<SRef<datastructure::Image>> const& images2, datastructure::CameraParameters const& camParams1, datastructure::CameraParameters const& camParams2, datastructure::Transform3Df& transformation, datastructure::RectificationParameters& rectParams1, datastructure::RectificationParameters& rectParams2)     override;
+    SolAR::FrameworkReturnCode rectify(datastructure::CameraParameters const& camParams1, datastructure::CameraParameters const& camParams2, datastructure::RectificationParameters& rectParams1, datastructure::RectificationParameters& rectParams2)     override;
 
 
   private:

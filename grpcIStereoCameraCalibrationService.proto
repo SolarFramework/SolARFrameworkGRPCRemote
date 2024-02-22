@@ -24,7 +24,24 @@ bytes rectParams2 = 3;
 sint32 xpcfGrpcReturnValue = 4;
 }
 
+message rectifyRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes camParams1 = 2;
+bytes camParams2 = 3;
+bytes rectParams1 = 4;
+bytes rectParams2 = 5;
+}
+
+message rectifyResponse
+{
+bytes rectParams1 = 1;
+bytes rectParams2 = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
 service grpcIStereoCameraCalibrationService {
 rpc calibrate(calibrateRequest) returns(calibrateResponse) {}
+rpc rectify(rectifyRequest) returns(rectifyResponse) {}
 }
 

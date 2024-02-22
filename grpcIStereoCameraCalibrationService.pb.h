@@ -52,10 +52,18 @@ extern calibrateRequestDefaultTypeInternal _calibrateRequest_default_instance_;
 class calibrateResponse;
 struct calibrateResponseDefaultTypeInternal;
 extern calibrateResponseDefaultTypeInternal _calibrateResponse_default_instance_;
+class rectifyRequest;
+struct rectifyRequestDefaultTypeInternal;
+extern rectifyRequestDefaultTypeInternal _rectifyRequest_default_instance_;
+class rectifyResponse;
+struct rectifyResponseDefaultTypeInternal;
+extern rectifyResponseDefaultTypeInternal _rectifyResponse_default_instance_;
 }  // namespace grpcIStereoCameraCalibration
 PROTOBUF_NAMESPACE_OPEN
 template<> ::grpcIStereoCameraCalibration::calibrateRequest* Arena::CreateMaybeMessage<::grpcIStereoCameraCalibration::calibrateRequest>(Arena*);
 template<> ::grpcIStereoCameraCalibration::calibrateResponse* Arena::CreateMaybeMessage<::grpcIStereoCameraCalibration::calibrateResponse>(Arena*);
+template<> ::grpcIStereoCameraCalibration::rectifyRequest* Arena::CreateMaybeMessage<::grpcIStereoCameraCalibration::rectifyRequest>(Arena*);
+template<> ::grpcIStereoCameraCalibration::rectifyResponse* Arena::CreateMaybeMessage<::grpcIStereoCameraCalibration::rectifyResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIStereoCameraCalibration {
 
@@ -507,6 +515,398 @@ class calibrateResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transformation_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams1_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams2_;
+    int32_t xpcfgrpcreturnvalue_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIStereoCameraCalibrationService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class rectifyRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIStereoCameraCalibration.rectifyRequest) */ {
+ public:
+  inline rectifyRequest() : rectifyRequest(nullptr) {}
+  ~rectifyRequest() override;
+  explicit PROTOBUF_CONSTEXPR rectifyRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  rectifyRequest(const rectifyRequest& from);
+  rectifyRequest(rectifyRequest&& from) noexcept
+    : rectifyRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline rectifyRequest& operator=(const rectifyRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline rectifyRequest& operator=(rectifyRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const rectifyRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const rectifyRequest* internal_default_instance() {
+    return reinterpret_cast<const rectifyRequest*>(
+               &_rectifyRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(rectifyRequest& a, rectifyRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(rectifyRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(rectifyRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  rectifyRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<rectifyRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const rectifyRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const rectifyRequest& from) {
+    rectifyRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(rectifyRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIStereoCameraCalibration.rectifyRequest";
+  }
+  protected:
+  explicit rectifyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCamParams1FieldNumber = 2,
+    kCamParams2FieldNumber = 3,
+    kRectParams1FieldNumber = 4,
+    kRectParams2FieldNumber = 5,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes camParams1 = 2;
+  void clear_camparams1();
+  const std::string& camparams1() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_camparams1(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_camparams1();
+  PROTOBUF_NODISCARD std::string* release_camparams1();
+  void set_allocated_camparams1(std::string* camparams1);
+  private:
+  const std::string& _internal_camparams1() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_camparams1(const std::string& value);
+  std::string* _internal_mutable_camparams1();
+  public:
+
+  // bytes camParams2 = 3;
+  void clear_camparams2();
+  const std::string& camparams2() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_camparams2(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_camparams2();
+  PROTOBUF_NODISCARD std::string* release_camparams2();
+  void set_allocated_camparams2(std::string* camparams2);
+  private:
+  const std::string& _internal_camparams2() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_camparams2(const std::string& value);
+  std::string* _internal_mutable_camparams2();
+  public:
+
+  // bytes rectParams1 = 4;
+  void clear_rectparams1();
+  const std::string& rectparams1() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rectparams1(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rectparams1();
+  PROTOBUF_NODISCARD std::string* release_rectparams1();
+  void set_allocated_rectparams1(std::string* rectparams1);
+  private:
+  const std::string& _internal_rectparams1() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rectparams1(const std::string& value);
+  std::string* _internal_mutable_rectparams1();
+  public:
+
+  // bytes rectParams2 = 5;
+  void clear_rectparams2();
+  const std::string& rectparams2() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rectparams2(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rectparams2();
+  PROTOBUF_NODISCARD std::string* release_rectparams2();
+  void set_allocated_rectparams2(std::string* rectparams2);
+  private:
+  const std::string& _internal_rectparams2() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rectparams2(const std::string& value);
+  std::string* _internal_mutable_rectparams2();
+  public:
+
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat();
+  int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(int32_t value);
+  private:
+  int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIStereoCameraCalibration.rectifyRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams1_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr camparams2_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams1_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams2_;
+    int32_t grpcservercompressionformat_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIStereoCameraCalibrationService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class rectifyResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIStereoCameraCalibration.rectifyResponse) */ {
+ public:
+  inline rectifyResponse() : rectifyResponse(nullptr) {}
+  ~rectifyResponse() override;
+  explicit PROTOBUF_CONSTEXPR rectifyResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  rectifyResponse(const rectifyResponse& from);
+  rectifyResponse(rectifyResponse&& from) noexcept
+    : rectifyResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline rectifyResponse& operator=(const rectifyResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline rectifyResponse& operator=(rectifyResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const rectifyResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const rectifyResponse* internal_default_instance() {
+    return reinterpret_cast<const rectifyResponse*>(
+               &_rectifyResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(rectifyResponse& a, rectifyResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(rectifyResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(rectifyResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  rectifyResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<rectifyResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const rectifyResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const rectifyResponse& from) {
+    rectifyResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(rectifyResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "grpcIStereoCameraCalibration.rectifyResponse";
+  }
+  protected:
+  explicit rectifyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRectParams1FieldNumber = 1,
+    kRectParams2FieldNumber = 2,
+    kXpcfGrpcReturnValueFieldNumber = 3,
+  };
+  // bytes rectParams1 = 1;
+  void clear_rectparams1();
+  const std::string& rectparams1() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rectparams1(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rectparams1();
+  PROTOBUF_NODISCARD std::string* release_rectparams1();
+  void set_allocated_rectparams1(std::string* rectparams1);
+  private:
+  const std::string& _internal_rectparams1() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rectparams1(const std::string& value);
+  std::string* _internal_mutable_rectparams1();
+  public:
+
+  // bytes rectParams2 = 2;
+  void clear_rectparams2();
+  const std::string& rectparams2() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rectparams2(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rectparams2();
+  PROTOBUF_NODISCARD std::string* release_rectparams2();
+  void set_allocated_rectparams2(std::string* rectparams2);
+  private:
+  const std::string& _internal_rectparams2() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rectparams2(const std::string& value);
+  std::string* _internal_mutable_rectparams2();
+  public:
+
+  // sint32 xpcfGrpcReturnValue = 3;
+  void clear_xpcfgrpcreturnvalue();
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
+  private:
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:grpcIStereoCameraCalibration.rectifyResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams1_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rectparams2_;
     int32_t xpcfgrpcreturnvalue_;
@@ -1070,9 +1470,361 @@ inline void calibrateResponse::set_xpcfgrpcreturnvalue(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.calibrateResponse.xpcfGrpcReturnValue)
 }
 
+// -------------------------------------------------------------------
+
+// rectifyRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void rectifyRequest::clear_grpcservercompressionformat() {
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline int32_t rectifyRequest::_internal_grpcservercompressionformat() const {
+  return _impl_.grpcservercompressionformat_;
+}
+inline int32_t rectifyRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIStereoCameraCalibration.rectifyRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void rectifyRequest::_internal_set_grpcservercompressionformat(int32_t value) {
+  
+  _impl_.grpcservercompressionformat_ = value;
+}
+inline void rectifyRequest::set_grpcservercompressionformat(int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.rectifyRequest.grpcServerCompressionFormat)
+}
+
+// bytes camParams1 = 2;
+inline void rectifyRequest::clear_camparams1() {
+  _impl_.camparams1_.ClearToEmpty();
+}
+inline const std::string& rectifyRequest::camparams1() const {
+  // @@protoc_insertion_point(field_get:grpcIStereoCameraCalibration.rectifyRequest.camParams1)
+  return _internal_camparams1();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void rectifyRequest::set_camparams1(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.camparams1_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.rectifyRequest.camParams1)
+}
+inline std::string* rectifyRequest::mutable_camparams1() {
+  std::string* _s = _internal_mutable_camparams1();
+  // @@protoc_insertion_point(field_mutable:grpcIStereoCameraCalibration.rectifyRequest.camParams1)
+  return _s;
+}
+inline const std::string& rectifyRequest::_internal_camparams1() const {
+  return _impl_.camparams1_.Get();
+}
+inline void rectifyRequest::_internal_set_camparams1(const std::string& value) {
+  
+  _impl_.camparams1_.Set(value, GetArenaForAllocation());
+}
+inline std::string* rectifyRequest::_internal_mutable_camparams1() {
+  
+  return _impl_.camparams1_.Mutable(GetArenaForAllocation());
+}
+inline std::string* rectifyRequest::release_camparams1() {
+  // @@protoc_insertion_point(field_release:grpcIStereoCameraCalibration.rectifyRequest.camParams1)
+  return _impl_.camparams1_.Release();
+}
+inline void rectifyRequest::set_allocated_camparams1(std::string* camparams1) {
+  if (camparams1 != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.camparams1_.SetAllocated(camparams1, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.camparams1_.IsDefault()) {
+    _impl_.camparams1_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.rectifyRequest.camParams1)
+}
+
+// bytes camParams2 = 3;
+inline void rectifyRequest::clear_camparams2() {
+  _impl_.camparams2_.ClearToEmpty();
+}
+inline const std::string& rectifyRequest::camparams2() const {
+  // @@protoc_insertion_point(field_get:grpcIStereoCameraCalibration.rectifyRequest.camParams2)
+  return _internal_camparams2();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void rectifyRequest::set_camparams2(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.camparams2_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.rectifyRequest.camParams2)
+}
+inline std::string* rectifyRequest::mutable_camparams2() {
+  std::string* _s = _internal_mutable_camparams2();
+  // @@protoc_insertion_point(field_mutable:grpcIStereoCameraCalibration.rectifyRequest.camParams2)
+  return _s;
+}
+inline const std::string& rectifyRequest::_internal_camparams2() const {
+  return _impl_.camparams2_.Get();
+}
+inline void rectifyRequest::_internal_set_camparams2(const std::string& value) {
+  
+  _impl_.camparams2_.Set(value, GetArenaForAllocation());
+}
+inline std::string* rectifyRequest::_internal_mutable_camparams2() {
+  
+  return _impl_.camparams2_.Mutable(GetArenaForAllocation());
+}
+inline std::string* rectifyRequest::release_camparams2() {
+  // @@protoc_insertion_point(field_release:grpcIStereoCameraCalibration.rectifyRequest.camParams2)
+  return _impl_.camparams2_.Release();
+}
+inline void rectifyRequest::set_allocated_camparams2(std::string* camparams2) {
+  if (camparams2 != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.camparams2_.SetAllocated(camparams2, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.camparams2_.IsDefault()) {
+    _impl_.camparams2_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.rectifyRequest.camParams2)
+}
+
+// bytes rectParams1 = 4;
+inline void rectifyRequest::clear_rectparams1() {
+  _impl_.rectparams1_.ClearToEmpty();
+}
+inline const std::string& rectifyRequest::rectparams1() const {
+  // @@protoc_insertion_point(field_get:grpcIStereoCameraCalibration.rectifyRequest.rectParams1)
+  return _internal_rectparams1();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void rectifyRequest::set_rectparams1(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.rectparams1_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.rectifyRequest.rectParams1)
+}
+inline std::string* rectifyRequest::mutable_rectparams1() {
+  std::string* _s = _internal_mutable_rectparams1();
+  // @@protoc_insertion_point(field_mutable:grpcIStereoCameraCalibration.rectifyRequest.rectParams1)
+  return _s;
+}
+inline const std::string& rectifyRequest::_internal_rectparams1() const {
+  return _impl_.rectparams1_.Get();
+}
+inline void rectifyRequest::_internal_set_rectparams1(const std::string& value) {
+  
+  _impl_.rectparams1_.Set(value, GetArenaForAllocation());
+}
+inline std::string* rectifyRequest::_internal_mutable_rectparams1() {
+  
+  return _impl_.rectparams1_.Mutable(GetArenaForAllocation());
+}
+inline std::string* rectifyRequest::release_rectparams1() {
+  // @@protoc_insertion_point(field_release:grpcIStereoCameraCalibration.rectifyRequest.rectParams1)
+  return _impl_.rectparams1_.Release();
+}
+inline void rectifyRequest::set_allocated_rectparams1(std::string* rectparams1) {
+  if (rectparams1 != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.rectparams1_.SetAllocated(rectparams1, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.rectparams1_.IsDefault()) {
+    _impl_.rectparams1_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.rectifyRequest.rectParams1)
+}
+
+// bytes rectParams2 = 5;
+inline void rectifyRequest::clear_rectparams2() {
+  _impl_.rectparams2_.ClearToEmpty();
+}
+inline const std::string& rectifyRequest::rectparams2() const {
+  // @@protoc_insertion_point(field_get:grpcIStereoCameraCalibration.rectifyRequest.rectParams2)
+  return _internal_rectparams2();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void rectifyRequest::set_rectparams2(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.rectparams2_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.rectifyRequest.rectParams2)
+}
+inline std::string* rectifyRequest::mutable_rectparams2() {
+  std::string* _s = _internal_mutable_rectparams2();
+  // @@protoc_insertion_point(field_mutable:grpcIStereoCameraCalibration.rectifyRequest.rectParams2)
+  return _s;
+}
+inline const std::string& rectifyRequest::_internal_rectparams2() const {
+  return _impl_.rectparams2_.Get();
+}
+inline void rectifyRequest::_internal_set_rectparams2(const std::string& value) {
+  
+  _impl_.rectparams2_.Set(value, GetArenaForAllocation());
+}
+inline std::string* rectifyRequest::_internal_mutable_rectparams2() {
+  
+  return _impl_.rectparams2_.Mutable(GetArenaForAllocation());
+}
+inline std::string* rectifyRequest::release_rectparams2() {
+  // @@protoc_insertion_point(field_release:grpcIStereoCameraCalibration.rectifyRequest.rectParams2)
+  return _impl_.rectparams2_.Release();
+}
+inline void rectifyRequest::set_allocated_rectparams2(std::string* rectparams2) {
+  if (rectparams2 != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.rectparams2_.SetAllocated(rectparams2, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.rectparams2_.IsDefault()) {
+    _impl_.rectparams2_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.rectifyRequest.rectParams2)
+}
+
+// -------------------------------------------------------------------
+
+// rectifyResponse
+
+// bytes rectParams1 = 1;
+inline void rectifyResponse::clear_rectparams1() {
+  _impl_.rectparams1_.ClearToEmpty();
+}
+inline const std::string& rectifyResponse::rectparams1() const {
+  // @@protoc_insertion_point(field_get:grpcIStereoCameraCalibration.rectifyResponse.rectParams1)
+  return _internal_rectparams1();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void rectifyResponse::set_rectparams1(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.rectparams1_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.rectifyResponse.rectParams1)
+}
+inline std::string* rectifyResponse::mutable_rectparams1() {
+  std::string* _s = _internal_mutable_rectparams1();
+  // @@protoc_insertion_point(field_mutable:grpcIStereoCameraCalibration.rectifyResponse.rectParams1)
+  return _s;
+}
+inline const std::string& rectifyResponse::_internal_rectparams1() const {
+  return _impl_.rectparams1_.Get();
+}
+inline void rectifyResponse::_internal_set_rectparams1(const std::string& value) {
+  
+  _impl_.rectparams1_.Set(value, GetArenaForAllocation());
+}
+inline std::string* rectifyResponse::_internal_mutable_rectparams1() {
+  
+  return _impl_.rectparams1_.Mutable(GetArenaForAllocation());
+}
+inline std::string* rectifyResponse::release_rectparams1() {
+  // @@protoc_insertion_point(field_release:grpcIStereoCameraCalibration.rectifyResponse.rectParams1)
+  return _impl_.rectparams1_.Release();
+}
+inline void rectifyResponse::set_allocated_rectparams1(std::string* rectparams1) {
+  if (rectparams1 != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.rectparams1_.SetAllocated(rectparams1, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.rectparams1_.IsDefault()) {
+    _impl_.rectparams1_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.rectifyResponse.rectParams1)
+}
+
+// bytes rectParams2 = 2;
+inline void rectifyResponse::clear_rectparams2() {
+  _impl_.rectparams2_.ClearToEmpty();
+}
+inline const std::string& rectifyResponse::rectparams2() const {
+  // @@protoc_insertion_point(field_get:grpcIStereoCameraCalibration.rectifyResponse.rectParams2)
+  return _internal_rectparams2();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void rectifyResponse::set_rectparams2(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.rectparams2_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.rectifyResponse.rectParams2)
+}
+inline std::string* rectifyResponse::mutable_rectparams2() {
+  std::string* _s = _internal_mutable_rectparams2();
+  // @@protoc_insertion_point(field_mutable:grpcIStereoCameraCalibration.rectifyResponse.rectParams2)
+  return _s;
+}
+inline const std::string& rectifyResponse::_internal_rectparams2() const {
+  return _impl_.rectparams2_.Get();
+}
+inline void rectifyResponse::_internal_set_rectparams2(const std::string& value) {
+  
+  _impl_.rectparams2_.Set(value, GetArenaForAllocation());
+}
+inline std::string* rectifyResponse::_internal_mutable_rectparams2() {
+  
+  return _impl_.rectparams2_.Mutable(GetArenaForAllocation());
+}
+inline std::string* rectifyResponse::release_rectparams2() {
+  // @@protoc_insertion_point(field_release:grpcIStereoCameraCalibration.rectifyResponse.rectParams2)
+  return _impl_.rectparams2_.Release();
+}
+inline void rectifyResponse::set_allocated_rectparams2(std::string* rectparams2) {
+  if (rectparams2 != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.rectparams2_.SetAllocated(rectparams2, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.rectparams2_.IsDefault()) {
+    _impl_.rectparams2_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIStereoCameraCalibration.rectifyResponse.rectParams2)
+}
+
+// sint32 xpcfGrpcReturnValue = 3;
+inline void rectifyResponse::clear_xpcfgrpcreturnvalue() {
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline int32_t rectifyResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t rectifyResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIStereoCameraCalibration.rectifyResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void rectifyResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void rectifyResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIStereoCameraCalibration.rectifyResponse.xpcfGrpcReturnValue)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 
