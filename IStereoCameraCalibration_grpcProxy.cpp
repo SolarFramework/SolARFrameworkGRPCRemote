@@ -42,7 +42,7 @@ XPCFErrorCode IStereoCameraCalibration_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IStereoCameraCalibration_grpcProxy::calibrate(std::vector<SRef<datastructure::Image>> const& images1, std::vector<SRef<datastructure::Image>> const& images2, datastructure::CameraParameters const& camParams1, datastructure::CameraParameters const& camParams2, datastructure::Transform3Df& transformation, datastructure::RectificationParameters& rectParams1, datastructure::RectificationParameters& rectParams2)
+SolAR::FrameworkReturnCode  IStereoCameraCalibration_grpcProxy::calibrate(std::vector<SRef<SolAR::datastructure::Image>> const& images1, std::vector<SRef<SolAR::datastructure::Image>> const& images2, SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, SolAR::datastructure::Transform3Df& transformation, SolAR::datastructure::RectificationParameters& rectParams1, SolAR::datastructure::RectificationParameters& rectParams2)
 {
   ::grpc::ClientContext context;
   ::grpcIStereoCameraCalibration::calibrateRequest reqIn;
@@ -52,13 +52,13 @@ SolAR::FrameworkReturnCode  IStereoCameraCalibration_grpcProxy::calibrate(std::v
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_images1(xpcf::serialize<std::vector<SRef<datastructure::Image>>>(images1));
-  reqIn.set_images2(xpcf::serialize<std::vector<SRef<datastructure::Image>>>(images2));
-  reqIn.set_camparams1(xpcf::serialize<datastructure::CameraParameters>(camParams1));
-  reqIn.set_camparams2(xpcf::serialize<datastructure::CameraParameters>(camParams2));
-  reqIn.set_transformation(xpcf::serialize<datastructure::Transform3Df>(transformation));
-  reqIn.set_rectparams1(xpcf::serialize<datastructure::RectificationParameters>(rectParams1));
-  reqIn.set_rectparams2(xpcf::serialize<datastructure::RectificationParameters>(rectParams2));
+  reqIn.set_images1(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Image>>>(images1));
+  reqIn.set_images2(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Image>>>(images2));
+  reqIn.set_camparams1(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams1));
+  reqIn.set_camparams2(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams2));
+  reqIn.set_transformation(xpcf::serialize<SolAR::datastructure::Transform3Df>(transformation));
+  reqIn.set_rectparams1(xpcf::serialize<SolAR::datastructure::RectificationParameters>(rectParams1));
+  reqIn.set_rectparams2(xpcf::serialize<SolAR::datastructure::RectificationParameters>(rectParams2));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IStereoCameraCalibration_grpcProxy::calibrate request sent at " << to_simple_string(start) << std::endl;
@@ -74,14 +74,14 @@ SolAR::FrameworkReturnCode  IStereoCameraCalibration_grpcProxy::calibrate(std::v
     throw xpcf::RemotingException("grpcIStereoCameraCalibrationService","calibrate",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  transformation = xpcf::deserialize<datastructure::Transform3Df>(respOut.transformation());
-  rectParams1 = xpcf::deserialize<datastructure::RectificationParameters>(respOut.rectparams1());
-  rectParams2 = xpcf::deserialize<datastructure::RectificationParameters>(respOut.rectparams2());
+  transformation = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transformation());
+  rectParams1 = xpcf::deserialize<SolAR::datastructure::RectificationParameters>(respOut.rectparams1());
+  rectParams2 = xpcf::deserialize<SolAR::datastructure::RectificationParameters>(respOut.rectparams2());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
-SolAR::FrameworkReturnCode  IStereoCameraCalibration_grpcProxy::rectify(datastructure::CameraParameters const& camParams1, datastructure::CameraParameters const& camParams2, datastructure::RectificationParameters& rectParams1, datastructure::RectificationParameters& rectParams2)
+SolAR::FrameworkReturnCode  IStereoCameraCalibration_grpcProxy::rectify(SolAR::datastructure::CameraParameters const& camParams1, SolAR::datastructure::CameraParameters const& camParams2, SolAR::datastructure::RectificationParameters& rectParams1, SolAR::datastructure::RectificationParameters& rectParams2)
 {
   ::grpc::ClientContext context;
   ::grpcIStereoCameraCalibration::rectifyRequest reqIn;
@@ -91,10 +91,10 @@ SolAR::FrameworkReturnCode  IStereoCameraCalibration_grpcProxy::rectify(datastru
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_camparams1(xpcf::serialize<datastructure::CameraParameters>(camParams1));
-  reqIn.set_camparams2(xpcf::serialize<datastructure::CameraParameters>(camParams2));
-  reqIn.set_rectparams1(xpcf::serialize<datastructure::RectificationParameters>(rectParams1));
-  reqIn.set_rectparams2(xpcf::serialize<datastructure::RectificationParameters>(rectParams2));
+  reqIn.set_camparams1(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams1));
+  reqIn.set_camparams2(xpcf::serialize<SolAR::datastructure::CameraParameters>(camParams2));
+  reqIn.set_rectparams1(xpcf::serialize<SolAR::datastructure::RectificationParameters>(rectParams1));
+  reqIn.set_rectparams2(xpcf::serialize<SolAR::datastructure::RectificationParameters>(rectParams2));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IStereoCameraCalibration_grpcProxy::rectify request sent at " << to_simple_string(start) << std::endl;
@@ -110,8 +110,8 @@ SolAR::FrameworkReturnCode  IStereoCameraCalibration_grpcProxy::rectify(datastru
     throw xpcf::RemotingException("grpcIStereoCameraCalibrationService","rectify",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  rectParams1 = xpcf::deserialize<datastructure::RectificationParameters>(respOut.rectparams1());
-  rectParams2 = xpcf::deserialize<datastructure::RectificationParameters>(respOut.rectparams2());
+  rectParams1 = xpcf::deserialize<SolAR::datastructure::RectificationParameters>(respOut.rectparams1());
+  rectParams2 = xpcf::deserialize<SolAR::datastructure::RectificationParameters>(respOut.rectparams2());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
