@@ -164,6 +164,8 @@ fi
 sed -i "s/-I-isystem/-I/g" `realpath $DATABASE_DIR`/compile_commands.json
 sed -i "s/-isystem/-I/g" `realpath $DATABASE_DIR`/compile_commands.json
 
+rm -rf gen
+
 $XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/$LIB_TYPE/release/xpcf_grpc_gen \
         --module_uuid $MODULE_UUID \
         --name SolARFramework \
@@ -176,7 +178,22 @@ $XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/$LIB_TYPE/release/xpc
         --remove_comments_in_macro \
         --generator protobuf \
         --interfaces_folder ${SOLAR_FRAMEWORK_PATH}/interfaces/ \
-        --output .
+        --output gen
+
+# Organize projects with folders instead of flat layout
+mkdir gen/src
+mkdir gen/interfaces
+mkdir gen/proto
+
+mv gen/*.cpp gen/src/
+mv gen/*.cc gen/src/
+mv gen/*.h gen/interfaces/
+mv gen/*.proto gen/proto/
+
+sed -i -E "s/(.+)\.cpp/gen\/src\/\1.cpp/g" gen/xpcfGrpcRemotingSolARFramework.pri
+sed -i -E "s/(.+)\.cc/gen\/src\/\1.cc/g" gen/xpcfGrpcRemotingSolARFramework.pri
+sed -i -E "s/(.+)\.h/gen\/interfaces\/\1.h/g" gen/xpcfGrpcRemotingSolARFramework.pri
+
 
 # TODO: fix bug of absolute path in header files
 # https://github.com/b-com-software-basis/xpcf/issues/11
