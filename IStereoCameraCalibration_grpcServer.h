@@ -26,6 +26,7 @@ class IStereoCameraCalibration_grpcServer:  public org::bcom::xpcf::Configurable
       public:
         grpcIStereoCameraCalibrationServiceImpl() = default;
         ::grpc::Status calibrate(::grpc::ServerContext* context, const ::grpcIStereoCameraCalibration::calibrateRequest* request, ::grpcIStereoCameraCalibration::calibrateResponse* response) override;
+        ::grpc::Status rectify(::grpc::ServerContext* context, const ::grpcIStereoCameraCalibration::rectifyRequest* request, ::grpcIStereoCameraCalibration::rectifyResponse* response) override;
 
         SRef<SolAR::api::input::devices::IStereoCameraCalibration> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
