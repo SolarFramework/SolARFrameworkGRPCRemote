@@ -14,6 +14,8 @@ DEFINES += MYVERSION=$${VERSION}
 DEFINES += TEMPLATE_LIBRARY
 CONFIG += c++1z
 
+CONFIG += externaldeps
+
 include(gen/findremakenrules.pri)
 
 CONFIG(debug,debug|release) {
@@ -44,6 +46,7 @@ unix {
 }
 
 linux {
+    QMAKE_CXXFLAGS += -Wno-attributes
     QMAKE_LFLAGS += -ldl
     LIBS += -ldl
     LIBS += -L/home/linuxbrew/.linuxbrew/lib # temporary fix caused by grpc with -lre2 ... without -L in grpc.pc
