@@ -133,7 +133,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::stop()
 }
 
 
-SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init(std::string const relocalizationServiceURL)
+SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init(std::string const relocalizationServiceURL, std::string const mapupdateServiceURL)
 {
   ::grpc::ClientContext context;
   ::grpcIMappingPipeline::init_grpc1Request reqIn;
@@ -144,6 +144,7 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init(std::string const r
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_relocalizationserviceurl(relocalizationServiceURL);
+  reqIn.set_mapupdateserviceurl(mapupdateServiceURL);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;

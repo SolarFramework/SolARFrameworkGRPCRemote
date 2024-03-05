@@ -4,12 +4,12 @@ import "google/protobuf/empty.proto";
 
 package grpcIRelocalizationPipeline;
 
-message initRequest
+message init_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 }
 
-message initResponse
+message init_grpc0Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -30,6 +30,17 @@ int32 grpcServerCompressionFormat  = 1;
 }
 
 message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message init_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapupdateServiceURL = 2;
+}
+
+message init_grpc1Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -104,9 +115,10 @@ sint32 xpcfGrpcReturnValue = 2;
 }
 
 service grpcIRelocalizationPipelineService {
-rpc init(initRequest) returns(initResponse) {}
+rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
+rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
 rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
 rpc relocalizeProcessRequest_grpc0(relocalizeProcessRequest_grpc0Request) returns(relocalizeProcessRequest_grpc0Response) {}

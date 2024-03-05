@@ -38,6 +38,7 @@ message init_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
 string relocalizationServiceURL = 2;
+string mapupdateServiceURL = 3;
 }
 
 message init_grpc1Response
