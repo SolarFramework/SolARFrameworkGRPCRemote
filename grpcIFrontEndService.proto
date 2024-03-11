@@ -293,6 +293,19 @@ bytes mapUUIDList = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message getClientMapUUIDRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+string mapUUID = 3;
+}
+
+message getClientMapUUIDResponse
+{
+string mapUUID = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 message getMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -353,6 +366,7 @@ rpc getLastPose(getLastPoseRequest) returns(getLastPoseResponse) {}
 rpc createMap(createMapRequest) returns(createMapResponse) {}
 rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
 rpc getAllMapsUUID(getAllMapsUUIDRequest) returns(getAllMapsUUIDResponse) {}
+rpc getClientMapUUID(getClientMapUUIDRequest) returns(getClientMapUUIDResponse) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}

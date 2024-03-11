@@ -43,6 +43,7 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     SolAR::FrameworkReturnCode createMap(std::string const& mapUUID)     override;
     SolAR::FrameworkReturnCode deleteMap(std::string const& mapUUID)     override;
     SolAR::FrameworkReturnCode getAllMapsUUID(std::vector<std::string>& mapUUIDList)     const     override;
+    SolAR::FrameworkReturnCode getClientMapUUID(std::string const& clientUUID, std::string& mapUUID)     const     override;
     SolAR::FrameworkReturnCode getMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure)     const     override;
     SolAR::FrameworkReturnCode setMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map> const mapDatastructure)     override;
     SolAR::FrameworkReturnCode getPointCloudRequest(std::string const& mapUUID, SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;

@@ -46,6 +46,7 @@ class IFrontEnd_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
         ::grpc::Status createMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::createMapRequest* request, ::grpcIFrontEnd::createMapResponse* response) override;
         ::grpc::Status deleteMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::deleteMapRequest* request, ::grpcIFrontEnd::deleteMapResponse* response) override;
         ::grpc::Status getAllMapsUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAllMapsUUIDRequest* request, ::grpcIFrontEnd::getAllMapsUUIDResponse* response) override;
+        ::grpc::Status getClientMapUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getClientMapUUIDRequest* request, ::grpcIFrontEnd::getClientMapUUIDResponse* response) override;
         ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapRequestRequest* request, ::grpcIFrontEnd::getMapRequestResponse* response) override;
         ::grpc::Status setMapRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::setMapRequestRequest* request, ::grpcIFrontEnd::setMapRequestResponse* response) override;
         ::grpc::Status getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest* request, ::grpcIFrontEnd::getPointCloudRequestResponse* response) override;

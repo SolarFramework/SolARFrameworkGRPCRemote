@@ -14,7 +14,7 @@ IFrontEnd_grpcServer::IFrontEnd_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IFrontEnd>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(25);
+  m_grpcServerCompressionConfig.resize(26);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -575,6 +575,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getAllMapsUUID response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getClientMapUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getClientMapUUIDRequest* request, ::grpcIFrontEnd::getClientMapUUIDResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getClientMapUUID", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getClientMapUUID request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string clientUUID = request->clientuuid();
+  std::string mapUUID = request->mapuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getClientMapUUID(clientUUID, mapUUID);
+  response->set_mapuuid(mapUUID);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getClientMapUUID response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
