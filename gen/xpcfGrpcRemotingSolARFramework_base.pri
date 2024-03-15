@@ -2,32 +2,32 @@
 QT       -= core gui
 CONFIG -= qt
 
-QMAKE_PROJECT_DEPTH = 0
-
 ## global definitions : target lib name, version
-INSTALLSUBDIR = SolARBuild
-TARGET = SolARFrameworkGRPCRemote
 FRAMEWORK = $$TARGET
 VERSION=1.2.0
 
 DEFINES += MYVERSION=$${VERSION}
+DEFINES += XPCFVERSION=\\\"$${VERSION}\\\"
 DEFINES += TEMPLATE_LIBRARY
 CONFIG += c++1z
 
-CONFIG += externaldeps
+include(findremakenrules.pri)
 
-include(gen/findremakenrules.pri)
+CONFIG -= static
+CONFIG += shared
 
 CONFIG(debug,debug|release) {
     DEFINES += _DEBUG=1
     DEFINES += DEBUG=1
-}
+    DEFINES += ENABLE_PROXY_TIMERS=1
+    DEFINES += ENABLE_SERVER_TIMERS=1
+ }
 CONFIG(release,debug|release) {
     DEFINES += _NDEBUG=1
     DEFINES += NDEBUG=1
 }
 
-DEPENDENCIESCONFIG = static install_recurse
+DEPENDENCIESCONFIG = shared recursive install_recurse
 
 ## Configuration for Visual Studio to install binaries and dependencies. Work also for QT Creator by replacing QMAKE_INSTALL
 PROJECTCONFIG = QTVS
@@ -35,21 +35,29 @@ PROJECTCONFIG = QTVS
 #NOTE : CONFIG as staticlib or sharedlib, DEPENDENCIESCONFIG as staticlib or sharedlib, QMAKE_TARGET.arch and PROJECTDEPLOYDIR MUST BE DEFINED BEFORE templatelibconfig.pri inclusion
 include ($${QMAKE_REMAKEN_RULES_ROOT}/templatelibconfig.pri)
 
-include (gen/xpcfGrpcRemotingSolARFramework.pri)
+include (xpcfGrpcRemotingSolARFramework.pri)
 
-INCLUDEPATH += $${PWD}/gen/interfaces
 
-unix {
-    # Avoids adding install steps manually. To be commented to have a better control over them.
-    QMAKE_POST_LINK += "$(MAKE) install"
+unix:!android {
     QMAKE_CXXFLAGS += -Wignored-qualifiers
+#    QMAKE_LINK=clang++
+#    QMAKE_CXX = clang++
 }
 
-linux {
-    QMAKE_CXXFLAGS += -Wno-attributes
-    QMAKE_LFLAGS += -ldl
+
+linux:!android {
     LIBS += -ldl
-    LIBS += -L/home/linuxbrew/.linuxbrew/lib # temporary fix caused by grpc with -lre2 ... without -L in grpc.pc
+    }
+
+macx {
+    DEFINES += _MACOS_TARGET_
+    QMAKE_MAC_SDK= macosx
+    QMAKE_CFLAGS += -mmacosx-version-min=10.7 -std=c11 #-x objective-c++
+    QMAKE_CXXFLAGS += -mmacosx-version-min=10.7 -std=c11 -std=c++11 -O3 -fPIC#-x objective-c++
+    QMAKE_LFLAGS += -mmacosx-version-min=10.7 -v -lstdc++
+    LIBS += -lstdc++ -lc -lpthread
+    INCLUDEPATH += /usr/local/include
+    LIBS += -L/usr/local/lib -lprotobuf
 }
 
 win32 {
@@ -59,16 +67,13 @@ win32 {
     QMAKE_CXXFLAGS += -wd4250 -wd4251 -wd4244 -wd4275 /Od
 }
 
+android {
+    QMAKE_LFLAGS += -nostdlib++
+}
+
 OTHER_FILES += \n    packagedependencies.txt
 
-OTHER_FILES += \n
+OTHER_FILES += \n    xpcfGrpcRemotingSolARFramework.xml
 
 #NOTE : Must be placed at the end of the .pro
 include ($${QMAKE_REMAKEN_RULES_ROOT}/remaken_install_target.pri)
-
-DISTFILES += \
-    README.md \
-    gen/xpcfGrpcRemotingSolARFrameworkClient.xml \
-    gen/xpcfGrpcRemotingSolARFrameworkClient_properties.xml \
-    gen/xpcfGrpcRemotingSolARFrameworkServer.xml \
-    gen/xpcfGrpcRemotingSolARFrameworkServer_properties.xml
