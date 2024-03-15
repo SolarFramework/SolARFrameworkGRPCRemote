@@ -13,6 +13,8 @@
 #include "IRelocalizationPipeline_grpcServer.h"
 #include "IFrontEnd_grpcProxy.h"
 #include "IFrontEnd_grpcServer.h"
+#include "IMapsManager_grpcProxy.h"
+#include "IMapsManager_grpcServer.h"
 #include "IServiceManager_grpcProxy.h"
 #include "IServiceManager_grpcServer.h"
 #endif
