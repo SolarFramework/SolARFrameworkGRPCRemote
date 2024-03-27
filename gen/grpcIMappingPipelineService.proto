@@ -1,0 +1,173 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMappingPipeline;
+
+message init_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message init_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message init_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string relocalizationServiceURL = 2;
+string mapupdateServiceURL = 3;
+}
+
+message init_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setCameraParameters_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes cameraParams = 2;
+}
+
+message setCameraParameters_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setCameraParameters_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes cameraParams1 = 2;
+bytes cameraParams2 = 3;
+}
+
+message setCameraParameters_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setRectificationParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes rectCam1 = 2;
+bytes rectCam2 = 3;
+}
+
+message setRectificationParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message set3DTransformSolARToWorldRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes transform = 2;
+}
+
+message set3DTransformSolARToWorldResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message mappingProcessRequest_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes images = 2;
+bytes poses = 3;
+bool fixedPose = 4;
+bytes transform = 5;
+bytes updatedTransform = 6;
+bytes status = 7;
+}
+
+message mappingProcessRequest_grpc0Response
+{
+bytes updatedTransform = 1;
+bytes status = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message mappingProcessRequest_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes images = 2;
+bytes poses = 3;
+bool fixedPose = 4;
+bytes status = 5;
+}
+
+message mappingProcessRequest_grpc1Response
+{
+bytes status = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message mappingProcessRequest_grpc2Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes images = 2;
+bytes poses = 3;
+bool fixedPose = 4;
+bytes updatedTransform = 5;
+bytes status = 6;
+}
+
+message mappingProcessRequest_grpc2Response
+{
+bytes updatedTransform = 1;
+bytes status = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message getDataForVisualizationRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes outputPointClouds = 2;
+bytes keyframePoses = 3;
+}
+
+message getDataForVisualizationResponse
+{
+bytes outputPointClouds = 1;
+bytes keyframePoses = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+service grpcIMappingPipelineService {
+rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
+rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
+rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCameraParameters_grpc0Response) {}
+rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
+rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
+rpc set3DTransformSolARToWorld(set3DTransformSolARToWorldRequest) returns(set3DTransformSolARToWorldResponse) {}
+rpc mappingProcessRequest_grpc0(mappingProcessRequest_grpc0Request) returns(mappingProcessRequest_grpc0Response) {}
+rpc mappingProcessRequest_grpc1(mappingProcessRequest_grpc1Request) returns(mappingProcessRequest_grpc1Response) {}
+rpc mappingProcessRequest_grpc2(mappingProcessRequest_grpc2Request) returns(mappingProcessRequest_grpc2Response) {}
+rpc getDataForVisualization(getDataForVisualizationRequest) returns(getDataForVisualizationResponse) {}
+}
+

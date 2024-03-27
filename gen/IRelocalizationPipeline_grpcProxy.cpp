@@ -134,7 +134,7 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::stop()
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::init(std::string const mapupdateServiceURL)
+SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::init(std::string const& mapupdateServiceURL)
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationPipeline::init_grpc1Request reqIn;
